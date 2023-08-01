@@ -1,2 +1,76 @@
-Test
-Test1
+[プレイヤーアクセス制限]
+○チャットの挙動を確認
+
+○アイテムショップの実装
+・挙動の確認
+・Widgetの表示方法を確認
+・Widgetの実装
+
+[Private]
+○Git
+https://www.i-ryo.com/entry/2018/11/28/221938#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%81%A0%E3%81%91%E3%81%A7GitHub%E3%82%92%E4%BD%93%E9%A8%93%E3%81%99%E3%82%8B
+
+
+[Moving]
+●Program
+※BPで簡単に実装を行う
+◇重力の移動
+◇カメラワーク
+
+●Design
+○仕分け
+・BaseBlockの種類分け
+ -小さかったら投影看板(オブジェクト)
+ -大きかったら引き続きBaseSurfaceの仕分け
+
+・BaseSurfaceの種類分け
+ -大きかったら投影看板(画像)
+ -小さかったらGreeble処理
+
+・GreebleBlockの種類分け
+ -細長かったら投影看板(テキスト)
+ -大きかったら立方体看板
+
+○投影看板(オブジェクト)
+・マテリアルにエフェクトをつける
+
+[DirectX]
+○クラスの整理
+
+※フラクタルを用いた幾何学的なアニメーションとそれを用いたパズルを考える。
+
+◇フラクタルクラスのメモを作成
+
+◇アニメーションの仕様を設計
+・フラクタルアニメーションの検証
+-拡大縮小
+-回転
+-上下左右運動
+
+
+[FPS]
+○勉強用プロジェクトのベースゲームを実装する
+・接触ギミックの検証
+ -ActorTimeを継承したBoxで実装を行う
+ 
+
+ 
+●DGSの導入
+・クックせずにDedicatedServerの環境を構築する
+https://tacoworks.jp/posts/20221218-ue5-dedicated-server
+・RPCのTutorial
+https://historia.co.jp/archives/12441/
+
+・資料
+https://www.youtube.com/watch?v=ad5MZLSDAZk&t=355
+https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Networking/HowTo/DedicatedServers/
+https://historia.co.jp/archives/12441/
+
+●GASの導入
+○Tutorial
+https://okawari-hakumai.hatenablog.com/entry/2019/04/10/225319
+
+・資料
+https://jackpot-lab.hateblo.jp/entry/2021/12/24/070000#GAS%E3%81%AE%E5%B0%8E%E5%85%A5%E5%88%9D%E5%BF%83%E8%80%85%E5%90%91%E3%81%91
+https://qiita.com/sentyaanko/items/314ee39feb62ce67b885
+https://www.youtube.com/watch?v=SxFPGOXv1g4
