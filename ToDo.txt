@@ -25,8 +25,6 @@ https://www.i-ryo.com/entry/2018/11/28/221938#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%
 ◇カメラワーク
 
 ●Design
-※Greebleを行う処理を合理的に修正
-
 ○仕分け
 ・BaseBlockの種類分け
  -小さかったら投影看板(オブジェクト)
@@ -43,30 +41,15 @@ https://www.i-ryo.com/entry/2018/11/28/221938#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%
 ○投影看板(オブジェクト)
 ・マテリアルにエフェクトをつける
 
-[DirectX]
-○クラスの整理
-
-※フラクタルを用いた幾何学的なアニメーションとそれを用いたパズルを考える。
-
-◇フラクタルクラスのメモを作成
-
-◇アニメーションの仕様を設計
-・フラクタルアニメーションの検証
--拡大縮小
--回転
--上下左右運動
-
 
 [FPS]
 ○勉強用プロジェクトのベースゲームを実装する
 ・接触ギミックの検証
  -ActorTimeを継承したBoxで実装を行う
- 
 
- 
 ●DGSの導入
-・クックせずにDedicatedServerの環境を構築する
-https://tacoworks.jp/posts/20221218-ue5-dedicated-server
+○クライアントをパッケージして二つで起動できるか確認する
+
 ・RPCのTutorial
 https://historia.co.jp/archives/12441/
 
@@ -83,3 +66,17 @@ https://okawari-hakumai.hatenablog.com/entry/2019/04/10/225319
 https://jackpot-lab.hateblo.jp/entry/2021/12/24/070000#GAS%E3%81%AE%E5%B0%8E%E5%85%A5%E5%88%9D%E5%BF%83%E8%80%85%E5%90%91%E3%81%91
 https://qiita.com/sentyaanko/items/314ee39feb62ce67b885
 https://www.youtube.com/watch?v=SxFPGOXv1g4
+
+
+[DirectX]
+○クラスの整理
+
+※フラクタルを用いた幾何学的なアニメーションとそれを用いたパズルを考える。
+
+◇フラクタルクラスのメモを作成
+
+◇アニメーションの仕様を設計
+・フラクタルアニメーションの検証
+-拡大縮小
+-回転
+-上下左右運動
