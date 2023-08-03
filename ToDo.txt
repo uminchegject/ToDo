@@ -1,3 +1,8 @@
+[反省]
+・サンプルプログラムをベースに技術勉強を行う
+・情報収集の時間を大切にする
+
+[会社]
 ○交流会アンケート
 ○1on1の準備
 
@@ -61,14 +66,8 @@ https://www.youtube.com/watch?v=ad5MZLSDAZk&t=355
 https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Networking/HowTo/DedicatedServers/
 https://historia.co.jp/archives/12441/
 
-●GASの導入
-○Tutorial
-https://okawari-hakumai.hatenablog.com/entry/2019/04/10/225319
+●LyraのTutorial
 
-・資料
-https://jackpot-lab.hateblo.jp/entry/2021/12/24/070000#GAS%E3%81%AE%E5%B0%8E%E5%85%A5%E5%88%9D%E5%BF%83%E8%80%85%E5%90%91%E3%81%91
-https://qiita.com/sentyaanko/items/314ee39feb62ce67b885
-https://www.youtube.com/watch?v=SxFPGOXv1g4
 
 
 [DirectX]
