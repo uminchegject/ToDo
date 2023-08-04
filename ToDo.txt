@@ -1,7 +1,3 @@
-[反省]
-・サンプルプログラムをベースに技術勉強を行う
-・情報収集の時間を大切にする
-
 [会社]
 ○交流会アンケート
 ○1on1の準備
@@ -9,17 +5,13 @@
 [プレイヤーアクセス制限]
 ○アイテムショップの実装
 ・挙動の確認
-・エラー箇所の確認
-・Widgetの表示方法を確認
-・Widgetの実装
-542065
-542833
-540999
+
+○デバッグ用キャラのレベル上げ
+ -アイテム生成可能になるまで
+ -レイドミッションが受けられるようになるまで
 
 ○ミッションのAPIレスポンスを調査
 
-○アクセス制限を行いのAPIの処理を確認
-※日中に行うことを通知する
 
 [Private]
 ○Git
@@ -67,7 +59,6 @@ https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Networking/HowTo/De
 https://historia.co.jp/archives/12441/
 
 ●LyraのTutorial
-
 
 
 [DirectX]
