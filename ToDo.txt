@@ -13,10 +13,10 @@
 ○ミッションのAPIレスポンスを調査
 
 
-[Private]
-○Git
-https://www.i-ryo.com/entry/2018/11/28/221938#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%81%A0%E3%81%91%E3%81%A7GitHub%E3%82%92%E4%BD%93%E9%A8%93%E3%81%99%E3%82%8B
-
+[SoulCity]
+○BasePointの位置を調整
+○天井の配置
+○派生アセットの配置
 
 [Moving]
 ●Program
