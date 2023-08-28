@@ -19,8 +19,7 @@
 ●Arc
 ○Panelカラー
 ・ノイズ
- -CofficientをY軸に引き伸ばす(乗算)
- -Cofficientを小さくする
+ -Noiseの値に応じてBlockの幅を小さくする(ランダム + 層)
 ・色の種類を統一する
 ・ExtrudeするBaseHeightに応じて色を明るくする
 
