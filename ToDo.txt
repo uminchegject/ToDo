@@ -1,7 +1,7 @@
 [プレイヤーアクセス制限]
-※質問
+※チャットの質問
 
-○キックの検証
+○キックのDelegateの検証
 
 ○フィールド遷移のアクセス制限実装
 
@@ -16,6 +16,17 @@
 ・BaseObjを見せないようにDetailを埋める
 ・Greeble＋パイプを細かく表示できるように実装する
 
+●Arc
+○Panelカラー
+・ノイズ
+ -CofficientをY軸に引き伸ばす(乗算)
+ -Cofficientを小さくする
+・色の種類を統一する
+・ExtrudeするBaseHeightに応じて色を明るくする
+
+○Arc
+・ExtrudeするBaseHeightに応じて色を明るくする
+
 [実装]
 ○パイプ周り
 ・ランダム性を高めるパラメーターを実装する
@@ -24,15 +35,3 @@
 
 ○Arc
 ・Greeble分割のうまい画像を参考にする
-
-[Panel]
-●カラー
-・ノイズ
- -CofficientをY軸に引き伸ばす(乗算)
- -Cofficientを小さくする
-・色の種類を統一する
-・ExtrudeするBaseHeightに応じて色を明るくする
-
-[Arc]
-・ExtrudeするBaseHeightに応じて色を明るくする
-　
