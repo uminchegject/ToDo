@@ -22,7 +22,17 @@
 ・GreebleBLockからPipeを生成する処理を実装
 ・パイプの下にCubeを配置する
 
-○外壁
+○Arc
 ・Greeble分割のうまい画像を参考にする
-・
+
+[Panel]
+●カラー
+・ノイズ
+ -CofficientをY軸に引き伸ばす(乗算)
+ -Cofficientを小さくする
+・色の種類を統一する
+・ExtrudeするBaseHeightに応じて色を明るくする
+
+[Arc]
+・ExtrudeするBaseHeightに応じて色を明るくする
 　
