@@ -1,14 +1,5 @@
 [ToDo]
-○住居とパイプ位置の選択
-
-[実装]
-○GreebleBlockの幅を狭める
-int points[] =  primpoints(0, @primnum);
-int pt1num =
-int pt2num =
-vector pt1pos = point(0, "P" ,points[0]);
-vector pt2pos = point(0, "P" ,points[1]);
-float width = len(pos1 - pos2);
-float moveLength = (width * @ResizeValue) / 2;
-vector moveVector = normalize(pos2 - pos1);
-setpointattrib(geoself(), "P", points[0], p)
+・層にする
+　ー奥の層ほど、GreebleBlockを細長くする
+・穴をあける
+　ー奥の層ほど、GreebleBlockの消す範囲を小さくする
