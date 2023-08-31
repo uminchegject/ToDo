@@ -1,25 +1,14 @@
-[生成]
-・様々な形態を生成するように実装する
-・パネル(外壁デザイン)をアルゴリズミックデザインにする
+[ToDo]
+○住居とパイプ位置の選択
 
-※平行線をテーマにする
-・格子(アルゴリズミックデザイン)
-・横長看板
-
-[資料]
-●制作の内容
-・プロシージャルモデリング
-・九龍城の街並みをUE4上で生成できるようにする
-
-●実装の内容
-・Houdini
-・Python
-・UE4
-
-●ロジックの説明
-・Greebleの説明
-・それぞれの処理の流れとその理由を説明
-
-
-●反省点
-・UE4上で実装する点においてメモリ不足に苦しんだ
+[実装]
+○GreebleBlockの幅を狭める
+int points[] =  primpoints(0, @primnum);
+int pt1num =
+int pt2num =
+vector pt1pos = point(0, "P" ,points[0]);
+vector pt2pos = point(0, "P" ,points[1]);
+float width = len(pos1 - pos2);
+float moveLength = (width * @ResizeValue) / 2;
+vector moveVector = normalize(pos2 - pos1);
+setpointattrib(geoself(), "P", points[0], p)
