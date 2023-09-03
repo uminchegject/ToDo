@@ -17,32 +17,32 @@ vector pt3pos = point(0, "P" , pt3num);
 vector pt4pos = point(0, "P" , pt4num);
 
 float width = length(pt2pos - pt1pos);
-float moveLength = width * (1 - @ResizeValue) / 2;
-vector moveVector = normalize(pt2pos - pt1pos) * moveLength;
+float moveWidthLength = width * (1 - @ResizeValue) / 2;
+vector moveWidthVector = normalize(pt2pos - pt1pos) * moveWidthLength;
 
 float height = length(pt3pos - pt2pos) * (random(@P) * 0.5);
-moveLength = height / 2;
-moveVector -= normalize(pt3pos - pt2pos) * moveLength;
+float moveHeightLength = height / 2;
+float moveHeightVector = normalize(pt3pos - pt2pos) * moveHeightLength;
 
 if(-0.1 < moveVector.y && moveVector.y < 0.1)
 {
-    setpointattrib(geoself(), "P", pt1num, pt1pos + moveVector * moveLength);
-    setpointattrib(geoself(), "P", pt2num, pt2pos - moveVector * moveLength);
-    setpointattrib(geoself(), "P", pt3num, pt3pos - moveVector * moveLength);
-    setpointattrib(geoself(), "P", pt4num, pt4pos + moveVector * moveLength);
+    setpointattrib(geoself(), "P", pt1num, moveWidthVector + moveHeightVector);
+    setpointattrib(geoself(), "P", pt2num, moveWidthVector + moveHeightVector);
+    setpointattrib(geoself(), "P", pt3num, moveWidthVector + moveHeightVector);
+    setpointattrib(geoself(), "P", pt4num, moveWidthVector + moveHeightVector);
 }
 else
 {
-        width = length(pt2pos - pt3pos);
-        moveLength = width * (1 - @ResizeValue) / 2;
-        moveVector = normalize(pt3pos - pt2pos);
-        
-        height = length(pt2pos - pt1pos) * (random(@P) * 0.5);
-        moveLength = height / 2;
-        moveVector -= normalize(pt2pos - pt1pos) * moveLength;
-        
-        setpointattrib(geoself(), "P", pt1num, pt1pos + moveVector * moveLength);
-        setpointattrib(geoself(), "P", pt2num, pt2pos + moveVector * moveLength);
-        setpointattrib(geoself(), "P", pt3num, pt3pos - moveVector * moveLength);
-        setpointattrib(geoself(), "P", pt4num, pt4pos - moveVector * moveLength);       
+	width = length(pt2pos - pt3pos);
+	moveWidthLength = width * (1 - @ResizeValue) / 2;
+	moveWidthVector = normalize(pt3pos - pt2pos) * moveWidthLength;
+	
+	height = length(pt2pos - pt1pos) * (random(@P) * 0.5);
+	moveHeightLength = height / 2;
+	moveHeightVector = normalize(pt2pos - pt1pos) * moveHeightLength;
+	
+	setpointattrib(geoself(), "P", pt1num, moveWidthVector + moveHeightVector));
+	setpointattrib(geoself(), "P", pt2num, moveWidthVector + moveHeightVector));
+	setpointattrib(geoself(), "P", pt3num, moveWidthVector + moveHeightVector));
+	setpointattrib(geoself(), "P", pt4num, moveWidthVector + moveHeightVector));       
 }
