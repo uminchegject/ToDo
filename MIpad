@@ -5,43 +5,44 @@
  ー奥の層ほど、GreebleBlockの消す範囲を小さくする
 
 [実装]
-○GreebleBlockを細長くする
-def Greeble(baseBlock):
-    num = 0
-    greeblingXAxisBlockList = [baseBlock]
-    greeblingYAxisBlockList = []
-    greebledBlockList = []
-    
-    toggleBreakNum = 0
+int points[] =  primpoints(0, @primnum);
+int pt1num = points[0];
+int pt2num = points[1];
+int pt3num = points[2];
+int pt4num = points[3];
 
-    while 0 < len(greeblingXAxisBlockList) or 0 < len(greeblingYAxisBlockList):
-        greeblingYAxisBlockList, greebledBlocks1 = GreebleXAxis(greeblingXAxisBlockList)
-        greeblingXAxisBlockList, greebledBlocks2 = GreebleYAxis(greeblingYAxisBlockList)        
-		greeblingXAxisBlockList, greebledBlocks3 = GreebleYAxis(greeblingXAxisBlockList)
-        greebledBlockList = greebledBlockList + greebledBlocks1 + greebledBlocks2 + greebledBlocks3
-		
-		//greebledBlockList = greebledBlockList + greebledBlocks1 + greebledBlocks2
-        
-        toggleBreakNum += 1
-        if 100 < toggleBreakNum:
-            greebledBlockList = greebledBlockList + greeblingYAxisBlockList #+ greeblingXAxisBlockList
-            break
+vector pt1pos = point(0, "P" , pt1num);
+vector pt2pos = point(0, "P" , pt2num);
+vector pt3pos = point(0, "P" , pt3num);
+vector pt4pos = point(0, "P" , pt4num);
 
-    return greebledBlockList
-	
-	
-	
-○幅の調整処理を修正
-float width = len(pos1 - pos2);
-float moveLength = (width * @ResizeValue) / 2;
-vector moveVector = normalize(pos2 - pos1);
-if(moveVector.y) < 0.1)
+float width = length(pt2pos - pt1pos);
+float moveLength = width * (1 - @ResizeValue) / 2;
+vector moveVector = normalize(pt2pos - pt1pos) * moveLength;
+
+float height = length(pt3pos - pt2pos) * (random(@P) * 0.5);
+moveLength = height / 2;
+moveVector -= normalize(pt3pos - pt2pos) * moveLength;
+
+if(-0.1 < moveVector.y && moveVector.y < 0.1)
 {
-	//ポイントの移動処理
+    setpointattrib(geoself(), "P", pt1num, pt1pos + moveVector * moveLength);
+    setpointattrib(geoself(), "P", pt2num, pt2pos - moveVector * moveLength);
+    setpointattrib(geoself(), "P", pt3num, pt3pos - moveVector * moveLength);
+    setpointattrib(geoself(), "P", pt4num, pt4pos + moveVector * moveLength);
 }
-else()
+else
 {
-	width = len(pos2 - pos3);
-	moveVector = normalize(pos3 - pos2);
-	//ポイントの移動処理
+        width = length(pt2pos - pt3pos);
+        moveLength = width * (1 - @ResizeValue) / 2;
+        moveVector = normalize(pt3pos - pt2pos);
+        
+        height = length(pt2pos - pt1pos) * (random(@P) * 0.5);
+        moveLength = height / 2;
+        moveVector -= normalize(pt2pos - pt1pos) * moveLength;
+        
+        setpointattrib(geoself(), "P", pt1num, pt1pos + moveVector * moveLength);
+        setpointattrib(geoself(), "P", pt2num, pt2pos + moveVector * moveLength);
+        setpointattrib(geoself(), "P", pt3num, pt3pos - moveVector * moveLength);
+        setpointattrib(geoself(), "P", pt4num, pt4pos - moveVector * moveLength);       
 }
