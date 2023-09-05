@@ -1,37 +1,36 @@
 [プレイヤーアクセス制限]
-※チャットの質問
-
-○キックのDelegateの検証
-
-○フィールド遷移のアクセス制限実装
-
-○空間転送のアクセス制限実装
-
-△コード整理
-
-△サブミット
+○XBOXの環境構築
+ ・Incredibild周りのエラーを改善する
+○AdventureBoardの最終クエストが受けられない不具合を修正
+ ・ブレークポイントの位置を確認し、処理を確認
+○他エラーの挙動と処理の確認
 
 [SoulCity]
 [IDEA]
 ・BaseObjを見せないようにDetailを埋める
 ・Greeble＋パイプを細かく表示できるように実装する
-・穴のサイズが大きい場合はパイプ、小さい場合は住居
 
-●Arc
-○Panelカラー
-・ノイズ
- -Noiseの値に応じてBlockの幅を小さくする(ランダム + 層)
-・色の種類を統一する
-・ExtrudeするBaseHeightに応じて色を明るくする
+●Residence
+・全体のBaseBlockに配置する
 
-○Arc
-・ExtrudeするBaseHeightに応じて色を明るくする
+●Panel
+・上層
+ -
+・下層
+ -
 
-[実装]
-○パイプ周り
-・ランダム性を高めるパラメーターを実装する
-・GreebleBLockからPipeを生成する処理を実装
-・パイプの下にCubeを配置する
+●Tube
 
-○Arc
-・Greeble分割のうまい画像を参考にする
+[検証]
+●Residence + Panel
+※様々なNoiseの種類を調べる
+
+○GridからGreebleし、ランダムにRemove
+
+○GreeblBlockを用いて上層を実装
+ -Greebleを行いNoiseの値に応じてRemove
+ 
+○GreeblBlockを用いて下層を実装
+ -細長いGreebleBlockを生成しNoiseの値に応じてRemove(完全にRemoveはしない)
+
+○BaseにResidenceを生成する
