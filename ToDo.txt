@@ -1,25 +1,39 @@
-[プレイヤーアクセス制限]
-○XBOXの環境構築
- ・Incredibild周りのエラーを改善する
-○AdventureBoardの最終クエストが受けられない不具合を修正
- ・ブレークポイントの位置を確認し、処理を確認
-○他エラーの挙動と処理の確認
+■[CS]
+●特定のマップでBGMが再生されない
+○ログを確認する
+ -ちゃんBGMが読み込まれているかを確認する
 
-[SoulCity]
+●ガシャを引いた際、演出ムービーでプレゼンターが消えることがある
+○挙動を確認
+
+○ガシャ開始時のログを確認
+　-北欧版でプレゼンテーターが出る際のログを取得する
+
+
+■[SoulCity]
 [IDEA]
-・BaseObjを見せないようにDetailを埋める
-・Greeble＋パイプを細かく表示できるように実装する
+・TubeBlock,PanelBlockの二つに分ける
+・PanelBlockの上下のオフセット値をランダムに設定し、削るイメージで実装する
+・層を設ける
+ -低層を細長く
+ -高層を太短く
 
-●Residence
-・全体のBaseBlockに配置する
+・Block
+ -ResidenceBlock + TubeBlock
+ -PanelBlock or TubeBlock
 
-●Panel
-・上層
- -
-・下層
- -
+・Primitive中心のスケーリングノード
 
-●Tube
+・淵のGreebleBlockを細長くランダムにスケーリング
+ -Panelから伸びているように見せる
+ -高さもランダムに設定する(立体交差)
+ -PanelDeleteの値に近いNoiseValueのGreebleBlockで設定する
+ -一つのBlock内に位置をずらして複数のFrameを生成する
+ -Frameの太さは統一する
+
+
+[実装]
+・Primitiveを中心としたスケーリングを実装
 
 [検証]
 ●Residence + Panel
@@ -34,3 +48,8 @@
  -細長いGreebleBlockを生成しNoiseの値に応じてRemove(完全にRemoveはしない)
 
 ○BaseにResidenceを生成する
+
+■[Private]
+・ワイヤーの整理
+
+
