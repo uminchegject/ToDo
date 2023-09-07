@@ -7,10 +7,15 @@
 ○挙動を確認
 
 ○ガシャ開始時のログを確認
-　-北欧版でプレゼンテーターが出る際のログを取得する
+ -北欧版でプレゼンテーターが出る際のログを取得する
 
+●Perforce
+○最新が取得できないファイルの最新を取得できるようにする
 
 ■[SoulCity]
+※休みまでにGrid上でPanel + TubeのPDを完成させる
+ -一度Houdini上でSoulCityの建物部分でPDし、レンダリングする
+
 [IDEA]
 ・TubeBlock,PanelBlockの二つに分ける
 ・PanelBlockの上下のオフセット値をランダムに設定し、削るイメージで実装する
@@ -22,8 +27,6 @@
  -ResidenceBlock + TubeBlock
  -PanelBlock or TubeBlock
 
-・Primitive中心のスケーリングノード
-
 ・淵のGreebleBlockを細長くランダムにスケーリング
  -Panelから伸びているように見せる
  -高さもランダムに設定する(立体交差)
@@ -33,23 +36,16 @@
 
 
 [実装]
-・Primitiveを中心としたスケーリングを実装
+○Primitiveを中心としたスケーリングを実装
 
 [検証]
 ●Residence + Panel
 ※様々なNoiseの種類を調べる
 
-○GridからGreebleし、ランダムにRemove
-
-○GreeblBlockを用いて上層を実装
- -Greebleを行いNoiseの値に応じてRemove
- 
 ○GreeblBlockを用いて下層を実装
  -細長いGreebleBlockを生成しNoiseの値に応じてRemove(完全にRemoveはしない)
 
 ○BaseにResidenceを生成する
 
 ■[Private]
-・ワイヤーの整理
-
-
+・結束バンドの整理
