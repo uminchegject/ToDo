@@ -1,17 +1,12 @@
 ■[CS]
-●特定のマップでBGMが再生されない
-○ログを確認する
- -ちゃんBGMが読み込まれているかを確認する
+●ゲーム開始時のBGM
+ -IDが取得できていないログを取得し、増山さんに担当してもらえないか確認する
 
-●ガシャを引いた際、演出ムービーでプレゼンターが消えることがある
-○挙動を確認
-
-○ガシャ開始時のログを確認
- -北欧版でプレゼンテーターが出る際のログを取得する
+●チケットの選別
+ -本日作業するBチケを決定する
 
 ●サブミット
-　ー※修正の対応処理を確認
-　
+ ー※修正の対応処理を確認
 
 
 ■[SoulCity]
@@ -29,28 +24,28 @@
  -ResidenceBlock + TubeBlock
  -PanelBlock or TubeBlock
 
-・淵のGreebleBlockを細長くランダムにスケーリング
+※鉄骨もPDの複雑さの一部として占めるように考える
  -Panelから伸びているように見せる
  -高さもランダムに設定する(立体交差)
  -PanelDeleteの値に近いNoiseValueのGreebleBlockで設定する
  -一つのBlock内に位置をずらして複数のFrameを生成する
  -Frameの太さは統一する
-
-※鉄骨もPDの複雑さの一部として占めるように考える
+ -Panelに層を設けて縁部分に鉄骨を埋める
 
 [実装]
 ○Primitiveを中心としたスケーリングを実装
 
 [検証]
+●Frame
+○
+
 ●Residence + Panel
 ※様々なNoiseの種類を調べる
 
-○GreeblBlockを用いて下層を実装
- -細長いGreebleBlockを生成しNoiseの値に応じてRemove(完全にRemoveはしない)
+○Panelを生成する
 
 ○BaseにResidenceを生成する
 
 
 ■[Private]
 ・結束バンドの整理
-
