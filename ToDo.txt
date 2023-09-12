@@ -49,6 +49,9 @@
 ●Volume
 ・Base躯体のPDを考える
  -空間的なPDを考える
+・縦に長いVolumeをベースにする
+ -地面(Tube)の面積を小さくする
+ -建物のファザードに凹凸をつける
 
 ●Panel + Tube
 ・TubeBlock,PanelBlockの二つに分ける
