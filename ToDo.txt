@@ -11,18 +11,15 @@
 
 ●レイドバトルに突入した際、マッチングしたメンバーの情報が表示されていない
 ○USBPartyBlueprintFunctionLibrary::GetCurrentPartyMemberが機能していない原因を調べる
+ -EN環境で挙動を確認する
 
 ●ストレージ容量不足時にゲームを開始した際、PS5側のシステムUIで表示されるメッセージの内容が、実際の挙動と相違している
-○DevNetのドキュメントを調べる
- -セーブ容量警告処理をベースに調査
- 
 ○SaveDialogMsgParam.sysMsgType = SCE_SAVE_DATA_DIALOG_SYSMSG_TYPE_NOSPACEの処理を確認する
-　-SCE_SAVE_DATA_DIALOG_SYSMSG_TYPE_NOSPACEを調査する
-
+ -SCE_SAVE_DATA_DIALOG_SYSMSG_TYPE_NOSPACEを調査する
 
 ●ミッション申請中もしくは突入する画面表示中に特定のメンバーが強制終了した際 、申請がキャンセルされない
 ○RemovePlayerStateを起こせるようにする
-　→処理の流れを確認する
+ →処理の流れを確認する
 
 
 ※アルビオンさんにチケットが移行する予定のため、Bチケットは保留
@@ -40,8 +37,25 @@
 
 
 ■[SoulCity]
-※休みまでにGrid上でPanel + TubeのPDを完成させる
- -一度Houdini上でSoulCityの建物部分でPDし、レンダリングする
+
+[ToDo]
+●Volumeの検証
+○検証環境を構築
+○摩天楼を検証
+ -縦長の立方体を配置
+ -
+
+[実装]
+●Panel + Tube
+○ノード整理
+ -while文に一連の処理を入れ込む
+○建物にコンバート
+ -検証
+
+●SciFiTown
+○必要な処理をまとめる
+○必要な処理を転移する
+
 
 [IDEA]
 ●Residence
@@ -70,18 +84,6 @@
  -一つのBlock内に位置をずらして複数のFrameを生成する
  -Frameの太さは統一する
  -Panelに層を設けて縁部分に鉄骨を埋める
-
-
-[実装]
-●Panel + Tube
-○ノード整理
- -while文に一連の処理を入れ込む
-○建物にコンバート
- -検証
-
-●SciFiTown
-○必要な処理をまとめる
-○必要な処理を転移する
 
 
 
