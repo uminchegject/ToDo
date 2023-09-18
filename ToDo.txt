@@ -60,6 +60,7 @@
 [IDEA]
 ●Residence
 ※アセットを配置するPDを考える
+※模様を考える
 ・Tube + PanelをテーマにしたPDDetailにする
  -Tubeを凹,Residenceを凸に配置する
 
@@ -68,11 +69,13 @@
 ・Base躯体のPDを考える
  -空間的なPDを考える
 ・縦に長いVolumeをベースにする
+ -Volumeの太さにコントラストを持たせる
 
 ・地面
  -地面(Tube)の面積を小さくする
  -コントラストをつける(大小、L字I字)
  -地面に高低差(Noise)をつけて、その上にTubeを配置する
+ -ArcをGL下から伸ばす
 
 ●Panel + Tube
 ・TubeBlock,PanelBlockの二つに分ける
@@ -87,6 +90,7 @@
  -一つのBlock内に位置をずらして複数のFrameを生成する
  -Frameの太さは統一する
  -Panelに層を設けて縁部分に鉄骨を埋める
+
 
 
 
