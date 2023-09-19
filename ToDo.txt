@@ -4,11 +4,16 @@
 　・テーマを考える時間を設ける
  ・様々な箇所に目を通す癖をつける
 ※ちゃんと調べる方法をまとめる
+　https://sonnaka.com/step-to-solve-error-of-programming/
 
 ・本を読む習慣をつける
 　・本屋に定期的に通う
 　・背景本を購入する
 
+■[Private]
+・batファイル
+　https://qiita.com/kshibamo/items/9368b0b2a4a2f40b61f1
+・結束バンドの整理
 
 ■[CS]
 ●XBOX環境構築
@@ -94,6 +99,3 @@
  -Panelに層を設けて縁部分に鉄骨を埋める
 
 
-
-■[Private]
-・結束バンドの整理
