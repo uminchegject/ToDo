@@ -1,18 +1,18 @@
 ■反省
 ・エラーの修正を行うときは、修正調査の具体的なテーマを考える。
-　・今回はプラットフォームの相違箇所をテーマにする
-　・テーマを考える時間を設ける
+ ・今回はプラットフォームの相違箇所をテーマにする
+ ・テーマを考える時間を設ける
  ・様々な箇所に目を通す癖をつける
 ※ちゃんと調べる方法をまとめる
-　https://sonnaka.com/step-to-solve-error-of-programming/
+ https://sonnaka.com/step-to-solve-error-of-programming/
 
 ・本を読む習慣をつける
-　・本屋に定期的に通う
-　・背景本を購入する
+ ・本屋に定期的に通う
+ ・背景本を購入する
 
 ■[Private]
 ・batファイル
-　https://qiita.com/kshibamo/items/9368b0b2a4a2f40b61f1
+ https://qiita.com/kshibamo/items/9368b0b2a4a2f40b61f1
 ・結束バンドの整理
 
 ■[CS]
@@ -63,26 +63,29 @@
 
 
 [IDEA]
-●Residence
-※アセットを配置するPDを考える
-※模様のPDを考える
-・Tube + PanelをテーマにしたPDDetailにする
- -Tubeを凹,Residenceを凸に配置する
-・光のラインを要素に加える
-　ーコントラスト(大小)
-
 ●Volume
 ※Pipe(Ground) + Pipe+Panel(Arc)でVolumeのPD検証を行う
 ・Base躯体のPDを考える
  -空間的なPDを考える
 ・縦に長いVolumeをベースにする
  -Volumeの太さにコントラストを持たせる
-
 ・地面
  -地面(Tube)の面積を小さくする
  -コントラストをつける(大小、L字I字)
  -地面に高低差(Noise)をつけて、その上にTubeを配置する
  -ArcはGLの下から存在するように埋める
+
+●SignBoard
+※SignBoardを構成要素の一つとする
+・アセットを用意
+
+●Residence
+※アセットを配置するPDを考える
+※模様のPDを考える
+・Tube + PanelをテーマにしたPDDetailにする
+ -Tubeを凹,Residenceを凸に配置する
+・光のラインを要素に加える
+ ーコントラスト(大小)
 
 ●Panel + Tube
 ・TubeBlock,PanelBlockの二つに分ける
