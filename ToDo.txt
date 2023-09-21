@@ -7,14 +7,17 @@
  https://sonnaka.com/step-to-solve-error-of-programming/
  
 ・スケジュール
-　・Public + Privateのセットを6時頃から(緊急時は終業後から)始める
+ ・Public + Privateのセットを6時頃から(緊急時は終業後から)始める
 
 ■[Private]
 ・batファイル
- https://qiita.com/kshibamo/items/9368b0b2a4a2f40b61f1
+ https://qiita.com/go1101/items/a2df957120b709b94273
 ・結束バンドの整理
 
 ■[CS]
+●XBOX環境構築
+○デバッグコマンドを打ち込めるようにする
+
 ●レイドバトルに突入した際、マッチングしたメンバーの情報が表示されていない
 ○ASBPlayerController::ClientApprovedJoinInstantParty_InternalがNullになってしまう原因を調べる
 
@@ -24,7 +27,8 @@
 
 ●ストレージ容量不足時にゲームを開始した際、PS5側のシステムUIで表示されるメッセージの内容が、実際の挙動と相違している
 ○FSonySaveGameSystem::SaveGameの処理を確認する
- 
+
+
 ※アルビオンさんにチケットが移行する予定のため、Bチケットは保留
 ▲フォトモードにてフォトを撮影した際、SEが再生されない
 ※Catに現状況の情報をまとめる
@@ -45,7 +49,9 @@
 ○摩天楼を検証
  ・Arc(Panel, Residence, I字Tube, SignBoard)
  ・地面(L字Tube,I字Tube)
+
 ●マテリアルの検討
+
 
 [実装]
 ●SciFiTown
