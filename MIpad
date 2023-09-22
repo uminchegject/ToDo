@@ -1,48 +1,128 @@
-[ToDo]
-・層にする
- ー奥の層ほど、GreebleBlockを細長くする
-・穴をあける
- ー奥の層ほど、GreebleBlockの消す範囲を小さくする
+node = hou.pwd()
+geo = node.geometry()
+from random import randint, uniform, random
 
-[実装]
-int points[] =  primpoints(0, @primnum);
-int pt1num = points[0];
-int pt2num = points[1];
-int pt3num = points[2];
-int pt4num = points[3];
+# Add code to modify contents of geo.
+# Use drop down menu to select examples.
 
-vector pt1pos = point(0, "P" , pt1num);
-vector pt2pos = point(0, "P" , pt2num);
-vector pt3pos = point(0, "P" , pt3num);
-vector pt4pos = point(0, "P" , pt4num);
+#=================================================================
+#パラメーター
+offsetCofficient = node.parm("OffsetCofficient").eval()
+minSlideCofficient = node.parm("MinSlideCofficient").eval()
+maxSlideCofficient = node.parm("MaxSlideCofficient").eval()
+#=================================================================
 
-float width = length(pt2pos - pt1pos);
-float moveWidthLength = width * (1 - @ResizeValue) / 2;
-vector moveWidthVector = normalize(pt2pos - pt1pos) * moveWidthLength;
+#L字パイプのBaseLineを生成する
+def SetGLLineVertexList(point):
+                
+    blockSize = (point.attribValue("SizeX"), point.attribValue("SizeY"))
+    blockBasePos = point.position()
+    tubeNum = point.attribValue("TubeNum")
+    radius = point.attribValue("Radius")
+    height = point.attribValue("Height")
+        
+    basePos_x = -blockSize[0] / 2
+    basePos_y = -blockSize[1] / 2   
+    
+    size_x = blockSize[0]
+    size_y = blockSize[1]
+    if size_x > size_y:
+        middlePosSubSlideLength = (size_y * (0.5 - offsetCofficient)) * uniform(minSlideCofficient, maxSlideCofficient)
+    else:
+        middlePosSubSlideLength = (size_x * (0.5 - offsetCofficient)) * uniform(minSlideCofficient, maxSlideCofficient)
+        
+    for num in range(tubeNum):
 
-float height = length(pt3pos - pt2pos) * (random(@P) * 0.5);
-float moveHeightLength = height / 2;
-float moveHeightVector = normalize(pt3pos - pt2pos) * moveHeightLength;
+        if size_x > size_y:
+      
+            startPos = (basePos_x + offsetCofficient * size_x, 0, basePos_y + (num + 0.5) * radius)
+            goalPos = (basePos_x + (1 - offsetCofficient) * size_x, 0, basePos_y + size_y - (tubeNum - num - 0.5) * radius)
+            middlePos1 = (startPos[0], height, startPos[2])
+            middlePos2 = (goalPos[0], height, goalPos[2])
 
-if(-0.1 < moveVector.y && moveVector.y < 0.1)
-{
-    setpointattrib(geoself(), "P", pt1num, moveWidthVector + moveHeightVector);
-    setpointattrib(geoself(), "P", pt2num, moveWidthVector + moveHeightVector);
-    setpointattrib(geoself(), "P", pt3num, moveWidthVector + moveHeightVector);
-    setpointattrib(geoself(), "P", pt4num, moveWidthVector + moveHeightVector);
-}
-else
-{
-	width = length(pt2pos - pt3pos);
-	moveWidthLength = width * (1 - @ResizeValue) / 2;
-	moveWidthVector = normalize(pt3pos - pt2pos) * moveWidthLength;
-	
-	height = length(pt2pos - pt1pos) * (random(@P) * 0.5);
-	moveHeightLength = height / 2;
-	moveHeightVector = normalize(pt2pos - pt1pos) * moveHeightLength;
-	
-	setpointattrib(geoself(), "P", pt1num, moveWidthVector + moveHeightVector));
-	setpointattrib(geoself(), "P", pt2num, moveWidthVector + moveHeightVector));
-	setpointattrib(geoself(), "P", pt3num, moveWidthVector + moveHeightVector));
-	setpointattrib(geoself(), "P", pt4num, moveWidthVector + moveHeightVector));       
-}
+            middlePosSlideLength = size_x / 2 + ((tubeNum - 1) / 2 - num) * radius
+            centerPos1 = (startPos[0] + middlePosSlideLength - middlePosSubSlideLength, height, startPos[2])
+            centerPos2 = (startPos[0] + middlePosSlideLength - middlePosSubSlideLength, height, goalPos[2])
+
+            lineVertexList = [startPos, middlePos1, centerPos1, centerPos2, middlePos2, goalPos]
+            MakeLine(lineVertexList)
+    
+        else:        
+        
+            startPos = (basePos_x + (num + 0.5) * radius, 0, basePos_y + offsetCofficient * size_y)
+            goalPos = (basePos_x + size_y - (tubeNum - num - 0.5) * radius, 0, basePos_y + (1 - offsetCofficient) * size_y)
+            middlePos1 =(startPos[0], height, startPos[2])
+            middlePos2 = (goalPos[0], height, goalPos[2])
+                        
+            middlePosSlideLength = size_y / 2 + ((tubeNum - 1) / 2 - num) * radius
+            centerPos1 = (startPos[0], height, startPos[2] + middlePosSlideLength - middlePosSubSlideLength)
+            centerPos2 = (goalPos[0], height, startPos[2] + middlePosSlideLength - middlePosSubSlideLength)                
+                        
+            lineVertexList = [startPos, middlePos1, centerPos1, centerPos2, middlePos2, goalPos]
+            MakeLine(lineVertexList)
+
+#ストレートパイプのBaseLineを生成する
+def SetStreetLineVertexList(point):
+                
+    blockSize = (point.attribValue("SizeX"), point.attribValue("SizeY"))
+    blockBasePos = point.position()
+    tubeNum = point.attribValue("TubeNum")
+    radius = point.attribValue("Radius")
+    height = point.attribValue("Height")
+        
+    basePos_x = -blockSize[0] / 2
+    basePos_y = -blockSize[1] / 2   
+    
+    size_x = blockSize[0]
+    size_y = blockSize[1]
+    
+    middlePosSubSlideLength = (size_x / 2 - ((tubeNum - 1) / 2) * radius) * uniform(minSlideCofficient, maxSlideCofficient)
+        
+    for num in range(tubeNum):        
+        if size_x > size_y:
+                
+            startPos = (basePos_x, height, basePos_y + (num + 0.5) * radius)
+            goalPos = (basePos_x + size_x, height, basePos_y + size_y - (tubeNum - num - 0.5) * radius)
+
+            middlePosSlideLength = size_x / 2 + ((tubeNum - 1) / 2 - num) * radius
+            centerPos1 = (startPos[0] + middlePosSlideLength - middlePosSubSlideLength, height, startPos[2])
+            centerPos2 = (startPos[0] + middlePosSlideLength - middlePosSubSlideLength, height, goalPos[2])
+        
+            lineVertexList = [startPos, centerPos1, centerPos2, goalPos]
+            MakeLine(lineVertexList)        
+    
+        else:
+                
+            startPos = (basePos_x + (num + 0.5) * radius, height, basePos_y)
+            goalPos = (basePos_x + size_x - (tubeNum - num - 0.5) * radius, height, basePos_y + size_y)
+                        
+            middlePosSlideLength = size_x / 2 + ((tubeNum - 1) / 2 - num) * radius
+            centerPos1 = (startPos[0], height, startPos[2] + middlePosSlideLength - middlePosSubSlideLength)
+            centerPos2 = (goalPos[0], height, startPos[2] + middlePosSlideLength - middlePosSubSlideLength)                         
+                
+            lineVertexList = [startPos, centerPos1, centerPos2, goalPos]
+            MakeLine(lineVertexList)
+
+#ベースラインを作成
+def MakeLine(VertexPosList):
+    poly = geo.createPolygon(is_closed = False)   
+    for position in VertexPosList:
+        point = geo.createPoint()
+        point.setPosition(position)
+        poly.addVertex(point)            
+
+        
+#=================================================================
+#main
+points = geo.points()
+
+for point in points:    
+
+    if 0 < point.attribValue("IsSetGL"):
+        SetGLLineVertexList(point)
+    else:
+        SetStreetLineVertexList(point)
+        
+        
+        
+        
