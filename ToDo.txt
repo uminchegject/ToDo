@@ -9,6 +9,12 @@
 ・スケジュール
  ・Public + Privateのセットを6時頃から(緊急時は終業後から)始める
 
+・風景を観察する際にそれぞれに該当する者はないかを意識して観察する
+ -Randmark
+ -Normal
+ -Detail
+・20種類ほどのアセットを使いまわす
+
 ■[Private]
 ・batファイル
  https://qiita.com/go1101/items/a2df957120b709b94273
@@ -45,18 +51,15 @@
 
 ■[SoulCity]
 [ToDo]
-●Volumeの検証
-○摩天楼を検証
- ・Arc(Panel, Residence, I字Tube, SignBoard)
+●アルファ検証
+※SciFiTownを参考にする
+○Volume検証
+ ・SignBoard + Volume
+○Detailの検証
+ ・Arc(Panel,I字Tube)
  ・地面(L字Tube,I字Tube)
 
 ●マテリアルの検討
-
-
-[実装]
-●SciFiTown
-○必要な処理をまとめる
-○必要な処理を転移する
 
 
 [IDEA]
@@ -73,7 +76,8 @@
  -ArcはGLの下から存在するように埋める
 
 ●SignBoard
-※SignBoardを構成要素の一つとする
+※スケールの大きいアセットを配置する
+・SignBoardを構成要素の一つとする
 ・アセットを用意
 
 ●Residence
