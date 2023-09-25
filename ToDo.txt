@@ -6,14 +6,6 @@
 ※ちゃんと調べる方法をまとめる
  https://sonnaka.com/step-to-solve-error-of-programming/
 
-・スケジュール■反省
-・エラーの修正を行うときは、修正調査の具体的なテーマを考える。
- ・今回はプラットフォームの相違箇所をテーマにする
- ・テーマを考える時間を設ける
- ・様々な箇所に目を通す癖をつける
-※ちゃんと調べる方法をまとめる
- https://sonnaka.com/step-to-solve-error-of-programming/
-
 ・スケジュール
  ・Public + Privateのセットを6時頃から(緊急時は終業後から)始める
 
