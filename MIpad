@@ -1,207 +1,3 @@
-node = hou.pwd()
-geo = node.geometry()
-
-# Add code to modify contents of geo.
-# Use drop down menu to select examples.
-
-# -----------------------------------------------------------------------------------------
-# パラメーター
-GreebleDivideMinRatio = 0.4
-GreebleDivideMaxRatio = 0.6
-RemainRatio = 0.8
-
-GreebleBlockMinLen = node.parm("GreebleBlockMinLen").eval()
-GreebleBlockMaxLen = node.parm("GreebleBlockMaxLen").eval()
-
-# -----------------------------------------------------------------------------------------
-
-
-# -----------------------------------------------------------------------------------------
-# 構造体
-class GreebleBlock:
-    pass
-# -----------------------------------------------------------------------------------------
-
-#==========================================================================================
-#Greeble
-def Greeble(baseBlock):
-    num = 0
-    greeblingXAxisBlockList = [baseBlock]
-    greeblingYAxisBlockList = []
-    greebledBlockList = []
-    
-    toggleBreakNum = 0
-
-    while 0 < len(greeblingXAxisBlockList) or 0 < len(greeblingYAxisBlockList):
-        greeblingYAxisBlockList, greebledBlocks1 = GreebleXAxis(greeblingXAxisBlockList)
-        greeblingXAxisBlockList, greebledBlocks2 = GreebleYAxis(greeblingYAxisBlockList)        
-        greebledBlockList = greebledBlockList + greebledBlocks1 + greebledBlocks2
-        
-        toggleBreakNum += 1
-        if 100 < toggleBreakNum:
-            greebledBlockList = greebledBlockList + greeblingYAxisBlockList #+ greeblingXAxisBlockList
-            break
-
-    return greebledBlockList      
-
-    
-def GreebleXAxis(greeblingXAxisBlockList):
-
-    greeblingYAxisBlockList = []
-    greebledBlockList = []
-
-    for originBlock in greeblingXAxisBlockList:
-        
-        if originBlock.Size[1] == 0:
-            continue
-
-        blockList, toggle = DivideXAxis(originBlock)
-        if toggle == True:
-            greeblingYAxisBlockList = greeblingYAxisBlockList + blockList
-        else:
-            greebledBlockList = greebledBlockList + blockList   
-    
-    return greeblingYAxisBlockList, greebledBlockList
-    
-def GreebleYAxis(greeblingYAxisBlockList):
-
-    greeblingXAxisBlockList = []
-    greebledBlockList = []
-
-    for originBlock in greeblingYAxisBlockList:   
-            
-        if originBlock.Size[0] == 0:
-            continue
-    
-        blockList, toggle = DivideYAxis(originBlock)
-        if toggle == True:
-            greeblingXAxisBlockList = greeblingXAxisBlockList + blockList
-        else:
-            greebledBlockList = greebledBlockList + blockList   
-    
-    return greeblingXAxisBlockList, greebledBlockList
-            
-
-from random import randint, uniform, random
-# 整数乱数を取得
-def GetRandIntInRange(min, max) :
-    return randint(min, max)
-# 少数乱数を取得
-def GetRandFloatInRange(min, max) :
-    return uniform(min, max)
-
-
-# X軸で分割する
-def DivideXAxis(greebleBlock) :
-
-    divideNum = int(GetRandFloatInRange(GreebleDivideMinRatio, GreebleDivideMaxRatio) * greebleBlock.Size[0])
-    greebleBlock1 = GreebleBlock()
-    greebleBlock1.Size = (divideNum, greebleBlock.Size[1])
-    greebleBlock1.BasePos = greebleBlock.BasePos
-    
-    greebleBlock2 = GreebleBlock()
-    greebleBlock2.Size = (greebleBlock.Size[0] - divideNum, greebleBlock.Size[1])
-    greebleBlock2.BasePos = (greebleBlock.BasePos[0] + divideNum, greebleBlock.BasePos[1])
-    
-    toggleContinue = True
-    if greebleBlock1.Size[0] < GreebleBlockMinLen:
-        toggleContinue = False
-    if greebleBlock2.Size[0] < GreebleBlockMinLen:
-        toggleContinue = False
-    
-    greebleBlockList = [greebleBlock1, greebleBlock2]
-    
-    if toggleContinue == False:      
-        greebleBlockList = [greebleBlock]
-        
-    if GreebleBlockMinLen < greebleBlock.Size[1]:
-        toggleContinue = True    
-        
-    return greebleBlockList, toggleContinue
-    
-# Y軸で分割する
-def DivideYAxis(greebleBlock) :
-
-    divideNum = int(GetRandFloatInRange(GreebleDivideMinRatio, GreebleDivideMaxRatio) * greebleBlock.Size[1])
-    greebleBlock1 = GreebleBlock()
-    greebleBlock1.Size = (greebleBlock.Size[0], divideNum)
-    greebleBlock1.BasePos = greebleBlock.BasePos
-    
-    greebleBlock2 = GreebleBlock()
-    greebleBlock2.Size = (greebleBlock.Size[0], greebleBlock.Size[1] - divideNum)
-    greebleBlock2.BasePos = (greebleBlock.BasePos[0], greebleBlock.BasePos[1] + divideNum)
-    
-    toggleContinue = True
-    if greebleBlock1.Size[1] < GreebleBlockMinLen:
-        toggleContinue = False
-    if greebleBlock2.Size[1] < GreebleBlockMinLen:
-        toggleContinue = False
-    
-    greebleBlockList = [greebleBlock1, greebleBlock2]
-    if toggleContinue == False:        
-        greebleBlockList = [greebleBlock]
-        
-    if GreebleBlockMinLen < greebleBlock.Size[0]:
-        toggleContinue = True    
-    
-    return greebleBlockList, toggleContinue
-#==========================================================================================
-    
-# ブロック確認用prim生成ツール
-def MakePrim(greebleBlock, Height): 
-
-
-    SizeX = greebleBlock.Size[0]
-    SizeY = greebleBlock.Size[1]
-    BasePosX = greebleBlock.BasePos[0] + (greebleBlock.Size[0] - SizeX) / 2 
-    BasePosY = greebleBlock.BasePos[1] + (greebleBlock.Size[1] - SizeY) / 2
-
-    pos1 = (BasePosX, Height, BasePosY)
-    pos2 = (BasePosX + SizeX, Height, BasePosY)
-    pos3 = (BasePosX + SizeX, Height, BasePosY + SizeY)
-    pos4 = (BasePosX, Height, BasePosY + SizeY)
-    
-    posList = [pos1, pos2, pos3, pos4]
-    
-    poly = geo.createPolygon()
-    
-    for position in posList:
-        point = geo.createPoint()
-        point.setPosition(position)
-        poly.addVertex(point)
-    
-    return poly
-        
-#==========================================================================================
-#main
-points = geo.points()
-
-for point in points:
-
-    basePoint = point
-    GreebleBlockSizeX = basePoint.attribValue("SizeX")
-    GreebleBlockSizeY = basePoint.attribValue("SizeY")
-
-    baseGreebleBlock = GreebleBlock()
-    GreebleBlockSize = (GreebleBlockSizeX, GreebleBlockSizeY)
-    baseGreebleBlock.BasePos = (-GreebleBlockSize[0] / 2, -GreebleBlockSize[1] / 2)
-    baseGreebleBlock.Size = GreebleBlockSize
-
-    greebleBlockList = []
-    greebleBlockList = Greeble(baseGreebleBlock)
-    
-    for block in greebleBlockList:
-    
-        greebleBlock = GreebleBlock()
-        BasePos = basePoint.position()
-   
-        greebleBlock.BasePos = (block.BasePos[0], block.BasePos[1])
-        greebleBlock.Size = (block.Size[0], block.Size[1])
-
-        blockPoly = MakePrim(greebleBlock, 0)
-
-geo.deletePoints(points) 
-#==========================================================================================
 
 
 
@@ -320,7 +116,7 @@ def DivideXAxis(greebleBlock) :
     greebleBlock2 = GreebleBlock()
     greebleBlock2.Size = (greebleBlock.Size[0] - divideNum, greebleBlock.Size[1])
     greebleBlock2.BasePos = (greebleBlock.BasePos[0] + divideNum, greebleBlock.BasePos[1])
-    
+
     toggleContinue = True
     if greebleBlock1.Size[0] < GreebleBlockMinLen:
         toggleContinue = False
@@ -332,6 +128,12 @@ def DivideXAxis(greebleBlock) :
     greebleBlockList = [greebleBlock1, greebleBlock2]
     if toggleContinue == False:
         greebleBlockList = [greebleBlock]
+		
+	#=================================================
+   	if GreebleBlockMinLen < greebleBlock.Size[1]:
+		toggleContinue = True   
+	#=================================================
+
     
     return greebleBlockList, toggleContinue
     
@@ -351,14 +153,19 @@ def DivideYAxis(greebleBlock) :
     if greebleBlock1.Size[1] < GreebleBlockMinLen:
         toggleContinue = False
     if greebleBlock2.Size[1] < GreebleBlockMinLen:
-        toggleContinue = False
-    if GetRandFloatInRange(0, 1) < RemainRatio and greebleBlock.Size[0] < GreebleBlockMaxLen:
-        toggleContinue = False
-    
+        toggleContinue = False		
+	if GetRandFloatInRange(0, 1) < RemainRatio and greebleBlock.Size[0] < GreebleBlockMaxLen:
+	toggleContinue = False
+
     greebleBlockList = [greebleBlock1, greebleBlock2]
     if toggleContinue == False:
         greebleBlockList = [greebleBlock]
-    
+
+	#=================================================
+   	if GreebleBlockMinLen < greebleBlock.Size[0]:
+		toggleContinue = True   
+	#=================================================
+
     return greebleBlockList, toggleContinue
 #==========================================================================================
     
@@ -430,4 +237,3 @@ for point in points:
         
 geo.deletePoints(points) 
 #==========================================================================================
-
