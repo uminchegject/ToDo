@@ -26,9 +26,6 @@
 ●ストレージ容量不足時にゲームを開始した際、PS5側のシステムUIで表示されるメッセージの内容が、実際の挙動と相違している
 ○サブミット
 
-●
-
-
 
 ●サブミット
 ※修正の対応処理を確認
@@ -38,8 +35,7 @@
 [ToDo]
 ●アルファ検証
 ※SciFiTownを参考にする
-○Volume検証
- ・SignBoard + Volume
+・Houdini上で検証(カラーも含めて)
 ○Detailの検証
  ・Arc(Panel,I字Tube)
  ・地面(L字Tube,I字Tube)
