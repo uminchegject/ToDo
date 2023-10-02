@@ -49,6 +49,12 @@
 ・Ground
  -Tube
 
+[BasePattern]
+●ライン
+ ・建物は縦のライン
+●Greeble
+ ・PDにランダム要素を加える
+
 
 [IDEA]
 ●Volume
