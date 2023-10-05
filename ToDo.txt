@@ -9,20 +9,20 @@
 ※チェックストリームの環境を整える
 
 ●ミッション申請中もしくは突入する画面表示中に特定のメンバーが強制終了した際 、申請がキャンセルされない
-※IWebSocketクラスを勉強する
-○IWebSocketが原因なのでSGさんに相談すべきかを確認する
+○URLからサーバー側の処理を確認する
+
 
 ●操作設定にて任意のボタン変更箇所を選択した後素早く戻るボタンを押下するとCommand Menu内の操作がコントローラーで行えなくなる
+※InputComponentを確認する
 ※エラーの原因をイメージする
  -CommandMenuのカーソルが固定されているままなのでは
-○LogConsoleManager
+○LogConsoleManage
 ○OptionMenuのBP側処理を参考に怪しい箇所を調べていく
 
 
 ●カメラ操作設定の「ゲームパッド：カメラ垂直感度」のスライダーのつまみの位置が、ポインターでクリックした位置とズレている
 https://xwxcicnu.softwaretest.jp/19/244/btsManagement/btsTop/view#id/15580
-○ログを設定してクックをする
-△マウスカーソルが消える処理を調べる
+○ログ内容からイメージする
 
 
 ●メモリケース画面にて、info表示の案内文言が途中で切れている
@@ -38,9 +38,25 @@ https://skyblue-workspace.slack.com/archives/C05PAPF7JBC/p1696234029512379?threa
 ●サブミット
 ※修正の対応処理を確認
 
+■[Study]
+[ToDo]
+○PCにソースベースのUEを落とす
+○DedicatedServer環境を準備する
+https://qiita.com/mechamogera/items/0b8719184bd088a165d0
+
+●DedicatedServerを勉強
+https://docs.unrealengine.com/4.26/en-US/InteractiveExperiences/Networking/HowTo/DedicatedServers/
+
+●websocketを勉強
+
+●c++の設計練習
+○サンプルコードから実装できるように準備
+
 
 ■[SoulCity]
 [ToDo]
+○Windowの生成ロジックのメモを作成
+
 ●マテリアル
 ※質問事項具体的にまとめる(YorN)
 ※Houdiniのみでカラーを付けて説明用のPJを実装する
