@@ -4,31 +4,27 @@
  https://qiita.com/go1101/items/a2df957120b709b94273
 ・結束バンドの整理
 
+
 ■[CS]
-※新しいチケットを確認する
+※リモートでXBOXが使えるように環境を整える
 ※チェックストリームの環境を整える
+※単体クックを確認する
 
 ●ミッション申請中もしくは突入する画面表示中に特定のメンバーが強制終了した際 、申請がキャンセルされない
 ○URLからサーバー側の処理を確認する
+wss://sb-strix-proxxy-sub-cs.devlop-cc.blue-protocol.com:7081/matchmaking
 
-
-●操作設定にて任意のボタン変更箇所を選択した後素早く戻るボタンを押下するとCommand Menu内の操作がコントローラーで行えなくなる
-※InputComponentを確認する
-※エラーの原因をイメージする
- -CommandMenuのカーソルが固定されているままなのでは
-○LogConsoleManage
-○OptionMenuのBP側処理を参考に怪しい箇所を調べていく
-
+●操作設定にて任意のボタン変更箇所を選択した後素早く戻るボタンを押下するとCommandMenu内の操作がコントローラーで行えなくなる
+○Disableされているキーがableする処理を調査する
+ -void ASBPlayerController::EnableInput
 
 ●カメラ操作設定の「ゲームパッド：カメラ垂直感度」のスライダーのつまみの位置が、ポインターでクリックした位置とズレている
-https://xwxcicnu.softwaretest.jp/19/244/btsManagement/btsTop/view#id/15580
-○ログ内容からイメージする
-
+○二つの値設定の値の根源を調べる
+○KeyConfig_List::ApplySlidersの処理が確認できるようにログを仕込む
 
 ●メモリケース画面にて、info表示の案内文言が途中で切れている
-https://skyblue-workspace.slack.com/archives/C055V04J96C/p1695964772004309
+○テキスト周り(RunTimeTextBoxについて調査する)
 ○解像度が違う際に行間が異なるサンプルアセットを調べる
-
 
 ●レイドバトルに突入した際、マッチングしたメンバーの情報が表示されていない
 △SG対応待ち
@@ -37,6 +33,7 @@ https://skyblue-workspace.slack.com/archives/C05PAPF7JBC/p1696234029512379?threa
 
 ●サブミット
 ※修正の対応処理を確認
+
 
 ■[Study]
 [ToDo]
