@@ -12,7 +12,124 @@
 ○URLからサーバー側の処理を確認する
 
 
+●操作設定にて任意のボタン変更箇所を選択した後素早く戻るボタンを押下するとCommand Menu内の操作がコントローラーで行えなくなる■[Private]
+・Inline
+・batファイル
+ https://qiita.com/go1101/items/a2df957120b709b94273
+・結束バンドの整理
+
+■[CS]
+●ミッション申請中もしくは突入する画面表示中に特定のメンバーが強制終了した際 、申請がキャンセルされない
+○URLからサーバー側の処理を確認する
+
 ●操作設定にて任意のボタン変更箇所を選択した後素早く戻るボタンを押下するとCommand Menu内の操作がコントローラーで行えなくなる
+※エラーの原因をイメージする
+○InputComponentを確認する
+ -DisableInput周りを調査
+
+
+●カメラ操作設定の「ゲームパッド：カメラ垂直感度」のスライダーのつまみの位置が、ポインターでクリックした位置とズレている
+https://xwxcicnu.softwaretest.jp/19/244/btsManagement/btsTop/view#id/15580
+○二度目の設定値の設定処理を確認
+ -単体BPのクックを試す
+
+●メモリケース画面にて、info表示の案内文言が途中で切れている
+https://skyblue-workspace.slack.com/archives/C055V04J96C/p1695964772004309
+○解像度が違う際に行間が異なるサンプルアセットを調べる
+
+
+●レイドバトルに突入した際、マッチングしたメンバーの情報が表示されていない
+△SG対応待ち
+https://skyblue-workspace.slack.com/archives/C05PAPF7JBC/p1696234029512379?thread_ts=1695787714.850269&cid=C05PAPF7JBC
+
+
+●サブミット
+※修正の対応処理を確認
+
+■[Study]
+[ToDo]
+
+●DedicatedServerを勉強
+○DedicatedServer環境を準備する
+https://qiita.com/mechamogera/items/0b8719184bd088a165d0
+○ゲームの仕組み本からネットーワーク側の技術を勉強する
+
+・https://docs.unrealengine.com/4.26/en-US/InteractiveExperiences/Networking/HowTo/DedicatedServers/
+
+●websocketを勉強
+
+●c++の設計練習
+○サンプルコードから実装できるように準備
+
+
+■[SoulCity]
+[ToDo]
+●マテリアル
+※質問事項具体的にまとめる(YorN)
+※Houdiniのみでカラーを付けて説明用のPJを実装する
+
+●検証
+※FacadeとArcのみでの検証を行う
+○SignBoard
+ -RandomPD
+ -Greeble + CopyToPoint
+
+○Window
+ -RandomPD
+ -(正方形、長方形(横、縦)、無し、面積)
+ -ブロックの縦横の長さ、ブロックに対する窓の面積をランダムに決めて設定する
+ -GreebleBlockごとに設定する、Noiseで面積を決める
+
+○FacadePD
+ -※全体の統一感をまとめるPatternPDを考える(grasshopper,architecture周りを調べる)
+ -ラインマテリアル(Tube,Panel,Facade)
+
+
+■[IDEA]
+※全てのパーツに共通する、PDロジックを考える
+
+●BaseProceduralDesign
+・Random
+ -Greeble
+ -コントラスト(サイズ)
+ -段差
+・Pattern
+ -Noise(面積比)
+ -縦に長いサイズ
+
+●Volume
+※Pipe(Ground) + Pipe+Panel(Arc)でVolumeのPD検証を行う
+・Base躯体のPDを考える
+ -空間的なPDを考える
+・縦に長いVolumeをベースにする
+ -Volumeの太さにコントラストを持たせる
+・地面
+ -地面(Tube)の面積を小さくする
+ -コントラストをつける(大小、L字I字)
+ -地面に高低差(Noise)をつけて、その上にTubeを配置する
+ -ArcはGLの下から存在するように埋める
+
+●SignBoard
+※スケールの大きいアセットを配置する
+・SignBoardを構成要素の一つとする
+・アセットを用意
+
+●Residence
+※アセットを配置するPDを考える
+※模様のPDを考える
+※ラインを入れる
+・Tube + PanelをテーマにしたPDDetailにする
+ -Tubeを凹,Residenceを凸に配置する
+・光のラインを要素に加える
+ ーコントラスト(大小)
+
+▲鉄骨もPDの複雑さの一部として占めるように考える
+ -Panelから伸びているように見せる
+ -高さもランダムに設定する(立体交差)
+ -PanelDeleteの値に近いNoiseValueのGreebleBlockで設定する
+ -一つのBlock内に位置をずらして複数のFrameを生成する
+ -Frameの太さは統一する
+ -Panelに層を設けて縁部分に鉄骨を埋める
 ※InputComponentを確認する
 ※エラーの原因をイメージする
  -CommandMenuのカーソルが固定されているままなのでは
