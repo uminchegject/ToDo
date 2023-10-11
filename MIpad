@@ -1,24 +1,45 @@
-●業務
-※情報収集時間と実装方法を必ず用意する
- →比率が3:1になるように調整をする
+●Window
+○面積比、有無の値をNoise,randomで設定して検証(GreebleNodeに直接コーディング)
+noiseValue = 
+cofficientValue = noiseValue + random(@P) * 0.3
+if(0.5 < cofficientValue)
+{
+	greebleBlock.width = width * cofficientValue
+	greebleBlock.height = height * cofficientValue
+	makeprim
+}
 
-※落ち着く時間を必ず設ける
- -勉強、PDの時間を必ず入れる(1時間半を目安に1セット)
- -席から離れる時間を入れる
- -Windowからメモ以外すべて消す
- 
-●勉強(PD＆PG)
-・収集情報の収集(電車+カフェ)
-・情報収集＆メモ(業務)
-・実装(業務後半+業務後)
+○GreebleBlockから均等に分割する
 
-※上昇収集からアウトプットまでスムーズに行えるように意識しながら勉強する
- -※情報収集を時間をかけて行い、実装準備をちゃんとする
+float minWidthSize = ch("MinWidthSize");
+float minHeightSize = ch("MinHeightSize");
 
-※アウトプットを欠かさず行えるようにする
- -日中の情報収集とメモでアウトプットしやすくする
+float sizeX = 
+float sizeY = 
 
-※業務に集中し過ぎないように必ず勉強のインプット＆メモを定期的に行う
+int divideXNum = int(randnum(@P) * sizeX / minWidthSize)
+int divideYNum = int(randnum(@P * 100)* sizeX / minWidthSize)
 
-※一日一つ英語資料から情報を得る
- -朝に必ず読む記事をまとめる
+float offsetRatio =
+
+float windowXSize = sizeX / divideXNum * offsetRatio; 
+float windowYSize = sizeY / divideYNum * offsetRatio;
+
+for(int i = 0; i < divideXNum; ++i)
+{
+	for(int j = 0; i < divideYNum; ++j)
+	{
+		//Windowを生成
+	}
+
+}
+
+
+○XY軸に正しく配置する
+
+
+
+●SignBoard
+
+●Facade
+○検証用ロジックを考える
