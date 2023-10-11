@@ -1,27 +1,29 @@
+■[反省]
+※Surface+Colorで検証を行う
+
 ■[Public]
 ●ミッション申請中もしくは突入する画面表示中に特定のメンバーが強制終了した際 、申請がキャンセルされない
-○URLからサーバー側の処理を確認する
-wss://sb-strix-proxxy-sub-cs.devlop-cc.blue-protocol.com:7081/matchmaking 
+○修正されているソースをコメントアウトして挙動を確認する
+　-※三ヶ尻さんに協力をお願いする
+
+○パーティを組んで不慮の切断を発生させると、パーティに復帰できないの内容を確認する(こちらの不具合が解消されたまま修正できる方法を模索する)
+https://xwxcicnu.softwaretest.jp/19/-1/btsManagement/btsTop/view#id/19320
+
 
 ●操作設定にて任意のボタン変更箇所を選択した後素早く戻るボタンを押下するとCommand Menu内の操作がコントローラーで行えなくなる
 ※エラーの原因をイメージする
-○InputComponentを確認する
- -DisableInput周りを調査
+○ログを確認する
+○ログを仕込む準備をする
 
 ●カメラ操作設定の「ゲームパッド：カメラ垂直感度」のスライダーのつまみの位置が、ポインターでクリックした位置とズレている
 https://xwxcicnu.softwaretest.jp/19/244/btsManagement/btsTop/view#id/15580
-○CameraSpeedPitch周りの値をログで確認する
- -ログを仕込み単体BPのクックを試す
+○最新バージョンで挙動を確認
 
 ●メモリケース画面にて、info表示の案内文言が途中で切れている
 https://skyblue-workspace.slack.com/archives/C055V04J96C/p1695964772004309
 ○解像度が違う際に行間が異なるサンプルアセットを調べる
 ○RunTimeTextBox周りを調査
 ○slackで検索をする
-
-●レイドバトルに突入した際、マッチングしたメンバーの情報が表示されていない
-△SG対応待ち
-https://skyblue-workspace.slack.com/archives/C05PAPF7JBC/p1696234029512379?thread_ts=1695787714.850269&cid=C05PAPF7JBC
 
 
 ●サブミット
