@@ -10,17 +10,21 @@ if(0.5 < cofficientValue)
 }
 
 ○GreebleBlockから均等に分割する
+・ForEachPrimをGreebleBlockにする
+・ConvertLineから長さを取得
+・WindowPrimを生成
+・CopyToPointする
 
 float minWidthSize = ch("MinWidthSize");
 float minHeightSize = ch("MinHeightSize");
 
-float sizeX = 
+float sizeX = prim("")
 float sizeY = 
 
 int divideXNum = int(randnum(@P) * sizeX / minWidthSize)
 int divideYNum = int(randnum(@P * 100)* sizeX / minWidthSize)
 
-float offsetRatio =
+float offsetRatio =　
 
 float windowXSize = sizeX / divideXNum * offsetRatio; 
 float windowYSize = sizeY / divideYNum * offsetRatio;
@@ -30,6 +34,20 @@ for(int i = 0; i < divideXNum; ++i)
 	for(int j = 0; i < divideYNum; ++j)
 	{
 		//Windowを生成
+		
+		vector pt1Pos = 
+		vector pt2Pos = 
+		vector pt3Pos = 
+		
+		int pt1Num = 
+		int pt2Num
+		int pt3Num
+		int pt4Num
+		
+		int windowPrim
+		
+		addvertex
+		
 	}
 
 }
