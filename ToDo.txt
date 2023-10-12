@@ -1,10 +1,11 @@
 ■[反省]
 ※Surface+Colorで検証を行う
+※読書Onlyか実装学習(サンプルコード+本)のどちらかを意識して読書をする
 
 ■[Public]
 ●ミッション申請中もしくは突入する画面表示中に特定のメンバーが強制終了した際 、申請がキャンセルされない
 ○修正されているソースをコメントアウトして挙動を確認する
-　-※三ヶ尻さんに協力をお願いする
+ -※三ヶ尻さんに協力をお願いする
 
 ○パーティを組んで不慮の切断を発生させると、パーティに復帰できないの内容を確認する(こちらの不具合が解消されたまま修正できる方法を模索する)
 https://xwxcicnu.softwaretest.jp/19/-1/btsManagement/btsTop/view#id/19320
@@ -30,24 +31,22 @@ https://skyblue-workspace.slack.com/archives/C055V04J96C/p1695964772004309
 ※修正の対応処理を確認
 
 ■[Study]
-[ToDo]
+●Read
+・DedicatedServerを勉強
+ -https://qiita.com/mechamogera/items/0b8719184bd088a165d0
+ -ゲームの仕組み本からネットーワーク側の技術を勉強する
 
-●DedicatedServerを勉強
-○DedicatedServer環境を準備する
-https://qiita.com/mechamogera/items/0b8719184bd088a165d0
-○ゲームの仕組み本からネットーワーク側の技術を勉強する
+・websocketを勉強
 
-・https://docs.unrealengine.com/4.26/en-US/InteractiveExperiences/Networking/HowTo/DedicatedServers/
+・batファイル
+ -https://qiita.com/go1101/items/a2df957120b709b94273
 
-●websocketを勉強
-
-●c++の設計練習
+●Cording
+・ゲームプログラミングc++
 ○サンプルコードから実装できるように準備
+○1章のコードを確認
 
-▲Inline
 
-▲batファイル
- https://qiita.com/go1101/items/a2df957120b709b94273
 
 
 ■[SoulCity]
@@ -57,18 +56,10 @@ https://qiita.com/mechamogera/items/0b8719184bd088a165d0
 ※Houdiniのみでカラーを付けて説明用のPJを実装する
 
 ●検証
-※FacadeとArcのみでの検証を行う
-○SignBoard
- -RandomPD
- -Greeble + CopyToPoint
-
 ○Window
 ・面積比、有無の値をNoise,randomで設定して検証
-・Extrudeして、色を付ける
- -RandomPD
  -(正方形、長方形(横、縦)、無し、面積)
  -ブロックの縦横の長さ、ブロックに対する窓の面積をランダムに決めて設定する
- 
 
 ○FacadePD
  -※全体の統一感をまとめるPatternPDを考える(grasshopper,architecture周りを調べる)
