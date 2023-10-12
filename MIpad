@@ -34,12 +34,5 @@ for(int i = 0; i < divideXNum; ++i)
 
 }
 
-
-○XY軸に正しく配置する
-
-
-
-●SignBoard
-
 ●Facade
 ○検証用ロジックを考える
