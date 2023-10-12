@@ -1,7 +1,0 @@
-StaticMesh'/Game/SoulCity/Environment/Meshes/Building_Slum/SM_Slums_Wall_02b.SM_Slums_Wall_02b'
-StaticMesh'/Game/SoulCity/Environment/Meshes/Building_Slum/SM_Slums_Wall_02a.SM_Slums_Wall_02a'
-StaticMesh'/Game/SoulCity/Environment/Meshes/Building_Slum/SM_Slums_Wall_02d.SM_Slums_Wall_02d'
-StaticMesh'/Game/SoulCity/Environment/Meshes/Building_Slum/SM_Slums_Wall_02e.SM_Slums_Wall_02e'
-StaticMesh'/Game/SoulCity/Environment/Meshes/Building_Slum/SM_Slums_Wall_02c.SM_Slums_Wall_02c'
-StaticMesh'/Game/SoulCity/Environment/Meshes/Building_Slum/SM_Slums_Wall_01d.SM_Slums_Wall_01d'
-StaticMesh'/Game/SoulCity/Environment/Meshes/Building_Slum/SM_Slums_Wall_01d.SM_Slums_Wall_01d'
