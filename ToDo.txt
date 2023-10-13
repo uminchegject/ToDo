@@ -1,12 +1,10 @@
-■[反省]
-※Surface+Colorで検証を行う
-※読書Onlyか実装学習(サンプルコード+本)のどちらかを意識して読書をする
-
 ■[Public]
 ●ミッション申請中もしくは突入する画面表示中に特定のメンバーが強制終了した際 、申請がキャンセルされない
 ○修正されているソースをコメントアウトして挙動を確認する
 ○パーティ復帰時の処理の流れを確認する
- -USBPartyManager::Resetの役割を調べる
+　-UPartySystem::WebSocketClosed()が走っているかを調査
+　-USBPartyManager::Resetの役割を調べる
+
 
 ○パーティを組んで不慮の切断を発生させると、パーティに復帰できないの内容を確認する(こちらの不具合が解消されたまま修正できる方法を模索する)
 ※離脱者がXBOXの場合パーティリセット時にセッションを切断するように実装が行われており、その際にSocketをClearするように実装されていることを確認
@@ -14,13 +12,12 @@ https://xwxcicnu.softwaretest.jp/19/-1/btsManagement/btsTop/view#id/19320
 
 
 ●操作設定にて任意のボタン変更箇所を選択した後素早く戻るボタンを押下するとCommand Menu内の操作がコントローラーで行えなくなる
-○ResetMenuModeが呼び出されない原因を調査
+○ResetMenuModeが正常時にどう処理されているかを調査
 ○ログを仕込む準備をする
 
 ●カメラ操作設定の「ゲームパッド：カメラ垂直感度」のスライダーのつまみの位置が、ポインターでクリックした位置とズレている
 https://xwxcicnu.softwaretest.jp/19/244/btsManagement/btsTop/view#id/15580
-○最新バージョンで挙動を確認
-※alvのマージ作業が完了次第サブミット
+○最新取得後サブミット
 
 ●メモリケース画面にて、info表示の案内文言が途中で切れている
 https://skyblue-workspace.slack.com/archives/C055V04J96C/p1695964772004309
