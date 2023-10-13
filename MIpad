@@ -1,56 +1,18 @@
-●Window
-○面積比、有無の値をNoise,randomで設定して検証(GreebleNodeに直接コーディング)
-noiseValue = 
-cofficientValue = noiseValue + random(@P) * 0.3
-if(0.5 < cofficientValue)
-{
-	greebleBlock.width = width * cofficientValue
-	greebleBlock.height = height * cofficientValue
-	makeprim
-}
+[ToDo]
+●マテリアル
+※質問事項具体的にまとめる(YorN)
+※Houdiniのみでカラーを付けて説明用のPJを実装する
 
-○GreebleBlockから均等に分割する
-・ForEachPrimをGreebleBlockにする
-・ConvertLineから長さを取得
-・WindowPrimを生成
-・CopyToPointする
+●検証
+○Window
+※WindowBlockを軸に多様なDetailを生成するロジックを考える
+ -ビル周りのモデリングの勉強をする
+ -BaseBlockごとに段差をつける
+ -くぼみをつける
+ -色をランダムにつける
+ 
+○Facade
+・長方形を並べて格子を生成
+・Noise値に応じてRemoveする
 
-float minWidthSize = ch("MinWidthSize");
-float minHeightSize = ch("MinHeightSize");
-
-float sizeX = prim("")
-float sizeY = 
-
-int divideXNum = int(randnum(@P) * sizeX / minWidthSize)
-int divideYNum = int(randnum(@P * 100)* sizeX / minWidthSize)
-
-float offsetRatio =　
-
-float windowXSize = sizeX / divideXNum * offsetRatio; 
-float windowYSize = sizeY / divideYNum * offsetRatio;
-
-for(int i = 0; i < divideXNum; ++i)
-{
-	for(int j = 0; i < divideYNum; ++j)
-	{
-		//Windowを生成
-		
-		vector pt1Pos = 
-		vector pt2Pos = 
-		vector pt3Pos = 
-		
-		int pt1Num = 
-		int pt2Num
-		int pt3Num
-		int pt4Num
-		
-		int windowPrim
-		
-		addvertex
-		
-	}
-
-}
-
-●Facade
-○検証用ロジックを考える
+ -色、明るさにコントラストをつける
