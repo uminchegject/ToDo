@@ -6,12 +6,11 @@
 ●ミッション申請中もしくは突入する画面表示中に特定のメンバーが強制終了した際 、申請がキャンセルされない
 ○修正されているソースをコメントアウトして挙動を確認する
 ○パーティ復帰時の処理の流れを確認する
-　-USBPartyManager::Resetの役割を調べる
+ -USBPartyManager::Resetの役割を調べる
 
 ○パーティを組んで不慮の切断を発生させると、パーティに復帰できないの内容を確認する(こちらの不具合が解消されたまま修正できる方法を模索する)
 ※離脱者がXBOXの場合パーティリセット時にセッションを切断するように実装が行われており、その際にSocketをClearするように実装されていることを確認
 https://xwxcicnu.softwaretest.jp/19/-1/btsManagement/btsTop/view#id/19320
-
 
 
 ●操作設定にて任意のボタン変更箇所を選択した後素早く戻るボタンを押下するとCommand Menu内の操作がコントローラーで行えなくなる
@@ -60,13 +59,12 @@ https://skyblue-workspace.slack.com/archives/C055V04J96C/p1695964772004309
 
 ●検証
 ○Window
-・面積比、有無の値をNoise,randomで設定して検証
- -(正方形、長方形(横、縦)、無し、面積)
- -ブロックの縦横の長さ、ブロックに対する窓の面積をランダムに決めて設定する
-
-○FacadePD
- -※全体の統一感をまとめるPatternPDを考える(grasshopper,architecture周りを調べる)
- -ラインマテリアル(Tube,Panel,Facade)
+※WindowBlockを軸に多様なDetailを生成するロジックを考える
+ -ビル周りのモデリングの勉強をする
+ 
+○Facade
+・長方形を並べて格子を生成
+・Noise値に応じてRemoveする
 
 
 ■[IDEA]
