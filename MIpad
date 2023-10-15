@@ -2,19 +2,24 @@
 ・休日検証(Surface + Color) + 平日実装(Detail)を意識する
 ・休日専用のメモ帳をつくる
 
-[ToDo]
+[検証]
 ●マテリアル
 ※質問事項具体的にまとめる(YorN)
 ※Houdiniのみでカラーを付けて説明用のPJを実装する
+・Window(マテリアル)
+ -単色
+・SignBoard(アセット)
+・格子(ライト)
 
-●検証
+●モデリング
 ○Window
 ※WindowBlockを軸に多様なDetailを生成するロジックを考える
- -ビル周りのモデリングの勉強をする
  -くぼみをつける
- 
-○Facade
- 
+
+[Study]
+○マテリアル周り
+○ビルのFacadeのモデリング方法
+  
 [IDEA]
 ●Tube
 
