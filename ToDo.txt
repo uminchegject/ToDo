@@ -1,10 +1,15 @@
+■[反省]
+・休日検証(Surface + Color) + 平日実装(Detail)を意識する
+・休日専用のメモ帳をつくる
+
+
+
 ■[Public]
 ●ミッション申請中もしくは突入する画面表示中に特定のメンバーが強制終了した際 、申請がキャンセルされない
 ○修正されているソースをコメントアウトして挙動を確認する
 ○パーティ復帰時の処理の流れを確認する
-　-UPartySystem::WebSocketClosed()が走っているかを調査
-　-USBPartyManager::Resetの役割を調べる
-
+ -UPartySystem::WebSocketClosed()が走っているかを調査
+ -USBPartyManager::Resetの役割を調べる
 
 ○パーティを組んで不慮の切断を発生させると、パーティに復帰できないの内容を確認する(こちらの不具合が解消されたまま修正できる方法を模索する)
 ※離脱者がXBOXの場合パーティリセット時にセッションを切断するように実装が行われており、その際にSocketをClearするように実装されていることを確認
@@ -49,22 +54,27 @@ https://skyblue-workspace.slack.com/archives/C055V04J96C/p1695964772004309
 
 
 ■[SoulCity]
-[ToDo]
+[検証]
 ●マテリアル
 ※質問事項具体的にまとめる(YorN)
 ※Houdiniのみでカラーを付けて説明用のPJを実装する
+・Window(マテリアル)
+ -単色
+・SignBoard(アセット)
+・格子(ライト)
 
-●検証
+●モデリング
 ○Window
 ※WindowBlockを軸に多様なDetailを生成するロジックを考える
- -ビル周りのモデリングの勉強をする
- 
-○Facade
-・長方形を並べて格子を生成
-・Noise値に応じてRemoveする
+ -くぼみをつける
 
 
-■[IDEA]
+[Study]
+○マテリアル周り
+○ビルのFacadeのモデリング方法
+
+
+[IDEA]
 ※全てのパーツに共通する、PDロジックを考える
 
 ●BaseProceduralDesign
@@ -73,6 +83,8 @@ https://skyblue-workspace.slack.com/archives/C055V04J96C/p1695964772004309
  -コントラスト(サイズ)
  -段差
 ・Pattern
+
+
  -Noise(面積比)
  -縦に長いサイズ
 
