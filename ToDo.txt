@@ -1,46 +1,8 @@
-■[反省]
-・休日検証(Surface + Color) + 平日実装(Detail)を意識する
-・休日専用のメモ帳をつくる
-
-
-
-■[Public]
-●ミッション申請中もしくは突入する画面表示中に特定のメンバーが強制終了した際 、申請がキャンセルされない
-○修正されているソースをコメントアウトして挙動を確認する
-○パーティ復帰時の処理の流れを確認する
- -UPartySystem::WebSocketClosed()が走っているかを調査
- -USBPartyManager::Resetの役割を調べる
-
-○パーティを組んで不慮の切断を発生させると、パーティに復帰できないの内容を確認する(こちらの不具合が解消されたまま修正できる方法を模索する)
-※離脱者がXBOXの場合パーティリセット時にセッションを切断するように実装が行われており、その際にSocketをClearするように実装されていることを確認
-https://xwxcicnu.softwaretest.jp/19/-1/btsManagement/btsTop/view#id/19320
-
-
-●操作設定にて任意のボタン変更箇所を選択した後素早く戻るボタンを押下するとCommand Menu内の操作がコントローラーで行えなくなる
-○ResetMenuModeが正常時にどう処理されているかを調査
-○ログを仕込む準備をする
-
-●カメラ操作設定の「ゲームパッド：カメラ垂直感度」のスライダーのつまみの位置が、ポインターでクリックした位置とズレている
-https://xwxcicnu.softwaretest.jp/19/244/btsManagement/btsTop/view#id/15580
-○最新取得後サブミット
-
-●メモリケース画面にて、info表示の案内文言が途中で切れている
-https://skyblue-workspace.slack.com/archives/C055V04J96C/p1695964772004309
-○解像度が違う際に行間が異なるサンプルアセットを調べる
-○RunTimeTextBox周りを調査
-○slackで検索をする
-
-
-●サブミット
-※修正の対応処理を確認
-
 ■[Study]
 ●Read
 ・DedicatedServerを勉強
  -https://qiita.com/mechamogera/items/0b8719184bd088a165d0
  -ゲームの仕組み本からネットーワーク側の技術を勉強する
-
-・websocketを勉強
 
 ・batファイル
  -https://qiita.com/go1101/items/a2df957120b709b94273
@@ -48,9 +10,7 @@ https://skyblue-workspace.slack.com/archives/C055V04J96C/p1695964772004309
 ●Cording
 ・ゲームプログラミングc++
 ○サンプルコードから実装できるように準備
-○1章のコードを確認
-
-
+○2章のコードを確認
 
 
 ■[SoulCity]
@@ -58,10 +18,21 @@ https://skyblue-workspace.slack.com/archives/C055V04J96C/p1695964772004309
 ●マテリアル
 ※質問事項具体的にまとめる(YorN)
 ※Houdiniのみでカラーを付けて説明用のPJを実装する
-・Window(マテリアル)
- -単色
-・SignBoard(アセット)
-・格子(ライト)
+
+○UE4マテリアルBPのTutorial
+ -blenderのマテリアルノードを参考にueで同じように実装を行う
+ -https://www.youtube.com/watch?v=dfMSfQ_IK4E
+
+○Houdini上でマテリアルを完結させる
+ -SignBoardの自動生成
+
+○facade
+ 
+○SignBoard
+ -看板の自動生成
+
+○格子
+ -アニメーション看板
 
 ●モデリング
 ○Window
@@ -83,8 +54,6 @@ https://skyblue-workspace.slack.com/archives/C055V04J96C/p1695964772004309
  -コントラスト(サイズ)
  -段差
 ・Pattern
-
-
  -Noise(面積比)
  -縦に長いサイズ
 
