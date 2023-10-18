@@ -1,26 +1,95 @@
-[反省]
-・休日検証(Surface + Color) + 平日実装(Detail)を意識する
-・休日専用のメモ帳をつくる
+■[Study]
+●Read
+・kindle独習c++
+・batファイル
+ -https://qiita.com/go1101/items/a2df957120b709b94273
 
+●Cording
+・ゲームプログラミングc++
+○サンプルコードから実装できるように準備
+○2章のコードを確認
+
+
+■[SoulCity]
 [検証]
 ●マテリアル
 ※質問事項具体的にまとめる(YorN)
 ※Houdiniのみでカラーを付けて説明用のPJを実装する
-・Window(マテリアル)
- -単色
-・SignBoard(アセット)
-・格子(ライト)
+
+○UE4マテリアルBPのTutorial
+ -blenderのマテリアルノードを参考にueで同じように実装を行う
+ -https://www.youtube.com/watch?v=dfMSfQ_IK4E
+
+○Houdini上でマテリアルを完結させる
+ -SignBoardの自動生成
+
+○facade
+ 
+○SignBoard
+ -看板の自動生成
+
+○格子
+ -アニメーション看板
 
 ●モデリング
+※DetailPDロジックを考える
 ○Window
 ※WindowBlockを軸に多様なDetailを生成するロジックを考える
  -くぼみをつける
 
+
 [Study]
 ○マテリアル周り
 ○ビルのFacadeのモデリング方法
-  
-[IDEA]
-●Tube
 
-●Voronoi
+
+[IDEA]
+※全てのパーツに共通する、PDロジックを考える
+
+●BaseProceduralDesign
+・Random
+ -Greeble
+ -コントラスト(サイズ)
+ -段差
+・Pattern
+ -Noise(面積比)
+ -縦に長いサイズ
+
+●Volume
+※Pipe(Ground) + Pipe+Panel(Arc)でVolumeのPD検証を行う
+・Base躯体のPDを考える
+ -空間的なPDを考える
+・縦に長いVolumeをベースにする
+ -Volumeの太さにコントラストを持たせる
+・地面
+ -地面(Tube)の面積を小さくする
+ -コントラストをつける(大小、L字I字)
+ -地面に高低差(Noise)をつけて、その上にTubeを配置する
+ -ArcはGLの下から存在するように埋める
+
+●SignBoard
+※スケールの大きいアセットを配置する
+・SignBoardを構成要素の一つとする
+・アセットを用意
+
+●Residence
+※アセットを配置するPDを考える
+※模様のPDを考える
+※ラインを入れる
+・Tube + PanelをテーマにしたPDDetailにする
+ -Tubeを凹,Residenceを凸に配置する
+・光のラインを要素に加える
+ ーコントラスト(大小)
+
+▲鉄骨もPDの複雑さの一部として占めるように考える
+ -Panelから伸びているように見せる
+ -高さもランダムに設定する(立体交差)
+ -PanelDeleteの値に近いNoiseValueのGreebleBlockで設定する
+ -一つのBlock内に位置をずらして複数のFrameを生成する
+ -Frameの太さは統一する
+ -Panelに層を設けて縁部分に鉄骨を埋める
+※InputComponentを確認する
+※エラーの原因をイメージする
+ -CommandMenuのカーソルが固定されているままなのでは
+○LogConsoleManage
+○OptionMenuのBP側処理を参考に怪しい箇所を調べていく
