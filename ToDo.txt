@@ -1,33 +1,32 @@
+■[反省]
+※Line(Obj)+Surface(Material)を意識する
+・昼休み後の1セットは資料、ソースの調査のみを行う
+　-プロジェクトの起動をしない
+
+
 ■[Public]
 ●パーティリーダーが離脱した際、パーティメンバーにリーダーが移譲されない
 ○OnCompleted_AssumeLeaderの処理が通っているかを確認する
-
-●カメラ操作設定の「ゲームパッド：カメラ垂直感度」のスライダーのつまみの位置が、ポインターでクリックした位置とズレている
-○サブミット対応
-
-●メモリケース画面にて、info表示の案内文言が途中で切れている
-https://skyblue-workspace.slack.com/archives/C055V04J96C/p1695964772004309
-○セッターの挙動を確認する
-
-●ミッション申請中もしくは突入する画面表示中に特定のメンバーが強制終了した際 、申請がキャンセルされない
-○不具合の際の挙動を確認する
-
+　-en,csにブレークポイントをつけて処理を確認する
+○BP側でOnCompleteGuildAssumeLeaderデリゲートを調べる
 
 ●操作設定にて任意のボタン変更箇所を選択した後素早く戻るボタンを押下するとCommand Menu内の操作がコントローラーで行えなくなる
-○ResetMenuModeが正常時にどう処理されているかを調査
-○ログを仕込む準備をする
+○挙動を確認する
+
+●メモリケース画面にて、info表示の案内文言が途中で切れている
+○表示だけできるようにする。
+
+●ミッション申請中もしくは突入する画面表示中に特定のメンバーが強制終了した際 、申請がキャンセルされない
+○復帰処理の流れを確認する
+ -xbox同士で挙動を確認する
+○不具合の際の挙動を確認する
 
 ●サブミット
 ※修正の対応処理を確認
 
-
 ■[Study]
 ●Read
-
-・DedicatedServerを勉強
- -https://qiita.com/mechamogera/items/0b8719184bd088a165d0
- -ゲームの仕組み本からネットーワーク側の技術を勉強する
-
+・kindle独習c++
 ・batファイル
  -https://qiita.com/go1101/items/a2df957120b709b94273
 
@@ -58,21 +57,28 @@ https://skyblue-workspace.slack.com/archives/C055V04J96C/p1695964772004309
 ○格子
  -アニメーション看板
 
-●モデリング
+
+●DetailPDロ
+○tube + frame
+※Volumeで考える
+・コントラスト
+ -大小
+ -太細
+ 
 ○Window
 ※WindowBlockを軸に多様なDetailを生成するロジックを考える
- -くぼみをつける
+・くぼみをつける
+・マテリアルにおいてDetailPDを考える
 
 
 [Study]
 ○マテリアル周り
 ○ビルのFacadeのモデリング方法
 
-
 [IDEA]
 ※全てのパーツに共通する、PDロジックを考える
 
-●BaseProceduralDesign
+●BaseProceduralDesign(Volume)
 ・Random
  -Greeble
  -コントラスト(サイズ)
@@ -80,18 +86,6 @@ https://skyblue-workspace.slack.com/archives/C055V04J96C/p1695964772004309
 ・Pattern
  -Noise(面積比)
  -縦に長いサイズ
-
-●Volume
-※Pipe(Ground) + Pipe+Panel(Arc)でVolumeのPD検証を行う
-・Base躯体のPDを考える
- -空間的なPDを考える
-・縦に長いVolumeをベースにする
- -Volumeの太さにコントラストを持たせる
-・地面
- -地面(Tube)の面積を小さくする
- -コントラストをつける(大小、L字I字)
- -地面に高低差(Noise)をつけて、その上にTubeを配置する
- -ArcはGLの下から存在するように埋める
 
 ●SignBoard
 ※スケールの大きいアセットを配置する
@@ -106,16 +100,3 @@ https://skyblue-workspace.slack.com/archives/C055V04J96C/p1695964772004309
  -Tubeを凹,Residenceを凸に配置する
 ・光のラインを要素に加える
  ーコントラスト(大小)
-
-▲鉄骨もPDの複雑さの一部として占めるように考える
- -Panelから伸びているように見せる
- -高さもランダムに設定する(立体交差)
- -PanelDeleteの値に近いNoiseValueのGreebleBlockで設定する
- -一つのBlock内に位置をずらして複数のFrameを生成する
- -Frameの太さは統一する
- -Panelに層を設けて縁部分に鉄骨を埋める
-※InputComponentを確認する
-※エラーの原因をイメージする
- -CommandMenuのカーソルが固定されているままなのでは
-○LogConsoleManage
-○OptionMenuのBP側処理を参考に怪しい箇所を調べていく
