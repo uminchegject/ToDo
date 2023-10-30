@@ -1,77 +1,59 @@
-■[反省]
-※Line(Obj)+Surface(Material)を意識する
-※挙動の流れ、ドキュメント、処理の3つをそれぞれ分けて考える
-・昼休み後の1セットは資料、ソースの調査のみを行う
-　-プロジェクトの起動をしない
-・作業内容が変更するたびに画面から目をに離して(目を閉じて)考える時間を作る
- -小休憩の前後で挙動の流れ、ドキュメントの確認、情報収集を入れてリセットを行う
- -画面を作業に集中できるレイアウトにして、考える時間を設ける
-
-■[Private]
-○クレジットの引き落とし確認
-○合意書
-
 ■[Public]
-●操作設定にて任意のボタン変更箇所を選択した後素早く戻るボタンを押下するとCommand Menu内の操作がコントローラーで行えなくなる
-○挙動を確認する
+○Dev-en-Ver102×××を取得する。
 
-●メモリケース画面にて、info表示の案内文言が途中で切れている
-○表示だけできるようにする。
+○現状の実装状況を確認する
+　→実装内容から調査内容を調べる
+　→※アクセス制限の工数出しの上報告をする。
 
-●ミッション申請中もしくは突入する画面表示中に特定のメンバーが強制終了した際 、申請がキャンセルされない
-○復帰処理の流れを確認する
- -xbox同士で挙動を確認する
-○不具合の際の挙動を確認する
+●テキストデータの追加
+○下記のURLを参考に実装
+http://pms-co10.lab.nbgi.jp:8090/pages/viewpage.action?pageId=70491841
+https://skyblue-workspace.slack.com/archives/C055V04J96C/p1691479395338739?thread_ts=1691371330.039949&cid=C055V04J96C
 
-●サブミット
-※修正の対応処理を確認
+●ミッション・レイドミッション
+○同じ実装を行う
+
+●クラフト
+○同じ実装を行う
+
+●エステ
+○同じ実装を行う
+○SBPlayerContrillerで実装していたRequestCheckStatusを調査する
+
+●フィールド
+○FString USBGameInstance::OnRecievedAdminCommandAccessRestrict(const FSBAdminCommand& InCommand)周りの調査を行う
+
+▲チャット
+結論：
+チャットのアクセス制限については、チャットサーバー側での対応のため、クライアントでの対応はなし
+https://skyblue-workspace.slack.com/archives/C055V04J96C/p1693898747127919?thread_ts=1686021192.063809&cid=C055V04J96C
 
 ■[Study]
 ●Read
 ・kindle独習c++
+ -※独習C++のファイルを検証PCで開いてプロジェクトファイルをデスクトップに持ってくる
 ・batファイル
  -https://qiita.com/go1101/items/a2df957120b709b94273
 
 ●Cording
+※業務中にバランスよく行う
 ・ゲームプログラミングc++
-○サンプルコードから実装できるように準備
-○2章のコードを確認
+ -※実際のコードに追加実装をしてみる
 
 
 ■[SoulCity]
 [検証]
-●マテリアル
 ※質問事項具体的にまとめる(YorN)
-※Houdiniのみでカラーを付けて説明用のPJを実装する
 
-○UE4マテリアルBPのTutorial
- -blenderのマテリアルノードを参考にueで同じように実装を行う
- -https://www.youtube.com/watch?v=dfMSfQ_IK4E
+○Building+Windowのマテリアルまで実装
 
-○Houdini上でマテリアルを完結させる
- -SignBoardの自動生成
+△アニメーションマテリアルの実装
 
-○facade
- 
-○SignBoard
- -看板の自動生成
-
-○格子
- -アニメーション看板
-
-
-●DetailPD
-○tube + frame
+△Frame + Alphaの実装
 ※Volumeで考える
 ・コントラスト
  -大小
  -太細
- 
-○Window
-※WindowBlockを軸に多様なDetailを生成するロジックを考える
-・くぼみをつける
-・マテリアルにおいてDetailPDを考える
-
 
 [Study]
 ○マテリアル周り
