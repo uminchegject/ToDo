@@ -1,8 +1,3 @@
-●土曜日までまで
-○ResidencePatternをUE4上で実装
- ※光(コントラストパターン)PDを考える
-○Frame + Alphaの検証
-
-●Frame + Alpha
-○BoxSpaceで管理する
-○Surfaceで検証
+●Frame + Alpha（SignBoard）
+○Frameロジックを考える
+○Frameの表面にSignBoard(Asset + Animation)をつける
