@@ -1,3 +1,13 @@
-●Frame + Alpha（SignBoard）
-○Frameロジックを考える
-○Frameの表面にSignBoard(Asset + Animation)をつける
+○パドルゲームに追加する要素をまとめる
+ -スピードの変更
+ -弾の増加
+
+○SignBoard
+ -細長いSignboard(アニメーション)
+ -大きいSignboard(アセット)
+ -小さいSignboard(色のみ)
+
+○工業
+ -Frame
+ -Tube
+ -Asset
