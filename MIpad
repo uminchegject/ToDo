@@ -1,18 +1,12 @@
 [Cording]
-※夕方の4時までに情報収集及びCordingメモの作成までを行う
-○code_masterのプロジェクトをgitで管理できるようにする
- https://tech-blog.rakus.co.jp/entry/20200529/git#1-1-Git%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB
-○HTMLの魔導書をbaseProjectに入れていく
+○git環境を構築
+○D3D11On12CreateDeviceの実装に必要な情報(DirectX11周り)を収集
+○シェーダーの魔導書を斥候(何をするかを決める)
 
-[Lighting]
-○Window + VertexBoard + SignBoard(色違い)のみで検証を行う
-
-○SignBoard
- -細長いSignboard(アニメーション)
- -大きいSignboard(アセット)
- -小さいSignboard(色のみ)
-
-○工業
- -Frame
- -Tube
- -Asset
+○マテリアルの検証
+ -BuildingBaseのマテリアルを設定(Greeble + Scaling)
+ -SignBoardの実装
+ -アニメーションマテリアルを実装
+○アセットの検証
+ -配置ロジックを調査
+ -適当なアセットを調査(看板)
