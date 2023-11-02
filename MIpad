@@ -1,6 +1,11 @@
-○パドルゲームに追加する要素をまとめる
- -スピードの変更
- -弾の増加
+[Cording]
+※夕方の4時までに情報収集及びCordingメモの作成までを行う
+○code_masterのプロジェクトをgitで管理できるようにする
+ https://tech-blog.rakus.co.jp/entry/20200529/git#1-1-Git%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB
+○HTMLの魔導書をbaseProjectに入れていく
+
+[Lighting]
+○Window + VertexBoard + SignBoard(色違い)のみで検証を行う
 
 ○SignBoard
  -細長いSignboard(アニメーション)
