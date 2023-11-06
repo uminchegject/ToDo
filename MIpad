@@ -2,23 +2,25 @@
 ※とりあえずSignBoardのみを実装
 
 ●houdini
-○格子部分を一つに統一する
+○SimpleSignBoardをランダムに見せる
+ -RandomRemove
+ -Size
 ○SignBoard配置ロジックの詳細設計
  -SignBoard(Simple)とSignBoard(Asset,Pattern)が重ならないようにする
+△格子部分を一つに統一する
 
 ●Material
-○用意した画像テクスチャをサイズが合うように設定する
+○SimpleマテリアルをGreebleMaterialにする
 ○模様マテリアルを実装
 ○アニメーションマテリアルを実装
+○用意した画像テクスチャをサイズが合うように設定する
+△Building
+ -Greeble
+ -Scaling
 
 ●アセット
 ○アセットの調査
 ○配置ロジックの設計
-
-●Building
-△マテリアルの設定
- -Greeble
- -Scaling
 
 ●Panel
 ○Panelロジックを設計
