@@ -1,27 +1,23 @@
 ■[Public]
-○Dev-en-Ver102×××を取得する。
+○挙動確認
+ -ミッション・レイドミッション
+ -クラフト
+ -エステ
 
-○現状の実装状況を確認する
-　→実装内容から調査内容を調べる
-　→※アクセス制限の工数出しの上報告をする。
+●フィールド(フィールド移動制限)
+○ローディング後にダイアログを表示する処理の実装方法を調べる
+　-CancelWarp処理の後にダイアログを表示するように実装できないかを調査
+○処理周りを調査
+ -bool USBOnlineSessionClient::HandleDisconnectInternal(UWorld* World, UNetDriver* NetDriver)
+ -ClientPreClientTravel_Implementation
 
-●テキストデータの追加
-○下記のURLを参考に実装
-http://pms-co10.lab.nbgi.jp:8090/pages/viewpage.action?pageId=70491841
-https://skyblue-workspace.slack.com/archives/C055V04J96C/p1691479395338739?thread_ts=1691371330.039949&cid=C055V04J96C
+●フィールド(マップ移動制限)
+○Warp周りの処理を通さずに確認だけ行う処理を実装できないかを調査
+○ClientPreClientTravel_Implementation
 
-●ミッション・レイドミッション
-○同じ実装を行う
-
-●クラフト
-○同じ実装を行う
-
-●エステ
-○同じ実装を行う
-○SBPlayerContrillerで実装していたRequestCheckStatusを調査する
-
-●フィールド
-○FString USBGameInstance::OnRecievedAdminCommandAccessRestrict(const FSBAdminCommand& InCommand)周りの調査を行う
+●フィールド(アステルリーズに強制遷移)
+○FString USBGameInstance::OnRecievedAdminCommandAccessRestrict(const FSBAdminCommand& InCommand)
+○※Response=HTTP/1.1 400 Bad Requestになってしまう原因を調査する
 
 ▲チャット
 結論：
@@ -30,30 +26,18 @@ https://skyblue-workspace.slack.com/archives/C055V04J96C/p1693898747127919?threa
 
 ■[Study]
 ●Read
-・kindle独習c++
- -※独習C++のファイルを検証PCで開いてプロジェクトファイルをデスクトップに持ってくる
-・batファイル
- -https://qiita.com/go1101/items/a2df957120b709b94273
+
 
 ●Cording
-※業務中にバランスよく行う
-・ゲームプログラミングc++
- -※実際のコードに追加実装をしてみる
-
+○code_masterのプロジェクトをgitで管理できるようにする
+ https://tech-blog.rakus.co.jp/entry/20200529/git#1-1-Git%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB
+○D3D11On12CreateDeviceを調査及び実装
+○HTMLの魔導書をbaseProjectに入れていく
 
 ■[SoulCity]
 [検証]
 ※質問事項具体的にまとめる(YorN)
 
-○Building+Windowのマテリアルまで実装
-
-△アニメーションマテリアルの実装
-
-△Frame + Alphaの実装
-※Volumeで考える
-・コントラスト
- -大小
- -太細
 
 [Study]
 ○マテリアル周り
@@ -84,3 +68,9 @@ https://skyblue-workspace.slack.com/archives/C055V04J96C/p1693898747127919?threa
  -Tubeを凹,Residenceを凸に配置する
 ・光のラインを要素に加える
  ーコントラスト(大小)
+ 
+ 
+お疲れ様です北米欧州の開発環境について二点伺いたいことがあるのですが、
+・editor上でプレイしようとした際に接続エラーが発生してしまうのですが、こちら三ヶ尻さんの環境でも発生してしまいますでしょうか。
+・BNLancherからクライアントビルドを取得したいのですが、どのバージョンを取得すればいいのか教えて頂けると幸いです。
+お手数をおかけしますが、もし上記のことについて知っていることがあれば教えて頂けると幸いです。
