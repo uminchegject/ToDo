@@ -2,10 +2,8 @@
 ※とりあえずSignBoardのみを実装
 
 ●houdini
-○SimpleSignBoardをランダムに見せる
- -RandomRemove
- -Size
 ○SignBoard配置ロジックの詳細設計
+　-SimpleSignBoardをランダムに見せる(RandomRemove,SizeContrast)
  -SignBoard(Simple)とSignBoard(Asset,Pattern)が重ならないようにする
 △格子部分を一つに統一する
 
@@ -16,23 +14,11 @@
 ○用意した画像テクスチャをサイズが合うように設定する
 △Building
  -Greeble
- -Scaling
+ -SizeContrast
 
-●アセット
+▲アセット
 ○アセットの調査
 ○配置ロジックの設計
 
-●Panel
+▲Panel
 ○Panelロジックを設計
- 
-
-[Cording]
-○git環境を構築
-
-○D3D11On12CreateDeviceの実装に必要な情報(DirectX11周り)を収集
- -DirectX12の描画を実装
- -DirectX11の描画を実装
- -D3D11On12CreateDeviceの情報を収集
- 
-○シェーダーの魔導書を斥候(何をするかを決める)
-
