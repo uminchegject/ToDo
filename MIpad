@@ -1,17 +1,25 @@
 [ToDo]
 ※とりあえずSignBoardのみを実装
 
+●SimpleSignBoard
+○SimpleSignBoardをランダムに見せる(RandomRemove,SizeContrast)
+○SimpleマテリアルをGreebleMaterialにする
+ -確認(https://www.youtube.com/watch?v=t49B32zYfX0&list=PLhVBAU5fUlz1-gsQG7ZMV8R_hm1TeGJGL&index=3&t=391s)
+ -UVのスケール、位置をランダムにするように実装
+
 ●houdini
 ○SignBoard配置ロジックの詳細設計
-　-SimpleSignBoardをランダムに見せる(RandomRemove,SizeContrast)
+ -SimpleSignBoardをランダムに見せる(RandomRemove,SizeContrast)
  -SignBoard(Simple)とSignBoard(Asset,Pattern)が重ならないようにする
 △格子部分を一つに統一する
 
 ●Material
 ○SimpleマテリアルをGreebleMaterialにする
+ -確認(https://www.youtube.com/watch?v=t49B32zYfX0&list=PLhVBAU5fUlz1-gsQG7ZMV8R_hm1TeGJGL&index=3&t=391s)
+ -UVのスケール、位置をランダムにするように実装
 ○模様マテリアルを実装
-○アニメーションマテリアルを実装
 ○用意した画像テクスチャをサイズが合うように設定する
+○アニメーションマテリアルを実装
 △Building
  -Greeble
  -SizeContrast
@@ -22,3 +30,11 @@
 
 ▲Panel
 ○Panelロジックを設計
+
+
+[Cording]
+※書籍からサンプルコードの詳細を必ず確認する
+
+●Read
+○背景モデリング
+○独習(※サンプルコードを確認できるようにする)
