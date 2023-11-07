@@ -5,19 +5,16 @@
  -エステ
 
 ●フィールド(フィールド移動制限)
-○ローディング後にダイアログを表示する処理の実装方法を調べる
-　-CancelWarp処理の後にダイアログを表示するように実装できないかを調査
-○処理周りを調査
- -bool USBOnlineSessionClient::HandleDisconnectInternal(UWorld* World, UNetDriver* NetDriver)
- -ClientPreClientTravel_Implementation
+○FieldTravelFailedAfterProcessを呼び出し
+○Widgetを表示する処理を実装
 
 ●フィールド(マップ移動制限)
-○Warp周りの処理を通さずに確認だけ行う処理を実装できないかを調査
-○ClientPreClientTravel_Implementation
+○※SBQuery_PlayerCharacter::MakeQueryPreJoinを用いた実装の調査
+○エラーコードからWidgetを表示
 
 ●フィールド(アステルリーズに強制遷移)
-○FString USBGameInstance::OnRecievedAdminCommandAccessRestrict(const FSBAdminCommand& InCommand)
-○※Response=HTTP/1.1 400 Bad Requestになってしまう原因を調査する
+○※Response=HTTP/1.1 400 Bad Requestになってしまう質問を用意する
+○FString USBGameInstance::OnRecievedAdminCommandAccessRestrict(const FSBAdminCommand& InCommand)周りの処理を確認する
 
 ▲チャット
 結論：
@@ -26,22 +23,26 @@ https://skyblue-workspace.slack.com/archives/C055V04J96C/p1693898747127919?threa
 
 ■[Study]
 ●Read
-
+○背景モデリング
+○独習(※サンプルコードを確認できるようにする)
 
 ●Cording
-○code_masterのプロジェクトをgitで管理できるようにする
- https://tech-blog.rakus.co.jp/entry/20200529/git#1-1-Git%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB
-○D3D11On12CreateDeviceを調査及び実装
-○HTMLの魔導書をbaseProjectに入れていく
+○独習
+○シェーダーの魔導書
 
 ■[SoulCity]
-[検証]
+[ToDo]
 ※質問事項具体的にまとめる(YorN)
-
+●SimpleSignBoard
+○SimpleSignBoardをランダムに見せる(RandomRemove,SizeContrast)
+○SimpleマテリアルをGreebleMaterialにする
+ -確認(https://www.youtube.com/watch?v=t49B32zYfX0&list=PLhVBAU5fUlz1-gsQG7ZMV8R_hm1TeGJGL&index=3&t=391s)
+ -UVのスケール、位置をランダムにするように実装
 
 [Study]
 ○マテリアル周り
 ○ビルのFacadeのモデリング方法
+
 
 [IDEA]
 ※全てのパーツに共通する、PDロジックを考える
