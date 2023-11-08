@@ -2,10 +2,9 @@
 ※とりあえずSignBoardのみを実装
 
 ●GreebleMaterial
-※SignBoardとPanelをGreebleMaterialに配置して検証
- -GreebleMaterialを透過モードで設定し、SingBoard(エミッシブを設定)とPanel(エミッシブ無し)で実装する
+●SignBoardとPanelをGreebleMaterialに配置して検証
 ○SimpleSignBoardの配置に統一性を持たせる
- -サイズと配置箇所
+ -サイズと配置箇所(大きめのPanelを全体的に埋める、SignBorardを小さく局所的に配置)
  -SignBoard同士のマテリアルの繋がり
 
 ●houdini
