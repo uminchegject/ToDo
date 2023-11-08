@@ -10,6 +10,8 @@
 
 ●フィールド(マップ移動制限)
 ○※SBQuery_PlayerCharacter::MakeQueryPreJoinを用いた実装の調査
+　-MapWidget_Map_BPで確認処理を実装(OnPressed_WarpPossintIcon→RequestWarp)
+ -○※USBPlayerWarpComponent::RequestWarpを調査
 ○エラーコードからWidgetを表示
 
 ●フィールド(アステルリーズに強制遷移)
@@ -24,7 +26,7 @@ https://skyblue-workspace.slack.com/archives/C055V04J96C/p1693898747127919?threa
 ■[Study]
 ●Read
 ○背景モデリング
-○独習(※サンプルコードを確認できるようにする)
+○独習(文章のみを確認(Read)+サンプルコードを確認(Cording))
 
 ●Cording
 ○独習
@@ -33,11 +35,13 @@ https://skyblue-workspace.slack.com/archives/C055V04J96C/p1693898747127919?threa
 ■[SoulCity]
 [ToDo]
 ※質問事項具体的にまとめる(YorN)
-●SimpleSignBoard
-○SimpleSignBoardをランダムに見せる(RandomRemove,SizeContrast)
-○SimpleマテリアルをGreebleMaterialにする
- -確認(https://www.youtube.com/watch?v=t49B32zYfX0&list=PLhVBAU5fUlz1-gsQG7ZMV8R_hm1TeGJGL&index=3&t=391s)
- -UVのスケール、位置をランダムにするように実装
+
+●GreebleMaterial
+※SignBoardとPanelをGreebleMaterialに配置して検証
+ -GreebleMaterialを透過モードで設定し、SingBoard(エミッシブを設定)とPanel(エミッシブ無し)で実装する
+○SimpleSignBoardの配置に統一性を持たせる
+ -サイズと配置箇所
+ -SignBoard同士のマテリアルの繋がり
 
 [Study]
 ○マテリアル周り
@@ -70,8 +74,3 @@ https://skyblue-workspace.slack.com/archives/C055V04J96C/p1693898747127919?threa
 ・光のラインを要素に加える
  ーコントラスト(大小)
  
- 
-お疲れ様です北米欧州の開発環境について二点伺いたいことがあるのですが、
-・editor上でプレイしようとした際に接続エラーが発生してしまうのですが、こちら三ヶ尻さんの環境でも発生してしまいますでしょうか。
-・BNLancherからクライアントビルドを取得したいのですが、どのバージョンを取得すればいいのか教えて頂けると幸いです。
-お手数をおかけしますが、もし上記のことについて知っていることがあれば教えて頂けると幸いです。
