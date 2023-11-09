@@ -5,18 +5,30 @@
  -エステ
 
 ●フィールド(フィールド移動制限)
-○FieldTravelFailedAfterProcessを呼び出し
 ○Widgetを表示する処理を実装
+ -FieldTravelFailedAfterProcessの後に呼び出し
+
+　// エラーダイアログ表示
+　//const FString& Message = USBTextBlueprintFunctionLibrary::GetSBRetMessage(RetCode);
+　//const FText SetTextMessage = FText::FromString(Message);
+　//ShowMessageDialog(SetTextMessage);
+
 
 ●フィールド(マップ移動制限)
-○※SBQuery_PlayerCharacter::MakeQueryPreJoinを用いた実装の調査
-　-MapWidget_Map_BPで確認処理を実装(OnPressed_WarpPossintIcon→RequestWarp)
- -○※USBPlayerWarpComponent::RequestWarpを調査
-○エラーコードからWidgetを表示
+○pre-joinを用いてマップ移動ができるか確認する処理を実装
+　・SBQuery_PlayerCharacter::MakeQueryPreJoin
+
 
 ●フィールド(アステルリーズに強制遷移)
-○※Response=HTTP/1.1 400 Bad Requestになってしまう質問を用意する
-○FString USBGameInstance::OnRecievedAdminCommandAccessRestrict(const FSBAdminCommand& InCommand)周りの処理を確認する
+○アステルリーズに飛ばす処理を実装
+　・FString USBGameInstance::OnRecievedAdminCommandGotoMap(const FSBAdminCommand& InCommand)
+
+○ダイアログの表示
+　
+
+●キャラ選択画面からアステルリーズに飛ばす
+○ダイアログの表示
+　-void USBOnlineSessionClient::PreJoinSession_HttpRequestCompleteでダイアログを表示
 
 ▲チャット
 結論：
@@ -36,11 +48,19 @@ https://skyblue-workspace.slack.com/archives/C055V04J96C/p1693898747127919?threa
 [ToDo]
 ※質問事項具体的にまとめる(YorN)
 
-●GreebleMaterial
+●GreebleMaterial検証
 ※SignBoardとPanelをGreebleMaterialに配置して検証
- -GreebleMaterialを透過モードで設定し、SingBoard(エミッシブを設定)とPanel(エミッシブ無し)で実装する
+○Panel
+・独立したSurfaceでGreebleMaterialを貼る
+ -側面のSurface一枚にGreebleを貼り付ける
+○SignBoard
+・一部分に集中してSignBoardを配置
+ -BaseGreebleを行ってRemove
+ -さらにGreebleを行いOffset
+ -マテリアルが繋がるように実装
+
 ○SimpleSignBoardの配置に統一性を持たせる
- -サイズと配置箇所
+ -サイズと配置箇所(大きめのPanelを全体的に埋める、SignBorardを小さく局所的に配置)
  -SignBoard同士のマテリアルの繋がり
 
 [Study]
