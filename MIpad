@@ -1,20 +1,7 @@
 [ToDo]
 ※とりあえずSignBoardのみを実装
 
-●GreebleMaterial
-●SignBoardとPanelをGreebleMaterialに配置して検証
-○SimpleSignBoardの配置に統一性を持たせる
- -サイズと配置箇所(大きめのPanelを全体的に埋める、SignBorardを小さく局所的に配置)
- -SignBoard同士のマテリアルの繋がり
-
-●houdini
-○SignBoard配置ロジックの詳細設計
- -SimpleSignBoardをランダムに見せる(RandomRemove,SizeContrast)
- -SignBoard(Simple)とSignBoard(Asset,Pattern)が重ならないようにする
-△格子部分を一つに統一する
-
 ●Material
-○SimpleマテリアルをGreebleMaterialにする
 ○模様マテリアルを実装
 ○用意した画像テクスチャをサイズが合うように設定する
 ○アニメーションマテリアルを実装
@@ -28,10 +15,3 @@
 
 ▲Panel
 ○Panelロジックを設計
-
-
-[Cording]
-※書籍からサンプルコードの詳細を必ず確認する
-
-●Read
-○独習(文章のみを確認(Read)+サンプルコードを確認(Cording))
