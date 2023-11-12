@@ -1,3 +1,45 @@
+●SignBoard+Panelの検証
+
+・SignBoard
+○色に変化を持たせるためにマテリアルを分ける
+
+・Panel
+○後ろのレイヤーをGreeble+Removeして細長いBlockで構成したGreebleMaterialを設定する
+○手前のレイヤーを通常のGreebleMaterialで半分空白にしたものにする
+
+[houdini]
+○SignBoard, Panelを重ねて配置する
+ -色に変化をつめる
+ 
+○格子Panelの配置
+
+○DetailSignBoardを配置
+ 
+[Material]
+・点滅
+ -GreebleSignBoard
+・スライドアニメーション
+ -LineSignBoard()
+ -LinePanel 
+・看板マテリアルエフェクト
+ -Asset(画像)
+
+○点滅アニメーションの実装
+
+○スライドアニメーションを実装
+
+○看板エフェクト(グリッドエフェクト)を実装
+ -画像を合わせて配置する
+ 
+○Buildingマテリアル
+ -UVScaleにコントラスト
+ -パッシブ値をランダムにする
+
+○模様マテリアルを実装
+ -※アニメーションを考慮する
+
+
+
 [Public]
 ※休日、平日のMT前午前のタスクを朝カフェで決めておく。
 ●マップ移動
