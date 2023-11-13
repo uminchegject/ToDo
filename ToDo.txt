@@ -5,38 +5,49 @@
  -エステ
 
 ●フィールド(フィールド移動制限)
-○Widgetを表示する処理を実装
+○仮Widgetで実装
  -FieldTravelFailedAfterProcessの後に呼び出し
 
-　// エラーダイアログ表示
-　//const FString& Message = USBTextBlueprintFunctionLibrary::GetSBRetMessage(RetCode);
-　//const FText SetTextMessage = FText::FromString(Message);
-　//ShowMessageDialog(SetTextMessage);
+・仮Widget 
+const FString Msg = TEXT("ログダヨー");
+const FText MsgText = FText::FromString(Msg);
+USBEventSceneBPFunctionLibrary::ShowMessageDialogNoWait(this, MsgText);
 
 
 ●フィールド(マップ移動制限)
-○pre-joinを用いてマップ移動ができるか確認する処理を実装
-　・SBQuery_PlayerCharacter::MakeQueryPreJoin
+※pre-joinAPIを確認のためのみに呼び出しても大丈夫かの質問を用意する
+お疲れ様です。
+フィールドアクセス制限のapiについて質問があり連絡させて頂きました。
+マップ移動時のアクセス制限の処理について、ワープ処理の中で"api/characters/pre_join"を用いてサーバー側でアクセス制限の確認を行うように実装していますが、
+この実装の挙動として、ワープポイント選択後に画面が暗転しapiでアクセス制限を確認した後、ワープキャンセル処理が走り元居た場所にワープするような挙動となっています。
+ただ、添付した仕様画像の仕様ではワープポイント選択時にダイアログ表示するのみにしなければなりません。
+そのため、マップからワープポイントを選択時、ワープの処理を行う前にapiを通じてアクセス制限をしているかの確認を行う処理を実装したいのですが、
+サーバー側でアクセス制限しているかを確認するためのapiを新しく実装して頂くことは可能でしょうか。
+もしくは、アクセス制限の確認のみの用途として"api/characters/pre_join"のapiを用いてクライアント側で実装することは可能でしょうか。
+お手数をおかけしますがご確認お願い致します。
+
+○アクセス制限確認処理を実装
+
+○BP側でダイアログを実装
 
 
 ●フィールド(アステルリーズに強制遷移)
-○アステルリーズに飛ばす処理を実装
-　・FString USBGameInstance::OnRecievedAdminCommandGotoMap(const FSBAdminCommand& InCommand)
+○サーバー側の処理を確認
+ -解決次第挙動を確認。
 
-○ダイアログの表示
-　
-
-●キャラ選択画面からアステルリーズに飛ばす
-○ダイアログの表示
-　-void USBOnlineSessionClient::PreJoinSession_HttpRequestCompleteでダイアログを表示
+○Widgetを表示
+USBGameInstance::InternalPlayerCharacterFailedWarpを参考に実装
 
 ▲チャット
 結論：
 チャットのアクセス制限については、チャットサーバー側での対応のため、クライアントでの対応はなし
 https://skyblue-workspace.slack.com/archives/C055V04J96C/p1693898747127919?thread_ts=1686021192.063809&cid=C055V04J96C
 
+
+
 ■[Study]
 ●Read
+○https://xn--97-273ae6a4irb6e2hsoiozc2g4b8082p.com/
 ○背景モデリング
 ○独習(文章のみを確認(Read)+サンプルコードを確認(Cording))
 
@@ -48,20 +59,12 @@ https://skyblue-workspace.slack.com/archives/C055V04J96C/p1693898747127919?threa
 [ToDo]
 ※質問事項具体的にまとめる(YorN)
 
-●GreebleMaterial検証
-※SignBoardとPanelをGreebleMaterialに配置して検証
-○Panel
-・独立したSurfaceでGreebleMaterialを貼る
- -側面のSurface一枚にGreebleを貼り付ける
-○SignBoard
-・一部分に集中してSignBoardを配置
- -BaseGreebleを行ってRemove
- -さらにGreebleを行いOffset
- -マテリアルが繋がるように実装
+●SignBoard+Panelの検証
+○マテリアルの色の濃さを分かりやすくする
 
-○SimpleSignBoardの配置に統一性を持たせる
- -サイズと配置箇所(大きめのPanelを全体的に埋める、SignBorardを小さく局所的に配置)
- -SignBoard同士のマテリアルの繋がり
+○修正レイヤーの重ね順を修正
+○GreebleMaterialを修正
+
 
 [Study]
 ○マテリアル周り
@@ -93,4 +96,3 @@ https://skyblue-workspace.slack.com/archives/C055V04J96C/p1693898747127919?threa
  -Tubeを凹,Residenceを凸に配置する
 ・光のラインを要素に加える
  ーコントラスト(大小)
- 
