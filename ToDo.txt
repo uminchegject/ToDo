@@ -3,29 +3,28 @@
  -ミッション・レイドミッション
  -クラフト
  -エステ
+ 
+●Widgetの実装
+※通常のテキストDTも必要かを確認する
 
-●フィールド(フィールド移動制限)
-○仮Widgetで実装
- -FieldTravelFailedAfterProcessの後に呼び出し
+・検証
+const static FSBTextTableHash cCanNotGoOnNowTextTableHash(0);
+const FString Msg = USBUIBlueprintFunctionLibrary::GetText("SystemMessage", cCanNotGoOnNowTextTableHash);
+const FText MsgText = FText::FromString(Msg);
+USBEventSceneBPFunctionLibrary::ShowMessageDialogNoWait(this, MsgText);
+
+○GetAssetsを用いてDTを取得する処理を実装
+ -Editorで検証
 
 ・仮Widget 
 const FString Msg = TEXT("ログダヨー");
 const FText MsgText = FText::FromString(Msg);
 USBEventSceneBPFunctionLibrary::ShowMessageDialogNoWait(this, MsgText);
 
+●フィールド(フィールド移動制限)
+○Widgetで実装
 
 ●フィールド(マップ移動制限)
-※pre-joinAPIを確認のためのみに呼び出しても大丈夫かの質問を用意する
-お疲れ様です。
-フィールドアクセス制限のapiについて質問があり連絡させて頂きました。
-マップ移動時のアクセス制限の処理について、ワープ処理の中で"api/characters/pre_join"を用いてサーバー側でアクセス制限の確認を行うように実装していますが、
-この実装の挙動として、ワープポイント選択後に画面が暗転しapiでアクセス制限を確認した後、ワープキャンセル処理が走り元居た場所にワープするような挙動となっています。
-ただ、添付した仕様画像の仕様ではワープポイント選択時にダイアログ表示するのみにしなければなりません。
-そのため、マップからワープポイントを選択時、ワープの処理を行う前にapiを通じてアクセス制限をしているかの確認を行う処理を実装したいのですが、
-サーバー側でアクセス制限しているかを確認するためのapiを新しく実装して頂くことは可能でしょうか。
-もしくは、アクセス制限の確認のみの用途として"api/characters/pre_join"のapiを用いてクライアント側で実装することは可能でしょうか。
-お手数をおかけしますがご確認お願い致します。
-
 ○アクセス制限確認処理を実装
 
 ○BP側でダイアログを実装
@@ -62,12 +61,14 @@ https://skyblue-workspace.slack.com/archives/C055V04J96C/p1693898747127919?threa
 ※質問事項具体的にまとめる(YorN)
 
 ●格子の実装
- -格子のデザインを設計
- -スライドアニメーションの実装
+・格子のデザインを設計
+・スライドアニメーションの実装
 
 ▲SignBoard+Panelの検証
- -Panelの手前のGreebleMaterialを密度中間のものを重ねる(SignBoardを参考)
- -レイヤーの順番を修正
+・Panelの手前のGreebleMaterialを密度中間のものを重ねる
+ -SignBoardよりも前に濃い色で配置する
+ -SignBoardを参考
+・レイヤーの順番を修正
 
 
 [Study]
@@ -96,7 +97,3 @@ https://skyblue-workspace.slack.com/archives/C055V04J96C/p1693898747127919?threa
 ※アセットを配置するPDを考える
 ※模様のPDを考える
 ※ラインを入れる
-・Tube + PanelをテーマにしたPDDetailにする
- -Tubeを凹,Residenceを凸に配置する
-・光のラインを要素に加える
- ーコントラスト(大小)
