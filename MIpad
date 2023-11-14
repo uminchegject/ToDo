@@ -1,3 +1,19 @@
+※Positionを乱数代わりにする
+
+●SlideAnimation
+・LineSignBoard
+ -ランダムに流れ星のようなスライドライトアニメーションをつける
+・AssetSignBoard
+ -平行にテキストをスライドさせる
+
+●BlinkingAnimation
+※ネオンの点滅を参考にする
+・GreebleSignBoard
+ -1/3のマテリアルのみにアニメーションをつける
+・AssetSignBoard
+ -幾つかのアセットをネオンのように点滅させる
+
+
 ●格子の実装
  -格子のデザインを設計
  -スライドアニメーションの実装
