@@ -34,6 +34,8 @@ USBEventSceneBPFunctionLibrary::ShowMessageDialogNoWait(this, MsgText);
 ●フィールド(アステルリーズに強制遷移)
 ○サーバー側の処理を確認
  -解決次第挙動を確認。
+ 
+○ログを確認
 
 ○Widgetを表示
 USBGameInstance::InternalPlayerCharacterFailedWarpを参考に実装
@@ -52,18 +54,20 @@ https://skyblue-workspace.slack.com/archives/C055V04J96C/p1693898747127919?threa
 ○独習(文章のみを確認(Read)+サンプルコードを確認(Cording))
 
 ●Cording
-○独習
+○独習(朝一でkindleでサンプルコードを確認する)
 ○シェーダーの魔導書
 
 ■[SoulCity]
 [ToDo]
 ※質問事項具体的にまとめる(YorN)
 
-●SignBoard+Panelの検証
-○マテリアルの色の濃さを分かりやすくする
+●格子の実装
+ -格子のデザインを設計
+ -スライドアニメーションの実装
 
-○修正レイヤーの重ね順を修正
-○GreebleMaterialを修正
+▲SignBoard+Panelの検証
+ -Panelの手前のGreebleMaterialを密度中間のものを重ねる(SignBoardを参考)
+ -レイヤーの順番を修正
 
 
 [Study]
