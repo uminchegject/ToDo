@@ -1,50 +1,11 @@
 ■[Public]
-○挙動確認
- -ミッション・レイドミッション
- -クラフト
- -エステ
- 
-●Widgetの実装
-※通常のテキストDTも必要かを確認する
+※実装できている箇所をサブミット
+　ークック＆挙動を確認
+　ー修正箇所を確認
 
-・検証
-const static FSBTextTableHash cCanNotGoOnNowTextTableHash(0);
-const FString Msg = USBUIBlueprintFunctionLibrary::GetText("SystemMessage", cCanNotGoOnNowTextTableHash);
-const FText MsgText = FText::FromString(Msg);
-USBEventSceneBPFunctionLibrary::ShowMessageDialogNoWait(this, MsgText);
+○CreatSessionのEOnlineSessionStateをNoSessionにするように修正
 
-○GetAssetsを用いてDTを取得する処理を実装
- -Editorで検証
-
-・仮Widget 
-const FString Msg = TEXT("ログダヨー");
-const FText MsgText = FText::FromString(Msg);
-USBEventSceneBPFunctionLibrary::ShowMessageDialogNoWait(this, MsgText);
-
-●フィールド(フィールド移動制限)
-○Widgetで実装
-
-●フィールド(マップ移動制限)
-○アクセス制限確認処理を実装
-
-○BP側でダイアログを実装
-
-
-●フィールド(アステルリーズに強制遷移)
-○サーバー側の処理を確認
- -解決次第挙動を確認。
- 
-○ログを確認
-
-○Widgetを表示
-USBGameInstance::InternalPlayerCharacterFailedWarpを参考に実装
-
-▲チャット
-結論：
-チャットのアクセス制限については、チャットサーバー側での対応のため、クライアントでの対応はなし
-https://skyblue-workspace.slack.com/archives/C055V04J96C/p1693898747127919?thread_ts=1686021192.063809&cid=C055V04J96C
-
-
+○申請後のアクセス禁止(突入ボタンでダイアログを表示)
 
 ■[Study]
 ●Read
@@ -56,13 +17,19 @@ https://skyblue-workspace.slack.com/archives/C055V04J96C/p1693898747127919?threa
 ○独習(朝一でkindleでサンプルコードを確認する)
 ○シェーダーの魔導書
 
+
 ■[SoulCity]
 [ToDo]
 ※質問事項具体的にまとめる(YorN)
 
-●格子の実装
-・格子のデザインを設計
-・スライドアニメーションの実装
+●アニメーションの検証
+○BlindingAnimation
+・GreebleMaterialの一つに実装する
+　-Positionに比例して点滅速度が変わるかを検証
+
+○SlideAnamation
+・細長いサーフェスを入れる
+・流れ星のようなマテリアルを実装
 
 ▲SignBoard+Panelの検証
 ・Panelの手前のGreebleMaterialを密度中間のものを重ねる
