@@ -1,22 +1,15 @@
-■[Public]
-※実装できている箇所をサブミット
- -チケットに記載＆久東さんに連絡
-
-○HostGameの処理が正しいかを確認
-
-○申請後のアクセス禁止(突入ボタンでダイアログを表示)
-
-■[Study]
-●Read
-○https://xn--97-273ae6a4irb6e2hsoiozc2g4b8082p.com/
-○背景モデリング
-○独習(文章のみを確認(Read)+サンプルコードを確認(Cording))
-
-●Cording
-○独習(朝一でkindleでサンプルコードを確認する)
-○シェーダーの魔導書
+[Public]
 
 
-■[SoulCity]
-・Panelの高さをランダムにする
-・Residenceの高さは統一する
+[Private]
+※ResidenceとPanel+SignBoardを分けて考える
+
+●Residence
+・Residenceのオフセット値は統一する
+
+●Panel+SignBoard
+・マテリアルは大きくし、Transformをランダムにする
+・Panel&SignBoardのオフセット値をランダムにする
+
+○検証
+ -UVScaleのTransformをランダムにする
