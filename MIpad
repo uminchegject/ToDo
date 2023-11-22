@@ -1,8 +1,14 @@
-[Public]
-
-
 [Private]
-※ResidenceとPanel+SignBoardを分けて考える
+●Surface配置ロジック
+※凹凸をつけることを意識する
+ -Panel+SignBoard
+ -Residence
+ -Tube
+ -Asset
+
+
+●SurfaceDetailロジック
+※それぞれのSurfaceを分けて考える
 
 ●Residence
 ・Residenceのオフセット値は統一する
