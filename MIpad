@@ -1,6 +1,11 @@
 [Private]
 ●Surface配置ロジック
 ※凹凸をつけることを意識する
+・上部の凹みはnoiseと多数のARCで表現する
+ -並行的な凹凸のみつける
+・ARCのgreebleの前に細長いblockを分割する
+
+
  -Panel+SignBoard
  -Residence
  -Tube
