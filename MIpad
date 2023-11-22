@@ -1,26 +1,5 @@
-[Private]
-●Surface配置ロジック
-※凹凸をつけることを意識する
-・上部の凹みはnoiseと多数のARCで表現する
- -並行的な凹凸のみつける
-・ARCのgreebleの前に細長いblockを分割する
-
-
- -Panel+SignBoard
- -Residence
- -Tube
- -Asset
-
-
-●SurfaceDetailロジック
-※それぞれのSurfaceを分けて考える
-
-●Residence
-・Residenceのオフセット値は統一する
-
-●Panel+SignBoard
-・マテリアルは大きくし、Transformをランダムにする
-・Panel&SignBoardのオフセット値をランダムにする
-
-○検証
- -UVScaleのTransformをランダムにする
+[ToDo]
+●Noise+Arcsの検証
+○Panelの透過不具合を修正
+ -一つのマテリアルBPにPanel+SignBoardをまとめる
+○SignBoard+Panelで凹凸を検証
