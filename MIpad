@@ -3,3 +3,5 @@
 ○Panelの透過不具合を修正
  -一つのマテリアルBPにPanel+SignBoardをまとめる
 ○SignBoard+Panelで凹凸を検証
+○Noiseの検証
+ -線のようなNoiseを使って壁のようにする
