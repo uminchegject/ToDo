@@ -1,6 +1,17 @@
 ●Noise+Arcsの検証
 ※凹凸をつけるためのPlusアルファを考える
+・OutSideSurface(RectangleSurface)から+αをつけることを考える
 
+●OutSideSurface生成ロジック
+※BaseBlockからGreebleしてBlockで高さを追加(調整)する
+ -BaseBlockのBaseHeightのOutSideSurfaceでPanel,格子を跨いで配置する
+・Arcの中心点のNoise値とSurfaceのNoise値の差からOutSideSurfaceを求める
+
+○検証
+・OutSideSurfaceにPanel+Signboardを配置
+ -Tube+Assetのロジックも拡張して考える
+
+[ToDo]
 ○Arc修正
  -Arcを埋める
  -ArcMaterialのUVScaleをランダムにする
@@ -10,3 +21,4 @@
 
 ○SignBoard修正
  -サイズを大きくし、量を少なくする
+
