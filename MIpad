@@ -1,8 +1,4 @@
-●Noise+Arcsの検証
-※凹凸をつけるためのPlusアルファを考える
-・OutSideSurface(RectangleSurface)から+αをつけることを考える
-
-●OutSideSurface生成ロジック
+●Surface
 ・OutSideSurface
  -Asset配置
 ・OutSideExtrudeSurface
@@ -10,13 +6,21 @@
 ・△BaseBlockからGreebleしてBlockで高さを追加(調整)する
  -BaseBlockのBaseHeightのOutSideSurfaceでPanel,格子を跨いで配置する
 
+●凹凸
+※Surfaceを意識する
+・Residence
+ -看板
+・Industrial
+ 
 
 [ToDo]
+○Surface修正
+ -Noise+RandomでArcのHeightにランダム性を設ける
+
 ○SignBoard + Panel修正
  -サイズを大きくし、量を少なくする
  -TopHeightを下げて、上部によっていないように見えるようにする
 
-○Tube
- -StreetTubeを生成
- -下地をArcMaterialとは別に用意する
-
+○HoudiniからUE4のパラメーターを設定するようにする
+ -ResidenceMaterialの色に変化をつける
+ -ResidenceMaterialにアニメーションをつける
