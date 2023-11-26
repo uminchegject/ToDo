@@ -3,24 +3,20 @@
 ・OutSideSurface(RectangleSurface)から+αをつけることを考える
 
 ●OutSideSurface生成ロジック
-・OutSideSurfaceを下に拡張する
- -模様、Tube,Panel
-・上部をはみ出させる
- -Panel
-・BaseBlockからGreebleしてBlockで高さを追加(調整)する
+・OutSideSurface
+ -Asset配置
+・OutSideExtrudeSurface
+ -Surfaceメインで配置(Panel+SignBoard,Tube)
+・△BaseBlockからGreebleしてBlockで高さを追加(調整)する
  -BaseBlockのBaseHeightのOutSideSurfaceでPanel,格子を跨いで配置する
- 
- 
 
-○検証
-・OutSideSurfaceにPanel+Signboardを配置
- -Tube+Assetのロジックも拡張して考える
 
 [ToDo]
-○Arc修正
-
-○Panel修正
-
-○SignBoard修正
+○SignBoard + Panel修正
  -サイズを大きくし、量を少なくする
+ -TopHeightを下げて、上部によっていないように見えるようにする
+
+○Tube
+ -StreetTubeを生成
+ -下地をArcMaterialとは別に用意する
 
