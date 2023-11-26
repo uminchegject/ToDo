@@ -3,9 +3,14 @@
 ・OutSideSurface(RectangleSurface)から+αをつけることを考える
 
 ●OutSideSurface生成ロジック
-※BaseBlockからGreebleしてBlockで高さを追加(調整)する
+・OutSideSurfaceを下に拡張する
+ -模様、Tube,Panel
+・上部をはみ出させる
+ -Panel
+・BaseBlockからGreebleしてBlockで高さを追加(調整)する
  -BaseBlockのBaseHeightのOutSideSurfaceでPanel,格子を跨いで配置する
-・Arcの中心点のNoise値とSurfaceのNoise値の差からOutSideSurfaceを求める
+ 
+ 
 
 ○検証
 ・OutSideSurfaceにPanel+Signboardを配置
@@ -13,11 +18,8 @@
 
 [ToDo]
 ○Arc修正
- -Arcを埋める
- -ArcMaterialのUVScaleをランダムにする
 
 ○Panel修正
- -
 
 ○SignBoard修正
  -サイズを大きくし、量を少なくする
