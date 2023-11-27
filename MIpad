@@ -11,16 +11,27 @@
 ・Residence
  -看板
 ・Industrial
- 
+
+●UE4Level
+※既に完成しているプロジェクトのマテリアル、アセットを使ってPDを行う
+ -Surfaceを用いた配置ロジックを設計する
+
+○下地のマテリアルを適応
+
+○アセットの配置
 
 [ToDo]
 ○Surface修正
- -Noise+RandomでArcのHeightにランダム性を設ける
-
+ -大きいサイズのOutsideExtrudeSurfaceに模様を設ける
+ 
 ○SignBoard + Panel修正
  -サイズを大きくし、量を少なくする
  -TopHeightを下げて、上部によっていないように見えるようにする
 
-○HoudiniからUE4のパラメーターを設定するようにする
- -ResidenceMaterialの色に変化をつける
- -ResidenceMaterialにアニメーションをつける
+○UEMaterial
+・数種類のマテリアルに分けて各パラメーターに変化をつける
+ -※配置箇所をランダムにしてなるべく変化があるように見せる
+ -UVScale
+ -Color
+ -Animationスパン
+
