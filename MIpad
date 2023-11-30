@@ -7,13 +7,10 @@
 ○ゲームプログラミング(Chapter2)
 
 [SoulCity]
-※月末ToDo
-・Texture.comで取得
-・Epicの無料アセットを取得
-
-○コンクリートマテリアルを検証
-・コンクリートマテリアルを用意(material.com)
- -SoulCityのコンクリートテクスチャをコンクリート部分だけ表示できるか
-
-○GreebleBlockを調整
+○アセット配置の検証
+・GreebleBlockを調整
  -縦長ブロックをなくす
+・適切な配置
+ -Top
+ -SideoutSurface
+ -SideoutExtrudeSurface
