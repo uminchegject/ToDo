@@ -1,16 +1,10 @@
 [Private]
-○Sessionに参加しているプレイヤーを取得する
- -RegisterPlayerで設定している先の管理箇所を確認する
+○アステルリーズへ遷移する処理を挙動確認
+ -World,GameModeについて勉強
 
 [Study]
 ○独習(代数引数)
 ○ゲームプログラミング(Chapter2)
 
 [SoulCity]
-○アセット配置の検証
-・GreebleBlockを調整
- -縦長ブロックをなくす
-・適切な配置
- -Top
- -SideoutSurface
- -SideoutExtrudeSurface
+○TopにBigAsset,BottomにSmallAssetを検証する
