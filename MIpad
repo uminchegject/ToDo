@@ -7,7 +7,8 @@
  -DGS側の処理の中でログ関連の処理がないかを調査する(ログ、GameSession)
 
 [SoulCity]
-○TopにBigAsset,BottomにSmallAssetを検証する
+○SmallAssetを埋めるようにロジックを設計する
+　-BigAssetは手作業で配置する(配置ロジックも考慮する)
 ○Assetを配置して検証を行う
 
 △BigAssetBlockの幅に比例してScaleを設定する
