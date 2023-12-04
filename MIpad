@@ -1,10 +1,11 @@
 [Private]
-○アステルリーズへ遷移する処理を挙動確認
- -World,GameModeについて勉強
+○アステルリーズへ飛ばす処理を実装
+・テキストを追加
+・World取得を修正
 
-[Study]
-○独習(代数引数)
-○ゲームプログラミング(Chapter2)
+○ログの表示処理を実装
+ -DGS側の処理の中でログ関連の処理がないかを調査する(ログ、GameSession)
 
 [SoulCity]
 ○TopにBigAsset,BottomにSmallAssetを検証する
+○Assetを配置して検証を行う
