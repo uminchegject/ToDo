@@ -9,3 +9,5 @@
 [SoulCity]
 ○TopにBigAsset,BottomにSmallAssetを検証する
 ○Assetを配置して検証を行う
+
+△BigAssetBlockの幅に比例してScaleを設定する
