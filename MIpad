@@ -1,14 +1,36 @@
+[反省]
+※VS,UE4など実装画面を見る時間を半分以下にするように工夫する
+ -資料の確認
+ -勉強
+ -情報収集(houdini, 4gamer)
+
 [Private]
 ○アステルリーズへ飛ばす処理を実装
-・テキストを追加
-・World取得を修正
+　-テキストを追加
+ -World取得を修正
 
 ○ログの表示処理を実装
  -DGS側の処理の中でログ関連の処理がないかを調査する(ログ、GameSession)
+ 
+○クラッシュ対応
+https://xwxcicnu.softwaretest.jp/btsService/btsView?bugId=24194&projectId=8
+
+○申請画面を閉じる
+https://xwxcicnu.softwaretest.jp/8/76/btsManagement/btsTop/view#id/24182
+・アカウントを用意
+・Widgetが閉じる際の処理を確認
+　-UMG_MatchingMenu
+
+
+[Study]
+○GameModeとGameState
+https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Framework/GameMode/
+
+○ネットワークの構築とマルチプレイヤー
+https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Networking/
+
 
 [SoulCity]
-○SmallAssetを埋めるようにロジックを設計する
-　-BigAssetは手作業で配置する(配置ロジックも考慮する)
-○Assetを配置して検証を行う
+○正方形、長方形(縦),長方形(横)の三種類 × サイズのアセットを用意する
 
 △BigAssetBlockの幅に比例してScaleを設定する
