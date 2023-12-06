@@ -6,20 +6,18 @@
 
 [Private]
 ○アステルリーズへ飛ばす処理を実装
-　-テキストを追加
+ -テキストを追加
  -World取得を修正
 
-○ログの表示処理を実装
- -DGS側の処理の中でログ関連の処理がないかを調査する(ログ、GameSession)
- 
 ○クラッシュ対応
 https://xwxcicnu.softwaretest.jp/btsService/btsView?bugId=24194&projectId=8
+
 
 ○申請画面を閉じる
 https://xwxcicnu.softwaretest.jp/8/76/btsManagement/btsTop/view#id/24182
 ・アカウントを用意
 ・Widgetが閉じる際の処理を確認
-　-UMG_MatchingMenu
+ -UMG_MatchingMenu
 
 
 [Study]
@@ -31,6 +29,6 @@ https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Networking/
 
 
 [SoulCity]
-○正方形、長方形(縦),長方形(横)の三種類 × サイズのアセットを用意する
+○SwitchIfで種類に応じたBoxをCopyToPointする
 
-△BigAssetBlockの幅に比例してScaleを設定する
+○正方形、長方形(縦),長方形(横)の三種類 × サイズのアセットを用意する
