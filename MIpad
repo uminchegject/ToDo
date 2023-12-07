@@ -1,23 +1,13 @@
-[反省]
-※VS,UE4など実装画面を見る時間を半分以下にするように工夫する
- -資料の確認
- -勉強
- -情報収集(houdini, 4gamer)
-
 [Private]
 ○アステルリーズへ飛ばす処理を実装
  -テキストを追加
  -World取得を修正
 
-○クラッシュ対応
+○MatchingMenuでWidgetを管理するように実装する
+・クラッシュ対応
 https://xwxcicnu.softwaretest.jp/btsService/btsView?bugId=24194&projectId=8
-
-
-○申請画面を閉じる
+・申請画面を閉じる
 https://xwxcicnu.softwaretest.jp/8/76/btsManagement/btsTop/view#id/24182
-・アカウントを用意
-・Widgetが閉じる際の処理を確認
- -UMG_MatchingMenu
 
 
 [Study]
@@ -29,6 +19,4 @@ https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Networking/
 
 
 [SoulCity]
-○SwitchIfで種類に応じたBoxをCopyToPointする
-
 ○正方形、長方形(縦),長方形(横)の三種類 × サイズのアセットを用意する
