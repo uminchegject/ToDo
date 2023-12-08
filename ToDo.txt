@@ -1,66 +1,30 @@
-■[Public]
-※実装できている箇所をサブミット
-　ークック＆挙動を確認
-　ー修正箇所を確認
-
-○CreatSessionのEOnlineSessionStateをNoSessionにするように修正
-
-○申請後のアクセス禁止(突入ボタンでダイアログを表示)
-
-■[Study]
-●Read
-○https://xn--97-273ae6a4irb6e2hsoiozc2g4b8082p.com/
-○背景モデリング
-○独習(文章のみを確認(Read)+サンプルコードを確認(Cording))
-
-●Cording
-○独習(朝一でkindleでサンプルコードを確認する)
-○シェーダーの魔導書
+[反省]
+※仕事以外ではPDに関係ない作業は極力避ける
+ -PDに関係なければPublicで試してみる
 
 
-■[SoulCity]
-[ToDo]
-※質問事項具体的にまとめる(YorN)
+[Private]
+○年末調整
+○交流会申し込み
 
-●アニメーションの検証
-○BlindingAnimation
-・GreebleMaterialの一つに実装する
-　-Positionに比例して点滅速度が変わるかを検証
+[Public]
+○クラッシュ対応
+https://xwxcicnu.softwaretest.jp/btsService/btsView?bugId=24194&projectId=8
+※OnDisconnectChatSystemが呼び出される原因を調査する
 
-○SlideAnamation
-・細長いサーフェスを入れる
-・流れ星のようなマテリアルを実装
-
-▲SignBoard+Panelの検証
-・Panelの手前のGreebleMaterialを密度中間のものを重ねる
- -SignBoardよりも前に濃い色で配置する
- -SignBoardを参考
-・レイヤーの順番を修正
+○フィールド制限時ローディングおわったらログを出すように修正
 
 
 [Study]
-○マテリアル周り
-○ビルのFacadeのモデリング方法
+○ネットワークの構築とマルチプレイヤー
+https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Networking/
 
 
-[IDEA]
-※全てのパーツに共通する、PDロジックを考える
+[SoulCity]
+レイヤーを意識して一つ一つ実装していく
+レイヤーごとにSurfaceを用意して検証を行っていく
 
-●BaseProceduralDesign(Volume)
-・Random
- -Greeble
- -コントラスト(サイズ)
- -段差
-・Pattern
- -Noise(面積比)
- -縦に長いサイズ
 
-●SignBoard
-※スケールの大きいアセットを配置する
-・SignBoardを構成要素の一つとする
-・アセットを用意
+○houdiniengineを使えるようにする
 
-●Residence
-※アセットを配置するPDを考える
-※模様のPDを考える
-※ラインを入れる
+○正方形、長方形(縦),長方形(横)の三種類 × サイズのアセットを用意する
