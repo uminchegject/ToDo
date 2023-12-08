@@ -4,26 +4,24 @@
 
 
 [Private]
-○年末調整
+○年末調整　
 ○交流会申し込み
 
 
 [Public]
 ○クラッシュ対応
 https://xwxcicnu.softwaretest.jp/btsService/btsView?bugId=24194&projectId=8
+※OnDisconnectChatSystemが呼び出される原因を調査する
+
+○フィールド制限時ローディングおわったらログを出すように修正
 
 
 [Study]
-○GameModeとGameState
-https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Framework/GameMode/
-
 ○ネットワークの構築とマルチプレイヤー
 https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Networking/
 
 
 [SoulCity]
 ○houdiniengineを使えるようにする
-○git環境を整理
- -git コマンド基本で検索
 
 ○正方形、長方形(縦),長方形(横)の三種類 × サイズのアセットを用意する
