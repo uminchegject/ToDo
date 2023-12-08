@@ -1,13 +1,16 @@
-[Private]
-○アステルリーズへ飛ばす処理を実装
- -テキストを追加
- -World取得を修正
+[反省]
+※仕事以外ではPDに関係ない作業は極力避ける
+ -PDに関係なければPublicで試してみる
 
-○MatchingMenuでWidgetを管理するように実装する
-・クラッシュ対応
+
+[Private]
+○年末調整
+○交流会申し込み
+
+
+[Public]
+○クラッシュ対応
 https://xwxcicnu.softwaretest.jp/btsService/btsView?bugId=24194&projectId=8
-・申請画面を閉じる
-https://xwxcicnu.softwaretest.jp/8/76/btsManagement/btsTop/view#id/24182
 
 
 [Study]
@@ -19,4 +22,8 @@ https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Networking/
 
 
 [SoulCity]
+○houdiniengineを使えるようにする
+○git環境を整理
+ -git コマンド基本で検索
+
 ○正方形、長方形(縦),長方形(横)の三種類 × サイズのアセットを用意する
