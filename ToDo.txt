@@ -21,10 +21,6 @@ https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Networking/
 
 
 [SoulCity]
-レイヤーを意識して一つ一つ実装していく
-レイヤーごとにSurfaceを用意して検証を行っていく
-
-
 ○houdiniengineを使えるようにする
 
 ○正方形、長方形(縦),長方形(横)の三種類 × サイズのアセットを用意する
