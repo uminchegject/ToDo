@@ -8,3 +8,9 @@
  -看板系
  -住居系
  -植物PD
+
+○VertexBlockの分別ロジックを設計
+
+○上部にBigAssetを配置
+
+○PanelSurfaceを生成
