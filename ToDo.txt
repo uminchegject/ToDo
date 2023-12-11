@@ -1,11 +1,14 @@
 [反省]
 ※仕事以外ではPDに関係ない作業は極力避ける
  -PDに関係なければPublicで試してみる
+※レイヤーを意識して一つ一つ実装していく
+ -レイヤーごとにSurface生成ロジックを実装して検証を行っていく
 
 
 [Private]
 ○年末調整
 ○交流会申し込み
+
 
 [Public]
 ○クラッシュ対応
@@ -19,8 +22,14 @@ https://xwxcicnu.softwaretest.jp/btsService/btsView?bugId=24194&projectId=8
 ○ネットワークの構築とマルチプレイヤー
 https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Networking/
 
-
 [SoulCity]
 ○houdiniengineを使えるようにする
 
-○正方形、長方形(縦),長方形(横)の三種類 × サイズのアセットを用意する
+○Surfaceの修正
+ -VertexBlockの分別ロジックを設計
+ -密集度を高くする
+ -縮尺を調整(小さく)する
+
+○上部にBigAssetを配置
+
+○PanelSurfaceを生成
