@@ -7,26 +7,29 @@
 
 [Private]
 ○年末調整
-○交流会申し込み
-
 
 [Public]
+※アカデミーOB会原稿確認。
+
 ○クラッシュ対応
 https://xwxcicnu.softwaretest.jp/btsService/btsView?bugId=24194&projectId=8
 ※OnDisconnectChatSystemが呼び出される原因を調査する
 
 ○フィールド制限時ローディングおわったらログを出すように修正
+・ソースを実装し、サブミット、挙動確認
 
 
 [Study]
 ○ネットワークの構築とマルチプレイヤー
 https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Networking/
 
+○マルチキュアストデリゲート
+https://docs.unrealengine.com/4.26/ja/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/Delegates/Multicast/
+
 [SoulCity]
-○houdiniengineを使えるようにする
+※正方形Blockで管理
 
 ○Surfaceの修正
- -VertexBlockの分別ロジックを設計
  -密集度を高くする
  -縮尺を調整(小さく)する
 
