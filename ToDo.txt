@@ -1,10 +1,3 @@
-[反省]
-※仕事以外ではPDに関係ない作業は極力避ける
- -PDに関係なければPublicで試してみる
-※レイヤーを意識して一つ一つ実装していく
- -レイヤーごとにSurface生成ロジックを実装して検証を行っていく
-
-
 [Private]
 ○年末調整
 
@@ -13,7 +6,7 @@
 
 ○クラッシュ対応
 https://xwxcicnu.softwaretest.jp/btsService/btsView?bugId=24194&projectId=8
-※OnDisconnectChatSystemが呼び出される原因を調査する
+※BroadcastNetworkFailureの原因を調べる
 
 ○フィールド制限時ローディングおわったらログを出すように修正
 ・ソースを実装し、サブミット、挙動確認
@@ -26,7 +19,11 @@ https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Networking/
 ○マルチキュアストデリゲート
 https://docs.unrealengine.com/4.26/ja/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/Delegates/Multicast/
 
+○Houdini
+https://gamemakers.jp/article/2023_12_11_56046/
+
 [SoulCity]
 ○Boxで検証
  -上部にBigAssetを配置
  -PanelSurfaceを生成
+ 
