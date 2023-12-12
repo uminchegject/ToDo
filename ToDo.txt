@@ -17,7 +17,7 @@ https://xwxcicnu.softwaretest.jp/btsService/btsView?bugId=24194&projectId=8
 
 ○フィールド制限時ローディングおわったらログを出すように修正
 ・ソースを実装し、サブミット、挙動確認
-
+ -各プレイヤーのGameInstanceを取得できるように実装する
 
 [Study]
 ○ネットワークの構築とマルチプレイヤー
@@ -27,12 +27,6 @@ https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Networking/
 https://docs.unrealengine.com/4.26/ja/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/Delegates/Multicast/
 
 [SoulCity]
-※正方形Blockで管理
-
-○Surfaceの修正
- -密集度を高くする
- -縮尺を調整(小さく)する
-
-○上部にBigAssetを配置
-
-○PanelSurfaceを生成
+○Boxで検証
+ -上部にBigAssetを配置
+ -PanelSurfaceを生成
