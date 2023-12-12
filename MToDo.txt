@@ -1,16 +1,12 @@
-※レイヤーを意識して一つ一つ実装していく
- -レイヤーごとにSurface生成ロジックを実装して検証を行っていく
+○修正
+ -正方形Blockを直列に並べる
+ -Greebleを分散するようにする
+ -サイズを調整
+ -
 
-○検証
-・アセットの検証
-・Surfaceを用いた検証
- -工業系
- -看板系
- -住居系
- -植物PD
+△上部にBigAssetを配置
 
-○VertexBlockの分別ロジックを設計
+△PanelSurfaceを配置
+ -Randamlyに配置
 
-○上部にBigAssetを配置
-
-○PanelSurfaceを生成
+△エッジDetailアセットを配置
