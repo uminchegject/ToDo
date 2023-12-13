@@ -2,11 +2,14 @@
 ・実際の挙動を確認
  -StartMatchingのOnMatchingFailedDelegate.Broadcastを確認
 
-
-○クラッシュ箇所から履歴を調査
+○HandleInternetErrorの処理から調査
+ -IsvalidPlayerの原因を調べる
 
 ○他のエラー処理を参考に調査
+ -TravelErrorから
+ -接続エラー121を意図的に発生させる
 
+×クラッシュ箇所から履歴を調査
 
 ・UMatchingSystem::ClientRpc
  -OnMatchmakingCompleteDelegates.Broadcast(FName(), true);
@@ -20,4 +23,3 @@
 ・USBGameInstance::OnMatchingFailedInternal(USBMatchingGameState* MatchedGame, const ESBMatchingFailureType FailureType)
 ・UFUNCTION(BlueprintImplementableEvent, Category = "SkyBlue|Matching", meta = (DisplayName = "MatchingFailed"))
 　void ReceiveMatchingFailed(const ESBMatchingFailureType FailureType, bool PenaltyForMe,	int MinuteToEndPenalty);
-
