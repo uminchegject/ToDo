@@ -1,3 +1,6 @@
+[反省]
+※ログを深くまで観察する癖をつける
+
 [Private]
 ○年末調整
 
@@ -8,9 +11,10 @@
 ○クラッシュ対応
 https://xwxcicnu.softwaretest.jp/btsService/btsView?bugId=24194&projectId=8
 ※BroadcastNetworkFailureの原因を調べる
- -引数を確認する
 
 ○フィールド制限時ローディングおわったらログを出すように修正
+・ソースを実装し、サブミット、挙動確認
+ -各プレイヤーのGameInstanceを取得できるように実装する
 
 
 [Study]
@@ -36,3 +40,4 @@ https://gamemakers.jp/article/2023_12_11_56046/
  -Randamlyに配置
 
 △エッジDetailアセットを配置
+
