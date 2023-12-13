@@ -3,27 +3,36 @@
 
 [Public]
 ※アカデミーOB会原稿確認。
+※switch を機材管理から外す
 
 ○クラッシュ対応
 https://xwxcicnu.softwaretest.jp/btsService/btsView?bugId=24194&projectId=8
 ※BroadcastNetworkFailureの原因を調べる
+ -引数を確認する
 
 ○フィールド制限時ローディングおわったらログを出すように修正
-・ソースを実装し、サブミット、挙動確認
- -各プレイヤーのGameInstanceを取得できるように実装する
+
 
 [Study]
 ○ネットワークの構築とマルチプレイヤー
 https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Networking/
 
-○マルチキュアストデリゲート
-https://docs.unrealengine.com/4.26/ja/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/Delegates/Multicast/
+○BroadcastNetworkFailure
 
 ○Houdini
 https://gamemakers.jp/article/2023_12_11_56046/
 
+
 [SoulCity]
-○Boxで検証
- -上部にBigAssetを配置
- -PanelSurfaceを生成
+○修正
+ -正方形Blockを直列に並べる
+ -Greebleを分散するようにする
+ -サイズを調整
+ -SmallAssetをランダムに配置する
  
+○上部にBigAssetを配置
+
+△PanelSurfaceを配置
+ -Randamlyに配置
+
+△エッジDetailアセットを配置
