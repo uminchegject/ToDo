@@ -1,15 +1,24 @@
-○api周りの処理の流れから原因を調査
+※しっかり目標を立てて、その目標に沿って作業することを優先する
+
+[Private]
+※アクセス制限した際に発生する処理の流れを確認する
 ・実際の挙動を確認
  -StartMatchingのOnMatchingFailedDelegate.Broadcastを確認
+ -apiにリクエストするまでの処理を確認
+ -apiからリクエストを取得し、クライアントにFailureTypeが反映されるまでの処理を確認
 
-○HandleInternetErrorの処理から調査
+△HandleInternetErrorの処理から調査
  -IsvalidPlayerの原因を調べる
 
-○他のエラー処理を参考に調査
+△他のエラー処理を参考に調査
  -TravelErrorから
  -接続エラー121を意図的に発生させる
 
 ×クラッシュ箇所から履歴を調査
+
+[SoulCity]
+○BaseBlockのGreebleMinSizeを大きくする
+
 
 ・UMatchingSystem::ClientRpc
  -OnMatchmakingCompleteDelegates.Broadcast(FName(), true);
@@ -22,4 +31,4 @@
 ・MatchingManager->OnMatchingFailed().AddUObject(this, &ThisClass::OnMatchingFailedInternal);
 ・USBGameInstance::OnMatchingFailedInternal(USBMatchingGameState* MatchedGame, const ESBMatchingFailureType FailureType)
 ・UFUNCTION(BlueprintImplementableEvent, Category = "SkyBlue|Matching", meta = (DisplayName = "MatchingFailed"))
-　void ReceiveMatchingFailed(const ESBMatchingFailureType FailureType, bool PenaltyForMe,	int MinuteToEndPenalty);
+ void ReceiveMatchingFailed(const ESBMatchingFailureType FailureType, bool PenaltyForMe,	int MinuteToEndPenalty);
