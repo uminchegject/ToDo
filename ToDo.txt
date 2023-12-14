@@ -1,5 +1,6 @@
 [反省]
 ※ログを深くまで観察する癖をつける
+※しっかり目標を立てて、その目標に沿って作業することを優先する
 
 [Private]
 ○年末調整
@@ -10,11 +11,10 @@
 
 ○クラッシュ対応
 https://xwxcicnu.softwaretest.jp/btsService/btsView?bugId=24194&projectId=8
-※BroadcastNetworkFailureの原因を調べる
 
 ○フィールド制限時ローディングおわったらログを出すように修正
-・ソースを実装し、サブミット、挙動確認
- -各プレイヤーのGameInstanceを取得できるように実装する
+
+・DGSからClientを呼び出す処理で参考になりそうなものがないかを確認する
 
 
 [Study]
@@ -29,6 +29,7 @@ https://gamemakers.jp/article/2023_12_11_56046/
 
 [SoulCity]
 ○修正
+　-BaseBlockのGreebleMinSizeを大きくする
  -正方形Blockを直列に並べる
  -Greebleを分散するようにする
  -サイズを調整
