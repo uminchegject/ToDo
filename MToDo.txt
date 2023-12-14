@@ -1,11 +1,12 @@
-※しっかり目標を立てて、その目標に沿って作業することを優先する
-
-[Private]
-※アクセス制限した際に発生する処理の流れを確認する
-・実際の挙動を確認
+○実際の挙動を調査
  -StartMatchingのOnMatchingFailedDelegate.Broadcastを確認
  -apiにリクエストするまでの処理を確認
  -apiからリクエストを取得し、クライアントにFailureTypeが反映されるまでの処理を確認
+
+○DGS側の挙動を調査
+※確認方法を考える
+・bool ASBGameSession::HandleStartMatchRequest()
+・void ASBGameSession::StartSession_HttpRequestComplete(USBHttpQuery* Query, FHttpResponsePtr Response, bool bWasSuccessful)
 
 △HandleInternetErrorの処理から調査
  -IsvalidPlayerの原因を調べる
@@ -19,7 +20,12 @@
 [SoulCity]
 ○BaseBlockのGreebleMinSizeを大きくする
 
+●API呼び出し前の処理
+　-bool UMatchingSystem::StartMatchmaking_Body( const FOnlineSessionSettings& NewSessionSettings, TSharedPtr<FOnlineSessionSearch>& InSearchSettings, bool bIsAllRegion )
+ -bool UMatchingSystem::StartMatchmaking_Body_Step2( const FOnlineSessionSettings& NewSessionSettings, TSharedPtr<FOnlineSessionSearch>& InSearchSettings, bool bIsAllRegion, const FString& Url )
+ -
 
+●APIの取得後の処理
 ・UMatchingSystem::ClientRpc
  -OnMatchmakingCompleteDelegates.Broadcast(FName(), true);
 
