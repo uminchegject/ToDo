@@ -12,14 +12,16 @@
 https://xwxcicnu.softwaretest.jp/btsService/btsView?bugId=24194&projectId=8
 ※質問を投げる
  -質問を用意する
-・DGS側で怪しそうな箇所にログを仕込む
+・エラー121が発生する(ActorがDestroyする)原因を調査する
+ -FailureType = FailureReceived
 
 ○フィールド制限時ローディングおわったらログを出すように修正
 ・DGSからClientを呼び出す処理で参考になりそうなものがないかを確認する
 
 ○マージ作業
-・資料を確認
-・一番シンプルそうな箇所で検証
+・動画の前半の説明を確認
+・サブミット手前まで作業してみる
+・同一ファイルをRevertする作業を試してみる。
 
 [Study]
 ○ネットワークの構築とマルチプレイヤー
@@ -42,3 +44,4 @@ https://gamemakers.jp/article/2023_12_11_56046/
 ・CopyAndTransformで実装する
 
 ○アセットの用意
+
