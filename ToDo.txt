@@ -6,39 +6,39 @@
 ○年末調整
 
 [Public]
-※アカデミーOB会原稿確認。
 ※switch を機材管理から外す
 
 ○クラッシュ対応
 https://xwxcicnu.softwaretest.jp/btsService/btsView?bugId=24194&projectId=8
+※質問を投げる
+ -質問を用意する
+・DGS側で怪しそうな箇所にログを仕込む
 
 ○フィールド制限時ローディングおわったらログを出すように修正
-
 ・DGSからClientを呼び出す処理で参考になりそうなものがないかを確認する
 
+○マージ作業
+・資料を確認
+・一番シンプルそうな箇所で検証
 
 [Study]
 ○ネットワークの構築とマルチプレイヤー
 https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Networking/
-
-○BroadcastNetworkFailure
 
 ○Houdini
 https://gamemakers.jp/article/2023_12_11_56046/
 
 
 [SoulCity]
-○修正
-　-BaseBlockのGreebleMinSizeを大きくする
- -正方形Blockを直列に並べる
- -Greebleを分散するようにする
- -サイズを調整
- -SmallAssetをランダムに配置する
- 
-○上部にBigAssetを配置
+●修正
+○スケールを調整
+・BaseArcSurfaceごとに調整値を設定する
+ -widthから算出
+ -一つ目のgreeble
 
-△PanelSurfaceを配置
- -Randamlyに配置
+○特定のNormalだけ90°回転する
 
-△エッジDetailアセットを配置
+○正方形Blockを直列に並べる
+・CopyAndTransformで実装する
 
+○アセットの用意
