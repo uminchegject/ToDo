@@ -1,40 +1,11 @@
-○実際の挙動を調査
- -StartMatchingのOnMatchingFailedDelegate.Broadcastを確認
- -apiにリクエストするまでの処理を確認
- -apiからリクエストを取得し、クライアントにFailureTypeが反映されるまでの処理を確認
-
-○DGS側の挙動を調査
-※確認方法を考える
-・bool ASBGameSession::HandleStartMatchRequest()
-・void ASBGameSession::StartSession_HttpRequestComplete(USBHttpQuery* Query, FHttpResponsePtr Response, bool bWasSuccessful)
-
-△HandleInternetErrorの処理から調査
- -IsvalidPlayerの原因を調べる
-
-△他のエラー処理を参考に調査
- -TravelErrorから
- -接続エラー121を意図的に発生させる
-
-×クラッシュ箇所から履歴を調査
-
 [SoulCity]
-○BaseBlockのGreebleMinSizeを大きくする
+●修正
+○スケールを調整
+・BaseArcSurfaceごとに調整値を設定する
+ -widthから算出
+ -一つ目のgreeble
 
-●API呼び出し前の処理
-　-bool UMatchingSystem::StartMatchmaking_Body( const FOnlineSessionSettings& NewSessionSettings, TSharedPtr<FOnlineSessionSearch>& InSearchSettings, bool bIsAllRegion )
- -bool UMatchingSystem::StartMatchmaking_Body_Step2( const FOnlineSessionSettings& NewSessionSettings, TSharedPtr<FOnlineSessionSearch>& InSearchSettings, bool bIsAllRegion, const FString& Url )
- -
+○特定のNormalだけ90°回転する
 
-●APIの取得後の処理
-・UMatchingSystem::ClientRpc
- -OnMatchmakingCompleteDelegates.Broadcast(FName(), true);
-
-・void USBMatchingManager::OnMatchmakingComplete(FName SessionName, bool bWasSuccessful)
- -OnMatchingFailedDelegate.Broadcast(MatchingGame, ErrorType);
-・USBMatchingManager::RegisterSessionDelegates()
- -MatchmakingCompleteDelegateHandle = MatchingSystem->OnMatchmakingComplete().AddUObject(this, &ThisClass::OnMatchmakingComplete);
-
-・MatchingManager->OnMatchingFailed().AddUObject(this, &ThisClass::OnMatchingFailedInternal);
-・USBGameInstance::OnMatchingFailedInternal(USBMatchingGameState* MatchedGame, const ESBMatchingFailureType FailureType)
-・UFUNCTION(BlueprintImplementableEvent, Category = "SkyBlue|Matching", meta = (DisplayName = "MatchingFailed"))
- void ReceiveMatchingFailed(const ESBMatchingFailureType FailureType, bool PenaltyForMe,	int MinuteToEndPenalty);
+○アセットの用意
+※突起物(6割) + 住居系(4割)で構成する
