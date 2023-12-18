@@ -1,22 +1,9 @@
 ■[IDEA]
-※全体的なアセットに対するサイズ感を大きくする
-
 ■Pattern
 ※BaseArcごとにPatternを決める
 ○Top
+※屋上から伸びるアセットを配置する
 ・Topのパターンアセットを生成する
- -出窓アセット
- -突っ張りアセット
-
-○Side
- -柱■[IDEA]
-※全体的なアセットに対するサイズ感を大きくする
-
-■Pattern
-※BaseArcごとにPatternを決める
-○Top
-・Topのパターンアセットを生成する
- -出窓アセット
  -突っ張りアセット
 
 ○Side
@@ -34,34 +21,4 @@
 ※シンプルなコンクリートベースで検証を行う
 
 [ToDo]
-○全体的なアセットに対するサイズ感を大きくする
-○Topにアセットを配置する
-
-
-
-float smallBlockTopPos = prim(0, "SmallBlockTopPos", 0);
-float smallBlockSize = prim(0, "SmallBlockSize", 0);
-
-int assetBlockSize = 2;
-
-vector pt1 = point(0 "P", 2);
-vector pt2 = point(0 "P", 3);
-vector transVector = normalize(pt2 - pt1);
-
-for(int i = 0; i < smallBlockSize / assetBlockSize; ++i)
-{
-	vector spawnVector = i * assetBlockSize + assetBlockSize / 2;
-	addpoint();
-}
-
- 
-○Floor
-・階をまたぐ
- -窓
- -タイル
-
-■Random
-・smallアセット
-
-[検証]
-※シンプルなコンクリートベースで検証を行う
+○TopAssetの四隅に角アセットを配置する
