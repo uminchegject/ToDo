@@ -1,7 +1,3 @@
-[反省]
-※ログを深くまで観察する癖をつける
-※しっかり目標を立てて、その目標に沿って作業することを優先する
-
 [Private]
 ○年末調整
 
@@ -10,8 +6,8 @@
 
 ○クラッシュ対応
 https://xwxcicnu.softwaretest.jp/btsService/btsView?bugId=24194&projectId=8
-※質問を投げる
- -質問を用意する
+※質問を用意する
+ -FailureTypeが起きてしまう原因の追い方を確認する
 ・エラー121が発生する(ActorがDestroyする)原因を調査する
  -FailureType = FailureReceived
 
@@ -20,28 +16,24 @@ https://xwxcicnu.softwaretest.jp/btsService/btsView?bugId=24194&projectId=8
 
 ○マージ作業
 ・動画の前半の説明を確認
-・サブミット手前まで作業してみる
-・同一ファイルをRevertする作業を試してみる。
+
+・UProject
+ -コンフリクトを対応
+ -dev-en-cs-ver102の対応を確認
+
+・Config
+ -コマンドを用いたマージ
+
+
 
 [Study]
 ○ネットワークの構築とマルチプレイヤー
 https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Networking/
 
-○Houdini
-https://gamemakers.jp/article/2023_12_11_56046/
-
+○クラッシュ時の検証
+https://qiita.com/donbutsu17/items/76ea5c5531aa4da77f9d
 
 [SoulCity]
-●修正
-○スケールを調整
-・BaseArcSurfaceごとに調整値を設定する
- -widthから算出
- -一つ目のgreeble
+○全体的なアセットに対するサイズ感を大きくする
 
-○特定のNormalだけ90°回転する
-
-○正方形Blockを直列に並べる
-・CopyAndTransformで実装する
-
-○アセットの用意
-
+○Topにアセットを配置する
