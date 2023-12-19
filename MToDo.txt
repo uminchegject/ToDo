@@ -1,24 +1,12 @@
-■[IDEA]
-■Pattern
-※BaseArcごとにPatternを決める
-○Top
-※屋上から伸びるアセットを配置する
-・Topのパターンアセットを生成する
- -突っ張りアセット
 
-○Side
- -柱
- 
-○Floor
-・階をまたぐ
- -窓
- -タイル
+[Block]
+●Pattern
+※配置に規則性を持たせる
+・階層でブロック化する
+ -BigAsset
+ -Window
 
-■Random
-・smallアセット
-
-[検証]
-※シンプルなコンクリートベースで検証を行う
-
-[ToDo]
-○TopAssetの四隅に角アセットを配置する
+●Random
+※配置にランダム性を持たせる
+・Greebleでブロック化する
+ -SmallAsset
