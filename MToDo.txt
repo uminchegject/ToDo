@@ -1,10 +1,11 @@
-
 [Block]
 ●Pattern
 ※配置に規則性を持たせる
+・OffsetBlockで生成する
 ・階層でブロック化する
  -BigAsset
  -Window
+
 
 ●Random
 ※配置にランダム性を持たせる
