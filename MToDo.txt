@@ -16,6 +16,9 @@
 ※シンプルなコンクリートベースで検証を行う
 
 ○※Pattern,Blockの検証準備をする
+・BaseSurface
+
+
 ・Random
  -IndustryAssetのみで構成
 
@@ -29,3 +32,15 @@
 
 △柱の配置ロジックを設計する
 △TopAssetの四隅に角アセットを配置する
+
+
+・BaseSurface
+・Greeble
+ -正方形大を生成
+  -サイズを調整(切り捨て)し、PatternSurfaceを生成
+ -正方形小、長方形小を生成
+  -SmallAssetを配置
+
+・PatternSurface
+ -AssetPointを規則的に生成
+ -RandomにRemove
