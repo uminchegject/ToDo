@@ -6,8 +6,26 @@
  -BigAsset
  -Window
 
-
 ●Random
 ※配置にランダム性を持たせる
 ・Greebleでブロック化する
  -SmallAsset
+
+
+[ToDo]
+※シンプルなコンクリートベースで検証を行う
+
+○※Pattern,Blockの検証準備をする
+・Random
+ -IndustryAssetのみで構成
+
+・Pattern
+ -※Pattern配置ロジックを実装
+ -ResidenceAssetを配置
+
+・BaseArc
+ -TopAsset
+ -Material
+
+△柱の配置ロジックを設計する
+△TopAssetの四隅に角アセットを配置する
