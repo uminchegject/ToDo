@@ -1,39 +1,42 @@
+[反省]
+※詰まっている箇所、勉強内容については仕事前、昼休みにしっかり計画する
+　ーちゃんと時間を確保する
+
+※サブミットのコメント情報に気を付ける
+・どこからのマージか
+Dev-en-Ver103xxx からマージされていることは記載してください
+・どこのCLまでのマージか（どこからどこまでのマージか）
+697707 ～ 711510 分のマージ
+・どのフォルダを対応したか
+
 [Private]
 ○年末調整
+○年末休日申請
 
 [Public]
 ※switch を機材管理から外す
 
+
 ○クラッシュ対応
 https://xwxcicnu.softwaretest.jp/btsService/btsView?bugId=24194&projectId=8
 ※質問を用意する
- -FailureTypeが起きてしまう原因の追い方を確認する
-・エラー121が発生する(ActorがDestroyする)原因を調査する
- -FailureType = FailureReceived
+・下記の処理からそれぞれ原因を調べる方法がないかを調べる
+[2023.12.20-05.48.27:319][768]LogNet: Error: UEngine::BroadcastNetworkFailure: FailureType = FailureReceived, ErrorString = Invalid PlayerId  Client: 9a820bfb6c2d42db8799ce595810a233, Server: , Driver = GameNetDriver SBNetDriver_2147339734
+[2023.12.20-05.48.27:321][768]LogNet: Warning: Network Failure: GameNetDriver[FailureReceived]: Invalid PlayerId  Client: 9a820bfb6c2d42db8799ce595810a233, Server: 
+[2023.12.20-05.48.27:322][768]LogNet: NetworkFailure: FailureReceived, Error: 'Invalid PlayerId  Client: 9a820bfb6c2d42db8799ce595810a233, Server: '
+[2023.12.20-05.48.27:322][768]LogSkyBlue: USBGameInstance::HandleNetworkErrorInternal FailureType:5 Handle In Client
+[2023.12.20-05.48.27:322][768]LogSkyBlue: USBGameInstance::ExecNetworkErrorInternal bIsActivateShutDownNotice Is [Off]
+[2023.12.20-05.48.27:322][768]LogSkyBlue: USBGameInstance::ExecNetworkErrorInternal ReleaseHttpQuery Url:https://datastore-ags-dev1.dev-en.blue-protocol.com:7701/apiext/gameservers/session
+[2023.12.20-05.48.27:323][768]LogSkyBlue: USBGameInstance::ExecNetworkErrorInternal Call SetReturnCharaSelect
+[2023.12.20-05.48.27:323][768]LogSkyBlue: USBErrorProc::StartDisconnectServer ShutDown Notice Is [On] IsActivateShutDownNotice=1.
 
 ○フィールド制限時ローディングおわったらログを出すように修正
 ・DGSからClientを呼び出す処理で参考になりそうなものがないかを確認する
-
-○マージ作業
-・動画の前半の説明を確認
-
-・UProject
- -コンフリクトを対応
- -dev-en-cs-ver102の対応を確認
-
-・Config
- -コマンドを用いたマージ
-
 
 
 [Study]
 ○ネットワークの構築とマルチプレイヤー
 https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Networking/
 
-○クラッシュ時の検証
-https://qiita.com/donbutsu17/items/76ea5c5531aa4da77f9d
 
 [SoulCity]
-○全体的なアセットに対するサイズ感を大きくする
-
-○Topにアセットを配置する
