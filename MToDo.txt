@@ -1,43 +1,20 @@
 [Block]
-●Pattern
-※配置に規則性を持たせる
-・OffsetBlockで生成する
-・階層でブロック化する
- -BigAsset
- -Window
-
 ●Random
 ※配置にランダム性を持たせる
 ・Greebleでブロック化する
  -SmallAsset
 
-
 [ToDo]
 ※シンプルなコンクリートベースで検証を行う
 
-○※Pattern,Blockの検証準備をする
-・BaseSurface
- -OffsetSurfaceにPattern
- -BaseSurfaceにRandom
+○※BigAsset,SmallAssetの検証準備をする
+・Greeble
+ -二段階でBlockを生成する
+ -BigAsset,SmallAssetの比率をコントロールできるようにする
 
-・Random
- -IndustryAssetのみで構成
+・BigAsset
 
-・Pattern
- -※Pattern配置ロジックを実装
- -ResidenceAssetを配置
-
-・BaseArc
- -TopAsset
- -Material
+・SmallAsset
 
 △柱の配置ロジックを設計する
 △TopAssetの四隅に角アセットを配置する
-
-
-[ロジック]
-・BaseSurface
- -Greebleに正方形大を生成するロジックを追加する
-
-・Pattern
- -Pointを規則的に並べてRandomにRemoveする
