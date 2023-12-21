@@ -17,7 +17,8 @@
 
 ○※Pattern,Blockの検証準備をする
 ・BaseSurface
-
+ -OffsetSurfaceにPattern
+ -BaseSurfaceにRandom
 
 ・Random
  -IndustryAssetのみで構成
@@ -34,13 +35,9 @@
 △TopAssetの四隅に角アセットを配置する
 
 
+[ロジック]
 ・BaseSurface
-・Greeble
- -正方形大を生成
-  -サイズを調整(切り捨て)し、PatternSurfaceを生成
- -正方形小、長方形小を生成
-  -SmallAssetを配置
+ -Greebleに正方形大を生成するロジックを追加する
 
-・PatternSurface
- -AssetPointを規則的に生成
- -RandomにRemove
+・Pattern
+ -Pointを規則的に並べてRandomにRemoveする
