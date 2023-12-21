@@ -1,25 +1,29 @@
 [反省]
 ※詰まっている箇所、勉強内容については仕事前、昼休みにしっかり計画する
-　ーちゃんと時間を確保する
+ ーちゃんと時間を確保する
 
 ※サブミットのコメント情報に気を付ける
 ・どこからのマージか
-Dev-en-Ver103xxx からマージされていることは記載してください
+ -Dev-en-Ver103xxx からマージされていることは記載してください
 ・どこのCLまでのマージか（どこからどこまでのマージか）
-697707 ～ 711510 分のマージ
+ -697707 ～ 711510 分のマージ
 ・どのフォルダを対応したか
 
 [Private]
-○年末調整
 ○年末休日申請
 
 [Public]
 ※switch を機材管理から外す
 
+○uprojectのエラーの原因を調査
+
+○Contentのマージ
 
 ○クラッシュ対応
 https://xwxcicnu.softwaretest.jp/btsService/btsView?bugId=24194&projectId=8
 ※質問を用意する
+・Delegate(FHandleDisconnectDelegate)にバインドされている箇所がないかを調査する
+https://docs.unrealengine.com/5.0/en-US/API/Runtime/Engine/FHandleDisconnectDelegate/
 ・下記の処理からそれぞれ原因を調べる方法がないかを調べる
 [2023.12.20-05.48.27:319][768]LogNet: Error: UEngine::BroadcastNetworkFailure: FailureType = FailureReceived, ErrorString = Invalid PlayerId  Client: 9a820bfb6c2d42db8799ce595810a233, Server: , Driver = GameNetDriver SBNetDriver_2147339734
 [2023.12.20-05.48.27:321][768]LogNet: Warning: Network Failure: GameNetDriver[FailureReceived]: Invalid PlayerId  Client: 9a820bfb6c2d42db8799ce595810a233, Server: 
@@ -35,6 +39,9 @@ https://xwxcicnu.softwaretest.jp/btsService/btsView?bugId=24194&projectId=8
 
 
 [Study]
+○P4Vコマンド
+https://effect.hatenablog.com/entry/2020/08/31/005024
+
 ○ネットワークの構築とマルチプレイヤー
 https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Networking/
 
