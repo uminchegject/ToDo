@@ -1,20 +1,13 @@
-[Block]
-●Random
-※配置にランダム性を持たせる
-・Greebleでブロック化する
- -SmallAsset
-
-[ToDo]
 ※シンプルなコンクリートベースで検証を行う
 
-○※BigAsset,SmallAssetの検証準備をする
-・Greeble
- -二段階でBlockを生成する
- -BigAsset,SmallAssetの比率をコントロールできるようにする
+[Pattern]
+・ランダムな行ごとに平行でブロック化する
+・アセットを詰めて配置していき、ランダムにremoveする
 
-・BigAsset
-
-・SmallAsset
+・ResidenceBlock
+ -WindowAsset, ObjectAssetを使い分ける
+・Industry
+ -Tube
 
 △柱の配置ロジックを設計する
 △TopAssetの四隅に角アセットを配置する
