@@ -1,14 +1,19 @@
-※シンプルなコンクリートベースで検証を行う
+[凹凸]
+※凹凸があるように見せることを目標にする
 
-[Pattern]
-・ランダムな行ごとに平行でブロック化する
-・Blockごとに配置をするロジックを組む
-・BaseBlockごとに同じ高さでBlock分けをする
+●BigBlock
+・BigAssetを配置する
 
-・ResidenceBlock
- -WindowAsset, ObjectAssetを使い分ける
-・Industry
- -Tube
+●SmallBlock
+・全体をオフセットする
+ -上部と下部で分けて上部をオフセットする
 
-△柱の配置ロジックを設計する
-△TopAssetの四隅に角アセットを配置する
+●TopBlock
+・上部アセットを配置する
+
+[検証]
+・TopSideAssetを配置する
+・BigAssetを配置する
+・TopAssetを配置する
+
+[]
