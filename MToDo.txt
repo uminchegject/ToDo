@@ -2,7 +2,8 @@
 
 [Pattern]
 ・ランダムな行ごとに平行でブロック化する
-・アセットを詰めて配置していき、ランダムにremoveする
+・Blockごとに配置をするロジックを組む
+・BaseBlockごとに同じ高さでBlock分けをする
 
 ・ResidenceBlock
  -WindowAsset, ObjectAssetを使い分ける
