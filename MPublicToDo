@@ -1,3 +1,16 @@
+[ToDo]
+○チケットの更新
+○北米マージ作業
+
+○質問(更新がなかった場合、テキスト周りの更新の意味)
+・お疲れ様です。
+コンフリクト内のファイルについて質問があります。
+添付したパスのファイルについて、en側のバージョン更新がなく自分でマージを検証してもコンフリクトしないことを確認しました。
+こちらのファイルについて木部さん側でコンフリクトした原因など心当たりがありましたら教えて頂けると幸いです。
+もし、問題なさそうでしたら自分の方でマージをしてサブミットしようと思います。
+お手数をおかけしますがご確認お願い致します。
+○マージ作業
+
 上※D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\Character\CharaParts\Mob\Lower\CP_CH_R01_mob_F100_fff_bdl_000.uasset
 上※D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\Character\CharaParts\Mob\Lower\CP_CH_R02_mob_F100_fff_bdl_001.uasset
 上※D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\Character\CharaParts\Mob\Upper\CP_CH_R01_mob_F100_fff_bdu_000.uasset
@@ -16,7 +29,7 @@
 上※D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\Character\Mob\R02\F100\Upper\R02_mob_F100_fff_bdu_001\Model\SK_CH_R02_mob_F100_fff_bdu_001.uasset
 
 MergePreview :: None(Disregard)
-・dev-en-Ver103 ::　いきなりマージ(質問)
+・dev-en-Ver103 :: いきなりマージ(質問)
 D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\L10N\en\Text\Arena.uasset
 D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\L10N\en\Text\CharacterName.uasset
 D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\L10N\en\Text\CrashReportClient.uasset
@@ -36,6 +49,6 @@ D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\Text\SystemMessage.uasset
 D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\Text\TitleMenu.uasset
 
 MergePreview :: None(Disregard)
-・dev-en-Ver103 ::　いきなりマージ(質問)
+・dev-en-Ver103 :: いきなりマージ(質問)
 D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\UI\Mount\MI_UI_MountEffect1.uasset
 D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\UI\Mount\UI_MountEffect1.uasset
