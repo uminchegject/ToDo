@@ -8,22 +8,14 @@
 ・それぞれのブロックが独立しているようにする
 ・Arcの重なり具合を調整するように高さを調整する
 
-●BigBlock
-・BigAssetを配置する
+●OffsetAsset
+ -TopAsset(屋根)
+ -TopSideAsset
+ -ResidenceAsset
+ -SideAsset
 
-●SmallBlock
-・全体をオフセットする
- -上部と下部で分けて上部をオフセットする
-
-●TopBlock
-・上部アセットを配置する
+●TopAsset
 
 [ToDo]
 ※最小限のアセットのみで凹凸の検証を行う
-
-○OffsetBlock
-・OffsetBlockの制限
-・TopSideAssetを整理
-
-○BigAsset
-・BigBlockをオフセットせずに、BigAssetを配置する
+※OffsetBlockを完成させる
