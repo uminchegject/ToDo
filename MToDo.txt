@@ -24,6 +24,10 @@
 ・BigAssetを配置する
 ・TopAssetを配置する
 
+[凹凸の検証]
+○OffsetBlockの生成
+○BigAssetの配置
+
 [ToDo]
 ○BigBlock、OffsetBlockに分ける
 ○OffsetBlockをオフセットする
