@@ -4,10 +4,9 @@
 
 [凹凸]
 ※凹凸があるように見せることを目標にする
-※一番上部をランダムな数値でオフセットする
- -それぞれのブロックが独立しているようにする
- -Arcの重なり具合を調整するように高さを調整する
-
+・一番上部をランダムな数値でオフセットする
+・それぞれのブロックが独立しているようにする
+・Arcの重なり具合を調整するように高さを調整する
 
 ●BigBlock
 ・BigAssetを配置する
@@ -19,16 +18,12 @@
 ●TopBlock
 ・上部アセットを配置する
 
-[検証]
-・TopSideAssetを配置する
-・BigAssetを配置する
-・TopAssetを配置する
-
-[凹凸の検証]
-○OffsetBlockの生成
-○BigAssetの配置
-
 [ToDo]
-○BigBlock、OffsetBlockに分ける
-○OffsetBlockをオフセットする
-○アセットを配置して検証
+※最小限のアセットのみで凹凸の検証を行う
+
+○OffsetBlock
+・OffsetBlockの制限
+・TopSideAssetを整理
+
+○BigAsset
+・BigBlockをオフセットせずに、BigAssetを配置する
