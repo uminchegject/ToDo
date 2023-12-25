@@ -1,7 +1,3 @@
-[Public]
-●コンフリクトの複雑ソースを確認する
-・差分を表示して差分を本線側にコピー&ペーストする
-
 [凹凸]
 ※凹凸があるように見せることを目標にする
 ・一番上部をランダムな数値でオフセットする
@@ -10,7 +6,6 @@
 
 ●OffsetAsset
  -TopAsset(屋根)
- -TopSideAsset
  -ResidenceAsset
  -SideAsset
 
