@@ -7,14 +7,10 @@
 [Public]
 ※switchを機材管理から外す
 
-※GameInstanceのマージ作業
-
-※修正対応チケットの記入
-https://cr-gap.backlog.com/view/SKY_AGS-627
-https://cr-gap.backlog.com/view/SKY_AGS-628
-
 ○Contentのマージ
-・マージ作業
+・BPのマージ作業
+ -差分を表示して差分を本線側にコピー&ペーストする
+・copyでP4V上で上書きをする
 
 △クラッシュ対応
 ・※質問を用意する
@@ -36,7 +32,18 @@ https://docs.unrealengine.com/5.0/en-US/API/Runtime/Engine/FHandleDisconnectDele
 
 [Study]
 ○PowerShell
+https://qiita.com/opengl-8080/items/bb0f5e4f1c7ce045cc57
 
 ○ネットワークの構築とマルチプレイヤー
 https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Networking/
 
+
+[Soulcity]
+※最小限のアセットのみで凹凸の検証を行う
+※OffsetBlockを完成させる
+
+○ArcBaseにTopSideAssetを配置
+
+○OffsetBlockの検証
+・Topに屋根を配置
+・BottomAssetを配置
