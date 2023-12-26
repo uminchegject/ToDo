@@ -16,9 +16,6 @@
 
 ○OffsetAssetの修正
 ・オフセット値をBottomSideAssetの埋まり具合に合わせる
-・OffsetAssetのみマテリアルを別に設定
-・TopSideAssetをなくす
+ -WidthLengthに応じてOffset値を変える
 
 ○OffsetAssetのDetailを修正
-・Bottomにタイルを配置
-・Sideに柱を配置
