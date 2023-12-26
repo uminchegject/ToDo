@@ -1,16 +1,5 @@
-[反省]
-※バージョン間の差異とマージ箇所の比較をし、違っているところが間違えていないかを調査する。
-
-[Private]
-○年末休日申請
-
 [Public]
 ※switchを機材管理から外す
-
-○Contentのマージ
-・BPのマージ作業
- -差分を表示して差分を本線側にコピー&ペーストする
-・copyでP4V上で上書きをする
 
 △クラッシュ対応
 ・※質問を用意する
@@ -36,14 +25,3 @@ https://qiita.com/opengl-8080/items/bb0f5e4f1c7ce045cc57
 
 ○ネットワークの構築とマルチプレイヤー
 https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Networking/
-
-
-[Soulcity]
-※最小限のアセットのみで凹凸の検証を行う
-※OffsetBlockを完成させる
-
-○ArcBaseにTopSideAssetを配置
-
-○OffsetBlockの検証
-・Topに屋根を配置
-・BottomAssetを配置
