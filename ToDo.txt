@@ -1,6 +1,11 @@
 [Public]
 ※switchを機材管理から外す
 
+○UIのマージ作業
+・UI_FOT-SkipStd-Bをお願いする
+・EN側のCLと差分を比較して一緒になっていない箇所を調べる
+　-Perforceから保存しているファイルを確認して比較を行う
+
 △クラッシュ対応
 ・※質問を用意する
 ・Delegate(FHandleDisconnectDelegate)にバインドされている箇所がないかを調査する
