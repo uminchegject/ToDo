@@ -1,6 +1,5 @@
 [凹凸]
 ※凹凸があるように見せることを目標にする
-・一番上部をランダムな数値でオフセットする
 ・それぞれのブロックが独立しているようにする
 ・Arcの重なり具合を調整するように高さを調整する
 
@@ -14,3 +13,12 @@
 [ToDo]
 ※最小限のアセットのみで凹凸の検証を行う
 ※OffsetBlockを完成させる
+
+○OffsetAssetの修正
+・オフセット値をBottomSideAssetの埋まり具合に合わせる
+・OffsetAssetのみマテリアルを別に設定
+・TopSideAssetをなくす
+
+○OffsetAssetのDetailを修正
+・Bottomにタイルを配置
+・Sideに柱を配置
