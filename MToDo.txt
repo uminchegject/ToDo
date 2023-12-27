@@ -14,8 +14,13 @@
 ※最小限のアセットのみで凹凸の検証を行う
 ※OffsetBlockを完成させる
 
-○OffsetAssetの修正
-・オフセット値をBottomSideAssetの埋まり具合に合わせる
- -WidthLengthに応じてOffset値を変える
+●アセットで埋める
+※上部をアセットで埋める
+・後ろのBaseArcが見えないレベルでアセットを埋める
 
-○OffsetAssetのDetailを修正
+・BlockSize
+ -BaseBlockのサイズをBigAssetのサイズに調整する
+ -BaseBlockHeightをBigAssetのサイズに調整する
+ 
+・Asset
+ -上部にBigAsset,下部にPanelAssetを配置する
