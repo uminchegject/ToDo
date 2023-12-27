@@ -1,54 +1,98 @@
-[ToDo]
-○チケットの更新
-○北米マージ作業
+■[SKBLO-1121 : 【アウト】【ミッションシーケンス】ミッション突入時のローディング中に該当ダンジョンをadminの機能制御から非公開に設定するとクラッシュする]
+https://xwxcicnu.softwaretest.jp/btsService/btsView?bugId=24194&projectId=8
 
-○質問(更新がなかった場合、テキスト周りの更新の意味)
-・お疲れ様です。
-コンフリクト内のファイルについて質問があります。
-添付したパスのファイルについて、en側のバージョン更新がなく自分でマージを検証してもコンフリクトしないことを確認しました。
-こちらのファイルについて木部さん側でコンフリクトした原因など心当たりがありましたら教えて頂けると幸いです。
-もし、問題なさそうでしたら自分の方でマージをしてサブミットしようと思います。
-お手数をおかけしますがご確認お願い致します。
-○マージ作業
+○質問
+・HandleInternetErrorの呼び出し元の調べ方
 
-上※D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\Character\CharaParts\Mob\Lower\CP_CH_R01_mob_F100_fff_bdl_000.uasset
-上※D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\Character\CharaParts\Mob\Lower\CP_CH_R02_mob_F100_fff_bdl_001.uasset
-上※D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\Character\CharaParts\Mob\Upper\CP_CH_R01_mob_F100_fff_bdu_000.uasset
-上※D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\Character\CharaParts\Mob\Upper\CP_CH_R02_mob_F100_fff_bdu_001.uasset
-上※D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\Character\CreateData\MobNpc\CCD_mob_F100.uasset
-上※D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\Character\CreateData\TalkNpc\Ver1_00\CCD_Npc_Nene.uasset
-上※D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\Character\CreateData\TalkNpc\Ver1_00\CCD_Npc_Rowbel.uasset
-上※D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\Character\CreateData\TalkNpc\Ver1_00\MobNpc\CCD_Npc_R01_F100_fff_01.uasset
-上※D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\Character\CreateData\TalkNpc\Ver1_00\MobNpc\CCD_Npc_R02_F100_fff_00.uasset
-消※D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\Character\Enemy\E506_00_01\Texture\SK_CH_E506_00_01_wing_D.uasset
-消※D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\Character\Enemy\E506_00_01\Texture\SK_CH_E506_00_01_wing_DI.uasset
-消※D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\Character\Enemy\E506_00_01\Texture\SK_CH_E506_00_01_wing_SP.uasset
-上※D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\Character\Mob\R01\F100\Lower\R01_mob_F100_fff_bdl_000\Model\SK_CH_R01_mob_F100_fff_bdl_000.uasset
-上※D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\Character\Mob\R01\F100\Upper\R01_mob_F100_fff_bdu_000\Model\SK_CH_R01_mob_F100_fff_bdu_000.uasset
-上※D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\Character\Mob\R02\F100\Lower\R02_mob_F100_fff_bdl_001\Model\SK_CH_R02_mob_F100_fff_bdl_001.uasset
-上※D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\Character\Mob\R02\F100\Upper\R02_mob_F100_fff_bdu_001\Model\SK_CH_R02_mob_F100_fff_bdu_001.uasset
+○実際の挙動を調査
+ -StartMatchingのOnMatchingFailedDelegate.Broadcastを確認
+ -apiにリクエストするまでの処理を確認
+ -apiからリクエストを取得し、クライアントにFailureTypeが反映されるまでの処理を確認
 
-MergePreview :: None(Disregard)
-・dev-en-Ver103 :: いきなりマージ(質問)
-D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\L10N\en\Text\Arena.uasset
-D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\L10N\en\Text\CharacterName.uasset
-D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\L10N\en\Text\CrashReportClient.uasset
-D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\L10N\en\Text\DungeonResult.uasset
-D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\L10N\en\Text\Jingle.uasset
-D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\L10N\en\Text\KeyGuide.uasset
-D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\L10N\en\Text\MapUI.uasset
-D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\L10N\en\Text\PlayerPresetText.uasset
-D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\L10N\en\Text\SeasonPassMenu.uasset
-D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\L10N\en\Text\SeasonPassQuest.uasset
-D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\L10N\en\Text\ShortcutRing.uasset
-D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\L10N\en\Text\StepList.uasset
+○DGS側の挙動を調査
+※確認方法を考える
+・bool ASBGameSession::HandleStartMatchRequest()
+・void ASBGameSession::StartSession_HttpRequestComplete(USBHttpQuery* Query, FHttpResponsePtr Response, bool bWasSuccessful)
 
-変更点あり
-D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\Text\Dialog.uasset
-D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\Text\SystemMessage.uasset
-D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\Text\TitleMenu.uasset
+△HandleInternetErrorの処理から調査
+ -IsvalidPlayerの原因を調べる
 
-MergePreview :: None(Disregard)
-・dev-en-Ver103 :: いきなりマージ(質問)
-D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\UI\Mount\MI_UI_MountEffect1.uasset
-D:\sky\Dev-en-cs-Ver103xxx\ue4\project\SkyBlue\Content\UI\Mount\UI_MountEffect1.uasset
+△他のエラー処理を参考に調査
+ -TravelErrorから
+ -接続エラー121を意図的に発生させる
+
+●API呼び出し前の処理
+　-bool UMatchingSystem::StartMatchmaking_Body( const FOnlineSessionSettings& NewSessionSettings, TSharedPtr<FOnlineSessionSearch>& InSearchSettings, bool bIsAllRegion )
+ -bool UMatchingSystem::StartMatchmaking_Body_Step2( const FOnlineSessionSettings& NewSessionSettings, TSharedPtr<FOnlineSessionSearch>& InSearchSettings, bool bIsAllRegion, const FString& Url )
+ -
+
+●APIの取得後の処理
+・UMatchingSystem::ClientRpc
+ -OnMatchmakingCompleteDelegates.Broadcast(FName(), true);
+
+・void USBMatchingManager::OnMatchmakingComplete(FName SessionName, bool bWasSuccessful)
+ -OnMatchingFailedDelegate.Broadcast(MatchingGame, ErrorType);
+・USBMatchingManager::RegisterSessionDelegates()
+ -MatchmakingCompleteDelegateHandle = MatchingSystem->OnMatchmakingComplete().AddUObject(this, &ThisClass::OnMatchmakingComplete);
+
+・MatchingManager->OnMatchingFailed().AddUObject(this, &ThisClass::OnMatchingFailedInternal);
+・USBGameInstance::OnMatchingFailedInternal(USBMatchingGameState* MatchedGame, const ESBMatchingFailureType FailureType)
+・UFUNCTION(BlueprintImplementableEvent, Category = "SkyBlue|Matching", meta = (DisplayName = "MatchingFailed"))
+ void ReceiveMatchingFailed(const ESBMatchingFailureType FailureType, bool PenaltyForMe,	int MinuteToEndPenalty);
+ 
+
+
+■[SKBLO-1120 : 【アウト】【ミッションシーケンス】adminの機能制御で冒険者ランク昇格試験を非公開にした際エラーメッセージが表示された後自動で申請画面が閉じず、またキャンセルを押下しても申請画面が閉じられない]
+https://xwxcicnu.softwaretest.jp/btsService/btsView?bugId=24182&projectId=8
+
+void USBGameInstance::ClientShowAccessRestrictDialog()
+{
+	bool bIsValid = false;
+	FText MsgText;
+	USBGameSingleton* GameSingleton = USBBlueprintFunctionLibrary::GetGameSingleton(bIsValid);
+	if (bIsValid && GameSingleton)
+	{
+		const FString Msg = GameSingleton->TextTableDB.GetText(TEXT("Dialog"), FSBTextId(TEXT("NAEU_4")));
+		MsgText = FText::FromString(Msg);
+	}
+	USBEventSceneBPFunctionLibrary::ShowMessageDialogNoWait(this, MsgText);
+}
+
+
+■[DGSからClientにかけてログ表示を呼び出す処理]
+
+for (FConstPlayerControllerIterator Iterator = World->GetPlayerControllerIterator(); Iterator; ++Iterator)
+{
+	ASBPlayerController* PlayerController = Cast<ASBPlayerController>(Iterator->Get());
+	if (PlayerController && PlayerController->PlayerState)
+	{
+		UE_LOG(LogSkyBlue, Log, TEXT("%s GetPlayerController"), ANSI_TO_TCHAR(__FUNCTION__));
+		PlayerController->TravelToAnyMap(TravelOption);
+		PlayerController->ClientShowMessageDialogNoWait(MsgText);
+	}
+}
+
+//クライアント上にNoWaitDialogを表示する
+void ASBPlayerController::ClientShowMessageDialogNoWait_Implementation(const FText& Message)
+{
+	UWorld* World = GetWorld();
+	if (World)
+	{
+		USBGameInstance* GI = Cast<USBGameInstance>(World->GetGameInstance());
+		if (GI)
+		{
+			GI->OnLoadCompletePlayerDelegate.AddDynamic(GI, &USBGameInstance::ClientShowAccessRestrictDialog);
+		}
+	}
+}
+
+UWorld* World = GetWorld();
+if (World)
+{
+	USBGameInstance* GI = Cast<USBGameInstance>(World->GetGameInstance());
+	if (GI)
+	{
+		GI->OnLoadCompletePlayerDelegate.Broadcast();
+		GI->OnLoadCompletePlayerDelegate.Clear();
+	}
+}
