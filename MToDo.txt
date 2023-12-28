@@ -1,26 +1,25 @@
-[凹凸]
-※凹凸があるように見せることを目標にする
-・それぞれのブロックが独立しているようにする
-・Arcの重なり具合を調整するように高さを調整する
+[反省]
+※TAに向けた本を読む
+・技術
+・アイデア
+・知識
 
-●OffsetAsset
- -TopAsset(屋根)
- -ResidenceAsset
- -SideAsset
+※行程を意識する
+・ドラフトレイアウト
+・アルファレイアウト
+・ベータレイアウト
 
-●TopAsset
+[Public]
+○Dialog表示関数を統一する
+○キャラクターの関数名を修正する
+ -※DGSからクライアント側の処理を呼ぶ処理を調査する
 
-[ToDo]
-※最小限のアセットのみで凹凸の検証を行う
-※OffsetBlockを完成させる
 
-●アセットで埋める
-※上部をアセットで埋める
-・後ろのBaseArcが見えないレベルでアセットを埋める
+[Private]
+●アルファ
+・Panelの配置
+ -一定サイズのArcのみに配置
+・Arcのサイズを調整
 
-・BlockSize
- -BaseBlockのサイズをBigAssetのサイズに調整する
- -BaseBlockHeightをBigAssetのサイズに調整する
- 
-・Asset
- -上部にBigAsset,下部にPanelAssetを配置する
+●ベータ
+・BigAssetの配置
