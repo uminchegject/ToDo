@@ -1,20 +1,19 @@
-[Public]
-○ミッション開始画面のエラーをサブミット
- -報告
-○質問
-○Delegateの調査
+[ドラフトレイアウト]
+●変化(Surface)
+・BaseSurfaceの大きさに変化をつける
+・空間の大小に変化をつける
+・Arcの傾斜に変化をつける
+
+○様々な空間を生成するNoiseがないかを検証
 
 
-[Private]
-●ドラフト
-・変化をつける
- -BaseSurfaceの大きさに変化をつける
- -空間の大小に変化をつける
- -Arcの傾斜に変化をつける
+●テクスチャ
+・BaseSurfaceの大きさに変化をつける
 
-●アルファ
-・変化をつける
- -アセットの種類に変化をつける(※OffsetAssets,ResidenceAssets,IndustoryAssets)
- -アセットの密集度合いに変化をつける
+○テクスチャのみでドラフトレイアウト
 
-●ベータ
+
+[アルファレイアウト]
+●変化(Asset)
+・アセットの種類に変化をつける(※OffsetAssets,ResidenceAssets,IndustoryAssets)
+・アセットの密集度合いに変化をつける
