@@ -1,4 +1,7 @@
 [ドラフトレイアウト]
+○再検証
+・OffsetBlockのサイズを調整
+
 ●変化(Surface)
 ○Surface単体でOffsetBlockの検証を行う
 ・BaseSurfaceの大きさに変化をつける
@@ -8,13 +11,14 @@
 ・空間の大小に変化をつける
 ・Arcの傾斜に変化をつける
 
-
 ●テクスチャ
 ○テクスチャのみでドラフトレイアウト
 ・BaseSurfaceの大きさに変化をつける
 
-
 [アルファレイアウト]
+○シンプル検証
+・屋根、窓、基礎のみで検証
+
 ●変化(Asset)
 ・アセットの種類に変化をつける(※OffsetAssets,ResidenceAssets,IndustoryAssets)
 ・アセットの密集度合いに変化をつける
