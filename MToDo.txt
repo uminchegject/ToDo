@@ -1,27 +1,17 @@
-※一枚Surfaceのみで一度完成させる
+[Public]
+○ネット側の調査の確認
+ -※反応がない場合は質問をする
+
+△キャラクターの関数名を修正する
+ -※DGSからクライアント側の処理を呼ぶ処理を調査する
+
+
+[Study]
+○PowerShell
+https://qiita.com/opengl-8080/items/bb0f5e4f1c7ce045cc57
+
+○ネットワークの構築とマルチプレイヤー
+https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Networking/
+
 
 [ドラフトレイアウト]
-○再検証
-・OffsetBlockのサイズを調整
-
-●変化(Surface)
-○Surface単体でOffsetBlockの検証を行う
-・BaseSurfaceの大きさに変化をつける
-・BaseSurfaceの角度に変化をつける
-
-○様々な空間を生成するNoiseがないかを検証
-・空間の大小に変化をつける
-・Arcの傾斜に変化をつける
-
-
-●テクスチャ
-○テクスチャのみでドラフトレイアウト
-・BaseSurfaceの大きさに変化をつける
-
-[アルファレイアウト]
-○シンプル検証
-・屋根、窓、基礎のみで検証
-
-●変化(Asset)
-・アセットの種類に変化をつける(※OffsetAssets,ResidenceAssets,IndustoryAssets)
-・アセットの密集度合いに変化をつける
