@@ -1,15 +1,10 @@
 [Public]
 ※switchを機材管理から外す
 
-○UIのマージ作業
-・UI_FOT-SkipStd-Bをお願いする
-・EN側のCLと差分を比較して一緒になっていない箇所を調べる
-　-Perforceから保存しているファイルを確認して比較を行う
+○クラッシュ対応
+・挙動を確認する
+ -※不具合が発生する場合質問を用意する
 
-△クラッシュ対応
-・※質問を用意する
-・Delegate(FHandleDisconnectDelegate)にバインドされている箇所がないかを調査する
-https://docs.unrealengine.com/5.0/en-US/API/Runtime/Engine/FHandleDisconnectDelegate/
 ・下記の処理からそれぞれ原因を調べる方法がないかを調べる
 [2023.12.20-05.48.27:319][768]LogNet: Error: UEngine::BroadcastNetworkFailure: FailureType = FailureReceived, ErrorString = Invalid PlayerId  Client: 9a820bfb6c2d42db8799ce595810a233, Server: , Driver = GameNetDriver SBNetDriver_2147339734
 [2023.12.20-05.48.27:321][768]LogNet: Warning: Network Failure: GameNetDriver[FailureReceived]: Invalid PlayerId  Client: 9a820bfb6c2d42db8799ce595810a233, Server: 
@@ -20,9 +15,6 @@ https://docs.unrealengine.com/5.0/en-US/API/Runtime/Engine/FHandleDisconnectDele
 [2023.12.20-05.48.27:323][768]LogSkyBlue: USBGameInstance::ExecNetworkErrorInternal Call SetReturnCharaSelect
 [2023.12.20-05.48.27:323][768]LogSkyBlue: USBErrorProc::StartDisconnectServer ShutDown Notice Is [On] IsActivateShutDownNotice=1.
 
-△フィールド制限時ローディングおわったらログを出すように修正
-・DGSからClientを呼び出す処理で参考になりそうなものがないかを確認する
-
 
 [Study]
 ○PowerShell
@@ -30,3 +22,8 @@ https://qiita.com/opengl-8080/items/bb0f5e4f1c7ce045cc57
 
 ○ネットワークの構築とマルチプレイヤー
 https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Networking/
+
+[SoulCity]
+△OutsideSurfaceを適切に配置するように修正
+
+△GreebleBlockのサイズに適合するアセットを配置するように実装
