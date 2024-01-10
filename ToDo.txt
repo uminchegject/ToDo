@@ -3,7 +3,6 @@
 
 ○クラッシュ対応
 ・挙動を確認する
- -※不具合が発生する場合質問を用意する
 
 ・下記の処理からそれぞれ原因を調べる方法がないかを調べる
 [2023.12.20-05.48.27:319][768]LogNet: Error: UEngine::BroadcastNetworkFailure: FailureType = FailureReceived, ErrorString = Invalid PlayerId  Client: 9a820bfb6c2d42db8799ce595810a233, Server: , Driver = GameNetDriver SBNetDriver_2147339734
@@ -26,11 +25,14 @@ https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Networking/
 [SoulCity]
 ※背景本を読んで照らし合わせる。
 
+●Detail
+※Detailに力を入れる
+○TopAsset,BottomAssetのサイズを調整する
+ -横方向のみのスケーリングを検討する
+○Offset値に変化をつける
+ -SmallBlockはOffset値を小さくする
+△GreebleBlockのサイズに適合するアセットを配置するように実装
+
 ●City
 ※SurfaceからCityに落とし込む
 △OutsideSurfaceを適切に配置するように修正
-
-●Detail
-※Detailに力を入れる
-△GreebleBlockのサイズに適合するアセットを配置するように実装
-
