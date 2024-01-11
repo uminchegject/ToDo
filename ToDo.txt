@@ -1,24 +1,9 @@
 [Public]
 ※switchを機材管理から外す
 
-○クラッシュ対応
-・挙動を確認する
-
-・下記の処理からそれぞれ原因を調べる方法がないかを調べる
-[2023.12.20-05.48.27:319][768]LogNet: Error: UEngine::BroadcastNetworkFailure: FailureType = FailureReceived, ErrorString = Invalid PlayerId  Client: 9a820bfb6c2d42db8799ce595810a233, Server: , Driver = GameNetDriver SBNetDriver_2147339734
-[2023.12.20-05.48.27:321][768]LogNet: Warning: Network Failure: GameNetDriver[FailureReceived]: Invalid PlayerId  Client: 9a820bfb6c2d42db8799ce595810a233, Server: 
-[2023.12.20-05.48.27:322][768]LogNet: NetworkFailure: FailureReceived, Error: 'Invalid PlayerId  Client: 9a820bfb6c2d42db8799ce595810a233, Server: '
-[2023.12.20-05.48.27:322][768]LogSkyBlue: USBGameInstance::HandleNetworkErrorInternal FailureType:5 Handle In Client
-[2023.12.20-05.48.27:322][768]LogSkyBlue: USBGameInstance::ExecNetworkErrorInternal bIsActivateShutDownNotice Is [Off]
-[2023.12.20-05.48.27:322][768]LogSkyBlue: USBGameInstance::ExecNetworkErrorInternal ReleaseHttpQuery Url:https://datastore-ags-dev1.dev-en.blue-protocol.com:7701/apiext/gameservers/session
-[2023.12.20-05.48.27:323][768]LogSkyBlue: USBGameInstance::ExecNetworkErrorInternal Call SetReturnCharaSelect
-[2023.12.20-05.48.27:323][768]LogSkyBlue: USBErrorProc::StartDisconnectServer ShutDown Notice Is [On] IsActivateShutDownNotice=1.
-
+○マージ対応
 
 [Study]
-○PowerShell
-https://qiita.com/opengl-8080/items/bb0f5e4f1c7ce045cc57
-
 ○ネットワークの構築とマルチプレイヤー
 https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Networking/
 
@@ -27,10 +12,10 @@ https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Networking/
 
 ●Detail
 ※Detailに力を入れる
-○TopAsset,BottomAssetのサイズを調整する
- -横方向のみのスケーリングを検討する
 ○Offset値に変化をつける
- -SmallBlockはOffset値を小さくする
+ -立体的にする
+○DetailAssetを用意する
+
 △GreebleBlockのサイズに適合するアセットを配置するように実装
 
 ●City
