@@ -1,3 +1,11 @@
+●凹凸
+Noiseに応じて凹凸、Removeする
+Random+Noiseで凹凸を表現する
+●口
+BaseSurface
+OffsetBlockの比率をコントロールできるようにする
+△BaseSurfaceにアセットを配置
+
 ●ツール
 ※検証までやる
 ・Blockパラメーター
