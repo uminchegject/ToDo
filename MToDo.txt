@@ -1,28 +1,21 @@
-●凹凸
-Noiseに応じて凹凸、Removeする
-Random+Noiseで凹凸を表現する
-●口
-BaseSurface
-OffsetBlockの比率をコントロールできるようにする
-△BaseSurfaceにアセットを配置
+[目標]
+・デザイン的に完成させる
+・PDツールとして機能性を持たせる
 
-●ツール
-※検証までやる
-・Blockパラメーター
- -サイズ
- -RandomRemove
- -ブロック形態(Noise)
+[IDEA]
+●BigBlock
+・凹凸
+ -Noiseに応じて凹凸、Removeする
+ -Random+Noiseで凹凸を表現する
+・口
+ -BaseSurface
+ -OffsetBlockの比率をコントロールできるようにする
+ -△BaseSurfaceにアセットを配置
 
-・Detailパラメーター
+●DetailBlock
  -アセット
  -テクスチャ
 
-●Detail
-△DetailAssetを用意する
- -IndustrialAssetsを生成する大きさに差に変化をつける
-
-△GreebleBlockのサイズに適合するアセットを配置するように実装
-
-●City
-※SurfaceからCityに落とし込む
-△OutsideSurfaceを適切に配置するように修正
+[ToDo] 
+○DetailAssetを用意する
+ -IndustrialAssetsをAssetBPでサイズに変化をつける
