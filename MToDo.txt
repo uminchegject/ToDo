@@ -1,21 +1,14 @@
 [目標]
-・デザイン的に完成させる
-・PDツールとして機能性を持たせる
+・VRゲームを実装
+・レベル自動生成を実装
 
-[IDEA]
-●BigBlock
-・凹凸
- -Noiseに応じて凹凸、Removeする
- -Random+Noiseで凹凸を表現する
-・口
- -BaseSurface
- -OffsetBlockの比率をコントロールできるようにする
- -△BaseSurfaceにアセットを配置
+●vr
+・ue4上でvrで歩く処理までを実装する
 
-●DetailBlock
- -アセット
- -テクスチャ
+●houdini 
+・迷路の生成
+・ゲーム開始時に自動的に街が生成されるように実装する
+ -必要なパラメーターをまとめる
+・道の生成
 
-[ToDo] 
-○DetailAssetを用意する
- -IndustrialAssetsをAssetBPでサイズに変化をつける
+▲chatgpt
