@@ -1,7 +1,10 @@
 [Public]
 ※switchを機材管理から外す
 
-○マージ対応
+●ブラー不具合の対応
+○正常な挙動のログと比較
+○キャラクターが表示されない原因を調査
+○ログを確認
 
 [Study]
 ○ネットワークの構築とマルチプレイヤー
@@ -16,6 +19,6 @@ https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Networking/
 ・空間をUE4上で配置して、空間の周りにPDを行う
  -※既存のSoulCityから空間をくりぬくイメージ
  -路地のみで検証
- 
+
 ●vr
 ・vrを中古で購入する
