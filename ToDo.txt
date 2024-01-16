@@ -10,14 +10,12 @@ https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Networking/
 [SoulCity]
 ※背景本を読んで照らし合わせる。
 
-●Detail
-※Detailに力を入れる
-○Offset値に変化をつける
- -立体的にする
-○DetailAssetを用意する
+●houdini 
+※LevelDesignのフローを動画を見て勉強する
 
-△GreebleBlockのサイズに適合するアセットを配置するように実装
-
-●City
-※SurfaceからCityに落とし込む
-△OutsideSurfaceを適切に配置するように修正
+・空間をUE4上で配置して、空間の周りにPDを行う
+ -※既存のSoulCityから空間をくりぬくイメージ
+ -路地のみで検証
+ 
+●vr
+・vrを中古で購入する
