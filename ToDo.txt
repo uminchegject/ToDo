@@ -3,7 +3,8 @@
 
 ●ブラー不具合の対応
 ○ダイアログ(TextWindowSkit)が繰り返し呼び出されていないかを確認する
-　→※呼び出し元(元凶)を調査する
+ 
+ →※呼び出し元(元凶)を調査する
 
 [Study]
 ○ネットワークの構築とマルチプレイヤー
@@ -18,6 +19,9 @@ https://docs.unrealengine.com/4.27/ja/InteractiveExperiences/Networking/
 ・空間をUE4上で配置して、空間の周りにPDを行う
  -※既存のSoulCityから空間をくりぬくイメージ
  -路地のみで検証
+ 
+○パラメーターの調整
+ -スケール
 
 ●vr
 ・vrを中古で購入する
