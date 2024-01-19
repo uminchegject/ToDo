@@ -1,12 +1,7 @@
-[目標]
-・VRゲームを実装
-・レベル自動生成を実装
+・curveをinput
+・inputをPolywire
+ -curveの位置に連携して道ができるようにする
+・BaseBlockをBoolean
+・高さ制限BlockをGroup化
 
-●houdini 
-※LevelDesignのフローを動画を見て勉強する
- -路地のみで検証
-・空間をUE4上で配置して、空間の周りにPDを行う
- -※既存のSoulCityから空間をくりぬくイメージ
-
-●vr
-・ue4上でvrで歩く処理までを実装する
+・Roadに面しているSurfaceをOutSideSurfaceに含める
