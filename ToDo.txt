@@ -2,15 +2,16 @@
 ※switchを機材管理から外す
 
 ●ブラー不具合の対応
+○SFadeScreen::Constructの呼び出し箇所の確認
 
 ●ミッションアクセス制限の修正
-○クック及び挙動確認及びサブミット
+○サブミットの報告
 
 [Study]
 
 [SoulCity]
 
-●houdini 
+●houdini
 ・LevelDesignのフローを動画を見て勉強する
 ・UE上で矩形を用いたレベルデザインを行い、矩形に応じて背景を生成する。
 
