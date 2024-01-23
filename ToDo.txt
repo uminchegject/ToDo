@@ -1,3 +1,10 @@
+[反省]
+※PublicとPrivateで勉強する準備をする
+ -7時半までにやることをまとめておく
+ -Publicでやることがある場合は散歩をする
+※勉強は午後に半分程の時間を使って行う
+ -午前中は基本仕事
+
 [Public]
 ※switchを機材管理から外す
 
@@ -7,13 +14,14 @@
 ●ミッションアクセス制限の修正
 ○サブミットの報告
 
-[Study]
+[Game]
+○ゲーム設計
+※サンプルゲームを拡張する形で実装する
+・ActionRPG
+https://www.slideshare.net/EpicGamesJapan/ue4action-rpg
+https://docs.unrealengine.com/4.27/ja/Resources/SampleGames/ARPG/
 
 [SoulCity]
-
 ●houdini
 ・LevelDesignのフローを動画を見て勉強する
 ・UE上で矩形を用いたレベルデザインを行い、矩形に応じて背景を生成する。
-
-○UEのレベル上のGeometoryをインプットしてHoudini上に反映できるようにする
-https://note.com/thesaurus/n/ne761f1c02fb0#69bc8b31-ab01-4b56-902b-a517aac777d5
