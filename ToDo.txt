@@ -1,27 +1,28 @@
 [反省]
-※PublicとPrivateで勉強する準備をする
- -7時半までにやることをまとめておく
- -Publicでやることがある場合は散歩をする
-※勉強は午後に半分程の時間を使って行う
- -午前中は基本仕事
+※ネームスペースを定義して分かりやすく実装するように意識する
 
 [Public]
 ※switchを機材管理から外す
 
-●ブラー不具合の対応
-○SFadeScreen::Constructの呼び出し箇所の確認
-
-●ミッションアクセス制限の修正
-○サブミットの報告
+○関連チケットがないかを調査する
+ -マージ漏れがないかを意識して調査する
 
 [Game]
-○ゲーム設計
 ※サンプルゲームを拡張する形で実装する
+ -サンプルゲームをそのまま用いる
+
 ・ActionRPG
 https://www.slideshare.net/EpicGamesJapan/ue4action-rpg
 https://docs.unrealengine.com/4.27/ja/Resources/SampleGames/ARPG/
 
+○PCにプロジェクトを入れる
+
+○ソースを確認する
+
 [SoulCity]
 ●houdini
-・LevelDesignのフローを動画を見て勉強する
-・UE上で矩形を用いたレベルデザインを行い、矩形に応じて背景を生成する。
+○Attibuteを取得したうえで値にするノードをなくす
+ -CopyAndTransform
+ -Extrude
+
+○ActionRPG(タワーディフェンス)に必要なレベルを設計する
