@@ -1,7 +1,19 @@
-・curveをinput
-・inputをPolywire
- -curveの位置に連携して道ができるようにする
-・BaseBlockをBoolean
-・高さ制限BlockをGroup化
+[Game]
+※サンプルゲームを拡張する形で実装する
+ -サンプルゲームをそのまま用いる
 
-・Roadに面しているSurfaceをOutSideSurfaceに含める
+・ActionRPG
+https://www.slideshare.net/EpicGamesJapan/ue4action-rpg
+https://docs.unrealengine.com/4.27/ja/Resources/SampleGames/ARPG/
+
+○PCにプロジェクトを入れる
+
+○ソースを確認する
+
+[SoulCity]
+●houdini
+○Attibuteを取得したうえで値にするノードをなくす
+ -CopyAndTransform
+ -Extrude
+
+○ActionRPG(タワーディフェンス)に必要なレベルを設計する
