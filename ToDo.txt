@@ -4,8 +4,13 @@
 [Public]
 ※switchを機材管理から外す
 
-○関連チケットがないかを調査する
- -マージ漏れがないかを意識して調査する
+●ver103修正
+※関連チケットがないかを調査する
+※マージ漏れがないかを意識して調査する
+
+○※工数をチケットに記載する
+
+○挙動確認ができる環境を整える
 
 [Game]
 ※サンプルゲームを拡張する形で実装する
@@ -15,14 +20,12 @@
 https://www.slideshare.net/EpicGamesJapan/ue4action-rpg
 https://docs.unrealengine.com/4.27/ja/Resources/SampleGames/ARPG/
 
-○PCにプロジェクトを入れる
-
 ○ソースを確認する
+ -参考フォルダから確認する
 
 [SoulCity]
 ●houdini
 ○Attibuteを取得したうえで値にするノードをなくす
- -CopyAndTransform
- -Extrude
+ -実装ノードを少しずつ出力できるかを確認する
 
 ○ActionRPG(タワーディフェンス)に必要なレベルを設計する
