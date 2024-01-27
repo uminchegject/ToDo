@@ -1,19 +1,4 @@
-[Game]
-※サンプルゲームを拡張する形で実装する
- -サンプルゲームをそのまま用いる
-
-・ActionRPG
-https://www.slideshare.net/EpicGamesJapan/ue4action-rpg
-https://docs.unrealengine.com/4.27/ja/Resources/SampleGames/ARPG/
-
-○PCにプロジェクトを入れる
-
-○ソースを確認する
-
-[SoulCity]
-●houdini
-○Attibuteを取得したうえで値にするノードをなくす
- -CopyAndTransform
- -Extrude
-
-○ActionRPG(タワーディフェンス)に必要なレベルを設計する
+●修正
+※スケールを修正
+○AssetBoxの配置処理を修正
+○OutSideSurfaceのサイズ計算を修正
