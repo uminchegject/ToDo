@@ -1,4 +1,9 @@
-●修正
-※スケールを修正
-○AssetBoxの配置処理を修正
-○OutSideSurfaceのサイズ計算を修正
+○修正
+・側面の一階部分にOffsetBlockを外す
+・Nearpointで側面の高さを取得してOutSideBlockを導き出す
+
+○レベルデザイン
+・サンプルレベルデザイン
+
+○ワイドなブロックにもOffsetBlockを生成できるようにする
+・横からdivideする
