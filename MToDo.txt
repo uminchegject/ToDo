@@ -1,5 +1,53 @@
-●複雑にする
-・様々なアセットを配置する
+●LevelDesign
+・ゲームジャンルごとのデザインを行う
+ -ダンジョン型(https://code.tutsplus.com/a-beginners-guide-to-designing-video-game-levels--cms-25662t)
+ -オープンワールド型(Kindle)
 
-[ToDo]
-○
+○サンプル平面図を貼ってレベルデザインをする
+※ドラフトデザインを行う
+
+●Away
+○サイズ修正
+
+○多種多様なアセットアクターを用意する
+
+●説明
+
+・目標
+ -前期のHoudiniで街をつくる目標からUE4のレベルデザインに落とし込むことを目標にした。
+
+※伝えたいことを3つにまとめる
+・プレイヤー目線のデザイン
+
+・簡易的に世界観を変えることができる
+ -アセットとマテリアルを変えれば空間的なレイアウトを変えずに世界観を変えることができる
+ 
+・レベルデザインを簡易的に変えることができる
+
+・次の個人勉強の目標
+ -ボロノイ分割
+ 
+●資料
+・プレイ動画
+
+▲Detail
+○側面の下部へのDetailBlockのアセット配置ロジックの実装
+・高さを統一してアセットをランダムに配置する
+float width = 0;
+float blockWidthBase = 10;
+vector normal = @N;
+
+int blockNum = int(width / blockWidthBase);
+float blockWidth = width / blockNum;
+
+vector spawnVector = (1, 0, 0);
+if(0.5 < abs(normal.z)) spawnVector = (0, 0, 1);
+
+vector spawnPos = @P;
+spawnPos -= spawnVector * (width / 2 - blockWidth / 2)
+for(int i = 0; i < blockNum; ++i)
+{
+	int ptNum = addpoint();
+	setpointattrib(0, "N", normal);
+	spawnPos += spawnVector * blockWidth;
+}
