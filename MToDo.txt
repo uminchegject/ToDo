@@ -1,9 +1,9 @@
 [IDEA]
-○OffsetBlockの生成までのコードを整理
-
-○Roadに応じたレベルの自動生成を実装及び検証
-
-△アセット配置の検証
+・Edgeアセット
+・Topアセット
+・OffsetBlockの有無
+・BigAsset(ランドマーク)の配置
+・PatternAssetの配置
 
 [IDEA]
 ●レベル
