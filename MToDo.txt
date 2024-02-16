@@ -1,19 +1,23 @@
 [IDEA]
-・Edgeアセット
-・Topアセット
-・OffsetBlockの有無
-・BigAsset(ランドマーク)の配置
-・PatternAssetの配置
+●Parameter
+※ブロックごとにパラメーターで整理できるようにする
 
-[IDEA]
+-※ブロック条件
+-※OffsetBlockの有無
+-※サイズ
+-※GreebleOrPattern
+-※アセット
+-△SingleAsset(ランドマーク)
+-△Edgeアセット
+-△Topアセット
+
 ●レベル
 ・様々な特徴の空間を生成する
  -大小の空間
  -開閉の空間(レベルより高低差のあるArcを生成する)
 
+
 ●Far
-・アセットのサイズをBlockに埋めるように調整
-・アセットを簡単に変更できるようにする
 
 ●Detail(Side)
 
