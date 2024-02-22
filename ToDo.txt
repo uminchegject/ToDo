@@ -1,31 +1,17 @@
-[反省]
-※ネームスペースを定義して分かりやすく実装するように意識する
-
 [Public]
 ※switchを機材管理から外す
 
-●ver103修正
-※関連チケットがないかを調査する
-※マージ漏れがないかを意識して調査する
+○734069のマージ
+　ーHistoryを確認して、上書きできそうか確認する
 
-○※工数をチケットに記載する
+○dev-enのアクセス制限の修正をdev-en-csでマージ
 
-○挙動確認ができる環境を整える
+△toolクックができない原因を調べる
+　ーpauseで確認する
 
-[Game]
-※サンプルゲームを拡張する形で実装する
- -サンプルゲームをそのまま用いる
+[Study]
+※Houdini,PDに応用できそうな分野を勉強する
+ -ゲーム数学
+ -テクニカルアーティスト
 
-・ActionRPG
-https://www.slideshare.net/EpicGamesJapan/ue4action-rpg
-https://docs.unrealengine.com/4.27/ja/Resources/SampleGames/ARPG/
-
-○ソースを確認する
- -参考フォルダから確認する
-
-[SoulCity]
-●houdini
-○Attibuteを取得したうえで値にするノードをなくす
- -実装ノードを少しずつ出力できるかを確認する
-
-○ActionRPG(タワーディフェンス)に必要なレベルを設計する
+○ゲームエンジニアが覚えて起きたい技術
