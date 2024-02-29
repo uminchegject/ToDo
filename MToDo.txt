@@ -1,8 +1,7 @@
-[IDEA]
-・GreebleBlockをメインにする
- -Blockのサイズに応じてPatternかSingleかを設定する
-
 [DataTable]
 ※Assetセレクトロジックを設計する
-○サイズ応じたアセットをDTから取得する
+・PatternDTとAssetBlockDTをそれぞれ用意する
+・GreebleのパラメーターをBlockDTで管理
+
+○サイズに応じたアセットをDTから取得する
 ○複数アセットを登録してランダムに選択する
