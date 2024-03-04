@@ -1,11 +1,14 @@
 [DataTable]
 ※Assetセレクトロジックを設計する
- -BaseBlock内のサイズとアセットをDTで管理できるようにする
-  -GreebleのパラメーターをBlockDTで管理
+ 
+●PatternBlock
 ・SingleAssetとMultiAssetそれぞれ用意する
- -SinggleAsset(屋根,土台)
+ -SingleAsset(屋根,土台)
  -MultiAsset(Pattern,Greeble)
+・BaseBlock内のサイズとアセットをDTで管理できるようにする
+・アセットスケールを1以下のランダムにして変化をつける
 
-○サイズに応じたアセットをDTから取得する
 ○複数アセットを登録してランダムに選択する
- -サイズもランダムにする
+
+●GreebleBlock
+・サイズに応じたアセットをDTから取得する
