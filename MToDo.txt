@@ -1,34 +1,9 @@
 [DataTable]
-・DTType
- -SingleAssets
- -MultiAssets
-
-○DT+構造体の実装
-・構造体
- -アセットパス
- -サイズ
- -位置
-
 ●PatternBlock
-・SingleAssetとMultiAssetそれぞれ用意する
- -SingleAsset(屋根,土台)
- -MultiAsset(Pattern,Greeble)
-・BaseBlock内のサイズとアセットをDTで管理できるようにする
 ・アセットスケールを1以下のランダムにして変化をつける
 
 ○複数アセットを登録してランダムに選択する
 
 ●GreebleBlock
 ・サイズに応じたアセットをDTから取得する
-
-[パラメーター]
-●Single
-・DT周りのパラメーター
-・PDパラメーター
-
-●Pattern
-・ブロックサイズ周りのパラメーター
-・PDパラメーター
-
-●Greeble
 ・Greebleサイズの調整
