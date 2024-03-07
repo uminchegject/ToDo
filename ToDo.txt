@@ -1,14 +1,51 @@
-○質問
-・DataStore
- -上記のAPIを用いたサーバー側でテキスト認証を行っていることを確認
-  -DataStore側の認証ということで、上記のAPIにおいて実装してもらうように依頼する形で大丈夫か
+bool bEnableScrollScrollBox()
 
-・クライアント側
- -マスターデータからホワイトリストで取得を行ってBlueprintFunctionLibraryで実装する予定
- -実装した関数をチェック箇所で呼び出し処理するように実装
-  -ダイアログを表示しなくても大丈夫か。
+○現在スクロールボックスを選択しているか
+FWidgetPath WidgetPath = SlateApp.LocateWindowUnderMouse(Posision, SlateApp.GetInteractiveTopLevelWindows());
+if (!WidgetPath.IsValid()) { break; }
 
-・仕様の確認
-　−下記の仕様で大丈夫か
+const FName SScrollBoxName("SScrollBox");
+const FArrangedChildren::FArrangedWidgetArray& AllArrangedWidgets = WidgetPath.Widgets.GetInternalArray();
+for (const FArrangedWidget& ArrangedWidget : AllArrangedWidgets)
+{
+	TSharedRef<SWidget> Widget = ArrangedWidget.Widget;
+	if (Widget->GetType() == SScrollBoxName)
+	{
+		auto ScrollBox = StaticCastSharedRef<SScrollBox>(Widget);
+		IsScrollBox = true;
+		return &ScrollBox;
+	}
+}
 
-・3段階目の説明について上記の疑問点を解決次第準備が整いますが、山森さんと藤沢さんにアポをとってもらい、説明する形になるのでしょうか。
+○次スクロールボックス以外を選択するか
+
+○カーソルの選択先に対してスクロールはまだできるか
+if (CursorInput.IsRepeat(ESBCursorInputKey::Gamepad_Up))
+{
+	if(ScrollBox->IsScrollStart())
+	{
+		return false;
+	}	
+}
+if (CursorInput.IsRepeat(ESBCursorInputKey::Gamepad_Down)) 
+{
+	if(ScrollBox->IsScrollEnd())
+	{
+		return false;
+	}
+}
+
+
+if (CursorInput.IsRepeat(ESBCursorInputKey::Gamepad_Left))
+{
+	if (ScrollBox->GetOrientation() == EOrientation::Orient_Horizontal && ScrollBox->IsScrollEnd())
+	{
+		return false;
+	}
+}
+if (CursorInput.IsRepeat(ESBCursorInputKey::Gamepad_Right))
+{
+
+}
+
+return true;
