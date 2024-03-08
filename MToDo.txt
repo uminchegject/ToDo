@@ -1,3 +1,9 @@
+[パラメーター]
+・サイズ適応範囲をBlockParamに設定して適応サイズに当てはめていく
+・DTにParameterStructを追加して設定していきアセット管理をする
+
+△Houdiniからパラメーターを取得
+
 [DataTable]
 ○DTから値を取得し反映させる処理を実装する
 
@@ -7,7 +13,4 @@
 ●GreebleBlock
 ・サイズに応じたアセットをDTから取得する
 ・Greebleサイズの調整
-
-[ポインタ]
-https://qiita.com/madcanyon1219/items/aa3781898440e097e773
-https://docs.unrealengine.com/4.27/ja/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/SmartPointerLibrary/
+ -Houdini側で実装
