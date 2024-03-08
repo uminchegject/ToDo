@@ -1,51 +1,65 @@
-bool bEnableScrollScrollBox()
+bool bEnableScrollScrollBox(const Vector& CusorPos, const Vector& NextPos)
 
-○現在スクロールボックスを選択しているか
-FWidgetPath WidgetPath = SlateApp.LocateWindowUnderMouse(Posision, SlateApp.GetInteractiveTopLevelWindows());
-if (!WidgetPath.IsValid()) { break; }
+//現在スクロールボックスを選択しているかを確認
+FWidgetPath WidgetPath = SlateApp.LocateWindowUnderMouse(CusorPos, SlateApp.GetInteractiveTopLevelWindows());
+if (!WidgetPath.IsValid()) {return false;}
 
 const FName SScrollBoxName("SScrollBox");
+uint64 CusorPosScrollBoxId = 0;
 const FArrangedChildren::FArrangedWidgetArray& AllArrangedWidgets = WidgetPath.Widgets.GetInternalArray();
+do
+{
+	for (const FArrangedWidget& ArrangedWidget : AllArrangedWidgets)
+	{
+		TSharedRef<SWidget> Widget = ArrangedWidget.Widget;
+		if (Widget->GetType() == SScrollBoxName)
+		{
+			auto ScrollBox = StaticCastSharedRef<SScrollBox>(Widget);
+			CusorPosScrollBoxId = ScrollBox.Get().GetId();
+			
+			break;
+		}
+	}
+	
+	//スクロールボックスが存在しないためスクロールができない
+	return false;
+}while(false)
+
+//次スクロールボックス以外を選択するかを確認
+WidgetPath = SlateApp.LocateWindowUnderMouse(CusorPos, SlateApp.GetInteractiveTopLevelWindows());
+if (!WidgetPath.IsValid()) {return false;}
+
+AllArrangedWidgets = WidgetPath.Widgets.GetInternalArray();
 for (const FArrangedWidget& ArrangedWidget : AllArrangedWidgets)
 {
 	TSharedRef<SWidget> Widget = ArrangedWidget.Widget;
 	if (Widget->GetType() == SScrollBoxName)
 	{
 		auto ScrollBox = StaticCastSharedRef<SScrollBox>(Widget);
-		IsScrollBox = true;
-		return &ScrollBox;
-	}
+		if(CusorPosScrollBoxId == ScrollBox.Get().GetId();)
+		{
+			//同じスクロールボックスに移動するためスクロールできない
+			return false;		
+		}
+	}		
 }
 
-○次スクロールボックス以外を選択するか
-
-○カーソルの選択先に対してスクロールはまだできるか
-if (CursorInput.IsRepeat(ESBCursorInputKey::Gamepad_Up))
+//カーソルの選択先に対してスクロールボックスの向き、スクロールはまだできるかを確認
+if (CursorInput.IsRepeat(ESBCursorInputKey::Gamepad_Up) && ScrollBox->GetOrientation() == EOrientation::Orient_Horizontal)
 {
-	if(ScrollBox->IsScrollStart())
-	{
-		return false;
-	}	
+	return !ScrollBox->IsScrollStart();
 }
-if (CursorInput.IsRepeat(ESBCursorInputKey::Gamepad_Down)) 
+if (CursorInput.IsRepeat(ESBCursorInputKey::Gamepad_Down) && ScrollBox->GetOrientation() == EOrientation::Orient_Horizontal) 
 {
-	if(ScrollBox->IsScrollEnd())
-	{
-		return false;
-	}
+	return !ScrollBox->IsScrollEnd();
 }
-
-
-if (CursorInput.IsRepeat(ESBCursorInputKey::Gamepad_Left))
+if (CursorInput.IsRepeat(ESBCursorInputKey::Gamepad_Left) && ScrollBox->GetOrientation() == EOrientation::Orient_Horizontal)
 {
-	if (ScrollBox->GetOrientation() == EOrientation::Orient_Horizontal && ScrollBox->IsScrollEnd())
-	{
-		return false;
-	}
+	return !ScrollBox->IsScrollStart();
 }
-if (CursorInput.IsRepeat(ESBCursorInputKey::Gamepad_Right))
+if (CursorInput.IsRepeat(ESBCursorInputKey::Gamepad_Right) && ScrollBox->GetOrientation() == EOrientation::Orient_Horizontal)
 {
-
+	return !ScrollBox->IsScrollEnd();
 }
 
-return true;
+return false;
