@@ -7,3 +7,7 @@
 ●GreebleBlock
 ・サイズに応じたアセットをDTから取得する
 ・Greebleサイズの調整
+
+[ポインタ]
+https://qiita.com/madcanyon1219/items/aa3781898440e097e773
+https://docs.unrealengine.com/4.27/ja/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/SmartPointerLibrary/
