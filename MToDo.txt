@@ -2,10 +2,14 @@
 ・サイズ適応範囲をBlockParamに設定して適応サイズに当てはめていく
 ・DTにParameterStructを追加して設定していきアセット管理をする
 
-△Houdiniからパラメーターを取得
-
 [DataTable]
 ○DTから値を取得し反映させる処理を実装する
+・パラメーターごとにSprit + find + atofで値を抽出
+ -string [] split(string s, string separators)
+ -int  find(string haystack, string needle)
+ -string thirdbyte = a_string[];
+ 
+・unreal_data_table_3_SingleAssetParameters
 
 ●PatternBlock
 ・アセットスケールを1以下のランダムにして変化をつける
@@ -14,11 +18,15 @@
 ・サイズに応じたアセットをDTから取得する
 ・Greebleサイズの調整
  -Houdini側で実装
-  
-unreal_data_table_3_SingleAssetParameters
 
-((AssetPath=("StaticMesh\'/Game/SoulCity/Environment/Meshes/Building_Slum/SM_Slums_Window_01b.SM_Slums_Window_01b\'"),
-Transform=(X=0.000000,Y=0.000000,Z=0.000000),
-Scale=(X=1.000000,Y=1.000000,Z=1.000000),
-Rotate=(X=0.000000,Y=0.000000,Z=0.000000),
-RemainRatio=1.000000))
+[BaseBlock]
+・サイズに変化を持たせる
+
+○Greebleロジックの設計
+ 
+○DTとBaseBlockを検証する
+  ・※BaseBlockのサイズに変化を持たせて様々な適応サイズのDTを用意しサイズ、種類ともに変化を持たせる
+
+[BaseSurface]
+○BaseSurface,BaseBlockの生成ロジック
+・Voronoiで角度、サイズに変化があるSurfaceを生成するロジックを設計する
