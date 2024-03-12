@@ -1,34 +1,8 @@
-[反省]
-・質問のタイミングと仕方を反省する
- -質問の仕方を調べる
-・翌日勉強すべき内容をまとめておく
-
 [Public]
+○TSharedPtr,TSharedRefの勉強
+-普通のポインタとの違いを調査
 
-//カーソルが選択している位置からスクロールボックスのインデックスを返す
-int GetSelectingScrollBoxIndexInPos(SScrollBox* ScrollBox, const FVector2D SeletingPos)
-{
+[Private]
+○DTから必要なパラメーター取得のソースをメモ
 
-	if(!ScrollBox) return -1;
-
-	FChildren* Children = ScrollBox->GetScrollBoxChildren();
-	TArray<SWidget*> AllItems = Children->GetAllChildren();
-	
-	int ClosestItemIndex = 0;
-	//○一つ目の距離を取得
-	float ClosestItemDistance = ;
-	
-	for(int i = 1; i < AllItems.Num(); ++i)
-	{
-		SWidget* Item = AllItems[i];
-		
-		//○距離を取得する
-		float disntance = 
-		if(disntance < ClosestItemDistance)
-		{
-			ClosestItemDistance = disntance;
-			ClosestItemIndex = i;
-		}
-	}
-	return Index = i;
-}
+○実装できるかの確認
