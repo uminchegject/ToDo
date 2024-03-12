@@ -1,17 +1,34 @@
-[Private]
-○ScrollBoxからインデックスを取得
+[反省]
+・質問のタイミングと仕方を反省する
+ -質問の仕方を調べる
+・翌日勉強すべき内容をまとめておく
 
-・FChildren::GetChildAt()
-int ChildrenNum = FChildren::num();
+[Public]
 
-int GetSelectingIndexInScrollBox(SWidget* SelectingWidget), SScrollBox* ScrollBox)
+//カーソルが選択している位置からスクロールボックスのインデックスを返す
+int GetSelectingScrollBoxIndexInPos(SScrollBox* ScrollBox, const FVector2D SeletingPos)
 {
-	FChildren* ScrollBoxChildren 
-	for(int i = 0; i < ScrollBoxChildren->Num(); ++i)
+
+	if(!ScrollBox) return -1;
+
+	FChildren* Children = ScrollBox->GetScrollBoxChildren();
+	TArray<SWidget*> AllItems = Children->GetAllChildren();
+	
+	int ClosestItemIndex = 0;
+	//○一つ目の距離を取得
+	float ClosestItemDistance = ;
+	
+	for(int i = 1; i < AllItems.Num(); ++i)
 	{
-		if(SelectingWidget == GetChildAt(i))
+		SWidget* Item = AllItems[i];
+		
+		//○距離を取得する
+		float disntance = 
+		if(disntance < ClosestItemDistance)
 		{
-			return i;
+			ClosestItemDistance = disntance;
+			ClosestItemIndex = i;
 		}
 	}
+	return Index = i;
 }
