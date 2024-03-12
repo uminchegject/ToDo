@@ -7,18 +7,22 @@
 
 ○DTから値を取得し反映させる処理を実装する
 ・パラメーターごとにSprit + find + atofで値を抽出
- -string [] split(string s, string separators)
- -int  find(string haystack, string needle)
- -string thirdbyte = a_string[];
- 
- -unreal_data_table_3_SingleAssetParameters
+
+・ソース
+string ParamStrArray[] = split(StringTest);
+string ParamStr = ParamStrArray[0];
+int StrStartIndex = find(ParamStr, "X") + 2;
+int StrEndIndex = StrStartIndex + 8;
+string ValueStr = ParamStr[StrStartIndex:StrEndIndex];
+@TransformX = atof(ValueStr);
 
 [BaseBlock]
-○Greebleロジックの修正
 ・サイズに変化を持たせる
+
+○Greebleロジックの設計
  
 ○DTとBaseBlockを検証する
- ・※BaseBlockのサイズに変化を持たせて様々な適応サイズのDTを用意しサイズ、種類ともに変化を持たせる
+・※BaseBlockのサイズに変化を持たせて様々な適応サイズのDTを用意しサイズ、種類ともに変化を持たせる
 
 [BaseSurface]
 ○BaseSurface,BaseBlockの生成ロジック
