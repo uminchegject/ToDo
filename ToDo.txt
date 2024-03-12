@@ -1,8 +1,87 @@
 [Public]
-○TSharedPtr,TSharedRefの勉強
--普通のポインタとの違いを調査
+●TSharedPtr,TSharedRefの勉強
+・普通のポインタとの違いを調査
+
+-https://docs.unrealengine.com/4.27/ja/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/SmartPointerLibrary/SharedPointer/
+-https://docs.unrealengine.com/4.27/ja/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/SmartPointerLibrary/
+-https://logicalbeat.jp/blog/11047/
+
+○SWidget*からTSharedPtrを取得する
+・SWidgetにしないでTSharedPtrで管理するように実装する
 
 [Private]
+○※パラメーター値を取得して生成するまでのふろーを設計する
+
 ○DTから必要なパラメーター取得のソースをメモ
 
 ○実装できるかの確認
+
+●ソース
+//Stringパラメーター値を取得
+int StringParamStartIndex = 0;
+int StringParamNum = 1;
+vector StringValueArray[];
+for(int i = 0; i < StringParamNum; ++i)
+{
+	String Value;
+	
+	string ParamStr = ParamStrArray[i + StringParamStartIndex];
+	int StrStartIndex = find(ParamStr, "=") + 1;
+	int StrEndIndex = find(ParamStr, ")") - 2;
+	Value = ParamStr[StrStartIndex:StrEndIndex];
+	
+	StringValueArray[i] = Value;
+}
+
+s@AssetPath = StringValueArray[0];
+
+//Vectorパラメーター値を取得
+int VectorParamStartIndex = 1;
+int VectorParamNum = 4;
+vector VectorValueArray[];
+for(int i = 0; i < VectorParamNum; ++i)
+{
+	vector Value;
+	
+	string ParamStr = ParamStrArray[i + VectorParamStartIndex];
+	int StrStartIndex = find(ParamStr, "X") + 2;
+	int StrEndIndex = StrStartIndex + 8;
+	string ValueStr = ParamStr[StrStartIndex:StrEndIndex];
+	Value.x = atof(ValueStr);
+
+	int StrStartIndex = find(ParamStr, "Y") + 2;
+	int StrEndIndex = StrStartIndex + 8;
+	string ValueStr = ParamStr[StrStartIndex:StrEndIndex];
+	Value.y = atof(ValueStr);
+
+	int StrStartIndex = find(ParamStr, "Z") + 2;
+	int StrEndIndex = StrStartIndex + 8;
+	string ValueStr = ParamStr[StrStartIndex:StrEndIndex];
+	Value.z = atof(ValueStr);
+	
+	VectorValueArray[i] = Value;
+}
+
+v@Transform = VectorValueArray[0];
+v@Scale = VectorValueArray[1];
+v@Rotate = VectorValueArray[2];
+
+
+//Floatパラメーター値を取得
+int FloatParamStartIndex = 4;
+int FloatParamNum = 1;
+vector FloatValueArray[];
+for(int i = 0; i < FloatParamNum; ++i)
+{
+	Float Value;
+	
+	string ParamStr = ParamStrArray[i + FloatParamStartIndex];
+	int StrStartIndex = find(ParamStr, "=") + 1;
+	int StrEndIndex = StrStartIndex + 8;
+	string ValueStr = ParamStr[StrStartIndex:StrEndIndex];
+	Value = atof(ValueStr);
+	
+	FloatValueArray[i] = Value;
+}
+
+@RemainRatio = FloatValueArray[0];
