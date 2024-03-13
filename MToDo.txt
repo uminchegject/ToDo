@@ -1,29 +1,20 @@
-[パラメーター]
-・サイズ適応範囲をBlockParamに設定して適応サイズに当てはめていく
-・DTにParameterStructを追加して設定していきアセット管理をする
+[PD]
+○Blockの適正サイズのAsset値を取得する
+・Block数をsplitしたarrayから調べてindexをランダムに決める
+-Structに目印をつける
 
-[DataTable]
-・アセットスケールを1以下のランダムにして変化をつける
+//AssetParamごとに分割
+string AssetParamStrArray[] = split(s@unreal_data_table_3_SingleAssetParameters, "/");
+int AssetParamNum = len(AssetParamStrArray) - 1;
+for(int i = 0; i < AssetParamNum; ++i)
+{
+	string AssetParamStr = AssetParamStrArray[i];	
+}
 
-○DTから値を取得し反映させる処理を実装する
-・パラメーターごとにSprit + find + atofで値を抽出
+string AssetPathStrArray[] = split
+int AssetPathStrNum = 
 
-・ソース
-string ParamStrArray[] = split(StringTest);
-string ParamStr = ParamStrArray[0];
-int StrStartIndex = find(ParamStr, "X") + 2;
-int StrEndIndex = StrStartIndex + 8;
-string ValueStr = ParamStr[StrStartIndex:StrEndIndex];
-@TransformX = atof(ValueStr);
+int SelectedAssetPathIndex = int(AssetParamStrNum * random());
 
-[BaseBlock]
-・サイズに変化を持たせる
 
-○Greebleロジックの設計
- 
-○DTとBaseBlockを検証する
-・※BaseBlockのサイズに変化を持たせて様々な適応サイズのDTを用意しサイズ、種類ともに変化を持たせる
-
-[BaseSurface]
-○BaseSurface,BaseBlockの生成ロジック
-・Voronoiで角度、サイズに変化があるSurfaceを生成するロジックを設計する
+△BaseBlockに対して1Attributeをランダムに選択して値を取得する
