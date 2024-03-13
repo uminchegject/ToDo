@@ -1,14 +1,136 @@
 [Public]
-●TSharedPtr,TSharedRefの勉強
-・普通のポインタとの違いを調査
--https://qiita.com/hmito/items/db3b14917120b285112f
--https://logicalbeat.jp/blog/11047/
+○子Widgetを取得する
+　-GridPanel, Slotから取得する
 
-○SWidget*からTSharedPtrを取得する
-・SWidgetにしないでTSharedPtrで管理するように実装する
-・SWidget*からTSharedPtr,TSharedReftにするフローを調査する
+○IsEndScrollBoxをちゃんと機能させる
+・
 
-[Private]
-○パラメーター値を取得して生成するまでのフローを設計する
-・BaseBlockに対して1Attributeをランダムに選択して値を取得する
-・Blockの適正サイズのAsset値を取得する
+○Grid上のWidget内でスクロール方向のWidgetを取得する
+・カーソル計算関数を実装して使う
+
+[Study]
+○GBとシェアードポインタについて調べる
+https://qiita.com/hmito/items/db3b14917120b285112f
+
+[PD]
+○Blockの適正サイズのAsset値を取得する
+・Block数をsplitしたarrayから調べてindexをランダムに決める
+
+△BaseBlockに対して1Attributeをランダムに選択して値を取得する
+
+
+●ソース
+//-----------------------------------------------------------------------------//
+bool FSBGameCursor::TickNavigation(FSlateApplication& SlateApp, TSharedRef<ICursor> Cursor)
+{
+	// カーソル操作の中止判定。全SlateUserの1つでもNGならNG
+	bool bCantCursorInput = CantCursorInput(SlateApp);
+	if (bCantCursorInput) { return false; }
+
+	// 走査方向
+	FVector2D Direction(0.f, 0.f);
+	if (CursorInput.IsRepeat(ESBCursorInputKey::Gamepad_Up)) { Direction.Y = -1.f; }
+	if (CursorInput.IsRepeat(ESBCursorInputKey::Gamepad_Down)) { Direction.Y = 1.f; }
+	if (CursorInput.IsRepeat(ESBCursorInputKey::Gamepad_Left)) { Direction.X = -1.f; }
+	if (CursorInput.IsRepeat(ESBCursorInputKey::Gamepad_Right)) { Direction.X = 1.f; }
+	if (Direction.IsZero() || bEnablePadCursorMove == false)
+	{
+		return false;
+	}
+	Direction.Normalize();
+
+	// デバッグよう
+#if !UE_BUILD_SHIPPING
+	NavigationCheckHistory.CursorPosition = SlateApp.GetCursorPos();
+	NavigationCheckHistory.CheckDirection = Direction;
+#endif	// !UE_BUILD_SHIPPING
+
+	// GetCursorPos()の値は、BreakPointで停止→再開で、その時の値に更新されてしまい不都合なので、この時点で取得した値を使用する
+	FVector2D CursorPosition = SlateApp.GetCursorPos();
+	// カーソルがWidgetに乗っているなら、そのWidgetの中心座標を使用する（結果を固定するため
+	if (LastUnderCursorWidget)
+	{
+		CursorPosition = FSBGameCursorHelper::GetWidgetCenterPos(*LastUnderCursorWidget);
+	}
+	// 入力方向にあるウィジェットを検索
+	TArray<FSBSearchWidgetResult> SearchWidgets;
+	FSBGameCursorHelper::SearchWidget(SearchWidgets, CursorPosition, Direction, LastUnderCursorWidget);
+	if (!SearchWidgets.Num())
+	{
+		return false;
+	}
+
+	SWidget* InteractableWidget = nullptr;
+	// カーソルがWidgetに乗っていない場合は、対象Widgetの中央座標を見て、最も近いWidgetに移動する
+	if (LastUnderCursorWidget == nullptr)
+	{
+		auto ResultList = FSBGameCursorHelper::FilterSearchResult(SearchWidgets, CursorPosition, Direction, FVector2D(0.5f));
+		// 最も近い、インタラクト可能な結果を取得
+		auto InteractableResult = FSBGameCursorHelper::GetNearInteractableResult(SlateApp, ResultList, LastUnderCursorWidget);
+		if (InteractableResult)
+		{
+			InteractableWidget = &InteractableResult->Widget().Get();
+			// memo:InteractableResultは、ResultListの要素へのポインタなので、スコープに注意
+		}
+	}
+	else
+	{
+		// カーソルがWidgetに乗っている場合、
+		// 例えば以下のような横長のボタン1,2,3があり、1にカーソルが乗っている時、右キーを入力した場合、
+		//		[     1    A][B    2     ]
+		//               [C    3     ]
+		// 移動元のWidget(1)と、移動先のWidget(2,3)について、中央座標同士で距離を求めると、2よりも3の方が近いため、3に移動してしまう。
+		// これを回避するため、移動元は入力した方向の隅座標(A)を、移動先は入力した方向と逆の隅座標(B,C)を使用して、再度絞り込みを行う。
+		// （例だと、A→Cは、有効な方向ではなくなるので除外され、Bを持つ2に移動できる
+		// しかし、これだけだと、
+		// GridPanel上で、Paddingがマイナス値で配置され、当たり判定が被っている場合（コマンドメニュー>マイキャラ>バッグ等）や、
+		//		[     1  [BA]  2     ]
+		// ボタンの中に、ボタンが配置されている場合（コマンドメニュー>クエスト>クエスト一覧>進行中等）に、
+		//		[     1[B2]A]
+		// A→Bが有効な方向に無く、見つけることが出来なくなるため、
+		// ・移動元の中央(1)→移動先の隅(B,C)
+		// ・移動元の隅(A)  →移動先の中央(2,3)
+		// も判定し、その中で最も近い座標で移動を行う
+		// （例だと、1→C、A→3も有効だが、A→Bが最も近いので、Bを持つ2に移動できる
+		FVector2D SourceAnchor = ((Direction + FVector2D(1.0f)) * 0.5f);	// -1, 0, 1のDirectionを、0, 0.5, 1に変換。
+		FVector2D CornerPos = FSBGameCursorHelper::GetWidgetAnchorPos(*LastUnderCursorWidget, SourceAnchor);
+		FVector2D TargetAnchor = FVector2D(1.0f) - SourceAnchor;	// -1, 0, 1のDirectionを、1, 0.5, 0に変換。
+		auto ResultList1 = FSBGameCursorHelper::FilterSearchResult(SearchWidgets, CursorPosition, Direction, TargetAnchor);
+		auto ResultList2 = FSBGameCursorHelper::FilterSearchResult(SearchWidgets, CornerPos, Direction, FVector2D(0.5f));
+		auto ResultList3 = FSBGameCursorHelper::FilterSearchResult(SearchWidgets, CornerPos, Direction, TargetAnchor, /*bUseNearlyZero*/true);
+		// 最も近い、インタラクト可能な結果を取得
+		auto Result1 = FSBGameCursorHelper::GetNearInteractableResult(SlateApp, ResultList1, LastUnderCursorWidget);
+		auto Result2 = FSBGameCursorHelper::GetNearInteractableResult(SlateApp, ResultList2, LastUnderCursorWidget);
+		auto Result3 = FSBGameCursorHelper::GetNearInteractableResult(SlateApp, ResultList3, LastUnderCursorWidget);
+		// 3つの検索結果の中で、最も近いものを使用する
+		auto InteractableResult = Result1;
+		if (InteractableResult == nullptr || (Result2 != nullptr && Result2->Distance < InteractableResult->Distance)) { InteractableResult = Result2; }
+		if (InteractableResult == nullptr || (Result3 != nullptr && Result3->Distance < InteractableResult->Distance)) { InteractableResult = Result3; }
+		if (InteractableResult)
+		{
+			InteractableWidget = &InteractableResult->Widget().Get();
+		}
+	}
+	// インタラクト可能なWidgetが見つかったら、カーソルを移動
+	if (InteractableWidget)
+	{
+		LastUnderCursorWidget = InteractableWidget;
+		auto CenterPos = FSBGameCursorHelper::GetWidgetCenterPos(*InteractableWidget);
+
+		bool bScroll = bScrollScrollBox(CursorPosition, CenterPos, SlateApp);
+		if (bScroll)
+		{
+			bool IsScrollBox;
+			SScrollBox* Scrollbox = GetScrollBoxInPos(IsScrollBox, CursorPosition, SlateApp);
+			int SelectingIndex = GetSelectingScrollBoxIndexInPos(Scrollbox, CursorPosition);
+			UE_LOG(LogSkyBlue, Log, TEXT("SelectingIndex :: %d"), SelectingIndex);
+			TSharedPtr<SWidget> NextWidget = GetNextSWidgetInScrollBox(Scrollbox, SelectingIndex);
+			Scrollbox->ScrollDescendantIntoView(NextWidget);
+			return true;
+		}
+
+		ApplyCursorPosition(SlateApp, Cursor, CenterPos);
+		return true;
+	}
+	return false;
+}
