@@ -1,49 +1,57 @@
 [Public]
-○子Widgetを取得する
-・GridPanel, Slotから取得する
-・GetAllItemにて、Childrenを取得しGetTypeしてGridPanelかSlotだったら返す
-
-○IsEndScrollBoxをちゃんと機能させる
-・大体スクロールが完了しているかを確認する処理を実装する
-
-○Grid上のWidget内でスクロール方向のWidgetを取得する
-//次カーソル合わせるWidgetを選択
-SWidget* SelectNextCusorWidget(FSlateApplication& SlateApp, const FVector2D Direction, SWidget* LastUnderCursorWidget)
+○次のWidgetを取得する関数を実装
+//スクロールボックス内の選択しているインデックスから次に選択するアイテムWidgetを取得する
+TSharedPtr<SWidget> FSBGameCursor::GetNextSWidgetInScrollBox(FSlateApplication& SlateApp,const FVector2D Direction, SScrollBox* Scrollbox)
 {
-
-	FVector2D CursorPosition = SlateApp.GetCursorPos();
-	FVector2D SourceAnchor = ((Direction + FVector2D(1.0f)) * 0.5f);	// -1, 0, 1のDirectionを、0, 0.5, 1に変換。
-	FVector2D CornerPos = FSBGameCursorHelper::GetWidgetAnchorPos(*LastUnderCursorWidget, SourceAnchor);
-	FVector2D TargetAnchor = FVector2D(1.0f) - SourceAnchor;	// -1, 0, 1のDirectionを、1, 0.5, 0に変換。
-	auto ResultList1 = FSBGameCursorHelper::FilterSearchResult(SearchWidgets, CursorPosition, Direction, TargetAnchor);
-	auto ResultList2 = FSBGameCursorHelper::FilterSearchResult(SearchWidgets, CornerPos, Direction, FVector2D(0.5f));
-	auto ResultList3 = FSBGameCursorHelper::FilterSearchResult(SearchWidgets, CornerPos, Direction, TargetAnchor, /*bUseNearlyZero*/true);
-	// 最も近い、インタラクト可能な結果を取得
-	auto Result1 = FSBGameCursorHelper::GetNearInteractableResult(SlateApp, ResultList1, LastUnderCursorWidget);
-	auto Result2 = FSBGameCursorHelper::GetNearInteractableResult(SlateApp, ResultList2, LastUnderCursorWidget);
-	auto Result3 = FSBGameCursorHelper::GetNearInteractableResult(SlateApp, ResultList3, LastUnderCursorWidget);
-	// 3つの検索結果の中で、最も近いものを使用する
-	auto InteractableResult = Result1;
-	if (InteractableResult == nullptr || (Result2 != nullptr && Result2->Distance < InteractableResult->Distance)) { InteractableResult = Result2; }
-	if (InteractableResult == nullptr || (Result3 != nullptr && Result3->Distance < InteractableResult->Distance)) { InteractableResult = Result3; }
-	if (InteractableResult)
+	if (!ScrollBox) return nullptr;
+	
+	TArray<TSharedPtr<SWidget>> AllItems = Scrollbox->GetAllScrollBoxItems();
+	
+	TArray<FSBSearchWidgetResult> SearchScrollBoxWidgets;
+	for(TSharedPtr<SWidget> Item : AllItems)
 	{
-		InteractableWidget = &InteractableResult->Widget().Get();
+		FVector2D ItemPos = FSBGameCursorHelper::GetWidgetCenterPos(*AllItems[i].Get());
+		SearchScrollBoxWidgets.Add(FSBSearchWidgetResult(*Item, ItemPos));
 	}
+	
+	FSBSearchWidgetResult result = SelectNextCusorWidget(SlateApp, Direction, SearchWidgets);
+	
+	return 
 }
 
+struct FSBSearchWidgetResult
+{
+public:
+
+	TSharedRef<SWidget> Widget;
+
+	FVector2D HitLocation { EForceInit::ForceInitToZero };
+
+	int32 HitCheckFlag;	// このボタンが遮蔽されてないかのフラグ。0未チェック、-1遮蔽、1インタラクト可能
+
+public:
+	FSBSearchWidgetResult() = default;
+
+	FSBSearchWidgetResult(TSharedRef<SWidget> InWidget, const FVector2D& InHitLocation)
+		: Widget(InWidget)
+		, HitLocation(InHitLocation)
+		, HitCheckFlag(0)
+	{
+	}
+};
 
 [Study]
-○シェアードポインタについて調べる
-https://qiita.com/hmito/items/db3b14917120b285112f
-
+TOptionalについて調査
 
 [PD]
 ○Blockの適正サイズのAsset値を取得する
 ・Block数をsplitしたarrayから調べてindexをランダムに決める
 -Structに目印をつける
 
+・attribute
+@unreal_data_table_3_SingleAssetParameters
 
+・ソース
 //AssetParamごとに分割
 string AssetParamStrArray[] = split(s@unreal_data_table_3_SingleAssetParameters, "/");
 int AssetParamNum = len(AssetParamStrArray) - 1;
