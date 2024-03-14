@@ -1,21 +1,30 @@
-[パラメーター]
-・サイズ適応範囲をBlockParamに設定して適応サイズに当てはめていく
-・DTにParameterStructを追加して設定していきアセット管理をする
+[ToDo]
+■パラメーター
+○アセットスケールを1以下のランダムにして変化をつける
 
-[DataTable]
-・アセットスケールを1以下のランダムにして変化をつける
-@unreal_data_table_3_SingleAssetParameters
+○生成までのロジック設計
+・Detailに落とし込む
+・生成座標となるポイントを生成
+・Detailから必要な情報を取得してAttributeに設定する
 
-[BaseBlock]
+■BaseBlock
 ○Greebleロジックの設計
 ・サイズに変化を持たせる
- 
-[検証]
+・パラメーターを設定する
+
+○サイズ適応範囲をBlockParamに設定して適応サイズに当てはめていく
+
+■検証
 ・※BaseBlockのサイズに変化を持たせて様々な適応サイズのDTを用意しサイズ、種類ともに変化を持たせる
 ・複数パターンを検証する
 ・DTとBaseBlockを検証する
 
 
-△[BaseSurface]
+[IDEA]
+■Base
+・マテリアルの設定
+・サイズ、位置の設定
+
+■BaseSurface
 ○BaseSurface,BaseBlockの生成ロジック
 ・Voronoiで角度、サイズに変化があるSurfaceを生成するロジックを設計する
