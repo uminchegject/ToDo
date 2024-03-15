@@ -14,19 +14,29 @@ for(int j = 0; j < AssetParamNum; ++j)
     string AssetParamStr = AssetParamStrArray[j];
     string ParamStrArray[] = split(AssetParamStr, ")");
     
-    //Stringパラメーター値を取得
-    int StringParamStartIndex = 0;
-    int StringParamNum = 1;
-    string StringValueArray[];
-    for(int i = 0; i < StringParamNum; ++i)
-    {
-        string value;
-        string ParamStr = ParamStrArray[i + StringParamStartIndex];
-        string AssetPathStrArray[] = split(ParamStr, ",");
-        int AssetPathStrNum = len(AssetPathStrArray) - 1;
-
-    }
-    AssetPath[j] = StringValueArray[0];
+//Stringパラメーター値を取得
+int StringParamStartIndex = 0;
+int StringParamNum = 1;
+string StringValueArray[];
+for(int i = 0; i < StringParamNum; ++i)
+{
+	string value;
+	string ParamStr = ParamStrArray[i + StringParamStartIndex];
+	string AssetPathStrArray[] = split(ParamStr, ",");
+	int AssetPathStrNum = len(AssetPathStrArray) - 1;
+	
+	string AssetPathStr;
+	for(int k = 0; k < AssetPathStrNum; ++k)
+	{
+		int StrStartIndex = find(AssetPathStr, "=") + 3;
+		if(StrStartIndex < 0) StrStartIndex = 1;
+		int StrEndIndex = len(AssetPathStr) - 2;
+		value = AssetPathStr[StrStartIndex:StrEndIndex]; 
+		StringValueArray[k] = value;	
+		append(AssetPathStr, value);
+	}
+}
+AssetPath[j] = AssetPathStr;
     
     
     //Vectorパラメーター値を取得
