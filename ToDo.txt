@@ -1,5 +1,11 @@
 [Public]
-○次のWidgetを取得する関数を実装
+●IsEndScrollBox,IsStartScrollBoxをちゃんと機能させる
+・Widget基準のスクロールからEndScroll,StartScrollを呼び出すロジックを考える。
+
+●パーティ申請のクラッシュ原因を調査
+・エラーログからエラー発生タイミングを確認する
+
+○TSharedPtrで結果を取得するロジックを考える
 //スクロールボックス内の選択しているインデックスから次に選択するアイテムWidgetを取得する
 TSharedPtr<SWidget> FSBGameCursor::GetNextSWidgetInScrollBox(FSlateApplication& SlateApp,const FVector2D Direction, SScrollBox* Scrollbox)
 {
@@ -11,56 +17,23 @@ TSharedPtr<SWidget> FSBGameCursor::GetNextSWidgetInScrollBox(FSlateApplication& 
 	for(TSharedPtr<SWidget> Item : AllItems)
 	{
 		FVector2D ItemPos = FSBGameCursorHelper::GetWidgetCenterPos(*AllItems[i].Get());
-		SearchScrollBoxWidgets.Add(FSBSearchWidgetResult(*Item, ItemPos));
+		SearchScrollBoxWidgets.Add(FSBSearchWidgetResult(Item.ToSharedRef(), ItemPos));
 	}
 	
 	FSBSearchWidgetResult result = SelectNextCusorWidget(SlateApp, Direction, SearchWidgets);
-	
+	TSharedPtr<SWidget> NextWidget = result.Widget;
 	return 
 }
 
-struct FSBSearchWidgetResult
-{
-public:
 
-	TSharedRef<SWidget> Widget;
-
-	FVector2D HitLocation { EForceInit::ForceInitToZero };
-
-	int32 HitCheckFlag;	// このボタンが遮蔽されてないかのフラグ。0未チェック、-1遮蔽、1インタラクト可能
-
-public:
-	FSBSearchWidgetResult() = default;
-
-	FSBSearchWidgetResult(TSharedRef<SWidget> InWidget, const FVector2D& InHitLocation)
-		: Widget(InWidget)
-		, HitLocation(InHitLocation)
-		, HitCheckFlag(0)
-	{
-	}
-};
-
-[Study]
-TOptionalについて調査
 
 [PD]
-○Blockの適正サイズのAsset値を取得する
-・Block数をsplitしたarrayから調べてindexをランダムに決める
--Structに目印をつける
+■パラメーター
+※DTデータをDetailAttributeに設定するまでを実装する
+○AssetPathをランダムに取得する
+・Splitとパラメーター取得についてUEを用いて確認する
 
-・attribute
-@unreal_data_table_3_SingleAssetParameters
-
-・ソース
-//AssetParamごとに分割
-string AssetParamStrArray[] = split(s@unreal_data_table_3_SingleAssetParameters, "/");
-int AssetParamNum = len(AssetParamStrArray) - 1;
-for(int i = 0; i < AssetParamNum; ++i)
-{
-	string AssetParamStr = AssetParamStrArray[i];	
-}
-
-//AssetPathをランダムに取得
-string AssetPathStrArray[] = split
-int AssetPathStrNum = 
+string AssetPathStrArray[] = split();
+int AssetPathStrNum = len(AssetPathStrArra) - 1;
 string AssetPathStr = AssetParamStrArray[int(AssetParamStrNum * random())];
+
