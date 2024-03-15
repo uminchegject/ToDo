@@ -1,5 +1,5 @@
 //AssetParamごとに分割
-string AssetParamStrArray[] = split(s@unreal_data_table_3_SingleAssetParameters, "/");
+string AssetParamStrArray[] = split(s@unreal_data_table_3_SingleAssetParameters, "!");
 int AssetParamNum = len(AssetParamStrArray) - 1;
 
 string AssetPath[];
@@ -20,11 +20,16 @@ for(int j = 0; j < AssetParamNum; ++j)
 	string StringValueArray[];
 	for(int i = 0; i < StringParamNum; ++i)
 	{
-		string value;        
+		string value;
 		string ParamStr = ParamStrArray[i + StringParamStartIndex];
-		int StrStartIndex = find(ParamStr, "=") + 3;
-		int StrEndIndex = len(ParamStr) - 1;
-		value = ParamStr[StrStartIndex:StrEndIndex]; 
+		string AssetPathStrArray[] = split(ParamStr, ",");
+		int AssetPathStrNum = len(AssetPathStrArra) - 1;
+		string AssetPathStr = AssetPathStrArray[int(AssetParamStrNum * random())];
+		
+		int StrStartIndex = find(AssetPathStr, "=") + 3;
+		if(StrStartIndex < 0) StrStartIndex = 1;
+		int StrEndIndex = len(AssetPathStr) - 2;
+		value = AssetPathStr[StrStartIndex:StrEndIndex]; 
 		StringValueArray[i] = value;
 	}
 	AssetPath[j] = StringValueArray[0];
