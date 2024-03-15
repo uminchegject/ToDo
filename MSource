@@ -1,5 +1,5 @@
 //AssetParamごとに分割
-string AssetParamStrArray[] = split(s@unreal_data_table_3_SingleAssetParameters, "!");
+string AssetParamStrArray[] = split(s@unreal_data_table_2_SingleAssetParameters, "!");
 int AssetParamNum = len(AssetParamStrArray) - 1;
 
 string AssetPath[];
@@ -10,80 +10,79 @@ float RemainRatio[];
 
 for(int j = 0; j < AssetParamNum; ++j)
 {
-	//パラメーターStrを取得
-	string AssetParamStr = AssetParamStrArray[j];
-	string ParamStrArray[] = split(AssetParamStr, ")");
+    //パラメーターStrを取得
+    string AssetParamStr = AssetParamStrArray[j];
+    string ParamStrArray[] = split(AssetParamStr, ")");
+    
+    //Stringパラメーター値を取得
+    int StringParamStartIndex = 0;
+    int StringParamNum = 1;
+    string StringValueArray[];
+    for(int i = 0; i < StringParamNum; ++i)
+    {
+        string value;
+        string ParamStr = ParamStrArray[i + StringParamStartIndex];
+        string AssetPathStrArray[] = split(ParamStr, ",");
+        int AssetPathStrNum = len(AssetPathStrArray) - 1;
 
-	//Stringパラメーター値を取得
-	int StringParamStartIndex = 0;
-	int StringParamNum = 1;
-	string StringValueArray[];
-	for(int i = 0; i < StringParamNum; ++i)
-	{
-		string value;
-		string ParamStr = ParamStrArray[i + StringParamStartIndex];
-		string AssetPathStrArray[] = split(ParamStr, ",");
-		int AssetPathStrNum = len(AssetPathStrArra) - 1;
-		string AssetPathStr = AssetPathStrArray[int(AssetParamStrNum * random())];
-		
-		int StrStartIndex = find(AssetPathStr, "=") + 3;
-		if(StrStartIndex < 0) StrStartIndex = 1;
-		int StrEndIndex = len(AssetPathStr) - 2;
-		value = AssetPathStr[StrStartIndex:StrEndIndex]; 
-		StringValueArray[i] = value;
-	}
-	AssetPath[j] = StringValueArray[0];
+    }
+    AssetPath[j] = StringValueArray[0];
+    
+    
+    //Vectorパラメーター値を取得
+    int VectorParamStartIndex = 1;
+    int VectorParamNum = 4;
+    vector VectorValueArray[];
+    for(int i = 0; i < VectorParamNum; ++i)
+    {
+        vector value;
+        
+        string ParamStr = ParamStrArray[i + VectorParamStartIndex];
+        int StrStartIndex = find(ParamStr, "X") + 2;
+        int StrEndIndex = StrStartIndex + 8;
+        string ValueStr = ParamStr[StrStartIndex:StrEndIndex];
+        value.x = atof(ValueStr);
 
+        StrStartIndex = find(ParamStr, "Y") + 2;
+        StrEndIndex = StrStartIndex + 8;
+        ValueStr = ParamStr[StrStartIndex:StrEndIndex];
+        value.y = atof(ValueStr);
 
-	//Vectorパラメーター値を取得
-	int VectorParamStartIndex = 1;
-	int VectorParamNum = 4;
-	vector VectorValueArray[];
-	for(int i = 0; i < VectorParamNum; ++i)
-	{
-		vector value;
-		
-		string ParamStr = ParamStrArray[i + VectorParamStartIndex];
-		int StrStartIndex = find(ParamStr, "X") + 2;
-		int StrEndIndex = StrStartIndex + 8;
-		string ValueStr = ParamStr[StrStartIndex:StrEndIndex];
-		value.x = atof(ValueStr);
+        StrStartIndex = find(ParamStr, "Z") + 2;
+        StrEndIndex = StrStartIndex + 8;
+        ValueStr = ParamStr[StrStartIndex:StrEndIndex];
+        value.z = atof(ValueStr);
+        
+        VectorValueArray[i] = value;
+    }
 
-		StrStartIndex = find(ParamStr, "Y") + 2;
-		StrEndIndex = StrStartIndex + 8;
-		ValueStr = ParamStr[StrStartIndex:StrEndIndex];
-		value.y = atof(ValueStr);
+    Transform[j] = VectorValueArray[0];
+    Scale[j] = VectorValueArray[1];
+    Rotate[j] = VectorValueArray[2];
+  
+    
+    //Floatパラメーター値を取得
+    int FloatParamStartIndex = 4;
+    int FloatParamNum = 1;
+    float FloatValueArray[];
+    for(int i = 0; i < FloatParamNum; ++i)
+    {
+        float value;
+        
+        string ParamStr = ParamStrArray[i + FloatParamStartIndex];
+        int StrStartIndex = find(ParamStr, "=") + 1;
+        int StrEndIndex = StrStartIndex + 8;
+        string ValueStr = ParamStr[StrStartIndex:StrEndIndex];
+        value = atof(ValueStr);
+        
+        FloatValueArray[i] = value;
+    }
 
-		StrStartIndex = find(ParamStr, "Z") + 2;
-		StrEndIndex = StrStartIndex + 8;
-		ValueStr = ParamStr[StrStartIndex:StrEndIndex];
-		value.z = atof(ValueStr);
-		
-		VectorValueArray[i] = value;
-	}
-
-	Transform[j] = VectorValueArray[0];
-	Scale[j] = VectorValueArray[1];
-	Rotate[j] = VectorValueArray[2];
-
-
-	//Floatパラメーター値を取得
-	int FloatParamStartIndex = 4;
-	int FloatParamNum = 1;
-	float FloatValueArray[];
-	for(int i = 0; i < FloatParamNum; ++i)
-	{
-		float value;
-		
-		string ParamStr = ParamStrArray[i + FloatParamStartIndex];
-		int StrStartIndex = find(ParamStr, "=") + 1;
-		int StrEndIndex = StrStartIndex + 8;
-		string ValueStr = ParamStr[StrStartIndex:StrEndIndex];
-		value = atof(ValueStr);
-		
-		FloatValueArray[i] = value;
-	}
-
-	RemainRatio[j] = FloatValueArray[0];
-
+    RemainRatio[j] = FloatValueArray[0];
 }
+
+v[]@Transform = Transform;
+v[]@Scale = Scale;
+v[]@Rotate = Rotate;
+f[]@RemainRatio = RemainRatio;
+
