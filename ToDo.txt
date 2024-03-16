@@ -1,39 +1,24 @@
 [Public]
-●IsEndScrollBox,IsStartScrollBoxをちゃんと機能させる
-・Widget基準のスクロールからEndScroll,StartScrollを呼び出すロジックを考える。
+○PS5の起動
+○エディターを用いた処理の確認
 
-●パーティ申請のクラッシュ原因を調査
-・エラーログからエラー発生タイミングを確認する
+[Private]
+※検証をした上で細かい実装を行う
+ -パラメーター実装はその後
+ -Houdiniで完結させる
 
-○TSharedPtrで結果を取得するロジックを考える
-//スクロールボックス内の選択しているインデックスから次に選択するアイテムWidgetを取得する
-TSharedPtr<SWidget> FSBGameCursor::GetNextSWidgetInScrollBox(FSlateApplication& SlateApp,const FVector2D Direction, SScrollBox* Scrollbox)
-{
-	if (!ScrollBox) return nullptr;
-	
-	TArray<TSharedPtr<SWidget>> AllItems = Scrollbox->GetAllScrollBoxItems();
-	
-	TArray<FSBSearchWidgetResult> SearchScrollBoxWidgets;
-	for(TSharedPtr<SWidget> Item : AllItems)
-	{
-		FVector2D ItemPos = FSBGameCursorHelper::GetWidgetCenterPos(*AllItems[i].Get());
-		SearchScrollBoxWidgets.Add(FSBSearchWidgetResult(Item.ToSharedRef(), ItemPos));
-	}
-	
-	FSBSearchWidgetResult result = SelectNextCusorWidget(SlateApp, Direction, SearchWidgets);
-	TSharedPtr<SWidget> NextWidget = result.Widget;
-	return 
-}
+○パラメーターDTをDetailに落とし込む
+・Multi1Paramの設定
+・△GreebleParamの設定
+ -houdiniで実装し、必要なパラメーターを絞り込む
 
+○生成座標となるポイントを生成
+・Greebleの実装
+ -必要なパラメーターをまとめる
+ -サイズに変化を持たせる
 
+○pointにDetailAttributeから必要な値を取得する
+・適応サイズの値を取得する
+・アセットスケールを1以下のランダムにして変化をつける
 
-[PD]
-■パラメーター
-※DTデータをDetailAttributeに設定するまでを実装する
-○AssetPathをランダムに取得する
-・Splitとパラメーター取得についてUEを用いて確認する
-
-string AssetPathStrArray[] = split();
-int AssetPathStrNum = len(AssetPathStrArra) - 1;
-string AssetPathStr = AssetParamStrArray[int(AssetParamStrNum * random())];
-
+○アセットの生成
