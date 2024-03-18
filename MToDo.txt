@@ -1,30 +1,50 @@
 [ToDo]
-■パラメーター
-○アセットスケールを1以下のランダムにして変化をつける
+■ブロック生成
+※既存のBase生成ロジックを修正して用いる
 
-○生成までのロジック設計
-・Detailに落とし込む
-・生成座標となるポイントを生成
-・Detailから必要な情報を取得してAttributeに設定する
+○Voronoiを用いたBase生成
 
-■BaseBlock
-○Greebleロジックの設計
+○Greebleの実装
 ・サイズに変化を持たせる
-・パラメーターを設定する
+・△必要なパラメーターをまとめる
 
-○サイズ適応範囲をBlockParamに設定して適応サイズに当てはめていく
+■フローの設計
+○パラメーターDTを整理する
+・Str周りを実装する
+
+○ParamAttributeから必要な値を取得する
+・適応サイズのBlockTypeを取得する
+vector size;
+int RightSizeIndexes[];
+for(int i = 0; i < BlockTypeNum; ++i)
+{
+	vector rightMinSize = point(1, "RightMinSize", i);
+	vector rightMaxSize = point(1, "RightMaxSize", i);
+	if(rightMinSize.x < size.x && size.x < rightMaxSize.x)
+	{
+		if(rightMinSize.y < size.y && size.y < rightMaxSize.y)
+		{
+			RightSizeIndexes[len(RightSizeIndexes)] = i;
+		}
+	}
+}
+int BlockTypeIndex = RightSizeIndexes[int(len(RightSizeIndexes) * random(@P))];
+
+・アセットスケールを1以下のランダムにして変化をつける
+ -パラメーターを追加する
+float scaleCofficient = point(1, "ScaleCofficient", BlockTypeIndex);
+v@scale = (1 - scaleCofficient) + scaleCofficient * random(@P);
+
+
+○アセットの生成
+
 
 ■検証
 ・※BaseBlockのサイズに変化を持たせて様々な適応サイズのDTを用意しサイズ、種類ともに変化を持たせる
-・複数パターンを検証する
-・DTとBaseBlockを検証する
+・※様々なアセット、タイプを用いて検証する
 
 
 [IDEA]
-■Base
+▲BaseObj
 ・マテリアルの設定
 ・サイズ、位置の設定
-
-■BaseSurface
-○BaseSurface,BaseBlockの生成ロジック
-・Voronoiで角度、サイズに変化があるSurfaceを生成するロジックを設計する
