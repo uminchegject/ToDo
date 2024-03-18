@@ -2,16 +2,7 @@
 ○PS5同士の挙動を確認する
  -デバッグし挙動を確認する
 
-[Study]
-
 [Private]
-○検証
-・Block,アセット共にサイズ差のあるように実装する
-・配置のみをする
-
-○Separatorの修正
-
-[ToDo]
 ■ブロック生成
 ※既存のBase生成ロジックを修正して用いる
 
@@ -19,45 +10,9 @@
 
 ○Greebleの実装
 ・サイズに変化を持たせる
+・Block,アセット共にサイズ差のあるように実装する
 ・△必要なパラメーターをまとめる
 
-■フローの設計
-○パラメーターDTを整理する
-・Str周りを実装する
 
-○ParamAttributeから必要な値を取得する
-・適応サイズのBlockTypeを取得する
-vector size;
-int RightSizeIndexes[];
-for(int i = 0; i < BlockTypeNum; ++i)
-{
-	vector rightMinSize = point(1, "RightMinSize", i);
-	vector rightMaxSize = point(1, "RightMaxSize", i);
-	if(rightMinSize.x < size.x && size.x < rightMaxSize.x)
-	{
-		if(rightMinSize.y < size.y && size.y < rightMaxSize.y)
-		{
-			RightSizeIndexes[len(RightSizeIndexes)] = i;
-		}
-	}
-}
-int BlockTypeIndex = RightSizeIndexes[int(len(RightSizeIndexes) * random(@P))];
-
-・アセットスケールを1以下のランダムにして変化をつける
- -パラメーターを追加する
-float scaleCofficient = point(1, "ScaleCofficient", BlockTypeIndex);
-v@scale = (1 - scaleCofficient) + scaleCofficient * random(@P);
-
-
-○アセットの生成
-
-
-■検証
-・※BaseBlockのサイズに変化を持たせて様々な適応サイズのDTを用意しサイズ、種類ともに変化を持たせる
-・※様々なアセット、タイプを用いて検証する
-
-
-[IDEA]
-▲BaseObj
-・マテリアルの設定
-・サイズ、位置の設定
+■DT
+Separatorの修正
