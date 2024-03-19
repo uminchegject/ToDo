@@ -4,15 +4,69 @@
 
 [Private]
 ■ブロック生成
-※既存のBase生成ロジックを修正して用いる
 
-○Voronoiを用いたBase生成
+○サイズ情報をPrimitiveに持たせる
+poly = geo.createPolygon()
 
-○Greebleの実装
-・サイズに変化を持たせる
-・Block,アセット共にサイズ差のあるように実装する
-・△必要なパラメーターをまとめる
+△ズレている箇所を修正する
+float minLength = 1;
+
+float width = @scale.x;
+float height = @scale.y;
+
+if(minLength < width && minLength < height)
+{
+    float shortLen = height;
+    float longLen = width;
+    if(longLen < shortLen)
+    {
+        shortLen = width;
+        longLen = height;
+    }
+    
+    int blockNum = int(longLen / shortLen);
+    float blockSize = longLen / blockNum;
+    
+    vector spawnPos = @P;
+    vector spawnPtDirection = (0, 0, 0);
+    vector blockScale = (1.0, 1.0, 1.0);
+    blockScale.y = height;
+    blockScale.x = blockSize;
+
+    spawnPos.x = @P.x - width / 2 + blockSize / 2;
+    spawnPtDirection.x = blockSize;
+    if(width < height)
+    {
+        spawnPos.y = @P.y - height / 2 + blockSize / 2;
+        spawnPos.x = @P.x;
+        spawnPtDirection.y = blockSize;
+        spawnPtDirection.x = 0;
+        blockScale.x = width;
+        blockScale.y = blockSize;
+        blockScale.z = 1;
+    }    
+    else if(0 < abs(@N.x))
+    {
+        spawnPos.z = @P.z - width / 2 + blockSize / 2;
+        spawnPos.x = @P.x;
+        spawnPtDirection.z = blockSize;
+        spawnPtDirection.x = 0;
+    }
+    
+    for(int i = 0; i < blockNum; ++i)
+    {
+        int ptNum = addpoint(0, spawnPos);
+        setpointattrib(0, "N", ptNum, @N);
+        setpointattrib(0, "scale", ptNum, blockScale);
+        spawnPos += spawnPtDirection;
+    }
+        
+    @B = blockNum;
+}
+
+removepoint(0, @ptnum);
 
 
 ■DT
-Separatorの修正
+○Separatorの修正
+・先頭に!をつける
