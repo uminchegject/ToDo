@@ -1,12 +1,18 @@
+[反省]
+※必ずリビルドを行う
+※使う関数の定義を確認する
+
 [Public]
-○PS5同士の挙動を確認する
- -デバッグし挙動を確認する
+○バインドしたイベントの一連の流れを確認する
+・InQue->Task->OutQue
+
+○差分を確認
 
 [Private]
 ■ブロック生成
 
 ○サイズ情報をPrimitiveに持たせる
-poly = geo.createPolygon()
+poly.setAttribValue("SizeX", 1.0)
 
 △ズレている箇所を修正する
 float minLength = 1;
@@ -16,41 +22,24 @@ float height = @scale.y;
 
 if(minLength < width && minLength < height)
 {
-    float shortLen = height;
-    float longLen = width;
-    if(longLen < shortLen)
-    {
-        shortLen = width;
-        longLen = height;
-    }
-    
-    int blockNum = int(longLen / shortLen);
-    float blockSize = longLen / blockNum;
+    int blockNum = int(height / width);
+    float blockHeight = height / blockNum;
     
     vector spawnPos = @P;
     vector spawnPtDirection = (0, 0, 0);
     vector blockScale = (1.0, 1.0, 1.0);
     blockScale.y = height;
-    blockScale.x = blockSize;
+    blockScale.x = blockHeight;
 
-    spawnPos.x = @P.x - width / 2 + blockSize / 2;
-    spawnPtDirection.x = blockSize;
     if(width < height)
     {
-        spawnPos.y = @P.y - height / 2 + blockSize / 2;
+        spawnPos.y = @P.y - height / 2 + blockHeight / 2;
         spawnPos.x = @P.x;
-        spawnPtDirection.y = blockSize;
+        spawnPtDirection.y = blockHeight;
         spawnPtDirection.x = 0;
         blockScale.x = width;
-        blockScale.y = blockSize;
+        blockScale.y = blockHeight;
         blockScale.z = 1;
-    }    
-    else if(0 < abs(@N.x))
-    {
-        spawnPos.z = @P.z - width / 2 + blockSize / 2;
-        spawnPos.x = @P.x;
-        spawnPtDirection.z = blockSize;
-        spawnPtDirection.x = 0;
     }
     
     for(int i = 0; i < blockNum; ++i)
