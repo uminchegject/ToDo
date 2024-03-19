@@ -11,7 +11,7 @@ float RemainRatio[];
 for(int j = 0; j < AssetParamNum; ++j)
 {
     //パラメーターStrを取得
-    string AssetParamStr = AssetParamStrArray[j];
+    string AssetParamStr = AssetParamStrArray[j + 1];
     string ParamStrArray[] = split(AssetParamStr, ")");
     
     //Stringパラメーター値を取得
