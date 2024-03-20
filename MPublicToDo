@@ -1,98 +1,33 @@
-■[SKBLO-1121 : 【アウト】【ミッションシーケンス】ミッション突入時のローディング中に該当ダンジョンをadminの機能制御から非公開に設定するとクラッシュする]
-https://xwxcicnu.softwaretest.jp/btsService/btsView?bugId=24194&projectId=8
 
-○質問
-・HandleInternetErrorの呼び出し元の調べ方
+■
+※時間が必要
 
-○実際の挙動を調査
- -StartMatchingのOnMatchingFailedDelegate.Broadcastを確認
- -apiにリクエストするまでの処理を確認
- -apiからリクエストを取得し、クライアントにFailureTypeが反映されるまでの処理を確認
+■イベントのバインド.
+void USBGameIntent_PS5::PartyInviteProc()
+ -PS5Session->GetPlayerSessionInvitations(*UniqueNetIdptr, CompletionDelegate);
 
-○DGS側の挙動を調査
-※確認方法を考える
-・bool ASBGameSession::HandleStartMatchRequest()
-・void ASBGameSession::StartSession_HttpRequestComplete(USBHttpQuery* Query, FHttpResponsePtr Response, bool bWasSuccessful)
+bool FOnlineSessionCrossgen::GetPlayerSessionInvitations(const FUniqueNetId& LocalUserId, const FOnGetPlayerSessionInvitationsCompleteDelegate& CompletionDelegate)
+　-SonySubsystem->GetAsyncTaskManager()->AddToInQueue(
+		new FOnlineAsyncTaskGetPlayerSessionInvitations(
+			SonySubsystem,
+			FUniqueNetIdSony::Cast(LocalUserId.AsShared()),
+			TaskCompletionDelegate
+		)
 
-△HandleInternetErrorの処理から調査
- -IsvalidPlayerの原因を調べる
+■FOnlineAsyncTaskManager
+・流れ
+InQue
+Task->Tick()
+OutQue
 
-△他のエラー処理を参考に調査
- -TravelErrorから
- -接続エラー121を意図的に発生させる
+○void FOnlineAsyncTaskManager::GameTick()
+・Delegatesのキューの処理時のResponseに異常値がある
+// Finish work and trigger delegates
+Item->Finalize();
+Item->TriggerDelegates();
+delete Item;
+Item = nullptr;
 
-●API呼び出し前の処理
-　-bool UMatchingSystem::StartMatchmaking_Body( const FOnlineSessionSettings& NewSessionSettings, TSharedPtr<FOnlineSessionSearch>& InSearchSettings, bool bIsAllRegion )
- -bool UMatchingSystem::StartMatchmaking_Body_Step2( const FOnlineSessionSettings& NewSessionSettings, TSharedPtr<FOnlineSessionSearch>& InSearchSettings, bool bIsAllRegion, const FString& Url )
- -
-
-●APIの取得後の処理
-・UMatchingSystem::ClientRpc
- -OnMatchmakingCompleteDelegates.Broadcast(FName(), true);
-
-・void USBMatchingManager::OnMatchmakingComplete(FName SessionName, bool bWasSuccessful)
- -OnMatchingFailedDelegate.Broadcast(MatchingGame, ErrorType);
-・USBMatchingManager::RegisterSessionDelegates()
- -MatchmakingCompleteDelegateHandle = MatchingSystem->OnMatchmakingComplete().AddUObject(this, &ThisClass::OnMatchmakingComplete);
-
-・MatchingManager->OnMatchingFailed().AddUObject(this, &ThisClass::OnMatchingFailedInternal);
-・USBGameInstance::OnMatchingFailedInternal(USBMatchingGameState* MatchedGame, const ESBMatchingFailureType FailureType)
-・UFUNCTION(BlueprintImplementableEvent, Category = "SkyBlue|Matching", meta = (DisplayName = "MatchingFailed"))
- void ReceiveMatchingFailed(const ESBMatchingFailureType FailureType, bool PenaltyForMe,	int MinuteToEndPenalty);
- 
-
-
-■[SKBLO-1120 : 【アウト】【ミッションシーケンス】adminの機能制御で冒険者ランク昇格試験を非公開にした際エラーメッセージが表示された後自動で申請画面が閉じず、またキャンセルを押下しても申請画面が閉じられない]
-https://xwxcicnu.softwaretest.jp/btsService/btsView?bugId=24182&projectId=8
-
-void USBGameInstance::ClientShowAccessRestrictDialog()
-{
-	bool bIsValid = false;
-	FText MsgText;
-	USBGameSingleton* GameSingleton = USBBlueprintFunctionLibrary::GetGameSingleton(bIsValid);
-	if (bIsValid && GameSingleton)
-	{
-		const FString Msg = GameSingleton->TextTableDB.GetText(TEXT("Dialog"), FSBTextId(TEXT("NAEU_4")));
-		MsgText = FText::FromString(Msg);
-	}
-	USBEventSceneBPFunctionLibrary::ShowMessageDialogNoWait(this, MsgText);
-}
-
-
-■[DGSからClientにかけてログ表示を呼び出す処理]
-
-for (FConstPlayerControllerIterator Iterator = World->GetPlayerControllerIterator(); Iterator; ++Iterator)
-{
-	ASBPlayerController* PlayerController = Cast<ASBPlayerController>(Iterator->Get());
-	if (PlayerController && PlayerController->PlayerState)
-	{
-		UE_LOG(LogSkyBlue, Log, TEXT("%s GetPlayerController"), ANSI_TO_TCHAR(__FUNCTION__));
-		PlayerController->TravelToAnyMap(TravelOption);
-		PlayerController->ClientShowMessageDialogNoWait(MsgText);
-	}
-}
-
-//クライアント上にNoWaitDialogを表示する
-void ASBPlayerController::ClientShowMessageDialogNoWait_Implementation(const FText& Message)
-{
-	UWorld* World = GetWorld();
-	if (World)
-	{
-		USBGameInstance* GI = Cast<USBGameInstance>(World->GetGameInstance());
-		if (GI)
-		{
-			GI->OnLoadCompletePlayerDelegate.AddDynamic(GI, &USBGameInstance::ClientShowAccessRestrictDialog);
-		}
-	}
-}
-
-UWorld* World = GetWorld();
-if (World)
-{
-	USBGameInstance* GI = Cast<USBGameInstance>(World->GetGameInstance());
-	if (GI)
-	{
-		GI->OnLoadCompletePlayerDelegate.Broadcast();
-		GI->OnLoadCompletePlayerDelegate.Clear();
-	}
-}
+・異常値
+FOnlineAsyncTaskNpBase<FGetPlayerSessionInvitationsTypes> = { bRequestStarted=true LocalUserId=Ptr=0x0000001041008eb0, SharedRefs=4, WeakRefs=4, Object={ State=LocalWithOnline (2) ... } NpParameter= ... }
+ResponseInformationOption
