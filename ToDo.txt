@@ -2,60 +2,55 @@
 ※必ずリビルドを行う
 ※使う関数の定義を確認する
 
+○uBlockOriginを導入
+
 [Public]
 ○バインドしたイベントの一連の流れを確認する
-・InQue->Task->OutQue
+※このあたりで分からなかったら報告
+・FOnlineAsyncTaskGetPlayerSessionInvitationsの定義を確認
+・FOnlineAsyncTaskManagerの一連の処理を確認
+・AddToOutQueueされている箇所を確認
+・Queのタスクが処理されている箇所を確認
 
 ○差分を確認
 
 [Private]
-■ブロック生成
+※SingleAssetのみ実装
 
-○サイズ情報をPrimitiveに持たせる
-poly.setAttribValue("SizeX", 1.0)
+○pointにAttributeを設定するように修正
 
-△ズレている箇所を修正する
-float minLength = 1;
+○Attributeを適応
+・回転
+・移動
+・スケールの設定
+ -アセットスケールを1以下のランダムにして変化をつける
+float scaleCofficient = 0.7
+v@scale = (1 - scaleCofficient) + scaleCofficient * random(@P);
+・アセットの生成
+ -※アセットのサイズコントラストが生まれるように選択する
+ 
+・ソース
+float sizeX = prim(2, "restlength", 0);
+float sizeY = prim(2, "restlength", 1);
+float minSize = 10;
+float noiseCofficient = 0.02;
 
-float width = @scale.x;
-float height = @scale.y;
+vector originPos = prim(1, "P", 0);
+@P -= originPos;
 
-if(minLength < width && minLength < height)
-{
-    int blockNum = int(height / width);
-    float blockHeight = height / blockNum;
-    
-    vector spawnPos = @P;
-    vector spawnPtDirection = (0, 0, 0);
-    vector blockScale = (1.0, 1.0, 1.0);
-    blockScale.y = height;
-    blockScale.x = blockHeight;
+float rotateValue = (random(originPos) - 0.5) * 0.2;//(noise(originPos * noiseCofficient) - 0.5) * 1.5;
+vector axis = set(0,1,0); //Y軸の回転軸を変数に保存
+vector4 q = quaternion(rotateValue ,axis);
+matrix mRotate = qconvert(q); //クォタニオンを回転行列に変換
 
-    if(width < height)
-    {
-        spawnPos.y = @P.y - height / 2 + blockHeight / 2;
-        spawnPos.x = @P.x;
-        spawnPtDirection.y = blockHeight;
-        spawnPtDirection.x = 0;
-        blockScale.x = width;
-        blockScale.y = blockHeight;
-        blockScale.z = 1;
-    }
-    
-    for(int i = 0; i < blockNum; ++i)
-    {
-        int ptNum = addpoint(0, spawnPos);
-        setpointattrib(0, "N", ptNum, @N);
-        setpointattrib(0, "scale", ptNum, blockScale);
-        spawnPos += spawnPtDirection;
-    }
-        
-    @B = blockNum;
-}
+float transValue = (random(originPos) - 0.4) * 0.2;
+if(minSize < sizeX && minSize < sizeY) transValue = (random(originPos) - 0.1) * 5;
+matrix mTrans = ident();// 単位行列を生成
+vector dir = prim(1, "N", 0);
+dir *= transValue;
 
-removepoint(0, @ptnum);
+translate(mTrans,dir); //開き角度から移動行列を生成
 
-
-■DT
-○Separatorの修正
-・先頭に!をつける
+@P *= mRotate; //回転行列を乗算
+@P *= mTrans; // 移動行列を乗算
+@P += originPos;
