@@ -2,34 +2,63 @@
 ※必ずリビルドを行う
 ※使う関数の定義を確認する
 
-○uBlockOriginを導入
-
 [Public]
-○バインドしたイベントの一連の流れを確認する
-※このあたりで分からなかったら報告
-・FOnlineAsyncTaskGetPlayerSessionInvitationsの定義を確認
-・FOnlineAsyncTaskManagerの一連の処理を確認
-・AddToOutQueueされている箇所を確認
-・Queのタスクが処理されている箇所を確認
+○OnlineSync周りを調査
 
-○差分を確認
 
 [Private]
 ※SingleAssetのみ実装
 
-○pointにAttributeを設定するように修正
-
 ○Attributeを適応
-・回転
-・移動
-・スケールの設定
- -アセットスケールを1以下のランダムにして変化をつける
-float scaleCofficient = 0.7
-v@scale = (1 - scaleCofficient) + scaleCofficient * random(@P);
-・アセットの生成
- -※アセットのサイズコントラストが生まれるように選択する
- 
 ・ソース
+int AssetNum = 
+for(int i = 0; i < AssetNum; ++i)
+{
+
+	//スケールの計算
+	vector scaleList[] = v[]@ScaleList;
+	vector scale = scaleList[i];
+	float scaleCofficient = 0.7;
+	v@scale = ((1 - scaleCofficient) * random(@P) + scaleCofficient) * scale;
+
+	//アセットパスの設定
+	string AssetPathsList[]= s[]@AssetPathList;
+	string AssetPathsStr = AssetPathsList[i];
+	string AssetPathList[] = split(AssetPathsStr, "!");
+	int UsedAssetPathIndex = int(len(AssetPathList) * random(@P));
+	string AssetPath = AssetPathList[UsedAssetPathIndex];
+	int StrStartIndex = find(PartParamStr, "!");
+	int StrEndIndex = len(PartParamStr) - 1;
+	s@AssetPath = PartParamStr[StrStartIndex:StrEndIndex]; 
+
+	//移動行列の計算
+	vector TransformList[] = v@[]TransformList;
+	vector dir = TransformList[i];
+	matrix mTrans = ident();// 単位行列を生成
+	translate(mTrans,dir); //開き角度から移動行列を生成
+
+	//回転行列の計算	
+	vector RotateList[] = v[]@RotateList;
+	vector rotateValue = RotateList[i];
+	vector axis = set(1,0,0);
+	vector4 q = quaternion(rotateValue.x ,axis);
+	matrix mRotate = qconvert(q);
+	axis = set(0,1,0)
+	q = quaternion(rotateValue.y ,axis);
+	mRotate *= qconvert(q);
+	axis = set(0,0,1)
+	q = quaternion(rotateValue.z ,axis);
+	mRotate *= qconvert(q);
+
+	//行列を乗算
+	@P *= mRotate; //回転行列を乗算
+	@P *= mTrans; // 移動行列を乗算
+}
+
+○アセットの生成
+ -※アセットのサイズコントラストが生まれるように選択する
+
+○OffsetBlockのランダムロジックも追加する
 float sizeX = prim(2, "restlength", 0);
 float sizeY = prim(2, "restlength", 1);
 float minSize = 10;
