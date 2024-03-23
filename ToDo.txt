@@ -1,40 +1,26 @@
-[反省]
-※必ずリビルドを行う
-※使う関数の定義を確認する
-
-[Public]
-○OnlineSync周りを調査
-
+[Study]
+○行列
 
 [Private]
 ※SingleAssetのみ実装
 
-○Attributeを適応
+○挙動確認
+・アセットの配置
+・適切サイズの取得処理
+
+○PatternBlockの実装準備
+
+△Attributeを適応
 ・ソース
 int AssetNum = 
 for(int i = 0; i < AssetNum; ++i)
 {
 
-	//スケールの計算
-	vector scaleList[] = v[]@ScaleList;
-	vector scale = scaleList[i];
-	float scaleCofficient = 0.7;
-	v@scale = ((1 - scaleCofficient) * random(@P) + scaleCofficient) * scale;
-
-	//アセットパスの設定
-	string AssetPathsList[]= s[]@AssetPathList;
-	string AssetPathsStr = AssetPathsList[i];
-	string AssetPathList[] = split(AssetPathsStr, "!");
-	int UsedAssetPathIndex = int(len(AssetPathList) * random(@P));
-	string AssetPath = AssetPathList[UsedAssetPathIndex];
-	int StrStartIndex = find(PartParamStr, "!");
-	int StrEndIndex = len(PartParamStr) - 1;
-	s@AssetPath = PartParamStr[StrStartIndex:StrEndIndex]; 
-
 	//移動行列の計算
 	vector TransformList[] = v@[]TransformList;
 	vector dir = TransformList[i];
 	matrix mTrans = ident();// 単位行列を生成
+	translate(mTrans,@N);
 	translate(mTrans,dir); //開き角度から移動行列を生成
 
 	//回転行列の計算	
@@ -54,32 +40,3 @@ for(int i = 0; i < AssetNum; ++i)
 	@P *= mRotate; //回転行列を乗算
 	@P *= mTrans; // 移動行列を乗算
 }
-
-○アセットの生成
- -※アセットのサイズコントラストが生まれるように選択する
-
-○OffsetBlockのランダムロジックも追加する
-float sizeX = prim(2, "restlength", 0);
-float sizeY = prim(2, "restlength", 1);
-float minSize = 10;
-float noiseCofficient = 0.02;
-
-vector originPos = prim(1, "P", 0);
-@P -= originPos;
-
-float rotateValue = (random(originPos) - 0.5) * 0.2;//(noise(originPos * noiseCofficient) - 0.5) * 1.5;
-vector axis = set(0,1,0); //Y軸の回転軸を変数に保存
-vector4 q = quaternion(rotateValue ,axis);
-matrix mRotate = qconvert(q); //クォタニオンを回転行列に変換
-
-float transValue = (random(originPos) - 0.4) * 0.2;
-if(minSize < sizeX && minSize < sizeY) transValue = (random(originPos) - 0.1) * 5;
-matrix mTrans = ident();// 単位行列を生成
-vector dir = prim(1, "N", 0);
-dir *= transValue;
-
-translate(mTrans,dir); //開き角度から移動行列を生成
-
-@P *= mRotate; //回転行列を乗算
-@P *= mTrans; // 移動行列を乗算
-@P += originPos;
