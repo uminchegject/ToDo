@@ -1,42 +1,20 @@
 [Study]
 ○行列
+https://qiita.com/yokoshu25/items/f2184faaeb7d772cf3bb
+https://zenn.dev/mebiusbox/books/132b654aa02124/viewer/a51ef6
+
+○HoudiniDT取り込みについて
+・ベクトル値の取り込み
+・Attribute名の設定
+・構造体の取り込み
 
 [Private]
-※SingleAssetのみ実装
-
 ○挙動確認
+※HDAにまとめて、ちゃんと機能するかを確認する
+※SingleAssetのみ実装
 ・アセットの配置
 ・適切サイズの取得処理
 
+○行列周りの実装
+
 ○PatternBlockの実装準備
-
-△Attributeを適応
-・ソース
-int AssetNum = 
-for(int i = 0; i < AssetNum; ++i)
-{
-
-	//移動行列の計算
-	vector TransformList[] = v@[]TransformList;
-	vector dir = TransformList[i];
-	matrix mTrans = ident();// 単位行列を生成
-	translate(mTrans,@N);
-	translate(mTrans,dir); //開き角度から移動行列を生成
-
-	//回転行列の計算	
-	vector RotateList[] = v[]@RotateList;
-	vector rotateValue = RotateList[i];
-	vector axis = set(1,0,0);
-	vector4 q = quaternion(rotateValue.x ,axis);
-	matrix mRotate = qconvert(q);
-	axis = set(0,1,0)
-	q = quaternion(rotateValue.y ,axis);
-	mRotate *= qconvert(q);
-	axis = set(0,0,1)
-	q = quaternion(rotateValue.z ,axis);
-	mRotate *= qconvert(q);
-
-	//行列を乗算
-	@P *= mRotate; //回転行列を乗算
-	@P *= mTrans; // 移動行列を乗算
-}
