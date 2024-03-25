@@ -1,97 +1,28 @@
-//AssetParamごとに分割
-string AssetParamStrArray[] = split(s@unreal_data_table_2_SingleAssetParameters, "!");
-int AssetParamNum = len(AssetParamStrArray) - 1;
-
-string AssetPath[];
-vector Transform[];
-vector Scale[];
-vector Rotate[];
-float RemainRatio[];
-
-for(int j = 0; j < AssetParamNum; ++j)
+int AssetNum = 
+for(int i = 0; i < AssetNum; ++i)
 {
-    //パラメーターStrを取得
-    string AssetParamStr = AssetParamStrArray[j + 1];
-    string ParamStrArray[] = split(AssetParamStr, ")");
-    
-    //Stringパラメーター値を取得
-    int StringParamStartIndex = 0;
-    int StringParamNum = 1;
-    string AssetPathStr;
-    for(int i = 0; i < StringParamNum; ++i)
-    {
-        string ParamStr = ParamStrArray[i + StringParamStartIndex];
-        string AssetPathStrArray[] = split(ParamStr, ",");
-        int AssetPathStrNum = len(AssetPathStrArray); 
-        for(int k = 0; k < AssetPathStrNum; ++k)
-        {
-            string PartParamStr = AssetPathStrArray[k];
-            int StrStartIndex = find(PartParamStr, "=") + 3;
-            if(StrStartIndex < 0) StrStartIndex = 1;
-            int StrEndIndex = len(PartParamStr);
-            string value = PartParamStr[StrStartIndex:StrEndIndex];   
-            append(AssetPathStr, value);
-            //append(AssetPathStr, PartParamStr);
-            append(AssetPathStr, "!");
-        }
-    }
-    AssetPath[j] = AssetPathStr;
-    
-    
-    //Vectorパラメーター値を取得
-    int VectorParamStartIndex = 1;
-    int VectorParamNum = 4;
-    vector VectorValueArray[];
-    for(int i = 0; i < VectorParamNum; ++i)
-    {
-        vector value;
-        
-        string ParamStr = ParamStrArray[i + VectorParamStartIndex];
-        int StrStartIndex = find(ParamStr, "X") + 2;
-        int StrEndIndex = StrStartIndex + 8;
-        string ValueStr = ParamStr[StrStartIndex:StrEndIndex];
-        value.x = atof(ValueStr);
 
-        StrStartIndex = find(ParamStr, "Y") + 2;
-        StrEndIndex = StrStartIndex + 8;
-        ValueStr = ParamStr[StrStartIndex:StrEndIndex];
-        value.y = atof(ValueStr);
+	//移動行列の計算
+	vector TransformList[] = v@[]TransformList;
+	vector dir = TransformList[i];
+	matrix mTrans = ident();// 単位行列を生成
+	translate(mTrans,@N);
+	translate(mTrans,dir); //開き角度から移動行列を生成
 
-        StrStartIndex = find(ParamStr, "Z") + 2;
-        StrEndIndex = StrStartIndex + 8;
-        ValueStr = ParamStr[StrStartIndex:StrEndIndex];
-        value.z = atof(ValueStr);
-        
-        VectorValueArray[i] = value;
-    }
+	//回転行列の計算	
+	vector RotateList[] = v[]@RotateList;
+	vector rotateValue = RotateList[i];
+	vector axis = set(1,0,0);
+	vector4 q = quaternion(rotateValue.x ,axis);
+	matrix mRotate = qconvert(q);
+	axis = set(0,1,0)
+	q = quaternion(rotateValue.y ,axis);
+	mRotate *= qconvert(q);
+	axis = set(0,0,1)
+	q = quaternion(rotateValue.z ,axis);
+	mRotate *= qconvert(q);
 
-    Transform[j] = VectorValueArray[0];
-    Scale[j] = VectorValueArray[1];
-    Rotate[j] = VectorValueArray[2];
-  
-    
-    //Floatパラメーター値を取得
-    int FloatParamStartIndex = 4;
-    int FloatParamNum = 1;
-    float FloatValueArray[];
-    for(int i = 0; i < FloatParamNum; ++i)
-    {
-        float value;
-        
-        string ParamStr = ParamStrArray[i + FloatParamStartIndex];
-        int StrStartIndex = find(ParamStr, "=") + 1;
-        int StrEndIndex = StrStartIndex + 8;
-        string ValueStr = ParamStr[StrStartIndex:StrEndIndex];
-        value = atof(ValueStr);
-        
-        FloatValueArray[i] = value;
-    }
-
-    RemainRatio[j] = FloatValueArray[0];
+	//行列を乗算
+	@P *= mRotate; //回転行列を乗算
+	@P *= mTrans; // 移動行列を乗算
 }
-
-s[]@AssetPath = AssetPath;
-v[]@Transform = Transform;
-v[]@Scale = Scale;
-v[]@Rotate = Rotate;
-f[]@RemainRatio = RemainRatio;
