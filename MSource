@@ -1,28 +1,36 @@
-int AssetNum = 
-for(int i = 0; i < AssetNum; ++i)
-{
+vector transform = chv("Transform");
+vector rotate = chv("Rotate");
 
-	//移動行列の計算
-	vector TransformList[] = v@[]TransformList;
-	vector dir = TransformList[i];
-	matrix mTrans = ident();// 単位行列を生成
-	translate(mTrans,@N);
-	translate(mTrans,dir); //開き角度から移動行列を生成
+vector pivotPos = @P;
+vector spawnPos = {0, 0, 0};
 
-	//回転行列の計算	
-	vector RotateList[] = v[]@RotateList;
-	vector rotateValue = RotateList[i];
-	vector axis = set(1,0,0);
-	vector4 q = quaternion(rotateValue.x ,axis);
-	matrix mRotate = qconvert(q);
-	axis = set(0,1,0)
-	q = quaternion(rotateValue.y ,axis);
-	mRotate *= qconvert(q);
-	axis = set(0,0,1)
-	q = quaternion(rotateValue.z ,axis);
-	mRotate *= qconvert(q);
+// 法線ベクトルの角度をクォタニオンに変換
+vector4 qNormal = dihedral(vector(1, 0, 0), @N); 
+matrix mNormal = qconvert(q);
 
-	//行列を乗算
-	@P *= mRotate; //回転行列を乗算
-	@P *= mTrans; // 移動行列を乗算
-}
+//移動行列の計算
+matrix mTrans = ident();// 単位行列を生成
+translate(mTrans,transform); //開き角度から移動行列を生成
+
+//回転行列の計算	
+vector axis = set(1,0,0);
+vector4 q = quaternion(rotate.x ,axis);
+matrix mRotate = qconvert(q);
+axis = set(0,1,0)
+q = quaternion(rotate.y ,axis);
+mRotate *= qconvert(q);
+axis = set(0,0,1)
+q = quaternion(rotate.z ,axis);
+mRotate *= qconvert(q);
+
+//行列を乗算
+spawnPos *= mNormal; //法線行列を計算
+spawnPos *= mTrans; // 移動行列を乗算
+spawnPos *= mRotate; //回転行列を乗算
+
+spawnPos += pivotPos;
+
+int ptnum = addpoint(0, spawnPos);
+setpointattrib()
+
+removeprim(0, @primnum, 1);
