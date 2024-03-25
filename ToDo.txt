@@ -1,7 +1,14 @@
+[Public]
+○Failedからクラッシュする処理の流れを調査する
+
+○田中さんへの質問
+・CLのAPI追加実装されている箇所でFailになってしまい、原因でクラッシュしてしまう状況となっています。
+・APIについて、Faildedになってしまう原因について心当たりがあれば教えて頂けると幸いです。
+
+
 [Study]
-○行列
-https://qiita.com/yokoshu25/items/f2184faaeb7d772cf3bb
-https://zenn.dev/mebiusbox/books/132b654aa02124/viewer/a51ef6
+○クォータニオン
+https://qiita.com/drken/items/0639cf34cce14e8d58a5
 
 ○HoudiniDT取り込みについて
 ・ベクトル値の取り込み
