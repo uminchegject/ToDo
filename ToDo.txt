@@ -1,14 +1,20 @@
 [Public]
-○Failedからクラッシュする処理の流れを調査する
+○デバッグ用のログを用意する
+・次のWidgetの選択を行えているかを確認
+・ScrollDescendantIntoViewがちゃんと機能しているかを確認
 
-○田中さんへの質問
-・CLのAPI追加実装されている箇所でFailになってしまい、原因でクラッシュしてしまう状況となっています。
-・APIについて、Faildedになってしまう原因について心当たりがあれば教えて頂けると幸いです。
+// パッドによる移動とスクロール
+// HasAnyMouseCaptorはスライダーなどでキャプチャされた場合に必要
+// キャプチャされている場合はキャプチャしている側の処理に任せる
+if (SlateApp.HasAnyMouseCaptor() || !TickNavigation(SlateApp, Cursor))
+{
+	TickCursorPosition(SlateApp, Cursor, DeltaTime);
+}
+TickScroll(SlateApp, Cursor, DeltaTime);
 
 
 [Study]
-○クォータニオン
-https://qiita.com/drken/items/0639cf34cce14e8d58a5
+○UE4のsessionについて
 
 ○HoudiniDT取り込みについて
 ・ベクトル値の取り込み
@@ -16,12 +22,11 @@ https://qiita.com/drken/items/0639cf34cce14e8d58a5
 ・構造体の取り込み
 
 [Private]
-○挙動確認
+■挙動確認
 ※HDAにまとめて、ちゃんと機能するかを確認する
-※SingleAssetのみ実装
-・アセットの配置
-・適切サイズの取得処理
+○アセットパスを用いた配置実装
 
-○行列周りの実装
+○適切サイズの取得処理
 
+■PatternBlock
 ○PatternBlockの実装準備
