@@ -1,32 +1,15 @@
 [Public]
-○デバッグ用のログを用意する
-・次のWidgetの選択を行えているかを確認
-・ScrollDescendantIntoViewがちゃんと機能しているかを確認
+○回答
+・Widgetの選択処理の中で不完全な箇所があり修正
+・ScrollBox内のアイテム座標の取得方法に問題があった
+ -SWidgetのMyGeometryから座標を取得することで解決できそう
 
-// パッドによる移動とスクロール
-// HasAnyMouseCaptorはスライダーなどでキャプチャされた場合に必要
-// キャプチャされている場合はキャプチャしている側の処理に任せる
-if (SlateApp.HasAnyMouseCaptor() || !TickNavigation(SlateApp, Cursor))
-{
-	TickCursorPosition(SlateApp, Cursor, DeltaTime);
-}
-TickScroll(SlateApp, Cursor, DeltaTime);
-
+○MyGeometryから取得するように実装
 
 [Study]
-○UE4のsessionについて
+・SWidget::ArrangeChildren
+・FArrangedWidget
 
-○HoudiniDT取り込みについて
-・ベクトル値の取り込み
-・Attribute名の設定
-・構造体の取り込み
 
 [Private]
-■挙動確認
-※HDAにまとめて、ちゃんと機能するかを確認する
-○アセットパスを用いた配置実装
-
-○適切サイズの取得処理
-
-■PatternBlock
-○PatternBlockの実装準備
+○AssetParamとBlockParamをそれぞれ用意するように実装する
