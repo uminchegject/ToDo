@@ -1,13 +1,9 @@
-[反省]
-※夜散歩後はメモのみを行う
-※バグ作業はまず、ログの仕込みと挙動確認を必ず行う
-
-
 [Public]
-○ソースの確認及び整理
-・P4Vで差分を確認しながら行う
+○ソース整理
+・SGBameCursor,SScrollBoxをP4Vで確認しつつ修正する
 
-○Geometryが見つからない原因を調査
+○Geometryのデバッグ機能
+・ScrollDescendantIntoViewとの差を調べる
 
 
 [設計]
