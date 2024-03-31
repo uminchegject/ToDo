@@ -1,47 +1,37 @@
-[ToDo]
-■ブロック生成
-○Greebleの実装
+[パラメーター]
+■IDEA
+●汎用性
+※PD部分とパラメーター部分の線引きをちゃんとする
+・Blockごとにパラメーターを用意する
+・BasePoint生成ロジックを工夫する
 
+●簡単
+・共通事項の洗い出し
+・種類でまとめてその中でランダムに取得する(屋根,窓,BigAsset)
 
-■フローの設計
-○パラメーターDTを整理する
-・Str周りを実装する
+■パラメーター
+●AssetRefパラメーター
+ -AssetPath
+ -AssetType
 
-○ParamAttributeから必要な値を取得する
-・適応サイズのBlockTypeを取得する
-vector size;
-int RightSizeIndexes[];
-for(int i = 0; i < BlockTypeNum; ++i)
-{
-	vector rightMinSize = point(1, "RightMinSize", i);
-	vector rightMaxSize = point(1, "RightMaxSize", i);
-	if(rightMinSize.x < size.x && size.x < rightMaxSize.x)
-	{
-		if(rightMinSize.y < size.y && size.y < rightMaxSize.y)
-		{
-			RightSizeIndexes[len(RightSizeIndexes)] = i;
-		}
-	}
-}
-int BlockTypeIndex = RightSizeIndexes[int(len(RightSizeIndexes) * random(@P))];
+●Assetパラメーター
+ -AssetType
+ -RemainRatio
+ -WidthRange
+ -DHRatioRange
+ -Scale
+ -Rotate
+ -Transform
+  
+●Patternパラメーター
+・SingleBlock
+ -AssetType
+ -WidthRange
+ -DHRatioRange
+・PatternBlock
+・GreebleBlock
 
-・アセットスケールを1以下のランダムにして変化をつける
- -パラメーターを追加する
-float scaleCofficient = point(1, "ScaleCofficient", BlockTypeIndex);
-v@scale = (1 - scaleCofficient) + scaleCofficient * random(@P);
+●DTパラメーター(Houdini)
+・
 
-
-○アセットの生成
-※アセットのサイズコントラストが生まれるように選択する
-
-
-■検証
-・※BaseBlockのサイズに変化を持たせて様々な適応サイズのDTを用意しサイズ、種類ともに変化を持たせる
-・※様々なアセット、タイプを用いて検証する
-・※配置のみをする
-
-
-[IDEA]
-▲BaseObj
-・マテリアルの設定
-・サイズ、位置の設定
+▲Materialパラメーター
