@@ -1,36 +1,60 @@
-vector transform = chv("Transform");
-vector rotate = chv("Rotate");
+[ToDo]
+■DTインポート周りの設計
+・Blockの種類ごとにDTインポート用のパラメーターを用意する
 
-vector pivotPos = @P;
-vector spawnPos = {0, 0, 0};
+■SinglePatternで検証
 
-// 法線ベクトルの角度をクォタニオンに変換
-vector4 qNormal = dihedral(vector(1, 0, 0), @N); 
-matrix mNormal = qconvert(q);
+○DTパラメーターを条件から決定
+float Width = @SizeX;
+float HDRatio = @SizeY / @SizeX;
+int ParamNum = point(1, "ParamNum", 0);
+int RightParamIndexes[];
 
-//移動行列の計算
-matrix mTrans = ident();// 単位行列を生成
-translate(mTrans,transform); //開き角度から移動行列を生成
+for(int i = 0; i < ParamNum, ++i)
+{
+    vector HDRatioRange = point(1, "HDRatioRange", i);
+    vector WidthRange = point(1, "WidthRange", i);
+    if(HDRatioRange.x < HDRatio && HDRatio < HDRatioRange.y)
+    {
+       if(WidthRange.x < Width && Width < WidthRange.y)
+        {
+            append(RightParamIndexes, i);
+        }
+    }	
+}	
+int ParamIndex = RightParamIndexes[int(len(RightParamIndexes) * random(@P)];
 
-//回転行列の計算	
-vector axis = set(1,0,0);
-vector4 q = quaternion(rotate.x ,axis);
-matrix mRotate = qconvert(q);
-axis = set(0,1,0)
-q = quaternion(rotate.y ,axis);
-mRotate *= qconvert(q);
-axis = set(0,0,1)
-q = quaternion(rotate.z ,axis);
-mRotate *= qconvert(q);
+○BlockDTからAsset
 
-//行列を乗算
-spawnPos *= mNormal; //法線行列を計算
-spawnPos *= mTrans; // 移動行列を乗算
-spawnPos *= mRotate; //回転行列を乗算
+○AssetTypeからAssetRefを取得
+int AssetRefNum = point(3, "AssetRefNum", 0);
+int AssetRefList[];
+for(int i = 0; i < AssetRefNum; ++i)
+{
+	if(AssetType == point(3, "AssetType", i)))
+	{
+		append(AssetRefList, point(3, "AssetRef", i));
+	}
+}
 
-spawnPos += pivotPos;
+s@AssetRef AssetRefIndex = AssetRefList[len(AssetRefList) * random(@P)];
 
-int ptnum = addpoint(0, spawnPos);
-setpointattrib()
 
-removeprim(0, @primnum, 1);
+●AssetRefパラメーター
+ -AssetPath
+ -AssetType
+
+●Assetパラメーター
+ -AssetType
+ -RemainRatio
+ -WidthRange
+ -DHRatioRange
+ -Scale
+ -Rotate
+ -Transform
+  
+●Patternパラメーター
+・SingleBlock
+ -AssetType
+ -WidthRange
+ -DHRatioRange
