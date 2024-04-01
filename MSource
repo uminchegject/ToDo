@@ -3,7 +3,6 @@
 ・Blockの種類ごとにDTインポート用のパラメーターを用意する
 
 ■SinglePatternで検証
-
 ○DTパラメーターを条件から決定
 float Width = @SizeX;
 float HDRatio = @SizeY / @SizeX;
@@ -22,9 +21,25 @@ for(int i = 0; i < ParamNum, ++i)
         }
     }	
 }	
-int ParamIndex = RightParamIndexes[int(len(RightParamIndexes) * random(@P)];
+int BlockDTIndex = RightParamIndexes[int(len(RightParamIndexes) * random(@P)];
 
 ○BlockDTからAsset
+for(int i = 0; i < BlockParamNum; ++i)
+{
+	string AssetType = point(1, "AssetType", i);
+	
+	int AssetParamNum = point(2, "NumParam", 0);
+	for(int j = 0; j  < AssetParamNum; ++i)
+	{
+		if(AssetType == point(2, "AssetType", j))
+		{
+			//○パラメーター周りの処理をpointに置き換える
+			int ptnum = addpoint();
+			
+			break;
+		}
+	}
+}
 
 ○AssetTypeからAssetRefを取得
 int AssetRefNum = point(3, "AssetRefNum", 0);
@@ -37,7 +52,7 @@ for(int i = 0; i < AssetRefNum; ++i)
 	}
 }
 
-s@AssetRef AssetRefIndex = AssetRefList[len(AssetRefList) * random(@P)];
+s@AssetRef = AssetRefList[len(AssetRefList) * random(@P)];
 
 
 ●AssetRefパラメーター
