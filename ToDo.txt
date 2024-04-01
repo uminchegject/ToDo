@@ -1,10 +1,12 @@
 [Public]
-○ソース整理
-・SGBameCursor,SScrollBoxをP4Vで確認しつつ修正する
+○GetChildでエラー(PurchaseSeasonPass)
+・次のWidget選択処理において、正常に選択できていない
 
-○Geometryのデバッグ機能
-・ScrollDescendantIntoViewとの差を調べる
+○動かない(G.A.S.H.A(Store))
+・GetAllScrollBoxItemsでアイテムを取得できない
 
+○上スクロールができない(BPPointExchange(Store))
+・Itemが取得できず、値が0になっていしまう。
 
 [パラメーター]
 ■IDEA
