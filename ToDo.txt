@@ -1,19 +1,21 @@
 [Public]
-○資料をまとめる
-・木部さんの資料を見つつ、必要な情報を箇条書きでまとめる
+※switchを機材管理から外す
 
-○挙動確認
-・PurchaseSeasonPass
-・G.A.S.H.A(Store)
-・BPPointExchange(Store)
+■入力マッピング対応
+○ソース整理
+・SGBameCursor,SScrollBoxをP4Vで確認しつつ修正する
+・bScrollScrollBoxの修正
 
-○GetScrollWidgetIntoViewが機能していない(PurchaseSeasonPass, 街倉庫)
-・カーソルの位置と次のWidgetの位置をログで確認する
-・デバッグする
+△GetScrollWidgetIntoViewが機能していない(PurchaseSeasonPass, 街倉庫)
+・次Widgetが選択できない原因を調査する
 
 △GetChildの修正
-・ScrollBox内の構造を確認する
-・PanelWidgetクラスのGetChildを検証
+・シーズンパス購入にてScorllBox内に異種類のItemが入っている際の対応
+・ガシャ詳細にてChildが取得できない原因を調査
+
+■アクセス制限
+○資料にまとめる
+・木部さんの資料をテンプレートにする
 
 
 [パラメーター]
