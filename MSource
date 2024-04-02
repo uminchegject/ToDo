@@ -1,9 +1,7 @@
-[ToDo]
-■DTインポート周りの設計
-・Blockの種類ごとにDTインポート用のパラメーターを用意する
+■ToDo
+・GreebleBlockで検証する
 
-■SinglePatternで検証
-○DTパラメーターを条件から決定
+○DTParamから情報を取得しAttributeに設定する処理を実装
 float Width = @SizeX;
 float HDRatio = @SizeY / @SizeX;
 int ParamNum = point(1, "ParamNum", 0);
@@ -23,53 +21,42 @@ for(int i = 0; i < ParamNum, ++i)
 }	
 int BlockDTIndex = RightParamIndexes[int(len(RightParamIndexes) * random(@P)];
 
-○BlockDTからAsset
-for(int i = 0; i < BlockParamNum; ++i)
-{
-	string AssetType = point(1, "AssetType", i);
-	
-	int AssetParamNum = point(2, "NumParam", 0);
-	for(int j = 0; j  < AssetParamNum; ++i)
-	{
-		if(AssetType == point(2, "AssetType", j))
-		{
-			//○パラメーター周りの処理をpointに置き換える
-			int ptnum = addpoint();
-			
-			break;
-		}
-	}
-}
 
-○AssetTypeからAssetRefを取得
-int AssetRefNum = point(3, "AssetRefNum", 0);
-int AssetRefList[];
-for(int i = 0; i < AssetRefNum; ++i)
-{
-	if(AssetType == point(3, "AssetType", i)))
-	{
-		append(AssetRefList, point(3, "AssetRef", i));
-	}
-}
+○Attribute値を参照して処理を行うように実装
+// 法線ベクトルの角度をクォタニオンに変換
+vector4 qNormal = dihedral({0, 1, 0}, @N); 
+matrix mNormal = qconvert(qNormal);
 
-s@AssetRef = AssetRefList[len(AssetRefList) * random(@P)];
+//移動行列の計算
+vector TransformList[] = v[]@TransformList;
+vector transform = TransformList[i]; 
+vector pivotPos = @P;
+vector nextPos = {0, 0, 0};
+matrix mTrans = ident();// 単位行列を生成
+translate(mTrans,transform); //開き角度から移動行列を生成
 
+//行列を乗算
+nextPos *= mTrans; // 移動行列を乗算
+nextPos *= mNormal; //法線行列を計算
+nextPos += pivotPos;
 
-●AssetRefパラメーター
- -AssetPath
- -AssetType
+int ptnum = addpoint(0, nextPos);
+setpointattrib(0, "N", ptnum, @N);
 
-●Assetパラメーター
- -AssetType
- -RemainRatio
- -WidthRange
- -DHRatioRange
- -Scale
- -Rotate
- -Transform
-  
-●Patternパラメーター
-・SingleBlock
- -AssetType
- -WidthRange
- -DHRatioRange
+//スケールの計算
+vector scaleList[] = v[]@ScaleList;
+vector scale = scaleList[i];
+scale *= set(@SizeX, @SizeX, @SizeX);  
+float scaleCofficient = 0.7;
+scale *= ((1 - scaleCofficient) * random(@P) + scaleCofficient);
+setpointattrib(0, "scale", ptnum, scale);
+
+//アセットパスの設定
+string AssetPathsList[]= s[]@AssetPathList;
+string AssetPathsStr = AssetPathsList[i];
+string AssetPathList[] = split(AssetPathsStr, "!");
+int UsedAssetPathIndex = int(len(AssetPathList) * random(@P));
+string AssetPath = AssetPathList[UsedAssetPathIndex];
+int StrStartIndex = 0;
+int StrEndIndex = len(AssetPath);
+setpointattrib(0, "AssetPath", ptnum, AssetPath[StrStartIndex:StrEndIndex]);
