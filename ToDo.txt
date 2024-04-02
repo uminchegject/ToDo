@@ -1,15 +1,26 @@
 [Public]
-○GetChildでエラー(PurchaseSeasonPass)
-・次のWidget選択処理において、正常に選択できていない
+○資料をまとめる
+・木部さんの資料を見つつ、必要な情報を箇条書きでまとめる
 
-○動かない(G.A.S.H.A(Store))
-・GetAllScrollBoxItemsでアイテムを取得できない
+○挙動確認
+・PurchaseSeasonPass
+・G.A.S.H.A(Store)
+・BPPointExchange(Store)
 
-○上スクロールができない(BPPointExchange(Store))
-・Itemが取得できず、値が0になっていしまう。
+○GetScrollWidgetIntoViewが機能していない(PurchaseSeasonPass, 街倉庫)
+・カーソルの位置と次のWidgetの位置をログで確認する
+・デバッグする
+
+△GetChildの修正
+・ScrollBox内の構造を確認する
+・PanelWidgetクラスのGetChildを検証
+
 
 [パラメーター]
 ■IDEA
+※BasePointのサイズに応じてAssetParamから自動的に選択を行うロジックを考える
+・AssetParamDTでブロックごとにアセット情報をまとめる
+
 ●汎用性
 ※PD部分とパラメーター部分の線引きをちゃんとする
 ・Blockごとにパラメーターを用意する
@@ -18,10 +29,3 @@
 ●簡単
 ・共通事項の洗い出し
 ・種類でまとめてその中でランダムに取得する(屋根,窓,BigAsset)
-
-■ToDo
-○DTParamから情報を取得する処理を実装
-
-○BlockParamからAssetparamを取得する際の処理を実装
-
-△マテリアル
