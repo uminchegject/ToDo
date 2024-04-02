@@ -1,3 +1,19 @@
+[パラメーター]
+■IDEA
+※BasePointのサイズに応じてAssetParamから自動的に選択を行うロジックを考える
+・AssetParamDTでブロックごとにアセット情報をまとめる
+
+●汎用性
+※PD部分とパラメーター部分の線引きをちゃんとする
+・Blockごとにパラメーターを用意する
+・BasePoint生成ロジックを工夫する
+
+●簡単
+・共通事項の洗い出し
+・種類でまとめてその中でランダムに取得する(屋根,窓,BigAsset)
+
+
+[ソース]
 ■ToDo
 ・GreebleBlockで検証する
 
@@ -17,9 +33,26 @@ for(int i = 0; i < ParamNum, ++i)
         {
             append(RightParamIndexes, i);
         }
-    }	
 }	
 int BlockDTIndex = RightParamIndexes[int(len(RightParamIndexes) * random(@P)];
+
+@remainRatio = point(1, "RemainRatio", BlockDTIndex);
+v@Scale = point(1, "Scale", BlockDTIndex);
+v@transform = point(1, "Transform", BlockDTIndex);
+v@rotate = point(1, "Rotate", BlockDTIndex);
+
+int AssetRefNum = point(2, "AssetRefNum", 0);
+int AssetRefList[];
+for(int i = 0; i < AssetRefNum; ++i)
+{
+	if(point(1, "AssetType", BlockDTIndex); == point(2, "AssetType", i)))
+	{
+		append(AssetRefList, point(2, "AssetRef", i));
+	}
+}
+
+s@AssetRef AssetRefIndex = AssetRefList[len(AssetRefList) * random(@P)];
+
 
 
 ○Attribute値を参照して処理を行うように実装
