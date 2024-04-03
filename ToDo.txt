@@ -2,20 +2,26 @@
 ※switchを機材管理から外す
 
 ■入力マッピング対応
-○ソース整理
+○ソース確認
 ・SGBameCursor,SScrollBoxをP4Vで確認しつつ修正する
 ・bScrollScrollBoxの修正
 
 △GetScrollWidgetIntoViewが機能していない(PurchaseSeasonPass, 街倉庫)
-・次Widgetが選択できない原因を調査する
+・カーソル位置設定処理の座標ログを確認する
 
 △GetChildの修正
-・シーズンパス購入にてScorllBox内に異種類のItemが入っている際の対応
-・ガシャ詳細にてChildが取得できない原因を調査
+・ChildNumが3以上の場合で実装し、階層を確認する
+ -シーズンパス購入にてScorllBox内に異種類のItemが入っている際の対応
+ -ガシャ詳細にてChildが取得できない原因を調査
 
 ■アクセス制限
 ○資料にまとめる
 ・木部さんの資料をテンプレートにする
+
+[ToDo]
+○Object参照の修正
+
+○パターンBlockのロジック設計
 
 
 [パラメーター]
