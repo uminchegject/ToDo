@@ -1,30 +1,27 @@
 [Public]
-※switchを機材管理から外す
+■顔合わせ準備
+○業務内容を質問
+○勉強
+・サンプルプロジェクトの調査
+ →実装
+○過去の業務内容をまとめる
 
 ■入力マッピング対応
-○ソース確認
-・SGBameCursor,SScrollBoxをP4Vで確認しつつ修正する
-・bScrollScrollBoxの修正
-
-△GetScrollWidgetIntoViewが機能していない(PurchaseSeasonPass, 街倉庫)
-・カーソル位置設定処理の座標ログを確認する
-
-△GetChildの修正
-・ChildNumが3以上の場合で実装し、階層を確認する
- -シーズンパス購入にてScorllBox内に異種類のItemが入っている際の対応
- -ガシャ詳細にてChildが取得できない原因を調査
+○CSのマージ
 
 ■アクセス制限
 ○資料にまとめる
 ・木部さんの資料をテンプレートにする
 
-[ToDo]
+
+[SoulCity]
+■ToDo
 ○Object参照の修正
 
-○パターンBlockのロジック設計
+○検証
+・SoulCityで検証
+・サイズ及びアセットに変化を持たせる
 
-
-[パラメーター]
 ■IDEA
 ※BasePointのサイズに応じてAssetParamから自動的に選択を行うロジックを考える
 ・AssetParamDTでブロックごとにアセット情報をまとめる
