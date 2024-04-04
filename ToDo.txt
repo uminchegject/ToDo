@@ -17,6 +17,7 @@
 [SoulCity]
 ■ToDo
 ○Object参照の修正
+・CopyToPointsのGeometry側にAssetRefDTを設定し、特定のAssetPt以外をRemoveする
 
 ○検証
 ・SoulCityで検証
