@@ -1,95 +1,57 @@
-[パラメーター]
-■IDEA
-※BasePointのサイズに応じてAssetParamから自動的に選択を行うロジックを考える
-・AssetParamDTでブロックごとにアセット情報をまとめる
+■プロジェクト
+KONAMI　e-football
 
-●汎用性
-※PD部分とパラメーター部分の線引きをちゃんとする
-・Blockごとにパラメーターを用意する
-・BasePoint生成ロジックを工夫する
+■プラットフォーム
+PS5,XBOX,PC,スマートフォン向け
 
-●簡単
-・共通事項の洗い出し
-・種類でまとめてその中でランダムに取得する(屋根,窓,BigAsset)
+■期間：2022年5月～2023年3月
 
-
-[ソース]
-■ToDo
-・GreebleBlockで検証する
-
-○DTParamから情報を取得しAttributeに設定する処理を実装
-float Width = @SizeX;
-float HDRatio = @SizeY / @SizeX;
-int ParamNum = point(1, "ParamNum", 0);
-int RightParamIndexes[];
-
-for(int i = 0; i < ParamNum, ++i)
-{
-    vector HDRatioRange = point(1, "HDRatioRange", i);
-    vector WidthRange = point(1, "WidthRange", i);
-    if(HDRatioRange.x < HDRatio && HDRatio < HDRatioRange.y)
-    {
-       if(WidthRange.x < Width && Width < WidthRange.y)
-        {
-            append(RightParamIndexes, i);
-        }
-}	
-int BlockDTIndex = RightParamIndexes[int(len(RightParamIndexes) * random(@P)];
-
-@remainRatio = point(1, "RemainRatio", BlockDTIndex);
-v@Scale = point(1, "Scale", BlockDTIndex);
-v@transform = point(1, "Transform", BlockDTIndex);
-v@rotate = point(1, "Rotate", BlockDTIndex);
-
-int AssetRefNum = point(2, "AssetRefNum", 0);
-int AssetRefList[];
-for(int i = 0; i < AssetRefNum; ++i)
-{
-	if(point(1, "AssetType", BlockDTIndex); == point(2, "AssetType", i)))
-	{
-		append(AssetRefList, point(2, "AssetRef", i));
-	}
-}
-
-s@AssetRef AssetRefIndex = AssetRefList[len(AssetRefList) * random(@P)];
+■担当業務
+ゲーム内におけるUIの実装
+●キャラクター編集画面対応
+-ロゴ選択処理
+-ユニフォーム選択処理
+-名前設定処理
+●編成設定画面対応
+-データ選択ビュー対応
+-データ入れ替え処理
+●キャラクター詳細画面の実装
+-キャラクター詳細情報表示処理
+●選択ビュー全般
+-ロゴ選択
+-フォント選択
+-キャラクターディテール選択
+【使用ツール】
+・C++、UE4、Perforce、slack
+【社内開発規模】
+プログラマー：3名、デザイナー：4名
 
 
+■プロジェクト
+BandaiNamco オンラインアクションRPGタイトル
 
-○Attribute値を参照して処理を行うように実装
-// 法線ベクトルの角度をクォタニオンに変換
-vector4 qNormal = dihedral({0, 1, 0}, @N); 
-matrix mNormal = qconvert(qNormal);
+■プラットフォーム
+PS5,XBOX,PC
 
-//移動行列の計算
-vector TransformList[] = v[]@TransformList;
-vector transform = TransformList[i]; 
-vector pivotPos = @P;
-vector nextPos = {0, 0, 0};
-matrix mTrans = ident();// 単位行列を生成
-translate(mTrans,transform); //開き角度から移動行列を生成
+■期間：2022年5月～2023年3月
 
-//行列を乗算
-nextPos *= mTrans; // 移動行列を乗算
-nextPos *= mNormal; //法線行列を計算
-nextPos += pivotPos;
+■担当業務
+海外版、CS版への移植対応
 
-int ptnum = addpoint(0, nextPos);
-setpointattrib(0, "N", ptnum, @N);
+●移植時の不具合対応
+ー英字への変更時の不具合対応
+ーデータストアからのデータ取得の不具合対応
+ーシステムUIの表示処理の修正
+ー操作周りの修正
 
-//スケールの計算
-vector scaleList[] = v[]@ScaleList;
-vector scale = scaleList[i];
-scale *= set(@SizeX, @SizeX, @SizeX);  
-float scaleCofficient = 0.7;
-scale *= ((1 - scaleCofficient) * random(@P) + scaleCofficient);
-setpointattrib(0, "scale", ptnum, scale);
+●新規実装対応
+ー機能制限機能の実装
 
-//アセットパスの設定
-string AssetPathsList[]= s[]@AssetPathList;
-string AssetPathsStr = AssetPathsList[i];
-string AssetPathList[] = split(AssetPathsStr, "!");
-int UsedAssetPathIndex = int(len(AssetPathList) * random(@P));
-string AssetPath = AssetPathList[UsedAssetPathIndex];
-int StrStartIndex = 0;
-int StrEndIndex = len(AssetPath);
-setpointattrib(0, "AssetPath", ptnum, AssetPath[StrStartIndex:StrEndIndex]);
+●国内PC側からのマージ対応
+ーCPP,BPで追加実装された箇所を北欧,PCストリームにマージする対応
+
+【使用ツール】
+・C++、UE4、Perforce、slack
+
+【社内開発規模】
+プログラマー：6名、デザイナー：2名、プランナー3名
