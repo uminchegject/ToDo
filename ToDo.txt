@@ -11,24 +11,22 @@
 ・木部さんの資料をテンプレートにする
 
 [Employ]
-○経歴書の修正
-○会社の調査
+○経歴書の修正のメモ
+○ポートフォリオのメモ
 
 [Study]
-
+○カリキュラム、経歴書に記載している技術を仕分けしてジャンルごとに勉強する
 
 [SoulCity]
 ■ToDo
-○Input(DT)周りの実装
-・Material
-・Asset
+○BasePointに応じたDTからの入出力の一連の処理の実装
+・マテリアルを抜く
+・DTのインプット周りの実装
+・Transformの修正
+ -比率で管理する
 
-■Block
-○Asset
+○Patternの実装
+・Size値を持ったBasePointを生成
 
-○Material
-
-■PD
-○BasePrim
-
-○Pt
+△マテリアルの実装
+・独立したパラメーターセットを実装する
