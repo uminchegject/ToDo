@@ -20,20 +20,6 @@
 ■ToDo
 ○BasePointに応じたDTからの入出力の一連の処理の実装
 
-・パラメーター周りの修正
-//移動周りの計算
-vector transform = point(1, "Transform", i);
-transform.x *= @SizeX / 2;
-transform.y *= @SizeY / 2;
-
-//スケール周りの計算
-vector scaleParam = point(1, "Scale", i);
-float scaleValue = 0;
-if(0 < scaleParam.x){scaleValue = scaleParam.x * @SizeX;}
-elseif(0 < scaleParam.y){scaleValue = scaleParam.y @SizeY;}
-else{scaleValue = @SizeY}
-v@scale = (scaleValue, scaleValue, scaleValue);
-
 ○Patternの実装
 ・Size値を持ったBasePointを生成
 
