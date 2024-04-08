@@ -10,20 +10,35 @@
 ○資料にまとめる
 ・木部さんの資料をテンプレートにする
 
+
 [Employ]
 ○経歴書の修正のメモ
+○履歴書のメモ
 ○ポートフォリオのメモ
+
 
 [Study]
 ○カリキュラム、経歴書に記載している技術を仕分けしてジャンルごとに勉強する
+
 
 [SoulCity]
 ■ToDo
 ○BasePointに応じたDTからの入出力の一連の処理の実装
 ・マテリアルを抜く
-・DTのインプット周りの実装
-・Transformの修正
- -比率で管理する
+・Transformを比率で管理するように
+
+//移動周りの計算
+vector transform = point(1, "Transform", i);
+transform.x *= @SizeX / 2;
+transform.y *= @SizeY / 2;
+
+//スケール周りの計算
+vector scaleParam = point(1, "Scale", i);
+float scaleValue = 0;
+if(0 < scaleParam.x){scaleValue = scaleParam.x * @SizeX;}
+elseif(0 < scaleParam.y){scaleValue = scaleParam.y @SizeY;}
+else{scaleValue = @SizeY}
+v@scale = (scaleValue, scaleValue, scaleValue);
 
 ○Patternの実装
 ・Size値を持ったBasePointを生成
