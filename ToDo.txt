@@ -1,32 +1,14 @@
 [反省]
 ●座学
 ・座学は基本15分1セット(朝2セット+午前1セット+夜1セット)
-　-できれば前日の夜に調査のみ行う
+ -できれば前日の夜に調査のみ行う
 ●ソース
-・学習済みのコンテンツをメインになるべく行う
+・学習済みのコンテンツをメインに勉強する
 ・業務の要領で長く集中するようにする
 
-[Public]
-■入力マッピング対応
-○dev-en-csストリームを消す
-
-[Source]
 
 [Study]
-※cppベースで勉強する
-○描画周り
-○線形代数
-○設計
-
-■アクセス制限
-○メモにまとめる
-
-■マージ準備
-○ストリームの取得
- -//csjp_stream/Dev-cs-Ver106xxx/
- -//stream/Dev-Ver106xxx/
-
-[Employ]
+■Employ
 ○経歴部分を経歴書から修正する形でメモを作成する
 ・経歴のまとめ方について調査する
  -https://ss-agent.jp/column/knowhow/tpl_cv/
@@ -35,3 +17,46 @@
 ・経歴書の修正のメモ
 ・履歴書のメモ
 ・ポートフォリオのメモ
+
+■CPP
+※ゲームプログラミングC++をベースに勉強する
+○ゲームの実装
+・ソースの調査
+・環境準備
+
+○Study
+・SDLの勉強
+
+
+[SoulCity]
+■ToDo
+○GreebleのDTInputを実装
+
+○各BlockのアセットDTの設定
+・アセットを調査する
+ -Modular Gothic/Fantasy Environment(Icon)
+ -SoulCity(Icon + )
+
+○PDロジックの再設計
+※Icon + Normalで実装する
+・Icon
+・Normal(VerticalBlock)
+-Blockの仕分け
+-BaseSurfaceの生成
+
+○マテリアルDTの実装
+・独立したパラメーターセットを実装する
+
+
+[Public]
+■入力マッピング対応
+○dev-en-csストリームを消す
+
+■アクセス制限
+○シークエンス図の作成
+・ほかの人の実装を確認する
+
+■マージ準備
+○ストリームの取得
+ -//csjp_stream/Dev-cs-Ver106xxx/
+ -//stream/Dev-Ver106xxx/
