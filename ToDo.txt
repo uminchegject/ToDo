@@ -1,9 +1,30 @@
+[反省]
+●座学
+・座学は基本15分1セット(朝2セット+午前1セット+夜1セット)
+　-できれば前日の夜に調査のみ行う
+●ソース
+・学習済みのコンテンツをメインになるべく行う
+・業務の要領で長く集中するようにする
+
 [Public]
 ■入力マッピング対応
 ○dev-en-csストリームを消す
 
+[Source]
+
+[Study]
+※cppベースで勉強する
+○描画周り
+○線形代数
+○設計
+
 ■アクセス制限
 ○メモにまとめる
+
+■マージ準備
+○ストリームの取得
+ -//csjp_stream/Dev-cs-Ver106xxx/
+ -//stream/Dev-Ver106xxx/
 
 [Employ]
 ○経歴部分を経歴書から修正する形でメモを作成する
@@ -14,23 +35,3 @@
 ・経歴書の修正のメモ
 ・履歴書のメモ
 ・ポートフォリオのメモ
-
-[Study]
-○トリガーについてまとめる
- -https://qiita.com/unknown_ds/items/2c148256f8f6066d1405
-
-[SoulCity]
-■ToDo
-○GreebleのDTInputを実装
-
-○各BlockのアセットDTの設定
-・アセットを調査する
- -Modular Gothic/Fantasy Environment
- -SoulCity
-
-○PDロジックの再設計
-・Blockの仕分け
-・BaseSurfaceの生成
-
-○マテリアルDTの実装
-・独立したパラメーターセットを実装する
