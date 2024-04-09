@@ -18,13 +18,15 @@
 ・履歴書のメモ
 ・ポートフォリオのメモ
 
-■CPP
+■Game
 ※ゲームプログラミングC++をベースに勉強する
-○ゲームの実装
-・ソースの調査
-・環境準備
+○環境準備
 
-○Study
+○ソースの調査
+
+○設計
+
+■Read
 ・SDLの勉強
 
 
@@ -34,7 +36,7 @@
 
 ○各BlockのアセットDTの設定
 ・アセットを調査する
- -Modular Gothic/Fantasy Environment(Icon)
+ -Modular Gothic/Fantasy Environment(Randmark) + (Module)
  -SoulCity(Icon + )
 
 ○PDロジックの再設計
