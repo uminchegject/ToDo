@@ -8,6 +8,8 @@
 [Employ]
 ○経歴部分を経歴書から修正する形でメモを作成する
 ・経歴のまとめ方について調査する
+ -https://ss-agent.jp/column/knowhow/tpl_cv/
+ -https://masa-ka.net/pascase/sepg-blog/programer-syokumukeirekisyo.php
 
 ・経歴書の修正のメモ
 ・履歴書のメモ
@@ -15,14 +17,16 @@
 
 [Study]
 ○トリガーについてまとめる
- -イベント処理
- -トリガー・ヒット判定・ダメージ処理
- -Physics表現の基礎
+ -https://qiita.com/unknown_ds/items/2c148256f8f6066d1405
 
 [SoulCity]
 ■ToDo
+○GreebleのDTInputを実装
+
 ○各BlockのアセットDTの設定
 ・アセットを調査する
+ -Modular Gothic/Fantasy Environment
+ -SoulCity
 
 ○PDロジックの再設計
 ・Blockの仕分け
