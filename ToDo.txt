@@ -1,33 +1,40 @@
 [反省]
-●座学
-・座学は基本15分1セット(朝2セット+午前1セット+夜1セット)
- -できれば前日の夜に調査のみ行う
-●ソース
-・学習済みのコンテンツをメインに勉強する
-・業務の要領で長く集中するようにする
+※座学は基本15分1セット(朝2セット+午前1セット+夜1セット)
+・できれば前日の夜に調査のみ行う
+
+※空いてる時間ができそうならゲーム・プログラム基礎部分の勉強をする
+・実装をベースに行う
+・仕様はなるべく人のものを参考にする(考えない)
 
 
 [Study]
+○設計の勉強
+
 ■Employ
 ○経歴部分を経歴書から修正する形でメモを作成する
 ・経歴のまとめ方について調査する
  -https://ss-agent.jp/column/knowhow/tpl_cv/
  -https://masa-ka.net/pascase/sepg-blog/programer-syokumukeirekisyo.php
 
+・職務経歴書
+アカデミーでは基礎部分を勉強してきました。
+業務においてはUI周りの実装を行ってきました。
+バグの対応を行いました。
+
+・履歴書
+職務経歴ではUE4の開発をメインに行い、
+プライベートではHoudiniとUE4を用いた背景の自動生成プロジェクトの開発を行ってきました。
+
 ・経歴書の修正のメモ
 ・履歴書のメモ
 ・ポートフォリオのメモ
 
 ■Game
-※ゲームプログラミングC++をベースに勉強する
+※"ゲームプログラミングC++"をベースに勉強する
 ○環境準備
-
 ○ソースの調査
-
+ -クラス図に落とし込む
 ○設計
-
-■Read
-・SDLの勉強
 
 
 [SoulCity]
@@ -36,15 +43,15 @@
 
 ○各BlockのアセットDTの設定
 ・アセットを調査する
- -Modular Gothic/Fantasy Environment(Randmark) + (Module)
- -SoulCity(Icon + )
+ -Modular Gothic/Fantasy Environment(Randmark)
+ -SoulCity(Randmark + Normal)
 
 ○PDロジックの再設計
-※Icon + Normalで実装する
-・Icon
+※Randmark + Normalで実装する
+・Randmark(HorizonalBlock)
+ -Randmark + VerticalBlockの生成ロジック
 ・Normal(VerticalBlock)
--Blockの仕分け
--BaseSurfaceの生成
+ -Blockの仕分け
 
 ○マテリアルDTの実装
 ・独立したパラメーターセットを実装する
