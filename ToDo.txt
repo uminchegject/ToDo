@@ -13,7 +13,7 @@
 ■Game
 ※"ゲームプログラミングC++"をベースに勉強する
 ○ソースの調査
-・クラス図に落とし込む
+・Chapter6までをクラス図に落とし込む
 
 ○設計
 ※ギャラクシーの設計を考えていく
@@ -29,13 +29,15 @@ https://orotiyamatano.hatenablog.com/entry/2022/12/15/UML#%E3%82%AF%E3%83%A9%E3%
 ■Employ
 ※Slackでバージョン管理する
  
-○下記の項目を軸にまとめる
+○自己PRにまとめる
+・下記の項目を軸にまとめる
  -職務経歴を志望動機・転職理由につなげる
  -職務経歴書に自己アピールを盛り込む
  -ストーリーを意識して職務経歴を書く
  -技術力だけでなくコミュニケーション力もアピールする
  -募集企業でどう働きたいのかをアピールする
 
+○自己PRに沿って項目を埋めていく
 
 ・経歴書の修正のメモ
 ・履歴書のメモ
@@ -50,12 +52,12 @@ https://masa-ka.net/pascase/sepg-blog/programer-syokumukeirekisyo.php
 ■ToDo
 ○GreebleのDTInputを実装
 
-○RandmarkAssetのDT周りを実装
-
 ○各BlockのアセットDTの設定
 ・アセットを調査する
  -Modular Gothic/Fantasy Environment(Randmark)
  -SoulCity(Randmark + Normal)
+
+○RandmarkAssetのDT周りを実装
 
 ○マテリアルDTの実装
 ・独立したパラメーターセットを実装する
@@ -70,6 +72,5 @@ https://masa-ka.net/pascase/sepg-blog/programer-syokumukeirekisyo.php
  -Pattern
 ・BigBlock
  -Single
-・Randmark
+・Randmark(Top?)
  -Single
- -上部から見えるように配置する
