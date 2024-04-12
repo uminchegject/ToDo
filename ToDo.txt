@@ -26,6 +26,8 @@
 ○ソースの調査
 ・Chapter6までをクラス図に落とし込む
 
+△テクスチャ周りの処理部分を確認
+
 ○設計
 ※ギャラクシーの設計を考えていく
 ・各章ごとに勉強しつつ設計を考えていく
@@ -58,27 +60,19 @@ https://masa-ka.net/pascase/sepg-blog/programer-syokumukeirekisyo.php
 
 [SoulCity]
 ■ToDo
-○GreebleのDTInputを実装
-
 ○各BlockのアセットDTの設定
 ・アセットを調査する
  -Modular Gothic/Fantasy Environment(Randmark)
  -SoulCity(Randmark + Normal)
 
-○RandmarkAssetのDT周りを実装
+○SingleSurfaceで検証
 
 ○マテリアルDTの実装
 ・独立したパラメーターセットを実装する
+
 
 ■IDEA
 ※DTのAssetを変更するだけで成立するように実装する
 ※Scale,Typeにコントラストをつける
 
-・SmallBlock
- -Greeble
-・NormalBlock
- -Pattern
-・BigBlock
- -Single
-・Randmark(Top?)
- -Single
+○SingleSurfaceで様々なAssetDTを整理する
