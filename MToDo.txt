@@ -1,37 +1,14 @@
-[パラメーター]
-■IDEA
-●汎用性
-※PD部分とパラメーター部分の線引きをちゃんとする
-・Blockごとにパラメーターを用意する
-・BasePoint生成ロジックを工夫する
+[Employ]
+※しっかりと根本原理を理解する姿勢が求められそうだ。
 
-●簡単
-・共通事項の洗い出し
-・種類でまとめてその中でランダムに取得する(屋根,窓,BigAsset)
+○どう働きたいかを具体的にまとめる
 
-■パラメーター
-●AssetRefパラメーター
- -AssetPath
- -AssetType
+○コミュニケーション力もアピールする
 
-●Assetパラメーター
- -AssetType
- -RemainRatio
- -WidthRange
- -DHRatioRange
- -Scale
- -Rotate
- -Transform
-  
-●Patternパラメーター
-・SingleBlock
- -AssetType
- -WidthRange
- -DHRatioRange
-・PatternBlock
-・GreebleBlock
+[Study]
+※サンプルの勉強方法
+ -コードの調査
+ -新しい機能の設計
 
-●DTパラメーター(Houdini)
-・
-
-▲Materialパラメーター
+[SoulCity]
+○AssetRefにSizeCofficientを追加する
