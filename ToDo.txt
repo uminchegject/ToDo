@@ -53,9 +53,15 @@ https://masa-ka.net/pascase/sepg-blog/programer-syokumukeirekisyo.php
 [SoulCity]
 ■ToDo
 ○配置ロジックの修正
+※Actorで管理する?
 ・ブロックサイズに近いスケールへの調整処理を実装
+Greeble分割ロジックの最低値を調整する
+
 ・位置調整処理の修正
  -法線に対して移動するように実装する
+vector normal = @N;
+normal *= mTransform;
+@P += normal;
 
 ○SingleSurfaceで検証
 ・PatternBlock
