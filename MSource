@@ -1,32 +1,10 @@
-[ネット]
-・サウンド周り
- -サウンドアセット再生
- -アレンジメント
- -立体音響表源
- -ADX2基礎
- -Wwise基礎
-・最適化
-・AI周り
- -NavMesh
- -ビヘイビアツリーによるAIの基礎 
- -ビヘイビアツリー応用
- -コンパニオンAI
- -ファジー理論
+matrix mTrans = ident();
+vector dir = chv("TransformVector");
+translate(mTrans,dir);
 
-[教材]
-・Physics表現の基礎
-トリガー・ヒット判定・ダメージ処理
-Animation Blueprintによるアクションパターン実装、
-モーションブレンド、
+vector normalDir = normalize(dir);
+matrix mRotate = dihedral(normalDir, @N);
 
-UIインタラクション、
-HUD表現、
-トゥーンシェーダ、
-スプラッターエフェクト、
-X-Ray表現、
-ディゾルブエフェクト、
-HLSLカスタムシェーダ
-Niagaraエフェクト、
-HTTP通信を使ったリーダーボードの実装、
-ネットワーク対戦ゲームシステム実装、
-プラグイン開発、
+dir *= mRotate;
+
+@P += dir; // 移動行列を乗算
