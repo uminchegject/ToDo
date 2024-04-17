@@ -1,20 +1,5 @@
-[反省]
-※実装勉強
-・朝に実装目標を決める
-・メモ(クラス図、シークエンス図)を日中に作成する
-・終業後＋夜カフェで挙動を確認する
-
-※TA本を優先して読む
- →ゲームプログラムC++は夜余裕があれば読む
-
-[Public]
-■入力マッピング対応
-○参考資料の確認
- -必要な項目をメモする
-○引継ぎ資料のメモを作成する
-
-
 [Study]
+○設計の勉強
 ■Game
 ○球体のフィールドを用意し、重力を球体に向けて実装する
 ・ワールドを球体にする
@@ -30,11 +15,15 @@ https://qiita.com/ykawakami/items/f6688b845945669f0ce5
 
 [SoulCity]
 ■ToDo
-○SingleSurfaceで検証
+○PatternBlockで検証
+ -roof
+ -base
+ -window
+ -△otherAsset
 ・サイズの調整
 ・位置の調整
- -PatternBlock
- -GreebleBlock
+
+○GreebleBlockを検証
 
 ○各BlockのアセットDTの設定
 ・アセットを調査する
