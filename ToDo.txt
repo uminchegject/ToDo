@@ -1,5 +1,6 @@
 [Study]
 ○設計の勉強
+
 ■Game
 ○球体のフィールドを用意し、重力を球体に向けて実装する
 ・ワールドを球体にする
@@ -15,15 +16,12 @@ https://qiita.com/ykawakami/items/f6688b845945669f0ce5
 
 [SoulCity]
 ■ToDo
-○PatternBlockで検証
- -roof
- -base
- -window
- -△otherAsset
-・サイズの調整
-・位置の調整
+○各DTセットをAssetTestを用いて検証
+・様々なサイズで確認できるように修正
 
-○GreebleBlockを検証
+○GreebleBlockの検証
+
+○PatternBlockの検証
 
 ○各BlockのアセットDTの設定
 ・アセットを調査する
