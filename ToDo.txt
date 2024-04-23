@@ -3,10 +3,10 @@
 
 ○dllの読み込みエラーの原因を調査
 ・Chapter1とChapter2の違いを調査
-　ーパス
-　ーログ
+ ーパス
+ ーログ
 ・PrivateとPublicの差を確認する
-　ーProgramFile
+ ーProgramFile
 
 ○環境構築
  -プロジェクトのセットアップ
@@ -28,11 +28,13 @@ https://qiita.com/ykawakami/items/f6688b845945669f0ce5
 [SoulCity]
 ※検証結果を画像に残して、修正方法を考えて再度検証するを繰り返す
 
+
 ○MaterialRefの実装
 ・Blockごとに分ける
 
 ○SingleSurfaceで(Block生成ロジック + アセットパターン)の複数のセットで検証する
  -実装物と検証HDAの結果を資料にする
+ -GreebleはTestAssetでサイズを事前に検証する
 ・Greeble(Residence)
 ・Greeble(Tube)
 ・Greeble(SignBoard)
