@@ -1,9 +1,21 @@
-○環境準備
- →動画で確認
+●BaseのBlockを用意して、そこから様々な種類のDTを実装していく
+※一つのテーマを必ず設定する
+・Pattern
+ -Asset
+ -Material
+・Greeble
+ -Asset
+ -Material
+ -Size
+ -RemianRatio
 
-・朝に実装目標を決める
-・メモ(クラス図、シークエンス図)を日中に作成する
-・、終業後＋夜カフェで挙動を確認する
+○各タイプごとのDTを用意する
+・1種類に絞る
+・Parameter + Refのセットで用意する
 
-※TA本を優先して読む
- →ゲームプログラムC++は夜余裕があれば読む
+-Residence(Pattern)
+-Residence(Greeble)
+-Other(Greeble)
+
+○用意したタイプを配置するそれぞれのBaseBlockの生成ロジック設計
+・SingleSurfaceで検証
