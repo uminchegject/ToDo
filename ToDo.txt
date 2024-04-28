@@ -1,24 +1,34 @@
 [SoulCity]
+○MaterialRefの設計
+・MaterialにもDTパラメーターを用意する
 
-○MaterialRefの実装
-・Blockごとに分ける
+○DTの管理方法の設計
+・DTセットを個々で設定し、Houdini側で全て管理する
 
-○BaseのGreebleBlockを用いてPattern+Greebleの検証を行う
+○GreebleBaseのAssetTypeを検証
 
-●GreebleBlock
-・ランダム要素を加える
- -Assetのサイズ、位置、種類をランダム化 
+●BaseのBlockを用意して、そこから様々な種類のDTを実装していく
+※一つのテーマを必ず設定する
+・Pattern
+ -Asset
+ -Material
+・Greeble
+ -Asset
+ -Material
+ -Size
+ -RemianRatio
 
-●PatternBlock
-・ランダム要素のアセットを加える
- -換気扇、看板
+○各タイプごとのDTを用意する
+・1種類に絞る
+・Parameter + Refのセットで用意する
 
-●実装候補
--Greeble(Residence)
--Greeble(Tube)
--Greeble(SignBoard)
--Pattern(Residence)
--Pattern(SignBoard)
+-Residence(Pattern)
+-Residence(Greeble)
+-Other(Greeble)
+
+○用意したタイプを配置するそれぞれのBaseBlockの生成ロジック設計
+・SingleSurfaceで検証
+
 
 ●街生成検証
 ・Greeble,Patternそれぞれ一つのDTができたら二つのみで検証
