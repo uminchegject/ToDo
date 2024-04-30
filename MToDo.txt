@@ -1,21 +1,54 @@
-●BaseのBlockを用意して、そこから様々な種類のDTを実装していく
-※一つのテーマを必ず設定する
-・Pattern
- -Asset
- -Material
-・Greeble
- -Asset
- -Material
- -Size
- -RemianRatio
+[Study]
+※サンプルゲームのコードを積極的に参考にする
 
-○各タイプごとのDTを用意する
-・1種類に絞る
-・Parameter + Refのセットで用意する
+■ジャンプ周りの実装
+○Actor::ProcessInputにジャンプ処理を追加する
 
--Residence(Pattern)
--Residence(Greeble)
--Other(Greeble)
+○サンプルコードからの調査
+ -Desent3
+ -知っておきたい技術
 
-○用意したタイプを配置するそれぞれのBaseBlockの生成ロジック設計
-・SingleSurfaceで検証
+○メモの作成
+
+■環境整備
+○dllの読み込みエラーの原因を調査
+・Chapter1とChapter2の違いを調査
+
+○PrivateでCMakeを用いてパッケージを開く
+ 
+△UMLのセットアップ
+
+■資料
+・UML
+https://orotiyamatano.hatenablog.com/entry/2022/12/15/UML#%E3%82%AF%E3%83%A9%E3%82%B9%E5%9B%B3%E3%81%AB%E3%81%AF%E3%81%84%E3%82%8D%E3%81%84%E3%82%8D%E7%A8%AE%E9%A1%9E%E3%81%8C%E3%81%82%E3%82%8B
+https://qiita.com/ykawakami/items/f6688b845945669f0ce5
+
+■ジャンプ処理
+//上昇
+t = mJumpHeight / static_cast< double >( mJumpUpTime );
+mVelocity.y = t;
+if ( !inputJump ){ //ジャンプ入力がないので下降に変化
+	mMode = MODE_JUMP_FALL;
+	mCount = 0;
+}else if ( mCount >= mJumpUpTime ){ //上昇終了
+	mMode = MODE_JUMP_STAY;
+	mCount = 0;
+}
+mVelocity.x = mVelocity.z = 0.0; //X,Z移動を抹殺
+break;
+case MODE_JUMP_STAY:
+mVelocity.y = 0.0;
+if ( !inputJump ){ //ジャンプ入力がないので下降に変化
+	mMode = MODE_JUMP_FALL;
+	mCount = 0;
+}else if ( mCount >= mJumpStayTime ){ //下降へ
+	mMode = MODE_JUMP_FALL;
+	mCount = 0;
+}
+break;
+case MODE_JUMP_FALL:
+//下降
+t = mJumpHeight / static_cast< double >( mJumpFallTime );
+mVelocity.y = -t;
+//接地判定は最終的には衝突処理でやるのでここではやらない。
+break;
