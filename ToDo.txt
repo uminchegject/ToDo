@@ -1,11 +1,29 @@
+[Study]
+■ジャンプ周りの実装
+○サンプルコードからの調査
+ -Desent3
+ -知っておきたい技術
+
+○メモの作成
+
+
 [SoulCity]
+■IDEA
+※Residenceベースで設計する
+ -SignBoardをGreebleBaseで配置
+ -IndustrialをBigサイズで配置
+ 
+■ToDo
 ○MaterialRefの設計
 ・MaterialにもDTパラメーターを用意する
 
-○DTの管理方法の設計
-・DTセットを個々で設定し、Houdini側で全て管理する
+○Residenceを複数タイプ用意
 
-○GreebleBaseのAssetTypeを検証
+○SignBoardのGreebleBlockを実装
+-Residenceと組み合わせて検証
+
+○IndustrialのGreebleBlockを実装
+-Residenceと組み合わせて検証
 
 ●BaseのBlockを用意して、そこから様々な種類のDTを実装していく
 ※一つのテーマを必ず設定する
@@ -18,18 +36,13 @@
  -Size
  -RemianRatio
 
-○各タイプごとのDTを用意する
-・1種類に絞る
-・Parameter + Refのセットで用意する
-
--Residence(Pattern)
--Residence(Greeble)
--Other(Greeble)
-
 ○用意したタイプを配置するそれぞれのBaseBlockの生成ロジック設計
 ・SingleSurfaceで検証
-
 
 ●街生成検証
 ・Greeble,Patternそれぞれ一つのDTができたら二つのみで検証
 ・SingleSurfaceを用いてサンプル用のCityを生成する
+
+■ポートフォリオ
+○設計をまとめる
+ ・UMLでまとめる
