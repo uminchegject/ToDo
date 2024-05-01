@@ -1,6 +1,9 @@
 [SoulCity]
+※DTを用いたBlockごとのAsset配置ロジックを共用し、BaseBlockの配置ロジックに力を入れる
+ -他Typeのアセットも検証する
+
 ■IDEA
-※Residenceベースで設計する
+・Residenceベースで設計する
  -SignBoardをGreebleBaseで配置
  -IndustrialをBigサイズで配置
  
@@ -35,10 +38,12 @@
 ・SingleSurfaceを用いてサンプル用のCityを生成する
 
 ■ポートフォリオ
-○DTでAssetの参照とパラメーターを管理
+●PatternBaseBlockからAssetを配置するまでを説明
+・DTでAssetの参照とパラメーターを管理
+・BaseBlockにてパラメーターの数値に応じた座標周りの計算をHoudiniで処理
+・Assetの参照を用いて計算した座標にアセットを生成
+・マテリアルを設定
 
-○パラメーターの数値に応じた座標周りの計算をHoudiniで処理
-
-○Assetの参照を用いて計算した座標にアセットを生成
-
-○マテリアルの参照
+●工夫ポイント
+・アセット×マテリアルでバリエーションを豊富に用意する
+・DTで管理することで柔軟に対応できるようにする
