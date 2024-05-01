@@ -1,3 +1,22 @@
+[City]
+※立方体を生成し、四面+上面にアセットを配置する
+・角度、平面サイズ、高さをランダムにする
+ -それぞれパラメーターで調整し、様々なパターンのCityを生成できるようにする
+
+○既存のCityGeneratorを修正する
+
+
+[Building]
+○Edge部分のアセット配置ロジックの実装
+・BaseBuilding単位で生成できるようにする
+
+○SubstructObj, AddObjの実装
+・追加できるようにしたい
+
+○Stylized winter city
+・Stylized winter city environment
+
+
 [SoulCity]
 ※DTを用いたBlockごとのAsset配置ロジックを共用し、BaseBlockの配置ロジックに力を入れる
  -他Typeのアセットも検証する
