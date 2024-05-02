@@ -13,31 +13,6 @@
 ○SubstructObj, AddObjの実装
 ・追加できるようにしたい
 
-○Stylized winter city
-・Stylized winter city environment
-
-
-[SoulCity]
-※DTを用いたBlockごとのAsset配置ロジックを共用し、BaseBlockの配置ロジックに力を入れる
- -他Typeのアセットも検証する
-
-■IDEA
-・Residenceベースで設計する
- -SignBoardをGreebleBaseで配置
- -IndustrialをBigサイズで配置
- 
-■ToDo
-○MaterialRefの設計
-・MaterialにもDTパラメーターを用意する
-
-○Residenceを複数タイプ用意
-
-○SignBoardのGreebleBlockを実装
--Residenceと組み合わせて検証
-
-○IndustrialのGreebleBlockを実装
--Residenceと組み合わせて検証
-
 ●BaseのBlockを用意して、そこから様々な種類のDTを実装していく
 ※一つのテーマを必ず設定する
 ・Pattern
@@ -49,14 +24,26 @@
  -Size
  -RemianRatio
 
-○用意したタイプを配置するそれぞれのBaseBlockの生成ロジック設計
-・SingleSurfaceで検証
+[Stylized winter city]
+・Stylized winter city environment
 
-●街生成検証
-・Greeble,Patternそれぞれ一つのDTができたら二つのみで検証
-・SingleSurfaceを用いてサンプル用のCityを生成する
 
-■ポートフォリオ
+[SoulCity]
+●Residenceベースで設計する
+ -SignBoardをGreebleBaseで配置
+ -IndustrialをBigサイズで配置
+
+○Residenceを複数タイプ用意
+
+○SignBoardのGreebleBlockを実装
+-Residenceと組み合わせて検証
+
+○IndustrialのGreebleBlockを実装
+-Residenceと組み合わせて検証
+
+
+
+[ポートフォリオ]
 ●PatternBaseBlockからAssetを配置するまでを説明
 ・DTでAssetの参照とパラメーターを管理
 ・BaseBlockにてパラメーターの数値に応じた座標周りの計算をHoudiniで処理
