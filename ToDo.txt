@@ -4,7 +4,7 @@
 ○追加アセットの検討
 ・表面にGreebleBaseBlockに応じたアセットを配置する
  -SignBoard
-・ResidenceSingleBlock
+ -ResidenceSingleBlock
 
 ○中世の街並みも再現
 ・Stylized winter city environment
