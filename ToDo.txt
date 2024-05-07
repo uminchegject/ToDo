@@ -1,55 +1,10 @@
-[City]
-※立方体を生成し、四面+上面にアセットを配置する
-・角度、平面サイズ、高さをランダムにする
- -それぞれパラメーターで調整し、様々なパターンのCityを生成できるようにする
+[PDCity]
+○マテリアルの設定方法を修正
 
-○既存のCityGeneratorを修正する
+○追加アセットの検討
+・表面にGreebleBaseBlockに応じたアセットを配置する
+ -SignBoard
+・ResidenceSingleBlock
 
-
-[Building]
-○Edge部分のアセット配置ロジックの実装
-・BaseBuilding単位で生成できるようにする
-
-○SubstructObj, AddObjの実装
-・追加できるようにしたい
-
-●BaseのBlockを用意して、そこから様々な種類のDTを実装していく
-※一つのテーマを必ず設定する
-・Pattern
- -Asset
- -Material
-・Greeble
- -Asset
- -Material
- -Size
- -RemianRatio
-
-[Stylized winter city]
+○中世の街並みも再現
 ・Stylized winter city environment
-
-
-[SoulCity]
-●Residenceベースで設計する
- -SignBoardをGreebleBaseで配置
- -IndustrialをBigサイズで配置
-
-○Residenceを複数タイプ用意
-
-○SignBoardのGreebleBlockを実装
--Residenceと組み合わせて検証
-
-○IndustrialのGreebleBlockを実装
--Residenceと組み合わせて検証
-
-
-
-[ポートフォリオ]
-●PatternBaseBlockからAssetを配置するまでを説明
-・DTでAssetの参照とパラメーターを管理
-・BaseBlockにてパラメーターの数値に応じた座標周りの計算をHoudiniで処理
-・Assetの参照を用いて計算した座標にアセットを生成
-・マテリアルを設定
-
-●工夫ポイント
-・アセット×マテリアルでバリエーションを豊富に用意する
-・DTで管理することで柔軟に対応できるようにする
