@@ -1,10 +1,12 @@
 [PDCity]
 ○マテリアルの設定方法を修正
 
-○追加アセットの検討
-・表面にGreebleBaseBlockに応じたアセットを配置する
- -SignBoard
- -ResidenceSingleBlock
+○AddObjの幅を広くしてSignBoardを配置する
+ -他にも配置できそうなものを配置する
+○PatternのSingleBlockのサイズランダム性を持たせる
+
+○BaseBlockの小さいサイズのもので、Greebleを行いSingleBlockを配置する
+
 
 ○中世の街並みも再現
 ・Stylized winter city environment
