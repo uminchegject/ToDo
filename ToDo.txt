@@ -1,12 +1,37 @@
-[PDCity]
+[Procedural Content Generation Framework]
+■開発環境を整える
+○ソースからビルド
+○プラグインの導入
+△ソースの調査を目的にソースのみでVSで作業できる環境を構築
+
+■PDCプラグインを調査
+○デバッグ
+○クラス、挙動構造を確認
+○サンプルコードで基本的な部分を確認
+・https://gam0022.net/blog/2024/01/01/ue5-pcg-introduction-tips/
+・https://www.youtube.com/watch?v=NWXdK03z4xY
+
+■設計
+
+■実装
+
+▲デスクトップの改良
+・データの掃除
+・掃除
+・メモリの増設
+
+
+[Tokyo Stylized Environment]
+■開発環境の準備
+○UE5におけるHDAの準備
+○データの移植(ベースの構造体を移植)
+アセットの取得
+△Gitの登録
+
+
+[SoulCity]
 ○マテリアルの設定方法を修正
 
-○AddObjの幅を広くしてSignBoardを配置する
- -他にも配置できそうなものを配置する
-○PatternのSingleBlockのサイズランダム性を持たせる
+○Z軸のサイズの管理方法を修正
 
-○BaseBlockの小さいサイズのもので、Greebleを行いSingleBlockを配置する
-
-
-○中世の街並みも再現
-・Stylized winter city environment
+○AssetParamの調整
