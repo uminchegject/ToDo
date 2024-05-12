@@ -12,6 +12,8 @@
 ・https://www.youtube.com/watch?v=NWXdK03z4xY
 
 ■設計
+※クラス設計を意識する
+※まずは簡単な機能から追加していく
 
 ■実装
 
@@ -23,15 +25,14 @@
 
 [Tokyo Stylized Environment]
 ■開発環境の準備
-○UE5におけるHDAの準備
-○データの移植(ベースの構造体を移植)
-アセットの取得
-△Gitの登録
+○Gitの登録
+
+
+■設計
+○
 
 
 [SoulCity]
 ○マテリアルの設定方法を修正
-
-○Z軸のサイズの管理方法を修正
 
 ○AssetParamの調整
