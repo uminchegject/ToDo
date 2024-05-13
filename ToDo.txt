@@ -1,10 +1,13 @@
 [Procedural Content Generation Framework]
 ■開発環境を整える
 ○ソースからビルド
+https://forums.unrealengine.com/t/shared-unrealengine-csproj-props-not-found/733218
 ○プラグインの導入
 △ソースの調査を目的にソースのみでVSで作業できる環境を構築
 
 ■PDCプラグインを調査
+○ソースの調査
+・https://github.com/EpicGames/UnrealEngine/tree/5.2-preview-1/Engine/Plugins/Experimental/PCG
 ○デバッグ
 ○クラス、挙動構造を確認
 ○サンプルコードで基本的な部分を確認
@@ -27,12 +30,20 @@
 ■開発環境の準備
 ○Gitの登録
 
-
 ■設計
-○
-
+※汎用的な追加で実装したい機能を考える
+○立方体を前提とした設計
+ -エッジ
+ -異形
+ -複数ブロックからの構成
+ 
+○道に応じた建築物の生成処理を実装
 
 [SoulCity]
+○適正サイズへの分割処理を修正
+
+○GreebleのNormal,Upの管理をちゃんと行うように修正
+
 ○マテリアルの設定方法を修正
 
 ○AssetParamの調整
