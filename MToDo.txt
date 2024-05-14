@@ -1,28 +1,26 @@
 [Study]
-※サンプルゲームのコードを積極的に参考にする
+・ComponentクラスではMesh周りの管理を行う
+ -○Meshの管理方法をどうするかを調査する
 
-■ジャンプ周りの実装
-○Actor::ProcessInputにジャンプ処理を追加する
+・Actorでは、座標系周りを管理する
 
-○サンプルコードからの調査
- -Desent3
- -知っておきたい技術
+-Actor
+-Component
+-PlaneActor
+-BoxComponent
 
-○メモの作成
+[Procedural Content Generation Framework]
+○新規実装に最低限必要な実装内容を確認する
+ -○クラス関係を調査する
 
-■環境整備
-○dllの読み込みエラーの原因を調査
-・Chapter1とChapter2の違いを調査
+[Public]
+○マージ漏れ箇所の調査
+・ログイン時に呼び出されていそうな箇所を探す
 
-○PrivateでCMakeを用いてパッケージを開く
- 
-△UMLのセットアップ
+○原因を調査
+・処理の流れを確認
 
-■資料
-・UML
-https://orotiyamatano.hatenablog.com/entry/2022/12/15/UML#%E3%82%AF%E3%83%A9%E3%82%B9%E5%9B%B3%E3%81%AB%E3%81%AF%E3%81%84%E3%82%8D%E3%81%84%E3%82%8D%E7%A8%AE%E9%A1%9E%E3%81%8C%E3%81%82%E3%82%8B
-https://qiita.com/ykawakami/items/f6688b845945669f0ce5
+○Ver1051をクックし比較環境を整備
 
-■ジャンプ処理
-・PlanetとPlayerの位置座標から適正ベクトル値(行列)を計算する
-・Playerの向いている方向、移動方向を修正(累乗)する
+[SoulCity]
+○BaseBlockに応じた配置処理を修正
