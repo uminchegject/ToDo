@@ -1,10 +1,53 @@
-matrix mTrans = ident();
-vector dir = chv("TransformVector");
-translate(mTrans,dir);
-
-vector normalDir = normalize(dir);
-matrix mRotate = dihedral(normalDir, @N);
-
-dir *= mRotate;
-
-@P += dir; // 移動行列を乗算
+	const Vector3& enemyPos = *enemy->position();
+	++mCount;
+	//ジャンプ押されてる？
+	Pad* pad = Pad::instance();
+	bool inputJump = pad->isOn( Pad::JUMP, mId );
+	double t;
+	//字句解析に似た書き方をしてみよう。コードの重複が増えるがブロック単位で見ればシンプルになる。
+	//普通の書き方とどちらが良いか比べてみよう。
+	switch ( mMode ){
+		case MODE_JUMP_UP:
+			//カメラが回りきっていないならカメラ回転継続
+			if ( mCameraCount < mCameraDelayCount ){
+				mAngleY += mAngleVelocityY;
+				++mCameraCount;
+			}
+			//上昇
+			t = mJumpHeight / static_cast< double >( mJumpUpTime );
+			mVelocity.y = t;
+			if ( !inputJump ){ //ジャンプ入力がないので下降に変化
+				mMode = MODE_JUMP_FALL;
+				mCount = 0;
+			}else if ( mCount >= mJumpUpTime ){ //上昇終了
+				mMode = MODE_JUMP_STAY; 
+				mCount = 0;
+			}
+			mVelocity.x = mVelocity.z = 0.0; //X,Z移動を抹殺
+			break;
+		case MODE_JUMP_STAY:
+			//カメラが回りきっていないならカメラ回転継続
+			if ( mCameraCount < mCameraDelayCount ){
+				mAngleY += mAngleVelocityY;
+				++mCameraCount;
+			}
+			mVelocity.y = 0.0;
+			if ( !inputJump ){ //ジャンプ入力がないので下降に変化
+				mMode = MODE_JUMP_FALL;
+				mCount = 0;
+			}else if ( mCount >= mJumpStayTime ){ //下降へ
+				mMode = MODE_JUMP_FALL;
+				mCount = 0;
+			}
+			break;
+		case MODE_JUMP_FALL:
+			//カメラが回りきっていないならカメラ回転継続
+			if ( mCameraCount < mCameraDelayCount ){
+				mAngleY += mAngleVelocityY;
+				++mCameraCount;
+			}
+			//下降
+			t = mJumpHeight / static_cast< double >( mJumpFallTime );
+			mVelocity.y = -t;
+			//接地判定は最終的には衝突処理でやるのでここではやらない。
+			break;
