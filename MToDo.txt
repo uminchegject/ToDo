@@ -1,26 +1,13 @@
 [Study]
-・ComponentクラスではMesh周りの管理を行う
- -○Meshの管理方法をどうするかを調査する
-
-・Actorでは、座標系周りを管理する
-
--Actor
--Component
--PlaneActor
--BoxComponent
+○Houdiniで球体を用いた挙動周りの処理を実装する
+※幾何学的な実装はHoudiniで検証する
 
 [Procedural Content Generation Framework]
 ○新規実装に最低限必要な実装内容を確認する
  -○クラス関係を調査する
 
-[Public]
-○マージ漏れ箇所の調査
-・ログイン時に呼び出されていそうな箇所を探す
-
-○原因を調査
-・処理の流れを確認
-
-○Ver1051をクックし比較環境を整備
+[NightCity]
+○建物のベースの形にバリエーションを持たせる
 
 [SoulCity]
-○BaseBlockに応じた配置処理を修正
+下部にIndustrialBlockを生成する
