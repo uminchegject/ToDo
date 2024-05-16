@@ -1,8 +1,13 @@
 [Study]
-○Houdiniで球体を用いた挙動周りの処理を実装する
-※幾何学的な実装はHoudiniで検証する
+○球体上で移動処理をした際のmRotation, mPositionの求め方を設計する
 
-○球体で動き回れるまでを実装する
+○FollowActorのmRotation, mPositionを更新する
+
+○球体のメッシュの表示実装方法を調査する
+
+○ベクトルを回転させるイメージで実装する
+
+○ベクトルの初期化を実装
 
 [Procedural Content Generation Framework]
 ○新規実装に最低限必要な実装内容を確認する
