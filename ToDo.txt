@@ -1,34 +1,21 @@
-[Procedural Content Generation Framework]
-■開発環境を整える
-○ソースからビルド
-https://forums.unrealengine.com/t/shared-unrealengine-csproj-props-not-found/733218
-○プラグインの導入
-△ソースの調査を目的にソースのみでVSで作業できる環境を構築
-
-■PDCプラグインを調査
-○ソースの調査
-・https://github.com/EpicGames/UnrealEngine/tree/5.2-preview-1/Engine/Plugins/Experimental/PCG
-○デバッグ
-○クラス、挙動構造を確認
-○サンプルコードで基本的な部分を確認
-・https://gam0022.net/blog/2024/01/01/ue5-pcg-introduction-tips/
-・https://www.youtube.com/watch?v=NWXdK03z4xY
-
-■設計
-※クラス設計を意識する
-※まずは簡単な機能から追加していく
-
-■実装
-
-▲デスクトップの改良
-・データの掃除
-・掃除
-・メモリの増設
-
+[PD]
+○列のPatternも実装する
+ -縦列、横列それぞれを用意する
 
 [Tokyo Stylized Environment]
+○建物のベースの形にバリエーションを持たせる
+※BaseBlockとSidePanelを組み合わせてPDを行う
+・BaseBlock
+ -立方体を組み合わせたようなボリュームを生成する
+・SidePanel
+ -Baseからボリュームをくり抜いたようなPanelを生成する
+ -※DTでBoolObjを管理する
+
 ■開発環境の準備
 ○Gitの登録
+
+■IDEA
+○NightCityをTSEを用いて実装する
 
 ■設計
 ※汎用的な追加で実装したい機能を考える
@@ -39,11 +26,19 @@ https://forums.unrealengine.com/t/shared-unrealengine-csproj-props-not-found/733
  
 ○道に応じた建築物の生成処理を実装
 
-[SoulCity]
-○適正サイズへの分割処理を修正
 
-○GreebleのNormal,Upの管理をちゃんと行うように修正
+[SoulCity] 
+○下部にIndustrialBlockを生成する
+・Blockの隅にBlockかAssetを配置する処理を実装する
+・IndustrialBlockは全体の2割以下にするように修正する
+
+■修正
+※平面感が出すぎなので、立体感を出す
+※バリエーション(サイズ、種類)を増やす
+ -立方体としてのバリエーションの増やし方を考える
 
 ○マテリアルの設定方法を修正
+
+○GreebleのNormal,Upの管理をちゃんと行うように修正
 
 ○AssetParamの調整
