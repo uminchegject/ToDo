@@ -1,44 +1,27 @@
 [PD]
 ○列のPatternも実装する
  -縦列、横列それぞれを用意する
-
-[Tokyo Stylized Environment]
-○建物のベースの形にバリエーションを持たせる
-※BaseBlockとSidePanelを組み合わせてPDを行う
-・BaseBlock
- -立方体を組み合わせたようなボリュームを生成する
-・SidePanel
- -Baseからボリュームをくり抜いたようなPanelを生成する
- -※DTでBoolObjを管理する
-
-■開発環境の準備
-○Gitの登録
-
-■IDEA
-○NightCityをTSEを用いて実装する
-
-■設計
-※汎用的な追加で実装したい機能を考える
-○立方体を前提とした設計
- -エッジ
- -異形
- -複数ブロックからの構成
+ -Blockサイズを管理できるようにする
+ -位置、サイズにランダム性を持たせる
  
-○道に応じた建築物の生成処理を実装
+[NightCity]
+※立方体を前提とした設計を行う
 
+○BaseBlockの設計
+・立方体を組み合わせたようなボリュームを生成する
+ -帯のように立方体を配置する
+   -※DTでAddObjを管理する
 
-[SoulCity] 
+○SidePanelの設計
+・Baseからボリュームをくり抜いたようなPanelを生成する
+ -※DTでBoolObjを管理する
+・SignBoardも組み込む
+ -Obj, Material
+
+[SoulCity]
 ○下部にIndustrialBlockを生成する
-・Blockの隅にBlockかAssetを配置する処理を実装する
 ・IndustrialBlockは全体の2割以下にするように修正する
-
-■修正
-※平面感が出すぎなので、立体感を出す
-※バリエーション(サイズ、種類)を増やす
- -立方体としてのバリエーションの増やし方を考える
-
-○マテリアルの設定方法を修正
-
-○GreebleのNormal,Upの管理をちゃんと行うように修正
-
-○AssetParamの調整
+ -側部に立方体を配置
+ -上部にネズミ返し
+ -Surfaceの上部に列Patternでアセットを配置
+  -大きめ
