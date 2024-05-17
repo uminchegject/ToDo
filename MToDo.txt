@@ -1,5 +1,6 @@
 [Study]
 ○球体上で移動処理をした際のmRotation, mPositionの求め方を設計する
+・距離を回転角度に変換してキャラクターを動かす
 
 ○FollowActorのmRotation, mPositionを更新する
 
@@ -18,6 +19,13 @@
 
 [NightCity]
 ○建物のベースの形にバリエーションを持たせる
+※BaseBlockとSidePanelを組み合わせてPDを行う
+・BaseBlock
+ -立方体を組み合わせたようなボリュームを生成する
+・SidePanel
+ -Baseからボリュームをくり抜いたようなPanelを生成する
 
 [SoulCity]
-下部にIndustrialBlockを生成する
+○下部にIndustrialBlockを生成する
+・Blockの隅にBlockかAssetを配置する処理を実装する
+・IndustrialBlockは全体の2割以下にするように修正する
