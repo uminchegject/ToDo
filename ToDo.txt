@@ -26,11 +26,14 @@
 
 
 [PD]
-○列のPatternの設計
-Blockサイズを設定できるようにする
- -サイズをオーバーサイズに設定して1列にする
+○マテリアルのUVを修正
+・PatternHDKで修正
 
 ○BaseVolumeの設計
 ・Volume動詞を組み合わせてBaseBlockを生成する処理を実装する
 ・DTで管理
 ・BaseSurfaceの生成
+
+
+[SoulCity]
+○PatternHDKでResidenceBlock,IndustrialBlockを検証する
