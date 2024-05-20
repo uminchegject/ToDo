@@ -26,10 +26,13 @@
 
 
 [PD]
+○左右上下にブロックを追加する処理を実装
+
 ○マテリアルのUVを修正
 ・PatternHDKで修正
 
 ○BaseVolumeの設計
+※3次元座標に対してのAssetParam,AddObjParamを追加する
 ・Volume動詞を組み合わせてBaseBlockを生成する処理を実装する
 ・DTで管理
 ・BaseSurfaceの生成
