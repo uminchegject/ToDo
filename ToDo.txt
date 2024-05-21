@@ -39,10 +39,14 @@ Surfaceの画像(例)
 [PD]
 ○BaseVolumeの設計
 ※3次元座標に対してのAssetParam,AddObjParamを追加する
+※NightCity,SoulCityそれぞれで用いれるように実装する
 ・Volume動詞を組み合わせてBaseBlockを生成する処理を実装する
 ・DTで管理
 ・BaseSurfaceの生成
 
 
 [SoulCity]
-○PatternHDKでResidenceBlock,IndustrialBlockを検証する
+○IndustrialBlockの設計をする
+
+○PatternHDAでResidenceBlockを検証する
+○GreebleHDAでResidenceBlockを検証する
