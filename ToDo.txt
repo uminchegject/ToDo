@@ -1,17 +1,35 @@
 [Study]
-○球体上で移動処理をした際のmRotation, mPositionの求め方を設計する
+●前後の移動処理
+upとnormalの外積ベクトルを軸に回転させる
 
+Vector3 normal = GetForward();
+Vector3 pos = mOwner->GetPosition();
+Vector3　up = pos - mTargetPlanet->GetPosition();
+up->Normalize();
+
+//回転軸を外積で求める
+
+//移動
+Quaternion rot = mOwner->GetRotation();
+float angle = mAngularSpeed * deltaTime;
+Quaternion inc(up, angle);
+rot = Quaternion::Concatenate(rot, inc);
+
+
+●左右の振り向き処理
+Quaternion rot = mOwner->GetRotation();
+float angle = mAngularSpeed * deltaTime;
+Quaternion inc(up, angle);
+rot = Quaternion::Concatenate(rot, inc);
+mOwner->SetRotation(rot);
 
 [MEmploy]
-●汎用性
+○DataTable
 ・テキスト
-建物などのプロシージャルデザインを行う場合、窓は側面に規則的に配置するなど共通化できる特徴が多々ある、
-そこで汎用的な共通要素を仕様に落とし込みHoudiniで実装し、汎用性を高めるように考えた。
-
-●パラメーター
-・テキスト
-移動値、回転値、スケール値などのパラメーターを用意して柔軟に対応できるようにする
- -回転値、移動値、スケール値、ランダム要素、アセット参照
+パラメーター周り、アセットの参照周りをDTで管理することで、柔軟に対応できるようにする
+DTを入れ替えるだけで、配置ロジックをそのままにパラメーターで微調整をしつつ違う世界観のアセットを配置できる
+ -アセット,AddObj,マテリアル
+アセットにEnumでタグ付けをし、タグ関連のアセットからランダムに参照を取得するようにする
 ・画像
 構造体の画像
 Surfaceの画像(例)
@@ -25,7 +43,6 @@ for(int i = 0; i < blockHeightNum + int(addBlock.x); ++i)
 {
 	for(int j = 0; j < blockWidthNum + int(addBlock.y); ++j)
 
-
 ○BaseVolumeの設計
 ※3次元座標に対してのAssetParam,AddObjParamを追加する
 ・Volume動詞を組み合わせてBaseBlockを生成する処理を実装する
@@ -35,12 +52,3 @@ for(int i = 0; i < blockHeightNum + int(addBlock.x); ++i)
 
 [SoulCity]
 ○PatternHDKでResidenceBlock,IndustrialBlockを検証する
-
-
-[Procedural Content Generation Framework]
-○新規実装に最低限必要な実装内容を確認する
-
-
-○クラス関係を調査する
-・デバッグで処理とデータの流れを確認する
-・それぞれのノードから共通部分を調査する
