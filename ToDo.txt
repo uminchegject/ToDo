@@ -4,7 +4,7 @@ upとnormalの外積ベクトルを軸に回転させる
 
 Vector3 normal = GetForward();
 Vector3 pos = mOwner->GetPosition();
-Vector3　up = pos - mTargetPlanet->GetPosition();
+Vector3 up = pos - mTargetPlanet->GetPosition();
 up->Normalize();
 
 //回転軸を外積で求める
@@ -37,12 +37,6 @@ Surfaceの画像(例)
 
 
 [PD]
-○左右上下にブロックを追加する処理を実装
-vector addBlock = point(1, "AddBlock", k);
-for(int i = 0; i < blockHeightNum + int(addBlock.x); ++i)
-{
-	for(int j = 0; j < blockWidthNum + int(addBlock.y); ++j)
-
 ○BaseVolumeの設計
 ※3次元座標に対してのAssetParam,AddObjParamを追加する
 ・Volume動詞を組み合わせてBaseBlockを生成する処理を実装する
