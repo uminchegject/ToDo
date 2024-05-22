@@ -1,31 +1,28 @@
-[Study]
-○球体上で移動処理をした際のmRotation, mPositionの求め方を設計する
-・距離を回転角度に変換してキャラクターを動かす
+[Volume]
+●BaseSurface
+・Random
+ -Scale
+ -Pos
+・Type
+ -None
+ -Asset + AddObj
 
-○FollowActorのmRotation, mPositionを更新する
+●AddVolume
+・Random
+ -Scale
+ -Pos
+・Pattern
 
-○球体のメッシュの表示実装方法を調査する
+●SubVolume
+・Random
+ -Scale
+ -Pos
+・Pattern
 
-○ベクトルを回転させるイメージで実装する
-
-○ベクトルの初期化を実装
-
-[Procedural Content Generation Framework]
-○新規実装に最低限必要な実装内容を確認する
-
-○クラス関係を調査する
-・デバッグで処理とデータの流れを確認する
-・それぞれのノードから共通部分を調査する
-
-[NightCity]
-○建物のベースの形にバリエーションを持たせる
-※BaseBlockとSidePanelを組み合わせてPDを行う
-・BaseBlock
- -立方体を組み合わせたようなボリュームを生成する
-・SidePanel
- -Baseからボリュームをくり抜いたようなPanelを生成する
-
-[SoulCity]
-○下部にIndustrialBlockを生成する
-・Blockの隅にBlockかAssetを配置する処理を実装する
-・IndustrialBlockは全体の2割以下にするように修正する
+●VolumeShape
+・ShapeType
+ -Box
+ -円柱
+・EdgeType
+ -Box
+ -Round
