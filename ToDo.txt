@@ -1,39 +1,45 @@
 [Study]
-●前後の移動処理
-upとnormalの外積ベクトルを軸に回転させる
-
+■前後の移動処理
+・upとnormalの外積ベクトルを軸に回転させる
 Vector3 normal = GetForward();
 Vector3 pos = mOwner->GetPosition();
 Vector3 up = pos - mTargetPlanet->GetPosition();
 up->Normalize();
 
-//回転軸を外積で求める
+○回転軸を外積で求める
+Vector3 rotateAxis;
 
-//移動
+○惑星軸のクォータニオンを計算
+Quaternion rot = mOwner->GetRotation();
+float angle = mAngularSpeed * deltaTime;
+Quaternion qRotate(rotateAxis, angle);
+
+Quaternion mPlanetRotation;
+mPlanetRotation = Quaternion::Concatenate(mPlanetRotation, qRotate);
+
+○プレイヤー周りの座標の計算
+//座標を更新
+pos = 
+
+//回転角度の更新
+
+
+■左右の振り向き処理
 Quaternion rot = mOwner->GetRotation();
 float angle = mAngularSpeed * deltaTime;
 Quaternion inc(up, angle);
-rot = Quaternion::Concatenate(rot, inc);
 
-
-●左右の振り向き処理
-Quaternion rot = mOwner->GetRotation();
-float angle = mAngularSpeed * deltaTime;
-Quaternion inc(up, angle);
-rot = Quaternion::Concatenate(rot, inc);
-mOwner->SetRotation(rot);
 
 [MEmploy]
 ○DataTable
 ・テキスト
-パラメーター周り、アセットの参照周りをDTで管理することで、柔軟に対応できるようにする
+パラメーター周り・アセットの参照周りをDTで管理することで、柔軟に対応できるようにする
 DTを入れ替えるだけで、配置ロジックをそのままにパラメーターで微調整をしつつ違う世界観のアセットを配置できる
  -アセット,AddObj,マテリアル
-アセットにEnumでタグ付けをし、タグ関連のアセットからランダムに参照を取得するようにする
 ・画像
 構造体の画像
-Surfaceの画像(例)
- -各アセットのパラメーターを表示する
+比較画像(例)
+ -各アセットのDTを表示する
 
 
 [PD]
