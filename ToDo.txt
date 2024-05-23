@@ -1,6 +1,7 @@
 [Study]
 ○カメラの挙動の調査及び修正
 
+
 [MEmploy]
 ○DataTable
 ・テキスト
@@ -13,18 +14,40 @@ DTを入れ替えるだけで、配置ロジックをそのままにパラメー
  -※共通している部分を重視する
  -各アセットのDTを表示する
 
+○多様性
+・ロジックに沿ってアセットを配置していくだけだと単調になってしまうデメリットがある、
+そこでマテリアル×アセット×ランダム要素(サイズ)と組み合わせを多様にすることで単調にならないようにする。
+
 
 [PD]
 ○BaseVolumeの設計
 ※3次元座標に対してのAssetParam,AddObjParamを追加する
 ※NightCity,SoulCityそれぞれで用いれるように実装する
-・Volume動詞を組み合わせてBaseBlockを生成する処理を実装する
+・Volume同士を組み合わせてBaseBlockを生成する処理を実装する
 ・DTで管理
 ・BaseSurfaceの生成
+
+○AddVolの実装
+・Parameter構造体の実装
+ -AddObj周りのParam
+  -Box座標に対する位置とスケールを設定
+ -BaseSurface周りのParam
+  -BaseSurfaceの生成条件
+  -VolumeSurfaceに対する、位置・スケールを設定
+ -Asset周りのParam
+  -BaseSurfaceの生成条件
+  -VolumeSurfaceに対する、位置・スケールを設定
+ -Material
+ 
+・検証
+ -WindowをPatternで配置
+  -BaseVolumeからAddVolumeを引いたVolumeSurfaceで配置
+  -VolumeSurfaceからBaseSurfaceを生成
+ -AddVolにVividなマテリアルを配置
 
 
 [SoulCity]
 ○IndustrialBlockの設計をする
 
+[NightCity]
 ○PatternHDAでResidenceBlockを検証する
-○GreebleHDAでResidenceBlockを検証する
