@@ -1,5 +1,21 @@
 [Study]
-○カメラの挙動の調査及び修正
+○Planetsから近いPlanetを取得する関数を実装する
+Game::FindPlanets(Vector3 findPos, float findRange ,std::vector<class SphereActor*>& planets)を実装する
+
+○FollowActorにてFindPlanetを行いMoveComponentにPlanetを設定する
+
+○MoveComponentにMoveBaseTargetを設定する
+・Getter,Setterを加える
+
+○ジャンプの実装
+ -ジャンプ中は周りのObjの重力も含めて計算する
+ -up, normalも更新する
+ 
+○レベルの構築
+ -Sphereの配置
+ -ライトの配置
+
+△カメラ周りの挙動を修正
 
 
 [MEmploy]
