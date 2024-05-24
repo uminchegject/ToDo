@@ -1,28 +1,27 @@
-[Volume]
-●BaseSurface
-・Random
- -Scale
- -Pos
-・Type
- -None
- -Asset + AddObj
+[ポートフォリオ]
+■多様性
+○多様性
+・ロジックに沿ってアセットを配置していくだけだと単調になってしまうデメリットがある、そこで
+マテリアル×アセット×ランダム要素(サイズ)と組み合わせを多様にすることで単調にならないようにする。
 
-●AddVolume
-・Random
- -Scale
- -Pos
-・Pattern
+○DTの管理
+・アセット・マテリアルを単一のものを配置するのではなく、ENUMでタグ付けしてそこからランダムに取得することで多様的にする
 
-●SubVolume
-・Random
- -Scale
- -Pos
-・Pattern
+○アセットのパラメーター周りの値におけるランダム要素
+・サイズ、位置、配置確率をランダムに設定することで単調に並べているように見せないようにする
 
-●VolumeShape
-・ShapeType
- -Box
- -円柱
-・EdgeType
- -Box
- -Round
+○Greeble分割
+・Greeble分割を用いることでGrid分割に比べてサイズ、形にランダム要素を加える
+
+
+
+[NightCity]
+○BaseVolumeを生成
+
+○VolumeSurfaceからBaseSurfaceを生成
+
+○BaseSurfaceにWindowを配置
+・PatternBlockで配置
+
+○マテリアルを配置
+・ビビットなカラーリングで配置汁
