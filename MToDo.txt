@@ -1,20 +1,14 @@
 [Volume]
-○BaseVolumeを生成
+○BoxVolumeをベースにしたアセット配置処理を実装
 
-○VolumeからBaseSurfaceを生成
-※ここ大事
-・Booleanに応じたBaseSurfaceを生成する処理を考える
+○上部、下部Surfaceへの配置処理を実装
 
-○BaseSurfaceの分別及びDTの割り当て
-・Surfaceの特徴ごとに明確にDTを分ける
 
-○BaseSurfaceにAssetを配置
-・PatternBlockでWindowを配置
-・PatternBlockで排気口を配置
-・PatternBlockで看板を配置
+[AddVolume]
+○Volumeをパラメーターで生成
 
-○マテリアルを配置
-・ビビットなカラーリングで配置する
+○VolumeSurfaceごとにMaterialDT,AddObjDT,AssetDTを設定
+
 
 ●NightCity
 ・BaseSurfaceの種類を多様にする
