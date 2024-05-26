@@ -1,69 +1,56 @@
-[Study]
-○Planetsから近いPlanetを取得する関数を実装する
-Game::FindPlanets(Vector3 findPos, float findRange ,std::vector<class SphereActor*>& planets)を実装する
+[Volume]
+-3DimensionalAssetType
+-3DimensionalAddObj
+-2DimensionalBlock
 
-○FollowActorにてFindPlanetを行いMoveComponentにPlanetを設定する
+○3DimensionalをベースにしたAsset,AddObjの配置処理を実装
 
-○MoveComponentにMoveBaseTargetを設定する
-・Getter,Setterを加える
-
-○ジャンプの実装
- -ジャンプ中は周りのObjの重力も含めて計算する
- -up, normalも更新する
- 
-○レベルの構築
- -Sphereの配置
- -ライトの配置
-
-△カメラ周りの挙動を修正
+○2DimensionalBlockの生成パラメーターの実装
+ -方角
+ -スケール
+ -位置
 
 
-[MEmploy]
-○DataTable
+[DT管理]
+○BaseSurfaceの条件をDTで管理する
+ -各BlockTypeごとに設定DTを用意する
+
+
+○VolumeSurfaceごとにMaterialDT,AddObjDT,AssetDTを設定
+・ENUMで種類を管理する
+ -各セットごとにENUM変数を用意する
+ -各DTにBlockType変数を設定する
+ -BaseBlockPrimのBlockTypeと照らし合わせて、ParameterPointを間引く
+
+
+●NightCity
+・BaseSurfaceの種類を多様にする
+
+●SoulCity
+・角度をランダムにする
+・サイズをランダムにする
+
+
+
+[Employ]
+●汎用性
 ・テキスト
-パラメーター周り・アセットの参照周りをDTで管理することで、柔軟に対応できるようにする
+建物などのプロシージャルデザインを行う場合、窓は側面に規則的に配置するなど共通化できる特徴が多々ある、
+そこで汎用的な共通要素を仕様に落とし込みHoudiniで実装し、汎用性を高めるように考えた。
+
+●パラメーター
+・テキスト
+移動値、回転値、スケール値などのパラメーターを用意して柔軟に対応できるようにする
+ -回転値、移動値、スケール値、ランダム要素、アセット参照
+・画像
+構造体の画像
+Surfaceの画像(例)
+ -各アセットのパラメーターを表示する
+
+●DataTable
+・テキスト
+パラメーター周り、アセットの参照周りをDTで管理することで、柔軟に対応できるようにする
 DTを入れ替えるだけで、配置ロジックをそのままにパラメーターで微調整をしつつ違う世界観のアセットを配置できる
  -アセット,AddObj,マテリアル
 ・画像
-構造体の画像
-比較画像(例)
- -※共通している部分を重視する
- -各アセットのDTを表示する
-
-○多様性
-・ロジックに沿ってアセットを配置していくだけだと単調になってしまうデメリットがある、
-そこでマテリアル×アセット×ランダム要素(サイズ)と組み合わせを多様にすることで単調にならないようにする。
-
-
-[PD]
-○BaseVolumeの設計
-※3次元座標に対してのAssetParam,AddObjParamを追加する
-※NightCity,SoulCityそれぞれで用いれるように実装する
-・Volume同士を組み合わせてBaseBlockを生成する処理を実装する
-・DTで管理
-・BaseSurfaceの生成
-
-○AddVolの実装
-・Parameter構造体の実装
- -AddObj周りのParam
-  -Box座標に対する位置とスケールを設定
- -BaseSurface周りのParam
-  -BaseSurfaceの生成条件
-  -VolumeSurfaceに対する、位置・スケールを設定
- -Asset周りのParam
-  -BaseSurfaceの生成条件
-  -VolumeSurfaceに対する、位置・スケールを設定
- -Material
- 
-・検証
- -WindowをPatternで配置
-  -BaseVolumeからAddVolumeを引いたVolumeSurfaceで配置
-  -VolumeSurfaceからBaseSurfaceを生成
- -AddVolにVividなマテリアルを配置
-
-
-[SoulCity]
-○IndustrialBlockの設計をする
-
-[NightCity]
-○PatternHDAでResidenceBlockを検証する
+DataTableの画像
