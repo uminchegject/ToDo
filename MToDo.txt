@@ -1,13 +1,25 @@
 [Volume]
-○BoxVolumeをベースにしたアセット配置処理を実装
+-3DimensionalAssetType
+-3DimensionalAddObj
+-2DimensionalBlock
 
-○上部、下部Surfaceへの配置処理を実装
+○3DimensionalをベースにしたAsset,AddObjの配置処理を実装
+
+○2DimensionalBlockの生成パラメーターの実装
+ -方角
+ -スケール
+ -位置
 
 
-[AddVolume]
-○Volumeをパラメーターで生成
+[DT管理]
+○BaseSurfaceの条件をDTで管理する
+ -各BlockTypeごとに設定DTを用意する
 
 ○VolumeSurfaceごとにMaterialDT,AddObjDT,AssetDTを設定
+・ENUMで種類を管理する
+ -各セットごとにENUM変数を用意する
+ -各DTにBlockType変数を設定する
+ -BaseBlockPrimのBlockTypeと照らし合わせて、ParameterPointを間引く
 
 
 ●NightCity
