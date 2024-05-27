@@ -1,3 +1,7 @@
+[Study]
+○カメラの挙動を調査
+
+
 [Volume]
 -3DimensionalAssetType
 -3DimensionalAddObj
@@ -5,15 +9,20 @@
 
 ○3DimensionalをベースにしたAsset,AddObjの配置処理を実装
 
+○AddObjの形態にバリエーションを持たせる
+
 ○2DimensionalBlockの生成パラメーターの実装
  -方角
  -スケール
  -位置
+ 
+
 
 
 [DT管理]
 ○BaseSurfaceの条件をDTで管理する
  -各BlockTypeごとに設定DTを用意する
+
 
 ○VolumeSurfaceごとにMaterialDT,AddObjDT,AssetDTを設定
 ・ENUMで種類を管理する
