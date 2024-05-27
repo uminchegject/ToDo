@@ -1,53 +1,94 @@
-	const Vector3& enemyPos = *enemy->position();
-	++mCount;
-	//ジャンプ押されてる？
-	Pad* pad = Pad::instance();
-	bool inputJump = pad->isOn( Pad::JUMP, mId );
-	double t;
-	//字句解析に似た書き方をしてみよう。コードの重複が増えるがブロック単位で見ればシンプルになる。
-	//普通の書き方とどちらが良いか比べてみよう。
-	switch ( mMode ){
-		case MODE_JUMP_UP:
-			//カメラが回りきっていないならカメラ回転継続
-			if ( mCameraCount < mCameraDelayCount ){
-				mAngleY += mAngleVelocityY;
-				++mCameraCount;
-			}
-			//上昇
-			t = mJumpHeight / static_cast< double >( mJumpUpTime );
-			mVelocity.y = t;
-			if ( !inputJump ){ //ジャンプ入力がないので下降に変化
-				mMode = MODE_JUMP_FALL;
-				mCount = 0;
-			}else if ( mCount >= mJumpUpTime ){ //上昇終了
-				mMode = MODE_JUMP_STAY; 
-				mCount = 0;
-			}
-			mVelocity.x = mVelocity.z = 0.0; //X,Z移動を抹殺
-			break;
-		case MODE_JUMP_STAY:
-			//カメラが回りきっていないならカメラ回転継続
-			if ( mCameraCount < mCameraDelayCount ){
-				mAngleY += mAngleVelocityY;
-				++mCameraCount;
-			}
-			mVelocity.y = 0.0;
-			if ( !inputJump ){ //ジャンプ入力がないので下降に変化
-				mMode = MODE_JUMP_FALL;
-				mCount = 0;
-			}else if ( mCount >= mJumpStayTime ){ //下降へ
-				mMode = MODE_JUMP_FALL;
-				mCount = 0;
-			}
-			break;
-		case MODE_JUMP_FALL:
-			//カメラが回りきっていないならカメラ回転継続
-			if ( mCameraCount < mCameraDelayCount ){
-				mAngleY += mAngleVelocityY;
-				++mCameraCount;
-			}
-			//下降
-			t = mJumpHeight / static_cast< double >( mJumpFallTime );
-			mVelocity.y = -t;
-			//接地判定は最終的には衝突処理でやるのでここではやらない。
-			break;
+int BlockTypeNum = point(1, "VolParamNum", 0);
+vector scale = v@scale;
+
+for(int blockTypeIndex = 0; blockTypeIndex < BlockTypeNum; ++blockTypeIndex)
+{
+    //アセットDT周り
+    int AssetRefNum = point(2, "AssetRefNum", 0);
+    int AssetRefIndexList[];
+    for(int i = 0; i < AssetRefNum; ++i)
+    {
+        string assetType1 = point(1, "AssetType", blockTypeIndex);
+        string assetType2 = point(2, "AssetType", i);
+        if(assetType1 == assetType2)
+        {
+            append(AssetRefIndexList, i);
+        }
+    }
+    
+    float randomNum = random(@P * (blockTypeIndex + 10));
+    int assetRefIndex = AssetRefIndexList[int(len(AssetRefIndexList) * randomNum)];
+    string assetRef = point(2, "AssetRef", assetRefIndex);
+
+	
+	//スケール周り
+    vector  blockscale = point(1, "ChildBlockScale", blockTypeIndex);
+	float sizeCofficient = point(2, "SizeCofficient", assetRefIndex);
+	//blockscale *= sizeCofficient;
+    
+    int primPts[] = primpoints(0, @primnum);
+    vector pt1Pos = point(0, "P", primPts[0]);
+ 
+ 
+	//ブロック周り
+    int blockXAxisNum = int(1 / blockscale.x);
+    int blockYAxisNum = int(1 / blockscale.y);
+    int blockZAxisNum = int(1 / blockscale.z);
+
+    if(blockXAxisNum < 1) blockXAxisNum = 1;
+    if(blockYAxisNum < 1) blockYAxisNum = 1;
+    if(blockZAxisNum < 1) blockZAxisNum = 1;
+    
+    vector adjustedScale;
+    adjustedScale.x = scale.x / blockXAxisNum;
+    adjustedScale.y = scale.y / blockYAxisNum;
+    adjustedScale.z = scale.z / blockZAxisNum;
+	
+	vector volumeScale = point(1, "VolumeScale", blockTypeIndex) * adjustedScale; 
+    
+	//移動周り
+	vector spawnBasePos = @P;
+	vector transform = point(1, "Transform", blockTypeIndex);
+	vector assetTransform = point(2, "Transform", assetRefIndex);
+	spawnBasePos += transform;
+	//spawnBasePos += assetTransform;
+	
+
+	//回転周り
+	vector rotate = point(1, "Rotate", blockTypeIndex);
+	vector assetRotate = point(2, "Rotate", assetRefIndex);
+	vector axis = set(1,0,0);
+	vector4 q = quaternion(radians(rotate.x + assetRotate.x) ,axis);
+	matrix mRotate = qconvert(q);
+	axis = set(0,1,0);
+	q = quaternion(radians(rotate.y + assetRotate.y) ,axis);
+	mRotate *= qconvert(q);
+	axis = set(0,0,1);
+	q = quaternion(radians(rotate.z + assetRotate.z) ,axis);
+	mRotate *= qconvert(q);
+	vector normal = (1.0, 0.0, 0.0);
+	normal.x = 1;
+	normal *= mRotate; // 回転行列を乗算 
+				
+				
+    for(int i = 0; i < blockXAxisNum; ++i)
+    {
+        for(int j = 0; j < blockYAxisNum; ++j)
+        {
+            for(int k = 0; k < blockZAxisNum; ++k)
+            {
+				vector spawnPos = spawnBasePos;
+                spawnPos.x += adjustedScale.x * i - scale.x / 2;
+                spawnPos.y += adjustedScale.y * j - scale.y / 2;
+                spawnPos.z += adjustedScale.z * k - scale.z / 2;                          
+			
+                int pt = addpoint(0, spawnPos);
+                setpointattrib(0, "N", pt, normal);
+                setpointattrib(0, "scale", pt, volumeScale);
+                setpointattrib(0, "AssetRef", pt, assetRef);
+            }
+        }
+    }
+}
+
+removepoint(0, @ptnum);
