@@ -1,56 +1,11 @@
-[Volume]
--3DimensionalAssetType
--3DimensionalAddObj
--2DimensionalBlock
+[Public]
+○アニメーションのシークエンス周りを調査
+　-StateMachine AnimationSet
 
-○3DimensionalをベースにしたAsset,AddObjの配置処理を実装
+[Study]
+○ジャンプの実装
+・ジャンプのロジックを決める
+https://qiita.com/odanny/items/297f32a334c41410cc5d
 
-○2DimensionalBlockの生成パラメーターの実装
- -方角
- -スケール
- -位置
-
-
-[DT管理]
-○BaseSurfaceの条件をDTで管理する
- -各BlockTypeごとに設定DTを用意する
-
-
-○VolumeSurfaceごとにMaterialDT,AddObjDT,AssetDTを設定
-・ENUMで種類を管理する
- -各セットごとにENUM変数を用意する
- -各DTにBlockType変数を設定する
- -BaseBlockPrimのBlockTypeと照らし合わせて、ParameterPointを間引く
-
-
-●NightCity
-・BaseSurfaceの種類を多様にする
-
-●SoulCity
-・角度をランダムにする
-・サイズをランダムにする
-
-
-
-[Employ]
-●汎用性
-・テキスト
-建物などのプロシージャルデザインを行う場合、窓は側面に規則的に配置するなど共通化できる特徴が多々ある、
-そこで汎用的な共通要素を仕様に落とし込みHoudiniで実装し、汎用性を高めるように考えた。
-
-●パラメーター
-・テキスト
-移動値、回転値、スケール値などのパラメーターを用意して柔軟に対応できるようにする
- -回転値、移動値、スケール値、ランダム要素、アセット参照
-・画像
-構造体の画像
-Surfaceの画像(例)
- -各アセットのパラメーターを表示する
-
-●DataTable
-・テキスト
-パラメーター周り、アセットの参照周りをDTで管理することで、柔軟に対応できるようにする
-DTを入れ替えるだけで、配置ロジックをそのままにパラメーターで微調整をしつつ違う世界観のアセットを配置できる
- -アセット,AddObj,マテリアル
-・画像
-DataTableの画像
+[PD]
+○アセット、AddVolの配置ロジックを設定
