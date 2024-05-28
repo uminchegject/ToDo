@@ -1,11 +1,26 @@
 [Public]
-○アニメーションのシークエンス周りを調査
-　-StateMachine AnimationSet
+○StateMachineのソースをベースに調査する
 
 [Study]
-○ジャンプの実装
-・ジャンプのロジックを決める
-https://qiita.com/odanny/items/297f32a334c41410cc5d
+○ジャンプ処理の実装
+
+○ダッシュ処理の実装
+
+○引力の実装
+
+○遠心力の実装
 
 [PD]
-○アセット、AddVolの配置ロジックを設定
+○アセット、AddVolの配置ロジックを実装
+
+○2DimensionBlockの配置処理を実装
+・ENUM周りの実装
+
+■IDEA
+●Greeble
+・各3方向分のみ
+・途中でランダムにやめる
+
+●AddBigObj
+・軸を決めてランダムに複数配置する
+・軸をランダムにする
