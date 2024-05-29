@@ -1,40 +1,33 @@
-[Public]
-○引き続きアニメーションが止まっていることを中心に調査を行う
-・StateMachineのソースをベースに調査する
-
-●StateMachine周りを調査
-・StartActionEndを用いたアニメーションフローを使っていることを確認
-
-●関連ファイルの不備を確認
-・同じAnimationSetを用いているイマジンデータと比較したが特に不備がありそうなところは見つからず
-
-
 [Study]
-※遠心力、重力をベースにした挙動
+○Planetsから近いPlanetを取得する関数を実装する
+Game::FindPlanets(Vector3 findPos, float findRange ,std::vector<class SphereActor*>& planets)を実装する
 
-○ジャンプ処理の実装
-y = 0.5*gravity*time*time - v0*time + HORIZONTAL_Y
-
-○ダッシュ処理の実装
-・遠心力をつける
-
-○引力の実装
-・各惑星に重力変数を個々で設定する
-
-○遠心力の実装
-・惑星への重力とは逆方向に力を加える
-
-○重力
-・惑星から一定距離以下にならないように実装する
-
-○キャラクター方向の計算
+○遠心力、重力をベースにした挙動を設計
+・ジャンプ処理の実装
+　-y = 0.5*gravity*time*time - v0*time + HORIZONTAL_Y
+・ダッシュ処理の実装
+　-遠心力をつける
+・引力の実装
+ -各惑星に重力変数を個々で設定する
+・遠心力の実装
+ -惑星への重力とは逆方向に力を加える
+・重力
+ -惑星から一定距離以下にならないように実装する
+・キャラクター方向の計算
+・カメラ挙動の設計
 
 
-[PD]
-○アセット、AddVolの配置ロジックを実装
 
-○2DimensionBlockの配置処理を実装
-・ENUM周りの実装
+[Volume]
+○3DimensionalをベースにしたAsset,AddObjの配置処理を実装
+
+○2DimensionalBlockの生成パラメーターの実装
+・ENUMの実装
+ -方角
+ -スケール
+ -位置
+
+△AddObjの形態にバリエーションを持たせる
 
 ■IDEA
 ●Greeble
@@ -44,3 +37,21 @@ y = 0.5*gravity*time*time - v0*time + HORIZONTAL_Y
 ●AddBigObj
 ・軸を決めてランダムに複数配置する
 ・軸をランダムにする
+
+
+[DT管理]
+○BaseSurfaceの条件をDTで管理する
+ -各BlockTypeごとに設定DTを用意する
+
+○VolumeSurfaceごとにMaterialDT,AddObjDT,AssetDTを設定
+・ENUMで種類を管理する
+ -各セットごとにENUM変数を用意する
+ -各DTにBlockType変数を設定する
+ -BaseBlockPrimのBlockTypeと照らし合わせて、ParameterPointを間引く
+
+●NightCity
+・BaseSurfaceの種類を多様にする
+
+●SoulCity
+・角度をランダムにする
+・サイズをランダムにする
