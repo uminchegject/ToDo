@@ -1,50 +1,53 @@
 [Study]
+・二進数と十進数
+https://qiita.com/higashi_nc/items/9a5ea00415a008f06843
+・VSアセンブラでメモリを追う
+https://qiita.com/kaito_tateyama/items/89272098f4b286b64115
+
+
+[Galaxy]
+※引力と遠心力をベースに設計
+
 ○Planetsから近いPlanetを取得する関数を実装する
 Game::FindPlanets(Vector3 findPos, float findRange ,std::vector<class SphereActor*>& planets)を実装する
 
-○遠心力、重力をベースにした挙動を設計
-・ジャンプ処理の実装
-　-y = 0.5*gravity*time*time - v0*time + HORIZONTAL_Y
-・ダッシュ処理の実装
-　-遠心力をつける
-・引力の実装
- -各惑星に重力変数を個々で設定する
-・遠心力の実装
- -惑星への重力とは逆方向に力を加える
-・重力
- -惑星から一定距離以下にならないように実装する
-・キャラクター方向の計算
-・カメラ挙動の設計
+○重力をインプットで調整できるように実装
 
+○カメラの挙動を実装
+
+○レベルの整理
+・複数の星を配置する
 
 
 [Volume]
+■3DGreeble
+○ロジックをメモ
+
+●パラメーター
+・Divide順番
+・DivideLengthRange
+・Block周りのパラメーター
+
+
+■3DBlockパラメーター
+・3DAsset
+・3DAddObj
+・BlockType
+
 ○3DimensionalをベースにしたAsset,AddObjの配置処理を実装
 
-○2DimensionalBlockの生成パラメーターの実装
-・ENUMの実装
- -方角
- -スケール
- -位置
 
-△AddObjの形態にバリエーションを持たせる
-
-■IDEA
-●Greeble
-・各3方向分のみ
-・途中でランダムにやめる
-
-●AddBigObj
-・軸を決めてランダムに複数配置する
-・軸をランダムにする
+■2DBlockパラメーター
+・2DAsset
+・2DAddObj
+・BlockType
 
 
-[DT管理]
+■DT管理
 ○BaseSurfaceの条件をDTで管理する
  -各BlockTypeごとに設定DTを用意する
 
-○VolumeSurfaceごとにMaterialDT,AddObjDT,AssetDTを設定
-・ENUMで種類を管理する
+○ENUMで種類を管理する
  -各セットごとにENUM変数を用意する
  -各DTにBlockType変数を設定する
  -BaseBlockPrimのBlockTypeと照らし合わせて、ParameterPointを間引く
