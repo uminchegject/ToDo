@@ -1,40 +1,15 @@
-[Study]
-○Planetsから近いPlanetを取得する関数を実装する
-Game::FindPlanets(Vector3 findPos, float findRange ,std::vector<class SphereActor*>& planets)を実装する
-
-
-
 [Volume]
-■3DGreeble
-○ロジックをメモ
+●Y軸で分割
 
-●パラメーター
-・Divide順番
-・DivideLengthRange
-・Block周りのパラメーター
+●Offset
+・ランダムに回転させる(SoulCity)
 
-[Block]
-○3DimensionalをベースにしたAsset,AddObjの配置処理を実装
+●2DBaseBlockを抽出し3DBlockを生成する
+・Greeble分割(SoulCity)
+・Pattern分割(NightCity)
 
-○2DimensionalBlockの生成パラメーターの実装
-・ENUMの実装
- -方角
- -スケール
- -位置
+[3DBaseBlock]
+・OutSidePanel(NightCity)
 
-■DT管理
-○BaseSurfaceの条件をDTで管理する
- -各BlockTypeごとに設定DTを用意する
-
-○VolumeSurfaceごとにMaterialDT,AddObjDT,AssetDTを設定
-・ENUMで種類を管理する
- -各セットごとにENUM変数を用意する
- -各DTにBlockType変数を設定する
- -BaseBlockPrimのBlockTypeと照らし合わせて、ParameterPointを間引く
-
-●NightCity
-・BaseSurfaceの種類を多様にする
-
-●SoulCity
-・角度をランダムにする
-・サイズをランダムにする
+[2DBaseBlock]
+・Pattern
