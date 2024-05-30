@@ -1,20 +1,40 @@
-[BaseVolume]
-○3DGreebleの実装
-・OldCity
-・SoulCIty
-・NightCity
+[Study]
+○Planetsから近いPlanetを取得する関数を実装する
+Game::FindPlanets(Vector3 findPos, float findRange ,std::vector<class SphereActor*>& planets)を実装する
 
-●IDEA
-・Greeble,MultiAddObjなどのVolume生成周りの実装を行う
-・Randomをベースにする
-・BaseVolumeのサイズ、位置、回転
-・Block情報のDTパラメーターを用意
+
+
+[Volume]
+■3DGreeble
+○ロジックをメモ
+
+●パラメーター
+・Divide順番
+・DivideLengthRange
+・Block周りのパラメーター
 
 [Block]
-○Greeble分割したBlockで処理を実装する
-・OldCity
-・SoulCIty
-・NightCity
+○3DimensionalをベースにしたAsset,AddObjの配置処理を実装
 
-●IDEA
-・立方体、四角形をベースにアセット、AddObjを配置していく際の情報をまとめる
+○2DimensionalBlockの生成パラメーターの実装
+・ENUMの実装
+ -方角
+ -スケール
+ -位置
+
+■DT管理
+○BaseSurfaceの条件をDTで管理する
+ -各BlockTypeごとに設定DTを用意する
+
+○VolumeSurfaceごとにMaterialDT,AddObjDT,AssetDTを設定
+・ENUMで種類を管理する
+ -各セットごとにENUM変数を用意する
+ -各DTにBlockType変数を設定する
+ -BaseBlockPrimのBlockTypeと照らし合わせて、ParameterPointを間引く
+
+●NightCity
+・BaseSurfaceの種類を多様にする
+
+●SoulCity
+・角度をランダムにする
+・サイズをランダムにする
