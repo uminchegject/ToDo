@@ -8,53 +8,58 @@ https://qiita.com/kaito_tateyama/items/89272098f4b286b64115
 [Galaxy]
 ※引力と遠心力をベースに設計
 
-○Planetsから近いPlanetを取得する関数を実装する
-Game::FindPlanets(Vector3 findPos, float findRange ,std::vector<class SphereActor*>& planets)を実装する
-
+○球体の周りを球体が回るようにするまで実装
+・部屋の中に収まるサイズで配置する
 ○重力をインプットで調整できるように実装
-
 ○カメラの挙動を実装
 
 ○レベルの整理
-・複数の星を配置する
+・△複数の星を配置する
+○Planetsから近いPlanetを取得する関数を実装する
+Game::FindPlanets(Vector3 findPos, float findRange ,std::vector<class SphereActor*>& planets)を実装する
 
 
-[Volume]
-■3DGreeble
-○ロジックをメモ
-
-●パラメーター
-・Divide順番
-・DivideLengthRange
-・Block周りのパラメーター
-
-
-■3DBlockパラメーター
-・3DAsset
-・3DAddObj
-・BlockType
-
-○3DimensionalをベースにしたAsset,AddObjの配置処理を実装
-
-
-■2DBlockパラメーター
-・2DAsset
-・2DAddObj
-・BlockType
-
-
-■DT管理
-○BaseSurfaceの条件をDTで管理する
- -各BlockTypeごとに設定DTを用意する
-
+[City]
 ○ENUMで種類を管理する
- -各セットごとにENUM変数を用意する
- -各DTにBlockType変数を設定する
  -BaseBlockPrimのBlockTypeと照らし合わせて、ParameterPointを間引く
 
+
+■Volume
+●Y軸で分割
+
+●Offset
+・ランダムに回転させる(SoulCity)
+・ランダムな値でオフセットする(SoulCity)
+・規則的にオフセットする(NightCity)
+
+●2DBaseBlockを抽出し3DBlockを生成する
+・Greeble分割(SoulCity)
+・Pattern分割(NightCity)
+
+
+■3DBaseBlock
+・OutSidePanel(NightCity)
+
+○ソースの修正及び検証
+
+
+■2DBaseBlock
+・Pattern(共通)
+
+○ソースの修正及び検証
+
+
+■IDEA
 ●NightCity
+・Volumeの形態を規則的にする
 ・BaseSurfaceの種類を多様にする
 
 ●SoulCity
-・角度をランダムにする
-・サイズをランダムにする
+・ランダム要素を強調する
+ -角度をランダムにする
+ -サイズをランダムにする
+
+●OldCity
+・戸建てメイン
+ -Top(屋根)
+ -Side(Window)
