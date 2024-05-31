@@ -1,36 +1,62 @@
 int BlockTypeNum = point(1, "VolParamNum", 0);
-vector scale = v@scale;
-
 for(int blockTypeIndex = 0; blockTypeIndex < BlockTypeNum; ++blockTypeIndex)
 {
+	//Primからサイズを取得
+	int primPts[] = primpoints(0, @primnum);
+	vector pt1Pos = point(0, "P", primPts[0]);
+
+	float sizeX;
+	float sizeY;
+	vector widthAxis;
+	vector heightAxis;
+
+	for(int i = 1; i < primPtNum.len() ; i++)
+	{
+		vector ptPos = point(0, "P", primPtNum[i]);
+		vector ptPosLast = point(0, "P", primPtNum[i - 1]);
+		float distanceFromPt = (ptPosOrigin - ptPos);
+		float distanceFromLastPt = (pt1PosOrigin - ptPosLast);
+		
+		if(distanceFromPt < distanceFromLastPt)
+		{
+			int ptNum = primPtNum[i];
+			primPtNum[i] = primPtNum[i - 1];
+			primPtNum[i - 1] = ptNum;	
+		}		
+	}
+
+	vector pt1Pos = point(0, "P", primPtNum[1]);
+	sizeX = length(pt1Pos - pt1PosOrigin);
+	widthAxis = normalize(pt1Pos - ptPosOrigin);
+
+	vector pt2Pos = point(0, "P", primPtNum[2]);
+	sizeY = length(pt2Pos - pt1PosOrigin);
+	heightAxis = normalize(pt2Pos - ptPosOrigin);
+
     //アセットDT周り
-    int AssetRefNum = point(2, "AssetRefNum", 0);
-    int AssetRefIndexList[];
-    for(int i = 0; i < AssetRefNum; ++i)
+    int MaterialRefNum = point(2, "MaterialRefNum", 0);
+    int MaterialRefIndexList[];
+    for(int i = 0; i < MaterialRefNum; ++i)
     {
-        string assetType1 = point(1, "AssetType", blockTypeIndex);
-        string assetType2 = point(2, "AssetType", i);
-        if(assetType1 == assetType2)
+        string materialType1 = point(1, "MaterialType", blockTypeIndex);
+        string materialType2 = point(2, "MaterialType", i);
+        if(materialType1 == materialType2)
         {
-            append(AssetRefIndexList, i);
+            append(MaterialRefIndexList, i);
         }
     }
     
     float randomNum = random(@P * (blockTypeIndex + 10));
-    int assetRefIndex = AssetRefIndexList[int(len(AssetRefIndexList) * randomNum)];
-    string assetRef = point(2, "AssetRef", assetRefIndex);
+    int MaterialRefIndex = MaterialRefIndexList[int(len(MaterialRefIndexList) * randomNum)];
+    string materialRef = point(2, "MaterialRef", MaterialRefIndex);
 
-	
-	//スケール周り
-    vector  blockscale = point(1, "ChildBlockScale", blockTypeIndex);
-	float sizeCofficient = point(2, "SizeCofficient", assetRefIndex);
-	//blockscale *= sizeCofficient;
-    
-    int primPts[] = primpoints(0, @primnum);
-    vector pt1Pos = point(0, "P", primPts[0]);
+        
+    //スケール周り
+    vector scale = v@scale;
+    scale *= point(1, "Scale", blockTypeIndex);
+    vector  blockscale = point(1, "ChildBlockScale", blockTypeIndex); 
  
- 
-	//ブロック周り
+    //ブロック周り
     int blockXAxisNum = int(1 / blockscale.x);
     int blockYAxisNum = int(1 / blockscale.y);
     int blockZAxisNum = int(1 / blockscale.z);
@@ -43,49 +69,45 @@ for(int blockTypeIndex = 0; blockTypeIndex < BlockTypeNum; ++blockTypeIndex)
     adjustedScale.x = scale.x / blockXAxisNum;
     adjustedScale.y = scale.y / blockYAxisNum;
     adjustedScale.z = scale.z / blockZAxisNum;
-	
-	vector volumeScale = point(1, "VolumeScale", blockTypeIndex) * adjustedScale; 
-    
-	//移動周り
-	vector spawnBasePos = @P;
-	vector transform = point(1, "Transform", blockTypeIndex);
-	vector assetTransform = point(2, "Transform", assetRefIndex);
-	spawnBasePos += transform;
-	//spawnBasePos += assetTransform;
-	
+        
+    vector volumeScale = point(1, "VolumeScale", blockTypeIndex) * adjustedScale; 
 
-	//回転周り
-	vector rotate = point(1, "Rotate", blockTypeIndex);
-	vector assetRotate = point(2, "Rotate", assetRefIndex);
-	vector axis = set(1,0,0);
-	vector4 q = quaternion(radians(rotate.x + assetRotate.x) ,axis);
-	matrix mRotate = qconvert(q);
-	axis = set(0,1,0);
-	q = quaternion(radians(rotate.y + assetRotate.y) ,axis);
-	mRotate *= qconvert(q);
-	axis = set(0,0,1);
-	q = quaternion(radians(rotate.z + assetRotate.z) ,axis);
-	mRotate *= qconvert(q);
-	vector normal = (1.0, 0.0, 0.0);
-	normal.x = 1;
-	normal *= mRotate; // 回転行列を乗算 
-				
-				
-    for(int i = 0; i < blockXAxisNum; ++i)
+    //移動周り
+    vector spawnBasePos = v@P;
+    vector transform = point(1, "Transform", blockTypeIndex);
+    spawnBasePos += transform;
+    
+
+    //回転周り
+    vector rotate = point(1, "Rotate", blockTypeIndex);
+    vector axis = set(1,0,0);
+    vector4 q = quaternion(radians(rotate.x) ,axis);
+    matrix mRotate = qconvert(q);
+    axis = set(0,1,0);
+    q = quaternion(radians(rotate.y) ,axis);
+    mRotate *= qconvert(q);
+    axis = set(0,0,1);
+    q = quaternion(radians(rotate.z) ,axis);
+    mRotate *= qconvert(q);
+    vector normal;
+    normal.z = 1;
+    normal *= mRotate; // 回転行列を乗算 
+  
+    for(int i = 1; i < blockXAxisNum + 1; ++i)
     {
-        for(int j = 0; j < blockYAxisNum; ++j)
+        for(int j = 1; j < blockYAxisNum + 1; ++j)
         {
-            for(int k = 0; k < blockZAxisNum; ++k)
+            for(int k = 1; k < blockZAxisNum + 1; ++k)
             {
-				vector spawnPos = spawnBasePos;
-                spawnPos.x += adjustedScale.x * i - scale.x / 2;
-                spawnPos.y += adjustedScale.y * j - scale.y / 2;
-                spawnPos.z += adjustedScale.z * k - scale.z / 2;                          
-			
+                vector spawnPos = spawnBasePos;
+                spawnPos.x += adjustedScale.x * i - scale.x;
+                spawnPos.y += adjustedScale.y * j - scale.y;
+                spawnPos.z += adjustedScale.z * k - scale.z;                          
+                        
                 int pt = addpoint(0, spawnPos);
                 setpointattrib(0, "N", pt, normal);
                 setpointattrib(0, "scale", pt, volumeScale);
-                setpointattrib(0, "AssetRef", pt, assetRef);
+                setpointattrib(0, "MaterialRef", pt, materialRef);
             }
         }
     }
