@@ -20,44 +20,65 @@ Game::FindPlanets(Vector3 findPos, float findRange ,std::vector<class SphereActo
 
 
 [City]
+
+○3DBlockの実装
+
+○VolumeMakerの実装
+
+○VolumeからBlockまでの処理を実装
+
+○AssetBlockDTの設定
+・WindowPatternを複数作成
+
+
+■3DBlock
 ○ENUMで種類を管理する
  -BaseBlockPrimのBlockTypeと照らし合わせて、ParameterPointを間引く
 
-
-■Volume
-●Y軸で分割
-
-●Offset
-・ランダムに回転させる(SoulCity)
-・ランダムな値でオフセットする(SoulCity)
-・規則的にオフセットする(NightCity)
-
-●2DBaseBlockを抽出し3DBlockを生成する
-・Greeble分割(SoulCity)
-・Pattern分割(NightCity)
+○3DBlock,2DBlockソースの修正及び検証
+・Volume単位で3DBlock,2DBlockを管理する
 
 
-■3DBaseBlock
-・OutSidePanel(NightCity)
+■MakeVolume
+※Patternを意識して考える
 
-○ソースの修正及び検証
+●パラメーター
+・DivideAxis
+・DivideBlockSizeRange
+・RotateRange
+・ScaleRange
+・DivideRatio
+
+○Scalingの原点を設定する
+・分割面をベースにする
+・前の分割面を記憶する
 
 
-■2DBaseBlock
-・Pattern(共通)
+■VolumeToBlock
+●Volumeパラメーター 
+・BlockType
+ -3DBlock
+ -2DBlock(Side)
+ -2DBlock(Top)
+  -Volume単位で管理する
+ 
+○外部と接しているかを判定する処理を実装する
 
-○ソースの修正及び検証
+○BlockTypeを複数選択しランダムに決定する処理を実装
+ -比率も設定する
+ -Noneも加える
 
 
 ■IDEA
 ●NightCity
-・Volumeの形態を規則的にする
+・Volumeの形態を規則的にする(規則的にオフセットする)
 ・BaseSurfaceの種類を多様にする
+・OutSidePanelを3DBlockで実装する
 
 ●SoulCity
 ・ランダム要素を強調する
- -角度をランダムにする
- -サイズをランダムにする
+ -角度をランダムにする(ランダムに回転させる)
+ -サイズをランダムにする(ランダムな値でオフセットする)
 
 ●OldCity
 ・戸建てメイン
