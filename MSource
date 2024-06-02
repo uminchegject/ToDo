@@ -1,4 +1,10 @@
-int BlockTypeNum = point(1, "VolParamNum", 0);
+○種類管理
+string SelectedType = point(1, "3DBlockParamNum", 0);
+string ParamType = s@BlockType;
+if(SelectedType != ParamType) { removepoint(0, @ptnum);}
+
+○2DBlock
+int BlockTypeNum = point(1, "2DBlockParamNum", 0);
 for(int blockTypeIndex = 0; blockTypeIndex < BlockTypeNum; ++blockTypeIndex)
 {
 	//Primからサイズを取得
