@@ -1,8 +1,12 @@
 [UE体験]
-鳥羽さんはなるべく自力で調査しながら実装（Unity経験者）。
-タワーディフェンスを実装、敵と接触した際の処理に苦戦しつつ、敵に接触した際にプレイヤーの爆発、ゲームオーバーを行うまでの基本的なゲーム部分を実装した
-馬場さんは中村先生と1対1の形式で実装（開発未経験）。
-難しいエネミー部分の実装を外して、プレイヤー挙動の実装に集中し、障害物を乗り越えつつクリアするゲームを実装。
+サウンド周り
+・音声信号処理に関する深い知識
+・非同期サウンド処理の実装経験
+・Unity, Unreal Engine などのエンジンを利用してのゲーム開発経験
+QA周り
+・Jenkinsの利用経験
+・DB、OS、ミドルウェアまたはネットワークなどに関する専門的知識
+・オートメーションテスト環境の開発経験
 
 
 [Study]
@@ -17,7 +21,18 @@ https://qiita.com/kaito_tateyama/items/89272098f4b286b64115
 
 ○球体の周りを球体が回るようにするまで実装
 ・部屋の中に収まるサイズで配置する
-○重力をインプットで調整できるように実装
+
+○重力と引力の実装
+・引力
+ -F = Mm/r2
+ -重さをコントロールできるようにする
+・遠心力
+　-a = rω2
+ -スピードをコントロールできるようにする
+
+○星を複数配置して実装してみる
+
+
 ○カメラの挙動を実装
 
 ○レベルの整理
@@ -39,11 +54,6 @@ Game::FindPlanets(Vector3 findPos, float findRange ,std::vector<class SphereActo
 
 ■3DBlock
 ○ENUMで種類を管理する
-int paramNum = point(1, "BlockTypeParamNum", 0);
-int paramIndex = int(paramNum * random(point(2, "P", 0));
-string selectedType = point(1, "3DBlockType", paramIndex);
-string paramType = s@3DBlockType;
-if(selectedType != paramType) { removepoint(0, @ptnum);}
 
 ○3DBlock,2DBlockソースの修正及び検証
 ・Volume単位で3DBlock,2DBlockを管理する
