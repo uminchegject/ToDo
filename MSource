@@ -1,45 +1,39 @@
-int BlockTypeNum = point(1, "VolParamNum", 0);
+int BlockTypeNum = point(1, "ObjParamNum", 0);
 for(int blockTypeIndex = 0; blockTypeIndex < BlockTypeNum; ++blockTypeIndex)
 {
-    //BlockType
-    string selectedType = point(1, "3DBlockType", blockTypeIndex);
-    string paramType = point(3, "3DBlockType", 0);
-    if(selectedType != paramType) { continue;}
-	
-	
-	//Primからサイズを取得
-	int primPts[] = primpoints(0, @primnum);
-	vector pt1Pos = point(0, "P", primPts[0]);
-	
-	float sizeX;
-	float sizeY;
-	vector widthAxis;
-	vector heightAxis;
-	
-	for(int i = 1; i < primPtNum.len() ; i++)
-	{
-		vector ptPos = point(0, "P", primPtNum[i]);
-		vector ptPosLast = point(0, "P", primPtNum[i - 1]);
-		float distanceFromPt = (ptPosOrigin - ptPos);
-		float distanceFromLastPt = (pt1PosOrigin - ptPosLast);
-		
-		if(distanceFromPt < distanceFromLastPt)
-		{
-			int ptNum = primPtNum[i];
-			primPtNum[i] = primPtNum[i - 1];
-			primPtNum[i - 1] = ptNum;	
-		}		
-	}
-	
-	vector pt1Pos = point(0, "P", primPtNum[1]);
-	sizeX = length(pt1Pos - pt1PosOrigin);
-	widthAxis = normalize(pt1Pos - ptPosOrigin);
-	
-	vector pt2Pos = point(0, "P", primPtNum[2]);
-	sizeY = length(pt2Pos - pt1PosOrigin);
-	heightAxis = normalize(pt2Pos - ptPosOrigin);
-	
-	
+    //Primからサイズを取得
+    int primPts[] = primpoints(0, @primnum);
+    vector ptPosOrigin = point(0, "P", primPts[0]);
+
+    float sizeX;
+    float sizeY;
+    vector widthAxis;
+    vector heightAxis;
+
+    for(int i = 1; i < len(primPts); i++)
+    {
+        vector ptPos = point(0, "P", primPts[i]);
+        vector ptPosLast = point(0, "P", primPts[i - 1]);
+        float distanceFromPt = length(ptPosOrigin - ptPos);
+        float distanceFromLastPt = length(ptPosOrigin - ptPosLast);
+        
+        if(distanceFromPt < distanceFromLastPt)
+        {
+            int ptNum = primPts[i];
+            primPts[i] = primPts[i - 1];
+            primPts[i - 1] = ptNum;       
+        }
+    }
+
+    vector pt1Pos = point(0, "P", primPts[1]);
+    sizeX = length(pt1Pos - ptPosOrigin);
+    widthAxis = normalize(pt1Pos - ptPosOrigin);
+
+    vector pt2Pos = point(0, "P", primPts[2]);
+    sizeY = length(pt2Pos - ptPosOrigin);
+    heightAxis = normalize(pt2Pos - ptPosOrigin);
+    
+    
     //アセットDT周り
     int MaterialRefNum = point(2, "MaterialRefNum", 0);
     int MaterialRefIndexList[];
@@ -52,20 +46,20 @@ for(int blockTypeIndex = 0; blockTypeIndex < BlockTypeNum; ++blockTypeIndex)
             append(MaterialRefIndexList, i);
         }
     }
-	
+        
     float randomNum = random(@P * (blockTypeIndex + 10));
     int MaterialRefIndex = MaterialRefIndexList[int(len(MaterialRefIndexList) * randomNum)];
     string materialRef = point(2, "MaterialRef", MaterialRefIndex);
-	
-	
+ 
+    
     //スケール周り
     vector scaleCofficient = point(1, "Scale", blockTypeIndex);
     sizeX *= scaleCofficient.x;
-	sizeY *= scaleCofficient.y;
-	
-    vector blockscale = point(1, "ChildBlockScale", blockTypeIndex);
-	
-	
+    sizeY *= scaleCofficient.y;
+
+    vector blockscale = point(1, "ChildBlockScale", blockTypeIndex);   
+ 
+    
     //ブロック周り
     int blockXAxisNum = int(1 / blockscale.x);
     int blockYAxisNum = int(1 / blockscale.y);
@@ -76,14 +70,8 @@ for(int blockTypeIndex = 0; blockTypeIndex < BlockTypeNum; ++blockTypeIndex)
     adjustedScale.y = sizeY / blockYAxisNum;
     adjustedScale.z = adjustedScale.x * scaleCofficient.x;
     vector volumeScale = point(1, "VolumeScale", blockTypeIndex) * adjustedScale;
-	
-	
-    //移動周り
-    vector spawnBasePos = v@P;
-    vector transform = point(1, "Transform", blockTypeIndex);
-    spawnBasePos += transform;
-	
-	
+    
+    
     //回転周り
     vector rotate = point(1, "Rotate", blockTypeIndex);
     vector axis = set(1,0,0);
@@ -95,24 +83,27 @@ for(int blockTypeIndex = 0; blockTypeIndex < BlockTypeNum; ++blockTypeIndex)
     axis = set(0,0,1);
     q = quaternion(radians(rotate.z) ,axis);
     mRotate *= qconvert(q);
-    vector normal;
-    normal.z = 1;
+    vector normal = v@N;
     normal *= mRotate; // 回転行列を乗算
-	
-	
+
+
+    //移動周り
+    vector spawnBasePos = v@P;
+    vector transform = point(1, "Transform", blockTypeIndex);
+    spawnBasePos += transform;
+
     for(int i = 1; i < blockXAxisNum + 1; ++i)
     {
         for(int j = 1; j < blockYAxisNum + 1; ++j)
         {
-			vector spawnPos = spawnBasePos;
-			spawnPos += adjustedScale.x * i * widthAxis - sizeX * widthAxis;
-			spawnPos += adjustedScale.y * j * heightAxis - sizeY * heightAxis;
-			int pt = addpoint(0, spawnPos);
-			setpointattrib(0, "N", pt, normal);
-			setpointattrib(0, "scale", pt, volumeScale);
-			setpointattrib(0, "MaterialRef", pt, materialRef);
+            vector spawnPos = spawnBasePos;
+            spawnPos += adjustedScale.x * (i - 0.5) * widthAxis - sizeX * widthAxis / 2;
+            spawnPos += adjustedScale.y * (j - 0.5) * heightAxis - sizeY * heightAxis / 2;
+            int pt = addpoint(0, spawnPos);
+            setpointattrib(0, "N", pt, normal);
+            setpointattrib(0, "scale", pt, volumeScale);
+            setpointattrib(0, "MaterialRef", pt, materialRef);
         }
-    }
-	
+    }      
 }
-removepoint(0, @ptnum);
+removeprim(0, i@primnum, 1);
