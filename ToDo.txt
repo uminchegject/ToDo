@@ -1,3 +1,10 @@
+[UE体験]
+鳥羽さんはなるべく自力で調査しながら実装（Unity経験者）。
+タワーディフェンスを実装、敵と接触した際の処理に苦戦しつつ、敵に接触した際にプレイヤーの爆発、ゲームオーバーを行うまでの基本的なゲーム部分を実装した
+馬場さんは中村先生と1対1の形式で実装（開発未経験）。
+難しいエネミー部分の実装を外して、プレイヤー挙動の実装に集中し、障害物を乗り越えつつクリアするゲームを実装。
+
+
 [Study]
 ・二進数と十進数
 https://qiita.com/higashi_nc/items/9a5ea00415a008f06843
@@ -20,7 +27,6 @@ Game::FindPlanets(Vector3 findPos, float findRange ,std::vector<class SphereActo
 
 
 [City]
-
 ○3DBlockの実装
 
 ○VolumeMakerの実装
@@ -33,7 +39,11 @@ Game::FindPlanets(Vector3 findPos, float findRange ,std::vector<class SphereActo
 
 ■3DBlock
 ○ENUMで種類を管理する
- -BaseBlockPrimのBlockTypeと照らし合わせて、ParameterPointを間引く
+int paramNum = point(1, "BlockTypeParamNum", 0);
+int paramIndex = int(paramNum * random(point(2, "P", 0));
+string selectedType = point(1, "3DBlockType", paramIndex);
+string paramType = s@3DBlockType;
+if(selectedType != paramType) { removepoint(0, @ptnum);}
 
 ○3DBlock,2DBlockソースの修正及び検証
 ・Volume単位で3DBlock,2DBlockを管理する
