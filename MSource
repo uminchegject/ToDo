@@ -1,21 +1,21 @@
-○種類管理
-string SelectedType = point(1, "3DBlockParamNum", 0);
-string ParamType = s@BlockType;
-if(SelectedType != ParamType) { removepoint(0, @ptnum);}
-
-○2DBlock
-int BlockTypeNum = point(1, "2DBlockParamNum", 0);
+int BlockTypeNum = point(1, "VolParamNum", 0);
 for(int blockTypeIndex = 0; blockTypeIndex < BlockTypeNum; ++blockTypeIndex)
 {
+    //BlockType
+    string selectedType = point(1, "3DBlockType", blockTypeIndex);
+    string paramType = point(3, "3DBlockType", 0);
+    if(selectedType != paramType) { continue;}
+	
+	
 	//Primからサイズを取得
 	int primPts[] = primpoints(0, @primnum);
 	vector pt1Pos = point(0, "P", primPts[0]);
-
+	
 	float sizeX;
 	float sizeY;
 	vector widthAxis;
 	vector heightAxis;
-
+	
 	for(int i = 1; i < primPtNum.len() ; i++)
 	{
 		vector ptPos = point(0, "P", primPtNum[i]);
@@ -30,15 +30,16 @@ for(int blockTypeIndex = 0; blockTypeIndex < BlockTypeNum; ++blockTypeIndex)
 			primPtNum[i - 1] = ptNum;	
 		}		
 	}
-
+	
 	vector pt1Pos = point(0, "P", primPtNum[1]);
 	sizeX = length(pt1Pos - pt1PosOrigin);
 	widthAxis = normalize(pt1Pos - ptPosOrigin);
-
+	
 	vector pt2Pos = point(0, "P", primPtNum[2]);
 	sizeY = length(pt2Pos - pt1PosOrigin);
 	heightAxis = normalize(pt2Pos - ptPosOrigin);
-
+	
+	
     //アセットDT周り
     int MaterialRefNum = point(2, "MaterialRefNum", 0);
     int MaterialRefIndexList[];
@@ -51,39 +52,38 @@ for(int blockTypeIndex = 0; blockTypeIndex < BlockTypeNum; ++blockTypeIndex)
             append(MaterialRefIndexList, i);
         }
     }
-    
+	
     float randomNum = random(@P * (blockTypeIndex + 10));
     int MaterialRefIndex = MaterialRefIndexList[int(len(MaterialRefIndexList) * randomNum)];
     string materialRef = point(2, "MaterialRef", MaterialRefIndex);
-
-        
+	
+	
     //スケール周り
-    vector scale = v@scale;
-    scale *= point(1, "Scale", blockTypeIndex);
-    vector  blockscale = point(1, "ChildBlockScale", blockTypeIndex); 
- 
+    vector scaleCofficient = point(1, "Scale", blockTypeIndex);
+    sizeX *= scaleCofficient.x;
+	sizeY *= scaleCofficient.y;
+	
+    vector blockscale = point(1, "ChildBlockScale", blockTypeIndex);
+	
+	
     //ブロック周り
     int blockXAxisNum = int(1 / blockscale.x);
     int blockYAxisNum = int(1 / blockscale.y);
-    int blockZAxisNum = int(1 / blockscale.z);
-
     if(blockXAxisNum < 1) blockXAxisNum = 1;
     if(blockYAxisNum < 1) blockYAxisNum = 1;
-    if(blockZAxisNum < 1) blockZAxisNum = 1;
-    
     vector adjustedScale;
-    adjustedScale.x = scale.x / blockXAxisNum;
-    adjustedScale.y = scale.y / blockYAxisNum;
-    adjustedScale.z = scale.z / blockZAxisNum;
-        
-    vector volumeScale = point(1, "VolumeScale", blockTypeIndex) * adjustedScale; 
-
+    adjustedScale.x = sizeX / blockXAxisNum;
+    adjustedScale.y = sizeY / blockYAxisNum;
+    adjustedScale.z = adjustedScale.x * scaleCofficient.x;
+    vector volumeScale = point(1, "VolumeScale", blockTypeIndex) * adjustedScale;
+	
+	
     //移動周り
     vector spawnBasePos = v@P;
     vector transform = point(1, "Transform", blockTypeIndex);
     spawnBasePos += transform;
-    
-
+	
+	
     //回転周り
     vector rotate = point(1, "Rotate", blockTypeIndex);
     vector axis = set(1,0,0);
@@ -97,26 +97,22 @@ for(int blockTypeIndex = 0; blockTypeIndex < BlockTypeNum; ++blockTypeIndex)
     mRotate *= qconvert(q);
     vector normal;
     normal.z = 1;
-    normal *= mRotate; // 回転行列を乗算 
-  
+    normal *= mRotate; // 回転行列を乗算
+	
+	
     for(int i = 1; i < blockXAxisNum + 1; ++i)
     {
         for(int j = 1; j < blockYAxisNum + 1; ++j)
         {
-            for(int k = 1; k < blockZAxisNum + 1; ++k)
-            {
-                vector spawnPos = spawnBasePos;
-                spawnPos.x += adjustedScale.x * i - scale.x;
-                spawnPos.y += adjustedScale.y * j - scale.y;
-                spawnPos.z += adjustedScale.z * k - scale.z;                          
-                        
-                int pt = addpoint(0, spawnPos);
-                setpointattrib(0, "N", pt, normal);
-                setpointattrib(0, "scale", pt, volumeScale);
-                setpointattrib(0, "MaterialRef", pt, materialRef);
-            }
+			vector spawnPos = spawnBasePos;
+			spawnPos += adjustedScale.x * i * widthAxis - sizeX * widthAxis;
+			spawnPos += adjustedScale.y * j * heightAxis - sizeY * heightAxis;
+			int pt = addpoint(0, spawnPos);
+			setpointattrib(0, "N", pt, normal);
+			setpointattrib(0, "scale", pt, volumeScale);
+			setpointattrib(0, "MaterialRef", pt, materialRef);
         }
     }
+	
 }
-
 removepoint(0, @ptnum);
