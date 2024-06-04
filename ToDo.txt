@@ -1,12 +1,11 @@
-[UE体験]
-サウンド周り
-・音声信号処理に関する深い知識
-・非同期サウンド処理の実装経験
-・Unity, Unreal Engine などのエンジンを利用してのゲーム開発経験
-QA周り
-・Jenkinsの利用経験
-・DB、OS、ミドルウェアまたはネットワークなどに関する専門的知識
-・オートメーションテスト環境の開発経験
+[SoundStudy]
+○サウンド技術周りについて調べる
+・サウンドエンジニアから技術を調べる
+・Ｑｕｉｔａから調べる
+・本から調べる
+ -歓迎条件・Wwise, fmod, CRIなどのサウンドミドルウェアの利用経験
+ -音声信号処理に関する深い知識
+ -非同期サウンド処理の実装経験
 
 
 [Study]
@@ -27,7 +26,7 @@ https://qiita.com/kaito_tateyama/items/89272098f4b286b64115
  -F = Mm/r2
  -重さをコントロールできるようにする
 ・遠心力
-　-a = rω2
+ -a = rω2
  -スピードをコントロールできるようにする
 
 ○星を複数配置して実装してみる
@@ -54,6 +53,9 @@ Game::FindPlanets(Vector3 findPos, float findRange ,std::vector<class SphereActo
 
 ■3DBlock
 ○ENUMで種類を管理する
+string blockTypeSelected = point(3, "BlockType", 0);
+string blockTypeParam = point(2, "BlockType", ParameterIndex);
+if(blockTypeParam != blockTypeSelected){continue;}
 
 ○3DBlock,2DBlockソースの修正及び検証
 ・Volume単位で3DBlock,2DBlockを管理する
@@ -62,12 +64,15 @@ Game::FindPlanets(Vector3 findPos, float findRange ,std::vector<class SphereActo
 ■MakeVolume
 ※Patternを意識して考える
 
+○パラメーターの実装
+
 ●パラメーター
 ・DivideAxis
 ・DivideBlockSizeRange
 ・RotateRange
 ・ScaleRange
 ・DivideRatio
+・BlockType
 
 ○Scalingの原点を設定する
 ・分割面をベースにする
