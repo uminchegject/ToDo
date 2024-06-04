@@ -1,109 +1,218 @@
-int BlockTypeNum = point(1, "ObjParamNum", 0);
-for(int blockTypeIndex = 0; blockTypeIndex < BlockTypeNum; ++blockTypeIndex)
-{
-    //Primからサイズを取得
-    int primPts[] = primpoints(0, @primnum);
-    vector ptPosOrigin = point(0, "P", primPts[0]);
+node = hou.pwd()
+geo = node.geometry()
 
-    float sizeX;
-    float sizeY;
-    vector widthAxis;
-    vector heightAxis;
+# Add code to modify contents of geo.
+# Use drop down menu to select examples.
 
-    for(int i = 1; i < len(primPts); i++)
-    {
-        vector ptPos = point(0, "P", primPts[i]);
-        vector ptPosLast = point(0, "P", primPts[i - 1]);
-        float distanceFromPt = length(ptPosOrigin - ptPos);
-        float distanceFromLastPt = length(ptPosOrigin - ptPosLast);
+# -----------------------------------------------------------------------------------------
+# パラメーター
+GreebleDivideMinRatio = 0.4
+GreebleDivideMaxRatio = 0.6
+RemainRatio = 0.3
+
+GreebleBlockMinParam = node.parm("GreebleBlockMinLen").eval()
+GreebleBlockMaxParam = node.parm("GreebleBlockMaxLen").eval()
+
+
+# -----------------------------------------------------------------------------------------
+
+
+# -----------------------------------------------------------------------------------------
+# 構造体
+class GreebleBlock:
+    pass
+# -----------------------------------------------------------------------------------------
+
+#==========================================================================================
+#Greeble
+def Greeble(baseBlock):
+    num = 0
+    greeblingXAxisBlockList = [baseBlock]
+    greeblingYAxisBlockList = []
+    greebledBlockList = []
+    
+    toggleBreakNum = 0
+
+    while 0 < len(greeblingXAxisBlockList) or 0 < len(greeblingYAxisBlockList):  
+        greeblingYAxisBlockList, greebledBlocks1 = GreebleXAxis(greeblingXAxisBlockList)
+        greeblingXAxisBlockList, greebledBlocks2 = GreebleYAxis(greeblingYAxisBlockList) 
+        greebledBlockList = greebledBlockList + greebledBlocks1 + greebledBlocks2
         
-        if(distanceFromPt < distanceFromLastPt)
-        {
-            int ptNum = primPts[i];
-            primPts[i] = primPts[i - 1];
-            primPts[i - 1] = ptNum;       
-        }
-    }
+        toggleBreakNum += 1
+        if 100 < toggleBreakNum:
+            greebledBlockList = greebledBlockList + greeblingYAxisBlockList
+            break
 
-    vector pt1Pos = point(0, "P", primPts[1]);
-    sizeX = length(pt1Pos - ptPosOrigin);
-    widthAxis = normalize(pt1Pos - ptPosOrigin);
+    return greebledBlockList      
 
-    vector pt2Pos = point(0, "P", primPts[2]);
-    sizeY = length(pt2Pos - ptPosOrigin);
-    heightAxis = normalize(pt2Pos - ptPosOrigin);
     
-    
-    //アセットDT周り
-    int MaterialRefNum = point(2, "MaterialRefNum", 0);
-    int MaterialRefIndexList[];
-    for(int i = 0; i < MaterialRefNum; ++i)
-    {
-        string materialType1 = point(1, "MaterialType", blockTypeIndex);
-        string materialType2 = point(2, "MaterialType", i);
-        if(materialType1 == materialType2)
-        {
-            append(MaterialRefIndexList, i);
-        }
-    }
+def GreebleXAxis(greeblingXAxisBlockList):
+
+    greeblingYAxisBlockList = []
+    greebledBlockList = []
+
+    for originBlock in greeblingXAxisBlockList:
         
-    float randomNum = random(@P * (blockTypeIndex + 10));
-    int MaterialRefIndex = MaterialRefIndexList[int(len(MaterialRefIndexList) * randomNum)];
-    string materialRef = point(2, "MaterialRef", MaterialRefIndex);
- 
-    
-    //スケール周り
-    vector scaleCofficient = point(1, "Scale", blockTypeIndex);
-    sizeX *= scaleCofficient.x;
-    sizeY *= scaleCofficient.y;
+        if originBlock.Size[1] == 0:
+            continue
 
-    vector blockscale = point(1, "ChildBlockScale", blockTypeIndex);   
- 
+        blockList, toggle = DivideXAxis(originBlock)
+        if toggle == True:
+            greeblingYAxisBlockList = greeblingYAxisBlockList + blockList
+        else:
+            greebledBlockList = greebledBlockList + blockList   
     
-    //ブロック周り
-    int blockXAxisNum = int(1 / blockscale.x);
-    int blockYAxisNum = int(1 / blockscale.y);
-    if(blockXAxisNum < 1) blockXAxisNum = 1;
-    if(blockYAxisNum < 1) blockYAxisNum = 1;
-    vector adjustedScale;
-    adjustedScale.x = sizeX / blockXAxisNum;
-    adjustedScale.y = sizeY / blockYAxisNum;
-    adjustedScale.z = adjustedScale.x * scaleCofficient.x;
-    vector volumeScale = point(1, "VolumeScale", blockTypeIndex) * adjustedScale;
+    return greeblingYAxisBlockList, greebledBlockList
     
+def GreebleYAxis(greeblingYAxisBlockList):
+
+    greeblingXAxisBlockList = []
+    greebledBlockList = []
+
+    for originBlock in greeblingYAxisBlockList:   
+            
+        if originBlock.Size[0] == 0:
+            continue
     
-    //回転周り
-    vector rotate = point(1, "Rotate", blockTypeIndex);
-    vector axis = set(1,0,0);
-    vector4 q = quaternion(radians(rotate.x) ,axis);
-    matrix mRotate = qconvert(q);
-    axis = set(0,1,0);
-    q = quaternion(radians(rotate.y) ,axis);
-    mRotate *= qconvert(q);
-    axis = set(0,0,1);
-    q = quaternion(radians(rotate.z) ,axis);
-    mRotate *= qconvert(q);
-    vector normal = v@N;
-    normal *= mRotate; // 回転行列を乗算
+        blockList, toggle = DivideYAxis(originBlock)
+        if toggle == True:
+            greeblingXAxisBlockList = greeblingXAxisBlockList + blockList
+        else:
+            greebledBlockList = greebledBlockList + blockList   
+    
+    return greeblingXAxisBlockList, greebledBlockList
+            
+
+from random import randint, uniform, random
+# 整数乱数を取得
+def GetRandIntInRange(min, max) :
+    return randint(min, max)
+# 少数乱数を取得
+def GetRandFloatInRange(min, max) :
+    return uniform(min, max)
 
 
-    //移動周り
-    vector spawnBasePos = v@P;
-    vector transform = point(1, "Transform", blockTypeIndex);
-    spawnBasePos += transform;
+# X軸で分割する
+def DivideXAxis(greebleBlock) :
 
-    for(int i = 1; i < blockXAxisNum + 1; ++i)
-    {
-        for(int j = 1; j < blockYAxisNum + 1; ++j)
-        {
-            vector spawnPos = spawnBasePos;
-            spawnPos += adjustedScale.x * (i - 0.5) * widthAxis - sizeX * widthAxis / 2;
-            spawnPos += adjustedScale.y * (j - 0.5) * heightAxis - sizeY * heightAxis / 2;
-            int pt = addpoint(0, spawnPos);
-            setpointattrib(0, "N", pt, normal);
-            setpointattrib(0, "scale", pt, volumeScale);
-            setpointattrib(0, "MaterialRef", pt, materialRef);
-        }
-    }      
-}
-removeprim(0, i@primnum, 1);
+    divideNum = GetRandFloatInRange(GreebleDivideMinRatio, GreebleDivideMaxRatio) * greebleBlock.Size[0]
+    greebleBlock1 = GreebleBlock()
+    greebleBlock1.Size = (divideNum, greebleBlock.Size[1])
+    greebleBlock1.BasePos = greebleBlock.BasePos
+    
+    greebleBlock2 = GreebleBlock()
+    greebleBlock2.Size = (greebleBlock.Size[0] - divideNum, greebleBlock.Size[1])
+    greebleBlock2.BasePos = (greebleBlock.BasePos[0] + divideNum, greebleBlock.BasePos[1])
+    
+    toggleContinue = True
+    if greebleBlock1.Size[0] < GreebleBlockMinLen:
+        toggleContinue = False
+    if greebleBlock2.Size[0] < GreebleBlockMinLen:
+        toggleContinue = False
+    if GetRandFloatInRange(0, 1) < RemainRatio and greebleBlock.Size[1] < GreebleBlockMaxLen:
+        toggleContinue = False    
+    
+    greebleBlockList = [greebleBlock1, greebleBlock2]
+    if toggleContinue == False:
+        greebleBlockList = [greebleBlock]
+    
+    return greebleBlockList, toggleContinue
+    
+# Y軸で分割する
+def DivideYAxis(greebleBlock) :
+
+    divideNum = GetRandFloatInRange(GreebleDivideMinRatio, GreebleDivideMaxRatio) * greebleBlock.Size[1]
+    greebleBlock1 = GreebleBlock()
+    greebleBlock1.Size = (greebleBlock.Size[0], divideNum)
+    greebleBlock1.BasePos = greebleBlock.BasePos
+    
+    greebleBlock2 = GreebleBlock()
+    greebleBlock2.Size = (greebleBlock.Size[0], greebleBlock.Size[1] - divideNum)
+    greebleBlock2.BasePos = (greebleBlock.BasePos[0], greebleBlock.BasePos[1] + divideNum)
+    
+    toggleContinue = True
+    if greebleBlock1.Size[1] < GreebleBlockMinLen:
+        toggleContinue = False
+    if greebleBlock2.Size[1] < GreebleBlockMinLen:
+        toggleContinue = False
+    if GetRandFloatInRange(0, 1) < RemainRatio and greebleBlock.Size[0] < GreebleBlockMaxLen:
+        toggleContinue = False
+    
+    greebleBlockList = [greebleBlock1, greebleBlock2]
+    if toggleContinue == False:
+        greebleBlockList = [greebleBlock]
+    
+    return greebleBlockList, toggleContinue
+#==========================================================================================
+# ポイントの生成
+def MakePoint(greebleBlock):   
+    centerPosition = (greebleBlock.BasePos[0] + greebleBlock.Size[0] / 2, 0, greebleBlock.BasePos[1] + greebleBlock.Size[1] / 2)    
+    point = geo.createPoint()
+    point.setPosition(centerPosition)
+    
+    point.setAttribValue("SizeX", greebleBlock.Size[0])
+    point.setAttribValue("SizeY", greebleBlock.Size[1])
+
+# primの生成
+def MakePrim(greebleBlock, Height): 
+
+
+    SizeX = greebleBlock.Size[0]
+    SizeY = greebleBlock.Size[1]
+    BasePosX = greebleBlock.BasePos[0] + (greebleBlock.Size[0] - SizeX) / 2 
+    BasePosY = greebleBlock.BasePos[1] + (greebleBlock.Size[1] - SizeY) / 2
+
+    pos1 = (BasePosX, Height, BasePosY)
+    pos2 = (BasePosX + SizeX, Height, BasePosY)
+    pos3 = (BasePosX + SizeX, Height, BasePosY + SizeY)
+    pos4 = (BasePosX, Height, BasePosY + SizeY)
+    
+    posList = [pos1, pos2, pos3, pos4]
+    
+    poly = geo.createPolygon()
+    poly.setAttribValue("SizeX", greebleBlock.Size[0])
+    poly.setAttribValue("SizeY", greebleBlock.Size[1])
+    
+    for position in posList:
+        point = geo.createPoint()
+        point.setPosition(position)
+        poly.addVertex(point)
+    
+    return poly
+        
+#==========================================================================================
+#main
+points = geo.points()
+geo.addAttrib(hou.attribType.Prim, "SizeX", 0.0)
+geo.addAttrib(hou.attribType.Prim, "SizeY", 0.0)
+
+for point in points:
+
+    basePoint = point
+    GreebleBlockSizeX = basePoint.attribValue("SizeX")
+    GreebleBlockSizeY = basePoint.attribValue("SizeY")
+    
+    GreebleBlockMinLen = GreebleBlockMinParam
+    GreebleBlockMaxLen = GreebleBlockMaxParam
+
+    baseGreebleBlock = GreebleBlock()
+    GreebleBlockSize = (GreebleBlockSizeX, GreebleBlockSizeY)
+    baseGreebleBlock.BasePos = (-GreebleBlockSize[0] / 2, -GreebleBlockSize[1] / 2)
+    baseGreebleBlock.Size = GreebleBlockSize
+
+    greebleBlockList = []
+    greebleBlockList = Greeble(baseGreebleBlock)
+    
+    for block in greebleBlockList:
+    
+        greebleBlock = GreebleBlock()
+        position = (block.BasePos[0] + block.Size[0] / 2, 0, block.BasePos[1] + block.Size[1] / 2)
+        
+        greebleBlock.BasePos = (block.BasePos[0], block.BasePos[1])
+        greebleBlock.Size = (block.Size[0], block.Size[1])
+
+        #MakePrim(greebleBlock, 0)
+        MakePoint(greebleBlock)
+geo.deletePoints(points) 
+#==========================================================================================
+
