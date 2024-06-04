@@ -1,18 +1,22 @@
-[SoundStudy]
-○サウンド技術周りについて調べる
-・サウンドエンジニアから技術を調べる
-・Ｑｕｉｔａから調べる
-・本から調べる
+[Study]
+■サウンド
  -歓迎条件・Wwise, fmod, CRIなどのサウンドミドルウェアの利用経験
  -音声信号処理に関する深い知識
  -非同期サウンド処理の実装経験
 
+○UE周りの実装を調べる
+・極み本
 
-[Study]
-・二進数と十進数
-https://qiita.com/higashi_nc/items/9a5ea00415a008f06843
-・VSアセンブラでメモリを追う
-https://qiita.com/kaito_tateyama/items/89272098f4b286b64115
+○技術を調べる
+・Quitaを調べる
+https://qiita.com/skillup_ai/items/01d882fe52085022f118
+https://qiita.com/tyanmahou/items/ba127b022d2781cc3e36
+https://qiita.com/htsnul/items/3e001e70e7144dda07a6
+
+
+○概念を調べる
+・サウンドエンジニアとは
+https://note.com/roomin/n/na75f211be294
 
 
 [Galaxy]
@@ -30,7 +34,6 @@ https://qiita.com/kaito_tateyama/items/89272098f4b286b64115
  -スピードをコントロールできるようにする
 
 ○星を複数配置して実装してみる
-
 
 ○カメラの挙動を実装
 
