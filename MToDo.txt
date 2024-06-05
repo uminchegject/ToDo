@@ -1,15 +1,31 @@
-[Volume]
-●Y軸で分割
+○DivideRatio
+if(random(blockPosOrigin * i) < divideRatio)
+{
+	
+}
+else
+{
+	int ptnum = addpoint(0, blockPosOrigin);
+	setpointattrib(0, ptnum, blockScaleOrigin);
+}
 
-●Offset
-・ランダムに回転させる(SoulCity)
+○BlockType
+setpointattrib(0, "IndexParam", ptnum, paramIndex);
+setpointattrib(0, "IndexParam", ptnum, paramNum - 1);
 
-●2DBaseBlockを抽出し3DBlockを生成する
-・Greeble分割(SoulCity)
-・Pattern分割(NightCity)
+○RotateRange
+vector blockNormalList[];
 
-[3DBaseBlock]
-・OutSidePanel(NightCity)
+//回転周り
+vector4 q = quaternion(radians(rotate) ,divideAxis);
+matrix mRotate = qconvert(q);
+normal *= mRotate;
 
-[2DBaseBlock]
-・Pattern
+push(blockNormalList, normal);
+
+setpointattrib(0, "N", ptnum, normal);
+
+
+○ScaleRange
+・分割面をベースにする
+・前の分割面を記憶する
