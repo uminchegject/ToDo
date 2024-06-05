@@ -1,22 +1,19 @@
-[反省]
-※UE4とHoudini,C++を軸にした情報収集を意識して行う
- -ゲーム技術の知識をUE,C++を通じて勉強する
- -TA周りの知識をHoudiniを通じて勉強する
- -朝(午前)記事を読む
- 
-※C++を勉強する
- -基礎部分を勉強する
- -ちゃんとアウトプットする
-
 [Study]
 ■サウンド
- -歓迎条件・Wwise, fmod, CRIなどのサウンドミドルウェアの利用経験
- -音声信号処理に関する深い知識
- -非同期サウンド処理の実装経験
+○ソフトウェアのドキュメントを読む
+・WWise
+・CRI
 
-○UE周りの実装を調べる
-・実装をしつつ、勉強をする
-https://docs.unrealengine.com/4.27/ja/WorkingWithAudio/
+○サウンドエンジニアの概念について調べる
+https://www.docswell.com/s/geekdrums/ZJLGMQ-gamemakers-scramble-interactive-music#p22
+
+○OpenALを実装する
+・Kindleを確認する(OpenGLも)
+
+■描画
+https://qiita.com/com04/items/c95a5e1c853a2d4b03a3
+
+
 
 ■自動化
  -Jenkinsの利用経験
