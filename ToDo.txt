@@ -9,13 +9,9 @@ https://www.docswell.com/s/geekdrums/ZJLGMQ-gamemakers-scramble-interactive-musi
 
 ○OpenALを実装する
 ・導入
-https://hatakenoko.hateblo.jp/entry/2018/05/24/220046
 ・Kindleのサンプルを実装
 
-
-■描画
-https://qiita.com/com04/items/c95a5e1c853a2d4b03a3
-
+○勉強の簡単な概要
 
 
 ■自動化
@@ -27,48 +23,15 @@ https://qiita.com/com04/items/c95a5e1c853a2d4b03a3
 https://docs.unrealengine.com/4.27/ja/WorkingWithAudio/
 
 
-[Galaxy]
-※引力と遠心力をベースに設計
-
-○球体の周りを球体が回るようにするまで実装
-・部屋の中に収まるサイズで配置する
-
-○重力と引力の実装
-・引力
- -F = Mm/r2
- -重さをコントロールできるようにする
-・遠心力
- -a = rω2
- -スピードをコントロールできるようにする
-
-○星を複数配置して実装してみる
-
-○カメラの挙動を実装
-
-○レベルの整理
-・△複数の星を配置する
-○Planetsから近いPlanetを取得する関数を実装する
-Game::FindPlanets(Vector3 findPos, float findRange ,std::vector<class SphereActor*>& planets)を実装する
-
 
 [City]
-○VolumeMakerの修正
-・blockPosを修正
-vector block1Pos = blockPosOrigin - divideAxis * (block1Scale / 2 + blockScaleOrigin / 2 - block1Scale);
-vector block2Pos = blockPosOrigin + divideAxis * (block2Scale / 2 + blockScaleOrigin / 2 - block2Scale);
-block1Pos *= block1Quo;
-block2Pos *= block2Quo;
-
-・クォータニオンで管理する
-vector4 blockQuoList[]
-
 ○BaseVolumeの生成
 ・サイズをランダムにする
 ・高さをNoise + Randomにする
+・Pointにする
 
-○BaseVolumeからVolumeの生成処理を検証https://hatakenoko.hateblo.jp/entry/2018/05/24/220046
+○BaseVolumeからVolumeの生成処理を検証
 ・サイズに応じてVolumeMakerのパラメーターを選別する
-
 
 ○3DBlockの実装
 
@@ -138,3 +101,28 @@ if(blockTypeParam != blockTypeSelected){continue;}
 ・戸建てメイン
  -Top(屋根)
  -Side(Window)
+
+
+
+[Galaxy]
+※引力と遠心力をベースに設計
+
+○球体の周りを球体が回るようにするまで実装
+・部屋の中に収まるサイズで配置する
+
+○重力と引力の実装
+・引力
+ -F = Mm/r2
+ -重さをコントロールできるようにする
+・遠心力
+ -a = rω2
+ -スピードをコントロールできるようにする
+
+○星を複数配置して実装してみる
+
+○カメラの挙動を実装
+
+○レベルの整理
+・△複数の星を配置する
+○Planetsから近いPlanetを取得する関数を実装する
+Game::FindPlanets(Vector3 findPos, float findRange ,std::vector<class SphereActor*>& planets)を実装する
