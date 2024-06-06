@@ -8,7 +8,10 @@
 https://www.docswell.com/s/geekdrums/ZJLGMQ-gamemakers-scramble-interactive-music#p22
 
 ○OpenALを実装する
-・Kindleを確認する(OpenGLも)
+・導入
+https://hatakenoko.hateblo.jp/entry/2018/05/24/220046
+・Kindleのサンプルを実装
+
 
 ■描画
 https://qiita.com/com04/items/c95a5e1c853a2d4b03a3
@@ -49,6 +52,24 @@ Game::FindPlanets(Vector3 findPos, float findRange ,std::vector<class SphereActo
 
 
 [City]
+○VolumeMakerの修正
+・blockPosを修正
+vector block1Pos = blockPosOrigin - divideAxis * (block1Scale / 2 + blockScaleOrigin / 2 - block1Scale);
+vector block2Pos = blockPosOrigin + divideAxis * (block2Scale / 2 + blockScaleOrigin / 2 - block2Scale);
+block1Pos *= block1Quo;
+block2Pos *= block2Quo;
+
+・クォータニオンで管理する
+vector4 blockQuoList[]
+
+○BaseVolumeの生成
+・サイズをランダムにする
+・高さをNoise + Randomにする
+
+○BaseVolumeからVolumeの生成処理を検証https://hatakenoko.hateblo.jp/entry/2018/05/24/220046
+・サイズに応じてVolumeMakerのパラメーターを選別する
+
+
 ○3DBlockの実装
 
 ○VolumeMakerの実装
