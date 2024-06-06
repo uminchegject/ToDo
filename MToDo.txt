@@ -1,31 +1,13 @@
-○DivideRatio
-if(random(blockPosOrigin * i) < divideRatio)
-{
-	
-}
-else
-{
-	int ptnum = addpoint(0, blockPosOrigin);
-	setpointattrib(0, ptnum, blockScaleOrigin);
-}
+[Sound]
+○実装目標
 
-○BlockType
-setpointattrib(0, "IndexParam", ptnum, paramIndex);
-setpointattrib(0, "IndexParam", ptnum, paramNum - 1);
-
-○RotateRange
-vector blockNormalList[];
-
-//回転周り
-vector4 q = quaternion(radians(rotate) ,divideAxis);
-matrix mRotate = qconvert(q);
-normal *= mRotate;
-
-push(blockNormalList, normal);
-
-setpointattrib(0, "N", ptnum, normal);
+○勉強概要をまとめる
+・OpenALを用いた自主勉強
 
 
-○ScaleRange
-・分割面をベースにする
-・前の分割面を記憶する
+[PD]
+○拡大、縮小の実装
+
+○Rotateの軸を決められるようにする
+
+○BaseVolumeの生成
