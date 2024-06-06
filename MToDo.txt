@@ -5,9 +5,34 @@
 ・OpenALを用いた自主勉強
 
 
+
 [PD]
-○拡大、縮小の実装
+■VolumeTest
+○BaseVolumeの検証
 
 ○Rotateの軸を決められるようにする
+・パラメーターを追加する
+vector rotateAxis;
 
-○BaseVolumeの生成
+○VolumeTypeを設定
+・数字で設定
+volume volumeTypeNum = point(1, "volumeTypeNum" paramIndex))
+paramIndex += 1;
+while(volumeTypeNum == point(1, "volumeTypeNum" paramIndex))
+{
+	
+}
+//addpoint
+
+○3DAddObjを用いた検証
+・Volume検証のため別ノードで最低限の実装をする
+ -Scale
+ -Material
+
+○拡大、縮小の実装
+・スケールのレンジをパラメーターで設定
+・原点を設定
+
+■Volume
+○BaseVolumeの表面に接している面のみにアセットを配置するように実装
+・
