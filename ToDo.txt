@@ -26,21 +26,19 @@ https://docs.unrealengine.com/4.27/ja/WorkingWithAudio/
 
 [City]
 ○BaseVolumeの生成
-・サイズをランダムにする
-・高さをNoise + Randomにする
-・Pointにする
-
-○BaseVolumeからVolumeの生成処理を検証
-・サイズに応じてVolumeMakerのパラメーターを選別する
-
-○3DBlockの実装
 
 ○VolumeMakerの実装
+
+○3DBlockの実装
 
 ○VolumeからBlockまでの処理を実装
 
 ○AssetBlockDTの設定
 ・WindowPatternを複数作成
+
+
+■MakeVolume
+※Patternを意識して考える
 
 
 ■3DBlock
@@ -53,24 +51,6 @@ if(blockTypeParam != blockTypeSelected){continue;}
 ・Volume単位で3DBlock,2DBlockを管理する
 
 
-■MakeVolume
-※Patternを意識して考える
-
-○パラメーターの実装
-
-●パラメーター
-・DivideAxis
-・DivideBlockSizeRange
-・RotateRange
-・ScaleRange
-・DivideRatio
-・BlockType
-
-○Scalingの原点を設定する
-・分割面をベースにする
-・前の分割面を記憶する
-
-
 ■VolumeToBlock
 ●Volumeパラメーター 
 ・BlockType
@@ -78,8 +58,6 @@ if(blockTypeParam != blockTypeSelected){continue;}
  -2DBlock(Side)
  -2DBlock(Top)
   -Volume単位で管理する
- 
-○外部と接しているかを判定する処理を実装する
 
 ○BlockTypeを複数選択しランダムに決定する処理を実装
  -比率も設定する
@@ -87,10 +65,12 @@ if(blockTypeParam != blockTypeSelected){continue;}
 
 
 ■IDEA
+※シンプルかつ、テーマに軸があるようにレイアウトする
+
 ●NightCity
 ・Volumeの形態を規則的にする(規則的にオフセットする)
-・BaseSurfaceの種類を多様にする
-・OutSidePanelを3DBlockで実装する
+・WindowとVolumeのみで構成する
+・Volumeの形態に多様性をもたせる
 
 ●SoulCity
 ・ランダム要素を強調する
@@ -98,9 +78,11 @@ if(blockTypeParam != blockTypeSelected){continue;}
  -サイズをランダムにする(ランダムな値でオフセットする)
 
 ●OldCity
+・サイズと大きさにコントラストをつける
 ・戸建てメイン
  -Top(屋根)
  -Side(Window)
+
 
 
 
