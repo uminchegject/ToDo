@@ -25,64 +25,43 @@ https://docs.unrealengine.com/4.27/ja/WorkingWithAudio/
 
 
 [City]
-○BaseVolumeの生成
-
-○VolumeMakerの実装
-
-○3DBlockの実装
-
-○VolumeからBlockまでの処理を実装
-
-○AssetBlockDTの設定
-・WindowPatternを複数作成
-
-
-■MakeVolume
-※Patternを意識して考える
-
-
-■3DBlock
-○ENUMで種類を管理する
-string blockTypeSelected = point(3, "BlockType", 0);
-string blockTypeParam = point(2, "BlockType", ParameterIndex);
-if(blockTypeParam != blockTypeSelected){continue;}
-
-○3DBlock,2DBlockソースの修正及び検証
-・Volume単位で3DBlock,2DBlockを管理する
-
-
 ■VolumeToBlock
+○2DBlockの修正
+
+○OpenDirectionに沿ったNormalの修正
+
 ●Volumeパラメーター 
+・Volume単位で管理する
 ・BlockType
  -3DBlock
  -2DBlock(Side)
  -2DBlock(Top)
-  -Volume単位で管理する
-
-○BlockTypeを複数選択しランダムに決定する処理を実装
- -比率も設定する
- -Noneも加える
 
 
-■IDEA
+■EachCity
 ※シンプルかつ、テーマに軸があるようにレイアウトする
 
 ●NightCity
-・Volumeの形態を規則的にする(規則的にオフセットする)
-・WindowとVolumeのみで構成する
-・Volumeの形態に多様性をもたせる
+・VolumeMaker
+ -Volumeの形態を規則的にする(規則的にオフセットする)
+ -Volumeの形態に多様性をもたせる
+・Block
+ -WindowとVolumeのみで構成する
 
 ●SoulCity
-・ランダム要素を強調する
+・VolumeMaker
  -角度をランダムにする(ランダムに回転させる)
  -サイズをランダムにする(ランダムな値でオフセットする)
+ -Y分割サイズを各ブロックで均等にする
+・Block
 
 ●OldCity
-・サイズと大きさにコントラストをつける
-・戸建てメイン
+※基礎部分に石垣を追加する
+・VolumeMaker
+ -Y軸で分割し、Scaleをランダムにする
+・Block
  -Top(屋根)
  -Side(Window)
-
 
 
 
