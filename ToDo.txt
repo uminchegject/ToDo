@@ -25,23 +25,26 @@ https://docs.unrealengine.com/4.27/ja/WorkingWithAudio/
 
 
 [City]
-※Block周りの実装はTest用のSinbleVolumeで検証しつつ、単体のVolumeからPDを完結させる。
- -○検証環境を用意
+○サイズに応じたブロック分割を考える
 
 ■VolumeToBlock
 ○2DBlockの修正
 
-○OpenDirectionに沿ったNormalの修正
-
 ○VolumeからBlockTypeをランダムに選択する処理を実装
 ・BlockCategoryで管理する
 ・Volume単位で管理する
-
  -BlockCategory
  -BlockType
  -3DBlock
  -2DBlock(Side)
  -2DBlock(Top)
+
+int paramIndexList[];
+push(paramIndexList, paramIndex);
+
+int paramIndex = paramIndexList[i];
+setpointattrib(0, "ParamIndex", ptnum, paramIndex);
+
 
 
 ■EachCity
@@ -61,14 +64,19 @@ https://docs.unrealengine.com/4.27/ja/WorkingWithAudio/
  -サイズをランダムにする(ランダムな値でオフセットする)
  -Y分割サイズを各ブロックで均等にする
 ・Block
+ -サイズに応じたPatternBlock,2DBlockを配置する
 
 ●NightCity
+Volumeの形態に多様性をもたせる
+Volumeの形態を規則的にする(規則的にオフセットする)
 ・VolumeMaker
- -Volumeの形態を規則的にする(規則的にオフセットする)
- -Volumeの形態に多様性をもたせる
+BaseVolumeのサイズに応じて二種類のParameterで生成する
+ -BigSize
+  -XYAxisDivide
+ -SmallSize
+  -PatternDivide
 ・Block
  -WindowとVolumeのみで構成する
-
 
 
 [Galaxy]
