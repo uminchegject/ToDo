@@ -11,7 +11,8 @@ https://www.docswell.com/s/geekdrums/ZJLGMQ-gamemakers-scramble-interactive-musi
 ・導入
 ・Kindleのサンプルを実装
 
-○勉強の簡単な概要
+○勉強の簡単な概要をまとめる
+・OpenALを通した勉強
 
 
 ■自動化
@@ -23,16 +24,21 @@ https://www.docswell.com/s/geekdrums/ZJLGMQ-gamemakers-scramble-interactive-musi
 https://docs.unrealengine.com/4.27/ja/WorkingWithAudio/
 
 
-
 [City]
+※Block周りの実装はTest用のSinbleVolumeで検証しつつ、単体のVolumeからPDを完結させる。
+ -○検証環境を用意
+
 ■VolumeToBlock
 ○2DBlockの修正
 
 ○OpenDirectionに沿ったNormalの修正
 
-●Volumeパラメーター 
+○VolumeからBlockTypeをランダムに選択する処理を実装
+・BlockCategoryで管理する
 ・Volume単位で管理する
-・BlockType
+
+ -BlockCategory
+ -BlockType
  -3DBlock
  -2DBlock(Side)
  -2DBlock(Top)
@@ -41,12 +47,13 @@ https://docs.unrealengine.com/4.27/ja/WorkingWithAudio/
 ■EachCity
 ※シンプルかつ、テーマに軸があるようにレイアウトする
 
-●NightCity
+●OldCity
+※基礎部分に石垣を追加する
 ・VolumeMaker
- -Volumeの形態を規則的にする(規則的にオフセットする)
- -Volumeの形態に多様性をもたせる
+ -Y軸で分割し、Scaleをランダムにする
 ・Block
- -WindowとVolumeのみで構成する
+ -Top(屋根)
+ -Side(Window)
 
 ●SoulCity
 ・VolumeMaker
@@ -55,13 +62,12 @@ https://docs.unrealengine.com/4.27/ja/WorkingWithAudio/
  -Y分割サイズを各ブロックで均等にする
 ・Block
 
-●OldCity
-※基礎部分に石垣を追加する
+●NightCity
 ・VolumeMaker
- -Y軸で分割し、Scaleをランダムにする
+ -Volumeの形態を規則的にする(規則的にオフセットする)
+ -Volumeの形態に多様性をもたせる
 ・Block
- -Top(屋根)
- -Side(Window)
+ -WindowとVolumeのみで構成する
 
 
 
