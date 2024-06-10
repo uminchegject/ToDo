@@ -1,87 +1,9 @@
-[Sound]
-○実装目標
+○2DBlockの修正
 
-○勉強概要をまとめる
-・OpenALを用いた自主勉強
+○DivideBlockの最小値を設定
 
+○VolumeMakerで検証
+・NightCity
+・SoulCity
 
-[PD]
-■VolumeTest
-○BaseVolumeの検証
-
-○Rotateの軸を決められるようにする
-・パラメーターを追加する
-vector rotateAxis;
-
-○VolumeTypeを設定
-・数字で設定
-volume volumeTypeNum = point(1, "volumeTypeNum" paramIndex))
-paramIndex += 1;
-while(volumeTypeNum == point(1, "volumeTypeNum" paramIndex))
-{
-	
-}
-//addpoint
-
-○3DAddObjを用いた検証
-・Volume検証のため別ノードで最低限の実装をする
- -Scale
- -Material
-
-
-○拡大、縮小の実装
-vector scale = (1.0, 1.0, 1.0);
-vector scaleNext = point(1, "Scale", i);
-vector frontDirData = frontDirDataList[i];
-
-if(frontDirData.x < 2)
-{
-	scale.x = scaleNext;
-	spawnPos.x += frontDirData.x * size.x * scale.x / 2;
-}
-
-
-if(frontDirData.y < 2)
-{
-	scale.x = scaleNext;
-	spawnPos.x += frontDirData.x * size.x * scale.x / 2;
-}
-
-
-if(frontDirData.z < 2)
-{
-	scale.x = scaleNext;
-	spawnPos.x += frontDirData.x * size.x * scale.x / 2;
-}
-
-
-●外側に面している方向を求める
-vector frontDirDataList[];
-for(int i = 0 i < 6; ++i)
-{
-	push(frontDirList, (0.0, 0.0, 0.0));
-}
-
-vector frontDirData = frontDirDataList[i];
-
-closedFront = (1.0, 0.0, 0.0);
-
-int toggle = 1;
-while(toggle != 0)
-{
-	//両面がふさがっている場合は除く
-	if(normalize(frontDirData) < 5) {break;}
-
-	//塞ぐ面がすでに塞がっている場合は除く
-	if(normalize((closedFront - frontDirData) * frontDirData) != 0) {break;}
-
-	frontDirData = closedFront + closedFront * frontDirData * 100;
-
-	toggle = 0;
-}
-
-
-
-■Volume
-○BaseVolumeの表面に接している面のみにアセットを配置するように実装
-・微調整方向を決める
+○OldCityの実装
