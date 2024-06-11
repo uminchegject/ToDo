@@ -17,17 +17,14 @@
 ○サイズに応じたブロック分割を考える
 
 ■VolumeToBlock
-○VolumeScale,VolumeTransの除去
-
-○DivideBlockの最小値を設定
-float minDivideSize = point(0, "MinDivideSize", paramIndex);
-if(minDivideSize < length(originBlockScale * divideAxis))
-{
-	
-}	
-
 ○2DBlockの修正
 ・SingleBlockの検証段階まで実装
+
+//アセットの微調整
+vector assetTransform = point(2, "Transform", assetRefIndex);
+float sizeCofficient = point(2, "SizeCofficient", assetRefIndex);
+volumeScale *= sizeCofficient;
+spawnBasePos += assetTransform * sizeCofficient * volumeScale;
 
 ○VolumeMakerで検証
 ・NightCity
