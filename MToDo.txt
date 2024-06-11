@@ -1,9 +1,19 @@
-○2DBlockの修正
+○検証できる段階まで実装
+・検証用のグラデーションサイズのボックスを用意し、検証
 
-○DivideBlockの最小値を設定
-
-○VolumeMakerで検証
-・NightCity
-・SoulCity
-
-○OldCityの実装
+●SoulCity
+・Blockのランダム性を強調
+ -アセットの配置にランダム性をもたせる
+ -ブロックのサイズ、向きにランダム性を持たせる
+ -マテリアルにランダム性を持たせる
+ 
+・VolumeMaker
+ -回転用DTを最初に挿入
+ 
+●NightCity
+・VolumePatternを強調
+ -均等にDivideする
+ -InsideかOutsideか
+ 
+●OldCity
+・アセットの細かい配置を強調
