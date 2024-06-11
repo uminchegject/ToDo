@@ -4,100 +4,65 @@
 ・WWise
 ・CRI
 
-○サウンドエンジニアの概念について調べる
-https://www.docswell.com/s/geekdrums/ZJLGMQ-gamemakers-scramble-interactive-music#p22
-
-○OpenALを実装する
-・導入
-・Kindleのサンプルを実装
+○OpenALとOpenGLを用いた実装をする
+フラクタル幾何学を用いた音声、描画表現
+・特定座標で音を鳴らすコードを実装
+・特定座標に矩形を描画するコードを実装
 
 ○勉強の簡単な概要をまとめる
 ・OpenALを通した勉強
-
-
-■自動化
- -Jenkinsの利用経験
- -DB、OS、ミドルウェアまたはネットワークなどに関する専門的知識
- -オートメーションテスト環境の開発経験
-
-○UE周りの実装を調べる
-https://docs.unrealengine.com/4.27/ja/WorkingWithAudio/
 
 
 [City]
 ○サイズに応じたブロック分割を考える
 
 ■VolumeToBlock
+○VolumeScale,VolumeTransの除去
+
+○DivideBlockの最小値を設定
+float minDivideSize = point(0, "MinDivideSize", paramIndex);
+if(minDivideSize < length(originBlockScale * divideAxis))
+{
+	
+}	
+
 ○2DBlockの修正
+・SingleBlockの検証段階まで実装
 
-○VolumeからBlockTypeをランダムに選択する処理を実装
-・BlockCategoryで管理する
-・Volume単位で管理する
- -BlockCategory
- -BlockType
- -3DBlock
- -2DBlock(Side)
- -2DBlock(Top)
+○VolumeMakerで検証
+・NightCity
+・SoulCity
 
-int paramIndexList[];
-push(paramIndexList, paramIndex);
-
-int paramIndex = paramIndexList[i];
-setpointattrib(0, "ParamIndex", ptnum, paramIndex);
-
+○OldCityの実装
+・SingleBlockで検証
 
 
 ■EachCity
 ※シンプルかつ、テーマに軸があるようにレイアウトする
 
 ●OldCity
-※基礎部分に石垣を追加する
 ・VolumeMaker
- -Y軸で分割し、Scaleをランダムにする
+
 ・Block
+アセットのサイズに合うように調整する
  -Top(屋根)
  -Side(Window)
 
 ●SoulCity
 ・VolumeMaker
- -角度をランダムにする(ランダムに回転させる)
- -サイズをランダムにする(ランダムな値でオフセットする)
- -Y分割サイズを各ブロックで均等にする
+角度をランダムにする(ランダムに回転させる)
+サイズをランダムにする(ランダムな値でオフセットする)
+
 ・Block
  -サイズに応じたPatternBlock,2DBlockを配置する
 
 ●NightCity
 Volumeの形態に多様性をもたせる
 Volumeの形態を規則的にする(規則的にオフセットする)
+
 ・VolumeMaker
 BaseVolumeのサイズに応じて二種類のParameterで生成する
- -BigSize
-  -XYAxisDivide
- -SmallSize
-  -PatternDivide
+ -DivideMinSizeで平面サイズが大きい場合はXY分割を行う
+
 ・Block
  -WindowとVolumeのみで構成する
-
-
-[Galaxy]
-※引力と遠心力をベースに設計
-
-○球体の周りを球体が回るようにするまで実装
-・部屋の中に収まるサイズで配置する
-
-○重力と引力の実装
-・引力
- -F = Mm/r2
- -重さをコントロールできるようにする
-・遠心力
- -a = rω2
- -スピードをコントロールできるようにする
-
-○星を複数配置して実装してみる
-
-○カメラの挙動を実装
-
-○レベルの整理
-・△複数の星を配置する
-○Planetsから近いPlanetを取得する関数を実装する
-Game::FindPlanets(Vector3 findPos, float findRange ,std::vector<class SphereActor*>& planets)を実装する
