@@ -16,18 +16,23 @@ https://codelabo.com/posts/20200228124232
 ○サイズに応じたブロック分割を考える
 
 ■VolumeToBlock
-○2DBlockの修正
-・回転周りの修正
-・SingleBlockの検証段階まで実装
+○回転周りの実装
+ -XY軸を自在に回転できるように修正
 
-○検証できる段階まで実装
-・検証用のグラデーションサイズのボックスを用意し検証
+○マテリアル周りの修正
+・回転軸に応じたUV展開をする
+・Boxサイズに応じたUV展開をする
+・マテリアルパラメーターにスケールを追加する
 
-○SoulCityの検証
-・VolumeMakerのテスト
-・BlockMakerのテスト
+○SoulCityの検証(Block)
+※Blockから検証する
+ -アセットの配置をランダムにする
+ -マテリアルをランダムにする
 
-○OldCityの実装
+○SoulCityの検証(Volume)
+※VolumeMakerを検証しやすくする
+※BigVolumeとSmallVolumeを分かりやすく分ける
+・DivideRatioとMinDivideLengthを用いて3DでGreeble分割を行う
 
 ■EachCity
 ※シンプルかつ、テーマに軸があるようにレイアウトする
@@ -47,7 +52,7 @@ https://codelabo.com/posts/20200228124232
  -マテリアルにランダム性を持たせる
  
 ・VolumeMaker
- -回転用DTを最初に挿入
+ -BaseVolumeをランダムに回転させる処理を追加実装
 
 ●NightCity
 ・Blockごとにメリハリをもたせる
