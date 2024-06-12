@@ -1,8 +1,7 @@
 [Study]
-■サウンド
-○ソフトウェアのドキュメントを読む
-・WWise
-・CRI
+○OpenGLの環境構築
+https://github.com/tokoik/glfw3sample/blob/master/main.cpp
+https://codelabo.com/posts/20200228124232
 
 ○OpenALとOpenGLを用いた実装をする
 フラクタル幾何学を用いた音声、描画表現
@@ -18,27 +17,23 @@
 
 ■VolumeToBlock
 ○2DBlockの修正
+・回転周りの修正
 ・SingleBlockの検証段階まで実装
 
-//アセットの微調整
-vector assetTransform = point(2, "Transform", assetRefIndex);
-float sizeCofficient = point(2, "SizeCofficient", assetRefIndex);
-volumeScale *= sizeCofficient;
-spawnBasePos += assetTransform * sizeCofficient * volumeScale;
+○検証できる段階まで実装
+・検証用のグラデーションサイズのボックスを用意し検証
 
-○VolumeMakerで検証
-・NightCity
-・SoulCity
+○SoulCityの検証
+・VolumeMakerのテスト
+・BlockMakerのテスト
 
 ○OldCityの実装
-・SingleBlockで検証
-
 
 ■EachCity
 ※シンプルかつ、テーマに軸があるようにレイアウトする
 
 ●OldCity
-・VolumeMaker
+・アセットの細かい配置を強調
 
 ・Block
 アセットのサイズに合うように調整する
@@ -46,20 +41,25 @@ spawnBasePos += assetTransform * sizeCofficient * volumeScale;
  -Side(Window)
 
 ●SoulCity
+・Blockのランダム性を強調
+ -アセットの配置にランダム性をもたせる
+ -ブロックのサイズ、向きにランダム性を持たせる
+ -マテリアルにランダム性を持たせる
+ 
 ・VolumeMaker
-角度をランダムにする(ランダムに回転させる)
-サイズをランダムにする(ランダムな値でオフセットする)
-
-・Block
- -サイズに応じたPatternBlock,2DBlockを配置する
+ -回転用DTを最初に挿入
 
 ●NightCity
-Volumeの形態に多様性をもたせる
-Volumeの形態を規則的にする(規則的にオフセットする)
+・Blockごとにメリハリをもたせる
+ -Volumeの形態に多様性をもたせる
+ -Volumeの形態を規則的にする(規則的にオフセットする)
 
 ・VolumeMaker
-BaseVolumeのサイズに応じて二種類のParameterで生成する
- -DivideMinSizeで平面サイズが大きい場合はXY分割を行う
-
+VolumePatternを強調
+ -BaseVolumeのサイズに応じて二種類のParameterで生成する
+  -DivideMinSizeで平面サイズが大きい場合はXY分割を行う
+ -均等にDivideする
+ -InsideかOutside(Window)か
+ 
 ・Block
  -WindowとVolumeのみで構成する
