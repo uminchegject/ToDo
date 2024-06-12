@@ -32,6 +32,7 @@ https://codelabo.com/posts/20200228124232
 ○SoulCityの検証(Volume)
 ※VolumeMakerを検証しやすくする
 ※BigVolumeとSmallVolumeを分かりやすく分ける
+ -最初のXYZ分割をサイズのみランダム化し、その後Greeble or Patternを行う
 ・DivideRatioとMinDivideLengthを用いて3DでGreeble分割を行う
 
 ■EachCity
