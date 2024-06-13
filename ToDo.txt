@@ -16,8 +16,11 @@ https://codelabo.com/posts/20200228124232
 ○サイズに応じたブロック分割を考える
 
 ■VolumeToBlock
+
 ○回転周りの実装
  -XY軸を自在に回転できるように修正
+
+○Divideの修正
 
 ○マテリアル周りの修正
 ・回転軸に応じたUV展開をする
@@ -34,6 +37,11 @@ https://codelabo.com/posts/20200228124232
 ※BigVolumeとSmallVolumeを分かりやすく分ける
  -最初のXYZ分割をサイズのみランダム化し、その後Greeble or Patternを行う
 ・DivideRatioとMinDivideLengthを用いて3DでGreeble分割を行う
+
+△NightCityのためのVolumeMakerの追加実装
+・BigVolumeとSmallVolumeで分ける
+・サイズ分割を行えるようにする
+ -パラメーターを追加し、0以外だったら適応する
 
 ■EachCity
 ※シンプルかつ、テーマに軸があるようにレイアウトする
