@@ -1,34 +1,16 @@
-[Study]
-○OpenGLの環境構築
-https://github.com/tokoik/glfw3sample/blob/master/main.cpp
-https://codelabo.com/posts/20200228124232
-
-○OpenALとOpenGLを用いた実装をする
-フラクタル幾何学を用いた音声、描画表現
-・特定座標で音を鳴らすコードを実装
-・特定座標に矩形を描画するコードを実装
-
-○勉強の簡単な概要をまとめる
-・OpenALを通した勉強
+[Employ]
+○今までの業務を深堀する
+※Employにも繋げられるようにまとめる
+ -資料を確認する
+ -ネットで調べる
 
 
 [City]
-○サイズに応じたブロック分割を考える
-
-■VolumeToBlock
-
-○回転周りの実装
- -XY軸を自在に回転できるように修正
-
-○Divideの修正
-
-○マテリアル周りの修正
-・回転軸に応じたUV展開をする
-・Boxサイズに応じたUV展開をする
-・マテリアルパラメーターにスケールを追加する
+○サイズの適正化
 
 ○SoulCityの検証(Block)
-※Blockから検証する
+・SignBoard+Roof
+NormalWindow
  -アセットの配置をランダムにする
  -マテリアルをランダムにする
 
@@ -37,6 +19,11 @@ https://codelabo.com/posts/20200228124232
 ※BigVolumeとSmallVolumeを分かりやすく分ける
  -最初のXYZ分割をサイズのみランダム化し、その後Greeble or Patternを行う
 ・DivideRatioとMinDivideLengthを用いて3DでGreeble分割を行う
+
+△マテリアル周りの修正
+・回転軸に応じたUV展開をする
+・Boxサイズに応じたUV展開をする
+・マテリアルパラメーターにスケールを追加する
 
 △NightCityのためのVolumeMakerの追加実装
 ・BigVolumeとSmallVolumeで分ける
@@ -77,3 +64,19 @@ VolumePatternを強調
  
 ・Block
  -WindowとVolumeのみで構成する
+
+
+
+
+[Study]
+○OpenGLの環境構築
+https://github.com/tokoik/glfw3sample/blob/master/main.cpp
+https://codelabo.com/posts/20200228124232
+
+○OpenALとOpenGLを用いた実装をする
+フラクタル幾何学を用いた音声、描画表現
+・特定座標で音を鳴らすコードを実装
+・特定座標に矩形を描画するコードを実装
+
+○勉強の簡単な概要をまとめる
+・OpenALを通した勉強
