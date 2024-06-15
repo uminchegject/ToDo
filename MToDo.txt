@@ -1,19 +1,35 @@
-○検証できる段階まで実装
-・検証用のグラデーションサイズのボックスを用意し、検証
+[Employ]
+○ポートフォリオ、履歴書の記載項目をまとめる
+
+○アカデミー、KONAMI、SKY案件についてまとめる
+
+
+[CityMaker]
+■Volume
+○VolumeMakerの修正
+・1つめのDivideパラメーターを作動させる
+
+●NightCity
+・BaseとなるBigVolumeを用意し、その中でSmallVolumeを配置する
+ -SmallVolumeにはテキストをランダムに配置する
+・規則的な配置ロジックを実装する
 
 ●SoulCity
-・Blockのランダム性を強調
- -アセットの配置にランダム性をもたせる
- -ブロックのサイズ、向きにランダム性を持たせる
- -マテリアルにランダム性を持たせる
- 
-・VolumeMaker
- -回転用DTを最初に挿入
- 
-●NightCity
-・VolumePatternを強調
- -均等にDivideする
- -InsideかOutsideか
- 
+・VolumeのMinSizeを小さくし、DivideRatioを0.5にしてVolumeのサイズを多様にする
+・△矛盾がないように回転させ、Volumeの向きにランダム性をもたせる(最初の分割時にY軸で回転)
+
 ●OldCity
-・アセットの細かい配置を強調
+・屋根用のVolumeとResidence部分のVolumeを用意する
+・Scaleを小さめにしてランダムに回転させて向きにランダム性をもたせる
+
+
+■Block
+●OldCity
+・Block内にPatternAssetで配置する
+
+●SoulCity
+・Roof, SignBoardをうまい具合に配置しランダム混沌さを強調する
+
+●NightCity
+
+・WindowをPatternAssetで配置する
