@@ -1,3 +1,5 @@
+vector baseVector = (1.0, 1.0, 1.0);
+
 vector volumePosList[];
 vector volumeScaleList[];
 matrix volumeMatrixList[];
@@ -9,27 +11,195 @@ volumePosList[0] = v@P;
 volumeScaleList[0] = v@scale;
 volumeMatrixList[0] = ident();
 volumeFrontDirDataList[0] = (0.0, 0.0, 0.0);
+volumeTypeList[0] = 0;
 volumeBlockParamIndexList[0] = 0;
 
 while(0 < len(volumePosList))
 {
+    vector blockPosList[];
+    vector blockScaleList[];
+    matrix blockMatrixList[];
+    vector frontDirDataList[];
+    vector blockParamIndexList[];       
+    blockPosList[0] = removeindex(volumePosList, 0);
+    blockScaleList[0] = removeindex(volumeScaleList, 0);
+    blockMatrixList[0] = removeindex(volumeMatrixList, 0);
+    frontDirDataList[0] = removeindex(volumeTypeList, 0);
+    blockParamIndexList[0] = removeindex(volumeBlockParamIndexList, 0);
+    
+    int volumeType = removeindex(volumeTypeList, 0);
+        
+    int paramIndex = 0;
+    while(paramIndex != point(1, "VolumeType", paramIndex))
+    {
+            paramIndex += 1;
+    }
+            
+    while(volumeType == point(1, "VolumeType", paramIndex))
+    {
 
-	vector volumeBlockParamIndex = removeIndex(volumeBlockParamIndex, 0);
-	vector volumePos = removeIndex(blockPosList, 0);
-	int volumeType = removeIndex(volumeTypeList, 0);
-	
-
-	int paramIndex = 0;
-	while(paramIndex == point(1, "VolumeType", paramIndex))
-	{
-		paramIndex += 1;
-	}
-	
-	while(volumeType == point(1, "VolumeType", paramIndex))
-	{
-		
-		
-		paramIndex += 1;
-	}
-	
+        if(point(1, "ParamNum", 0) < paramIndex) {break;}
+        
+        vector blockParamIndex = point(1, "BlockParamIndex", paramIndex);
+        vector minSize = point(1, "MinSize", paramIndex);
+        vector maxSize = point(1, "MaxSize", paramIndex);
+        vector divideAxis = point(1, "DivideAxis", paramIndex);
+        vector rotateAxis = point(1, "RotateAxis", paramIndex);
+        float divideRatio = point(1, "DivideRatio", paramIndex);
+        vector divideRange = point(1, "DivideRange", paramIndex);
+        int toggleAdjustMode = point(1, "ToggleAdjustMode", paramIndex);
+        vector transform = point(1, "Transform", paramIndex);
+        vector rotateRange = point(1, "RotateRange", paramIndex);
+        vector scaleRange = point(1, "ScaleRange", paramIndex);
+        vector volumeScale = point(1, "VolumeScale", paramIndex);
+        
+        int blockNum = len(blockPosList);       
+        for(int i = 0; i < blockNum; i++)
+        {               
+            vector blockPosOrigin = removeindex(blockPosList, 0);
+            vector blockScaleOrigin = removeindex(blockScaleList, 0);
+            matrix blockMatrixOrigin = removeindex(blockMatrixList, 0);
+            vector blockFrontDirDataOrigin = removeindex(frontDirDataList, 0);
+            vector blockParamIndexOrigin = removeindex(blockParamIndexList ,0); 
+    
+            if(blockScaleOrigin.x < minSize.x || blockScaleOrigin.y < minSize.y ||  blockScaleOrigin.z < minSize.z)
+            {
+                push(blockParamIndexList, blockParamIndexOrigin);
+                push(blockPosList, blockPosOrigin);
+                push(blockScaleList, blockScaleOrigin);
+                push(blockMatrixList, blockMatrixOrigin);
+                push(frontDirDataList, blockFrontDirDataOrigin);
+                continue;
+            }
+            if(maxSize.x < blockScaleOrigin.x || maxSize.y < blockScaleOrigin.y || maxSize.z < blockScaleOrigin.z)
+            {
+                push(blockParamIndexList, blockParamIndexOrigin);
+                push(blockPosList, blockPosOrigin);
+                push(blockScaleList, blockScaleOrigin);
+                push(blockMatrixList, blockMatrixOrigin);
+                push(frontDirDataList, blockFrontDirDataOrigin);
+                continue;
+            } 
+                        
+            if(toggleAdjustMode == 1)
+            {                
+                //回転周り
+                float RotateValue = random(blockPosOrigin * (i + 2)) * (rotateRange.y - rotateRange.x) + rotateRange.x;
+                vector4 q = quaternion(radians(RotateValue) ,rotateAxis);
+                matrix rotateMatrix = blockMatrixOrigin * qconvert(q);
+    
+                //スケール周り
+                float ScaleCofficient = rand(blockPosOrigin * (i + 10)) * (scaleRange.y - scaleRange.x) + scaleRange.x;
+                vector MoveVector;
+                if(abs(blockFrontDirDataOrigin.x) <= 1)
+                {
+                    MoveVector.x = -blockFrontDirDataOrigin.x * blockScaleOrigin.x * (ScaleCofficient - 1) / 2;
+                    blockScaleOrigin.x *= ScaleCofficient;
+                }
+                if(abs(blockFrontDirDataOrigin.y) <= 1)
+                {
+                    MoveVector.y = -blockFrontDirDataOrigin.y * blockScaleOrigin.y * (ScaleCofficient - 1) / 2;
+                    blockScaleOrigin.y *= ScaleCofficient;
+                }
+                if(abs(blockFrontDirDataOrigin.z) <= 1)
+                {
+                    MoveVector.z = -blockFrontDirDataOrigin.z * blockScaleOrigin.z * (ScaleCofficient - 1) / 2;
+                    blockScaleOrigin.z *= ScaleCofficient;
+                } 
+                
+                //移動
+                transform.x *= blockScaleOrigin.x;
+                transform.y *= blockScaleOrigin.y;
+                transform.z *= blockScaleOrigin.z;
+    
+                //ボリュームスケール
+                blockScaleOrigin.x *= volumeScale.x; 
+                blockScaleOrigin.y *= volumeScale.y;
+                blockScaleOrigin.z *= volumeScale.z;                
+                
+                MoveVector += transform;
+                MoveVector *= rotateMatrix;
+                blockPosOrigin += MoveVector;
+    
+                push(blockParamIndexList, blockParamIndex);
+                push(blockPosList, blockPosOrigin);
+                push(blockScaleList, blockScaleOrigin);
+                push(blockMatrixList, rotateMatrix);
+                push(frontDirDataList, blockFrontDirDataOrigin);                    
+            }    
+            else
+            {               
+                float block1ScaleValue = random(blockPosOrigin * (i + 10000)) * (divideRange.y - divideRange.x) + divideRange.x;   
+                float block2ScaleValue = 1 - block1ScaleValue;
+                vector block1Scale = blockScaleOrigin * (baseVector - divideAxis * block1ScaleValue);
+                vector block2Scale = blockScaleOrigin * (baseVector - divideAxis * block2ScaleValue);
+                
+                vector block1Pos = blockPosOrigin - divideAxis * (block1Scale / 2 + blockScaleOrigin / 2 - block1Scale) * blockMatrixOrigin;
+                vector block2Pos = blockPosOrigin + divideAxis * (block2Scale / 2 + blockScaleOrigin / 2 - block2Scale) * blockMatrixOrigin;
+    
+                //塞ぎ面周り
+                vector block1CloseFront = divideAxis;
+                vector block2CloseFront = -divideAxis;
+                vector block1FrontDirData = blockFrontDirDataOrigin;
+                vector block2FrontDirData = blockFrontDirDataOrigin; 
+                int toggle = 1;
+                while(toggle != 0)
+                {
+                    if(1 < length((block1CloseFront + block1FrontDirData) * block1CloseFront)) {break;}
+                    block1FrontDirData += block1CloseFront + block1FrontDirData * block1CloseFront * 100;
+                    toggle = 0;
+                }
+                toggle = 1;
+                while(toggle != 0)
+                {
+                    if(1 < length((block2CloseFront + block2FrontDirData) * block2CloseFront)) {break;}
+                    block2FrontDirData += block2CloseFront + block2FrontDirData * block2CloseFront * 100;
+                    toggle = 0; 
+                }
+           
+                if(random(blockPosOrigin * (i + 1000)) < divideRatio)
+                {
+                    push(blockParamIndexList, blockParamIndex);
+                    push(blockParamIndexList, blockParamIndex);
+                    push(blockPosList, block1Pos);
+                    push(blockPosList, block2Pos);
+                    push(blockScaleList, block1Scale);
+                    push(blockScaleList, block2Scale); 
+                    push(blockMatrixList, blockMatrixOrigin);
+                    push(blockMatrixList, blockMatrixOrigin);
+                    push(frontDirDataList, block1FrontDirData);
+                    push(frontDirDataList, block2FrontDirData);
+                }
+                else    blockParamIndexList[0] = removeindex(volumeBlockParamIndexList, 0);     
+                {
+                    push(blockParamIndexList, blockParamIndexOrigin);
+                    push(blockPosList, blockPosOrigin);
+                    push(blockScaleList, blockScaleOrigin);
+                    push(blockMatrixList, blockMatrixOrigin);
+                    push(frontDirDataList, blockFrontDirDataOrigin);
+                } 
+            }                                           
+        }               
+        paramIndex += 1;  
+    }
+        
+    for(int i = 0; i < len(blockPosList); i++)
+    {
+        vector spawnPos = blockPosList[i];
+        int ptnum = addpoint(0, spawnPos);
+        vector blockParamIndex = blockParamIndexList[i];
+        vector scale = blockScaleList[i];
+        matrix mRotate = blockMatrixList[i];
+        vector frontDirData = frontDirDataList[i];
+        
+        vector normal;
+        normal.z = 1;
+        normal *= mRotate;
+        
+        setpointattrib(0, "scale", ptnum, scale);
+        setpointattrib(0, "RotateMatrix", ptnum, mRotate);
+        setpointattrib(0, "FrontDirData", ptnum, frontDirData);
+        setpointattrib(0, "BlockParamIndex", ptnum, blockParamIndex);
+        setpointattrib(0, "N", ptnum, normal);
+    }
 }
