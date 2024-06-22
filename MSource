@@ -1,15 +1,23 @@
-vector volumeBlockParamIndexList[];
 vector volumePosList[];
 vector volumeScaleList[];
 matrix volumeMatrixList[];
 vector volumeFrontDirDataList[];
 int volumeTypeList[];
+vector volumeBlockParamIndexList[];
 
-while(0 < len(volumeBlockParamIndexList))
+volumePosList[0] = v@P;
+volumeScaleList[0] = v@scale;
+volumeMatrixList[0] = ident();
+volumeFrontDirDataList[0] = (0.0, 0.0, 0.0);
+volumeBlockParamIndexList[0] = 0;
+
+while(0 < len(volumePosList))
 {
 
+	vector volumeBlockParamIndex = removeIndex(volumeBlockParamIndex, 0);
 	vector volumePos = removeIndex(blockPosList, 0);
 	int volumeType = removeIndex(volumeTypeList, 0);
+	
 
 	int paramIndex = 0;
 	while(paramIndex == point(1, "VolumeType", paramIndex))
@@ -20,6 +28,8 @@ while(0 < len(volumeBlockParamIndexList))
 	while(volumeType == point(1, "VolumeType", paramIndex))
 	{
 		
+		
+		paramIndex += 1;
 	}
 	
 }
