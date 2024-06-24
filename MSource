@@ -14,6 +14,8 @@ volumeFrontDirDataList[0] = (0.0, 0.0, 0.0);
 volumeTypeList[0] = 0;
 volumeBlockParamIndexList[0] = 0;
 
+int testToggle = 0;
+
 while(0 < len(volumePosList))
 {
     vector blockPosList[];
@@ -30,14 +32,17 @@ while(0 < len(volumePosList))
     int volumeType = removeindex(volumeTypeList, 0);
         
     int paramIndex = 0;
-    while(paramIndex != point(1, "VolumeType", paramIndex))
+    while(volumeType != point(1, "VolumeType", paramIndex))
     {
-            paramIndex += 1;
+        paramIndex += 1;
+        if(point(1, "ParamNum", 0) < paramIndex) {break;}
     }
-            
+    
+	if(0 != paramIndex) {break;}
+	
     while(volumeType == point(1, "VolumeType", paramIndex))
     {
-
+    
         if(point(1, "ParamNum", 0) < paramIndex) {break;}
         
         vector blockParamIndex = point(1, "BlockParamIndex", paramIndex);
@@ -52,6 +57,7 @@ while(0 < len(volumePosList))
         vector rotateRange = point(1, "RotateRange", paramIndex);
         vector scaleRange = point(1, "ScaleRange", paramIndex);
         vector volumeScale = point(1, "VolumeScale", paramIndex);
+        int nextVolumeType = point(1, "NextVolumeType", paramIndex);
         
         int blockNum = len(blockPosList);       
         for(int i = 0; i < blockNum; i++)
@@ -61,7 +67,7 @@ while(0 < len(volumePosList))
             matrix blockMatrixOrigin = removeindex(blockMatrixList, 0);
             vector blockFrontDirDataOrigin = removeindex(frontDirDataList, 0);
             vector blockParamIndexOrigin = removeindex(blockParamIndexList ,0); 
-    
+            
             if(blockScaleOrigin.x < minSize.x || blockScaleOrigin.y < minSize.y ||  blockScaleOrigin.z < minSize.z)
             {
                 push(blockParamIndexList, blockParamIndexOrigin);
@@ -79,8 +85,8 @@ while(0 < len(volumePosList))
                 push(blockMatrixList, blockMatrixOrigin);
                 push(frontDirDataList, blockFrontDirDataOrigin);
                 continue;
-            } 
-                        
+            }   
+			
             if(toggleAdjustMode == 1)
             {                
                 //回転周り
@@ -108,24 +114,34 @@ while(0 < len(volumePosList))
                 } 
                 
                 //移動
-                transform.x *= blockScaleOrigin.x;
-                transform.y *= blockScaleOrigin.y;
-                transform.z *= blockScaleOrigin.z;
+                MoveVector += transform.x * blockScaleOrigin.x;
+                MoveVector += transform.y * blockScaleOrigin.y;
+                MoveVector += transform.z * blockScaleOrigin.z;
+                MoveVector *= rotateMatrix;
+                blockPosOrigin += MoveVector;
     
                 //ボリュームスケール
                 blockScaleOrigin.x *= volumeScale.x; 
                 blockScaleOrigin.y *= volumeScale.y;
                 blockScaleOrigin.z *= volumeScale.z;                
-                
-                MoveVector += transform;
-                MoveVector *= rotateMatrix;
-                blockPosOrigin += MoveVector;
-    
+                    
                 push(blockParamIndexList, blockParamIndex);
                 push(blockPosList, blockPosOrigin);
                 push(blockScaleList, blockScaleOrigin);
                 push(blockMatrixList, rotateMatrix);
-                push(frontDirDataList, blockFrontDirDataOrigin);                    
+                push(frontDirDataList, blockFrontDirDataOrigin);
+                
+                if(nextVolumeType < 0) {continue;}
+                
+                if(0 < testToggle) {continue;}
+               
+                push(volumePosList, blockPosOrigin);
+                push(volumeScaleList, blockScaleOrigin);
+                push(volumeMatrixList, rotateMatrix);
+                push(volumeFrontDirDataList, blockFrontDirDataOrigin);
+                push(volumeBlockParamIndexList, blockParamIndex);
+                push(volumeTypeList, nextVolumeType);
+                
             }    
             else
             {               
@@ -170,7 +186,7 @@ while(0 < len(volumePosList))
                     push(frontDirDataList, block1FrontDirData);
                     push(frontDirDataList, block2FrontDirData);
                 }
-                else    blockParamIndexList[0] = removeindex(volumeBlockParamIndexList, 0);     
+                else   
                 {
                     push(blockParamIndexList, blockParamIndexOrigin);
                     push(blockPosList, blockPosOrigin);
@@ -202,4 +218,8 @@ while(0 < len(volumePosList))
         setpointattrib(0, "BlockParamIndex", ptnum, blockParamIndex);
         setpointattrib(0, "N", ptnum, normal);
     }
+    if(point(1, "ParamNum", 0) < paramIndex) {break;}
+    testToggle += 1;
 }
+
+removepoint(0, @ptnum);
