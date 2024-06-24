@@ -1,5 +1,5 @@
 [Employ]
-○資料をまとめる
+○KONAMIの対応業務を軸に空白部分を埋める
 
 [City]
 ○VolumeTypeの実装を行う
