@@ -4,6 +4,7 @@
 [City]
 ○VolumeTypeの実装を行う
 ・処理を行う確率にするように修正する
+・Volumeを生成するかのパラメーターも追加実装する
  -SoulCityでBaseVolume内でDivideし、アセットをランダムに配置する
  -SoulCityでSingleBlockを生成する
  -NightCityで上部に看板を配置する
