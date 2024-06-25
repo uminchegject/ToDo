@@ -1,49 +1,14 @@
 ○PCのフォルダ内を整理する
 
 [Employ]
-○KONAMIの対応業務を軸に空白部分を埋める
+○資料をまとめる
 
 [City]
-○VolumeTypeの実装を行う
-・処理を行う確率にするように修正する
-float paramRatio = point(1, "DivideRatio", paramIndex);
-
-if(random(v@P * (paramIndex + 1) < paramRatio) {continue;}
-
-
-・Volumeを生成するかのパラメーターも追加実装する
-int toggleMakeVolume = point(1, "ToggleMakeVolume", paramIndex);
-
-int blockNum = len(blockPosList);        
-for(int i = 0; i < blockNum; i++)
-{
-
-}
-if(toggleMakeVolume == 1)
-{
-    for(int i = 0; i < len(blockPosList); i++)
-    {
-        vector spawnPos = blockPosList[i];
-        int ptnum = addpoint(0, spawnPos);
-        vector blockParamIndex = blockParamIndexList[i];
-        vector scale = blockScaleList[i];
-        matrix mRotate = blockMatrixList[i];
-        vector frontDirData = frontDirDataList[i];
-        
-        vector normal;
-        normal.z = 1;
-        normal *= mRotate;
-        
-        setpointattrib(0, "scale", ptnum, scale);
-        setpointattrib(0, "RotateMatrix", ptnum, mRotate);
-        setpointattrib(0, "FrontDirData", ptnum, frontDirData);
-        setpointattrib(0, "BlockParamIndex", ptnum, blockParamIndex);
-        setpointattrib(0, "N", ptnum, normal);
-    }
-}
-
+○VolumeMakerの検証
+・SoulCity
  -SoulCityでBaseVolume内でDivideし、アセットをランダムに配置する
  -SoulCityでSingleBlockを生成する
+・NightCity
  -NightCityで上部に看板を配置する
 
 ■NightCity
