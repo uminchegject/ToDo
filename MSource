@@ -14,7 +14,7 @@ volumeFrontDirDataList[0] = (0.0, 0.0, 0.0);
 volumeTypeList[0] = 0;
 volumeBlockParamIndexList[0] = 0;
 
-int testToggle = 0;
+int volumeType = 0;
 
 while(0 < len(volumePosList))
 {
@@ -27,9 +27,7 @@ while(0 < len(volumePosList))
     blockScaleList[0] = removeindex(volumeScaleList, 0);
     blockMatrixList[0] = removeindex(volumeMatrixList, 0);
     frontDirDataList[0] = removeindex(volumeTypeList, 0);
-    blockParamIndexList[0] = removeindex(volumeBlockParamIndexList, 0);
-    
-    int volumeType = removeindex(volumeTypeList, 0);
+    blockParamIndexList[0] = removeindex(volumeBlockParamIndexList, 0);    
         
     int paramIndex = 0;
     while(volumeType != point(1, "VolumeType", paramIndex))
@@ -38,11 +36,9 @@ while(0 < len(volumePosList))
         if(point(1, "ParamNum", 0) < paramIndex) {break;}
     }
     
-	if(0 != paramIndex) {break;}
-	
     while(volumeType == point(1, "VolumeType", paramIndex))
     {
-    
+     
         if(point(1, "ParamNum", 0) < paramIndex) {break;}
         
         vector blockParamIndex = point(1, "BlockParamIndex", paramIndex);
@@ -59,7 +55,9 @@ while(0 < len(volumePosList))
         vector volumeScale = point(1, "VolumeScale", paramIndex);
         int nextVolumeType = point(1, "NextVolumeType", paramIndex);
         
-        int blockNum = len(blockPosList);       
+        paramIndex += 1; 
+        
+        int blockNum = len(blockPosList);        
         for(int i = 0; i < blockNum; i++)
         {               
             vector blockPosOrigin = removeindex(blockPosList, 0);
@@ -67,6 +65,16 @@ while(0 < len(volumePosList))
             matrix blockMatrixOrigin = removeindex(blockMatrixList, 0);
             vector blockFrontDirDataOrigin = removeindex(frontDirDataList, 0);
             vector blockParamIndexOrigin = removeindex(blockParamIndexList ,0); 
+            
+            if(0 < nextVolumeType) 
+            {
+                push(volumePosList, blockPosOrigin);
+                push(volumeScaleList, blockScaleOrigin);
+                push(volumeMatrixList, blockMatrixOrigin);
+                push(volumeFrontDirDataList, blockFrontDirDataOrigin);
+                push(volumeBlockParamIndexList, blockParamIndex);
+                volumeType = nextVolumeType;
+            }                       
             
             if(blockScaleOrigin.x < minSize.x || blockScaleOrigin.y < minSize.y ||  blockScaleOrigin.z < minSize.z)
             {
@@ -86,7 +94,7 @@ while(0 < len(volumePosList))
                 push(frontDirDataList, blockFrontDirDataOrigin);
                 continue;
             }   
-			
+                            
             if(toggleAdjustMode == 1)
             {                
                 //回転周り
@@ -114,9 +122,9 @@ while(0 < len(volumePosList))
                 } 
                 
                 //移動
-                MoveVector += transform.x * blockScaleOrigin.x;
-                MoveVector += transform.y * blockScaleOrigin.y;
-                MoveVector += transform.z * blockScaleOrigin.z;
+                MoveVector.x += transform.x * blockScaleOrigin.x;
+                MoveVector.y += transform.y * blockScaleOrigin.y;
+                MoveVector.z += transform.z * blockScaleOrigin.z;
                 MoveVector *= rotateMatrix;
                 blockPosOrigin += MoveVector;
     
@@ -130,18 +138,7 @@ while(0 < len(volumePosList))
                 push(blockScaleList, blockScaleOrigin);
                 push(blockMatrixList, rotateMatrix);
                 push(frontDirDataList, blockFrontDirDataOrigin);
-                
-                if(nextVolumeType < 0) {continue;}
-                
-                if(0 < testToggle) {continue;}
-               
-                push(volumePosList, blockPosOrigin);
-                push(volumeScaleList, blockScaleOrigin);
-                push(volumeMatrixList, rotateMatrix);
-                push(volumeFrontDirDataList, blockFrontDirDataOrigin);
-                push(volumeBlockParamIndexList, blockParamIndex);
-                push(volumeTypeList, nextVolumeType);
-                
+                                
             }    
             else
             {               
@@ -196,7 +193,6 @@ while(0 < len(volumePosList))
                 } 
             }                                           
         }               
-        paramIndex += 1;  
     }
         
     for(int i = 0; i < len(blockPosList); i++)
@@ -219,7 +215,6 @@ while(0 < len(volumePosList))
         setpointattrib(0, "N", ptnum, normal);
     }
     if(point(1, "ParamNum", 0) < paramIndex) {break;}
-    testToggle += 1;
 }
 
 removepoint(0, @ptnum);
