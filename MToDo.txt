@@ -1,18 +1,25 @@
-■Volumeの検証
+■Volume
 ●SoulCity
-・
+・BigVolumeとSmallVolumeを分ける
+　-BigVolumeはPattern,Industrial
+　-SmallVolumeはSingleResidenceでランダム回転させる
 
 ●Night
+・BaseVolumeを縦割りする
+・BaseVolumeをさらに縦割りしてAssetVolumeとして使う
+　ーランダムに一回平行方向に分割する
+・上部に看板Volumeを配置する
 
-
-■Detailの検証
+■Block
 ○AssetDTの整理
 ・SoulCity(Industrial)
  -Vent(Big)
  -VentSmall
  -SignBoard
  -Tube
-・NightCity
+・NightCity(Residence)
+・NightCity(Top)
+・NightCity(Industrial)
 
 ○2DBlockの整理
 ・
