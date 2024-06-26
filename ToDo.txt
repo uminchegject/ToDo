@@ -4,12 +4,6 @@
 ○資料をまとめる
 
 [City]
-○枝分かれ方式で行うようにできるように修正
-whileの前にvolumeTypeを変更する
-
-○BlockParamTypeもパラメーターで管理できるように修正
-・BlockParamTypeを設定するトグルも用意する
-
 ■SoulCityの検証
 ○アセットのDTを整理
 ・Residence
@@ -24,7 +18,7 @@ whileの前にvolumeTypeを変更する
  -Vent(Big)
  -VentSmall
  -SignBoard
- -Tuble
+ -Tube
 
 ○Industrialの検証
 ・大きめのVolumeを取得
