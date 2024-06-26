@@ -4,20 +4,44 @@
 ○資料をまとめる
 
 [City]
-○VolumeMakerの検証
-・SoulCity
- -SoulCityでBaseVolume内でDivideし、アセットをランダムに配置する
- -SoulCityでSingleBlockを生成する
-・NightCity
- -NightCityで上部に看板を配置する
+○枝分かれ方式で行うようにできるように修正
+
+○Blockの取得ロジックをまとめる
+
+■SoulCityの検証
+○アセットのDTを整理
+・Residence
+小さめのVolumeにし、回転させる
+ -Window(Wide)
+ -Window(Small)
+ -Roof
+ -Vent
+ -SignBoard
+・Industrial
+大きいサイズのBlockをベースに合わせる
+ -Vent(Big)
+ -VentSmall
+ -SignBoard
+ -Tuble
+
+○Industrialの検証
+・大きめのVolumeを取得
+・マテリアルをコンクリートに
+・Blockサイズは大きめにする
+・アセットのサイズは幅広く選択し、小さいものはTransRangeを大きくする
+
+○Reisidence(Pattern)の検証
+・大きめのVolumeを取得
+
+○Residence(Greeble)の検証
+・Volumeをある程度小さくなるまで分割
+・アセットサイズに余裕を持たせてTransRangeを大きめに設定する
+
+
 
 ■NightCity
-○上部用のVolumeを生成する
- -上部に看板を配置
- -1回り小さい3DBlockを生成
-
+○上部に看板を配置
 ○文字の配置を修正
-△側面に方向を設けて裏表のアセットを配置する
 
 ■SoulCity
 ○SingleOffseBlockの実装
