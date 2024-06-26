@@ -1,38 +1,18 @@
-○枝分かれ方式で行うようにできるように修正
-
-○Blockの分割ロジックを確率
-
-○アセットのランダム配置ロジックを実装
-・アセットを小さめのサイズで設定しTransformRangeを広げる
-
-○アセットの詳細は配置
- -Pattern
- -Greeble
- -3D
-
+■Volumeの検証
 ●SoulCity
-・Residence
-小さめのVolumeにし、回転させる
- -Window(Wide)
- -Window(Small)
- -Roof
- -Vent
- -SignBoard
-・Industrial
-大きいサイズのBlockをベースに合わせる
+・
+
+●Night
+
+
+■Detailの検証
+○AssetDTの整理
+・SoulCity(Industrial)
  -Vent(Big)
  -VentSmall
  -SignBoard
- -Tuble
- 
-●NightCity
-・Bottom
- -None
- -Vent(SmallOther)
- -SignBoard(BigOther,Icon)
- -SmallWindow
- -WideWindow
-・Top
- -SteelWall
- -SignBOard
- -Vent
+ -Tube
+・NightCity
+
+○2DBlockの整理
+・
