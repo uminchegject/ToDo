@@ -5,8 +5,10 @@
 
 [City]
 ○枝分かれ方式で行うようにできるように修正
+whileの前にvolumeTypeを変更する
 
-○Blockの取得ロジックをまとめる
+○BlockParamTypeもパラメーターで管理できるように修正
+・BlockParamTypeを設定するトグルも用意する
 
 ■SoulCityの検証
 ○アセットのDTを整理
