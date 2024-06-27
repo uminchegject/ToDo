@@ -1,25 +1,17 @@
-■Volume
+
+●TokyoCity
+※AssetGreeble
+○SignBoard
+△TopVolume
+
 ●SoulCity
-・BigVolumeとSmallVolumeを分ける
-　-BigVolumeはPattern,Industrial
-　-SmallVolumeはSingleResidenceでランダム回転させる
+※SmallVolume + BigVolume
+○SmallVolumeのDetail
+△Industrial
 
-●Night
-・BaseVolumeを縦割りする
-・BaseVolumeをさらに縦割りしてAssetVolumeとして使う
-　ーランダムに一回平行方向に分割する
-・上部に看板Volumeを配置する
+[TokyoCity]
+○同じアセットを等間隔に配置する
 
-■Block
-○AssetDTの整理
-・SoulCity(Industrial)
- -Vent(Big)
- -VentSmall
- -SignBoard
- -Tube
-・NightCity(Residence)
-・NightCity(Top)
-・NightCity(Industrial)
+○アセットBlockのGreebleを行う
 
-○2DBlockの整理
-・
+○看板を検証
