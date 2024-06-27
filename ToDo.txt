@@ -1,38 +1,62 @@
 ○PCのフォルダ内を整理する
+○荷物をまとめて持ち帰る
+ -私物と公用物を仕分ける
 
 [Employ]
+○書類の修正
 ○資料をまとめる
 
 [City]
-■SoulCityの検証
-○アセットのDTを整理
-・Residence
-小さめのVolumeにし、回転させる
- -Window(Wide)
- -Window(Small)
- -Roof
- -Vent
- -SignBoard
-・Industrial
-大きいサイズのBlockをベースに合わせる
+○ポートフォリオの修正
+
+○アセットパラメーター周りのデバッグ
+//アセットの微調整
+vector assetTransform = point(2, "Transform", assetRefIndex);
+float sizeCofficient = point(2, "SizeCofficient", assetRefIndex);
+vector assetScale = sizeCofficient * assetScaleOrigin;
+vector adjustedAssetMove = assetTransform * sizeCofficient * assetScale;
+adjustedAssetMove *= mRotate;
+spawnBasePos += adjustedAssetMove;
+
+■Volume
+○IndustrialBlockの検証
+ -大きいサイズのBlockをベースにし、TransformRangeの範囲を大きくする
+
+●SoulCity
+・BigVolumeとSmallVolumeを分ける
+ -BigVolumeはPattern,Industrial
+ -SmallVolumeはSingleResidence
+  -ランダムに回転させる
+  -TransRangeで配置位置をランダムにする
+
+●Night
+・BaseVolumeを縦割りする
+・BaseVolumeをさらに縦割りしてAssetVolumeとして使う
+ ーランダムに一回平行方向に分割する
+・上部に看板Volumeを配置する
+
+
+■Block
+○AssetDTの整理
+・SoulCity(Industrial)
  -Vent(Big)
  -VentSmall
  -SignBoard
  -Tube
+・NightCity(Residence)
+・NightCity(Top)
+・NightCity(Industrial)
 
-○Industrialの検証
-・大きめのVolumeを取得
-・マテリアルをコンクリートに
-・Blockサイズは大きめにする
-・アセットのサイズは幅広く選択し、小さいものはTransRangeを大きくする
-
-○Reisidence(Pattern)の検証
-・大きめのVolumeを取得
-
-○Residence(Greeble)の検証
-・Volumeをある程度小さくなるまで分割
-・アセットサイズに余裕を持たせてTransRangeを大きめに設定する
-
+○Blockの整理
+・SoulCity
+ -SingleBlock
+ -PatternBlock
+ -IndustrialBlock
+・NightCity
+ -TopBlock
+ -ResidenceBlock
+ -IndustrialBlock
+ -SignBoard
 
 
 ■NightCity
@@ -42,14 +66,9 @@
 ■SoulCity
 ○SingleOffseBlockの実装
  -屋根,看板などを配置
-○最上部Blockの実装
+△最上部Blockの実装
  -タンク
  -屋根付きBlock
-
-■OldCity
-○側面にアセットを配置
- -種類を設ける
-○上部に屋根を配置
 
 
 [Study]
