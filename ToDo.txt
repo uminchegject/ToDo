@@ -1,63 +1,21 @@
-○PCのフォルダ内を整理する
-
 [Employ]
 ○資料をまとめる
-
-[City]
-○枝分かれ方式で行うようにできるように修正
-
-○Blockの取得ロジックをまとめる
-
-■SoulCityの検証
-○アセットのDTを整理
-・Residence
-小さめのVolumeにし、回転させる
- -Window(Wide)
- -Window(Small)
- -Roof
- -Vent
- -SignBoard
-・Industrial
-大きいサイズのBlockをベースに合わせる
- -Vent(Big)
- -VentSmall
- -SignBoard
- -Tuble
-
-○Industrialの検証
-・大きめのVolumeを取得
-・マテリアルをコンクリートに
-・Blockサイズは大きめにする
-・アセットのサイズは幅広く選択し、小さいものはTransRangeを大きくする
-
-○Reisidence(Pattern)の検証
-・大きめのVolumeを取得
-
-○Residence(Greeble)の検証
-・Volumeをある程度小さくなるまで分割
-・アセットサイズに余裕を持たせてTransRangeを大きめに設定する
-
-
-
-■NightCity
-○上部に看板を配置
-○文字の配置を修正
+ -画像サイズを合わせる
 
 ■SoulCity
-○SingleOffseBlockの実装
- -屋根,看板などを配置
-○最上部Blockの実装
- -タンク
- -屋根付きBlock
+○CityMakerの修正
+ -アセットの回転周りを修正
+ -BlockIndexの修正
 
-■OldCity
-○側面にアセットを配置
- -種類を設ける
-○上部に屋根を配置
-
+■NightCity
+※凹凸を増やす
+ -立方体以外の形態を追加できるようにする
+ -Topに看板を配置する
+※多様なサイズのアセットを配置する
+ -看板
 
 [Study]
-○テクニカルアーティストスターターキットで学んだことをDocsWellかQuitaで復習する
-
-○ゲームプログラミングC++のサンプルコードを用いた実装
 ※C++の最低限の部分を勉強する
+○テクニカルアーティストスターターキットで学んだことをDocsWellかQuitaで復習する
+○ゲームプログラミングC++のサンプルコードを用いた実装
+○アカデミー教材
