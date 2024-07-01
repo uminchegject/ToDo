@@ -1,17 +1,38 @@
+[PD]
+■SoulCity
+○アセットの回転周りを修正
 
-●TokyoCity
-※AssetGreeble
-○SignBoard
-△TopVolume
+△BlockIndexの修正
 
-●SoulCity
-※SmallVolume + BigVolume
-○SmallVolumeのDetail
-△Industrial
+■NightCity
+●設計
+・ResidencePatternの用意
+・AssetBlockにランダムに配置
+ -一定以下の幅Blockは空白にする
 
-[TokyoCity]
-○同じアセットを等間隔に配置する
 
-○アセットBlockのGreebleを行う
 
-○看板を検証
+[Portfolio]
+●街の自動生成ツール
+・UE4側で建物の形態情報とアセット情報をDataTableで管理
+・UE4で設定したDataTableを参照して建物形態を生成
+・生成した形態に応じてDataTableのアセットを配置
+
+●ツールを用いたメリット
+・自動生成によるアセットの配置業務の効率化
+・建築形態情報及びアセット周りのパラメーターを用いた柔軟な街並みを管理
+・パラメーターで建物の高さ大きさなどを簡単に調整でき、街並みの検証を簡単に行うことができる
+
+
+・アセットの検証
+ -使用アセットを変えて比較Boxの画像を用意(SoulCity, TokyoCity)
+ -アセットサイズを変えて比較Boxの画像を用意(SoulCity, TokyoCity)
+
+・街並みの検証
+ -高さを4段階に変えた画像を用意(SoulCity, TokyoCity)
+ -建物の平面を4段階で変えた画像を用意(SoulCity, TokyoCity)
+
+○自己PRの修正
+大学時代建築デザインを通じてプロシージャルデザインを勉強しており、勉強していく中でゲーム業界のプロシージャル技術に興味を持ちゲーム業界を志望しました。
+エンジニアとしてゲーム業界に入った後は、仕事でエンジニアの業務に励む傍ら、空いた時間にHoudiniを通じてプロシージャルデザインを用いた背景の自動生成の勉強を行い今に至ります。
+学生時代及びプライベートで勉強していたプロシージャルデザインの技術及び建築に関する知識、仕事で培ったエンジニアとしての技術を活かし、背景デザインの業務効率化に貢献したいと考えています。
