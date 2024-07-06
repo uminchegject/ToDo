@@ -40,7 +40,7 @@
 ○Topの実装
 
 ○Sizeの多様性を検証
-
+ -Small, Midium, Bigの3種類で検証
 
 
 ●Bottom
