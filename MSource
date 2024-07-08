@@ -19,12 +19,12 @@ while(0 < len(volumePosList))
 {
     vector blockPosList[];
     vector blockScaleList[];
-	vector blockParamIndexList[];       
+    vector blockParamIndexList[];       
     blockPosList[0] = removeindex(volumePosList, 0);
     blockScaleList[0] = removeindex(volumeScaleList, 0);
     blockParamIndexList[0] = removeindex(volumeBlockParamIndexList, 0);
     volumeType = removeindex(volumeTypeList, 0);
-	vector divideAxis = removeindex(volumeDivideAxisList, 0);
+    vector divideAxis = removeindex(volumeDivideAxisList, 0);
         
     int paramIndex = 0;
     while(volumeType != point(1, "VolumeType", paramIndex))
@@ -41,73 +41,79 @@ while(0 < len(volumePosList))
         int nextVolumeType = point(1, "NextVolumeType", paramIndex);
         vector blockParamIndex = point(1, "BlockParamIndex", paramIndex);
         vector divideRange = point(1, "DivideRange", paramIndex);
-		vector scaleRange = point(1, "ScaleRange", paramIndex);        
+        vector scaleRange = point(1, "ScaleRange", paramIndex);        
         paramIndex += 1; 
-		
-		int divideLoopNum = point(1, "DivideLoopNum", paramIndex);
-		for(int j = 0; j < divideLoopNum; j++)
-		{
-			if(divideAxis.x == 0) {divideAxis = (1.0, 0.0, 0.0);}
-			else {divideAxis = (0.0, 0.0, 1.0);}
-			
-			int blockNum = len(blockPosList);        
-			for(int i = 0; i < blockNum; i++)
-			{
-				loopNum += 1;
-				
-				vector blockPosOrigin = removeindex(blockPosList, 0);
-				vector blockScaleOrigin = removeindex(blockScaleList, 0);
-				vector blockParamIndexOrigin = removeindex(blockParamIndexList ,0);
+                
+        int DivideLoopNum = point(1, "DivideLoopNum", paramIndex);
+        for(int j = 0; j < 6; j++)
+        {
+            if(divideAxis.x == 0) 
+            {
+                divideAxis.x = 1;
+                divideAxis.z = 0;
+            }
+            else             
+            {
+                divideAxis.x = 0;
+                divideAxis.z = 1;
+            }
+            int blockNum = len(blockPosList);        
+            for(int i = 0; i < blockNum; i++)
+            {
+                loopNum += 1;
+                
+                vector blockPosOrigin = removeindex(blockPosList, 0);
+                vector blockScaleOrigin = removeindex(blockScaleList, 0);
+                vector blockParamIndexOrigin = removeindex(blockParamIndexList ,0);                 
 
-				if(Ratio < random(blockPosOrigin * (loopNum)))             
-				{
-					push(blockParamIndexList, blockParamIndexOrigin);
-					push(blockPosList, blockPosOrigin);
-					push(blockScaleList, blockScaleOrigin);             
-					continue;
-				}                                     
-				if(0 < nextVolumeType) 
-				{         
-					push(volumePosList, blockPosOrigin);
-					push(volumeScaleList, blockScaleOrigin);
-					push(volumeBlockParamIndexList, blockParamIndexOrigin);
-					push(volumeTypeList, nextVolumeType);
-					continue;
-				}
-				
-				if(blockParamIndex.x < 0)
-				{
-					blockParamIndex = blockParamIndexOrigin;
-				}
-				  
-				float block1ScaleValue = random(blockPosOrigin * (loopNum + i)) * (divideRange.y - divideRange.x) + divideRange.x;   
-				float block2ScaleValue = 1 - block1ScaleValue;
-				vector block1Scale = blockScaleOrigin * (baseVector - divideAxis * block1ScaleValue);
-				vector block2Scale = blockScaleOrigin * (baseVector - divideAxis * block2ScaleValue);
-				
-				float scaleCofficient = random(blockPosOrigin * (loopNum + i + 10) * (scaleRange.y - scaleRange.x) + scaleRange.x;
-				block1Scale *= scaleCofficient;
-				block2Scale *= scaleCofficient;
-				
-				vector block1Pos = blockPosOrigin - divideAxis * (block1Scale / 2 + blockScaleOrigin / 2 - block1Scale) * blockMatrixOrigin;
-				vector block2Pos = blockPosOrigin + divideAxis * (block2Scale / 2 + blockScaleOrigin / 2 - block2Scale) * blockMatrixOrigin;
-		   
-				push(blockParamIndexList, blockParamIndex);
-				push(blockParamIndexList, blockParamIndex);
-				push(blockPosList, block1Pos);
-				push(blockPosList, block2Pos);
-				push(blockScaleList, block1Scale);
-				push(blockScaleList, block2Scale);                                           
-			}
-		}              
+                
+                if(Ratio < random(blockPosOrigin * (loopNum)))             
+                {
+                    push(blockParamIndexList, blockParamIndexOrigin);
+                    push(blockPosList, blockPosOrigin);
+                    push(blockScaleList, blockScaleOrigin);             
+                    continue;
+                }                                     
+                if(0 < nextVolumeType) 
+                {         
+                    push(volumePosList, blockPosOrigin);
+                    push(volumeScaleList, blockScaleOrigin);
+                    push(volumeBlockParamIndexList, blockParamIndexOrigin);
+                    push(volumeTypeList, nextVolumeType);
+                    continue;
+                }
+                
+                if(blockParamIndex.x < 0)
+                {
+                    blockParamIndex = blockParamIndexOrigin;
+                }
+
+                float block1ScaleValue = random(blockPosOrigin * (loopNum + i)) * (divideRange.y - divideRange.x) + divideRange.x;   
+                float block2ScaleValue = 1 - block1ScaleValue;
+                vector block1Scale = blockScaleOrigin * (baseVector - divideAxis * block1ScaleValue);
+                vector block2Scale = blockScaleOrigin * (baseVector - divideAxis * block2ScaleValue);                
+                
+                vector block1Pos = blockPosOrigin - divideAxis * (block1Scale / 2 + blockScaleOrigin / 2 - block1Scale);
+                vector block2Pos = blockPosOrigin + divideAxis * (block2Scale / 2 + blockScaleOrigin / 2 - block2Scale);
+   
+                push(blockParamIndexList, blockParamIndex);
+                push(blockParamIndexList, blockParamIndex);
+                push(blockPosList, block1Pos);
+                push(blockPosList, block2Pos);
+                push(blockScaleList, block1Scale);
+                push(blockScaleList, block2Scale);                                           
+            }
+        }              
         for(int i = 0; i < len(blockPosList); i++)
         {
             loopNum += 1;
-            vector spawnPos = blockPosList[i];          
-            if(Ratio < random(spawnPos * loopNum)) {continue;}
+            vector spawnPos = blockPosList[i];
             int ptnum = addpoint(0, spawnPos);
             vector ptBlockParamIndex = blockParamIndexList[i];
             vector scale = blockScaleList[i];
+            float scaleCofficient = random(spawnPos * (loopNum + i)) * (scaleRange.y - scaleRange.x) + scaleRange.x;
+            scale *= scaleCofficient;
+
             
             setpointattrib(0, "scale", ptnum, scale);
             setpointattrib(0, "BlockParamIndex", ptnum, ptBlockParamIndex);
