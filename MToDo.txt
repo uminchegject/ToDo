@@ -1,51 +1,23 @@
-[RoadMaker]
-※Volumeのみで街並みを生成できるロジック設計を行う
-
-○道とVolumeのみで検証
-
-○道の管理方法を設計
-
-■IDEA
-※テーマに沿った街並みを生成できるようにするパラメーターを用意する
-※高さを管理できるようにする
- -Noise, Random
-
-■実装
-○検証のためのベースを実装
-・DTの実装
- -回す回数
- -DivieRange
- -ScaleRange
+●NightCity
+・縦軸でAssetBlockを分割する
+ -Top(SmallWindow, Vent)
+ -Center(Residence)
+ -Bottom()
  
-●街並み生成のためのパラメーター
-・回す回数
-・DivideRange
-・区画の高さ設定
+ 
+●RoadMaker
+※Noise関連のパラメーターも用意する
+
+○道幅
+・スケーリングを長さで管理するように修正する
+
+○高さ
+・高さパラメーターを設定
  -Noise
- -RandomRange
-・街区の種類
+ -Random
 
-●詳細な部分のパラメーター
-・道のモデリング
- -中心線からの距離
- -路肩のモデル
-・アセット
- -中心線からの距離
- -アセット周りのパラメーター
-
-[CityMaker]
-○CityMakerのiをloopnumに修正
-
-■NightVity
-○Topの実装
-
-○Sizeの多様性を検証
- -Small, Midium, Bigの3種類で検証
-
-
-●Bottom
-・下部側面のアセットを設定
-
-●Top
-・上部側面のアセットを設定
-・上部上面のAddObjとアセットを設定
+○街区のサイズ
+・サイズ調整パラメーターを設定 
+ 
+○VolumeType
+※道幅、高さ、街区サイズを管理できるように設計する
