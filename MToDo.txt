@@ -11,13 +11,49 @@
 ○道幅
 ・スケーリングを長さで管理するように修正する
 
+vector scale;
+vector adjustedScale = scale;
+
+float scaleCofficient = random(spawnPos * (loopNum + i)) * (scaleRange.y - scaleRange.x) + scaleRange.x;
+adjustedScale.x -= scaleCofficient;
+adjustedScale.z -= scaleCofficient;
+
+scale.x *= adjustedScale.x / scale.x;
+scale.z *= adjustedScale.z / scale.z;
+
+
 ○高さ
 ・高さパラメーターを設定
  -Noise
  -Random
 
+float heightRange = point(1, "HeightRange", paramIndex);
+float height = random(spawnPos * (loopNum + i + 10)) * (heightRange.y - heightRange.x) + heightRange.x;
+scale.y = height;
+spawnPos += height / 2;
+
+
 ○街区のサイズ
 ・サイズ調整パラメーターを設定 
- 
+※DivideRangeを中央値に設定する
+
+minScale
+maxScale
+
+if(blockScaleOrigin.x < minSize.x || blockScaleOrigin.y < minSize.y || blockScaleOrigin.z < minSize.z)
+{
+	push(blockParamIndexList, blockParamIndexOrigin);
+	push(blockPosList, blockPosOrigin);
+	push(blockScaleList, blockScaleOrigin);
+	continue;
+}
+if(maxSize.x < blockScaleOrigin.x || maxSize.y < blockScaleOrigin.y || maxSize.z < blockScaleOrigin.z)
+{
+	push(blockParamIndexList, blockParamIndexOrigin);
+	push(blockPosList, blockPosOrigin);
+	push(blockScaleList, blockScaleOrigin);
+	continue;
+}
+
 ○VolumeType
 ※道幅、高さ、街区サイズを管理できるように設計する
