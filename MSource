@@ -41,8 +41,11 @@ while(0 < len(volumePosList))
         int nextVolumeType = point(1, "NextVolumeType", paramIndex);
         vector blockParamIndex = point(1, "BlockParamIndex", paramIndex);
         vector divideRange = point(1, "DivideRange", paramIndex);
-        vector scaleRange = point(1, "ScaleRange", paramIndex);        
-        paramIndex += 1; 
+        vector scaleRange = point(1, "ScaleRange", paramIndex);
+        vector heightRange = point(1, "HeightRange", paramIndex);
+        vector minSize = point(1, "MinSize", paramIndex);
+        vector maxSize = point(1, "MaxSize", paramIndex);
+        paramIndex += 1;
                 
         int DivideLoopNum = point(1, "DivideLoopNum", paramIndex);
         for(int j = 0; j < 6; j++)
@@ -73,7 +76,21 @@ while(0 < len(volumePosList))
                     push(blockPosList, blockPosOrigin);
                     push(blockScaleList, blockScaleOrigin);             
                     continue;
-                }                                     
+                }
+                if(blockScaleOrigin.x < minSize.x || blockScaleOrigin.y < minSize.y ||  blockScaleOrigin.z < minSize.z)
+                {
+                    push(blockParamIndexList, blockParamIndexOrigin);
+                    push(blockPosList, blockPosOrigin);
+                    push(blockScaleList, blockScaleOrigin);
+                    continue;
+                }
+                if(maxSize.x < blockScaleOrigin.x || maxSize.y < blockScaleOrigin.y || maxSize.z < blockScaleOrigin.z)
+                {
+                    push(blockParamIndexList, blockParamIndexOrigin);
+                    push(blockPosList, blockPosOrigin);
+                    push(blockScaleList, blockScaleOrigin);
+                    continue;
+                }                
                 if(0 < nextVolumeType) 
                 {         
                     push(volumePosList, blockPosOrigin);
@@ -110,11 +127,19 @@ while(0 < len(volumePosList))
             vector spawnPos = blockPosList[i];
             int ptnum = addpoint(0, spawnPos);
             vector ptBlockParamIndex = blockParamIndexList[i];
-            vector scale = blockScaleList[i];
-            float scaleCofficient = random(spawnPos * (loopNum + i)) * (scaleRange.y - scaleRange.x) + scaleRange.x;
-            scale *= scaleCofficient;
-
             
+            vector scale = blockScaleList[i];
+            vector adjustedScale = scale;            
+            float scaleCofficient = random(spawnPos * (loopNum + i)) * (scaleRange.y - scaleRange.x) + scaleRange.x;
+            adjustedScale.x -= 0.4;//scaleCofficient;
+            adjustedScale.z -= 0.4;//scaleCofficient;            
+            scale.x *= adjustedScale.x / scale.x;
+            scale.z *= adjustedScale.z / scale.z;
+            
+            float height = random(spawnPos * (loopNum + i + 10)) * (heightRange.y - heightRange.x) + heightRange.x;
+            scale.y = height;
+            spawnPos += height / 2;            
+           
             setpointattrib(0, "scale", ptnum, scale);
             setpointattrib(0, "BlockParamIndex", ptnum, ptBlockParamIndex);
         }        
