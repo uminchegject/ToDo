@@ -1,9 +1,21 @@
 [CityMaker]
 ●RoadMaker
+・一つ目のBlock情報を除くように修正
 ・ScaleRangeとHeightRangeパラメーターの管理箇所を修正
 ・複数パラメーターを用いたデバッグ
 ・街区のサイズの管理処理をデバッグ
-・一つ目のBlock情報を除くように修正
+
+○AddPoint周りを修正する
+
+●CityMaker
+・アセットサイズを適切にする(SoulCity)
+ -SingleBlock
+  -Vent,Window,SignBoardと横並びにする
+  -Blockを横長にする
+  -Windowを小さめにする
+  -重心を下に寄せる
+ -PatternBlock
+  -Blockを縦長にする
 
 [C++]
 ●Matrix
