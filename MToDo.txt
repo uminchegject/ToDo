@@ -1,31 +1,45 @@
 [CityMaker]
 ●RoadMaker
-・一つ目のBlock情報を除くように修正
-・ScaleRangeとHeightRangeパラメーターの管理箇所を修正
-・複数パラメーターを用いたデバッグ
-・街区のサイズの管理処理をデバッグ
+※道幅、高さ、街区の大きさを意識して設計する
 
-○blockNextParamIndex周りを修正
+○最低限のロジックを実装
 
-○必要なパラメーターを追加していく
+○機能を追加していく
 
 ●CityMaker
 ・アセットサイズを適切にする(SoulCity)
- -SingleBlock
-  -Vent,Window,SignBoardと横並びにする
-  -Blockを横長にする
-  -Windowを小さめにする
-  -重心を下に寄せる
- -PatternBlock
-  -Blockを縦長にする
+
+・△ロジックを修正する
+ -パラメーター
+ -サイズ調整
 
 [C++]
-●設計と実装の勉強
-※設計をメインに勉強する
-※なるべく簡単なロジックを用いて、手を動かすようにする
-※設計は大まかにサンプルコードを参考にする
+■実装
+○3D行列への変換を実装する
 
-○汎用性のある矩形で管理する
-・クラスを設計する
+■設計
+※線をベースとした生成、アニメーションロジックを実装する
 
+●管理ロジック
+・Noiseを用いた群アニメーション
+class LineManager
+{
+	
+}
 
+●Obj生成ロジック
+・
+class Line
+{
+	Vector3 _mpt1_pos
+	Vector3 _mpt2_pos
+	Vector3 _mpos;
+
+	void SetDirection(void)
+
+}
+
+class Point
+{
+	
+}
