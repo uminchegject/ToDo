@@ -19,27 +19,6 @@
 
 ■設計
 ※線をベースとした生成、アニメーションロジックを実装する
-
-●管理ロジック
-・Noiseを用いた群アニメーション
-class LineManager
-{
-	
-}
-
-●Obj生成ロジック
-・
-class Line
-{
-	Vector3 _mpt1_pos
-	Vector3 _mpt2_pos
-	Vector3 _mpos;
-
-	void SetDirection(void)
-
-}
-
-class Point
-{
-	
-}
+・色
+・長さ
+・方向
