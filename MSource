@@ -1,142 +1,29 @@
-vector blockPosList[];
-vector blockScaleList[];
-vector blockParamIndexList[]; 
-vector blockNextParamIndexList[];
+○RoadとArcBaseを実装して検証を行う
 
-blockPosList[0] = v@P;
-blockScaleList[0] = v@scale;
-blockParamIndexList[0] = 0;
-blockNextParamIndexList[0] = 0;
+■Raad
+・道をベースにしたパラメーターを用意する
 
-int loopNum = 0;
-	
-for(int paramIndex = 0; paramIndex < point(1, "ParamNum", 0); paramIndex++)
-{
-	float ratio = point(1, "Ratio", paramIndex);
-	float divideRatio = point(1, "DivideRatio", paramIndex);
-	vector nextParamIndexRange = point(1, "NextParamIndexRange", paramIndex);
-	vector divideRange = point(1, "DivideRange", paramIndex);
-	vector minSize = point(1, "MinSize", paramIndex);
-	vector maxSize = point(1, "MaxSize", paramIndex);
-	int divideLoopNum = point(1, "DivideLoopNum", paramIndex);
-	float seed = point(1, "Seed", paramIndex);
+○パラメーター
+ -幅
+ -量(比率)
 
-	int blockNum = len(blockPosList);        
-	for(int i = 0; i < blockNum; i++)
-	{
-		vector blockPosOrigin = removeindex(blockPosList, 0);
-		vector blockScaleOrigin = removeindex(blockScaleList, 0);
-		vector blockParamIndexOrigin = removeindex(blockParamIndexList ,0);
-		vector blockNextParamIndexOrigin = removeindex(blockNextParamIndexList ,0);
-		
-		if(random(loopNum + i) < ratio)
-		{
-			push(blockPosList, blockPosOrigin);
-			push(blockScaleList, blockScaleOrigin);
-			push(blockParamIndexList, blockParamIndexOrigin);
-			push(blockNextParamIndexList, blockNextParamIndexOrigin);
-			continue;
-		}
-		
-		if(blockParamIndexOrigin != paramIndex)
-		{
-			push(blockPosList, blockPosOrigin);
-			push(blockScaleList, blockScaleOrigin);
-			push(blockParamIndexList, blockParamIndexOrigin);
-			push(blockNextParamIndexList, blockNextParamIndexOrigin);
-			continue;
-		}
-		
-		vector dividingBlockPosList[];
-		vector dividingBlockScaleList[];
-		vector dividingBlockParamIndexList[]; 
-		vector dividingBlockNextParamIndexList[];
+■ArcBase
+・CityBlockを分割して生成する
+・FrontDirectionをVolumeMakerに継承する
+ -△ArcBase間にも裏側のアセット配置をするように実装する
 
-		dividingBlockPosList[0] = blockPosOrigin;
-		dividingBlockScaleList[0] = blockScaleOrigin;
-		dividingBlockParamIndexList[0] = blockParamIndexOrigin;
-		dividingBlockNextParamIndexList[0] = blockNextParamIndexOrigin;	
+○パラメーター
+ -サイズ
+ -高さ
+ -オフセット値
 
-		for(int j = 0; j < divideLoopNum; j++)
-		{
+○FrontDirection周りの修正
+ -
 
-			if(divideAxis.x == 0) 
-			{
-				divideAxis.x = 1;
-				divideAxis.z = 0;
-			}
-			else             
-			{
-				divideAxis.x = 0;
-				divideAxis.z = 1;
-			}
+■Volume
+・分割方法を修正する
+ -MinSizeまで分割し続けるロジックを実装する
 
-			for(int k = 0; k < len(dividingBlockPosList); ++k)
-				loopNum += seed;
-				
-				vector dividingBlockPosOrigin = removeindex(dividingBlockPosList, 0);
-				vector dividingBlockScaleOrigin = removeindex(dividingBlockScaleList, 0);
-				vector dividingBlockParamIndexOrigin = removeindex(dividingBlockParamIndexList ,0);
-				vector dividingBlockNextParamIndexOrigin = removeindex(dividingBlockNextParamIndexList ,0);
-
-				if(divideRatio < random(loopNum + i * j))             
-				{
-					push(dividingBlockPosList, dividingBlockPosOrigin);
-					push(dividingBlockScaleList, dividingBlockScaleOrigin); 
-					push(dividingBlockParamIndexList, dividingBlockParamIndexOrigin);
-					push(dividingBlockNextParamIndexList, blockNextParamIndexOrign);
-					continue;
-				}              
-
-				float block1ScaleValue = random(dividingBlockPosOrigin * (loopNum + i * j + 1000)) * (divideRange.y - divideRange.x) + divideRange.x;   
-				float block2ScaleValue = 1 - block1ScaleValue;
-				vector block1Scale = dividingBlockScaleOrigin * (baseVector - divideAxis * block1ScaleValue);
-				vector block2Scale = dividingBlockScaleOrigin * (baseVector - divideAxis * block2ScaleValue);                
-				
-				vector block1Pos = dividingBlockPosOrigin - divideAxis * (block1Scale / 2 + dividingBlockScaleOrigin / 2 - block1Scale);
-				vector block2Pos = dividingBlockPosOrigin + divideAxis * (block2Scale / 2 + dividingBlockScaleOrigin / 2 - block2Scale);
-
-				push(dividingBlockParamIndexList, paramIndex);
-				push(dividingBlockParamIndexList, paramIndex);
-				push(dividingBlockPosList, block1Pos);
-				push(dividingBlockPosList, block2Pos);
-				push(dividingBlockScaleList, block1Scale);
-				push(dividingBlockScaleList, block2Scale);
-			}
-		}
-		
-		for(int j = 0; j < len(dividingBlockPosList); j++)
-		{
-			push(blockPosList, dividingBlockPosList[j]);
-			push(blockScaleList, dividingBlockScaleList[j]);
-			push(blockParamIndexList, dividingBlockParamIndexList[j]);
-			push(blockNextParamIndexList, dividingBlockNextParamIndexList[j]);		
-		}		
-	}
-}
-
-
-for(int i = 0; i < len(blockPosList); i++)
-{
-	loopNum += seed;
-	vector spawnPos = blockPosList[i];
-	int blockParamIndex = blockParamIndexList[i];		
-	vector scale = blockScaleList[i];
-	
-	vector scaleRange = point(1, "ScaleRange", blockParamIndex);
-	vector heightRange = point(1, "HeightRange", blockParamIndex);
-	
-	vector adjustedScale = scale;            
-	float scaleCofficient = random(loopNum) * (scaleRange.y - scaleRange.x) + scaleRange.x;
-	adjustedScale.x -= scaleCofficient;
-	adjustedScale.z -= scaleCofficient;            
-	scale.x *= adjustedScale.x / scale.x;
-	scale.z *= adjustedScale.z / scale.z;
-	
-	float height = random(loopNum + 1000) * (heightRange.y - heightRange.x) + heightRange.x;
-	scale.y = height;
-	spawnPos.y += height / 2;            
-   
-	int ptnum = addpoint(0, spawnPos);
-	setpointattrib(0, "scale", ptnum, scale);
-} 
+■AddObj
+・PMを実装する
+ -PMの子にアセットパラメーターをつける
