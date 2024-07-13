@@ -1,24 +1,40 @@
 [CityMaker]
-○BigBlock + SmallBlockをSoulCityで検証
-・RoadMakerの実装
-・SmallBlockのパラメーターを検証
- -Volumeを先にやり、後にAssetを行う
-・BigBlockのパラメーターを検証
- -SmallBlockを子パラメーターとして用いる
+○RoadとArcBaseを実装して検証を行う
 
-●RoadMaker
+■Raad
 ※道幅、高さ、街区の大きさを意識して設計する
+・道をベースにしたパラメーターを用意する
 
-○最低限のロジックを実装
-○機能を追加していく
+○パラメーター
+ -幅
+ -量(比率)
 
-●CityMaker
+■ArcBase
+・CityBlockを分割して生成する
+・FrontDirectionをVolumeMakerに継承する
+ -△ArcBase間にも裏側のアセット配置をするように実装する
+
+○パラメーター
+ -サイズ
+ -高さ
+ -オフセット値
+
+○FrontDirection周りの修正
+ 
+■Volume
 ・BigBlock上に垂直なSmallBlockの街を生成する
-・アセットサイズを適切にする(SoulCity)
 
-・△ロジックを修正する
+○分割方法を修正する
+ -MinSizeまで分割し続けるロジックを実装する
+
+△ロジックを修正する
  -パラメーター
  -サイズ調整
+
+■AddObj
+・PMを実装する
+ -PMの子にアセットパラメーターをつける
+
 
 [C++]
 ■実装
