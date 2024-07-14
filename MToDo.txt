@@ -1,10 +1,22 @@
-○Roadのパラメーターを整理
- -
+■Volume
+・柔軟かつ簡単に実装できるように設計
 
-○ArcbaseとVolumeを検証
- -Volumeは修正せずに検証のみする
+○分割方法を修正する
+ -MinSizeとMaxSizeをfloatにする
 
-○Volumeのパラメーターを整理
+○AdjustedModeを柔軟にできるように修正する
+
+○パラメーターを修正
+
+
+■AssetBlock
+・BaseAssetとDetailAssetを分けて実装する
+
+○BaseAssetを敷き詰めて配置するように実装
+
+○角のBaseAssetを配置する
+
+
 
 ■Raad
 ※道幅、高さ、街区の大きさを意識して設計する
@@ -13,6 +25,7 @@
 ○パラメーター
  -幅
  -量(比率)
+
 
 ■ArcBase
 ・CityBlockを分割して生成する
@@ -28,25 +41,11 @@
 
 ○FrontDirection周りの修正
  -FrontDirectionをVolumeMakerに継承する
- 
 
-■Volume
-※Volumeパラメーターをもっと柔軟に使いやすくする
- -ベースの設計部分はそのままにする
-○分割方法を修正する
- -MinSizeとMaxSizeをfloatにする
-○AdjustedModeを柔軟にできるように修正する
- 
-
-
-△ロジックを修正する
- -パラメーター
- -サイズ調整
 
 ■AddObj
 ・PMを実装する
  -PMの子にアセットパラメーターをつける
- 
  
 
 [C++]
