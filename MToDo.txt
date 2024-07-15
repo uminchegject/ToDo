@@ -1,21 +1,25 @@
 ■Volume
-・柔軟かつ簡単に実装できるように設計
-
 ○分割方法を修正する
- -MinSizeとMaxSizeをfloatにする
-
-○AdjustedModeを柔軟にできるように修正する
+ -※DivideMinSizeまで分割し続ける仕様に変更する
+ -DivideMinSizeをパラメーターで追加
+ -分割軸をパラメーターとして設定するように実装
 
 ○パラメーターを修正
+・ToggleStopMakeを上にする
+・ToggleAdJustModeをDivideModeに変更
+ -DivideRangeのデフォルト値を-1にしておき、0以上でないと機能しないようにする
+・Divide周りを下に持っていく
 
 
 ■AssetBlock
 ・BaseAssetとDetailAssetを分けて実装する
 
-○BaseAssetを敷き詰めて配置するように実装
-
-○角のBaseAssetを配置する
-
+○フローの設計を修正
+・3DVolumeの配置位置を計算
+・BaseAssetの配置位置を計算
+ -○BaseAssetを敷き詰めて配置できるようにサイズを修正
+ -○角のBaseAssetを配置する
+・DetailAssetの配置位置を計算
 
 
 ■Raad
