@@ -1,11 +1,13 @@
 [ToDo]
 ●BaseAsset + BaseObj
 ・Blockサイズをパラメーターで設定
- -Edgeサイズも設定し、
+ -BaseAssetサイズを基準にする
+ -Edgeサイズも考慮する
 ・縦横比率に一番近い分割値を求めるように修正
  -※Blockサイズとベース座標はあらかじめ決めておく
  -決められたParamIndexからBaseAssetのスケールを参照して分割値を設定する
 ・BaseAssetのスケールを埋めるように調整
+
 
 ※Volume内に組み込む
  -Scale周りの管理を厳格にする
