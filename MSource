@@ -1,38 +1,116 @@
-float block1ScaleValue = random(blockPosOrigin * (i + loopNum)) * (divideRange.y - divideRange.x) + divideRange.x;   
-float block2ScaleValue = 1 - block1ScaleValue;
-vector block1Scale = blockScaleOrigin * (baseVector - divideAxis * block1ScaleValue);
-vector block2Scale = blockScaleOrigin * (baseVector - divideAxis * block2ScaleValue);
+●Divideの繰り返し処理を実装
+float divideRatio = = point(1, "DivideRatio", paramIndex);
+vector divideRange = point(1, "DivideRange", paramIndex);
+vector AxisToDivide = point(1, "AxisToDivide", paramIndex);
+int divideLoopNum = point(1, "DivideLoopNum", paramIndex);
+float divideMinSize = point(1, "DivideMinSize", paramIndex);
 
-vector block1Pos = blockPosOrigin - divideAxis * (block1Scale / 2 + blockScaleOrigin / 2 - block1Scale) * blockMatrixOrigin;
-vector block2Pos = blockPosOrigin + divideAxis * (block2Scale / 2 + blockScaleOrigin / 2 - block2Scale) * blockMatrixOrigin;
+vector dividingBlockPosList[];
+vector dividingBlockScaleList[];
+matrix dividingBlockMatrixList[];
+vector dividingBlockFrontDirDataList[];
 
-//塞ぎ面周り
-vector block1CloseFront = divideAxis;
-vector block2CloseFront = -divideAxis;
-vector block1FrontDirData = blockFrontDirDataOrigin;
-vector block2FrontDirData = blockFrontDirDataOrigin; 
-int toggle = 1;
-while(toggle != 0)
+dividingBlockPosList[0] = blockPosOrigin;
+dividingBlockScaleList[0] = blockScaleOrigin;
+dividingBlockMatrixList[0] = blockMatrixOrigin;
+dividingBlockFrontDirDataList[0] = blockFrontDirDataOrigin;
+
+
+vector divideAxis = 0;
+divideAxis.x = 1;
+for(int j = 0; j < divideLoopNum; j++)
 {
-    if(1 < length((block1CloseFront + block1FrontDirData) * block1CloseFront)) {break;}
-    block1FrontDirData += block1CloseFront + block1FrontDirData * block1CloseFront * 100;
-    toggle = 0;
-}
-toggle = 1;
-while(toggle != 0)
-{
-    if(1 < length((block2CloseFront + block2FrontDirData) * block2CloseFront)) {break;}
-    block2FrontDirData += block2CloseFront + block2FrontDirData * block2CloseFront * 100;
-    toggle = 0; 
+	if(divideAxis.x == 1) 
+	{
+		divideAxis = 0;
+		if(0 < diviAxisToDividedeAxis.y) divideAxis.y = 1;
+		else if(0 < diviAxisToDividedeAxis.z) divideAxis.z = 1;
+	}
+	if(divideAxis.y == 1) 
+	{
+		divideAxis = 0;
+		if(0 < diviAxisToDividedeAxis.z) divideAxis.z = 1;
+		else if(0 < diviAxisToDividedeAxis.x) divideAxis.x = 1;
+	}
+	if(divideAxis.z == 1) 
+	{
+		divideAxis = 0;
+		if(0 < diviAxisToDividedeAxis.x) divideAxis.x = 1;
+		else if(0 < diviAxisToDividedeAxis.y) divideAxis.y = 1;
+	}
+
+	int dividingBlockNum = len(dividingBlockPosList);
+	for(int k = 0; k < dividingBlockNum ; ++k)
+	{
+		loopNum += seed;
+		
+		vector dividingBlockPosOrigin = removeindex(dividingBlockPosList, 0);
+		vector dividingBlockScaleOrigin = removeindex(dividingBlockScaleList, 0);
+		int dividingBlockMatrixOrigin = removeindex(dividingBlockMatrixList ,0);
+		int dividingBlockFrontDirDataOrigin = removeindex(dividingBlockFrontDirDataList ,0);
+		
+		if(divideRatio < random(loopNum + j + k))             
+		{
+			push(dividingBlockPosList, dividingBlockPosOrigin);
+			push(dividingBlockScaleList, dividingBlockScaleOrigin); 
+			push(dividingBlockMatrixList, dividingBlockMatrixOrigin);
+			push(dividingBlockFrontDirDataList, dividingBlockFrontDirDataOrigin);
+			continue;
+		}      
+
+		float block1ScaleValue = random(dividingBlockPosOrigin * (i + loopNum)) * (divideRange.y - divideRange.x) + divideRange.x;   
+		float block2ScaleValue = 1 - block1ScaleValue;
+		vector block1Scale = dividingBlockScaleOrigin * (baseVector - divideAxis * block1ScaleValue);
+		vector block2Scale = dividingBlockScaleOrigin * (baseVector - divideAxis * block2ScaleValue);
+
+		vector block1Pos = dividingBlockPosOrigin - divideAxis * (block1Scale / 2 + dividingBlockScaleOrigin / 2 - block1Scale) * dividingBlockMatrixOrigin;
+		vector block2Pos = dividingBlockPosOrigin + divideAxis * (block2Scale / 2 + dividingBlockScaleOrigin / 2 - block2Scale) * dividingBlockMatrixOrigin;
+
+		//塞ぎ面周り
+		vector block1CloseFront = divideAxis;
+		vector block2CloseFront = -divideAxis;
+		vector block1FrontDirData = dividingBlockFrontDirDataOrigin;
+		vector block2FrontDirData = dividingBlockFrontDirDataOrigin; 
+		int toggle = 1;
+		while(toggle != 0)
+		{
+			if(1 < length((block1CloseFront + block1FrontDirData) * block1CloseFront)) {break;}
+			block1FrontDirData += block1CloseFront + block1FrontDirData * block1CloseFront * 100;
+			toggle = 0;
+		}
+		toggle = 1;
+		while(toggle != 0)
+		{
+			if(1 < length((block2CloseFront + block2FrontDirData) * block2CloseFront)) {break;}
+			block2FrontDirData += block2CloseFront + block2FrontDirData * block2CloseFront * 100;
+			toggle = 0; 
+		}
+
+		if(length(divideAxis * block1Scale) < divideMinSize|| length(divideAxis * block1Scale) < divideMinSize)
+		{
+			push(dividingBlockPosList, dividingBlockPosOrigin);
+			push(dividingBlockScaleList, dividingBlockScaleOrigin); 
+			push(dividingBlockMatrixList, dividingBlockMatrixOrigin);
+			push(dividingBlockFrontDirDataList, dividingBlockFrontDirDataOrigin);
+			continue;           
+		}
+		
+		push(dividingBlockPosList, block1Pos);
+		push(dividingBlockPosList, block2Pos);
+		push(dividingBlockScaleList, block1Scale);
+		push(dividingBlockScaleList, block2Scale); 
+		push(dividingBlockMatrixList, blockMatrixOrigin);
+		push(dividingBlockMatrixList, blockMatrixOrigin);
+		push(dividingBlockFrontDirDataList, block1FrontDirData);
+		push(dividingBlockFrontDirDataList, block2FrontDirData);
+	}   
 }
 
-push(blockParamIndexList, blockParamIndex);
-push(blockParamIndexList, blockParamIndex);
-push(blockPosList, block1Pos);
-push(blockPosList, block2Pos);
-push(blockScaleList, block1Scale);
-push(blockScaleList, block2Scale); 
-push(blockMatrixList, blockMatrixOrigin);
-push(blockMatrixList, blockMatrixOrigin);
-push(frontDirDataList, block1FrontDirData);
-push(frontDirDataList, block2FrontDirData);
+for(int j = 0; j < len(dividingBlockPosList); j++)
+{
+	push(blockPosList, dividingBlockPosList[j]);
+	push(blockScaleList, dividingBlockScaleList[j]);
+	push(blockMatrixList, dividingBlockMatrixList[j]);
+	push(frontDirDataList, dividingBlockFrontDirDataList[j]);	
+	push(blockParamIndexList, blockParamIndexOrigin);
+}
