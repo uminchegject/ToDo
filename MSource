@@ -1,29 +1,38 @@
-○RoadとArcBaseを実装して検証を行う
+float block1ScaleValue = random(blockPosOrigin * (i + loopNum)) * (divideRange.y - divideRange.x) + divideRange.x;   
+float block2ScaleValue = 1 - block1ScaleValue;
+vector block1Scale = blockScaleOrigin * (baseVector - divideAxis * block1ScaleValue);
+vector block2Scale = blockScaleOrigin * (baseVector - divideAxis * block2ScaleValue);
 
-■Raad
-・道をベースにしたパラメーターを用意する
+vector block1Pos = blockPosOrigin - divideAxis * (block1Scale / 2 + blockScaleOrigin / 2 - block1Scale) * blockMatrixOrigin;
+vector block2Pos = blockPosOrigin + divideAxis * (block2Scale / 2 + blockScaleOrigin / 2 - block2Scale) * blockMatrixOrigin;
 
-○パラメーター
- -幅
- -量(比率)
+//塞ぎ面周り
+vector block1CloseFront = divideAxis;
+vector block2CloseFront = -divideAxis;
+vector block1FrontDirData = blockFrontDirDataOrigin;
+vector block2FrontDirData = blockFrontDirDataOrigin; 
+int toggle = 1;
+while(toggle != 0)
+{
+    if(1 < length((block1CloseFront + block1FrontDirData) * block1CloseFront)) {break;}
+    block1FrontDirData += block1CloseFront + block1FrontDirData * block1CloseFront * 100;
+    toggle = 0;
+}
+toggle = 1;
+while(toggle != 0)
+{
+    if(1 < length((block2CloseFront + block2FrontDirData) * block2CloseFront)) {break;}
+    block2FrontDirData += block2CloseFront + block2FrontDirData * block2CloseFront * 100;
+    toggle = 0; 
+}
 
-■ArcBase
-・CityBlockを分割して生成する
-・FrontDirectionをVolumeMakerに継承する
- -△ArcBase間にも裏側のアセット配置をするように実装する
-
-○パラメーター
- -サイズ
- -高さ
- -オフセット値
-
-○FrontDirection周りの修正
- -
-
-■Volume
-・分割方法を修正する
- -MinSizeまで分割し続けるロジックを実装する
-
-■AddObj
-・PMを実装する
- -PMの子にアセットパラメーターをつける
+push(blockParamIndexList, blockParamIndex);
+push(blockParamIndexList, blockParamIndex);
+push(blockPosList, block1Pos);
+push(blockPosList, block2Pos);
+push(blockScaleList, block1Scale);
+push(blockScaleList, block2Scale); 
+push(blockMatrixList, blockMatrixOrigin);
+push(blockMatrixList, blockMatrixOrigin);
+push(frontDirDataList, block1FrontDirData);
+push(frontDirDataList, block2FrontDirData);
