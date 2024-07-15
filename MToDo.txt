@@ -1,14 +1,34 @@
-■Volume
-○分割方法を修正する
- -※DivideMinSizeまで分割し続ける仕様に変更する
- -DivideMinSizeをパラメーターで追加
- -分割軸をパラメーターとして設定するように実装
+[ToDo]
+●BaseAsset + BaseObj
+※Volume内に組み込む
+ -Scale周りの管理を厳格にする
 
-○パラメーターを修正
-・ToggleStopMakeを上にする
-・ToggleAdJustModeをDivideModeに変更
- -DivideRangeのデフォルト値を-1にしておき、0以上でないと機能しないようにする
-・Divide周りを下に持っていく
+・BaseObjMaterialParam
+ -BlockType
+ -Material
+
+・BaseAssetParam
+ -BlockType
+ -EdgeAsset
+ -NormalAsset
+ -Scale
+
+
+●ArcBase
+・CityBlockを分割して生成する
+
+○空間をつくるパラメーターを用意する
+ -道
+ -空間
+
+○パラメーター
+ -サイズ
+ -高さ
+ -オフセット値
+
+○FrontDirection周りの実装
+ -FrontDirectionをVolumeMakerに継承する
+
 
 
 ■AssetBlock
@@ -21,14 +41,21 @@
  -○角のBaseAssetを配置する
 ・DetailAssetの配置位置を計算
 
-
-■Raad
-※道幅、高さ、街区の大きさを意識して設計する
-・道をベースにしたパラメーターを用意する
-
-○パラメーター
- -幅
- -量(比率)
+●3DObj
+・パラメーター
+ -Material
+ -ParamIndex
+ 
+●BaseAsset
+・パラメーター
+ -BlockType
+ -AssetType
+ -Transform
+ -Rotate
+ -Scale
+ -ChildBlockScale
+ -VolumeScale
+ -AddBlock
 
 
 ■ArcBase
@@ -46,6 +73,13 @@
 ○FrontDirection周りの修正
  -FrontDirectionをVolumeMakerに継承する
 
+■Raad
+※道幅、高さ、街区の大きさを意識して設計する
+・道をベースにしたパラメーターを用意する
+
+○パラメーター
+ -幅
+ -量(比率)
 
 ■AddObj
 ・PMを実装する
