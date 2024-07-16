@@ -11,86 +11,95 @@
 
 
 [PD]
-○※RoadMakerの検証までを行う
-・CityMakerの修正
-・アセットのブラッシュアップ(SoulCity)
-・RoadMakerの実装
+■AssetBlock
+○BaseAssetのスケールを埋めるように調整
+ -BaseAssetのスケールを参照する
+ -※VolumeMakerのDivideMinSizeを調整していびつなスケールにならないようにさせる
+ 
+○BaseAssetの場合FrontDirDataから必要分のみ配置するように実装する
 
-■RoadMaker
-※Volumeのみで街並みを生成できるロジック設計を行う
+○BaseMaterialかBaseAssetをインスタンスに設定する
 
-○道とVolumeのみで検証
+○BasePointを生成
 
+○パラメーター
+・BaseObjMaterialParam
+ -BlockType
+ -Material
 
-■IDEA
-※テーマに沿った街並みを生成できるようにするパラメーターを用意する
-
-■実装
-○検証のためのベースを実装
-
-●詳細な部分のパラメーター
-・道のモデリング
- -中心線からの距離
- -路肩のモデル
-・アセット
- -中心線からの距離
- -アセット周りのパラメーター
+・BaseAssetParam
+ -BlockType
+ -EdgeAsset
+ -NormalAsset
+ -Scale
 
 
-■CityMaker
-○アセットの修正(SoulCity)
-・アセットスケール周りではみ出さないように修正
+■ArcBase
+・CityBlockを分割して生成する
 
-○パラメーターの整理
-・※パラメーターの型を適切なものにする
-・Bool値で管理できないかを検証
-・パラメーターの順番を整理
+○空間をつくるパラメーターを用意する
+ -道
+ -空間
 
-●Bottom
-・下部側面のアセットを設定
+○パラメーター
+ -サイズ
+ -高さ
+ -オフセット値
 
-●Top
-・上部側面のアセットを設定
-・上部上面のAddObjとアセットを設定
-
-
-●NightCity
-○Sizeの多様性を検証
- -Small(Vent, SmallWindow), Midium(Window), Big(SignBoard)の3種類で検証
-
-○TopBlockの検証
-・鉄骨を配置
-・Volumeを配置
-・Assetを配置
- -ライト
- -テキスト
+○FrontDirection周りの修正
+ -FrontDirectionをVolumeMakerに継承する
 
 
-■ModelingStudy
-・多くのパターンが必要なアセットをモデリングで用意してみる
- -マテリアルはシンプルで、チュートリアルにちょうどいいモデルで練習する
-・道のベース及び、ベースとなるアセットを生成してみる(路肩、階段)
+■Raad
+※道幅、高さ、街区の大きさを意識して設計する
+・道をベースにしたパラメーターを用意する
 
-○サンプルデータを調査
- -一連のフローを確認する
+○パラメーター
+ -幅
+ -量(比率)
 
+
+■AddObj
+・PMを実装する
+ -PMに応じてアセットを配置するようにする
 
 [C++]
-※サンプルコードを参考に設計を行っていく
+※サンプルコードをベースに設計(改造)を行っていく
 
 ■3Dを2D表現する処理を実装
 ※3Dを2Dに落とし込むロジックを勉強
 ※行列周りの勉強を行う
 
-○行列周りのクラスを実装
-
-○ライン周りのクラス設計
-
-[Study]
-○2Dから3Dへの透視変換
+○投影行列変換を実装
 https://mitani.cs.tsukuba.ac.jp/lecture/old2015/cg/03/03_slides.pdf
 https://zenn.dev/kazukisako/articles/czprfbcybbce
 https://qiita.com/ryutorion/items/0824a8d6f27564e850c9
 
 https://zenn.dev/mebiusbox/articles/8e765148576919#%F0%9F%93%8C-%E3%83%AC%E3%83%B3%E3%83%80%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%91%E3%82%A4%E3%83%97%E3%83%A9%E3%82%A4%E3%83%B3
 https://tokoik.github.io/gg/ggbook03.pdf
+
+○オブジェクトクラスを実装
+※線と面をベースとした生成、アニメーションロジックを実装する
+※Objを線、面、で好きに構成して表示するように実装する
+・色
+ColorManager
+ -背景、オブジェクト
+ -メイン、ビビッド
+ -グラデーション
+・線
+LineManager
+ -
+・面
+SurfaceManager
+ -
+
+■アカデミー教材の改造
+○3Dゲーム向けに修正する
+
+
+[UE4]
+○設計
+https://www.docswell.com/s/alwei/ZJNP4K-2022-05-12-155309#p8
+
+○ActionRPGを勉強
+https://www.slideshare.net/slideshow/ue4action-rpg/113726210
