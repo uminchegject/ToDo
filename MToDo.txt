@@ -1,122 +1,63 @@
-[ToDo]
-●BaseAsset + BaseObj
+○FrontDirから,EdgePos, EdgeSize, SurfacePos, SurfaceSizeを求める処理を実装する
 
-○BaseAssetのスケールを埋めるように調整
- -BaseAssetのスケールを参照する
- -※VolumeMakerのDivideMinSizeを調整していびつなスケールにならないようにさせる
- 
-○BaseAssetの場合FrontDirDataから必要分のみ配置するように実装する
-
-○BaseMaterialかBaseAssetをインスタンスに設定する
-
-○BasePointを生成
-
-○パラメーター
-・BaseObjMaterialParam
- -BlockType
- -Material
-
-・BaseAssetParam
- -BlockType
- -EdgeAsset
- -NormalAsset
- -Scale
-
-
-●ArcBase
-・CityBlockを分割して生成する
-
-○空間をつくるパラメーターを用意する
- -道
- -空間
-
-○パラメーター
- -サイズ
- -高さ
- -オフセット値
-
-○FrontDirection周りの実装
- -FrontDirectionをVolumeMakerに継承する
-
-
-
-■AssetBlock
-・BaseAssetとDetailAssetを分けて実装する
-
-○フローの設計を修正
-・3DVolumeの配置位置を計算
-・BaseAssetの配置位置を計算
- -○BaseAssetを敷き詰めて配置できるようにサイズを修正
- -○角のBaseAssetを配置する
-・DetailAssetの配置位置を計算
-
-●3DObj
-・パラメーター
- -Material
- -ParamIndex
- 
-●BaseAsset
 ・パラメーター
  -BlockType
- -AssetType
- -Transform
- -Rotate
- -Scale
- -ChildBlockScale
- -VolumeScale
- -AddBlock
+ -Size
+ -Ref
 
+・BlockAsset
+・TopAsseet
+・BottomAsset
+・SideAsset
+・EdgeAssset
 
-■ArcBase
-・CityBlockを分割して生成する
+○SideAssetとEdgeAssetをVolume単位で管理する
+　-ベースポイントの生成までを実装する
 
-○空間をつくるパラメーターを用意する
- -道
- -空間
+if(-1 < v@FrontDirData.x)
+{
+	
+}
+if(-1.0 == v@FrontDirData.x && v@FrontDirData.x == 0.0)
+{
 
-○パラメーター
- -サイズ
- -高さ
- -オフセット値
+}
+if(-1 < v@FrontDirData.x)
+{
+	
+}
+if(-1.0 == v@FrontDirData.z && v@FrontDirData.z == 0.0)
+{
+	
+}
+if(-1 < v@FrontDirData.z)
+{
+	
+}
 
-○FrontDirection周りの修正
- -FrontDirectionをVolumeMakerに継承する
-
-■Raad
-※道幅、高さ、街区の大きさを意識して設計する
-・道をベースにしたパラメーターを用意する
-
-○パラメーター
- -幅
- -量(比率)
-
-■AddObj
-・PMを実装する
- -PMの子にアセットパラメーターをつける
- 
-
-[C++]
-■実装
-○3D行列への変換を実装する
-
-○矩形を生成できるように実装する
-
-■設計
-※線と面をベースとした生成、アニメーションロジックを実装する
-※Objを線、面、で好きに構成して表示するように実装する
-・色
-ColorManager
- -背景、オブジェクト
- -メイン、ビビッド
- -グラデーション
-・線
-LineManager
- -
-・面
-SurfaceManager
- -
-
-○オブジェクトごとにクラスを用意して線、面、色に関するメンバを整理する
-
-[UE4]
-○設計の勉強
+○それ以外はSurface単位で管理する
+ -ベースポイントの生成まで実装
+if(v@FrontDirData.y < 0 && @OriginNormal.y != 0.0)
+{
+    removeprim(0, @primnum, 1);    
+}
+if(v@FrontDirData.y < -1.0 || 0.0 < v@FrontDirData.y)
+{
+    if(v@OriginNormal.y == 1.0) removeprim(0, @primnum, 1);
+}
+if(v@FrontDirData.x < 0.0 && v@OriginNormal.x == -1.0)
+{
+    removeprim(0, @primnum, 1);
+}
+if(v@FrontDirData.x < -1.0 || 0.0 < v@FrontDirData.x)
+{
+    if(v@OriginNormal.x == 1.0) removeprim(0, @primnum, 1);
+}
+if(v@FrontDirData.z < 0.0 && v@OriginNormal.z == -1.0)
+{
+    removeprim(0, @primnum, 1);    
+}
+if(v@FrontDirData.z < -1.0 || 0.0 < v@FrontDirData.z)
+{
+    if(v@OriginNormal.z == 1.0) removeprim(0, @primnum, 1);    
+}
