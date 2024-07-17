@@ -11,39 +11,34 @@
 
 
 [PD]
+
 ■AssetBlock
-・BaseSizeを設定
-・BaseSizeからTopSize,SideSizeを除算
-・BaseSizeを分割
+※VolumeMakerのDivideMinSizeを調整していびつなスケールにならないようにさせる
+・TopBasePoint
+・BottomBasePoint
+・SideBasePoint
+・BlockBasePoint
+ -BaseAssetのスケールを埋めるように調整
 
-○TopBasePointの生成
+●パラメーター
+・Ref
+・Type
+・Scale
+・Transform
+・Rotate
+・SizeCofficient
 
-○BottomBasePointの生成
-
-○SideBasePointの生成
+○BaseVolume, BaseSurfaceの生成
 ※回転も考慮する
 
-○BlokoBasePointの生成
+○BaseSizeを設定
+○BaseSizeからTopSize,SideSize,BottomSizeを除算
+○BaseSizeを分割
+○BasePointの生成
+・BasePointを余分に生成しトグルを持たせる
+ -isTopBasePoint
+ -isSideBasePoint
 
-○BaseAssetのスケールを埋めるように調整
- -BaseAssetのスケールを参照する
- -※VolumeMakerのDivideMinSizeを調整していびつなスケールにならないようにさせる
- -BaseAssetの場合FrontDirDataから必要分のみ配置するように実装する
-
-○BaseMaterialかBaseAssetをインスタンスに設定する
-
-○BasePointを生成
-
-○パラメーター
-・BaseObjMaterialParam
- -BlockType
- -Material
-
-・BaseAssetParam
- -BlockType
- -EdgeAsset
- -NormalAsset
- -Scale
 
 
 ■ArcBase
@@ -82,15 +77,6 @@
 ※3Dを2Dに落とし込むロジックを勉強
 ※行列周りの勉強を行う
 
-○投影行列変換を実装
-・xとyのみに影響を与える行列を実装
-
-https://mitani.cs.tsukuba.ac.jp/lecture/old2015/cg/03/03_slides.pdf
-https://zenn.dev/kazukisako/articles/czprfbcybbce
-https://qiita.com/ryutorion/items/0824a8d6f27564e850c9
-
-https://zenn.dev/mebiusbox/articles/8e765148576919#%F0%9F%93%8C-%E3%83%AC%E3%83%B3%E3%83%80%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%91%E3%82%A4%E3%83%97%E3%83%A9%E3%82%A4%E3%83%B3
-https://tokoik.github.io/gg/ggbook03.pdf
 
 ○オブジェクトクラスを実装
 ※線と面をベースとした生成、アニメーションロジックを実装する
@@ -106,17 +92,20 @@ LineManager
 ・面
 SurfaceManager
  -
-
+ 
+ 
 ■アカデミー教材の改造
 ○3Dゲーム向けに修正する
 
 
 [UE4]
-○ActionRPGを勉強
-https://www.slideshare.net/slideshow/ue4action-rpg/113726210
+○GASを調査
+
+・TutorialからGasの実装方法を具体的に確認する
+・ActionRPGの調査
+ -Health, Mana, Damage, MoveSpeed周りを調査する
+https://www.docswell.com/s/EpicGamesJapan/KNLLP5-UE4_SGOsaka2018_ActionRPGSampleCat
 
 ○設計
 https://www.docswell.com/s/alwei/ZJNP4K-2022-05-12-155309#p8
 
-○ActionRPGの調査
- -GASの調査
