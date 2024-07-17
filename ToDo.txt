@@ -11,34 +11,21 @@
 
 
 [PD]
+○それぞれのタイプと大きさを管理するDTを用意する
+ -BaseBlockType
+ -AssetBlockType
+ -CityBlockType
 
 ■AssetBlock
 ※VolumeMakerのDivideMinSizeを調整していびつなスケールにならないようにさせる
-・TopBasePoint
-・BottomBasePoint
-・SideBasePoint
-・BlockBasePoint
- -BaseAssetのスケールを埋めるように調整
 
-●パラメーター
-・Ref
-・Type
-・Scale
-・Transform
-・Rotate
-・SizeCofficient
+○既存の実装をベースに修正する
 
-○BaseVolume, BaseSurfaceの生成
-※回転も考慮する
-
-○BaseSizeを設定
-○BaseSizeからTopSize,SideSize,BottomSizeを除算
-○BaseSizeを分割
-○BasePointの生成
-・BasePointを余分に生成しトグルを持たせる
- -isTopBasePoint
- -isSideBasePoint
-
+・TopBase
+・BottomBase
+・SideBase
+・BlockBase
+・EdgeBase
 
 
 ■ArcBase
@@ -108,4 +95,3 @@ https://www.docswell.com/s/EpicGamesJapan/KNLLP5-UE4_SGOsaka2018_ActionRPGSample
 
 ○設計
 https://www.docswell.com/s/alwei/ZJNP4K-2022-05-12-155309#p8
-
