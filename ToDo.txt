@@ -12,11 +12,23 @@
 
 [PD]
 ■AssetBlock
+・BaseSizeを設定
+・BaseSizeからTopSize,SideSizeを除算
+・BaseSizeを分割
+
+○TopBasePointの生成
+
+○BottomBasePointの生成
+
+○SideBasePointの生成
+※回転も考慮する
+
+○BlokoBasePointの生成
+
 ○BaseAssetのスケールを埋めるように調整
  -BaseAssetのスケールを参照する
  -※VolumeMakerのDivideMinSizeを調整していびつなスケールにならないようにさせる
- 
-○BaseAssetの場合FrontDirDataから必要分のみ配置するように実装する
+ -BaseAssetの場合FrontDirDataから必要分のみ配置するように実装する
 
 ○BaseMaterialかBaseAssetをインスタンスに設定する
 
@@ -71,6 +83,8 @@
 ※行列周りの勉強を行う
 
 ○投影行列変換を実装
+・xとyのみに影響を与える行列を実装
+
 https://mitani.cs.tsukuba.ac.jp/lecture/old2015/cg/03/03_slides.pdf
 https://zenn.dev/kazukisako/articles/czprfbcybbce
 https://qiita.com/ryutorion/items/0824a8d6f27564e850c9
@@ -98,8 +112,11 @@ SurfaceManager
 
 
 [UE4]
+○ActionRPGを勉強
+https://www.slideshare.net/slideshow/ue4action-rpg/113726210
+
 ○設計
 https://www.docswell.com/s/alwei/ZJNP4K-2022-05-12-155309#p8
 
-○ActionRPGを勉強
-https://www.slideshare.net/slideshow/ue4action-rpg/113726210
+○ActionRPGの調査
+ -GASの調査
