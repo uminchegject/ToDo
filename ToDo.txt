@@ -16,10 +16,12 @@
  -AssetBlockType
  -CityBlockType
 
-■AssetBlock
-※VolumeMakerのDivideMinSizeを調整していびつなスケールにならないようにさせる
+■ArcBase
+●BaseAsset
 
-○既存の実装をベースに修正する
+●PM
+
+○Assetの配置箇所を設定
 
 ・TopBase
 ・BottomBase
@@ -61,9 +63,6 @@
 ※サンプルコードをベースに設計(改造)を行っていく
 
 ■3Dを2D表現する処理を実装
-※3Dを2Dに落とし込むロジックを勉強
-※行列周りの勉強を行う
-
 
 ○オブジェクトクラスを実装
 ※線と面をベースとした生成、アニメーションロジックを実装する
@@ -87,11 +86,11 @@ SurfaceManager
 
 [UE4]
 ○GASを調査
-
 ・TutorialからGasの実装方法を具体的に確認する
 ・ActionRPGの調査
  -Health, Mana, Damage, MoveSpeed周りを調査する
 https://www.docswell.com/s/EpicGamesJapan/KNLLP5-UE4_SGOsaka2018_ActionRPGSampleCat
 
-○設計
+○ActionRPGを用いたゲームの実装
+・ActionRPGの調査
 https://www.docswell.com/s/alwei/ZJNP4K-2022-05-12-155309#p8
