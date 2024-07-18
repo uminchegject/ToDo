@@ -1,63 +1,28 @@
-○FrontDirから,EdgePos, EdgeSize, SurfacePos, SurfaceSizeを求める処理を実装する
+■Road
 
-・パラメーター
- -BlockType
- -Size
- -Ref
 
-・BlockAsset
-・TopAsseet
-・BottomAsset
-・SideAsset
-・EdgeAssset
+■CityBlock
 
-○SideAssetとEdgeAssetをVolume単位で管理する
-　-ベースポイントの生成までを実装する
 
-if(-1 < v@FrontDirData.x)
-{
-	
-}
-if(-1.0 == v@FrontDirData.x && v@FrontDirData.x == 0.0)
-{
+■Volume
+・1F
 
-}
-if(-1 < v@FrontDirData.x)
-{
-	
-}
-if(-1.0 == v@FrontDirData.z && v@FrontDirData.z == 0.0)
-{
-	
-}
-if(-1 < v@FrontDirData.z)
-{
-	
-}
 
-○それ以外はSurface単位で管理する
- -ベースポイントの生成まで実装
-if(v@FrontDirData.y < 0 && @OriginNormal.y != 0.0)
-{
-    removeprim(0, @primnum, 1);    
-}
-if(v@FrontDirData.y < -1.0 || 0.0 < v@FrontDirData.y)
-{
-    if(v@OriginNormal.y == 1.0) removeprim(0, @primnum, 1);
-}
-if(v@FrontDirData.x < 0.0 && v@OriginNormal.x == -1.0)
-{
-    removeprim(0, @primnum, 1);
-}
-if(v@FrontDirData.x < -1.0 || 0.0 < v@FrontDirData.x)
-{
-    if(v@OriginNormal.x == 1.0) removeprim(0, @primnum, 1);
-}
-if(v@FrontDirData.z < 0.0 && v@OriginNormal.z == -1.0)
-{
-    removeprim(0, @primnum, 1);    
-}
-if(v@FrontDirData.z < -1.0 || 0.0 < v@FrontDirData.z)
-{
-    if(v@OriginNormal.z == 1.0) removeprim(0, @primnum, 1);    
-}
+■DetailBase
+・BasePointを生成する
+○BasePoint用のパラメーターを用意
+※Volumeを基準に生成するパラメーターを用意
+
+○Assetの配置箇所を設定
+
+○2DGreebleの実装
+
+○BaseAssetの生成
+
+▲PM
+・DetailBaseと枝分かれする
+
+■Detail
+●Asset
+
+○Assetの配置
