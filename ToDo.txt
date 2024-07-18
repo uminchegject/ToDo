@@ -67,6 +67,9 @@
 ○オブジェクトクラスを実装
 ※線と面をベースとした生成、アニメーションロジックを実装する
 ※Objを線、面、で好きに構成して表示するように実装する
+
+
+
 ・色
 ColorManager
  -背景、オブジェクト
@@ -79,6 +82,9 @@ LineManager
 SurfaceManager
  -
  
+○カメラクラスの実装
+・向き
+・位置
  
 ■アカデミー教材の改造
 ○3Dゲーム向けに修正する
@@ -94,3 +100,4 @@ https://www.docswell.com/s/EpicGamesJapan/KNLLP5-UE4_SGOsaka2018_ActionRPGSample
 ○ActionRPGを用いたゲームの実装
 ・ActionRPGの調査
 https://www.docswell.com/s/alwei/ZJNP4K-2022-05-12-155309#p8
+https://www.docswell.com/s/EpicGamesJapan/KXVDY5-2022-08-02-124838#p7
