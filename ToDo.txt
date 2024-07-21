@@ -60,15 +60,17 @@
  -PMに応じてアセットを配置するようにする
 
 [C++]
+■アカデミーのコードを実装
 ※サンプルコードをベースに設計(改造)を行っていく
 
-■3Dを2D表現する処理を実装
+○サンプルコードの実装
+
+
+■カラー周り,3D周りのオリジナル表現を実装
 
 ○オブジェクトクラスを実装
 ※線と面をベースとした生成、アニメーションロジックを実装する
 ※Objを線、面、で好きに構成して表示するように実装する
-
-
 
 ・色
 ColorManager
@@ -86,8 +88,6 @@ SurfaceManager
 ・向き
 ・位置
  
-■アカデミー教材の改造
-○3Dゲーム向けに修正する
 
 
 [UE4]
@@ -96,6 +96,7 @@ SurfaceManager
 ・ActionRPGの調査
  -Health, Mana, Damage, MoveSpeed周りを調査する
 https://www.docswell.com/s/EpicGamesJapan/KNLLP5-UE4_SGOsaka2018_ActionRPGSampleCat
+
 
 ○ActionRPGを用いたゲームの実装
 ・ActionRPGの調査
