@@ -1,3 +1,7 @@
+
+PM→BasePoint
+
+
 ■Road
 
 
@@ -10,6 +14,24 @@
 
 ■DetailBase
 ・BasePointを生成する
+ -BasePoint
+ -BasePM→BasePoint
+ -BasePoint→BasePM
+・CopyToPointする
+・VolumeかEdgeかSurfaceで管理する
+
+●フロー
+・BasePMの生成
+・BasePointの生成
+ -DetailPMの生成
+ -DetailAssetの生成
+
+●パラメーター
+・ベースタイプ(Edge, Surface)
+・ベース位置(倍率、実サイズ)
+・ベーススケール(倍率、実サイズ)
+・BlockScale
+
 ○BasePoint用のパラメーターを用意
 ※Volumeを基準に生成するパラメーターを用意
 
@@ -17,12 +39,10 @@
 
 ○2DGreebleの実装
 
-○BaseAssetの生成
-
-▲PM
-・DetailBaseと枝分かれする
 
 ■Detail
+○BaseAssetの生成を検証
+
 ●Asset
 
 ○Assetの配置
