@@ -1,4 +1,6 @@
 [反省]
+※基本的な部分が設計されているコードを改造していく形で勉強していく
+
 ※もう一度資料を整理する
 ・必ずタイトルをプレーする
 ・一時間前には資料に目を通すなど準備を済ませておく
@@ -7,30 +9,22 @@
 [ToDo]
 ○プライバシー研修
 
+
 [Employ]
+テクニカルアーティスト
 
 
 [PD]
-○それぞれのタイプと大きさを管理するDTを用意する
- -BaseBlockType
- -AssetBlockType
- -CityBlockType
+■Road
+※道幅、高さ、街区の大きさを意識して設計する
+・道をベースにしたパラメーターを用意する
 
-■ArcBase
-●BaseAsset
-
-●PM
-
-○Assetの配置箇所を設定
-
-・TopBase
-・BottomBase
-・SideBase
-・BlockBase
-・EdgeBase
+○パラメーター
+ -幅
+ -量(比率)
 
 
-■ArcBase
+■CityBlock
 ・CityBlockを分割して生成する
 
 ○空間をつくるパラメーターを用意する
@@ -43,62 +37,68 @@
  -オフセット値
 
 ○FrontDirection周りの修正
- -FrontDirectionをVolumeMakerに継承する
+ -FrontDirectionをVolumeMakerに継承す
 
 
-■Raad
-※道幅、高さ、街区の大きさを意識して設計する
-・道をベースにしたパラメーターを用意する
-
-○パラメーター
- -幅
- -量(比率)
+■Volume
 
 
-■AddObj
-・PMを実装する
- -PMに応じてアセットを配置するようにする
+■DetailBase
+・BasePointを生成する
+ -BasePoint
+ -BasePM→BasePoint
+ -BasePoint→BasePM
+・CopyToPointする
+・VolumeかEdgeかSurfaceで管理する
+
+●フロー
+・BasePMの生成
+・BasePointの生成
+ -DetailPMの生成
+ -DetailAssetの生成
+
+●パラメーター
+・BaseType(Edge, Surface)
+・BasePointType(Base, DetailAsset)
+・Transform(倍率、実サイズ)
+・BaseScale
+・ChildScale
+
+○BasePoint用のパラメーターを用意
+※Volumeを基準に生成するパラメーターを用意
+
+○2DGreebleの実装
+
+
+■Detail
+○BaseAssetの生成を検証
+
+●Asset
+
+○Assetの配置
+
+
 
 [C++]
-■アカデミーのコードを実装
-※サンプルコードをベースに設計(改造)を行っていく
+■Base
+○アカデミーのコードを起動できるようにする
 
-○サンプルコードの実装
-
-
-■カラー周り,3D周りのオリジナル表現を実装
-
-○オブジェクトクラスを実装
-※線と面をベースとした生成、アニメーションロジックを実装する
-※Objを線、面、で好きに構成して表示するように実装する
-
-・色
-ColorManager
- -背景、オブジェクト
- -メイン、ビビッド
- -グラデーション
-・線
-LineManager
- -
-・面
-SurfaceManager
- -
- 
-○カメラクラスの実装
-・向き
-・位置
- 
+■Add
+○DXLibrary周りで追加で実装できそうな箇所を勉強する
 
 
 [UE4]
-○GASを調査
-・TutorialからGasの実装方法を具体的に確認する
-・ActionRPGの調査
- -Health, Mana, Damage, MoveSpeed周りを調査する
-https://www.docswell.com/s/EpicGamesJapan/KNLLP5-UE4_SGOsaka2018_ActionRPGSampleCat
-
-
-○ActionRPGを用いたゲームの実装
+■Base
+○ActionRPG
 ・ActionRPGの調査
 https://www.docswell.com/s/alwei/ZJNP4K-2022-05-12-155309#p8
 https://www.docswell.com/s/EpicGamesJapan/KXVDY5-2022-08-02-124838#p7
+
+
+■Add
+○GAS
+・TutorialからGasの実装方法を具体的に確認する
+・ActionRPGの調査
+ -Health, Mana, Damage, MoveSpeed周りを調査する
+ 
+○Paper2D
