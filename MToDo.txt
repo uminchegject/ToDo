@@ -1,52 +1,128 @@
+
+
+●MakeBase
+int isEdgeBlock1 = 0;
+int isEdgeBlock2 = 0;
+int isEdgeBlock3 = 0;
+int isEdgeBlock4 = 0;
+
+if(-1 < v@FrontDirData.x)
+{
+    vector spawnPos = v@P;
+    spawnPos.x -= v@scale.x / 2;
+	int pt = addpoint(0, spawnPos)
+	vector scale = v@scale;
+	scale.x = v@scale.z;
+	setpointattrib(ptnum, "Scale", pt, scale);
+	vector normal = 0;
+	normal.x = -1;
+	setpointattrib(ptnum, "N", normal);
+    isEdgeBlock1 = 1;
+    isEdgeBlock4 = 1;
+}
+if(-1.0 == v@FrontDirData.x && v@FrontDirData.x == 0.0)
+{
+	vector spawnPos = v@P;
+    spawnPos.x += v@scale.x / 2;
+	int pt = addpoint(0, spawnPos)
+	vector scale = v@scale;
+	scale.x = v@scale.z;
+	setpointattrib(ptnum, "Scale", pt, scale);
+	vector normal = 0;
+	normal.x = 1;
+	setpointattrib(ptnum, "N", normal);
+    isEdgeBlock2 = 1;
+    isEdgeBlock3 = 1;
+}
+if(-1 < v@FrontDirData.z)
+{   
+	vector spawnPos = v@P;
+    spawnPos.z -= v@scale.z / 2;
+	int pt = addpoint(0, spawnPos)
+	vector scale = v@scale;
+	setpointattrib(ptnum, "Scale", pt, scale);
+	vector normal = 0;
+	normal.z = -1;
+	setpointattrib(ptnum, "N", normal);
+    isEdgeBlock3 = 1;
+    isEdgeBlock4 = 1;
+}
+if(-1.0 == v@FrontDirData.z && v@FrontDirData.z == 0.0)
+{
+    spawnPos.z += v@scale.z / 2;
+	int pt = addpoint(0, spawnPos)
+	vector scale = v@scale;
+	setpointattrib(ptnum, "Scale", pt, scale);
+	vector normal = 0;
+	normal.z = 1;
+	setpointattrib(ptnum, "N", normal);
+    isEdgeBlock1 = 1;
+    isEdgeBlock2 = 1;
+}
+
+
+vector scale = (1.0, 1.0, 1.0);
+scale.y = v@scale.y;
+if(isEdgeBlock1 == 1)
+{
+    vector spawnPos = v@P;
+    spawnPos.x -= v@scale.x / 2;
+    spawnPos.z += v@scale.z / 2;
+    int pt = addpoint(0, spawnPos);
+    setpointattrib(0, "scale", pt, scale);
+	setpointattrib(0, "N", pt, (0.0, 0.0, 1.0))
+	setpointattrib(0, "isEdge", pt, 1);
+}
+if(isEdgeBlock2 == 1)
+{
+    vector spawnPos = v@P;
+    spawnPos.x += v@scale.x / 2;
+    spawnPos.z += v@scale.z / 2;
+    int pt = addpoint(0, spawnPos);
+    setpointattrib(0, "scale", pt, scale);
+	setpointattrib(0, "N", pt, (0.0, 0.0, 1.0))
+	setpointattrib(0, "isEdge", pt, 1);
+}
+if(isEdgeBlock3 == 1)
+{
+    vector spawnPos = v@P;
+    spawnPos.x += v@scale.x / 2;
+    spawnPos.z -= v@scale.z / 2;
+    int pt = addpoint(0, spawnPos);
+    setpointattrib(0, "scale", pt, scale);
+	setpointattrib(0, "N", pt, (0.0, 0.0, -1.0))
+	setpointattrib(0, "isEdge", pt, 1);
+}
+if(isEdgeBlock4 == 1)
+{
+    vector spawnPos = v@P;
+    spawnPos.x -= v@scale.x / 2;
+    spawnPos.z -= v@scale.z / 2;
+    int pt = addpoint(0, spawnPos);
+    setpointattrib(0, "scale", pt, scale);
+	setpointattrib(0, "N", pt, (0.0, 0.0, -1.0))
+	setpointattrib(0, "isEdge", pt, 1);
+}
+
 ●Attribute
- -Pos
- -Scale
- -Normal
+
+・Scale
+・ChildScale
 
 
-●BasePoint
-vector frontDirData = v@FrontDirData;
 
+●MakePoint
 
-if(v@FrontDirData.y < 0 && @OriginNormal.y != 0.0)
+for(int paramIndex = 0; paramIndex < point(1, "ParamNum", 0); paramIndex++)
 {
-    removeprim(0, @primnum, 1);    
-}
-if(v@FrontDirData.x < 0.0 && v@OriginNormal.x == -1.0)
-{
-    removeprim(0, @primnum, 1);    
-}
-if(v@FrontDirData.x < -1.0 || 0.0 < v@FrontDirData.x)
-{
-    if(v@OriginNormal.x == 1.0) removeprim(0, @primnum, 1);    
-}
-if(v@FrontDirData.z < 0.0 && v@OriginNormal.z == -1.0)
-{
-    removeprim(0, @primnum, 1);    
-}
-if(v@FrontDirData.z < -1.0 || 0.0 < v@FrontDirData.z)
-{
-    if(v@OriginNormal.z == 1.0) removeprim(0, @primnum, 1);    
-}
 
-int toggleEdge1
-int toggleEdge2
-int toggleEdge3
-int toggleEdge4
+		
+	vector basePos = v@P;
+	vector moveVec = point(1, "Transform", paramIndex);
+	if()
+	basePos += moveVec;
+	vector baseScale = v@scale;
+	
+	if()
+} 
 
-
-●Greeble
-・Baseの計算
- -Scale
- -Transform
-
-・Childの計算(Greeble)
- -MinSize
-
-
-●Pattern
-・Baseの計算
- -Scale
- -Transform
-・Childの計算
- -Scale
