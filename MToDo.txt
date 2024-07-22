@@ -1,48 +1,52 @@
-
-PM→BasePoint
-
-
-■Road
-
-
-■CityBlock
+●Attribute
+ -Pos
+ -Scale
+ -Normal
 
 
-■Volume
-・1F
+●BasePoint
+vector frontDirData = v@FrontDirData;
 
 
-■DetailBase
-・BasePointを生成する
- -BasePoint
- -BasePM→BasePoint
- -BasePoint→BasePM
-・CopyToPointする
-・VolumeかEdgeかSurfaceで管理する
+if(v@FrontDirData.y < 0 && @OriginNormal.y != 0.0)
+{
+    removeprim(0, @primnum, 1);    
+}
+if(v@FrontDirData.x < 0.0 && v@OriginNormal.x == -1.0)
+{
+    removeprim(0, @primnum, 1);    
+}
+if(v@FrontDirData.x < -1.0 || 0.0 < v@FrontDirData.x)
+{
+    if(v@OriginNormal.x == 1.0) removeprim(0, @primnum, 1);    
+}
+if(v@FrontDirData.z < 0.0 && v@OriginNormal.z == -1.0)
+{
+    removeprim(0, @primnum, 1);    
+}
+if(v@FrontDirData.z < -1.0 || 0.0 < v@FrontDirData.z)
+{
+    if(v@OriginNormal.z == 1.0) removeprim(0, @primnum, 1);    
+}
 
-●フロー
-・BasePMの生成
-・BasePointの生成
- -DetailPMの生成
- -DetailAssetの生成
-
-●パラメーター
-・ベースタイプ(Edge, Surface)
-・ベース位置(倍率、実サイズ)
-・ベーススケール(倍率、実サイズ)
-・BlockScale
-
-○BasePoint用のパラメーターを用意
-※Volumeを基準に生成するパラメーターを用意
-
-○Assetの配置箇所を設定
-
-○2DGreebleの実装
+int toggleEdge1
+int toggleEdge2
+int toggleEdge3
+int toggleEdge4
 
 
-■Detail
-○BaseAssetの生成を検証
+●Greeble
+・Baseの計算
+ -Scale
+ -Transform
 
-●Asset
+・Childの計算(Greeble)
+ -MinSize
 
-○Assetの配置
+
+●Pattern
+・Baseの計算
+ -Scale
+ -Transform
+・Childの計算
+ -Scale
