@@ -10,6 +10,25 @@
 
 
 [PD]
+-Volume
+ -BaseVolume
+ -BasePM
+-Surface
+ -PM
+-BasePoint
+ -DetailMD
+ -DetailAsset
+
+○BasePointの生成
+・パラメーターをベースにBasePointを配置
+ -Scale
+ -TopScale
+ -SideScale
+・Side部分で重らないように実装する
+
+○Assetの生成箇所を修正
+
+
 ■Road
 ※道幅、高さ、街区の大きさを意識して設計する
 ・道をベースにしたパラメーターを用意する
@@ -43,34 +62,9 @@
  -BasePoint
  -BasePM→BasePoint
  -BasePoint→BasePM
-・CopyToPointする
-・VolumeかEdgeかSurfaceで管理する
-
-●フロー
-・BasePMの生成
-・BasePointの生成
- -DetailPMの生成
- -DetailAssetの生成
-
-●パラメーター
-・BaseType(Edge, Surface)
-・BasePointType(Base, DetailAsset)
-・Transform(倍率、実サイズ)
-・BaseScale
-・ChildScale
-
-○BasePoint用のパラメーターを用意
-※Volumeを基準に生成するパラメーターを用意
-
-○2DGreebleの実装
-
 
 ■Detail
 ○BaseAssetの生成を検証
-
-●Asset
-
-○Assetの配置
 
 
 
@@ -80,9 +74,20 @@
 
 
 ■Add
-○ツール(GUI)の実装
-・Mapエディタの実装
+・QuitaCalendarで実装を調べる
+https://qiita.com/advent-calendar/2018/dxlib
 
+○基礎情報
+https://qiita.com/kama1021/items/fa4575745b4e5f7a202c
+
+○カメラの実装
+・カメラの検証
+ -カメラ位置と向きを原点に合わせる
+・矩形の実装
+ -3角形を組み合わせる
+
+○リソースのスマートポインタ管理
+https://qiita.com/CdecPGL/items/f698c8d0f5e4c9036915
 
 [UE4]
 ■Base
@@ -99,7 +104,8 @@ https://www.docswell.com/s/EpicGamesJapan/KXVDY5-2022-08-02-124838#p7
  -Health, Mana, Damage, MoveSpeed周りを調査する
  
 ○Paper2D
-・ThirdPersonで実装
-・レベル遷移
- -上部からの視点
- -横部からの視点
+https://zenn.dev/dany1468/scraps/b095b50acbaf66
+
+・Tutorialプロジェクトを調査
+ -発射物のチュートリアル
+ -ライティングのチュートリアル
