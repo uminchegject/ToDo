@@ -1,4 +1,35 @@
+■DetailBase
+・BasePointを生成する
+ -BasePoint
+ -BasePM→BasePoint
+ -BasePoint→BasePM
+・CopyToPointする
+・VolumeかEdgeかSurfaceで管理する
 
+●フロー
+・BasePMの生成
+・BasePointの生成
+ -DetailPMの生成
+ -DetailAssetの生成
+ 
+●パラメーター
+・BaseType(Edge, Surface)
+・Transform(倍率、実サイズ)
+・BaseScale
+・ChildScale
+
+○BasePoint用のパラメーターを用意
+※Volumeを基準に生成するパラメーターを用意
+
+
+-Volume
+ -BaseVolume
+ -BasePM
+-Surface
+ -PM
+-BasePoint
+ -DetailMD
+ -DetailAsset
 
 ●MakeBase
 int isEdgeBlock1 = 0;
