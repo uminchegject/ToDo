@@ -1,37 +1,10 @@
-■DetailBase
-・BasePointを生成する
- -BasePoint
- -BasePM→BasePoint
- -BasePoint→BasePM
-・CopyToPointする
-・VolumeかEdgeかSurfaceで管理する
+○BasePointの生成
+・パラメーターをベースにBasePointを配置
+ -Scale
+ -TopScale
+ -SideScale
+・Side部分で重らないように実装する
 
-●フロー
-・BasePMの生成
-・BasePointの生成
- -DetailPMの生成
- -DetailAssetの生成
- 
-●パラメーター
-・BaseType(Edge, Surface)
-・Transform(倍率、実サイズ)
-・BaseScale
-・ChildScale
-
-○BasePoint用のパラメーターを用意
-※Volumeを基準に生成するパラメーターを用意
-
-
--Volume
- -BaseVolume
- -BasePM
--Surface
- -PM
--BasePoint
- -DetailMD
- -DetailAsset
-
-●MakeBase
 int isEdgeBlock1 = 0;
 int isEdgeBlock2 = 0;
 int isEdgeBlock3 = 0;
@@ -135,25 +108,6 @@ if(isEdgeBlock4 == 1)
 	setpointattrib(0, "isEdge", pt, 1);
 }
 
-●Attribute
-
-・Scale
-・ChildScale
 
 
-
-●MakePoint
-
-for(int paramIndex = 0; paramIndex < point(1, "ParamNum", 0); paramIndex++)
-{
-
-		
-	vector basePos = v@P;
-	vector moveVec = point(1, "Transform", paramIndex);
-	if()
-	basePos += moveVec;
-	vector baseScale = v@scale;
-	
-	if()
-} 
-
+○Assetの生成箇所を修正
