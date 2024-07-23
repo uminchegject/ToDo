@@ -5,109 +5,82 @@
  -SideScale
 ・Side部分で重らないように実装する
 
-int isEdgeBlock1 = 0;
-int isEdgeBlock2 = 0;
-int isEdgeBlock3 = 0;
-int isEdgeBlock4 = 0;
+
+●MakeBase
+int pt1 = 0;
+int pt2 = 0;
+int pt3 = 0;
+int pt4 = 0;
+int isSideSurface = 0;
 
 if(-1 < v@FrontDirData.x)
 {
     vector spawnPos = v@P;
     spawnPos.x -= v@scale.x / 2;
-	int pt = addpoint(0, spawnPos)
+	int pt1 = addpoint(0, spawnPos)
 	vector scale = v@scale;
 	scale.x = v@scale.z;
-	setpointattrib(ptnum, "Scale", pt, scale);
+	setpointattrib(ptnum, "Scale", pt1, scale);
 	vector normal = 0;
 	normal.x = -1;
-	setpointattrib(ptnum, "N", normal);
-    isEdgeBlock1 = 1;
-    isEdgeBlock4 = 1;
+	setpointattrib(ptnum, "N", pt1, normal);
+	setpointattrib(ptnum, "IsEachEdge", pt1, 1);
+    isSideSurface = 1;
 }
 if(-1.0 == v@FrontDirData.x && v@FrontDirData.x == 0.0)
 {
 	vector spawnPos = v@P;
     spawnPos.x += v@scale.x / 2;
-	int pt = addpoint(0, spawnPos)
+	int pt2 = addpoint(0, spawnPos)
 	vector scale = v@scale;
 	scale.x = v@scale.z;
-	setpointattrib(ptnum, "Scale", pt, scale);
+	setpointattrib(ptnum, "Scale", pt2, scale);
 	vector normal = 0;
 	normal.x = 1;
-	setpointattrib(ptnum, "N", normal);
-    isEdgeBlock2 = 1;
-    isEdgeBlock3 = 1;
+	setpointattrib(ptnum, "N", pt2, normal);
+	if(isSideSurface == 0)
+	{
+		setpointattrib(ptnum, "IsEachEdge", pt2, 1);
+		isSideSurface = 1;
+	}
 }
 if(-1 < v@FrontDirData.z)
 {   
 	vector spawnPos = v@P;
     spawnPos.z -= v@scale.z / 2;
-	int pt = addpoint(0, spawnPos)
+	int pt3 = addpoint(0, spawnPos)
 	vector scale = v@scale;
-	setpointattrib(ptnum, "Scale", pt, scale);
+	setpointattrib(ptnum, "Scale", pt3, scale);
 	vector normal = 0;
 	normal.z = -1;
-	setpointattrib(ptnum, "N", normal);
-    isEdgeBlock3 = 1;
-    isEdgeBlock4 = 1;
+	setpointattrib(ptnum, "N", pt3, normal);
+	if(isSideSurface == 0)
+	{
+		setpointattrib(ptnum, "IsEachEdge", pt2, 1);
+		isSideSurface = 1;
+	}
+
 }
 if(-1.0 == v@FrontDirData.z && v@FrontDirData.z == 0.0)
 {
     spawnPos.z += v@scale.z / 2;
-	int pt = addpoint(0, spawnPos)
+	int pt4 = addpoint(0, spawnPos)
 	vector scale = v@scale;
-	setpointattrib(ptnum, "Scale", pt, scale);
+	setpointattrib(ptnum, "Scale", pt4, scale);
 	vector normal = 0;
 	normal.z = 1;
-	setpointattrib(ptnum, "N", normal);
-    isEdgeBlock1 = 1;
-    isEdgeBlock2 = 1;
+	setpointattrib(ptnum, "N", pt4, normal);
+	if(isSideSurface == 0)
+	{
+		setpointattrib(ptnum, "IsEachEdge", pt2, 1);
+		isSideSurface = 1;
+	}
 }
 
-
-vector scale = (1.0, 1.0, 1.0);
-scale.y = v@scale.y;
-if(isEdgeBlock1 == 1)
-{
-    vector spawnPos = v@P;
-    spawnPos.x -= v@scale.x / 2;
-    spawnPos.z += v@scale.z / 2;
-    int pt = addpoint(0, spawnPos);
-    setpointattrib(0, "scale", pt, scale);
-	setpointattrib(0, "N", pt, (0.0, 0.0, 1.0))
-	setpointattrib(0, "isEdge", pt, 1);
-}
-if(isEdgeBlock2 == 1)
-{
-    vector spawnPos = v@P;
-    spawnPos.x += v@scale.x / 2;
-    spawnPos.z += v@scale.z / 2;
-    int pt = addpoint(0, spawnPos);
-    setpointattrib(0, "scale", pt, scale);
-	setpointattrib(0, "N", pt, (0.0, 0.0, 1.0))
-	setpointattrib(0, "isEdge", pt, 1);
-}
-if(isEdgeBlock3 == 1)
-{
-    vector spawnPos = v@P;
-    spawnPos.x += v@scale.x / 2;
-    spawnPos.z -= v@scale.z / 2;
-    int pt = addpoint(0, spawnPos);
-    setpointattrib(0, "scale", pt, scale);
-	setpointattrib(0, "N", pt, (0.0, 0.0, -1.0))
-	setpointattrib(0, "isEdge", pt, 1);
-}
-if(isEdgeBlock4 == 1)
-{
-    vector spawnPos = v@P;
-    spawnPos.x -= v@scale.x / 2;
-    spawnPos.z -= v@scale.z / 2;
-    int pt = addpoint(0, spawnPos);
-    setpointattrib(0, "scale", pt, scale);
-	setpointattrib(0, "N", pt, (0.0, 0.0, -1.0))
-	setpointattrib(0, "isEdge", pt, 1);
-}
+●MakePoint
+-Scale
+-TopScale
+-SideScale
 
 
-
-○Assetの生成箇所を修正
+●MakeAsset
