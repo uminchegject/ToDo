@@ -1,116 +1,242 @@
-●Divideの繰り返し処理を実装
-float divideRatio = = point(1, "DivideRatio", paramIndex);
-vector divideRange = point(1, "DivideRange", paramIndex);
-vector AxisToDivide = point(1, "AxisToDivide", paramIndex);
-int divideLoopNum = point(1, "DivideLoopNum", paramIndex);
-float divideMinSize = point(1, "DivideMinSize", paramIndex);
-
-vector dividingBlockPosList[];
-vector dividingBlockScaleList[];
-matrix dividingBlockMatrixList[];
-vector dividingBlockFrontDirDataList[];
-
-dividingBlockPosList[0] = blockPosOrigin;
-dividingBlockScaleList[0] = blockScaleOrigin;
-dividingBlockMatrixList[0] = blockMatrixOrigin;
-dividingBlockFrontDirDataList[0] = blockFrontDirDataOrigin;
+○BasePointの生成
+・パラメーターをベースにBasePointを配置
+ -Scale
+ -TopScale
+ -SideScale
+・Side部分で重らないように実装する
 
 
-vector divideAxis = 0;
-divideAxis.x = 1;
-for(int j = 0; j < divideLoopNum; j++)
+●MakeBase
+int pt1 = 0;
+int pt2 = 0;
+int pt3 = 0;
+int pt4 = 0;
+int isSideSurface = 0;
+
+if(-1 < v@FrontDirData.x)
 {
-	if(divideAxis.x == 1) 
+    vector spawnPos = v@P;
+    spawnPos.x -= v@scale.x / 2;
+	int pt1 = addpoint(0, spawnPos)
+	vector scale = v@scale;
+	scale.x = v@scale.z;
+	setpointattrib(ptnum, "Scale", pt1, scale);
+	vector normal = 0;
+	normal.x = -1;
+	setpointattrib(ptnum, "N", pt1, normal);
+	setpointattrib(ptnum, "IsEachEdge", pt1, 1);
+    isSideSurface = 1;
+}
+if(-1.0 == v@FrontDirData.x && v@FrontDirData.x == 0.0)
+{
+	vector spawnPos = v@P;
+    spawnPos.x += v@scale.x / 2;
+	int pt2 = addpoint(0, spawnPos)
+	vector scale = v@scale;
+	scale.x = v@scale.z;
+	setpointattrib(ptnum, "Scale", pt2, scale);
+	vector normal = 0;
+	normal.x = 1;
+	setpointattrib(ptnum, "N", pt2, normal);
+	if(isSideSurface == 0)
 	{
-		divideAxis = 0;
-		if(0 < diviAxisToDividedeAxis.y) divideAxis.y = 1;
-		else if(0 < diviAxisToDividedeAxis.z) divideAxis.z = 1;
+		setpointattrib(ptnum, "IsEachEdge", pt2, 1);
+		isSideSurface = 1;
 	}
-	if(divideAxis.y == 1) 
+}
+if(-1 < v@FrontDirData.z)
+{   
+	vector spawnPos = v@P;
+    spawnPos.z -= v@scale.z / 2;
+	int pt3 = addpoint(0, spawnPos)
+	vector scale = v@scale;
+	setpointattrib(ptnum, "Scale", pt3, scale);
+	vector normal = 0;
+	normal.z = -1;
+	setpointattrib(ptnum, "N", pt3, normal);
+	if(isSideSurface == 0)
 	{
-		divideAxis = 0;
-		if(0 < diviAxisToDividedeAxis.z) divideAxis.z = 1;
-		else if(0 < diviAxisToDividedeAxis.x) divideAxis.x = 1;
+		setpointattrib(ptnum, "IsEachEdge", pt2, 1);
+		isSideSurface = 1;
 	}
-	if(divideAxis.z == 1) 
+
+}
+if(-1.0 == v@FrontDirData.z && v@FrontDirData.z == 0.0)
+{
+    spawnPos.z += v@scale.z / 2;
+	int pt4 = addpoint(0, spawnPos)
+	vector scale = v@scale;
+	setpointattrib(ptnum, "Scale", pt4, scale);
+	vector normal = 0;
+	normal.z = 1;
+	setpointattrib(ptnum, "N", pt4, normal);
+	if(isSideSurface == 0)
 	{
-		divideAxis = 0;
-		if(0 < diviAxisToDividedeAxis.x) divideAxis.x = 1;
-		else if(0 < diviAxisToDividedeAxis.y) divideAxis.y = 1;
+		setpointattrib(ptnum, "IsEachEdge", pt2, 1);
+		isSideSurface = 1;
 	}
-
-	int dividingBlockNum = len(dividingBlockPosList);
-	for(int k = 0; k < dividingBlockNum ; ++k)
-	{
-		loopNum += seed;
-		
-		vector dividingBlockPosOrigin = removeindex(dividingBlockPosList, 0);
-		vector dividingBlockScaleOrigin = removeindex(dividingBlockScaleList, 0);
-		int dividingBlockMatrixOrigin = removeindex(dividingBlockMatrixList ,0);
-		int dividingBlockFrontDirDataOrigin = removeindex(dividingBlockFrontDirDataList ,0);
-		
-		if(divideRatio < random(loopNum + j + k))             
-		{
-			push(dividingBlockPosList, dividingBlockPosOrigin);
-			push(dividingBlockScaleList, dividingBlockScaleOrigin); 
-			push(dividingBlockMatrixList, dividingBlockMatrixOrigin);
-			push(dividingBlockFrontDirDataList, dividingBlockFrontDirDataOrigin);
-			continue;
-		}      
-
-		float block1ScaleValue = random(dividingBlockPosOrigin * (i + loopNum)) * (divideRange.y - divideRange.x) + divideRange.x;   
-		float block2ScaleValue = 1 - block1ScaleValue;
-		vector block1Scale = dividingBlockScaleOrigin * (baseVector - divideAxis * block1ScaleValue);
-		vector block2Scale = dividingBlockScaleOrigin * (baseVector - divideAxis * block2ScaleValue);
-
-		vector block1Pos = dividingBlockPosOrigin - divideAxis * (block1Scale / 2 + dividingBlockScaleOrigin / 2 - block1Scale) * dividingBlockMatrixOrigin;
-		vector block2Pos = dividingBlockPosOrigin + divideAxis * (block2Scale / 2 + dividingBlockScaleOrigin / 2 - block2Scale) * dividingBlockMatrixOrigin;
-
-		//塞ぎ面周り
-		vector block1CloseFront = divideAxis;
-		vector block2CloseFront = -divideAxis;
-		vector block1FrontDirData = dividingBlockFrontDirDataOrigin;
-		vector block2FrontDirData = dividingBlockFrontDirDataOrigin; 
-		int toggle = 1;
-		while(toggle != 0)
-		{
-			if(1 < length((block1CloseFront + block1FrontDirData) * block1CloseFront)) {break;}
-			block1FrontDirData += block1CloseFront + block1FrontDirData * block1CloseFront * 100;
-			toggle = 0;
-		}
-		toggle = 1;
-		while(toggle != 0)
-		{
-			if(1 < length((block2CloseFront + block2FrontDirData) * block2CloseFront)) {break;}
-			block2FrontDirData += block2CloseFront + block2FrontDirData * block2CloseFront * 100;
-			toggle = 0; 
-		}
-
-		if(length(divideAxis * block1Scale) < divideMinSize|| length(divideAxis * block1Scale) < divideMinSize)
-		{
-			push(dividingBlockPosList, dividingBlockPosOrigin);
-			push(dividingBlockScaleList, dividingBlockScaleOrigin); 
-			push(dividingBlockMatrixList, dividingBlockMatrixOrigin);
-			push(dividingBlockFrontDirDataList, dividingBlockFrontDirDataOrigin);
-			continue;           
-		}
-		
-		push(dividingBlockPosList, block1Pos);
-		push(dividingBlockPosList, block2Pos);
-		push(dividingBlockScaleList, block1Scale);
-		push(dividingBlockScaleList, block2Scale); 
-		push(dividingBlockMatrixList, blockMatrixOrigin);
-		push(dividingBlockMatrixList, blockMatrixOrigin);
-		push(dividingBlockFrontDirDataList, block1FrontDirData);
-		push(dividingBlockFrontDirDataList, block2FrontDirData);
-	}   
 }
 
-for(int j = 0; j < len(dividingBlockPosList); j++)
+●MakePoint
+-Scale
+-TopScale
+-BottomScale
+-SideScale
+
+
+for(int paramIndex = 0; paramIndex < point(1, "ParamNum", 0); ++paramIndex)
 {
-	push(blockPosList, dividingBlockPosList[j]);
-	push(blockScaleList, dividingBlockScaleList[j]);
-	push(blockMatrixList, dividingBlockMatrixList[j]);
-	push(frontDirDataList, dividingBlockFrontDirDataList[j]);	
-	push(blockParamIndexList, blockParamIndexOrigin);
+
+	vector blockscale = point(1, "BlockScale", paramIndex);
+	vector topScale = point(1, "TopScale", paramIndex);
+	vector sideScale = point(1, "SideScale", paramIndex);
+	vector bottomScale = point(1, "BottomScale", paramIndex);
+
+	//ブロック周り
+	float sizeX = v@scale.x - sideScale.x * 2;
+	float sizeY = v@scale.y - topScale.y - bottomScale.y;	
+	
+	int blockXAxisNum = int(sizeX / blockscale.x);
+	int blockYAxisNum = int(sizeY / blockscale.y);
+	if(blockXAxisNum < 1) blockXAxisNum = 1;
+	if(blockYAxisNum < 1) blockYAxisNum = 1;
+	
+	vector baseValue;
+	baseValue.x = v@scale.x / (sideScale.x * 2 + sizeX * blockXAxisNum);
+	baseValue.y = v@scale.y / (topScale.y + bottomScale.y + sizeY * blockYAxisNum);	
+	
+	vector sideDir = v@N;
+	vector axis = set(0,1,0);
+	vector4 q = quaternion(radians(90) ,axis);
+	sideDir *= qconvert(q);	
+	
+	vector spawnBasePos; 
+	spawnBasePos = v@P;
+	spawnBasePos -= v@scale.x * 0.5 * sideDir;
+	spawnBasePos.y -= v@scale.y * 0.5;
+	
+	
+	for(int i = 0; i < blockXAxisNum; ++i)
+	{	
+		int pt = 0;
+		for(int j = 0; j < blockYAxisNum; ++j)
+		{
+			vector spawnPos = spawnBasePos;
+			spawnPos += 
+			pt = addpoint(0, spawnPos);
+		}
+
+		if(j == 0) {setpointattrib(0, "IsBottomPoint", pt, 1);}
+		if(j == blockYAxisNum - 1){setpointattrib(0, "IsTopPoint", pt, 1);}
+		
+		if(i == 0) 
+		{
+			if(j == 0 || j == blockYAxisNum - 1)
+				{setpointattrib(0, "IsEdgePoint", pt, 1);}
+			else
+				{setpointattrib(0, "IsSidePoint", pt, 1);}
+		}	
+		if(i == blockXAxisNum - 1 && i@IsEachEdge == 1)
+		{
+			if(j == 0 || j == blockYAxisNum - 1)
+				{setpointattrib(0, "IsEdgePoint", pt, 1);}
+			else
+				{setpointattrib(0, "IsSidePoint", pt, 1);}
+		}
+		
+		
+		
+	}
+	
+}
+
+●MakeAsset
+int BlockTypeNum = point(1, "AssetParamNum", 0);
+int blockTypeParamIndex = v@BlockParamIndex.x + int(random(@P) * (v@BlockParamIndex.y - v@BlockParamIndex.x + 0.9));
+for(int blockTypeIndex = 0; blockTypeIndex < BlockTypeNum; ++blockTypeIndex)
+{
+    //ブロック選別
+    string selectedType = point(1, "BlockType", blockTypeIndex);
+    if(selectedType != blockTypeParamIndex) { continue;}
+	
+	float randomNum = random(@P * blockTypeIndex);                   
+
+	//アセットDT周り
+	int AssetRefNum = point(2, "AssetRefNum", 0);
+	int AssetRefIndexList[];
+	for(int k = 0; k < AssetRefNum; ++k)
+	{
+		string assetType1 = point(1, "AssetType", blockTypeIndex);
+		string assetType2 = point(2, "AssetType", k);
+		if(assetType1 == assetType2)
+		{
+			append(AssetRefIndexList, k);
+		}
+	}
+
+	int assetRefIndex = AssetRefIndexList[int(len(AssetRefIndexList) * randomNum + 0.9)];
+	string assetRef = point(2, "AssetRef", assetRefIndex);
+
+	//回転周り
+	vector rotate = point(1, "Rotate", blockTypeIndex);
+	vector assetRotate = point(2, "Rotate", assetRefIndex);
+	vector axis = set(1,0,0);
+	vector4 q = quaternion(radians(rotate.x + assetRotate.x) ,axis);
+	matrix mRotate = qconvert(q);
+	axis = set(0,1,0);
+	q = quaternion(radians(rotate.y + assetRotate.y) ,axis);
+	mRotate *= qconvert(q);
+	axis = set(0,0,1);
+	q = quaternion(radians(rotate.z + assetRotate.z) ,axis);
+	mRotate *= qconvert(q);
+	vector normal;
+	normal.z = 1;
+	q = dihedral(normal, v@N);  
+	mRotate *= qconvert(q);
+	normal *= mRotate; // 回転行列を乗算
+
+	//移動周り    
+	vector spawnBasePos = v@P;
+	vector transform = point(1, "Transform", blockTypeIndex);
+	transform *= adjustedScale;
+	transform *= mRotate;
+	spawnBasePos += transform;
+
+	//アセットの微調整
+	vector sizeRange = point(1, "SizeRange", blockTypeIndex);            
+	vector assetTransform = point(2, "Transform", assetRefIndex);
+	float sizeCofficient = point(2, "SizeCofficient", assetRefIndex);
+	sizeCofficient *= sizeRange.x + randomNum * (sizeRange.y - sizeRange.x);
+
+	int isYAxisAssetScale = point(1, "IsYAxisAssetScale", blockTypeIndex);
+	vector assetScale = sizeCofficient * volumeScale.x;
+	if(0 < isYAxisAssetScale) {assetScale = sizeCofficient * volumeScale.y;}
+
+	vector adjustedAssetMove = assetTransform * sizeCofficient * volumeScale;
+	adjustedAssetMove *= mRotate;
+	spawnBasePos += adjustedAssetMove;
+
+	//TransformRange
+	vector transformXAxisRange = point(1 , "TransformXAxisRange", blockTypeIndex);
+	vector transformYAxisRange = point(1 , "TransformYAxisRange", blockTypeIndex);
+							
+	vector spawnPos = spawnBasePos;
+	spawnPos += adjustedScale.x * (i - 0.5) * widthAxis - sizeX * widthAxis / 2;
+	spawnPos += adjustedScale.y * (j - 0.5) * heightAxis - sizeY * heightAxis / 2;
+
+	vector movePos;
+	movePos.x = random(spawnPos * 10) * (transformXAxisRange.y - transformXAxisRange.x) + transformXAxisRange.x;
+	movePos.y = random(spawnPos * 20) * (transformYAxisRange.y - transformYAxisRange.y) + transformYAxisRange.y;
+
+	axis = set(0,1,0);
+	q = quaternion(radians(90) ,axis);
+	mRotate = qconvert(q);            
+	movePos *= mRotate;
+	spawnPos += movePos;
+	if(point(1 , "RemainRatio", blockTypeIndex) < random(spawnPos)) {continue;}
+
+	int pt = addpoint(0, spawnPos);
+	setpointattrib(0, "N", pt, normal);
+	setpointattrib(0, "scale", pt, assetScale);
+	setpointattrib(0, "AssetRef", pt, assetRef);
 }
