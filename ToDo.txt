@@ -9,12 +9,12 @@
 
 
 [PD]
--Volume
+・Volume
  -BaseVolume
  -BasePM
--Surface
+・Surface
  -PM
--BasePoint
+・BasePoint
  -DetailMD
  -DetailAsset
 
@@ -108,3 +108,5 @@ https://zenn.dev/dany1468/scraps/b095b50acbaf66
 ・Tutorialプロジェクトを調査
  -発射物のチュートリアル
  -ライティングのチュートリアル
+ 
+・HD2DのBPを確認
