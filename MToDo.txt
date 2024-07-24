@@ -1,12 +1,21 @@
 ■CityMaker
-・Volume
- -BaseVolume
- -BasePM
-・Surface
- -PM
-・BasePoint
- -DetailMD
- -DetailAsset
+・3D
+ -Volume
+・2D
+ -Surface
+・1D
+ -BasePoint
+
+●3D
+・Baseの生成検証
+ -Road
+ -ArcBase
+
+●2D
+・Paper2Dの背景の生成
+
+●1D
+・Detailのブラッシュアップ 
 
 ○Baseの生成のみで検証を行う
 
