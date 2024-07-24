@@ -1,125 +1,21 @@
-○BasePointの生成
-・パラメーターをベースにBasePointを配置
- -Scale
- -TopScale
- -SideScale
-・Side部分で重らないように実装する
+■CityMaker
+・Volume
+ -BaseVolume
+ -BasePM
+・Surface
+ -PM
+・BasePoint
+ -DetailMD
+ -DetailAsset
+
+○Baseの生成のみで検証を行う
 
 
-●MakeBase
-int pt1 = 0;
-int pt2 = 0;
-int pt3 = 0;
-int pt4 = 0;
-int isSideSurface = 0;
 
-if(-1 < v@FrontDirData.x)
-{
-    vector spawnPos = v@P;
-    spawnPos.x -= v@scale.x / 2;
-	int pt1 = addpoint(0, spawnPos)
-	vector scale = v@scale;
-	scale.x = v@scale.z;
-	setpointattrib(ptnum, "Scale", pt1, scale);
-	vector normal = 0;
-	normal.x = -1;
-	setpointattrib(ptnum, "N", pt1, normal);
-	setpointattrib(ptnum, "IsEachEdge", pt1, 1);
-    isSideSurface = 1;
-}
-if(-1.0 == v@FrontDirData.x && v@FrontDirData.x == 0.0)
-{
-	vector spawnPos = v@P;
-    spawnPos.x += v@scale.x / 2;
-	int pt2 = addpoint(0, spawnPos)
-	vector scale = v@scale;
-	scale.x = v@scale.z;
-	setpointattrib(ptnum, "Scale", pt2, scale);
-	vector normal = 0;
-	normal.x = 1;
-	setpointattrib(ptnum, "N", pt2, normal);
-	if(isSideSurface == 0)
-	{
-		setpointattrib(ptnum, "IsEachEdge", pt2, 1);
-		isSideSurface = 1;
-	}
-}
-if(-1 < v@FrontDirData.z)
-{   
-	vector spawnPos = v@P;
-    spawnPos.z -= v@scale.z / 2;
-	int pt3 = addpoint(0, spawnPos)
-	vector scale = v@scale;
-	setpointattrib(ptnum, "Scale", pt3, scale);
-	vector normal = 0;
-	normal.z = -1;
-	setpointattrib(ptnum, "N", pt3, normal);
-	if(isSideSurface == 0)
-	{
-		setpointattrib(ptnum, "IsEachEdge", pt2, 1);
-		isSideSurface = 1;
-	}
+■C++
+○線、面をベースにした実装
+・カメラの実装
+・オブジェクトの実装
 
-}
-if(-1.0 == v@FrontDirData.z && v@FrontDirData.z == 0.0)
-{
-    spawnPos.z += v@scale.z / 2;
-	int pt4 = addpoint(0, spawnPos)
-	vector scale = v@scale;
-	setpointattrib(ptnum, "Scale", pt4, scale);
-	vector normal = 0;
-	normal.z = 1;
-	setpointattrib(ptnum, "N", pt4, normal);
-	if(isSideSurface == 0)
-	{
-		setpointattrib(ptnum, "IsEachEdge", pt2, 1);
-		isSideSurface = 1;
-	}
-}
-
-●MakePoint
--Scale
--TopScale
--BottomScale
--SideScale
-
-
-for(int paramIndex = 0; paramIndex < point(1, "ParamNum", 0); ++paramIndex)
-{
-
-	vector blockscale = point(1, "BlockScale", paramIndex);
-	vector topScale = point(1, "TopScale", paramIndex);
-	vector sideScale = point(1, "SideScale", paramIndex);
-	vector bottomScale = point(1, "BottomScale", paramIndex);
-
-	//ブロック周り
-	float sizeX = v@scale.x - sideScale.x
-	if(i@isSideSurface == 1) sizeX -= sideScale.x;
-	float sizeY = v@scale.y - topScale.y - bottomScale.y;
-	
-	
-	int blockXAxisNum = int(sizeX / blockscale.x);
-	int blockYAxisNum = int(sizeY / blockscale.y);
-	if(blockXAxisNum < 1) blockXAxisNum = 1;
-	if(blockYAxisNum < 1) blockYAxisNum = 1;
-	vector adjustedScale;
-	adjustedScale.x = sizeX / blockXAxisNum;
-	adjustedScale.y = sizeY / blockYAxisNum;
-	adjustedScale.z = adjustedScale.x * blockscale.z;
-	
-	vector normal;
-	normal.z = 1;
-	q = dihedral(normal, v@N);
-	mRotate *= qconvert(q);
-	
-	for(int i = 1; i < blockXAxisNum + 1; ++i)
-	{
-		for(int j = 1; j < blockYAxisNum + 1; ++j)
-		{   
-			
-		}
-	}
-	
-}
-
-●MakeAsset
+■UE4
+○HD2Dの実装
