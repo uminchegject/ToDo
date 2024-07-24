@@ -80,7 +80,46 @@ if(-1.0 == v@FrontDirData.z && v@FrontDirData.z == 0.0)
 ●MakePoint
 -Scale
 -TopScale
+-BottomScale
 -SideScale
 
+
+for(int paramIndex = 0; paramIndex < point(1, "ParamNum", 0); ++paramIndex)
+{
+
+	vector blockscale = point(1, "BlockScale", paramIndex);
+	vector topScale = point(1, "TopScale", paramIndex);
+	vector sideScale = point(1, "SideScale", paramIndex);
+	vector bottomScale = point(1, "BottomScale", paramIndex);
+
+	//ブロック周り
+	float sizeX = v@scale.x - sideScale.x
+	if(i@isSideSurface == 1) sizeX -= sideScale.x;
+	float sizeY = v@scale.y - topScale.y - bottomScale.y;
+	
+	
+	int blockXAxisNum = int(sizeX / blockscale.x);
+	int blockYAxisNum = int(sizeY / blockscale.y);
+	if(blockXAxisNum < 1) blockXAxisNum = 1;
+	if(blockYAxisNum < 1) blockYAxisNum = 1;
+	vector adjustedScale;
+	adjustedScale.x = sizeX / blockXAxisNum;
+	adjustedScale.y = sizeY / blockYAxisNum;
+	adjustedScale.z = adjustedScale.x * blockscale.z;
+	
+	vector normal;
+	normal.z = 1;
+	q = dihedral(normal, v@N);
+	mRotate *= qconvert(q);
+	
+	for(int i = 1; i < blockXAxisNum + 1; ++i)
+	{
+		for(int j = 1; j < blockYAxisNum + 1; ++j)
+		{   
+			
+		}
+	}
+	
+}
 
 ●MakeAsset
