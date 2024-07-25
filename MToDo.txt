@@ -1,4 +1,10 @@
 ■CityMaker
+○DetailVolumeMakerのロジック設計
+・サイズ設定を細かく行う
+ -FrontData,3D情報から生成できるようにする
+・VolumeMakerのロジックを改造する形で実装する
+・Volume→BasePointまでの処理を行う
+
 ・3D
  -Volume
 ・2D
