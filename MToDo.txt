@@ -1,3 +1,48 @@
+■反省
+※PDとPGを切り分けて勉強する
+※午前から午後にかけてインプットからアウトプットへと変えていく
+
+・PGはインプットをメインに勉強する
+ -業務序盤に読書、中盤にメモ、サンプルコードの調査、終盤にコーディング
+・PDはアウトプットをメインに勉強する
+ -業務中にインプット(動画)、業務終盤と業務外にアウトプット(メモ、実装)を行う
+ 
+・PGは浅く広く勉強する
+ -インプットしたことに対して2割アウトプットする
+・PDは深く勉強する
+ -自分で考えたアウトプットに対して外部から2割インプットする
+
+
+※PDは3D,2D,1Dを分別して考える
+・3D(Box, 3DVolume)
+・2D(Surface, 2DVolume)
+・1D(BasePoint, Detail)
+
+※PDはVolumeとDetailを分別して考える
+・VolumeMaker
+・BasePointMaker
+・DetailMaker
+
+
+■DetailVolumeMaker
+○VolumeMakerの処理に詳細な処理を加える
+・高さの統一
+・幅の統一
+
+●SoulCity
+・BaseAsset
+・DetailAsset
+
+●DotCity
+・
+
+●TokyoCity
+
+
+
+
+
+
 ■CityMaker
 ○DetailVolumeMakerのロジック設計
 ・サイズ設定を細かく行う
