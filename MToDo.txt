@@ -25,63 +25,37 @@
 
 
 ■DetailVolumeMaker
-○VolumeMakerの処理に詳細な処理を加える
+・FrontData,3D情報から生成できるようにする
+・Volume→BasePointまでの処理を行う
+
+○パラメーターの整理
+・VolumeMakerの処理に詳細な処理を加える
 ・高さの統一
 ・幅の統一
 
-●SoulCity
-・BaseAsset
-・DetailAsset
+○Baseで検証
+・Boxで検証
 
-●DotCity
-・
-
-●TokyoCity
-
-
-
-
-
-
-■CityMaker
-○DetailVolumeMakerのロジック設計
-・サイズ設定を細かく行う
- -FrontData,3D情報から生成できるようにする
-・VolumeMakerのロジックを改造する形で実装する
-・Volume→BasePointまでの処理を行う
-
-・3D
- -Volume
-・2D
- -Surface
-・1D
- -BasePoint
-
-●3D
-・Baseの生成検証
- -Road
- -ArcBase
-
-●2D
-・Paper2Dの背景の生成
-
-●1D
-・Detailのブラッシュアップ 
-
-○Baseの生成のみで検証を行う
 
 ■UE4
-○HD2Dの実装
-・※PDの検証を行う
- -スプライトとマップチップで素材を用意する
- -用意した素材をPDを用いて生成
-・CineCameraの実装
-・レベル環境を整理する
-・奥に動く処理もつける
+○※ラーニングプロジェクトをあさる
+https://qiita.com/O_Y_G/items/4b9971f775a41f63f41f
+
+○Paper2D周りの勉強を行う
+・GAS&Paper2D
+https://qiita.com/O_Y_G/items/044e0cfaf16dc61221d3
+
+
+△Paper2Dの動作環境を整える
 
 
 ■C++
-○とりあえずの検証
+○読書
+
+○DXLibrary
+https://qiita.com/tsuchinokoman/items/a01fdce36592bfc8149f
+
+△とりあえずの検証
 ・※線、面をベースにした実装
 ・カメラの実装
 ・オブジェクトの実装
