@@ -2,9 +2,24 @@
 ・FrontData,3D情報から生成できるようにする
 ・Volume→BasePointまでの処理を行う
 
+●Parameter
+・RuleParam
+ -アトリビュートに持たせる
+・VolumeMakeParam
+ -Greeble
+ -Scale
+・SurfaceMakeParam
+ -Greeble
+ -Scale
+・BasePointMakeParam
+ -IsEdge
+ -BlockSize
+ -BasePointのGreeble
+
 ・Volume + PM
 ・Scaling
 ・BasePoint
+
 
 ■UE4
 ○UE5.4追加機能
