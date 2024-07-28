@@ -1,25 +1,33 @@
-■DetailVolumeMaker
-・FrontData,3D情報から生成できるようにする
-・Volume→BasePointまでの処理を行う
+■BaseSurfaceMaker
+○BoxToSurfaceを実装する
+ -VolumeMakerを修正しつつ、DetailVolumeMakerを実装する
+ -サイズ調整にルールを設けるアトリビュートを設定できるように追加実装する
 
-■Parameter
-●RuleParam
+・Volume→Surfaceは処理及びパラメーターを分けて実装する
+ -共通でRuleAttributeを設定する
+
+●Parameter
+・RuleParam
  -高さ単位
  -幅単位
 
-●MakeSurfaceParam
-・Line, Surfaceの管理及び生成も行う
+・DivideParam
+Line, Surfaceの管理及び生成も行う
  -Greeble
  -Scale
  -PM
- 
-●BasePointMakeParam
- -Scale
- -BlockSize
- -Greeble
 
-●Base
- -Material
+
+■BasePointMaker
+○SurfaceToBasePointを実装する
+・RuleAttributeに応じて生成するように実装する
+
+●Parameter
+ -BlockSize
+
+
+■DetailMaker
+○DetailAsset, DetailPMを修正する
 
 
 ■UE4
