@@ -9,24 +9,7 @@
 
 
 [PD]
-・Volume
- -BaseVolume
- -BasePM
-・Surface
- -PM
-・BasePoint
- -DetailMD
- -DetailAsset
-
-○BasePointの生成
-・パラメーターをベースにBasePointを配置
- -Scale
- -TopScale
- -SideScale
-・Side部分で重らないように実装する
-
-○Assetの生成箇所を修正
-
+○SoulCityで検証
 
 ■Road
 ※道幅、高さ、街区の大きさを意識して設計する
@@ -76,17 +59,6 @@
 ・QuitaCalendarで実装を調べる
 https://qiita.com/advent-calendar/2018/dxlib
 
-○基礎情報
-https://qiita.com/kama1021/items/fa4575745b4e5f7a202c
-
-○カメラの実装
-・カメラの検証
- -カメラ位置と向きを原点に合わせる
-・矩形の実装
- -3角形を組み合わせる
-
-○リソースのスマートポインタ管理
-https://qiita.com/CdecPGL/items/f698c8d0f5e4c9036915
 
 [UE4]
 ■Base
