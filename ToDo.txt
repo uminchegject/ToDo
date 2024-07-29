@@ -4,9 +4,6 @@
 ・一時間前には資料に目を通すなど準備を済ませておく
  -その後は散歩をするなどして気を落ち着かせる
 
-[ToDo]
-○プライバシー研修
-
 
 [PD]
 ○SoulCityで検証
@@ -40,19 +37,15 @@
 
 
 ■DetailBase
-・BasePointを生成する
- -BasePoint
- -BasePM→BasePoint
- -BasePoint→BasePM
+
 
 ■Detail
-○BaseAssetの生成を検証
 
 
 
 [C++]
 ■Base
-○アカデミーのコードを起動できるようにする
+○カラークラスを既存プロジェクトに落とし込む
 
 
 ■Add
@@ -73,12 +66,3 @@ https://www.docswell.com/s/EpicGamesJapan/KXVDY5-2022-08-02-124838#p7
 ・TutorialからGasの実装方法を具体的に確認する
 ・ActionRPGの調査
  -Health, Mana, Damage, MoveSpeed周りを調査する
- 
-○Paper2D
-https://zenn.dev/dany1468/scraps/b095b50acbaf66
-
-・Tutorialプロジェクトを調査
- -発射物のチュートリアル
- -ライティングのチュートリアル
- 
-・HD2DのBPを確認
