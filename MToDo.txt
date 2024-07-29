@@ -1,5 +1,14 @@
 ■BaseSurfaceMaker
-○BoxToSurfaceを実装する
+※SoulCityで検証
+○Surface, Line要素の追加実装
+・Surface, Lineに変換するパラメーターを用意する
+
+○Volumeに対するBasePointの生成処理の実装
+
+○RuleAttributeの実装
+
+
+・BoxToSurfaceを実装する
  -VolumeMakerを修正しつつ、DetailVolumeMakerを実装する
  -サイズ調整にルールを設けるアトリビュートを設定できるように追加実装する
 
@@ -11,11 +20,9 @@
  -高さ単位
  -幅単位
 
-・DivideParam
-Line, Surfaceの管理及び生成も行う
- -Greeble
- -Scale
- -PM
+・MakeParam
+ -Line, Surfaceの管理及び生成も行う
+ -VolumeMakerを修正する
 
 
 ■BasePointMaker
@@ -34,12 +41,15 @@ Line, Surfaceの管理及び生成も行う
 ○UE5.4追加機能
 https://www.docswell.com/s/EpicGamesJapan/KQR34N-ue-meetup-osaka-02#p11
 
+○HD2DTips
+https://qiita.com/O_Y_G/items/cc1b4920a2b4a6bfd921
+
 ○奥行方向への移動処理を実装
 
 
-
 ■C++
-○読書
+○基礎情報
+https://qiita.com/kama1021/items/fa4575745b4e5f7a202c
 
 ○Shooting2D_Sampleで検証
 ・Mathクラスを実装
