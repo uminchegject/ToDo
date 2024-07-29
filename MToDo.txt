@@ -1,36 +1,45 @@
-○VolumeMakerを修正
-　-Volumemaker, DetailVolumeMakerを共通で用いる
- -Surface, Line, Volume全てに対応できるように修正する
- 
-○BasePointMakerを設計
- -Surface, Line, Volume全てに対応できるように設計する
- 
-○Greebleを最小サイズまで分割するようにする機能を追加実装
+■VolumeMaker
+○BasePointの生成
+・Type, Scale, NormalをAttributeで設定しておく
 
-○RuleAttributeの実装
+○Volume
+・BasePointに利用する際のためにNormalも設定する
+ -toggleを追加してFrontDirDataから正面を取得して設定する
+ -Frontがない場合は全軸0で設定する
 
+○Greeble
+・MinSizeまでひたすらGreebleし続ける機能を追加する
+ -loopnumを1000に設定する
 
-■BaseSurfaceMaker
-※SoulCityで検証
-
-・Volume→Surfaceは処理及びパラメーターを分けて実装する
- -共通でRuleAttributeを設定する
-
-●RuleParameter
- -高さ単位
- -幅単位
-
+○Surface
+・VolumeからSurfaceに変換するToggleを追加する
+ -FrontDirDataから法線軸に対してサイズを0にする
+  -サイズの0をtoggleにしてSurfaceかを判断する
+ -EdgeにVolumeを生成するかのToggleも実装する
 
 
 ■BasePointMaker
+・BasePointからBasePointを生成する
+・Surface, Line, Volume全てに対応できるように設計する
 ・RuleAttributeに応じて生成するように実装する
 
 ●Parameter
  -BlockSize
+ 
+○ScaleからVolumeか、Surfaceかを判定する 
 
+
+■RuleAttribute
+
+●RuleParameter
+ -高さ単位
+ -幅単位
+ 
 
 ■DetailMaker
 ○DetailAsset, DetailPMを修正する
+
+
 
 
 ■UE4
@@ -38,6 +47,7 @@
 https://qiita.com/O_Y_G/items/cc1b4920a2b4a6bfd921
 
 ○DOF
+
 
 
 ■C++
