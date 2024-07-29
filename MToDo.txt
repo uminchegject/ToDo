@@ -1,4 +1,6 @@
 ■VolumeMaker
+※連結しても問題内容に実装する
+
 ○BasePointの生成
 ・Type, Scale, NormalをAttributeで設定しておく
 
@@ -19,6 +21,9 @@
 
 
 ■BasePointMaker
+※SurfaceならSurface, VolumeならLineとしてBasePointを配置する
+ -VolumeはDirectionを設定する
+・VolumeMakerのAttributeのまま使えるように設計する
 ・BasePointからBasePointを生成する
 ・Surface, Line, Volume全てに対応できるように設計する
 ・RuleAttributeに応じて生成するように実装する
