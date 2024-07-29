@@ -1,32 +1,28 @@
-■BaseSurfaceMaker
-※SoulCityで検証
-○Surface, Line要素の追加実装
-・Surface, Lineに変換するパラメーターを用意する
-
-○Volumeに対するBasePointの生成処理の実装
+○VolumeMakerを修正
+　-Volumemaker, DetailVolumeMakerを共通で用いる
+ -Surface, Line, Volume全てに対応できるように修正する
+ 
+○BasePointMakerを設計
+ -Surface, Line, Volume全てに対応できるように設計する
+ 
+○Greebleを最小サイズまで分割するようにする機能を追加実装
 
 ○RuleAttributeの実装
 
 
-・BoxToSurfaceを実装する
- -VolumeMakerを修正しつつ、DetailVolumeMakerを実装する
- -サイズ調整にルールを設けるアトリビュートを設定できるように追加実装する
+■BaseSurfaceMaker
+※SoulCityで検証
 
 ・Volume→Surfaceは処理及びパラメーターを分けて実装する
  -共通でRuleAttributeを設定する
 
-●Parameter
-・RuleParam
+●RuleParameter
  -高さ単位
  -幅単位
 
-・MakeParam
- -Line, Surfaceの管理及び生成も行う
- -VolumeMakerを修正する
 
 
 ■BasePointMaker
-○SurfaceToBasePointを実装する
 ・RuleAttributeに応じて生成するように実装する
 
 ●Parameter
@@ -38,22 +34,16 @@
 
 
 ■UE4
-○UE5.4追加機能
-https://www.docswell.com/s/EpicGamesJapan/KQR34N-ue-meetup-osaka-02#p11
-
 ○HD2DTips
 https://qiita.com/O_Y_G/items/cc1b4920a2b4a6bfd921
 
-○奥行方向への移動処理を実装
+○DOF
 
 
 ■C++
-○基礎情報
-https://qiita.com/kama1021/items/fa4575745b4e5f7a202c
+○inline
 
 ○Shooting2D_Sampleで検証
-・Mathクラスを実装
-・SimpleLevelを実装
 ・InputManagerを用いてカメラ周りの動きを実装
 
 ○カメラ、色オブジェクトクラス周りを実装
