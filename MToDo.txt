@@ -1,23 +1,24 @@
 ■VolumeMaker
 ※連結しても問題内容に実装する
 
-○BasePointの生成
-・Type, Scale, NormalをAttributeで設定しておく
-
 ○Volume
 ・BasePointに利用する際のためにNormalも設定する
- -toggleを追加してFrontDirDataから正面を取得して設定する
+ -FrontDirDataから正面を取得して設定する
  -Frontがない場合は全軸0で設定する
-
-○Greeble
-・MinSizeまでひたすらGreebleし続ける機能を追加する
- -loopnumを1000に設定する
+○BasePointAttributeの修正
+・Type, Scale, NormalをAttributeで設定しておく
+○AttributeTypeに応じたBasePointのみに対応するように修正する
 
 ○Surface
 ・VolumeからSurfaceに変換するToggleを追加する
  -FrontDirDataから法線軸に対してサイズを0にする
   -サイズの0をtoggleにしてSurfaceかを判断する
  -EdgeにVolumeを生成するかのToggleも実装する
+  -BasePointをすぐに生成してしまう
+
+△Greeble
+・MinSizeまでひたすらGreebleし続ける機能を追加する
+ -loopnumを1000に設定する
 
 
 ■BasePointMaker
@@ -37,9 +38,8 @@
 ■RuleAttribute
 
 ●RuleParameter
- -高さ単位
- -幅単位
- 
+v@ConstSize 
+
 
 ■DetailMaker
 ○DetailAsset, DetailPMを修正する
@@ -48,16 +48,13 @@
 
 
 ■UE4
-○HD2DTips
+○細かい箇所の修正
 https://qiita.com/O_Y_G/items/cc1b4920a2b4a6bfd921
 
-○DOF
-
+○ActionRPGのソースを調査
 
 
 ■C++
-○inline
-
 ○Shooting2D_Sampleで検証
 ・InputManagerを用いてカメラ周りの動きを実装
 
