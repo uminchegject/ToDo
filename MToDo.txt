@@ -1,61 +1,64 @@
 ■VolumeMaker
 ※連結しても問題内容に実装する
 
-○Volume
+○BasePointAttributeの修正
+・Type, Scale, NormalをAttributeで設定しておく
+
+volumePosList[0] = v@P;
+volumeScaleList[0] = v@scale;
+volumeMatrixList[0] = ident();
+volumeFrontDirDataList[0] = (0.0, 0.0, 0.0);
+volumeTypeList[0] = 0;
+
+setpointattrib(0, "scale", ptnum, scale);
+setpointattrib(0, "FrontDirData", ptnum, frontDirData);
+setpointattrib(0, "VolumeType", ptnum, ptBlockParamIndex);
+setpointattrib(0, "RotateMatrix", ptnum, mRotate);
+setpointattrib(0, "N", ptnum, normal);
+
+○AttributeTypeに応じたBasePointのみに対応するように修正する
+・BlockParamIndex関連の処理を消す
+・VolumeTypeを統一する
+
+
+○SurfaceParamenter
 ・BasePointに利用する際のためにNormalも設定する
  -FrontDirDataから正面を取得して設定する
  -Frontがない場合は全軸0で設定する
-○BasePointAttributeの修正
-・Type, Scale, NormalをAttributeで設定しておく
-○AttributeTypeに応じたBasePointのみに対応するように修正する
 
-○Surface
-・VolumeからSurfaceに変換するToggleを追加する
- -FrontDirDataから法線軸に対してサイズを0にする
-  -サイズの0をtoggleにしてSurfaceかを判断する
- -EdgeにVolumeを生成するかのToggleも実装する
-  -BasePointをすぐに生成してしまう
-
-△Greeble
-・MinSizeまでひたすらGreebleし続ける機能を追加する
- -loopnumを1000に設定する
+-SurfaceToggle
+-TopEdge
+-TopEdgeSize
+-SideEdge
+-SideEgeSize
 
 
-■BasePointMaker
-※SurfaceならSurface, VolumeならLineとしてBasePointを配置する
+○PatternParameter
+・VolumeMakerのパラメーターに入れる
+・SurfaceならSurface, VolumeならLineとしてBasePointを配置する
  -VolumeはDirectionを設定する
-・VolumeMakerのAttributeのまま使えるように設計する
-・BasePointからBasePointを生成する
-・Surface, Line, Volume全てに対応できるように設計する
-・RuleAttributeに応じて生成するように実装する
 
-●Parameter
- -BlockSize
- 
-○ScaleからVolumeか、Surfaceかを判定する 
+・Parameter
+ -Size
+  -Vectorで管理し、Ⅰ単位のみの設定の場合はAxis・Lengthの役割を果たせる。
 
 
-■RuleAttribute
-
-●RuleParameter
-v@ConstSize 
-
-
-■DetailMaker
 ○DetailAsset, DetailPMを修正する
 
 
-
-
 ■UE4
-○細かい箇所の修正
-https://qiita.com/O_Y_G/items/cc1b4920a2b4a6bfd921
+○ActionRPGのソース調査
 
-○ActionRPGのソースを調査
+○IModuleInterface
+https://docs.unrealengine.com/4.27/ja/ProgrammingAndScripting/ProgrammingWithCPP/Modules/
+
+○他プロジェクトの調査
+　-
+
+△ActionRPGへ他プロジェクトで勉強した箇所を追加実装
 
 
 ■C++
-○Shooting2D_Sampleで検証
-・InputManagerを用いてカメラ周りの動きを実装
+○他プロジェクトのソース調査
 
-○カメラ、色オブジェクトクラス周りを実装
+△Shooting2D_Sampleで勉強した箇所を追加実装
