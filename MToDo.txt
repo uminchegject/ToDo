@@ -1,18 +1,85 @@
-■反省
-※サンプルプロジェクトの調査をメインに勉強を行う
- -プロジェクトに関する読書、実装は2割の労力で行う
- -設計力、読解力、文章力を身に着けるように意識する
+■PatternParameter
+・VolumeMakerのパラメーターに入れる
+・SurfaceならSurface, VolumeならLineとしてBasePointを配置する
+・Parameter
+ -Size
+  -Vectorで管理し、１単位のみの設定の場合はAxis・Lengthの役割を果たせる。
+ 
+if(0 < patternSize.x || 0 < patternSize.y)
+{
+	vector blockSize = 1;
+	int blockNumX = 0;
+	int blockNumY = 0;
+	if(0.0 < patternSize.y)
+	{
+		blockNumY = int(blockScaleOrigin.y / patternSize.y);
+		if(blockNumY == 0){blockNumY = 1}
+		patternSize.y = blockScaleOrigin.y / blockNumY;		
+	}
+	else
+	{
+		blockNumY = 1;		
+		patternSize.y = blockScaleOrigin.y;
+	}
+	
+	
+	if(-2 < frontDirData.x)
+	{
+		if(0.0 < patternSize.x)
+		{
+			blockNumX = int(blockScaleOrigin.x / patternSize.x);
+			if(blockNumX == 0){blockNumX = 1}
+			patternSize.x = blockScaleOrigin.x / blockNumX;		
+		}
+		else
+		{
+			blockNumX = 1;		
+			patternSize.x = blockScaleOrigin.x;
+		}
+	}
+	else if(-2 < frontDirData.z)
+	{
+		if(0.0 < patternSize.z)
+		{
+			blockNumX = int(blockScaleOrigin.z / patternSize.z);
+			if(blockNumX == 0){blockNumX = 1}
+			patternSize.z = blockScaleOrigin.z / blockNumX;		
+		}
+		else
+		{
+			blockNumX = 1;		
+			patternSize.z = blockScaleOrigin.z;
+		}
+	}
+	else ()
+	{
+		blockNumX = 1;
+		patternSize.x = blockScaleOrigin.x;
+		patternSize.z = blockScaleOrigin.z;
+	}
+	
+		
+	vector spawnBasePos = blockPosOrigin;
+	spawnBasePos -= normalize(patternSize) * blockScaleOrigin / 2;
+	for(int x = 0; x < blockNumX + 1; ++x)
+	{
+		for(int y = 0; y < blockNumY + 1; ++y)
+		{			
+			vector spawnPos = spawnBasePos;			
+			spawnPos.x += x * patternSize.x / 2;
+			spawnPos.y += y * patternSize.y / 2;
+			spawnPos.z += z * patternSize.z / 2;
+			
+			push(blockPosList, spawnPos);
+			push(blockScaleList, patternSize);
+			push(blockMatrixList, rotateMatrix);
+			push(frontDirDataList, blockFrontDirDataOrigin);			
+		}
+	}
+}
 
 
-■VolumeMaker
-※連結しても問題内容に実装する
-○VolumeMakerの修正
-・連結させても正しい挙動になるように修正
- -Matrix周りを調査
-・nextVolumeTypeをvectorにしてRangeにする
-
-
-○SurfaceParamenter
+■SurfaceParamenter
 ・BasePointに利用する際のためにNormalも設定する
  -FrontDirDataから正面を取得して設定する
  -Frontがない場合は全軸0で設定する
@@ -21,31 +88,108 @@
  -TopEdgeType
  -TopEdgeSize
  -SideEdgeType
- -SideEgeSize
+ -SideEdgeSize
+ -BottomEdgeType
+ -BottomEdgeSize
 
 
-○PatternParameter
-・VolumeMakerのパラメーターに入れる
-・SurfaceならSurface, VolumeならLineとしてBasePointを配置する
-・Parameter
- -Size
-  -Vectorで管理し、Ⅰ単位のみの設定の場合はAxis・Lengthの役割を果たせる。
+int isEdgeBlock1 = 0;
+int isEdgeBlock2 = 0;
+int isEdgeBlock3 = 0;
+int isEdgeBlock4 = 0;
+if(-1 < v@FrontDirData.x)
+{
+    isEdgeBlock1 = 1;
+    isEdgeBlock4 = 1;
+	if(-1.0 < v@FrontDirData.y)
+	{
+		push(blockPosList, blockPosOrigin);
+		push(blockScaleList, blockScaleOrigin);
+		push(blockMatrixList, rotateMatrix);
+		push(frontDirDataList, blockFrontDirDataOrigin);		
+	}
+	if(-1.0 == v@FrontDirData.y && v@FrontDirData.y == 0.0)
+	{
+		push(blockPosList, blockPosOrigin);
+		push(blockScaleList, blockScaleOrigin);
+		push(blockMatrixList, rotateMatrix);
+		push(frontDirDataList, blockFrontDirDataOrigin);		
+	}
+}
+if(-1.0 == v@FrontDirData.x && v@FrontDirData.x == 0.0)
+{
+    isEdgeBlock2 = 1;
+    isEdgeBlock3 = 1;
+	if(-1.0 < v@FrontDirData.y)
+	{
+		push(blockPosList, blockPosOrigin);
+		push(blockScaleList, blockScaleOrigin);
+		push(blockMatrixList, rotateMatrix);
+		push(frontDirDataList, blockFrontDirDataOrigin);		
+	}
+	if(-1.0 == v@FrontDirData.y && v@FrontDirData.y == 0.0)
+	{
+		push(blockPosList, blockPosOrigin);
+		push(blockScaleList, blockScaleOrigin);
+		push(blockMatrixList, rotateMatrix);
+		push(frontDirDataList, blockFrontDirDataOrigin);		
+	}
+}
+if(-1 < v@FrontDirData.z)
+{
+    isEdgeBlock1 = 1;
+    isEdgeBlock2 = 1;
+	if(-1.0 < v@FrontDirData.y)
+	{
+		push(blockPosList, blockPosOrigin);
+		push(blockScaleList, blockScaleOrigin);
+		push(blockMatrixList, rotateMatrix);
+		push(frontDirDataList, blockFrontDirDataOrigin);		
+	}
+	if(-1.0 == v@FrontDirData.y && v@FrontDirData.y == 0.0)
+	{
+		push(blockPosList, blockPosOrigin);
+		push(blockScaleList, blockScaleOrigin);
+		push(blockMatrixList, rotateMatrix);
+		push(frontDirDataList, blockFrontDirDataOrigin);		
+	}
+}
+if(-1.0 == v@FrontDirData.z && v@FrontDirData.z == 0.0)
+{
+    isEdgeBlock3 = 1;
+    isEdgeBlock4 = 1;
+	if(-1 < v@FrontDirData.y)
+	{
+		push(blockPosList, blockPosOrigin);
+		push(blockScaleList, blockScaleOrigin);
+		push(blockMatrixList, rotateMatrix);
+		push(frontDirDataList, blockFrontDirDataOrigin);		
+	}
+	if(-1.0 == v@FrontDirData.y && v@FrontDirData.y == 0.0)
+	{
+		push(blockPosList, blockPosOrigin);
+		push(blockScaleList, blockScaleOrigin);
+		push(blockMatrixList, rotateMatrix);
+		push(frontDirDataList, blockFrontDirDataOrigin);		
+	}
+}
 
 
-○DetailAsset, DetailPMを修正する
+vector scale = (1.0, 1.0, 1.0);
+scale.y = v@scale.y;
+if(isEdgeBlock1 == 1)
+{
+	
+}
+if(isEdgeBlock2 == 1)
+{
 
+}
+if(isEdgeBlock3 == 1)
+{
 
-■UE4
-○ActionRPGのソース調査
+}
+if(isEdgeBlock4 == 1)
+{
 
-○他プロジェクトの調査
- -https://kinnaji.com/
-
-・電卓 
-https://kinnaji.com/2019/03/27/calculator/
-
-
-■C++
-○他プロジェクトのソース調査
-
-△Shooting2D_Sampleで勉強した箇所を追加実装
+}
