@@ -1,45 +1,21 @@
+■反省
+※サンプルプロジェクトの調査をメインに勉強を行う
+ -プロジェクトに関する読書、実装は2割の労力で行う
+ -設計力、読解力、文章力を身に着けるように意識する
+
+
 ■VolumeMaker
 ※連結しても問題内容に実装する
+○VolumeMakerの修正
+・連結させても正しい挙動になるように修正
+ -Matrix周りを調査
+・nextVolumeTypeをvectorにしてRangeにする
 
-○BasePointAttributeの修正
-・Type, Scale, NormalをAttributeで設定しておく
-
-volumePosList[0] = v@P;
-volumeScaleList[0] = v@scale;
-volumeMatrixList[0] = v@RotateMatrix;
-volumeFrontDirDataList[0] = v@FrontDirData;
-volumeTypeList[0] = i@VolumeType;
-
-setpointattrib(0, "scale", ptnum, scale);
-setpointattrib(0, "FrontDirData", ptnum, frontDirData);
-setpointattrib(0, "VolumeType", ptnum, volumeType);
-setpointattrib(0, "RotateMatrix", ptnum, mRotate);
-setpointattrib(0, "N", ptnum, normal);
-
-○AttributeTypeに応じたBasePointのみに対応するように修正する
-・BlockParamIndex関連の処理を消す
-・VolumeTypeを統一する
- -nextVolumeTypeをvectorにしてRangeにする
- 
-vector nextVolumeType = point(1, "NextVolumeType", paramIndex);
-volumeTypeList[0] = i@VolumeType;
-
-if(0 < nextVolumeType.x) 
-{         
-	push(volumePosList, blockPosOrigin);
-	push(volumeScaleList, blockScaleOrigin);
-	push(volumeMatrixList, blockMatrixOrigin);
-	push(volumeFrontDirDataList, blockFrontDirDataOrigin);
-	push(volumeBlockParamIndexList, blockParamIndexOrigin);
-	int nextType =  random(dividingBlockPosOrigin * (i + loopNum)) * (nextVolumeType.y - nextVolumeType.x) + nextVolumeType.x;
-	push(volumeTypeList, nextType);
-}
 
 ○SurfaceParamenter
 ・BasePointに利用する際のためにNormalも設定する
  -FrontDirDataから正面を取得して設定する
  -Frontがない場合は全軸0で設定する
-
 ・Paramenter
  -SurfaceToggle
  -TopEdgeType
@@ -51,7 +27,6 @@ if(0 < nextVolumeType.x)
 ○PatternParameter
 ・VolumeMakerのパラメーターに入れる
 ・SurfaceならSurface, VolumeならLineとしてBasePointを配置する
-
 ・Parameter
  -Size
   -Vectorで管理し、Ⅰ単位のみの設定の場合はAxis・Lengthの役割を果たせる。
@@ -63,13 +38,11 @@ if(0 < nextVolumeType.x)
 ■UE4
 ○ActionRPGのソース調査
 
-○IModuleInterface
-https://docs.unrealengine.com/4.27/ja/ProgrammingAndScripting/ProgrammingWithCPP/Modules/
-
 ○他プロジェクトの調査
  -https://kinnaji.com/
 
-△ActionRPGへ他プロジェクトで勉強した箇所を追加実装
+・電卓 
+https://kinnaji.com/2019/03/27/calculator/
 
 
 ■C++
