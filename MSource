@@ -2,10 +2,10 @@
 ・VolumeMakerのパラメーターに入れる
 ・SurfaceならSurface, VolumeならLineとしてBasePointを配置する
 ・Parameter
- -Size
+ -PatternSize
   -Vectorで管理し、１単位のみの設定の場合はAxis・Lengthの役割を果たせる。
  
-if(0 < patternSize.x || 0 < patternSize.y)
+else if(0 < patternSize.x || 0 < patternSize.y)
 {
 	vector blockSize = 1;
 	int blockNumX = 0;
@@ -14,12 +14,12 @@ if(0 < patternSize.x || 0 < patternSize.y)
 	{
 		blockNumY = int(blockScaleOrigin.y / patternSize.y);
 		if(blockNumY == 0){blockNumY = 1}
-		patternSize.y = blockScaleOrigin.y / blockNumY;		
+		blockSize.y = blockScaleOrigin.y / blockNumY;		
 	}
 	else
 	{
 		blockNumY = 1;		
-		patternSize.y = blockScaleOrigin.y;
+		blockSize.y = blockScaleOrigin.y;
 	}
 	
 	
@@ -29,12 +29,12 @@ if(0 < patternSize.x || 0 < patternSize.y)
 		{
 			blockNumX = int(blockScaleOrigin.x / patternSize.x);
 			if(blockNumX == 0){blockNumX = 1}
-			patternSize.x = blockScaleOrigin.x / blockNumX;		
+			blockSize.x = blockScaleOrigin.x / blockNumX;		
 		}
 		else
 		{
 			blockNumX = 1;		
-			patternSize.x = blockScaleOrigin.x;
+			blockSize.x = blockScaleOrigin.x;
 		}
 	}
 	else if(-2 < frontDirData.z)
@@ -43,35 +43,35 @@ if(0 < patternSize.x || 0 < patternSize.y)
 		{
 			blockNumX = int(blockScaleOrigin.z / patternSize.z);
 			if(blockNumX == 0){blockNumX = 1}
-			patternSize.z = blockScaleOrigin.z / blockNumX;		
+			blockSize.z = blockScaleOrigin.z / blockNumX;		
 		}
 		else
 		{
 			blockNumX = 1;		
-			patternSize.z = blockScaleOrigin.z;
+			blockSize.z = blockScaleOrigin.z;
 		}
 	}
 	else ()
 	{
 		blockNumX = 1;
-		patternSize.x = blockScaleOrigin.x;
-		patternSize.z = blockScaleOrigin.z;
+		blockSize.x = blockScaleOrigin.x;
+		blockSize.z = blockScaleOrigin.z;
 	}
 	
 		
 	vector spawnBasePos = blockPosOrigin;
-	spawnBasePos -= normalize(patternSize) * blockScaleOrigin / 2;
+	spawnBasePos -= blockScaleOrigin / 2;
 	for(int x = 0; x < blockNumX + 1; ++x)
 	{
 		for(int y = 0; y < blockNumY + 1; ++y)
 		{			
 			vector spawnPos = spawnBasePos;			
-			spawnPos.x += x * patternSize.x / 2;
-			spawnPos.y += y * patternSize.y / 2;
-			spawnPos.z += z * patternSize.z / 2;
+			spawnPos.x += x * blockSize.x / 2;
+			spawnPos.y += y * blockSize.y / 2;
+			spawnPos.z += z * blockSize.z / 2;
 			
 			push(blockPosList, spawnPos);
-			push(blockScaleList, patternSize);
+			push(blockScaleList, blockSize);
 			push(blockMatrixList, rotateMatrix);
 			push(frontDirDataList, blockFrontDirDataOrigin);			
 		}
@@ -79,16 +79,23 @@ if(0 < patternSize.x || 0 < patternSize.y)
 }
 
 
+
 ■SurfaceParamenter
+・別ノードで実装する
 ・BasePointに利用する際のためにNormalも設定する
  -FrontDirDataから正面を取得して設定する
  -Frontがない場合は全軸0で設定する
+ 
 ・Paramenter
- -SurfaceToggle
- -TopEdgeType
- -TopEdgeSize
+ -TypeIndex
+ -SideType
+ -TopType
+ -Top3DEdgeType
+ -Bottom3DEdgeType
  -SideEdgeType
  -SideEdgeSize
+ -TopEdgeSize
+ -TopEdgeType
  -BottomEdgeType
  -BottomEdgeSize
 
@@ -101,79 +108,22 @@ if(-1 < v@FrontDirData.x)
 {
     isEdgeBlock1 = 1;
     isEdgeBlock4 = 1;
-	if(-1.0 < v@FrontDirData.y)
-	{
-		push(blockPosList, blockPosOrigin);
-		push(blockScaleList, blockScaleOrigin);
-		push(blockMatrixList, rotateMatrix);
-		push(frontDirDataList, blockFrontDirDataOrigin);		
-	}
-	if(-1.0 == v@FrontDirData.y && v@FrontDirData.y == 0.0)
-	{
-		push(blockPosList, blockPosOrigin);
-		push(blockScaleList, blockScaleOrigin);
-		push(blockMatrixList, rotateMatrix);
-		push(frontDirDataList, blockFrontDirDataOrigin);		
-	}
 }
 if(-1.0 == v@FrontDirData.x && v@FrontDirData.x == 0.0)
 {
     isEdgeBlock2 = 1;
     isEdgeBlock3 = 1;
-	if(-1.0 < v@FrontDirData.y)
-	{
-		push(blockPosList, blockPosOrigin);
-		push(blockScaleList, blockScaleOrigin);
-		push(blockMatrixList, rotateMatrix);
-		push(frontDirDataList, blockFrontDirDataOrigin);		
-	}
-	if(-1.0 == v@FrontDirData.y && v@FrontDirData.y == 0.0)
-	{
-		push(blockPosList, blockPosOrigin);
-		push(blockScaleList, blockScaleOrigin);
-		push(blockMatrixList, rotateMatrix);
-		push(frontDirDataList, blockFrontDirDataOrigin);		
-	}
 }
 if(-1 < v@FrontDirData.z)
 {
     isEdgeBlock1 = 1;
     isEdgeBlock2 = 1;
-	if(-1.0 < v@FrontDirData.y)
-	{
-		push(blockPosList, blockPosOrigin);
-		push(blockScaleList, blockScaleOrigin);
-		push(blockMatrixList, rotateMatrix);
-		push(frontDirDataList, blockFrontDirDataOrigin);		
-	}
-	if(-1.0 == v@FrontDirData.y && v@FrontDirData.y == 0.0)
-	{
-		push(blockPosList, blockPosOrigin);
-		push(blockScaleList, blockScaleOrigin);
-		push(blockMatrixList, rotateMatrix);
-		push(frontDirDataList, blockFrontDirDataOrigin);		
-	}
 }
 if(-1.0 == v@FrontDirData.z && v@FrontDirData.z == 0.0)
 {
     isEdgeBlock3 = 1;
     isEdgeBlock4 = 1;
-	if(-1 < v@FrontDirData.y)
-	{
-		push(blockPosList, blockPosOrigin);
-		push(blockScaleList, blockScaleOrigin);
-		push(blockMatrixList, rotateMatrix);
-		push(frontDirDataList, blockFrontDirDataOrigin);		
-	}
-	if(-1.0 == v@FrontDirData.y && v@FrontDirData.y == 0.0)
-	{
-		push(blockPosList, blockPosOrigin);
-		push(blockScaleList, blockScaleOrigin);
-		push(blockMatrixList, rotateMatrix);
-		push(frontDirDataList, blockFrontDirDataOrigin);		
-	}
 }
-
 
 vector scale = (1.0, 1.0, 1.0);
 scale.y = v@scale.y;
