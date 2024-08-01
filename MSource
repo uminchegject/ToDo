@@ -18,7 +18,7 @@ for(int blockTypeIndex = 0; blockTypeIndex < BlockTypeNum; ++blockTypeIndex)
 	string assetRef = point(2, "AssetRef", assetRefIndex);
 	
 	//回転周り
-	vector rotate = point(1, "Rotate", blockTypeIndex);
+	vector rotate = 10; //point(1, "Rotate", blockTypeIndex);
 	vector assetRotate = point(2, "Rotate", assetRefIndex);
 	vector axis = set(1,0,0);
 	vector4 q = quaternion(radians(rotate.x + assetRotate.x) ,axis);
@@ -29,40 +29,37 @@ for(int blockTypeIndex = 0; blockTypeIndex < BlockTypeNum; ++blockTypeIndex)
 	axis = set(0,0,1);
 	q = quaternion(radians(rotate.z + assetRotate.z) ,axis);
 	mRotate *= qconvert(q);
-	vector normal;
+	vector normal = 0;
 	normal.z = 1;
 	q = dihedral(normal, v@N);  
 	mRotate *= qconvert(q);
 	normal *= mRotate; // 回転行列を乗算
 	
 	//移動周り    
-	vector spawnBasePos = v@P;
-	vector transform = point(1, "Transform", blockTypeIndex);
+	vector spawnPos = v@P;
+	vector transform = (0.0, 0.0, 0.0);//point(1, "Transform", blockTypeIndex);
 	transform *= adjustedScale;
 	transform *= mRotate;
-	spawnBasePos += transform;
+	spawnPos += transform;
 
 	//アセットの微調整
-	vector sizeRange = point(1, "SizeRange", blockTypeIndex);            
+	vector sizeRange = (0.8, 1.0, 0.0); //point(1, "SizeRange", blockTypeIndex);            
 	vector assetTransform = point(2, "Transform", assetRefIndex);
 	float sizeCofficient = point(2, "SizeCofficient", assetRefIndex);
 	sizeCofficient *= sizeRange.x + randomNum * (sizeRange.y - sizeRange.x);
 	
-	int isYAxisAssetScale = point(1, "IsYAxisAssetScale", blockTypeIndex);
-	vector assetScale = sizeCofficient * volumeScale.x;
-	if(0 < isYAxisAssetScale) {assetScale = sizeCofficient * volumeScale.y;}
+	vector scaleParam = point(1, "ScaleParam", blockTypeIndex);
+	vector assetScale = sizeCofficient * v@scale;
+	if(0 == scaleParam.x) {assetScale = sizeCofficient * v@scale.y;}
+	if(0 == scaleParam.y) {assetScale = sizeCofficient * v@scale.x;}
 	
-	vector adjustedAssetMove = assetTransform * sizeCofficient * volumeScale;
+	vector adjustedAssetMove = assetTransform * v@scale;
 	adjustedAssetMove *= mRotate;
-	spawnBasePos += adjustedAssetMove;
+	spawnPos += adjustedAssetMove;
 	
 	//TransformRange
 	vector transformXAxisRange = point(1 , "TransformXAxisRange", blockTypeIndex);
 	vector transformYAxisRange = point(1 , "TransformYAxisRange", blockTypeIndex);
-
-	vector spawnPos = spawnBasePos;
-	spawnPos += adjustedScale.x * (i - 0.5) * widthAxis - sizeX * widthAxis / 2;
-	spawnPos += adjustedScale.y * (j - 0.5) * heightAxis - sizeY * heightAxis / 2;
 	
 	vector movePos;
 	movePos.x = random(spawnPos * 10) * (transformXAxisRange.y - transformXAxisRange.x) + transformXAxisRange.x;
