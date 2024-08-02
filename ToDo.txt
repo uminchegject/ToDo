@@ -1,68 +1,77 @@
-[反省]
-※もう一度資料を整理する
-・必ずタイトルをプレーする
-・一時間前には資料に目を通すなど準備を済ませておく
- -その後は散歩をするなどして気を落ち着かせる
+■業務
+・サバゲーの告知
+・IZONの質問
 
 
-[PD]
-○SoulCityで検証
+■実装
+○Patternの実装
+・SpawnPointにMatrixを乗算する
 
-■Road
-※道幅、高さ、街区の大きさを意識して設計する
-・道をベースにしたパラメーターを用意する
+○Surface周りの実装
+・SpawnPointにMatrixを乗算する
 
-○パラメーター
- -幅
- -量(比率)
-
-
-■CityBlock
-・CityBlockを分割して生成する
-
-○空間をつくるパラメーターを用意する
- -道
- -空間
-
-○パラメーター
- -サイズ
- -高さ
- -オフセット値
-
-○FrontDirection周りの修正
- -FrontDirectionをVolumeMakerに継承す
+○Asset周りの修正
+・サイズ調整
+isYAxisAssetScaleをassetScaleに修正する
 
 
-■Volume
+■生成
+●DetailBlock
+・Sizeに応じたDetailBlockを複数用意する
+ -BaseAssetの検証後にSingleBoxで検証
+ -BaseAssetの検証後にVolumeMakerで実装
+
+・組み合わせ
+ -Size
+ -BaseAsset
+ -DetailAsset
+ 
+・行程
+ -SurfaceMaker
+ -VolumeMaker(PatternMaker)
+ -AssetMaker
+ 
+
+●VolumeBlock
+・多様なSizeのBlockを生成し、Sizeに応じたタイプを設定する
+ -SingleBoxを用いた検証
+ -VolumeMakerで検証
+
+・様々な配置ロジックを実装
+ -VolumeMaker + α(Noise?) 
 
 
-■DetailBase
+■資料
+○参考資料を集める
+・DocsWellを参考にする
+
+○メモを作成
+
+○必要画像の整理と用意
+
+○清書を作成
+・ポートフォリオ
+・評価面談
 
 
-■Detail
+■UE4
+○調査内容の勉強
+・GAS
+・InventoryData
+
+○ActionRPGのソース調査
+・ARPGPlayerControllerBase
+ -UAbilitySystemComponent
+・ARPGCharacterBase
+ -InventoryData
+
+○アカデミープロジェクトに実装
+
+・他プロジェクトの調査
+ -https://kinnaji.com/
 
 
-
-[C++]
-■Base
-○カラークラスを既存プロジェクトに落とし込む
-
-
-■Add
-・QuitaCalendarで実装を調べる
-https://qiita.com/advent-calendar/2018/dxlib
-
-
-[UE4]
-■Base
-○ActionRPG
-・ActionRPGの調査
-https://www.docswell.com/s/alwei/ZJNP4K-2022-05-12-155309#p8
-https://www.docswell.com/s/EpicGamesJapan/KXVDY5-2022-08-02-124838#p7
-
-
-■Add
-○GAS
-・TutorialからGasの実装方法を具体的に確認する
-・ActionRPGの調査
- -Health, Mana, Damage, MoveSpeed周りを調査する
+■C++
+・調査内容の勉強
+・ソースから実装箇所及び設計周りを調査
+・アカデミーコードに実装
