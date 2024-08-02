@@ -1,34 +1,33 @@
-■サバゲー
-お疲れ様です。
-8月のサバゲーですけど、昨今の暑さを考えると屋内って条件に加えて冷房完備も追加した方がいいかなと思いました。
-それで、冷房完備とアクセスの条件で調べたところ竹山さんが候補で上げてくれていたのどちらかが良いかなと思うのですがいかがでしょうか。
-ただ個人的にも広いフィールドは気になっているので、9月以降の気温が落ち着いたタイミングでフルオートが使えるような屋外の広いフィールドにチャレンジしたい気持ちもあります。
+[反省]
+※もう一度資料を整理する
+・必ずタイトルをプレーする
+・一時間前には資料に目を通すなど準備を済ませておく
+ -その後は散歩をするなどして気を落ち着かせる
 
 
-■VolumeMaker
-※連結しても問題内容に実装する
-○VolumeMakerの修正
-・nextVolumeTypeをvectorにしてRangeにする
+[PD]
+○SoulCityで検証
 
-○DetailAsset, DetailPMを修正する
+■Road
+※道幅、高さ、街区の大きさを意識して設計する
+・道をベースにしたパラメーターを用意する
 
-
-■UE4
-○ActionRPGのソース調査
-・ARPGPlayerControllerBase
- -UAbilitySystemComponent
-・ARPGCharacterBase
-　-InventoryData
-
-○UE4C++の勉強
-
-・他プロジェクトの調査
- -https://kinnaji.com/
+○パラメーター
+ -幅
+ -量(比率)
 
 
-■C++
-○SwordBoudの調査
-・キャラクター周りを調査
-・Task周りを調査
+■CityBlock
+・CityBlockを分割して生成する
 
-△Shooting2D_Sampleで勉強した箇所を追加実装
+○空間をつくるパラメーターを用意する
+ -道
+ -空間
+
+○パラメーター
+ -サイズ
+ -高さ
+ -オフセット値
+
+○FrontDirection周りの修正
+ -FrontDirectionをVolumeMakerに継承す
