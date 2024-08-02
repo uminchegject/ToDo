@@ -1,7 +1,9 @@
 ■業務
-・サバゲーの告知
-・IZONの質問
+○自己紹介
+○Canvasへの自分の名前の追加
 
+■Git
+※SourceTreeを用いたGtの勉強
 
 ■実装
 ○Patternの実装
