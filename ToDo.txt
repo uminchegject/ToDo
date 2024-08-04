@@ -2,45 +2,33 @@
 ○自己紹介
 ○Canvasへの自分の名前の追加
 
+
 ■Git
-※SourceTreeを用いたGtの勉強
+※SourceTreeを用いたGitの勉強
+
 
 ■実装
-○Patternの実装
-・SpawnPointにMatrixを乗算する
-
-○Surface周りの実装
-・SpawnPointにMatrixを乗算する
-
-○Asset周りの修正
-・サイズ調整
-isYAxisAssetScaleをassetScaleに修正する
+※BaseAssetの生成までの実装及び検証を目標とする
 
 
-■生成
-●DetailBlock
+■Base生成
+・多様なSizeのBlockを生成し、Sizeに応じたタイプを設定する
+
+●Volume生成に変化を加える
+・※プレゼン資料用の素材を用意する
+・様々な配置ロジックを実装
+ -VolumeMaker + α(Noise?)
+
+
+■Detail生成
+・作業の簡略化のためBaseAssetのPointをそのまま使う
 ・Sizeに応じたDetailBlockを複数用意する
- -BaseAssetの検証後にSingleBoxで検証
- -BaseAssetの検証後にVolumeMakerで実装
+・△VolumeMakerのDivide時Normal, RotateMatrixも反映させる
 
-・組み合わせ
+●組み合わせによる多様化
  -Size
  -BaseAsset
  -DetailAsset
- 
-・行程
- -SurfaceMaker
- -VolumeMaker(PatternMaker)
- -AssetMaker
- 
-
-●VolumeBlock
-・多様なSizeのBlockを生成し、Sizeに応じたタイプを設定する
- -SingleBoxを用いた検証
- -VolumeMakerで検証
-
-・様々な配置ロジックを実装
- -VolumeMaker + α(Noise?) 
 
 
 ■資料
@@ -57,15 +45,7 @@ isYAxisAssetScaleをassetScaleに修正する
 
 
 ■UE4
-○調査内容の勉強
-・GAS
-・InventoryData
-
-○ActionRPGのソース調査
-・ARPGPlayerControllerBase
- -UAbilitySystemComponent
-・ARPGCharacterBase
- -InventoryData
+○業務プロジェクトのソースを調査
 
 ○アカデミープロジェクトに実装
 
