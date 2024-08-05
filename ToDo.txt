@@ -1,14 +1,16 @@
 ■業務
-○自己紹介
 ○Canvasへの自分の名前の追加
+○1on1の資料を再確認
 
 ■Git
 ※SourceTreeを用いたGitの勉強
+・UE4・SourceTree・Gitを組み合わせたバージョン管理を確認する
+https://kuzuniku.blogspot.com/2015/01/unrealengine4git.html
 
 
 ■実装
 ※BaseAssetの生成までの実装及び検証を目標とする
-
+○環境整理
 
 ■Base生成
 ・多様なSizeのBlockを生成し、Sizeに応じたタイプを設定する
