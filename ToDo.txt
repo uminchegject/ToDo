@@ -4,8 +4,12 @@
 
 ■Git
 ※SourceTreeを用いたGitの勉強
-・UE4・SourceTree・Gitを組み合わせたバージョン管理を確認する
-https://kuzuniku.blogspot.com/2015/01/unrealengine4git.html
+・Gitの作業のフローを確認する
+・Git
+
+○EditorのGitに紐づける
+
+○GitHubDeskTopを入れる
 
 
 ■実装
