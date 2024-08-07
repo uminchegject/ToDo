@@ -1,20 +1,15 @@
 ■業務
 ○Canvasへの自分の名前の追加
-○1on1の資料を再確認
 
-■Git
-※SourceTreeを用いたGitの勉強
-・Gitの作業のフローを確認する
+
+■Study
+・UE4の設計
+https://www.docswell.com/s/alwei/58LE7K-2022-05-12-154951
+・UE5新機能
+https://www.docswell.com/s/alwei/ZNNP7Z-2022-05-12-161041#p59
 ・Git
+https://qiita.com/KosukeSone/items/514dd24828b485c69a05
 
-○EditorのGitに紐づける
-
-○GitHubDeskTopを入れる
-
-
-■実装
-※BaseAssetの生成までの実装及び検証を目標とする
-○環境整理
 
 ■Base生成
 ・多様なSizeのBlockを生成し、Sizeに応じたタイプを設定する
@@ -38,6 +33,9 @@
 
 
 ■資料
+※勉強会とブログの記事をまとめる
+　-ワードプレスと画像を用意。
+
 ○参考資料を集める
 ・DocsWellを参考にする
 
@@ -53,7 +51,6 @@
 ■UE4
 ○業務プロジェクトのソースを調査
  -気になる技術があれば深堀
-
 ○アカデミープロジェクトに実装
 
 ■C++
