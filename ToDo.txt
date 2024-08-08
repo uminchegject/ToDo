@@ -5,28 +5,26 @@
 ■Study
 ・UE4の設計
 https://www.docswell.com/s/alwei/58LE7K-2022-05-12-154951
-・UE5新機能
-https://www.docswell.com/s/alwei/ZNNP7Z-2022-05-12-161041#p59
-・Git
-https://qiita.com/KosukeSone/items/514dd24828b485c69a05
+・Noise
+https://qiita.com/procedural_design/items/d7689f0074c4a9cb5927
 
 
-■Base生成
-・多様なSizeのBlockを生成し、Sizeに応じたタイプを設定する
+■実装
+○VolumeからAsset生成までの一連の処理を実装
+・BaseAssetをまず完成させる
 
-●組み合わせ
+
+■組み合わせ
+●Volume
 ・※プレゼン資料用の比較ができる要素をまとめる
  -Height
  -Size
  -Type
+・コントラスト
+ -Height
+ -Size
 
-
-■Detail生成
-・作業の簡略化のためBaseAssetのPointをそのまま使う
-・Sizeに応じたDetailBlockを複数用意する
-・△VolumeMakerのDivide時Normal, RotateMatrixも反映させる
-
-●組み合わせによる多様化
+●Asset
  -Size
  -BaseAsset
  -DetailAsset
@@ -34,10 +32,24 @@ https://qiita.com/KosukeSone/items/514dd24828b485c69a05
 
 ■資料
 ※勉強会とブログの記事をまとめる
-　-ワードプレスと画像を用意。
+ -ワードプレスと画像を用意。
+ 
+・Pointの生成
+ -BaseAsset
+ -DetailAsset
+
+・PointAttributeを用いた管理
+ -Scale
+ -Instance
+ -Normal + up
+
+・DataTableを使った管理
+
 
 ○参考資料を集める
-・DocsWellを参考にする
+・DocsWell, Quitaを参考にする
+https://www.docswell.com/s/EpicGamesJapan/K4Q8Y8-EGC2024_Procedures#p29
+https://qiita.com/TaroOzaki/items/f249ae4b5e8dc46f16f3
 
 ○メモを作成
 
@@ -52,6 +64,7 @@ https://qiita.com/KosukeSone/items/514dd24828b485c69a05
 ○業務プロジェクトのソースを調査
  -気になる技術があれば深堀
 ○アカデミープロジェクトに実装
+
 
 ■C++
 ・調査内容の勉強
