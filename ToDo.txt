@@ -1,24 +1,36 @@
 ■業務
 ●調査
-・プレイしつつログを確認する
-　ーManager
-　ーGimmick
+・プレイしつつログを確認してギミック周りのアクタークラスを調べる
+・Studyする必要がありそうな技術をまとめる
 
-●Study
-　ーギミック周り
+ ーManager
+ ーGimmick
+
 
 ●感想をまとめる
-
+・操作周り
+・カメラ周り
+ -
+・レベル周り
+ -道が分かりずらい
+ 
 
 
 ■Study
 ・UE4の設計
 https://www.docswell.com/s/alwei/58LE7K-2022-05-12-154951
-・Noise
-https://qiita.com/procedural_design/items/d7689f0074c4a9cb5927
+・継承と合成
+https://postd.cc/why-composition-is-often-better-than-inheritance/
+・オブジェクト指向
+https://qiita.com/tutinoco/items/6952b01e5fc38914ec4e
+
 
 
 ■実装
+○Normalに応じてVolumeMakerが正しく挙動するように修正
+・Pattern, Adjust, Divideモードの順番でそれぞれ確認をしていく
+・SurfaceMakerの面を一つずつ確認していく
+
 ○VolumeからAsset生成までの一連の処理を実装
 ・BaseAssetをまず完成させる
 
@@ -42,18 +54,6 @@ https://qiita.com/procedural_design/items/d7689f0074c4a9cb5927
 ■資料
 ※勉強会とブログの記事をまとめる
  -ワードプレスと画像を用意。
- 
-・Pointの生成
- -BaseAsset
- -DetailAsset
-
-・PointAttributeを用いた管理
- -Scale
- -Instance
- -Normal + up
-
-・DataTableを使った管理
-
 
 ○参考資料を集める
 ・DocsWell, Quitaを参考にする
@@ -67,6 +67,21 @@ https://qiita.com/TaroOzaki/items/f249ae4b5e8dc46f16f3
 ○清書を作成
 ・ポートフォリオ
 ・評価面談
+
+
+●メモ
+・実際の実装とそこから分かるプロシージャルモデリングのメリット
+
+・Pointの生成
+ -BaseAsset
+ -DetailAsset
+
+・PointAttributeを用いた管理
+ -Scale
+ -Instance
+ -Normal + up
+
+・DataTableを使った管理
 
 
 ■UE4
