@@ -5,22 +5,33 @@
 ・SingleBlockをそれぞれ実装
 ・実装したSingleBlockを組み合わせてCityを生成する
 
-○BaseVolumeの検証
-・Blog記事のための検証
+○SimpleBaseVolumeMakerの実装
 
-○DetailAssetの配置ロジックの設計
-
-△コントラストをつけたBaseAssetを用意する
-・大、中、小
-
-●コントラスト
-・サイズ
-・平面
-・高さ
+○一連の処理を検証
+ -SimpleBaseVolumeの生成
+ -DetailVolumeの生成
+ -BaseAssetの配置
+ 
+○BaseAssetを複数パターン用意
+ -SigleBlockで検証
+ -SimpleBaseVolumeで検証
 
 ●BaseVolume
-・垂直・水平
+・コントラスト
+ -Size
+ -Height(Noise)
+ -EmptyRatio
+ -SingleBlock or MultiBlock
 
+●BaseAsset
+・コントラストをつけたBaseAssetを用意する
+ -大、中、小
+
+●DetailAsset
+・BaseAssetに応じたDetailAssetの配置を行う
+・変化
+ -サイズ(Greeble, Random)
+ -位置(Greeble, Random)
 
 
 [BLOG]
@@ -46,22 +57,23 @@
 
 
 [IZON.]
-○問題の洗い出し
-○必要そうな解決方法(面白くできそうなギミック)を提案
-
 ○テスト環境を準備
 ○実装
 
+○※智人に操作をできるようにさせて検証プロジェクトを実装してみる。
+ -虚人 :: アクション要素
+ -智人 :: パズル要素
+ 
+●智人メインのギミック
+・智人と虚人が分かれて行動するギミック
+・創造をテーマにしたパズル要素
+ -ルート
 
 ●解決案
 ・智人にしかできないギミックを増やす
- -智人しか入れな
 
 ●人喰い大鷲のトリコとIZON.の比較
-
+・役割が明確に分かれているかつ、役割がちゃんと機能している
 
 ●問題
 ・虚人が全てできてしまう
- -智人にしかできないギミックを増やす
-
-・少年の役割、知能が必要なギミック、トリコが入れない場所
