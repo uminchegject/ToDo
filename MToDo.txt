@@ -5,11 +5,13 @@
 ・SingleBlockをそれぞれ実装
 ・実装したSingleBlockを組み合わせてCityを生成する
 
-△コントラストをつけたBaseAssetを用意する
-・大、中、小
-
 ○BaseVolumeの検証
 ・Blog記事のための検証
+
+○DetailAssetの配置ロジックの設計
+
+△コントラストをつけたBaseAssetを用意する
+・大、中、小
 
 ●コントラスト
 ・サイズ
