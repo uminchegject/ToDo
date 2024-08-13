@@ -1,11 +1,5 @@
 [CityMaker]
-・BaseAssetのみで実装
-
-○デバッグ
-・SingleBlockをそれぞれ実装
-・実装したSingleBlockを組み合わせてCityを生成する
-
-○SimpleBaseVolumeMakerの実装
+※SimpleBaseVolumeMakerをBaseAssetのみで検証
 
 ○一連の処理を検証
  -SimpleBaseVolumeの生成
@@ -27,7 +21,7 @@
 ・コントラストをつけたBaseAssetを用意する
  -大、中、小
 
-●DetailAsset
+▲DetailAsset
 ・BaseAssetに応じたDetailAssetの配置を行う
 ・変化
  -サイズ(Greeble, Random)
@@ -51,7 +45,6 @@
 
 ・側面の位置の管理方法
 
-
 ●検証
 ・コントラストの重要性
 
@@ -59,6 +52,11 @@
 [IZON.]
 ○テスト環境を準備
 ○実装
+
+○ギミックプロジェクトをIZON.に入れる
+・Gitの範囲から外す
+・GameModeをIZON.に置き換える
+・操作周りで必要な処理をIZON.クラスを継承して実装する
 
 ○※智人に操作をできるようにさせて検証プロジェクトを実装してみる。
  -虚人 :: アクション要素
