@@ -1,0 +1,15 @@
+●技術
+・Pointの管理方法について
+ -Scale
+ -AssetInstance
+ -Pos
+ -Normal, up
+
+・Pointを参照してさらにPointを生成する
+
+・DataTableを用いたPointの管理方法
+
+・側面の位置の管理方法
+
+●検証
+・コントラストの重要性
