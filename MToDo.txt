@@ -64,6 +64,12 @@ https://qiita.com/4_mio_11/items/9e8af2ce82ee2a7625b5
 ・チュートリアルを実装
 https://qiita.com/4_mio_11/items/9e8af2ce82ee2a7625b5
 
+・仕様
+ -虚人から一定以上離れないようにする
+ -徘徊
+ -アイテムの取得(MoveTo & イベント)
+ -創造(MoveTo & イベント)
+
 
 ●解決案
 ・智人にしかできないギミックを増やす
@@ -73,3 +79,5 @@ https://qiita.com/4_mio_11/items/9e8af2ce82ee2a7625b5
 ・役割を明確にする
  -虚人 :: アクション要素 :: 破壊 
  -智人 :: パズル要素 :: 創造
+ 
+ 
