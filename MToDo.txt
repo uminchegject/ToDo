@@ -1,3 +1,9 @@
+[Study]
+●EQS
+https://qiita.com/manuo/items/cc332b71aedb70ad6bfc
+●AI
+https://qiita.com/4_mio_11/items/9e8af2ce82ee2a7625b5
+
 [CityMaker]
 ※SimpleBaseVolumeMakerをBaseAssetのみで検証
 
@@ -33,26 +39,19 @@
  -位置(Greeble, Random)
 
 
-[BLOG]
-○ブログの環境整理
-・Quitaで実装
-
-●技術
-・Pointの管理方法について
- -Scale
- -AssetInstance
- -Pos
- -Normal, up
-
-
 [IZON.]
-○サンプルの確認
-・TestMapを確認
-・クラスを確認
-・ヨウスコウさんのサンプルプロジェクトを確認
+○調査
+・実装したギミックと比較
+ -Content/blueprint/Map/DestoryObj/BP_DestoryObj_Base.uasset
 
-○ギミックの実装
-・新クラスを継承してOverLapのイベント
+○FallDownの修正
+・エフェクトの位置を設定して発生させる
+・倒れる角度を設定できるようにする
+・ソフトターゲット対象にする
+
+○Fallの修正
+・高さの設定ができるように修正
+・ソフトターゲット対象にする
 
 ○アイデア出し
 ※それぞれのギミックを作った上でプラスアルファを実装する
@@ -61,8 +60,10 @@
 
 ○智人AI
 ・智人のソースを調査
+ -BT_PL002_00周りを調査
 ・チュートリアルを実装
 https://qiita.com/4_mio_11/items/9e8af2ce82ee2a7625b5
+
 
 ●解決案
 ・智人にしかできないギミックを増やす
