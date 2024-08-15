@@ -43,17 +43,10 @@ https://free-gamer.hatenablog.com/entry/2019/08/10/024708
 
 [IZON.]
 ○調査
-・実装したギミックと比較
+・ギミックの親クラス
  -Content/blueprint/Map/DestoryObj/BP_DestoryObj_Base.uasset
-
-○FallDownの修正
-・エフェクトの位置を設定して発生させる
-・倒れる角度を設定できるようにする
-・ソフトターゲット対象にする
-
-○Fallの修正
-・高さの設定ができるように修正
-・ソフトターゲット対象にする
+・AIController
+ -BT_PL002_00周りを調査
 
 ○アイデア出し
 ※それぞれのギミックを作った上でプラスアルファを実装する
@@ -62,7 +55,6 @@ https://free-gamer.hatenablog.com/entry/2019/08/10/024708
 
 ○智人AI
 ・智人のソースを調査
- -BT_PL002_00周りを調査
 
 ・仕様
  -虚人から一定以上離れないようにする
@@ -79,5 +71,3 @@ https://free-gamer.hatenablog.com/entry/2019/08/10/024708
 ・役割を明確にする
  -虚人 :: アクション要素 :: 破壊 
  -智人 :: パズル要素 :: 創造
- 
- 
