@@ -16,12 +16,14 @@
 
 
 ・HoudiniEngineForUnrealにおけるAttribute
-https://www.sidefx.com/docs/unreal16.5/_attributes.html
+https://www.sidefx.com/docs/houdini/unreal/attributes.html
+
 
 ・unreal_instance
 アセットのパスをpointattribのunreal_instanceに持たせることでアセットの生成を行うことができる。
 また、v@scaleでアセットのスケールを設定できv@N, v@upでアセットの向きと傾きを設定できる
 unreal_instanceを用いる場合はセットでv@scale, v@N, v@upを設定すべきという認識。
+また、unreal split instancesを用いればエディター上で個々のアセットの調整を独立して行うことができる
 
 ・unreal_material
 primitiveattributeにunreal_materialを設定することで、primitiveにue4を設定できる。
