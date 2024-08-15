@@ -1,8 +1,7 @@
 [Study]
-●EQS
-https://qiita.com/manuo/items/cc332b71aedb70ad6bfc
 ●AI
 https://qiita.com/4_mio_11/items/9e8af2ce82ee2a7625b5
+https://free-gamer.hatenablog.com/entry/2019/08/10/024708
 
 [CityMaker]
 ※SimpleBaseVolumeMakerをBaseAssetのみで検証
@@ -13,10 +12,9 @@ https://qiita.com/4_mio_11/items/9e8af2ce82ee2a7625b5
  -BaseAssetの配置
  
 ○Volumeの検証
- -平面の生成
- -Noiseの高さ
- -3DGreeble
- 
+・FrontDirDataをリセットしてGreebleを行うように修正
+・BaseBlock生成とGreebleの生成を検証
+
 ○BaseAssetを複数パターン用意
  -SingleBlockで検証
  -SimpleBaseVolumeで検証
@@ -38,6 +36,10 @@ https://qiita.com/4_mio_11/items/9e8af2ce82ee2a7625b5
  -サイズ(Greeble, Random)
  -位置(Greeble, Random)
 
+
+[Blog]
+○UV展開について調査
+○unrealattributeについて調査
 
 [IZON.]
 ○調査
@@ -61,12 +63,10 @@ https://qiita.com/4_mio_11/items/9e8af2ce82ee2a7625b5
 ○智人AI
 ・智人のソースを調査
  -BT_PL002_00周りを調査
-・チュートリアルを実装
-https://qiita.com/4_mio_11/items/9e8af2ce82ee2a7625b5
 
 ・仕様
  -虚人から一定以上離れないようにする
- -徘徊
+ -徘徊(プレイヤーの位置の周りを徘徊させる)
  -アイテムの取得(MoveTo & イベント)
  -創造(MoveTo & イベント)
 
