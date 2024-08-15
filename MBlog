@@ -1,28 +1,81 @@
-●技術
-・Pointの管理方法について
- -Scale
- -AssetInstance
- -Pos
- -Normal, up
+[Study]
+●AI
+https://qiita.com/4_mio_11/items/9e8af2ce82ee2a7625b5
+https://free-gamer.hatenablog.com/entry/2019/08/10/024708
 
-●はじめに
-現在ゲーム業界でクライアントエンジニアとして働いているegjectです。
-元々は建築系の大学でプロシージャルデザインを研究していましたが、プロシージャルデザインを通じてゲーム業界に興味を持ちゲームエンジニアになりました。
-学生時代に行っていたプロシージャルデザインを用いた制作は趣味の延長上で現在も行っています。
-制作内容としてはHoudiniを用いてUE4上で背景の自動生成を行うことを目標に実装しています。
-実装をしていく過程で行った作業や設計の考え方を整理することを目的に記事を書いていこうと思います。
+[CityMaker]
+※SimpleBaseVolumeMakerをBaseAssetのみで検証
 
-・アトリビュートの概念
+○一連の処理を検証
+ -SimpleBaseVolumeの生成
+ -DetailVolumeの生成
+ -BaseAssetの配置
+ 
+○Volumeの検証
+・FrontDirDataをリセットしてGreebleを行うように修正
+・BaseBlock生成とGreebleの生成を検証
+
+○BaseAssetを複数パターン用意
+ -SingleBlockで検証
+ -SimpleBaseVolumeで検証
+
+●BaseVolume
+・コントラスト
+ -Size
+ -Height(Noise)
+ -EmptyRatio
+ -SingleBlock or MultiBlock
+
+●BaseAsset
+・コントラストをつけたBaseAssetを用意する
+ -大、中、小
+
+▲DetailAsset
+・BaseAssetに応じたDetailAssetの配置を行う
+・変化
+ -サイズ(Greeble, Random)
+ -位置(Greeble, Random)
 
 
-・HoudiniEngineForUnrealにおけるAttribute
-https://www.sidefx.com/docs/unreal16.5/_attributes.html
+[Blog]
+○UV展開について調査
+○unrealattributeについて調査
 
-・unreal_instance
-アセットのパスをpointattribのunreal_instanceに持たせることでアセットの生成を行うことができる。
-また、v@scaleでアセットのスケールを設定できv@N, v@upでアセットの向きと傾きを設定できる
-unreal_instanceを用いる場合はセットでv@scale, v@N, v@upを設定すべきという認識。
+[IZON.]
+○調査
+・実装したギミックと比較
+ -Content/blueprint/Map/DestoryObj/BP_DestoryObj_Base.uasset
 
-・unreal_material
-primitiveattributeにunreal_materialを設定することで、primitiveにue4を設定できる。
-ただ、Primitiveに対してuv展開を行わなければならない、
+○FallDownの修正
+・エフェクトの位置を設定して発生させる
+・倒れる角度を設定できるようにする
+・ソフトターゲット対象にする
+
+○Fallの修正
+・高さの設定ができるように修正
+・ソフトターゲット対象にする
+
+○アイデア出し
+※それぞれのギミックを作った上でプラスアルファを実装する
+・虚人と智人を接触させる処理を実装
+・破壊と創造を分けてアクションを作る
+
+○智人AI
+・智人のソースを調査
+ -BT_PL002_00周りを調査
+
+・仕様
+ -虚人から一定以上離れないようにする
+ -徘徊(プレイヤーの位置の周りを徘徊させる)
+ -アイテムの取得(MoveTo & イベント)
+ -創造(MoveTo & イベント)
+
+
+●解決案
+・智人にしかできないギミックを増やす
+ -創造をテーマにしたパズル要素
+・智人と虚人が分かれて行動するギミック
+ -ルート
+・役割を明確にする
+ -虚人 :: アクション要素 :: 破壊 
+ -智人 :: パズル要素 :: 創造
