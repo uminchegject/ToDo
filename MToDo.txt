@@ -3,6 +3,12 @@
 https://qiita.com/4_mio_11/items/9e8af2ce82ee2a7625b5
 https://free-gamer.hatenablog.com/entry/2019/08/10/024708
 
+
+[業務]
+○サバゲーの勧誘
+○KOTの解除申請
+
+
 [CityMaker]
 ※SimpleBaseVolumeMakerをBaseAssetのみで検証
 
@@ -49,8 +55,13 @@ https://free-gamer.hatenablog.com/entry/2019/08/10/024708
 ・AIController
  -BT_PL002_00周りを調査
 
-○智人AIで
- -アイテムの取得、設置までのフローを実装する
+○智人AIの実装
+・AI周りの設計
+・徘徊周りの実装方法の調査
+
+・アイテムの取得、設置までを実装する
+・徘徊周りの実装
+・智人AIを用いたギミック及びAI周りのアイデアを実装物と照らして提案する
 
 ■アイデア
 ・智人にしかできないギミックを増やす
