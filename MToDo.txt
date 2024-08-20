@@ -1,11 +1,27 @@
 ■SoulCity
-○SurfaceMakerParameterにパラメーターを加える
- -TopEdgeSideSize
- -BottomEdgeSideSize
+○SurfaceMakerParameterにパラメーターを加えて、修正も行う
+
+float top3DEdgeSideSize = point(1, "Top3DEdgeSideSize", paramIndex);
+float bottom3DEdgeSideSize = point(1, "Bottom3DEdgeSideSize", paramIndex);
+ 
+vector scale =  v@scale;
+scale.x -= depthSize * 2;
+scale.y -= depthSize * 2;
+scale.z = topEdgeSize;
+ 
+vector scaleTopEdge = v@scale;
+scaleTopEdge.x = scale.z - top3DEdgeSideSize * 2;
+scaleTopEdge.y = topEdgeSize;
+scaleTopEdge.z = depthSize;
+
+vector scale3DTopEdge = top3DEdgeSideSize;
+scale3DTopEdge.y = topEdgeSize;
+
 
 ○BaseAssetの検証
 ・Type2の検証
 ・Patternの検証
+
 
 ○DetailAssetの検証
 ・Patternの検証
@@ -45,4 +61,3 @@ Attributeについての説明
  -倒れるときにエフェクト、効果音、カメラが振動が発生する
  -転がってくるスピードを調整できる
  -ガードもしくは攻撃で破壊できる
- 
