@@ -1,90 +1,22 @@
-[Study]
-●AI
-https://qiita.com/4_mio_11/items/9e8af2ce82ee2a7625b5
-https://free-gamer.hatenablog.com/entry/2019/08/10/024708
+■SoulCity
+○BaseAssetの検証
+・Type2の検証
+・Patternの検証
+
+○DetailAssetの検証
+・Patternの検証
+・Greebleの検証
 
 
-[業務]
-○サバゲーの勧誘
-○KOTの解除申請
+■BLOG
+Attributeについての説明
 
 
-[CityMaker]
-※SimpleBaseVolumeMakerをBaseAssetのみで検証
+■業務
+○ギミッククラス周りの調査
 
-○一連の処理を検証
- -SimpleBaseVolumeの生成
- -DetailVolumeの生成
- -BaseAssetの配置
- 
-○Volumeの検証
-・FrontDirDataをリセットしてGreebleを行うように修正
-・BaseBlock生成とGreebleの生成を検証
+○ギミックの実装
 
-○BaseAssetを複数パターン用意
- -SingleBlockで検証
- -SimpleBaseVolumeで検証
+○ThibitoAIの新規実装
 
-●BaseVolume
-・コントラスト
- -Size
- -Height(Noise)
- -EmptyRatio
- -SingleBlock or MultiBlock
-
-●BaseAsset
-・コントラストをつけたBaseAssetを用意する
- -大、中、小
-
-▲DetailAsset
-・BaseAssetに応じたDetailAssetの配置を行う
-・変化
- -サイズ(Greeble, Random)
- -位置(Greeble, Random)
-
-
-[Blog]
-○UV展開について調査
-○unrealattributeについて調査
-
-
-[IZON.]
-○調査
-・ギミックの親クラス
- -Content/blueprint/Map/DestoryObj/BP_DestoryObj_Base.uasset
-・AIController
- -BT_PL002_00周りを調査
-
-○智人AIの実装
-・AI周りの設計
-・徘徊周りの実装方法の調査
-
-・アイテムの取得、設置までを実装する
-・徘徊周りの実装
-・智人AIを用いたギミック及びAI周りのアイデアを実装物と照らして提案する
-
-■アイデア
-・智人にしかできないギミックを増やす
- -創造をテーマにしたパズル要素
-・智人と虚人が分かれて行動するギミック
- -ルート
-・役割を明確にする
- -虚人 :: アクション要素 :: 破壊 
- -智人 :: パズル要素 :: 創造
-
-
-●ギミック
-・智人にアクションを起こさせるギミックを実装してみる
- -智人に動きを持たせる
-・智人AIにマッチしたギミックを考える
- -智人の足場をつくる
- -戦闘中に何かをつくる
-
-
-●智人AI
-・智人のソースを調査
-・仕様
- -虚人から一定以上離れないようにする
- -徘徊(プレイヤーの位置の周りを徘徊させる)
- -アイテムの取得(MoveTo & イベント)
- -創造(MoveTo & イベント)
+○Thibitoのアニメーション周りを調査
