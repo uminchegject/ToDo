@@ -17,6 +17,10 @@ scaleTopEdge.z = depthSize;
 vector scale3DTopEdge = top3DEdgeSideSize;
 scale3DTopEdge.y = topEdgeSize;
 
+if(0.0 < sideEdgeSize)
+if(0.0 < top3DEdgeSideSize)
+if(0.0 < bottom3DEdgeSideSize)
+
 
 ○BaseAssetの検証
 ・Type2の検証
@@ -61,3 +65,4 @@ Attributeについての説明
  -倒れるときにエフェクト、効果音、カメラが振動が発生する
  -転がってくるスピードを調整できる
  -ガードもしくは攻撃で破壊できる
+ 
