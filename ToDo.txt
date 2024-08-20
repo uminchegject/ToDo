@@ -1,80 +1,88 @@
-■業務
-●大鷲のトリコを研究
-※大鷲のトリコの仕様を最優先に考える
-
-●サンプルコードの研究
-・ギミック周り
-
-●ソースの研究
-
-●OXメンバーへの質問
-・プランナーへの検証を手伝うのはどうすればいいか
-・ゲームの方向性の確認
-
-●資料の確認
+[Study]
+●AI
+https://forums.unrealengine.com/t/event-on-possess-get/500962/2
 
 
-■Study
-・UE4の設計
-https://www.docswell.com/s/alwei/58LE7K-2022-05-12-154951
+[業務]
 
 
+[CityMaker]
+○一連の処理を検証
+ -CityBaseVolumeの生成
+ -CityBaseVolumeからSingleVolumeの生成とタイプ分け
+ -BaseAssetの配置
+ -DetailAssetの配置
 
-■実装
-○Normalに応じてVolumeMakerが正しく挙動するように修正
-・Pattern, Adjust, Divideモードの順番でそれぞれ確認をしていく
-・SurfaceMakerの面を一つずつ確認していく
-
-○VolumeからAsset生成までの一連の処理を実装
-・BaseAssetをまず完成させる
-
-
-
-■組み合わせ
-●Volume
-・※プレゼン資料用の比較ができる要素をまとめる
- -Height
- -Size
- -Type
+●BaseVolume
 ・コントラスト
- -Height
  -Size
+ -Height(Noise)
+ -EmptyRatio
+ -SingleBlock or MultiBlock
 
-●Asset
- -Size
- -BaseAsset
- -DetailAsset
+●BaseAsset
+・コントラストをつけたBaseAssetを用意する
+ -大、中、小
 
-
-■資料
-※勉強会とブログの記事をまとめる。
-※個人ブログもやってみる。
- -ワードプレスと画像を用意。
-
-○参考資料を集める
-・DocsWell, Quitaを参考にする
-https://www.docswell.com/s/EpicGamesJapan/K4Q8Y8-EGC2024_Procedures#p29
-https://qiita.com/TaroOzaki/items/f249ae4b5e8dc46f16f3
-
-○メモを作成
-
-○必要画像の整理と用意
-
-○清書を作成
-・ポートフォリオ
-・評価面談
+▲DetailAsset
+・BaseAssetに応じたDetailAssetの配置を行う
+・変化
+ -サイズ(Greeble, Random)
+ -位置(Greeble, Random)
 
 
-●メモ
-・実際の実装とそこから分かるプロシージャルモデリングのメリット
+[Blog]
+○UV展開について調査
+○attributeの概念について調査する
 
-・Pointの生成
- -BaseAsset
- -DetailAsset
 
-・PointAttributeを用いた管理
- -Scale
- -Instance
- -Normal + up
+[IZON.]
+■調査
+○ギミック周りのクラス調査
+・BP_ChibitoCreationPower_Base
+・BP_DestoryObj_Base
 
-・DataTableを使った管理
+
+■ギミックの実装
+●トリガーに接触すると柱が倒れて転がってくる
+・アニメーションで特定の座標を動くようにする
+・○潰された後の仕様を確認する
+・スピード調整のパラメーターを用意する
+ 
+●ジャンプパッド
+・実装方法はネットから探してくる
+・ジャンプ力のパラメーターの実装
+
+●虚人の素手攻撃で動かせるブロック
+・パンチしたらパンチした方向に動かすオブジェクトを実装
+
+▲智人綱渡りを守るギミック
+・智人を独立して動くモードにする実装
+・MP_TestAutoCreationをベースに実装
+・智人しか渡れない道を実装
+・エネミーをウェーブでスポーン
+
+
+■プラスアルファの実装
+○AI周りを新規で実装する
+・BP_Thibitoを複製して、AIContorllerを新しいAIControllerに設定する
+・徘徊周りの実装を行い動くかを検証する
+
+●トリガーに接触すると柱が倒れて転がってくる
+・柱を止めるオブジェクトを智人にクリエイトさせる
+
+●ジャンプパッド
+・ジャンプパッドをチビトにクリエイトさせる
+
+●虚人の素手攻撃で動かせるブロック
+・ブロックをチビトにクリエイトさせる
+
+▲智人綱渡りを守るギミック
+
+
+■アイデア
+・智人にしかできないギミックを増やす
+ -創造をテーマにしたパズル要素
+・役割を明確にする
+ -虚人 :: アクション要素 :: 破壊 
+ -智人 :: パズル要素 :: 創造
