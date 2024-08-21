@@ -12,14 +12,21 @@
 制作内容としてはHoudiniを用いてUE4上で背景の自動生成を行うことを目標に実装しています。
 実装をしていく過程で行った作業や設計の考え方を整理することを目的に記事を書いていこうと思います。
 
+
+●Attribute
+https://www.monolithsoft.co.jp/techblog/houdini/000492.html
+
 ・Houdiniにおけるアトリビュート
-point, Vertex, Primitive, DetailそれぞれにAttributeを持たせることができる
-基本情報のP(座標)に加えて、N(法線), Cd(色),scale(スケール)など情報をそれぞれに持たせることができる
+Houdiniにおいてpoint, Vertex, Primitive, Detailの4つの項目にAttributeを持たせることができます。
+ -point
+ -Vertex
+ -Primitive
+ -Detail
+また、Attributeについては基本情報のP(座標)に加えて、N(法線), Cd(色),scale(スケール)など様々な情報を持たせることができます。
+https://www.sidefx.com/ja/docs/houdini/model/attributes.html
 
 ・HoudiniEngineForUnrealにおけるアトリビュート
-HoudiniEngineForUnrealにおける専用のアトリビュートが存在する
-https://www.sidefx.com/docs/houdini/unreal/attributes.html
-
+そして、HoudiniEngineForUnrealにおいて専用のアトリビュートを用いて実装を行っていく必要があります。
 
 ・unreal_instance
 アセットのパスをpointattribのunreal_instanceに持たせることでアセットの生成を行うことができる。
@@ -29,4 +36,12 @@ unreal_instanceを用いる場合はセットでv@scale, v@N, v@upを設定す�
 
 ・unreal_material
 primitiveattributeにunreal_materialを設定することで、primitiveにue4を設定できる。
-ただ、Primitiveに対してuv展開を行わなければならない、
+ただ、Primitiveに対してuv展開を行わなければならない
+
+https://www.sidefx.com/docs/houdini/unreal/attributes.html
+
+●実装例
+・Box上でPointを配置
+・Attributeを設定
+・MakeInstance
+・UE上で生成
