@@ -63,68 +63,58 @@ if(0 < nextVolumeType)
 
 ○回転後の移動
  -SighBoard
- 
-//回転周り
+
 vector normal = 0;
 normal.z = 1;
 vector4 qRotate = dihedral(normal, v@N);
 matrix mRotate = qconvert(qRotate);
+vector spawnPos = v@P;
+vector scale = v@Scale;
 
-vector rotate = point(1, "Rotate", blockTypeIndex);
+//-------------------------------------------------------------------------------------------------
+//AssetRef
 vector assetRotate = point(2, "Rotate", assetRefIndex);
 vector axis = set(1,0,0);
-vector4 qAdjutedRotate = quaternion(radians(rotate.x + assetRotate.x) ,axis);
-matrix mAdjustedRotate = qconvert(qAdjutedRotate);
+vector4 qAssetRotate = quaternion(radians(assetRotate.x) ,axis);
+matrix mAssetRotate = qconvert(qAssetRotate);
 axis = set(0,1,0);
-qAdjutedRotate = quaternion(radians(rotate.y + assetRotate.y) ,axis);
-mAdjustedRotate *= qconvert(qAdjutedRotate);
+qAssetRotate = quaternion(radians(assetRotate.y) ,axis);
+mAssetRotate *= qconvert(qAssetRotate);
 axis = set(0,0,1);
-qAdjutedRotate = quaternion(radians(rotate.z + assetRotate.z) ,axis);
-mAdjustedRotate *= qconvert(qAdjutedRotate);    
-mRotate *= mAdjustedRotate;
-
-normal *= mRotate;
-
-
-//移動周り    
-vector spawnPos = v@P;
-vector transform = point(1, "Transform", blockTypeIndex);
-vector transformXAxisRange = point(1 , "TransformXAxisRange", blockTypeIndex);
-vector transformYAxisRange = point(1 , "TransformYAxisRange", blockTypeIndex);   
-transform.x += random(spawnPos * 10) * (transformXAxisRange.y - transformXAxisRange.x) + transformXAxisRange.x;
-transform.y += random(spawnPos * 20) * (transformYAxisRange.y - transformYAxisRange.x) + transformYAxisRange.x;
-transform *= v@scale;
+qAssetRotate = quaternion(radians(assetRotate.z) ,axis);
+mAssetRotate *= qconvert(qAssetRotate);    
 
 vector assetTransform = point(2, "Transform", assetRefIndex);
-vector adjustedAssetMove = assetTransform * v@scale;
-transform += adjustedAssetMove;
+assetTransform *= scale;
+assetTransform *= mRotate;
 
-transform *= mRotate;
-spawnPos += transform;
+vector assetScale = point(2, "SizeCofficient", assetRefIndex); 
+//-------------------------------------------------------------------------------------------------
 
+//-------------------------------------------------------------------------------------------------
+//AssetParam
+vector paramRotate = point(1, "Rotate", blockTypeIndex);
+vector axis = set(1,0,0);
+vector4 qParamRotate = quaternion(radians(paramRotate.x) ,axis);
+matrix mParamRotate = qconvert(qParamRotate);
+axis = set(0,1,0);
+qParamRotate = quaternion(radians(paramRotate.y) ,axis);
+mParamRotate *= qconvert(qParamRotate);
+axis = set(0,0,1);
+qParamRotate = quaternion(radians(paramRotate.z) ,axis);
+mParamRotate *= qconvert(qParamRotate);
 
-//サイズ周り
+vector paramTransform = point(1, "Transform", blockTypeIndex);
+paramTransform *= scale;
+paramTransform *= mRotate;
+
+vector paramScale = point(1, "SizeCofficient", blockTypeIndex); 
 vector sizeRange = point(1, "SizeRange", blockTypeIndex);
 float sizeCofficient = sizeRange.x + randomNum * (sizeRange.y - sizeRange.x);
-vector assetScale = v@scale;
-assetScale *= sizeCofficient;
+paramScale *= sizeCofficient
+//-------------------------------------------------------------------------------------------------
 
-vector scaleParam = point(1, "ScaleParam", blockTypeIndex);
-assetScale *= scaleParam;
-if(0 == scaleParam.x) {assetScale.x = assetScale.y;}
-if(0 == scaleParam.y) {assetScale.y = assetScale.x;} 
 
-vector assetSizeCofficient = point(2, "SizeCofficient", assetRefIndex);
-assetScale *= assetSizeCofficient;
-
-if(point(1 , "RemainRatio", blockTypeIndex) < random(spawnPos)) {continue;}
-
-int pt = addpoint(0, spawnPos);
-setpointattrib(0, "N", pt, normal);
-setpointattrib(0, "scale", pt, assetScale);
-setpointattrib(0, "AssetRef", pt, assetRef);     
-
- 
 ○Top,Center,BottomのEdgeSizeの分離
  float top3DEdgeSideSize = point(1, "Top3DEdgeSideSize", paramIndex);
 float bottom3DEdgeSideSize = point(1, "Bottom3DEdgeSideSize", paramIndex);
