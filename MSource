@@ -1,48 +1,147 @@
-■SoulCity
-○SurfaceMakerParameterにパラメーターを加える
- -TopEdgeSideSize
- -BottomEdgeSideSize
+■Volume
+○Scalingを正確にする
+ -分割する際にサイズを正確にするように修正
 
-○BaseAssetの検証
-・Type2の検証
-・Patternの検証
+//ScaleRange
+if(scaleRange.x =! 1 || scaleRange.y =! 1)
+{
+	float ScaleCofficient = rand(blockPosOrigin * (i + loopNum + 10)) * (scaleRange.y - scaleRange.x) + scaleRange.x;
+	blockScaleOrigin *= ScaleCofficient;
+	vector adjustedMoveVector = 0;
+	if(abs(blockFrontDirDataOrigin.x) <= 1)
+	{
+		adjustedMoveVector.x = -blockFrontDirDataOrigin.x * blockScaleOrigin.x * (ScaleCofficient - 1) / 2;
+	}
+	if(abs(blockFrontDirDataOrigin.y) <= 1)
+	{
+		adjustedMoveVector.y = -blockFrontDirDataOrigin.y * blockScaleOrigin.y * (ScaleCofficient - 1) / 2;
+	}
+	if(abs(blockFrontDirDataOrigin.z) <= 1)
+	{
+		adjustedMoveVector.z = -blockFrontDirDataOrigin.z * blockScaleOrigin.z * (ScaleCofficient - 1) / 2;
+	}
+	adjustedMoveVector *= rotateMatrix;
+{
+else
+{
+	//移動
+	vector MoveVector += transform * blockScaleOrigin;
+	MoveVector *= rotateMatrix;
+	blockPosOrigin += MoveVector;
 
-○DetailAssetの検証
-・Patternの検証
-・Greebleの検証
+	//回転周り
+	float RotateValue = random(blockPosOrigin * (i + loopNum)) * (rotateRange.y - rotateRange.x) + rotateRange.x;
+	vector4 q = quaternion(radians(RotateValue) ,rotateAxis);
+	matrix rotateMatrix = blockMatrixOrigin * qconvert(q);
+
+	//ボリュームスケール
+	blockScaleOrigin.x *= volumeScale.x; 
+	blockScaleOrigin.y *= volumeScale.y;
+	blockScaleOrigin.z *= volumeScale.z;      
+}
+
+push(blockPosList, blockPosOrigin);
+push(blockScaleList, blockScaleOrigin);
+push(blockMatrixList, rotateMatrix);
+push(frontDirDataList, blockFrontDirDataOrigin);
 
 
-■BLOG
-Attributeについての説明
+○NextTypeをした後そのまま継続させる
+・LastTypeを設定するように修正する
+if(0 < nextVolumeType) 
+{         
+	push(volumePosList, blockPosOrigin);
+	push(volumeScaleList, blockScaleOrigin);
+	push(volumeMatrixList, blockMatrixOrigin);
+	push(volumeFrontDirDataList, blockFrontDirDataOrigin);
+	push(volumeTypeList, nextVolumeType);
+}
 
+■Detail
+○Transform周りの修正
+ -Scaleの反映
 
-[業務]
-■アイデア出し
-・動かせるブロックをどう落とし込むか
-・ジャンプパッドキックの配置ロジック
-
-■Study + 調査
-○切れた参照の復元方法について調査
-
-○転がる柱の実装に必要な情報を調査
-・ヒットした際の分離+ダメージの実装方法を調査
-・DestroyObjBaseクラスの調査
-
-△AI周りの調査
-
-■拡張実装
-○ジャンプパッドキック
-・智人が創造するように実装する
- -バトルモードでも使えるようにする
-
-○虚人の素手攻撃で動かせるブロック
-・智人が想像する代わりに動けなくなる
-
-■基礎実装
-○トリガーに接触すると柱が倒れて転がってくる
- -トリガーに接触すると柱が倒れてくる、
- -倒れた柱はプレイヤーのほうに転がる（坂道を転がる）
- -倒れるときにエフェクト、効果音、カメラが振動が発生する
- -転がってくるスピードを調整できる
- -ガードもしくは攻撃で破壊できる
+○回転後の移動
+ -SighBoard
  
+//回転周り
+vector normal = 0;
+normal.z = 1;
+vector4 qRotate = dihedral(normal, v@N);
+matrix mRotate = qconvert(qRotate);
+
+vector rotate = point(1, "Rotate", blockTypeIndex);
+vector assetRotate = point(2, "Rotate", assetRefIndex);
+vector axis = set(1,0,0);
+vector4 qAdjutedRotate = quaternion(radians(rotate.x + assetRotate.x) ,axis);
+matrix mAdjustedRotate = qconvert(qAdjutedRotate);
+axis = set(0,1,0);
+qAdjutedRotate = quaternion(radians(rotate.y + assetRotate.y) ,axis);
+mAdjustedRotate *= qconvert(qAdjutedRotate);
+axis = set(0,0,1);
+qAdjutedRotate = quaternion(radians(rotate.z + assetRotate.z) ,axis);
+mAdjustedRotate *= qconvert(qAdjutedRotate);    
+mRotate *= mAdjustedRotate;
+
+normal *= mRotate;
+
+
+//移動周り    
+vector spawnPos = v@P;
+vector transform = point(1, "Transform", blockTypeIndex);
+vector transformXAxisRange = point(1 , "TransformXAxisRange", blockTypeIndex);
+vector transformYAxisRange = point(1 , "TransformYAxisRange", blockTypeIndex);   
+transform.x += random(spawnPos * 10) * (transformXAxisRange.y - transformXAxisRange.x) + transformXAxisRange.x;
+transform.y += random(spawnPos * 20) * (transformYAxisRange.y - transformYAxisRange.x) + transformYAxisRange.x;
+transform *= v@scale;
+
+vector assetTransform = point(2, "Transform", assetRefIndex);
+vector adjustedAssetMove = assetTransform * v@scale;
+transform += adjustedAssetMove;
+
+transform *= mRotate;
+spawnPos += transform;
+
+
+//サイズ周り
+vector sizeRange = point(1, "SizeRange", blockTypeIndex);
+float sizeCofficient = sizeRange.x + randomNum * (sizeRange.y - sizeRange.x);
+vector assetScale = v@scale;
+assetScale *= sizeCofficient;
+
+vector scaleParam = point(1, "ScaleParam", blockTypeIndex);
+assetScale *= scaleParam;
+if(0 == scaleParam.x) {assetScale.x = assetScale.y;}
+if(0 == scaleParam.y) {assetScale.y = assetScale.x;} 
+
+vector assetSizeCofficient = point(2, "SizeCofficient", assetRefIndex);
+assetScale *= assetSizeCofficient;
+
+if(point(1 , "RemainRatio", blockTypeIndex) < random(spawnPos)) {continue;}
+
+int pt = addpoint(0, spawnPos);
+setpointattrib(0, "N", pt, normal);
+setpointattrib(0, "scale", pt, assetScale);
+setpointattrib(0, "AssetRef", pt, assetRef);     
+
+ 
+○Top,Center,BottomのEdgeSizeの分離
+ float top3DEdgeSideSize = point(1, "Top3DEdgeSideSize", paramIndex);
+float bottom3DEdgeSideSize = point(1, "Bottom3DEdgeSideSize", paramIndex);
+ 
+vector scale =  v@scale;
+scale.x -= depthSize * 2;
+scale.y -= depthSize * 2;
+scale.z = topEdgeSize;
+ 
+vector scaleTopEdge = v@scale;
+scaleTopEdge.x = scale.z - top3DEdgeSideSize * 2;
+scaleTopEdge.y = topEdgeSize;
+scaleTopEdge.z = depthSize;
+
+vector scale3DTopEdge = top3DEdgeSideSize;
+scale3DTopEdge.y = topEdgeSize;
+
+if(0.0 < sideEdgeSize)
+if(0.0 < top3DEdgeSideSize)
+if(0.0 < bottom3DEdgeSideSize)
