@@ -1,32 +1,29 @@
-[反省]
-※勉強の意をこめてSFCはこまめにプレイする
-・企業研究もSFCと最新タイトルをプレイする
+[CityGenerator]
+○CityGeneratorの修正
 
-[業務]
-■Study + 調査
-○ダメージ周りの調査
-
-
-■拡張実装
-○智人AIの実装
-
-△智人の追従モードと徘徊モードの実装
-・徘徊モードの仕様設計と実装方法の整理
+○Parameterの修正
+・建物を独立させる
+・Assetの種類を増やす
+・詳細な部分を詰める
 
 
-■基礎実装
-※ギミックの根本の部分を整理して、共通した意図・仕様のギミックを複数用意
+■IDEA
+●ビューポート上での生成
+・ビューポートでモデリングしたものに対して生成するように実装する
 
-○トリガーに接触すると柱が倒れて転がってくる
- -移動周りの実装
- -ガード及び破壊の実装 
- -トリガーに接触すると柱が倒れてくる
- -倒れた柱はプレイヤーのほうに転がる（坂道を転がる）
- -倒れるときにエフェクト、効果音、カメラが振動が発生する
- -転がってくるスピードを調整できる
- -ヒットしてしまった場合は分離+ダメージを受ける
- -ガードもしくは攻撃で破壊できる
- 
+●Volumeの置き方にバリエーションを持たせる
+・SurfaceBaseのVolumeMakerを実装する
+ -NoiseによるSurface内のBasePointの調整
+ -奥行の設定
+
+●PMを設計
+・SurfaceBaseを生成してVolumeMakerに繋げる
+・ObjにMaterialを設定する対応を実装する
+
+
+[IZON.]
+○AI周りの設計
+・スクエニのAI本を散歩しながら読む
 
 ■IDEA
 ●虚人の素手攻撃で動かせるブロック
@@ -41,41 +38,3 @@
 ・ダメージを発生させるギミック
 ・トリガーギミック
 ・強制移動
-
-
-[CityGenerator]
-■VolumeMaker
-○Scalingを正確にする
-・分割する際にサイズを正確にするように修正
-
-■DetailMaker
-○Transform周りの修正
-・Scaleの反映
-○Top,Center,BottomのEdgeSizeの分離
-○回転後の移動
-
-・SurfaceMakerParameterにパラメーターを加えて、修正も行う
-
-float top3DEdgeSideSize = point(1, "Top3DEdgeSideSize", paramIndex);
-float bottom3DEdgeSideSize = point(1, "Bottom3DEdgeSideSize", paramIndex);
- 
-vector scale =  v@scale;
-scale.x -= depthSize * 2;
-scale.y -= depthSize * 2;
-scale.z = topEdgeSize;
- 
-vector scaleTopEdge = v@scale;
-scaleTopEdge.x = scale.z - top3DEdgeSideSize * 2;
-scaleTopEdge.y = topEdgeSize;
-scaleTopEdge.z = depthSize;
-
-vector scale3DTopEdge = top3DEdgeSideSize;
-scale3DTopEdge.y = topEdgeSize;
-
-if(0.0 < sideEdgeSize)
-if(0.0 < top3DEdgeSideSize)
-if(0.0 < bottom3DEdgeSideSize)
-
-
-■BLOG
-Attributeについての説明
