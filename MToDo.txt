@@ -2,26 +2,31 @@
 ○CityGeneratorの修正
 
 ○現在のプロジェクトをベースにカードリッジ方式を実装
+・VolumeMaker, AssetMakerのみで実装してみる
 
+○VolumeMakerの設計修正
+・VolumeTypeの引継ぎ周りを修正
+
+○他VolumeMakerもコンバートできるように設計する
 
 ■IDEA
+●カードリッジ
+ -オブジェクト配置情報
+ -アセット情報
+・最初のBasePointの値だけ直接設定させる
+※カードリッジ側で反射的に操作したいパラメーターは直接設定できるようにする
+ -Scale
+ -Seed
+
 ●BasePoint生成ロジック
 ・SurfaceBaseのVolumeMakerを実装する
  -NoiseによるSurface内のBasePointの調整
  -奥行の設定
 
-●PM設計
+▲PM設計
 ・SurfaceBaseを生成してVolumeMakerに繋げる
 ・ObjにMaterialを設定する対応を実装する
 
-●カードリッジ
- -オブジェクト配置情報
- -アセット情報
- 
-・最初のBasePointの値だけ直接設定させる
-※カードリッジ側で反射的に操作したいパラメーターは直接設定できるようにする
- -Scale
- -Seed
 
 
 [IZON.]
