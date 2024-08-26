@@ -82,8 +82,22 @@ BP_Destroy_Baseを継承
 ・VolumeTypeの引継ぎ周りを修正
 ・カードリッジかしやすいように設計
 
+○順番に実装しつつ検証していく
+ -Asset
+ -SurfaceMaker
+ -VolumeMaker
+・処理の流れ
+ -Init
+ -MakeVolume
+ -MakeSurface
+ -MakeDetail
+
 ○他VolumeMakerもコンバートできるように設計する
 ※SoulCity, TokyoCity, OldCityをベースに必要なカードリッジを設計する
+
+・SurfaceMakerを使いやすいように修正する
+　ーArcMaker
+　ーSimpleSurfaceMaker
 
 ■IDEA
 ●カードリッジ
