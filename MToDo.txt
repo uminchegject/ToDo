@@ -1,9 +1,14 @@
 [業務]
 ■Study + 調査
-○ダメージ周りの調査
+○UE4設計
+https://hogetatu.hatenablog.com/entry/2017/12/11/000638
 
 
 ■拡張実装
+○Gimmickクラスの設計を提案
+・クラスの説明
+・それぞれギミックの根本部分の整理
+
 ○智人AIの実装
 
 △智人の追従モードと徘徊モードの実装
@@ -22,12 +27,36 @@
  -転がってくるスピードを調整できる
  -ヒットしてしまった場合は分離+ダメージを受ける
  -ガードもしくは攻撃で破壊できる
- 
-○インターフェースを用いたギミッククラス設計を行う
-https://www.docswell.com/s/alwei/58LE7K-2022-05-12-154951#p25
- 
+
+
+■基底クラス
+・GimmickEventを用意して呼び出す
+ -GimmickEventをOverRideして処理を呼び出す
+ -EventExecuteDestroyObjectからGimmickEventを呼び出す
+
+・サウンド、エフェクト、カメラ振動を関数化
+
+・アニメーションイベントの継承
+動きなども制御できるようにさせる
+
+・ダメージを入れる
+
+●DestoryGimmick
+BP_DestroyObj_Baseを継承
+・破壊条件を設定する
+
+●StaticGimmick
+BP_Destroy_Baseを継承
+
 
 ■IDEA
+・武器による選択肢を持たせる。
+・コンボによってしか破壊できないギミックを考える。
+・後にならないと進めないレベルを設定する。
+・パラメーターで難易度をを変えられる
+・ギミック同士で組み合わせる
+
+
 ●虚人の素手攻撃で動かせるブロック
 ・レベルの移動
 ・智人のルート生成
@@ -46,13 +75,15 @@ https://www.docswell.com/s/alwei/58LE7K-2022-05-12-154951#p25
 ○CityGeneratorの修正
 ・現在の実装の挙動確認
 
-○現在のプロジェクトをベースにカードリッジ方式を実装
-・VolumeMaker, AssetMakerのみで実装してみる
+○実装した建物Generatorをカードリッジ化する
+・DetailMaker(SurfaceMaker + DetailMaker(Greeble or Pattern)), AssetMakerのみで実装してみる
 
 ○VolumeMakerの設計修正
 ・VolumeTypeの引継ぎ周りを修正
+・カードリッジかしやすいように設計
 
 ○他VolumeMakerもコンバートできるように設計する
+※SoulCity, TokyoCity, OldCityをベースに必要なカードリッジを設計する
 
 ■IDEA
 ●カードリッジ
