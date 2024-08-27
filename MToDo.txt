@@ -1,8 +1,6 @@
 [業務]
 ■Study + 調査
-○UE4設計
-https://hogetatu.hatenablog.com/entry/2017/12/11/000638
-
+○智人の待機、追従モードの切替箇所を調査
 
 ■拡張実装
 ○Gimmickクラスの設計を提案
@@ -14,9 +12,11 @@ https://hogetatu.hatenablog.com/entry/2017/12/11/000638
 △智人の追従モードと徘徊モードの実装
 ・徘徊モードの仕様設計と実装方法の整理
 
-
 ■基礎実装
 ※ギミックの根本の部分を整理して、共通した意図・仕様のギミックを複数用意
+
+○基底クラスの実装
+まず、BP_StaticObjGimmickを実装する
 
 ○トリガーに接触すると柱が倒れて転がってくる
  -移動周りの実装
@@ -33,19 +33,16 @@ https://hogetatu.hatenablog.com/entry/2017/12/11/000638
 ・GimmickEventを用意して呼び出す
  -GimmickEventをOverRideして処理を呼び出す
  -EventExecuteDestroyObjectからGimmickEventを呼び出す
-
 ・サウンド、エフェクト、カメラ振動を関数化
-
 ・アニメーションイベントの継承
-動きなども制御できるようにさせる
-
+ -動きなども制御できるようにさせる
 ・ダメージを入れる
 
-●DestoryGimmick
+●BP_DestoryObjGimmick
 BP_DestroyObj_Baseを継承
 ・破壊条件を設定する
 
-●StaticGimmick
+●BP_StaticObjGimmick
 BP_Destroy_Baseを継承
 
 
@@ -76,13 +73,7 @@ BP_Destroy_Baseを継承
 ・現在の実装の挙動確認
 
 ○実装した建物Generatorをカードリッジ化する
-・DetailMaker(SurfaceMaker + DetailMaker(Greeble or Pattern)), AssetMakerのみで実装してみる
-
-○VolumeMakerの設計修正
-・VolumeTypeの引継ぎ周りを修正
-・カードリッジかしやすいように設計
-
-○順番に実装しつつ検証していく
+・順番に実装しつつ検証していく
  -Asset
  -SurfaceMaker
  -VolumeMaker
@@ -92,12 +83,15 @@ BP_Destroy_Baseを継承
  -MakeSurface
  -MakeDetail
 
+○VolumeMakerの設計修正
+・VolumeTypeの引継ぎ周りを修正
+・カードリッジかしやすいように設計
+
 ○他VolumeMakerもコンバートできるように設計する
 ※SoulCity, TokyoCity, OldCityをベースに必要なカードリッジを設計する
-
 ・SurfaceMakerを使いやすいように修正する
-　ーArcMaker
-　ーSimpleSurfaceMaker
+ ーBoxSurfaceMaker
+ ーSimpleSurfaceMaker
 
 ■IDEA
 ●カードリッジ
