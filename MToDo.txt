@@ -19,6 +19,14 @@ https://tech.spark-creative.co.jp/entry/2022/12/02/123633
 ○ダメージ周りの対応
 ・Thibitoの修正を行い説明する
 
+○それぞれのBaseクラスを実装
+
+○継承して各ギミックを実装
+
+○マージ
+
+○報告
+
 
 ■拡張実装
 ○Gimmickクラスの設計を提案
@@ -41,7 +49,6 @@ https://tech.spark-creative.co.jp/entry/2022/12/02/123633
 
 ●BP_DestoryObjGimmick
 BP_DestroyObj_Baseを継承
-・破壊条件を設定する
 
 ●BP_StaticObjGimmick
 BP_Destroy_Baseを継承
@@ -84,16 +91,19 @@ BP_Destroy_Baseを継承
  -MakeSurface
  -MakeDetail
 
-○パラメーターをまとめて設定できるように実装する
+○パラメーターの分割
+・for文で回してパラメーターに応じた処理を行うようにSwitchする
+ -Greeble
+ -Pattern
+ -Scale
+ -BlockSurface
+ -SimpleSurfacde
 
-○Typeの流動性を高める
- -for文で回してパラメーターに応じた処理を行うようにSwitchする
+○VolumeType周りの修正
+・複数種類で兼用できるようにする
+ -配列でTypeNumを全て入れる
+ -各パラメーターで追加できるようにする
 
-○他VolumeMakerもコンバートできるように設計する
-※SoulCity, TokyoCity, OldCityをベースに必要なカードリッジを設計する
-・SurfaceMakerを使いやすいように修正する
- ーBoxSurfaceMaker
- ーSimpleSurfaceMaker
 
 ■IDEA
 ●カードリッジ
