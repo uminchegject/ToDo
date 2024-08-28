@@ -1,10 +1,3 @@
-●技術
-・Pointの管理方法について
- -Scale
- -AssetInstance
- -Pos
- -Normal, up
-
 ●はじめに
 現在ゲーム業界でクライアントエンジニアとして働いているegjectです。
 元々は建築系の大学でプロシージャルデザインを研究していましたが、プロシージャルデザインを通じてゲーム業界に興味を持ちゲームエンジニアになりました。
@@ -14,31 +7,24 @@
 
 
 ●Attribute
-https://www.monolithsoft.co.jp/techblog/houdini/000492.html
-
 ・Houdiniにおけるアトリビュート
 Houdiniにおいてpoint, Vertex, Primitive, Detailの4つの項目にAttributeを持たせることができます。
- -point
- -Vertex
- -Primitive
- -Detail
+・下記を参照
+https://www.monolithsoft.co.jp/techblog/houdini/000492.html
 また、Attributeについては基本情報のP(座標)に加えて、N(法線), Cd(色),scale(スケール)など様々な情報を持たせることができます。
 https://www.sidefx.com/ja/docs/houdini/model/attributes.html
 
 ・HoudiniEngineForUnrealにおけるアトリビュート
-そして、HoudiniEngineForUnrealにおいて専用のアトリビュートを用いて実装を行っていく必要があります。
+HoudiniEngineForUnrealにおいては専用のアトリビュートを用いて実装を行っていく必要があります。
+https://www.sidefx.com/docs/houdini/unreal/attributes.html
+この中で自分が使用したunreal_instanceを実装例をつけて説明していきます。
 
-・unreal_instance
+・unreal_instanceについて
 アセットのパスをpointattribのunreal_instanceに持たせることでアセットの生成を行うことができる。
 また、v@scaleでアセットのスケールを設定できv@N, v@upでアセットの向きと傾きを設定できる
 unreal_instanceを用いる場合はセットでv@scale, v@N, v@upを設定すべきという認識。
 また、unreal split instancesを用いればエディター上で個々のアセットの調整を独立して行うことができる
 
-・unreal_material
-primitiveattributeにunreal_materialを設定することで、primitiveにue4を設定できる。
-ただ、Primitiveに対してuv展開を行わなければならない
-
-https://www.sidefx.com/docs/houdini/unreal/attributes.html
 
 ●実装例
 ・Box上でPointを配置
