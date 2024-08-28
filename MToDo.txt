@@ -80,6 +80,8 @@ BP_Destroy_Baseを継承
 ○CityGeneratorの修正
 ・現在の実装の挙動確認
 
+○VolumeMakerを分割してSwitchを実装し、検証する
+
 ○実装した建物Generatorをカードリッジ化する
 ・順番に実装しつつ検証していく
  -Asset
@@ -103,6 +105,8 @@ BP_Destroy_Baseを継承
 ・複数種類で兼用できるようにする
  -配列でTypeNumを全て入れる
  -各パラメーターで追加できるようにする
+ -配列からランダムにVolumeTypeを取得するように実装する
+
 
 
 ■IDEA
