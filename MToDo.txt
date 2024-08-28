@@ -107,9 +107,10 @@ BP_Destroy_Baseを継承
  -MakeSurface
  -MakeDetail
 
+○パラメーターをまとめて設定できるように実装する
+
 ○Typeの流動性を高める
  -for文で回してパラメーターに応じた処理を行うようにSwitchする
- -
 
 ○他VolumeMakerもコンバートできるように設計する
 ※SoulCity, TokyoCity, OldCityをベースに必要なカードリッジを設計する
