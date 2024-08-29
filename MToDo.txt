@@ -2,7 +2,8 @@
 ○多重継承と仮想基本クラス
 http://marupeke296.com/CPP_No8_MultiClass.html
 
-○ギミックの中で気になるアイテムの中の処理を確認する
+○HoudiniMayaの概要を確認
+
 
 [Houdini]
 ■Study
