@@ -4,6 +4,8 @@ http://marupeke296.com/CPP_No8_MultiClass.html
 
 ○ギミックの中で気になるアイテムの中の処理を確認する
 
+○VisualStudioのインストール
+
 
 ○AI
 https://tech.spark-creative.co.jp/entry/2022/12/02/123633
@@ -13,6 +15,9 @@ https://tech.spark-creative.co.jp/entry/2022/12/02/123633
 
 
 [業務]
+○最新の取得とブランチへのマージ
+・BaseクラスだけIgnoreしておく
+
 ○破壊周りの対応
 ・破壊のマスタークラスを実装して継承したクラスで破壊オブジェクトを設定するように対応
 
@@ -27,6 +32,8 @@ https://tech.spark-creative.co.jp/entry/2022/12/02/123633
 
 ○報告
 
+
+△Baseギミックを用いた新しいアイデアの提案
 
 ■拡張実装
 ○Gimmickクラスの設計を提案
@@ -80,7 +87,21 @@ BP_Destroy_Baseを継承
 ○CityGeneratorの修正
 ・現在の実装の挙動確認
 
-○VolumeMakerを分割してSwitchを実装し、検証する
+○VolumeMakerを分割してSwitchを実装し検証する
+
+○VolumeType周りの修正
+・複数種類で兼用できるようにする
+ -配列でTypeNumを全て入れる
+ -各パラメーターで追加できるようにする
+ -配列からランダムにVolumeTypeを取得するように実装する
+
+○パラメーターの分割
+・for文で回してパラメーターに応じた処理を行うようにSwitchする
+ -Greeble
+ -Pattern
+ -Scale
+ -BlockSurface
+ -SimpleSurfacde
 
 ○実装した建物Generatorをカードリッジ化する
 ・順番に実装しつつ検証していく
@@ -92,21 +113,6 @@ BP_Destroy_Baseを継承
  -MakeVolume
  -MakeSurface
  -MakeDetail
-
-○パラメーターの分割
-・for文で回してパラメーターに応じた処理を行うようにSwitchする
- -Greeble
- -Pattern
- -Scale
- -BlockSurface
- -SimpleSurfacde
-
-○VolumeType周りの修正
-・複数種類で兼用できるようにする
- -配列でTypeNumを全て入れる
- -各パラメーターで追加できるようにする
- -配列からランダムにVolumeTypeを取得するように実装する
-
 
 
 ■IDEA
