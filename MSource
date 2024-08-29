@@ -1,27 +1,232 @@
-■Volume
-○NextTypeをした後そのまま継続させる
-・LastTypeを設定するように修正する
-while(volumeType == point(1, "VolumeType", paramIndex) || volumeType == point(1, "NextVolumeType", paramIndex))
+○SelectType
+・条件
+・ランダム設定
+
+●Scale
+//回転周り
+float RotateValue = random(blockPosOrigin * (i + loopNum)) * (rotateRange.y - rotateRange.x) + rotateRange.x;
+vector4 q = quaternion(radians(RotateValue) ,rotateAxis);
+matrix rotateMatrix = blockMatrixOrigin * qconvert(q);
+
+//スケール周り
+float ScaleCofficient = rand(blockPosOrigin * (i + loopNum + 10)) * (scaleRange.y - scaleRange.x) + scaleRange.x;
+vector MoveVector;
+if(abs(blockFrontDirDataOrigin.x) <= 1)
+{
+	MoveVector.x = -blockFrontDirDataOrigin.x * blockScaleOrigin.x * (ScaleCofficient - 1) / 2;
+	blockScaleOrigin.x *= ScaleCofficient;
+}
+if(abs(blockFrontDirDataOrigin.y) <= 1)
+{
+	MoveVector.y = -blockFrontDirDataOrigin.y * blockScaleOrigin.y * (ScaleCofficient - 1) / 2;
+	blockScaleOrigin.y *= ScaleCofficient;
+}
+if(abs(blockFrontDirDataOrigin.z) <= 1)
+{
+	MoveVector.z = -blockFrontDirDataOrigin.z * blockScaleOrigin.z * (ScaleCofficient - 1) / 2;
+	blockScaleOrigin.z *= ScaleCofficient;
+} 
+
+//移動
+MoveVector.x += transform.x * blockScaleOrigin.x;
+MoveVector.y += transform.y * blockScaleOrigin.y;
+MoveVector.z += transform.z * blockScaleOrigin.z;
+MoveVector *= rotateMatrix;
+blockPosOrigin += MoveVector;
+
+//ボリュームスケール
+blockScaleOrigin.x *= volumeScale.x; 
+blockScaleOrigin.y *= volumeScale.y;
+blockScaleOrigin.z *= volumeScale.z;                
+
+push(blockPosList, blockPosOrigin);
+push(blockScaleList, blockScaleOrigin);
+push(blockMatrixList, rotateMatrix);
+push(frontDirDataList, blockFrontDirDataOrigin);
 
 
-■Detail
-○Top,Center,BottomのEdgeSizeの分離
-float top3DEdgeSideSize = point(1, "Top3DEdgeSideSize", paramIndex);
-float bottom3DEdgeSideSize = point(1, "Bottom3DEdgeSideSize", paramIndex);
- 
-vector scale =  v@scale;
-scale.x -= depthSize * 2;
-scale.y -= depthSize * 2;
-scale.z = topEdgeSize;
- 
-vector scaleTopEdge = v@scale;
-scaleTopEdge.x = scale.z - top3DEdgeSideSize * 2;
-scaleTopEdge.y = topEdgeSize;
-scaleTopEdge.z = depthSize;
 
-vector scale3DTopEdge = top3DEdgeSideSize;
-scale3DTopEdge.y = topEdgeSize;
+●Greeble
+if(0 < divideLoopNum)
+{
+	vector dividingBlockPosList[];
+	vector dividingBlockScaleList[];
+	matrix dividingBlockMatrixList[];
+	vector dividingBlockFrontDirDataList[];
+	
+	dividingBlockPosList[0] = blockPosOrigin;
+	dividingBlockScaleList[0] = blockScaleOrigin;
+	dividingBlockMatrixList[0] = blockMatrixOrigin;
+	dividingBlockFrontDirDataList[0] = blockFrontDirDataOrigin; 
+	
+	vector divideAxis = 0;
+	divideAxis.x = 1;
+	for(int j = 0; j < divideLoopNum; j++)
+	{
+		if(divideAxis.x == 1) 
+		{
+			divideAxis = 0;
+			if(0 < axisToDivide.y) divideAxis.y = 1;
+			else if(0 < axisToDivide.z) divideAxis.z = 1;
+			else {divideAxis.x = 1;}
+		}
+		else if(divideAxis.y == 1) 
+		{
+			divideAxis = 0;
+			if(0 < axisToDivide.z) divideAxis.z = 1;
+			else if(0 < axisToDivide.x) divideAxis.x = 1;
+			else {divideAxis.y = 1;}
+		}
+		else if(divideAxis.z == 1) 
+		{
+			divideAxis = 0;
+			if(0 < axisToDivide.x) divideAxis.x = 1;
+			else if(0 < axisToDivide.y) divideAxis.y = 1;
+			else {divideAxis.z = 1;}
+		}
+	
+		int dividingBlockNum = len(dividingBlockPosList);
+		for(int k = 0; k < dividingBlockNum ; ++k)
+		{
+			loopNum += 1;
+			
+			vector dividingBlockPosOrigin = removeindex(dividingBlockPosList, 0);
+			vector dividingBlockScaleOrigin = removeindex(dividingBlockScaleList, 0);
+			matrix dividingBlockMatrixOrigin = removeindex(dividingBlockMatrixList ,0);
+			vector dividingBlockFrontDirDataOrigin = removeindex(dividingBlockFrontDirDataList ,0);
+			
+			if(divideRatio < random(loopNum + j + k))             
+			{
+				push(dividingBlockPosList, dividingBlockPosOrigin);
+				push(dividingBlockScaleList, dividingBlockScaleOrigin); 
+				push(dividingBlockMatrixList, dividingBlockMatrixOrigin);
+				push(dividingBlockFrontDirDataList, dividingBlockFrontDirDataOrigin);
+				continue;
+			}      
+	
+			float block1ScaleValue = random(dividingBlockPosOrigin * (i + loopNum)) * (divideRange.y - divideRange.x) + divideRange.x;   
+			float block2ScaleValue = 1 - block1ScaleValue;
+			vector block1Scale = dividingBlockScaleOrigin * (baseVector - divideAxis * block1ScaleValue);
+			vector block2Scale = dividingBlockScaleOrigin * (baseVector - divideAxis * block2ScaleValue);
+	
+			vector block1Pos = dividingBlockPosOrigin - divideAxis * (block1Scale / 2 + dividingBlockScaleOrigin / 2 - block1Scale) * dividingBlockMatrixOrigin;
+			vector block2Pos = dividingBlockPosOrigin + divideAxis * (block2Scale / 2 + dividingBlockScaleOrigin / 2 - block2Scale) * dividingBlockMatrixOrigin;
+	
+			//塞ぎ面周り
+			vector block1CloseFront = divideAxis;
+			vector block2CloseFront = -divideAxis;
+			vector block1FrontDirData = dividingBlockFrontDirDataOrigin;
+			vector block2FrontDirData = dividingBlockFrontDirDataOrigin; 
+			int toggle = 1;
+			while(toggle != 0)
+			{
+				if(1 < length((block1CloseFront + block1FrontDirData) * block1CloseFront)) {break;}
+				block1FrontDirData += block1CloseFront + block1FrontDirData * block1CloseFront * 100;
+				toggle = 0;
+			}
+			toggle = 1;
+			while(toggle != 0)
+			{
+				if(1 < length((block2CloseFront + block2FrontDirData) * block2CloseFront)) {break;}
+				block2FrontDirData += block2CloseFront + block2FrontDirData * block2CloseFront * 100;
+				toggle = 0; 
+			}
+	
+			if(length(divideAxis * block1Scale) < divideMinSize|| length(divideAxis * block1Scale) < divideMinSize)
+			{
+				push(dividingBlockPosList, dividingBlockPosOrigin);
+				push(dividingBlockScaleList, dividingBlockScaleOrigin); 
+				push(dividingBlockMatrixList, dividingBlockMatrixOrigin);
+				push(dividingBlockFrontDirDataList, dividingBlockFrontDirDataOrigin);
+				continue;           
+			}
+			
+			push(dividingBlockPosList, block1Pos);
+			push(dividingBlockPosList, block2Pos);
+			push(dividingBlockScaleList, block1Scale);
+			push(dividingBlockScaleList, block2Scale); 
+			push(dividingBlockMatrixList, blockMatrixOrigin);
+			push(dividingBlockMatrixList, blockMatrixOrigin);
+			push(dividingBlockFrontDirDataList, block1FrontDirData);
+			push(dividingBlockFrontDirDataList, block2FrontDirData);
+		}   
+	}
+	for(int j = 0; j < len(dividingBlockPosList); j++)
+	{
+		push(blockPosList, dividingBlockPosList[j]);
+		push(blockScaleList, dividingBlockScaleList[j]);
+		push(blockMatrixList, dividingBlockMatrixList[j]);
+		push(frontDirDataList, dividingBlockFrontDirDataList[j]);       
+	}                
+}
 
-if(0.0 < sideEdgeSize)
-if(0.0 < top3DEdgeSideSize)
-if(0.0 < bottom3DEdgeSideSize)
+
+●Pattern
+else if(0.0 < length(patternSize))
+{
+	vector blockSize = 1;
+	vector patternBlockNum = 1;
+
+	if(0.0 < patternSize.y)
+	{
+		patternBlockNum.y = int(blockScaleOrigin.y / patternSize.y);
+		if(patternBlockNum.y == 0){patternBlockNum.y = 1;}
+		blockSize.y = blockScaleOrigin.y / patternBlockNum.y;
+		blockFrontDirDataOrigin.y = -100;
+	}
+	else
+	{
+		patternBlockNum.y = 1;          
+		blockSize.y = blockScaleOrigin.y;
+	}
+
+
+	if(0.0 < patternSize.x)
+	{
+		patternBlockNum.x = int(blockScaleOrigin.x / patternSize.x);
+		if(patternBlockNum.x == 0){patternBlockNum.x = 1;}
+		blockSize.x = blockScaleOrigin.x / patternBlockNum.x;
+		blockFrontDirDataOrigin.z = -100;
+	}
+	else
+	{
+		patternBlockNum.x = 1;          
+		blockSize.x = blockScaleOrigin.x;
+	}     
+
+	if(0.0 < patternSize.z)
+	{
+		patternBlockNum.z = int(blockScaleOrigin.z / patternSize.x);
+		if(patternBlockNum.z == 0){patternBlockNum.z = 1;}
+		blockSize.z = blockScaleOrigin.z / patternBlockNum.z;
+		blockFrontDirDataOrigin.x = -100;
+	}
+	else
+	{
+		patternBlockNum.z = 1;          
+		blockSize.z = blockScaleOrigin.z;
+	}
+
+
+	vector spawnBasePos = -blockScaleOrigin / 2;
+	for(int x = 0; x < patternBlockNum.x; ++x)
+	{
+		for(int y = 0; y < patternBlockNum.y; ++y)
+		{
+			for(int z = 0; z < patternBlockNum.z; ++z)
+			{
+				vector spawnPos = spawnBasePos;                 
+				spawnPos.x += (x + 0.5) * blockSize.x;
+				spawnPos.y += (y + 0.5) * blockSize.y;
+				spawnPos.z += (z + 0.5) * blockSize.z;
+				spawnPos *= blockMatrixOrigin;
+				spawnPos += blockPosOrigin;
+
+				push(blockPosList, spawnPos);
+				push(blockScaleList, blockSize);
+				push(blockMatrixList, blockMatrixOrigin);
+				push(frontDirDataList, blockFrontDirDataOrigin); 
+			}
+		}
+	}
+}    
