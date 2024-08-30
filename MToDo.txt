@@ -21,6 +21,7 @@ http://marupeke296.com/CPP_No8_MultiClass.html
 ■Houdini(Maya)
 ○HoudiniForMayaでできることを整理する
 
+
 ■ポートフォリオ
 ○修正箇所をテキストにまとめる
 ・ロジックを細かく使用方法をついて実装する
@@ -32,7 +33,6 @@ http://marupeke296.com/CPP_No8_MultiClass.html
  -建物の特徴をとらえてロジックに落とし込んだことを説明する
 
 ・アーティストに優しい設計をアピール
- -
 
 ○ポートフォリオを修正
 
@@ -92,6 +92,7 @@ BP_Destroy_Baseを継承
 
 
 [CityGenerator]
+■Unreal
 ○CityGeneratorの修正
 ・現在の実装の挙動確認
 
@@ -121,6 +122,12 @@ BP_Destroy_Baseを継承
  -MakeVolume
  -MakeSurface
  -MakeDetail
+
+
+■Maya
+※たのしい建物ジェネレータを参考に現在のプロジェクトをMayaで使えるように改良する
+ -DCC上でSurfaceを生成したら自動生成される処理
+・Mayaの制作フローを確認してプロシージャルにするメリットのある箇所を導き出す
 
 
 ■IDEA
