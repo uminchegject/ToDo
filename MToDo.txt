@@ -2,8 +2,8 @@
 ○多重継承と仮想基本クラス
 http://marupeke296.com/CPP_No8_MultiClass.html
 
-○HoudiniMayaの概要を確認
-
+○パスに沿ってアクターを動かすように実装
+https://historia.co.jp/archives/4290/
 
 [Houdini]
 ■Study
@@ -41,19 +41,9 @@ http://marupeke296.com/CPP_No8_MultiClass.html
 
 
 [IZON.]
-○破壊周りの対応
-・破壊のマスタークラスを実装して継承したクラスで破壊オブジェクトを設定するように対応
-
-○それぞれのBaseクラスを実装
-
-○継承して各ギミックを実装
-
-○マージ
-
-○報告
-
-△Baseギミックを用いた新しいアイデアの提案
-
+○tw_05ギミックの修正
+・パスで動きを決定できるようにする
+・落ちてから動き出すように修正する
 
 ■拡張実装
 ○Gimmickクラスの設計を提案
