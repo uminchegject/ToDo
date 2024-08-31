@@ -1,3 +1,77 @@
+■実装
+○ポイントの生成及び種類別の実装をする
+・内積を取って向いている方向を確認する
+ -PrimitiveのNormalと内積を比較する
+
+vector normal = v@N;
+vector up = {0, 1, 0};
+vector down = {0, -1, 0};
+float angleRange = ch("AngleRange");
+
+//上方向の確認
+float cos_theta = dot(normal, up); 
+float theta = acos(cos_theta);
+float theta_degrees = degrees(theta);
+if (theta_degrees <= angleRange) {i@group_up_primitive = 1;}
+
+//下方向を確認
+cos_theta = dot(normal, down); 
+theta = acos(cos_theta);
+theta_degrees = degrees(theta);
+if (theta_degrees <= angleRange) {i@group_down_primitive = 1;}
+
+// 水平方向と確認
+float vertical_component = normal.z;
+float magnitude = length(normal);
+cos_theta = vertical_component / magnitude;
+theta = acos(cos_theta);
+theta_degrees = degrees(theta);
+if (theta_degrees <= angleRange) {i@group_vertical_primitive = 1;}
+
+・primitiveにnoise_valueを持たせる
+float noise_value = noise(v@P);
+@noise_value = noise_value;
+
+・凹凸ノイズを入れる(point)
+float noise_value = noise(v@P);
+v@P += v@N * noise_value;
+ 
+・Noiseの値からくぼみの深さを確認する
+
+
+
+
+○ポイントの種類に応じてDataTableからその種類のアセットを取得してinstanceに設定する
+//アセットのランダム取得
+int AssetRefNum = point(1, "AssetRefNum", 0);
+int AssetRefIndexList[];
+for(int index = 0; index < AssetRefNum; ++index)
+{
+	string asset = point(1, "AssetType", index);
+	if(assetType1 == assetType2)
+	{
+		append(AssetRefIndexList, index);
+	}
+}       
+int selectedAssetRefIndex = AssetRefIndexList[int(floor(rand(@ptnum) * arraySize))];
+string assetRef = point(1, "AssetRef", selectedAssetRefIndex);
+s@unreal_instance = assetRef;
+
+■IDEA
+●ポイント生成
+
+●位置の特徴別に種類分け
+・enumの用意
+
+ -側面、上面、下面
+ -くぼみ
+
+●アセットをデータテーブルで管理できるようにする
+・構造体の用意
+
+
+
+■CityMaker
 int toggleRunning = 0;
 
 //ランダム
