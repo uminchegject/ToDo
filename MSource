@@ -1,49 +1,83 @@
-○SelectType
-・条件
-・ランダム設定
+int toggleRunning = 0;
 
-●Scale
-//回転周り
-float RotateValue = random(blockPosOrigin * (i + loopNum)) * (rotateRange.y - rotateRange.x) + rotateRange.x;
-vector4 q = quaternion(radians(RotateValue) ,rotateAxis);
-matrix rotateMatrix = blockMatrixOrigin * qconvert(q);
+//ランダム
+if(random(@P) < ratio) {toggleRunning = 1;}
 
-//スケール周り
-float ScaleCofficient = rand(blockPosOrigin * (i + loopNum + 10)) * (scaleRange.y - scaleRange.x) + scaleRange.x;
-vector MoveVector;
-if(abs(blockFrontDirDataOrigin.x) <= 1)
+//サイズ規制
+if(blockScaleOrigin.x < minSize.x || blockScaleOrigin.y < minSize.y ||  blockScaleOrigin.z < minSize.z)
 {
-	MoveVector.x = -blockFrontDirDataOrigin.x * blockScaleOrigin.x * (ScaleCofficient - 1) / 2;
-	blockScaleOrigin.x *= ScaleCofficient;
+	toggleRunning = 1;
 }
-if(abs(blockFrontDirDataOrigin.y) <= 1)
+if(maxSize.x < blockScaleOrigin.x || maxSize.y < blockScaleOrigin.y || maxSize.z < blockScaleOrigin.z)
 {
-	MoveVector.y = -blockFrontDirDataOrigin.y * blockScaleOrigin.y * (ScaleCofficient - 1) / 2;
-	blockScaleOrigin.y *= ScaleCofficient;
+	toggleRunning = 1;
 }
-if(abs(blockFrontDirDataOrigin.z) <= 1)
+
+//タイプに含まれているか
+int typeNumList[] = point(0, "TypeNumList", @ptnum);
+for(int i = 0; i < len(typeNumList); i++)
 {
-	MoveVector.z = -blockFrontDirDataOrigin.z * blockScaleOrigin.z * (ScaleCofficient - 1) / 2;
-	blockScaleOrigin.z *= ScaleCofficient;
-} 
+	int typeNum = point(1, "TypeNumList", i@LoopCount); 
+	if(typeNumList[i] == typeNum){toggleRunning = 1;}
+}
 
-//移動
-MoveVector.x += transform.x * blockScaleOrigin.x;
-MoveVector.y += transform.y * blockScaleOrigin.y;
-MoveVector.z += transform.z * blockScaleOrigin.z;
-MoveVector *= rotateMatrix;
-blockPosOrigin += MoveVector;
+if(toggleRunning == 1)
+{
+	//メイン処理
+	vector transform = point(1, "Transform", i@LoopCount);
+	vector volumeScale = point(1, "Scale", i@LoopCount);     
+	vector rotateAxis = point(1, "RotateAxis", i@LoopCount);
+	vector rotateRange = point(1, "RotateRange", i@LoopCount);
+	vector offsetScaleRange = point(1, "OffsetScaleRange", i@LoopCount);
 
-//ボリュームスケール
-blockScaleOrigin.x *= volumeScale.x; 
-blockScaleOrigin.y *= volumeScale.y;
-blockScaleOrigin.z *= volumeScale.z;                
+	if(offsetScaleRange.x != 0)
+	{
+		//オフセットスケール周り
+		float ScaleCofficient = rand(v@P * 10) * (scaleRange.y - scaleRange.x) + scaleRange.x;
+		vector MoveVector;
+		if(abs(v@FrontDirData.x) <= 1)
+		{
+			MoveVector.x = -v@FrontDirData.x * v@scale.x * (ScaleCofficient - 1) / 2;
+			v@scale.x *= ScaleCofficient;
+		}
+		if(abs(v@FrontDirData.y) <= 1)
+		{
+			MoveVector.y = -v@FrontDirData.y * v@scale.y * (ScaleCofficient - 1) / 2;
+			v@scale.y *= ScaleCofficient;
+		}
+		if(abs(v@FrontDirData.z) <= 1)
+		{
+			MoveVector.z = -v@FrontDirData.z * v@scale.z * (ScaleCofficient - 1) / 2;
+			v@scale.z *= ScaleCofficient;
+		}
+		MoveVector *= 4@RotateMatrix;
+		v@P += MoveVector;
+	}
+	else()
+	{
+		//回転周り
+		float rotateValue = random(v@P) * (rotateRange.y - rotateRange.x) + rotateRange.x;
+		vector4 q = quaternion(radians(rotateValue) ,rotateAxis);
+		matrix rotateMatrix = 4@RotateMatrix * qconvert(q);
 
-push(blockPosList, blockPosOrigin);
-push(blockScaleList, blockScaleOrigin);
-push(blockMatrixList, rotateMatrix);
-push(frontDirDataList, blockFrontDirDataOrigin);
-
+		//移動
+		MoveVector.x += transform.x * v@scale.x;
+		MoveVector.y += transform.y * v@scale.y;
+		MoveVector.z += transform.z * v@scale.z;
+		MoveVector *= rotateMatrix;
+		v@P += MoveVector;
+		
+		//ボリュームスケール
+		v@scale *= volumeScale;            
+	}	
+	
+	
+	//typeを追加
+	int addTypeNumList[] = point(1, "AddTypeNumList", i@LoopCount);
+	int index = addTypeNumList[int(floor(rand(@ptnum) * len(addTypeNumList)))];
+	append(typeNumList, addTypeNumList[index]);
+	setpointattrib(0, "TypeNumList", @ptnum, typeNumList, "set");		
+}
 
 
 ●Greeble
