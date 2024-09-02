@@ -5,39 +5,22 @@ http://marupeke296.com/CPP_No8_MultiClass.html
 ○パスに沿ってアクターを動かすように実装
 https://historia.co.jp/archives/4290/
 
-[Houdini]
-■Study
 ・ナナイトシステム + Lumen
 ・モジュラーモデリング
 
+
+[Houdini]
 ■Maya
-○ライセンスをもらったら田中さんに報告
+○操作周りのTutorialを確認する
+
 
 ■洞窟
-・カーブから携帯を生成
-・マテリアルを設定
-・オブジェクトの配置
+○Houdini側のみの実装を提出
+
+○UE4でアセットを自動配置するように実装
+
 
 ■Houdini(Maya)
-○HoudiniForMayaでできることを整理する
-
-
-■ポートフォリオ
-○DataTableを用いたメリットの説明
-・アーティストに優しい設計をアピール
-・デザイナーが管理しやすいようにする
-
-○Greeble処理の説明
-・装飾が単調にならないため(実際の建物をサンプルに説明をする)
-・建物の特徴をとらえてロジックに落とし込んだことを説明する
-
-○Attributeを用いた説明
-・管理を行いやすくする
-
-●修正箇所をテキストにまとめる
-・ロジックを細かく使用方法をついて実装する
-・効率化をするための工夫部分を強調する
-・ツールの使用例を具体的に示す
 
 
 [IZON.]
@@ -45,11 +28,10 @@ https://historia.co.jp/archives/4290/
 ・パスで動きを決定できるようにする
 ・落ちてから動き出すように修正する
 
-■拡張実装
-○Gimmickクラスの設計を提案
-・クラスの説明
-・それぞれギミックの根本部分の整理
+○ビームで破壊して落ちるギミックを実装
 
+
+■拡張実装
 ○智人AIの実装
 ・智人の追従モードと徘徊モードの実装
  -徘徊モードの仕様設計と実装方法の整理
@@ -58,20 +40,6 @@ https://historia.co.jp/archives/4290/
 ■基礎実装
 ※ギミックの根本の部分を整理して、共通した意図・仕様のギミックを複数用意
 
-
-■基底クラス
-・マスタークラスを実装する
- -継承したクラスでコンポーネントを設定するようにする
-・インターフェースでTriggerEventをつなげる
-・パラメーターで難易度を変えられるように修正する
-
-●BP_DestoryObjGimmick
-BP_DestroyObj_Baseを継承
-
-●BP_StaticObjGimmick
-BP_Destroy_Baseを継承
-
-●BP_TriggerBase
 
 ■IDEA
 ・武器による選択肢を持たせる。
@@ -96,8 +64,8 @@ BP_Destroy_Baseを継承
 
 [CityGenerator]
 ■Unreal
-○CityGeneratorの修正
-・現在の実装の挙動確認
+※説明すべき箇所を整理して、その説明を具体例にできるようにPDを行う
+ -家のオブジェクトを生成して配置していく流れを実装する
 
 ○VolumeMakerを分割してSwitchを実装し検証する
 
@@ -107,15 +75,15 @@ BP_Destroy_Baseを継承
  -各パラメーターで追加できるようにする
  -配列からランダムにVolumeTypeを取得するように実装する
 
-○パラメーターの分割
-・for文で回してパラメーターに応じた処理を行うようにSwitchする
+
+●パラメーターの種類
  -Greeble
  -Pattern
  -Scale
  -BlockSurface
  -SimpleSurfacde
 
-○実装した建物Generatorをカードリッジ化する
+●実装の流れ
 ・順番に実装しつつ検証していく
  -Asset
  -SurfaceMaker
@@ -125,12 +93,6 @@ BP_Destroy_Baseを継承
  -MakeVolume
  -MakeSurface
  -MakeDetail
-
-
-■Maya
-※たのしい建物ジェネレータを参考に現在のプロジェクトをMayaで使えるように改良する
- -DCC上でSurfaceを生成したら自動生成される処理
-・Mayaの制作フローを確認してプロシージャルにするメリットのある箇所を導き出す
 
 
 ■IDEA
@@ -150,7 +112,6 @@ BP_Destroy_Baseを継承
 ▲PM設計
 ・SurfaceBaseを生成してVolumeMakerに繋げる
 ・ObjにMaterialを設定する対応を実装する
-
 
 ■BLOG
 Attributeについての説明
