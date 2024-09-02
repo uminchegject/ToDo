@@ -8,19 +8,17 @@ https://historia.co.jp/archives/4290/
 ・ナナイトシステム + Lumen
 ・モジュラーモデリング
 
+・シンクロモードの
+
+・AIImvorker
 
 [Houdini]
 ■Maya
-○操作周りのTutorialを確認する
-
 
 ■洞窟
-○Houdini側のみの実装を提出
+○回転部分を修正する
 
-○UE4でアセットを自動配置するように実装
-
-
-■Houdini(Maya)
+■Houdini()
 
 
 [IZON.]
