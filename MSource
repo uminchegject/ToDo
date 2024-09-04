@@ -1,160 +1,112 @@
-■実装
-○ポイントの生成及び種類別の実装をする
-・内積を取って向いている方向を確認する
- -PrimitiveのNormalと内積を比較する
-
-vector normal = v@N;
-vector up = {0, 1, 0};
-vector down = {0, -1, 0};
-float angleRange = ch("AngleRange");
-
-//上方向の確認
-float cos_theta = dot(normal, up); 
-float theta = acos(cos_theta);
-float theta_degrees = degrees(theta);
-if (theta_degrees <= angleRange) {i@group_up_primitive = 1;}
-
-//下方向を確認
-cos_theta = dot(normal, down); 
-theta = acos(cos_theta);
-theta_degrees = degrees(theta);
-if (theta_degrees <= angleRange) {i@group_down_primitive = 1;}
-
-// 水平方向と確認
-float vertical_component = normal.z;
-float magnitude = length(normal);
-cos_theta = vertical_component / magnitude;
-theta = acos(cos_theta);
-theta_degrees = degrees(theta);
-if (theta_degrees <= angleRange) {i@group_vertical_primitive = 1;}
-
-・primitiveにnoise_valueを持たせる
-float noise_value = noise(v@P);
-@noise_value = noise_value;
-
-・凹凸ノイズを入れる(point)
-float noise_value = noise(v@P);
-v@P += v@N * noise_value;
- 
-・Noiseの値からくぼみの深さを確認する
-
-
-
-
-○ポイントの種類に応じてDataTableからその種類のアセットを取得してinstanceに設定する
-//アセットのランダム取得
-int AssetRefNum = point(1, "AssetRefNum", 0);
-int AssetRefIndexList[];
-for(int index = 0; index < AssetRefNum; ++index)
-{
-	string asset = point(1, "AssetType", index);
-	if(assetType1 == assetType2)
-	{
-		append(AssetRefIndexList, index);
-	}
-}       
-int selectedAssetRefIndex = AssetRefIndexList[int(floor(rand(@ptnum) * arraySize))];
-string assetRef = point(1, "AssetRef", selectedAssetRefIndex);
-s@unreal_instance = assetRef;
-
-■IDEA
-●ポイント生成
-
-●位置の特徴別に種類分け
-・enumの用意
-
- -側面、上面、下面
- -くぼみ
-
-●アセットをデータテーブルで管理できるようにする
-・構造体の用意
-
-
-
-■CityMaker
-int toggleRunning = 0;
-
-//ランダム
-if(random(@P) < ratio) {toggleRunning = 1;}
-
-//サイズ規制
-if(blockScaleOrigin.x < minSize.x || blockScaleOrigin.y < minSize.y ||  blockScaleOrigin.z < minSize.z)
-{
-	toggleRunning = 1;
-}
-if(maxSize.x < blockScaleOrigin.x || maxSize.y < blockScaleOrigin.y || maxSize.z < blockScaleOrigin.z)
-{
-	toggleRunning = 1;
-}
-
-//タイプに含まれているか
-int typeNumList[] = point(0, "TypeNumList", @ptnum);
+●Pattern
 for(int i = 0; i < len(typeNumList); i++)
 {
-	int typeNum = point(1, "TypeNumList", i@LoopCount); 
-	if(typeNumList[i] == typeNum){toggleRunning = 1;}
+    int typeNum = point(1, "TypeNum", i@LoopCount); 
+    if(typeNumList[i] == typeNum)
+    {
+        toggleRunning = 1;
+        break;
+    }       
 }
 
 if(toggleRunning == 1)
 {
-	//メイン処理
-	vector transform = point(1, "Transform", i@LoopCount);
-	vector volumeScale = point(1, "Scale", i@LoopCount);     
-	vector rotateAxis = point(1, "RotateAxis", i@LoopCount);
-	vector rotateRange = point(1, "RotateRange", i@LoopCount);
-	vector offsetScaleRange = point(1, "OffsetScaleRange", i@LoopCount);
+	vector blockSize = 1;
+	vector patternBlockNum = 1;
 
-	if(offsetScaleRange.x != 0)
+	if(0.0 < patternSize.y)
 	{
-		//オフセットスケール周り
-		float ScaleCofficient = rand(v@P * 10) * (scaleRange.y - scaleRange.x) + scaleRange.x;
-		vector MoveVector;
-		if(abs(v@FrontDirData.x) <= 1)
-		{
-			MoveVector.x = -v@FrontDirData.x * v@scale.x * (ScaleCofficient - 1) / 2;
-			v@scale.x *= ScaleCofficient;
-		}
-		if(abs(v@FrontDirData.y) <= 1)
-		{
-			MoveVector.y = -v@FrontDirData.y * v@scale.y * (ScaleCofficient - 1) / 2;
-			v@scale.y *= ScaleCofficient;
-		}
-		if(abs(v@FrontDirData.z) <= 1)
-		{
-			MoveVector.z = -v@FrontDirData.z * v@scale.z * (ScaleCofficient - 1) / 2;
-			v@scale.z *= ScaleCofficient;
-		}
-		MoveVector *= 4@RotateMatrix;
-		v@P += MoveVector;
+		patternBlockNum.y = int(floor(v@scale.y / patternSize.y));
+		if(patternBlockNum.y == 0){patternBlockNum.y = 1;}
+		blockSize.y = v@scale.y / patternBlockNum.y;
+		v@frontDirDataList.y = -100;
 	}
-	else()
+	else
 	{
-		//回転周り
-		float rotateValue = random(v@P) * (rotateRange.y - rotateRange.x) + rotateRange.x;
-		vector4 q = quaternion(radians(rotateValue) ,rotateAxis);
-		matrix rotateMatrix = 4@RotateMatrix * qconvert(q);
+		patternBlockNum.y = 1;          
+		blockSize.y = v@scale.y;
+	}
 
-		//移動
-		MoveVector.x += transform.x * v@scale.x;
-		MoveVector.y += transform.y * v@scale.y;
-		MoveVector.z += transform.z * v@scale.z;
-		MoveVector *= rotateMatrix;
-		v@P += MoveVector;
-		
-		//ボリュームスケール
-		v@scale *= volumeScale;            
-	}	
-	
+
+	if(0.0 < patternSize.x)
+	{
+		patternBlockNum.x = int(floor(v@scale.x / patternSize.x));
+		if(patternBlockNum.x == 0){patternBlockNum.x = 1;}
+		blockSize.x = v@scale.x / patternBlockNum.x;
+		v@frontDirDataList.z = -100;
+	}
+	else
+	{
+		patternBlockNum.x = 1;          
+		blockSize.x = v@scale.x;
+	}     
+
+	if(0.0 < patternSize.z)
+	{
+		patternBlockNum.z = int(floor(v@scale.z / patternSize.x));
+		if(patternBlockNum.z == 0){patternBlockNum.z = 1;}
+		blockSize.z = v@scale.z / patternBlockNum.z;
+		v@frontDirDataList.x = -100;
+	}
+	else
+	{
+		patternBlockNum.z = 1;          
+		blockSize.z = v@scale.z;
+	}
 	
 	//typeを追加
-	int addTypeNumList[] = point(1, "AddTypeNumList", i@LoopCount);
-	int index = addTypeNumList[int(floor(rand(@ptnum) * len(addTypeNumList)))];
-	append(typeNumList, addTypeNumList[index]);
-	setpointattrib(0, "TypeNumList", @ptnum, typeNumList, "set");		
+    int addTypeNumList[] = point(1, "AddTypeNumList", i@LoopCount);
+    int index = addTypeNumList[int(floor(rand(@ptnum) * len(addTypeNumList)))];
+    append(typeNumList, index);
+    i[]@TypeNumList = typeNumList;
+	
+	//AddLoopNum
+	i@LoopCount += 1;
+
+	//removepoint
+	removepoint(0, @ptnum);
+
+	vector spawnBasePos = -v@scale / 2;
+	for(int x = 0; x < patternBlockNum.x; ++x)
+	{
+		for(int y = 0; y < patternBlockNum.y; ++y)
+		{
+			for(int z = 0; z < patternBlockNum.z; ++z)
+			{
+				vector spawnPos = spawnBasePos;                 
+				spawnPos.x += (x + 0.5) * blockSize.x;
+				spawnPos.y += (y + 0.5) * blockSize.y;
+				spawnPos.z += (z + 0.5) * blockSize.z;
+				spawnPos *= 4@RotateMatrix;
+				spawnPos += v@P;
+
+				int pt = addpoint(0, v@P);
+				setpointattrib(0, "N", pt, v@N);
+				setpointattrib(0, "scale", pt, v@scale);
+				setpointattrib(0, "RotateMatrix", pt, 4@RotateMatrix);
+				setpointattrib(0, "FrontDirData", pt, v@FrontDirData);
+				setpointattrib(0, "TypeNumList", pt, typeNumList);
+				setpointattrib(0, "LoopCount", pt, i@LoopCount);
+			}
+		}
+	}	
 }
 
 
 ●Greeble
+for(int i = 0; i < len(typeNumList); i++)
+{
+    int typeNum = point(1, "TypeNum", i@LoopCount); 
+    if(typeNumList[i] == typeNum)
+    {
+        toggleRunning = 1;
+        break;
+    }       
+}
+
+if(toggleRunning == 1)
+{
+
 if(0 < divideLoopNum)
 {
 	vector dividingBlockPosList[];
@@ -162,13 +114,18 @@ if(0 < divideLoopNum)
 	matrix dividingBlockMatrixList[];
 	vector dividingBlockFrontDirDataList[];
 	
-	dividingBlockPosList[0] = blockPosOrigin;
-	dividingBlockScaleList[0] = blockScaleOrigin;
-	dividingBlockMatrixList[0] = blockMatrixOrigin;
-	dividingBlockFrontDirDataList[0] = blockFrontDirDataOrigin; 
+	dividingBlockPosList[0] = v@P;
+	dividingBlockScaleList[0] = v@scale;
+	dividingBlockMatrixList[0] = 4@RotateMatrix;
+	dividingBlockFrontDirDataList[0] = v@FrontDirData;
 	
+	float divideRatio = point(1, "DivideRatio", paramIndex);
+	int divideLoopNum = point(1, "DivideLoopNum", paramIndex);
+	float divideMinSize = point(1, "DivideMinSize", paramIndex);
+	vector axisToDivide = point(1, "AxisToDivide", paramIndex);
+	vector divideRange = point(1, "DivideRange", paramIndex);	
+
 	vector divideAxis = 0;
-	divideAxis.x = 1;
 	for(int j = 0; j < divideLoopNum; j++)
 	{
 		if(divideAxis.x == 1) 
@@ -203,16 +160,9 @@ if(0 < divideLoopNum)
 			matrix dividingBlockMatrixOrigin = removeindex(dividingBlockMatrixList ,0);
 			vector dividingBlockFrontDirDataOrigin = removeindex(dividingBlockFrontDirDataList ,0);
 			
-			if(divideRatio < random(loopNum + j + k))             
-			{
-				push(dividingBlockPosList, dividingBlockPosOrigin);
-				push(dividingBlockScaleList, dividingBlockScaleOrigin); 
-				push(dividingBlockMatrixList, dividingBlockMatrixOrigin);
-				push(dividingBlockFrontDirDataList, dividingBlockFrontDirDataOrigin);
-				continue;
-			}      
-	
-			float block1ScaleValue = random(dividingBlockPosOrigin * (i + loopNum)) * (divideRange.y - divideRange.x) + divideRange.x;   
+			if(divideRatio < random()){continue;}        
+
+			float block1ScaleValue = random(dividingBlockPosOrigin) * (divideRange.y - divideRange.x) + divideRange.x;   
 			float block2ScaleValue = 1 - block1ScaleValue;
 			vector block1Scale = dividingBlockScaleOrigin * (baseVector - divideAxis * block1ScaleValue);
 			vector block2Scale = dividingBlockScaleOrigin * (baseVector - divideAxis * block2ScaleValue);
@@ -259,82 +209,32 @@ if(0 < divideLoopNum)
 			push(dividingBlockFrontDirDataList, block2FrontDirData);
 		}   
 	}
+	
+	//typeを追加
+    int addTypeNumList[] = point(1, "AddTypeNumList", i@LoopCount);
+    int index = addTypeNumList[int(floor(rand(@ptnum) * len(addTypeNumList)))];
+    append(typeNumList, index);
+    i[]@TypeNumList = typeNumList;
+	
+	//AddLoopNum
+	i@LoopCount += 1;
+
+	//removepoint
+	removepoint(0, @ptnum);	
+	
 	for(int j = 0; j < len(dividingBlockPosList); j++)
 	{
 		push(blockPosList, dividingBlockPosList[j]);
 		push(blockScaleList, dividingBlockScaleList[j]);
 		push(blockMatrixList, dividingBlockMatrixList[j]);
-		push(frontDirDataList, dividingBlockFrontDirDataList[j]);       
+		push(frontDirDataList, dividingBlockFrontDirDataList[j]);
+
+		int pt = addpoint(0, dividingBlockPosList[j]);
+		setpointattrib(0, "N", pt, v@N);
+		setpointattrib(0, "scale", pt, dividingBlockScaleList[j]);
+		setpointattrib(0, "RotateMatrix", pt, dividingBlockMatrixList[j]);
+		setpointattrib(0, "FrontDirData", pt, dividingBlockFrontDirDataList[j]);
+		setpointattrib(0, "TypeNumList", pt, typeNumList);
+		setpointattrib(0, "LoopCount", pt, i@LoopCount);		
 	}                
 }
-
-
-●Pattern
-else if(0.0 < length(patternSize))
-{
-	vector blockSize = 1;
-	vector patternBlockNum = 1;
-
-	if(0.0 < patternSize.y)
-	{
-		patternBlockNum.y = int(blockScaleOrigin.y / patternSize.y);
-		if(patternBlockNum.y == 0){patternBlockNum.y = 1;}
-		blockSize.y = blockScaleOrigin.y / patternBlockNum.y;
-		blockFrontDirDataOrigin.y = -100;
-	}
-	else
-	{
-		patternBlockNum.y = 1;          
-		blockSize.y = blockScaleOrigin.y;
-	}
-
-
-	if(0.0 < patternSize.x)
-	{
-		patternBlockNum.x = int(blockScaleOrigin.x / patternSize.x);
-		if(patternBlockNum.x == 0){patternBlockNum.x = 1;}
-		blockSize.x = blockScaleOrigin.x / patternBlockNum.x;
-		blockFrontDirDataOrigin.z = -100;
-	}
-	else
-	{
-		patternBlockNum.x = 1;          
-		blockSize.x = blockScaleOrigin.x;
-	}     
-
-	if(0.0 < patternSize.z)
-	{
-		patternBlockNum.z = int(blockScaleOrigin.z / patternSize.x);
-		if(patternBlockNum.z == 0){patternBlockNum.z = 1;}
-		blockSize.z = blockScaleOrigin.z / patternBlockNum.z;
-		blockFrontDirDataOrigin.x = -100;
-	}
-	else
-	{
-		patternBlockNum.z = 1;          
-		blockSize.z = blockScaleOrigin.z;
-	}
-
-
-	vector spawnBasePos = -blockScaleOrigin / 2;
-	for(int x = 0; x < patternBlockNum.x; ++x)
-	{
-		for(int y = 0; y < patternBlockNum.y; ++y)
-		{
-			for(int z = 0; z < patternBlockNum.z; ++z)
-			{
-				vector spawnPos = spawnBasePos;                 
-				spawnPos.x += (x + 0.5) * blockSize.x;
-				spawnPos.y += (y + 0.5) * blockSize.y;
-				spawnPos.z += (z + 0.5) * blockSize.z;
-				spawnPos *= blockMatrixOrigin;
-				spawnPos += blockPosOrigin;
-
-				push(blockPosList, spawnPos);
-				push(blockScaleList, blockSize);
-				push(blockMatrixList, blockMatrixOrigin);
-				push(frontDirDataList, blockFrontDirDataOrigin); 
-			}
-		}
-	}
-}    
