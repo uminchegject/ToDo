@@ -13,7 +13,7 @@ https://yamagishi-2bit.blogspot.com/2020/10/blog-post_10.html
 
 [IZON.]
 ○連絡
-・進捗の説明と質問
+・ギミックの説明
 
 ○tw_05の検証
 ・クォータニオンを用いて実装
@@ -22,7 +22,6 @@ https://dokuro.moe/ue4-cpp-super-simple-rotate-round-any-object/
 
 
 ○柱岩投げギミック(BP_Gimmick_tw09)
-・すでに似たようなギミックが用意されていると前回の定例で伺ったような気がするのですが、教えて頂くことは可能でしょうか
 
 
 [CityGenerator]
