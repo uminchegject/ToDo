@@ -1,99 +1,9 @@
-●Pattern
-for(int i = 0; i < len(typeNumList); i++)
-{
-    int typeNum = point(1, "TypeNum", i@LoopCount); 
-    if(typeNumList[i] == typeNum)
-    {
-        toggleRunning = 1;
-        break;
-    }       
-}
-
-if(toggleRunning == 1)
-{
-	vector blockSize = 1;
-	vector patternBlockNum = 1;
-
-	if(0.0 < patternSize.y)
-	{
-		patternBlockNum.y = int(floor(v@scale.y / patternSize.y));
-		if(patternBlockNum.y == 0){patternBlockNum.y = 1;}
-		blockSize.y = v@scale.y / patternBlockNum.y;
-		v@frontDirDataList.y = -100;
-	}
-	else
-	{
-		patternBlockNum.y = 1;          
-		blockSize.y = v@scale.y;
-	}
-
-
-	if(0.0 < patternSize.x)
-	{
-		patternBlockNum.x = int(floor(v@scale.x / patternSize.x));
-		if(patternBlockNum.x == 0){patternBlockNum.x = 1;}
-		blockSize.x = v@scale.x / patternBlockNum.x;
-		v@frontDirDataList.z = -100;
-	}
-	else
-	{
-		patternBlockNum.x = 1;          
-		blockSize.x = v@scale.x;
-	}     
-
-	if(0.0 < patternSize.z)
-	{
-		patternBlockNum.z = int(floor(v@scale.z / patternSize.x));
-		if(patternBlockNum.z == 0){patternBlockNum.z = 1;}
-		blockSize.z = v@scale.z / patternBlockNum.z;
-		v@frontDirDataList.x = -100;
-	}
-	else
-	{
-		patternBlockNum.z = 1;          
-		blockSize.z = v@scale.z;
-	}
-	
-	//typeを追加
-    int addTypeNumList[] = point(1, "AddTypeNumList", i@LoopCount);
-    int index = addTypeNumList[int(floor(rand(@ptnum) * len(addTypeNumList)))];
-    append(typeNumList, index);
-    i[]@TypeNumList = typeNumList;
-	
-	//AddLoopNum
-	i@LoopCount += 1;
-
-	//removepoint
-	removepoint(0, @ptnum);
-
-	vector spawnBasePos = -v@scale / 2;
-	for(int x = 0; x < patternBlockNum.x; ++x)
-	{
-		for(int y = 0; y < patternBlockNum.y; ++y)
-		{
-			for(int z = 0; z < patternBlockNum.z; ++z)
-			{
-				vector spawnPos = spawnBasePos;                 
-				spawnPos.x += (x + 0.5) * blockSize.x;
-				spawnPos.y += (y + 0.5) * blockSize.y;
-				spawnPos.z += (z + 0.5) * blockSize.z;
-				spawnPos *= 4@RotateMatrix;
-				spawnPos += v@P;
-
-				int pt = addpoint(0, v@P);
-				setpointattrib(0, "N", pt, v@N);
-				setpointattrib(0, "scale", pt, v@scale);
-				setpointattrib(0, "RotateMatrix", pt, 4@RotateMatrix);
-				setpointattrib(0, "FrontDirData", pt, v@FrontDirData);
-				setpointattrib(0, "TypeNumList", pt, typeNumList);
-				setpointattrib(0, "LoopCount", pt, i@LoopCount);
-			}
-		}
-	}	
-}
-
-
 ●Greeble
+int toggleRunning = 0;
+
+//タイプに含まれているか
+int typeNumList[] = i[]@TypeNumList;
+
 for(int i = 0; i < len(typeNumList); i++)
 {
     int typeNum = point(1, "TypeNum", i@LoopCount); 
@@ -101,29 +11,31 @@ for(int i = 0; i < len(typeNumList); i++)
     {
         toggleRunning = 1;
         break;
-    }       
+    }
+}
+
+if(point(1, "ParamType", i@LoopCount) != 2)
+{ 
+    removepoint(0, @ptnum); 
+    toggleRunning = 0;
 }
 
 if(toggleRunning == 1)
 {
 
-if(0 < divideLoopNum)
-{
 	vector dividingBlockPosList[];
 	vector dividingBlockScaleList[];
-	matrix dividingBlockMatrixList[];
 	vector dividingBlockFrontDirDataList[];
 	
 	dividingBlockPosList[0] = v@P;
 	dividingBlockScaleList[0] = v@scale;
-	dividingBlockMatrixList[0] = 4@RotateMatrix;
 	dividingBlockFrontDirDataList[0] = v@FrontDirData;
 	
-	float divideRatio = point(1, "DivideRatio", paramIndex);
-	int divideLoopNum = point(1, "DivideLoopNum", paramIndex);
-	float divideMinSize = point(1, "DivideMinSize", paramIndex);
-	vector axisToDivide = point(1, "AxisToDivide", paramIndex);
-	vector divideRange = point(1, "DivideRange", paramIndex);	
+	float divideRatio = point(1, "DivideRatio", i@LoopCount);
+	int divideLoopNum = point(1, "DivideLoopNum", i@LoopCount);
+	float divideMinSize = point(1, "DivideMinSize", i@LoopCount);
+	vector axisToDivide = point(1, "AxisToDivide", i@LoopCount);
+	vector divideRange = point(1, "DivideRange", i@LoopCount);	
 
 	vector divideAxis = 0;
 	for(int j = 0; j < divideLoopNum; j++)
@@ -157,7 +69,6 @@ if(0 < divideLoopNum)
 			
 			vector dividingBlockPosOrigin = removeindex(dividingBlockPosList, 0);
 			vector dividingBlockScaleOrigin = removeindex(dividingBlockScaleList, 0);
-			matrix dividingBlockMatrixOrigin = removeindex(dividingBlockMatrixList ,0);
 			vector dividingBlockFrontDirDataOrigin = removeindex(dividingBlockFrontDirDataList ,0);
 			
 			if(divideRatio < random()){continue;}        
@@ -167,8 +78,13 @@ if(0 < divideLoopNum)
 			vector block1Scale = dividingBlockScaleOrigin * (baseVector - divideAxis * block1ScaleValue);
 			vector block2Scale = dividingBlockScaleOrigin * (baseVector - divideAxis * block2ScaleValue);
 	
-			vector block1Pos = dividingBlockPosOrigin - divideAxis * (block1Scale / 2 + dividingBlockScaleOrigin / 2 - block1Scale) * dividingBlockMatrixOrigin;
-			vector block2Pos = dividingBlockPosOrigin + divideAxis * (block2Scale / 2 + dividingBlockScaleOrigin / 2 - block2Scale) * dividingBlockMatrixOrigin;
+			vector block1Move = divideAxis * (block1Scale / 2 + dividingBlockScaleOrigin / 2 - block1Scale);
+			vector block2Move = divideAxis * (block2Scale / 2 + dividingBlockScaleOrigin / 2 - block2Scale);
+			block1Move = qrotate(p@orient, block1Move);
+			block2Move = qrotate(p@orient, block2Move);
+			
+			vector block1Pos = dividingBlockPosOrigin - block1Move;
+			vector block2Pos = dividingBlockPosOrigin + block2Move;
 	
 			//塞ぎ面周り
 			vector block1CloseFront = divideAxis;
@@ -194,7 +110,6 @@ if(0 < divideLoopNum)
 			{
 				push(dividingBlockPosList, dividingBlockPosOrigin);
 				push(dividingBlockScaleList, dividingBlockScaleOrigin); 
-				push(dividingBlockMatrixList, dividingBlockMatrixOrigin);
 				push(dividingBlockFrontDirDataList, dividingBlockFrontDirDataOrigin);
 				continue;           
 			}
@@ -203,8 +118,6 @@ if(0 < divideLoopNum)
 			push(dividingBlockPosList, block2Pos);
 			push(dividingBlockScaleList, block1Scale);
 			push(dividingBlockScaleList, block2Scale); 
-			push(dividingBlockMatrixList, blockMatrixOrigin);
-			push(dividingBlockMatrixList, blockMatrixOrigin);
 			push(dividingBlockFrontDirDataList, block1FrontDirData);
 			push(dividingBlockFrontDirDataList, block2FrontDirData);
 		}   
@@ -226,15 +139,759 @@ if(0 < divideLoopNum)
 	{
 		push(blockPosList, dividingBlockPosList[j]);
 		push(blockScaleList, dividingBlockScaleList[j]);
-		push(blockMatrixList, dividingBlockMatrixList[j]);
 		push(frontDirDataList, dividingBlockFrontDirDataList[j]);
 
 		int pt = addpoint(0, dividingBlockPosList[j]);
-		setpointattrib(0, "N", pt, v@N);
 		setpointattrib(0, "scale", pt, dividingBlockScaleList[j]);
-		setpointattrib(0, "RotateMatrix", pt, dividingBlockMatrixList[j]);
 		setpointattrib(0, "FrontDirData", pt, dividingBlockFrontDirDataList[j]);
+		setpointattrib(0, "orient", pt, p@orient);		
 		setpointattrib(0, "TypeNumList", pt, typeNumList);
 		setpointattrib(0, "LoopCount", pt, i@LoopCount);		
 	}                
 }
+
+
+
+
+
+
+
+
+
+
+●MakeBlock
+
+
+int toggleRunning = 0;
+
+//タイプに含まれているか
+int typeNumList[] = i[]@TypeNumList;
+
+for(int i = 0; i < len(typeNumList); i++)
+{
+    int typeNum = point(1, "TypeNum", i@LoopCount); 
+    if(typeNumList[i] == typeNum)
+    {
+        toggleRunning = 1;
+        break;
+    }
+}
+
+if(point(1, "ParamType", i@LoopCount) != 3)
+{ 
+    removepoint(0, @ptnum); 
+    toggleRunning = 0;
+}
+
+if(toggleRunning == 1)
+{
+
+for(int paramIndex = 0; paramIndex < paramNum; paramIndex++)
+{
+
+    float SideType = point(1, "SideType", paramIndex);
+    float TopType = point(1, "TopType", paramIndex);
+    float BottomType = point(1, "BottomType", paramIndex);
+    float SideEdgeType = point(1, "SideEdgeType", paramIndex);
+    float TopEdgeType = point(1, "TopEdgeType", paramIndex);
+    float BottomEdgeType = point(1, "BottomEdgeType", paramIndex);
+    float Top3DEdgeType = point(1, "Top3DEdgeType", paramIndex);
+    float Bottom3DEdgeType = point(1, "Bottom3DEdgeType", paramIndex);
+
+    float depthSize = point(1, "DepthSize", paramIndex);
+    float sideEdgeSize = point(1, "SideEdgeSize", paramIndex);
+    float topEdgeSize = point(1, "TopEdgeSize", paramIndex);
+    float bottomEdgeSize = point(1, "BottomEdgeSize", paramIndex);    
+        
+    int isEdgeBlock1 = 0;
+    int isEdgeBlock2 = 0;
+    int isEdgeBlock3 = 0;
+    int isEdgeBlock4 = 0;    
+    
+    if(-1.0 < v@FrontDirData.y)
+    {
+        vector spawnPos = 0;
+        spawnPos.y = v@scale.y / 2;
+        spawnPos = qrotate(p@orient, spawnPos);
+        spawnPos += v@P;      
+                
+        vector scale =  v@scale;
+        scale.x -= depthSize;
+        scale.y -= depthSize;
+        scale.z = topEdgeSize;
+        
+        vector frontDirData = v@FrontDirData;
+        frontDirData.x = -100;
+        frontDirData.z = -100;
+                
+        vector rotateAxis = 0;
+        rotateAxis.x = 1;
+        vector4 qRotate = quaternion(radians(-90) , rotateAxis);
+        matrix mRotate =  qconvert(qRotate);
+        mRotate *= 4@RotateMatrix;
+        vector normal = 0;
+        normal.z = 1;
+        normal *= mRotate;
+        vector up = 0;
+        up.y = 1;
+        up *= mRotate;
+        
+        int pt = addpoint(0, spawnPos);
+        setpointattrib(0, "VolumeType", pt, TopType);
+        setpointattrib(0, "scale", pt, scale);
+        setpointattrib(0, "FrontDirData", pt, frontDirData);
+        setpointattrib(0, "RotateMatrix", pt, mRotate);
+        setpointattrib(0, "N", pt, normal);
+        setpointattrib(0, "up", pt, up);
+    }
+    if(-1.0 == v@FrontDirData.y || v@FrontDirData.y == 0.0)
+    {        
+        vector spawnPos = 0;
+        spawnPos.y = -v@scale.y / 2;
+        spawnPos *= 4@RotateMatrix;
+        spawnPos += v@P;
+        
+        vector scale =  v@scale;
+        scale.x -= depthSize;
+        scale.y -= depthSize;
+        scale.z = bottomEdgeSize;
+        
+        vector frontDirData = v@FrontDirData;
+        frontDirData.x = -100;
+        frontDirData.z = -100;
+
+        vector rotateAxis = 0;
+        rotateAxis.x = 1;
+        vector4 qRotate = quaternion(radians(90) , rotateAxis);
+        matrix mRotate =  qconvert(qRotate);
+        mRotate *= 4@RotateMatrix;
+        vector normal = 0;
+        normal.z = 1;
+        normal *= mRotate;
+        vector up = 0;
+        up.y = 1;
+        up *= mRotate;      
+        
+        int pt = addpoint(0, spawnPos);
+        setpointattrib(0, "VolumeType", pt, BottomType);    
+        setpointattrib(0, "scale", pt, scale);
+        setpointattrib(0, "FrontDirData", pt, frontDirData);
+        setpointattrib(0, "RotateMatrix", pt, mRotate);
+        setpointattrib(0, "N", pt, normal);
+        setpointattrib(0, "up", pt, up);        
+    }
+    
+    if(-1.0 == v@FrontDirData.x || v@FrontDirData.x == 0.0)
+    {
+        isEdgeBlock1 = 1;
+        isEdgeBlock4 = 1;
+            
+        vector spawnPos = 0;
+        spawnPos.x += v@scale.x / 2;
+        spawnPos *= 4@RotateMatrix;
+        spawnPos += v@P; 
+        
+        vector scale = v@scale;
+        scale.x = scale.z - sideEdgeSize;
+        scale.y -= topEdgeSize / 2 + bottomEdgeSize / 2;
+        scale.z = depthSize;
+        
+        vector frontDirData = v@FrontDirData;
+        frontDirData.y = -100;
+        frontDirData.z = -100;
+        
+        vector rotateAxis = 0;
+        rotateAxis.y = 1;
+        vector4 qRotate = quaternion(radians(90) , rotateAxis);
+        matrix mRotate =  qconvert(qRotate);
+        mRotate *= 4@RotateMatrix;
+        vector normal = 0;
+        normal.z = 1;
+        normal *= mRotate;
+        vector up = 0;
+        up.y = 1;
+        up *= mRotate;       
+        
+        int pt = addpoint(0, spawnPos);
+        setpointattrib(0, "VolumeType", pt, SideType);    
+        setpointattrib(0, "scale", pt, scale);
+        setpointattrib(0, "RotateMatrix", pt, mRotate);
+        setpointattrib(0, "N", pt, normal);
+        setpointattrib(0, "up", pt, up);    
+        setpointattrib(0, "FrontDirData", pt, frontDirData);
+    
+        if(0.0 < topEdgeSize)
+        {
+            vector spawnPosTopEdge = 0;
+            spawnPosTopEdge.y += scale.y / 2 + topEdgeSize / 2;
+            spawnPosTopEdge *= 4@RotateMatrix;
+            spawnPosTopEdge += spawnPos;
+            
+            vector scaleTopEdge = scale;
+            scaleTopEdge.y = topEdgeSize;
+            scaleTopEdge.z = depthSize;
+
+            pt = addpoint(0, spawnPosTopEdge);
+            setpointattrib(0, "VolumeType", pt, TopEdgeType);
+            setpointattrib(0, "scale", pt, scaleTopEdge);
+            setpointattrib(0, "RotateMatrix", pt, mRotate);
+            setpointattrib(0, "N", pt, normal);
+            setpointattrib(0, "up", pt, up);     
+            setpointattrib(0, "FrontDirData", pt, frontDirData);
+        }
+        
+        if(0.0 < bottomEdgeSize)
+        {
+            vector spawnPosBottomEdge = 0;
+            spawnPosBottomEdge.y -= scale.y / 2 + bottomEdgeSize / 2;
+            spawnPosBottomEdge *= 4@RotateMatrix;
+            spawnPosBottomEdge += spawnPos; 
+            
+            vector scaleBottomEdge = scale;
+            scaleBottomEdge.y = bottomEdgeSize;
+            scaleBottomEdge.z = depthSize;
+                
+            pt = addpoint(0, spawnPosBottomEdge);
+            setpointattrib(0, "VolumeType", pt, BottomEdgeType);        
+            setpointattrib(0, "scale", pt, scaleBottomEdge);
+            setpointattrib(0, "RotateMatrix", pt, mRotate);
+            setpointattrib(0, "N", pt, normal);
+            setpointattrib(0, "up", pt, up);   
+            setpointattrib(0, "FrontDirData", pt, frontDirData);
+        }    
+    }
+    if(-1 < v@FrontDirData.x)
+    {
+        isEdgeBlock2 = 1;
+        isEdgeBlock3 = 1;
+            
+        vector spawnPos = 0;
+        spawnPos.x -= v@scale.x / 2;
+        spawnPos *= 4@RotateMatrix;
+        spawnPos += v@P;
+        
+        vector scale =  v@scale;
+        scale.x = scale.z - sideEdgeSize;
+        scale.y -= topEdgeSize / 2 + bottomEdgeSize / 2;
+        scale.z = depthSize;
+        
+        vector frontDirData = v@FrontDirData;
+        frontDirData.y = -100;
+        frontDirData.z = -100;
+
+        vector rotateAxis = 0;
+        rotateAxis.y = 1;
+        vector4 qRotate = quaternion(radians(270) , rotateAxis);
+        matrix mRotate =  qconvert(qRotate);
+        mRotate *= 4@RotateMatrix;
+        vector normal = 0;
+        normal.z = 1;
+        normal *= mRotate;
+        vector up = 0;
+        up.y = 1;
+        up *= mRotate;        
+        
+        int pt = addpoint(0, spawnPos);
+        setpointattrib(0, "VolumeType", pt, SideType);    
+        setpointattrib(0, "scale", pt, scale);
+        setpointattrib(0, "RotateMatrix", pt, mRotate);
+        setpointattrib(0, "N", pt, normal);
+        setpointattrib(0, "up", pt, up);    
+        setpointattrib(0, "FrontDirData", pt, frontDirData);     
+    
+        if(0.0 < topEdgeSize)
+        {
+            vector spawnPosTopEdge = 0;
+            spawnPosTopEdge.y += scale.y / 2 + topEdgeSize / 2;
+            spawnPosTopEdge *= 4@RotateMatrix;
+            spawnPosTopEdge += spawnPos;
+            
+            vector scaleTopEdge = scale;
+            scaleTopEdge.y = topEdgeSize;
+            scaleTopEdge.z = depthSize;
+                
+            pt = addpoint(0, spawnPosTopEdge);
+            setpointattrib(0, "VolumeType", pt, TopEdgeType);        
+            setpointattrib(0, "scale", pt, scaleTopEdge);
+            setpointattrib(0, "RotateMatrix", pt, mRotate);
+            setpointattrib(0, "N", pt, normal);
+            setpointattrib(0, "up", pt, up);     
+            setpointattrib(0, "FrontDirData", pt, frontDirData);
+        }
+        
+        if(0.0 < bottomEdgeSize)
+        {
+            vector spawnPosBottomEdge = 0;
+            spawnPosBottomEdge.y -= scale.y / 2 + bottomEdgeSize / 2;
+            spawnPosBottomEdge *= 4@RotateMatrix;
+            spawnPosBottomEdge += spawnPos;
+            
+            vector scaleBottomEdge = scale;
+            scaleBottomEdge.y = bottomEdgeSize;
+            scaleBottomEdge.z = depthSize;
+                
+            pt = addpoint(0, spawnPosBottomEdge);   
+            setpointattrib(0, "VolumeType", pt, BottomEdgeType);
+            setpointattrib(0, "scale", pt, scaleBottomEdge);
+            setpointattrib(0, "RotateMatrix", pt, mRotate);
+            setpointattrib(0, "N", pt, normal);
+            setpointattrib(0, "up", pt, up);         
+            setpointattrib(0, "FrontDirData", pt, frontDirData);
+        }   
+    }
+    if(-1 < v@FrontDirData.z)
+    {
+        isEdgeBlock1 = 1;
+        isEdgeBlock2 = 1;
+        
+        vector spawnPos = 0;
+        spawnPos.z -= v@scale.z / 2;
+        spawnPos *= 4@RotateMatrix;
+        spawnPos += v@P;
+        
+        vector scale =  v@scale;
+        scale.x -= sideEdgeSize;
+        scale.y -= topEdgeSize / 2 + bottomEdgeSize / 2;
+        scale.z = depthSize;
+        
+        vector frontDirData = v@FrontDirData;
+        frontDirData.x = -100;
+        frontDirData.y = -100;
+        
+        vector rotateAxis = 0;
+        rotateAxis.y = 1;
+        vector4 qRotate = quaternion(radians(180) , rotateAxis);
+        matrix mRotate = 4@RotateMatrix;
+        mRotate *=  qconvert(qRotate);
+        vector normal = 0;
+        normal.z = 1;
+        normal *= mRotate;
+        vector up = 0;
+        up.y = 1;
+        up *= mRotate;          
+        
+        int pt = addpoint(0, spawnPos);
+        setpointattrib(0, "VolumeType", pt, SideType);    
+        setpointattrib(0, "scale", pt, scale);
+        setpointattrib(0, "RotateMatrix", pt, mRotate);
+        setpointattrib(0, "N", pt, normal);
+        setpointattrib(0, "up", pt, up);     
+        setpointattrib(0, "FrontDirData", pt, frontDirData);  
+        
+        if(0.0 < topEdgeSize)
+        {
+            vector spawnPosTopEdge = 0;
+            spawnPosTopEdge.y += scale.y / 2 + topEdgeSize / 2;
+            spawnPosTopEdge *= 4@RotateMatrix;
+            spawnPosTopEdge += spawnPos;
+            
+            vector scaleTopEdge = scale;
+            scaleTopEdge.y = topEdgeSize;
+            scaleTopEdge.z = depthSize;
+                
+            pt = addpoint(0, spawnPosTopEdge);
+            setpointattrib(0, "VolumeType", pt, TopEdgeType);        
+            setpointattrib(0, "scale", pt, scaleTopEdge);
+            setpointattrib(0, "RotateMatrix", pt, mRotate);
+            setpointattrib(0, "N", pt, normal);
+            setpointattrib(0, "up", pt, up);      
+            setpointattrib(0, "FrontDirData", pt, frontDirData);
+        }
+        
+        if(0.0 < bottomEdgeSize)
+        {
+            vector spawnPosBottomEdge = 0;
+            spawnPosBottomEdge.y -= scale.y / 2 + bottomEdgeSize / 2;
+            spawnPosBottomEdge *= 4@RotateMatrix;
+            spawnPosBottomEdge += spawnPos; 
+            vector scaleBottomEdge = scale;
+            scaleBottomEdge.y = bottomEdgeSize;
+            scaleBottomEdge.z = depthSize;
+                
+            pt = addpoint(0, spawnPosBottomEdge);
+            setpointattrib(0, "VolumeType", pt, BottomEdgeType);
+            setpointattrib(0, "scale", pt, scaleBottomEdge);
+            setpointattrib(0, "RotateMatrix", pt, mRotate);
+            setpointattrib(0, "N", pt, normal);
+            setpointattrib(0, "up", pt, up);          
+            setpointattrib(0, "FrontDirData", pt, frontDirData);
+        }    
+    }
+    if(-1.0 == v@FrontDirData.z || v@FrontDirData.z == 0.0)
+    {
+        isEdgeBlock3 = 1;
+        isEdgeBlock4 = 1;
+        
+        vector spawnPos = 0;
+        spawnPos.z += v@scale.z / 2;
+        spawnPos *= 4@RotateMatrix;
+        spawnPos += v@P; 
+        vector scale =  v@scale;
+        scale.x -= sideEdgeSize;
+        scale.y -= topEdgeSize / 2 + bottomEdgeSize / 2;
+        scale.z = depthSize;
+        
+        vector frontDirData = v@FrontDirData;
+        frontDirData.x = -100;
+        frontDirData.y = -100;
+        
+        vector rotateAxis = 0;
+        rotateAxis.y = 1;
+        vector4 qRotate = quaternion(radians(0) , rotateAxis);
+        matrix mRotate = 4@RotateMatrix;
+        mRotate *=  qconvert(qRotate);
+        vector normal = 0;
+        normal.z = 1;
+        normal *= mRotate;
+        vector up = 0;
+        up.y = 1;
+        up *= mRotate;          
+        
+        int pt = addpoint(0, spawnPos);
+        setpointattrib(0, "VolumeType", pt, SideType);    
+        setpointattrib(0, "scale", pt, scale);
+        setpointattrib(0, "RotateMatrix", pt, mRotate);
+        setpointattrib(0, "N", pt, normal);
+        setpointattrib(0, "up", pt, up);    
+        setpointattrib(0, "FrontDirData", pt, frontDirData);  
+    
+        if(0.0 < topEdgeSize)
+        {
+            vector spawnPosTopEdge = 0;
+            spawnPosTopEdge.y += scale.y / 2 + topEdgeSize / 2;
+            spawnPosTopEdge *= 4@RotateMatrix;
+            spawnPosTopEdge += spawnPos;
+            
+            vector scaleTopEdge = scale;
+            scaleTopEdge.y = topEdgeSize;
+            scaleTopEdge.z = depthSize;
+                
+            pt = addpoint(0, spawnPosTopEdge);
+            setpointattrib(0, "VolumeType", pt, TopEdgeType);        
+            setpointattrib(0, "scale", pt, scaleTopEdge);
+            setpointattrib(0, "RotateMatrix", pt, mRotate);
+            setpointattrib(0, "N", pt, normal);
+            setpointattrib(0, "up", pt, up);     
+            setpointattrib(0, "FrontDirData", pt, frontDirData);
+        }
+        
+        if(0.0 < bottomEdgeSize)
+        {
+            vector spawnPosBottomEdge = 0;
+            spawnPosBottomEdge.y -= scale.y / 2 + bottomEdgeSize / 2;
+            spawnPosBottomEdge *= 4@RotateMatrix;
+            spawnPosBottomEdge += spawnPos;
+            
+            vector scaleBottomEdge = scale;
+            scaleBottomEdge.y = bottomEdgeSize;
+            scaleBottomEdge.z = depthSize;
+                
+            pt = addpoint(0, spawnPosBottomEdge);
+            setpointattrib(0, "VolumeType", pt, BottomEdgeType);
+            setpointattrib(0, "scale", pt, scaleBottomEdge);
+            setpointattrib(0, "RotateMatrix", pt, mRotate);
+            setpointattrib(0, "N", pt, normal);
+            setpointattrib(0, "up", pt, up);    
+            setpointattrib(0, "FrontDirData", pt, frontDirData);
+        } 
+    }
+    
+    
+    if(0.0 < sideEdgeSize)
+    {
+        if(0 < isEdgeBlock1)
+        {
+            vector spawnPos = 0;
+            spawnPos.x += v@scale.x / 2;
+            spawnPos.z -= v@scale.z / 2;
+            spawnPos *= 4@RotateMatrix;
+            spawnPos += v@P;
+            
+            vector scale =  v@scale;
+            scale.y -= topEdgeSize / 2 + bottomEdgeSize / 2;
+            scale.x = sideEdgeSize;
+            scale.z = sideEdgeSize;
+            
+            vector frontDirData = -100.0;
+            frontDirData.x = 1.0;
+            
+            vector rotateAxis = 0;
+            rotateAxis.y = 1;
+            vector4 qRotate = quaternion(radians(180) , rotateAxis);
+            matrix mRotate =  qconvert(qRotate);
+            mRotate *= 4@RotateMatrix;
+            vector normal = 0;
+            normal.z = 1;
+            normal *= mRotate;
+            vector up = 0;
+            up.y = 1;
+            up *= mRotate;             
+            
+            int pt = addpoint(0, spawnPos);
+            setpointattrib(0, "VolumeType", pt, SideEdgeType);
+            setpointattrib(0, "scale", pt, scale);
+            setpointattrib(0, "RotateMatrix", pt, mRotate);
+            setpointattrib(0, "N", pt, normal);
+            setpointattrib(0, "up", pt, up);   
+            setpointattrib(0, "FrontDirData", pt, frontDirData);  
+            
+            if(0.0 < topEdgeSize)
+            {
+                vector spawnPos3DTopEdge = 0;
+                spawnPos3DTopEdge.y = scale.y / 2 + topEdgeSize / 2;
+                spawnPos3DTopEdge *=4@RotateMatrix; 
+                spawnPos3DTopEdge += spawnPos;
+                
+                vector scale3DTopEdge = scale;
+                scale3DTopEdge.y = topEdgeSize;
+                pt = addpoint(0, spawnPos3DTopEdge);
+                
+                setpointattrib(0, "VolumeType", pt, Top3DEdgeType);            
+                setpointattrib(0, "scale", pt, scale3DTopEdge);
+                setpointattrib(0, "RotateMatrix", pt, mRotate);
+                setpointattrib(0, "N", pt, normal);
+                setpointattrib(0, "up", pt, up);     
+                setpointattrib(0, "FrontDirData", pt, frontDirData);
+            }
+            if(0.0 < bottomEdgeSize)
+            {            
+                vector spawnPos3DBottomEdge = 0;
+                spawnPos3DBottomEdge.y -= scale.y / 2 + bottomEdgeSize / 2;
+                spawnPos3DBottomEdge *= 4@RotateMatrix;
+                spawnPos3DBottomEdge += spawnPos;
+                
+                vector scale3DBottomEdge = scale;
+                scale3DBottomEdge.y = bottomEdgeSize;
+                
+                pt = addpoint(0, spawnPos3DBottomEdge); 
+                setpointattrib(0, "VolumeType", pt, Bottom3DEdgeType); 
+                setpointattrib(0, "scale", pt, scale3DBottomEdge);
+                setpointattrib(0, "RotateMatrix", pt, mRotate);
+                setpointattrib(0, "N", pt, normal);
+                setpointattrib(0, "up", pt, up);    
+                setpointattrib(0, "FrontDirData", pt, frontDirData);           
+            }
+    
+        }
+        if(isEdgeBlock2 == 1)
+        {
+            vector spawnPos = 0;
+            spawnPos.x -= v@scale.x / 2;
+            spawnPos.z -= v@scale.z / 2;
+            spawnPos *= 4@RotateMatrix;
+            spawnPos += v@P;
+            
+            vector scale =  v@scale;
+            scale.y -= topEdgeSize / 2 + bottomEdgeSize / 2;
+            scale.x = sideEdgeSize;
+            scale.z = sideEdgeSize;
+            
+            vector frontDirData = -100.0;
+            frontDirData.x = 1.0; 
+            
+            vector rotateAxis = 0;
+            rotateAxis.y = 1;
+            vector4 qRotate = quaternion(radians(270) , rotateAxis);
+            matrix mRotate =  qconvert(qRotate);
+            mRotate *= 4@RotateMatrix;
+            vector normal = 0;
+            normal.z = 1;
+            normal *= mRotate;
+            vector up = 0;
+            up.y = 1;
+            up *= mRotate;            
+            
+            int pt = addpoint(0, spawnPos);
+            setpointattrib(0, "VolumeType", pt, SideEdgeType);
+            setpointattrib(0, "scale", pt, scale);
+            setpointattrib(0, "RotateMatrix", pt, mRotate);
+            setpointattrib(0, "N", pt, normal);
+            setpointattrib(0, "up", pt, up);   
+            setpointattrib(0, "FrontDirData", pt, frontDirData);  
+        
+            if(0.0 < topEdgeSize)
+            {
+                vector spawnPos3DTopEdge = 0;
+                spawnPos3DTopEdge.y = scale.y / 2 + topEdgeSize / 2;
+                spawnPos3DTopEdge *=4@RotateMatrix; 
+                spawnPos3DTopEdge += spawnPos;
+                
+                vector scale3DTopEdge = scale;
+                scale3DTopEdge.y = topEdgeSize;
+                
+                pt = addpoint(0, spawnPos3DTopEdge);                
+                setpointattrib(0, "VolumeType", pt, Top3DEdgeType);
+                setpointattrib(0, "scale", pt, scale3DTopEdge);
+                setpointattrib(0, "RotateMatrix", pt, mRotate);
+                setpointattrib(0, "N", pt, normal);
+                setpointattrib(0, "up", pt, up);    
+                setpointattrib(0, "FrontDirData", pt, frontDirData);
+            }
+            if(0.0 < bottomEdgeSize)
+            {            
+                vector spawnPos3DBottomEdge = 0;
+                spawnPos3DBottomEdge.y -= scale.y / 2 + bottomEdgeSize / 2;
+                spawnPos3DBottomEdge *= 4@RotateMatrix;
+                spawnPos3DBottomEdge += spawnPos;
+                
+                vector scale3DBottomEdge = scale;
+                scale3DBottomEdge.y = bottomEdgeSize;
+                
+                pt = addpoint(0, spawnPos3DBottomEdge);                
+                setpointattrib(0, "VolumeType", pt, Bottom3DEdgeType); 
+                setpointattrib(0, "scale", pt, scale3DBottomEdge);
+                setpointattrib(0, "RotateMatrix", pt, mRotate);
+                setpointattrib(0, "N", pt, normal);
+                setpointattrib(0, "up", pt, up);    
+                setpointattrib(0, "FrontDirData", pt, frontDirData);          
+            }
+        }
+        if(isEdgeBlock3 == 1)
+        {
+            vector spawnPos = 0;
+            spawnPos.x -= v@scale.x / 2;
+            spawnPos.z += v@scale.z / 2;
+            spawnPos *= 4@RotateMatrix;
+            spawnPos += v@P;
+            
+            vector scale =  v@scale;
+            scale.y -= topEdgeSize / 2 + bottomEdgeSize / 2;
+            scale.x = sideEdgeSize;
+            scale.z = sideEdgeSize;
+            
+            vector frontDirData = -100.0;
+            frontDirData.x = -1.0;
+            
+            vector rotateAxis = 0;
+            rotateAxis.y = 1;
+            vector4 qRotate = quaternion(radians(0) , rotateAxis);
+            matrix mRotate =  qconvert(qRotate);
+            mRotate *= 4@RotateMatrix;
+            vector normal = 0;
+            normal.z = 1;
+            normal *= mRotate;
+            vector up = 0;
+            up.y = 1;
+            up *= mRotate;          
+            
+            int pt = addpoint(0, spawnPos); 
+            setpointattrib(0, "VolumeType", pt, SideEdgeType);
+            setpointattrib(0, "scale", pt, scale);
+            setpointattrib(0, "RotateMatrix", pt, mRotate);
+            setpointattrib(0, "N", pt, normal);
+            setpointattrib(0, "up", pt, up);     
+            setpointattrib(0, "FrontDirData", pt, frontDirData);  
+    
+            if(0.0 < topEdgeSize)
+            {
+                vector spawnPos3DTopEdge = 0;
+                spawnPos3DTopEdge.y = scale.y / 2 + topEdgeSize / 2;
+                spawnPos3DTopEdge *=4@RotateMatrix; 
+                spawnPos3DTopEdge += spawnPos;
+                
+                vector scale3DTopEdge = scale;
+                scale3DTopEdge.y = topEdgeSize;
+                
+                pt = addpoint(0, spawnPos3DTopEdge);
+                setpointattrib(0, "VolumeType", pt, Top3DEdgeType);
+                setpointattrib(0, "scale", pt, scale3DTopEdge);
+                setpointattrib(0, "RotateMatrix", pt, mRotate);
+                setpointattrib(0, "N", pt, normal);
+                setpointattrib(0, "up", pt, up);   
+                setpointattrib(0, "FrontDirData", pt, frontDirData);
+            }
+            if(0.0 < bottomEdgeSize)
+            {            
+                vector spawnPos3DBottomEdge = 0;
+                spawnPos3DBottomEdge.y -= scale.y / 2 + bottomEdgeSize / 2;
+                spawnPos3DBottomEdge *= 4@RotateMatrix;
+                spawnPos3DBottomEdge += spawnPos;
+                
+                vector scale3DBottomEdge = scale;
+                scale3DBottomEdge.y = bottomEdgeSize;
+                pt = addpoint(0, spawnPos3DBottomEdge);
+                
+                setpointattrib(0, "VolumeType", pt, Bottom3DEdgeType);
+                setpointattrib(0, "scale", pt, scale3DBottomEdge);
+                setpointattrib(0, "RotateMatrix", pt, mRotate);
+                setpointattrib(0, "N", pt, normal);
+                setpointattrib(0, "up", pt, up);    
+                setpointattrib(0, "FrontDirData", pt, frontDirData);           
+            }
+        }
+        if(isEdgeBlock4 == 1)
+        {
+            vector spawnPos = 0;
+            spawnPos.x += v@scale.x / 2;
+            spawnPos.z += v@scale.z / 2;
+            spawnPos *= 4@RotateMatrix;
+            spawnPos += v@P;
+            
+            vector scale =  v@scale;
+            scale.y -= topEdgeSize / 2 + bottomEdgeSize / 2;
+            scale.x = sideEdgeSize;
+            scale.z = sideEdgeSize;
+            
+            vector frontDirData = -100.0;
+            frontDirData.x = -1.0;
+            
+            vector rotateAxis = 0;
+            rotateAxis.y = 1;
+            vector4 qRotate = quaternion(radians(90) , rotateAxis);
+            matrix mRotate =  qconvert(qRotate);
+            mRotate *= 4@RotateMatrix;
+            vector normal = 0;
+            normal.z = 1;
+            normal *= mRotate;
+            vector up = 0;
+            up.y = 1;
+            up *= mRotate;              
+            
+            int pt = addpoint(0, spawnPos); 
+            setpointattrib(0, "VolumeType", pt, SideEdgeType);
+            setpointattrib(0, "scale", pt, scale);
+            setpointattrib(0, "RotateMatrix", pt, mRotate);
+            setpointattrib(0, "N", pt, normal);
+            setpointattrib(0, "up", pt, up);    
+            setpointattrib(0, "FrontDirData", pt, frontDirData);  
+    
+            if(0.0 < topEdgeSize)
+            {
+                vector spawnPos3DTopEdge = 0;
+                spawnPos3DTopEdge.y = scale.y / 2 + topEdgeSize / 2;
+                spawnPos3DTopEdge *=4@RotateMatrix; 
+                spawnPos3DTopEdge += spawnPos;
+                
+                vector scale3DTopEdge = scale;
+                scale3DTopEdge.y = topEdgeSize;
+                
+                pt = addpoint(0, spawnPos3DTopEdge);
+                setpointattrib(0, "VolumeType", pt, Top3DEdgeType);
+                setpointattrib(0, "scale", pt, scale3DTopEdge);
+                setpointattrib(0, "RotateMatrix", pt, mRotate);
+                setpointattrib(0, "N", pt, normal);
+                setpointattrib(0, "up", pt, up);   
+                setpointattrib(0, "FrontDirData", pt, frontDirData);
+            }
+            if(0.0 < bottomEdgeSize)
+            {            
+                vector spawnPos3DBottomEdge = 0;
+                spawnPos3DBottomEdge.y -= scale.y / 2 + bottomEdgeSize / 2;
+                spawnPos3DBottomEdge *= 4@RotateMatrix;
+                spawnPos3DBottomEdge += spawnPos;
+                
+                vector scale3DBottomEdge = scale;
+                scale3DBottomEdge.y = bottomEdgeSize;
+                
+                pt = addpoint(0, spawnPos3DBottomEdge);
+                setpointattrib(0, "VolumeType", pt, Bottom3DEdgeType); 
+                setpointattrib(0, "scale", pt, scale3DBottomEdge);
+                setpointattrib(0, "RotateMatrix", pt, mRotate);
+                setpointattrib(0, "N", pt, normal);
+                setpointattrib(0, "up", pt, up);   
+                setpointattrib(0, "FrontDirData", pt, frontDirData);           
+            }       
+        }
+    }
+}    
+removepoint(0, @ptnum);
