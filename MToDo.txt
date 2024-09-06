@@ -1,19 +1,9 @@
-[Study]
-○orientを用いた角度管理について
-https://yamagishi-2bit.blogspot.com/2020/10/blog-post_10.html
-
-○rotateの管理について
-
-
-[ポートフォリオ]
-○アセットの用意
-
-○配置まで実装
+[Cave]
 
 
 [IZON.]
-○連絡
-・ギミックの説明
+○検証レベルを実装
+・EventTrigger_AutoCreationStartを参考に実装する
 
 ○tw_05の検証
 ・クォータニオンを用いて実装
@@ -21,26 +11,26 @@ https://yamagishi-2bit.blogspot.com/2020/10/blog-post_10.html
 https://dokuro.moe/ue4-cpp-super-simple-rotate-round-any-object/
 
 
-○柱岩投げギミック(BP_Gimmick_tw09)
-
-
 [CityGenerator]
 ■Unreal
 ※説明すべき箇所を整理して、その説明を具体例にできるようにPDを行う
  -家のオブジェクトを生成して配置していく流れを実装する
+※汎用的に使えるように実装する
 
 ○DetailParameterの実装
  -Greeble
  -Pattern
  -Scale
+ 
+○UE上での挙動検証
 
 ○BaseMakeParameterの実装
- -BlockSurface
- -SimpleSurfacde
 
 ○InitParameterの実装
  -Scale
  -Seed
+ 
+
 
 ●実装の流れ
 ・順番に実装しつつ検証していく
