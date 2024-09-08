@@ -1,83 +1,62 @@
-[Cave]
+※TAはアーティストをサポートする仕組みを軸に考える
+※PGは設計を軸に考える
+※TAのツール周りの基礎的な部分を勉強する
 
+○HoudiniFXにコンバートする
 
-[IZON.]
-○検証レベルを実装
-・EventTrigger_AutoCreationStartを参考に実装する
+○既存のアセットで資料画像を用意する
 
-○tw_05の検証
-・クォータニオンを用いて実装
-・アクターの方向に対して正常な挙動を行うように修正
-https://dokuro.moe/ue4-cpp-super-simple-rotate-round-any-object/
-
-
-[CityGenerator]
-■Unreal
-※説明すべき箇所を整理して、その説明を具体例にできるようにPDを行う
- -家のオブジェクトを生成して配置していく流れを実装する
-※汎用的に使えるように実装する
-
-○DetailParameterの実装
- -Greeble
+■IDEA
+○必要なパラメーターの実装
  -Pattern
+ -Greeble
  -Scale
- 
-○UE上での挙動検証
+ -Box
+ -Asset
 
-○BaseMakeParameterの実装
-
-○InitParameterの実装
+●InitParameterを用いた柔軟なPDの設計
  -Scale
  -Seed
- 
 
 
-●実装の流れ
-・順番に実装しつつ検証していく
- -Asset
- -SurfaceMaker
- -VolumeMaker
-・処理の流れ
- -Init
- -MakeVolume
- -MakeSurface
- -MakeDetail
 
 ■Modelingtoolの説明
+※業務のサポートをする仕組みを強調するようにまとめる
+※ポートフォリオを参考にして実装する
+※既存の完成形のアセットを用いて説明をする
+
+○資料の用意
+・規則性を無くす工夫
+ -角度のランダム配置
+ -Greebleを用いたサイズのランダム
+
 ○DataTableを用いたメリットの説明
 ・アーティストに優しい設計をアピール
-・DataTableによるパラメーターの管理しやすいようにする
+・DataTableによるパラメーターの管理をしやすいようにする
+・
 
-・規則的に並べる処理
- -規則的に並べる処理を実装する
 
-・Greeble処理
- -装飾が単調にならないため(実際の建物をサンプルに説明をする)
- -建物の特徴をとらえてロジックに落とし込んだことを説明する
+・資料
+ -入れ替えのメリットを画像で説明する
+ -BaseAssetを手作業で用意して、DetailAssetをパラメーターで実装する
 
-・形態の管理
- -Assetの配置管理と建物の形態管理を分けて実装する
 
+○規則的に並べる処理
+・繰り返し規則的に並べる処理を分かり安く説明する
+
+・資料
+ -同じ間隔でアセットを配置する際などに用いる 
+ 
+
+○Greeble処理
+・装飾が単調にならないため(実際の建物をサンプルに説明をする)
+・建物の特徴をとらえてロジックに落とし込んだことを説明する
+
+・資料
+ -
+ 
 
 ●修正箇所をテキストにまとめる
 ・ロジックを細かく使用方法をついて実装する
 ・効率化をするための工夫部分を強調する
 ・ツールの使用例を具体的に示す
-
-■IDEA
-●カードリッジ
- -オブジェクト配置情報
- -アセット情報
-・最初のBasePointの値だけ直接設定させる
-※カードリッジ側で反射的に操作したいパラメーターは直接設定できるようにする
- -Scale
- -Seed
-
-●BasePoint生成ロジック
-・SurfaceBaseのVolumeMakerを実装する
- -NoiseによるSurface内のBasePointの調整
- -奥行の設定
-
-▲PM設計
-・SurfaceBaseを生成してVolumeMakerに繋げる
-・ObjにMaterialを設定する対応を実装する
