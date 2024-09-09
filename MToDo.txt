@@ -52,8 +52,14 @@
 
 ○ModularModelingについて調べてメリットをまとめる
 
-●ModularModelingのメリット
-・
+●UnrealEngineにおけるModularModelingツールの開発
+・UnrealEngineで背景レベルを制作していく場合、背景で用いるアセットを用いてレベル上で構築していくModularModeling
+アセットを配置していく際に、配置位置や向きなどに一定のルールを設けることができると考え、
+そのルールをパラメーターとして、半自動的にModularModelingを行うツールを開発した。
+
+▲設計
+・配置、向きなどに関するルールをパラメーター化しパラメーターの値で簡単にModularModelingを行えるように実装した
+・アセット情報をDataTableで管理することで、ModularModeling
 
 ●ツールの工夫箇所
 ・規則性と不規則性
@@ -61,7 +67,7 @@
  -規則性の中に不規則性を入れることで単調にならないようにする
 
 ・DataTableによる管理
- -アセット情報、規則性性の情報をデータテーブルで管理することで効率的にModularModelingを行う
+ -アセット情報、規則性の情報をデータテーブルで管理することで効率的にModularModelingを行う
 
 
 ●資料
