@@ -1,88 +1,80 @@
+[Cave]
 ※TAはアーティストをサポートする仕組みを軸に考える
 ※PGは設計を軸に考える
 ※TAのツール周りの基礎的な部分を勉強する
 
-[Cave]
 ○マテリアルの設定
 
-○DataTableの適応
+○コードの整理
 
-○配置処理を実装
-
-■IDEA
-・Density
-・Edge
-・Scale
-・Rotate
-・
-
-●側面に岩を配置
-
-●側面下部に鍾乳石を配置
-・Density
-
-●上部に鍾乳石を配置
-・Density
-
-●下部に小石を配置
+○アセットの用意と配置
+・Referenceを参考にする
 
 
-[ModularModeling]
+[IZON.]
+○検証レベルを実装
+・EventTrigger_AutoCreationStartを参考に実装する
+
+○tw_05の検証
+・クォータニオンを用いて実装
+・アクターの方向に対して正常な挙動を行うように修正
+https://dokuro.moe/ue4-cpp-super-simple-rotate-round-any-object/
+
+
+[CityGenerator]
+■Unreal
+※説明すべき箇所を整理して、その説明を具体例にできるようにPDを行う
+ -家のオブジェクトを生成して配置していく流れを実装する
+※汎用的に使えるように実装する
+
 ○HoudiniFXにコンバートする
 
 ○既存のアセットで資料画像を用意する
+・DataTable
+ -TokyoCityの既存ビルのベースにDetailAsset(複数種類)を配置する
+ 
+・規則性と不規則性
+ -TokyoCityの既存ビル(複数種類)のベースに規則的に並べる
+ 
+ -Greebleを用いてBlockを分割する
+ -RemainRatioでランダムに配置する 
+
+●実装の流れ
+・順番に実装しつつ検証していく
+ -Asset
+ -SurfaceMaker
+ -VolumeMaker
+・処理の流れ
+ -Init
+ -MakeVolume
+ -MakeSurface
+ -MakeDetail
+
 
 ■IDEA
 ●ModuleParameterを繰り返し使う設計で作品を作る
  -Pattern
  -Greeble
  -Scale
- -Volume
+ -Block
  
 ●InitParameterを用いた柔軟なPDの設計
  -Scale
  -Seed
 
+●カードリッジ
+ -オブジェクト配置情報
+ -アセット情報
+・最初のBasePointの値だけ直接設定させる
+※カードリッジ側で反射的に操作したいパラメーターは直接設定できるようにする
+ -Scale
+ -Seed
 
+●BasePoint生成ロジック
+・SurfaceBaseのVolumeMakerを実装する
+ -NoiseによるSurface内のBasePointの調整
+ -奥行の設定
 
-■ModularModelingの説明
-※業務のサポートをする仕組みを強調するようにまとめる
-※ポートフォリオを参考にして実装する
-※既存の完成形のアセットを用いて説明をする
-
-○ModularModelingについて調べてメリットをまとめる
-
-●UnrealEngineにおけるModularModelingツールの開発
-・UnrealEngineで背景レベルを制作していく場合、背景で用いるアセットを用いてレベル上で構築していくModularModeling
-アセットを配置していく際に、配置位置や向きなどに一定のルールを設けることができると考え、
-そのルールをパラメーターとして、半自動的にModularModelingを行うツールを開発した。
-
-▲設計
-・配置、向きなどに関するルールをパラメーター化しパラメーターの値で簡単にModularModelingを行えるように実装した
-・アセット情報をDataTableで管理することで、ModularModeling
-
-●ツールの工夫箇所
-・規則性と不規則性
- -規則性がある部分はパラメーターで管理できるようにして管理をする
- -規則性の中に不規則性を入れることで単調にならないようにする
-
-・DataTableによる管理
- -アセット情報、規則性の情報をデータテーブルで管理することで効率的にModularModelingを行う
-
-
-●資料
-・DataTable
- -TokyoCityの既存ビルのベースにDetailAsset(複数種類)を配置する
- 
-・規則性
- -TokyoCityの既存ビル(複数種類)のベースに規則的に並べる
-
-・Greeble
- -SoulCityアセットを不規則に並べる 
-
- 
-
-●修正箇所をテキストにまとめる
-・ロジックを細かく使用方法をついて実装する
-・効率化をするための工夫部分を強調する
-・ツールの使用例を具体的に示す
+▲PM設計
+・SurfaceBaseを生成してVolumeMakerに繋げる
+・ObjにMaterialを設定する対応を実装する
