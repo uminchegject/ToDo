@@ -5,6 +5,10 @@
 [Portfolio]
 ○参考書類を調べる
 
+○研修期間の作品と個人製作の作品を分ける
+
+○破壊表現の資料をまとめる
+ -議事録をまとめながらまとめる
 
 [IZON.]
 ○検証レベルを実装
@@ -18,10 +22,10 @@ https://dokuro.moe/ue4-cpp-super-simple-rotate-round-any-object/
 
 [CityGenerator]
 ■TokyoCity
-○4面生成ノードを作成する
+○サイズに関連する処理にユニットサイズを参照するように修正する
+・一旦スケールを1の近似値にして実装する。
 
-○サイズ管理を行えるように設計する
-・
+○TopBottom部分を種類分けするノードを実装する
 
 ●建物部分をHDAに置き換える
 
@@ -37,8 +41,7 @@ https://dokuro.moe/ue4-cpp-super-simple-rotate-round-any-object/
  -TokyoCityの既存ビルのベースにDetailAsset(複数種類)を配置する
  
 ・規則性と不規則性
- -TokyoCityの既存ビル(複数種類)のベースに規則的に並べる
- 
+ -TokyoCityの既存ビル(複数種類)のベースに規則的に並べる 
  -Greebleを用いてBlockを分割する
  -RemainRatioでランダムに配置する 
 
