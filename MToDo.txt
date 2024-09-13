@@ -1,23 +1,11 @@
-※TAはアーティストをサポートする仕組みを軸に考える
-※PGは設計を軸に考える
-※TAのツール周りの基礎的な部分を勉強する
-
 [Portfolio]
 ○参考書類を調べる
 
-○研修期間の作品と個人製作の作品を分ける
 
-○破壊表現の資料をまとめる
- -議事録をまとめながらまとめる
-
-[IZON.]
-○検証レベルを実装
-・EventTrigger_AutoCreationStartを参考に実装する
-
-○tw_05の検証
-・クォータニオンを用いて実装
-・アクターの方向に対して正常な挙動を行うように修正
-https://dokuro.moe/ue4-cpp-super-simple-rotate-round-any-object/
+[Maya]
+○PM手法を研究する
+・MEL,PythonでMaya内で完結する
+・モデリングをMaya側でやり、HoudiniでPDを行う
 
 
 [CityGenerator]
@@ -30,8 +18,7 @@ https://dokuro.moe/ue4-cpp-super-simple-rotate-round-any-object/
 ●建物部分をHDAに置き換える
 
 
-
-■Unreal
+■Portfolio
 ※説明すべき箇所を整理して、その説明を具体例にできるようにPDを行う
  -家のオブジェクトを生成して配置していく流れを実装する
 ※汎用的に使えるように実装する
@@ -50,6 +37,7 @@ https://dokuro.moe/ue4-cpp-super-simple-rotate-round-any-object/
  -Asset
  -SurfaceMaker
  -VolumeMaker
+ 
 ・処理の流れ
  -Init
  -MakeVolume
@@ -84,3 +72,14 @@ https://dokuro.moe/ue4-cpp-super-simple-rotate-round-any-object/
 ▲PM設計
 ・SurfaceBaseを生成してVolumeMakerに繋げる
 ・ObjにMaterialを設定する対応を実装する
+
+
+[IZON.]
+○検証レベルを実装
+・特定位置に触れたら智人をギミックに向かって向かわせて、戻ってくるまでの処理を実装する
+・エネミーのスポーンを実装する
+
+○tw_05の検証
+・クォータニオンを用いて実装
+・アクターの方向に対して正常な挙動を行うように修正
+https://dokuro.moe/ue4-cpp-super-simple-rotate-round-any-object/
