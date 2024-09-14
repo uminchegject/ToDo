@@ -1,93 +1,71 @@
-for(int paramIndex = 0; paramIndex < point(1, "AssetParamNum", 0); ++paramIndex)
-{   
+[CityGenerator]
+■TokyoCity
+○TokyoCityの建物を生成するロジックを実装
+・フロー
+ -0_SignBoard_Make(100, 2000)
+ -100_Base_Edge(110, 120)
+ -110_Base_Pattern(111)
+ -120_Base_Edge(121)
+ -110_Detail_Pattern(112)
+ -2000_SignBoard_Divide(2100, 2200)
+ -2100_SignBoardBase_Pattern(2110)
+ -2100_SignBoardTextBase_Scale(2120)
+ -2120_SignBoardText_Pattern(2130)
+ -2200_SignBoardLegs
+ 
+○EdgeMakerからAddTypeNumを消す
 
-	int toggleRunning = 0;
-	for(int i = 0; i < len(typeNumList); i++)
-	{
-		int typeNum = point(1, "TypeNum", paramIndex); 
-		if(typeNumList[i] == typeNum)
-		{
-			toggleRunning = 1;
-			break;
-		}       
-	}
-    if(toggleRunning == 0){continue;}
-	
-    float randomNum = random(@P * (paramIndex + 1));
 
-    //アセットDT周り
-    int AssetRefNum = point(2, "AssetRefNum", 0);
-    int AssetRefIndexList[];
-    for(int k = 0; k < AssetRefNum; ++k)
-    {
-        string assetType1 = point(1, "AssetType", paramIndex);
-        string assetType2 = point(2, "AssetType", k);
-        if(assetType1 == assetType2)
-        {
-            append(AssetRefIndexList, k);
-        }
-    }       
-    int assetRefIndex = AssetRefIndexList[floor(int(len(AssetRefIndexList) * randomNum))];
-    string assetRef = point(2, "AssetRef", assetRefIndex);
-    
-	
-    vector4 qRotate = p@orient;
-    vector spawnPos = v@P;
-    vector scale = v@Scale;
-    
-    //-------------------------------------------------------------------------------------------------
-    //AssetRef
-    vector assetRotate = point(2, "Rotate", assetRefIndex);
-    vector axis = set(1,0,0);
-    vector4 qAssetRotate = ident();
-	qAssetRotate = qmultiply(qAssetRotate, quaternion(radians(assetRotate.x) ,axis)); 
-    axis = set(0,1,0);
-	qAssetRotate = qmultiply(qAssetRotate, quaternion(radians(assetRotate.y) ,axis)); 
-    axis = set(0,0,1);
-	qAssetRotate = qmultiply(qAssetRotate, quaternion(radians(assetRotate.z) ,axis));     
-    
-    vector assetTransform = point(2, "Transform", assetRefIndex);
-    assetTransform *= scale;
-    assetTransform = qrotate(qAssetRotate, assetTransform);
-    
-    vector assetScale = point(2, "SizeCofficient", assetRefIndex); 
-    //-------------------------------------------------------------------------------------------------
-    
-    //-------------------------------------------------------------------------------------------------
-    //AssetParam
-    vector paramRotate = point(1, "Rotate", paramIndex);
-    vector axis = set(1,0,0);
-    vector4 qParamRotate = ident();
-	qParamRotate = qmultiply(qParamRotate, quaternion(radians(assetRotate.x) ,axis)); 
-    axis = set(0,1,0);
-    qParamRotate = qmultiply(qParamRotate, quaternion(radians(paramRotate.y) ,axis));
-    axis = set(0,0,1);
-    qParamRotate = qmultiply(qParamRotate, quaternion(radians(paramRotate.z) ,axis));
-    
-    vector paramTransform = point(1, "Transform", paramIndex);
-    paramTransform *= scale;
-    paramTransform = qrotate(qParamRotate, paramTransform);
-    
-    vector paramScale = point(1, "SizeCofficient", paramIndex); 
-    vector sizeRange = point(1, "SizeRange", paramIndex);
-    float sizeCofficient = sizeRange.x + randomNum * (sizeRange.y - sizeRange.x);
-    paramScale *= sizeCofficient
-    //-------------------------------------------------------------------------------------------------
-    
-    spawnPos += assetTransform;
-    scale *= assetScale;
-	qRotate = qmultiply(qRotate, qAssetRotate);
-    
-    spawnPos += paramTransform;
-    scale *= paramScale;
-	qRotate = qmultiply(qRotate, qAssetRotate);
-    
-    if(point(1 , "RemainRatio", paramIndex) < random(spawnPos)) {continue;}
-    
-    int pt = addpoint(0, spawnPos);
-    setpointattrib(0, "scale", pt, assetScale);
-	setpointattrib(0, "orient", pt, qRotate);
-    setpointattrib(0, "unreal_instance", pt, assetRef);  
+○EdgeMakerをBaseサイズに合うように生成するよう修正
+spawnPos.x += v@scale.x / 2 - depthSize / 2;
+
+vector spawnPos = 0;
+spawnPos.x += v@scale.x / 2 - depthSize / 2;
+spawnPos.z += v@scale.z / 2 - depthSize / 2;
+
+○EdgeMakerのEdgeSizeが0だった場合にサイズを調整する
+if(0 < sideEdgeSize)
+{
+
 }
 
-removepoint(0, @ptnum);
+●実装の流れ
+・順番に実装しつつ検証していく
+ -Asset
+ -SurfaceMaker
+ -VolumeMaker
+ 
+・処理の流れ
+ -Init
+ -MakeVolume
+ -MakeSurface
+ -MakeDetail
+
+
+■IDEA
+●ModuleParameterを繰り返し使う設計で作品を作る
+ -Pattern
+ -Greeble
+ -Scale
+ -Block
+ 
+●InitParameterを用いた柔軟なPDの設計
+ -Scale
+ -Seed
+
+●カードリッジ
+ -オブジェクト配置情報
+ -アセット情報
+・最初のBasePointの値だけ直接設定させる
+※カードリッジ側で反射的に操作したいパラメーターは直接設定できるようにする
+ -Scale
+ -Seed
+
+●BasePoint生成ロジック
+・SurfaceBaseのVolumeMakerを実装する
+ -NoiseによるSurface内のBasePointの調整
+ -奥行の設定
+
+▲PM設計
+・SurfaceBaseを生成してVolumeMakerに繋げる
+・ObjにMaterialを設定する対応を実装する
