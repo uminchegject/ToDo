@@ -1,33 +1,10 @@
 [CityGenerator]
 ■TokyoCity
-○TokyoCityの建物を生成するロジックを実装
-・フロー
- -0_SignBoard_Make(100, 2000)
- -100_Base_Edge(110, 120)
- -110_Base_Pattern(111)
- -120_Base_Edge(121)
- -110_Detail_Pattern(112)
- -2000_SignBoard_Divide(2100, 2200)
- -2100_SignBoardBase_Pattern(2110)
- -2100_SignBoardTextBase_Scale(2120)
- -2120_SignBoardText_Pattern(2130)
- -2200_SignBoardLegs
- 
-○EdgeMakerからAddTypeNumを消す
+○ユニット化パラメーターの追加
 
+○indexをremoveするように修正
 
-○EdgeMakerをBaseサイズに合うように生成するよう修正
-spawnPos.x += v@scale.x / 2 - depthSize / 2;
-
-vector spawnPos = 0;
-spawnPos.x += v@scale.x / 2 - depthSize / 2;
-spawnPos.z += v@scale.z / 2 - depthSize / 2;
-
-○EdgeMakerのEdgeSizeが0だった場合にサイズを調整する
-if(0 < sideEdgeSize)
-{
-
-}
+○分岐周りの設計をし直す
 
 ●IDEA
 ・SignBoardBaseにDetailを加える
