@@ -2,84 +2,25 @@
 ○参考書類を調べる
 
 
-[Maya]
-○PM手法を研究する
-・MEL,PythonでMaya内で完結する
-・モデリングをMaya側でやり、HoudiniでPDを行う
-
-
-[CityGenerator]
-■TokyoCity
-○サイズに関連する処理にユニットサイズを参照するように修正する
-・一旦スケールを1の近似値にして実装する。
-
-○TopBottom部分を種類分けするノードを実装する
-
-●建物部分をHDAに置き換える
-
-
-■Portfolio
-※説明すべき箇所を整理して、その説明を具体例にできるようにPDを行う
- -家のオブジェクトを生成して配置していく流れを実装する
-※汎用的に使えるように実装する
-
-○既存のアセットで資料画像を用意する
-・DataTable
- -TokyoCityの既存ビルのベースにDetailAsset(複数種類)を配置する
+■カテゴライズ
+●規則性と不規則性
  
-・規則性と不規則性
- -TokyoCityの既存ビル(複数種類)のベースに規則的に並べる 
- -Greebleを用いてBlockを分割する
- -RemainRatioでランダムに配置する 
+●モジュラーモデリング
 
-●実装の流れ
-・順番に実装しつつ検証していく
- -Asset
- -SurfaceMaker
- -VolumeMaker
+●DataTable
  
-・処理の流れ
- -Init
- -MakeVolume
- -MakeSurface
- -MakeDetail
+●モデリング
 
 
-■IDEA
-●ModuleParameterを繰り返し使う設計で作品を作る
- -Pattern
- -Greeble
- -Scale
- -Block
- 
-●InitParameterを用いた柔軟なPDの設計
- -Scale
- -Seed
-
-●カードリッジ
- -オブジェクト配置情報
- -アセット情報
-・最初のBasePointの値だけ直接設定させる
-※カードリッジ側で反射的に操作したいパラメーターは直接設定できるようにする
- -Scale
- -Seed
-
-●BasePoint生成ロジック
-・SurfaceBaseのVolumeMakerを実装する
- -NoiseによるSurface内のBasePointの調整
- -奥行の設定
-
-▲PM設計
-・SurfaceBaseを生成してVolumeMakerに繋げる
-・ObjにMaterialを設定する対応を実装する
+[面談]
+○説明の補足となる画像を用意する
+・DataTableを用いた管理(業務の効率化)
+・Greeble分割を用いた表現(デザインの幅を広げる)
 
 
-[IZON.]
-○検証レベルを実装
-・特定位置に触れたら智人をギミックに向かって向かわせて、戻ってくるまでの処理を実装する
-・エネミーのスポーンを実装する
+■回答
+●デザインの幅を広げる
 
-○tw_05の検証
-・クォータニオンを用いて実装
-・アクターの方向に対して正常な挙動を行うように修正
-https://dokuro.moe/ue4-cpp-super-simple-rotate-round-any-object/
+●業務の効率化について
+
+●将来について
