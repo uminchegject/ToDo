@@ -29,6 +29,16 @@ if(0 < sideEdgeSize)
 
 }
 
+●IDEA
+・SignBoardBaseにDetailを加える
+ -照明
+ 
+・GreebleでBlockを増やす
+
+・AddTypeをランダムにして組み合わせをランダム化する
+
+
+■IDEA
 ●実装の流れ
 ・順番に実装しつつ検証していく
  -Asset
@@ -41,8 +51,6 @@ if(0 < sideEdgeSize)
  -MakeSurface
  -MakeDetail
 
-
-■IDEA
 ●ModuleParameterを繰り返し使う設計で作品を作る
  -Pattern
  -Greeble
