@@ -1,15 +1,24 @@
 [CityGenerator]
 ■DataTable
-○BLockParameterの修正
+○BlockParameterの修正
 int newPointTypeNumList[] = typeNumList;
 append(newPointTypeNumList, index);
 
+○Buildingを一つ用意する
+・SignBoard
+・Building
 
+○AssetRefを複数用意する(DataTable)
+・Base
+・Detail
+
+○複数のボリュームを用意する(ModularModeing)
+・ボリュームとアセットの比較画像を用意する
 
 ●IDEA
 ・SignBoardBaseにDetailを加える
  -照明
- 
+
 ・GreebleでBlockを増やす
 
 ・AddTypeをランダムにして組み合わせをランダム化する
@@ -18,9 +27,9 @@ append(newPointTypeNumList, index);
 ■Greeble
 ※フラクタル幾何学を用いた新しいデザイン手法の模索
 
-○Greebleを検証
-・BaseAssetで検証
-・FrontDirDataの挙動を確認
+○看板で簡単なGreebleフラクタルの実装例を用意する
+・BaseのGreeble生成
+・適切なサイズのテキストをランダムに配置
 
 
 ■フロー処理の修正
