@@ -1,27 +1,7 @@
 [CityGenerator]
-
-○Pattern処理を修正
--depth / 2を消す
-
-○複数タイプを予め設定できるようにする
-//typeを追加
-strParam = point(1, "AddTypeNumList", i@LoopCount);
-strParamBlockList = re_split(",", strParam);
-foreach(string strParamList; strParamBlockList)
-{
-	strParamList = re_split("_", strParam);
-	int addTypeNumList[];
-	foreach(string str; strParamList)
-	{
-		append(addTypeNumList, atoi(str));
-	}
-	int type = addTypeNumList[int(floor(rand(@ptnum) * len(addTypeNumList)))];
-	append(typeNumList, type);
-}
-i[]@TypeNumList = typeNumList;
-
-○パラメーターをまとめる
-・boolで種類を切り分ける
+○MakeEdgeの修正・挙動確認
+・AddType部分を修正
+・Edge部分のj挙動を修正
 
 ○BuildGeneratorを完成させる
 ・分岐箇所で予めAssetParamTypeを設定しておく
@@ -33,7 +13,7 @@ i[]@TypeNumList = typeNumList;
  -Greeble
  -Offset
  -AdjustHeight
- -Greeble
+
 
 ■IDEA
 ●実装の流れ
@@ -74,3 +54,41 @@ i[]@TypeNumList = typeNumList;
 ▲PM設計
 ・SurfaceBaseを生成してVolumeMakerに繋げる
 ・ObjにMaterialを設定する対応を実装する
+
+
+
+[IZON.]
+○検証レベルを実装
+・特定位置に触れたら智人をギミックに向かって向かわせて、戻ってくるまでの処理を実装する
+・エネミーのスポーンを実装する
+
+○tw_05の検証
+・クォータニオンを用いて実装
+・アクターの方向に対して正常な挙動を行うように修正
+https://dokuro.moe/ue4-cpp-super-simple-rotate-round-any-object/
+
+
+[ポートフォリオ]
+○文章をまとめる
+
+○プロジェクトを整理する
+・撮影できるところまで用意する
+・画像を用意してスライドに張る
+
+○動画を用意
+・字幕の設定を教えてもらう
+
+
+■文章
+●建物Generator
+
+●洞窟ジェネレータ
+・パラメーターの説明
+
+●破片ジェネレータ
+・
+・テクスチャの説明
+・MayaのオブジェクトをHoudiniを通して破片に変換する
+
+●植栽ジェネレータ
+・Mayaを用いて実装
