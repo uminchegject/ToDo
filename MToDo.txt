@@ -24,9 +24,16 @@ i[]@TypeNumList = typeNumList;
 ・boolで種類を切り分ける
 
 ○BuildGeneratorを完成させる
+・分岐箇所で予めAssetParamTypeを設定しておく
 ・パラメーターフローの設計部分を意識して考える
 
 ○CityGeneratorの設計
+・DataTableをそれぞれ用意してInputに設定する
+・Greebleを用いてCityGenneratorを設定
+ -Greeble
+ -Offset
+ -AdjustHeight
+ -Greeble
 
 ■IDEA
 ●実装の流れ
