@@ -1,10 +1,26 @@
+[Maya]
+■ModularModeling
+○SignBoardCity
+・Mayaでベースを用意してHoudiniにインポート
+・Houdini側でモデリング
+・Mayaでアウトプットしてテクスチャを貼る
+
+●MEL(Python)
+・できることを大まかに本から理解する
+・メモを作成
+
+●DCC
+・モジュールを簡単にモデリングする
+・チュートリアルを用意
+
+
 [CityGenerator]
 ○BuildGeneratorを完成させる
-・分岐箇所で予めAssetParamTypeを設定しておく
-・パラメーターフローの設計部分を意識して考える
+・Greebleを活かす
 
-○CityGeneratorの設計
+○BlockGeneratorの設計
 ・DataTableをそれぞれ用意してInputに設定する
+・InitParameterの設計
 ・Greebleを用いてCityGenneratorを設定
  -Greeble
  -Offset
@@ -52,30 +68,17 @@
 ・ObjにMaterialを設定する対応を実装する
 
 
-
 [IZON.]
 ○検証レベルを実装
 ・BP_GimmickTrigger_tw06_start
-　ー接触したらBP_Spawnを生成する
-　ーThibitoをGoalに向かわせる
-　ー再度Thibitoと接触したら消滅する
-　ーEnumで管理
+ ー接触したらBP_Spawnを生成する
+ ーThibitoをGoalに向かわせる
+ ー再度Thibitoと接触したら消滅する
+ ーEnumで管理
 ・BP_GimmickTrigger_tw06_Goal
-　ー接触したらTriggerを呼び出す
-
+ ー接触したらTriggerを呼び出す
 
 ○tw_05の検証
 ・クォータニオンを用いて実装
 ・アクターの方向に対して正常な挙動を行うように修正
 https://dokuro.moe/ue4-cpp-super-simple-rotate-round-any-object/
-
-
-[Maya]
-■ModularModeling
-○MEL(Python)
-・できることを大まかに本から理解する
-・メモを作成
-
-○DCC
-・モジュールを簡単にモデリングする
-・チュートリアルを用意
