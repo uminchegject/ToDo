@@ -1,3 +1,14 @@
+○ポートフォリオ
+・モジュラーモデリング
+・GreebleをVexで疑似的に実装
+
+○表紙
+・看板のあるなし
+・BuildingDetailのあるなし
+・Patternを大きめに設定し壁をWindowで埋める
+
+・Greebleを行いDetailPatternを行う
+
 [CityGenerator]
 ○MakeEdgeの修正・挙動確認
 ・AddType部分を修正
