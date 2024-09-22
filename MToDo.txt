@@ -1,13 +1,20 @@
 [Maya]
-■ModularModeling
-○SignBoardCity
-・Mayaでベースを用意してHoudiniにインポート
-・Houdini側でモデリング
-・Mayaでアウトプットしてテクスチャを貼る
+■ProceduralModeling
+※MayaのモデリングとMELのスクリプトでプロシージャルモデリングを実装する
+
+○できることを把握する
+
+○メモにまとめる
+
 
 ●MEL(Python)
-・できることを大まかに本から理解する
-・メモを作成
+・本のチュートリアルを回す
+ -基礎部分とモデリング部分をベースに勉強する
+
+・Greeble
+・CopyToPoint
+
+△柔軟なUV展開、マテリアル
 
 ●DCC
 ・モジュールを簡単にモデリングする
@@ -16,16 +23,22 @@
 
 [CityGenerator]
 ○BuildGeneratorを完成させる
-・Greebleを活かす
+・EdgeMakeの検証
+・Greebleの検証
+・Greebleを活かした生成を実装する
+
+
 
 ○BlockGeneratorの設計
-・DataTableをそれぞれ用意してInputに設定する
 ・InitParameterの設計
-・Greebleを用いてCityGenneratorを設定
- -Greeble
- -Offset
+ -Scale
+ -Seed
+・Parameterの設計
+ -PlaceLogic
+ -BuildScale
  -AdjustHeight
 
+○Boxで検証
 
 ■IDEA
 ●実装の流れ
