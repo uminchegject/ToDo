@@ -3,6 +3,7 @@
 ※MayaのモデリングとMELのスクリプトでプロシージャルモデリングを実装する
 
 ○できることを把握する
+・PDにつなげられるモデリングテーマを決める
 
 ○メモにまとめる
 
@@ -10,9 +11,9 @@
 ●MEL(Python)
 ・本のチュートリアルを回す
  -基礎部分とモデリング部分をベースに勉強する
-
 ・Greeble
 ・CopyToPoint
+・UI(Input)
 
 △柔軟なUV展開、マテリアル
 
@@ -27,8 +28,6 @@
 ・Greebleの検証
 ・Greebleを活かした生成を実装する
 
-
-
 ○BlockGeneratorの設計
 ・InitParameterの設計
  -Scale
@@ -39,6 +38,7 @@
  -AdjustHeight
 
 ○Boxで検証
+
 
 ■IDEA
 ●実装の流れ
@@ -83,15 +83,16 @@
 
 [IZON.]
 ○検証レベルを実装
-・BP_GimmickTrigger_tw06_start
- ー接触したらBP_Spawnを生成する
- ーThibitoをGoalに向かわせる
- ー再度Thibitoと接触したら消滅する
- ーEnumで管理
-・BP_GimmickTrigger_tw06_Goal
- ー接触したらTriggerを呼び出す
+●BP_GimmickTrigger_tw06_start
+※ThibitoとBP_Spawnの管理を行う
+・BP_Spawn
+ -接触したらBP_Spawnを生成する
+ -再度Thibitoと接触したら消滅する
+・Thibito
+ -ThibitoをGoalに向かわせる
+ -Goalのイベントに戻ってくる処理をバインドする
 
-○tw_05の検証
+△tw_05の検証
 ・クォータニオンを用いて実装
 ・アクターの方向に対して正常な挙動を行うように修正
 https://dokuro.moe/ue4-cpp-super-simple-rotate-round-any-object/
