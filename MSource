@@ -1,92 +1,55 @@
-[CityGenerator]
-■DataTable
-○BlockParameterの修正
-int newPointTypeNumList[] = typeNumList;
-append(newPointTypeNumList, index);
+●セット
+・変化値
+・ランダム値
 
-○Buildingを一つ用意する
-・SignBoard
-・Building
+●InitParameter
+・スケール
+・位置
+・オブジェクト種類
+・方向
 
-○AssetRefを複数用意する(DataTable)
-・Base
-・Detail
+●AnimationParameter
+・スケール
+・位置
+・オブジェクト種類
+・方向
 
-○複数のボリュームを用意する(ModularModeing)
-・ボリュームとアセットの比較画像を用意する
-
-●IDEA
-・SignBoardBaseにDetailを加える
- -照明
-
-・GreebleでBlockを増やす
-
-・AddTypeをランダムにして組み合わせをランダム化する
-
-
-■Greeble
-※フラクタル幾何学を用いた新しいデザイン手法の模索
-
-○看板で簡単なGreebleフラクタルの実装例を用意する
-・BaseのGreeble生成
-・適切なサイズのテキストをランダムに配置
-
-
-■フロー処理の修正
-○複数タイプを予め設定できる
-//typeを追加
-strParam = point(1, "AddTypeNumList", i@LoopCount);
-strParamBlockList = re_split(",", strParam);
-foreach(string strParamList; strParamBlockList)
+global proc spiralobjects(float $rad, int %num)
 {
-	strParamList = re_split("_", strParam);
-	int addTypeNumList[];
-	foreach(string str; strParamList)
+	int $i;
+	float $r = 0.0;
+	float $y = 0.0;
+	string &name[];
+	
+	for($i = 0; $i < $num; $i++)
 	{
-		append(addTypeNumList, atoi(str));
+		$name = 'sphere';
+		setAttr($name[0] + ".tx") $rad;
+		rotate -ws -p 0 0 0  0 $r 0;
+		setAttr($name[0] + ".ty") $y;
+		$r += 30.0;
+		$y += 0.5;
 	}
-	int type = addTypeNumList[int(floor(rand(@ptnum) * len(addTypeNumList)))];
-	append(typeNumList, type);
+
 }
-i[]@TypeNumList = typeNumList;
 
+global proc circleAnimation1(float $rad, int $frame)
+{
+	int $i;
+	float $r = 0.0;
+	string $name[];
+	
+	$name = 'sphere';
+	setAttr($name[0] + ".tx") $rad;
+	setAttr($name[0] + ".rotatePivotX") (-$rad);
+	
+	for($i = 0; $i < $frame; $i++)
+	{
+		currentTime $i;
+		setAttr ($name[0] + ".ry") $r;
+		setKeyframe -at "ry" $name[0];
+		$r += 10.0;
+	}
+}
 
-■IDEA
-●実装の流れ
-・順番に実装しつつ検証していく
- -Asset
- -SurfaceMaker
- -VolumeMaker
- 
-・処理の流れ
- -Init
- -MakeVolume
- -MakeSurface
- -MakeDetail
-
-●ModuleParameterを繰り返し使う設計で作品を作る
- -Pattern
- -Greeble
- -Scale
- -Block
- 
-●InitParameterを用いた柔軟なPDの設計
- -Scale
- -Seed
-
-●カードリッジ
- -オブジェクト配置情報
- -アセット情報
-・最初のBasePointの値だけ直接設定させる
-※カードリッジ側で反射的に操作したいパラメーターは直接設定できるようにする
- -Scale
- -Seed
-
-●BasePoint生成ロジック
-・SurfaceBaseのVolumeMakerを実装する
- -NoiseによるSurface内のBasePointの調整
- -奥行の設定
-
-▲PM設計
-・SurfaceBaseを生成してVolumeMakerに繋げる
-・ObjにMaterialを設定する対応を実装する
+rand(-0.1, 0.1);
