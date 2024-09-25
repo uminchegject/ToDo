@@ -1,44 +1,26 @@
-[Maya]
-■ProceduralModeling
+[DCC]
+■ProceduralAnimation(MEL)
 ※MayaのモデリングとMELのスクリプトでプロシージャルモデリングを実装する
+○アニメーション
+○GUI周りの勉強及び実装
 
-○できることを把握する
-・PDにつなげられるモデリングテーマを決める
-
-○メモにまとめる
-
-
-●MEL(Python)
+●IDEA
+※MELでできることをメインに調べる
 ・本のチュートリアルを回す
  -基礎部分とモデリング部分をベースに勉強する
-・Greeble
-・CopyToPoint
-・UI(Input)
 
-△柔軟なUV展開、マテリアル
-
-●DCC
-・モジュールを簡単にモデリングする
-・チュートリアルを用意
-
+■Modeling
+・Houdiniのサンプルから工程を調べる
+ -Modeling
+ -UV
+ -Material
 
 [CityGenerator]
 ○BuildGeneratorを完成させる
-・EdgeMakeの検証
-・Greebleの検証
 ・Greebleを活かした生成を実装する
 
-○BlockGeneratorの設計
-・InitParameterの設計
- -Scale
- -Seed
-・Parameterの設計
- -PlaceLogic
- -BuildScale
- -AdjustHeight
-
-○Boxで検証
-
+○BlockGeneratorの検証
+・BOXで検証
 
 ■IDEA
 ●実装の流れ
@@ -53,11 +35,6 @@
  -MakeSurface
  -MakeDetail
 
-●ModuleParameterを繰り返し使う設計で作品を作る
- -Pattern
- -Greeble
- -Scale
- -Block
  
 ●InitParameterを用いた柔軟なPDの設計
  -Scale
@@ -71,10 +48,6 @@
  -Scale
  -Seed
 
-●BasePoint生成ロジック
-・SurfaceBaseのVolumeMakerを実装する
- -NoiseによるSurface内のBasePointの調整
- -奥行の設定
 
 ▲PM設計
 ・SurfaceBaseを生成してVolumeMakerに繋げる
@@ -92,7 +65,7 @@
  -ThibitoをGoalに向かわせる
  -Goalのイベントに戻ってくる処理をバインドする
 
-△tw_05の検証
+○tw_05の検証
 ・クォータニオンを用いて実装
 ・アクターの方向に対して正常な挙動を行うように修正
 https://dokuro.moe/ue4-cpp-super-simple-rotate-round-any-object/
