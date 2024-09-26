@@ -1,11 +1,18 @@
+[TA準備]
+○ドキュメント確認
+ -CROWI
+ -コンフル
+ 
+○パソコンの返却
+
+○荷物整理
+
 [DCC]
 ■ProceduralAnimation(MEL)
 ○MELの実装
 
 ○PDアニメーションの実装
 
-○GUI周りの勉強及び実装
-・※サンプルプロジェクトをコーディングする
 
 ●IDEA
 ※MELでできることをメインに調べる
@@ -61,15 +68,8 @@
 
 
 [IZON.]
-○検証レベルを実装
-●BP_GimmickTrigger_tw06_start
-※ThibitoとBP_Spawnの管理を行う
-・BP_Spawn
- -接触したらBP_Spawnを生成する
- -再度Thibitoと接触したら消滅する
-・Thibito
- -ThibitoをGoalに向かわせる
- -Goalのイベントに戻ってくる処理をバインドする
+○設計の見直し
+・Goal, Resorce, Startの関係を再設計
 
 ○tw_05の検証
 ・クォータニオンを用いて実装
