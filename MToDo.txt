@@ -1,8 +1,11 @@
 [DCC]
 ■ProceduralAnimation(MEL)
-※MayaのモデリングとMELのスクリプトでプロシージャルモデリングを実装する
-○アニメーション
+○MELの実装
+
+○PDアニメーションの実装
+
 ○GUI周りの勉強及び実装
+・※サンプルプロジェクトをコーディングする
 
 ●IDEA
 ※MELでできることをメインに調べる
@@ -16,11 +19,14 @@
  -Material
 
 [CityGenerator]
+■DetailGenerator
 ○BuildGeneratorを完成させる
 ・Greebleを活かした生成を実装する
 
-○BlockGeneratorの検証
-・BOXで検証
+■BlockGenerator
+○NoiseのOffset値をInitに追加する
+
+○Greeble分割するときに合体させたままにする処理を追加する
 
 ■IDEA
 ●実装の流れ
