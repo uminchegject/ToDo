@@ -1,3 +1,47 @@
+[CityGenerator]
+■Detail
+※DetailAssetを配置していくのに必要な処理を実装しつつ、DTを用意していく
+
+○Greebleを用いたBlockの分割生成
+
+○異形の生成ロジックと配置ロジックの設計
+
+●DT
+・BuildingBase
+・SignBoard
+・TopDetail
+
+■City
+※Cityを生成するのに必要な処理を実装していく
+
+○Blockの統合
+
+[ProceduralAnimation]
+○初期配置ロジックを設計
+・まずは検証でBOXを用いる
+
+○回転、移動、スケール周りの管理方法を確認する
+
+
+[Public]
+○顔合わせに向けて資料をまとめて再確認
+
+○テクニカルアーティストスターターキットの確認
+
+△設計の見直し
+・Goal, Resorce, Startの関係を再設計
+
+
+[生活修正]
+・朝ベース読書
+ -夜関連読書
+・昼15分レベルの自主製作を行う
+ -夜に繋げられるようにする
+・昼休みに昼寝
+ -起きてSFC
+・朝PCを用いた情報収集を行う
+ -サンプルプロジェクト、DocsWell
+
 [TA準備]
 ○ドキュメント確認
  -CROWI
@@ -7,9 +51,14 @@
 
 ○荷物整理
 
+
+[顔合わせ準備]
+○Chatworkを参考にまとめる
+
+
 [DCC]
 ■ProceduralAnimation(MEL)
-○MELの実装
+○MELの学習
 
 ○PDアニメーションの実装
 
