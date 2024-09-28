@@ -1,3 +1,92 @@
+○セットパラメーターを追加できるようにする
+
+●パラメーターセット
+※固定値 + ランダム値をセットで設定する
+・初期値
+・経過値
+・経過時間
+
+●パラメーター種類
+・オブジェクト種類
+・スケール
+・位置
+・方向
+
+
+global proc spiralobjects(float $rad, int %num)
+{
+	int $i;
+	float $r = 0.0;
+	float $y = 0.0;
+	string &name[];
+	
+	for($i = 0; $i < $num; $i++)
+	{
+		$name = 'sphere';
+		setAttr($name[0] + ".tx") $rad;
+		rotate -ws -p 0 0 0  0 $r 0;
+		setAttr($name[0] + ".ty") $y;
+		$r += 30.0;
+		$y += 0.5;
+	}
+
+}
+
+global proc circleAnimation1(float $rad, int $frame)
+{
+	int $i;
+	float $r = 0.0;
+	string $name[];
+	
+	$name = 'sphere';
+	setAttr($name[0] + ".tx") $rad;
+	setAttr($name[0] + ".rotatePivotX") (-$rad);
+	
+	for($i = 0; $i < $frame; $i++)
+	{
+		currentTime $i;
+		setAttr ($name[0] + ".ry") $r;
+		setKeyframe -at "ry" $name[0];
+		$r += 10.0;
+	}
+}
+
+rand(-0.1, 0.1);
+
+global proc makeSphere
+{
+	float $val;
+	
+	$val = 'floatSliderGrp -q -value radiusSlider';
+	sphere;
+	scale $val $val $val;	
+}
+
+window -title "スライダ 1";
+columnLayout;
+text -label "球体を生成";
+floatSliderGrp -label "半径" -field true
+	-min 0.1 -max 20.0 -step 0.1 -value 1.0 radiusSlider;
+button -label "作成" -command "makeSphere()";
+showWindow;
+
+
+vector $trns = <<0.0,0.0,0.0>>;
+vector $rot = <<0.0,0.0,0.0>>;
+vector $scl = <<1.0,1.0,1.0>>;
+vector $jo = <<0.0,0.0,0.0>>;
+vector $valSetList[] = {$trns,$rot,$scl,$jo};
+
+string $node = joint();
+string $attrList[] = {".t",".r",".s",".jo"};
+
+for ($cnt = 0;$cnt < size($valSetList);$cnt++){
+	vector $val = $valSetList[$cnt];
+	setAttr ($node + $attrList[$cnt]) ($val.x) ($val.y) ($val.z);
+}
+
+
+
 ○パラメーターの追加方法
 ○使いやすいパラメーター型の調査
 ○buttonの関数の呼び出し方
