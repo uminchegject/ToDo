@@ -1,38 +1,86 @@
-[CityGenerator]
-■Detail
-※DetailAssetを配置していくのに必要な処理を実装しつつ、DTを用意していく
-
-○各部位の実装
-・Base
- -Greebleを用いたBlockの分割
- -立方体,丸角
- -Pattern
-・SignBoard
- -大きさの変化
- -鉄骨足場,コンクリート足場
- -立方体,丸角
+[生活修正]
+・朝ベース読書
+ -夜関連読書
+・昼15分レベルの自主製作を行う
+ -夜に繋げられるようにする
+・昼休みに昼寝
+ -起きてSFC
+・朝PCを用いた情報収集を行う
+ -サンプルプロジェクト、DocsWell
 
 
-■City
-※Cityを生成するのに必要な処理を実装していく
+[TA準備]
+○ドキュメント確認
+ -CROWI
+ -コンフル
+ 
+○パソコンの返却
 
-○SurfaceMakerを複数追加実装する
-・Greeble
-・斜面
+○荷物整理
+
+○プロジェクト離脱報告
 
 
-[ProceduralAnimation]
+[MEL]
+■ProceduralAnimation
 ○回転、移動、スケール周りの管理方法を勉強
 
 ○Boxで検証
 
 ○初期配置ロジックを設計
 
+●IDEA
+※MELでできることをメインに調べる
+・本のチュートリアルを回す
+ -基礎部分とモデリング部分をベースに勉強する
 
-[Public]
-○顔合わせに向けて資料をまとめて再確認
 
-○テクニカルアーティストスターターキットの確認
+[CityGenerator]
+※Houdiniで完結させる
 
-△設計の見直し
+○Houdini上で完結するように置き換える
+・BOXで検証できるまでを実装する
+
+■Detail
+※DetailAssetを配置していくのに必要な処理を実装しつつ、DTを用意していく
+
+○Greebleを用いたBlockの分割生成
+
+○Houdiniにおけるモデリングの学習
+・モデリング、UV,マテリアルまでの一式を勉強する
+・パラメーターを用いて調整できるように設計する
+
+
+■City
+※Cityを生成するのに必要な処理を実装していく
+
+○NoiseのOffset値をInitに追加する
+
+
+■Line
+●設計
+・Primitiveで管理する
+・Heightを持たせる
+
+●処理
+・BlockToLine
+・LineToBlock
+・MakeEdge
+・DivideHeight
+
+
+■IDEA
+●InitParameterを用いた柔軟なPDの設計
+ -Scale
+ -Seed
+
+
+
+[IZON.]
+○設計の見直し
 ・Goal, Resorce, Startの関係を再設計
+
+○tw_05の検証
+・クォータニオンを用いて実装
+・アクターの方向に対して正常な挙動を行うように修正
+https://dokuro.moe/ue4-cpp-super-simple-rotate-round-any-object/
