@@ -10,14 +10,9 @@
 
 
 [TA準備]
-○ドキュメント確認
- -CROWI
- -コンフル
- 
+○挨拶コメントの準備
 ○パソコンの返却
-
 ○荷物整理
-
 ○プロジェクト離脱報告
 
 
@@ -75,10 +70,11 @@
  -Seed
 
 
-
 [IZON.]
-○設計の見直し
-・Goal, Resorce, Startの関係を再設計
+○Gimmick_06のStart,Managerの実装
+・Resorceに接触したらGoalをSpawn
+・Goalに接触したらStart, ResorceをRemove
+
 
 ○tw_05の検証
 ・クォータニオンを用いて実装
