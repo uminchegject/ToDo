@@ -59,9 +59,9 @@
 
 ●処理
 ・BlockToLine
-・LineToBlock
 ・MakeEdge
 ・DivideHeight
+・LineToBlock
 
 
 ■IDEA
