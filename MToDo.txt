@@ -7,11 +7,9 @@
  -起きてSFC
 ・朝PCを用いた情報収集を行う
  -サンプルプロジェクト、DocsWell
-
-
+ 
 [TA準備]
 ○挨拶コメントの準備
-○パソコンの返却
 ○荷物整理
 ○プロジェクト離脱報告
 
@@ -59,9 +57,9 @@
 
 ●処理
 ・BlockToLine
+・LineToBlock
 ・MakeEdge
 ・DivideHeight
-・LineToBlock
 
 
 ■IDEA
