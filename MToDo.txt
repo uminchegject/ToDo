@@ -1,17 +1,29 @@
-[生活修正]
-・朝ベース読書
- -夜関連読書
-・昼15分レベルの自主製作を行う
- -夜に繋げられるようにする
-・昼休みに昼寝
- -起きてSFC
-・朝PCを用いた情報収集を行う
- -サンプルプロジェクト、DocsWell
-
- 
 [TA準備]
 ○荷物整理
 ○プロジェクト離脱報告
+お疲れ様です。
+11月から新しい案件へのアサインが決定したため、10月いっぱいまでのご連絡させて頂きます。
+開始時期が
+また、プロジェクトのラーニングが始まっているためラーニングをやりつつIZONを並行して対応する状況となっており進捗が遅くなってしまう状況となっています。
+こちらのご都合となってしまい大変申し訳ございません。
+
+○CRSVN研修
+https://www.vps.coyote-tec.com/6668f980668922c6043c503a#%E3%81%AA%E3%81%9Csvn%E3%82%92%E4%BD%BF%E3%81%86%E3%81%AE%E3%81%8B
+○CoyoteLancher研修
+https://www.vps.coyote-tec.com/63d23a88800581e6744a6971
+
+
+[USD]
+・USDの基礎
+https://www.youtube.com/watch?v=4kMBwpdwkkw
+https://qiita.com/ousttrue/items/b5f34e0f2441ca74467e
+https://www.slideshare.net/slideshow/usd-79288174/79288174#2
+https://fereria.github.io/reincarnation_tech/usd/what_is_usd
+
+・USDの運用
+https://qiita.com/takahito-tejima/items/ee0332bfb5c9baed3b09
+https://www.sidefx.com/tutorials/usd-authoring-with-solaris/
+https://www.youtube.com/watch?v=SqTHglDeKtU
 
 
 [CityGenerator]
@@ -20,7 +32,7 @@
 ○Houdini上で完結するように置き換える
 ・BOXで検証できるまでを実装する
 
-○CurveBaseの生成ツールを設計及び実装
+○CurveBaseの生成ツールの設計及びメモ
 
 
 ■Detail
