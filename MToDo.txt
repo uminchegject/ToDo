@@ -7,25 +7,11 @@
  -起きてSFC
 ・朝PCを用いた情報収集を行う
  -サンプルプロジェクト、DocsWell
+
  
 [TA準備]
-○挨拶コメントの準備
 ○荷物整理
 ○プロジェクト離脱報告
-
-
-[MEL]
-■ProceduralAnimation
-○回転、移動、スケール周りの管理方法を勉強
-
-○Boxで検証
-
-○初期配置ロジックを設計
-
-●IDEA
-※MELでできることをメインに調べる
-・本のチュートリアルを回す
- -基礎部分とモデリング部分をベースに勉強する
 
 
 [CityGenerator]
@@ -33,6 +19,9 @@
 
 ○Houdini上で完結するように置き換える
 ・BOXで検証できるまでを実装する
+
+○CurveBaseの生成ツールを設計及び実装
+
 
 ■Detail
 ※DetailAssetを配置していくのに必要な処理を実装しつつ、DTを用意していく
@@ -55,11 +44,16 @@
 ・Primitiveで管理する
 ・Heightを持たせる
 
-●処理
+●Line
 ・BlockToLine
-・LineToBlock
-・MakeEdge
-・DivideHeight
+・MakeEdge(CutCurve)
+・HeightChange
+・LineToPointBlock
+
+●Curve
+・MakeEdge(CutCurve)
+・HeightChange
+・CurveToPointBlock
 
 
 ■IDEA
@@ -67,14 +61,30 @@
  -Scale
  -Seed
 
+●CurveBaseのPD
+
+●ボロノイロジックを用いたModeling
+
 
 [IZON.]
-○Gimmick_06のStart,Managerの実装
-・Resorceに接触したらGoalをSpawn
-・Goalに接触したらStart, ResorceをRemove
-
+○Gimmick_06のデバッグ
 
 ○tw_05の検証
 ・クォータニオンを用いて実装
 ・アクターの方向に対して正常な挙動を行うように修正
 https://dokuro.moe/ue4-cpp-super-simple-rotate-round-any-object/
+
+
+[MEL]
+■ProceduralAnimation
+○回転、移動、スケール周りの管理方法を勉強
+
+○Boxで検証
+
+○初期配置ロジックを設計
+
+
+●IDEA
+※MELでできることをメインに調べる
+・本のチュートリアルを回す
+ -基礎部分とモデリング部分をベースに勉強する
