@@ -1,16 +1,9 @@
 [TA準備]
-○荷物整理
-○プロジェクト離脱報告
-お疲れ様です。
-11月から別案件へのアサインが決定したため、IZONへのアサインが10月いっぱいで終了することをご連絡させて頂きます。
-また、プロジェクトのラーニングが始まっているためラーニングをやりつつIZONを並行して対応する状況となっており進捗が遅くなってしまう状況となってしまうため、ご了承の程お願い致します。
-短い期間でしたがIZONという魅力的なタイトルの開発に携われてとても光栄でした。1ファンとしてマスター版の完成を心待ちにしています。
-引き続きGimmick周りの対応やその他に対応してほしいタスクなどあればご連絡頂けると幸いです。
-
 ○CRSVN研修
 https://www.vps.coyote-tec.com/6668f980668922c6043c503a#%E3%81%AA%E3%81%9Csvn%E3%82%92%E4%BD%BF%E3%81%86%E3%81%AE%E3%81%8B
 ○CoyoteLancher研修
 https://www.vps.coyote-tec.com/63d23a88800581e6744a6971
+○Pythonの学習
 
 
 [USD]
@@ -26,6 +19,43 @@ https://qiita.com/ousttrue/items/b5f34e0f2441ca74467e
 https://qiita.com/takahito-tejima/items/ee0332bfb5c9baed3b09
 https://www.sidefx.com/tutorials/usd-authoring-with-solaris/
 https://www.youtube.com/watch?v=SqTHglDeKtU
+
+
+[IZON.]
+○TimeLineが0になってしまう原因を調べる
+
+
+[ツール]
+○必要な処理をまとめて、Cmdをリストアップする
+・シーンのオブジェクトの全取得
+・選択中のオブジェクトの取得
+・複数オブジェクトの削除
+
+ -削除するオブジェクトをリストアップ
+ -リストアップしたオブジェクトを削除
+
+○コーディング規約の確認
+https://candrgroup-coyotevfx.atlassian.net/wiki/spaces/TEC/pages/285474817/Python
+・コメントとログをちゃんと残す
+
+○資料の確認
+・Python周り
+・MELとPython
+
+
+■ツール実装
+・undoで確認できる
+・インデントを気をつける
+
+○処理の実装
+・仮のリストを用意してそれ以外のオブジェクトを取得し、削除する
+
+○UIの実装
+・実行ボタン
+
+●仕様
+・登録したオブジェクト以外を削除するツール
+・ルートのみを対象とする
 
 
 [CityGenerator]
@@ -78,10 +108,3 @@ https://www.youtube.com/watch?v=SqTHglDeKtU
 ●CurveBaseのPD
 
 ●ボロノイロジックを用いたModeling
-
-
-[IZON.]
-○tw_05の検証
-・クォータニオンを用いて実装
-・アクターの方向に対して正常な挙動を行うように修正
-https://dokuro.moe/ue4-cpp-super-simple-rotate-round-any-object/
