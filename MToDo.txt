@@ -5,6 +5,9 @@ https://www.vps.coyote-tec.com/6668f980668922c6043c503a#%E3%81%AA%E3%81%9Csvn%E3
 https://www.vps.coyote-tec.com/63d23a88800581e6744a6971
 
 
+[IZON.]
+○TimeLineが0になってしまう原因を調べる
+
 [USD]
 ・USDの基礎
 https://www.youtube.com/watch?v=4kMBwpdwkkw
@@ -18,10 +21,6 @@ https://qiita.com/ousttrue/items/b5f34e0f2441ca74467e
 https://qiita.com/takahito-tejima/items/ee0332bfb5c9baed3b09
 https://www.sidefx.com/tutorials/usd-authoring-with-solaris/
 https://www.youtube.com/watch?v=SqTHglDeKtU
-
-
-[IZON.]
-○TimeLineが0になってしまう原因を調べる
 
 
 [ツール]
@@ -60,10 +59,24 @@ https://candrgroup-coyotevfx.atlassian.net/wiki/spaces/TEC/pages/285474817/Pytho
 [CityGenerator]
 ※Houdiniで完結させる
 
+○パラメーターの実装
+
 ○Houdini上で完結するように置き換える
 ・BOXで検証できるまでを実装する
 
 ○CurveBaseの生成ツールの設計及びメモ
+●Box
+ -Pattern
+ -Greeble
+ 
+●Line
+・PrimでBlockを分ける
+ -MakeEdge
+ -DivideHeight
+ 
+●CurveToPoint
+ -Greeble
+ -Pattern
 
 
 ■Detail
