@@ -25,16 +25,25 @@ https://www.youtube.com/watch?v=SqTHglDeKtU
 
 [ツール]
 ○必要な処理をまとめて、Cmdをリストアップする
-・シーンのオブジェクトの全取得
-・選択中のオブジェクトの取得
-・複数オブジェクトの削除
+import maya.cmds as cmds
 
- -削除するオブジェクトをリストアップ
- -リストアップしたオブジェクトを削除
+# 配列を入れる
+object_list = ["pCube1", "pSphere1", "pCylinder1"]
+
+# シーン内のすべてのオブジェクトを取得
+all_objects = cmds.ls(dag=True, long=True)
+
+# 選択していないオブジェクトを削除
+for obj in all_objects:
+    if obj not in selected_objects:
+        cmds.delete(obj)
+
+○Pythonの勉強
+・SecondOut
 
 ○コーディング規約の確認
 https://candrgroup-coyotevfx.atlassian.net/wiki/spaces/TEC/pages/285474817/Python
-・コメントとログをちゃんと残す
+・コーディング規約に沿ってソースを修正する
 
 ○資料の確認
 ・Python周り
@@ -65,51 +74,30 @@ https://candrgroup-coyotevfx.atlassian.net/wiki/spaces/TEC/pages/285474817/Pytho
 ・BOXで検証できるまでを実装する
 
 ○CurveBaseの生成ツールの設計及びメモ
-●Box
- -Pattern
- -Greeble
- 
-●Line
-・PrimでBlockを分ける
- -MakeEdge
- -DivideHeight
- 
-●CurveToPoint
- -Greeble
- -Pattern
 
 
 ■Detail
 ※DetailAssetを配置していくのに必要な処理を実装しつつ、DTを用意していく
-
-○Greebleを用いたBlockの分割生成
 
 ○Houdiniにおけるモデリングの学習
 ・モデリング、UV,マテリアルまでの一式を勉強する
 ・パラメーターを用いて調整できるように設計する
 
 
-■City
-※Cityを生成するのに必要な処理を実装していく
-
-○NoiseのOffset値をInitに追加する
-
-
-■Line
-●設計
-・Primitiveで管理する
-・Heightを持たせる
-
+■パラメーター
+●Box
+ -Base
+ -Pattern
+ -Greeble
+ -TopBottom
+ -MakeLine
+ 
 ●Line
-・BlockToLine
-・MakeEdge(CutCurve)
-・HeightChange
-・LineToPointBlock
-
-●Curve
-・MakeEdge(CutCurve)
-・HeightChange
-・CurveToPointBlock
+・PrimでBlockを分ける
+ -MakeEdge
+ -DivideHeight 
+ -Greeble
+ -Pattern
 
 
 ■IDEA
