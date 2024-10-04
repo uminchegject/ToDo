@@ -7,8 +7,11 @@ https://www.vps.coyote-tec.com/63d23a88800581e6744a6971
 
 [IZON.]
 ○TimeLineが0になってしまう原因を調べる
+・1からタイムラインを実装し直す。
 
 [USD]
+○一度サンプルで挙動確認を行って挙動の流れを確認する
+
 ・USDの基礎
 https://www.youtube.com/watch?v=4kMBwpdwkkw
 https://qiita.com/ousttrue/items/b5f34e0f2441ca74467e
@@ -16,15 +19,20 @@ https://www.slideshare.net/slideshow/usd-79288174/79288174#2
 https://fereria.github.io/reincarnation_tech/usd/what_is_usd
 
 ・USDの運用
-https://monsho.hatenablog.com/entry/2017/10/29/142712
+https://fereria.github.io/reincarnation_tech/usd/python/tutorials/01
 https://qiita.com/ousttrue/items/b5f34e0f2441ca74467e
 https://qiita.com/takahito-tejima/items/ee0332bfb5c9baed3b09
+
+・USDの運用(Houdini)
+https://note.com/indyzonecorp/n/ndf9d8f82d7e5#93191dbb-a31d-4dbc-851a-584b7882528b
+https://houdinifx.jp/blog/lops%E3%81%AE%E4%BB%95%E7%B5%84%E3%81%BF/
+
 https://www.sidefx.com/tutorials/usd-authoring-with-solaris/
 https://www.youtube.com/watch?v=SqTHglDeKtU
 
 
 [ツール]
-○必要な処理をまとめて、Cmdをリストアップする
+
 import maya.cmds as cmds
 
 # 配列を入れる
@@ -66,7 +74,7 @@ https://candrgroup-coyotevfx.atlassian.net/wiki/spaces/TEC/pages/285474817/Pytho
 
 
 [CityGenerator]
-※Houdiniで完結させる
+※Houdini上で配置ロジックを完結させて検証まで行ってから、UEに落とし込む
 
 ○パラメーターの実装
 
@@ -75,6 +83,8 @@ https://candrgroup-coyotevfx.atlassian.net/wiki/spaces/TEC/pages/285474817/Pytho
 
 ○CurveBaseの生成ツールの設計及びメモ
 
+○配置パターンの設計
+・ノイズ
 
 ■Detail
 ※DetailAssetを配置していくのに必要な処理を実装しつつ、DTを用意していく
