@@ -1,13 +1,50 @@
+[Python]
+○maya.cmdを用いたUI実装の予習
+
+○ソース解析
+https://github.com/ATI-Stud-Prod/generative-city
+
+[USD]
+○翌週に回すTutorialを調べ、予習しておく
+
+[Modlieng]
+○Line周りの設計
+
+○配置周りの設計
+・Noise
+//=====================================================================================================
+
+
+
+[Studied]
+●CQE
+Create フラグはコマンドの作成モードで表示できます	 
+Quary フラグはコマンドの照会モードで表示できます
+Edit フラグはコマンドの編集モードで表示できます
+
+●コーディング規約
+・モジュール宣言位置に気を付ける
+・キャメルケース(hogehogePyear)
+・ログを必ず表示する(mel.eval('print("ここに表示する")'))
+
+●コーディング
+・assemblies :　最上位レベルのトランスフォーム DAG オブジェクトがリスト
+・long : フルパス名を返す('|group1|pCylinder1')
+・list() : リストの編集
+・\はコメント内にコメントをする際などに用いる
+ -''の中に""を入れる
+
+
 [TA準備]
-○CRSVN研修
-https://www.vps.coyote-tec.com/6668f980668922c6043c503a#%E3%81%AA%E3%81%9Csvn%E3%82%92%E4%BD%BF%E3%81%86%E3%81%AE%E3%81%8B
 ○CoyoteLancher研修
 https://www.vps.coyote-tec.com/63d23a88800581e6744a6971
 
 
 [IZON.]
-○TimeLineが0になってしまう原因を調べる
-・1からタイムラインを実装し直す。
+○TimeLine不具合調査
+・AlongCurveが 1 / 2になってしまう原因を調査
+・Timelineの最後が0になってしまう原因を調査
+
 
 [USD]
 ○一度サンプルで挙動確認を行って挙動の流れを確認する
@@ -23,7 +60,7 @@ https://fereria.github.io/reincarnation_tech/usd/python/tutorials/01
 https://qiita.com/ousttrue/items/b5f34e0f2441ca74467e
 https://qiita.com/takahito-tejima/items/ee0332bfb5c9baed3b09
 
-・USDの運用(Houdini)
+・LOPS&Soraris
 https://note.com/indyzonecorp/n/ndf9d8f82d7e5#93191dbb-a31d-4dbc-851a-584b7882528b
 https://houdinifx.jp/blog/lops%E3%81%AE%E4%BB%95%E7%B5%84%E3%81%BF/
 
@@ -32,40 +69,18 @@ https://www.youtube.com/watch?v=SqTHglDeKtU
 
 
 [ツール]
-
-import maya.cmds as cmds
-
-# 配列を入れる
-object_list = ["pCube1", "pSphere1", "pCylinder1"]
-
-# シーン内のすべてのオブジェクトを取得
-all_objects = cmds.ls(dag=True, long=True)
-
-# 選択していないオブジェクトを削除
-for obj in all_objects:
-    if obj not in selected_objects:
-        cmds.delete(obj)
-
-○Pythonの勉強
-・SecondOut
-
-○コーディング規約の確認
-https://candrgroup-coyotevfx.atlassian.net/wiki/spaces/TEC/pages/285474817/Python
-・コーディング規約に沿ってソースを修正する
-
 ○資料の確認
-・Python周り
-・MELとPython
-
+https://3d.crdg.jp/tech/archives/218
+https://3d.crdg.jp/tech/archives/382
+https://3d.crdg.jp/tech/archives/4495
+https://3d.crdg.jp/tech/archives/380
+https://3d.crdg.jp/tech/archives/1938
 
 ■ツール実装
 ・undoで確認できる
-・インデントを気をつける
-
-○処理の実装
-・仮のリストを用意してそれ以外のオブジェクトを取得し、削除する
 
 ○UIの実装
+※Mayaの一般的なツールのレイアウトを参考にする
 ・実行ボタン
 
 ●仕様
