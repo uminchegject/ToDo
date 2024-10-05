@@ -1,124 +1,63 @@
-○セットパラメーターを追加できるようにする
+[Python]
+■ツール課題
+○UIクラスの設計及び実装
+・課題の実装をするためのGUIのメモを用意する
+・Widgetのみクラス実装する
 
-●パラメーターセット
-※固定値 + ランダム値をセットで設定する
-・初期値
-・経過値
-・経過時間
-
-●パラメーター種類
-・オブジェクト種類
-・スケール
-・位置
-・方向
+・GUI資料
+https://patrickvfx.blogspot.com/2017/07/maya-ui-layout-example.html
+https://www.google.com/search?sca_esv=6449538529ffda2f&rlz=1C1TKQJ_jaJP1032JP1032&sxsrf=ADLYWIKywbyhsAoqyBo8vTPgF6ld3AB4ag:1728123845183&q=maya+python+ui+examples&udm=2&fbs=AEQNm0BqbPbAzSj6PhNr7nv9Ltx-oFh8tVsgXi1MyFbswNtTUOS5b68chsyOj2QEdx4EPnNB7Wky5TqumNHSrVdtUsZ-2JY3HthHoitUBydBVP1vHtqjXy6n_IKnMn98M4epydyLBbdJmce40bp1mKAiriexIYKp9djJQv3398PicHOSQXh7Uc5Vuds1o3_gFAMmmKJSZffIFMGUqKQt_7B2HgpEjo3QiVFGkz350yRKhoDy77diOcQ&sa=X&ved=2ahUKEwjl463_gveIAxUlevUHHd2SGX4QtKgLegQIERAB&biw=1280&bih=631&dpr=2
+https://gucheng0712.github.io/python/2019/06/01/Creating-UI-in-Maya.html
 
 
-global proc spiralobjects(float $rad, int %num)
-{
-	int $i;
-	float $r = 0.0;
-	float $y = 0.0;
-	string &name[];
-	
-	for($i = 0; $i < $num; $i++)
-	{
-		$name = 'sphere';
-		setAttr($name[0] + ".tx") $rad;
-		rotate -ws -p 0 0 0  0 $r 0;
-		setAttr($name[0] + ".ty") $y;
-		$r += 30.0;
-		$y += 0.5;
-	}
+■HardSurfaceModeling
+○モデリングTutorialを調べる
+・ハードサーフェスモデリングについて検証する
+・プロシージャルにサポートできる行程がないかを調べる
 
-}
-
-global proc circleAnimation1(float $rad, int $frame)
-{
-	int $i;
-	float $r = 0.0;
-	string $name[];
-	
-	$name = 'sphere';
-	setAttr($name[0] + ".tx") $rad;
-	setAttr($name[0] + ".rotatePivotX") (-$rad);
-	
-	for($i = 0; $i < $frame; $i++)
-	{
-		currentTime $i;
-		setAttr ($name[0] + ".ry") $r;
-		setKeyframe -at "ry" $name[0];
-		$r += 10.0;
-	}
-}
-
-rand(-0.1, 0.1);
-
-global proc makeSphere
-{
-	float $val;
-	
-	$val = 'floatSliderGrp -q -value radiusSlider';
-	sphere;
-	scale $val $val $val;	
-}
-
-window -title "スライダ 1";
-columnLayout;
-text -label "球体を生成";
-floatSliderGrp -label "半径" -field true
-	-min 0.1 -max 20.0 -step 0.1 -value 1.0 radiusSlider;
-button -label "作成" -command "makeSphere()";
-showWindow;
+●設計
+※Modelingをベースに行い、プロシージャルにサポートするツールを設計する
+※クラス設計を意識する
+・GUIの基底クラスを考える
 
 
-vector $trns = <<0.0,0.0,0.0>>;
-vector $rot = <<0.0,0.0,0.0>>;
-vector $scl = <<1.0,1.0,1.0>>;
-vector $jo = <<0.0,0.0,0.0>>;
-vector $valSetList[] = {$trns,$rot,$scl,$jo};
-
-string $node = joint();
-string $attrList[] = {".t",".r",".s",".jo"};
-
-for ($cnt = 0;$cnt < size($valSetList);$cnt++){
-	vector $val = $valSetList[$cnt];
-	setAttr ($node + $attrList[$cnt]) ($val.x) ($val.y) ($val.z);
-}
+[USD]
+○翌週に回すTutorialを調べ、予習しておく
 
 
+[Modlieng]
+■Noise周りの設計
+○NoiseParameterの追加
+・AttributeにNoiseを入れる
 
-○パラメーターの追加方法
-○使いやすいパラメーター型の調査
-○buttonの関数の呼び出し方
+○BoxでNoise周りの実装フローを確立する
+・Base
+ -OffsetRange
+・Greeble
+ -DivideRatio
+
+●IDEA
+・Boxサイズに偏りを持たせる
+・Typeに偏りを持たせる
 
 
-global proc transBox()
-{
-	
-	string $name[];	
-	$name = 'sphere';
-	int $float initValue = 'floatSliderGrp -q -value init';
-	int $float deltaValue = 'floatSliderGrp -q -value delta';
-	int $float timeValue = 'floatSliderGrp -q -value time';
-	
-	$name = 'sphere';
-	setAttr($name[0] + ".tx") $init;
-	
-	for($i = 0; $i < $timeValue; $i++)
-	{
-		currentTime $i;
-		setAttr ($name[0] + ".rx") $deltaValue * $i / $timeValue;
-		setKeyframe -at "ry" $name[0];
-	}
-}
+■Line周りの設計
+○PolyWireでまず検証する
+・BoxとColorで検証する
+ -DivideBlock
+ -DivideHeight
+ -MakeEdge
 
-window -title "Transform";
-columnLayout;
-text -label "立方体を移動";
 
-floatSliderGrp -label "初期値" -field true -min 0.0 -max 20.0 -step 0.1 -value 0.0 init;
-floatSliderGrp -label "経過値" -field true -min 0.0 -max 20.0 -step 0.1 -value 0.0 delta;
-floatSliderGrp -label "経過時間" -field true -min 0.0 -max 20.0 -step 0.1 -value 0.0 time;
+●処理
+・BlockToLine
+・LineToBlock
 
-button -label "On" -command "transBox()";
-showWindow;
+・DivideBlock
+
+・DivideHeight
+・MakeEdge
+
+
+●IDEA
+・MakeEdgeで形に変化を与える
