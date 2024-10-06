@@ -1,37 +1,101 @@
+[反省]
+※教えてもらう際は必ずメモを取り、終わった後にメモをまとめる時間を用意する
+※明確なタスクを常に持っておく
+※休日は明確なタスクが存在するとき以外は極力外にいる
+ -休日はなるべく早くタスクを明確化することを心掛ける
+ 
+
+[USD]
+○翌週に回すTutorialを調べ、予習しておく
+
+
 [Python]
 ■ツール課題
-○UIクラスの設計及び実装
-・課題の実装をするためのGUIのメモを用意する
-・Widgetのみクラス実装する
+※サンプルプロジェクトを探す
+
+●処理
+・登録処理
+ -登録ボタンを押したら選択しているオブジェクトを登録するように実装
+ -登録したらダイアログに表示するように実装
+
+・登録解除処理
+ -登録解除するボタンを押したら選択してる登録一覧オブジェクトから登録を外すように実装
+
+・削除処理
+ -エラーのダイアログの表示
 
 ・GUI資料
 https://patrickvfx.blogspot.com/2017/07/maya-ui-layout-example.html
 https://gucheng0712.github.io/python/2019/06/01/Creating-UI-in-Maya.html
 https://qiita.com/lie_871221/items/1b6ef8faba06e5180cf9
 
+
 ■HardSurfaceModeling
 ○モデリングTutorialを調べる
 ・ハードサーフェスモデリングについて検証する
 ・プロシージャルにサポートできる行程がないかを調べる
 
+○Voronoiをメインに検証を進める
+・サンプルコードの研究
+ https://puarts.com/?pid=873
+ https://www.youtube.com/watch?v=ghD79dVZZ_o
+・ツールの実装
+ 
+・拡張
+
+
 ●設計
 ※Modelingをベースに行い、プロシージャルにサポートするツールを設計する
 ※クラス設計を意識する
-・GUIの基底クラスを考える
-
-
-[USD]
-○翌週に回すTutorialを調べ、予習しておく
+※模様を生成することを意識する
 
 
 [Modelieng]
+※明確なアセットセットを目標に都度新規実装を加えていく
+
 ■ModularOldCity
-○BoxBaseParameterを整理する
+○BoxとColorでGreebleベースの区画生成と、LineMakerを用いた形態の変化を検証する
+・BoxBaseParameterを整理する
+・LineBaseParamenterを新規実装する
+・InitParameterを整理する
 
-○LineBaseParamenterを新規実装する
+△Detail部分を整理する
 
-○InitParameterを整理する
-・Scale
+
+■LineMakerの設計
+・Attributeに表裏のベクトルを設定しておく
+
+●BoxToLine
+PolyLineを生成する
+・Parameter
+ -DividePrim
+
+●LineToBox
+・Boxを生成する
+・Parameter
+ -EdgeSize
+ -DepthSize
+
+●MakeEdge
+Edgeの生成,移動
+・Parameter
+ -Range
+ -TransformPoint
+
+●BaseParamenter
+・Parameter
+ -Transform
+ -Scale
+ -Rotate 
+ 
+●DivideHeight
+・Parameter
+ -IsPattern
+ -IsRandom 
+ -HeightValue
+ 
+▲DividePrim
+・
 
 
 ■IDEA
@@ -41,16 +105,3 @@ https://qiita.com/lie_871221/items/1b6ef8faba06e5180cf9
  
  -Boxサイズに偏りを持たせる
  -Typeに偏りを持たせる
-
-
-●Line周りの設計
-・DivideBlock
- -DivideHeight
- -DividePrim
-・Edge
- -MakeEdge
- -DeleteEdge
- -SlideEdge
-
-・BlockToLine
-・LineToBlock
