@@ -6,9 +6,8 @@
 
 ・GUI資料
 https://patrickvfx.blogspot.com/2017/07/maya-ui-layout-example.html
-https://www.google.com/search?sca_esv=6449538529ffda2f&rlz=1C1TKQJ_jaJP1032JP1032&sxsrf=ADLYWIKywbyhsAoqyBo8vTPgF6ld3AB4ag:1728123845183&q=maya+python+ui+examples&udm=2&fbs=AEQNm0BqbPbAzSj6PhNr7nv9Ltx-oFh8tVsgXi1MyFbswNtTUOS5b68chsyOj2QEdx4EPnNB7Wky5TqumNHSrVdtUsZ-2JY3HthHoitUBydBVP1vHtqjXy6n_IKnMn98M4epydyLBbdJmce40bp1mKAiriexIYKp9djJQv3398PicHOSQXh7Uc5Vuds1o3_gFAMmmKJSZffIFMGUqKQt_7B2HgpEjo3QiVFGkz350yRKhoDy77diOcQ&sa=X&ved=2ahUKEwjl463_gveIAxUlevUHHd2SGX4QtKgLegQIERAB&biw=1280&bih=631&dpr=2
 https://gucheng0712.github.io/python/2019/06/01/Creating-UI-in-Maya.html
-
+https://qiita.com/lie_871221/items/1b6ef8faba06e5180cf9
 
 ■HardSurfaceModeling
 ○モデリングTutorialを調べる
@@ -25,39 +24,33 @@ https://gucheng0712.github.io/python/2019/06/01/Creating-UI-in-Maya.html
 ○翌週に回すTutorialを調べ、予習しておく
 
 
-[Modlieng]
-■Noise周りの設計
-○NoiseParameterの追加
-・AttributeにNoiseを入れる
+[Modelieng]
+■ModularOldCity
+○BoxBaseParameterを整理する
 
-○BoxでNoise周りの実装フローを確立する
-・Base
- -OffsetRange
-・Greeble
- -DivideRatio
+○LineBaseParamenterを新規実装する
 
-●IDEA
-・Boxサイズに偏りを持たせる
-・Typeに偏りを持たせる
+○InitParameterを整理する
+・Scale
 
 
-■Line周りの設計
-○PolyWireでまず検証する
-・BoxとColorで検証する
- -DivideBlock
+■IDEA
+●Noise周りの設計
+・NoiseParameterの追加
+ -AttributeにNoiseを持たせて
+ 
+ -Boxサイズに偏りを持たせる
+ -Typeに偏りを持たせる
+
+
+●Line周りの設計
+・DivideBlock
  -DivideHeight
+ -DividePrim
+・Edge
  -MakeEdge
+ -DeleteEdge
+ -SlideEdge
 
-
-●処理
 ・BlockToLine
 ・LineToBlock
-
-・DivideBlock
-
-・DivideHeight
-・MakeEdge
-
-
-●IDEA
-・MakeEdgeで形に変化を与える
