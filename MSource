@@ -1,43 +1,127 @@
+//======================================================================
+//UI周り
 from maya import cmds
 
-def buttonAction(args):
-  print("Button is pressed")
-  
-def showUI():
-  win = cmds.window(title="Button Event", widthHeight = (200,200))
-  cmds.columnLayout()
-  cmds.button(label="My Button", command = buttonAction)
-  cmds.showWindow(win)
-  
-showUI()
+def appendButtonAction(args):
+    '''
+    追加ボタンを押した際のイベント       
+    ''' 
 
-//-------------------------------------------------
+    selObj = cmds.ls(sl=1)
+    cmds.textScrollList('SelectingObjList',edit=1,a=selObj)
+    
+def removeButtonAction(args):
+    '''
+    削除ボタンを押した際のイベント       
+    ''' 
+    selFieldItem = cmds.textScrollList('SelectingObjList',q=1,si=1)
+    cmds.textScrollList('SelectingObjList',edit=1,ri=selFieldItem)    
+    
+def deleteButtonAction(args):
+    '''削除ボタンを押した際のイベント    
+    警告ダイアログを表示し、はいを押したら削除処理を呼ぶ        
+    '''
+    
+    yes = u"はい"
+    no = u"いいえ"
+    result = cmds.confirmDialog(message="消してもいいですか？", button=[yes, no], cb="いいえ")
+    
+    if result == yes:
+        deleteItems()
+        mel.eval('print("実行しました")')
+        
+    else:
+        mel.eval('print("キャンセルしました")')
+        
+def deleteItems():
+    '''アイテム削除    
+    シーン内のグローバル直下のオブジェクトから登録オブジェクトを除き、削除       
+    '''    
+    
+    allObjList = cmds.ls(assemblies = True, long = True)
+    remainObjList = cmds.textScrollList('SelectingObjList', q=1, ai=1)
+    deleteObjList = list(set(allObjList) - set(remainObjList))
+    cmds.delete(deleteObjList)
+    
+    '''
+    削除不可能オブジェクトを外す処理を実装したいがうまくいかず…
+    for obj in deleteObjList:
+        lock_check = cmds.getAttr(obj, lock=True)
+        if lock_check == True:           
+            cmds.delete(obj)
+        else:
+            print("{}を削除できませんでした" .format(obj))
+    '''
 
-class SpheresClass():
-  def __init__(self):
-    self.win = cmds.window(title="Make Spheres",widthHeight=(300,200))
+
+def initTextScrollList():
+    '''   
+    jsonファイルからリストを取得して、シーン上にあるオブジェクトと照らし合わせて存在すれば登録するように実装    
+    '''    
+    cmds.textScrollList('SelectingObjList')
+  
+def main():
+    win = cmds.window(title="RemoveObj", s=1)
     cmds.columnLayout()
-    self.numSpheres = cmds.intField(minValue=1)
-    cmds.button(label="Make Spheres",command = self.makeSpheres)
-    cmds.showWindow(self.win)
-  def makeSpheres(self,*args):
-    number = cmds.intField(self.numSpheres,query=True,value=True)
-    for i in range(0,number):
-      cmds.polySphere()
-      cmds.move(i*2.2,0,0)
-      
-SpheresClass()
+    initTextScrollList()
+    cmds.setParent('..')
+    cmds.rowLayout(nc=3)
+    cmds.button(label="Append", command = appendButtonAction)
+    cmds.button(label="Remove", command = removeButtonAction)
+    cmds.button(label="Do", command = deleteButtonAction)
+    cmds.showWindow(win)
+    
+main()
 
-//-------------------------------------------------------
 
-    def addList(self):#リストを空にしてアウトライナ上で選択しているアイテムをリストに追加する。
-        getList=cmds.ls(sl=True)#選択しているオブジェクトを取得
-        self.ui.listWidget.clear()#リストを空にして
-        self.ui.listWidget.addItems(getList)#getListをリストに追加する
+
+//--------------------------------------------------------------------
+//セーブデータ周り
+import os, json
+
+class Settings(object):
+    def __init__(self):
+        print("hoge")
+        temp = __name__.split('.')
+        self.__filename = os.path.join(
+        os.getenv('MAYA_APP_DIR'),
+        temp[0],
+        temp[-1]+'.json'
+        )
+        self.__filename = os.path.normpath(self.__filename)
+        self.__filename = self.__filename.replace("\\","/")
+        print(self.__filename)
+        self.reset()
 		
-//-------------------------------------------------------
+    def reset(self):
+        print("huga")
+        self.across = 1
+		
+    def save(self):
+        print("piyo")
+        saveData = {'across':self.across}
+        if not os.path.exists(self.__filename):
+            os.makedirs(os.path.dirname(self.__filename))
+        with open(self.__filename, 'w') as f:
+            json.dump(saveData, f)
+		
+    def read(self):
+        print("foo")
+        if os.path.exists(self.__filename):
+            with open(self.__filename, 'r') as f:
+                saveData = json.load(f)
+                self.across = saveData['across']
+				
 
-    def __init__(self,parent=None):
-    #省略
-    self.ui.pushButton.clicked.connect(self.addList)#Addボタンの処理
-    self.ui.pushButton_2.clicked.connect(self.printList)#Printボタンの処理
+
+settings = Settings()
+
+settings.reset()
+print(settings.across)
+
+settings.across = 10
+settings.save()
+
+settings.across = 100
+settings.read()
+print(settings.across)
