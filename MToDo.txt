@@ -1,19 +1,8 @@
-[Python]
-○maya.cmdを用いたUI実装の予習
-
-○ソース解析
-https://github.com/ATI-Stud-Prod/generative-city
-
-[USD]
-○翌週に回すTutorialを調べ、予習しておく
-
-[Modlieng]
-○Line周りの設計
-
-○配置周りの設計
-・Noise
-//=====================================================================================================
-
+[反省]
+※教えてもらう際は必ずメモを取り、終わった後にメモをまとめる時間を用意する
+※明確なタスクを常に持っておく
+※休日は明確なタスクが存在するとき以外は極力外にいる
+ -休日はなるべく早くタスクを明確化することを心掛ける
 
 
 [Studied]
@@ -28,13 +17,13 @@ Edit フラグはコマンドの編集モードで表示できます
 ・ログを必ず表示する(mel.eval('print("ここに表示する")'))
 
 ●コーディング
-・assemblies :　最上位レベルのトランスフォーム DAG オブジェクトがリスト
+・assemblies : 最上位レベルのトランスフォーム DAG オブジェクトがリスト
 ・long : フルパス名を返す('|group1|pCylinder1')
 ・list() : リストの編集
 ・\はコメント内にコメントをする際などに用いる
  -''の中に""を入れる
 
-
+ 
 [TA準備]
 ○CoyoteLancher研修
 https://www.vps.coyote-tec.com/63d23a88800581e6744a6971
@@ -43,7 +32,7 @@ https://www.vps.coyote-tec.com/63d23a88800581e6744a6971
 [IZON.]
 ○TimeLine不具合調査
 ・AlongCurveが 1 / 2になってしまう原因を調査
-・Timelineの最後が0になってしまう原因を調査
+・Timelineの最後が0になってしまう原因を調査 
 
 
 [USD]
@@ -68,61 +57,106 @@ https://www.sidefx.com/tutorials/usd-authoring-with-solaris/
 https://www.youtube.com/watch?v=SqTHglDeKtU
 
 
-[ツール]
-○資料の確認
+[Python]
+■ツール課題
+※サンプルプロジェクトを探す
+
+●処理
+・登録処理
+ -登録ボタンを押したら選択しているオブジェクトを登録するように実装
+ -登録したらダイアログに表示するように実装
+
+・登録解除処理
+ -登録解除するボタンを押したら選択してる登録一覧オブジェクトから登録を外すように実装
+
+・削除処理
+ -エラーのダイアログの表示
+
+・GUI資料
 https://3d.crdg.jp/tech/archives/218
 https://3d.crdg.jp/tech/archives/382
 https://3d.crdg.jp/tech/archives/4495
 https://3d.crdg.jp/tech/archives/380
 https://3d.crdg.jp/tech/archives/1938
 
-■ツール実装
-・undoで確認できる
-
-○UIの実装
-※Mayaの一般的なツールのレイアウトを参考にする
-・実行ボタン
-
-●仕様
-・登録したオブジェクト以外を削除するツール
-・ルートのみを対象とする
+https://patrickvfx.blogspot.com/2017/07/maya-ui-layout-example.html
+https://gucheng0712.github.io/python/2019/06/01/Creating-UI-in-Maya.html
+https://qiita.com/lie_871221/items/1b6ef8faba06e5180cf9
 
 
-[CityGenerator]
-※Houdini上で配置ロジックを完結させて検証まで行ってから、UEに落とし込む
 
-○パラメーターの実装
+■HardSurfaceModeling
+○モデリングTutorialを調べる
+・ハードサーフェスモデリングについて検証する
+・プロシージャルにサポートできる行程がないかを調べる
 
-○Houdini上で完結するように置き換える
-・BOXで検証できるまでを実装する
-
-○CurveBaseの生成ツールの設計及びメモ
-
-○配置パターンの設計
-・ノイズ
-
-■Detail
-※DetailAssetを配置していくのに必要な処理を実装しつつ、DTを用意していく
-
-○Houdiniにおけるモデリングの学習
-・モデリング、UV,マテリアルまでの一式を勉強する
-・パラメーターを用いて調整できるように設計する
-
-
-■パラメーター
-●Box
- -Base
- -Pattern
- -Greeble
- -TopBottom
- -MakeLine
+○Voronoiをメインに検証を進める
+・サンプルコードの研究
+ https://puarts.com/?pid=873
+ https://www.youtube.com/watch?v=ghD79dVZZ_o
+・ツールの実装
  
-●Line
-・PrimでBlockを分ける
- -MakeEdge
- -DivideHeight 
- -Greeble
- -Pattern
+・拡張
+
+●設計
+※Modelingをベースに行い、プロシージャルにサポートするツールを設計する
+※クラス設計を意識する
+※模様を生成することを意識する
+
+
+[Modelieng]
+※明確なアセットセットを目標に都度新規実装を加えていく
+
+■ModularOldCity
+○BoxとColorでGreebleベースの区画生成と、LineMakerを用いた形態の変化を検証する
+・BoxBaseParameterを整理する
+ -1通りの挙動を確認する
+ -Box&Colorの検証環境を整える
+・LineBaseParamenterを新規実装する
+ -BoxToLine, LineToBoxを実装
+ -DivideHeightを実装
+ -Lineの検証環境を整理
+ -MakeEdgeを実装
+ -DividePrimを実装
+・InitParameterを整理する
+
+△Detail部分を整理する
+
+
+■LineMakerの設計
+・Attributeに表裏のベクトルを設定しておく
+
+●BoxToLine
+PolyLineを生成する
+・Parameter
+ -DividePrim
+
+●LineToBox
+・Boxを生成する
+・Parameter
+ -EdgeSize
+ -DepthSize
+
+●MakeEdge
+Edgeの生成,移動
+・Parameter
+ -Range
+ -TransformPoint
+
+●BaseParamenter
+・Parameter
+ -Transform
+ -Scale
+ -Rotate 
+ 
+●DivideHeight
+・Parameter
+ -IsPattern
+ -IsRandom 
+ -HeightValue
+ 
+▲DividePrim
+・
 
 
 ■IDEA
@@ -130,6 +164,9 @@ https://3d.crdg.jp/tech/archives/1938
  -Scale
  -Seed
 
-●CurveBaseのPD
-
-●ボロノイロジックを用いたModeling
+●Noise周りの設計
+・NoiseParameterの追加
+ -AttributeにNoiseを持たせて
+ 
+ -Boxサイズに偏りを持たせる
+ -Typeに偏りを持たせる
