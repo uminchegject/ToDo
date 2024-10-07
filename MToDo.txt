@@ -1,38 +1,14 @@
-[反省]
-※教えてもらう際は必ずメモを取り、終わった後にメモをまとめる時間を用意する
-※明確なタスクを常に持っておく
-※休日は明確なタスクが存在するとき以外は極力外にいる
- -休日はなるべく早くタスクを明確化することを心掛ける
+[Study]
+○CQEMのそれぞれの意味を確認する
 
 
-[Studied]
-●CQE
-Create フラグはコマンドの作成モードで表示できます	 
-Quary フラグはコマンドの照会モードで表示できます
-Edit フラグはコマンドの編集モードで表示できます
-
-●コーディング規約
-・モジュール宣言位置に気を付ける
-・キャメルケース(hogehogePyear)
-・ログを必ず表示する(mel.eval('print("ここに表示する")'))
-
-●コーディング
-・assemblies : 最上位レベルのトランスフォーム DAG オブジェクトがリスト
-・long : フルパス名を返す('|group1|pCylinder1')
-・list() : リストの編集
-・\はコメント内にコメントをする際などに用いる
- -''の中に""を入れる
-
- 
 [TA準備]
 ○CoyoteLancher研修
 https://www.vps.coyote-tec.com/63d23a88800581e6744a6971
 
 
 [IZON.]
-○TimeLine不具合調査
-・AlongCurveが 1 / 2になってしまう原因を調査
-・Timelineの最後が0になってしまう原因を調査 
+○
 
 
 [USD]
@@ -40,7 +16,6 @@ https://www.vps.coyote-tec.com/63d23a88800581e6744a6971
 
 ・USDの基礎
 https://www.youtube.com/watch?v=4kMBwpdwkkw
-https://qiita.com/ousttrue/items/b5f34e0f2441ca74467e
 https://www.slideshare.net/slideshow/usd-79288174/79288174#2
 https://fereria.github.io/reincarnation_tech/usd/what_is_usd
 
@@ -61,16 +36,17 @@ https://www.youtube.com/watch?v=SqTHglDeKtU
 ■ツール課題
 ※サンプルプロジェクトを探す
 
-●処理
-・登録処理
- -登録ボタンを押したら選択しているオブジェクトを登録するように実装
- -登録したらダイアログに表示するように実装
+○仕様
+・追加する、減らすという仕様にする
+・選択していなかったらダイアログを表示
 
-・登録解除処理
- -登録解除するボタンを押したら選択してる登録一覧オブジェクトから登録を外すように実装
+○レイアウト
+・似ているボタン(Append, Remove)は並列に置く
+・実行ボタンは段落を変えて配置する
+・収縮に対応させる
 
-・削除処理
- -エラーのダイアログの表示
+○Jsonを用いた保存
+・ツール実行時にjsonファイルからリストを取得して、シーン上にあるオブジェクトと照らし合わせて存在すれば登録するように実装
 
 ・GUI資料
 https://3d.crdg.jp/tech/archives/218
@@ -95,8 +71,9 @@ https://qiita.com/lie_871221/items/1b6ef8faba06e5180cf9
  https://puarts.com/?pid=873
  https://www.youtube.com/watch?v=ghD79dVZZ_o
 ・ツールの実装
- 
+
 ・拡張
+
 
 ●設計
 ※Modelingをベースに行い、プロシージャルにサポートするツールを設計する
@@ -136,12 +113,17 @@ PolyLineを生成する
 ・Parameter
  -EdgeSize
  -DepthSize
+ 
+int ptnum[] = primPts()
 
 ●MakeEdge
-Edgeの生成,移動
+PrimPtsを取得して、隣同士のPrimPtの間にmakeEdgeを行う
 ・Parameter
  -Range
- -TransformPoint
+
+●EdgeTransform
+動かすEdgeに隣接しているPtも一緒に動かすかどうかを関連づける
+
 
 ●BaseParamenter
 ・Parameter
