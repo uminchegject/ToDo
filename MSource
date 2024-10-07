@@ -1,108 +1,43 @@
-[反省]
-※教えてもらう際は必ずメモを取り、終わった後にメモをまとめる時間を用意する
-※明確なタスクを常に持っておく
-※休日は明確なタスクが存在するとき以外は極力外にいる
- -休日はなるべく早くタスクを明確化することを心掛ける
- 
+from maya import cmds
 
-[USD]
-○翌週に回すTutorialを調べ、予習しておく
+def buttonAction(args):
+  print("Button is pressed")
+  
+def showUI():
+  win = cmds.window(title="Button Event", widthHeight = (200,200))
+  cmds.columnLayout()
+  cmds.button(label="My Button", command = buttonAction)
+  cmds.showWindow(win)
+  
+showUI()
 
+//-------------------------------------------------
 
-[Python]
-■ツール課題
-※サンプルプロジェクトを探す
+class SpheresClass():
+  def __init__(self):
+    self.win = cmds.window(title="Make Spheres",widthHeight=(300,200))
+    cmds.columnLayout()
+    self.numSpheres = cmds.intField(minValue=1)
+    cmds.button(label="Make Spheres",command = self.makeSpheres)
+    cmds.showWindow(self.win)
+  def makeSpheres(self,*args):
+    number = cmds.intField(self.numSpheres,query=True,value=True)
+    for i in range(0,number):
+      cmds.polySphere()
+      cmds.move(i*2.2,0,0)
+      
+SpheresClass()
 
-●処理
-・登録処理
- -登録ボタンを押したら選択しているオブジェクトを登録するように実装
- -登録したらダイアログに表示するように実装
+//-------------------------------------------------------
 
-・登録解除処理
- -登録解除するボタンを押したら選択してる登録一覧オブジェクトから登録を外すように実装
+    def addList(self):#リストを空にしてアウトライナ上で選択しているアイテムをリストに追加する。
+        getList=cmds.ls(sl=True)#選択しているオブジェクトを取得
+        self.ui.listWidget.clear()#リストを空にして
+        self.ui.listWidget.addItems(getList)#getListをリストに追加する
+		
+//-------------------------------------------------------
 
-・削除処理
- -エラーのダイアログの表示
-
-・GUI資料
-https://patrickvfx.blogspot.com/2017/07/maya-ui-layout-example.html
-https://gucheng0712.github.io/python/2019/06/01/Creating-UI-in-Maya.html
-https://qiita.com/lie_871221/items/1b6ef8faba06e5180cf9
-
-
-■HardSurfaceModeling
-○モデリングTutorialを調べる
-・ハードサーフェスモデリングについて検証する
-・プロシージャルにサポートできる行程がないかを調べる
-
-○Voronoiをメインに検証を進める
-・サンプルコードの研究
- https://puarts.com/?pid=873
- https://www.youtube.com/watch?v=ghD79dVZZ_o
-・ツールの実装
-　-オブジェクトをボロノイ分割するツールを実装する
-
-・拡張
-
-
-●設計
-※Modelingをベースに行い、プロシージャルにサポートするツールを設計する
-※クラス設計を意識する
-※模様を生成することを意識する
-
-
-[Modelieng]
-※明確なアセットセットを目標に都度新規実装を加えていく
-
-■ModularOldCity
-○BoxとColorでGreebleベースの区画生成と、LineMakerを用いた形態の変化を検証する
-・BoxBaseParameterを整理する
-・LineBaseParamenterを新規実装する
-・InitParameterを整理する
-
-△Detail部分を整理する
-
-
-■LineMakerの設計
-・Attributeに表裏のベクトルを設定しておく
-
-●BoxToLine
-PolyLineを生成する
-・Parameter
- -DividePrim
-
-●LineToBox
-・Boxを生成する
-・Parameter
- -EdgeSize
- -DepthSize
-
-●MakeEdge
-Edgeの生成,移動
-・Parameter
- -Range
- -TransformPoint
-
-●BaseParamenter
-・Parameter
- -Transform
- -Scale
- -Rotate 
- 
-●DivideHeight
-・Parameter
- -IsPattern
- -IsRandom 
- -HeightValue
- 
-▲DividePrim
-・
-
-
-■IDEA
-●Noise周りの設計
-・NoiseParameterの追加
- -AttributeにNoiseを持たせて
- 
- -Boxサイズに偏りを持たせる
- -Typeに偏りを持たせる
+    def __init__(self,parent=None):
+    #省略
+    self.ui.pushButton.clicked.connect(self.addList)#Addボタンの処理
+    self.ui.pushButton_2.clicked.connect(self.printList)#Printボタンの処理
