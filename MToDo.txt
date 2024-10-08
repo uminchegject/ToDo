@@ -1,14 +1,8 @@
 [Study]
 ○CQEMのそれぞれの意味を確認する
 
-
-[TA準備]
-○CoyoteLancher研修
-https://www.vps.coyote-tec.com/63d23a88800581e6744a6971
-
-
 [IZON.]
-○
+○挙動確認及びマージ対応
 
 
 [USD]
@@ -45,8 +39,18 @@ https://www.youtube.com/watch?v=SqTHglDeKtU
 ・実行ボタンは段落を変えて配置する
 ・収縮に対応させる
 
+with LayoutManager(cmds.columnLayout(adj=True, rowSpacing=10)):
+	cmds.textField(w=500, tx="TestTextField")
+	with LayoutManager(cmds.rowLayout(adj=True)):
+		cmds.button(label="追加")
+		cmds.button(label="排除")
+	cmds.button(label="実行")
+
+
 ○Jsonを用いた保存
 ・ツール実行時にjsonファイルからリストを取得して、シーン上にあるオブジェクトと照らし合わせて存在すれば登録するように実装
+・登録する際にシーン上に存在するかどうかを確認する
+
 
 ・GUI資料
 https://3d.crdg.jp/tech/archives/218
@@ -66,19 +70,11 @@ https://qiita.com/lie_871221/items/1b6ef8faba06e5180cf9
 ・ハードサーフェスモデリングについて検証する
 ・プロシージャルにサポートできる行程がないかを調べる
 
-○Voronoiをメインに検証を進める
-・サンプルコードの研究
- https://puarts.com/?pid=873
- https://www.youtube.com/watch?v=ghD79dVZZ_o
-・ツールの実装
-
-・拡張
-
 
 ●設計
 ※Modelingをベースに行い、プロシージャルにサポートするツールを設計する
-※クラス設計を意識する
 ※模様を生成することを意識する
+※HoudiniForMayaも検証する
 
 
 [Modelieng]
@@ -96,6 +92,9 @@ https://qiita.com/lie_871221/items/1b6ef8faba06e5180cf9
  -MakeEdgeを実装
  -DividePrimを実装
 ・InitParameterを整理する
+
+○MakeEdge(凹)を上部にいくほど追加するように実装
+ -MakeEdge後にDividePrimする
 
 △Detail部分を整理する
 
