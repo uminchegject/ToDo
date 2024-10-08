@@ -1,127 +1,96 @@
-//======================================================================
-//UI周り
-from maya import cmds
+import maya.cmds as cmds
+import maya.mel as mel
+from maya.common.ui import LayoutManager
 
-def appendButtonAction(args):
+def appendButtonAction(*args):
     '''
     追加ボタンを押した際のイベント       
     ''' 
+    selectingObjs = cmds.ls(sl = True, assemblies = True)
+    scrollListObjs = cmds.textScrollList('SelectingObjList', query=True, allItems=True)
+    selectingReferenceObjs = cmds.ls(type='reference')
 
-    selObj = cmds.ls(sl=1)
-    cmds.textScrollList('SelectingObjList',edit=1,a=selObj)
+    if not selectingObjs:
+        cmds.inViewMessage(amg='<hl> ルートのオブジェクトが選択されていません </hl>', pos='midCenter', fade=True )
+        cmds.warning('ルートのオブジェクトが選択されていません')
+        return
+        
+    if scrollListObjs is None:
+        scrollListObjs = []
+                
+    addObjList = list(set(selectingObjs) - set(scrollListObjs))
     
-def removeButtonAction(args):
+    print(addObjList)
+    
+    nodelist = cmds.ls(type='reference')
+    for node in nodelist:
+        RNnode = cmds.referenceQuery(node, referenceNode=True)
+        Result = cmds.referenceQuery(RNnode, nodes=True)
+        addObjList = list(set(addObjList) - set(Result))
+    print(addObjList)
+    
+    cmds.textScrollList('SelectingObjList',edit=1,a=addObjList)    
+
+    
+def removeButtonAction(*args):
     '''
     削除ボタンを押した際のイベント       
     ''' 
-    selFieldItem = cmds.textScrollList('SelectingObjList',q=1,si=1)
-    cmds.textScrollList('SelectingObjList',edit=1,ri=selFieldItem)    
-    
-def deleteButtonAction(args):
-    '''削除ボタンを押した際のイベント    
-    警告ダイアログを表示し、はいを押したら削除処理を呼ぶ        
-    '''
-    
-    yes = u"はい"
-    no = u"いいえ"
-    result = cmds.confirmDialog(message="消してもいいですか？", button=[yes, no], cb="いいえ")
-    
-    if result == yes:
-        deleteItems()
-        mel.eval('print("実行しました")')
-        
+    selectedItems = cmds.textScrollList('SelectingObjList', query=True, selectItem=True)
+    if selectedItems:
+        cmds.textScrollList('SelectingObjList', edit=True, removeItem=selectedItems)
     else:
-        mel.eval('print("キャンセルしました")')
-        
-def deleteItems():
+        cmds.inViewMessage(amg='<hl> リストの項目が選択されていません </hl>', pos='midCenter', fade=True) 
+    
+
+
+
+def deleteItems(*args):
     '''アイテム削除    
     シーン内のグローバル直下のオブジェクトから登録オブジェクトを除き、削除       
-    '''    
+    '''
+    cantDeleteObjList = ['persp', 'side', 'front', 'top']
     
-    allObjList = cmds.ls(assemblies = True, long = True)
+           
+    allObjList = cmds.ls(assemblies = True)
     remainObjList = cmds.textScrollList('SelectingObjList', q=1, ai=1)
-    deleteObjList = list(set(allObjList) - set(remainObjList))
+    if remainObjList is None:
+       cmds.inViewMessage(amg='<hl>リストに消さないルートのオブジェクトを登録してください</hl>', pos='midCenter', fade=True )
+       cmds.warning('リストに消さないルートのオブジェクトを登録してください') 
+       return  
+    deleteObjList = list(set(allObjList) - set(remainObjList) - set(cantDeleteObjList))
+    
+    if not deleteObjList:
+       cmds.inViewMessage(amg='ルートに消すオブジェクトがありませんでした', pos='midCenter', fade=True )
+       mel.eval('print("ルートに消すオブジェクトがありませんでした")')
+       return
+        
     cmds.delete(deleteObjList)
+    cmds.inViewMessage(amg='リスト以外のルートを削除しました', pos='midCenter', fade=True )
+    mel.eval('print("リスト以外のルートを削除しました")')
+     
     
-    '''
-    削除不可能オブジェクトを外す処理を実装したいがうまくいかず…
-    for obj in deleteObjList:
-        lock_check = cmds.getAttr(obj, lock=True)
-        if lock_check == True:           
-            cmds.delete(obj)
-        else:
-            print("{}を削除できませんでした" .format(obj))
-    '''
-
-
-def initTextScrollList():
-    '''   
-    jsonファイルからリストを取得して、シーン上にあるオブジェクトと照らし合わせて存在すれば登録するように実装    
-    '''    
-    cmds.textScrollList('SelectingObjList')
-  
 def main():
-    win = cmds.window(title="RemoveObj", s=1)
-    cmds.columnLayout()
-    initTextScrollList()
-    cmds.setParent('..')
-    cmds.rowLayout(nc=3)
-    cmds.button(label="Append", command = appendButtonAction)
-    cmds.button(label="Remove", command = removeButtonAction)
-    cmds.button(label="Do", command = deleteButtonAction)
-    cmds.showWindow(win)
-    
+    windowName = "delete_manager"
+
+    if cmds.window(windowName, q=True, exists=True):
+        cmds.deleteUI(windowName, window=True)
+
+    window = cmds.window(windowName)
+
+    with LayoutManager(cmds.formLayout(numberOfDivisions=100)) as form:
+        textScrollList = cmds.textScrollList('SelectingObjList', allowMultiSelection = 1)
+        with LayoutManager(cmds.columnLayout(adj=True, rowSpacing=10)) as column:
+            with LayoutManager(cmds.rowLayout(numberOfColumns=2)):
+                cmds.button(label="追加", command = appendButtonAction)
+                cmds.button(label="排除", command = removeButtonAction)
+            cmds.button(label="実行", command = deleteItems)
+
+        cmds.formLayout( form, edit=True, 
+            attachForm=[(textScrollList, 'top', 5), (textScrollList, 'left', 5), (column, 'left', 5), (column, 'bottom', 5), (column, 'right', 5),], 
+            attachControl=[ (textScrollList, 'bottom', 5, column)], 
+            attachPosition=[(textScrollList, 'right', 5, 100)],)
+
+        cmds.showWindow( window )
+
 main()
-
-
-
-//--------------------------------------------------------------------
-//セーブデータ周り
-import os, json
-
-class Settings(object):
-    def __init__(self):
-        print("hoge")
-        temp = __name__.split('.')
-        self.__filename = os.path.join(
-        os.getenv('MAYA_APP_DIR'),
-        temp[0],
-        temp[-1]+'.json'
-        )
-        self.__filename = os.path.normpath(self.__filename)
-        self.__filename = self.__filename.replace("\\","/")
-        print(self.__filename)
-        self.reset()
-		
-    def reset(self):
-        print("huga")
-        self.across = 1
-		
-    def save(self):
-        print("piyo")
-        saveData = {'across':self.across}
-        if not os.path.exists(self.__filename):
-            os.makedirs(os.path.dirname(self.__filename))
-        with open(self.__filename, 'w') as f:
-            json.dump(saveData, f)
-		
-    def read(self):
-        print("foo")
-        if os.path.exists(self.__filename):
-            with open(self.__filename, 'r') as f:
-                saveData = json.load(f)
-                self.across = saveData['across']
-				
-
-
-settings = Settings()
-
-settings.reset()
-print(settings.across)
-
-settings.across = 10
-settings.save()
-
-settings.across = 100
-settings.read()
-print(settings.across)
