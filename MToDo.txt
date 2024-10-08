@@ -1,10 +1,3 @@
-[Study]
-○CQEMのそれぞれの意味を確認する
-
-[IZON.]
-○挙動確認及びマージ対応
-
-
 [USD]
 ○一度サンプルで挙動確認を行って挙動の流れを確認する
 
@@ -30,27 +23,18 @@ https://www.youtube.com/watch?v=SqTHglDeKtU
 ■ツール課題
 ※サンプルプロジェクトを探す
 
-○仕様
-・追加する、減らすという仕様にする
-・選択していなかったらダイアログを表示
+○メッセージを出す場所を整理する
+ -warningと実行を使い分ける
+ -セットでメッセージ
 
-○レイアウト
-・似ているボタン(Append, Remove)は並列に置く
-・実行ボタンは段落を変えて配置する
-・収縮に対応させる
+○追加、排除ボタンを大きくする
+ -横サイズを伸ばす
+ -8の倍数を推奨
 
-with LayoutManager(cmds.columnLayout(adj=True, rowSpacing=10)):
-	cmds.textField(w=500, tx="TestTextField")
-	with LayoutManager(cmds.rowLayout(adj=True)):
-		cmds.button(label="追加")
-		cmds.button(label="排除")
-	cmds.button(label="実行")
+○サンプルコードを参照
 
-
-○Jsonを用いた保存
-・ツール実行時にjsonファイルからリストを取得して、シーン上にあるオブジェクトと照らし合わせて存在すれば登録するように実装
-・登録する際にシーン上に存在するかどうかを確認する
-
+○ラムダ、バーシャルを勉強
+ -サンプルコードを参照
 
 ・GUI資料
 https://3d.crdg.jp/tech/archives/218
@@ -81,7 +65,32 @@ https://qiita.com/lie_871221/items/1b6ef8faba06e5180cf9
 ※明確なアセットセットを目標に都度新規実装を加えていく
 
 ■ModularOldCity
-○BoxとColorでGreebleベースの区画生成と、LineMakerを用いた形態の変化を検証する
+○BoxBaseParameterの検証環境を整備
+・BoxBaseParameterを整理する
+・Box&Colorの検証環境を整備
+
+○LineBaseParamenterの検証環境を整備
+・BoxToLineを実装
+・LineToBoxを実装
+
+○DivideHeight
+・実装メモを用意
+・検証
+
+○MakeEdge(凹)の実装
+・実装メモを用意
+・検証
+
+○DividePrimの実装
+・実装メモを用意
+・検証
+
+○凹凸Arcの検証
+・MakeEdge(凹)を上部にいくほど追加するように実装
+・DividePrimを行い分割
+・Boxとカラーで挙動を確認
+ 
+ 
 ・BoxBaseParameterを整理する
  -1通りの挙動を確認する
  -Box&Colorの検証環境を整える
@@ -92,9 +101,6 @@ https://qiita.com/lie_871221/items/1b6ef8faba06e5180cf9
  -MakeEdgeを実装
  -DividePrimを実装
 ・InitParameterを整理する
-
-○MakeEdge(凹)を上部にいくほど追加するように実装
- -MakeEdge後にDividePrimする
 
 △Detail部分を整理する
 
