@@ -1,4 +1,79 @@
 import maya.cmds as cmds
+
+アトリビュートの値を参照する
+getAttr("ネットワークノード.アトリビュート名")
+
+アトリビュートを消す
+cmds.deleteAttr("ネットワークノード.アトリビュート名")
+
+ユーザーカスタムアトリビュートをリスト参照
+cmds.listAttr(ノード名,  ud=True)
+
+
+//------------------------------------------------------
+node_list = ["aaaaa","fffff","ccccc"]
+
+# ネットワークノードを探す
+ui_info_name = "tool_ui_info"
+is_ui_info = cmds.ls(ui_info_name, type="network")
+
+if not is_ui_info:
+    # ネットワークノードがない場合は、ノードを作成する
+    ui_info = cmds.createNode("network", name=ui_info_name)
+
+else:
+    ui_info = is_ui_info[0]
+
+
+# 初回作成時
+for obj_name in node_list:
+    cmds.addAttr(ui_info, longName=obj_name, dt="string")
+    cmds.setAttr("{0}.{1}".format(ui_info, obj_name), obj_name, type="string")
+	
+	
+	
+//----------------------------------------------
+
+
+import maya.cmds as cmds
+import functools
+def createInfoNode():
+    toolName = 'nyahonyaho_tamakuro'
+    infoNode = cmds.createNode('network',n = '{}_uiInfo'.format(toolName))
+    cmds.addAttr(infoNode,at = 'float3',ln = 'userAttr')
+    cmds.addAttr(infoNode,at = 'float',ln = 'userAttrX',p = 'userAttr')
+    cmds.addAttr(infoNode,at = 'float',ln = 'userAttrY',p = 'userAttr')
+    cmds.addAttr(infoNode,at = 'float',ln = 'userAttrZ',p = 'userAttr')
+def updateNode(*args,**kwargs):
+    print(args)
+    toolName = 'nyahonyaho_tamakuro'
+    infoNode = '{}_uiInfo'.format(toolName)
+    cmds.setAttr('{}.{}'.format(infoNode,args[0]),args[1])
+def createToolUi():
+    toolName = 'nyahonyaho_tamakuro'
+    infoNode = '{}_uiInfo'.format(toolName)
+    if not cmds.objExists(infoNode):createInfoNode()
+    win = '{}_ui'.format(toolName)
+    if cmds.window(win,q = True,ex = True):
+        cmds.deleteUI(win)
+    cmds.window(win)
+    cmds.rowColumnLayout(nc = 2)
+    #以下は通常のfloatFiledを使う方法
+    '''
+    for xyz in ['X','Y','Z']:
+        attrName = 'userAttr{}'.format(xyz)
+        cmds.text(l = attrName)
+        cmds.floatField(v = cmds.getAttr('{}.{}'.format(infoNode,attrName)),
+            cc = functools.partial(updateNode,attrName))
+    '''
+    #以下はattributeControlGrpを使う方法 
+    cmds.attrControlGrp( attribute='{}.userAttr'.format(infoNode) )
+    cmds.showWindow(win)
+createToolUi()
+
+///---------------------------------------------------
+
+import maya.cmds as cmds
 import maya.mel as mel
 from maya.common.ui import LayoutManager
 
