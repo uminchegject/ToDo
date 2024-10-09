@@ -1,3 +1,14 @@
+[反省]
+・検証でもmainにまとめる
+・"_"がパブリック, "__"がプライベート
+
+[Study]
+・GUI資料
+https://3d.crdg.jp/tech/archives/218
+https://3d.crdg.jp/tech/archives/4495
+https://3d.crdg.jp/tech/archives/1938
+
+
 [USD]
 ○一度サンプルで挙動確認を行って挙動の流れを確認する
 
@@ -23,32 +34,12 @@ https://www.youtube.com/watch?v=SqTHglDeKtU
 ■ツール課題
 ※サンプルプロジェクトを探す
 
-○メッセージを出す場所を整理する
- -warningと実行を使い分ける
- -セットでメッセージ
+○保存機能の実装
 
 ○追加、排除ボタンを大きくする
- -横サイズを伸ばす
- -8の倍数を推奨
+ -formLayoutで分割するように実装する
 
-○サンプルコードを参照
-
-○ラムダ、バーシャルを勉強
- -サンプルコードを参照
-
-・GUI資料
-https://3d.crdg.jp/tech/archives/218
-https://3d.crdg.jp/tech/archives/382
-https://3d.crdg.jp/tech/archives/4495
-https://3d.crdg.jp/tech/archives/380
-https://3d.crdg.jp/tech/archives/1938
-
-https://patrickvfx.blogspot.com/2017/07/maya-ui-layout-example.html
-https://gucheng0712.github.io/python/2019/06/01/Creating-UI-in-Maya.html
-https://qiita.com/lie_871221/items/1b6ef8faba06e5180cf9
-
-
-
+[Modeling]
 ■HardSurfaceModeling
 ○モデリングTutorialを調べる
 ・ハードサーフェスモデリングについて勉強する
@@ -77,31 +68,28 @@ https://qiita.com/lie_871221/items/1b6ef8faba06e5180cf9
 ・BoxToLineを実装
 ・LineToBoxを実装
 
+○LineBaseParamenterの検証環境を整備
+・BoxToLineを実装
+・LineToBoxを実装
 
-○MakeEdge(凹)の実装(検証)
-・MakeEdgeをしながら重ねていき、高さを実装する
-int primpts[] = primpoints(0, @primnum);
-for(int i = 0; i < len(primpts) - 1; ++i)
-{
-	//ptとptの間にランダムでptを生成してaddvertexする
-	
-	//生成したptに沿ってEdgeを動かす
-
-}
+○凹凸Greebleの設計
+・Greebleを行い、境界線でMakeEdgeを行う
+・交点となるポイントのIDとつながりだけ覚えておいて、後はPointを動かしまくる
 
 ○DividePrimの実装(検証)
-int primpts[] = primpoints(0, @primnum);
-for(int i = 0; i < len(primpts) - 1; ++i)
-{
+int makingPrimId = addprim(0, "polyline");
 
-	//primptsの中でランダムにDivideする実装
-	if(random(point(0, "P", primpts[i])) < 0.5)
-	{
-		
-	}
+int primpts[] = primpoints(0, @primnum);
+addvertex(0, makingPrimId, primpts[0]);
+for(int i = 1; i < len(primpts); ++i)
+{	
+	int pts[] = primpoints(0, makingPrimId);
+	if(random(point(0, "P", primpts[i])) < 0.5 && 1 < len(pts)) makingPrimId = addprim(0, "polyline");
 	
+	addvertex(0, makingPrimId, primpts[i]);
 }
 
+removeprim(0, @primnum, 1);
 
 ○凹凸Arcの検証
 ・MakeEdge(凹)を上部にいくほど追加するように実装
@@ -147,7 +135,6 @@ PrimPtsを取得して、隣同士のPrimPtの間にmakeEdgeを行う
 ●EdgeTransform
 動かすEdgeに隣接しているPtも一緒に動かすかどうかを関連づける
 
-
 ●BaseParamenter
 ・Parameter
  -Transform
@@ -160,8 +147,10 @@ PrimPtsを取得して、隣同士のPrimPtの間にmakeEdgeを行う
  -IsRandom 
  -HeightValue
  
+▲DivideBlock
+・独立したSubBlockを用意し、高さ・屋根に変化を持たせる
+ 
 ▲DividePrim
-・
 
 
 ■IDEA
