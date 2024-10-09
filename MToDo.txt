@@ -51,13 +51,17 @@ https://qiita.com/lie_871221/items/1b6ef8faba06e5180cf9
 
 ■HardSurfaceModeling
 ○モデリングTutorialを調べる
-・ハードサーフェスモデリングについて検証する
-・プロシージャルにサポートできる行程がないかを調べる
+・ハードサーフェスモデリングについて勉強する
+ -各パーツのディテール部分で応用できない場所がないかを調査する
+ -プロシージャルにサポートできる行程がないかを調べる
+・検証しやすいパターンを考える
 
+○Voronoiで検証
 
 ●設計
 ※Modelingをベースに行い、プロシージャルにサポートするツールを設計する
 ※模様を生成することを意識する
+ -※模様の形態に問わずDetail部分をModelingできる方法を考える
 ※HoudiniForMayaも検証する
 
 
@@ -73,17 +77,31 @@ https://qiita.com/lie_871221/items/1b6ef8faba06e5180cf9
 ・BoxToLineを実装
 ・LineToBoxを実装
 
-○DivideHeight
-・実装メモを用意
-・検証
 
-○MakeEdge(凹)の実装
-・実装メモを用意
-・検証
+○MakeEdge(凹)の実装(検証)
+・MakeEdgeをしながら重ねていき、高さを実装する
+int primpts[] = primpoints(0, @primnum);
+for(int i = 0; i < len(primpts) - 1; ++i)
+{
+	//ptとptの間にランダムでptを生成してaddvertexする
+	
+	//生成したptに沿ってEdgeを動かす
 
-○DividePrimの実装
-・実装メモを用意
-・検証
+}
+
+○DividePrimの実装(検証)
+int primpts[] = primpoints(0, @primnum);
+for(int i = 0; i < len(primpts) - 1; ++i)
+{
+
+	//primptsの中でランダムにDivideする実装
+	if(random(point(0, "P", primpts[i])) < 0.5)
+	{
+		
+	}
+	
+}
+
 
 ○凹凸Arcの検証
 ・MakeEdge(凹)を上部にいくほど追加するように実装
