@@ -1,14 +1,11 @@
 [反省]
 ・検証でもmainにまとめる
-・"_"がパブリック, "__"がプライベート
 
 [Study]
-・GUI資料
-https://3d.crdg.jp/tech/archives/4495
-https://3d.crdg.jp/tech/archives/1938
-
 ・USD
 https://www.polyphony.co.jp/publications/
+・Spline曲線
+https://qiita.com/khidaka/items/bce40daf5d5ea469241e
 
 [USD]
 ○一度サンプルで挙動確認を行って挙動の流れを確認する
@@ -43,26 +40,31 @@ https://www.youtube.com/watch?v=SqTHglDeKtU
 
 [Modeling]
 ■HardSurfaceModeling
+※Modelingをベースに行い、プロシージャルにサポートするツールを設計する
+※模様を生成することを意識する
+ -※模様の形態に問わずDetail部分をModelingできる方法を考える
+※HoudiniForMayaも検証する
+
 ○モデリングTutorialを調べる
 ・ハードサーフェスモデリングについて勉強する
  -各パーツのディテール部分で応用できない場所がないかを調査する
  -プロシージャルにサポートできる行程がないかを調べる
 ・検証しやすいパターンを考える
 
+○Voronoi分割したPrimSurfaceを統合する
+
 ○Voronoiで検証
 ・マテリアルコントラスト
 ・OffsetHeight
 ・スケールコントラスト
  -スケールに対するマテリアル
+・分割ロジックの設計
+ -せん
+・穴を空ける
+ -骨組み
+
 
 ○多様な形態に適応したDetail生成ロジックを設計
-
-
-●設計
-※Modelingをベースに行い、プロシージャルにサポートするツールを設計する
-※模様を生成することを意識する
- -※模様の形態に問わずDetail部分をModelingできる方法を考える
-※HoudiniForMayaも検証する
 
 
 [Modelieng]
@@ -79,6 +81,7 @@ https://www.youtube.com/watch?v=SqTHglDeKtU
 
 ○凹凸Volumeの設計
 ・Base内でラインを引いて削りながらHeightをつけていく
+ -直線で削っていく検証を行う
  -ラインを中間点で折込を入れる
 
 ○DividePrimの実装(検証)
@@ -130,15 +133,10 @@ PolyLineを生成する
  -EdgeSize
  -DepthSize
  
-int ptnum[] = primPts()
-
 ●MakeEdge
 PrimPtsを取得して、隣同士のPrimPtの間にmakeEdgeを行う
 ・Parameter
  -Range
-
-●EdgeTransform
-動かすEdgeに隣接しているPtも一緒に動かすかどうかを関連づける
 
 ●BaseParamenter
 ・Parameter
