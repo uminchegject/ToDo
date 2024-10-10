@@ -1,171 +1,20 @@
-import maya.cmds as cmds
+○HeightLineを複製しつつ、徐々に小さくなるように実装して検証を行う
 
-アトリビュートの値を参照する
-getAttr("ネットワークノード.アトリビュート名")
+○Block化の繰り返し処理の実装
 
-アトリビュートを消す
-cmds.deleteAttr("ネットワークノード.アトリビュート名")
+○Blockの一体化の実装
 
-ユーザーカスタムアトリビュートをリスト参照
-cmds.listAttr(ノード名,  ud=True)
+△左右対象化
 
-
-//------------------------------------------------------
-node_list = ["aaaaa","fffff","ccccc"]
-
-# ネットワークノードを探す
-ui_info_name = "tool_ui_info"
-is_ui_info = cmds.ls(ui_info_name, type="network")
-
-if not is_ui_info:
-    # ネットワークノードがない場合は、ノードを作成する
-    ui_info = cmds.createNode("network", name=ui_info_name)
-
-else:
-    ui_info = is_ui_info[0]
+○検証環境の構築(Houdini)
+・色
+・OffsetHeight
+・Divide
+・境目のObj化
 
 
-# 初回作成時
-for obj_name in node_list:
-    cmds.addAttr(ui_info, longName=obj_name, dt="string")
-    cmds.setAttr("{0}.{1}".format(ui_info, obj_name), obj_name, type="string")
-	
-	
-	
-//----------------------------------------------
-
-
-import maya.cmds as cmds
-import functools
-def createInfoNode():
-    toolName = 'nyahonyaho_tamakuro'
-    infoNode = cmds.createNode('network',n = '{}_uiInfo'.format(toolName))
-    cmds.addAttr(infoNode,at = 'float3',ln = 'userAttr')
-    cmds.addAttr(infoNode,at = 'float',ln = 'userAttrX',p = 'userAttr')
-    cmds.addAttr(infoNode,at = 'float',ln = 'userAttrY',p = 'userAttr')
-    cmds.addAttr(infoNode,at = 'float',ln = 'userAttrZ',p = 'userAttr')
-def updateNode(*args,**kwargs):
-    print(args)
-    toolName = 'nyahonyaho_tamakuro'
-    infoNode = '{}_uiInfo'.format(toolName)
-    cmds.setAttr('{}.{}'.format(infoNode,args[0]),args[1])
-def createToolUi():
-    toolName = 'nyahonyaho_tamakuro'
-    infoNode = '{}_uiInfo'.format(toolName)
-    if not cmds.objExists(infoNode):createInfoNode()
-    win = '{}_ui'.format(toolName)
-    if cmds.window(win,q = True,ex = True):
-        cmds.deleteUI(win)
-    cmds.window(win)
-    cmds.rowColumnLayout(nc = 2)
-    #以下は通常のfloatFiledを使う方法
-    '''
-    for xyz in ['X','Y','Z']:
-        attrName = 'userAttr{}'.format(xyz)
-        cmds.text(l = attrName)
-        cmds.floatField(v = cmds.getAttr('{}.{}'.format(infoNode,attrName)),
-            cc = functools.partial(updateNode,attrName))
-    '''
-    #以下はattributeControlGrpを使う方法 
-    cmds.attrControlGrp( attribute='{}.userAttr'.format(infoNode) )
-    cmds.showWindow(win)
-createToolUi()
-
-///---------------------------------------------------
-
-import maya.cmds as cmds
-import maya.mel as mel
-from maya.common.ui import LayoutManager
-
-def appendButtonAction(*args):
-    '''
-    追加ボタンを押した際のイベント       
-    ''' 
-    selectingObjs = cmds.ls(sl = True, assemblies = True)
-    scrollListObjs = cmds.textScrollList('SelectingObjList', query=True, allItems=True)
-    selectingReferenceObjs = cmds.ls(type='reference')
-
-    if not selectingObjs:
-        cmds.inViewMessage(amg='<hl> ルートのオブジェクトが選択されていません </hl>', pos='midCenter', fade=True )
-        cmds.warning('ルートのオブジェクトが選択されていません')
-        return
-        
-    if scrollListObjs is None:
-        scrollListObjs = []
-                
-    addObjList = list(set(selectingObjs) - set(scrollListObjs))
-    
-    print(addObjList)
-    
-    nodelist = cmds.ls(type='reference')
-    for node in nodelist:
-        RNnode = cmds.referenceQuery(node, referenceNode=True)
-        Result = cmds.referenceQuery(RNnode, nodes=True)
-        addObjList = list(set(addObjList) - set(Result))
-    print(addObjList)
-    
-    cmds.textScrollList('SelectingObjList',edit=1,a=addObjList)    
-
-    
-def removeButtonAction(*args):
-    '''
-    削除ボタンを押した際のイベント       
-    ''' 
-    selectedItems = cmds.textScrollList('SelectingObjList', query=True, selectItem=True)
-    if selectedItems:
-        cmds.textScrollList('SelectingObjList', edit=True, removeItem=selectedItems)
-    else:
-        cmds.inViewMessage(amg='<hl> リストの項目が選択されていません </hl>', pos='midCenter', fade=True) 
-    
-
-
-
-def deleteItems(*args):
-    '''アイテム削除    
-    シーン内のグローバル直下のオブジェクトから登録オブジェクトを除き、削除       
-    '''
-    cantDeleteObjList = ['persp', 'side', 'front', 'top']
-    
-           
-    allObjList = cmds.ls(assemblies = True)
-    remainObjList = cmds.textScrollList('SelectingObjList', q=1, ai=1)
-    if remainObjList is None:
-       cmds.inViewMessage(amg='<hl>リストに消さないルートのオブジェクトを登録してください</hl>', pos='midCenter', fade=True )
-       cmds.warning('リストに消さないルートのオブジェクトを登録してください') 
-       return  
-    deleteObjList = list(set(allObjList) - set(remainObjList) - set(cantDeleteObjList))
-    
-    if not deleteObjList:
-       cmds.inViewMessage(amg='ルートに消すオブジェクトがありませんでした', pos='midCenter', fade=True )
-       mel.eval('print("ルートに消すオブジェクトがありませんでした")')
-       return
-        
-    cmds.delete(deleteObjList)
-    cmds.inViewMessage(amg='リスト以外のルートを削除しました', pos='midCenter', fade=True )
-    mel.eval('print("リスト以外のルートを削除しました")')
-     
-    
-def main():
-    windowName = "delete_manager"
-
-    if cmds.window(windowName, q=True, exists=True):
-        cmds.deleteUI(windowName, window=True)
-
-    window = cmds.window(windowName)
-
-    with LayoutManager(cmds.formLayout(numberOfDivisions=100)) as form:
-        textScrollList = cmds.textScrollList('SelectingObjList', allowMultiSelection = 1)
-        with LayoutManager(cmds.columnLayout(adj=True, rowSpacing=10)) as column:
-            with LayoutManager(cmds.rowLayout(numberOfColumns=2)):
-                cmds.button(label="追加", command = appendButtonAction)
-                cmds.button(label="排除", command = removeButtonAction)
-            cmds.button(label="実行", command = deleteItems)
-
-        cmds.formLayout( form, edit=True, 
-            attachForm=[(textScrollList, 'top', 5), (textScrollList, 'left', 5), (column, 'left', 5), (column, 'bottom', 5), (column, 'right', 5),], 
-            attachControl=[ (textScrollList, 'bottom', 5, column)], 
-            attachPosition=[(textScrollList, 'right', 5, 100)],)
-
-        cmds.showWindow( window )
-
-main()
+●IDEA
+・フラクタル
+ -スケールコントラスト
+・AddObj
+・カラーコントラスト
