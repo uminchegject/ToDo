@@ -18,3 +18,15 @@
  -スケールコントラスト
 ・AddObj
 ・カラーコントラスト
+
+
+●Base
+・DivideLine
+・BaseParameter
+ -Transorm
+ -Rotate
+ -Scale
+
+●Voronoi
+・RoundEdge
+・PointPos
