@@ -30,20 +30,17 @@ https://www.youtube.com/watch?v=SqTHglDeKtU
 
 [Python]
 ■ツール課題
-○追加、排除ボタンを大きくする
- -formLayoutで分割するように実装する
+○scriptJobの実装
 
-○保存機能の組み込み
-
-○ソースの整理
+○デバッグ
 
 
-[Modeling]
+[ProceduralModeling]
 ■HardSurfaceModeling
 ※Modelingをベースに行い、プロシージャルにサポートするツールを設計する
 ※模様を生成することを意識する
  -※模様の形態に問わずDetail部分をModelingできる方法を考える
-※HoudiniForMayaも検証する
+ -※BaseParameter(Scale, Rotate, Transform)を用いた模様生成を考える
 
 ○モデリングTutorialを調べる
 ・ハードサーフェスモデリングについて勉強する
@@ -53,21 +50,40 @@ https://www.youtube.com/watch?v=SqTHglDeKtU
 
 ○Voronoi分割したPrimSurfaceを統合する
 
-○Voronoiで検証
-・マテリアルコントラスト
+○Voronoi分割及びPrimSurfaceの結合処理の繰り返し
+ -フラクタル
+ -スケールコントラスト
+
+○検証環境の構築(Houdini)
+・色
+ -グレースケール
 ・OffsetHeight
-・スケールコントラスト
- -スケールに対するマテリアル
-・分割ロジックの設計
- -せん
-・穴を空ける
- -骨組み
+・境目のObj化
+・Pointの配置
+
+○BaseParameterの実装
+・Scale
+ -Extend
+・Rotate
+・Transform
+ -Height
+
+△多様な形態に適応したDetail生成ロジックを設計
+
+■IDEA
+●Base
+・DivideLine
+・BaseParameter
+ -Transorm
+ -Rotate
+ -Scale
+
+●Voronoi
+・PointPos
+・RoundEdge
 
 
-○多様な形態に適応したDetail生成ロジックを設計
-
-
-[Modelieng]
+[ModularModelieng]
 ※明確なアセットセットを目標に都度新規実装を加えていく
 
 ■ModularOldCity
@@ -78,11 +94,6 @@ https://www.youtube.com/watch?v=SqTHglDeKtU
 ○LineBaseParamenterの検証環境を整備
 ・BoxToLineを実装
 ・LineToBoxを実装
-
-○凹凸Volumeの設計
-・Base内でラインを引いて削りながらHeightをつけていく
- -直線で削っていく検証を行う
- -ラインを中間点で折込を入れる
 
 ○DividePrimの実装(検証)
 int makingPrimId = addprim(0, "polyline");
@@ -101,10 +112,16 @@ removeprim(0, @primnum, 1);
 
 ○凹凸Arcの検証
 ・MakeEdge(凹)を上部にいくほど追加するように実装
+ -HeightLineを複製しつつ、徐々に小さくなるように実装して検証を行う
 ・DividePrimを行い分割
 ・Boxとカラーで挙動を確認
- 
- 
+
+○凹凸Volumeの設計
+・Base内でラインを引いて削りながらHeightをつけていく
+ -直線で削っていく検証を行う
+ -ラインを中間点で折込を入れる
+
+
 ・BoxBaseParameterを整理する
  -1通りの挙動を確認する
  -Box&Colorの検証環境を整える
@@ -121,17 +138,6 @@ removeprim(0, @primnum, 1);
 
 ■LineMakerの設計
 ・Attributeに表裏のベクトルを設定しておく
-
-●BoxToLine
-PolyLineを生成する
-・Parameter
- -DividePrim
-
-●LineToBox
-・Boxを生成する
-・Parameter
- -EdgeSize
- -DepthSize
  
 ●MakeEdge
 PrimPtsを取得して、隣同士のPrimPtの間にmakeEdgeを行う
