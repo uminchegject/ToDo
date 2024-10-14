@@ -1,8 +1,126 @@
-○Densityベースで検証
+■ModularModeling
+・凹凸の検証
+・DividePrimの検証
+
+●TypeNumの管理
+int toggleRunning = 0;
+int seed = detail(0, "Seed");
+
+//タイプに含まれているか
+int typeNumList[] = i[]@TypeNumList;
+
+for(int i = 0; i < len(typeNumList); i++)
+{
+    int typeNum = chi("../ParamInput/typeNum" + itoa(i@LoopCount)); 
+    if(typeNumList[i] == typeNum)
+    {
+        removeindex(typeNumList, i);
+        toggleRunning = 1;
+        break;
+    }
+}
+
+if(chi("../ParamInput/base_toggleBase" + itoa(i@LoopCount)) != 1)
+{ 
+    removepoint(0, @ptnum); 
+    toggleRunning = 0;
+}
+
+if(toggleRunning == 1)
+{
+
+    //typeを追加
+    string strAddTypeParam = chs("../ParamInput/addTypeNumList" + itoa(i@LoopCount));
+    string strAddTypeParamBlockList[] = re_split(",", strAddTypeParam);
+    foreach(string strAddTypeParamBlock; strAddTypeParamBlockList)
+    {
+        string strAddTypeParamList[] = re_split("_", strAddTypeParamBlock);
+        int addTypeNumList[];
+        foreach(string str; strAddTypeParamList)
+        {
+            append(addTypeNumList, atoi(str));
+        }
+        int type = addTypeNumList[int(floor(rand(@ptnum + seed) * len(addTypeNumList)))];
+        append(typeNumList, type);
+    }
+    i[]@TypeNumList = typeNumList;  
+}
+
+●Frontの管理
+・Sort(ByVertexOrder)で時計回りに設定する
+・次のPtIndexから引いたベクトルを90度回転させた方向を内側とする
+
+
+○Y軸への複製ノードの実装
+・node追加ごとにSlideさせる
+
+○凹凸Arcの検証
+・編集を加えた部分にTypeを新しく追加する
+ -Lineを動かす
+ -Edgeを動かす(内側)
+
+
+△DividePrimの実装(検証)
+int makingPrimId = addprim(0, "polyline");
+
+int primpts[] = primpoints(0, @primnum);
+addvertex(0, makingPrimId, primpts[0]);
+for(int i = 1; i < len(primpts); ++i)
+{	
+	int pts[] = primpoints(0, makingPrimId);
+	if(random(point(0, "P", primpts[i])) < 0.5 && 1 < len(pts)) makingPrimId = addprim(0, "polyline");
+	
+	addvertex(0, makingPrimId, primpts[i]);
+}
+removeprim(0, @primnum, 1);
+
+[PD]
+
+○Noiseから傾きを取得する方法を考える
+
+○DensityベースでBaseParamterの検証
 
 ○Group化したPrimsの編集周りを研究
 
 ○Clusterの検証に繋げる
+
+
+■BaseParameter
+・Directionを設定
+・Cofficient値
+・ノード形式でパラメーターを管理しつつ、編集を行っていく
+ -Extrude
+ -Offset(Inside, OutSide)
+
+○Noise, Density, Directionの設定
+float posCofficient = ch("PosCofficient");
+float noiseCofficfient = ch("NoiseCofficfient");
+float noisePlus = ch("NoisePlus");
+
+@density = noise(v@P * posCofficient) * noiseCofficfient - noisePlus;
+@noise = noise(v@P * posCofficient) * 2.2 - 1;
+
+v@direction = 
+
+○Scale
+v@MinScale
+v@MaxScale
+・PrimのOriginPosとPrimPtsPosをベクトルにスケーリングする
+ -Directionを係数にする
+
+○Transform
+v@MinTrans
+v@MaxTrans
+・Transを方向Matrixで回転させて移動する
+
+○Rotate
+v@MinRotate
+v@MaxRotate
+・軸を方向Matrixで回転させて、軸を基準に回転させる
+
+○Extrude
+v@MinExtrudeHeight
+v@MaxExtrudeHeight
 
 
 ■Voronoi(Density)
@@ -18,6 +136,7 @@
 ・Scale
  -Density
 ・Transform
+ -Adjust
 
 ▲Cluster
 ・フラクタル
@@ -27,6 +146,8 @@
 
 
 ■Voronoi
+https://min.togetter.com/G1PuH4H
+
 ※模様を生成することを意識する
  -※模様の形態に問わずDetail部分をModelingできる方法を考える
  -※BaseParameter(Scale, Rotate, Transform)を用いた模様生成を考える
@@ -47,39 +168,3 @@
  -グレースケール
  
 ▲境目のObj化
-
-
-
-■ModularModeling
-・凹凸の検証
-・DividePrimの検証
-
-○LineManagerの整理
- -Type
-
-○Y軸への複製ノードの実装
-
-○SlideLineノードの実装
- -編集を加えた部分にTypeを新しく追加する
-
-○凹凸Arcの検証
- -PolyLineをExtrudeして色付けを行い確認
-
-△四角形のLineに凹凸をつけるロジックを設計
-・EdgeTransform
-・LineTransform
-
-
-△DividePrimの実装(検証)
-int makingPrimId = addprim(0, "polyline");
-
-int primpts[] = primpoints(0, @primnum);
-addvertex(0, makingPrimId, primpts[0]);
-for(int i = 1; i < len(primpts); ++i)
-{	
-	int pts[] = primpoints(0, makingPrimId);
-	if(random(point(0, "P", primpts[i])) < 0.5 && 1 < len(pts)) makingPrimId = addprim(0, "polyline");
-	
-	addvertex(0, makingPrimId, primpts[i]);
-}
-removeprim(0, @primnum, 1);
