@@ -1,32 +1,85 @@
-○HeightLineを複製しつつ、徐々に小さくなるように実装して検証を行う
+○Densityベースで検証
 
-○Block化の繰り返し処理の実装
+○Group化したPrimsの編集周りを研究
 
-○Blockの一体化の実装
-
-△左右対象化
-
-○検証環境の構築(Houdini)
-・色
-・OffsetHeight
-・Divide
-・境目のObj化
+○Clusterの検証に繋げる
 
 
-●IDEA
-・フラクタル
- -スケールコントラスト
-・AddObj
-・カラーコントラスト
-
+■Voronoi(Density)
+●PointPos
+・Density
+ -PosCofficientScale
+ -DensityCofficientScale
+ -DensityCofficientAdjustValue
 
 ●Base
-・DivideLine
-・BaseParameter
- -Transorm
- -Rotate
- -Scale
+・Rotate
+ -Density
+・Scale
+ -Density
+・Transform
 
-●Voronoi
-・RoundEdge
-・PointPos
+▲Cluster
+・フラクタル
+ -ブロック化して処理をパターン化する
+ -スケールコントラストに繋げる
+・Layerを分けてPoint配置(数)とBaseParameterに変化を持たせる
+
+
+■Voronoi
+※模様を生成することを意識する
+ -※模様の形態に問わずDetail部分をModelingできる方法を考える
+ -※BaseParameter(Scale, Rotate, Transform)を用いた模様生成を考える
+
+●Pointの配置の設計及び検証
+ -Density
+
+●BaseParameterの設計及び検証
+・Scale
+ -拡張
+・Rotate
+ -傾き
+・Transform
+ -高さ
+
+●カラー設定
+・Base, Main, Vividを意識する
+ -グレースケール
+ 
+▲境目のObj化
+
+
+
+■ModularModeling
+・凹凸の検証
+・DividePrimの検証
+
+○LineManagerの整理
+ -Type
+
+○Y軸への複製ノードの実装
+
+○SlideLineノードの実装
+ -編集を加えた部分にTypeを新しく追加する
+
+○凹凸Arcの検証
+ -PolyLineをExtrudeして色付けを行い確認
+
+△四角形のLineに凹凸をつけるロジックを設計
+・EdgeTransform
+・LineTransform
+
+
+△DividePrimの実装(検証)
+int makingPrimId = addprim(0, "polyline");
+
+int primpts[] = primpoints(0, @primnum);
+addvertex(0, makingPrimId, primpts[0]);
+for(int i = 1; i < len(primpts); ++i)
+{	
+	int pts[] = primpoints(0, makingPrimId);
+	if(random(point(0, "P", primpts[i])) < 0.5 && 1 < len(pts)) makingPrimId = addprim(0, "polyline");
+	
+	addvertex(0, makingPrimId, primpts[i]);
+}
+removeprim(0, @primnum, 1);
