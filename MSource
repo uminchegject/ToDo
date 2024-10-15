@@ -1,170 +1,74 @@
-■ModularModeling
-・凹凸の検証
-・DividePrimの検証
+○方向と傾きを求める
+ -Noise(vector)
+float noiseCofficient = ch("NoiseCofficient");
+float normalCofficient = ch("NormalCofficient");
 
-●TypeNumの管理
-int toggleRunning = 0;
-int seed = detail(0, "Seed");
+v@noiseVector = noise(v@P * noiseCofficient);
+@noiseFloat = noise(v@P * noiseCofficient);
 
-//タイプに含まれているか
-int typeNumList[] = i[]@TypeNumList;
 
-for(int i = 0; i < len(typeNumList); i++)
-{
-    int typeNum = chi("../ParamInput/typeNum" + itoa(i@LoopCount)); 
-    if(typeNumList[i] == typeNum)
-    {
-        removeindex(typeNumList, i);
-        toggleRunning = 1;
-        break;
-    }
-}
+//テスト
+v@P.y += @noiseFloat;
 
-if(chi("../ParamInput/base_toggleBase" + itoa(i@LoopCount)) != 1)
-{ 
-    removepoint(0, @ptnum); 
-    toggleRunning = 0;
-}
+vector normal = v@noiseVector;
+normal.y = 0;
+normal *= @noiseFloat * normalCofficient;
 
-if(toggleRunning == 1)
-{
-
-    //typeを追加
-    string strAddTypeParam = chs("../ParamInput/addTypeNumList" + itoa(i@LoopCount));
-    string strAddTypeParamBlockList[] = re_split(",", strAddTypeParam);
-    foreach(string strAddTypeParamBlock; strAddTypeParamBlockList)
-    {
-        string strAddTypeParamList[] = re_split("_", strAddTypeParamBlock);
-        int addTypeNumList[];
-        foreach(string str; strAddTypeParamList)
-        {
-            append(addTypeNumList, atoi(str));
-        }
-        int type = addTypeNumList[int(floor(rand(@ptnum + seed) * len(addTypeNumList)))];
-        append(typeNumList, type);
-    }
-    i[]@TypeNumList = typeNumList;  
-}
-
-●Frontの管理
-・Sort(ByVertexOrder)で時計回りに設定する
-・次のPtIndexから引いたベクトルを90度回転させた方向を内側とする
+int prim = addprim(0, "polyline");
+addvertex(0, prim, @ptnum);
+int pt = addpoint(0, v@P + normal);
+addvertex(0, prim, pt);
 
 
 ○Y軸への複製ノードの実装
-・node追加ごとにSlideさせる
+・パラメーターの中にパラメーターを入れる
+ -for分の中でLineParameter分だけfor分を回し、Lineを複製する
 
-○凹凸Arcの検証
-・編集を加えた部分にTypeを新しく追加する
- -Lineを動かす
- -Edgeを動かす(内側)
+・Init
+ -Height
+ -BaseLine
 
-
-△DividePrimの実装(検証)
-int makingPrimId = addprim(0, "polyline");
-
-int primpts[] = primpoints(0, @primnum);
-addvertex(0, makingPrimId, primpts[0]);
-for(int i = 1; i < len(primpts); ++i)
-{	
-	int pts[] = primpoints(0, makingPrimId);
-	if(random(point(0, "P", primpts[i])) < 0.5 && 1 < len(pts)) makingPrimId = addprim(0, "polyline");
-	
-	addvertex(0, makingPrimId, primpts[i]);
+//Init
+float totalHeightRatio = 0;
+for(int i = 0 ; i < numprim; ++i)
+{
+	totalHeightRatio += prim(0, "HeightRatio", i);
 }
-removeprim(0, @primnum, 1);
+float unitHeight = totalHeight / totalHeightRatio;
 
-[PD]
+//Slide
+addedHeightRatio = 0;
+for(int i = 0 ; i < @numprim - 1; ++i)
+{
+	float heightRatio = = prim(0, "HeightRatio", i);
+	float heightPos = (addedHeightRatio / totalHeightRatio) * totalHeight;
+	addedHeightRatio += heightRatio;	
+	
+	//Slide
+	int primpts[] = primpoints(0, i);
+	foreach(pt ; primpts)
+	{
 
-○Noiseから傾きを取得する方法を考える
+		vector ptPos = point(0, "P", pt);
+		ptPos.y += baseHeight;
+		setpointattrib(0, "P", pt, ptPos);
+		float height = heightRatio * unitHeight;
+		setpointattrib(0, "Height", pt, height);
+		
+	}	
+}
 
-○DensityベースでBaseParamterの検証
-
-○Group化したPrimsの編集周りを研究
-
-○Clusterの検証に繋げる
-
-
-■BaseParameter
-・Directionを設定
-・Cofficient値
-・ノード形式でパラメーターを管理しつつ、編集を行っていく
- -Extrude
- -Offset(Inside, OutSide)
-
-○Noise, Density, Directionの設定
-float posCofficient = ch("PosCofficient");
-float noiseCofficfient = ch("NoiseCofficfient");
-float noisePlus = ch("NoisePlus");
-
-@density = noise(v@P * posCofficient) * noiseCofficfient - noisePlus;
-@noise = noise(v@P * posCofficient) * 2.2 - 1;
-
-v@direction = 
-
-○Scale
-v@MinScale
-v@MaxScale
-・PrimのOriginPosとPrimPtsPosをベクトルにスケーリングする
- -Directionを係数にする
-
-○Transform
-v@MinTrans
-v@MaxTrans
-・Transを方向Matrixで回転させて移動する
-
-○Rotate
-v@MinRotate
-v@MaxRotate
-・軸を方向Matrixで回転させて、軸を基準に回転させる
-
-○Extrude
-v@MinExtrudeHeight
-v@MaxExtrudeHeight
+//AddPrim
+int primpts[] = primpoints(0, @numprim);
+foreach(pt ; primpts)
+{
+	vector ptPos = point(0, "P", pt);
+	ptPos.y += baseHeight;
+	setpointattrib(0, "P", pt, ptPos);
+}
 
 
-■Voronoi(Density)
-●PointPos
-・Density
- -PosCofficientScale
- -DensityCofficientScale
- -DensityCofficientAdjustValue
+・Slide
+ -1を基準に比率を設定し、最後にHeightに対しての分割を行う
 
-●Base
-・Rotate
- -Density
-・Scale
- -Density
-・Transform
- -Adjust
-
-▲Cluster
-・フラクタル
- -ブロック化して処理をパターン化する
- -スケールコントラストに繋げる
-・Layerを分けてPoint配置(数)とBaseParameterに変化を持たせる
-
-
-■Voronoi
-https://min.togetter.com/G1PuH4H
-
-※模様を生成することを意識する
- -※模様の形態に問わずDetail部分をModelingできる方法を考える
- -※BaseParameter(Scale, Rotate, Transform)を用いた模様生成を考える
-
-●Pointの配置の設計及び検証
- -Density
-
-●BaseParameterの設計及び検証
-・Scale
- -拡張
-・Rotate
- -傾き
-・Transform
- -高さ
-
-●カラー設定
-・Base, Main, Vividを意識する
- -グレースケール
- 
-▲境目のObj化
+・AddPrim
