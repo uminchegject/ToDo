@@ -1,36 +1,38 @@
-○方向と傾きを求める
+●方向と傾きを求める
  -Noise(vector)
 float noiseCofficient = ch("NoiseCofficient");
 float normalCofficient = ch("NormalCofficient");
+vector baseDirection = ch("BaseDirection");
 
 v@noiseVector = noise(v@P * noiseCofficient);
 @noiseFloat = noise(v@P * noiseCofficient);
 
-
-//テスト
 v@P.y += @noiseFloat;
 
-vector normal = v@noiseVector;
-normal.y = 0;
-normal *= @noiseFloat * normalCofficient;
+vector direction = {0, 1, 0};
+float angle = cos(baseDirection, noiseVector);
+angle *= 100;
+vector rotateAxis = {0, 0, 1};
+direction = rotate(direction, rotateAxis, angle);
+
+rotateAxis = {0, 1, 0};
+baseDirection.y = 0;
+noiseVector.y = 0;
+angle = cos(baseDirection, noiseVector);
+direction = rotate(direction, rotateAxis, angle);
 
 int prim = addprim(0, "polyline");
 addvertex(0, prim, @ptnum);
-int pt = addpoint(0, v@P + normal);
+int pt = addpoint(0, v@P + direction);
 addvertex(0, prim, pt);
 
 
-○Y軸への複製ノードの実装
-・パラメーターの中にパラメーターを入れる
- -for分の中でLineParameter分だけfor分を回し、Lineを複製する
-
-・Init
- -Height
- -BaseLine
-
+●Y軸への複製ノードの実装
 //Init
+float totalHeight = @Height;
+float baseHeight = v@P.y;
 float totalHeightRatio = 0;
-for(int i = 0 ; i < numprim; ++i)
+for(int i = 0 ; i < i@numprim; ++i)
 {
 	totalHeightRatio += prim(0, "HeightRatio", i);
 }
@@ -38,9 +40,9 @@ float unitHeight = totalHeight / totalHeightRatio;
 
 //Slide
 addedHeightRatio = 0;
-for(int i = 0 ; i < @numprim - 1; ++i)
+for(int i = 0 ; i < i@numprim - 1; ++i)
 {
-	float heightRatio = = prim(0, "HeightRatio", i);
+	float heightRatio = prim(0, "HeightRatio", i);
 	float heightPos = (addedHeightRatio / totalHeightRatio) * totalHeight;
 	addedHeightRatio += heightRatio;	
 	
@@ -50,25 +52,25 @@ for(int i = 0 ; i < @numprim - 1; ++i)
 	{
 
 		vector ptPos = point(0, "P", pt);
-		ptPos.y += baseHeight;
+		ptPos.y = baseHeight + heightPos;
 		setpointattrib(0, "P", pt, ptPos);
-		float height = heightRatio * unitHeight;
-		setpointattrib(0, "Height", pt, height);
 		
+		float height = heightRatio * unitHeight;
+		setpointattrib(0, "Height", pt, height);		
 	}	
 }
 
 //AddPrim
-int primpts[] = primpoints(0, @numprim);
+int primpts[] = primpoints(0, i@numprim);
+float heightRatio = prim(0, "HeightRatio", i@numprim);
+int prim = addprim(0, "polyline");
 foreach(pt ; primpts)
 {
 	vector ptPos = point(0, "P", pt);
-	ptPos.y += baseHeight;
-	setpointattrib(0, "P", pt, ptPos);
+	ptPos.y = baseHeight + unitHeight * addedHeightRatio;
+	pt = addpoint(0, ptPos);
+	addvertex(0, prim, pt);
+
+	float height = heightRatio * unitHeight;
+	setpointattrib(0, "Height", pt, height);
 }
-
-
-・Slide
- -1を基準に比率を設定し、最後にHeightに対しての分割を行う
-
-・AddPrim
