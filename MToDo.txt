@@ -1,101 +1,163 @@
-[反省]
-・検証でもmainにまとめる
-
-[Study]
-・USD
-https://www.polyphony.co.jp/publications/
-・Spline曲線
-https://qiita.com/khidaka/items/bce40daf5d5ea469241e
-
-[USD]
-○一度サンプルで挙動確認を行って挙動の流れを確認する
-
-・USDの基礎
-https://www.youtube.com/watch?v=4kMBwpdwkkw
-https://www.slideshare.net/slideshow/usd-79288174/79288174#2
-https://fereria.github.io/reincarnation_tech/usd/what_is_usd
-
-・USDの運用
-https://fereria.github.io/reincarnation_tech/usd/python/tutorials/01
-https://qiita.com/ousttrue/items/b5f34e0f2441ca74467e
-https://qiita.com/takahito-tejima/items/ee0332bfb5c9baed3b09
-
-・LOPS&Soraris
-https://note.com/indyzonecorp/n/ndf9d8f82d7e5#93191dbb-a31d-4dbc-851a-584b7882528b
-https://houdinifx.jp/blog/lops%E3%81%AE%E4%BB%95%E7%B5%84%E3%81%BF/
-
-https://www.sidefx.com/tutorials/usd-authoring-with-solaris/
-https://www.youtube.com/watch?v=SqTHglDeKtU
-
-
 [Python]
 ■ツール課題
-○scriptJobの実装
-
-○デバッグ
+○ドキュメント作成
 
 
 [ProceduralModeling]
-■HardSurfaceModeling
-※Modelingをベースに行い、プロシージャルにサポートするツールを設計する
 ※模様を生成することを意識する
  -※模様の形態に問わずDetail部分をModelingできる方法を考える
  -※BaseParameter(Scale, Rotate, Transform)を用いた模様生成を考える
 
+■HardSurfaceModeling
 ○モデリングTutorialを調べる
 ・ハードサーフェスモデリングについて勉強する
  -各パーツのディテール部分で応用できない場所がないかを調査する
  -プロシージャルにサポートできる行程がないかを調べる
 ・検証しやすいパターンを考える
 
-○Voronoi分割したPrimSurfaceを統合する
 
-○Voronoi分割及びPrimSurfaceの結合処理の繰り返し
- -フラクタル
- -スケールコントラスト
+■BaseParameter
+・Directionを設定
+・Cofficient値
+・ノード形式でパラメーターを管理しつつ、編集を行っていく
+ -Extrude
+ -Offset(Inside, OutSide)
 
-○検証環境の構築(Houdini)
-・色
- -グレースケール
-・OffsetHeight
-・境目のObj化
-・Pointの配置
+○Noise, Density, Directionの設定
+float posCofficient = ch("PosCofficient");
+float noiseCofficfient = ch("NoiseCofficfient");
+float noisePlus = ch("NoisePlus");
 
-○BaseParameterの実装
-・Scale
- -Extend
-・Rotate
-・Transform
- -Height
+@density = noise(v@P * posCofficient) * noiseCofficfient - noisePlus;
+@noise = noise(v@P * posCofficient) * 2.2 - 1;
 
-△多様な形態に適応したDetail生成ロジックを設計
+v@direction = 
 
-■IDEA
+○Scale
+v@MinScale
+v@MaxScale
+・PrimのOriginPosとPrimPtsPosをベクトルにスケーリングする
+ -Directionを係数にする
+
+○Transform
+v@MinTrans
+v@MaxTrans
+・Transを方向Matrixで回転させて移動する
+
+○Rotate
+v@MinRotate
+v@MaxRotate
+・軸を方向Matrixで回転させて、軸を基準に回転させる
+
+○Extrude
+v@MinExtrudeHeight
+v@MaxExtrudeHeight
+
+
+■Voronoi(Density)
+○Noiseから傾きを取得する方法を考える
+
+○DensityベースでBaseParamterの検証
+
+○Group化したPrimsの編集周りを研究
+
+○Clusterの検証に繋げる
+
+●PointPos
+・Density
+ -PosCofficientScale
+ -DensityCofficientScale
+ -DensityCofficientAdjustValue
+
 ●Base
-・DivideLine
-・BaseParameter
- -Transorm
- -Rotate
- -Scale
+・Rotate
+ -Density
+・Scale
+ -Density
+・Transform
+ -Adjust
 
-●Voronoi
-・PointPos
-・RoundEdge
+●Cluster
+・フラクタル
+ -ブロック化して処理をパターン化する
+ -スケールコントラストに繋げる
+・Layerを分けてPoint配置(数)とBaseParameterに変化を持たせる
+
+●カラー設定
+・Base, Main, Vividを意識する
+ -グレースケール
+ 
+▲境目のObj化
+
+
 
 
 [ModularModelieng]
 ※明確なアセットセットを目標に都度新規実装を加えていく
 
-■ModularOldCity
-○BoxBaseParameterの検証環境を整備
-・BoxBaseParameterを整理する
-・Box&Colorの検証環境を整備
+■LineManager
+・凹凸の検証
+・DividePrimの検証
 
-○LineBaseParamenterの検証環境を整備
-・BoxToLineを実装
-・LineToBoxを実装
+●TypeNumの管理
+int toggleRunning = 0;
+int seed = detail(0, "Seed");
 
-○DividePrimの実装(検証)
+//タイプに含まれているか
+int typeNumList[] = i[]@TypeNumList;
+
+for(int i = 0; i < len(typeNumList); i++)
+{
+    int typeNum = chi("../ParamInput/typeNum" + itoa(i@LoopCount)); 
+    if(typeNumList[i] == typeNum)
+    {
+        removeindex(typeNumList, i);
+        toggleRunning = 1;
+        break;
+    }
+}
+
+if(chi("../ParamInput/base_toggleBase" + itoa(i@LoopCount)) != 1)
+{ 
+    removepoint(0, @ptnum); 
+    toggleRunning = 0;
+}
+
+if(toggleRunning == 1)
+{
+
+    //typeを追加
+    string strAddTypeParam = chs("../ParamInput/addTypeNumList" + itoa(i@LoopCount));
+    string strAddTypeParamBlockList[] = re_split(",", strAddTypeParam);
+    foreach(string strAddTypeParamBlock; strAddTypeParamBlockList)
+    {
+        string strAddTypeParamList[] = re_split("_", strAddTypeParamBlock);
+        int addTypeNumList[];
+        foreach(string str; strAddTypeParamList)
+        {
+            append(addTypeNumList, atoi(str));
+        }
+        int type = addTypeNumList[int(floor(rand(@ptnum + seed) * len(addTypeNumList)))];
+        append(typeNumList, type);
+    }
+    i[]@TypeNumList = typeNumList;  
+}
+
+●Frontの管理
+・Sort(ByVertexOrder)で時計回りに設定する
+・次のPtIndexから引いたベクトルを90度回転させた方向を内側とする
+
+
+○Y軸への複製ノードの実装
+・node追加ごとにSlideさせる
+
+○凹凸Arcの検証
+・編集を加えた部分にTypeを新しく追加する
+ -Lineを動かす
+ -Edgeを動かす(内側)
+
+
+△DividePrimの実装(検証)
 int makingPrimId = addprim(0, "polyline");
 
 int primpts[] = primpoints(0, @primnum);
@@ -107,59 +169,7 @@ for(int i = 1; i < len(primpts); ++i)
 	
 	addvertex(0, makingPrimId, primpts[i]);
 }
-
 removeprim(0, @primnum, 1);
-
-○凹凸Arcの検証
-・MakeEdge(凹)を上部にいくほど追加するように実装
- -HeightLineを複製しつつ、徐々に小さくなるように実装して検証を行う
-・DividePrimを行い分割
-・Boxとカラーで挙動を確認
-
-○凹凸Volumeの設計
-・Base内でラインを引いて削りながらHeightをつけていく
- -直線で削っていく検証を行う
- -ラインを中間点で折込を入れる
-
-
-・BoxBaseParameterを整理する
- -1通りの挙動を確認する
- -Box&Colorの検証環境を整える
-・LineBaseParamenterを新規実装する
- -BoxToLine, LineToBoxを実装
- -DivideHeightを実装
- -Lineの検証環境を整理
- -MakeEdgeを実装
- -DividePrimを実装
-・InitParameterを整理する
-
-△Detail部分を整理する
-
-
-■LineMakerの設計
-・Attributeに表裏のベクトルを設定しておく
- 
-●MakeEdge
-PrimPtsを取得して、隣同士のPrimPtの間にmakeEdgeを行う
-・Parameter
- -Range
-
-●BaseParamenter
-・Parameter
- -Transform
- -Scale
- -Rotate 
- 
-●DivideHeight
-・Parameter
- -IsPattern
- -IsRandom 
- -HeightValue
- 
-▲DivideBlock
-・独立したSubBlockを用意し、高さ・屋根に変化を持たせる
- 
-▲DividePrim
 
 
 ■IDEA
@@ -172,4 +182,4 @@ PrimPtsを取得して、隣同士のPrimPtの間にmakeEdgeを行う
  -AttributeにNoiseを持たせて
  
  -Boxサイズに偏りを持たせる
- -Typeに偏りを持たせる
+ -Typeに偏りを持たせる@
