@@ -1,6 +1,70 @@
+[反省]
+※デバッグをしっかりする
+※utf-8への文字コード設定
+ -*- coding: utf-8 -*-
+
+・新規実装をする際に新しい技術、やり方を積極的に入れていく
+・既存ツールのMELを勉強する
+ -頭文字が大文字のCmdsがMELで実装されている
+・for分の書き方
+ -range
+ -enumerate
+ -辞書型
+ -Zip
+
+
+[Study]
+○Houdiniのサンプルコードの確認
+
+○DCCツールの実装フロー
+
+・Spline曲線
+https://qiita.com/khidaka/items/bce40daf5d5ea469241e
+
+
+
+[USD]
+○一度サンプルで挙動確認を行って挙動の流れを確認する
+
+・USDの基礎
+https://www.youtube.com/watch?v=4kMBwpdwkkw
+https://www.slideshare.net/slideshow/usd-79288174/79288174#2
+https://fereria.github.io/reincarnation_tech/usd/what_is_usd
+
+・USDの運用
+https://fereria.github.io/reincarnation_tech/usd/python/tutorials/01
+https://qiita.com/ousttrue/items/b5f34e0f2441ca74467e
+https://qiita.com/takahito-tejima/items/ee0332bfb5c9baed3b09
+
+・LOPS&Soraris
+https://note.com/indyzonecorp/n/ndf9d8f82d7e5#93191dbb-a31d-4dbc-851a-584b7882528b
+https://houdinifx.jp/blog/lops%E3%81%AE%E4%BB%95%E7%B5%84%E3%81%BF/
+
+https://www.sidefx.com/tutorials/usd-authoring-with-solaris/
+https://www.youtube.com/watch?v=SqTHglDeKtU
+
+
 [Python]
 ■ツール課題
-○ドキュメント作成
+○GIFのマウスの移動部分を抜く
+
+○HP側にコーディング
+ -画像クリックしたら大きくなるようにする
+
+
+[IZON.]
+■Gimmick_06
+○ChibitoのAIを復旧する
+○ExcuteEverytimeを正常に動くよう修正する
+○Creation周りを修正する
+
+■Gimmick_04
+○調査
+
+■Gimmick_11
+○中牟田さんに、相談する
+　-サンプルを実装して、それを見せて相談する
+
 
 
 [ProceduralModeling]
@@ -31,7 +95,26 @@ float noisePlus = ch("NoisePlus");
 @density = noise(v@P * posCofficient) * noiseCofficfient - noisePlus;
 @noise = noise(v@P * posCofficient) * 2.2 - 1;
 
-v@direction = 
+○方向と傾きを求める
+ -Noise(vector)
+float noiseCofficient = ch("NoiseCofficient");
+float normalCofficient = ch("NormalCofficient");
+
+v@noiseVector = noise(v@P * noiseCofficient);
+@noiseFloat = noise(v@P * noiseCofficient);
+
+
+//テスト
+v@P.y += @noiseFloat;
+
+vector normal = v@noiseVector;
+normal.y = 0;
+normal *= @noiseFloat * normalCofficient;
+
+int prim = addprim(0, "polyline");
+addvertex(0, prim, @ptnum);
+int pt = addpoint(0, v@P + normal);
+addvertex(0, prim, pt);
 
 ○Scale
 v@MinScale
@@ -149,7 +232,18 @@ if(toggleRunning == 1)
 
 
 ○Y軸への複製ノードの実装
-・node追加ごとにSlideさせる
+・パラメーターの中にパラメーターを入れる
+ -for分の中でLineParameter分だけfor分を回し、Lineを複製する
+
+・Init
+ -Height
+ -BaseLine
+
+・for
+ -Slide
+ -AddPrim
+ -△Change
+
 
 ○凹凸Arcの検証
 ・編集を加えた部分にTypeを新しく追加する
@@ -182,4 +276,4 @@ removeprim(0, @primnum, 1);
  -AttributeにNoiseを持たせて
  
  -Boxサイズに偏りを持たせる
- -Typeに偏りを持たせる@
+ -Typeに偏りを持たせる
