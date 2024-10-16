@@ -26,6 +26,17 @@ https://houdinifx.jp/blog/lops%E3%81%AE%E4%BB%95%E7%B5%84%E3%81%BF/
 https://www.sidefx.com/tutorials/usd-authoring-with-solaris/
 https://www.youtube.com/watch?v=SqTHglDeKtU
 
+・Schemaについて調べる
+ -階層をつける
+ 
+・nvidiaビルドでPixarのサンプルコードを確認する
+・usdCatで確認する
+
+・動画の途中のサンプルを参考にする
+
+・パイプラインの基礎的な部分を勉強する
+
+・USDを使ってみる
 
 [Python]
 ■ツール課題
