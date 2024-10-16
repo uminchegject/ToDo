@@ -14,13 +14,11 @@
 
 
 [Study]
-○Houdiniのサンプルコードの確認
-
-○DCCツールの実装フロー
-
-・Spline曲線
-https://qiita.com/khidaka/items/bce40daf5d5ea469241e
-
+●HoudiniForMaya
+・Tutorial
+https://support.borndigital.co.jp/hc/ja/articles/900000756146--%E5%88%9D%E5%BF%83%E8%80%85%E5%90%91%E3%81%91Houdini%E3%83%88%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%AB005-Houdini-Engine-for-Maya%E3%81%A7Houdini-%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E3%82%A2%E3%82%BB%E3%83%83%E3%83%88%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B
+・Debug
+https://houdinifx.jp/blog/houdini-engine-for-maya-%E3%83%87%E3%83%90%E3%83%83%E3%82%B0%E3%81%AE%E4%BB%95%E6%96%B9/
 
 
 [USD]
@@ -63,8 +61,7 @@ https://www.youtube.com/watch?v=SqTHglDeKtU
 
 ■Gimmick_11
 ○中牟田さんに、相談する
-　-サンプルを実装して、それを見せて相談する
-
+ -サンプルを実装して、それを見せて相談する
 
 
 [ProceduralModeling]
@@ -87,6 +84,7 @@ https://www.youtube.com/watch?v=SqTHglDeKtU
  -Extrude
  -Offset(Inside, OutSide)
 
+
 ○Noise, Density, Directionの設定
 float posCofficient = ch("PosCofficient");
 float noiseCofficfient = ch("NoiseCofficfient");
@@ -95,26 +93,34 @@ float noisePlus = ch("NoisePlus");
 @density = noise(v@P * posCofficient) * noiseCofficfient - noisePlus;
 @noise = noise(v@P * posCofficient) * 2.2 - 1;
 
+
 ○方向と傾きを求める
- -Noise(vector)
 float noiseCofficient = ch("NoiseCofficient");
 float normalCofficient = ch("NormalCofficient");
+vector baseDirection = ch("BaseDirection");
 
 v@noiseVector = noise(v@P * noiseCofficient);
 @noiseFloat = noise(v@P * noiseCofficient);
 
-
-//テスト
 v@P.y += @noiseFloat;
 
-vector normal = v@noiseVector;
-normal.y = 0;
-normal *= @noiseFloat * normalCofficient;
+vector direction = {0, 1, 0};
+float angle = cos(baseDirection, noiseVector);
+angle *= 100;
+vector rotateAxis = {0, 0, 1};
+direction = rotate(direction, rotateAxis, angle);
+
+rotateAxis = {0, 1, 0};
+baseDirection.y = 0;
+noiseVector.y = 0;
+angle = cos(baseDirection, noiseVector);
+direction = rotate(direction, rotateAxis, angle);
 
 int prim = addprim(0, "polyline");
 addvertex(0, prim, @ptnum);
-int pt = addpoint(0, v@P + normal);
+int pt = addpoint(0, v@P + direction);
 addvertex(0, prim, pt);
+
 
 ○Scale
 v@MinScale
@@ -136,10 +142,7 @@ v@MaxRotate
 v@MinExtrudeHeight
 v@MaxExtrudeHeight
 
-
 ■Voronoi(Density)
-○Noiseから傾きを取得する方法を考える
-
 ○DensityベースでBaseParamterの検証
 
 ○Group化したPrimsの編集周りを研究
@@ -171,7 +174,6 @@ v@MaxExtrudeHeight
  -グレースケール
  
 ▲境目のObj化
-
 
 
 
@@ -232,18 +234,52 @@ if(toggleRunning == 1)
 
 
 ○Y軸への複製ノードの実装
-・パラメーターの中にパラメーターを入れる
- -for分の中でLineParameter分だけfor分を回し、Lineを複製する
+//Init
+float totalHeight = @Height;
+float baseHeight = v@P.y;
+float totalHeightRatio = 0;
+for(int i = 0 ; i < i@numprim; ++i)
+{
+	totalHeightRatio += prim(0, "HeightRatio", i);
+}
+float unitHeight = totalHeight / totalHeightRatio;
 
-・Init
- -Height
- -BaseLine
+//Slide
+addedHeightRatio = 0;
+for(int i = 0 ; i < i@numprim - 1; ++i)
+{
+	float heightRatio = prim(0, "HeightRatio", i);
+	float heightPos = (addedHeightRatio / totalHeightRatio) * totalHeight;
+	addedHeightRatio += heightRatio;	
+	
+	//Slide
+	int primpts[] = primpoints(0, i);
+	foreach(pt ; primpts)
+	{
 
-・for
- -Slide
- -AddPrim
- -△Change
+		vector ptPos = point(0, "P", pt);
+		ptPos.y = baseHeight + heightPos;
+		setpointattrib(0, "P", pt, ptPos);
+		
+		float height = heightRatio * unitHeight;
+		setpointattrib(0, "Height", pt, height);		
+	}	
+}
 
+//AddPrim
+int primpts[] = primpoints(0, i@numprim);
+float heightRatio = prim(0, "HeightRatio", i@numprim);
+int prim = addprim(0, "polyline");
+foreach(pt ; primpts)
+{
+	vector ptPos = point(0, "P", pt);
+	ptPos.y = baseHeight + unitHeight * addedHeightRatio;
+	pt = addpoint(0, ptPos);
+	addvertex(0, prim, pt);
+
+	float height = heightRatio * unitHeight;
+	setpointattrib(0, "Height", pt, height);
+}
 
 ○凹凸Arcの検証
 ・編集を加えた部分にTypeを新しく追加する
@@ -251,19 +287,8 @@ if(toggleRunning == 1)
  -Edgeを動かす(内側)
 
 
-△DividePrimの実装(検証)
-int makingPrimId = addprim(0, "polyline");
+○DividePrimの実装(検証)
 
-int primpts[] = primpoints(0, @primnum);
-addvertex(0, makingPrimId, primpts[0]);
-for(int i = 1; i < len(primpts); ++i)
-{	
-	int pts[] = primpoints(0, makingPrimId);
-	if(random(point(0, "P", primpts[i])) < 0.5 && 1 < len(pts)) makingPrimId = addprim(0, "polyline");
-	
-	addvertex(0, makingPrimId, primpts[i]);
-}
-removeprim(0, @primnum, 1);
 
 
 ■IDEA
