@@ -1,30 +1,50 @@
-●方向と傾きを求める
- -Noise(vector)
-float noiseCofficient = ch("NoiseCofficient");
-float normalCofficient = ch("NormalCofficient");
-vector baseDirection = ch("BaseDirection");
+●TypeNumの管理
+int toggleRunning = 0;
+int seed = detail(0, "Seed");
 
-v@noiseVector = noise(v@P * noiseCofficient);
-@noiseFloat = noise(v@P * noiseCofficient);
+//タイプに含まれているか
+int typeNumList[] = i[]@TypeNumList;
 
-v@P.y += @noiseFloat;
+for(int i = 0; i < len(typeNumList); i++)
+{
+    int typeNum = chi("../ParamInput/typeNum" + itoa(i@LoopCount)); 
+    if(typeNumList[i] == typeNum)
+    {
+        removeindex(typeNumList, i);
+        toggleRunning = 1;
+        break;
+    }
+}
 
-vector direction = {0, 1, 0};
-float angle = cos(baseDirection, noiseVector);
-angle *= 100;
-vector rotateAxis = {0, 0, 1};
-direction = rotate(direction, rotateAxis, angle);
+if(chi("../ParamInput/base_toggleBase" + itoa(i@LoopCount)) != 1)
+{ 
+    removepoint(0, @ptnum); 
+    toggleRunning = 0;
+}
 
-rotateAxis = {0, 1, 0};
-baseDirection.y = 0;
-noiseVector.y = 0;
-angle = cos(baseDirection, noiseVector);
-direction = rotate(direction, rotateAxis, angle);
+if(toggleRunning == 1)
+{
 
-int prim = addprim(0, "polyline");
-addvertex(0, prim, @ptnum);
-int pt = addpoint(0, v@P + direction);
-addvertex(0, prim, pt);
+    //typeを追加
+    string strAddTypeParam = chs("../ParamInput/addTypeNumList" + itoa(i@LoopCount));
+    string strAddTypeParamBlockList[] = re_split(",", strAddTypeParam);
+    foreach(string strAddTypeParamBlock; strAddTypeParamBlockList)
+    {
+        string strAddTypeParamList[] = re_split("_", strAddTypeParamBlock);
+        int addTypeNumList[];
+        foreach(string str; strAddTypeParamList)
+        {
+            append(addTypeNumList, atoi(str));
+        }
+        int type = addTypeNumList[int(floor(rand(@ptnum + seed) * len(addTypeNumList)))];
+        append(typeNumList, type);
+    }
+    i[]@TypeNumList = typeNumList;  
+}
+
+●Frontの管理
+・Sort(ByVertexOrder)で時計回りに設定する
+・次のPtIndexから引いたベクトルを90度回転させた方向を内側とする
 
 
 ●Y軸への複製ノードの実装
@@ -74,3 +94,83 @@ foreach(pt ; primpts)
 	float height = heightRatio * unitHeight;
 	setpointattrib(0, "Height", pt, height);
 }
+
+
+○PrimPtsごとにランダムに処理を回す
+int primPts[] = primpoints(0, @primnum);
+int primPtsNum = len(primPts);
+for(int i = 0; i < primPtsNum; ++i)
+{
+
+	float randomNum = rand(v@P);
+	//EdgeMove
+	if(randomNum < 0.2)
+	{
+		int pt = primPts[i];
+		int lastPt = primPts[(i - 1 + primPtsNum) % primPtsNum];
+		int nextPt = primPts[(i + 1) % primPtsNum];	
+
+		vector ptPos = point(0, "P", pt);
+		vector nextPtPos = point(0, "P", nextPt);
+		vector lastPtpos = point(0, "P", lastPt);
+
+		vector nextPtDir = normalize(nextPtPos - ptPos);
+		vector lastPtDir = normalize(lastPtpos - ptPos);
+
+		vector nextPtRange = len(nextPtPos - ptPos);
+		vector lastPtRange = len(lastPtpos - ptPos);
+
+		//EditVertex
+		
+		//DividePrim
+
+	}
+	//LineMove
+	else if(randomNum < 0.4)
+	{
+		int pt1 = primPts[i];
+		int lastPt = primPts[(i - 1 + primPtsNum) % primPtsNum]; 
+		int pt2 = primPts[(i + 1) % primPtsNum];
+		int nextPt = primPts[(i + 2) % primPtsNum];
+		
+		vector pt1Pos = point(0, "P", pt1);
+		vector pt2Pos = point(0, "P", pt2);
+		vector nextPtPos = point(0, "P", nextPt);
+		vector lastPtpos = point(0, "P", lastPt);
+
+		vector nextPtDir = normalize(nextPtPos - pt2Pos);
+		vector lastPtDir = normalize(lastPtpos - pt1Pos);
+
+		vector nextPtRange = len(nextPtPos - pt2Pos);
+		vector lastPtRange = len(lastPtpos - pt1Pos);		
+
+		//EditLine
+		
+		
+		//DividePrim
+		setpointattrib(0, "ToggleChangeType", pt1, 1);
+
+	}	
+}
+
+//ToggleChangeTypeを参照してPrimを分割する
+int primPts[] = primpoints(0, @primnum);
+int primPtsNum = len(primPts);
+int makingPrim = addprim(0, "polyline");
+for(int i = 0; i < primPtsNum; ++i)
+{
+	int pt = primPts[i];
+	addvertex(makingPrim, pt);
+	
+	if(point(0, "ToggleChangeType", pt) == 1) 
+	{
+		pt = primPts[(i + 1) % len(primPts)];
+		addvertex(makingPrim, pt);
+		makingPrim = addprim(0, "polyline");
+	}
+}
+
+
+○Add, RemoveなどEdit以外の処理も追加する
+・Offset
+・ZIGZAG
