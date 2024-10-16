@@ -1,18 +1,3 @@
-[反省]
-※デバッグをしっかりする
-※utf-8への文字コード設定
- -*- coding: utf-8 -*-
-
-・新規実装をする際に新しい技術、やり方を積極的に入れていく
-・既存ツールのMELを勉強する
- -頭文字が大文字のCmdsがMELで実装されている
-・for分の書き方
- -range
- -enumerate
- -辞書型
- -Zip
-
-
 [Study]
 ●HoudiniForMaya
 ・Tutorial
@@ -44,11 +29,8 @@ https://www.youtube.com/watch?v=SqTHglDeKtU
 
 [Python]
 ■ツール課題
-○GIFのマウスの移動部分を抜く
-
-○HP側にコーディング
- -画像クリックしたら大きくなるようにする
-
+○バインドポーズの調査
+　ーリグについて調査
 
 [IZON.]
 ■Gimmick_06
@@ -57,7 +39,12 @@ https://www.youtube.com/watch?v=SqTHglDeKtU
 ○Creation周りを修正する
 
 ■Gimmick_04
-○調査
+○防衛フェーズの実装方法を調査
+
+○BP_Gimmick_tw04の実装
+・60秒間起動フェーズを挟む
+・BP_SpawnをSpawn
+・エレベーターの起動
 
 ■Gimmick_11
 ○中牟田さんに、相談する
@@ -83,44 +70,6 @@ https://www.youtube.com/watch?v=SqTHglDeKtU
 ・ノード形式でパラメーターを管理しつつ、編集を行っていく
  -Extrude
  -Offset(Inside, OutSide)
-
-
-○Noise, Density, Directionの設定
-float posCofficient = ch("PosCofficient");
-float noiseCofficfient = ch("NoiseCofficfient");
-float noisePlus = ch("NoisePlus");
-
-@density = noise(v@P * posCofficient) * noiseCofficfient - noisePlus;
-@noise = noise(v@P * posCofficient) * 2.2 - 1;
-
-
-○方向と傾きを求める
-float noiseCofficient = ch("NoiseCofficient");
-float normalCofficient = ch("NormalCofficient");
-vector baseDirection = ch("BaseDirection");
-
-v@noiseVector = noise(v@P * noiseCofficient);
-@noiseFloat = noise(v@P * noiseCofficient);
-
-v@P.y += @noiseFloat;
-
-vector direction = {0, 1, 0};
-float angle = cos(baseDirection, noiseVector);
-angle *= 100;
-vector rotateAxis = {0, 0, 1};
-direction = rotate(direction, rotateAxis, angle);
-
-rotateAxis = {0, 1, 0};
-baseDirection.y = 0;
-noiseVector.y = 0;
-angle = cos(baseDirection, noiseVector);
-direction = rotate(direction, rotateAxis, angle);
-
-int prim = addprim(0, "polyline");
-addvertex(0, prim, @ptnum);
-int pt = addpoint(0, v@P + direction);
-addvertex(0, prim, pt);
-
 
 ○Scale
 v@MinScale
@@ -184,112 +133,9 @@ v@MaxExtrudeHeight
 ・凹凸の検証
 ・DividePrimの検証
 
-●TypeNumの管理
-int toggleRunning = 0;
-int seed = detail(0, "Seed");
-
-//タイプに含まれているか
-int typeNumList[] = i[]@TypeNumList;
-
-for(int i = 0; i < len(typeNumList); i++)
-{
-    int typeNum = chi("../ParamInput/typeNum" + itoa(i@LoopCount)); 
-    if(typeNumList[i] == typeNum)
-    {
-        removeindex(typeNumList, i);
-        toggleRunning = 1;
-        break;
-    }
-}
-
-if(chi("../ParamInput/base_toggleBase" + itoa(i@LoopCount)) != 1)
-{ 
-    removepoint(0, @ptnum); 
-    toggleRunning = 0;
-}
-
-if(toggleRunning == 1)
-{
-
-    //typeを追加
-    string strAddTypeParam = chs("../ParamInput/addTypeNumList" + itoa(i@LoopCount));
-    string strAddTypeParamBlockList[] = re_split(",", strAddTypeParam);
-    foreach(string strAddTypeParamBlock; strAddTypeParamBlockList)
-    {
-        string strAddTypeParamList[] = re_split("_", strAddTypeParamBlock);
-        int addTypeNumList[];
-        foreach(string str; strAddTypeParamList)
-        {
-            append(addTypeNumList, atoi(str));
-        }
-        int type = addTypeNumList[int(floor(rand(@ptnum + seed) * len(addTypeNumList)))];
-        append(typeNumList, type);
-    }
-    i[]@TypeNumList = typeNumList;  
-}
-
-●Frontの管理
-・Sort(ByVertexOrder)で時計回りに設定する
-・次のPtIndexから引いたベクトルを90度回転させた方向を内側とする
-
-
-○Y軸への複製ノードの実装
-//Init
-float totalHeight = @Height;
-float baseHeight = v@P.y;
-float totalHeightRatio = 0;
-for(int i = 0 ; i < i@numprim; ++i)
-{
-	totalHeightRatio += prim(0, "HeightRatio", i);
-}
-float unitHeight = totalHeight / totalHeightRatio;
-
-//Slide
-addedHeightRatio = 0;
-for(int i = 0 ; i < i@numprim - 1; ++i)
-{
-	float heightRatio = prim(0, "HeightRatio", i);
-	float heightPos = (addedHeightRatio / totalHeightRatio) * totalHeight;
-	addedHeightRatio += heightRatio;	
-	
-	//Slide
-	int primpts[] = primpoints(0, i);
-	foreach(pt ; primpts)
-	{
-
-		vector ptPos = point(0, "P", pt);
-		ptPos.y = baseHeight + heightPos;
-		setpointattrib(0, "P", pt, ptPos);
-		
-		float height = heightRatio * unitHeight;
-		setpointattrib(0, "Height", pt, height);		
-	}	
-}
-
-//AddPrim
-int primpts[] = primpoints(0, i@numprim);
-float heightRatio = prim(0, "HeightRatio", i@numprim);
-int prim = addprim(0, "polyline");
-foreach(pt ; primpts)
-{
-	vector ptPos = point(0, "P", pt);
-	ptPos.y = baseHeight + unitHeight * addedHeightRatio;
-	pt = addpoint(0, ptPos);
-	addvertex(0, prim, pt);
-
-	float height = heightRatio * unitHeight;
-	setpointattrib(0, "Height", pt, height);
-}
-
-○凹凸Arcの検証
-・編集を加えた部分にTypeを新しく追加する
- -Lineを動かす
- -Edgeを動かす(内側)
-
-
-○DividePrimの実装(検証)
-
-
+○Add, RemoveなどEdit以外の処理も追加する
+・Offset
+・
 
 ■IDEA
 ●InitParameterを用いた柔軟なPDの設計
