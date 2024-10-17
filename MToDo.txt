@@ -7,7 +7,18 @@ https://houdinifx.jp/blog/houdini-engine-for-maya-%E3%83%87%E3%83%90%E3%83%83%E3
 
 
 [USD]
+○参考リンクの整理
+
+○パイプラインの基礎的な部分を勉強する
+ -ゲーム制作者になるための3Dグラフィックス技術 
+
+○Schemaについて調べる
+ -階層をつける
+
 ○一度サンプルで挙動確認を行って挙動の流れを確認する
+・nvidiaビルドでPixarのサンプルコードを確認する
+ -usdCatで確認する
+
 
 ・USDの基礎
 https://www.youtube.com/watch?v=4kMBwpdwkkw
@@ -18,6 +29,8 @@ https://fereria.github.io/reincarnation_tech/usd/what_is_usd
 https://fereria.github.io/reincarnation_tech/usd/python/tutorials/01
 https://qiita.com/ousttrue/items/b5f34e0f2441ca74467e
 https://qiita.com/takahito-tejima/items/ee0332bfb5c9baed3b09
+https://dev.classmethod.jp/articles/how_to_use_usd_for_developers/
+
 
 ・LOPS&Soraris
 https://note.com/indyzonecorp/n/ndf9d8f82d7e5#93191dbb-a31d-4dbc-851a-584b7882528b
@@ -26,22 +39,13 @@ https://houdinifx.jp/blog/lops%E3%81%AE%E4%BB%95%E7%B5%84%E3%81%BF/
 https://www.sidefx.com/tutorials/usd-authoring-with-solaris/
 https://www.youtube.com/watch?v=SqTHglDeKtU
 
-・Schemaについて調べる
- -階層をつける
- 
-・nvidiaビルドでPixarのサンプルコードを確認する
-・usdCatで確認する
 
-・動画の途中のサンプルを参考にする
-
-・パイプラインの基礎的な部分を勉強する
-
-・USDを使ってみる
 
 [Python]
 ■ツール課題
 ○バインドポーズの調査
-　ーリグについて調査
+ ーリグについて調査
+
 
 [IZON.]
 ■Gimmick_06
@@ -67,15 +71,12 @@ https://www.youtube.com/watch?v=SqTHglDeKtU
  -※模様の形態に問わずDetail部分をModelingできる方法を考える
  -※BaseParameter(Scale, Rotate, Transform)を用いた模様生成を考える
 
-■HardSurfaceModeling
-○モデリングTutorialを調べる
-・ハードサーフェスモデリングについて勉強する
- -各パーツのディテール部分で応用できない場所がないかを調査する
- -プロシージャルにサポートできる行程がないかを調べる
-・検証しやすいパターンを考える
+■PointEditor
+ -Density
+ -螺旋
+ -Cluster
 
-
-■BaseParameter
+■BlockEditor
 ・Directionを設定
 ・Cofficient値
 ・ノード形式でパラメーターを管理しつつ、編集を行っていく
@@ -98,36 +99,28 @@ v@MinRotate
 v@MaxRotate
 ・軸を方向Matrixで回転させて、軸を基準に回転させる
 
-○Extrude
-v@MinExtrudeHeight
-v@MaxExtrudeHeight
+○Offset
+v@MinOffset
+v@MaxOffset
 
-■Voronoi(Density)
-○DensityベースでBaseParamterの検証
+△Cluster
 
-○Group化したPrimsの編集周りを研究
-
-○Clusterの検証に繋げる
-
-●PointPos
-・Density
- -PosCofficientScale
- -DensityCofficientScale
- -DensityCofficientAdjustValue
-
-●Base
-・Rotate
- -Density
-・Scale
- -Density
-・Transform
- -Adjust
-
-●Cluster
-・フラクタル
+△フラクタル
  -ブロック化して処理をパターン化する
  -スケールコントラストに繋げる
 ・Layerを分けてPoint配置(数)とBaseParameterに変化を持たせる
+
+■DetailMaker
+ -Extrude
+ -CopyToPoint
+ -ProceduralModeling
+ -Material
+
+○モデリングTutorialを調べる
+・ハードサーフェスモデリングについて勉強する
+ -各パーツのディテール部分で応用できない場所がないかを調査する
+ -プロシージャルにサポートできる行程がないかを調べる
+・検証しやすいパターンを考える
 
 ●カラー設定
 ・Base, Main, Vividを意識する
@@ -146,7 +139,6 @@ v@MaxExtrudeHeight
 
 ○Add, RemoveなどEdit以外の処理も追加する
 ・Offset
-・
 
 ■IDEA
 ●InitParameterを用いた柔軟なPDの設計
