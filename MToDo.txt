@@ -1,4 +1,13 @@
 [Study]
+●モデリング
+・ハードサーフェスモデリングのロボットモデリングの解説部分からツールの使い方を勉強する
+・MayaGamesから機能の概要を把握する
+ -機能の概要を把握した上でビジュアルリファレンスで深堀を行っていく
+ 
+●リグ
+・MayaGamesから機能の概要を把握する
+ -機能の概要を把握した上でビジュアルリファレンスで深堀を行っていく
+
 ●HoudiniForMaya
 ・Tutorial
 https://support.borndigital.co.jp/hc/ja/articles/900000756146--%E5%88%9D%E5%BF%83%E8%80%85%E5%90%91%E3%81%91Houdini%E3%83%88%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%AB005-Houdini-Engine-for-Maya%E3%81%A7Houdini-%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E3%82%A2%E3%82%BB%E3%83%83%E3%83%88%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B
@@ -6,20 +15,24 @@ https://support.borndigital.co.jp/hc/ja/articles/900000756146--%E5%88%9D%E5%BF%8
 https://houdinifx.jp/blog/houdini-engine-for-maya-%E3%83%87%E3%83%90%E3%83%83%E3%82%B0%E3%81%AE%E4%BB%95%E6%96%B9/
 
 
-[USD]
-○参考リンクの整理
 
+[USD]
 ○パイプラインの基礎的な部分を勉強する
  -ゲーム制作者になるための3Dグラフィックス技術 
 
 ○Schemaについて調べる
- -階層をつける
+・CompositionからSchemaまでのドキュメントを確認する
+　ーメモにまとめる
+https://fereria.github.io/reincarnation_tech/usd/schema
 
-○一度サンプルで挙動確認を行って挙動の流れを確認する
-・nvidiaビルドでPixarのサンプルコードを確認する
- -usdCatで確認する
+○セットアップ
+https://fereria.github.io/reincarnation_tech/usd/start_usd
 
+○サンプルの確認
+・CompositionからSchemaまでのドキュメントのサンプルコードを確認する
+https://fereria.github.io/reincarnation_tech/usd/schema
 
+●資料
 ・USDの基礎
 https://www.youtube.com/watch?v=4kMBwpdwkkw
 https://www.slideshare.net/slideshow/usd-79288174/79288174#2
@@ -30,7 +43,6 @@ https://fereria.github.io/reincarnation_tech/usd/python/tutorials/01
 https://qiita.com/ousttrue/items/b5f34e0f2441ca74467e
 https://qiita.com/takahito-tejima/items/ee0332bfb5c9baed3b09
 https://dev.classmethod.jp/articles/how_to_use_usd_for_developers/
-
 
 ・LOPS&Soraris
 https://note.com/indyzonecorp/n/ndf9d8f82d7e5#93191dbb-a31d-4dbc-851a-584b7882528b
@@ -44,32 +56,47 @@ https://www.youtube.com/watch?v=SqTHglDeKtU
 [Python]
 ■ツール課題
 ○バインドポーズの調査
- ーリグについて調査
+　ーリグ周りのツールのサンプルを調査
+
 
 
 [IZON.]
 ■Gimmick_06
 ○ChibitoのAIを復旧する
+　-AIControllerからCommonを呼び出す
 ○ExcuteEverytimeを正常に動くよう修正する
+
 ○Creation周りを修正する
+ -CreationSourceを継承する
 
 ■Gimmick_04
-○防衛フェーズの実装方法を調査
-
-○BP_Gimmick_tw04の実装
-・60秒間起動フェーズを挟む
-・BP_SpawnをSpawn
-・エレベーターの起動
+○待機周りの処理を実装
+　ーソースの整理
 
 ■Gimmick_11
 ○中牟田さんに、相談する
  -サンプルを実装して、それを見せて相談する
 
 
+
 [ProceduralModeling]
 ※模様を生成することを意識する
  -※模様の形態に問わずDetail部分をModelingできる方法を考える
  -※BaseParameter(Scale, Rotate, Transform)を用いた模様生成を考える
+
+■BlockEditor(Base)
+○EdgeLine
+・ConvertLineを行いPolyLineを取得する
+
+○EdgePoint
+・PrimPtsで取得する
+
+○material
+
+△CenterPoint
+・PrimのPosを取得する
+
+△Line
 
 ■PointEditor
  -Density
@@ -80,28 +107,6 @@ https://www.youtube.com/watch?v=SqTHglDeKtU
 ・Directionを設定
 ・Cofficient値
 ・ノード形式でパラメーターを管理しつつ、編集を行っていく
- -Extrude
- -Offset(Inside, OutSide)
-
-○Scale
-v@MinScale
-v@MaxScale
-・PrimのOriginPosとPrimPtsPosをベクトルにスケーリングする
- -Directionを係数にする
-
-○Transform
-v@MinTrans
-v@MaxTrans
-・Transを方向Matrixで回転させて移動する
-
-○Rotate
-v@MinRotate
-v@MaxRotate
-・軸を方向Matrixで回転させて、軸を基準に回転させる
-
-○Offset
-v@MinOffset
-v@MaxOffset
 
 △Cluster
 
