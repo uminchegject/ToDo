@@ -1,3 +1,10 @@
+●Base
+・Height
+・Type
+・Change
+・Add
+
+
 ●TypeNumの管理
 int toggleRunning = 0;
 int seed = detail(0, "Seed");
