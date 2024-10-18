@@ -22,7 +22,7 @@ https://houdinifx.jp/blog/houdini-engine-for-maya-%E3%83%87%E3%83%90%E3%83%83%E3
 
 ○Schemaについて調べる
 ・CompositionからSchemaまでのドキュメントを確認する
-　ーメモにまとめる
+ ーメモにまとめる
 https://fereria.github.io/reincarnation_tech/usd/schema
 
 ○セットアップ
@@ -56,14 +56,13 @@ https://www.youtube.com/watch?v=SqTHglDeKtU
 [Python]
 ■ツール課題
 ○バインドポーズの調査
-　ーリグ周りのツールのサンプルを調査
-
+ ーリグ周りのツールのサンプルを調査
 
 
 [IZON.]
 ■Gimmick_06
 ○ChibitoのAIを復旧する
-　-AIControllerからCommonを呼び出す
+ -AIControllerからCommonを呼び出す
 ○ExcuteEverytimeを正常に動くよう修正する
 
 ○Creation周りを修正する
@@ -85,6 +84,9 @@ https://www.youtube.com/watch?v=SqTHglDeKtU
  -※BaseParameter(Scale, Rotate, Transform)を用いた模様生成を考える
 
 ■BlockEditor(Base)
+○BaseParameterを行列で管理するように修正
+○パラメーター管理を実装
+
 ○EdgeLine
 ・ConvertLineを行いPolyLineを取得する
 
