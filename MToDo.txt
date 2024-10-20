@@ -2,20 +2,15 @@
 ○Typeの実装(整理)
 ○Editの実装(検証)
 
-●Create(Child)
- -Offset
- -Line
+●Create
+
+●Type
 
 ●Edit
  -MakeEdge
  -Scale
  -DividePrim
  -Height
-
-●Type
- -Inheritance
- -Change
- -Merge
 
 ●BlockToDetail
  
@@ -31,17 +26,102 @@
  -汎用工程(繰り返し行う行程)
  -パラメーターで簡単に調整できそうな工程
  
+●Create
+
+●Type
+
 ●Edit
  -Scale
  -Transform
  -Rotate
- 
-●Create
- -Prim
- 
-●Type
+
+●BlockToDetail
+
+
+
+■Type
  -Inheritance
  -Change
  -Merge
 
-●BlockToDetail
+//タイプに含まれているか
+int typeNumList[] = i[]@TypeNumList;
+
+//Typeの照合
+for(int i = 0; i < len(typeNumList); i++)
+{
+    int typeNum = chi("../ParamInput/typeNum" + itoa(i@LoopCount)); 
+    if(typeNumList[i] == typeNum)
+    {
+        removeindex(typeNumList, i);
+        toggleRunning = 1;
+        break;
+    }
+}
+
+//typeを追加
+string strAddTypeParam = chs("../ParamInput/addTypeNumList" + itoa(i@LoopCount));
+string strAddTypeParamBlockList[] = re_split(",", strAddTypeParam);
+foreach(string strAddTypeParamBlock; strAddTypeParamBlockList)
+{
+	string strAddTypeParamList[] = re_split("_", strAddTypeParamBlock);
+	int addTypeNumList[];
+	foreach(string str; strAddTypeParamList)
+	{
+		append(addTypeNumList, atoi(str));
+	}
+	int type = addTypeNumList[int(floor(rand(v@P + seed) * len(addTypeNumList)))];
+	append(typeNumList, type);
+}
+
+
+■Create(Child)
+●Point
+int toggleCreate
+int typeNumList[] = 
+vector pos = 
+vector scale = 
+vector4 mRotate = 
+
+if(toggleCreate == 1)
+{
+	int pt = addpoint(0, v@P);
+	setpointattrib(0, "scale", pt, scale);
+	setpointattrib(0, "orient", pt, mRotate);
+	setpointattrib(0, "TypeNumList", pt, typeNumList);
+	setpointattrib(0, "LoopCount", pt, i@LoopCount + 1);
+}
+else
+{
+	v@P = pos;
+	v@scale = scale;
+	v@orient = orient;
+	i[]@TypeNumList = typeNumList;
+}
+
+●Prim
+int toggleCreate
+int typeNumList[] = 
+vector4 baseMatrix = 
+if(toggleCreate == 1)
+{
+	int prim = addprim(0, "polyline");	
+	setprimattrib(0, "BaseMatrix", prim, baseMatrix);
+	setpointattrib(0, "TypeNumList", prim, typeNumList);
+	
+	int primPts[] = primpoints(0, @primnum);
+	foreach(int primPt; primPts)
+	{
+		vector ptPos = point(0, "P", primPt);
+		int pt = addpoint(0. ptPos);
+		addvertex(0, pt, prim);		
+	}
+}
+else
+{
+	i[]@TypeNumList = typeNumList;
+	v@orient = orient;
+}
+
+
+■SelectEditParts
