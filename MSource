@@ -1,17 +1,56 @@
-●Base
-・Height
+[MD]
+■Box
+○EditBaseの実装
+・全体的なフローの修正
+ -Type
+ -Create
+・Baseの実装
+ -Transform
+ -Scale
+ -Rotate
+
+△Greebleの再実装
+・FrontDirData
+
+○検証
+
+■LIne
+○DividePrimの実装
+・
+
+○EditBaseの実装
+・Scale
+・Transform
+
+○全体的なフローを実装
 ・Type
-・Change
-・Add
+・BaseMatrixの適応
+
+○Editの検証
+
+ 
+[PD]
+○モデリング工程の勉強
+
+※どんな幾何学でもBlockとして管理できるようする
+ -Point
+ -Line
+※モデリング工程内からパラメーター化できそうな部分を調べる
+ -Blockベースで対応できる処理
+ -汎用工程(繰り返し行う行程)
+ -パラメーターで簡単に調整できそうな工程
 
 
-●TypeNumの管理
-int toggleRunning = 0;
-int seed = detail(0, "Seed");
+[Source]
+■Type
+ -Inheritance
+ -Change
+ -Merge
 
 //タイプに含まれているか
 int typeNumList[] = i[]@TypeNumList;
 
+//Typeの照合
 for(int i = 0; i < len(typeNumList); i++)
 {
     int typeNum = chi("../ParamInput/typeNum" + itoa(i@LoopCount)); 
@@ -23,161 +62,105 @@ for(int i = 0; i < len(typeNumList); i++)
     }
 }
 
-if(chi("../ParamInput/base_toggleBase" + itoa(i@LoopCount)) != 1)
-{ 
-    removepoint(0, @ptnum); 
-    toggleRunning = 0;
-}
-
-if(toggleRunning == 1)
+//typeを追加
+string strAddTypeParam = chs("../ParamInput/addTypeNumList" + itoa(i@LoopCount));
+string strAddTypeParamBlockList[] = re_split(",", strAddTypeParam);
+foreach(string strAddTypeParamBlock; strAddTypeParamBlockList)
 {
-
-    //typeを追加
-    string strAddTypeParam = chs("../ParamInput/addTypeNumList" + itoa(i@LoopCount));
-    string strAddTypeParamBlockList[] = re_split(",", strAddTypeParam);
-    foreach(string strAddTypeParamBlock; strAddTypeParamBlockList)
-    {
-        string strAddTypeParamList[] = re_split("_", strAddTypeParamBlock);
-        int addTypeNumList[];
-        foreach(string str; strAddTypeParamList)
-        {
-            append(addTypeNumList, atoi(str));
-        }
-        int type = addTypeNumList[int(floor(rand(@ptnum + seed) * len(addTypeNumList)))];
-        append(typeNumList, type);
-    }
-    i[]@TypeNumList = typeNumList;  
-}
-
-●Frontの管理
-・Sort(ByVertexOrder)で時計回りに設定する
-・次のPtIndexから引いたベクトルを90度回転させた方向を内側とする
-
-
-●Y軸への複製ノードの実装
-//Init
-float totalHeight = @Height;
-float baseHeight = v@P.y;
-float totalHeightRatio = 0;
-for(int i = 0 ; i < i@numprim; ++i)
-{
-	totalHeightRatio += prim(0, "HeightRatio", i);
-}
-float unitHeight = totalHeight / totalHeightRatio;
-
-//Slide
-addedHeightRatio = 0;
-for(int i = 0 ; i < i@numprim - 1; ++i)
-{
-	float heightRatio = prim(0, "HeightRatio", i);
-	float heightPos = (addedHeightRatio / totalHeightRatio) * totalHeight;
-	addedHeightRatio += heightRatio;	
-	
-	//Slide
-	int primpts[] = primpoints(0, i);
-	foreach(pt ; primpts)
+	string strAddTypeParamList[] = re_split("_", strAddTypeParamBlock);
+	int addTypeNumList[];
+	foreach(string str; strAddTypeParamList)
 	{
-
-		vector ptPos = point(0, "P", pt);
-		ptPos.y = baseHeight + heightPos;
-		setpointattrib(0, "P", pt, ptPos);
-		
-		float height = heightRatio * unitHeight;
-		setpointattrib(0, "Height", pt, height);		
-	}	
-}
-
-//AddPrim
-int primpts[] = primpoints(0, i@numprim);
-float heightRatio = prim(0, "HeightRatio", i@numprim);
-int prim = addprim(0, "polyline");
-foreach(pt ; primpts)
-{
-	vector ptPos = point(0, "P", pt);
-	ptPos.y = baseHeight + unitHeight * addedHeightRatio;
-	pt = addpoint(0, ptPos);
-	addvertex(0, prim, pt);
-
-	float height = heightRatio * unitHeight;
-	setpointattrib(0, "Height", pt, height);
-}
-
-
-○PrimPtsごとにランダムに処理を回す
-int primPts[] = primpoints(0, @primnum);
-int primPtsNum = len(primPts);
-for(int i = 0; i < primPtsNum; ++i)
-{
-
-	float randomNum = rand(v@P);
-	//EdgeMove
-	if(randomNum < 0.2)
-	{
-		int pt = primPts[i];
-		int lastPt = primPts[(i - 1 + primPtsNum) % primPtsNum];
-		int nextPt = primPts[(i + 1) % primPtsNum];	
-
-		vector ptPos = point(0, "P", pt);
-		vector nextPtPos = point(0, "P", nextPt);
-		vector lastPtpos = point(0, "P", lastPt);
-
-		vector nextPtDir = normalize(nextPtPos - ptPos);
-		vector lastPtDir = normalize(lastPtpos - ptPos);
-
-		vector nextPtRange = len(nextPtPos - ptPos);
-		vector lastPtRange = len(lastPtpos - ptPos);
-
-		//EditVertex
-		
-		//DividePrim
-
+		append(addTypeNumList, atoi(str));
 	}
-	//LineMove
-	else if(randomNum < 0.4)
-	{
-		int pt1 = primPts[i];
-		int lastPt = primPts[(i - 1 + primPtsNum) % primPtsNum]; 
-		int pt2 = primPts[(i + 1) % primPtsNum];
-		int nextPt = primPts[(i + 2) % primPtsNum];
-		
-		vector pt1Pos = point(0, "P", pt1);
-		vector pt2Pos = point(0, "P", pt2);
-		vector nextPtPos = point(0, "P", nextPt);
-		vector lastPtpos = point(0, "P", lastPt);
-
-		vector nextPtDir = normalize(nextPtPos - pt2Pos);
-		vector lastPtDir = normalize(lastPtpos - pt1Pos);
-
-		vector nextPtRange = len(nextPtPos - pt2Pos);
-		vector lastPtRange = len(lastPtpos - pt1Pos);		
-
-		//EditLine
-		
-		
-		//DividePrim
-		setpointattrib(0, "ToggleChangeType", pt1, 1);
-
-	}	
+	int type = addTypeNumList[int(floor(rand(v@P + seed) * len(addTypeNumList)))];
+	append(typeNumList, type);
 }
 
-//ToggleChangeTypeを参照してPrimを分割する
-int primPts[] = primpoints(0, @primnum);
-int primPtsNum = len(primPts);
-int makingPrim = addprim(0, "polyline");
-for(int i = 0; i < primPtsNum; ++i)
+
+■Create(Child)
+●Point
+int toggleCreate
+int typeNumList[] = 
+vector pos = 
+vector scale = 
+vector4 mRotate = 
+
+if(toggleCreate == 1)
 {
-	int pt = primPts[i];
-	addvertex(makingPrim, pt);
+	int pt = addpoint(0, v@P);
+	setpointattrib(0, "scale", pt, scale);
+	setpointattrib(0, "orient", pt, mRotate);
+	setpointattrib(0, "TypeNumList", pt, typeNumList);
+	setpointattrib(0, "LoopCount", pt, i@LoopCount + 1);
+}
+else
+{
+	v@P = pos;
+	v@scale = scale;
+	v@orient = orient;
+	i[]@TypeNumList = typeNumList;
+}
+
+●Prim
+int toggleCreate
+int typeNumList[] = 
+vector4 baseMatrix = 
+if(toggleCreate == 1)
+{
+	int prim = addprim(0, "polyline");	
+	setprimattrib(0, "BaseMatrix", prim, baseMatrix);
+	setpointattrib(0, "TypeNumList", prim, typeNumList);
 	
-	if(point(0, "ToggleChangeType", pt) == 1) 
+	int primPts[] = primpoints(0, @primnum);
+	foreach(int primPt; primPts)
 	{
-		pt = primPts[(i + 1) % len(primPts)];
-		addvertex(makingPrim, pt);
-		makingPrim = addprim(0, "polyline");
+		vector ptPos = point(0, "P", primPt);
+		int pt = addpoint(0. ptPos);
+		addvertex(0, pt, prim);		
 	}
 }
+else
+{
+	i[]@TypeNumList = typeNumList;
+	v@orient = orient;
+}
 
 
-○Add, RemoveなどEdit以外の処理も追加する
-・Offset
-・ZIGZAG
+■Edit
+●Box
+・BaseParameter
+ -Scale
+ -Transform
+ -Rotate
+
+・Greeble
+ -FrontDirData
+
+●Line
+※PrimPointを編集する
+・BaseParameter
+ -Scale
+ -Transform
+
+・MakeEdge
+・DividePrim
+・Height
+ 
+●Voronoi
+・BaseParameter
+ -Scale
+ -Transform
+ -Rotate
+
+
+■BlockToDetail
+●Box
+・MakeLine
+
+●Line
+・MakePointToCopy
+
+●Voronoi
+・Modeling
+・MakePointToCopy
