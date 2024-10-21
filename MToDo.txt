@@ -1,23 +1,7 @@
-[MD]
-○Typeの実装(整理)
-○Editの実装(検証)
-
-●Create
-
-●Type
-
-●Edit
- -MakeEdge
- -Scale
- -DividePrim
- -Height
-
-●BlockToDetail
- 
- 
-[PD]
-○モデリング工程の勉強
-
+[ProceduralModeling]
+※模様を生成することを意識する
+ -模様の形態に問わずDetail部分をModelingできる方法を考える
+ -BaseParameter(Scale, Rotate, Transform)を用いた模様生成を考える
 ※どんな幾何学でもBlockとして管理できるようする
  -Point
  -Line
@@ -25,103 +9,101 @@
  -Blockベースで対応できる処理
  -汎用工程(繰り返し行う行程)
  -パラメーターで簡単に調整できそうな工程
+
+■BlockEditor(Base)
+○BaseParameterを行列で管理するように修正
+○パラメーター管理を実装
+
+○EdgeLine
+・ConvertLineを行いPolyLineを取得する
+
+○EdgePoint
+・PrimPtsで取得する
+
+○material
+
+△CenterPoint
+・PrimのPosを取得する
+
+△Line
+
+■PointEditor
+ -Density
+ -螺旋
+ -Cluster
+
+■BlockEditor
+・Directionを設定
+・Cofficient値
+・ノード形式でパラメーターを管理しつつ、編集を行っていく
+
+△Cluster
+
+△フラクタル
+ -ブロック化して処理をパターン化する
+ -スケールコントラストに繋げる
+・Layerを分けてPoint配置(数)とBaseParameterに変化を持たせる
+
+■DetailMaker
+ -Extrude
+ -CopyToPoint
+ -ProceduralModeling
+ -Material
+
+○モデリングTutorialを調べる
+・ハードサーフェスモデリングについて勉強する
+ -各パーツのディテール部分で応用できない場所がないかを調査する
+ -プロシージャルにサポートできる行程がないかを調べる
+・検証しやすいパターンを考える
+
+●カラー設定
+・Base, Main, Vividを意識する
+ -グレースケール
  
-●Create
+▲境目のObj化
 
-●Type
 
-●Edit
- -Scale
+
+[ModularModelieng]
+※明確なアセットセットを目標に都度新規実装を加えていく
+
+■Box
+○EditBaseの実装
+・全体的なフローの修正
+ -Type
+ -Create
+・Baseの実装
  -Transform
+ -Scale
  -Rotate
 
-●BlockToDetail
+△Greebleの再実装
+・FrontDirData
 
+○検証
 
+■LIne
+○DividePrimの実装
+・
 
-■Type
- -Inheritance
- -Change
- -Merge
+○EditBaseの実装
+・Scale
+・Transform
 
-//タイプに含まれているか
-int typeNumList[] = i[]@TypeNumList;
+○全体的なフローを実装
+・Type
+・BaseMatrixの適応
 
-//Typeの照合
-for(int i = 0; i < len(typeNumList); i++)
-{
-    int typeNum = chi("../ParamInput/typeNum" + itoa(i@LoopCount)); 
-    if(typeNumList[i] == typeNum)
-    {
-        removeindex(typeNumList, i);
-        toggleRunning = 1;
-        break;
-    }
-}
+○Editの検証
 
-//typeを追加
-string strAddTypeParam = chs("../ParamInput/addTypeNumList" + itoa(i@LoopCount));
-string strAddTypeParamBlockList[] = re_split(",", strAddTypeParam);
-foreach(string strAddTypeParamBlock; strAddTypeParamBlockList)
-{
-	string strAddTypeParamList[] = re_split("_", strAddTypeParamBlock);
-	int addTypeNumList[];
-	foreach(string str; strAddTypeParamList)
-	{
-		append(addTypeNumList, atoi(str));
-	}
-	int type = addTypeNumList[int(floor(rand(v@P + seed) * len(addTypeNumList)))];
-	append(typeNumList, type);
-}
+■IDEA
+●InitParameterを用いた柔軟なPDの設計
+ -Scale
+ -Seed
 
-
-■Create(Child)
-●Point
-int toggleCreate
-int typeNumList[] = 
-vector pos = 
-vector scale = 
-vector4 mRotate = 
-
-if(toggleCreate == 1)
-{
-	int pt = addpoint(0, v@P);
-	setpointattrib(0, "scale", pt, scale);
-	setpointattrib(0, "orient", pt, mRotate);
-	setpointattrib(0, "TypeNumList", pt, typeNumList);
-	setpointattrib(0, "LoopCount", pt, i@LoopCount + 1);
-}
-else
-{
-	v@P = pos;
-	v@scale = scale;
-	v@orient = orient;
-	i[]@TypeNumList = typeNumList;
-}
-
-●Prim
-int toggleCreate
-int typeNumList[] = 
-vector4 baseMatrix = 
-if(toggleCreate == 1)
-{
-	int prim = addprim(0, "polyline");	
-	setprimattrib(0, "BaseMatrix", prim, baseMatrix);
-	setpointattrib(0, "TypeNumList", prim, typeNumList);
-	
-	int primPts[] = primpoints(0, @primnum);
-	foreach(int primPt; primPts)
-	{
-		vector ptPos = point(0, "P", primPt);
-		int pt = addpoint(0. ptPos);
-		addvertex(0, pt, prim);		
-	}
-}
-else
-{
-	i[]@TypeNumList = typeNumList;
-	v@orient = orient;
-}
-
-
-■SelectEditParts
+●Noise周りの設計
+・NoiseParameterの追加
+ -AttributeにNoiseを持たせて
+ 
+ -Boxサイズに偏りを持たせる
+ -Typeに偏りを持たせる
