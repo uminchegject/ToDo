@@ -73,8 +73,8 @@ https://www.youtube.com/watch?v=SqTHglDeKtU
  
 ●仕様
 ・髪、頭、体それぞれのバインドポーズを一つのボタンで行えるように実装する
-　ーUIは実装せず直接処理が走るように実装する
-　ーそれぞれのリグ名を検索して処理を走らせるように実装する
+ ーUIは実装せず直接処理が走るように実装する
+ ーそれぞれのリグ名を検索して処理を走らせるように実装する
 ・複数のバインドポーズを一つにまとめる処理を実装する
 http://blog.livedoor.jp/morisoba123/archives/52213335.html
  -バインドポーズを上書きする
@@ -91,7 +91,7 @@ http://blog.livedoor.jp/morisoba123/archives/52213335.html
 
 ■Gimmick_04
 ○待機周りの処理を実装
-　ーソースの整理
+ ーソースの整理
 
 ■Gimmick_11
 ○所有周りの処理を調査
@@ -100,6 +100,7 @@ http://blog.livedoor.jp/morisoba123/archives/52213335.html
 
 ○中牟田さんに、相談する
  -サンプルを実装して、それを見せて相談する
+
 
 
 [Modeling]
@@ -126,13 +127,6 @@ https://support.borndigital.co.jp/hc/ja/articles/900000756146--%E5%88%9D%E5%BF%8
 
 ■BlockEditor(Base)
 ○BaseParameterを行列で管理するように修正
-○パラメーター管理を実装
-
-○EdgeLine
-・ConvertLineを行いPolyLineを取得する
-
-○EdgePoint
-・PrimPtsで取得する
 
 ○material
 
