@@ -103,16 +103,6 @@ http://blog.livedoor.jp/morisoba123/archives/52213335.html
 
 
 
-[Modeling]
-○CyberPunkのインストール
-
-○基本操作の確認
-
-○HoudiniForMayaの確認
-https://support.borndigital.co.jp/hc/ja/articles/900000756146--%E5%88%9D%E5%BF%83%E8%80%85%E5%90%91%E3%81%91Houdini%E3%83%88%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%AB005-Houdini-Engine-for-Maya%E3%81%A7Houdini-%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E3%82%A2%E3%82%BB%E3%83%83%E3%83%88%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B
-
-
-
 [ProceduralModeling]
 ※模様を生成することを意識する
  -模様の形態に問わずDetail部分をModelingできる方法を考える
@@ -125,50 +115,43 @@ https://support.borndigital.co.jp/hc/ja/articles/900000756146--%E5%88%9D%E5%BF%8
  -汎用工程(繰り返し行う行程)
  -パラメーターで簡単に調整できそうな工程
 
-■BlockEditor(Base)
-○BaseParameterを行列で管理するように修正
+○基本操作の確認
 
-○material
+○HoudiniForMayaの確認
+https://support.borndigital.co.jp/hc/ja/articles/900000756146--%E5%88%9D%E5%BF%83%E8%80%85%E5%90%91%E3%81%91Houdini%E3%83%88%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%AB005-Houdini-Engine-for-Maya%E3%81%A7Houdini-%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E3%82%A2%E3%82%BB%E3%83%83%E3%83%88%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B
 
-△CenterPoint
-・PrimのPosを取得する
+○BlockEditor(Voronoi)を実装
+・BaseParameterの実装
+・BaseParameterを行列で管理するように修正
 
-△Line
+○内部をMayaで制作
 
-■PointEditor
+○検証
+
+
+■IDEA
+●PointEditor
  -Density
  -螺旋
  -Cluster
 
-■BlockEditor
+●BlockEditor
 ・Directionを設定
 ・Cofficient値
-・ノード形式でパラメーターを管理しつつ、編集を行っていく
-
-△Cluster
-
-△フラクタル
+・△Cluster
+・△フラクタル
  -ブロック化して処理をパターン化する
  -スケールコントラストに繋げる
-・Layerを分けてPoint配置(数)とBaseParameterに変化を持たせる
 
-■DetailMaker
+●DetailMaker
  -Extrude
  -CopyToPoint
  -ProceduralModeling
  -Material
-
-○モデリングTutorialを調べる
-・ハードサーフェスモデリングについて勉強する
- -各パーツのディテール部分で応用できない場所がないかを調査する
- -プロシージャルにサポートできる行程がないかを調べる
-・検証しやすいパターンを考える
-
-●カラー設定
-・Base, Main, Vividを意識する
+・カラー設定
+ -Base, Main, Vividを意識する
  -グレースケール
- 
-▲境目のObj化
+・境目のObj化
 
 
 
