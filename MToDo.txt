@@ -102,6 +102,15 @@ http://blog.livedoor.jp/morisoba123/archives/52213335.html
  -サンプルを実装して、それを見せて相談する
 
 
+[Modeling]
+○CyberPunkのインストール
+
+○基本操作の確認
+
+○HoudiniForMayaの確認
+https://support.borndigital.co.jp/hc/ja/articles/900000756146--%E5%88%9D%E5%BF%83%E8%80%85%E5%90%91%E3%81%91Houdini%E3%83%88%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%AB005-Houdini-Engine-for-Maya%E3%81%A7Houdini-%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E3%82%A2%E3%82%BB%E3%83%83%E3%83%88%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B
+
+
 
 [ProceduralModeling]
 ※模様を生成することを意識する
