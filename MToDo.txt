@@ -95,9 +95,10 @@ http://blog.livedoor.jp/morisoba123/archives/52213335.html
 
 ■Gimmick_11
 ○所有周りの処理を調査
- -EventAttackROn,EventAttackLOn
- -EventCarryOn, EventCarryOff
-
+ -Carryableの調査
+  -SynchroPillar周りを調査
+  -処理を検証
+ 
 ○中牟田さんに、相談する
  -サンプルを実装して、それを見せて相談する
 
