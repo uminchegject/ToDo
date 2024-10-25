@@ -38,35 +38,46 @@ https://candrgroup-coyotevfx.atlassian.net/wiki/spaces/TEC/pages/344555807
 
 [Python]
 ■ツール課題
-○調査
-・必要な処理をまとめる
+○BindPoseを呼び出す処理を実装
 
-○実装メモの作成
+○Tポーズに切り替える処理を実装
+・COG以下階層のジョイントを全て取得する
+・ジョイントのAttrib値を全て0に設定する
 
 ●仕様
-
+・bindposeとTポーズを切り替えるトグルボタンがほしい
+ -UI化しなくても、シェルフに登録する用のコマンドでも可
+ -bindposeは通常のMayaの機能でできるモノ
+ -Tポーズの定義は、「COG」以下階層のジョイントの回転値がすべてゼロな事。
 
 [IZON.]
-■Gimmick_06
-○ChibitoのAIを復旧する
- -AIControllerからCommonを呼び出す
-○ExcuteEverytimeを正常に動くよう修正する
-
-○Creation周りを修正する
- -CreationSourceを継承する
-
 ■Gimmick_04
-○待機周りの処理を実装
- ーソースの整理
+○追加実装
+
+・この間虚人は智人を抱えられない
+ -Carryを制限する
+・60秒経過後は敵を全滅させることでエレベーターが上に移動可能となりイベントクリア
+ -エネミーを管理する(DestoryActorするごとにエネミーの数を確認し、0になったらエレベーターを動かす)
+ 　-EndPlayのイベントにエネミーの残数を確認する処理をバインドする
+ -エネミーが全部倒されたらIsCreationをTrueする
  
-○追加実装箇所を確認
+■Gimmick_04
+○降りて、エレベーターを出現させる処理を呼び出さないように修正する
+
+○抱えられない処理を挟む
+
+○60秒経過後は敵を全滅させることでエレベーターが上に移動するように修正
+・エネミーを管理する(DestoryActorするごとにエネミーの数を確認し、0になったらエレベーターを動かす)
+ -BP_EnemyManagerを取得してGetEnemysで敵の数を確認する
+ 　-EndPlayのイベントにエネミーの残数を確認する処理をバインドする
+・エネミーが全部倒されたらIsCreationをTrueする
 
 ■Gimmick_11
-○所有周りの処理を調査
-・降ろせる方法を調査
- -CancelCarryGimmick
+○降ろす処理を実装する
+・BP_Kyojinから直接CancelCarryGimmickを呼び出す
 
-○一連の処理を実装
+○土台クラスの実装
+・土台に球を配置する処理を実装する
 
 [ProceduralModeling]
 ※模様を生成することを意識する
@@ -97,10 +108,15 @@ https://candrgroup-coyotevfx.atlassian.net/wiki/spaces/TEC/pages/344555807
  -Density
  -螺旋
  -Cluster
+・Edit,Create,Typeを設計する
 
 ●BlockEditor
-・Directionを設定
-・Cofficient値
+・Baseparameter
+ -Directionを設定
+ -Cofficient値
+  -Scale
+  -Transform
+  -Rotate
 ・△Cluster
 ・△フラクタル
  -ブロック化して処理をパターン化する
