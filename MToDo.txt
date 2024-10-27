@@ -1,179 +1,44 @@
-[Study]
-●リグ
-・MayaGamesから機能の概要を把握する
- -機能の概要を把握した上でビジュアルリファレンスで深堀を行っていく
-・ウェイトをつける(スキニング)
-・モデリング工程
- -モデリング
- -骨入れ
- -バインド(スキニング)
-
-
-[USD]
-○サンプルの確認
-・ドキュメントのサンプルコードと比較する
-・メモをまとめる
-
-●資料
-・USDの基礎
-https://www.youtube.com/watch?v=4kMBwpdwkkw
-https://www.slideshare.net/slideshow/usd-79288174/79288174#2
-https://fereria.github.io/reincarnation_tech/usd/what_is_usd
-
-・USDの運用
-https://fereria.github.io/reincarnation_tech/usd/python/tutorials/01
-https://qiita.com/ousttrue/items/b5f34e0f2441ca74467e
-https://qiita.com/takahito-tejima/items/ee0332bfb5c9baed3b09
-https://dev.classmethod.jp/articles/how_to_use_usd_for_developers/
-
-・LOPS&Soraris
-https://note.com/indyzonecorp/n/ndf9d8f82d7e5#93191dbb-a31d-4dbc-851a-584b7882528b
-https://houdinifx.jp/blog/lops%E3%81%AE%E4%BB%95%E7%B5%84%E3%81%BF/
-
-https://www.sidefx.com/tutorials/usd-authoring-with-solaris/
-https://www.youtube.com/watch?v=SqTHglDeKtU
-
-・Plugin
-https://candrgroup-coyotevfx.atlassian.net/wiki/spaces/TEC/pages/344555807
-
-[Python]
-■ツール課題
-○BindPoseを呼び出す処理を実装
-
-○Tポーズに切り替える処理を実装
-・COG以下階層のジョイントを全て取得する
-・ジョイントのAttrib値を全て0に設定する
-
-●仕様
-・bindposeとTポーズを切り替えるトグルボタンがほしい
- -UI化しなくても、シェルフに登録する用のコマンドでも可
- -bindposeは通常のMayaの機能でできるモノ
- -Tポーズの定義は、「COG」以下階層のジョイントの回転値がすべてゼロな事。
-
-[IZON.]
-■Gimmick_04
-○追加実装
-
-・この間虚人は智人を抱えられない
- -Carryを制限する
-・60秒経過後は敵を全滅させることでエレベーターが上に移動可能となりイベントクリア
- -エネミーを管理する(DestoryActorするごとにエネミーの数を確認し、0になったらエレベーターを動かす)
- 　-EndPlayのイベントにエネミーの残数を確認する処理をバインドする
- -エネミーが全部倒されたらIsCreationをTrueする
- 
-■Gimmick_04
-○降りて、エレベーターを出現させる処理を呼び出さないように修正する
-
-○抱えられない処理を挟む
-
-○60秒経過後は敵を全滅させることでエレベーターが上に移動するように修正
-・エネミーを管理する(DestoryActorするごとにエネミーの数を確認し、0になったらエレベーターを動かす)
- -BP_EnemyManagerを取得してGetEnemysで敵の数を確認する
- 　-EndPlayのイベントにエネミーの残数を確認する処理をバインドする
-・エネミーが全部倒されたらIsCreationをTrueする
-
-■Gimmick_11
-○降ろす処理を実装する
-・BP_Kyojinから直接CancelCarryGimmickを呼び出す
-
-○土台クラスの実装
-・土台に球を配置する処理を実装する
-
-[ProceduralModeling]
-※模様を生成することを意識する
- -模様の形態に問わずDetail部分をModelingできる方法を考える
- -BaseParameter(Scale, Rotate, Transform)を用いた模様生成を考える
-※どんな幾何学でもBlockとして管理できるようする
- -Point
- -Line
-※モデリング工程内からパラメーター化できそうな部分を調べる
- -Blockベースで対応できる処理
- -汎用工程(繰り返し行う行程)
- -パラメーターで簡単に調整できそうな工程
-
-○VoronoiGeneratorを実装
-・BaseParameterの実装
-・BaseParameterを行列で管理するように修正
-
-○HoudiniForMayaで確認
-
-○Detail部分の作成
-・※VoronoiGeneratorを応用できる建築物を設計する
-・Modeling
-・UV
-・Material
-
-■VoronoiGenerator
-●PointEditor
- -Density
- -螺旋
- -Cluster
-・Edit,Create,Typeを設計する
-
-●BlockEditor
-・Baseparameter
- -Directionを設定
- -Cofficient値
-  -Scale
-  -Transform
-  -Rotate
-・△Cluster
-・△フラクタル
- -ブロック化して処理をパターン化する
- -スケールコントラストに繋げる
-
-●DetailMaker
- -Extrude
- -CopyToPoint
- -ProceduralModeling
- -Material
-・カラー設定
- -Base, Main, Vividを意識する
- -グレースケール
-・境目のObj化
-
-
-
-[ModularModelieng]
-※明確なアセットセットを目標に都度新規実装を加えていく
+※深追いしない
 
 ■Box
-○EditBaseの実装
-・全体的なフローの修正
- -Type
- -Create
-・Baseの実装
- -Transform
- -Scale
- -Rotate
+●Init
+・Base
+ -Front
+ -Back
+ -Side
+ -Edge
+・蓋
+ -Top
+ -Front
+ -Back
+ -Side
+ -Edge
+・下部
+ -Front
+ -Back
+ -Side
+ -Edge
+・境界
+ -Front
+ -Back
+ -Side
+ -
 
-△Greebleの再実装
-・FrontDirData
 
-○検証
-
-■LIne
-○DividePrimの実装
-・Editした部分をDividePrimする
-
-○EditBaseの実装
+●Edit
 ・Scale
 ・Transform
+・Rotate
 
-○全体的なフローを実装
-・Type
-・BaseMatrixの適応
 
-○Editの検証
+●Create
+・EditToggle
 
-■IDEA
-●InitParameterを用いた柔軟なPDの設計
- -Scale
- -Seed
+・Miller
+ -Vertex
+ -Horizontal
 
-●Noise周りの設計
-・NoiseParameterの追加
- -AttributeにNoiseを持たせて
- 
- -Boxサイズに偏りを持たせる
- -Typeに偏りを持たせる
+・Greeble
+・Pattern
+
+●Type
