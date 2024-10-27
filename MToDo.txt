@@ -1,44 +1,60 @@
-※深追いしない
+※勉強した技術をベースに実装する
+ -深追いしない
+ -PD(BlockManager)に紐づける
 
-■Box
+■BoxManager
 ●Init
-・Base
+・BasePoint
+ -Side
  -Front
  -Back
- -Side
- -Edge
-・蓋
- -Top
- -Front
- -Back
- -Side
- -Edge
-・下部
- -Front
- -Back
- -Side
- -Edge
-・境界
- -Front
- -Back
- -Side
- -
-
 
 ●Edit
 ・Scale
 ・Transform
 ・Rotate
 
+●Create
+・Edit
+・Pattern
+・Greeble
+
+●Detail
+・CopyToPoint
+
+●Type
+
+
+■Detail
+●Init
+・Point
+
+●Edit
+・EditFlow
 
 ●Create
-・EditToggle
-
-・Miller
- -Vertex
- -Horizontal
-
 ・Greeble
 ・Pattern
 
 ●Type
+・PrimitiveでIntで管理する
+
+■VoronoiPattern(LineManager)
+●Init
+・InitPts
+ -Pos
+
+●Edit
+・AddVoronoiPts
+・MoveVoronoiPts
+
+●Create
+・EditCreate
+・Fractal
+
+●Type
+PtsType
+
+●Detail
+・Edge
+・Line
