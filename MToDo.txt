@@ -3,6 +3,12 @@
  -PD(BlockManager)に紐づける
 
 ■BoxManager
+○Initの実装
+ -InitParameterの実装
+ -Side,Front,BackのBasePointを生成
+○BaseParameterの実装
+○CopyToPoint周りの実装
+
 ●Init
 ・BasePoint
  -Side
@@ -26,6 +32,8 @@
 
 
 ■Detail
+○BoxのBaseをモデリング
+
 ●Init
 ・Point
 
@@ -33,13 +41,14 @@
 ・EditFlow
 
 ●Create
-・Greeble
-・Pattern
 
 ●Type
 ・PrimitiveでIntで管理する
 
+
 ■VoronoiPattern(LineManager)
+○VoronoiPtsによるVoronoi分割を実装
+
 ●Init
 ・InitPts
  -Pos
