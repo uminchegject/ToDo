@@ -104,13 +104,15 @@ SetBindPose()
  -汎用工程(繰り返し行う行程)
  -パラメーターで簡単に調整できそうな工程
 
+○VoronoiPtsのEditを設計
+
+○SampleProjectからモデリング手順を勉強
+
 ■BoxManager
 ・側面で検証する
 ○Initの実装
  -Side, Front, Back
  -InitParameter
-○Editの実装
- -Scale, Transform,Rotate
 ○Createの実装
  -Pattern, Greeble
 ○Detailの実装
@@ -142,6 +144,7 @@ SetBindPose()
 ○Initの実装
  -Boxの生成
  -Parameterの実装
+○HoudiniのSampleプロジェクトから作業工程を勉強する
 ○Baseのモデリング
 
 ●Init
@@ -158,6 +161,9 @@ SetBindPose()
 ■VoronoiPattern(LineManager)
 ・Topで検証する
 ○Ptsからボロノイを行う処理を実装する
+ -サンプルコードで検証
+○PtsのEdit周りを設計
+
 ●Init
 ・InitPts
  -Pos
@@ -169,7 +175,8 @@ SetBindPose()
 
 ●Create
 ・EditCreate
-・Fractal
+・AddBlock
+ -Ptsを追加する
 
 ●Type
 PtsType
@@ -212,15 +219,3 @@ PtsType
 ・BaseMatrixの適応
 
 ○Editの検証
-
-■IDEA
-●InitParameterを用いた柔軟なPDの設計
- -Scale
- -Seed
-
-●Noise周りの設計
-・NoiseParameterの追加
- -AttributeにNoiseを持たせて
- 
- -Boxサイズに偏りを持たせる
- -Typeに偏りを持たせる
