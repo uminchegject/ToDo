@@ -104,6 +104,8 @@ SetBindPose()
  -汎用工程(繰り返し行う行程)
  -パラメーターで簡単に調整できそうな工程
 
+○Parameterノードの名前を修正
+
 ○VoronoiPtsのEditを設計
 
 ○SampleProjectからモデリング手順を勉強
