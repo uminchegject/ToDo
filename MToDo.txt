@@ -1,13 +1,100 @@
+[反省]
 ※勉強した技術をベースに実装する
  -深追いしない
  -PD(BlockManager)に紐づける
 
+
+
+[USD]
+○サンプルの確認
+・ドキュメントのサンプルコードと比較する
+・メモをまとめる
+
+●資料
+・USDの基礎
+https://www.youtube.com/watch?v=4kMBwpdwkkw
+https://www.slideshare.net/slideshow/usd-79288174/79288174#2
+https://fereria.github.io/reincarnation_tech/usd/what_is_usd
+
+・USDの運用
+https://fereria.github.io/reincarnation_tech/usd/python/tutorials/01
+https://qiita.com/ousttrue/items/b5f34e0f2441ca74467e
+https://qiita.com/takahito-tejima/items/ee0332bfb5c9baed3b09
+https://dev.classmethod.jp/articles/how_to_use_usd_for_developers/
+
+・LOPS&Soraris
+https://note.com/indyzonecorp/n/ndf9d8f82d7e5#93191dbb-a31d-4dbc-851a-584b7882528b
+https://houdinifx.jp/blog/lops%E3%81%AE%E4%BB%95%E7%B5%84%E3%81%BF/
+
+https://www.sidefx.com/tutorials/usd-authoring-with-solaris/
+https://www.youtube.com/watch?v=SqTHglDeKtU
+
+・Plugin
+https://candrgroup-coyotevfx.atlassian.net/wiki/spaces/TEC/pages/344555807
+
+
+
+[Python]
+■ツール課題
+○BindPoseを呼び出す処理を実装
+
+○Tポーズに切り替える処理を実装
+・COG以下階層のジョイントを全て取得する
+・ジョイントのAttrib値を全て0に設定する
+
+●仕様
+・bindposeとTポーズを切り替えるトグルボタンがほしい
+ -UI化しなくても、シェルフに登録する用のコマンドでも可
+ -bindposeは通常のMayaの機能でできるモノ
+ -Tポーズの定義は、「COG」以下階層のジョイントの回転値がすべてゼロな事。
+
+[IZON.]
+■Gimmick_06
+・修正
+
+■Gimmick_04
+○降りて、エレベーターを出現させる処理を呼び出さないように修正する
+
+○抱えられない処理を挟む
+
+○60秒経過後は敵を全滅させることでエレベーターが上に移動するように修正
+・エネミーを管理する(DestoryActorするごとにエネミーの数を確認し、0になったらエレベーターを動かす)
+ -BP_EnemyManagerを取得してGetEnemysで敵の数を確認する
+  -EndPlayのイベントにエネミーの残数を確認する処理をバインドする
+・エネミーが全部倒されたらIsCreationをTrueする
+
+■Gimmick_11
+○降ろす処理を実装する
+・BP_Kyojinから直接CancelCarryGimmickを呼び出す
+
+○土台クラスの実装
+・土台に球を配置する処理を実装する
+
+
+
+[ProceduralModeling]
+※模様を生成することを意識する
+ -模様の形態に問わずDetail部分をModelingできる方法を考える
+ -BaseParameter(Scale, Rotate, Transform)を用いた模様生成を考える
+※どんな幾何学でもBlockとして管理できるようする
+ -Point
+ -Line
+※モデリング工程内からパラメーター化できそうな部分を調べる
+ -Blockベースで対応できる処理
+ -汎用工程(繰り返し行う行程)
+ -パラメーターで簡単に調整できそうな工程
+
 ■BoxManager
+・側面で検証する
 ○Initの実装
- -InitParameterの実装
- -Side,Front,BackのBasePointを生成
-○BaseParameterの実装
-○CopyToPoint周りの実装
+ -Side, Front, Back
+ -InitParameter
+○Editの実装
+ -Scale, Transform,Rotate
+○Createの実装
+ -Pattern, Greeble
+○Detailの実装
+ -CopyToPoint
 
 ●Init
 ・BasePoint
@@ -30,9 +117,12 @@
 
 ●Type
 
-
 ■Detail
-○BoxのBaseをモデリング
+・Base形態で検証する
+○Initの実装
+ -Boxの生成
+ -Parameterの実装
+○Baseのモデリング
 
 ●Init
 ・Point
@@ -45,10 +135,8 @@
 ●Type
 ・PrimitiveでIntで管理する
 
-
 ■VoronoiPattern(LineManager)
-○VoronoiPtsによるVoronoi分割を実装
-
+○Ptsからボロノイを行う処理を実装する
 ●Init
 ・InitPts
  -Pos
@@ -56,6 +144,7 @@
 ●Edit
 ・AddVoronoiPts
 ・MoveVoronoiPts
+・PatternVoronoiPts
 
 ●Create
 ・EditCreate
@@ -67,3 +156,50 @@ PtsType
 ●Detail
 ・Edge
 ・Line
+・Color
+ -Base, Main, Vividを意識する
+
+
+[ModularModelieng]
+※明確なアセットセットを目標に都度新規実装を加えていく
+
+■Box
+○EditBaseの実装
+・全体的なフローの修正
+ -Type
+ -Create
+・Baseの実装
+ -Transform
+ -Scale
+ -Rotate
+
+△Greebleの再実装
+・FrontDirData
+
+○検証
+
+■LIne
+○DividePrimの実装
+・Editした部分をDividePrimする
+
+○EditBaseの実装
+・Scale
+・Transform
+
+○全体的なフローを実装
+・Type
+・BaseMatrixの適応
+
+○Editの検証
+
+■IDEA
+●InitParameterを用いた柔軟なPDの設計
+ -Scale
+ -Seed
+
+●Noise周りの設計
+・NoiseParameterの追加
+ -AttributeにNoiseを持たせて
+ 
+ -Boxサイズに偏りを持たせる
+ -Typeに偏りを持たせる
