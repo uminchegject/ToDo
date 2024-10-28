@@ -1,10 +1,3 @@
-[反省]
-※勉強した技術をベースに実装する
- -深追いしない
- -PD(BlockManager)に紐づける
-
-
-
 [USD]
 ○サンプルの確認
 ・ドキュメントのサンプルコードと比較する
@@ -36,40 +29,67 @@ https://candrgroup-coyotevfx.atlassian.net/wiki/spaces/TEC/pages/344555807
 
 [Python]
 ■ツール課題
+○質問
+・アルファポーズの角度について
 ○BindPoseを呼び出す処理を実装
-
-○Tポーズに切り替える処理を実装
-・COG以下階層のジョイントを全て取得する
-・ジョイントのAttrib値を全て0に設定する
 
 ●仕様
 ・bindposeとTポーズを切り替えるトグルボタンがほしい
  -UI化しなくても、シェルフに登録する用のコマンドでも可
  -bindposeは通常のMayaの機能でできるモノ
  -Tポーズの定義は、「COG」以下階層のジョイントの回転値がすべてゼロな事。
+ 
+●ソース
+def SetTPose():
+    rootList = cmds.ls(assemblies = True)
+    
+    jointList = set()
+    for root in rootList:
+    	children = set(cmds.listRelatives(rootList, fullPath=True, type = "joint") or [])
+    	while children:
+    		jointList.update(children)
+    		children = set(cmds.listRelatives(children, fullPath=True, type = "joint") or []) - jointList
+    
+    for joint in jointList:
+        print(joint)
+        cmds.setAttr( joint + '.rotate', 0, 0, 0, type = 'double3' )
+
+
+def SetBindPose():
+    rootList = cmds.ls(assemblies = True)
+    for root in rootList:
+        pose = cmds.dagPose(root, q = 1, bp = 1)			
+        if pose:
+            cmds.dagPose(root, r = 1, g = 1, bp = 1)
+				
+SetBindPose()
+#SetTPose()
+
+
 
 [IZON.]
 ■Gimmick_06
-・修正
+○ChibitoのAIを復旧する
+ -AIControllerからCommonを呼び出す
+○ExcuteEverytimeを正常に動くよう修正する
+
+○Creation周りを修正する
+ -CreationSourceを継承する
 
 ■Gimmick_04
-○降りて、エレベーターを出現させる処理を呼び出さないように修正する
+○アニメーション周りを修正(質問)
 
-○抱えられない処理を挟む
+○抱えられない処理を挟む(質問)
 
-○60秒経過後は敵を全滅させることでエレベーターが上に移動するように修正
+○60秒経過後は敵を全滅させることでエレベーターが上に移動するように修正(質問 + 実装)
 ・エネミーを管理する(DestoryActorするごとにエネミーの数を確認し、0になったらエレベーターを動かす)
  -BP_EnemyManagerを取得してGetEnemysで敵の数を確認する
   -EndPlayのイベントにエネミーの残数を確認する処理をバインドする
 ・エネミーが全部倒されたらIsCreationをTrueする
 
 ■Gimmick_11
-○降ろす処理を実装する
-・BP_Kyojinから直接CancelCarryGimmickを呼び出す
-
-○土台クラスの実装
-・土台に球を配置する処理を実装する
-
+○挙動確認
+○サブミット
 
 
 [ProceduralModeling]
@@ -136,6 +156,7 @@ https://candrgroup-coyotevfx.atlassian.net/wiki/spaces/TEC/pages/344555807
 ・PrimitiveでIntで管理する
 
 ■VoronoiPattern(LineManager)
+・Topで検証する
 ○Ptsからボロノイを行う処理を実装する
 ●Init
 ・InitPts
