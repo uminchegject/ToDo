@@ -1,56 +1,21 @@
 [IZON.]
 ■Gimmick_04
-○アニメーションを修正する(質問 + 実装)
-・Stay→Commonで仮実装
+○質問
+ -アニメーション
+ -智人を抱えない状態
+ -Enemyの取得
 
-○抱えられない処理を挟む(質問)
-
-○60秒経過後は敵を全滅させることでエレベーターが上に移動するように修正(質問)
-・エネミーを管理する(DestoryActorするごとにエネミーの数を確認し、0になったらエレベーターを動かす)
- -BP_EnemyManagerを取得してGetEnemysで敵の数を確認する
-  -EndPlayのイベントにエネミーの残数を確認する処理をバインドする
-・エネミーが全部倒されたらIsCreationをTrueする
-
-■Gimmick_11
-○挙動確認
-○サブミット
 
 [Python]
 ■ツール課題
-○質問
-○BindPoseを呼び出す処理を実装
+○設計し直す
+・BindPoseの割合を参考にTrueかFalseを決める
 
 ●仕様
 ・bindposeとTポーズを切り替えるトグルボタンがほしい
  -UI化しなくても、シェルフに登録する用のコマンドでも可
  -bindposeは通常のMayaの機能でできるモノ
  -Tポーズの定義は、「COG」以下階層のジョイントの回転値がすべてゼロな事。
- 
-●ソース
-def SetTPose():
-    rootList = cmds.ls(assemblies = True)
-    
-    jointList = set()
-    for root in rootList:
-    	children = set(cmds.listRelatives(rootList, fullPath=True, type = "joint") or [])
-    	while children:
-    		jointList.update(children)
-    		children = set(cmds.listRelatives(children, fullPath=True, type = "joint") or []) - jointList
-    
-    for joint in jointList:
-        print(joint)
-        cmds.setAttr( joint + '.rotate', 0, 0, 0, type = 'double3' )
-
-
-def SetBindPose():
-    rootList = cmds.ls(assemblies = True)
-    for root in rootList:
-        pose = cmds.dagPose(root, q = 1, bp = 1)			
-        if pose:
-            cmds.dagPose(root, r = 1, g = 1, bp = 1)
-				
-SetBindPose()
-#SetTPose()
 
 
 
@@ -75,11 +40,12 @@ SetBindPose()
  -CopyToPoint
 
 ■Detail
+※同一人物がまとめた箱のイラスト集を一通りモデリングし、共通化できる部分をPD化する
 ○モデリング工程の勉強
 ○Initの実装
  -Boxの生成
  -Parameterの実装
-○Baseのモデリング
+○Baseをモデリング
 
 ■VoronoiPattern(LineManager)
 ●資料
@@ -91,233 +57,6 @@ https://github.com/0x384c0/HoudiniProjects/tree/main/R%26D/procedural_modeling
 ○PtsのEdit周りを設計
 
 ■Line
-○DividePrimの実装
-・Editした部分をDividePrimする
-
-○EditBaseの実装
-・Scale
-・Transform
-
-○全体的なフローを実装
-・Type
-・BaseMatrixの適応
-
-○Editの検証
-
-
-[反省]
-・シェルブをサンプルに実装する
-・Configureを活用する
-
-[USD]
-○キッチンプロジェクトの確認
-※キッチンプロジェクトをベースにする
-・キッチンプロジェクトの全体的な設計を調査
-・ドキュメントのサンプルコードと比較する
-・メモをまとめる確認
-
-●資料
-・USDの基礎
-https://www.youtube.com/watch?v=4kMBwpdwkkw
-https://www.slideshare.net/slideshow/usd-79288174/79288174#2
-https://fereria.github.io/reincarnation_tech/usd/what_is_usd
-
-・USDの運用
-https://fereria.github.io/reincarnation_tech/usd/python/tutorials/01
-https://qiita.com/ousttrue/items/b5f34e0f2441ca74467e
-https://qiita.com/takahito-tejima/items/ee0332bfb5c9baed3b09
-https://dev.classmethod.jp/articles/how_to_use_usd_for_developers/
-
-・LOPS&Soraris
-https://note.com/indyzonecorp/n/ndf9d8f82d7e5#93191dbb-a31d-4dbc-851a-584b7882528b
-https://houdinifx.jp/blog/lops%E3%81%AE%E4%BB%95%E7%B5%84%E3%81%BF/
-
-https://www.sidefx.com/tutorials/usd-authoring-with-solaris/
-https://www.youtube.com/watch?v=SqTHglDeKtU
-
-・Plugin
-https://candrgroup-coyotevfx.atlassian.net/wiki/spaces/TEC/pages/344555807
-
-[Python]
-■ツール課題
-○アルファポーズかの判定処理を実装
-+
-●仕様
-・bindposeとTポーズを切り替えるトグルボタンがほしい
- -UI化しなくても、シェルフに登録する用のコマンドでも可
- -bindposeは通常のMayaの機能でできるモノ
- -Tポーズの定義は、「COG」以下階層のジョイントの回転値がすべてゼロな事。
- 
-●ソース
-def SetTPose():
-    rootList = cmds.ls(assemblies = True)
-    
-    jointList = set()
-    for root in rootList:
-    	children = set(cmds.listRelatives(rootList, fullPath=True, type = "joint") or [])
-    	while children:
-    		jointList.update(children)
-    		children = set(cmds.listRelatives(children, fullPath=True, type = "joint") or []) - jointList
-    
-    for joint in jointList:
-        print(joint)
-        cmds.setAttr( joint + '.rotate', 0, 0, 0, type = 'double3' )
-
-
-def SetBindPose():
-    rootList = cmds.ls(assemblies = True)
-    for root in rootList:
-        pose = cmds.dagPose(root, q = 1, bp = 1)			
-        if pose:
-            cmds.dagPose(root, r = 1, g = 1, bp = 1)
-				
-SetBindPose()
-#SetTPose()
-
-
-
-[IZON.]
-■Gimmick_06
-○ChibitoのAIを復旧する
- -AIControllerからCommonを呼び出す
-○ExcuteEverytimeを正常に動くよう修正する
-
-○Creation周りを修正する
- -CreationSourceを継承する
-
-■Gimmick_04
-○アニメーション周りを修正(質問)
-
-○抱えられない処理を挟む(質問)
-
-○60秒経過後は敵を全滅させることでエレベーターが上に移動するように修正(質問 + 実装)
-・エネミーを管理する(DestoryActorするごとにエネミーの数を確認し、0になったらエレベーターを動かす)
- -BP_EnemyManagerを取得してGetEnemysで敵の数を確認する
-  -EndPlayのイベントにエネミーの残数を確認する処理をバインドする
-・エネミーが全部倒されたらIsCreationをTrueする
-
-■Gimmick_11
-○挙動確認
-○サブミット
-
-
-[ProceduralModeling]
-※モデリング工程内からパラメーター化できそうな部分を調べる
- -Blockベースで対応できる処理
- -汎用工程(繰り返し行う行程)
- -パラメーターで簡単に調整できそうな工程
-
-○Parameterノードの名前を修正
-
-○Initの実装
- -Side, Front, Back
- -InitParameter
-
-○SampleProjectからモデリング手順を勉強
-
-○VoronoiPtsのEditを設計
-
-
-
-■BoxManager
-・側面で検証する
-○Initの実装
- -Side, Front, Back
- -InitParameter
-○Createの実装
- -Pattern, Greeble
-○Detailの実装
- -CopyToPoint
-
-●Init
-・BasePoint
- -Side
- -Front
- -Back
-
-●Edit
-・Scale
-・Transform
-・Rotate
-
-●Create
-・Edit
-・Pattern
-・Greeble
-
-●Detail
-・CopyToPoint
-
-●Type
-
-■Detail
-・Base形態で検証する
-○Initの実装
- -Boxの生成
- -Parameterの実装
-○HoudiniのSampleプロジェクトから作業工程を勉強する
-○Baseのモデリング
-
-●Init
-・Point
-
-●Edit
-・EditFlow
-
-●Create
-
-●Type
-・PrimitiveでIntで管理する
-
-■VoronoiPattern(LineManager)
-・Topで検証する
-○Ptsからボロノイを行う処理を実装する
- -サンプルコードで検証
-○PtsのEdit周りを設計
-
-●Init
-・InitPts
- -Pos
-
-●Edit
-・AddVoronoiPts
-・MoveVoronoiPts
-・PatternVoronoiPts
-
-●Create
-・EditCreate
-・AddBlock
- -Ptsを追加する
-
-●Type
-PtsType
-
-●Detail
-・Edge
-・Line
-・Color
- -Base, Main, Vividを意識する
-
-
-[ModularModelieng]
-※明確なアセットセットを目標に都度新規実装を加えていく
-
-■Box
-○EditBaseの実装
-・全体的なフローの修正
- -Type
- -Create
-・Baseの実装
- -Transform
- -Scale
- -Rotate
-
-△Greebleの再実装
-・FrontDirData
-
-○検証
-
-■LIne
 ○DividePrimの実装
 ・Editした部分をDividePrimする
 
