@@ -1,7 +1,9 @@
 [USD]
-○サンプルの確認
+○キッチンプロジェクトの確認
+※キッチンプロジェクトをベースにする
+・キッチンプロジェクトの全体的な設計を調査
 ・ドキュメントのサンプルコードと比較する
-・メモをまとめる
+・メモをまとめる確認
 
 ●資料
 ・USDの基礎
@@ -31,7 +33,8 @@ https://candrgroup-coyotevfx.atlassian.net/wiki/spaces/TEC/pages/344555807
 ■ツール課題
 ○質問
 ・アルファポーズの角度について
-○BindPoseを呼び出す処理を実装
+
+○アルファポーズかの判定処理を実装
 
 ●仕様
 ・bindposeとTポーズを切り替えるトグルボタンがほしい
@@ -93,12 +96,6 @@ SetBindPose()
 
 
 [ProceduralModeling]
-※模様を生成することを意識する
- -模様の形態に問わずDetail部分をModelingできる方法を考える
- -BaseParameter(Scale, Rotate, Transform)を用いた模様生成を考える
-※どんな幾何学でもBlockとして管理できるようする
- -Point
- -Line
 ※モデリング工程内からパラメーター化できそうな部分を調べる
  -Blockベースで対応できる処理
  -汎用工程(繰り返し行う行程)
@@ -106,9 +103,15 @@ SetBindPose()
 
 ○Parameterノードの名前を修正
 
-○VoronoiPtsのEditを設計
+○Initの実装
+ -Side, Front, Back
+ -InitParameter
 
 ○SampleProjectからモデリング手順を勉強
+
+○VoronoiPtsのEditを設計
+
+
 
 ■BoxManager
 ・側面で検証する
