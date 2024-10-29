@@ -1,40 +1,24 @@
-[USD]
-○キッチンプロジェクトの確認
-※キッチンプロジェクトをベースにする
-・キッチンプロジェクトの全体的な設計を調査
-・ドキュメントのサンプルコードと比較する
-・メモをまとめる確認
+[IZON.]
+■Gimmick_04
+○アニメーションを修正する(質問 + 実装)
+・Stay→Commonで仮実装
 
-●資料
-・USDの基礎
-https://www.youtube.com/watch?v=4kMBwpdwkkw
-https://www.slideshare.net/slideshow/usd-79288174/79288174#2
-https://fereria.github.io/reincarnation_tech/usd/what_is_usd
+○抱えられない処理を挟む(質問)
 
-・USDの運用
-https://fereria.github.io/reincarnation_tech/usd/python/tutorials/01
-https://qiita.com/ousttrue/items/b5f34e0f2441ca74467e
-https://qiita.com/takahito-tejima/items/ee0332bfb5c9baed3b09
-https://dev.classmethod.jp/articles/how_to_use_usd_for_developers/
+○60秒経過後は敵を全滅させることでエレベーターが上に移動するように修正(質問)
+・エネミーを管理する(DestoryActorするごとにエネミーの数を確認し、0になったらエレベーターを動かす)
+ -BP_EnemyManagerを取得してGetEnemysで敵の数を確認する
+  -EndPlayのイベントにエネミーの残数を確認する処理をバインドする
+・エネミーが全部倒されたらIsCreationをTrueする
 
-・LOPS&Soraris
-https://note.com/indyzonecorp/n/ndf9d8f82d7e5#93191dbb-a31d-4dbc-851a-584b7882528b
-https://houdinifx.jp/blog/lops%E3%81%AE%E4%BB%95%E7%B5%84%E3%81%BF/
-
-https://www.sidefx.com/tutorials/usd-authoring-with-solaris/
-https://www.youtube.com/watch?v=SqTHglDeKtU
-
-・Plugin
-https://candrgroup-coyotevfx.atlassian.net/wiki/spaces/TEC/pages/344555807
-
-
+■Gimmick_11
+○挙動確認
+○サブミット
 
 [Python]
 ■ツール課題
 ○質問
-・アルファポーズの角度について
-
-○アルファポーズかの判定処理を実装
+○BindPoseを呼び出す処理を実装
 
 ●仕様
 ・bindposeとTポーズを切り替えるトグルボタンがほしい
@@ -70,148 +54,43 @@ SetBindPose()
 
 
 
-[IZON.]
-■Gimmick_06
-○ChibitoのAIを復旧する
- -AIControllerからCommonを呼び出す
-○ExcuteEverytimeを正常に動くよう修正する
+[USD]
+○キッチンプロジェクトの確認
+※キッチンプロジェクトをベースにする
+・キッチンプロジェクトの全体的な設計を調査
+・ドキュメントのサンプルコードと比較する
+・メモをまとめる確認
 
-○Creation周りを修正する
- -CreationSourceを継承する
-
-■Gimmick_04
-○アニメーション周りを修正(質問)
-
-○抱えられない処理を挟む(質問)
-
-○60秒経過後は敵を全滅させることでエレベーターが上に移動するように修正(質問 + 実装)
-・エネミーを管理する(DestoryActorするごとにエネミーの数を確認し、0になったらエレベーターを動かす)
- -BP_EnemyManagerを取得してGetEnemysで敵の数を確認する
-  -EndPlayのイベントにエネミーの残数を確認する処理をバインドする
-・エネミーが全部倒されたらIsCreationをTrueする
-
-■Gimmick_11
-○挙動確認
-○サブミット
 
 
 [ProceduralModeling]
-※モデリング工程内からパラメーター化できそうな部分を調べる
- -Blockベースで対応できる処理
- -汎用工程(繰り返し行う行程)
- -パラメーターで簡単に調整できそうな工程
-
-○Parameterノードの名前を修正
-
-○Initの実装
- -Side, Front, Back
- -InitParameter
-
-○SampleProjectからモデリング手順を勉強
-
-○VoronoiPtsのEditを設計
-
-
-
 ■BoxManager
 ・側面で検証する
-○Initの実装
- -Side, Front, Back
- -InitParameter
+○ParameterNullの命名を修正
+○Editの実装
+ -Scale, Transform,Rotate
 ○Createの実装
  -Pattern, Greeble
 ○Detailの実装
  -CopyToPoint
 
-●Init
-・BasePoint
- -Side
- -Front
- -Back
-
-●Edit
-・Scale
-・Transform
-・Rotate
-
-●Create
-・Edit
-・Pattern
-・Greeble
-
-●Detail
-・CopyToPoint
-
-●Type
-
 ■Detail
-・Base形態で検証する
+○モデリング工程の勉強
 ○Initの実装
  -Boxの生成
  -Parameterの実装
-○HoudiniのSampleプロジェクトから作業工程を勉強する
 ○Baseのモデリング
 
-●Init
-・Point
-
-●Edit
-・EditFlow
-
-●Create
-
-●Type
-・PrimitiveでIntで管理する
-
 ■VoronoiPattern(LineManager)
+●資料
+https://github.com/0x384c0/HoudiniProjects/tree/main/R%26D/procedural_modeling
+
 ・Topで検証する
 ○Ptsからボロノイを行う処理を実装する
  -サンプルコードで検証
 ○PtsのEdit周りを設計
 
-●Init
-・InitPts
- -Pos
-
-●Edit
-・AddVoronoiPts
-・MoveVoronoiPts
-・PatternVoronoiPts
-
-●Create
-・EditCreate
-・AddBlock
- -Ptsを追加する
-
-●Type
-PtsType
-
-●Detail
-・Edge
-・Line
-・Color
- -Base, Main, Vividを意識する
-
-
-[ModularModelieng]
-※明確なアセットセットを目標に都度新規実装を加えていく
-
-■Box
-○EditBaseの実装
-・全体的なフローの修正
- -Type
- -Create
-・Baseの実装
- -Transform
- -Scale
- -Rotate
-
-△Greebleの再実装
-・FrontDirData
-
-○検証
-
-■LIne
+■Line
 ○DividePrimの実装
 ・Editした部分をDividePrimする
 
