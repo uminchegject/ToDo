@@ -1,5 +1,8 @@
 [勉強]
 ○Houdinipackage
+https://www.sidefx.com/ja/docs/houdini/ref/plugins.html
+https://openusd.org/release/tut_helloworld.html
+https://zenn.dev/remiria/articles/7514e41f89a887b33730
 
 [セットアップ]
 ○ファイル移植
@@ -39,19 +42,13 @@
 
 [USD]
 ○勉強環境の構築
-・VSCodeでプロジェクト管理ができるようにする
-https://qiita.com/ousttrue/items/b5f34e0f2441ca74467e
-https://qiita.com/takahito-tejima/items/ee0332bfb5c9baed3b09
+・事例を調べる
 
 ○キッチンプロジェクトの確認
 ※キッチンプロジェクトをベースにする
 ・キッチンプロジェクトの全体的な設計を調査
 ・ドキュメントのサンプルコードと比較する
 ・メモをまとめる確認
-
-●資料
-https://zenn.dev/remiria/articles/7514e41f89a887b33730
-
 
 
 [ProceduralModeling]
