@@ -1,11 +1,22 @@
-[勉強]
-○Houdinipackage
+[USD]
+■Study
+●Solaris
+https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/09_solaris_vex/
+https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/01_solaris_open_usd/
+https://qiita.com/55hertz/items/2c6f5e7cead95ef62064
+
+●USD(Kitchen)
 https://zenn.dev/remiria/articles/7514e41f89a887b33730
+※キッチンプロジェクトをベースにする
+・キッチンプロジェクトの全体的な設計を調査
+・ドキュメントのサンプルコードと比較する
+・メモをまとめる確認
+
+
 
 [セットアップ]
 ○ファイル移植
 ○VSCode(プラグイン)
-○USDView(Kitchen)
 ○IZON
 
 
@@ -13,13 +24,13 @@ https://zenn.dev/remiria/articles/7514e41f89a887b33730
 [IZON.]
 ■Gimmick_04
 ○修正
+・智人を抱えられないようにする処理を実装
 ・Spawn位置の修正
 ・エフェクトを消す
 ○挙動の質問
 ・タワーディフェンス時のThibitoの挙動
 
 ■Gimmick_11
-・智人を抱えられないようにする処理を実装
 ・連打したら持ててしまう不具合の原因を調査
 ・インタラクトUIの表示部分がないかを調査
 
@@ -27,7 +38,14 @@ https://zenn.dev/remiria/articles/7514e41f89a887b33730
 
 [Python]
 ■ツール課題
-○新しい実装
+○UIの実装
+・シーン内のアニメーションキーを取得し、objectを設定する
+・Obj一覧
+・削除ボタン
+
+○選択オブジェクトの反映
+
+○選択オブジェクトの削除機能
 
 ●仕様
 ・シーン内にアニメーションキーがあるか確認したい
@@ -38,21 +56,8 @@ https://zenn.dev/remiria/articles/7514e41f89a887b33730
 
 
 
-[USD]
-○勉強環境の構築
-・事例を調べる
-
-○キッチンプロジェクトの確認
-※キッチンプロジェクトをベースにする
-・キッチンプロジェクトの全体的な設計を調査
-・ドキュメントのサンプルコードと比較する
-・メモをまとめる確認
-
-
 [ProceduralModeling]
 ■BoxManager
-○Detailの実装
- -CopyToPoint
 ○検証
 
 △Createの実装
