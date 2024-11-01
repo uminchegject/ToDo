@@ -1,7 +1,5 @@
 [勉強]
 ○Houdinipackage
-https://www.sidefx.com/ja/docs/houdini/ref/plugins.html
-https://openusd.org/release/tut_helloworld.html
 https://zenn.dev/remiria/articles/7514e41f89a887b33730
 
 [セットアップ]
