@@ -1,96 +1,48 @@
-[USD]
-■Study
-●Solaris
-https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/09_solaris_vex/
-https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/01_solaris_open_usd/
-https://qiita.com/55hertz/items/2c6f5e7cead95ef62064
+※Modeling作業は極力会社で行う
+・同作者、同作品でテーマを統一する
+・背景(街並み)の世界観を作ることを意識する
+・ModularModelingとProceduralPatternをベースとした実装する
 
-●USD(Kitchen)
-https://zenn.dev/remiria/articles/7514e41f89a887b33730
-※キッチンプロジェクトをベースにする
-・キッチンプロジェクトの全体的な設計を調査
-・ドキュメントのサンプルコードと比較する
-・メモをまとめる確認
+○リファレンスを調査
+・TopAsset
+ -Tank
+ -Pipe
+ -電柱(Line)
+・HardSurface
+ -本
 
+○Greebleの実装
 
+○Wireの検証
+・サンプルプロジェクトの調査
+https://houdinifx.jp/blog/labs-cable-generator2-0-sop/
 
-[セットアップ]
-○ファイル移植
-○VSCode(プラグイン)
-○IZON
+○Voronoiの検証
+・サンプルプロジェクトの調査
 
-
-
-[IZON.]
-■Gimmick_04
-○修正
-・智人を抱えられないようにする処理を実装
-・Spawn位置の修正
-・エフェクトを消す
-○挙動の質問
-・タワーディフェンス時のThibitoの挙動
-
-■Gimmick_11
-・連打したら持ててしまう不具合の原因を調査
-・インタラクトUIの表示部分がないかを調査
+○マテリアル周りの検証
 
 
+■Body
+●PPattern
+・Voronoi
 
-[Python]
-■ツール課題
-○UIの実装
-・シーン内のアニメーションキーを取得し、objectを設定する
-・Obj一覧
-・削除ボタン
+●MModeling
+・Block
+ -Window
+ -HardSurface
 
-○選択オブジェクトの反映
-
-○選択オブジェクトの削除機能
-
-●仕様
-・シーン内にアニメーションキーがあるか確認したい
- -ある場合はアニメーションキーがついたobjectの一覧が見れると良い。
- -リストを選択すると、そのobjectを選択したい。
- -リストで選択中のobjectのアニメーションキー削除機能もあるとGood。
- -欲をいえば、削除後に回転値をXYZすべてゼロにしてほしい
+●Detail
+・Window
+・HardSurface
+・Structure
 
 
+■Top
+●MModeling
+・GreebleBlock
+ -TopAsset
 
-[ProceduralModeling]
-■BoxManager
-○検証
-
-△Createの実装
- -Pattern, Miller, Greeble
-
-■Detail
-※同一人物がまとめた箱のイラスト集を一通りモデリングし、共通化できる部分をPD化する
-https://autodestruct.com/images/quake4_crates3.jpg
-○モデリング工程の勉強
-○Initの実装
- -Boxの生成
- -Parameterの実装
-○Baseをモデリング
-
-■VoronoiPattern(LineManager)
-●資料
-https://github.com/0x384c0/HoudiniProjects/tree/main/R%26D/procedural_modeling
-
-・Topで検証する
-○Ptsからボロノイを行う処理を実装する
- -サンプルコードで検証
-○PtsのEdit周りを設計
-
-■Line
-○DividePrimの実装
-・Editした部分をDividePrimする
-
-○EditBaseの実装
-・Scale
-・Transform
-
-○全体的なフローを実装
-・Type
-・BaseMatrixの適応
-
-○Editの検証
+●Detail
+・Tank
+・電柱(Line)
