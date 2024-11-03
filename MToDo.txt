@@ -5,11 +5,9 @@
 
 ○リファレンスを調査
 ・TopAsset
- -Tank
- -Pipe
- -電柱(Line)
+ -Maya実践ハードサーフェスモデリング
 ・HardSurface
- -本
+ -Maya実践ハードサーフェスモデリング
 
 ○Greebleの実装
 
@@ -19,6 +17,13 @@ https://houdinifx.jp/blog/labs-cable-generator2-0-sop/
 
 ○Voronoiの検証
 ・サンプルプロジェクトの調査
+https://github.com/0x384c0/HoudiniProjects/tree/main/R%26D/procedural_modeling
+
+○LabsLotSubdivisionの調査
+https://www.sidefx.com/ja/docs/houdini/nodes/sop/labs--lot_subdivision.html
+
+○ScifiPanelsの調査
+https://www.sidefx.com/ja/docs/houdini/nodes/sop/labs--scifi_panels.html
 
 ○マテリアル周りの検証
 
