@@ -9,23 +9,24 @@
 ・HardSurface
  -Maya実践ハードサーフェスモデリング
 
+○LabsLotSubdivisionの調査
+https://www.sidefx.com/ja/docs/houdini/nodes/sop/labs--lot_subdivision.html
+○ScifiPanelsの調査
+https://www.sidefx.com/ja/docs/houdini/nodes/sop/labs--scifi_panels.html
 ○Greebleの実装
-
-○Wireの検証
-・サンプルプロジェクトの調査
-https://houdinifx.jp/blog/labs-cable-generator2-0-sop/
 
 ○Voronoiの検証
 ・サンプルプロジェクトの調査
 https://github.com/0x384c0/HoudiniProjects/tree/main/R%26D/procedural_modeling
 
-○LabsLotSubdivisionの調査
-https://www.sidefx.com/ja/docs/houdini/nodes/sop/labs--lot_subdivision.html
+○HoudiniLabsをインストール
+https://zenn.dev/eke/articles/816beb76872052
 
-○ScifiPanelsの調査
-https://www.sidefx.com/ja/docs/houdini/nodes/sop/labs--scifi_panels.html
+△Wireの検証
+・サンプルプロジェクトの調査
+https://houdinifx.jp/blog/labs-cable-generator2-0-sop/
 
-○マテリアル周りの検証
+△マテリアル周りの検証
 
 
 ■Body
