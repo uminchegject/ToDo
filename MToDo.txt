@@ -1,3 +1,19 @@
+[Python]
+■ツール課題
+○選択処理の実装
+○削除処理の実装
+ -回転値をXYZすべてゼロにする
+
+●仕様
+・シーン内にアニメーションキーがあるか確認したい
+ -ある場合はアニメーションキーがついたobjectの一覧が見れると良い。
+ -リストを選択すると、そのobjectを選択したい。
+ -リストで選択中のobjectのアニメーションキー削除機能もあるとGood。
+ -欲をいえば、削除後に回転値をXYZすべてゼロにしてほしい
+
+
+
+[ProceduralModeling]
 ※Modeling作業は極力会社で行う
 ・同作者、同作品でテーマを統一する
 ・背景(街並み)の世界観を作ることを意識する
@@ -28,7 +44,6 @@ https://houdinifx.jp/blog/labs-cable-generator2-0-sop/
 
 △マテリアル周りの検証
 
-
 ■Body
 ●PPattern
 ・Voronoi
@@ -52,3 +67,19 @@ https://houdinifx.jp/blog/labs-cable-generator2-0-sop/
 ●Detail
 ・Tank
 ・電柱(Line)
+
+
+
+■Line
+○DividePrimの実装
+・Editした部分をDividePrimする
+
+○EditBaseの実装
+・Scale
+・Transform
+
+○全体的なフローを実装
+・Type
+・BaseMatrixの適応
+
+○Editの検証
