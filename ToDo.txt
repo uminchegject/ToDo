@@ -1,53 +1,138 @@
-■Employ
-・上記の順番とした理由
-プロシージャルデザインを活かせるデザインが何かを意識して順位づけしました。
-モデリングをする際などに効率化できる行程が多い作業、ロジック化しやすい作業は何かと考えると上記の順位になりました。
+[USD]
+●資料
+・USDの基礎
+https://www.youtube.com/watch?v=4kMBwpdwkkw
+https://www.slideshare.net/slideshow/usd-79288174/79288174#2
+https://fereria.github.io/reincarnation_tech/usd/what_is_usd
 
-・あなたが得意としているデザインスキルを具体的に教えてください。
-（任意）作品をどこかに公開している場合、よろしければその公開URLなどをご記載ください。
-プロシージャルデザインです。大学時代、建築を通じてプロシージャルデザインを研究しており、形態的なロジックを設計してプログラムに落とし込み建築を生成するというフローの建築デザインを行っていました。
-また、現在は本職のエンジニアを通じてUnrealEngineを勉強しつつ、HoudiniEngineForUnrealを用いてUEにおける背景のプロシージャルデザインを勉強しています。
+・USDの運用
+https://fereria.github.io/reincarnation_tech/usd/python/tutorials/01
+https://qiita.com/ousttrue/items/b5f34e0f2441ca74467e
+https://qiita.com/takahito-tejima/items/ee0332bfb5c9baed3b09
+https://dev.classmethod.jp/articles/how_to_use_usd_for_developers/
 
-・デザインを学習するにあたって、参考にしている書籍・Webサイトなどを具体的に教えてください。
-Houdiniを始めた当初はを用いて勉強し、
-現在はDocsWellやQuitaを通じてプロシージャルデザインの勉強をしています。
-Houdiniのモデリング機能についてはというHoudini上でのモデリングTutorialを発信している配信者がいるので、その方の動画を参考にしています。
+・LOPS&Soraris
+https://note.com/indyzonecorp/n/ndf9d8f82d7e5#93191dbb-a31d-4dbc-851a-584b7882528b
+https://houdinifx.jp/blog/lops%E3%81%AE%E4%BB%95%E7%B5%84%E3%81%BF/
 
-・プログラム言語、スクリプト（C言語、JAVA、PYTHON、MEL、ブループリント等）の経験がある場合は、言語名と習得レベルを教えてください。
-業務経歴としてC++及びBluePrintが2年半となっております。
-担当業務としてUI周りを1年間と、CS版への移植対応に対する不具合対応を1年半行っており、
-UI周りの実装、他の人が実装した処理のデバッグ対応の経験があります。
-HoudiniのVEXは勉強をはじめて3年程となり、背景の自動生成で求められる処理周りの実装(行列や座標周りなど)は一通り実装できます。
+https://www.sidefx.com/tutorials/usd-authoring-with-solaris/
+https://www.youtube.com/watch?v=SqTHglDeKtU
 
-・あなたが最近１番熱中したものを１つ挙げ、そのコンテンツの良さを教えて下さい。あなたが最近経験した（またはしている）「感動体験」について教えてください。
-「感動体験」の内容と、その良さや、あなた自身が感じたこと・考えたことを教えてください。
-・ボードゲーム
- -手軽に遊べて、プレイヤーに遊び方の選択肢を与えるゲーム
- -ルールがシンプルだが、戦術が練りやすい
- -プレイ時間が短いため繰り返しプレイをすることができ、様々な戦術を練りやすい
- -ルールを簡単に決めることができる
-
-・これまでリーダー経験（課題制作・部活動等）がある方は、その時の具体的な内容と、苦労したこと・学びを得たことを教えてください。
-大学の卒業制作の際に後輩と2人で共同制作したことが、私のリーダー経験の一つです。
-プロシージャルデザインを用いた建築デザインをテーマに制作しており、頭の中でイメージしたロジックを共有して作業することにとても苦労しました。
-そこで、作業を一度明確化し上で細分化し、模型制作などイメージしやすい作業をなるべく後輩に割り振ることで、イメージのズレで作業に支障をきたさないように工夫を行っていました。
-このことを踏まえて作業の明確化と細分化を重要性を学ぶことができました。
-また、しっかりしていた後輩ということもあり、新社会人になった際には後輩の良い部分を学び、積極的に仕事や手伝いをするように心掛けています。
+・Plugin
+https://candrgroup-coyotevfx.atlassian.net/wiki/spaces/TEC/pages/344555807
 
 
-■Modelingtoolの説明
-○DataTableを用いたメリットの説明
-・アーティストに優しい設計をアピール
-・DataTableによるパラメーターの管理しやすいようにする
-
-・規則的に並べる処理
- -規則的に並べる処理を実装する
-・Greeble処理
- -装飾が単調にならないため(実際の建物をサンプルに説明をする)
- -建物の特徴をとらえてロジックに落とし込んだことを説明する
 
 
-●修正箇所をテキストにまとめる
-・ロジックを細かく使用方法をついて実装する
-・効率化をするための工夫部分を強調する
-・ツールの使用例を具体的に示す
+[ProceduralModeling]
+■BoxManager
+・側面で検証する
+○Initの実装
+ -Side, Front, Back
+ -InitParameter
+○Createの実装
+ -Pattern, Greeble
+○Detailの実装
+ -CopyToPoint
+
+●Init
+・BasePoint
+ -Side
+ -Front
+ -Back
+
+●Edit
+・Scale
+・Transform
+・Rotate
+
+●Create
+・Edit
+・Pattern
+・Greeble
+
+●Detail
+・CopyToPoint
+
+●Type
+
+■Detail
+・Base形態で検証する
+○Initの実装
+ -Boxの生成
+ -Parameterの実装
+○HoudiniのSampleプロジェクトから作業工程を勉強する
+○Baseのモデリング
+
+●Init
+・Point
+
+●Edit
+・EditFlow
+
+●Create
+
+●Type
+・PrimitiveでIntで管理する
+
+■VoronoiPattern(LineManager)
+・Topで検証する
+○Ptsからボロノイを行う処理を実装する
+ -サンプルコードで検証
+○PtsのEdit周りを設計
+
+●Init
+・InitPts
+ -Pos
+
+●Edit
+・AddVoronoiPts
+・MoveVoronoiPts
+・PatternVoronoiPts
+
+●Create
+・EditCreate
+・AddBlock
+ -Ptsを追加する
+
+●Type
+PtsType
+
+●Detail
+・Edge
+・Line
+・Color
+ -Base, Main, Vividを意識する
+
+
+[ModularModelieng]
+※明確なアセットセットを目標に都度新規実装を加えていく
+
+■Box
+○EditBaseの実装
+・全体的なフローの修正
+ -Type
+ -Create
+・Baseの実装
+ -Transform
+ -Scale
+ -Rotate
+
+△Greebleの再実装
+・FrontDirData
+
+○検証
+
+■LIne
+○DividePrimの実装
+・Editした部分をDividePrimする
+
+○EditBaseの実装
+・Scale
+・Transform
+
+○全体的なフローを実装
+・Type
+・BaseMatrixの適応
+
+○Editの検証
