@@ -1,3 +1,47 @@
+[Study]
+・SpareInput
+ -input数を増やす
+ --1で指定できる
+ -エンジンで動かすとバグる
+
+
+
+[USD]
+○報告書の作成
+　ー参考文献を調べる
+○CustomSchemaの参考文献の調査
+■Study
+●Solaris
+https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/09_solaris_vex/
+https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/01_solaris_open_usd/
+https://qiita.com/55hertz/items/2c6f5e7cead95ef62064
+
+●USD(Kitchen)
+https://zenn.dev/remiria/articles/7514e41f89a887b33730
+
+
+
+[セットアップ]
+○ファイル移植
+○VSCode(プラグイン)
+
+
+
+[IZON.]
+■Gimmick_04
+○修正
+・智人を抱えられないようにする処理を実装
+・Spawn位置の修正
+・エフェクトを消す
+○挙動の質問
+・タワーディフェンス時のThibitoの挙動
+
+■Gimmick_11
+・連打したら持ててしまう不具合の原因を調査
+・インタラクトUIの表示部分がないかを調査
+
+
+
 [Python]
 ■ツール課題
 ○選択処理の実装
@@ -24,6 +68,7 @@
  -Maya実践ハードサーフェスモデリング
 ・HardSurface
  -Maya実践ハードサーフェスモデリング
+
 
 ○LabsLotSubdivisionの調査
 https://www.sidefx.com/ja/docs/houdini/nodes/sop/labs--lot_subdivision.html
