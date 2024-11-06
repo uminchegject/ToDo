@@ -8,16 +8,15 @@
 
 [USD]
 ○報告書の作成
-　ー参考文献を調べる
+ ー参考文献を調べる
+ ーメモの作成
 ○CustomSchemaの参考文献の調査
+
 ■Study
 ●Solaris
 https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/09_solaris_vex/
 https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/01_solaris_open_usd/
 https://qiita.com/55hertz/items/2c6f5e7cead95ef62064
-
-●USD(Kitchen)
-https://zenn.dev/remiria/articles/7514e41f89a887b33730
 
 
 
@@ -28,6 +27,10 @@ https://zenn.dev/remiria/articles/7514e41f89a887b33730
 
 
 [IZON.]
+■Gimmick_11
+・連打したら持ててしまう不具合の原因を調査
+・インタラクトUIの表示部分がないかを調査
+
 ■Gimmick_04
 ○修正
 ・智人を抱えられないようにする処理を実装
@@ -36,17 +39,11 @@ https://zenn.dev/remiria/articles/7514e41f89a887b33730
 ○挙動の質問
 ・タワーディフェンス時のThibitoの挙動
 
-■Gimmick_11
-・連打したら持ててしまう不具合の原因を調査
-・インタラクトUIの表示部分がないかを調査
-
 
 
 [Python]
 ■ツール課題
-○選択処理の実装
-○削除処理の実装
- -回転値をXYZすべてゼロにする
+○質問
 
 ●仕様
 ・シーン内にアニメーションキーがあるか確認したい
@@ -69,19 +66,23 @@ https://zenn.dev/remiria/articles/7514e41f89a887b33730
 ・HardSurface
  -Maya実践ハードサーフェスモデリング
 
+○DetailAssetのPModeling化
 
-○LabsLotSubdivisionの調査
-https://www.sidefx.com/ja/docs/houdini/nodes/sop/labs--lot_subdivision.html
-○ScifiPanelsの調査
-https://www.sidefx.com/ja/docs/houdini/nodes/sop/labs--scifi_panels.html
+○HoudiniLabsをインストール
+https://zenn.dev/eke/articles/816beb76872052
+
 ○Greebleの実装
+
+○Clusterの実装
+・SubDivisionを参考にする
 
 ○Voronoiの検証
 ・サンプルプロジェクトの調査
 https://github.com/0x384c0/HoudiniProjects/tree/main/R%26D/procedural_modeling
+○ScifiPanelsの調査
+https://www.sidefx.com/ja/docs/houdini/nodes/sop/labs--scifi_panels.html
 
-○HoudiniLabsをインストール
-https://zenn.dev/eke/articles/816beb76872052
+○ScifPModelingの実装
 
 △Wireの検証
 ・サンプルプロジェクトの調査
