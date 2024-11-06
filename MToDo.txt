@@ -1,22 +1,15 @@
-[Study]
-・SpareInput
- -input数を増やす
- --1で指定できる
- -エンジンで動かすとバグる
-
-
-
 [USD]
-○報告書の作成
- ー参考文献を調べる
- ーメモの作成
-○CustomSchemaの参考文献の調査
+○セットアップ
+○Schemaの生成検証
+○CodeLessSchemaの生成検証
 
 ■Study
 ●Solaris
 https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/09_solaris_vex/
 https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/01_solaris_open_usd/
 https://qiita.com/55hertz/items/2c6f5e7cead95ef62064
+
+●Schema
 
 
 
@@ -28,8 +21,11 @@ https://qiita.com/55hertz/items/2c6f5e7cead95ef62064
 
 [IZON.]
 ■Gimmick_11
-・連打したら持ててしまう不具合の原因を調査
-・インタラクトUIの表示部分がないかを調査
+○連打したら持ててしまう不具合の原因を調査
+・CarryableGimmickActorが時間が経ってからでないとNullにならない
+　ーCheckisActiveCarryableObjectが正常に動くようにする
+○インタラクトUIの表示部分がないかを調査
+　ーノートPCで作業
 
 ■Gimmick_04
 ○修正
@@ -43,7 +39,8 @@ https://qiita.com/55hertz/items/2c6f5e7cead95ef62064
 
 [Python]
 ■ツール課題
-○質問
+○削除機能を実装
+ -Attributeを0にリセットする
 
 ●仕様
 ・シーン内にアニメーションキーがあるか確認したい
@@ -67,7 +64,12 @@ https://qiita.com/55hertz/items/2c6f5e7cead95ef62064
  -Maya実践ハードサーフェスモデリング
 
 ○DetailAssetのPModeling化
-
+・Tank
+ -Scale
+・Box
+ -Scale
+ -TubeNum
+ 
 ○HoudiniLabsをインストール
 https://zenn.dev/eke/articles/816beb76872052
 
