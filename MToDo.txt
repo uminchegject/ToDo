@@ -4,6 +4,8 @@
 ○CodeLessSchemaの生成検証
 
 ■Study
+○Chatwork
+
 ●Solaris
 https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/09_solaris_vex/
 https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/01_solaris_open_usd/
@@ -23,9 +25,9 @@ https://qiita.com/55hertz/items/2c6f5e7cead95ef62064
 ■Gimmick_11
 ○連打したら持ててしまう不具合の原因を調査
 ・CarryableGimmickActorが時間が経ってからでないとNullにならない
-　ーCheckisActiveCarryableObjectが正常に動くようにする
+ ーCheckisActiveCarryableObjectが正常に動くようにする
 ○インタラクトUIの表示部分がないかを調査
-　ーノートPCで作業
+ ーノートPCで作業
 
 ■Gimmick_04
 ○修正
@@ -57,23 +59,12 @@ https://qiita.com/55hertz/items/2c6f5e7cead95ef62064
 ・背景(街並み)の世界観を作ることを意識する
 ・ModularModelingとProceduralPatternをベースとした実装する
 
-○リファレンスを調査
-・TopAsset
- -Maya実践ハードサーフェスモデリング
-・HardSurface
- -Maya実践ハードサーフェスモデリング
-
-○DetailAssetのPModeling化
-・Tank
- -Scale
-・Box
- -Scale
- -TubeNum
- 
-○HoudiniLabsをインストール
-https://zenn.dev/eke/articles/816beb76872052
+○DetailModeling
+・Maya実践ハードサーフェスモデリングを参考にする
+・DetailAssetのPModeling設計
 
 ○Greebleの実装
+・TopのMModelingを検証
 
 ○Clusterの実装
 ・SubDivisionを参考にする
