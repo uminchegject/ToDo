@@ -1,39 +1,41 @@
-[反省]
-●環境パス
-・Document/Houdini/packageに環境パス管理jsonが存在する
- -jsonにHoudiniPathを指定することでHoudiniフォルダとして参照することができる
-・HoudiniPath::メインのパス、&がデフォルトを意味する
+[Study]
+●キャッチシャドウ・リフレクションハイライト
+・壁面に溝や穴を掘ることで影やハイライトの演出
+・形状コントラスト、影とハイライトのコントラスト
+・直線的なオブジェクトと曲面を持つオブジェクトを組み合わせる
+
+・小さいオブジェクトを組み込むことで立体的に見せる
+・ヒューマンスケールを意識する
+
+●MayaPython
+・Docstring(コメント)を必ずつける
+・undoの修正
+・ログの表示
+・unicordの登録
 
 
 
 [USD]
 ○セットアップのドキュメント作成
 ○環境変数を用いたSchemaの読み込み検証
-○モジュールのビルド生成方法のSchemaを確認
+○HoudiniのUSDビルド周りを調査
+○WindowのUSDビルド周りを調査
 
 ■Study
 ○Solarisの操作
 https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/13_create_usdAssets_01/
 https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/09_solaris_vex/
+https://houdinifx.jp/blog/usd%E3%81%AE%E5%9F%BA%E7%A4%8E/
 
 ○USDのコーディング周り(usda)
-https://qiita.com/takahito-tejima/items/ee0332bfb5c9baed3b09
-
-
-
-[セットアップ]
-○ファイル移植
-○VSCode(プラグイン)
 
 
 
 [IZON.]
 ■Gimmick_11
-○連打したら持ててしまう不具合の原因を調査
-・CarryableGimmickActorが時間が経ってからでないとNullにならない
- ーCheckisActiveCarryableObjectが正常に動くようにする
 ○インタラクトUIの表示部分がないかを調査
- ーノートPCで作業
+・BP_PL002_00クラスのHidden, ChangeImageを参考に処理を実装する
+・AccessCollission_Gimmickに持つ処理を入れる
 
 ■Gimmick_04
 ○修正
@@ -46,15 +48,6 @@ https://qiita.com/takahito-tejima/items/ee0332bfb5c9baed3b09
 
 
 [Python]
-■ツール課題
-○確認
-
-●仕様
-・シーン内にアニメーションキーがあるか確認したい
- -ある場合はアニメーションキーがついたobjectの一覧が見れると良い。
- -リストを選択すると、そのobjectを選択したい。
- -リストで選択中のobjectのアニメーションキー削除機能もあるとGood。
- -欲をいえば、削除後に回転値をXYZすべてゼロにしてほしい
 
 
 
@@ -64,8 +57,10 @@ https://qiita.com/takahito-tejima/items/ee0332bfb5c9baed3b09
 ・背景(街並み)の世界観を作ることを意識する
 ・ModularModelingとProceduralPatternをベースとした実装する
 
-○ScifiPanelsの調査
-https://www.sidefx.com/ja/docs/houdini/nodes/sop/labs--scifi_panels.html
+○DetailPatternの設計
+・ScifiPanelsを参考にする
+ -CaveでEdgeLineを調整して、LineをSweepし、Polybevelし、PolyExtrudeする
+ -EdgePointをグループ化し、PolyBevelする
 
 ○Greebleの実装
 
