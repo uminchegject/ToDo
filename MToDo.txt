@@ -1,120 +1,57 @@
-[Study]
-●キャッチシャドウ・リフレクションハイライト
-・壁面に溝や穴を掘ることで影やハイライトの演出
-・形状コントラスト、影とハイライトのコントラスト
-・直線的なオブジェクトと曲面を持つオブジェクトを組み合わせる
+■BlockManagerの実装
+○Greeble
 
-・小さいオブジェクトを組み込むことで立体的に見せる
-・ヒューマンスケールを意識する
+○Cluster
 
-●MayaPython
-・Docstring(コメント)を必ずつける
-・undoの修正
-・ログの表示
-・unicordの登録
+△Miller
 
-
-
-[USD]
-○セットアップのドキュメント作成
-○環境変数を用いたSchemaの読み込み検証
-○HoudiniのUSDビルド周りを調査
-○WindowのUSDビルド周りを調査
-
-■Study
-○Solarisの操作
-https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/13_create_usdAssets_01/
-https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/09_solaris_vex/
-https://houdinifx.jp/blog/usd%E3%81%AE%E5%9F%BA%E7%A4%8E/
-
-○USDのコーディング周り(usda)
-
-
-
-[IZON.]
-■Gimmick_11
-○インタラクトUIの表示部分がないかを調査
-・BP_PL002_00クラスのHidden, ChangeImageを参考に処理を実装する
-・AccessCollission_Gimmickに持つ処理を入れる
-
-■Gimmick_04
-○修正
-・智人を抱えられないようにする処理を実装
-・Spawn位置の修正
-・エフェクトを消す
-○挙動の質問
-・タワーディフェンス時のThibitoの挙動
-
-
-
-[Python]
-
-
-
-[ProceduralModeling]
-※Modeling作業は極力会社で行う
-・同作者、同作品でテーマを統一する
-・背景(街並み)の世界観を作ることを意識する
-・ModularModelingとProceduralPatternをベースとした実装する
-
-○DetailPatternの設計
+■DetailManagerの実装
+○DetailPattern
 ・ScifiPanelsを参考にする
  -CaveでEdgeLineを調整して、LineをSweepし、Polybevelし、PolyExtrudeする
  -EdgePointをグループ化し、PolyBevelする
 
-○Greebleの実装
+○CopyToPoint
 
-○Clusterの実装
+■Manager
+●Init
+・InitBlock
 
-○Voronoiの検証
-・サンプルプロジェクトの調査
-https://github.com/0x384c0/HoudiniProjects/tree/main/R%26D/procedural_modeling
+●Edit
+・Cluster(Type)
+・Miller
 
-○DetailModeling
-・Maya実践ハードサーフェスモデリングを参考にする
-・DetailAssetのPModeling設計
+●Create
+・Greeble
 
-△Wireの検証
-・サンプルプロジェクトの調査ｋ
-https://houdinifx.jp/blog/labs-cable-generator2-0-sop/
+●Type
+PtsType
 
-△マテリアル周りの検証
+●DetailAsset
 
-■Body
-●PPattern
-・Voronoi
-
-●MModeling
-・Block
- -Window
- -HardSurface
-
-●Detail
-・Window
-・HardSurface
-・Structure
-
-■Top
-●MModeling
-・GreebleBlock
- -TopAsset
-
-●Detail
-・Tank
-・電柱(Line)
+●DetailPattern
+・Edge
+・Line
+・Color
+ -Base, Main, Vividを意識する
 
 
 
-■Line
-○DividePrimの実装
-・Editした部分をDividePrimする
+■攻殻機動隊
+○Topの検証
+・Greeble
+・AssetScaleの設定
+ -辺の長さに応じた大きさにする
+・CopyToPoint
+ -DetailAssetのスケールを調整し配置
 
-○EditBaseの実装
-・Scale
-・Transform
-
-○全体的なフローを実装
-・Type
-・BaseMatrixの適応
-
-○Editの検証
+○Sideの検証
+・BaseBlockPointの生成
+ -Greebleを行いBlockPointをCluster化
+ -△Pointの座標をミラー化する
+・BaseBlockの生成
+ -Primitiveを生成し結合を行う
+ -EdgeとEdgeLineを抽出
+・DetailPatternの検証
+ -色をコントラストを付けて確認する
+ -ScifiPanelのロジックを参考に実装する
