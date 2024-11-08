@@ -4,13 +4,21 @@
  -jsonにHoudiniPathを指定することでHoudiniフォルダとして参照することができる
 ・HoudiniPath::メインのパス、&がデフォルトを意味する
 
+
+
 [USD]
 ○セットアップのドキュメント作成
-○Solaris上でのSchemaを用いた編集検証
+○環境変数を用いたSchemaの読み込み検証
+○モジュールのビルド生成方法のSchemaを確認
 
 ■Study
 ○Solarisの操作
-○USDのコーディング周り
+https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/13_create_usdAssets_01/
+https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/09_solaris_vex/
+
+○USDのコーディング周り(usda)
+https://qiita.com/takahito-tejima/items/ee0332bfb5c9baed3b09
+
 
 
 [セットアップ]
@@ -56,21 +64,20 @@
 ・背景(街並み)の世界観を作ることを意識する
 ・ModularModelingとProceduralPatternをベースとした実装する
 
-○DetailModeling
-・Maya実践ハードサーフェスモデリングを参考にする
-・DetailAssetのPModeling設計
+○ScifiPanelsの調査
+https://www.sidefx.com/ja/docs/houdini/nodes/sop/labs--scifi_panels.html
 
 ○Greebleの実装
-・TopのMModelingを検証
 
 ○Clusterの実装
-・SubDivisionを参考にする
+
 ○Voronoiの検証
 ・サンプルプロジェクトの調査
 https://github.com/0x384c0/HoudiniProjects/tree/main/R%26D/procedural_modeling
-○ScifiPanelsの調査
-https://www.sidefx.com/ja/docs/houdini/nodes/sop/labs--scifi_panels.html
-○ScifPModelingの実装
+
+○DetailModeling
+・Maya実践ハードサーフェスモデリングを参考にする
+・DetailAssetのPModeling設計
 
 △Wireの検証
 ・サンプルプロジェクトの調査ｋ
@@ -91,7 +98,6 @@ https://houdinifx.jp/blog/labs-cable-generator2-0-sop/
 ・Window
 ・HardSurface
 ・Structure
-
 
 ■Top
 ●MModeling
