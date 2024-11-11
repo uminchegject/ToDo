@@ -136,7 +136,7 @@ PtsType
  -色をコントラストを付けて確認する
  -ScifiPanelのロジックを参考に実装する
 
-■Line
+■LineManager(Arc)
 ※Editした部分のTypeをまとめる
 ※PrimTypeを分けて管理する
  -MatrixType,PrimType
@@ -147,6 +147,7 @@ PtsType
 ●Edit
 ・Scale(Prim)
 ・Transform(Prim)
+・凹(検証)
 
 ●Create
 ・DivideHeight
