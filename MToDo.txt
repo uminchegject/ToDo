@@ -7,11 +7,12 @@
 ・小さいオブジェクトを組み込むことで立体的に見せる
 ・ヒューマンスケールを意識する
 
-●MayaPython
-・Docstring(コメント)を必ずつける
-・undoの修正
-・ログの表示
-・unicordの登録
+●ProceduralModeling
+・Modeling作業は極力会社で行う
+・同作者、同作品でテーマを統一する
+・背景(街並み)の世界観を作ることを意識する
+・ModularModelingとProceduralPatternをベースとした実装する
+・明確なアセットセットを目標に都度新規実装を加えていく
 
 
 
@@ -30,16 +31,13 @@ https://www.sidefx.com/forum/topic/84456/
 https://www.sidefx.com/tutorials/compiling-usd-plugins-for-houdini-windows-10/
 
 
-■Study
-○公式ドキュメント(Houdini_USD)
-※公式ドキュメントから全体的な構造を把握する
-https://www.sidefx.com/docs/hdk/_h_d_k__u_s_d.html
-https://openusd.org/docs/Houdini-USD-Plugins.html
-
 ○Solarisの操作
 https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/13_create_usdAssets_01/
 https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/09_solaris_vex/
 https://houdinifx.jp/blog/usd%E3%81%AE%E5%9F%BA%E7%A4%8E/
+・公式
+https://www.sidefx.com/docs/hdk/_h_d_k__u_s_d.html
+https://openusd.org/docs/Houdini-USD-Plugins.html
 
 ○USDのコーディング周り(usda)
 
@@ -60,20 +58,15 @@ https://houdinifx.jp/blog/usd%E3%81%AE%E5%9F%BA%E7%A4%8E/
 ・タワーディフェンス時のThibitoの挙動
 
 
-
 [Python]
-○修正
 
 
 [ProceduralModeling]
-・Modeling作業は極力会社で行う
-・同作者、同作品でテーマを統一する
-・背景(街並み)の世界観を作ることを意識する
-・ModularModelingとProceduralPatternをベースとした実装する
-・明確なアセットセットを目標に都度新規実装を加えていく
-
 ■BlockManagerの実装
 ※Surface(四角)をBaseとして実装する
+○BoxParameterInputをParameterInputに変換する
+ -BaseEditorのソースをParameterInputに変換する
+
 ○Greebleのパラメーター化
 
 ○Patternのパラメーター化
@@ -93,6 +86,7 @@ https://github.com/0x384c0/HoudiniProjects/tree/main/R%26D/procedural_modeling
  -EdgePointをグループ化し、PolyBevelする
 
 ○CopyToPoint
+・サイズの調整を行う
 
 △マテリアル周りの検証
 
