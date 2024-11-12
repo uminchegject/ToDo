@@ -14,22 +14,23 @@
 ・ModularModelingとProceduralPatternをベースとした実装する
 ・明確なアセットセットを目標に都度新規実装を加えていく
 
-
-
 [USD]
-○セットアップのドキュメント作成
+○USDのビルド
+ -CMake 3.25.3
+ -Python 3.9.13
+ -pip 22.0.4
+ -Pyside 2
+ -visualStudio2019
+
+○HDKの調査
+・HDKのTutorialを行う
+https://qiita.com/jyouryuusui/items/14cb1804ba426d7b287f
+
+○HoudiniHDKを用いたビルドの検証
+○USDを用いたビルドの検証
+・ライブラリのインストール方法の解消確認
 ○環境変数を用いたSchemaの読み込み検証
-○HoudiniのUSDビルド周りを調査
-○WindowのUSDビルド周りを調査
-
-●検証
-・Adding custom "Kind" 
-https://www.sidefx.com/forum/topic/84456/
-
-●参考資料
-・CompileUSD
-https://www.sidefx.com/tutorials/compiling-usd-plugins-for-houdini-windows-10/
-
+　ーHOUDINI_DSO_USD_PATH
 
 ○Solarisの操作
 https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/13_create_usdAssets_01/
@@ -46,16 +47,15 @@ https://openusd.org/docs/Houdini-USD-Plugins.html
 [IZON.]
 ■Gimmick_11
 ○インタラクトUIの表示部分がないかを調査
+・△BP_PL002_00と同じ処理で実装する
+　ーBP_Kyojinと接触中に同じ処理が走るように実装する
+　ー持たれた際に呼び出されるイベントがあれば紐づける
 ・BP_PL002_00クラスのHidden, ChangeImageを参考に処理を実装する
 ・AccessCollission_Gimmickに持つ処理を入れる
 
 ■Gimmick_04
-○修正
-・智人を抱えられないようにする処理を実装
-・Spawn位置の修正
-・エフェクトを消す
-○挙動の質問
-・タワーディフェンス時のThibitoの挙動
+○相談
+・一度確認してもらう
 
 
 [Python]
@@ -64,15 +64,6 @@ https://openusd.org/docs/Houdini-USD-Plugins.html
 [ProceduralModeling]
 ■BlockManagerの実装
 ※Surface(四角)をBaseとして実装する
-○BoxParameterInputをParameterInputに変換する
- -BaseEditorのソースをParameterInputに変換する
-
-○Greebleのパラメーター化
-
-○Patternのパラメーター化
-
-○Clusterのパラメーター化
-
 △Miller
 
 △Voronoi検証
@@ -116,26 +107,7 @@ PtsType
 ・Line
 ・Color
  -Base, Main, Vividを意識する
-
-■攻殻機動隊
-○Topの検証
-・Greeble
-・AssetScaleの設定
- -辺の長さに応じた大きさにする
-・CopyToPoint
- -DetailAssetのスケールを調整し配置
-
-○Sideの検証
-・BaseBlockPointの生成
- -Greebleを行いBlockPointをCluster化
- -△Pointの座標をミラー化する
-・BaseBlockの生成
- -Primitiveを生成し結合を行う
- -EdgeとEdgeLineを抽出
-・DetailPatternの検証
- -色をコントラストを付けて確認する
- -ScifiPanelのロジックを参考に実装する
-
+ 
 ■LineManager(Arc)
 ※Editした部分のTypeをまとめる
 ※PrimTypeを分けて管理する
@@ -157,3 +129,22 @@ PtsType
 ●Type
 ・MatrixType
 ・PrimType
+
+■攻殻機動隊
+○Topの検証
+・Greeble
+・AssetScaleの設定
+ -辺の長さに応じた大きさにする
+・CopyToPoint
+ -DetailAssetのスケールを調整し配置
+
+○Sideの検証
+・BaseBlockPointの生成
+ -Greebleを行いBlockPointをCluster化
+ -△Pointの座標をミラー化する
+・BaseBlockの生成
+ -Primitiveを生成し結合を行う
+ -EdgeとEdgeLineを抽出
+・DetailPatternの検証
+ -色をコントラストを付けて確認する
+ -ScifiPanelのロジックを参考に実装する
