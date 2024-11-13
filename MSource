@@ -1,33 +1,22 @@
-○DetailAssetの配置
-・短い辺のサイズを基準にする
-・高さは範囲を設定しランダムに決める
+○
+お疲れ様です。お時間を頂いてしまい大変申し訳ございません。
+新しいプロジェクトが落ち着き、Gimmick_11の対応が完了したため連絡させて頂きます。
+また、Gimmick_04についても基本的な部分の実装は完了したのですが、いくつか気になる点があるため相談させて頂けると幸いです。
+・
 
-vector heightRange = {1.0, 1.5, 0};
-float height = random(v@P) * (heightRange.y - heightRange.x) + heightRange.x;
+[ドキュメント]
+■CodeLess
+●手順
+●メリット
+●デメリット
+・書き方
 
-float depth = v@scale.x;
-if(v@scale.y < v@scale.x) depth = v@scale.y;
+■ビルド
+●手順
+●メリット
+●デメリット
+・書き方
 
-vector slidableVector = 0;
-if(v@scale.x < v@scale.z) slidableVector.z = v@scale.z - v@scale.x;
-else slidableVector.x = v@scale.x - v@scale.z;
-slidableVector /= 2;
-
-vector spawnPos = v@P;
-spawnPos.y += height / 2;
-spawnPos += random(v@P) * slidableVector;
-
-vector scale = v@scale;
-scale.y = height;
-if(v@scale.x < v@scale.z) scale.z = v@scale.x;
-else scale.x = v@scale.z;
-
-v@P = spawnPos;
-v@scale = scale;
-
-
-○ScifiPanelの整理
-
-
-
-python build_usd.py "C:\Users\uminc\Desktop\OpenUSD-release\build"
+■検証
+○CodeLessの扱い方
+○ビルドの場合バイナリとjsonを移動しただけで両方で使えるのか
