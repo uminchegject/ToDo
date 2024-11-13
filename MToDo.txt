@@ -7,30 +7,15 @@
 ・小さいオブジェクトを組み込むことで立体的に見せる
 ・ヒューマンスケールを意識する
 
-●ProceduralModeling
-・Modeling作業は極力会社で行う
-・同作者、同作品でテーマを統一する
-・背景(街並み)の世界観を作ることを意識する
-・ModularModelingとProceduralPatternをベースとした実装する
-・明確なアセットセットを目標に都度新規実装を加えていく
 
 [USD]
-○USDのビルド
- -CMake 3.25.3
- -Python 3.9.13
- -pip 22.0.4
- -Pyside 2
- -visualStudio2019
+○SideFXUSDを用いたビルドの検証
+https://github.com/sideeffects/USD
 
-○HDKの調査
-・HDKのTutorialを行う
-https://qiita.com/jyouryuusui/items/14cb1804ba426d7b287f
-
-○HoudiniHDKを用いたビルドの検証
-○USDを用いたビルドの検証
-・ライブラリのインストール方法の解消確認
 ○環境変数を用いたSchemaの読み込み検証
 　ーHOUDINI_DSO_USD_PATH
+
+△HDKを用いたPluginのコンパイル方法の調査
 
 ○Solarisの操作
 https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/13_create_usdAssets_01/
@@ -40,25 +25,18 @@ https://houdinifx.jp/blog/usd%E3%81%AE%E5%9F%BA%E7%A4%8E/
 https://www.sidefx.com/docs/hdk/_h_d_k__u_s_d.html
 https://openusd.org/docs/Houdini-USD-Plugins.html
 
-○USDのコーディング周り(usda)
-
+○HDK
+https://qiita.com/jyouryuusui/items/14cb1804ba426d7b287f
 
 
 [IZON.]
-■Gimmick_11
-○インタラクトUIの表示部分がないかを調査
-・△BP_PL002_00と同じ処理で実装する
-　ーBP_Kyojinと接触中に同じ処理が走るように実装する
-　ー持たれた際に呼び出されるイベントがあれば紐づける
-・BP_PL002_00クラスのHidden, ChangeImageを参考に処理を実装する
-・AccessCollission_Gimmickに持つ処理を入れる
-
-■Gimmick_04
 ○相談
-・一度確認してもらう
-
+お疲れ様です。お時間を頂いてしまい大変申し訳ございません。
+新しいプロジェクトが落ち着き、Gimmick_11の対応が完了したため連絡させて頂きます。
+また、Gimmick_04についても基本的な部分の実装は完了したのですが、いくつか気になる点があるため相談させて頂けると幸いです。
 
 [Python]
+○仕様確認
 
 
 [ProceduralModeling]
@@ -70,14 +48,17 @@ https://openusd.org/docs/Houdini-USD-Plugins.html
 ・サンプルプロジェクトの調査
 https://github.com/0x384c0/HoudiniProjects/tree/main/R%26D/procedural_modeling
 
+
 ■DetailManagerの実装
 ○DetailPattern
 ・ScifiPanelsを参考にする
  -CaveでEdgeLineを調整して、LineをSweepし、Polybevelし、PolyExtrudeする
  -EdgePointをグループ化し、PolyBevelする
+・設計
+ -BaseLineを生成しPatternを生成する
 
 ○CopyToPoint
-・サイズの調整を行う
+・実際のDetailAssetに適応させてみる
 
 △マテリアル周りの検証
 
