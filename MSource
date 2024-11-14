@@ -1,22 +1,18 @@
-○
-お疲れ様です。お時間を頂いてしまい大変申し訳ございません。
-新しいプロジェクトが落ち着き、Gimmick_11の対応が完了したため連絡させて頂きます。
-また、Gimmick_04についても基本的な部分の実装は完了したのですが、いくつか気になる点があるため相談させて頂けると幸いです。
-・
+■Block
+○Clusterの修正
+・Noiseで管理
+ -Cofficient
+ -Addjust
+・Noise値を割ってintにし、ポイントを割り当てる
+ 
+○Millerの実装
+・2等分し、片方に処理を入れ、もう片方に適応をさせる 
 
-[ドキュメント]
-■CodeLess
-●手順
-●メリット
-●デメリット
-・書き方
+○SideSurface
+・Greeble,Miller,Clusterを組み合わせて実装
 
-■ビルド
-●手順
-●メリット
-●デメリット
-・書き方
+■DetailAsset
+○TopObjectをサイズ適応処理を実装して検証
 
-■検証
-○CodeLessの扱い方
-○ビルドの場合バイナリとjsonを移動しただけで両方で使えるのか
+■DetailPattern
+○Blockのスケール(Offset)の実装
