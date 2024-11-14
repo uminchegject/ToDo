@@ -9,12 +9,7 @@
 
 
 [USD]
-○CodeLessの扱い方の検証
-
-○環境変数を用いたSchemaの読み込み検証
- ーHOUDINI_DSO_USD_PATH
-
-○ビルドの場合バイナリとjsonを移動しただけで両方で使えるのか
+○見直し
 
 ○Solarisの操作
 https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/13_create_usdAssets_01/
@@ -28,32 +23,36 @@ https://openusd.org/docs/Houdini-USD-Plugins.html
 https://qiita.com/jyouryuusui/items/14cb1804ba426d7b287f
 
 
-[ドキュメント]
-■CodeLess
-●手順
-●メリット
-・通常のビルドを行う方法と比較して工程が非常に楽
-●デメリット
-・通常の定義方法と違いがあるため、Editorの使い方とは
-
-■ビルド
-●手順
-●メリット
-・通常のSchema定義方法なので、Houdini以外でSchemaを定義する必要がある場合などは
-●デメリット
-手順が非常に複雑(特にUSDのビルドが)、既に定義してあるSchemaのデータを配置することがメインになってきそう
-
 
 [IZON.]
-○相談
-お疲れ様です。お時間を頂いてしまい大変申し訳ございません。
-新しいプロジェクトが落ち着き、Gimmick_11の対応が完了したため連絡させて頂きます。
-また、Gimmick_04についても基本的な部分の実装は完了したのですが、いくつか気になる点があるため相談させて頂けると幸いです。
-・エフェクトが不自然
-・智人が棒立ちになってしまう(召喚している感じのモーションがあればいいかも…)
+○ワープホールの修正
+・時間が経ったら召喚
+・敵を倒したらエフェクトを表示し、ワープ可能にする
+・素材 :: SM_tw-2_Trasfer_Device
+○智人のアニメ―ションの実装
+・アニメーション(Montage)周りの実装方法を調査
 
 [Python]
-○仕様確認
+○判別処理の実装
+○色付け方法の確認
+
+●仕様
+命名規則
+L(R)_name_No_..._ctrl
+
+コントローラは、末尾に「_ctrl」が必ず付く
+中間に「_ctrl」がつくノードもあるが、末尾以外は無視
+
+L_XXXとなっていたら、青
+R_XXXとなっていたら、紫
+Ph_L(R)_XXXとなっていたら、水色
+Uq_L(R)_XXXとなっていたら、水色
+XXX_meta_ui_Ctrlとなっていたら、ピンク
+上記条件に合わないモノは変更しないようにしたい。
+
+今回の「～_ctrl」を判別する部分で注文があります。
+こちらはsplitで最後の文字で判別できることは分かってますが、今回は正規表現を使って判別をしてください。
+
 
 
 [ProceduralModeling]
@@ -67,11 +66,11 @@ https://github.com/0x384c0/HoudiniProjects/tree/main/R%26D/procedural_modeling
 
 ■DetailManagerの実装
 ○DetailPattern
-・ScifiPanelsを参考にする
- -CaveでEdgeLineを調整して、LineをSweepし、Polybevelし、PolyExtrudeする
- -EdgePointをグループ化し、PolyBevelする
-・設計
- -BaseLineを生成しPatternを生成する
+・マテリアル周りの実装
+ -窓
+ -壁
+・ClusterとGreebleを用いてBlockをType化
+・Type化したBlockに対してマテリアルを適応
 
 ○CopyToPoint
 ・実際のDetailAssetに適応させてみる
