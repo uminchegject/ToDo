@@ -32,6 +32,8 @@ https://qiita.com/jyouryuusui/items/14cb1804ba426d7b287f
 ○智人のアニメ―ションの実装
 ・アニメーション(Montage)周りの実装方法を調査
 
+
+
 [Python]
 ○判別処理の実装
 ○色付け方法の確認
@@ -58,24 +60,40 @@ XXX_meta_ui_Ctrlとなっていたら、ピンク
 [ProceduralModeling]
 ■BlockManagerの実装
 ※Surface(四角)をBaseとして実装する
+
+○Clusterの修正
+・Noiseで管理
+ -Cofficient
+ -Addjust
+・Noise値を割ってintにし、ポイントを割り当てる
+
 △Miller
+・2等分し、片方に処理を入れ、もう片方に適応をさせる 
 
 △Voronoi検証
 ・サンプルプロジェクトの調査
 https://github.com/0x384c0/HoudiniProjects/tree/main/R%26D/procedural_modeling
 
-■DetailManagerの実装
-○DetailPattern
+■SurfaceManager
+○SideSurface
+・Greeble,Miller,Clusterを組み合わせて実装
+
+■DetailPatternの実装
 ・マテリアル周りの実装
  -窓
  -壁
 ・ClusterとGreebleを用いてBlockをType化
 ・Type化したBlockに対してマテリアルを適応
 
-○CopyToPoint
-・実際のDetailAssetに適応させてみる
+○Blockのスケール(Offset)の実装
 
 △マテリアル周りの検証
+
+■DetailAsset
+○TopObjectをサイズ適応処理を実装して検証
+
+○CopyToPoint
+・実際のDetailAssetに適応させてみる
 
 ■LineManagerの実装
 ○ArcLineManager
