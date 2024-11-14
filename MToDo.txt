@@ -9,13 +9,12 @@
 
 
 [USD]
-○SideFXUSDを用いたビルドの検証
-https://github.com/sideeffects/USD
+○CodeLessの扱い方の検証
 
 ○環境変数を用いたSchemaの読み込み検証
-　ーHOUDINI_DSO_USD_PATH
+ ーHOUDINI_DSO_USD_PATH
 
-△HDKを用いたPluginのコンパイル方法の調査
+○ビルドの場合バイナリとjsonを移動しただけで両方で使えるのか
 
 ○Solarisの操作
 https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/13_create_usdAssets_01/
@@ -29,11 +28,29 @@ https://openusd.org/docs/Houdini-USD-Plugins.html
 https://qiita.com/jyouryuusui/items/14cb1804ba426d7b287f
 
 
+[ドキュメント]
+■CodeLess
+●手順
+●メリット
+・通常のビルドを行う方法と比較して工程が非常に楽
+●デメリット
+・通常の定義方法と違いがあるため、Editorの使い方とは
+
+■ビルド
+●手順
+●メリット
+・通常のSchema定義方法なので、Houdini以外でSchemaを定義する必要がある場合などは
+●デメリット
+手順が非常に複雑(特にUSDのビルドが)、既に定義してあるSchemaのデータを配置することがメインになってきそう
+
+
 [IZON.]
 ○相談
 お疲れ様です。お時間を頂いてしまい大変申し訳ございません。
 新しいプロジェクトが落ち着き、Gimmick_11の対応が完了したため連絡させて頂きます。
 また、Gimmick_04についても基本的な部分の実装は完了したのですが、いくつか気になる点があるため相談させて頂けると幸いです。
+・エフェクトが不自然
+・智人が棒立ちになってしまう(召喚している感じのモーションがあればいいかも…)
 
 [Python]
 ○仕様確認
@@ -47,7 +64,6 @@ https://qiita.com/jyouryuusui/items/14cb1804ba426d7b287f
 △Voronoi検証
 ・サンプルプロジェクトの調査
 https://github.com/0x384c0/HoudiniProjects/tree/main/R%26D/procedural_modeling
-
 
 ■DetailManagerの実装
 ○DetailPattern
