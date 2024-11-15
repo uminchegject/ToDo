@@ -1,20 +1,20 @@
-[USD]
-○cmakeビルド
-https://fereria.github.io/reincarnation_tech/usd/cpp/cmakebuild
-
-○見直し
-
-○Solarisの操作
+[Study]
+・Solarisの操作
 https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/13_create_usdAssets_01/
 https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/09_solaris_vex/
 https://houdinifx.jp/blog/usd%E3%81%AE%E5%9F%BA%E7%A4%8E/
 ・公式
 https://www.sidefx.com/docs/hdk/_h_d_k__u_s_d.html
 https://openusd.org/docs/Houdini-USD-Plugins.html
-
-○HDK
+・HDK
 https://qiita.com/jyouryuusui/items/14cb1804ba426d7b287f
+・cmakeビルド
+https://fereria.github.io/reincarnation_tech/usd/cpp/cmakebuild
+・USDC++
+https://fereria.github.io/reincarnation_tech/usd/cpp/start_usdcpp
 
+
+[USD]
 
 
 [IZON.]
@@ -22,19 +22,30 @@ https://qiita.com/jyouryuusui/items/14cb1804ba426d7b287f
 ・時間が経ったら召喚
 ・敵を倒したらエフェクトを表示し、ワープ可能にする
 ・素材 :: SM_tw-2_Trasfer_Device
-○智人のアニメ―ションの実装
-・アニメーション(Montage)周りの実装方法を調査
 
+○Montageの学習
+
+○智人のアニメ―ションの実装
+・呼び出せないように修正
+・アニメーション(Montage)周りの実装方法を調査
+・BP_KyojinのStartGuardMotionを参考にする
 
 
 [Python]
 ○判別処理の実装
-○色付け方法の確認
+
+○Jointの色付け
+https://teikes.hatenablog.com/entry/2021/05/26/190042
+
+targetNode = pm.PyNode("node_name_of_target")
+targetNode.overrideEnabled.set(1)
+targetNode.overrideRGBColors.set(1)
+targetNode.overrideColorRGB.set(rgbColor)
 
 ●仕様
 命名規則
 L(R)_name_No_..._ctrl
-
+＾
 コントローラは、末尾に「_ctrl」が必ず付く
 中間に「_ctrl」がつくノードもあるが、末尾以外は無視
 
@@ -47,101 +58,3 @@ XXX_meta_ui_Ctrlとなっていたら、ピンク
 
 今回の「～_ctrl」を判別する部分で注文があります。
 こちらはsplitで最後の文字で判別できることは分かってますが、今回は正規表現を使って判別をしてください。
-
-
-
-[ProceduralModeling]
-■BlockManagerの実装
-※Surface(四角)をBaseとして実装する
-
-○Clusterの修正
-・Noiseで管理
- -Cofficient
- -Addjust
-・Noise値を割ってintにし、ポイントを割り当てる
-
-■DetailAsset
-○TopObjectをサイズ適応処理を実装して検証
-
-○CopyToPoint
-・実際のDetailAssetに適応させてみる
-
-■SurfaceManager
-○SideSurface
-・Greeble,Miller,Clusterを組み合わせて実装
-
-○Blockのスケール(Offset)の実装
-
-○Miller
-・2等分し、片方に処理を入れ、もう片方に適応をさせる 
-
-△Voronoi検証
-・サンプルプロジェクトの調査
-https://github.com/0x384c0/HoudiniProjects/tree/main/R%26D/procedural_modeling
-
-●設計
- -Edge
- -Line
-・Edit
-・Create
-・Type
-
-■DetailPatternの実装
-△マテリアル周りの実装
-・ClusterとGreebleを用いてBlockをType化
-・Type化したBlockに対してマテリアルを適応
- -窓
- -壁
- 
-●キャッチシャドウ・リフレクションハイライト
-・壁面に溝や穴を掘ることで影やハイライトの演出
-・形状コントラスト、影とハイライトのコントラスト
-・直線的なオブジェクトと曲面を持つオブジェクトを組み合わせる
-
-・小さいオブジェクトを組み込むことで立体的に見せる
-・ヒューマンスケールを意識する
-
-■LineManagerの実装
-○ArcLineManager
-・現在の実装部分を修正する
-
-■LineManager(Arc)
-※Editした部分のTypeをまとめる
-※PrimTypeを分けて管理する
- -MatrixType,PrimType
-
-●Init
-・Line(Box)
-
-●Edit
-・Scale(Prim)
-・Transform(Prim)
-・凹(検証)
-
-●Create
-・DivideHeight
-・DividePrim
-・Greeble
-
-●Type
-・MatrixType
-・PrimType
-
-■攻殻機動隊
-○Topの検証
-・Greeble
-・AssetScaleの設定
- -辺の長さに応じた大きさにする
-・CopyToPoint
- -DetailAssetのスケールを調整し配置
-
-○Sideの検証
-・BaseBlockPointの生成
- -Greebleを行いBlockPointをCluster化
- -△Pointの座標をミラー化する
-・BaseBlockの生成
- -Primitiveを生成し結合を行う
- -EdgeとEdgeLineを抽出
-・DetailPatternの検証
- -色をコントラストを付けて確認する
- -ScifiPanelのロジックを参考に実装する
