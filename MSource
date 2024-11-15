@@ -1,20 +1,99 @@
-■Block
+[ProceduralModeling]
+■BlockManager
+※Surface(四角)をBaseとして実装する
+
 ○Clusterの修正
 ・Noiseで管理
  -Cofficient
  -Addjust
 ・Noise値を割ってintにし、ポイントを割り当てる
- 
-○Millerの実装
-・2等分し、片方に処理を入れ、もう片方に適応をさせる 
-
-○SideSurface
-・Greeble,Miller,Clusterを組み合わせて実装
 
 ■DetailAsset
 ○TopObjectをサイズ適応処理を実装して検証
 
+■SurfaceManager
+○SideSurface
+・Greeble,Miller,Clusterを組み合わせて実装
+
+○Miller
+・2等分し、片方に処理を入れ、もう片方に適応をさせる 
+
+△Voronoi検証
+・サンプルプロジェクトの調査
+https://github.com/0x384c0/HoudiniProjects/tree/main/R%26D/procedural_modeling
+
+●Base
+・Edge
+・Line
+
+●Edit
+・BaseEdit
+・Miller
+
+●Create
+・Greeble
+・Voronoi
+
+●Type
+・Cluster
+
 ■DetailPattern
 ○Blockのスケール(Offset)の実装
 
-■SurfaceAsset
+△マテリアル周りの実装
+・ClusterとGreebleを用いてBlockをType化
+・Type化したBlockに対してマテリアルを適応
+ -窓
+ -壁
+ 
+●キャッチシャドウ・リフレクションハイライト
+・壁面に溝や穴を掘ることで影やハイライトの演出
+・形状コントラスト、影とハイライトのコントラスト
+・直線的なオブジェクトと曲面を持つオブジェクトを組み合わせる
+
+・小さいオブジェクトを組み込むことで立体的に見せる
+・ヒューマンスケールを意識する
+
+■LineManager
+※Editした部分のTypeをまとめる
+※PrimTypeを分けて管理する
+ -MatrixType,PrimType
+
+○ArcLineManager
+・現在の実装部分を修正する
+
+●Init
+・Line(Box)
+
+●Edit
+・Scale(Prim)
+・Transform(Prim)
+・凹(検証)
+
+●Create
+・DivideHeight
+・DividePrim
+・Greeble
+
+●Type
+・MatrixType
+・PrimType
+
+■攻殻機動隊
+○Topの検証
+・Greeble
+・AssetScaleの設定
+ -辺の長さに応じた大きさにする
+・CopyToPoint
+ -DetailAssetのスケールを調整し配置
+
+○Sideの検証
+・BaseBlockPointの生成
+ -Greebleを行いBlockPointをCluster化
+ -△Pointの座標をミラー化する
+・BaseBlockの生成
+ -Primitiveを生成し結合を行う
+ -EdgeとEdgeLineを抽出
+・DetailPatternの検証
+ -色をコントラストを付けて確認する
+ -ScifiPanelのロジックを参考に実装する
