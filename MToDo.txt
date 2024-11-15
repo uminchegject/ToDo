@@ -1,14 +1,7 @@
-[Study]
-●キャッチシャドウ・リフレクションハイライト
-・壁面に溝や穴を掘ることで影やハイライトの演出
-・形状コントラスト、影とハイライトのコントラスト
-・直線的なオブジェクトと曲面を持つオブジェクトを組み合わせる
-
-・小さいオブジェクトを組み込むことで立体的に見せる
-・ヒューマンスケールを意識する
-
-
 [USD]
+○cmakeビルド
+https://fereria.github.io/reincarnation_tech/usd/cpp/cmakebuild
+
 ○見直し
 
 ○Solarisの操作
@@ -67,61 +60,51 @@ XXX_meta_ui_Ctrlとなっていたら、ピンク
  -Addjust
 ・Noise値を割ってintにし、ポイントを割り当てる
 
-△Miller
-・2等分し、片方に処理を入れ、もう片方に適応をさせる 
-
-△Voronoi検証
-・サンプルプロジェクトの調査
-https://github.com/0x384c0/HoudiniProjects/tree/main/R%26D/procedural_modeling
-
-■SurfaceManager
-○SideSurface
-・Greeble,Miller,Clusterを組み合わせて実装
-
-■DetailPatternの実装
-・マテリアル周りの実装
- -窓
- -壁
-・ClusterとGreebleを用いてBlockをType化
-・Type化したBlockに対してマテリアルを適応
-
-○Blockのスケール(Offset)の実装
-
-△マテリアル周りの検証
-
 ■DetailAsset
 ○TopObjectをサイズ適応処理を実装して検証
 
 ○CopyToPoint
 ・実際のDetailAssetに適応させてみる
 
+■SurfaceManager
+○SideSurface
+・Greeble,Miller,Clusterを組み合わせて実装
+
+○Blockのスケール(Offset)の実装
+
+○Miller
+・2等分し、片方に処理を入れ、もう片方に適応をさせる 
+
+△Voronoi検証
+・サンプルプロジェクトの調査
+https://github.com/0x384c0/HoudiniProjects/tree/main/R%26D/procedural_modeling
+
+●設計
+ -Edge
+ -Line
+・Edit
+・Create
+・Type
+
+■DetailPatternの実装
+△マテリアル周りの実装
+・ClusterとGreebleを用いてBlockをType化
+・Type化したBlockに対してマテリアルを適応
+ -窓
+ -壁
+ 
+●キャッチシャドウ・リフレクションハイライト
+・壁面に溝や穴を掘ることで影やハイライトの演出
+・形状コントラスト、影とハイライトのコントラスト
+・直線的なオブジェクトと曲面を持つオブジェクトを組み合わせる
+
+・小さいオブジェクトを組み込むことで立体的に見せる
+・ヒューマンスケールを意識する
+
 ■LineManagerの実装
 ○ArcLineManager
 ・現在の実装部分を修正する
 
-■Manager
-●Init
-・InitBlock
-
-●Edit
-・Cluster(Type)
-・Miller
-
-●Create
-・Greeble
-・Pattern
-
-●Type
-PtsType
-
-●DetailAsset
-
-●DetailPattern
-・Edge
-・Line
-・Color
- -Base, Main, Vividを意識する
- 
 ■LineManager(Arc)
 ※Editした部分のTypeをまとめる
 ※PrimTypeを分けて管理する
