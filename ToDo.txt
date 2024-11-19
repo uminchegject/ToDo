@@ -1,138 +1,121 @@
-[USD]
-●資料
-・USDの基礎
-https://www.youtube.com/watch?v=4kMBwpdwkkw
-https://www.slideshare.net/slideshow/usd-79288174/79288174#2
-https://fereria.github.io/reincarnation_tech/usd/what_is_usd
+[Block]
+■BlockManager
+※Surface(四角)をBaseとして実装する
 
-・USDの運用
-https://fereria.github.io/reincarnation_tech/usd/python/tutorials/01
-https://qiita.com/ousttrue/items/b5f34e0f2441ca74467e
-https://qiita.com/takahito-tejima/items/ee0332bfb5c9baed3b09
-https://dev.classmethod.jp/articles/how_to_use_usd_for_developers/
+■DetailAsset
+○TopObjectをサイズ適応処理を実装して検証
 
-・LOPS&Soraris
-https://note.com/indyzonecorp/n/ndf9d8f82d7e5#93191dbb-a31d-4dbc-851a-584b7882528b
-https://houdinifx.jp/blog/lops%E3%81%AE%E4%BB%95%E7%B5%84%E3%81%BF/
-
-https://www.sidefx.com/tutorials/usd-authoring-with-solaris/
-https://www.youtube.com/watch?v=SqTHglDeKtU
-
-・Plugin
-https://candrgroup-coyotevfx.atlassian.net/wiki/spaces/TEC/pages/344555807
-
-
-
-
-[ProceduralModeling]
-■BoxManager
-・側面で検証する
-○Initの実装
- -Side, Front, Back
- -InitParameter
-○Createの実装
- -Pattern, Greeble
-○Detailの実装
- -CopyToPoint
-
-●Init
-・BasePoint
- -Side
- -Front
- -Back
-
-●Edit
+●InitAttribute
 ・Scale
-・Transform
-・Rotate
-
-●Create
-・Edit
-・Pattern
-・Greeble
-
-●Detail
-・CopyToPoint
-
-●Type
-
-■Detail
-・Base形態で検証する
-○Initの実装
- -Boxの生成
- -Parameterの実装
-○HoudiniのSampleプロジェクトから作業工程を勉強する
-○Baseのモデリング
-
-●Init
-・Point
-
-●Edit
-・EditFlow
-
-●Create
-
-●Type
-・PrimitiveでIntで管理する
-
-■VoronoiPattern(LineManager)
-・Topで検証する
-○Ptsからボロノイを行う処理を実装する
- -サンプルコードで検証
-○PtsのEdit周りを設計
-
-●Init
-・InitPts
- -Pos
-
-●Edit
-・AddVoronoiPts
-・MoveVoronoiPts
-・PatternVoronoiPts
-
-●Create
-・EditCreate
-・AddBlock
- -Ptsを追加する
-
-●Type
-PtsType
-
-●Detail
-・Edge
-・Line
-・Color
- -Base, Main, Vividを意識する
-
-
-[ModularModelieng]
-※明確なアセットセットを目標に都度新規実装を加えていく
-
-■Box
-○EditBaseの実装
-・全体的なフローの修正
- -Type
- -Create
-・Baseの実装
- -Transform
- -Scale
- -Rotate
-
-△Greebleの再実装
-・FrontDirData
-
-○検証
-
-■LIne
-○DividePrimの実装
-・Editした部分をDividePrimする
-
-○EditBaseの実装
-・Scale
-・Transform
-
-○全体的なフローを実装
+・Origin
 ・Type
-・BaseMatrixの適応
 
-○Editの検証
+
+
+[Surface]
+■SurfaceManager
+○必要なBaseEditを追加で実装
+・Blockスケール(Offset)
+・Transform(Normal)
+・Rotate(origin)
+
+○拡張Editの修正
+・Greeble
+・Cluster
+
+○SideSurfaceBlockのパラメーター設計
+
+△Miller
+・2等分し、片方に処理を入れ、もう片方に適応をさせる 
+
+△Voronoi検証
+・サンプルプロジェクトの調査
+https://github.com/0x384c0/HoudiniProjects/tree/main/R%26D/procedural_modeling
+
+●Base
+・EditPrim
+・DividePrim
+・ConnectPrim
+
+●Edit
+・BaseEdit
+ -Rotate
+ -Scale
+ -Transform
+・Miller
+ -Connect
+
+●Create
+・Greeble
+・Voronoi
+・ManhattanVoronoi
+
+●Type
+・Cluster
+・Connect
+
+■DetailPattern
+○SurfacePModelingの設計
+・SurfaceBlockから生成できるようにする
+
+△マテリアル周りの実装
+・ClusterとGreebleを用いてBlockをType化
+・Type化したBlockに対してマテリアルを適応
+ -窓
+ -壁
+ 
+●BasePos
+・Center
+・EdgePoint
+・EdgeLine
+ 
+●キャッチシャドウ・リフレクションハイライト
+・壁面に溝や穴を掘ることで影やハイライトの演出
+・形状コントラスト、影とハイライトのコントラスト
+・直線的なオブジェクトと曲面を持つオブジェクトを組み合わせる
+
+・小さいオブジェクトを組み込むことで立体的に見せる
+・ヒューマンスケールを意識する
+
+
+
+[Line]
+■LineManager
+※Editした部分のTypeをまとめる
+※PrimTypeを分けて管理する
+ -MatrixType,PrimType
+
+○LineEditの設計&実装
+
+○VertexEditの設計&実装
+
+○BaseEditの実装
+・Scale
+・Transform
+
+○凹Editの実装
+
+○CopyToPointを用いたUEAssetの検証
+
+●Base
+・EditLine
+・MakeLine
+・DivideLine
+・VertexManager
+
+●Init
+・Line(Box)
+
+●Edit
+・Scale(Prim)
+・Transform(Prim)
+・凹(検証)
+
+●Create
+・DivideHeight
+・DividePrim
+・△Greeble
+
+●Type
+・MatrixType
+・PrimType
