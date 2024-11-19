@@ -58,3 +58,81 @@ XXX_meta_ui_Ctrlとなっていたら、ピンク
 
 今回の「～_ctrl」を判別する部分で注文があります。
 こちらはsplitで最後の文字で判別できることは分かってますが、今回は正規表現を使って判別をしてください。
+
+
+
+[Procedural]
+■BlockManager
+○Clusterの修正
+・Noiseで管理
+ -Cofficient
+ -Addjust
+・Noise値を割ってintにし、ポイントを割り当てる
+
+int toggleRunning = 0;
+int seed = detail(0, "Seed");
+
+//タイプに含まれているか
+int typeNumList[] = i[]@TypeNumList;
+
+for(int i = 0; i < len(typeNumList); i++)
+{
+    int typeNum = chi("../ParamInput/typeNum" + itoa(i@LoopCount)); 
+    if(typeNumList[i] == typeNum)
+    {
+        removeindex(typeNumList, i);
+        toggleRunning = 1;
+        break;
+    }
+}
+
+if(chi("../ParamInput/cluster_toggleCluster" + itoa(i@LoopCount)) != 1)
+{ 
+    removepoint(0, @ptnum);
+    toggleRunning = 0;
+}
+
+if(toggleRunning == 1)
+{       
+	//Noise
+	vector cofficient = 
+	vector adjustPos = 
+	vector noiseRange = 
+	
+	float noiseCofficient = (v@P + adjustPos) * cofficient;
+	noiseCofficient = fit(noiseCofficient, noiseRange.x, noiseRange.y, 0, 1);
+
+    //typeを追加
+    string strAddTypeParam = chs("../ParamInput/addTypeNumList" + itoa(i@LoopCount));
+    string strAddTypeParamBlockList[] = re_split(",", strAddTypeParam);
+    foreach(string strAddTypeParamBlock; strAddTypeParamBlockList)
+    {
+        string strAddTypeParamList[] = re_split("_", strAddTypeParamBlock);
+        int addTypeNumList[];
+        foreach(string str; strAddTypeParamList)
+        {
+            append(addTypeNumList, atoi(str));
+        }
+		
+		int index = int(noiseCofficient * len(addTypeNumList));
+        int type = addTypeNumList[index];
+        append(typeNumList, type);
+    }
+    i[]@TypeNumList = typeNumList;
+}
+
+i@LoopCount += 1;
+
+■SurfaceManager
+○必要なBaseEditを追加で実装
+・Blockスケール(Offset)
+・Transform(Normal)
+・Rotate(origin)
+
+○拡張Editの修正
+・Greeble
+・Cluster
+
+○SideSurfaceBlockのパラメーター設計
+
+■LIneManager
