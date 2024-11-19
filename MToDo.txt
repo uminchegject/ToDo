@@ -1,4 +1,8 @@
 [Study]
+●コマンド履歴を確認する方法
+・コマンドのエコーのチェックを入れる
+・Ctrl + Zで履歴を確認する
+
 ・Solarisの操作
 https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/13_create_usdAssets_01/
 https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/09_solaris_vex/
@@ -14,7 +18,19 @@ https://fereria.github.io/reincarnation_tech/usd/cpp/cmakebuild
 https://fereria.github.io/reincarnation_tech/usd/cpp/start_usdcpp
 
 
+[FallGuys]
+○ドキュメント整理
+・仕様
+
+○環境構築
+・Git
+
+○ソース調査
+
+
+
 [USD]
+
 
 
 [IZON.]
@@ -31,6 +47,7 @@ https://fereria.github.io/reincarnation_tech/usd/cpp/start_usdcpp
 ・BP_KyojinのStartGuardMotionを参考にする
 
 
+
 [Python]
 ○判別処理の実装
 
@@ -41,6 +58,7 @@ targetNode = pm.PyNode("node_name_of_target")
 targetNode.overrideEnabled.set(1)
 targetNode.overrideRGBColors.set(1)
 targetNode.overrideColorRGB.set(rgbColor)
+
 
 ●仕様
 命名規則
@@ -122,6 +140,7 @@ if(toggleRunning == 1)
 }
 
 i@LoopCount += 1;
+
 
 ■SurfaceManager
 ○必要なBaseEditを追加で実装
