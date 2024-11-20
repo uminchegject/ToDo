@@ -20,14 +20,20 @@ https://fereria.github.io/reincarnation_tech/usd/cpp/start_usdcpp
 
 [FallGuys]
 ○挨拶
+お忙しいところ失礼いたします。
+本日からエンジニアとしてアサインすることになりましたTAチームの中村と申します。
+元々OXエンジニアスタジオにいましたが、先月COYOTETAチームに異動してきました。
+自分も34期生の新米なので頼りない部分もあるかと思いますが、一生懸命サポートさせて頂くのでよろしくお願いします!
 
-○ドキュメント整理
-・仕様
+早速ですが、開発環境のセットアップを行っていこうかと思います。
+バージョン管理はGitで行っていこうかと考えているので、Gitに制作物をアップロードする予定のある方はGitのアカウント作って頂きチャットで一報頂けると幸いです。
+また、Gitで分からないことなどあれば気軽に聞いてください!
 
 ○環境構築
 ・Git
 
 ○ソース調査
+・挙動確認
 
 
 
@@ -43,6 +49,10 @@ https://fereria.github.io/reincarnation_tech/usd/cpp/start_usdcpp
 ・素材 :: SM_tw-2_Trasfer_Device
 
 ○Montageの学習
+・構造の見直し
+https://dev.epicgames.com/documentation/ja-jp/unreal-engine/animation-montage-in-unreal-engine
+https://qiita.com/Shibash/items/f71ef72af6f710dccdc8
+・IZON.内部を調査
 
 ○智人のアニメ―ションの実装
 ・呼び出せないように修正
@@ -52,16 +62,7 @@ https://fereria.github.io/reincarnation_tech/usd/cpp/start_usdcpp
 
 
 [Python]
-○判別処理の実装
-
-○Jointの色付け
-https://teikes.hatenablog.com/entry/2021/05/26/190042
-
-targetNode = pm.PyNode("node_name_of_target")
-targetNode.overrideEnabled.set(1)
-targetNode.overrideRGBColors.set(1)
-targetNode.overrideColorRGB.set(rgbColor)
-
+○実装メモの作成
 
 ●仕様
 命名規則
@@ -84,8 +85,7 @@ XXX_meta_ui_Ctrlとなっていたら、ピンク
 
 [Procedural]
 ■BlockManager
-○パラメーターで管理できるようにする
- -Clusters
+○DetailAssetのスケール適応を実装
 
 ■SurfaceManager
 ○必要なBaseEditを追加で実装
