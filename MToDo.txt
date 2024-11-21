@@ -1,45 +1,14 @@
 [Study]
-●コマンド履歴を確認する方法
-・コマンドのエコー
-・Ctrl + Zで履歴を確認する
-
-・Solarisの操作
-https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/13_create_usdAssets_01/
-https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/09_solaris_vex/
-https://houdinifx.jp/blog/usd%E3%81%AE%E5%9F%BA%E7%A4%8E/
-・公式
-https://www.sidefx.com/docs/hdk/_h_d_k__u_s_d.html
-https://openusd.org/docs/Houdini-USD-Plugins.html
-・HDK
-https://qiita.com/jyouryuusui/items/14cb1804ba426d7b287f
-・cmakeビルド
-https://fereria.github.io/reincarnation_tech/usd/cpp/cmakebuild
-・USDC++
-https://fereria.github.io/reincarnation_tech/usd/cpp/start_usdcpp
-
+●Study
+・基本仕様
+・何ができるか
+・実践
 
 [FallGuys]
-○挨拶
-お忙しいところ失礼いたします。
-本日からエンジニアとしてアサインすることになりましたTAチームの中村と申します。
-元々OXエンジニアスタジオにいましたが、先月COYOTETAチームに異動してきました。
-自分も34期生の新米なので頼りない部分もあるかと思いますが、一生懸命サポートさせて頂くのでよろしくお願いします!
-
-早速ですが、開発環境のセットアップを行っていこうかと思います。
-バージョン管理はGitで行っていこうかと考えているので、Gitに制作物をアップロードする予定のある方はGitのアカウント作って頂きチャットで一報頂けると幸いです。
-また、Gitで分からないことなどあれば気軽に聞いてください!
-
-○環境構築
-・Git
-
-○ソース調査
-・挙動確認
-
-
+○サンプルソースの調査
 
 [USD]
-○ドキュメントの修正
-
+○ビルド方法の調査
 
 
 [IZON.]
@@ -58,29 +27,6 @@ https://qiita.com/Shibash/items/f71ef72af6f710dccdc8
 ・呼び出せないように修正
 ・アニメーション(Montage)周りの実装方法を調査
 ・BP_KyojinのStartGuardMotionを参考にする
-
-
-
-[Python]
-○実装メモの作成
-
-●仕様
-命名規則
-L(R)_name_No_..._ctrl
-＾
-コントローラは、末尾に「_ctrl」が必ず付く
-中間に「_ctrl」がつくノードもあるが、末尾以外は無視
-
-L_XXXとなっていたら、青
-R_XXXとなっていたら、紫
-Ph_L(R)_XXXとなっていたら、水色
-Uq_L(R)_XXXとなっていたら、水色
-XXX_meta_ui_Ctrlとなっていたら、ピンク
-上記条件に合わないモノは変更しないようにしたい。
-
-今回の「～_ctrl」を判別する部分で注文があります。
-こちらはsplitで最後の文字で判別できることは分かってますが、今回は正規表現を使って判別をしてください。
-
 
 
 [Procedural]
