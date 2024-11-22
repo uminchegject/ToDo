@@ -1,43 +1,28 @@
 [Study]
-●Study
-※仕事を楽にする勉強(予習)
-・基本仕様
-・何ができるか
-・実践
+●CustomSchema
+・CustomSchemaを共通のものとして用いる
+ -Maya
+ -Houdini
+ -UE4
 
-●USD
-・USDA
-https://qiita.com/takahito-tejima/items/ee0332bfb5c9baed3b09
-・Solaris
-https://ikatnek.blogspot.com/2021/12/why-use-usd-why-use-solaris.html
-
-●HDK
-
-
-[FallGuys]
-○サンプルソースの調査
+●USDビルド
+ -ビルドを用いた作業
 
 
 [USD]
-○ビルド方法の調査
+○CustomSchemaのビルド
+
+○資料のメモ作成
+
+
+[GUYS]
+○ビークルゲームの処理を確認
+
+○レースゲームの形だけ実装する
 
 
 [IZON.]
-○ワープホールの修正
-・時間が経ったら召喚
-・敵を倒したらエフェクトを表示し、ワープ可能にする
-・素材 :: SM_tw-2_Trasfer_Device
-
-○Montageの学習
-・構造の見直し
-https://dev.epicgames.com/documentation/ja-jp/unreal-engine/animation-montage-in-unreal-engine
-https://qiita.com/Shibash/items/f71ef72af6f710dccdc8
-・IZON.内部を調査
-
-○智人のアニメ―ションの実装
-・呼び出せないように修正
-・アニメーション(Montage)周りの実装方法を調査
-・BP_KyojinのStartGuardMotionを参考にする
+○Montageの実装方法を確認
 
 
 [Procedural]
