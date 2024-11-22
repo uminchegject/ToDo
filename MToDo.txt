@@ -1,11 +1,22 @@
 [Study]
 ●Study
+※仕事を楽にする勉強(予習)
 ・基本仕様
 ・何ができるか
 ・実践
 
+●USD
+・USDA
+https://qiita.com/takahito-tejima/items/ee0332bfb5c9baed3b09
+・Solaris
+https://ikatnek.blogspot.com/2021/12/why-use-usd-why-use-solaris.html
+
+●HDK
+
+
 [FallGuys]
 ○サンプルソースの調査
+
 
 [USD]
 ○ビルド方法の調査
