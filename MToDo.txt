@@ -1,28 +1,27 @@
 [Study]
-●CustomSchema
-・CustomSchemaを共通のものとして用いる
- -Maya
- -Houdini
- -UE4
+※基本5階で食事することは避ける
+ -食べ歩きか飲み物を買って散歩する
 
-●USDビルド
- -ビルドを用いた作業
+[GUYS]
+○サンプルソースの調査
 
 
 [USD]
-○CustomSchemaのビルド
-
-○資料のメモ作成
-
-
-[GUYS]
-○ビークルゲームの処理を確認
-
-○レースゲームの形だけ実装する
+○ビルドデータからusdGenSchemaを行えるようにする
+ -NVidiaからもできるか確認する
 
 
 [IZON.]
-○Montageの実装方法を確認
+○MontagePlayの実装
+
+○呼び出せないように修正
+
+○ワープホールの修正
+・時間が経ったらSpawnActor
+ -△徐々に出現させる処理を調査
+・素材 :: SM_tw-2_Trasfer_Device
+
+○エフェクトの質問
 
 
 [Procedural]
