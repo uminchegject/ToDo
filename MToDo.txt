@@ -1,9 +1,4 @@
 [Study]
-●Study
-・基本仕様
-・何ができるか
-・実践
-
 ※基礎と発展(仕事)の中間部分を勉強する
  -仕事とUSDの共通している部分を調べる
  -プライベートでは極力直接仕事に関連することをしない
@@ -14,32 +9,29 @@
 ※基本5階で食事することは避ける
  -食べ歩きか飲み物を買って散歩する
 
-
-[GUYS]
-○サンプルソースの調査
+※不具合対応の際は調査する段階を細かく分ける
 
 
 [USD]
-○ビルドデータからusdGenSchemaを行えるようにする
- -NVidiaからもできるか確認する
-
-・ninjaをインストールする
-https://github.com/PixarAnimationStudios/OpenUSD/issues/935
-・公式ドキュメント
-https://openusd.org/release/api/_usd__page__generating_schemas.html
+○ドキュメントの整理
 
 
 [IZON.]
-○MontagePlayの実装
+○EnhanceInputの入力を止める方法を調査
 
-○呼び出せないように修正
+○ソースの整理
 
-○ワープホールの修正
-・時間が経ったらSpawnActor
- -△徐々に出現させる処理を調査
-・素材 :: SM_tw-2_Trasfer_Device
+△アニメーション周りの修正
 
-○エフェクトの質問
+○質問
+ -
+
+[GUYS]
+○タスクの整理
+
+○分割プレイの実装
+
+○ギミックの仕様をまとめる
 
 
 [Procedural]
