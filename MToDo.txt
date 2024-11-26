@@ -1,6 +1,19 @@
 [Study]
+●Study
+・基本仕様
+・何ができるか
+・実践
+
+※基礎と発展(仕事)の中間部分を勉強する
+ -仕事とUSDの共通している部分を調べる
+ -プライベートでは極力直接仕事に関連することをしない
+ -ToDoをMDで用意
+
+※帰宅後は30分を目安にできるToDoを予め設定しておく
+
 ※基本5階で食事することは避ける
  -食べ歩きか飲み物を買って散歩する
+
 
 [GUYS]
 ○サンプルソースの調査
@@ -9,6 +22,11 @@
 [USD]
 ○ビルドデータからusdGenSchemaを行えるようにする
  -NVidiaからもできるか確認する
+
+・ninjaをインストールする
+https://github.com/PixarAnimationStudios/OpenUSD/issues/935
+・公式ドキュメント
+https://openusd.org/release/api/_usd__page__generating_schemas.html
 
 
 [IZON.]
