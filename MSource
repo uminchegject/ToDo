@@ -1,59 +1,23 @@
-■SurfaceManager
-○Clusterの実装
-・Noiseで管理
- -Cofficient
- -Addjust
-・Noise値を割ってintにし、ポイントを割り当てる
-
-○BlockManagerをSurfaceManagerにコンバート
-
-○必要なBaseEditを追加で実装
-・Blockスケール(Offset)
-・Transform(Normal)
-・Rotate(origin)
-
-○SideSurfaceBlockのパラメーター設計
-
-△Miller
-・2等分し、片方に処理を入れ、もう片方に適応をさせる 
-
-△Voronoi検証
-・サンプルプロジェクトの調査
-https://github.com/0x384c0/HoudiniProjects/tree/main/R%26D/procedural_modeling
-
-
-●Base
-・Edge
-・Line
-
-●Edit
-・BaseEdit
+○GimmickActorの実装
+・OverlapEvent
+・TimeLineの実装
+・Animation
  -Rotate
- -Scale
- -Transform
-・Miller
+ -Move
 
-●Create
-・Greeble
-・Voronoi
+○Player周りの実装
+・プラグインを調査
 
-●Type
-・Cluster
+○CheckPoint周りの実装
+・RaceGameを参考にする
 
-■DetailPattern
-○SurfacePModelingの設計
-・SurfaceBlockから生成できるようにする
+○SE周りの実装
+・RaceGameを調査
 
-△マテリアル周りの実装
-・ClusterとGreebleを用いてBlockをType化
-・Type化したBlockに対してマテリアルを適応
- -窓
- -壁
- 
-●キャッチシャドウ・リフレクションハイライト
-・壁面に溝や穴を掘ることで影やハイライトの演出
-・形状コントラスト、影とハイライトのコントラスト
-・直線的なオブジェクトと曲面を持つオブジェクトを組み合わせる
+○画面分割の実装
+https://papersloth.hatenablog.com/entry/2018/01/25/214954
 
-・小さいオブジェクトを組み込むことで立体的に見せる
-・ヒューマンスケールを意識する
+○一連のゲームの流れを実装
+・RaceGameを参考にする
+
+△UI周りの実装
