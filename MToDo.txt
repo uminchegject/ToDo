@@ -4,11 +4,6 @@
  -プライベートでは極力直接仕事に関連することをしない
  -ToDoをMDで用意
 
-※帰宅後は30分を目安にできるToDoを予め設定しておく
-
-※基本5階で食事することは避ける
- -食べ歩きか飲み物を買って散歩する
-
 ※不具合対応の際は調査する段階を細かく分ける
 
 
@@ -40,30 +35,15 @@ https://forums.unrealengine.com/t/how-can-i-disable-inputaction-except-some-inpu
 ○タスクの整理
 ・Gitにまとめる
 
-○GimmickActorの実装
-・OverlapEvent
-・Pysics
-・Animation
- -Rotate
- -Move
+○MoveItの中身を調査
+・複数人プレイ方法
 
-○Player周りの実装
-・プラグインを調査
+○PhysicksConstraintの調査
+https://argonauts.hatenablog.jp/entry/2022/11/19/185610
+https://dev.epicgames.com/documentation/ja-jp/unreal-engine/physics-constraint-reference-in-unreal-engine?application_version=5.1
 
-○CheckPoint周りの実装
-・RaceGameを参考にする
-
-○SE周りの実装
-・RaceGameを調査
-
-○画面分割の実装
-https://papersloth.hatenablog.com/entry/2018/01/25/214954
-
-○一連のゲームの流れを実装
-・RaceGameを参考にする
-
-△UI周りの実装
-
+○Gimmick_Baseの実装
+・TimeLineの実装
 
 [Procedural]
 ■BlockManager
