@@ -13,37 +13,61 @@
 
 
 [USD]
-○ドキュメントの整理
+○不足ドキュメント
+・CMakeLists.txt
 
+・module.cpp
+
+・moduleDeps.cpp
+
+・__init__.py
+
+○ドキュメントの整理
+・コンフルに記載
+・手順通りの挙動確認
 
 [IZON.]
 ○EnhanceInputの入力を止める方法を調査
-
-○質問
+https://forums.unrealengine.com/t/how-can-i-disable-inputaction-except-some-input-action-in-enhanced-input/1205904/8
 
 
 [GUYS]
-○タスクの整理
-
-○分割プレイの実装
-
 ○ギミックの仕様をまとめる
+・実際に実装して、そこに当てはまるように実装できないかを確認する
+ -Gimmick_Baseの実装
+ -Player周りの修正
+
+○タスクの整理
+・Gitにまとめる
+
+○GimmickActorの実装
+・OverlapEvent
+・Pysics
+・Animation
+ -Rotate
+ -Move
+
+○Player周りの実装
+・プラグインを調査
+
+○CheckPoint周りの実装
+・RaceGameを参考にする
+
+○SE周りの実装
+・RaceGameを調査
+
+○画面分割の実装
+https://papersloth.hatenablog.com/entry/2018/01/25/214954
+
+○一連のゲームの流れを実装
+・RaceGameを参考にする
+
+△UI周りの実装
 
 
 [Procedural]
 ■BlockManager
-○DetailAssetのスケール適応を実装
-
-■SurfaceManager
-○必要なBaseEditを追加で実装
-・Blockスケール(Offset)
-・Transform(Normal)
-・Rotate(origin)
-
-○拡張Editの修正
-・Greeble
-・Cluster
-
-○SideSurfaceBlockのパラメーター設計
-
-■LIneManager
+○DetailAssetのサイズを適切に調整する
+ -サイズ外のものは除く
+ 
+○Main側のスケールも適切になるように調整する
