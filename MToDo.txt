@@ -6,29 +6,30 @@
 
 ※不具合対応の際は調査する段階を細かく分ける
 
+※午前と午後で2セット勉強+実装+ドキュメント制作を行う
+
+○Animation周りの調査
+・ビークル
+
+○新案件orUSD
+
 
 [USD]
 ○自主ドキュメントの整理
 
+
 [IZON.]
-○Montageの実装
+○Montageの修正
 
 ○ソースの整理
 
-○自主ドキュメントの整理
 
 [GUYS]
-○MoveItの中身を調査
-・複数人プレイ方法
-
-○RaceGameの調査
+○一連のゲームの流れを実装
 
 ○PhisicksConstraintの調査
 https://argonauts.hatenablog.jp/entry/2022/11/19/185610
 https://dev.epicgames.com/documentation/ja-jp/unreal-engine/physics-constraint-reference-in-unreal-engine?application_version=5.1
-
-○タスクの整理
-・Gitにまとめる
 
 
 [Procedural]
