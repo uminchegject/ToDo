@@ -12,30 +12,40 @@
 ・ビークルの調査
 https://unrealengine.hatenablog.com/entry/2023/12/25/000000
 
-○新案件orUSD
+○houdinicommand周り
 
 
 [USD]
-○自主ドキュメントの整理
+○batの実装
+1.usdaファイルのパスを入力
+2.Houdiniライブラリに環境パスを通す
+3.usdGenSchemaコマンドの実行
+
+4.CMakeList.txtの作成
+5.cmakeビルド
+6.フォルダ配置
+
+1.Houdini, OpenUSDのパスを入力
+※2.OpenUSDライブラリに環境パスを通す
+3.usdGenSchemaコマンドの実行
+4.CMakeList.txtの作成
+※5.不足しているデータを用意
+※6.CMakeList.txtの書き換え
+7.cmakeビルド
+8.フォルダ配置
 
 
 [IZON.]
-○Montageの修正
-
-○ソースの整理
+・入力の停止周りの実装を修正
+・AnimationMontageの修正
+・Widgetの表示を修正
+　ーボタンの修正
+　ー表示周りの修正
+・エフェクトの修正
 
 
 [GUYS]
-○一連のゲームの流れを実装
-
-○PhisicksConstraintの調査
-https://argonauts.hatenablog.jp/entry/2022/11/19/185610
-https://dev.epicgames.com/documentation/ja-jp/unreal-engine/physics-constraint-reference-in-unreal-engine?application_version=5.1
-
+・一連のゲームを実装
 
 [Procedural]
-■BlockManager
-○DetailAssetのサイズを適切に調整する
- -サイズ外のものは除く
- 
-○Main側のスケールも適切になるように調整する
+○ノードを個別化
