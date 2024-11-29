@@ -9,7 +9,8 @@
 ※午前と午後で2セット勉強+実装+ドキュメント制作を行う
 
 ○Animation周りの調査
-・ビークル
+・ビークルの調査
+https://unrealengine.hatenablog.com/entry/2023/12/25/000000
 
 ○新案件orUSD
 
