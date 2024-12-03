@@ -4,15 +4,13 @@
  -プライベートでは極力直接仕事に関連することをしない
  -ToDoをMDで用意
 
-※不具合対応の際は調査する段階を細かく分ける
+○bat周り
 
-※午前と午後で2セット勉強+実装+ドキュメント制作を行う
+○MoveIt!の調査
 
-○Animation周りの調査
-・ビークルの調査
-https://unrealengine.hatenablog.com/entry/2023/12/25/000000
-
-○houdinicommand周り
+△物理挙動
+https://argonauts.hatenablog.jp/entry/2022/11/19/185610
+https://dev.epicgames.com/documentation/ja-jp/unreal-engine/physics-constraint-reference-in-unreal-engine?application_version=5.1
 
 
 [USD]
@@ -20,7 +18,6 @@ https://unrealengine.hatenablog.com/entry/2023/12/25/000000
 1.usdaファイルのパスを入力
 2.Houdiniライブラリに環境パスを通す
 3.usdGenSchemaコマンドの実行
-
 4.CMakeList.txtの作成
 5.cmakeビルド
 6.フォルダ配置
@@ -35,17 +32,23 @@ https://unrealengine.hatenablog.com/entry/2023/12/25/000000
 8.フォルダ配置
 
 
-[IZON.]
-・入力の停止周りの実装を修正
-・AnimationMontageの修正
-・Widgetの表示を修正
-　ーボタンの修正
-　ー表示周りの修正
-・エフェクトの修正
-
-
 [GUYS]
-・一連のゲームを実装
+○Gimmick
+・アニメーション
+・SE
+・プレイヤーの状態異常を設定
+・OverlapEvent
+・物理挙動
+ -ドア
+
+○Player
+・動きを制限
+・物理挙動
+ -ふっとび
+
 
 [Procedural]
-○ノードを個別化
+○ツール
+・ノードを個別化
+
+○モデリング
