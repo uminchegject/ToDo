@@ -3,18 +3,28 @@
  -仕事とUSDの共通している部分を調べる
  -プライベートでは極力直接仕事に関連することをしない
  -ToDoをMDで用意
+ 
+○schemaの定義
 
-○bat周り
+○キャラクターの挙動周りの設定
 
-○MoveIt!の調査
-
-△物理挙動
+△物理挙動(ギミック)
 https://argonauts.hatenablog.jp/entry/2022/11/19/185610
 https://dev.epicgames.com/documentation/ja-jp/unreal-engine/physics-constraint-reference-in-unreal-engine?application_version=5.1
 
 
 [USD]
-○batの実装
+○ソースの整理
+・個人ドキュメントの作成
+
+○Schema構成を変更した際の挙動確認
+
+○不要なデータの削除
+
+○ドキュメント作成
+
+
+●仕様
 1.usdaファイルのパスを入力
 2.Houdiniライブラリに環境パスを通す
 3.usdGenSchemaコマンドの実行
@@ -38,13 +48,28 @@ https://dev.epicgames.com/documentation/ja-jp/unreal-engine/physics-constraint-r
 ・SE
 ・プレイヤーの状態異常を設定
 ・OverlapEvent
-・物理挙動
- -ドア
 
 ○Player
-・動きを制限
-・物理挙動
- -ふっとび
+・顔の振り返りを止める
+・MoveIt!の処理を調べて使えそうなものをコピーする
+・Characterの挙動パラメーターについて調べ、値を調整するようにする
+ 
+○HUD
+
+○サウンド
+
+○アウトゲーム
+・待機画面
+ -キャラ選択
+ -UI
+・リザルト画面
+ -キャラ配置
+ -
+
+ 
+△最適化の検証
+
+△レベル遷移の検証
 
 
 [Procedural]
