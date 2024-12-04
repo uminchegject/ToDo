@@ -4,9 +4,12 @@
  -プライベートでは極力直接仕事に関連することをしない
  -ToDoをMDで用意
  
-○schemaの定義
+○Solaris&USD
+https://www.sidefx.com/contentlibrary/warehouse-lights/
+・schemaを中心に検証する
 
-○キャラクターの挙動周りの設定
+○MoveIt!の調査
+・キャラクター周りの実装部分を調査
 
 △物理挙動(ギミック)
 https://argonauts.hatenablog.jp/entry/2022/11/19/185610
@@ -22,7 +25,6 @@ https://dev.epicgames.com/documentation/ja-jp/unreal-engine/physics-constraint-r
 ○不要なデータの削除
 
 ○ドキュメント作成
-
 
 ●仕様
 1.usdaファイルのパスを入力
@@ -43,20 +45,10 @@ https://dev.epicgames.com/documentation/ja-jp/unreal-engine/physics-constraint-r
 
 
 [GUYS]
-○Gimmick
-・アニメーション
-・SE
-・プレイヤーの状態異常を設定
-・OverlapEvent
-
 ○Player
 ・顔の振り返りを止める
 ・MoveIt!の処理を調べて使えそうなものをコピーする
 ・Characterの挙動パラメーターについて調べ、値を調整するようにする
- 
-○HUD
-
-○サウンド
 
 ○アウトゲーム
 ・待機画面
@@ -64,8 +56,16 @@ https://dev.epicgames.com/documentation/ja-jp/unreal-engine/physics-constraint-r
  -UI
 ・リザルト画面
  -キャラ配置
- -
+ 
+○HUD
 
+○サウンド
+
+○Gimmick
+・アニメーション
+・SE
+・プレイヤーの状態異常を設定
+・OverlapEvent
  
 △最適化の検証
 
@@ -73,7 +73,9 @@ https://dev.epicgames.com/documentation/ja-jp/unreal-engine/physics-constraint-r
 
 
 [Procedural]
-○ツール
-・ノードを個別化
+※Editor上での編集に対応できるようにする
+○BlockManager
+・ノードの実装
 
-○モデリング
+○LineManager
+・ノードの実装
