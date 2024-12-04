@@ -2,7 +2,7 @@
 ※基礎と発展(仕事)の中間部分を勉強する
  -仕事とUSDの共通している部分を調べる
  -プライベートでは極力直接仕事に関連することをしない
- -ToDoをMDで用意
+ -ToDoをMDで用意 
  
 ○Solaris&USD
 https://www.sidefx.com/contentlibrary/warehouse-lights/
@@ -17,31 +17,28 @@ https://dev.epicgames.com/documentation/ja-jp/unreal-engine/physics-constraint-r
 
 
 [USD]
-○ソースの整理
-・個人ドキュメントの作成
 
-○Schema構成を変更した際の挙動確認
 
-○不要なデータの削除
+■ドキュメント作成
+●ツールの概要
+・CodeLessSchemaでSchemaを定義する
 
-○ドキュメント作成
+●ツールの使い方
+・作業フォルダにschemaを定義しているusdaファイルとBatファイルを配置
+ -※usdaファイルは必ず"schema"と命名する(schema.usda)
+・Batを起動
+・schemaLibraryNameの設定
+ -schema.usdaで定義しているLibraryNameをそのまま設定する
+・releaseフォルダ内にschema定義に必要なデータが作成されるので、作成されたフォルダをHPATHが通っているフォルダに配置すればschema定義完了
 
-●仕様
-1.usdaファイルのパスを入力
-2.Houdiniライブラリに環境パスを通す
-3.usdGenSchemaコマンドの実行
-4.CMakeList.txtの作成
-5.cmakeビルド
-6.フォルダ配置
 
-1.Houdini, OpenUSDのパスを入力
-※2.OpenUSDライブラリに環境パスを通す
-3.usdGenSchemaコマンドの実行
-4.CMakeList.txtの作成
-※5.不足しているデータを用意
-※6.CMakeList.txtの書き換え
-7.cmakeビルド
-8.フォルダ配置
+●注意点
+下記のフォルダがデフォルトパスにない場合は書き換える必要あり
+・Houdiniのインストールフォルダパスが下記パスでない場合は書き換える
+C:\Program Files\Side Effects Software\Houdini 20.0.751
+ ※20.5.410以外のバージョンで行う場合も書き換える必要あり
+・VsDevCmd.bat(Develop Command Prompt VS 2022)がデフォルトの下記のパスと違う場合は書き換える
+C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Tools\VsDevCmd.bat
 
 
 [GUYS]
