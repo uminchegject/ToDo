@@ -3,7 +3,12 @@
  -仕事とUSDの共通している部分を調べる
  -プライベートでは極力直接仕事に関連することをしない
  -ToDoをMDで用意 
- 
+
+※実装以外にも時間を割く
+ -読書
+ -PD
+ -ドキュメント作成
+
 ○Solaris&USD
 https://www.sidefx.com/contentlibrary/warehouse-lights/
 ・schemaを中心に検証する
@@ -15,37 +20,25 @@ https://www.sidefx.com/contentlibrary/warehouse-lights/
 https://argonauts.hatenablog.jp/entry/2022/11/19/185610
 https://dev.epicgames.com/documentation/ja-jp/unreal-engine/physics-constraint-reference-in-unreal-engine?application_version=5.1
 
-
 [USD]
+○挙動確認
 
-
-■ドキュメント作成
-●ツールの概要
-・CodeLessSchemaでSchemaを定義する
-
-●ツールの使い方
-・作業フォルダにschemaを定義しているusdaファイルとBatファイルを配置
- -※usdaファイルは必ず"schema"と命名する(schema.usda)
-・Batを起動
-・schemaLibraryNameの設定
- -schema.usdaで定義しているLibraryNameをそのまま設定する
-・releaseフォルダ内にschema定義に必要なデータが作成されるので、作成されたフォルダをHPATHが通っているフォルダに配置すればschema定義完了
-
-
-●注意点
-下記のフォルダがデフォルトパスにない場合は書き換える必要あり
-・Houdiniのインストールフォルダパスが下記パスでない場合は書き換える
-C:\Program Files\Side Effects Software\Houdini 20.0.751
- ※20.5.410以外のバージョンで行う場合も書き換える必要あり
-・VsDevCmd.bat(Develop Command Prompt VS 2022)がデフォルトの下記のパスと違う場合は書き換える
-C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Tools\VsDevCmd.bat
+○ドキュメントの整理
+・テキスト
+・写真
 
 
 [GUYS]
+○処理の確認
+・Pluginを別プロジェクトに移動
+・別プロジェクトをVSProjectで生成
+https://dev.epicgames.com/documentation/ja-jp/unreal-engine/how-to-generate-unreal-engine-project-files-for-your-ide
+
 ○Player
 ・顔の振り返りを止める
-・MoveIt!の処理を調べて使えそうなものをコピーする
-・Characterの挙動パラメーターについて調べ、値を調整するようにする
+・スライディングの実装
+・風で飛ぶ
+・動きを鈍くする
 
 ○アウトゲーム
 ・待機画面
