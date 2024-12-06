@@ -9,36 +9,40 @@
  -PD
  -ドキュメント作成
 
+○usdGenSchema
+・公式ドキュメント
+https://openusd.org/dev/api/_usd__page__generating_schemas.html#Codeless_Schemas
 
-[USD]
-○Study
-・Tutorial
-https://openusd.org/docs/Referencing-Layers.html
+○Solaris
 ・Vexの使い方
 https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/09_solaris_vex/
-・読み物
-https://qiita.com/advent-calendar/2022/usd
 ・Solarisの実装方法の調査
 https://www.sidefx.com/contentlibrary/warehouse-lights/
 
 
-■ドキュメント
-●Schemaの定義方法
+[USD]
+○Tutorial
+https://openusd.org/docs/USD-Tutorials.html
 
-●Schemaの構成
 
 
 [GUYS]
 ※実装のベースとなる部分を実装する
 ※レベルの一連の流れを実装する
 
-○レベル周りの実装
-・待機レベル
- -オンライン
-・プレイレベル
- -ゴール
-・リザルトレベル
- -順位
+○待機レベル
+・準備完了ボタン
+・試合開始
+ -プレイヤーの情報管理
+
+○プレイ画面
+・ゴール
+ -リザルトレベルへ遷移
+ -プレイヤーの管理
+・観戦者
+ -
+
+○リザルト
 
 △サウンド
 
