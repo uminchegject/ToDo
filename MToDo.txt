@@ -30,6 +30,12 @@ https://openusd.org/docs/USD-Tutorials.html
 ※実装のベースとなる部分を実装する
 ※レベルの一連の流れを実装する
 
+●Study
+https://essence-of-human-game-creation.com/unreal-engine-localmultiplay-ui/
+https://qiita.com/suramaru517/items/91194a937981b5685341
+https://unrealengine.hatenablog.com/entry/2021/02/23/232048
+https://tech.dentsusoken.com/entry/ue5_emote_sync
+
 ○待機レベル
 ・準備完了ボタン
 ・試合開始
