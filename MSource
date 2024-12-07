@@ -1,23 +1,63 @@
-○GimmickActorの実装
-・OverlapEvent
-・TimeLineの実装
-・Animation
- -Rotate
- -Move
+int toggleRunning = 0;
+int seed = detail(0, "Seed");
 
-○Player周りの実装
-・プラグインを調査
+int typeNum = chi("TypeNum");
+string strAddTypeParam = chs("AddTypeList");
+vector transform = chv("Transform");
+vector scale = chv("scale");     
+vector rotateAxis = chv("RotateAxis");
+float rotateValue = ch("RotateValue");
 
-○CheckPoint周りの実装
-・RaceGameを参考にする
+//タイプに含まれているか
+int typeNumList[] = i[]@TypeNumList;
 
-○SE周りの実装
-・RaceGameを調査
+for(int i = 0; i < len(typeNumList); i++)
+{
+    if(typeNumList[i] == typeNum)
+    {
+        removeindex(typeNumList, i);
+        toggleRunning = 1;
+        break;
+    }
+}
 
-○画面分割の実装
-https://papersloth.hatenablog.com/entry/2018/01/25/214954
 
-○一連のゲームの流れを実装
-・RaceGameを参考にする
-
-△UI周りの実装
+if(toggleRunning == 1)
+{
+    
+    //回転周り
+    vector local_normal = {1, 0, 0};
+    vector world_normal = qrotate(p@orient, local_normal);
+    vector4 quat = quaternion(radians(rotateValue), rotateAxis);   
+    vector4 orient = qmultiply(p@orient, quat);   
+    
+    //移動
+    vector MoveVector;
+    MoveVector.x = transform.x * v@scale.x;
+    MoveVector.y = transform.y * v@scale.y;
+    MoveVector.z = transform.z * v@scale.z;  
+    MoveVector = qrotate(p@orient, MoveVector);
+    transform = MoveVector + v@P; 
+    
+    //ボリュームスケール
+    scale *= v@scale;
+       
+    //typeを追加
+    string strAddTypeParamBlockList[] = re_split(",", strAddTypeParam);
+    foreach(string strAddTypeParamBlock; strAddTypeParamBlockList)
+    {
+        string strAddTypeParamList[] = re_split("_", strAddTypeParamBlock);
+        int addTypeNumList[];
+        foreach(string str; strAddTypeParamList)
+        {
+            append(addTypeNumList, atoi(str));
+        }
+        int type = addTypeNumList[int(floor(rand(@ptnum + seed) * len(addTypeNumList)))];
+        append(typeNumList, type);
+    }
+    
+	v@P = transform;
+	v@scale = scale;
+	v@orient = orient;
+	i[]@TypeNumList = typeNumList;
+}
