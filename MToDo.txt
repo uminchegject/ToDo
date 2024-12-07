@@ -1,81 +1,21 @@
-[Study]
-※基礎と発展(仕事)の中間部分を勉強する
- -仕事とUSDの共通している部分を調べる
- -プライベートでは極力直接仕事に関連することをしない
- -ToDoをMDで用意 
-
-※実装以外にも時間を割く
- -読書
- -PD
- -ドキュメント作成
-
-○usdGenSchema
-・公式ドキュメント
-https://openusd.org/dev/api/_usd__page__generating_schemas.html#Codeless_Schemas
-
-○Solaris
-・Vexの使い方
-https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/09_solaris_vex/
-・Solarisの実装方法の調査
-https://www.sidefx.com/contentlibrary/warehouse-lights/
-
-
-[USD]
-○Tutorial
-https://openusd.org/docs/USD-Tutorials.html
-
-
-
 [GUYS]
-※実装のベースとなる部分を実装する
-※レベルの一連の流れを実装する
-
-●Study
-https://essence-of-human-game-creation.com/unreal-engine-localmultiplay-ui/
-https://qiita.com/suramaru517/items/91194a937981b5685341
-https://unrealengine.hatenablog.com/entry/2021/02/23/232048
-https://tech.dentsusoken.com/entry/ue5_emote_sync
+○レベル間のデータの受け渡し
 
 ○待機レベル
+・キャラクター選択
 ・準備完了ボタン
-・試合開始
- -プレイヤーの情報管理
 
 ○プレイ画面
+・スタートアニメーション
 ・ゴール
- -リザルトレベルへ遷移
- -プレイヤーの管理
-・観戦者
- -
 
 ○リザルト
-
-△サウンド
-
-△UI
+・UI
 
 
-○Player
-・顔の振り返りを止める
-・風で飛ぶ
-・動きを鈍くする
-
-○Gimmick
-・アニメーション
-・SE
-・プレイヤーの状態異常を設定
-・OverlapEvent
- 
-△最適化の検証
-
-△レベル遷移の検証
-
-
-
-[Procedural]
-※Editor上での編集に対応できるようにする
-○BlockManager
-・ノードの実装
-
-○LineManager
-・ノードの実装
+[PD]
+●BlockNode
+v@P = transform;
+v@scale = scale;
+v@orient = orient;
+i[]@TypeNumList = typeNumList;
