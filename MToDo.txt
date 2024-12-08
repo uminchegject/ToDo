@@ -1,21 +1,29 @@
 [GUYS]
-○レベル間のデータの受け渡し
+○GameInstanceとサーバーとクライアントにおけるやり取りについて調査
 
-○待機レベル
-・キャラクター選択
-・準備完了ボタン
+○実装
+・選択したキャラクター情報
+・プレイヤーの人数
+・ゴールした順位
+ -リザルト画面
 
-○プレイ画面
-・スタートアニメーション
-・ゴール
-
-○リザルト
-・UI
+○SeamTravelの実装
+・各画面遷移を実装
 
 
 [PD]
+○ModularModelingのサンプルプロジェクトの調査
+https://www.youtube.com/watch?v=N4LWSeDOfJ4
+
 ●BlockNode
 v@P = transform;
 v@scale = scale;
 v@orient = orient;
 i[]@TypeNumList = typeNumList;
+
+●LineModule
+
+
+[USD]
+○Tutorial
+https://openusd.org/docs/USD-Tutorials.html
