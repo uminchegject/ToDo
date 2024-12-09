@@ -1,5 +1,41 @@
+[Study]
+※業務とその他の2本のみに集中する
+※Input + Outputを明確に分けて勉強、業務を進めていく
+ 
+
+○usdGenSchema
+・公式ドキュメント
+https://openusd.org/dev/api/_usd__page__generating_schemas.html#Codeless_Schemas
+
+○Solaris
+・Vexの使い方
+https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/09_solaris_vex/
+・Solarisの実装方法の調査
+https://www.sidefx.com/contentlibrary/warehouse-lights/
+
+
+
+[USD]
+○Pluginの挙動について仕様を調査
+
+○UsdObjFileFormatの調査
+
+○SdfFileFormatの調査
+
+△Tutorial
+https://openusd.org/docs/USD-Tutorials.html
+
+
+
 [GUYS]
-○GameInstanceとサーバーとクライアントにおけるやり取りについて調査
+※実装のベースとなる部分を実装する
+※レベルの一連の流れを実装する
+
+●Study
+https://essence-of-human-game-creation.com/unreal-engine-localmultiplay-ui/
+https://qiita.com/suramaru517/items/91194a937981b5685341
+https://unrealengine.hatenablog.com/entry/2021/02/23/232048
+https://tech.dentsusoken.com/entry/ue5_emote_sync
 
 ○実装
 ・選択したキャラクター情報
@@ -20,7 +56,24 @@
 △観戦者モード
 
 
-[PD]
+○Player
+・顔の振り返りを止める
+・風で飛ぶ
+・動きを鈍くする
+
+○Gimmick
+・アニメーション
+・SE
+・プレイヤーの状態異常を設定
+・OverlapEvent
+ 
+△最適化の検証
+
+△レベル遷移の検証
+
+
+
+[Procedural]
 ○ModularModelingのサンプルプロジェクトの調査
 
 ●BlockNode
@@ -30,8 +83,3 @@ v@orient = orient;
 i[]@TypeNumList = typeNumList;
 
 ●LineModule
-
-
-[USD]
-○Tutorial
-https://openusd.org/docs/USD-Tutorials.html
