@@ -10,10 +10,18 @@
 ○SeamTravelの実装
 ・各画面遷移を実装
 
+△待機レベル
+・準備完了ボタン
+・試合開始
+ -プレイヤーの情報管理
+
+△サウンド
+
+△観戦者モード
+
 
 [PD]
 ○ModularModelingのサンプルプロジェクトの調査
-https://www.youtube.com/watch?v=N4LWSeDOfJ4
 
 ●BlockNode
 v@P = transform;
