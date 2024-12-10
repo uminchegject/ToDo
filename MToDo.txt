@@ -28,49 +28,55 @@ https://openusd.org/docs/USD-Tutorials.html
 
 
 [GUYS]
-※実装のベースとなる部分を実装する
-※レベルの一連の流れを実装する
 
-●Study
-https://essence-of-human-game-creation.com/unreal-engine-localmultiplay-ui/
-https://qiita.com/suramaru517/items/91194a937981b5685341
-https://unrealengine.hatenablog.com/entry/2021/02/23/232048
-https://tech.dentsusoken.com/entry/ue5_emote_sync
+○ロビーレベル、Widgetの実装
 
-○実装
-・選択したキャラクター情報
-・プレイヤーの人数
-・ゴールした順位
- -リザルト画面
+○ゴールの実装
 
+○Widget実装のお願い
+
+■タイトル
+○アニメーションの再生機能の実装
+
+■ロビー画面
 ○SeamTravelの実装
-・各画面遷移を実装
 
-△待機レベル
-・準備完了ボタン
-・試合開始
- -プレイヤーの情報管理
+○オンライン
+・構造体のGameInstanceへの保存
+・Login,Logoutしたプレイヤーの管理
+・PreparedPlayerの確認
+
+○キャラクターの表示
+
+
+■プレイ画面
+○ゴールの実装
+
+○オンライン周りの実装
+・ゴール順位
+
+△入力
 
 △サウンド
 
-△観戦者モード
-
-
-○Player
+△Player挙動
 ・顔の振り返りを止める
 ・風で飛ぶ
 ・動きを鈍くする
 
-○Gimmick
+△Gimmick
 ・アニメーション
 ・SE
 ・プレイヤーの状態異常を設定
 ・OverlapEvent
- 
-△最適化の検証
 
-△レベル遷移の検証
+△観戦者モード
 
+
+■リザルト画面
+○アニメーションの再生機能の実装
+
+△最適化の実装
 
 
 [Procedural]
