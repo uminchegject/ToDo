@@ -16,11 +16,18 @@ https://www.sidefx.com/contentlibrary/warehouse-lights/
 
 
 [USD]
-○Pluginの挙動について仕様を調査
+○alembicの設計概要
+・alembicFileFormat
+・alembicData
+・alembicReader
+・alembicWriter
+・alembicUtil
 
-○UsdObjFileFormatの調査
+○alembicFileFormatについて
+・SdfAbstractDataについて
 
-○SdfFileFormatの調査
+○alembicDataについて
+・SdfFileFormatについて
 
 △Tutorial
 https://openusd.org/docs/USD-Tutorials.html
@@ -28,19 +35,18 @@ https://openusd.org/docs/USD-Tutorials.html
 
 
 [GUYS]
-
-○ロビーレベル、Widgetの実装
-
-○ゴールの実装
-
 ○Widget実装のお願い
+
+○Roby画面の実装
+・入力
+
+○キャラクター設定の実装
+・Robyで設定したキャラクターを設定するように実装する
 
 ■タイトル
 ○アニメーションの再生機能の実装
 
 ■ロビー画面
-○SeamTravelの実装
-
 ○オンライン
 ・構造体のGameInstanceへの保存
 ・Login,Logoutしたプレイヤーの管理
@@ -48,14 +54,9 @@ https://openusd.org/docs/USD-Tutorials.html
 
 ○キャラクターの表示
 
-
 ■プレイ画面
-○ゴールの実装
-
 ○オンライン周りの実装
 ・ゴール順位
-
-△入力
 
 △サウンド
 
@@ -72,7 +73,6 @@ https://openusd.org/docs/USD-Tutorials.html
 
 △観戦者モード
 
-
 ■リザルト画面
 ○アニメーションの再生機能の実装
 
@@ -81,6 +81,7 @@ https://openusd.org/docs/USD-Tutorials.html
 
 [Procedural]
 ○ModularModelingのサンプルプロジェクトの調査
+https://rart.gumroad.com/l/wcrng?layout=profile
 
 ●BlockNode
 v@P = transform;
