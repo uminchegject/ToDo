@@ -1,40 +1,26 @@
-[Study]
-※業務とその他の2本のみに集中する
-※Input + Outputを明確に分けて勉強、業務を進めていく
- 
-
-○usdGenSchema
-・公式ドキュメント
-https://openusd.org/dev/api/_usd__page__generating_schemas.html#Codeless_Schemas
-
-○Solaris
-・Vexの使い方
-https://fereria.github.io/reincarnation_tech_bk/05_DCCTool/10_Houdini/11_SOLARIS/09_solaris_vex/
-・Solarisの実装方法の調査
-https://www.sidefx.com/contentlibrary/warehouse-lights/
-
-
-
 [USD]
-○abstractData以降の調査
+○デバッグ環境の構築
+・ChatGPTの検索を参考に調査を行っていく
 
-○デバッグ環境の調査
-
-△FileformatStudy
-
-△UsdTutorial
-https://openusd.org/docs/USD-Tutorials.html
-
-△PluginTutorial
-
+○ソースの調査
 
 
 [GUYS]
-○キャラクター設定の実装
-・Robyで設定したキャラクターを設定するように実装する
+○SE
+・フィールド
+・キャラクター
+・ギミック
 
-○サウンド
-https://gamemakers.jp/article/2023_03_10_31608/
+○Gimmick
+・アニメーション
+・SE
+・プレイヤーの状態異常を設定
+・OverlapEvent
+
+○Player挙動
+・風で飛ぶ
+・動きを鈍くする
+・△顔の振り返りを止める
 
 ■タイトル
 ○アニメーションの再生機能の実装
@@ -51,17 +37,6 @@ https://gamemakers.jp/article/2023_03_10_31608/
 ○オンライン周りの実装
 ・ゴール順位
 
-△Player挙動
-・顔の振り返りを止める
-・風で飛ぶ
-・動きを鈍くする
-
-△Gimmick
-・アニメーション
-・SE
-・プレイヤーの状態異常を設定
-・OverlapEvent
-
 △観戦者モード
 
 ■リザルト画面
@@ -70,23 +45,7 @@ https://gamemakers.jp/article/2023_03_10_31608/
 △最適化の実装
 
 
-[Procedural]
-○BasePointの配置ロジックを考える
+[PD]
+○BasePoint
 
-●資料
-https://rart.gumroad.com/l/wcrng?layout=profile
-
-■IDEA
-●BasePoint
-
-●Detail
-・画像から
-
-■MModeling
-●BlockNode
-v@P = transform;
-v@scale = scale;
-v@orient = orient;
-i[]@TypeNumList = typeNumList;
-
-●LineModule
+△Detail
