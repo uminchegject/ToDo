@@ -16,32 +16,25 @@ https://www.sidefx.com/contentlibrary/warehouse-lights/
 
 
 [USD]
-○alembicの設計概要
-・alembicFileFormat
-・alembicData
-・alembicReader
-・alembicWriter
-・alembicUtil
+○abstractData以降の調査
 
-○alembicFileFormatについて
-・SdfAbstractDataについて
+○デバッグ環境の調査
 
-○alembicDataについて
-・SdfFileFormatについて
+△FileformatStudy
 
-△Tutorial
+△UsdTutorial
 https://openusd.org/docs/USD-Tutorials.html
+
+△PluginTutorial
 
 
 
 [GUYS]
-○Widget実装のお願い
-
-○Roby画面の実装
-・入力
-
 ○キャラクター設定の実装
 ・Robyで設定したキャラクターを設定するように実装する
+
+○サウンド
+https://gamemakers.jp/article/2023_03_10_31608/
 
 ■タイトル
 ○アニメーションの再生機能の実装
@@ -57,8 +50,6 @@ https://openusd.org/docs/USD-Tutorials.html
 ■プレイ画面
 ○オンライン周りの実装
 ・ゴール順位
-
-△サウンド
 
 △Player挙動
 ・顔の振り返りを止める
@@ -80,9 +71,18 @@ https://openusd.org/docs/USD-Tutorials.html
 
 
 [Procedural]
-○ModularModelingのサンプルプロジェクトの調査
+○BasePointの配置ロジックを考える
+
+●資料
 https://rart.gumroad.com/l/wcrng?layout=profile
 
+■IDEA
+●BasePoint
+
+●Detail
+・画像から
+
+■MModeling
 ●BlockNode
 v@P = transform;
 v@scale = scale;
