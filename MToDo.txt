@@ -1,37 +1,15 @@
 [Study]
-※業務とその他の2本のみに集中する
-※Input + Outputを明確に分けて勉強、業務を進めていく
+○サーバー周り
 
-○Plugin
-https://openusd.org/docs/Creating-a-Usdview-Plugin.html
-https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
-https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
-
-○Scene Description Foundations
-https://openusd.org/dev/api/sdf_page_front.html
-
-
-[USD]
-○usdObjの調査
-・デバッグ
-・ソースの調査
-
-△UsdTutorial
-https://openusd.org/docs/USD-Tutorials.html
-
-△PluginTutorial
-
+○ムービー周り
 
 
 [GUYS]
 ○タイトル画面
 ・ムービーの再生
  -シークエンサー
-・UIGameModeの実装
 
 ○キャラクター選択画面
-・キャラクターの配置
-・プレイヤーIDの設定
 
 ○プレイ画面
 ・ゴール
@@ -61,24 +39,21 @@ https://openusd.org/docs/USD-Tutorials.html
 ■クレジット画面
 
 
-
 [Procedural]
-○BasePointの配置ロジックを考える
-
 ●資料
 https://rart.gumroad.com/l/wcrng?layout=profile
 
-■IDEA
-●BasePoint
+■Detail
+○Textureの用意
 
-●Detail
-・画像から
+○モデリング
+
 
 ■MModeling
-●BlockNode
-v@P = transform;
-v@scale = scale;
-v@orient = orient;
-i[]@TypeNumList = typeNumList;
+●PointBlock
+・Edit
+・Cluster
 
-●LineModule
+●SurfaceBlock
+・Edit
+・Box
