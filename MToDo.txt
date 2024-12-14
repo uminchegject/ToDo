@@ -1,6 +1,8 @@
 [Study]
 ○サーバー周り
 
+○ノードのまとめ方
+
 [GUYS]
 ○オンライン周りの修正
 
@@ -35,18 +37,40 @@ https://qiita.com/Aichi_Lover/items/f7721f3b4081c8d40b53
 ●資料
 https://rart.gumroad.com/l/wcrng?layout=profile
 
+■Init
+○Greebleで四角形のInitBaseLineを生成する
+
+■PointBlock
+v@P = transform;
+v@scale = scale;
+v@orient = orient;
+i[]@TypeNumList = typeNumList;
+
+○Edit
+・実装
+
+○Cluster
+・ノード化
+
+■LineBlock
+@height = height;
+i[]@vertexList
+i[]@TypeNumList
+
+○ConvertPointBlock
+
+○Edit
+・Offset
+・EditVertex
+・EditType
+
+○MakePlan
+・AddLine
+ -階層追加
+・AddVertex
+ -平面変化
+
 ■Detail
 ○Textureの用意
 
 ○モデリング
-
-
-■MModeling
-●PointBlock
-・Edit
-・Cluster
-
-●LineBlock
-・Edit
-・MakeGroundPlan
-・ConvertPointBlock
