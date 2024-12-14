@@ -1,19 +1,18 @@
 [Study]
 ○サーバー周り
 
-○ムービー周り
-
-
 [GUYS]
 ○タイトル画面
-・ムービーの再生
- -シークエンサー
 
 ○キャラクター選択画面
+・選択キャラクター情報
 
 ○プレイ画面
+・スタミナゲージ
 ・ゴール
 
+○パッケージ化
+https://qiita.com/Aichi_Lover/items/f7721f3b4081c8d40b53
 
 ■タイトル
 
@@ -54,6 +53,7 @@ https://rart.gumroad.com/l/wcrng?layout=profile
 ・Edit
 ・Cluster
 
-●SurfaceBlock
+●LineBlock
 ・Edit
-・Box
+・MakeGroundPlan
+・ConvertPointBlock
