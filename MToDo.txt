@@ -1,12 +1,14 @@
 [Study]
-○サーバー周り
-
 ○ノードのまとめ方
+https://www.sidefx.com/docs/houdini/help/createexamples.html
+
+○サーバー周り
 
 [GUYS]
 ○オンライン周りの修正
 
 ○観戦者モード
+・https://dev.epicgames.com/documentation/ja-jp/unreal-engine/switching-between-multiple-fixed-camera-perspectives-in-unreal-engine
 
 ○パッケージ化
 https://qiita.com/Aichi_Lover/items/f7721f3b4081c8d40b53
