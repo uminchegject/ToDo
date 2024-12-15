@@ -49,12 +49,17 @@ https://rart.gumroad.com/l/wcrng?layout=profile
 
 
 ■LineBlock
-○Greebleで四角形のInitBaseLineを生成する
-・PointGreebleノードの実装
-・PointToLineノードの実装
+○PointGreebleノードの実装
+
+○PointToLine
+・orient, scaleからLineを生成する
+・Attributeを設定する
+i[]@type
+i[]@vertex
+@height
+
 
 ○LineToBlock
-・Parameter = 
 vector blockSize = 
 int Type = 
 int edgeType = 
