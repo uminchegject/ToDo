@@ -3,9 +3,14 @@
 
 [Study]
 ○ノードのまとめ方
+・Clusterノードの実装
 https://www.sidefx.com/docs/houdini/help/createexamples.html
 
+○orient(クォータニオン)
+・PointToLineの実装
+
 ○サーバー周り
+・スライディングの修正
 https://qiita.com/minami_koh/items/d104567a54b3d9311266
 https://dev.epicgames.com/documentation/ja-jp/unreal-engine/networking-overview#%E3%82%AF%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%88%E3%81%AE%E6%89%80%E6%9C%89%E6%A8%A9
 
@@ -47,17 +52,8 @@ https://rart.gumroad.com/l/wcrng?layout=profile
 
 ○Cluster
 
-
 ■LineBlock
 ○PointGreebleノードの実装
-
-○PointToLine
-・orient, scaleからLineを生成する
-・Attributeを設定する
-i[]@type
-i[]@vertex
-@height
-
 
 ○LineToBlock
 vector blockSize = 
@@ -70,12 +66,10 @@ for(int i = 0; i < len(primPtsList); i++)
 	
 }
 
-
 ■Detail
 ○Textureの用意
 
 ○モデリング
-
 
 ■LIneBlockIDEA
 ●Offset
