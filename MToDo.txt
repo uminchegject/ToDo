@@ -1,14 +1,17 @@
+[USD]
+○usdObjの調査
+
 [Study]
 ○ノードのまとめ方
 https://www.sidefx.com/docs/houdini/help/createexamples.html
 
 ○サーバー周り
+https://qiita.com/minami_koh/items/d104567a54b3d9311266
+https://dev.epicgames.com/documentation/ja-jp/unreal-engine/networking-overview#%E3%82%AF%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%88%E3%81%AE%E6%89%80%E6%9C%89%E6%A8%A9
+
 
 [GUYS]
 ○オンライン周りの修正
-
-○観戦者モード
-・https://dev.epicgames.com/documentation/ja-jp/unreal-engine/switching-between-multiple-fixed-camera-perspectives-in-unreal-engine
 
 ○パッケージ化
 https://qiita.com/Aichi_Lover/items/f7721f3b4081c8d40b53
@@ -39,40 +42,49 @@ https://qiita.com/Aichi_Lover/items/f7721f3b4081c8d40b53
 ●資料
 https://rart.gumroad.com/l/wcrng?layout=profile
 
-■Init
-○Greebleで四角形のInitBaseLineを生成する
-
 ■PointBlock
-v@P = transform;
-v@scale = scale;
-v@orient = orient;
-i[]@TypeNumList = typeNumList;
-
 ○Edit
-・実装
 
 ○Cluster
-・ノード化
+
 
 ■LineBlock
-@height = height;
-i[]@vertexList
-i[]@TypeNumList
+○Greebleで四角形のInitBaseLineを生成する
+・PointGreebleノードの実装
+・PointToLineノードの実装
 
-○ConvertPointBlock
+○LineToBlock
+・Parameter = 
+vector blockSize = 
+int Type = 
+int edgeType = 
 
-○Edit
-・Offset
-・EditVertex
-・EditType
+int primPtsList =
+for(int i = 0; i < len(primPtsList); i++)
+{
+	
+}
 
-○MakePlan
-・AddLine
- -階層追加
-・AddVertex
- -平面変化
 
 ■Detail
 ○Textureの用意
 
 ○モデリング
+
+
+■LIneBlockIDEA
+●Offset
+・Edit
+・Make
+
+●Split
+・VertexSprit
+・RatioSprit
+
+●HeightDivide
+・AddLine
+ -階層追加
+
+●MakePlanIdea
+・AddVertex
+ -平面変化
