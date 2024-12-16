@@ -1,10 +1,15 @@
-[USD]
-○usdObjの調査
-・ソース調査
- -△ドキュメント作成
-・デバッグ
-
 [Study]
+※業務とその他の2本のみに集中する
+※Input + Outputを明確に分けて勉強、業務を進めていく
+
+○Plugin
+https://openusd.org/docs/Creating-a-Usdview-Plugin.html
+https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
+https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
+
+○Scene Description Foundations
+https://openusd.org/dev/api/sdf_page_front.html
+
 ○ノードのまとめ方
 ・Clusterノードの実装
 https://www.sidefx.com/docs/houdini/help/createexamples.html
