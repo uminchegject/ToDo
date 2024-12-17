@@ -14,20 +14,23 @@ https://openusd.org/dev/api/sdf_page_front.html
 ・Clusterノードの実装
 https://www.sidefx.com/docs/houdini/help/createexamples.html
 
-○orient(クォータニオン)
-・PointToLineの実装
-
-○サーバー周り
-・スライディングの修正
-https://qiita.com/minami_koh/items/d104567a54b3d9311266
-https://dev.epicgames.com/documentation/ja-jp/unreal-engine/networking-overview#%E3%82%AF%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%88%E3%81%AE%E6%89%80%E6%9C%89%E6%A8%A9
 
 
 [GUYS]
-○オンライン周りの修正
+○締め切り報告
+お疲れ様です。
+ゲームのパッケージ化に向けてゲーム内で使うアセットなどのマージ締め切りを12月21日(土)に設けさせて頂きます。
+その上で日曜日にデータの整理及びパッケージ化を行い、パッケージ化が失敗した際は翌週にデバッグを行いつつパッケージ対応を行っていこうかと思います。
+お忙しいところ大変恐縮ですがご了承の程よろしくお願いいたします。
+
+○オンライン周りの修正(Clinet + Server)
+・ログイン時のサーバー側のキャラクターの反映
+・スライディング
+・ゴール
 
 ○パッケージ化
-https://qiita.com/Aichi_Lover/items/f7721f3b4081c8d40b53
+
+
 
 ■タイトル
 
