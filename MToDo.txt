@@ -7,51 +7,39 @@ https://openusd.org/docs/Creating-a-Usdview-Plugin.html
 https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
 https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
 
-○Scene Description Foundations
-https://openusd.org/dev/api/sdf_page_front.html
-
 ○ノードのまとめ方
 ・Clusterノードの実装
 https://www.sidefx.com/docs/houdini/help/createexamples.html
 
+[USD]
+○Alembicのデバッグ
+・usdcat hello.usda --out hello.abc
+・usdcat hello.abc --out convertedHello.usda
 
+○ドキュメント作成
+・debugでビルド
+python build_usd.py --build-variant=debug --usdview --alembic C:\Users\yusuke.nakamura\Desktop\OpenUSD\debugBuild
+・visualstudioを起動
+・デバッグ設定でコマンドを設定
+ -usdcatでコンバートするコマンドを設定しデバッグする
+
+
+△Objのビルド
 
 [GUYS]
-○締め切り報告
-お疲れ様です。
-ゲームのパッケージ化に向けてゲーム内で使うアセットなどのマージ締め切りを12月21日(土)に設けさせて頂きます。
-その上で日曜日にデータの整理及びパッケージ化を行い、パッケージ化が失敗した際は翌週にデバッグを行いつつパッケージ対応を行っていこうかと思います。
-お忙しいところ大変恐縮ですがご了承の程よろしくお願いいたします。
+○サポートの相談
+・
+○Widgetの実装
+・タイトルでベースを実装する
 
 ○オンライン周りの修正(Clinet + Server)
 ・ログイン時のサーバー側のキャラクターの反映
 ・スライディング
 ・ゴール
 
+○キャラクターの実装
+
 ○パッケージ化
-
-
-
-■タイトル
-
-■ロビー画面
-
-■プレイ画面
-○SE
-・フィールド
-・キャラクター
-・ギミック
-
-○Gimmick
-
-○Player挙動
-・風で飛ぶ
-・動きを鈍くする
-・△顔の振り返りを止める
-
-■リザルト画面
-
-■クレジット画面
 
 
 [Procedural]
