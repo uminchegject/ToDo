@@ -16,19 +16,19 @@ https://www.sidefx.com/docs/houdini/help/createexamples.html
 ・usdcat hello.usda --out hello.abc
 ・usdcat hello.abc --out convertedHello.usda
 
-○ドキュメント作成
-・debugでビルド
-python build_usd.py --build-variant=debug --usdview --alembic C:\Users\yusuke.nakamura\Desktop\OpenUSD\debugBuild
-・visualstudioを起動
-・デバッグ設定でコマンドを設定
- -usdcatでコンバートするコマンドを設定しデバッグする
+■ドキュメント
+●debugでビルド
+・python build_usd.py --build-variant=debug --usdview --alembic C:\Users\yusuke.nakamura\Desktop\OpenUSD\debugBuild
 
+●visualstudioを起動
+
+●デバッグ設定でコマンドを設定
+
+△Pythonのデバッグ方法
 
 △Objのビルド
 
 [GUYS]
-○サポートの相談
-・
 ○Widgetの実装
 ・タイトルでベースを実装する
 
