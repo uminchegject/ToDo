@@ -12,21 +12,13 @@ https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
 https://www.sidefx.com/docs/houdini/help/createexamples.html
 
 [USD]
-○Alembicのデバッグ
-・usdcat hello.usda --out hello.abc
-・usdcat hello.abc --out convertedHello.usda
+○VisualStudioデバッグ方法の参考資料
+・dllのデバッグ
+https://learn.microsoft.com/ja-jp/visualstudio/debugger/how-to-debug-from-a-dll-project?view=vs-2022
+・build-varient=debug
+・solutionフォルダ
 
-■ドキュメント
-●debugでビルド
-・python build_usd.py --build-variant=debug --usdview --alembic C:\Users\yusuke.nakamura\Desktop\OpenUSD\debugBuild
 
-●visualstudioを起動
-
-●デバッグ設定でコマンドを設定
-
-△Pythonのデバッグ方法
-
-△Objのビルド
 
 [GUYS]
 ○Widgetの実装
