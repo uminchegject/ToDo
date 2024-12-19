@@ -11,16 +11,40 @@ https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
 ・Clusterノードの実装
 https://www.sidefx.com/docs/houdini/help/createexamples.html
 
+
 [USD]
+○デバッグ調査
+・メモの作成
+ -Read
+ -Write
+・デバッグから確認できたクラス構成を一度ドキュメントに反映
+
+○FileFormatPluginのクラス参考資料
+
+○デバッグ準備の挙動確認
+
 ○VisualStudioデバッグ方法の参考資料
 ・dllのデバッグ
 https://learn.microsoft.com/ja-jp/visualstudio/debugger/how-to-debug-from-a-dll-project?view=vs-2022
 ・build-varient=debug
 ・solutionフォルダ
+cmakeの中間ファイルで生成されたvisualstudiosolutionファイルを用いてデバッグを行う
 
+○build_usd.pyの調査
+・build_varientの調査
+・中間ファイルの指定部分の調査
 
 
 [GUYS]
+○サーバー側のGameInstanceは1つのみと定義した上でデバッグを行う
+・AddPlayerの処理をサーバー側で独立させる実装で試す
+・数をログで表示する
+・いきなりServerTravelを呼び出す
+
+○Title画面まで実装
+
+○キャラクターの実装
+
 ○Widgetの実装
 ・タイトルでベースを実装する
 
@@ -28,8 +52,6 @@ https://learn.microsoft.com/ja-jp/visualstudio/debugger/how-to-debug-from-a-dll-
 ・ログイン時のサーバー側のキャラクターの反映
 ・スライディング
 ・ゴール
-
-○キャラクターの実装
 
 ○パッケージ化
 
