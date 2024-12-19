@@ -1,63 +1,427 @@
-int toggleRunning = 0;
-int seed = detail(0, "Seed");
-
-int typeNum = chi("TypeNum");
-string strAddTypeParam = chs("AddTypeList");
-vector transform = chv("Transform");
-vector scale = chv("scale");     
-vector rotateAxis = chv("RotateAxis");
-float rotateValue = ch("RotateValue");
-
-//タイプに含まれているか
-int typeNumList[] = i[]@TypeNumList;
-
-for(int i = 0; i < len(typeNumList); i++)
+[abc to usda]
+bool
+UsdAbc_AlembicData::Open(const std::string& filePath)
 {
-    if(typeNumList[i] == typeNum)
+    TfAutoMallocTag2 tag("UsdAbc_AlembicData", "UsdAbc_AlembicData::Open");
+    TRACE_FUNCTION();
+
+    // Prepare the reader.
+    _reader.reset(new UsdAbc_AlembicDataReader);
+    // Suppress instancing support.
+    if (TfGetEnvSetting(USD_ABC_EXPAND_INSTANCES)) {
+        _reader->SetFlag(UsdAbc_AlembicContextFlagNames->expandInstances);
+    }
+    // Create instances but disallow instancing on the prototype.
+    if (TfGetEnvSetting(USD_ABC_DISABLE_INSTANCING)) {
+        _reader->SetFlag(UsdAbc_AlembicContextFlagNames->disableInstancing);
+    }
+    // Use the parent of instance sources as the Usd prototype prim, where
+    // possible.
+    if (TfGetEnvSetting(USD_ABC_PARENT_INSTANCES)) {
+        _reader->SetFlag(UsdAbc_AlembicContextFlagNames->promoteInstances);
+    }
+    //_reader->SetFlag(UsdAbc_AlembicContextFlagNames->verbose);
+
+    // Open the archive.
+    if (_reader->Open(filePath, _arguments)) {
+        return true;
+    }
+
+    TF_RUNTIME_ERROR("Failed to open Alembic archive \"%s\": %s",
+                     filePath.c_str(),
+                     _reader->GetErrors().c_str());
+    Close();
+    return false;
+}
+
+
+bool
+_ReaderContext::Open(const std::string& filePath, std::string* errorLog,
+                     const SdfFileFormat::FileFormatArguments& args)
+{
+    Close();
+
+    std::vector<std::string> layeredABC;
     {
-        removeindex(typeNumList, i);
-        toggleRunning = 1;
-        break;
+        auto abcLayers = args.find("abcLayers");
+        if (abcLayers != args.end()) {
+            for (auto&& l : TfStringSplit(abcLayers->second, ",")) {
+                layeredABC.emplace_back(std::move(l));
+            }
+        }
+    }
+    layeredABC.emplace_back(filePath);
+
+#if PXR_HDF5_SUPPORT_ENABLED && !H5_HAVE_THREADSAFE
+    // HDF5 may not be thread-safe.
+    using lock_guard = std::lock_guard<std::recursive_mutex>;
+    std::unique_ptr<std::lock_guard<std::recursive_mutex>> hfd5Lock(new lock_guard(*_hdf5));
+#endif
+
+    using IFactory = ::Alembic::AbcCoreFactory::IFactory;
+    IFactory factory;
+    IFactory::CoreType abcType;
+    factory.setPolicy(Abc::ErrorHandler::Policy::kQuietNoopPolicy);
+    factory.setOgawaNumStreams(_GetNumOgawaStreams());
+
+#if ALEMBIC_LIBRARY_VERSION >= 10709
+    if (!TfGetEnvSetting(USD_ABC_READ_ARCHIVE_USE_MMAP)) {
+        factory.setOgawaReadStrategy(Alembic::AbcCoreFactory::IFactory::kFileStreams);
+    }
+#endif
+
+    IArchive archive = factory.getArchive(layeredABC, abcType);
+
+#if PXR_HDF5_SUPPORT_ENABLED && !H5_HAVE_THREADSAFE
+    if (abcType == IFactory::kHDF5 || abcType == IFactory::kLayer) {
+        // An HDF5, or layered which may have an HDF5 layer
+        _mutex = &*_hdf5;
+    } else {
+        // Don't need the HDF5 lock
+        hfd5Lock.reset();
+    }
+#endif
+
+    std::string format;
+    switch (abcType) {
+        case IFactory::kHDF5: format = "HDF5"; break;
+        case IFactory::kOgawa: format = "Ogawa"; break;
+        case IFactory::kLayer: format = "Layer"; break;
+        default:
+        case IFactory::kUnknown: format = "Unknown"; break;
+    }
+    if (!archive.valid()) {
+        *errorLog = TfStringPrintf("Unsupported format: '%s'", format.c_str());
+        return false;
+    }
+
+    // Get info.
+    uint32_t apiVersion;
+    std::string writer, version, date, comment;
+    double fps = 0.0;
+#if ALEMBIC_LIBRARY_VERSION >= 10712
+    GetArchiveInfo(archive, writer, version, apiVersion, date, comment, fps);
+#else
+    GetArchiveInfo(archive, writer, version, apiVersion, date, comment);
+#endif
+
+    // Report.
+    if (IsFlagSet(UsdAbc_AlembicContextFlagNames->verbose)) {
+        TF_STATUS("Opened %s file written by Alembic %s",
+                  format.c_str(),
+                  UsdAbc_FormatAlembicVersion(apiVersion).c_str());
+    }
+
+    // Cut over.
+    _archive = std::move(archive);
+
+    // Fill pseudo-root in the cache.
+    const SdfPath rootPath = SdfPath::AbsoluteRootPath();
+    _pseudoRoot = &_prims[rootPath];
+    _pseudoRoot->metadata[SdfFieldKeys->Documentation] = comment;
+
+    // Gather the names of the root prims.  Instancing will want to create
+    // new root prims.  Those must have unique names that don't modify the
+    // names of existing root prims.  So we have to have the existing names
+    // first.
+    IObject root = _archive.getTop();
+    std::set<std::string> usedRootNames;
+    for (size_t i = 0, n = root.getNumChildren(); i != n; ++i) {
+        IObject child(root, root.getChildHeader(i).getName());
+        std::string name = _CleanName(child.getName(), " _", usedRootNames,
+                                      _AlembicFixName(),
+                                      &SdfPath::IsValidIdentifier);
+        usedRootNames.insert(name);
+    }
+
+    // Fetch authored timeCodesPerSecond early so that we can use it 
+    // for rescaling timeSamples.
+    if (const PropertyHeader* property =
+            root.getProperties().getPropertyHeader("Usd")) {
+        const MetaData& metadata = property->getMetaData();
+        _pseudoRoot->metadata[SdfFieldKeys->TimeCodesPerSecond] = 24.0;
+        _GetDoubleMetadata(metadata, _pseudoRoot->metadata,
+                           SdfFieldKeys->TimeCodesPerSecond);
+        _timeScale = _pseudoRoot->metadata[SdfFieldKeys->TimeCodesPerSecond].Get<double>();
+    }
+    else if (fps != 0.0) {
+        _pseudoRoot->metadata[SdfFieldKeys->TimeCodesPerSecond] = fps;
+        _timeScale = _pseudoRoot->metadata[SdfFieldKeys->TimeCodesPerSecond].Get<double>();
+    }
+
+    // Collect instancing information.
+    // Skipping this step makes later code expand instances.
+    if (!IsFlagSet(UsdAbc_AlembicContextFlagNames->expandInstances)) {
+        // Find the instance sources and their instances.
+        _SourceToInstancesMap instances;
+        _FindInstances(root, &instances);
+
+        // If we're allowing instance promotion find the candidates.
+        _ObjectReaderSet promotable;
+        if (IsFlagSet(UsdAbc_AlembicContextFlagNames->promoteInstances)) {
+            _FindPromotable(instances, &promotable);
+        }
+
+        // Save instancing info to lookup during main traversal, including
+        // choosing paths for the prototypes.
+        _SetupInstancing(instances, promotable, &usedRootNames);
+    }
+
+    // Re-root so the <defaultPrim> is actually the archive!
+    TfToken abcReRoot;
+    {
+        auto reRoot = args.find("abcReRoot");
+        if (reRoot != args.end()) {
+            if (!TfIsValidIdentifier(reRoot->second)) {
+                TF_WARN("[usdAbc] Ignoring re-root because identifer '%s' is"
+                        " not valid (%s).", reRoot->second.c_str(),
+                        filePath.c_str());
+            } else
+                abcReRoot = TfToken(reRoot->second);
+        }
+    }
+
+    // Fill rest of the cache.
+    if (!abcReRoot.IsEmpty()) {
+        SdfPath compPath = rootPath.AppendChild(abcReRoot);
+        auto& xform = _prims[compPath];
+        xform.typeName = UsdAbcPrimTypeNames->Xform;
+        xform.specifier = SdfSpecifierDef;
+        _ReadPrimChildren(*this, root, compPath, xform);
+        _pseudoRoot->children.emplace_back(std::move(abcReRoot));
+    } else
+        _ReadPrimChildren(*this, root, rootPath, *_pseudoRoot);
+
+    // Append the prototypes to the pseudo-root.  We use lexicographical order
+    // but the order doesn't really matter.  We also note here the Alembic
+    // source path for each prototype and whether it's instanceable or not
+    // (which is chosen simply by the disableInstancing flag).
+    if (!_instanceSources.empty()) {
+        const bool instanceable =
+            !IsFlagSet(UsdAbc_AlembicContextFlagNames->disableInstancing);
+        std::map<SdfPath, std::string> prototypes;
+        for (const _SourceToPrototypeMap::value_type& v: _instanceSources) {
+            prototypes[v.second.path] = v.first;
+        }
+        for (const auto& prototype: prototypes) {
+            const SdfPath& name = prototype.first;
+            _pseudoRoot->children.push_back(name.GetNameToken());
+            _prims[name].instanceSource = prototype.second;
+            _prims[name].instanceable   = instanceable;
+        }
+    }
+
+    // Guess the start and end timeCode using the sample times.
+    if (!_allTimeSamples.empty()) {
+        _pseudoRoot->metadata[SdfFieldKeys->StartTimeCode] =
+            *_allTimeSamples.begin();
+        _pseudoRoot->metadata[SdfFieldKeys->EndTimeCode]   =
+            *_allTimeSamples.rbegin();
+    }
+
+    // If no upAxis is authored, pretend that it was authored as 'Y'.  This
+    // is primarily to facilitate working with externally-generated abc
+    // files at Pixar, where we unfortunately still work in a Z-up pipeline,
+    // and therefore configure UsdGeomGetFallbackUpAxis() to return 'Z'.
+    _pseudoRoot->metadata[UsdGeomTokens->upAxis] = UsdGeomTokens->y;
+
+    // Get the Usd metadata.  This will overwrite any metadata previously
+    // set on _pseudoRoot.
+    if (const PropertyHeader* property =
+            root.getProperties().getPropertyHeader("Usd")) {
+        const MetaData& metadata = property->getMetaData();
+        _GetDoubleMetadata(metadata, _pseudoRoot->metadata,
+                           SdfFieldKeys->StartTimeCode);
+        _GetDoubleMetadata(metadata, _pseudoRoot->metadata,
+                           SdfFieldKeys->EndTimeCode);
+
+        _GetDoubleMetadata(metadata, _pseudoRoot->metadata,
+                           SdfFieldKeys->FramesPerSecond);
+
+        _GetTokenMetadata(metadata, _pseudoRoot->metadata,
+                          UsdGeomTokens->upAxis);
+
+        // Read the default prim name.
+        _GetTokenMetadata(metadata, _pseudoRoot->metadata,
+                          SdfFieldKeys->DefaultPrim);
+    }
+
+    // If no default prim then choose one by a heuristic (first root prim).
+    if (!_pseudoRoot->children.empty()) {
+        // Use emplace to leave existing property above untouched and avoid the
+        // VtValue construction if possible (gcc-4.8 requires the fun syntax)
+        _pseudoRoot->metadata.emplace(std::piecewise_construct,
+            std::forward_as_tuple(SdfFieldKeys->DefaultPrim),
+            std::forward_as_tuple(_pseudoRoot->children.front()));
+    }
+
+    return true;
+}
+
+
+Alembic::Abc::IArchive IFactory::getArchive(
+    const std::vector< std::string > & iFileNames, CoreType & oType )
+{
+    Alembic::AbcCoreLayer::ReadArchive layer;
+
+    Alembic::AbcCoreLayer::ArchiveReaderPtrs archives;
+
+    // first read our archives, skipping over bad ones
+    CoreType coreType;
+    std::vector< std::string >::const_iterator it = iFileNames.begin();
+    for ( ; it != iFileNames.end(); ++it )
+    {
+        Alembic::Abc::IArchive archive = getArchive( *it, coreType );
+        if ( archive.getPtr() )
+        {
+            archives.push_back( archive.getPtr() );
+        }
+    }
+
+    // if we have just one, no reason to layer
+    if ( archives.size() == 1 )
+    {
+        oType = coreType;
+        return Alembic::Abc::IArchive( archives[0], m_policy );
+    }
+    else if ( ! archives.empty() )
+    {
+        Alembic::AbcCoreAbstract::ArchiveReaderPtr arPtr = layer( archives );
+        oType = kLayer;
+        return Alembic::Abc::IArchive( arPtr, m_policy );
+    }
+
+    // no valid archives pushed, so invalid
+    oType = kUnknown;
+    return Alembic::Abc::IArchive();
+}
+
+
+void
+GetArchiveInfo(
+    IArchive & iArchive,
+    std::string & oApplicationWriter,
+    std::string & oAlembicVersion,
+    Util::uint32_t & oAlembicApiVersion,
+    std::string & oDateWritten,
+    std::string & oUserDescription,
+    double & oDCCFPS)
+{
+    if ( ! iArchive.getPtr() )
+    {
+        return;
+    }
+
+    AbcA::MetaData md = iArchive.getPtr()->getMetaData();
+    oApplicationWriter = md.get( kApplicationNameKey );
+    oAlembicVersion = md.get( "_ai_AlembicVersion" );
+    oAlembicApiVersion = iArchive.getArchiveVersion();
+
+    oDateWritten = md.get( kDateWrittenKey );
+    oUserDescription = md.get( kUserDescriptionKey );
+    oDCCFPS = atof( md.get( kDCCFPSKey ).c_str() );
+}
+
+
+
+
+
+[usda to abc]
+
+bool
+UsdAbc_AlembicDataWriter::Open(
+    const std::string& filePath,
+    const std::string& comment)
+{
+    TRACE_FUNCTION();
+
+    _errorLog.clear();
+
+    const std::string dir = TfGetPathName(filePath);
+    if (!dir.empty() && !TfIsDir(dir) && !TfMakeDirs(dir)) {
+        TF_RUNTIME_ERROR("Could not create directory '%s'", dir.c_str());
+        return false;
+    }
+
+    try {
+        _impl->SetArchive(
+            CreateArchiveWithInfo(Alembic::AbcCoreOgawa::WriteArchive(),
+                                  filePath, writerName, comment));
+        return true;
+    }
+    catch (std::exception& e) {
+        _errorLog.append(e.what());
+        _errorLog.append("\n");
+        return false;
     }
 }
 
 
-if(toggleRunning == 1)
+bool
+UsdAbc_AlembicDataWriter::Write(const SdfAbstractDataConstPtr& data)
 {
-    
-    //回転周り
-    vector local_normal = {1, 0, 0};
-    vector world_normal = qrotate(p@orient, local_normal);
-    vector4 quat = quaternion(radians(rotateValue), rotateAxis);   
-    vector4 orient = qmultiply(p@orient, quat);   
-    
-    //移動
-    vector MoveVector;
-    MoveVector.x = transform.x * v@scale.x;
-    MoveVector.y = transform.y * v@scale.y;
-    MoveVector.z = transform.z * v@scale.z;  
-    MoveVector = qrotate(p@orient, MoveVector);
-    transform = MoveVector + v@P; 
-    
-    //ボリュームスケール
-    scale *= v@scale;
-       
-    //typeを追加
-    string strAddTypeParamBlockList[] = re_split(",", strAddTypeParam);
-    foreach(string strAddTypeParamBlock; strAddTypeParamBlockList)
-    {
-        string strAddTypeParamList[] = re_split("_", strAddTypeParamBlock);
-        int addTypeNumList[];
-        foreach(string str; strAddTypeParamList)
-        {
-            append(addTypeNumList, atoi(str));
+    TRACE_FUNCTION();
+
+    try {
+        if (_impl->GetArchive().valid() && data) {
+            const _WriterSchema& schema = _GetSchema();
+            _impl->SetSchema(&schema);
+            _impl->SetData(data);
+            _WritePrim(*_impl, _Parent(), SdfPath::AbsoluteRootPath());
         }
-        int type = addTypeNumList[int(floor(rand(@ptnum + seed) * len(addTypeNumList)))];
-        append(typeNumList, type);
+        return true;
     }
-    
-	v@P = transform;
-	v@scale = scale;
-	v@orient = orient;
-	i[]@TypeNumList = typeNumList;
+    catch (std::exception& e) {
+        _errorLog.append(e.what());
+        _errorLog.append("\n");
+        return false;
+    }
+}
+
+
+/// Set the Usd data that we will translate.  Also resets _timeScale to
+/// data's timeCodesPerSecond
+void SetData(const SdfAbstractDataConstPtr& data) { 
+	_data = data; 
+	VtValue tcps;
+	if (data->Has(SdfPath::AbsoluteRootPath(),
+				  SdfFieldKeys->TimeCodesPerSecond, &tcps)) {
+		if (tcps.IsHolding<double>()) {
+			_timeScale = tcps.UncheckedGet<double>();
+		}
+	}
+}
+	
+	
+static
+void
+_WritePrim(
+    _WriterContext& context,
+    const _Parent& parent,
+    const SdfPath& path)
+{
+    _Parent prim;
+    {
+        // Compute the type name.
+        const TfToken typeName = _ComputeTypeName(context, path);
+
+        // Write the properties.
+        _PrimWriterContext primContext(context, parent, path);
+        for (const auto& writer :
+                 context.GetSchema().GetPrimWriters(typeName)) {
+            TRACE_SCOPE("UsdAbc_AlembicDataWriter:_WritePrim");
+            writer(&primContext);
+        }
+        prim = primContext.GetParent();
+    }
+
+    // Write the name children.
+    const VtValue childrenNames =
+        context.GetData().Get(path, SdfChildrenKeys->PrimChildren);
+    if (childrenNames.IsHolding<TfTokenVector>()) {
+        for (const auto& childName :
+                 childrenNames.UncheckedGet<TfTokenVector>()) {
+            _WritePrim(context, prim, path.AppendChild(childName));
+        }
+    }
 }
