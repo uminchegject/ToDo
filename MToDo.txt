@@ -1,4 +1,6 @@
 [USD]
+○プロジェクトのリビルド部分をドキュメントを追加
+
 ○abc to usdaの調査
 ※ファイルの中身を把握した上で実際の処理の流れを調べる
 ・metaデータの書き込み部分をまとめる
@@ -21,3 +23,90 @@ https://qiita.com/ugai/items/9881e2f11de398510ea1
 ○パッケージ
 
 ○タイマー周りの実装
+
+[Study]
+※業務とその他の2本のみに集中する
+※Input + Outputを明確に分けて勉強、業務を進めていく
+
+○Plugin
+https://openusd.org/docs/Creating-a-Usdview-Plugin.html
+https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
+https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
+
+○ノードのまとめ方
+・Clusterノードの実装
+https://www.sidefx.com/docs/houdini/help/createexamples.html
+
+
+[USD]
+○デバッグ調査
+・メモの作成
+ -Read
+ -Write
+・デバッグから確認できたクラス構成を一度ドキュメントに反映
+
+○FileFormatPluginのクラス参考資料
+
+○デバッグ準備の挙動確認
+
+○VisualStudioデバッグ方法の参考資料
+https://learn.microsoft.com/ja-jp/visualstudio/debugger/how-to-debug-from-a-dll-project?view=vs-2022
+https://www.hiroakit.com/archives/20230319/
+
+○build_usd.pyの調査
+・build_varientの調査
+・中間ファイルの指定部分の調査
+
+
+[GUYS]
+○キャラクターの実装
+
+○Widgetの実装
+
+○パッケージ化
+
+
+[Procedural]
+●資料
+https://rart.gumroad.com/l/wcrng?layout=profile
+
+■PointBlock
+○Edit
+
+○Cluster
+
+■LineBlock
+○PointGreebleノードの実装
+
+○LineToBlock
+vector blockSize = 
+int Type = 
+int edgeType = 
+
+int primPtsList =
+for(int i = 0; i < len(primPtsList); i++)
+{
+	
+}
+
+■Detail
+○Textureの用意
+
+○モデリング
+
+■LIneBlockIDEA
+●Offset
+・Edit
+・Make
+
+●Split
+・VertexSprit
+・RatioSprit
+
+●HeightDivide
+・AddLine
+ -階層追加
+
+●MakePlanIdea
+・AddVertex
+ -平面変化
