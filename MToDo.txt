@@ -1,29 +1,3 @@
-[USD]
-○プロジェクトのリビルド部分をドキュメントを追加
-
-○abc to usdaの調査
-※ファイルの中身を把握した上で実際の処理の流れを調べる
-・metaデータの書き込み部分をまとめる
-
-○usda to abcの調査
-※ファイルの中身を把握した上で実際の処理の流れを調べる
-・primの情報取得部分をまとめる
-
-△Adobeプラグインのデバッグ
-
-△Alembicのビルド
-https://qiita.com/ugai/items/9881e2f11de398510ea1
-
-
-[GUYS]
-○入力周りの実装
-
-○スタートからゴールまで実装
-
-○パッケージ
-
-○タイマー周りの実装
-
 [Study]
 ※業務とその他の2本のみに集中する
 ※Input + Outputを明確に分けて勉強、業務を進めていく
@@ -33,37 +7,37 @@ https://openusd.org/docs/Creating-a-Usdview-Plugin.html
 https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
 https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
 
+○Alembicのビルド
+https://qiita.com/ugai/items/9881e2f11de398510ea1
+
 ○ノードのまとめ方
 ・Clusterノードの実装
 https://www.sidefx.com/docs/houdini/help/createexamples.html
 
 
 [USD]
-○デバッグ調査
-・メモの作成
- -Read
- -Write
-・デバッグから確認できたクラス構成を一度ドキュメントに反映
+○abc to usdaの調査
+※ファイルの中身を把握した上で実際の処理の流れを調べる
+・metaデータの書き込み部分をまとめる
+
+○usda to abcの調査
+※ファイルの中身を把握した上で実際の処理の流れを調べる
+・primの情報取得部分をまとめる
 
 ○FileFormatPluginのクラス参考資料
 
 ○デバッグ準備の挙動確認
-
-○VisualStudioデバッグ方法の参考資料
-https://learn.microsoft.com/ja-jp/visualstudio/debugger/how-to-debug-from-a-dll-project?view=vs-2022
-https://www.hiroakit.com/archives/20230319/
-
-○build_usd.pyの調査
-・build_varientの調査
-・中間ファイルの指定部分の調査
+・プロジェクトのリビルド部分をドキュメントを追加
 
 
 [GUYS]
-○キャラクターの実装
+○スタートからゴールまで実装
+
+○パッケージ
 
 ○Widgetの実装
 
-○パッケージ化
+○タイマー周りの実装
 
 
 [Procedural]
