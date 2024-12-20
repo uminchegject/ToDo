@@ -26,8 +26,21 @@ https://www.sidefx.com/docs/houdini/help/createexamples.html
 
 ○FileFormatPluginのクラス参考資料
 
-○デバッグ準備の挙動確認
-・プロジェクトのリビルド部分をドキュメントを追加
+○クラス調査
+・AlembicReader
+class _ReaderContext;
+class _PrimReaderContext;
+
+・AlembicWriter
+class UsdSamples
+class _Parent
+class _PrimWriterContext
+class _WriterSchem
+class _WriterContext
+
+○処理の流れ
+・AlembicReader
+・AlembicWriter
 
 
 [GUYS]
