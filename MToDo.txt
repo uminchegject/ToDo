@@ -16,16 +16,6 @@ https://www.sidefx.com/docs/houdini/help/createexamples.html
 
 
 [USD]
-○abc to usdaの調査
-※ファイルの中身を把握した上で実際の処理の流れを調べる
-・metaデータの書き込み部分をまとめる
-
-○usda to abcの調査
-※ファイルの中身を把握した上で実際の処理の流れを調べる
-・primの情報取得部分をまとめる
-
-○FileFormatPluginのクラス参考資料
-
 ○クラス調査
 ・AlembicReader
 class _ReaderContext;
@@ -35,12 +25,15 @@ class _PrimReaderContext;
 class UsdSamples
 class _Parent
 class _PrimWriterContext
-class _WriterSchem
+class _WriterSchema
 class _WriterContext
 
 ○処理の流れ
 ・AlembicReader
 ・AlembicWriter
+
+○FileFormatPluginのクラス参考資料
+
 
 
 [GUYS]
