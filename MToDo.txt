@@ -1,92 +1,15 @@
-[Study]
-※業務とその他の2本のみに集中する
-※Input + Outputを明確に分けて勉強、業務を進めていく
+[GUYS]
+※エディター上で完結させる
 
-○Plugin
-https://openusd.org/docs/Creating-a-Usdview-Plugin.html
-https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
-https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
+○タイマーの共有化
 
-○Alembicのビルド
-https://qiita.com/ugai/items/9881e2f11de398510ea1
-
-○ノードのまとめ方
-・Clusterノードの実装
-https://www.sidefx.com/docs/houdini/help/createexamples.html
+○タイムアップ制に変更
 
 
 [USD]
-○クラス調査
-・AlembicReader
+○ドキュメント作成
+class _WriterContext
+class _PrimWriterContext
+
 class _ReaderContext;
 class _PrimReaderContext;
-
-・AlembicWriter
-class UsdSamples
-class _Parent
-class _PrimWriterContext
-class _WriterSchema
-class _WriterContext
-
-○処理の流れ
-・AlembicReader
-・AlembicWriter
-
-○FileFormatPluginのクラス参考資料
-
-
-
-[GUYS]
-○スタートからゴールまで実装
-
-○パッケージ
-
-○Widgetの実装
-
-○タイマー周りの実装
-
-
-[Procedural]
-●資料
-https://rart.gumroad.com/l/wcrng?layout=profile
-
-■PointBlock
-○Edit
-
-○Cluster
-
-■LineBlock
-○PointGreebleノードの実装
-
-○LineToBlock
-vector blockSize = 
-int Type = 
-int edgeType = 
-
-int primPtsList =
-for(int i = 0; i < len(primPtsList); i++)
-{
-	
-}
-
-■Detail
-○Textureの用意
-
-○モデリング
-
-■LIneBlockIDEA
-●Offset
-・Edit
-・Make
-
-●Split
-・VertexSprit
-・RatioSprit
-
-●HeightDivide
-・AddLine
- -階層追加
-
-●MakePlanIdea
-・AddVertex
- -平面変化
