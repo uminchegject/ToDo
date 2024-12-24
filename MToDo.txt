@@ -1,23 +1,29 @@
+[usdAbc]
+○概要の記載
+
+○読み直し
+
+○visualstudioのセットアップ確認
+
+●読み込み
+・Schema
+・Archive
+・
+
+●書き込み
+
+
 [GUYS]
 ○ムービーのBGM
 
-○ゴール周りの修正
-・ワープ
-・全員ゴールまで待機
-
 ○スタミナゲージの修正
-
-○キャラ選択をプレイレベルで反映
 
 ○勝ちリザルトの表示
 
 
-[USD]
-○alembicReaderの調査
-・_ReaderContext::Open
-・_ReadPrim::_ReaderPrim
+○ゴール周りの修正
 
-△XTransformの変換手順を調査
+○選択したキャラの反映
 
-○ドキュメント整理
-・ChatGPTのように記載する
+
+△全員ゴールまで待機
