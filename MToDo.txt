@@ -1,3 +1,20 @@
+[Study]
+※業務とその他の2本のみに集中する
+※Input + Outputを明確に分けて勉強、業務を進めていく
+
+○Plugin
+https://openusd.org/docs/Creating-a-Usdview-Plugin.html
+https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
+https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
+
+○Alembicのビルド
+https://qiita.com/ugai/items/9881e2f11de398510ea1
+
+○ノードのまとめ方
+・Clusterノードの実装
+https://www.sidefx.com/docs/houdini/help/createexamples.html
+
+
 [usdAbc]
 ○概要の記載
 
@@ -5,24 +22,14 @@
 
 ○visualstudioのセットアップ確認
 
-●書き込み
-読み込むAlembicのArchiveを取得する処理が実装されている
-Getschemaではbuilder構造体を用いてSchemaに応じて呼び出すべき処理を管理するクラスでセットアップし呼び出す
-そして、Objectから子Objectを取得して次の階層のObjectも同様にWritePrimを行い繰り返し行っていく
-
-●読み込み
-CreateRootでは読み込むUSDのルートを設定している
-CreateArchiveではUSDを書き込むためのAlembicの
-
 
 
 [GUYS]
+○ムービーのBGM
+
 ○スタミナゲージの修正
 
 ○勝ちリザルトの表示
-
-
-○ムービーのBGM
 
 
 ○ゴール周りの修正
@@ -31,3 +38,49 @@ CreateArchiveではUSDを書き込むためのAlembicの
 
 
 △全員ゴールまで待機
+
+
+[Procedural]
+●資料
+https://rart.gumroad.com/l/wcrng?layout=profile
+
+■PointBlock
+○Edit
+
+○Cluster
+
+■LineBlock
+○PointGreebleノードの実装
+
+○LineToBlock
+vector blockSize = 
+int Type = 
+int edgeType = 
+
+int primPtsList =
+for(int i = 0; i < len(primPtsList); i++)
+{
+	
+}
+
+■Detail
+○Textureの用意
+
+○モデリング
+
+■LIneBlockIDEA
+●Offset
+・Edit
+・Make
+
+●Split
+・VertexSprit
+・RatioSprit
+
+●HeightDivide
+・AddLine
+ -階層追加
+
+●MakePlanIdea
+・AddVertex
+ -平面変化
