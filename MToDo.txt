@@ -1,23 +1,75 @@
+[Study]
+※業務とその他の2本のみに集中する
+※Input + Outputを明確に分けて勉強、業務を進めていく
+
+○Plugin
+https://openusd.org/docs/Creating-a-Usdview-Plugin.html
+https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
+https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
+
+○Alembicのビルド
+https://qiita.com/ugai/items/9881e2f11de398510ea1
+
+○ノードのまとめ方
+・Clusterノードの実装
+https://www.sidefx.com/docs/houdini/help/createexamples.html
+
+
+[usdAbc]
+○ドキュメント修正
+
+○必要な追加調査の必要性の検討
+
+
+
 [GUYS]
-○怪しい箇所にログを入れてThirdPersonMapで挙動確認できるようにしパッケージ
-
 ○ムービーのBGM
-https://www.youtube.com/watch?v=NU5DKzEhXC8
-サウンドをwav形式で用意
 
-○スタミナゲージの修正
-・CtrlとShiftを同時押しした際に戻らなくなる
-
-○勝ちムービーの表示
-・ThirdPersonで検証
-
-○ゴールに着いたら強制終了する
-・ThirdPersonで検証
-
-○選択したキャラの反映
-・ThirdPersonで検証
+○ゴールメンバーの修正
 
 
-○全員ゴールまで待機
-・SetLocation
-・SetCamera
+
+[Procedural]
+●資料
+https://rart.gumroad.com/l/wcrng?layout=profile
+
+■PointBlock
+○Edit
+
+○Cluster
+
+■LineBlock
+○PointGreebleノードの実装
+
+○LineToBlock
+vector blockSize = 
+int Type = 
+int edgeType = 
+
+int primPtsList =
+for(int i = 0; i < len(primPtsList); i++)
+{
+	
+}
+
+■Detail
+○Textureの用意
+
+○モデリング
+
+■LIneBlockIDEA
+●Offset
+・Edit
+・Make
+
+●Split
+・VertexSprit
+・RatioSprit
+
+●HeightDivide
+・AddLine
+ -階層追加
+
+●MakePlanIdea
+・AddVertex
+ -平面変化
