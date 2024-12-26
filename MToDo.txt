@@ -15,23 +15,7 @@ https://qiita.com/ugai/items/9881e2f11de398510ea1
 https://www.sidefx.com/docs/houdini/help/createexamples.html
 
 
-[usdAbc]
-○ドキュメント修正
-
-○必要な追加調査の必要性の検討
-
-
-
-[GUYS]
-○ムービーのBGM
-https://mozpaca.hatenablog.com/entry/20180313/1520937575
-
-○ゴールメンバーの修正
-
-お忙しいところ失礼致します。
-12月の間稼働が行いえず大変申し訳ございませんでした。
-誠に恐縮ではございますが、プロジェクトから退かせていただけますようお願い申し上げます。
-こちらから残ることをお願いさせているのにも関わらず大変申し訳ございません。
+[USD]
 
 
 [Procedural]
