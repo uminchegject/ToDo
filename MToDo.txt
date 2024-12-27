@@ -7,15 +7,29 @@ https://openusd.org/docs/Creating-a-Usdview-Plugin.html
 https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
 https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
 
-○Alembicのビルド
-https://qiita.com/ugai/items/9881e2f11de398510ea1
-
 ○ノードのまとめ方
 ・Clusterノードの実装
 https://www.sidefx.com/docs/houdini/help/createexamples.html
 
 
 [USD]
+○デバッグ環境の構築
+
+○usdObjの調査
+
+○ドキュメントの調査
+
+○Meshの実装検証
+
+
+[GUYS]
+○オンライン周りの再設計
+
+
+[TAStudy]
+○DCCの基礎
+・Mesh,Material,Skelton
+・背景
 
 
 [Procedural]
