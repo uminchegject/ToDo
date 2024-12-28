@@ -1,45 +1,31 @@
-[Study]
-※業務とその他の2本のみに集中する
-※Input + Outputを明確に分けて勉強、業務を進めていく
-
+[USD]
 ○Plugin
 https://openusd.org/docs/Creating-a-Usdview-Plugin.html
 https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
 https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
 
-○ノードのまとめ方
-・Clusterノードの実装
-https://www.sidefx.com/docs/houdini/help/createexamples.html
+○Solaris
+https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPHAUH&index=2
 
 
-[USD]
-○デバッグ環境の構築
-
-○usdObjの調査
-
-○ドキュメントの調査
-
-○Meshの実装検証
-
-
-[GUYS]
-○オンライン周りの再設計
-
-
-[TAStudy]
-○DCCの基礎
+[Modeling]
+○Maya本
 ・Mesh,Material,Skelton
 ・背景
 
 
-[Procedural]
-●資料
-https://rart.gumroad.com/l/wcrng?layout=profile
+[PModeling]
+○エスカレーターを確認
 
+○調査
+
+
+[MModeling]
 ■PointBlock
 ○Edit
 
 ○Cluster
+
 
 ■LineBlock
 ○PointGreebleノードの実装
@@ -55,10 +41,6 @@ for(int i = 0; i < len(primPtsList); i++)
 	
 }
 
-■Detail
-○Textureの用意
-
-○モデリング
 
 ■LIneBlockIDEA
 ●Offset
