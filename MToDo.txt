@@ -1,34 +1,15 @@
-[USD]
-○Plugin
-https://openusd.org/docs/Creating-a-Usdview-Plugin.html
-https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
-https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
-
-○Solaris
-https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPHAUH&index=2
-
-
-[Modeling]
-○Maya本
-・Mesh,Material,Skelton
-・背景
-
-
 [PModeling]
-○エスカレーターを確認
-
-○調査
+○エスカレータープロジェクトの動画確認
 
 
 [MModeling]
-■PointBlock
-○Edit
+※ファザード生成をとりあえず実装する。
 
-○Cluster
-
-
-■LineBlock
 ○PointGreebleノードの実装
+・四角形のLineを生成する
+・Attributeの設定
+ -Attribute
+ -Type
 
 ○LineToBlock
 vector blockSize = 
@@ -41,8 +22,13 @@ for(int i = 0; i < len(primPtsList); i++)
 	
 }
 
+■PointBlock
+○Edit
 
-■LIneBlockIDEA
+○Cluster
+
+
+■LineBlock
 ●Offset
 ・Edit
 ・Make
