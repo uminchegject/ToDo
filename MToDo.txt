@@ -1,3 +1,28 @@
+[USD]
+○C++ベースプラグインの実装方法
+・Cmakeの書き方の勉強
+
+○C++プロジェクトのビルド及びデバッグ方法
+set(PXR_PREFIX examples)
+set(PXR_INSTALL_SUBDIR plugin/usd)
+
+add_subdirectory(usdObj)
+
+○Solaris
+https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPHAUH&index=2
+
+●Plugin
+https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
+https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
+
+
+
+[Modeling]
+○Maya本
+・Mesh,Material,Skelton
+・背景
+
+
 [PModeling]
 ○エスカレータープロジェクトの動画確認
 
@@ -10,17 +35,39 @@
 ・Attributeの設定
  -Attribute
  -Type
-
+・△ClusterしてLineにコンバートする
+ 
 ○LineToBlock
-vector blockSize = 
-int Type = 
-int edgeType = 
+vector blockSize = (1.0, 1.0, 1.0);
 
-int primPtsList =
-for(int i = 0; i < len(primPtsList); i++)
+int primPtsList = primpoints(i@primnum);
+for(int i = 0; i < len(primPtsList) - 1; i++)
 {
+	int pt1 = primPtsList[i];
+	int pt2 = primPtsList[i + 1];
+	vector pt1Pos = point(0, "P", pt1);
+	vector pt2Pos = point(0, "P", pt2);
 	
+	int widthBlockNum = int(length(pt2Pos - pt1Pos) / blockSize.x);
+	int heightBlockNum = int(@Height / blockSize.y);
+	
+	vector widthSlider = (pt2Pos - pt1Pos) / widthBlockNum;
+	vector heightSlider;
+	heightSlider.y = heightBlockNum;
+	
+	for(int width = 0; width < widthBlockNum; width++)
+	{	
+		for(int height = 0; height < heightBlockNum; height++)
+		{
+			vector spawnPos = pt1Pos;
+			spawnPos += width * widthSlider;
+			spawnPos += height * heightSlider;
+			
+			int pt = addpoint(0, spawnPos);
+		}
+	}
 }
+
 
 ■PointBlock
 ○Edit
