@@ -1,30 +1,46 @@
+[Private]
+○会社に荷物を持っていく
+
+○要らない物の整理
+
+
+[Study]
+■Movie
+△Solaris
+https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPHAUH&index=2
+
+△HoudiniModeling
+・エスカレーター
+
+
+■Work
+○背景ハードサーフェス本をHoudiniで再現
+・モデリングの一連の手順をカフェで考え、準備しておく
+ -Sci_fi
+ -Village
+ -Escalator
+
+△Maya本
+・Mesh,Material,Skelton
+・背景
+
+
+
 [USD]
-○C++ベースプラグインの実装方法
+△C++ベースプラグインの実装方法
 ・Cmakeの書き方の勉強
 
-○C++プロジェクトのビルド及びデバッグ方法
+△C++プロジェクトのビルド及びデバッグ方法
 set(PXR_PREFIX examples)
 set(PXR_INSTALL_SUBDIR plugin/usd)
 
 add_subdirectory(usdObj)
 
-○Solaris
-https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPHAUH&index=2
 
 ●Plugin
 https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
 https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
 
-
-
-[Modeling]
-○Maya本
-・Mesh,Material,Skelton
-・背景
-
-
-[PModeling]
-○エスカレータープロジェクトの動画確認
 
 
 [MModeling]
