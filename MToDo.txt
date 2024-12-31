@@ -9,8 +9,8 @@
 △Solaris
 https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPHAUH&index=2
 
-△HoudiniModeling
-・エスカレーター
+○HoudiniModeling(エスカレーター)
+・UVからUEへの展開までを確認
 
 
 ■Work
@@ -19,6 +19,8 @@ https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPH
  -Sci_fi
  -Village
  -Escalator
+○ラフモデルの生成
+○ランディングモデルの生成
 
 △Maya本
 ・Mesh,Material,Skelton
@@ -106,4 +108,4 @@ for(int i = 0; i < len(primPtsList) - 1; i++)
 
 ●MakePlanIdea
 ・AddVertex
- -平面変化
+ -平面変化                                                     
