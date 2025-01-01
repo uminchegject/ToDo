@@ -9,7 +9,7 @@
 △Solaris
 https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPHAUH&index=2
 
-○HoudiniModeling(エスカレーター)
+△HoudiniModeling(エスカレーター)
 ・UVからUEへの展開までを確認
 
 
@@ -21,6 +21,8 @@ https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPH
  -Escalator
 ○ラフモデルの生成
 ○ランディングモデルの生成
+
+△HoudiniにおけるUVとMaterial周りの調査
 
 △Maya本
 ・Mesh,Material,Skelton
@@ -48,12 +50,9 @@ https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
 [MModeling]
 ※ファザード生成をとりあえず実装する。
 
-○PointGreebleノードの実装
+○Greebleノードの実装
 ・四角形のLineを生成する
-・Attributeの設定
- -Attribute
- -Type
-・△ClusterしてLineにコンバートする
+・ClusterしてLineにコンバートする
  
 ○LineToBlock
 vector blockSize = (1.0, 1.0, 1.0);
@@ -109,3 +108,14 @@ for(int i = 0; i < len(primPtsList) - 1; i++)
 ●MakePlanIdea
 ・AddVertex
  -平面変化                                                     
+ 
+■BaseMaker
+○Greebleノードを修正していく
+・SideFXLabのノードの中を確認する
+
+○CityGeneratorを調査する
+https://www.youtube.com/watch?v=Y6-EWYXZG4s
+
+■EditMode
+○brenderのプロジェクトを調査する
+https://www.youtube.com/watch?v=UCYHV9GJU1Q
