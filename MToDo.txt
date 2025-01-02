@@ -1,3 +1,12 @@
+[反省]
+※休日も早寝早起きを行う
+※家事は必ず15分レベルで詳細にブロック化する
+※家での作業は15分レベルに極力留める
+ -カフェで設計・Study、仕事場で作業を行う
+※家メインの日は3時間ワンセットを目安に家事を行う
+ -カフェで家事とプレイタイトルを決める
+
+
 [Private]
 ○会社に荷物を持っていく
 
@@ -6,28 +15,17 @@
 
 [Study]
 ■Movie
+○HoudiniのTutorial
+
 △Solaris
 https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPHAUH&index=2
 
-△HoudiniModeling(エスカレーター)
-・UVからUEへの展開までを確認
-
-
 ■Work
-○背景ハードサーフェス本をHoudiniで再現
-・モデリングの一連の手順をカフェで考え、準備しておく
- -Sci_fi
- -Village
- -Escalator
-○ラフモデルの生成
-○ランディングモデルの生成
-
-△HoudiniにおけるUVとMaterial周りの調査
+○HoudiniのTutorialをベースにPDを勉強
 
 △Maya本
 ・Mesh,Material,Skelton
 ・背景
-
 
 
 [USD]
@@ -40,7 +38,6 @@ set(PXR_INSTALL_SUBDIR plugin/usd)
 
 add_subdirectory(usdObj)
 
-
 ●Plugin
 https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
 https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
@@ -50,65 +47,13 @@ https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
 [MModeling]
 ※ファザード生成をとりあえず実装する。
 
-○Greebleノードの実装
-・四角形のLineを生成する
-・ClusterしてLineにコンバートする
- 
-○LineToBlock
-vector blockSize = (1.0, 1.0, 1.0);
+○Primitive同士のマージを実装
+・BaseGroundSurfaceの生成
 
-int primPtsList = primpoints(i@primnum);
-for(int i = 0; i < len(primPtsList) - 1; i++)
-{
-	int pt1 = primPtsList[i];
-	int pt2 = primPtsList[i + 1];
-	vector pt1Pos = point(0, "P", pt1);
-	vector pt2Pos = point(0, "P", pt2);
-	
-	int widthBlockNum = int(length(pt2Pos - pt1Pos) / blockSize.x);
-	int heightBlockNum = int(@Height / blockSize.y);
-	
-	vector widthSlider = (pt2Pos - pt1Pos) / widthBlockNum;
-	vector heightSlider;
-	heightSlider.y = heightBlockNum;
-	
-	for(int width = 0; width < widthBlockNum; width++)
-	{	
-		for(int height = 0; height < heightBlockNum; height++)
-		{
-			vector spawnPos = pt1Pos;
-			spawnPos += width * widthSlider;
-			spawnPos += height * heightSlider;
-			
-			int pt = addpoint(0, spawnPos);
-		}
-	}
-}
+○BaseSideSurfaceの生成
 
+○BaseSideSurfaceからBasePointの生成
 
-■PointBlock
-○Edit
-
-○Cluster
-
-
-■LineBlock
-●Offset
-・Edit
-・Make
-
-●Split
-・VertexSprit
-・RatioSprit
-
-●HeightDivide
-・AddLine
- -階層追加
-
-●MakePlanIdea
-・AddVertex
- -平面変化                                                     
- 
 ■BaseMaker
 ○Greebleノードを修正していく
 ・SideFXLabのノードの中を確認する
