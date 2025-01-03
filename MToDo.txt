@@ -49,10 +49,6 @@ https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
 ○Primitive同士のマージを実装
 ・BaseGroundSurfaceの生成
 
-○BaseSideSurfaceの生成
-・AttributeをHeightで設定する
-・Extrudeを使う
-
 ■BaseMaker
 ○Greebleノードを修正していく
 ・SideFXLabのノードの中を確認する
@@ -61,5 +57,5 @@ https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
 https://www.youtube.com/watch?v=Y6-EWYXZG4s
 
 ■EditMode
-○brenderのプロジェクトを調査する
+○blenderのプロジェクトを調査する
 https://www.youtube.com/watch?v=UCYHV9GJU1Q
