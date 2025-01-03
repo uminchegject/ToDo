@@ -1,49 +1,3 @@
-[反省]
-※休日も早寝早起きを行う
-※家事は必ず15分レベルで詳細にブロック化する
-※家での作業は15分レベルに極力留める
- -カフェで設計・Study、仕事場で作業を行う
-※家メインの日は3時間ワンセットを目安に家事を行う
- -カフェで家事とプレイタイトルを決める
-
-
-[Private]
-○会社に荷物を持っていく
-
-○要らない物の整理
-
-
-[Study]
-■Movie
-○HoudiniのTutorial
-
-△Solaris
-https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPHAUH&index=2
-
-■Work
-○HoudiniのTutorialをベースにPDを勉強
-
-△Maya本
-・Mesh,Material,Skelton
-・背景
-
-
-[USD]
-△C++ベースプラグインの実装方法
-・Cmakeの書き方の勉強
-
-△C++プロジェクトのビルド及びデバッグ方法
-set(PXR_PREFIX examples)
-set(PXR_INSTALL_SUBDIR plugin/usd)
-
-add_subdirectory(usdObj)
-
-●Plugin
-https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
-https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
-
-
-
 [MModeling]
 ※ファザード生成をとりあえず実装する。
 
@@ -51,8 +5,93 @@ https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
 ・BaseGroundSurfaceの生成
 
 ○BaseSideSurfaceの生成
+・AttributeをHeightで設定する
+・Extrudeを使う
+
+○sort
+// 距離とポイントIDをペアで保持する一時配列
+float distances[];
+int sortedPoints[];
+
+// 各ポイントの距離を計算して配列に格納
+foreach (int pt; points) {
+    vector ptPosition = point(0, "P", pt);
+    float distance = length(ptPosition - targetPosition);
+    append(distances, distance);
+}
+
+// ソート結果を取得 (ソートされたインデックスを基にポイントIDを並び替え)
+int indices[] = argsort(distances);
+
+foreach (int idx; indices) {
+    append(sortedPoints, points[idx]);
+}
+
+// 結果を新しい配列として保持
+i[]@sorted_points = sortedPoints;
+
 
 ○BaseSideSurfaceからBasePointの生成
+vector blockSize = chv("BlockSize");
+
+int primPts[] = primpoints(0, i@primnum);
+int basePt = primPts[0];
+int heightPts[];
+int widthPts[];
+
+
+vector heightPt1 = point(0, "P", heightPts[0]);
+vector heightPt2 = point(0, "P", heightPts[1]);
+vector widthPt1 = point(0, "P", widthPts[0]);
+vector widthPt2 = point(0, "P", widthPts[1]);
+
+vector blockSurfaceSize;
+blockSurfaceSize.x = length(widthPt2 - widthPt1);
+blockSurfaceSize.y = length(heightPt2 - heightPt1);
+
+widthPtNum = int(blockSurfaceSize.x / blockSize.x);
+heightPtNum = int(blockSurfaceSize.y / blockSize.y);
+
+vector slider;
+slider_x = (blockSurfaceSize.x / widthPtNum) * normal(widthPt2 - widthPt1);
+slider_y = (blockSurfaceSize.y / heightPtNum) * normal(heightPt2 - heightPt1);
+
+for(int width = 0; width < widthPtNum; ++width)
+{
+	for(int height = 0; height < heightPtNum; ++height)
+	{
+		vector spawnPos = v@P;
+		spawnPos += width * slider_x - (slider_x * width) / 2;
+		spawnPos -= height * slider_y - (slider_y * height) / 2;
+		
+		addpoint(0, spawnPos);
+	}
+}
+
+○Normal
+// 法線 (N) を正規化
+vector N = normalize(@N);
+
+// アップベクトルを定義（任意の固定方向）
+vector up = {0, 1, 0};
+
+// N と平行な場合を避けるため、適宜調整
+if (abs(dot(N, up)) > 0.99) {
+    up = {0, 0, 1};
+}
+
+// タンジェントベクトルを計算
+vector tangent = normalize(cross(up, N));
+
+// バイノーマルを計算
+vector binormal = normalize(cross(N, tangent));
+
+// 3x3の回転行列を作成
+matrix3 rotationMatrix = set(tangent, binormal, N);
+
+// 回転行列から四元数を生成
+@orient = quaternion(rotationMatrix);
+
 
 ■BaseMaker
 ○Greebleノードを修正していく
