@@ -8,8 +8,6 @@
 
 
 [Private]
-○会社に荷物を持っていく
-
 ○要らない物の整理
 
 
@@ -46,13 +44,15 @@ https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
 [MModeling]
 ※ファザード生成をとりあえず実装する。
 
-○Primitive同士のマージを実装
-・BaseGroundSurfaceの生成
+○EditModeの検証
+・PDの実装
 
-○TopのPD化
+○BaseSideSurfaceのType化
+・Surfaceのグループ化
+・△新しいTypeのアセットを用意
 
-○EditModeの実装
-・凹凸を表現する
+○BaseGroundSurfaceのPDを実装
+・Primitive同士のマージを実装
 
 ■BaseMaker
 ○Greebleノードを修正していく
@@ -63,4 +63,4 @@ https://www.youtube.com/watch?v=Y6-EWYXZG4s
 
 ■EditMode
 ○blenderのプロジェクトを調査する
-https://www.youtube.com/watch?v=UCYHV9GJU1Q
+https://wwwi.youtube.com/watch?v=UCYHV9GJU1Q
