@@ -51,7 +51,7 @@ https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
 ・Surfaceのグループ化
 ・△新しいTypeのアセットを用意
 
-○BaseGroundSurfaceのPDを実装
+△BaseGroundSurfaceのPDを実装
 ・Primitive同士のマージを実装
 
 ■BaseMaker
