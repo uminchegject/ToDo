@@ -1,121 +1,88 @@
-[Block]
-■BlockManager
-※Surface(四角)をBaseとして実装する
-
-■DetailAsset
-○TopObjectをサイズ適応処理を実装して検証
-
-●InitAttribute
-・Scale
-・Origin
-・Type
+[反省]
+※休日も早寝早起きを行う
+※家事は必ず15分レベルで詳細にブロック化する
+※家での作業は15分レベルに極力留める
+ -カフェで設計・Study、仕事場で作業を行う
+※家メインの日は3時間ワンセットを目安に家事を行う
+ -カフェで家事とプレイタイトルを決める
 
 
-
-[Surface]
-■SurfaceManager
-○必要なBaseEditを追加で実装
-・Blockスケール(Offset)
-・Transform(Normal)
-・Rotate(origin)
-
-○拡張Editの修正
-・Greeble
-・Cluster
-
-○SideSurfaceBlockのパラメーター設計
-
-△Miller
-・2等分し、片方に処理を入れ、もう片方に適応をさせる 
-
-△Voronoi検証
-・サンプルプロジェクトの調査
-https://github.com/0x384c0/HoudiniProjects/tree/main/R%26D/procedural_modeling
-
-●Base
-・EditPrim
-・DividePrim
-・ConnectPrim
-
-●Edit
-・BaseEdit
- -Rotate
- -Scale
- -Transform
-・Miller
- -Connect
-
-●Create
-・Greeble
-・Voronoi
-・ManhattanVoronoi
-
-●Type
-・Cluster
-・Connect
-
-■DetailPattern
-○SurfacePModelingの設計
-・SurfaceBlockから生成できるようにする
-
-△マテリアル周りの実装
-・ClusterとGreebleを用いてBlockをType化
-・Type化したBlockに対してマテリアルを適応
- -窓
- -壁
- 
-●BasePos
-・Center
-・EdgePoint
-・EdgeLine
- 
-●キャッチシャドウ・リフレクションハイライト
-・壁面に溝や穴を掘ることで影やハイライトの演出
-・形状コントラスト、影とハイライトのコントラスト
-・直線的なオブジェクトと曲面を持つオブジェクトを組み合わせる
-
-・小さいオブジェクトを組み込むことで立体的に見せる
-・ヒューマンスケールを意識する
+[Private]
+○要らない物の整理
 
 
+[Study]
+■Movie
+○HoudiniのTutorial
 
-[Line]
-■LineManager
-※Editした部分のTypeをまとめる
-※PrimTypeを分けて管理する
- -MatrixType,PrimType
+○Solaris
+https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPHAUH&index=2
 
-○LineEditの設計&実装
+■Work
+○HoudiniのTutorialをベースにPDを勉強
 
-○VertexEditの設計&実装
+○Maya本
+・Mesh,Material,Skelton
+・背景
 
-○BaseEditの実装
-・Scale
-・Transform
+[USD]
+○デバッグ環境の整理
+・独自実装したプラグインのDebug
+set(PXR_PREFIX examples)
+set(PXR_INSTALL_SUBDIR plugin/usd)
 
-○凹Editの実装
+add_subdirectory(usdObj)
 
-○CopyToPointを用いたUEAssetの検証
+・GFさんのPCにおけるデバッグ環境の整理
 
-●Base
-・EditLine
-・MakeLine
-・DivideLine
-・VertexManager
 
-●Init
-・Line(Box)
+○USDにおける各コンポーネントの実装方法を調査及びドキュメント化
+・Mesh
+ -usdObj
+ -サンプルソースの作成
+・Material
+・Skelton
 
-●Edit
-・Scale(Prim)
-・Transform(Prim)
-・凹(検証)
+△C++ベースプラグインの実装方法
+・Cmakeの書き方の勉強
 
-●Create
-・DivideHeight
-・DividePrim
-・△Greeble
+●Plugin
+https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
+https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
 
-●Type
-・MatrixType
-・PrimType
+
+[MModeling]
+※ファザード生成をとりあえず実装する。
+○上下方向を正確にする
+
+■Type
+○PrimにTypeListを入れる
+・SurfaceToPointにもTypeListを継承する
+
+○検証
+・SurfaceをGreeble
+ -GreebleのDivideの際にVividBlock(SingleBlock)を生成しておく
+・SurfaceのTypeをClusterで整理する
+
+○TypeAssetを用意
+・UEAssetで検証
+
+
+●IDEA
+・Greeble(Divide)
+・Cluster(Type)
+・Vivit(SingleBlock)
+
+■BaseMaker
+○BaseGroundSurfaceのPDを実装
+・Primitive同士のマージを実装
+
+○Greebleノードを修正していく
+・SideFXLabのノードの中を確認する
+
+○CityGeneratorを調査する
+https://www.youtube.com/watch?v=Y6-EWYXZG4s
+
+■EditMode
+○blenderのプロジェクトを調査する
+https://wwwi.youtube.com/watch?v=UCYHV9GJU1Q
