@@ -44,24 +44,26 @@ https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
 [MModeling]
 ※ファザード生成をとりあえず実装する。
 
-○SurfaceToPointをするためのBaseの実装
-・四角形に統一する
-・軸(orientのupを決める)
+■Type
+○PrimにTypeListを入れる
+・SurfaceToPointにもTypeListを継承する
 
-○EditModeの検証
-・PDの実装
+○上下方向を正確にする
 
-○BaseSideSurfaceのType化
-・Surfaceのグループ化
- -Group化してBlastしてそれぞれのTypeでCopyToPointする
- -TypeListでの管理も設計してみる
-・△新しいTypeのアセットを用意
+○Surface,Point検証
 
-△BaseGroundSurfaceのPDを実装
-・Primitive同士のマージを実装
+●Surface
+・Greeble(Divide)
+・Cluster(Type)
 
+●Point
+・Cluster(Type)
+・Vivit(Divide)
 
 ■BaseMaker
+○BaseGroundSurfaceのPDを実装
+・Primitive同士のマージを実装
+
 ○Greebleノードを修正していく
 ・SideFXLabのノードの中を確認する
 
