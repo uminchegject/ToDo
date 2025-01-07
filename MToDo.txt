@@ -82,6 +82,12 @@ https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
 [MModeling]
 ※ファザード生成をとりあえず実装する。
 ○上下方向を正確にする
+if(heightPt2.y < heightPt1.y)
+{
+	int top_pt = heightPt1;
+	int heightPt1 = heightPt2;
+	int heightPt2 = top_pt;
+}
 
 ■Type
 ○PrimにTypeListを入れる
