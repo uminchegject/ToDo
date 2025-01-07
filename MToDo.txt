@@ -32,16 +32,26 @@ set(PXR_PREFIX examples)
 set(PXR_INSTALL_SUBDIR plugin/usd)
 
 add_subdirectory(usdObj)
-
 ・GFさんのPCにおけるデバッグ環境の整理
 
+○内製フォーマットの調査
+・UsdGeomMeshで対応するAttrを調査する
 
-○USDにおける各コンポーネントの実装方法を調査及びドキュメント化
-・Mesh
- -usdObj
- -サンプルソースの作成
-・Material
-・Skelton
+○USDへのコンバート方法のサンプルソースを作成
+UsdGeomMesh mesh = UsdGeomMesh::Define(stage, SdfPath("/" + group.name));
+
+mesh.GetPointsAttr().Set(usdPoints);
+
+VtArray<int> faceVertexCounts, faceVertexIndices, faceUVIndices;
+for (const auto& face : group.faces) {
+	faceVertexCounts.push_back(face.size());
+	for (int p = face.pointsBegin; p != face.pointsEnd; ++p) {
+		faceVertexIndices.push_back(objPoints[p].vertIndex);
+	}
+}
+
+mesh.GetFaceVertexCountsAttr().Set(faceVertexCounts);
+mesh.GetFaceVertexIndicesAttr().Set(faceVertexIndices);
 
 △C++ベースプラグインの実装方法
 ・Cmakeの書き方の勉強
@@ -52,7 +62,7 @@ https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
 
 
 [GUYS]
-○修正箇所のリストアップ
+○GunActionの調査
 
 
 [MModeling]
