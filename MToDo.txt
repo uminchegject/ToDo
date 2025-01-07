@@ -7,8 +7,10 @@
  -カフェで家事とプレイタイトルを決める
 
 
+
 [Private]
 ○要らない物の整理
+
 
 
 [Study]
@@ -25,15 +27,9 @@ https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPH
 ・Mesh,Material,Skelton
 ・背景
 
+
+
 [USD]
-○デバッグ環境の整理
-・独自実装したプラグインのDebug
-set(PXR_PREFIX examples)
-set(PXR_INSTALL_SUBDIR plugin/usd)
-
-add_subdirectory(usdObj)
-・GFさんのPCにおけるデバッグ環境の整理
-
 ○内製フォーマットの調査
 ・UsdGeomMeshで対応するAttrを調査する
 
@@ -53,16 +49,34 @@ for (const auto& face : group.faces) {
 mesh.GetFaceVertexCountsAttr().Set(faceVertexCounts);
 mesh.GetFaceVertexIndicesAttr().Set(faceVertexIndices);
 
-△C++ベースプラグインの実装方法
-・Cmakeの書き方の勉強
+○ドキュメント作成
+・UsdGeomMeshと内製Geomとの比較
+・実装する際の予想サンプルコード
+
+△当てはまらないAttributeの対応方法を調査
+・CustomSchema
+・CustomAttribute
+
+△その他必要なソースの整理
+
+○デバッグ環境の整理
+・独自実装したプラグインのDebug
+set(PXR_PREFIX examples)
+set(PXR_INSTALL_SUBDIR plugin/usd)
+
+add_subdirectory(usdObj)
+・GFさんのPCにおけるデバッグ環境の整理
 
 ●Plugin
 https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
 https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
 
 
+
 [GUYS]
 ○GunActionの調査
+・GameInstance,GameMode,PlayerStateの管理部分を修正する
+
 
 
 [MModeling]
