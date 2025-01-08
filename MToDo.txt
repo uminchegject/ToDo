@@ -30,42 +30,24 @@ https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPH
 
 
 [USD]
-○内製フォーマットの調査
-・UsdGeomMeshで対応するAttrを調査する
+○USDの構成周りについて調査
+・実際のfileFormatPlugin内でコンバートした際の構成を確認
+ -usdObj
+ -usdAbc
+ -△Adobe
+・Kitchen_set
+https://zenn.dev/remiria/articles/7514e41f89a887b33730
+https://zenn.dev/remiria/articles/9af685611d77b60e80d7
+https://www.hiroakit.com/archives/20221123/
 
-○USDへのコンバート方法のサンプルソースを作成
-UsdGeomMesh mesh = UsdGeomMesh::Define(stage, SdfPath("/" + group.name));
-
-mesh.GetPointsAttr().Set(usdPoints);
-
-VtArray<int> faceVertexCounts, faceVertexIndices, faceUVIndices;
-for (const auto& face : group.faces) {
-	faceVertexCounts.push_back(face.size());
-	for (int p = face.pointsBegin; p != face.pointsEnd; ++p) {
-		faceVertexIndices.push_back(objPoints[p].vertIndex);
-	}
-}
-
-mesh.GetFaceVertexCountsAttr().Set(faceVertexCounts);
-mesh.GetFaceVertexIndicesAttr().Set(faceVertexIndices);
-
-○ドキュメント作成
-・UsdGeomMeshと内製Geomとの比較
-・実装する際の予想サンプルコード
+○内製フォーマットの構成周りについて調査
 
 ○デバッグ環境の整理
 ・独自実装したプラグインのDebug
 set(PXR_PREFIX examples)
 set(PXR_INSTALL_SUBDIR plugin/usd)
-
 add_subdirectory(usdObj)
 ・GFさんのPCにおけるデバッグ環境の整理
-
-△当てはまらないAttributeの対応方法を調査
-・CustomSchema
-・CustomAttribute
-
-△その他必要なソースの整理
 
 ●Plugin
 https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
@@ -74,8 +56,7 @@ https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
 
 
 [GUYS]
-○GunActionの調査
-・GameInstance,GameMode,PlayerStateの管理部分を修正する
+○CharacterSelect画面の修正
 
 
 
