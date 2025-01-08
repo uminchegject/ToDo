@@ -53,12 +53,6 @@ mesh.GetFaceVertexIndicesAttr().Set(faceVertexIndices);
 ・UsdGeomMeshと内製Geomとの比較
 ・実装する際の予想サンプルコード
 
-△当てはまらないAttributeの対応方法を調査
-・CustomSchema
-・CustomAttribute
-
-△その他必要なソースの整理
-
 ○デバッグ環境の整理
 ・独自実装したプラグインのDebug
 set(PXR_PREFIX examples)
@@ -66,6 +60,12 @@ set(PXR_INSTALL_SUBDIR plugin/usd)
 
 add_subdirectory(usdObj)
 ・GFさんのPCにおけるデバッグ環境の整理
+
+△当てはまらないAttributeの対応方法を調査
+・CustomSchema
+・CustomAttribute
+
+△その他必要なソースの整理
 
 ●Plugin
 https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
@@ -100,7 +100,6 @@ if(heightPt2.y < heightPt1.y)
 
 ○TypeAssetを用意
 ・UEAssetで検証
-
 
 ●IDEA
 ・Greeble(Divide)
