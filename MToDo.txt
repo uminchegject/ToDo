@@ -30,20 +30,19 @@ https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPH
 
 
 [USD]
+○構造
+https://fereria.github.io/reincarnation_tech/usd/asset_structure
+○meshの構造
+https://qiita.com/snowxcrash/items/4e6e58e13c04dafc5749
+
 ○USDの構成周りについて調査
 ・実際のfileFormatPlugin内でコンバートした際の構成を確認
+・attribute(property)への設定処理を確認
  -usdObj
  -usdAbc
  -△Adobe
 
-○davinciの調査
-
-○構造
-https://fereria.github.io/reincarnation_tech/usd/asset_structure
-
-○meshの構造
-https://qiita.com/snowxcrash/items/4e6e58e13c04dafc5749
-
+△da vinciの調査
 
 ○内製フォーマットの構成周りについて調査
 ・USDの構成をベースに必要な情報を調べる
@@ -61,7 +60,6 @@ add_subdirectory(usdObj)
 https://zenn.dev/remiria/articles/7514e41f89a887b33730
 https://zenn.dev/remiria/articles/9af685611d77b60e80d7
 https://www.hiroakit.com/archives/20221123/
-
 ●Plugin
 https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
 https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
@@ -71,7 +69,9 @@ https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
 [GUYS]
 ○Title画面の修正
 ・Movieの修正
+ -フォルダの整理
 ・Soundの修正
+ -フォルダの整理
 
 
 [MModeling]
@@ -88,6 +88,25 @@ if(heightPt2.y < heightPt1.y)
 ・TypeとサイズのMapを入れる
  -Folderパラメーターで対応
 ・サイズに適応したTypeがあった場合にTypeを設定し、Greebleを中断する
+for(int paramIndex = 0; paramIndex < ; paramIndex++)
+{
+	vector scaleRange = chv("../ParamInput/ScaleRange" + itoa(paramIndex));
+	vector type = chi("../ParamInput/Type" + itoa(paramIndex));
+	vector ratio = ch("../ParamInput/Type" + itoa(paramIndex));
+
+	float minLength = dividingBlockScaleOrigin.x;
+	if(dividingBlockScaleOrigin.y < minLength) minLength = dividingBlockScaleOrigin.y;
+	if(dividingBlockScaleOrigin.z < minLength) minLength = dividingBlockScaleOrigin.z;
+	
+	if(random(dividingBlockPosOrigin) < ratio) continue;	
+	if(minLength < scaleRange.x) continue;
+	if(scaleRange.y < minLength) continue;
+	
+    int pt = addpoint(0, dividingBlockPosOrigin);
+    setpointattrib(0, "scale", pt, dividingBlockScaleOrigin);
+    setpointattrib(0, "orient", pt, p@orient);
+	continue;
+}
 
 ■Type
 ○PrimにTypeListを入れる
