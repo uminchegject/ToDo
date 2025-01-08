@@ -35,12 +35,18 @@ https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPH
  -usdObj
  -usdAbc
  -△Adobe
-・Kitchen_set
-https://zenn.dev/remiria/articles/7514e41f89a887b33730
-https://zenn.dev/remiria/articles/9af685611d77b60e80d7
-https://www.hiroakit.com/archives/20221123/
+
+○davinciの調査
+
+○構造
+https://fereria.github.io/reincarnation_tech/usd/asset_structure
+
+○meshの構造
+https://qiita.com/snowxcrash/items/4e6e58e13c04dafc5749
+
 
 ○内製フォーマットの構成周りについて調査
+・USDの構成をベースに必要な情報を調べる
 
 ○デバッグ環境の整理
 ・独自実装したプラグインのDebug
@@ -49,6 +55,13 @@ set(PXR_INSTALL_SUBDIR plugin/usd)
 add_subdirectory(usdObj)
 ・GFさんのPCにおけるデバッグ環境の整理
 
+△ピカチュウサンプルの確認
+
+●Kitchen_set
+https://zenn.dev/remiria/articles/7514e41f89a887b33730
+https://zenn.dev/remiria/articles/9af685611d77b60e80d7
+https://www.hiroakit.com/archives/20221123/
+
 ●Plugin
 https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
 https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
@@ -56,8 +69,9 @@ https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
 
 
 [GUYS]
-○CharacterSelect画面の修正
-
+○Title画面の修正
+・Movieの修正
+・Soundの修正
 
 
 [MModeling]
@@ -69,6 +83,11 @@ if(heightPt2.y < heightPt1.y)
 	int heightPt1 = heightPt2;
 	int heightPt2 = top_pt;
 }
+
+○GreebleにTypeを仕込む
+・TypeとサイズのMapを入れる
+ -Folderパラメーターで対応
+・サイズに適応したTypeがあった場合にTypeを設定し、Greebleを中断する
 
 ■Type
 ○PrimにTypeListを入れる
