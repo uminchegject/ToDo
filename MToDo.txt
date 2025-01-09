@@ -40,6 +40,8 @@ https://qiita.com/snowxcrash
 ○usdObjの処理の調査
 
 ○faceVertexCounts, faceVertexIndicesへの設定方法
+・実際のソースかSurfaceの管理方法について分かるドキュメントが欲しい。
+
 
 ○変換処理についての概要を用意
 
