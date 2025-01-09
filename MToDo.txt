@@ -37,13 +37,19 @@ https://qiita.com/snowxcrash/items/4e6e58e13c04dafc5749
 ・実践
 https://qiita.com/snowxcrash
 
-○usdObjの処理の調査
-
 ○faceVertexCounts, faceVertexIndicesへの設定方法
 ・実際のソースかSurfaceの管理方法について分かるドキュメントが欲しい。
 
-
 ○変換処理についての概要を用意
+
+○usdAbcの処理の調査
+
+
+○usdObjの処理の調査
+
+△Kitchen_setの調査
+
+△Davinciの調査
 
 ■ドキュメント
 ●処理の流れ
@@ -78,6 +84,7 @@ https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
  -フォルダの整理
 
 
+
 [MModeling]
 ※ファザード生成をとりあえず実装する。
 ○上下方向を正確にする
@@ -92,11 +99,12 @@ if(heightPt2.y < heightPt1.y)
 ・TypeとサイズのMapを入れる
  -Folderパラメーターで対応
 ・サイズに適応したTypeがあった場合にTypeを設定し、Greebleを中断する
-for(int paramIndex = 0; paramIndex < ; paramIndex++)
+int vivitAssetToggle = 0;
+for(int paramIndex = 0; paramIndex < ch("../Greeble/TypeList"); paramIndex++)
 {
-	vector scaleRange = chv("../ParamInput/ScaleRange" + itoa(paramIndex));
-	vector type = chi("../ParamInput/Type" + itoa(paramIndex));
-	vector ratio = ch("../ParamInput/Type" + itoa(paramIndex));
+	vector scaleRange = chv("../Greeble/greeble_AddType" + itoa(paramIndex));
+	vector type = chi("../Greeble/greeble_AddTypeScaleRange" + itoa(paramIndex));
+	vector ratio = ch("../ParamInput/ratio" + itoa(paramIndex));
 
 	float minLength = dividingBlockScaleOrigin.x;
 	if(dividingBlockScaleOrigin.y < minLength) minLength = dividingBlockScaleOrigin.y;
@@ -106,6 +114,12 @@ for(int paramIndex = 0; paramIndex < ; paramIndex++)
 	if(minLength < scaleRange.x) continue;
 	if(scaleRange.y < minLength) continue;
 	
+	vivitAssetToggle = 1;
+	break;
+}
+
+if(vivitAssetToggle == 1)
+{
     int pt = addpoint(0, dividingBlockPosOrigin);
     setpointattrib(0, "scale", pt, dividingBlockScaleOrigin);
     setpointattrib(0, "orient", pt, p@orient);
