@@ -30,31 +30,24 @@ https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPH
 
 
 [USD]
-○構造
+・構造
 https://fereria.github.io/reincarnation_tech/usd/asset_structure
-○meshの構造
+・meshの構造
 https://qiita.com/snowxcrash/items/4e6e58e13c04dafc5749
-○実践
+・実践
 https://qiita.com/snowxcrash
 
-○fileformatpluginにおけるUSDの構成周りについて調査
-・実際のfileFormatPlugin内でコンバートした際の構成を確認
-・attribute(property)への設定処理を確認
- -usdObj
- -usdAbc
- -△Adobe
- 
-○usd側の構成の調査
-・Kitchen_set
-・davinci
+○usdObjの処理の調査
 
-○ドキュメント作成
-・サンプルusdの構成の説明
-・コンバートした際の構成の説明
- -比較
+○faceVertexCounts, faceVertexIndicesへの設定方法
 
-○内製フォーマットの構成周りについて調査
-・USDの構成をベースに必要な情報を調べる
+○変換処理についての概要を用意
+
+■ドキュメント
+●処理の流れ
+・クラス設計
+
+●Meshへの変換処理
 
 ○デバッグ環境の整理
 ・独自実装したプラグインのDebug
