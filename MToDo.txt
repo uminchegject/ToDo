@@ -37,25 +37,39 @@ https://qiita.com/snowxcrash/items/4e6e58e13c04dafc5749
 ・実践
 https://qiita.com/snowxcrash
 
-○faceVertexCounts, faceVertexIndicesへの設定方法
-・実際のソースかSurfaceの管理方法について分かるドキュメントが欲しい。
+○SurfaceとIndexの管理方法についてドキュメントを調査
 
-○変換処理についての概要を用意
-
-○usdAbcの処理の調査
-
+○内製フォーマットを読み込む際にfileformatpluginのReadが読まれる前の処理をデバッグする
+・input引数の中身を確認する
 
 ○usdObjの処理の調査
+
+△usdAbcの処理の調査
 
 △Kitchen_setの調査
 
 △Davinciの調査
 
-■ドキュメント
-●処理の流れ
-・クラス設計
 
-●Meshへの変換処理
+■ドキュメント
+・処理の概要の説明
+●usdGeMeshの説明
+
+
+●usdGeomMesh
+usdAbcにおいて、まずMeshTypeを定義しその中に必要な情報をattributeに設定していくという形で一連の処理が実装されていました。
+そのため、本fileformatpluginにおいてもmeshを定義し適切なattributeに値を設定していく処理を実装していきます。
+まず、usdGeomMeshの定義においてBBox,頂点座標、頂点法線、UV、面ごとの頂点数、面の頂点インデックス情報を適切なAttributeに設定する
+処理を調査しました。
+
+・faceVertexCounts, faceVertexIndicesへの設定方法
+ -//surfaceの管理部分について
+
+●fileformatplugin
+・objフォーマットをusdに変換するfileformatpluginに変換するsampleがあるため、こちらも参考に実装を進めていきます。
+・fileformatpluginを継承したクラス、内製フォーマットからusdに変換するクラスの2つで構成されているため、本実装でも同じように実装していく予定です。
+
+
 
 ○デバッグ環境の整理
 ・独自実装したプラグインのDebug
