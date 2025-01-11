@@ -1,144 +1,17 @@
-[反省]
-※休日も早寝早起きを行う
-※家事は必ず15分レベルで詳細にブロック化する
-※家での作業は15分レベルに極力留める
- -カフェで設計・Study、仕事場で作業を行う
-※家メインの日は3時間ワンセットを目安に家事を行う
- -カフェで家事とプレイタイトルを決める
-
-
-
-[Private]
-○要らない物の整理
-
-
-
-[Study]
-■Movie
-○HoudiniのTutorial
-
-○Solaris
-https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPHAUH&index=2
-
-■Work
-○HoudiniのTutorialをベースにPDを勉強
-
-○Maya本
-・Mesh,Material,Skelton
-・背景
-
-
-
 [USD]
-・構造
-https://fereria.github.io/reincarnation_tech/usd/asset_structure
-・meshの構造
-https://qiita.com/snowxcrash/items/4e6e58e13c04dafc5749
-・実践
-https://qiita.com/snowxcrash
+○Pluginの新規実装
 
-○デバッグ環境の整理
-・独自実装したプラグインのDebug
-set(PXR_PREFIX examples)
-set(PXR_INSTALL_SUBDIR plugin/usd)
-add_subdirectory(usdObj)
-・GFさんのPCにおけるデバッグ環境の整理
+[PD]
+○アセットの用意
+・NormalType * 2
+・VivitType * 1
 
-△usdAbcの処理の調査
+○配置ロジックの実装
 
-△Kitchen_setの調査
+○JapaneseCastleの準備
+・動画ダウンロード
+・ソースの中身を調べる
 
-△Davinciの調査
-
-△ピカチュウサンプルの確認
-
-●Kitchen_set
-https://zenn.dev/remiria/articles/7514e41f89a887b33730
-https://zenn.dev/remiria/articles/9af685611d77b60e80d7
-https://www.hiroakit.com/archives/20221123/
-●Plugin
-https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
-https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
-
-
-
-[GUYS]
-○Title画面の修正
-・Movieの修正
- -フォルダの整理
-・Soundの修正
- -フォルダの整理
-
-
-
-[MModeling]
-※ファザード生成をとりあえず実装する。
-○上下方向を正確にする
-if(heightPt2.y < heightPt1.y)
-{
-	int top_pt = heightPt1;
-	int heightPt1 = heightPt2;
-	int heightPt2 = top_pt;
-}
-
-○GreebleにTypeを仕込む
-・TypeとサイズのMapを入れる
- -Folderパラメーターで対応
-・サイズに適応したTypeがあった場合にTypeを設定し、Greebleを中断する
-int vivitAssetToggle = 0;
-for(int paramIndex = 0; paramIndex < ch("../Greeble/TypeList"); paramIndex++)
-{
-	vector scaleRange = chv("../Greeble/greeble_AddType" + itoa(paramIndex));
-	vector type = chi("../Greeble/greeble_AddTypeScaleRange" + itoa(paramIndex));
-	vector ratio = ch("../ParamInput/ratio" + itoa(paramIndex));
-
-	float minLength = dividingBlockScaleOrigin.x;
-	if(dividingBlockScaleOrigin.y < minLength) minLength = dividingBlockScaleOrigin.y;
-	if(dividingBlockScaleOrigin.z < minLength) minLength = dividingBlockScaleOrigin.z;
-	
-	if(random(dividingBlockPosOrigin) < ratio) continue;	
-	if(minLength < scaleRange.x) continue;
-	if(scaleRange.y < minLength) continue;
-	
-	vivitAssetToggle = 1;
-	break;
-}
-
-if(vivitAssetToggle == 1)
-{
-    int pt = addpoint(0, dividingBlockPosOrigin);
-    setpointattrib(0, "scale", pt, dividingBlockScaleOrigin);
-    setpointattrib(0, "orient", pt, p@orient);
-	continue;
-}
-
-■Type
-○PrimにTypeListを入れる
-・SurfaceToPointにもTypeListを継承する
-
-○検証
-・SurfaceをGreeble
- -GreebleのDivideの際にVividBlock(SingleBlock)を生成しておく
-・SurfaceのTypeをClusterで整理する
-
-○TypeAssetを用意
-・UEAssetで検証
-
-●IDEA
-・Greeble(Divide)
-・Cluster(Type)
-・Vivit(SingleBlock)
-
-■BaseMaker
-○BaseGroundSurfaceのPDを実装
-・Primitive同士のマージを実装
-
-○Greebleノードを修正していく
-・SideFXLabのノードの中を確認する
-
-○CityGeneratorを調査する
-https://www.youtube.com/watch?v=Y6-EWYXZG4s
-
-■EditMode
-○blenderのプロジェクトを調査する
-https://wwwi.youtube.com/watch?v=UCYHV9GJU1Q
+[Maya]
+○作業準備
+・チーバ君
