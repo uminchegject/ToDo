@@ -1,17 +1,49 @@
+[Study]
+○プロジェクト管理について
+・Maya
+・Houdini
+
+○デバッグ環境の構築
+
+
 [USD]
-○Pluginの新規実装
+■Pluginの新規実装
+○usdObjの調査
+・CMakeLists
+・Pluginfo
+
+○実装
+・完全体のobjをusdへ
+ -構造をKitchenSetに似せる
+・usdToObj
+
+■FileFormat
+○objファイルフォーマット
+
+○mayaでマテリアルを含めたサンプルデータを用意
+
+
 
 [PD]
+■Face_Generator
 ○アセットの用意
 ・全く違うタイプのアセットを複数用意する
 
 ○配置ロジックの実装
 ・柔軟性の高い配置ロジックを実装する
 
-○JapaneseCastleの準備
-・ソースの中身を調べる
+■JapaneseCastle
+○ソースの中身を調べる
  -Floor1
+ 
+○アセットをMayaで作成
 
-[Maya]
-○作業準備
-・チーバ君
+○配置ロジックを応用
+
+
+[GUYS]
+○アウトゲームの設計を調査
+
+○C++で実装
+・Title
+・CharacterSelect
