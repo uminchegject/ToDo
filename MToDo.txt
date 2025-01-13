@@ -1,12 +1,70 @@
+[反省]
+※休日も早寝早起きを行う
+※家事は必ず15分レベルで詳細にブロック化する
+※家での作業は15分レベルに極力留める
+ -カフェで設計・Study、仕事場で作業を行う
+※家メインの日は3時間ワンセットを目安に家事を行う
+ -カフェで家事とプレイタイトルを決める
+
+
+[Private]
+○要らない物の整理
+
+
 [Study]
+■Movie
+○JapaneseCastle
+
+○Solaris
+https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPHAUH&index=2
+
+■Read&Work
 ○プロジェクト管理について
 ・Maya
 ・Houdini
 
-○デバッグ環境の構築
+○USD
+・基礎
+https://qiita.com/snowxcrash
+・Tutorial,Example
+
+○JapaneseCastle
+
+○Maya本
+○作業準備
+・チーバ君
 
 
 [USD]
+■Work
+・構造
+https://fereria.github.io/reincarnation_tech/usd/asset_structure
+・meshの構造
+https://qiita.com/snowxcrash/items/4e6e58e13c04dafc5749
+
+○デバッグ環境の整理
+・独自実装したプラグインのDebug
+set(PXR_PREFIX examples)
+set(PXR_INSTALL_SUBDIR plugin/usd)
+add_subdirectory(usdObj)
+・GFさんのPCにおけるデバッグ環境の整理
+
+△usdAbcの処理の調査
+
+△Kitchen_setの調査
+
+△Davinciの調査
+
+△ピカチュウサンプルの確認
+
+●Kitchen_set
+https://zenn.dev/remiria/articles/7514e41f89a887b33730
+https://zenn.dev/remiria/articles/9af685611d77b60e80d7
+https://www.hiroakit.com/archives/20221123/
+●Plugin
+https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
+https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
+
 ■Pluginの新規実装
 ○usdObjの調査
 ・CMakeLists
@@ -17,11 +75,19 @@
  -構造をKitchenSetに似せる
 ・usdToObj
 
-■FileFormat
-○objファイルフォーマット
+○ファイルフォーマットについて勉強
+・objファイルフォーマットをベースに勉強
+ -mayaでマテリアルを含めたサンプルデータを用意
 
-○mayaでマテリアルを含めたサンプルデータを用意
 
+[GUYS]
+○アウトゲームの設計を調査
+・C++のサンプルプロジェクトを調査
+ -VehicleGame
+
+○C++で実装
+・Title
+・CharacterSelect
 
 
 [PD]
@@ -31,6 +97,24 @@
 
 ○配置ロジックの実装
 ・柔軟性の高い配置ロジックを実装する
+・PrimにTypeListを入れる
+ -SurfaceToPointにもTypeListを継承する
+
+○BaseGroundSurfaceのPDを実装
+・Primitive同士のマージを実装
+・Greebleノードを修正していく
+ -SideFXLabのノードの中を確認する
+・CityGeneratorを調査する
+https://www.youtube.com/watch?v=Y6-EWYXZG4s
+
+△EditMode
+・blenderのプロジェクトを調査する
+https://wwwi.youtube.com/watch?v=UCYHV9GJU1Q
+
+●IDEA
+・Greeble(Divide)
+・Cluster(Type)
+・Vivit(SingleBlock)
 
 ■JapaneseCastle
 ○ソースの中身を調べる
@@ -39,11 +123,3 @@
 ○アセットをMayaで作成
 
 ○配置ロジックを応用
-
-
-[GUYS]
-○アウトゲームの設計を調査
-
-○C++で実装
-・Title
-・CharacterSelect
