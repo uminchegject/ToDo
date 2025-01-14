@@ -18,7 +18,7 @@ https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPH
 
 ■Read&Work
 ○usdの構造のドキュメントメモを作成
-・グラフを作る(まずKitchen)
+・usdObjで実装する
 -ドキュメント
 https://fereria.github.io/reincarnation_tech/usd/model_hierarchy#component
 https://fereria.github.io/reincarnation_tech/usd/asset_structure
