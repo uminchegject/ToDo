@@ -13,19 +13,18 @@
 
 [Study]
 ■Movie
-○JapaneseCastle
-
 ○Solaris
 https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPHAUH&index=2
 
 ■Read&Work
 ○usdの構造のドキュメントメモを作成
-・ドキュメント
+・グラフを作る(まずKitchen)
+-ドキュメント
+https://fereria.github.io/reincarnation_tech/usd/model_hierarchy#component
 https://fereria.github.io/reincarnation_tech/usd/asset_structure
-https://github.com/usd-wg/assets/blob/main/docs/asset-structure-guidelines.md
-・サンプル
- -Kitchen_set
- -△Davinciの調査
+-サンプル
+Kitchen_set
+Davinci
 
 ○Houdini
 ・WorkFlow
@@ -38,9 +37,7 @@ https://openusd.org/release/tut_usd_tutorials.html
 
 ○JapaneseCastle
 
-○Maya本
-・作業準備
- -チーバ君
+○チーバ君
 
 
 [USD]
@@ -49,18 +46,12 @@ https://openusd.org/release/tut_usd_tutorials.html
 ・ビルドソースの構成
 ・ソースの扱いについて
 
-●実装フロー
-・最低限のソースでfileformatpluginを実装
-・情報の取得
-
 ○デバッグ環境の整理
 ・独自実装したプラグインのDebug
 set(PXR_PREFIX examples)
 set(PXR_INSTALL_SUBDIR plugin/usd)
 add_subdirectory(usdObj)
 ・GFさんのPCにおけるデバッグ環境の整理
-
-△ピカチュウサンプルの確認
 
 ●Kitchen_set
 https://zenn.dev/remiria/articles/7514e41f89a887b33730
@@ -73,19 +64,12 @@ https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
 https://qiita.com/snowxcrash/items/4e6e58e13c04dafc5749
 
 ■Pluginの新規実装
-○usdObjの調査
-・CMakeLists
-・Pluginfo
-
-○他フォーマットを最低限で実装
-
 ○usdObjの修正
 ・完成されたobjファイルを用意し中身を調査
 ・抜けている情報をusdに持たせるように修正
 
-○ファイルフォーマットについて勉強
-・objファイルフォーマットをベースに勉強
- -mayaでマテリアルを含めたサンプルデータを用意
+○他フォーマットを最低限で実装
+・geo
 
 
 [GUYS]
@@ -103,10 +87,12 @@ https://qiita.com/snowxcrash/items/4e6e58e13c04dafc5749
 ○アセットの用意
 ・全く違うタイプのアセットを複数用意する
 
+○HDA化
+・Typeのパラメーターを実装
+・BlockScaleのパラメーターを実装
+
 ○配置ロジックの実装
 ・柔軟性の高い配置ロジックを実装する
-・PrimにTypeListを入れる
- -SurfaceToPointにもTypeListを継承する
 
 ○BaseGroundSurfaceのPDを実装
 ・Primitive同士のマージを実装
