@@ -1,12 +1,127 @@
-■Plugin
-○Releaseの用意
+[反省]
+※休日も早寝早起きを行う
+※家事は必ず15分レベルで詳細にブロック化する
+※家での作業は15分レベルに極力留める
+ -カフェで設計・Study、仕事場で作業を行う
+※家メインの日は3時間ワンセットを目安に家事を行う
+ -カフェで家事とプレイタイトルを決める
 
-○Tutorial
-https://fereria.github.io/reincarnation_tech_bk/11_Pipeline/01_USD/30_Programming/00_CPP/01_asset_resolver_01/
+
+[Private]
+○要らない物の整理
+
+
+[Study]
+■Movie
+○Solaris
+https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPHAUH&index=2
+
+■Read&Work
+○usdの構造のドキュメントメモを作成
+・グラフを作る(まずKitchen)
+-ドキュメント
+https://fereria.github.io/reincarnation_tech/usd/model_hierarchy#component
+https://fereria.github.io/reincarnation_tech/usd/asset_structure
+-サンプル
+Kitchen_set
+Davinci
+
+○USDマクロ
+
+○Houdini
+・WorkFlow
+https://support.borndigital.co.jp/hc/ja/articles/26261060729625-Houdini-%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6-%E3%83%81%E3%83%BC%E3%83%A0%E3%81%A7%E7%92%B0%E5%A2%83%E3%82%92%E5%85%B1%E6%9C%89%E3%81%99%E3%82%8B%E3%81%AB%E3%81%AF
+https://fxnomemo.blogspot.com/2021/04/houdini-workflow.html
+
+○USDTutorial
+https://openusd.org/release/tut_usd_tutorials.html
+https://qiita.com/snowxcrash
+
+○JapaneseCastle
+
+○チーバ君
+
+
+[USD]
+■Work
+○libraryの調査
+・fbsの方法
+・使い方
+
+△実装作業における流れの確認
+・ビルドソースの構成
+・ソースの扱いについて
+
+○デバッグ環境の整理
+・独自実装したプラグインのDebug
+set(PXR_PREFIX examples)
+set(PXR_INSTALL_SUBDIR plugin/usd)
+add_subdirectory(usdObj)
+・GFさんのPCにおけるデバッグ環境の整理
+
+●Kitchen_set
+https://zenn.dev/remiria/articles/7514e41f89a887b33730
+https://zenn.dev/remiria/articles/9af685611d77b60e80d7
+https://www.hiroakit.com/archives/20221123/
+●Plugin
+https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
+https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
+●meshの構造
+https://qiita.com/snowxcrash/items/4e6e58e13c04dafc5749
+
+■Pluginの新規実装
+○TFToken周りについて調査
 
 ○usdGeoを実装
+・コンストラクタとデストラクタのみでとりあえずビルドを通す
 
-■WorkFlow
-○fbsの調査
-・ドキュメント
-・ソース
+・実装を少しづつ進めてビルド確認を行う
+ -Cmake
+ -VisualStudio
+
+
+[GUYS]
+○アウトゲームの設計を調査
+・C++のサンプルプロジェクトを調査
+ -VehicleGame
+
+○C++で実装
+・Title
+・CharacterSelect
+
+
+[PD]
+■Face_Generator
+○アセットの用意
+・全く違うタイプのアセットを複数用意する
+
+○HDA化
+・Typeのパラメーターを実装
+・BlockScaleのパラメーターを実装
+
+○配置ロジックの実装
+・柔軟性の高い配置ロジックを実装する
+
+○BaseGroundSurfaceのPDを実装
+・Primitive同士のマージを実装
+・Greebleノードを修正していく
+ -SideFXLabのノードの中を確認する
+・CityGeneratorを調査する
+https://www.youtube.com/watch?v=Y6-EWYXZG4s
+
+△EditMode
+・blenderのプロジェクトを調査する
+https://wwwi.youtube.com/watch?v=UCYHV9GJU1Q
+
+●IDEA
+・Greeble(Divide)
+・Cluster(Type)
+・Vivit(SingleBlock)
+
+■JapaneseCastle
+○ソースの中身を調べる
+ -Floor1
+ 
+○アセットをMayaで作成
+
+○配置ロジックを応用
