@@ -96,8 +96,18 @@ https://qiita.com/snowxcrash/items/4e6e58e13c04dafc5749
 ・全く違うタイプのアセットを複数用意する
 
 ○HDA化
-・Typeのパラメーターを実装
-・BlockScaleのパラメーターを実装
+・Group名とType名をセットでHDAのパラメーターにする
+ -Group名でTypeの値を設定し、TypeのアセットをCopyPointする
+
+for(int paramindex = 0; paramindex < paramnum; ++paramindex)
+{
+	string group_name = 
+	int type = 
+	if(primitive(0, "group_name", 0) == 1)
+	{
+		setprimattrib(0, "Type", type, )
+	}
+}
 
 ○配置ロジックの実装
 ・柔軟性の高い配置ロジックを実装する
