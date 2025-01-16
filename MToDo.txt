@@ -1,90 +1,9 @@
-[反省]
-※動画はすぐにアプトプットを行う必要のある内容を学ぶ
+■Plugin
+○geoからの情報取得処理をサンプルで実装
 
-[Private]
-○要らない物の整理
-
-
-[Study]
-■Movie
-○Maya
-https://www.youtube.com/playlist?list=PLhzCDkTROE9vg8DClp3bTHfXDiNW9LN47
-
-●Solaris
-https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPHAUH&index=2
-
-■Read&Work
-○Houdini
-・WorkFlow
-https://support.borndigital.co.jp/hc/ja/articles/26261060729625-Houdini-%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6-%E3%83%81%E3%83%BC%E3%83%A0%E3%81%A7%E7%92%B0%E5%A2%83%E3%82%92%E5%85%B1%E6%9C%89%E3%81%99%E3%82%8B%E3%81%AB%E3%81%AF
-https://fxnomemo.blogspot.com/2021/04/houdini-workflow.html
-
-○USDTutorial
-https://openusd.org/release/tut_usd_tutorials.html
-https://qiita.com/snowxcrash
-
-○JapaneseCastle
-
-○チーバ君
-
-●USDのレイヤー構造
--ドキュメント
-https://fereria.github.io/reincarnation_tech/usd/model_hierarchy#component
-https://fereria.github.io/reincarnation_tech/usd/asset_structure
--サンプル
-Kitchen_set
-Davinci
-
-[USD]
-■Work
-○libraryの調査
-・fbsの方法
-・使い方
-
-△実装作業における流れの確認
-・ビルドソースの構成
-・ソースの扱いについて
-
-○デバッグ環境の整理
-・独自実装したプラグインのDebug
-set(PXR_PREFIX examples)
-set(PXR_INSTALL_SUBDIR plugin/usd)
-add_subdirectory(usdObj)
-・GFさんのPCにおけるデバッグ環境の整理
-
-●Kitchen_set
-https://zenn.dev/remiria/articles/7514e41f89a887b33730
-https://zenn.dev/remiria/articles/9af685611d77b60e80d7
-https://www.hiroakit.com/archives/20221123/
-●Plugin
-https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
-https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
-●meshの構造
-https://qiita.com/snowxcrash/items/4e6e58e13c04dafc5749
-
-■Pluginの新規実装
-○geoからの情報の取得方法を調査
-void parseGeoFile(const std::string& filePath) {
-    std::ifstream file(filePath);
-    if (!file.is_open()) {
-        std::cerr << "Failed to open file: " << filePath << std::endl;
-        return;
-    }
-
-    std::string line;
-    while (std::getline(file, line)) {
-        // ファイルの行を解析する
-        if (line.find("Point") != std::string::npos) {
-            std::cout << "Point data found: " << line << std::endl;
-        } else if (line.find("Primitive") != std::string::npos) {
-            std::cout << "Primitive data found: " << line << std::endl;
-        }
-        // 他の構造も必要に応じて処理
-    }
-
-    file.close();
-}
-
+○Plugin実装のドキュメントとデータを作成
+・Gitで管理する
+・MDで用意
 
 ○streamクラスのメモを用意
 
@@ -93,45 +12,17 @@ void parseGeoFile(const std::string& filePath) {
  -Cmake
  -VisualStudio
 
+■Work
+○HoudiniPluginの調査
+・実装方法
+・デバッグ方法
 
-[GUYS]
-○アウトゲームの設計を調査
-・C++のサンプルプロジェクトを調査
- -VehicleGame
+○内製HoudiniPluginを調査
+・使用方法
+・デバッグ
 
-○C++で実装
-・Title
-・CharacterSelect
+○内製フォーマットから情報を取得する処理を実装
 
-
-[PD]
-■Face_Generator
-○アセットの用意
-・全く違うタイプのアセットを複数用意する
-
-○配置ロジックの実装
-・柔軟性の高い配置ロジックを実装する
-
-○BaseGroundSurfaceのPDを実装
-・Primitive同士のマージを実装
-・Greebleノードを修正していく
- -SideFXLabのノードの中を確認する
-・CityGeneratorを調査する
-https://www.youtube.com/watch?v=Y6-EWYXZG4s
-
-△EditMode
-・blenderのプロジェクトを調査する
-https://wwwi.youtube.com/watch?v=UCYHV9GJU1Q
-
-●IDEA
-・Greeble(Divide)
-・Cluster(Type)
-・Vivit(SingleBlock)
-
-■JapaneseCastle
-○ソースの中身を調べる
- -Floor1
- 
-○アセットをMayaで作成
-
-○配置ロジックを応用
+○libraryの調査
+・fbsの方法
+・使い方
