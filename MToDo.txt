@@ -1,11 +1,5 @@
 [反省]
-※休日も早寝早起きを行う
-※家事は必ず15分レベルで詳細にブロック化する
-※家での作業は15分レベルに極力留める
- -カフェで設計・Study、仕事場で作業を行う
-※家メインの日は3時間ワンセットを目安に家事を行う
- -カフェで家事とプレイタイトルを決める
-
+※動画はすぐにアプトプットを行う必要のある内容を学ぶ
 
 [Private]
 ○要らない物の整理
@@ -13,21 +7,13 @@
 
 [Study]
 ■Movie
-○Solaris
+○Maya
+https://www.youtube.com/playlist?list=PLhzCDkTROE9vg8DClp3bTHfXDiNW9LN47
+
+●Solaris
 https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPHAUH&index=2
 
 ■Read&Work
-○usdの構造のドキュメントメモを作成
-・グラフを作る(まずKitchen)
--ドキュメント
-https://fereria.github.io/reincarnation_tech/usd/model_hierarchy#component
-https://fereria.github.io/reincarnation_tech/usd/asset_structure
--サンプル
-Kitchen_set
-Davinci
-
-○USDマクロ
-
 ○Houdini
 ・WorkFlow
 https://support.borndigital.co.jp/hc/ja/articles/26261060729625-Houdini-%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6-%E3%83%81%E3%83%BC%E3%83%A0%E3%81%A7%E7%92%B0%E5%A2%83%E3%82%92%E5%85%B1%E6%9C%89%E3%81%99%E3%82%8B%E3%81%AB%E3%81%AF
@@ -41,6 +27,13 @@ https://qiita.com/snowxcrash
 
 ○チーバ君
 
+●USDのレイヤー構造
+-ドキュメント
+https://fereria.github.io/reincarnation_tech/usd/model_hierarchy#component
+https://fereria.github.io/reincarnation_tech/usd/asset_structure
+-サンプル
+Kitchen_set
+Davinci
 
 [USD]
 ■Work
@@ -71,6 +64,27 @@ https://qiita.com/snowxcrash/items/4e6e58e13c04dafc5749
 
 ■Pluginの新規実装
 ○geoからの情報の取得方法を調査
+void parseGeoFile(const std::string& filePath) {
+    std::ifstream file(filePath);
+    if (!file.is_open()) {
+        std::cerr << "Failed to open file: " << filePath << std::endl;
+        return;
+    }
+
+    std::string line;
+    while (std::getline(file, line)) {
+        // ファイルの行を解析する
+        if (line.find("Point") != std::string::npos) {
+            std::cout << "Point data found: " << line << std::endl;
+        } else if (line.find("Primitive") != std::string::npos) {
+            std::cout << "Primitive data found: " << line << std::endl;
+        }
+        // 他の構造も必要に応じて処理
+    }
+
+    file.close();
+}
+
 
 ○streamクラスのメモを用意
 
