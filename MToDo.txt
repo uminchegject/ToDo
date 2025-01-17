@@ -37,9 +37,13 @@ Davinci
 
 [USD]
 ■Work
-○ファイルフォーマットライブラリ周りを調査
-・ビルド方法
-・ライブラリの使用例
+○バッファーから情報を取得する一連の処理を確認する
+・デバッグ
+https://atmarkit.itmedia.co.jp/ait/articles/2107/16/news029.html
+https://qiita.com/ryhara/items/b3b9a3976f2b1220532a
+
+○C++におけるソースの調査
+・gfx_object
 
 ○内製フォーマットから情報を取得する処理をサンプル実装
 
