@@ -1,99 +1,31 @@
-[反省]
-※動画はすぐにアプトプットを行う必要のある内容を学ぶ
-
-[Private]
-○要らない物の整理
-
-
-[Study]
-■Movie
-○Maya
-https://www.youtube.com/playlist?list=PLhzCDkTROE9vg8DClp3bTHfXDiNW9LN47
-
-●Solaris
-https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPHAUH&index=2
-
-■Read&Work
-○Houdini
-・WorkFlow
-https://support.borndigital.co.jp/hc/ja/articles/26261060729625-Houdini-%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6-%E3%83%81%E3%83%BC%E3%83%A0%E3%81%A7%E7%92%B0%E5%A2%83%E3%82%92%E5%85%B1%E6%9C%89%E3%81%99%E3%82%8B%E3%81%AB%E3%81%AF
-https://fxnomemo.blogspot.com/2021/04/houdini-workflow.html
-
-○USDTutorial
-https://openusd.org/release/tut_usd_tutorials.html
-https://qiita.com/snowxcrash
-
-○JapaneseCastle
-
-○チーバ君
-
-●USDのレイヤー構造
--ドキュメント
-https://fereria.github.io/reincarnation_tech/usd/model_hierarchy#component
-https://fereria.github.io/reincarnation_tech/usd/asset_structure
--サンプル
-Kitchen_set
-Davinci
-
-[USD]
 ■Work
-○バッファーから情報を取得する一連の処理を確認する
+○※報告内容をまとめる
+
+○FlatBufferの調査
+・公式ドキュメント
+・GFドキュメント
+
+○FlatBufferのバイナリのデコートの調査
+・ドキュメント
+・ソース
+ -gfx_object
+
+○FlatBufferのFileFormatPluginを実装
 ・デバッグ
-https://atmarkit.itmedia.co.jp/ait/articles/2107/16/news029.html
-https://qiita.com/ryhara/items/b3b9a3976f2b1220532a
 
-○C++におけるソースの調査
-・gfx_object
+○GFPCで実装準備
+・デバッグビルド
+・FileFormatPluginの実装
+・社内フォーマットのfbsのデコード環境を整理
 
-○内製フォーマットから情報を取得する処理をサンプル実装
+■FlatBuffer
+○できることを調査
 
-△実装作業における流れの確認
-・ビルドソースの構成
-・ソースの扱いについて
+○挙動を確認
 
-○デバッグ環境の整理
-・独自実装したプラグインのDebug
-set(PXR_PREFIX examples)
-set(PXR_INSTALL_SUBDIR plugin/usd)
-add_subdirectory(usdObj)
-・GFさんのPCにおけるデバッグ環境の整理
-
-●Kitchen_set
-https://zenn.dev/remiria/articles/7514e41f89a887b33730
-https://zenn.dev/remiria/articles/9af685611d77b60e80d7
-https://www.hiroakit.com/archives/20221123/
-●Plugin
-https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
-https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
-●meshの構造
-https://qiita.com/snowxcrash/items/4e6e58e13c04dafc5749
+○FileFormatPluginで読み込み処理を実装
 
 ■Pluginの新規実装
-○情報取得処理をサンプルで実装
-bool UsdGeoFileFormat::Read(
-    SdfLayer* layer,
-    const string& resolvedPath,
-    bool metadataOnly) const
-{
-    std::ifstream fin(resolvedPath.c_str());
-    if (!fin.is_open()) {
-        TF_RUNTIME_ERROR("Failed to open file \"%s\"", resolvedPath.c_str());
-        return false;
-    }
-
-    std::string line;
-    while (std::getline(fin, line)) {
-        if (line.find("pointattributes") != std::string::npos) {
-            std::cout << "pointattributes data found: " << line << std::endl;
-        }
-        else if (line.find("primitives") != std::string::npos) {
-            std::cout << "primitives data found: " << line << std::endl;
-        }
-    }
-
-    return true;
-}
-
 ○最低限のPluginの実装方法をまとめる
 ・ドキュメントメモの作成(MD)
  -CMakeList
@@ -108,47 +40,3 @@ bool UsdGeoFileFormat::Read(
 ・実装を少しづつ進めてビルド確認を行う
  -Cmake
  -VisualStudio
-
-
-
-[GUYS]
-○アウトゲームの設計を調査
-・C++のサンプルプロジェクトを調査
- -VehicleGame
-
-○C++で実装
-・Title
-・CharacterSelect
-
-
-[PD]
-■Face_Generator
-○アセットの用意
-・全く違うタイプのアセットを複数用意する
-
-○配置ロジックの実装
-・柔軟性の高い配置ロジックを実装する
-
-○BaseGroundSurfaceのPDを実装
-・Primitive同士のマージを実装
-・Greebleノードを修正していく
- -SideFXLabのノードの中を確認する
-・CityGeneratorを調査する
-https://www.youtube.com/watch?v=Y6-EWYXZG4s
-
-△EditMode
-・blenderのプロジェクトを調査する
-https://wwwi.youtube.com/watch?v=UCYHV9GJU1Q
-
-●IDEA
-・Greeble(Divide)
-・Cluster(Type)
-・Vivit(SingleBlock)
-
-■JapaneseCastle
-○ソースの中身を調べる
- -Floor1
- 
-○アセットをMayaで作成
-
-○配置ロジックを応用
