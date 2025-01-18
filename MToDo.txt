@@ -1,53 +1,51 @@
+■Face_Generator
+※モジュールを最終目標にする
+
+○BuildingGeneratorを参考に必要機能を追加実装
+https://www.sidefx.com/ja/tutorials/building-generator/
+
+○ランダム要素の追加実装
+※柔軟性の高い配置ロジックを実装する
+・配置位置の調整パラメーター
+・配置確率
+・ブロックタイプのランダム化
+ -Blockの結合
+
+△アセットの用意
+・全く違うタイプのアセットを複数用意する
+・buildingGenerator
+
+△UEに適合
+
+△EditMode
+・blenderのプロジェクトを調査する
+https://wwwi.youtube.com/watch?v=UCYHV9GJU1Q
+
+
+■City_Volume_Generator
+○CityGeneratorを調査する
+https://www.youtube.com/watch?v=Y6-EWYXZG4s
+
+○BaseGroundSurfaceのPDを実装
+・Primitive同士のマージを実装
+・Greebleノードを修正していく
+ -SideFXLabのノードの中を確認する
+
+●IDEA
+・Greeble(Divide)
+・Cluster(Type)
+
+■JapaneseCastle
+○ソースの中身を調べる
+ -Floor1
+
+○配置ロジックを応用
+ 
+△アセットをMayaで作成
+
 ■FlatBuffer
 ○できることを調査
 
 ○挙動を確認
 
 ○FileFormatPluginで読み込み処理を実装
-
-■Pluginの新規実装
-○最低限のPluginの実装方法をまとめる
-・ドキュメントメモの作成(MD)
- -CMakeList
- -PluginInfo
- -FileFormat
-・Gitにソースをアップ
- -Gitにおけるプラグインソースの管理を整理
-
-○streamクラスのメモを用意
-
-○usdGeoを実装
-・実装を少しづつ進めてビルド確認を行う
- -Cmake
- -VisualStudio
-
-■Face_Generator
-○アセットの用意
-・全く違うタイプのアセットを複数用意する
-
-○配置ロジックの実装
-・柔軟性の高い配置ロジックを実装する
-
-○BaseGroundSurfaceのPDを実装
-・Primitive同士のマージを実装
-・Greebleノードを修正していく
- -SideFXLabのノードの中を確認する
-・CityGeneratorを調査する
-https://www.youtube.com/watch?v=Y6-EWYXZG4s
-
-△EditMode
-・blenderのプロジェクトを調査する
-https://wwwi.youtube.com/watch?v=UCYHV9GJU1Q
-
-●IDEA
-・Greeble(Divide)
-・Cluster(Type)
-・Vivit(SingleBlock)
-
-■JapaneseCastle
-○ソースの中身を調べる
- -Floor1
- 
-○アセットをMayaで作成
-
-○配置ロジックを応用
