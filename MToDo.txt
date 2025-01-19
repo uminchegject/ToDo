@@ -3,6 +3,7 @@
 
 ○BuildingGeneratorを参考に必要機能を追加実装
 https://www.sidefx.com/ja/tutorials/building-generator/
+・Edge
 
 ○ランダム要素の追加実装
 ※柔軟性の高い配置ロジックを実装する
@@ -42,10 +43,3 @@ https://www.youtube.com/watch?v=Y6-EWYXZG4s
 ○配置ロジックを応用
  
 △アセットをMayaで作成
-
-■FlatBuffer
-○できることを調査
-
-○挙動を確認
-
-○FileFormatPluginで読み込み処理を実装
