@@ -1,16 +1,46 @@
 ■Work
 ○※報告内容をまとめる
+お忙しいところ失礼致します。
+現在の進捗状況についてお伝えさせて頂きます。
+まず、OpenUSDにおいて内製フォーマット形式のファイルををOpen_USD側で読み込むためのプラグインの実装し、ビルドでusdviewで開く挙動の確認は完了しました。
+現在、内製フォーマット側(バッファーから)からの情報取得処理の実装を行っているのですが、C++におけるFlatBuffers周りの実装に
 ・内製フォーマット形式の読み込み処理は完了
 ・FlatBuffersの理解に時間がかかり、バイナリから情報を取得する実装に時間がかかっている
 ・追加の工数が欲しい
 
-○Pluginのビルド
-・内製フォーマットビルドし、読み込みできるかを確認
-・GFさんのPCにおけるデバッグ環境の整理
-
 ○FBSから情報を取得する処理をサンプル実装
-・aabb
-・name
+bool UsdGeoFileFormat::Read(
+    SdfLayer* layer,
+    const string& resolvedPath,
+    bool metadataOnly) const
+{
+	//全体データからメッシュデータの取得
+    std::ifstream fin(resolvedPath.c_str());
+    if (!fin.is_open()) {
+        TF_RUNTIME_ERROR("Failed to open file \"%s\"", resolvedPath.c_str());
+        return false;
+    }
+
+    while (std::getline(fin, line)) {
+        if (line.empty())
+            continue;
+
+        lineStream.clear();
+        lineStream.str(line);
+
+		std::string Path;
+        if (key == "\"mesh_data\":") {
+            lineStream >> Path; 
+            break;
+        }
+    }
+
+	//メッシュデータからメッシュバイナリの取得
+	
+	
+    return true;
+}
+
 
 ○FlatBufferの調査
 ・公式ドキュメント
