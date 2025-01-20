@@ -3,6 +3,8 @@
 ※休日は背景周りの興味のあるプロシージャルデザインの調査と実装をメインに行う
 
 [Private]
+○携帯の移行
+
 ○要らない物の整理
 
 
@@ -20,11 +22,6 @@ https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPH
  -公式ドキュメント(https://flatbuffers.dev/languages/cpp/)
 ・挙動を確認
 ・FileFormatPluginで読み込み処理を実装
-
-○HoudiniTutorial
-・WorkFlow
-https://support.borndigital.co.jp/hc/ja/articles/26261060729625-Houdini-%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6-%E3%83%81%E3%83%BC%E3%83%A0%E3%81%A7%E7%92%B0%E5%A2%83%E3%82%92%E5%85%B1%E6%9C%89%E3%81%99%E3%82%8B%E3%81%AB%E3%81%AF
-https://fxnomemo.blogspot.com/2021/04/houdini-workflow.html
 
 ○USDTutorial
 https://openusd.org/release/tut_usd_tutorials.html
@@ -67,6 +64,12 @@ Davinci
 [Work]
 ■Work
 ○※報告内容をまとめる
+・pluginの読み込みの確認
+・バイナリから情報を取得するための調査に時間が欲しい
+
+○Pluginのビルド
+・内製フォーマットビルドし、読み込みできるかを確認
+・GFさんのPCにおけるデバッグ環境の整理
 
 ○FlatBufferの調査
 ・公式ドキュメント
@@ -80,23 +83,12 @@ Davinci
 ○FlatBufferのFileFormatPluginを実装
 ・デバッグ
 
-○GFPCで実装準備
-・デバッグビルド
-・FileFormatPluginの実装
-・generated_hを使ってflatbufferの読み込み処理を実装
-
 ○内製フォーマットから情報を取得する処理をサンプル実装
+・generated_hを使ってflatbufferの読み込み処理を実装
 
 △実装作業における流れの確認
 ・ビルドソースの構成
 ・ソースの扱いについて
-
-○デバッグ環境の整理
-・独自実装したプラグインのDebug
-set(PXR_PREFIX examples)
-set(PXR_INSTALL_SUBDIR plugin/usd)
-add_subdirectory(usdObj)
-・GFさんのPCにおけるデバッグ環境の整理
 
 ●Kitchen_set
 https://zenn.dev/remiria/articles/7514e41f89a887b33730
