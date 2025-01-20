@@ -1,17 +1,66 @@
+[反省]
+※動画はすぐにアプトプットを行う必要のある内容を学ぶ
+※休日は背景周りの興味のあるプロシージャルデザインの調査と実装をメインに行う
+※ドキュメントまとめる際は参考サイトと書く内容をまずまとめて、範囲内で詳細を記載していく
+ -参考サイトと章を先に決める
+※検証(実装)とドキュメント作成は明確に分ける
+
+[Private]
+○携帯の移行
+
+○要らない物の整理
+
+
+[Study]
+■Movie
+○Maya
+https://www.youtube.com/playlist?list=PLhzCDkTROE9vg8DClp3bTHfXDiNW9LN47
+
+●Solaris
+https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPHAUH&index=2
+
+■Read&Work
+○USDTutorial
+https://openusd.org/release/tut_usd_tutorials.html
+https://qiita.com/snowxcrash
+
+○MayaTutorial
+・チーバ君
+
+○C++Tutorial(UETutorial)
+・アウトゲームの設計を調査
+・C++のサンプルプロジェクトを調査
+ -VehicleGame
+
+●USDのレイヤー構造
+-ドキュメント
+https://fereria.github.io/reincarnation_tech/usd/model_hierarchy#component
+https://fereria.github.io/reincarnation_tech/usd/asset_structure
+-サンプル
+Kitchen_set
+Davinci
+
+■FlatBuffers(Do)
+○Tutorialで挙動を確認
+https://flatbuffers.dev/tutorial/
+
+○Schemaの挙動をそれぞれ確認
+https://flatbuffers.dev/schema/
+
+○実装した内容と比較しつつそれぞれ確認
+https://flatbuffers.dev/languages/cpp/
+
+■FileFormatPlugin
+○streamクラスのメモを用意
+
+○usdGeoを実装
+・実装を少しづつ進めてビルド確認を行う
+ -Cmake
+ -VisualStudio
+
+
+[Work]
 ■Work
-○報告内容をまとめる
-お忙しいところ失礼いたします。
-現在の進捗状況についてご連絡するとともに、それに伴う工数追加のご相談をさせていただきたく存じます。
-
-まず、内製フォーマット形式のファイルをOpen_USDビルドで読み込むためのプラグインの実装を行い、ビルド後にusdviewでの挙動確認が完了しております。
-現在は、内製フォーマット（バイナリ）から情報を取得する処理の実装を進めておりますが、C++におけるFlatBuffers関連の実装に関する調査に時間を要しており、進捗が遅れている状況です。
-
-つきましては、誠に恐縮ではございますが、工数を3日追加させていただきたく存じます。
-具体的な予定としては、内製フォーマットからの情報取得処理の実装に3日、さらに取得した情報を基にUSDを構築する処理に4日間をいただければと考えております。
-
-お時間を頂戴してしまい大変恐縮ではございますが、何卒よろしくお願い申し上げます。
-
-
 ○FBSから情報を取得する処理をサンプル実装
 bool UsdGeoFileFormat::Read(
     SdfLayer* layer,
@@ -45,30 +94,72 @@ bool UsdGeoFileFormat::Read(
     return true;
 }
 
+○FileFormatの読み込み処理を設計
+・Pythonプロジェクトを参考にする
 
-■FileFormatPlugin(Do)
-○streamクラスのメモを用意
+○USDの構築処理を設計
 
-○usdGeoを実装
-・実装を少しづつ進めてビルド確認を行う
- -Cmake
- -VisualStudio
+△実装作業における流れの確認
+・ビルドソースの構成
+・ソースの扱いについて
 
-■FileFormatPlugin(Document)
-○新規プラグインの実装方法ドキュメント
-・実装の流れの概要
-・CmakeLists
- -ソースとコメント
-・Pluginfo
- -ソースとコメント
+●Kitchen_set
+https://zenn.dev/remiria/articles/7514e41f89a887b33730
+https://zenn.dev/remiria/articles/9af685611d77b60e80d7
+https://www.hiroakit.com/archives/20221123/
+●Plugin
+https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
+https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
+●meshの構造
+https://qiita.com/snowxcrash/items/4e6e58e13c04dafc5749
 
 
-■FlatBuffers(Do)
-○Tutorialで挙動を確認しドキュメント化
-https://flatbuffers.dev/tutorial/
+[PD]
+■Face_Generator
+○DetailAssetの対応
+・パラメーターの実装
+ -配置位置の調整
+ -タイプ管理
+・アセットの用意
+ -モデリング
+ -UV
+ -Material
+ -BuildingGenerator(SideFXLab)
 
-○Schemaの挙動をそれぞれ確認しドキュメント化
-https://flatbuffers.dev/schema/
+○ドキュメント化
+・モジュール化
+・メモの作成
 
-○実装した内容と比較しつつそれぞれ確認しドキュメント化
-https://flatbuffers.dev/languages/cpp/
+△UEに適合
+
+△EditMode
+・blenderのプロジェクトを調査する
+https://wwwi.youtube.com/watch?v=UCYHV9GJU1Q
+
+●RandomIDEA
+・配置位置のランダム調整
+・配置確率
+・ブロックタイプのランダム化
+ -Blockの結合
+
+■City_Volume_Generator
+○CityGeneratorのロジックを調査
+・BlenderのCityGeneratorを参考にする
+https://www.youtube.com/watch?v=Y6-EWYXZG4s
+
+△BaseGroundSurfaceのPDを実装
+・Primitive同士のマージを実装
+・Greebleノードを修正していく
+ -SideFXLabのノードの中を確認する
+
+●IDEA
+・Greeble(Divide)
+・Cluster(Type)
+
+■Building_Generator
+○JapaneseCastleを調べる
+ -Floor1
+
+○配置ロジックを応用
+ 
+△アセットをMayaで作成retaasdawsdaswaqea s
