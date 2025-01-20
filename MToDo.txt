@@ -1,12 +1,16 @@
 ■Work
-○※報告内容をまとめる
-お忙しいところ失礼致します。
-現在の進捗状況についてお伝えさせて頂きます。
-まず、OpenUSDにおいて内製フォーマット形式のファイルををOpen_USD側で読み込むためのプラグインの実装し、ビルドでusdviewで開く挙動の確認は完了しました。
-現在、内製フォーマット側(バッファーから)からの情報取得処理の実装を行っているのですが、C++におけるFlatBuffers周りの実装に
-・内製フォーマット形式の読み込み処理は完了
-・FlatBuffersの理解に時間がかかり、バイナリから情報を取得する実装に時間がかかっている
-・追加の工数が欲しい
+○報告内容をまとめる
+お忙しいところ失礼いたします。
+現在の進捗状況についてご連絡するとともに、それに伴う工数追加のご相談をさせていただきたく存じます。
+
+まず、内製フォーマット形式のファイルをOpen_USDビルドで読み込むためのプラグインの実装を行い、ビルド後にusdviewでの挙動確認が完了しております。
+現在は、内製フォーマット（バイナリ）から情報を取得する処理の実装を進めておりますが、C++におけるFlatBuffers関連の実装に関する調査に時間を要しており、進捗が遅れている状況です。
+
+つきましては、誠に恐縮ではございますが、工数を3日追加させていただきたく存じます。
+具体的な予定としては、内製フォーマットからの情報取得処理の実装に3日、さらに取得した情報を基にUSDを構築する処理に4日間をいただければと考えております。
+
+お時間を頂戴してしまい大変恐縮ではございますが、何卒よろしくお願い申し上げます。
+
 
 ○FBSから情報を取得する処理をサンプル実装
 bool UsdGeoFileFormat::Read(
@@ -42,34 +46,29 @@ bool UsdGeoFileFormat::Read(
 }
 
 
-○FlatBufferの調査
-・公式ドキュメント
-・GFドキュメント
-
-■Read&Work
-○FlatBuffers
-・Tutorila
-https://flatbuffers.dev/tutorial/
-・SchemaOverview
-https://flatbuffers.dev/schema/
-・C++
-https://flatbuffers.dev/languages/cpp/
-
-○挙動を確認
-・FileFormatPluginで読み込み処理を実装
-
-■Pluginの新規実装
-○最低限のPluginの実装方法をまとめる
-・ドキュメントメモの作成(MD)
- -CMakeList
- -PluginInfo
- -FileFormat
-・Gitにソースをアップ
- -Gitにおけるプラグインソースの管理を整理
-
+■FileFormatPlugin(Do)
 ○streamクラスのメモを用意
 
 ○usdGeoを実装
 ・実装を少しづつ進めてビルド確認を行う
  -Cmake
  -VisualStudio
+
+■FileFormatPlugin(Document)
+○新規プラグインの実装方法ドキュメント
+・実装の流れの概要
+・CmakeLists
+ -ソースとコメント
+・Pluginfo
+ -ソースとコメント
+
+
+■FlatBuffers(Do)
+○Tutorialで挙動を確認しドキュメント化
+https://flatbuffers.dev/tutorial/
+
+○Schemaの挙動をそれぞれ確認しドキュメント化
+https://flatbuffers.dev/schema/
+
+○実装した内容と比較しつつそれぞれ確認しドキュメント化
+https://flatbuffers.dev/languages/cpp/
