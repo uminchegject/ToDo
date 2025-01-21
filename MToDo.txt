@@ -1,9 +1,54 @@
+[反省]
+※動画はすぐにアプトプットを行う必要のある内容を学ぶ
+※休日は背景周りの興味のあるプロシージャルデザインの調査と実装をメインに行う
+※ドキュメントまとめる際は参考サイトと書く内容をまずまとめて、範囲内で詳細を記載していく
+ -参考サイトと章を先に決める
+※検証(実装)とドキュメント作成は明確に分ける
+
+[Private]
+○携帯の移行
+
+○要らない物の整理
+
+
+[Study]
+■Movie
+○Maya
+https://www.youtube.com/playlist?list=PLhzCDkTROE9vg8DClp3bTHfXDiNW9LN47
+
+●Solaris
+https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPHAUH&index=2
+
+■Read&Work
+○MSB8028の調査
+
+○releaseでデバッグするための調査
+
+○USDTutorial
+https://openusd.org/release/tut_usd_tutorials.html
+https://qiita.com/snowxcrash
+
+○MayaTutorial
+・チーバ君
+
+○C++Tutorial(UETutorial)
+・アウトゲームの設計を調査
+・C++のサンプルプロジェクトを調査
+ -VehicleGame
+
+●USDのレイヤー構造
+-ドキュメント
+https://fereria.github.io/reincarnation_tech/usd/model_hierarchy#component
+https://fereria.github.io/reincarnation_tech/usd/asset_structure
+-サンプル
+Kitchen_set
+Davinci
+
 ■FlatBuffers
 ○samplesのサンプルソースの調査
 ・sample_text.cpp
 ・sample_bfbs.cpp
 ・sample_binary.cpp
-
 
 ■FileFormatPlugin
 ○ドキュメントのまとめ
@@ -16,14 +61,15 @@
 ・AdobeObjの調査
  -△AdobeFileFormatをビルドし、挙動を確認
 
-
+[Work]
 ■Work
 ○バッファーの取得方法を調査
 ・binaryからbufferを取得する処理を調査
 https://zenn.dev/hikarin/articles/3346f9bb2ae2302a1a80
 
 ○デバッグ環境の構築
-・ログを確認する
+・DebugBuildを成功させる
+・ReleaseBuildでのデバッグ方法を調査する
 
 ○Fileの読み込み処理のデバッグ
 
@@ -33,20 +79,34 @@ https://zenn.dev/hikarin/articles/3346f9bb2ae2302a1a80
 △USDの構築処理を設計
 ・AdobeのFileFormatPluginを参考にする
 
+●Kitchen_set
+https://zenn.dev/remiria/articles/7514e41f89a887b33730
+https://zenn.dev/remiria/articles/9af685611d77b60e80d7
+https://www.hiroakit.com/archives/20221123/
+●Plugin
+https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
+https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
+●meshの構造
+https://qiita.com/snowxcrash/items/4e6e58e13c04dafc5749
 
+
+[PD]
 ■Face_Generator
+※Building Generator from Image から 子供都市に拡張していくことを目標にする
+
 ○HDAの整理
 ・Imageで実際にデバッグ
 
 ○パラメーターの実装(Detail)
- -配置位置の調整
- -タイプ管理
+・配置位置の調整
+・タイプ管理
+ -子供都市(https://www.youtube.com/watch?v=Bh1OuhywtBw)
 
 ○アセットの用意(Detail)
-・Procedural看板
- -プロシージャルモデリング
- -UV
- -Material
+・UV
+・Material
+ -子供都市(https://www.youtube.com/watch?v=Bh1OuhywtBw)
+ -Building Generator from Image
 
 ○ドキュメント化
 ・モジュール化
@@ -63,3 +123,25 @@ https://wwwi.youtube.com/watch?v=UCYHV9GJU1Q
 ・配置確率
 ・ブロックタイプのランダム化
  -Blockの結合
+
+■City_Volume_Generator
+○CityGeneratorのロジックを調査
+・BlenderのCityGeneratorを参考にする
+https://www.youtube.com/watch?v=Y6-EWYXZG4s
+
+△BaseGroundSurfaceのPDを実装
+・Primitive同士のマージを実装
+・Greebleノードを修正していく
+ -SideFXLabのノードの中を確認する
+
+●IDEA
+・Greeble(Divide)
+・Cluster(Type)
+
+■Building_Generator
+○JapaneseCastleを調べる
+ -Floor1
+
+○配置ロジックを応用
+ 
+△アセットをMayaで作成retaasdawsdaswaqea s
