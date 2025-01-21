@@ -40,18 +40,15 @@ https://fereria.github.io/reincarnation_tech/usd/asset_structure
 Kitchen_set
 Davinci
 
-■FlatBuffers(Do)
-○Tutorialで挙動を確認
-https://flatbuffers.dev/tutorial/
-
-○Schemaの挙動をそれぞれ確認
-https://flatbuffers.dev/schema/
-
-○実装した内容と比較しつつそれぞれ確認
-https://flatbuffers.dev/languages/cpp/
+■FlatBuffers
+○Tutorialの挙動確認
 
 ■FileFormatPlugin
-○streamクラスのメモを用意
+○ドキュメントのまとめ
+
+○USD構築の資料を調査
+
+○USD構築設計のメモを用意
 
 ○usdGeoを実装
 ・実装を少しづつ進めてビルド確認を行う
