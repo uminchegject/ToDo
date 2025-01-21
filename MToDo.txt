@@ -1,162 +1,30 @@
-[反省]
-※動画はすぐにアプトプットを行う必要のある内容を学ぶ
-※休日は背景周りの興味のあるプロシージャルデザインの調査と実装をメインに行う
-※ドキュメントまとめる際は参考サイトと書く内容をまずまとめて、範囲内で詳細を記載していく
- -参考サイトと章を先に決める
-※検証(実装)とドキュメント作成は明確に分ける
-
-[Private]
-○携帯の移行
-
-○要らない物の整理
-
-
-[Study]
-■Movie
-○Maya
-https://www.youtube.com/playlist?list=PLhzCDkTROE9vg8DClp3bTHfXDiNW9LN47
-
-●Solaris
-https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPHAUH&index=2
-
-■Read&Work
-○USDTutorial
-https://openusd.org/release/tut_usd_tutorials.html
-https://qiita.com/snowxcrash
-
-○MayaTutorial
-・チーバ君
-
-○C++Tutorial(UETutorial)
-・アウトゲームの設計を調査
-・C++のサンプルプロジェクトを調査
- -VehicleGame
-
-●USDのレイヤー構造
--ドキュメント
-https://fereria.github.io/reincarnation_tech/usd/model_hierarchy#component
-https://fereria.github.io/reincarnation_tech/usd/asset_structure
--サンプル
-Kitchen_set
-Davinci
-
 ■FlatBuffers
-○Tutorialの挙動確認
+○samplesのサンプルソースの調査
+・binaryからbufferを取得する処理を調査
+
+○testsのサンプルソースの調査
+・binaryからbufferを取得する処理を調査
 
 ■FileFormatPlugin
+○AdobeFileFormatの調査
+・Objの調査(※OpenUSDのObjに)
+・△AdobeFileFormatをビルドし、挙動を確認
+
 ○ドキュメントのまとめ
-
-○USD構築の資料を調査
-
-○USD構築設計のメモを用意
-
-○usdGeoを実装
-・実装を少しづつ進めてビルド確認を行う
- -Cmake
- -VisualStudio
 
 
 [Work]
 ■Work
-○FBSから情報を取得する処理をサンプル実装
-bool UsdGeoFileFormat::Read(
-    SdfLayer* layer,
-    const string& resolvedPath,
-    bool metadataOnly) const
-{
-	//全体データからメッシュデータの取得
-    std::ifstream fin(resolvedPath.c_str());
-    if (!fin.is_open()) {
-        TF_RUNTIME_ERROR("Failed to open file \"%s\"", resolvedPath.c_str());
-        return false;
-    }
+○バッファーの取得方法を既存ソースから調査
+・binaryからbufferを取得する処理を調査
 
-    while (std::getline(fin, line)) {
-        if (line.empty())
-            continue;
+○デバッグ環境の構築
+・ログを確認する
 
-        lineStream.clear();
-        lineStream.str(line);
+○Fileの読み込み処理のデバッグ
 
-		std::string Path;
-        if (key == "\"mesh_data\":") {
-            lineStream >> Path; 
-            break;
-        }
-    }
+○FileFormatの読み込み処理を最低限実装
+・OpenUSDのTutorialのObjを参考に実装
 
-	//メッシュデータからメッシュバイナリの取得
-	
-	
-    return true;
-}
-
-○FileFormatの読み込み処理を設計
-・Pythonプロジェクトを参考にする
-
-○USDの構築処理を設計
-
-△実装作業における流れの確認
-・ビルドソースの構成
-・ソースの扱いについて
-
-●Kitchen_set
-https://zenn.dev/remiria/articles/7514e41f89a887b33730
-https://zenn.dev/remiria/articles/9af685611d77b60e80d7
-https://www.hiroakit.com/archives/20221123/
-●Plugin
-https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
-https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
-●meshの構造
-https://qiita.com/snowxcrash/items/4e6e58e13c04dafc5749
-
-
-[PD]
-■Face_Generator
-○DetailAssetの対応
-・パラメーターの実装
- -配置位置の調整
- -タイプ管理
-・アセットの用意
- -モデリング
- -UV
- -Material
- -BuildingGenerator(SideFXLab)
-
-○ドキュメント化
-・モジュール化
-・メモの作成
-
-△UEに適合
-
-△EditMode
-・blenderのプロジェクトを調査する
-https://wwwi.youtube.com/watch?v=UCYHV9GJU1Q
-
-●RandomIDEA
-・配置位置のランダム調整
-・配置確率
-・ブロックタイプのランダム化
- -Blockの結合
-
-■City_Volume_Generator
-○CityGeneratorのロジックを調査
-・BlenderのCityGeneratorを参考にする
-https://www.youtube.com/watch?v=Y6-EWYXZG4s
-
-△BaseGroundSurfaceのPDを実装
-・Primitive同士のマージを実装
-・Greebleノードを修正していく
- -SideFXLabのノードの中を確認する
-
-●IDEA
-・Greeble(Divide)
-・Cluster(Type)
-
-■Building_Generator
-○JapaneseCastleを調べる
- -Floor1
-
-○配置ロジックを応用
- 
-△アセットをMayaで作成retaasdawsdaswaqea s
+△USDの構築処理を設計
+・AdobeのFileFormatPluginを参考にする
