@@ -1,22 +1,26 @@
 ■FlatBuffers
 ○samplesのサンプルソースの調査
-・binaryからbufferを取得する処理を調査
+・sample_text.cpp
+・sample_bfbs.cpp
+・sample_binary.cpp
 
-○testsのサンプルソースの調査
-・binaryからbufferを取得する処理を調査
 
 ■FileFormatPlugin
-○AdobeFileFormatの調査
-・Objの調査(※OpenUSDのObjに)
-・△AdobeFileFormatをビルドし、挙動を確認
-
 ○ドキュメントのまとめ
+・新規プラグインの実装
+
+△dancingCubesの調査
+
+○構成の調査
+・TutorialObjの調査
+・AdobeObjの調査
+ -△AdobeFileFormatをビルドし、挙動を確認
 
 
-[Work]
 ■Work
-○バッファーの取得方法を既存ソースから調査
+○バッファーの取得方法を調査
 ・binaryからbufferを取得する処理を調査
+https://zenn.dev/hikarin/articles/3346f9bb2ae2302a1a80
 
 ○デバッグ環境の構築
 ・ログを確認する
@@ -28,3 +32,34 @@
 
 △USDの構築処理を設計
 ・AdobeのFileFormatPluginを参考にする
+
+
+■Face_Generator
+○HDAの整理
+・Imageで実際にデバッグ
+
+○パラメーターの実装(Detail)
+ -配置位置の調整
+ -タイプ管理
+
+○アセットの用意(Detail)
+・Procedural看板
+ -プロシージャルモデリング
+ -UV
+ -Material
+
+○ドキュメント化
+・モジュール化
+・メモの作成
+
+△UEに適合
+
+△EditMode
+・blenderのプロジェクトを調査する
+https://wwwi.youtube.com/watch?v=UCYHV9GJU1Q
+
+●RandomIDEA
+・配置位置のランダム調整
+・配置確率
+・ブロックタイプのランダム化
+ -Blockの結合
