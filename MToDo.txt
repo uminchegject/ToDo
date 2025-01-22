@@ -1,11 +1,12 @@
 ■FlatBuffers
 ○デバッグ
+・処理をドキュメント化
 
 △FileFormatPluginで読み込み処理を実装
 
 ■FileFormatPlugin
-△AdobeFileFormatをビルドし、挙動を確認
-・Adobeのfileformatpluginを引数をつけてビルド
+○AdobeFileFormatをビルドし
+https://github.com/adobe/USD-Fileformat-plugins#:~:text=3.%20Configure%2C%20build%20and%20install%20it
 
 △dancingCubesの調査
 
@@ -42,22 +43,40 @@ https://zenn.dev/hikarin/articles/3346f9bb2ae2302a1a80
 △USDの構築処理を設計
 ・AdobeのFileFormatPluginを参考にする
 
+■Base
+○リファレンス
+
+○ブロック化(モデリング)
+
+■Fun
+○リファレンス
+・動画も探す
+
+○モデリング
+・UV
+・マテリアル
+
+○プロシージャルモデリングの実装
+
+○配置ロジックの実装
+・配置位置の調整
+・配置率
+
+■Signs
+○リファレンス
+
+○プロシージャルモデリング
+
+○プロシージャルマテリアル
+
 ■Face_Generator
 ※Building Generator from Image から 子供都市に拡張していくことを目標にする
+https://www.youtube.com/watch?v=Bh1OuhywtBw
 
 ○HDAの整理
 ・Imageで実際にデバッグ
 
-○パラメーターの実装(Detail)
-・配置位置の調整
-・タイプ管理
- -子供都市(https://www.youtube.com/watch?v=Bh1OuhywtBw)
-
-○アセットの用意(Detail)
-・UV
-・Material
- -子供都市(https://www.youtube.com/watch?v=Bh1OuhywtBw)
- -Building Generator from Image
+○タイプ管理の実装
 
 ○ドキュメント化
 ・モジュール化
