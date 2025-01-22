@@ -1,88 +1,147 @@
 [反省]
-※休日も早寝早起きを行う
-※家事は必ず15分レベルで詳細にブロック化する
-※家での作業は15分レベルに極力留める
- -カフェで設計・Study、仕事場で作業を行う
-※家メインの日は3時間ワンセットを目安に家事を行う
- -カフェで家事とプレイタイトルを決める
+※動画はすぐにアプトプットを行う必要のある内容を学ぶ
+※休日は背景周りの興味のあるプロシージャルデザインの調査と実装をメインに行う
+※ドキュメントまとめる際は参考サイトと書く内容をまずまとめて、範囲内で詳細を記載していく
+ -参考サイトと章を先に決める
+※検証(実装)とドキュメント作成は明確に分ける
 
 
 [Private]
+○携帯の移行
+
 ○要らない物の整理
 
 
 [Study]
 ■Movie
-○HoudiniのTutorial
+○Maya
+https://www.youtube.com/playlist?list=PLhzCDkTROE9vg8DClp3bTHfXDiNW9LN47
 
-○Solaris
+●Solaris
 https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPHAUH&index=2
 
+■Read&Work
+○USDTutorial
+https://openusd.org/release/tut_usd_tutorials.html
+https://qiita.com/snowxcrash
+
+○MayaTutorial
+・チーバ君
+
+○C++Tutorial(UETutorial)
+・アウトゲームの設計を調査
+・C++のサンプルプロジェクトを調査
+ -VehicleGame
+
+●USDのレイヤー構造
+-ドキュメント
+https://fereria.github.io/reincarnation_tech/usd/model_hierarchy#component
+https://fereria.github.io/reincarnation_tech/usd/asset_structure
+-サンプル
+Kitchen_set
+Davinci
+
+■FlatBuffers
+○samplesのサンプルソースの調査
+・sample_text.cpp
+・sample_bfbs.cpp
+・sample_binary.cpp
+
+○デバッグ
+
+■FileFormatPlugin
+○構成の調査
+・TutorialObjの調査
+・AdobeObjの調査
+ -△AdobeFileFormatをビルドし、挙動を確認
+
+△dancingCubesの調査
+
+
+[Work]
 ■Work
-○HoudiniのTutorialをベースにPDを勉強
+○デバッグ環境の構築
+・DebugBuildを成功させる
+ -MSB8028をChatGPTで確認
+・ReleaseBuildでのデバッグ方法を調査する
+ -ChatGPTで確認
 
-○Maya本
-・Mesh,Material,Skelton
-・背景
+○バッファーの取得方法を調査
+・binaryからbufferを取得する処理を調査
+ -https://zenn.dev/hikarin/articles/3346f9bb2ae2302a1a80
+ -GFドキュメント
 
-[USD]
-○デバッグ環境の整理
-・独自実装したプラグインのDebug
-set(PXR_PREFIX examples)
-set(PXR_INSTALL_SUBDIR plugin/usd)
+○Fileの読み込み処理のデバッグ
 
-add_subdirectory(usdObj)
+○FileFormatの読み込み処理を最低限実装
+・OpenUSDのTutorialのObjを参考に実装
 
-・GFさんのPCにおけるデバッグ環境の整理
+△USDの構築処理を設計
+・AdobeのFileFormatPluginを参考にする
 
-
-○USDにおける各コンポーネントの実装方法を調査及びドキュメント化
-・Mesh
- -usdObj
- -サンプルソースの作成
-・Material
-・Skelton
-
-△C++ベースプラグインの実装方法
-・Cmakeの書き方の勉強
-
+●Kitchen_set
+https://zenn.dev/remiria/articles/7514e41f89a887b33730
+https://zenn.dev/remiria/articles/9af685611d77b60e80d7
+https://www.hiroakit.com/archives/20221123/
 ●Plugin
 https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
 https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
+●meshの構造
+https://qiita.com/snowxcrash/items/4e6e58e13c04dafc5749
 
 
-[MModeling]
-※ファザード生成をとりあえず実装する。
-○上下方向を正確にする
+[PD]
+■Face_Generator
+※Building Generator from Image から 子供都市に拡張していくことを目標にする
 
-■Type
-○PrimにTypeListを入れる
-・SurfaceToPointにもTypeListを継承する
+○HDAの整理
+・Imageで実際にデバッグ
 
-○検証
-・SurfaceをGreeble
- -GreebleのDivideの際にVividBlock(SingleBlock)を生成しておく
-・SurfaceのTypeをClusterで整理する
+○パラメーターの実装(Detail)
+・配置位置の調整
+・タイプ管理
+ -子供都市(https://www.youtube.com/watch?v=Bh1OuhywtBw)
 
-○TypeAssetを用意
-・UEAssetで検証
+○アセットの用意(Detail)
+・UV
+・Material
+ -子供都市(https://www.youtube.com/watch?v=Bh1OuhywtBw)
+ -Building Generator from Image
 
+○ドキュメント化
+・モジュール化
+・メモの作成
+
+△UEに適合
+
+△EditMode
+・blenderのプロジェクトを調査する
+https://wwwi.youtube.com/watch?v=UCYHV9GJU1Q
+
+●RandomIDEA
+・配置位置のランダム調整
+・配置確率
+・ブロックタイプのランダム化
+ -Blockの結合
+
+■City_Volume_Generator
+○CityGeneratorのロジックを調査
+・BlenderのCityGeneratorを参考にする
+https://www.youtube.com/watch?v=Y6-EWYXZG4s
+
+△BaseGroundSurfaceのPDを実装
+・Primitive同士のマージを実装
+・Greebleノードを修正していく
+ -SideFXLabのノードの中を確認する
 
 ●IDEA
 ・Greeble(Divide)
 ・Cluster(Type)
-・Vivit(SingleBlock)
 
-■BaseMaker
-○BaseGroundSurfaceのPDを実装
-・Primitive同士のマージを実装
+■Building_Generator
+○JapaneseCastleを調べる
+ -Floor1
 
-○Greebleノードを修正していく
-・SideFXLabのノードの中を確認する
-
-○CityGeneratorを調査する
-https://www.youtube.com/watch?v=Y6-EWYXZG4s
-
-■EditMode
-○blenderのプロジェクトを調査する
-https://wwwi.youtube.com/watch?v=UCYHV9GJU1Q
+○配置ロジックを応用
+ 
+△アセットをMayaで作成retaasdawsdaswaqea s
