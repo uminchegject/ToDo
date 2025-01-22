@@ -5,6 +5,7 @@
  -参考サイトと章を先に決める
 ※検証(実装)とドキュメント作成は明確に分ける
 
+
 [Private]
 ○携帯の移行
 
@@ -20,10 +21,6 @@ https://www.youtube.com/playlist?list=PLhzCDkTROE9vg8DClp3bTHfXDiNW9LN47
 https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPHAUH&index=2
 
 ■Read&Work
-○MSB8028の調査
-
-○releaseでデバッグするための調査
-
 ○USDTutorial
 https://openusd.org/release/tut_usd_tutorials.html
 https://qiita.com/snowxcrash
@@ -50,26 +47,31 @@ Davinci
 ・sample_bfbs.cpp
 ・sample_binary.cpp
 
+○デバッグ
+
 ■FileFormatPlugin
 ○ドキュメントのまとめ
 ・新規プラグインの実装
-
-△dancingCubesの調査
 
 ○構成の調査
 ・TutorialObjの調査
 ・AdobeObjの調査
  -△AdobeFileFormatをビルドし、挙動を確認
 
+△dancingCubesの調査
+
 [Work]
 ■Work
-○バッファーの取得方法を調査
-・binaryからbufferを取得する処理を調査
-https://zenn.dev/hikarin/articles/3346f9bb2ae2302a1a80
-
 ○デバッグ環境の構築
 ・DebugBuildを成功させる
+ -MSB8028をChatGPTで確認
 ・ReleaseBuildでのデバッグ方法を調査する
+ -ChatGPTで確認
+
+○バッファーの取得方法を調査
+・binaryからbufferを取得する処理を調査
+ -https://zenn.dev/hikarin/articles/3346f9bb2ae2302a1a80
+ -GFドキュメント
 
 ○Fileの読み込み処理のデバッグ
 
