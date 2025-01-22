@@ -42,36 +42,44 @@ Kitchen_set
 Davinci
 
 ■FlatBuffers
-○samplesのサンプルソースの調査
-・sample_text.cpp
-・sample_bfbs.cpp
-・sample_binary.cpp
-
 ○デバッグ
+・処理をドキュメント化
+
+△FileFormatPluginで読み込み処理を実装
+
 
 ■FileFormatPlugin
-○構成の調査
-・TutorialObjの調査
-・AdobeObjの調査
- -△AdobeFileFormatをビルドし、挙動を確認
-
 △dancingCubesの調査
 
+△AdobePluginのビルド
 
 [Work]
 ■Work
-○デバッグ環境の構築
-・DebugBuildを成功させる
- -MSB8028をChatGPTで確認
-・ReleaseBuildでのデバッグ方法を調査する
- -ChatGPTで確認
+○検証用のソースを準備
+・バイナリパスの取得処理
+{
+	"test" : 1,
+	"test_list" : [
+		"test_2" : "test_value",
+		"test_3" : {
+			"x" : 1,
+			"y" : 1,
+			"z" : 1,
+		}
+	}
+}
 
-○バッファーの取得方法を調査
-・binaryからbufferを取得する処理を調査
- -https://zenn.dev/hikarin/articles/3346f9bb2ae2302a1a80
- -GFドキュメント
+○バイナリから読み込む処理を調査
+・GetRootAsを調査
+・Tutorialの例を再現する
+https://zenn.dev/hikarin/articles/3346f9bb2ae2302a1a80
 
-○Fileの読み込み処理のデバッグ
+○バイナリの読み込み処理のデバッグ
+
+○最低限の実装フローを設計
+・TutorialObjの調査
+・PythonSampleの調査
+・△ドキュメントにまとめる
 
 ○FileFormatの読み込み処理を最低限実装
 ・OpenUSDのTutorialのObjを参考に実装
@@ -93,24 +101,34 @@ https://qiita.com/snowxcrash/items/4e6e58e13c04dafc5749
 [PD]
 ■Face_Generator
 ※Building Generator from Image から 子供都市に拡張していくことを目標にする
+https://www.youtube.com/watch?v=Bh1OuhywtBw
 
 ○HDAの整理
 ・Imageで実際にデバッグ
 
-○パラメーターの実装(Detail)
-・配置位置の調整
-・タイプ管理
- -子供都市(https://www.youtube.com/watch?v=Bh1OuhywtBw)
-
-○アセットの用意(Detail)
-・UV
-・Material
- -子供都市(https://www.youtube.com/watch?v=Bh1OuhywtBw)
- -Building Generator from Image
-
 ○ドキュメント化
 ・モジュール化
 ・メモの作成
+
+○Base
+・リファレンス
+・ブロック化(モデリング)
+
+○Fun
+・リファレンス
+https://www.youtube.com/watch?v=tbH3jyg5raQ
+・モデリング
+ -UV
+ -マテリアル
+・プロシージャルモデリングの実装
+・配置ロジックの実装
+ -配置位置の調整
+ -配置率
+
+○Signs
+・リファレンス
+・プロシージャルモデリング
+・プロシージャルマテリアル
 
 △UEに適合
 
