@@ -12,9 +12,6 @@
 ■Work
 ○検証用のソースを準備
 ・バイナリパスの取得処理
-・バイナリから情報を取得する処理
-https://zenn.dev/hikarin/articles/3346f9bb2ae2302a1a80
-
 {
 	"test" : 1,
 	"test_list" : [
@@ -26,6 +23,11 @@ https://zenn.dev/hikarin/articles/3346f9bb2ae2302a1a80
 		}
 	}
 }
+
+○バイナリから読み込む処理を調査
+・ドキュメントの例を再現する
+・△Tutorialの例を再現する
+https://zenn.dev/hikarin/articles/3346f9bb2ae2302a1a80
 
 ○バイナリの読み込み処理のデバッグ
 
