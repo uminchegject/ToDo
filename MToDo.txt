@@ -13,7 +13,7 @@ https://flatbuffers.dev/quick_start/
 ・AdobeObjの調査
 
 ○AdobeFileFormatをビルドし、挙動を確認
-https://github.com/adobe/USD-Fileformat-plugins
+・adobeのfileformatpluginを引数をつけてビルド
 
 △dancingCubesの調査
 
