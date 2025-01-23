@@ -1,10 +1,9 @@
 [反省]
-※動画はすぐにアプトプットを行う必要のある内容を学ぶ
-※休日は背景周りの興味のあるプロシージャルデザインの調査と実装をメインに行う
 ※ドキュメントまとめる際は参考サイトと書く内容をまずまとめて、範囲内で詳細を記載していく
  -参考サイトと章を先に決める
 ※検証(実装)とドキュメント作成は明確に分ける
-
+※4時間同じ作業は極力避ける
+ -午後1では最低1時間自習を入れる
 
 [Private]
 ○携帯の移行
@@ -42,89 +41,139 @@ Kitchen_set
 Davinci
 
 ■FlatBuffers
-○デバッグ
-・処理をドキュメント化
+○ドキュメント化
+・デコード
+・エンコード
 
 ○Schemaの確認
 https://flatbuffers.dev/schema/
 ・サンプルソースを調べる
 ・△実際に書き込みから取得までを実装しデバッグする
 
-△FileFormatPluginで読み込み処理を実装
-
-
 ■FileFormatPlugin
-○GEOの読み込み処理の実装
-
-○USDの構築処理を実装
+○GEOの実装メモの用意
+・Stream
+・StreamIO
+・Translator
 
 △dancingCubesの調査
 
 △AdobePluginのビルド
 
+
+
 [Work]
 ■Work
-○バイナリパスの取得処理を実装
+○StreamIOクラスの実装
+・バイナリパスの取得処理を実装
+ -Main
+ -Mesh
+ -Bin
+
+class StreamIO
 {
-	"test" : 1,
-	"test_list" : [
-		"test_2" : "test_value",
-		"test_3" : {
-			"x" : 1,
-			"y" : 1,
-			"z" : 1,
-		}
-	}
+	public:
+	
+	//全体
+	bool ReadFromStream(std::istream &input, Stream *stream, std::string *error)
+	
+	//バイナリから必要な情報をクラスにまとめる
+	bool ReadMeshFromStream(std::istream &input, Stream *stream, std::string *error)
+
+	bool ReadMaterialFromStream(std::istream &input, Stream *stream, std::string *error)
+
+	bool ReadSkinFromStream(std::istream &input, Stream *stream, std::string *error)
+
 }
 
-○バイナリから読み込む処理を実装
-・GetRootAsを調査
-・Tutorialの例を再現する
-https://zenn.dev/hikarin/articles/3346f9bb2ae2302a1a80
 
-#include <fstream>
-#include <vector>
-#include <iostream>
-#include "example_generated.h"
+○streamクラスの実装
+・PythonSampleの調査
+・MeshClassのみ実装する
 
-int main() {
-    // バイナリデータをファイルから読み込む
-    std::ifstream infile("data.bin", std::ios::binary);
-    if (!infile) {
-        std::cerr << "Failed to open file!" << std::endl;
-        return -1;
-    }
+class Stream
+{
+	public:
+	
+	
+	
+}
 
-    // ファイルの終端を取得してサイズを取得
-    infile.seekg(0, std::ios::end);
-    size_t fileSize = infile.tellg();
-    infile.seekg(0, std::ios::beg);
+class MeshStream
+{
 
-    // バッファを確保して読み込む
-    std::vector<uint8_t> buffer(fileSize);
-    infile.read(reinterpret_cast<char*>(buffer.data()), fileSize);
+}
 
-    // ---- バイナリからルートを取得 ----
-    const MyData* data = flatbuffers::GetRoot<MyData>(buffer.data());
+class Material
+{
 
-    // ---- データを操作 ----
-    if (data) {
-        std::cout << "ID: " << data->id() << std::endl;
-        std::cout << "Name: " << data->name()->c_str() << std::endl;
-    } else {
-        std::cerr << "Invalid FlatBuffer data!" << std::endl;
-    }
+}
 
-    return 0;
+class Skin
+{
+
 }
 
 ○USDの構築処理のサンプル処理を実装
-・OpenUSDのTutorialのObjを参考に実装
+SdfLayerRefPtr
+TranslateMeshToUsd(const class MeshStream &meshStream);
 
-○最低限の実装フローを設計
-・TutorialObjの調査
-・PythonSampleの調査
-・△ドキュメントにまとめる
+SdfLayerRefPtr
+
+SdfLayerRefPtr TranslateMeshToUsd(const Stream &Stream)
+{
+    // Create the layer to populate.
+    SdfLayerRefPtr layer = SdfLayer::CreateAnonymous(".usda");
+
+    // Create a UsdStage with that root layer.
+    UsdStageRefPtr stage = UsdStage::Open(layer);
+
+	// Create a mesh for the group.
+	UsdGeomMesh mesh = UsdGeomMesh::Define(stage, SdfPath("/" + group.name));
+
+	// Populate the mesh data from the obj data.  This is not a very smart
+	// importer.  We throw all the verts onto everything for simplicity.  If
+	// this was a proper obj importer, it would reindex verts per-group.
+	mesh.GetPointsAttr().Set(usdPoints);
+
+	VtArray<int> faceVertexCounts, faceVertexIndices, faceUVIndices;
+	for (const auto& face : group.faces) {
+		faceVertexCounts.push_back(face.size());
+		for (int p = face.pointsBegin; p != face.pointsEnd; ++p) {
+			faceVertexIndices.push_back(objPoints[p].vertIndex);
+			if (objPoints[p].uvIndex >= 0) {
+				faceUVIndices.push_back(objPoints[p].uvIndex);
+			}
+		}
+	}
+
+	// Now set the attributes.
+	mesh.GetFaceVertexCountsAttr().Set(faceVertexCounts);
+	mesh.GetFaceVertexIndicesAttr().Set(faceVertexIndices);
+
+	// Create a primvar for the UVs if stored in the obj data. Note that
+	// it's valid in this layer for the UV mapping to not be fully defined
+	// in the obj data. For example, this layer may just provide the texture
+	// coordinates and another layer the indexing, or vice versa.
+	if (!usdUVs.empty() || !faceUVIndices.empty()) {
+		UsdGeomPrimvar uvPrimVar = UsdGeomPrimvarsAPI(mesh).CreatePrimvar(
+		TfToken("uv"), SdfValueTypeNames->TexCoord2fArray,
+		UsdGeomTokens->faceVarying);
+		if (!usdUVs.empty()) {
+			uvPrimVar.GetAttr().Set(usdUVs);
+		}
+		if (!faceUVIndices.empty()) {
+			uvPrimVar.CreateIndicesAttr().Set(faceUVIndices); // indexed
+		}
+	}
+
+	// Set extent.
+	mesh.GetExtentAttr().Set(extentArray);
+    }
+
+    return layer;
+}
+
 
 △USDの構築処理を設計
 ・AdobeのFileFormatPluginを参考にする
@@ -140,13 +189,18 @@ https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
 https://qiita.com/snowxcrash/items/4e6e58e13c04dafc5749
 
 
+
 [PD]
 ■Face_Generator
 ※Building Generator from Image から 子供都市に拡張していくことを目標にする
 https://www.youtube.com/watch?v=Bh1OuhywtBw
 
-○HDAの整理
-・Imageで実際にデバッグ
+○モデリングに必要な最低限の操作確認
+・Base
+https://www.youtube.com/watch?v=CsFIbPUrK-U&list=PLhVBAU5fUlz21YOtCmtOX7g5RWAKyxhXU&index=15
+・Funs
+https://www.youtube.com/watch?v=pntX0my-Sp4
+https://www.youtube.com/watch?v=8PTPbsNwZ4U&t=9s
 
 ○ドキュメント化
 ・モジュール化
@@ -158,7 +212,6 @@ https://www.youtube.com/watch?v=Bh1OuhywtBw
 
 ○Fun
 ・リファレンス
-https://www.youtube.com/watch?v=tbH3jyg5raQ
 ・モデリング
  -UV
  -マテリアル
