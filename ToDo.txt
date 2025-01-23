@@ -45,18 +45,26 @@ Davinci
 ○デバッグ
 ・処理をドキュメント化
 
+○Schemaの確認
+https://flatbuffers.dev/schema/
+・サンプルソースを調べる
+・△実際に書き込みから取得までを実装しデバッグする
+
 △FileFormatPluginで読み込み処理を実装
 
 
 ■FileFormatPlugin
+○GEOの読み込み処理の実装
+
+○USDの構築処理を実装
+
 △dancingCubesの調査
 
 △AdobePluginのビルド
 
 [Work]
 ■Work
-○検証用のソースを準備
-・バイナリパスの取得処理
+○バイナリパスの取得処理を実装
 {
 	"test" : 1,
 	"test_list" : [
@@ -69,20 +77,54 @@ Davinci
 	}
 }
 
-○バイナリから読み込む処理を調査
+○バイナリから読み込む処理を実装
 ・GetRootAsを調査
 ・Tutorialの例を再現する
 https://zenn.dev/hikarin/articles/3346f9bb2ae2302a1a80
 
-○バイナリの読み込み処理のデバッグ
+#include <fstream>
+#include <vector>
+#include <iostream>
+#include "example_generated.h"
+
+int main() {
+    // バイナリデータをファイルから読み込む
+    std::ifstream infile("data.bin", std::ios::binary);
+    if (!infile) {
+        std::cerr << "Failed to open file!" << std::endl;
+        return -1;
+    }
+
+    // ファイルの終端を取得してサイズを取得
+    infile.seekg(0, std::ios::end);
+    size_t fileSize = infile.tellg();
+    infile.seekg(0, std::ios::beg);
+
+    // バッファを確保して読み込む
+    std::vector<uint8_t> buffer(fileSize);
+    infile.read(reinterpret_cast<char*>(buffer.data()), fileSize);
+
+    // ---- バイナリからルートを取得 ----
+    const MyData* data = flatbuffers::GetRoot<MyData>(buffer.data());
+
+    // ---- データを操作 ----
+    if (data) {
+        std::cout << "ID: " << data->id() << std::endl;
+        std::cout << "Name: " << data->name()->c_str() << std::endl;
+    } else {
+        std::cerr << "Invalid FlatBuffer data!" << std::endl;
+    }
+
+    return 0;
+}
+
+○USDの構築処理のサンプル処理を実装
+・OpenUSDのTutorialのObjを参考に実装
 
 ○最低限の実装フローを設計
 ・TutorialObjの調査
 ・PythonSampleの調査
 ・△ドキュメントにまとめる
-
-○FileFormatの読み込み処理を最低限実装
-・OpenUSDのTutorialのObjを参考に実装
 
 △USDの構築処理を設計
 ・AdobeのFileFormatPluginを参考にする
