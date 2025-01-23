@@ -1,180 +1,109 @@
-■UsdGeomMeshの構成方法
-●最低限必要なMeshの構造
-・int[] faceVertexCounts
-面ごとの頂点数
-{
-    std::vector<int> iList;
-    iList.push_back(4);
+○StreamIOクラスの実装
+・バイナリパスの取得処理を実装
+ -Main
+ -Mesh
+ -Bin
 
-    UsdAttribute attr = geomMesh.CreateFaceVertexCountsAttr();
-    VtIntArray ar = VtIntArray(iList.begin(), iList.end());
-    attr.Set(ar);
+class StreamIO
+{
+	public:
+	
+	//全体
+	bool ReadFromStream(std::istream &input, Stream *stream, std::string *error)
+	
+	//バイナリから必要な情報をクラスにまとめる
+	bool ReadMeshFromStream(std::istream &input, Stream *stream, std::string *error)
+
+	bool ReadMaterialFromStream(std::istream &input, Stream *stream, std::string *error)
+
+	bool ReadSkinFromStream(std::istream &input, Stream *stream, std::string *error)
+
 }
 
-・int[] faceVertexIndices
-面の頂点インデックス
+
+○streamクラスの実装
+・PythonSampleの調査
+・MeshClassのみ実装する
+
+class Stream
 {
-    std::vector<int> iList;
-    iList.push_back(0);
-    iList.push_back(1);
-    iList.push_back(2);
-    iList.push_back(3);
-
-    UsdAttribute attr = geomMesh.CreateFaceVertexIndicesAttr();
-    VtIntArray ar = VtIntArray(iList.begin(), iList.end());
-    attr.Set(ar);
-}
-
-・point3f[] points
-頂点座標
-{
-    std::vector vList;
-    vList.push_back(GfVec3f(-1, 0, -1));
-    vList.push_back(GfVec3f(-1, 0, 1));
-    vList.push_back(GfVec3f(1, 0, 1));
-    vList.push_back(GfVec3f(1, 0, -1));
-
-    UsdAttribute attr = geomMesh.CreatePointsAttr();
-    VtVec3fArray ar = VtVec3fArray(vList.begin(), vList.end());
-    attr.Set(ar);
-}
-
-・texCoord2f[] primvars:st
-頂点ごとのUV
-{
-    std::vector<GfVec2f> uvList;
-    uvList.push_back(GfVec2f(0, 0));
-    uvList.push_back(GfVec2f(1, 0));
-    uvList.push_back(GfVec2f(1, 1));
-    uvList.push_back(GfVec2f(0, 1));
-
-    UsdGeomPrimvar primV = geomMesh.CreatePrimvar(TfToken("st"), SdfValueTypeNames->TexCoord2fArray, UsdGeomTokens->varying);
-    UsdAttribute attr = primV.GetAttr();
-    VtVec2fArray ar = VtVec2fArray(uvList.begin(), uvList.end());
-    attr.Set(ar);
-}
-
-・normal3f[] normals
-頂点ごとの法線
-{
-    std::vector<GfVec3f> vList;
-    vList.push_back(GfVec3f(0, 1, 0));
-    vList.push_back(GfVec3f(0, 1, 0));
-    vList.push_back(GfVec3f(0, 1, 0));
-    vList.push_back(GfVec3f(0, 1, 0));
-
-    UsdAttribute attr = geomMesh.CreateNormalsAttr();
-    VtVec3fArray ar = VtVec3fArray(vList.begin(), vList.end());
-     attr.Set(ar);
-}
-
-■usdAbc
-●usdAbcPluginでReadした際のMeshの構造
-
-・int[] faceVertexCounts
-・int[] faceVertexIndices
-・point3f[] points
-
-・float3[] extent
-面のboundbox
-{
+	public:
+	
+	
 	
 }
 
-・uniform token orientation
-・uniform token subdivisionScheme
-
-・custom string[] primvars:shop_materialpath
-・custom uint[] primvars:shop_materialpath:indices
-・uniform token subsetFamily:materialBind:familyType
-
-・texCoord2f[] primvars:st
-・int[] primvars:st:indices
-
-
-・matrix4d xformOp:transform
-・uniform token[] xformOpOrder
-
-●処理
-static
-void
-_ReadPolyMesh(_PrimReaderContext* context)
+class MeshStream
 {
-    typedef IPolyMesh Type;
 
-    // Wrap the object.
-    if (!Type::matches(context->GetObject().getHeader())) {
-        // Not of type Type.
-        return;
-    }
-
-    // Set prim type.
-    context->GetPrim().typeName = UsdAbcPrimTypeNames->Mesh;
-
-    // Add child properties under schema.
-    context->SetSchema(Type::schema_type::info_type::defaultName());
-
-    // Add properties.
-    context->AddProperty(
-        UsdGeomTokens->points,
-        SdfValueTypeNames->Point3fArray,
-        _CopyGeneric<IP3fArrayProperty, GfVec3f>(
-            context->ExtractSchema("P"), kNoMatching));
-    context->AddProperty(
-        UsdGeomTokens->velocities,
-        SdfValueTypeNames->Vector3fArray,
-        _CopyGeneric<IV3fArrayProperty, GfVec3f>(
-            context->ExtractSchema(".velocities")));
-    context->AddProperty(
-        UsdGeomTokens->normals,
-        SdfValueTypeNames->Normal3fArray,
-        _CopyGeneric<IN3fGeomParam, GfVec3f>(
-            context->ExtractSchema("N")));
-    context->AddProperty(
-        UsdGeomTokens->faceVertexIndices,
-        SdfValueTypeNames->IntArray,
-        _CopyGeneric<IInt32ArrayProperty, int>(
-            context->ExtractSchema(".faceIndices")));
-    context->AddProperty(
-        UsdGeomTokens->faceVertexCounts,
-        SdfValueTypeNames->IntArray,
-        _CopyGeneric<IInt32ArrayProperty, int>(
-            context->ExtractSchema(".faceCounts")));
-
-    // Read texture coordinates
-    _ReadProperty<IV2fGeomParam, GfVec2f>(context, "uv", _GetUVPropertyName(), _GetUVTypeName());
-
-    // Custom subdivisionScheme property.  Alembic doesn't have this since
-    // the Alembic schema is PolyMesh.  Usd needs "none" as the scheme.
-    context->AddUniformProperty(
-        UsdGeomTokens->subdivisionScheme,
-        SdfValueTypeNames->Token,
-        _CopySynthetic(UsdGeomTokens->none));
 }
 
-■△Kitchen_set
-●構造
-・asset.usd
-・asset_payload.usd
-ペイロードを挟む
-・asset_geom.usd
-データ本体
+class Material
+{
 
-●asset_geom.usdのMesh構造
-・float3[] extent
-・custom bool isAsset
-・float[] primvars:__faceindex
-・
+}
 
-■△Davinci
-●構造
+class Skin
+{
 
+}
 
-■参考資料
-・Kitchen_set
-https://zenn.dev/remiria/articles/7514e41f89a887b33730#%E3%82%B3%E3%83%B3%E3%83%9D%E3%82%B8%E3%82%B7%E3%83%A7%E3%83%B3
-https://zenn.dev/remiria/articles/9af685611d77b60e80d7
+○USDの構築処理のサンプル処理を実装
+SdfLayerRefPtr
+TranslateMeshToUsd(const class MeshStream &meshStream);
 
-・usdMeshGeom
-https://qiita.com/snowxcrash/items/4e6e58e13c04dafc5749
-https://github.com/ft-lab/Documents_USD/blob/master/doc/usd_create_mesh.md
+SdfLayerRefPtr
+
+SdfLayerRefPtr TranslateMeshToUsd(const Stream &Stream)
+{
+    // Create the layer to populate.
+    SdfLayerRefPtr layer = SdfLayer::CreateAnonymous(".usda");
+
+    // Create a UsdStage with that root layer.
+    UsdStageRefPtr stage = UsdStage::Open(layer);
+
+	// Create a mesh for the group.
+	UsdGeomMesh mesh = UsdGeomMesh::Define(stage, SdfPath("/" + group.name));
+
+	// Populate the mesh data from the obj data.  This is not a very smart
+	// importer.  We throw all the verts onto everything for simplicity.  If
+	// this was a proper obj importer, it would reindex verts per-group.
+	mesh.GetPointsAttr().Set(usdPoints);
+
+	VtArray<int> faceVertexCounts, faceVertexIndices, faceUVIndices;
+	for (const auto& face : group.faces) {
+		faceVertexCounts.push_back(face.size());
+		for (int p = face.pointsBegin; p != face.pointsEnd; ++p) {
+			faceVertexIndices.push_back(objPoints[p].vertIndex);
+			if (objPoints[p].uvIndex >= 0) {
+				faceUVIndices.push_back(objPoints[p].uvIndex);
+			}
+		}
+	}
+
+	// Now set the attributes.
+	mesh.GetFaceVertexCountsAttr().Set(faceVertexCounts);
+	mesh.GetFaceVertexIndicesAttr().Set(faceVertexIndices);
+
+	// Create a primvar for the UVs if stored in the obj data. Note that
+	// it's valid in this layer for the UV mapping to not be fully defined
+	// in the obj data. For example, this layer may just provide the texture
+	// coordinates and another layer the indexing, or vice versa.
+	if (!usdUVs.empty() || !faceUVIndices.empty()) {
+		UsdGeomPrimvar uvPrimVar = UsdGeomPrimvarsAPI(mesh).CreatePrimvar(
+		TfToken("uv"), SdfValueTypeNames->TexCoord2fArray,
+		UsdGeomTokens->faceVarying);
+		if (!usdUVs.empty()) {
+			uvPrimVar.GetAttr().Set(usdUVs);
+		}
+		if (!faceUVIndices.empty()) {
+			uvPrimVar.CreateIndicesAttr().Set(faceUVIndices); // indexed
+		}
+	}
+
+	// Set extent.
+	mesh.GetExtentAttr().Set(extentArray);
+    }
+
+    return layer;
+}
