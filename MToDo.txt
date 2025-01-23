@@ -1,3 +1,6 @@
+○サンプルソースのダウンロード
+https://www.borndigital.co.jp/book/9784862465962/
+
 ■FlatBuffers
 ○ドキュメント化
 ・デコード
@@ -10,11 +13,10 @@ https://flatbuffers.dev/schema/
 
 
 ■FileFormatPlugin
-○GEOの読み込み処理の実装
-・内製フォーマットを参考にする
-
-○USDの構築処理を実装
-・内製フォーマットを参考にする
+○GEOの実装メモの用意
+・Stream
+・StreamIO
+・Translator
 
 △dancingCubesの調査
 
@@ -22,20 +24,67 @@ https://flatbuffers.dev/schema/
 
 
 ■Work
+○Pythonプロジェクトを調査
+
+○C++プロジェクトを調査
+
 ○StreamIOクラスの実装
-・PythonSampleの調査
 ・バイナリパスの取得処理を実装
  -Main
  -Mesh
  -Bin
 
+class StreamIO
+{
+	public:
+	
+	//全体
+	bool ReadFromStream(std::istream &input, Stream *stream, std::string *error)
+	
+	//バイナリから必要な情報をクラスにまとめる
+	bool ReadMeshFromStream(std::istream &input, Stream *stream, std::string *error)
+
+	bool ReadMaterialFromStream(std::istream &input, Stream *stream, std::string *error)
+
+	bool ReadSkinFromStream(std::istream &input, Stream *stream, std::string *error)
+
+}
+
+
 ○streamクラスの実装
 ・PythonSampleの調査
-・必要な情報をまとめる
+・MeshClassのみ実装する
+
+class Stream
+{
+	public:
+	
+	
+	
+}
+
+class MeshStream
+{
+
+}
+
+class Material
+{
+
+}
+
+class Skin
+{
+
+}
 
 ○USDの構築処理のサンプル処理を実装
-・下記に入れる
-SdfLayerRefPtr UsdObjTranslateObjToUsd(const Stream &Stream)
+SdfLayerRefPtr
+TranslateMeshToUsd(const class MeshStream &meshStream);
+
+SdfLayerRefPtr
+
+SdfLayerRefPtr TranslateMeshToUsd(const Stream &Stream)
 {
     // Create the layer to populate.
     SdfLayerRefPtr layer = SdfLayer::CreateAnonymous(".usda");
@@ -44,7 +93,7 @@ SdfLayerRefPtr UsdObjTranslateObjToUsd(const Stream &Stream)
     UsdStageRefPtr stage = UsdStage::Open(layer);
 
 	// Create a mesh for the group.
-	UsdGeomMesh mesh =　UsdGeomMesh::Define(stage, SdfPath("/" + group.name));
+	UsdGeomMesh mesh = UsdGeomMesh::Define(stage, SdfPath("/" + group.name));
 
 	// Populate the mesh data from the obj data.  This is not a very smart
 	// importer.  We throw all the verts onto everything for simplicity.  If
@@ -95,7 +144,10 @@ SdfLayerRefPtr UsdObjTranslateObjToUsd(const Stream &Stream)
 https://www.youtube.com/watch?v=Bh1OuhywtBw
 
 ○HDAの整理
-・Imageで実際にデバッグ
+・Block単位でランダムにアセットを決めるように修正
+
+○モデリングに必要な最低限の操作確認
+https://www.youtube.com/watch?v=CsFIbPUrK-U&list=PLhVBAU5fUlz21YOtCmtOX7g5RWAKyxhXU&index=15
 
 ○ドキュメント化
 ・モジュール化
@@ -107,7 +159,8 @@ https://www.youtube.com/watch?v=Bh1OuhywtBw
 
 ○Fun
 ・リファレンス
-https://www.youtube.com/watch?v=tbH3jyg5raQ
+https://www.youtube.com/watch?v=pntX0my-Sp4
+https://www.youtube.com/watch?v=8PTPbsNwZ4U&t=9s
 ・モデリング
  -UV
  -マテリアル
