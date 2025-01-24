@@ -1,16 +1,15 @@
-○サンプルソースのダウンロード
-https://www.borndigital.co.jp/book/9784862465962/
+○HDKの調査
+・geoから値を取得する処理を実装する
+https://qiita.com/jyouryuusui/items/14cb1804ba426d7b287f
+https://www.sidefx.com/docs/hdk/_h_d_k__intro__creating_plugins.html
 
 ■FlatBuffers
 ○ドキュメント化
 ・デコード
 ・エンコード
 
-○Schemaの確認
-https://flatbuffers.dev/schema/
-・サンプルソースを調べる
-・△実際に書き込みから取得までを実装しデバッグする
-
+○サンプルソースの調査
+・ドキュメント化
 
 ■FileFormatPlugin
 ○GEOの実装メモの用意
@@ -20,168 +19,31 @@ https://flatbuffers.dev/schema/
 
 △dancingCubesの調査
 
-△AdobePluginのビルド
+△HoudiniHDKの調査
+・データの取得方法を調査
 
+△AdobeFileFormatPluginのデバッグ
 
 ■Work
-○Pythonプロジェクトを調査
+○読み込み処理の実装
+・StreamIOクラスの実装
+・streamクラスの実装
 
-○C++プロジェクトを調査
+○FileFormatクラスを実装
 
-○StreamIOクラスの実装
-・バイナリパスの取得処理を実装
- -Main
- -Mesh
- -Bin
+○Translatorクラスの実装
 
-class StreamIO
-{
-	public:
-	
-	//全体
-	bool ReadFromStream(std::istream &input, Stream *stream, std::string *error)
-	
-	//バイナリから必要な情報をクラスにまとめる
-	bool ReadMeshFromStream(std::istream &input, Stream *stream, std::string *error)
+△usdObjのsequence, group, Comments, ArbitraryTextを実装する
 
-	bool ReadMaterialFromStream(std::istream &input, Stream *stream, std::string *error)
+△USDの構築処理を設計
+・AdobeのFileFormatPluginを参考にする
 
-	bool ReadSkinFromStream(std::istream &input, Stream *stream, std::string *error)
-
-}
-
-
-○streamクラスの実装
-・PythonSampleの調査
-・MeshClassのみ実装する
-
-class Stream
-{
-	public:
-	
-	
-	
-}
-
-class MeshStream
-{
-
-}
-
-class Material
-{
-
-}
-
-class Skin
-{
-
-}
-
-○USDの構築処理のサンプル処理を実装
-SdfLayerRefPtr
-TranslateMeshToUsd(const class MeshStream &meshStream);
-
-SdfLayerRefPtr
-
-SdfLayerRefPtr TranslateMeshToUsd(const Stream &Stream)
-{
-    // Create the layer to populate.
-    SdfLayerRefPtr layer = SdfLayer::CreateAnonymous(".usda");
-
-    // Create a UsdStage with that root layer.
-    UsdStageRefPtr stage = UsdStage::Open(layer);
-
-	// Create a mesh for the group.
-	UsdGeomMesh mesh = UsdGeomMesh::Define(stage, SdfPath("/" + group.name));
-
-	// Populate the mesh data from the obj data.  This is not a very smart
-	// importer.  We throw all the verts onto everything for simplicity.  If
-	// this was a proper obj importer, it would reindex verts per-group.
-	mesh.GetPointsAttr().Set(usdPoints);
-
-	VtArray<int> faceVertexCounts, faceVertexIndices, faceUVIndices;
-	for (const auto& face : group.faces) {
-		faceVertexCounts.push_back(face.size());
-		for (int p = face.pointsBegin; p != face.pointsEnd; ++p) {
-			faceVertexIndices.push_back(objPoints[p].vertIndex);
-			if (objPoints[p].uvIndex >= 0) {
-				faceUVIndices.push_back(objPoints[p].uvIndex);
-			}
-		}
-	}
-
-	// Now set the attributes.
-	mesh.GetFaceVertexCountsAttr().Set(faceVertexCounts);
-	mesh.GetFaceVertexIndicesAttr().Set(faceVertexIndices);
-
-	// Create a primvar for the UVs if stored in the obj data. Note that
-	// it's valid in this layer for the UV mapping to not be fully defined
-	// in the obj data. For example, this layer may just provide the texture
-	// coordinates and another layer the indexing, or vice versa.
-	if (!usdUVs.empty() || !faceUVIndices.empty()) {
-		UsdGeomPrimvar uvPrimVar = UsdGeomPrimvarsAPI(mesh).CreatePrimvar(
-		TfToken("uv"), SdfValueTypeNames->TexCoord2fArray,
-		UsdGeomTokens->faceVarying);
-		if (!usdUVs.empty()) {
-			uvPrimVar.GetAttr().Set(usdUVs);
-		}
-		if (!faceUVIndices.empty()) {
-			uvPrimVar.CreateIndicesAttr().Set(faceUVIndices); // indexed
-		}
-	}
-
-	// Set extent.
-	mesh.GetExtentAttr().Set(extentArray);
-    }
-
-    return layer;
-}
-
-
-■Face_Generator
-※Building Generator from Image から 子供都市に拡張していくことを目標にする
-https://www.youtube.com/watch?v=Bh1OuhywtBw
-
-○HDAの整理
-・Block単位でランダムにアセットを決めるように修正
-
-○モデリングに必要な最低限の操作確認
-https://www.youtube.com/watch?v=CsFIbPUrK-U&list=PLhVBAU5fUlz21YOtCmtOX7g5RWAKyxhXU&index=15
-
-○ドキュメント化
-・モジュール化
-・メモの作成
-
-○Base
-・リファレンス
-・ブロック化(モデリング)
-
-○Fun
-・リファレンス
-https://www.youtube.com/watch?v=pntX0my-Sp4
-https://www.youtube.com/watch?v=8PTPbsNwZ4U&t=9s
-・モデリング
- -UV
- -マテリアル
-・プロシージャルモデリングの実装
-・配置ロジックの実装
- -配置位置の調整
- -配置率
-
-○Signs
-・リファレンス
-・プロシージャルモデリング
-・プロシージャルマテリアル
-
-△UEに適合
-
-△EditMode
-・blenderのプロジェクトを調査する
-https://wwwi.youtube.com/watch?v=UCYHV9GJU1Q
-
-●RandomIDEA
-・配置位置のランダム調整
-・配置確率
-・ブロックタイプのランダム化
- -Blockの結合
+●Kitchen_set
+https://zenn.dev/remiria/articles/7514e41f89a887b33730
+https://zenn.dev/remiria/articles/9af685611d77b60e80d7
+https://www.hiroakit.com/archives/20221123/
+●Plugin
+https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
+https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
+●meshの構造
+https://qiita.com/snowxcrash/items/4e6e58e13c04dafc5749
