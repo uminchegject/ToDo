@@ -45,10 +45,8 @@ Davinci
 ・デコード
 ・エンコード
 
-○Schemaの確認
-https://flatbuffers.dev/schema/
-・サンプルソースを調べる
-・△実際に書き込みから取得までを実装しデバッグする
+○サンプルソースの調査
+・ドキュメント化
 
 ■FileFormatPlugin
 ○GEOの実装メモの用意
@@ -58,9 +56,10 @@ https://flatbuffers.dev/schema/
 
 △dancingCubesの調査
 
-△AdobePluginのビルド
+△HoudiniHDKの調査
+・データの取得方法を調査
 
-
+△AdobeFileFormatPluginのデバッグ
 
 [Work]
 ■Work
@@ -199,8 +198,8 @@ https://www.youtube.com/watch?v=Bh1OuhywtBw
 ・Base
 https://www.youtube.com/watch?v=CsFIbPUrK-U&list=PLhVBAU5fUlz21YOtCmtOX7g5RWAKyxhXU&index=15
 ・Funs
-https://www.youtube.com/watch?v=pntX0my-Sp4
-https://www.youtube.com/watch?v=8PTPbsNwZ4U&t=9s
+Sci_fi
+Old_Town
 
 ○ドキュメント化
 ・モジュール化
