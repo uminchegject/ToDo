@@ -1,192 +1,5 @@
-[反省]
-※ドキュメントまとめる際は参考サイトと書く内容をまずまとめて、範囲内で詳細を記載していく
- -参考サイトと章を先に決める
-※検証(実装)とドキュメント作成は明確に分ける
-※4時間同じ作業は極力避ける
- -午後1では最低1時間自習を入れる
-
-[Private]
-○携帯の移行
-
-○要らない物の整理
-
-
-[Study]
-■Movie
-○Maya
-https://www.youtube.com/playlist?list=PLhzCDkTROE9vg8DClp3bTHfXDiNW9LN47
-
-●Solaris
-https://www.youtube.com/watch?v=b2j6dpz7dyU&list=PLDKz2hzFO3ndQ3QCDztYogHIdyKzPHAUH&index=2
-
-■Read&Work
-○USDTutorial
-https://openusd.org/release/tut_usd_tutorials.html
-https://qiita.com/snowxcrash
-
-○MayaTutorial
-・チーバ君
-
-○C++Tutorial(UETutorial)
-・アウトゲームの設計を調査
-・C++のサンプルプロジェクトを調査
- -VehicleGame
-
-●USDのレイヤー構造
--ドキュメント
-https://fereria.github.io/reincarnation_tech/usd/model_hierarchy#component
-https://fereria.github.io/reincarnation_tech/usd/asset_structure
--サンプル
-Kitchen_set
-Davinci
-
-■FlatBuffers
-○ドキュメント化
-・デコード
-・エンコード
-
-○サンプルソースの調査
-・ドキュメント化
-
-■FileFormatPlugin
-○GEOの実装メモの用意
-・Stream
-・StreamIO
-・Translator
-
-△dancingCubesの調査
-
-△HoudiniHDKの調査
-・データの取得方法を調査
-
-△AdobeFileFormatPluginのデバッグ
-
-[Work]
-■Work
-○StreamIOクラスの実装
-・バイナリパスの取得処理を実装
- -Main
- -Mesh
- -Bin
-
-class StreamIO
-{
-	public:
-	
-	//全体
-	bool ReadFromStream(std::istream &input, Stream *stream, std::string *error)
-	
-	//バイナリから必要な情報をクラスにまとめる
-	bool ReadMeshFromStream(std::istream &input, Stream *stream, std::string *error)
-
-	bool ReadMaterialFromStream(std::istream &input, Stream *stream, std::string *error)
-
-	bool ReadSkinFromStream(std::istream &input, Stream *stream, std::string *error)
-
-}
-
-
-○streamクラスの実装
-・PythonSampleの調査
-・MeshClassのみ実装する
-
-class Stream
-{
-	public:
-	
-	
-	
-}
-
-class MeshStream
-{
-
-}
-
-class Material
-{
-
-}
-
-class Skin
-{
-
-}
-
-○USDの構築処理のサンプル処理を実装
-SdfLayerRefPtr
-TranslateMeshToUsd(const class MeshStream &meshStream);
-
-SdfLayerRefPtr
-
-SdfLayerRefPtr TranslateMeshToUsd(const Stream &Stream)
-{
-    // Create the layer to populate.
-    SdfLayerRefPtr layer = SdfLayer::CreateAnonymous(".usda");
-
-    // Create a UsdStage with that root layer.
-    UsdStageRefPtr stage = UsdStage::Open(layer);
-
-	// Create a mesh for the group.
-	UsdGeomMesh mesh = UsdGeomMesh::Define(stage, SdfPath("/" + group.name));
-
-	// Populate the mesh data from the obj data.  This is not a very smart
-	// importer.  We throw all the verts onto everything for simplicity.  If
-	// this was a proper obj importer, it would reindex verts per-group.
-	mesh.GetPointsAttr().Set(usdPoints);
-
-	VtArray<int> faceVertexCounts, faceVertexIndices, faceUVIndices;
-	for (const auto& face : group.faces) {
-		faceVertexCounts.push_back(face.size());
-		for (int p = face.pointsBegin; p != face.pointsEnd; ++p) {
-			faceVertexIndices.push_back(objPoints[p].vertIndex);
-			if (objPoints[p].uvIndex >= 0) {
-				faceUVIndices.push_back(objPoints[p].uvIndex);
-			}
-		}
-	}
-
-	// Now set the attributes.
-	mesh.GetFaceVertexCountsAttr().Set(faceVertexCounts);
-	mesh.GetFaceVertexIndicesAttr().Set(faceVertexIndices);
-
-	// Create a primvar for the UVs if stored in the obj data. Note that
-	// it's valid in this layer for the UV mapping to not be fully defined
-	// in the obj data. For example, this layer may just provide the texture
-	// coordinates and another layer the indexing, or vice versa.
-	if (!usdUVs.empty() || !faceUVIndices.empty()) {
-		UsdGeomPrimvar uvPrimVar = UsdGeomPrimvarsAPI(mesh).CreatePrimvar(
-		TfToken("uv"), SdfValueTypeNames->TexCoord2fArray,
-		UsdGeomTokens->faceVarying);
-		if (!usdUVs.empty()) {
-			uvPrimVar.GetAttr().Set(usdUVs);
-		}
-		if (!faceUVIndices.empty()) {
-			uvPrimVar.CreateIndicesAttr().Set(faceUVIndices); // indexed
-		}
-	}
-
-	// Set extent.
-	mesh.GetExtentAttr().Set(extentArray);
-    }
-
-    return layer;
-}
-
-
-△USDの構築処理を設計
-・AdobeのFileFormatPluginを参考にする
-
-●Kitchen_set
-https://zenn.dev/remiria/articles/7514e41f89a887b33730
-https://zenn.dev/remiria/articles/9af685611d77b60e80d7
-https://www.hiroakit.com/archives/20221123/
-●Plugin
-https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
-https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
-●meshの構造
-https://qiita.com/snowxcrash/items/4e6e58e13c04dafc5749
-
+○SFCのプレイ
+・何を話すか決める
 
 
 [PD]
@@ -194,37 +7,27 @@ https://qiita.com/snowxcrash/items/4e6e58e13c04dafc5749
 ※Building Generator from Image から 子供都市に拡張していくことを目標にする
 https://www.youtube.com/watch?v=Bh1OuhywtBw
 
-○モデリングに必要な最低限の操作確認
-・Base
-https://www.youtube.com/watch?v=CsFIbPUrK-U&list=PLhVBAU5fUlz21YOtCmtOX7g5RWAKyxhXU&index=15
-・Funs
-Sci_fi
-Old_Town
+○モデリング
+・UEのSoulCityを参考にする
+・モデリング資料
+ -OldCity
+ -ScifiCity
+
+○Detailの配置ロジックの実装
+・配置位置の調整
+・BlockSize
+・配置率
+
+△マテリアル周りの調査
 
 ○ドキュメント化
 ・モジュール化
 ・メモの作成
 
-○Base
-・リファレンス
-・ブロック化(モデリング)
-
-○Fun
-・リファレンス
-・モデリング
- -UV
- -マテリアル
-・プロシージャルモデリングの実装
-・配置ロジックの実装
- -配置位置の調整
- -配置率
-
-○Signs
-・リファレンス
-・プロシージャルモデリング
-・プロシージャルマテリアル
-
 △UEに適合
+・制作したデータをUEに変換
+ -Tutorialを参考にする
+・DataTableを用いたアセット配置処理
 
 △EditMode
 ・blenderのプロジェクトを調査する
