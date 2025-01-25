@@ -1,6 +1,4 @@
-○SFCのプレイ
-・何を話すか決める
-
+○容量の明けたい場合ははどうすればいいかを聞く
 
 ■Face_Generator
 ※Building Generator from Image から 子供都市に拡張していくことを目標にする
@@ -13,20 +11,56 @@ https://www.youtube.com/watch?v=Bh1OuhywtBw
  -ScifiCity
 
 ○Signs
-・モデリング
+・モデリング-
  -Box
  -Bobe
 ・プロシージャルモデリング
  -サイズ
  -配置
- -繋ぎ
+ -Connecter
 
 ○Base
 ・モデリング
  -Block
-
+・プロシージャルモデリング
+ -ブロックサイズ
+ -Type
 
 ○Detailの配置ロジックの実装
 ・配置位置の調整
 ・BlockSize
 ・配置率
+
+○ドキュメント化
+・モジュール化
+・メモの作成
+
+△UEに適合
+・制作したデータをUEに変換
+ -Tutorialを参考にする
+・DataTableを用いたアセット配置処理
+
+△EditMode
+・blenderのプロジェクトを調査する
+https://wwwi.youtube.com/watch?v=UCYHV9GJU1Q
+
+●RandomIDEA
+・配置位置のランダム調整
+・配置確率
+・ブロックタイプのランダム化
+ -Blockの結合
+
+■お昼の過ごし方
+●ゲーム
+・SFC
+ -ドラクエ6
+ -ロマサガ3
+ -クロノトリガー
+・Switch
+ -OuterWilds
+ -3minit
+
+●散歩
+・Siositeルート
+・愛宕神社ルート
+・日比谷公園ルート
