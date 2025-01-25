@@ -2,7 +2,6 @@
 ・何を話すか決める
 
 
-[PD]
 ■Face_Generator
 ※Building Generator from Image から 子供都市に拡張していくことを目標にする
 https://www.youtube.com/watch?v=Bh1OuhywtBw
@@ -13,50 +12,21 @@ https://www.youtube.com/watch?v=Bh1OuhywtBw
  -OldCity
  -ScifiCity
 
+○Signs
+・モデリング
+ -Box
+ -Bobe
+・プロシージャルモデリング
+ -サイズ
+ -配置
+ -繋ぎ
+
+○Base
+・モデリング
+ -Block
+
+
 ○Detailの配置ロジックの実装
 ・配置位置の調整
 ・BlockSize
 ・配置率
-
-△マテリアル周りの調査
-
-○ドキュメント化
-・モジュール化
-・メモの作成
-
-△UEに適合
-・制作したデータをUEに変換
- -Tutorialを参考にする
-・DataTableを用いたアセット配置処理
-
-△EditMode
-・blenderのプロジェクトを調査する
-https://wwwi.youtube.com/watch?v=UCYHV9GJU1Q
-
-●RandomIDEA
-・配置位置のランダム調整
-・配置確率
-・ブロックタイプのランダム化
- -Blockの結合
-
-■City_Volume_Generator
-○CityGeneratorのロジックを調査
-・BlenderのCityGeneratorを参考にする
-https://www.youtube.com/watch?v=Y6-EWYXZG4s
-
-△BaseGroundSurfaceのPDを実装
-・Primitive同士のマージを実装
-・Greebleノードを修正していく
- -SideFXLabのノードの中を確認する
-
-●IDEA
-・Greeble(Divide)
-・Cluster(Type)
-
-■Building_Generator
-○JapaneseCastleを調べる
- -Floor1
-
-○配置ロジックを応用
- 
-△アセットをMayaで作成retaasdawsdaswaqea s
