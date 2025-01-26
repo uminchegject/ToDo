@@ -1,109 +1,66 @@
-○StreamIOクラスの実装
-・バイナリパスの取得処理を実装
- -Main
- -Mesh
- -Bin
-
-class StreamIO
+■Detail
+●Type
+int paramIndexList[];
+for(int paramIndex = 1; paramIndex < chi("../FaceGenerator_TypeList") + 1; ++paramIndex)
 {
-	public:
-	
-	//全体
-	bool ReadFromStream(std::istream &input, Stream *stream, std::string *error)
-	
-	//バイナリから必要な情報をクラスにまとめる
-	bool ReadMeshFromStream(std::istream &input, Stream *stream, std::string *error)
-
-	bool ReadMaterialFromStream(std::istream &input, Stream *stream, std::string *error)
-
-	bool ReadSkinFromStream(std::istream &input, Stream *stream, std::string *error)
-
-}
-
-
-○streamクラスの実装
-・PythonSampleの調査
-・MeshClassのみ実装する
-
-class Stream
-{
-	public:
-	
-	
-	
-}
-
-class MeshStream
-{
-
-}
-
-class Material
-{
-
-}
-
-class Skin
-{
-
-}
-
-○USDの構築処理のサンプル処理を実装
-SdfLayerRefPtr
-TranslateMeshToUsd(const class MeshStream &meshStream);
-
-SdfLayerRefPtr
-
-SdfLayerRefPtr TranslateMeshToUsd(const Stream &Stream)
-{
-    // Create the layer to populate.
-    SdfLayerRefPtr layer = SdfLayer::CreateAnonymous(".usda");
-
-    // Create a UsdStage with that root layer.
-    UsdStageRefPtr stage = UsdStage::Open(layer);
-
-	// Create a mesh for the group.
-	UsdGeomMesh mesh = UsdGeomMesh::Define(stage, SdfPath("/" + group.name));
-
-	// Populate the mesh data from the obj data.  This is not a very smart
-	// importer.  We throw all the verts onto everything for simplicity.  If
-	// this was a proper obj importer, it would reindex verts per-group.
-	mesh.GetPointsAttr().Set(usdPoints);
-
-	VtArray<int> faceVertexCounts, faceVertexIndices, faceUVIndices;
-	for (const auto& face : group.faces) {
-		faceVertexCounts.push_back(face.size());
-		for (int p = face.pointsBegin; p != face.pointsEnd; ++p) {
-			faceVertexIndices.push_back(objPoints[p].vertIndex);
-			if (objPoints[p].uvIndex >= 0) {
-				faceUVIndices.push_back(objPoints[p].uvIndex);
-			}
-		}
-	}
-
-	// Now set the attributes.
-	mesh.GetFaceVertexCountsAttr().Set(faceVertexCounts);
-	mesh.GetFaceVertexIndicesAttr().Set(faceVertexIndices);
-
-	// Create a primvar for the UVs if stored in the obj data. Note that
-	// it's valid in this layer for the UV mapping to not be fully defined
-	// in the obj data. For example, this layer may just provide the texture
-	// coordinates and another layer the indexing, or vice versa.
-	if (!usdUVs.empty() || !faceUVIndices.empty()) {
-		UsdGeomPrimvar uvPrimVar = UsdGeomPrimvarsAPI(mesh).CreatePrimvar(
-		TfToken("uv"), SdfValueTypeNames->TexCoord2fArray,
-		UsdGeomTokens->faceVarying);
-		if (!usdUVs.empty()) {
-			uvPrimVar.GetAttr().Set(usdUVs);
-		}
-		if (!faceUVIndices.empty()) {
-			uvPrimVar.CreateIndicesAttr().Set(faceUVIndices); // indexed
-		}
-	}
-
-	// Set extent.
-	mesh.GetExtentAttr().Set(extentArray);
+    string type_name = chs("../FaceGenerator_TypeName" + itoa(paramIndex));    
+    if(inprimgroup(0, type_name, i@primnum) == 1)
+    {
+        append(paramIndexList, paramIndex);
     }
-
-    return layer;
 }
+
+int index = int(random(v@P) * len(paramIndexList));
+int paramIndex = paramIndexList[index];
+i@ParamIndex = paramIndex;
+v@BlockSize = chv("../FaceGenerator_BlockSize" + itoa(paramIndex));
+
+
+●SpawnPt
+for(int width = 0; width < widthPtNum; ++width)
+{
+    for(int height = 0; height < heightPtNum; ++height)
+    {
+        vector baseSpawnPos = v@P;
+        baseSpawnPos += width * slider_x + slider_x / 2;
+        baseSpawnPos -= (slider_x * widthPtNum) / 2;
+        baseSpawnPos += height * slider_y + slider_y / 2;
+        baseSpawnPos -= (slider_y * heightPtNum) / 2;
+		
+        if(heightPt1.y == heightPt2.y && widthPt1.y == widthPt2.y) continue;
+		
+		int assetParamNum = chi("../FaceGenerator_AssetList" + itoa(i@ParamIndex));
+		for(int paramIndex = 0; i < len(assetParamNum); paramIndex++)
+		{		
+			string assetPath = chs("../FaceGenerator_AssetPath" + itoa(ParamIndex) + "_" + itoa(assetIndex));
+			float assetRatio = chs("../FaceGenerator_AssetRatio" + itoa(ParamIndex) + "_" + itoa(assetIndex));
+			vector assetMinPos = chs("../FaceGenerator_AssetMinPos" + itoa(ParamIndex) + "_" + itoa(assetIndex));
+			vector assetMaxPos = chs("../FaceGenerator_AssetMaxPos" + itoa(ParamIndex) + "_" + itoa(assetIndex));		
+						
+			vector spawnPos = baseSpawnPos;
+			spawnPos.x += assetMaxPos.x * random(spawnPos) + assetMinPos.x;
+			spawnPos.y += assetMaxPos.y * random(spawnPos) + assetMinPos.y;
+			spawnPos.z += assetMaxPos.z * random(spawnPos) + assetMinPos.z;
+			
+			if(random(spawnPos) < assetRatio) continue;
+			
+			int pt = addpoint(0, spawnPos);
+			setpointattrib(0, "orient", pt, orient);
+			        setpointattrib(0, "ObjectPath", pt, assetPath);
+			
+			
+		}
+		
+    }
+}
+
+■Sign
+●パラメーター
+・TexturePath
+・サイズ
+
+●処理
+・Boxの配置
+ -Greeble
+・Connect
+ -Greebleの分割ラインに配置
