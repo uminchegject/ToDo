@@ -65,7 +65,11 @@ Davinci
 
 
 [Work]
-■Work
+■Read
+○Face情報の取得に該当する情報を調査
+・プロジェクトソース(C++, Python)
+・Generatedソース
+
 ○generatedからの取得処理の実装
 
 ○構造体の実装
@@ -73,13 +77,11 @@ Davinci
 ・FaceVertexCount
 ・FaceVertexIndices
 
-○最低限の実装
-・GetPointAttr 
-・GetFaceVertexCountAttr 
+■Write
+○最低限のStage構築処理の実装
+・GetPointAttr
+・GetFaceVertexCountAttr
 ・GetFaceVertexIndicesAttr 
-
-△USDの構築処理を設計
-・AdobeのFileFormatPluginを参考にする
 
 ●Kitchen_set
 https://zenn.dev/remiria/articles/7514e41f89a887b33730
