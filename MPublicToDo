@@ -1,109 +1,87 @@
-■アドバイス
-・ストーリーを意識する
-・検証、実験をアピールする
-・着地は必ずポジティブに(理想に向けてどうしていくかを補足で加える)
- -課題を抽出して、技術的ソリューションを提案をする
- -デザイナーに対してホスピタリティーをもつ
-・一文一文をちゃんと分けて話すように意識する
- -順序だてて説明する
- 
-■エンジニアの強み
-・ゲームエンジンを考慮した業務の遂行
- -HoudiniEngineの際のDataTableを用いたアセット管理
-・PythonやMELなどのスクリプトを用いたツールの実装
+●CustomStream
+
+class Custom
+{
+
+public:
+
+	struct Face
+	{
+		int vertexCounts;
+		std::vector<int> vertexIndices;		
+	}
+	
+	Custom(file_path);
+	
+	std::vector<Point> const &GetPoints() const
+	{
+		return points;
+	}
+	
+	std::vector<GfVec2f> const &GetUVs() const
+	{
+		return uvs;
+	}	
+	
+	GfVec3f const &GetUVs() const
+	{
+		return aabb;
+	}
+
+	std::vector<Face> const &GetFaces() const
+	{
+		return faces;
+	}	
+	
+	GfVec2f aabb;
+	std::vector<GfVec3f> points;
+    std::vector<GfVec2f> uvs;
+    std::vector<GfVec3f> normals;
+    std::string name;
+    std::vector<Face> faces;
+
+}
+
+void Custom::Custom(file_path)
+{
+	
+}
 
 
-■分からないとき
-・思い当たるものはありません。
-・いままでにやったことはありませんが、ぜひチャレンジしたいと思っています。
 
-■自己紹介
-・エンジニア経歴
- -大学時代にプロシージャルデザインを用いた建築デザインを研究していたためその技術を活かしたいと考えてゲーム業界を志望
- -まずはゲームの構造について理解したいと考えてエンジニアを選択
- -在学中にCR社のゲームエンジニアアカデミーでカリキュラムを受けてUE4とCPPを学習
- -卒業と同時にCR社のOXエンジニアスタジオに入社
- -ソーシャルスポーツゲームの新規モードのUI周りの処理を実装
- -オンラインアクションRPGにおける移植対応におけるバグ対応
-・Houdini経歴
- -ゲーム業界におけるプロシージャルデザインについて知るため、業務と並行してHoudiniの検証を行い続けてきました。
- -今回のメンバーのアサイン変更のタイミングでお話を頂きアサインしました。
+●Translator
+SdfLayerRefPtr layer = SdfLayer::CreateAnonymous(".usda");
 
+UsdStageRefPtr stage = UsdStage::Open(layer);
 
-■逆質問
-・チーム規模について
- ーそのメンバーでどのように回しているかを確認する
-・参画した際にどのような準備をしといた方がいいかを確認
+UsdGeomMesh mesh = UsdGeomMesh::Define(stage, SdfPath("/" + CustomStream.GetName()));
 
+//UV情報を取得
+const std::vector<GfVec2f> &pointsUV = CustomStream.GetUVs();
+VtVec2fArray usdUVs;
+usdUVs.assign(pointsUV.begin(), pointsUV.end());
 
-■PD
-●業務内容
-・検証・実験を具体的にアピールする
- -HoudiniEngineForUnrealを用いた背景のモジュラーモデリングの検証
- -HoudiniEngineForMayaにおける破片生成の検証
- -DataTableを用いたデータ管理
- -HeightFieldを用いた地形生成
+//Points情報を設定
+const std::vector<UsdCustomStream::Point> &Points = CustomStream.GetPoints();
+mesh.GetPointsAttr().Set(usdPoints);
+
+//aabb情報を設定
+VtVec3fArray extentArray(2);
+GfVec2f aabb = CustomStream.GetAabb();
+extentArray[0] = aabb.x;
+extentArray[1] = aabb.y;
+mesh.GetExtentAttr().Set(extentArray);
 
 
-●学んだこと
-・プロシージャルワークフローを設計し、実装まで行う一連の経験を行うことができた
- -背景のプロシージャルデザインの際に効率化すべき部分を考え、ロジックに落とし込み実装する経験が活かされた
+//Face情報を設定
+VtArray<int> faceVertexCounts, faceVertexIndices;
+for (const auto& face : CustomStream.GetFaces()) 
+{
+	faceVertexCounts.push_back(face.vertexCounts);
+	for (const auto& indice : face.vertexIndices) {
+		faceVertexIndices.push_back(indice);
+	}
+}	
+mesh.GetFaceVertexCountsAttr().Set(faceVertexCounts);
+mesh.GetFaceVertexIndicesAttr().Set(faceVertexIndices);
 
-・UE上で背景を作成するとき効率化できそうなフローを明確化しロジックに落とし込み実装する
- -建物のサイズに応じて窓を規則的に配置し、配置するアセットをデータテーブルで管理することで、配置処理をそのままにアセット入れ替えることができる
-・アセットの配置をする際のルールや条件を明確化しつつ、パラメーターで調整できるようにすることでデザイナーに使いやすいツールを実装
-
-●後悔したこと
-・デザイナーが使うことを考えずに実装してしまった。
- -パラメーターを分かりやすくシンプルにする
-
-
-■KONAMI
-●業務内容
-・UI周りの実装
-
-●学んだこと
-・業務におけるプログラマの基礎的部分
-・UI周りの実装
-
-●苦労したこと
-初めての業務ということもあり、他の人が実装したベースクラスをちゃんと理解しそれらを用いて新規実装を行うことが苦労した。
-
-●気を付けていたこと
-・コミュニケーション
- -業務の上司に全てやり取りして頂く形式だったためプランナー、デザイナーとのコミュニケーションはありませんでした。
-  -デザイナーが同じ場所で仕事をしていたため、質問しやすくするために仕事以外でも食事やゲームを一緒にするなど行っていた。
-・業務
- -BluePrintにおける読みやすいコードを実装することに気を付けていた
-  -Sequence、ノード整理、コメント
-・ホスピタリティ
- -ノードの整理やコメント残し、Sequenceノードをもちいた可読性をよくするように気を付けていた
-  -Houdiniの実装でも活かしたい
-
-■SKY
-●業務内容
-・移植対応及び不具合対応
-
-●学んだこと
-・人のコードの意図を汲み取る
- -バイナリデータの手動マージを担当した際に他の人の実装物の意図を読み取り、マージを行う作業を行っていたので人の実装物の意図を読み解く力がついた
-・コミュニケーション
- -大規模なプロジェクトだったため、調査をするにも時間がかかるため不具合の調査部分を触った箇所があるメンバーに聞いたり、逆に教えたりしあえるようになりました。
-・ホスピタリティ
- -マージ対応をする際にノードのレイアウトが分かりずらい時などはコメントでまとめて可読性をよくするように工夫していた。
- -他の人が自分が担当したことのある部分で処理の調査をしていた際は積極的に協力するようにしていた
- 
-●改善できたこと
-BluePrint側の修正した際の挙動ごとにパッケージ化を行う必要があり、その時間を改善できたかも。
-
-●気を付けていたこと
-・業務
- -修正対応の影響範囲が他の処理に影響しないかを気をつけた。
-・コミュニケーション
- -修正対応の確認などの際に修正内容についてクライアント側と意思疎通に相違がないように気を付けていた
- 
-●業務詳細
-・ScrollBoxの仕様をコンシューマーの際は一番端まで選択部分を動かした状態で横移動しようとしたらスクロールする
-・ステートマシンのアニメーション遷移を管理するトランジションノードのPlayEnd内の処理に不具合の原因が存在
- ーアニメーションの経過時間がオフセット値によって計算時にちょうど0になってしまい、浮動小数の誤差によりtrueであるべき箇所がfalseになってしまうことが原因でした。
-・機能制限をした際の挙動を新規実装
