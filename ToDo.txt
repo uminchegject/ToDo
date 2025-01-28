@@ -65,33 +65,11 @@ Davinci
 
 
 [Work]
-■Read
-○Face情報の取得に該当する情報を調査
-・プロジェクトソース(C++, Python)
-・Generatedソース
+○Vertices, Polygonの読み込み処理の実装
+・FileFormatソース内で実装
 
-○generatedからの取得処理の実装
-
-○構造体の実装
-・points
-・FaceVertexCount
-・FaceVertexIndices
-
-■Write
-○最低限のStage構築処理の実装
-・GetPointAttr
-・GetFaceVertexCountAttr
-・GetFaceVertexIndicesAttr 
-
-●Kitchen_set
-https://zenn.dev/remiria/articles/7514e41f89a887b33730
-https://zenn.dev/remiria/articles/9af685611d77b60e80d7
-https://www.hiroakit.com/archives/20221123/
-●Plugin
-https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_01
-https://fereria.github.io/reincarnation_tech_dev/usd/usdview_plugin_02
-●meshの構造
-https://qiita.com/snowxcrash/items/4e6e58e13c04dafc5749
+○クラス実装
+・ビルドを通す
 
 ■お昼の過ごし方
 ●ゲーム
