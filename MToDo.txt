@@ -1,13 +1,24 @@
-■FlatBuffers
-○FlatBuffersのメリットを調査
+■Read&Work
+○バイトのデコードとエンコード
+・バイト演算
+・statc_castについて
 
-○force_alignの調査
+■FlatBuffers
+○force_align(byte)でエンコードとデコードを行う為の調査
+
+○ドキュメント化
+・ソースの解説
+
+○サンプルソースの調査
+・ドキュメント化
+
 
 ■FileFormatPlugin(Work)
 ○Jsonから情報を取得する処理の実装
+・Key(特定の文字列)を判定して、その中で要素ごとに文字列を分割して、そこから中の値を参照する
 
 ○他情報の追加
-・normal
+・uv
 
 ○クラス設計
 
@@ -24,16 +35,14 @@ https://www.youtube.com/watch?v=Bh1OuhywtBw
 ・配置率
 
 ○マテリアル
-・UV
-・Texture
-・エスカレーターを参考にする
-
+・UVとTextureをノードのみのシンプルな構造で行う
+・△UEへのコンバート方法を調査
 
 ○モデリング
 ・UEのSoulCityを参考にする
 
 ○Signs
-・モデリング-
+・モデリング
  -Box
 ・プロシージャルモデリング
  -サイズ
@@ -45,4 +54,4 @@ https://www.youtube.com/watch?v=Bh1OuhywtBw
  -Block
 ・プロシージャルモデリング
  -ブロックサイズ
- -Type
+ -Types
