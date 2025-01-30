@@ -1,48 +1,66 @@
-■FlatBuffers
-○FlatBuffersのメリットを調査
+■Detail
+●Type
+int paramIndexList[];
+for(int paramIndex = 1; paramIndex < chi("../FaceGenerator_TypeList") + 1; ++paramIndex)
+{
+    string type_name = chs("../FaceGenerator_TypeName" + itoa(paramIndex));    
+    if(inprimgroup(0, type_name, i@primnum) == 1)
+    {
+        append(paramIndexList, paramIndex);
+    }
+}
 
-○force_alignの調査
-
-■FileFormatPlugin(Work)
-○Jsonから情報を取得する処理の実装
-
-○他情報の追加
-・normal
-
-○クラス設計
-
-△FlatBuffersのソース整理
-・インクルードディレクトリをまとめる
-
-■Face_Generator
-※Building Generator from Image から 子供都市に拡張していくことを目標にする
-https://www.youtube.com/watch?v=Bh1OuhywtBw
-
-○Detailの配置ロジックの実装
-・配置位置の調整
-・BlockSize
-・配置率
-
-○マテリアル
-・UV
-・Texture
-・エスカレーターを参考にする
+int index = int(random(v@P) * len(paramIndexList));
+int paramIndex = paramIndexList[index];
+i@ParamIndex = paramIndex;
+v@BlockSize = chv("../FaceGenerator_BlockSize" + itoa(paramIndex));
 
 
-○モデリング
-・UEのSoulCityを参考にする
+●SpawnPt
+for(int width = 0; width < widthPtNum; ++width)
+{
+    for(int height = 0; height < heightPtNum; ++height)
+    {
+        vector baseSpawnPos = v@P;
+        baseSpawnPos += width * slider_x + slider_x / 2;
+        baseSpawnPos -= (slider_x * widthPtNum) / 2;
+        baseSpawnPos += height * slider_y + slider_y / 2;
+        baseSpawnPos -= (slider_y * heightPtNum) / 2;
+		
+        if(heightPt1.y == heightPt2.y && widthPt1.y == widthPt2.y) continue;
+		
+		int assetParamNum = chi("../FaceGenerator_AssetList" + itoa(i@ParamIndex));
+		for(int paramIndex = 0; i < len(assetParamNum); paramIndex++)
+		{		
+			string assetPath = chs("../FaceGenerator_AssetPath" + itoa(ParamIndex) + "_" + itoa(assetIndex));
+			float assetRatio = chs("../FaceGenerator_AssetRatio" + itoa(ParamIndex) + "_" + itoa(assetIndex));
+			vector assetMinPos = chs("../FaceGenerator_AssetMinPos" + itoa(ParamIndex) + "_" + itoa(assetIndex));
+			vector assetMaxPos = chs("../FaceGenerator_AssetMaxPos" + itoa(ParamIndex) + "_" + itoa(assetIndex));		
+						
+			vector spawnPos = baseSpawnPos;
+			spawnPos.x += assetMaxPos.x * random(spawnPos) + assetMinPos.x;
+			spawnPos.y += assetMaxPos.y * random(spawnPos) + assetMinPos.y;
+			spawnPos.z += assetMaxPos.z * random(spawnPos) + assetMinPos.z;
+			
+			if(random(spawnPos) < assetRatio) continue;
+			
+			int pt = addpoint(0, spawnPos);
+			setpointattrib(0, "orient", pt, orient);
+			setpointattrib(0, "ObjectPath", pt, assetPath);
+			
+			
+		}
+		
+    }
+}
 
-○Signs
-・モデリング-
- -Box
-・プロシージャルモデリング
- -サイズ
- -配置
- -Connecter
+■Sign
+●パラメーター
+・TexturePath
+・サイズ
 
-△Base
-・モデリング
- -Block
-・プロシージャルモデリング
- -ブロックサイズ
- -Type
+●処理
+・Boxの配置
+ -Greeble
+・Connect
+ -Greebleの分割ラインに配置
