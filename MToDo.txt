@@ -1,90 +1,48 @@
-■Read&Work
-○バイトのデコードとエンコード
-・バイト演算
-・statc_castについて
-
 ■FlatBuffers
 ○FlatBuffersのメリットを調査
 
 ○force_alignの調査
 
-○force_align(byte)でエンコードとデコードを行う為の調査
-
-○ドキュメント化
-・ソースの解説
-
-○サンプルソースの調査
-・ドキュメント化
-
-
 ■FileFormatPlugin(Work)
 ○Jsonから情報を取得する処理の実装
 
+○他情報の追加
+・normal
+
 ○クラス設計
 
-○他情報の追加
-
-○FlatBuffersのソース整理
+△FlatBuffersのソース整理
 ・インクルードディレクトリをまとめる
-
-○ソースの整理
-・warningの解消
-・文字コード
-
-○デバッグ
-
-●インストール手準
-・libを事前に用意
-・CMakeの修正
- -Includeフォルダの修正
-・ソースフォルダをextrasフォルダに入れる
-・CMakeListに追加
-・ビルド
-
-■お昼の過ごし方
-○写真
-
-●ゲーム
-・SFC
- -ドラクエ6
- -ロマサガ3
- -クロノトリガー
-・Switch
- -OuterWilds
- -3minit
-
-●散歩
-・Siositeルート
-・愛宕神社ルート
-・日比谷公園ルート
 
 ■Face_Generator
 ※Building Generator from Image から 子供都市に拡張していくことを目標にする
 https://www.youtube.com/watch?v=Bh1OuhywtBw
 
+○Detailの配置ロジックの実装
+・配置位置の調整
+・BlockSize
+・配置率
+
+○マテリアル
+・UV
+・Texture
+・エスカレーターを参考にする
+
+
 ○モデリング
 ・UEのSoulCityを参考にする
-・モデリング資料
- -OldCity
- -ScifiCity
 
 ○Signs
 ・モデリング-
  -Box
- -Bobe
 ・プロシージャルモデリング
  -サイズ
  -配置
  -Connecter
 
-○Base
+△Base
 ・モデリング
  -Block
 ・プロシージャルモデリング
  -ブロックサイズ
  -Type
-
-○Detailの配置ロジックの実装
-・配置位置の調整
-・BlockSize
-・配置率
