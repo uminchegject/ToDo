@@ -5,8 +5,7 @@
 ※ラジオ休憩では1話聞いたら小休憩を挟む
  -1話分の作業だけ集中して行う
 ※詰まった場合は調べる時間と検証する時間をセットで明確に設定する
-
-○スマホのロックの移行について確認
+※複雑に考えず、最低限かつシンプルに実装する
 
 [Private]
 ○携帯の移行
@@ -34,14 +33,6 @@ https://qiita.com/snowxcrash
 https://www.youtube.com/playlist?list=PLhzCDkTROE9vg8DClp3bTHfXDiNW9LN47
 ・チーバ君
 
-●USDのレイヤー構造
--ドキュメント
-https://fereria.github.io/reincarnation_tech/usd/model_hierarchy#component
-https://fereria.github.io/reincarnation_tech/usd/asset_structure
--サンプル
-Kitchen_set
-Davinci
-
 ■FlatBuffers
 ○force_align(byte)でエンコードとデコードを行う為の調査
 
@@ -62,34 +53,9 @@ Davinci
 △HoudiniHDKの調査
 ・データの取得方法を調査
 
-△AdobeFileFormatPluginのデバッグ
-
-
 [Work]
-○Jsonから情報を取得する処理の実装
-・Key(特定の文字列)を判定して、その中で要素ごとに文字列を分割して、そこから中の値を参照する
-
-○他情報の追加
-・uv
-
-○クラス設計
-
-△FlatBuffersのソース整理
-・インクルードディレクトリをまとめる
-
-○ソースの整理
-・warningの解消
-・文字コード
-
-○デバッグ
-
-●インストール手準
-・libを事前に用意
-・CMakeの修正
- -Includeフォルダの修正
-・ソースフォルダをextrasフォルダに入れる
-・CMakeListに追加
-・ビルド
+■FileFormatPlugin
+○最終調整
 
 ■お昼の過ごし方
 ●ゲーム
@@ -108,56 +74,7 @@ Davinci
 ・Vカットポテト
 
 
-
 [PD]
-■Face_Generator
-※Building Generator from Image から 子供都市に拡張していくことを目標にする
-https://www.youtube.com/watch?v=Bh1OuhywtBw
-
-○Detailの配置ロジックの実装
-・配置位置の調整
-・BlockSize
-・配置率
-
-○マテリアル
-・UVとTextureをノードのみのシンプルな構造で行う
-・△UEへのコンバート方法を調査
-
-○モデリング
-・UEのSoulCityを参考にする
-
-○Signs
-・モデリング
- -Box
-・プロシージャルモデリング
- -サイズ
- -配置
- -Connecter
-
-△Base
-・モデリング
- -Block
-・プロシージャルモデリング
- -ブロックサイズ
- -Types
-
-△UEに適合
-
-△EditMode
-・blenderのプロジェクトを調査する
-https://wwwi.youtube.com/watch?v=UCYHV9GJU1Q
-
-■Sign
-●パラメーター
-・TexturePath
-・サイズ
-
-●処理
-・Boxの配置
- -Greeble
-・Connect
- -Greebleの分割ラインに配置
-
 ■City_Volume_Generator
 ○CityGeneratorのロジックを調査
 ・BlenderのCityGeneratorを参考にする
