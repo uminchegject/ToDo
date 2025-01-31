@@ -1,110 +1,3 @@
-※複雑に考えず、最低限かつシンプルに実装する
-
-■Study
-○HDKの調査
-・geoから値を取得する処理を実装する
-https://qiita.com/jyouryuusui/items/14cb1804ba426d7b287f
-https://www.sidefx.com/docs/hdk/_h_d_k__intro__creating_plugins.html
-
-○バイトのデコードとエンコード
-・バイト演算
-・statc_castについて
-
-■FlatBuffers
-○force_align(byte)でエンコードとデコードを行う為の調査
-
-○ドキュメント化
-・ソースの解説
-
-○サンプルソースの調査
-・ドキュメント化
-
-■FileFormatPlugin
-○実装メモの用意
-・Stream
-・StreamIO
-・Translator
-
-△dancingCubesの調査
-
-△HoudiniHDKの調査
-・データの取得方法を調査
-
-△AdobeFileFormatPluginのデバッグ
-
-■FileFormatPlugin(Work)
-○Jsonから情報を取得する処理の実装
-・Key(特定の文字列)を判定して、その括弧内の値を取得する処理を実装する
-void GetValue(const std::string Key, std::string& Value)
-{
-	
-}
-
-○クラス設計
-・ReadCustomFile
- -GetAllJson
- -GetMeshJson
- -GetMeshBinary
- -ReadData(json_path, binary_path)
-  -ReadAabb
-  -ReadMeshBinary
-  -ReadPositionData
-  -ReadNormalsData
-  -ReadUvsData
-  -ReadAabbData
-・WriteToLayer
-
-○他情報の追加
-・uv
-mesh.GetPointsAttr().Set(usdPoints);
-
-VtArray<int> faceVertexCounts, faceVertexIndices, faceUVIndices;
-for (const auto& face : group.faces) {
-	faceVertexCounts.push_back(face.size());
-	for (int p = face.pointsBegin; p != face.pointsEnd; ++p) {
-		faceVertexIndices.push_back(objPoints[p].vertIndex);
-		if (objPoints[p].uvIndex >= 0) {
-			faceUVIndices.push_back(objPoints[p].uvIndex);
-		}
-	}
-}
-
-
-mesh.GetFaceVertexCountsAttr().Set(faceVertexCounts);
-mesh.GetFaceVertexIndicesAttr().Set(faceVertexIndices);
-
-if (!usdUVs.empty() || !faceUVIndices.empty()) {
-	UsdGeomPrimvar uvPrimVar = UsdGeomPrimvarsAPI(mesh).CreatePrimvar(
-	TfToken("uv"), SdfValueTypeNames->TexCoord2fArray,
-	UsdGeomTokens->faceVarying);
-	if (!usdUVs.empty()) {
-		uvPrimVar.GetAttr().Set(usdUVs);
-	}
-	if (!faceUVIndices.empty()) {
-		uvPrimVar.CreateIndicesAttr().Set(faceUVIndices); // indexed
-	}
-}
-
-○FlatBuffersのソース整理
-・インクルードディレクトリをまとめる
-
-○ソースの整理
-・warningの解消
-・文字コード
-・最低限の情報
-https://fereria.github.io/reincarnation_tech/usd/model_hierarchy#component
-
-○デバッグ
-
-●インストール手準
-・libを事前に用意
-・CMakeの修正
- -Includeフォルダの修正
-・ソースフォルダをextrasフォルダに入れる
-・CMakeListに追加
-・ビルド
-
-
 ■Face_Generator
 ※Building Generator from Image から 子供都市に拡張していくことを目標にする
 https://www.youtube.com/watch?v=Bh1OuhywtBw
@@ -114,13 +7,6 @@ https://www.youtube.com/watch?v=Bh1OuhywtBw
 ・BlockSize
 ・配置率
 
-○マテリアル
-・UVとTextureをノードのみのシンプルな構造で行う
-・△UEへのコンバート方法を調査
-
-○モデリング
-・UEのSoulCityを参考にする
-
 ○Signs
 ・モデリング
  -Box
@@ -128,10 +14,20 @@ https://www.youtube.com/watch?v=Bh1OuhywtBw
  -サイズ
  -配置
  -Connecter
+・Texture
 
-△Base
-・モデリング
- -Block
-・プロシージャルモデリング
- -ブロックサイズ
- -Types
+○Baseの最終調整
+
+●マテリアル
+・UVとTextureをノードのみのシンプルな構造で行う
+・△UEへのコンバート方法を調査
+
+●モデリング
+・UEのSoulCityを参考にする
+
+△UEに適合
+
+△EditMode
+・blenderのプロジェクトを調査する
+https://wwwi.youtube.com/watch?v=UCYHV9GJU1Q
+
