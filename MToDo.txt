@@ -16,7 +16,11 @@ https://www.youtube.com/watch?v=Bh1OuhywtBw
  -Connecter
 ・Texture
 
-○Baseの最終調整
+○CityGeneratorロジックの調査
+
+△Baseを複数用意
+
+△Assetを複数用意
 
 ●マテリアル
 ・UVとTextureをノードのみのシンプルな構造で行う
@@ -30,4 +34,3 @@ https://www.youtube.com/watch?v=Bh1OuhywtBw
 △EditMode
 ・blenderのプロジェクトを調査する
 https://wwwi.youtube.com/watch?v=UCYHV9GJU1Q
-
