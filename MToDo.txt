@@ -1,98 +1,41 @@
-[反省]
-※ドキュメントまとめる際は参考サイトと書く内容をまずまとめて、範囲内で詳細を記載していく
- -参考サイトと章を先に決める
-※検証(実装)とドキュメント作成は明確に分ける
-※ラジオ休憩では1話聞いたら小休憩を挟む
- -1話分の作業だけ集中して行う
-※詰まった場合は調べる時間と検証する時間をセットで明確に設定する
-※複雑に考えず、最低限かつシンプルに実装する
+※ChillWorkDayは思考散歩時間をメインに設ける
+ -翌週のタスクと勉強の方向性を思考する
+ -間時間に思考をメモにまとめた上で1時間を目安に作業を行う。
 
-[Private]
-○携帯の移行
-
-○要らない物の整理
-
-
-[Study]
 ■Study
 ○HDKの調査
 ・geoから値を取得する処理を実装する
 https://qiita.com/jyouryuusui/items/14cb1804ba426d7b287f
-https://www.sidefx.com/docs/hdk/_h_d_k__intro__creating_plugins.html
+https://www.sidefx.com/docs/hdk/_h_d_k__intro.html
 
-○バイトのデコードとエンコード
-・バイト演算
-・statc_castについて
+○MegaStructureの調査
+https://gumroad.com/d/496de7a942ce8f21482619ec75e3e772
+・マテリアルの設定
+・UEへの持ち込み
 
-○USDTutorial
-https://openusd.org/release/tut_usd_tutorials.html
-https://qiita.com/snowxcrash
+■Face_Generator
+※Building Generator from Image から 子供都市に拡張していくことを目標にする
+https://www.youtube.com/watch?v=Bh1OuhywtBw
 
-○MayaTutorial
-・動画Tutorial
-https://www.youtube.com/playlist?list=PLhzCDkTROE9vg8DClp3bTHfXDiNW9LN47
-・チーバ君
+○Detailの配置ロジックの実装
+・配置位置の調整
+・BlockSize
+・配置率
 
-■FlatBuffers
-○force_align(byte)でエンコードとデコードを行う為の調査
+○Modeling(PD)
+※SoulCityのアセットをベースに用意していく
+・Base
+・SignBoard
+ -ImageTextureのパラメーター化
 
-○ドキュメント化
-・ソースの解説
+○EditModeで検証
 
-○サンプルソースの調査
-・ドキュメント化
+○UE上におけるModularModelingの実装
+・DataTableを用いた設計
 
-■FileFormatPlugin
-○実装メモの用意
-・Stream
-・StreamIO
-・Translator
+●パラメーター
+・TexturePath
+・ImageSize
 
-△dancingCubesの調査
-
-△HoudiniHDKの調査
-・データの取得方法を調査
-
-[Work]
-■FileFormatPlugin
-○最終調整
-
-■お昼の過ごし方
-●ゲーム
-・SFC
- -ドラクエ6
- -ロマサガ3
- -クロノトリガー
-・Switch
- -OuterWilds
- -3minit
-
-●散歩
-・Siositeルート
-・愛宕神社ルート
-・日比谷公園ルート
-・Vカットポテト
-
-
-[PD]
-■City_Volume_Generator
-○CityGeneratorのロジックを調査
-・BlenderのCityGeneratorを参考にする
-https://www.youtube.com/watch?v=Y6-EWYXZG4s
-
-△BaseGroundSurfaceのPDを実装
-・Primitive同士のマージを実装
-・Greebleノードを修正していく
- -SideFXLabのノードの中を確認する
-
-●IDEA
-・Greeble(Divide)
-・Cluster(Type)
-
-■Building_Generator
-○JapaneseCastleを調べる
- -Floor1
-
-○配置ロジックを応用
- 
-△アセットをMayaで作成retaasdawsdaswaqea
+●Material
+・仮でImageのみ
