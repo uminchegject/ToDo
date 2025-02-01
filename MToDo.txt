@@ -1,3 +1,13 @@
+■Study
+○HDKの調査
+・geoから値を取得する処理を実装する
+https://qiita.com/jyouryuusui/items/14cb1804ba426d7b287f
+https://www.sidefx.com/docs/hdk/_h_d_k__intro.html
+
+○MegaStructureの調査
+https://gumroad.com/d/496de7a942ce8f21482619ec75e3e772
+
+
 ■Face_Generator
 ※Building Generator from Image から 子供都市に拡張していくことを目標にする
 https://www.youtube.com/watch?v=Bh1OuhywtBw
@@ -12,22 +22,26 @@ https://www.youtube.com/watch?v=Bh1OuhywtBw
  -Box
 ・プロシージャルモデリング
  -サイズ
- -配置
- -Connecter
+ -△Connecter
 ・Texture
+ -とりあえず画像だけ
 
-○CityGeneratorロジックの調査
+●マテリアル
+・Megastructureを参考にする
+
+●モデリング
+・UEのSoulCityを参考にする
+
+
+△Greeble配置ロジック
+
+△CityGeneratorロジックの調査
 
 △Baseを複数用意
 
 △Assetを複数用意
 
-●マテリアル
-・UVとTextureをノードのみのシンプルな構造で行う
-・△UEへのコンバート方法を調査
-
-●モデリング
-・UEのSoulCityを参考にする
+△EditModeで検証
 
 △UEに適合
 
