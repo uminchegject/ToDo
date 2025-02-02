@@ -1,22 +1,3 @@
-■Detail
-●Type
-int paramIndexList[];
-for(int paramIndex = 1; paramIndex < chi("../FaceGenerator_TypeList") + 1; ++paramIndex)
-{
-    string type_name = chs("../FaceGenerator_TypeName" + itoa(paramIndex));    
-    if(inprimgroup(0, type_name, i@primnum) == 1)
-    {
-        append(paramIndexList, paramIndex);
-    }
-}
-
-int index = int(random(v@P) * len(paramIndexList));
-int paramIndex = paramIndexList[index];
-i@ParamIndex = paramIndex;
-v@BlockSize = chv("../FaceGenerator_BlockSize" + itoa(paramIndex));
-
-
-●SpawnPt
 for(int width = 0; width < widthPtNum; ++width)
 {
     for(int height = 0; height < heightPtNum; ++height)
@@ -29,38 +10,24 @@ for(int width = 0; width < widthPtNum; ++width)
 		
         if(heightPt1.y == heightPt2.y && widthPt1.y == widthPt2.y) continue;
 		
-		int assetParamNum = chi("../FaceGenerator_AssetList" + itoa(i@ParamIndex));
-		for(int paramIndex = 0; i < len(assetParamNum); paramIndex++)
-		{		
-			string assetPath = chs("../FaceGenerator_AssetPath" + itoa(ParamIndex) + "_" + itoa(assetIndex));
-			float assetRatio = chs("../FaceGenerator_AssetRatio" + itoa(ParamIndex) + "_" + itoa(assetIndex));
-			vector assetMinPos = chs("../FaceGenerator_AssetMinPos" + itoa(ParamIndex) + "_" + itoa(assetIndex));
-			vector assetMaxPos = chs("../FaceGenerator_AssetMaxPos" + itoa(ParamIndex) + "_" + itoa(assetIndex));		
-						
-			vector spawnPos = baseSpawnPos;
-			spawnPos.x += assetMaxPos.x * random(spawnPos) + assetMinPos.x;
-			spawnPos.y += assetMaxPos.y * random(spawnPos) + assetMinPos.y;
-			spawnPos.z += assetMaxPos.z * random(spawnPos) + assetMinPos.z;
-			
-			if(random(spawnPos) < assetRatio) continue;
-			
-			int pt = addpoint(0, spawnPos);
-			setpointattrib(0, "orient", pt, orient);
-			setpointattrib(0, "ObjectPath", pt, assetPath);
-			
-			
-		}
+	int assetParamNum = chi("../DetailGenerator_AssetList" + itoa(i@ParamIndex));
+	for(int paramIndex = 0; i < len(assetParamNum); paramIndex++)
+	{		
+		string assetPath = chs("../DetailGenerator_AssetPath" + itoa(ParamIndex) + "_" + itoa(assetIndex));
+		float assetRatio = chs("../DetailGenerator_AssetRatio" + itoa(ParamIndex) + "_" + itoa(assetIndex));
+		vector assetMinPos = chs("../DetailGenerator_AssetMinPos" + itoa(ParamIndex) + "_" + itoa(assetIndex));
+		vector assetMaxPos = chs("../DetailGenerator_AssetMaxPos" + itoa(ParamIndex) + "_" + itoa(assetIndex));		
+					
+		vector spawnPos = baseSpawnPos;
+		spawnPos.x += assetMaxPos.x * random(spawnPos) + assetMinPos.x;
+		spawnPos.y += assetMaxPos.y * random(spawnPos) + assetMinPos.y;
+		spawnPos.z += assetMaxPos.z * random(spawnPos) + assetMinPos.z;
 		
+		if(random(spawnPos) < assetRatio) continue;
+		
+		int pt = addpoint(0, spawnPos);
+		setpointattrib(0, "orient", pt, orient);
+		setpointattrib(0, "ObjectPath", pt, assetPath);
+	}	
     }
 }
-
-■Sign
-●パラメーター
-・TexturePath
-・サイズ
-
-●処理
-・Boxの配置
- -Greeble
-・Connect
- -Greebleの分割ラインに配置
