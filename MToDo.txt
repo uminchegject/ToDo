@@ -1,17 +1,46 @@
-※ChillWorkDayは思考散歩時間をメインに設ける
- -翌週のタスクと勉強の方向性を思考する
- -間時間に思考をメモにまとめた上で1時間を目安に作業を行う。
-
 ■Study
 ○HDKの調査
 ・geoから値を取得する処理を実装する
 https://qiita.com/jyouryuusui/items/14cb1804ba426d7b287f
 https://www.sidefx.com/docs/hdk/_h_d_k__intro.html
 
-○MegaStructureの調査
+○バイトのデコードとエンコード
+・バイト演算
+・statc_castについて
+
+○HoudiniTutorial
+・MegaStructureの調査
 https://gumroad.com/d/496de7a942ce8f21482619ec75e3e772
-・マテリアルの設定
-・UEへの持ち込み
+ -マテリアルの設定
+ -UEへの持ち込み
+ 
+■FlatBuffers
+○force_align(byte)でエンコードとデコードを行う為の調査
+
+○ドキュメント化
+・ソースの解説
+
+○サンプルソースの調査
+・ドキュメント化
+
+■FileFormatPlugin
+○実装メモの用意
+・Stream
+・StreamIO
+・Translator
+
+△dancingCubesの調査
+
+△HoudiniHDKの調査
+・データの取得方法を調査
+
+■Work
+○ドキュメント化
+
+○ソースの整理
+
+○Gitでソースをアップロード
+・ドキュメントでGitの使用方法を調査
 
 ■Face_Generator
 ※Building Generator from Image から 子供都市に拡張していくことを目標にする
@@ -27,7 +56,6 @@ https://www.youtube.com/watch?v=Bh1OuhywtBw
 ・Base
 ・SignBoard
  -ImageTextureのパラメーター化
-
 ○EditModeで検証
 
 ○UE上におけるModularModelingの実装
