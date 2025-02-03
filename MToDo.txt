@@ -1,28 +1,31 @@
 ■Study
-○HDKの調査
-・geoから値を取得する処理を実装する
+○HDKTutorial
 https://qiita.com/jyouryuusui/items/14cb1804ba426d7b287f
 https://www.sidefx.com/docs/hdk/_h_d_k__intro.html
 
-○バイトのデコードとエンコード
-・バイト演算
-・statc_castについて
+○USDTutorial
+https://openusd.org/release/tut_usd_tutorials.html
+https://qiita.com/snowxcrash
+
+○MayaTutorial
+・動画Tutorial
+https://www.youtube.com/playlist?list=PLhzCDkTROE9vg8DClp3bTHfXDiNW9LN47
+・チーバ君
 
 ○HoudiniTutorial
 ・MegaStructureの調査
 https://gumroad.com/d/496de7a942ce8f21482619ec75e3e772
  -マテリアルの設定
  -UEへの持ち込み
- 
+
 ■FlatBuffers
 ○force_align(byte)でエンコードとデコードを行う為の調査
-・△byte演算も挑戦してみる
+・byte演算も挑戦してみる
+ -ChatGPT
+ -エンコード、デコード
 
 ○ドキュメント化
 ・ソースの解説
-
-○サンプルソースの調査
-・ドキュメント化
 
 ■FileFormatPlugin
 ○実装メモの用意
@@ -32,16 +35,8 @@ https://gumroad.com/d/496de7a942ce8f21482619ec75e3e772
 
 △dancingCubesの調査
 
-△HoudiniHDKの調査
+△HoudiniGEOの調査
 ・データの取得方法を調査
-
-■Work
-○ドキュメント化
-
-○ソースの整理
-
-○Gitでソースをアップロード
-・ドキュメントでGitの使用方法を調査
 
 ■Face_Generator
 ※Building Generator from Image から 子供都市に拡張していくことを目標にする
