@@ -16,6 +16,7 @@ https://gumroad.com/d/496de7a942ce8f21482619ec75e3e772
  
 ■FlatBuffers
 ○force_align(byte)でエンコードとデコードを行う為の調査
+・△byte演算も挑戦してみる
 
 ○ドキュメント化
 ・ソースの解説
