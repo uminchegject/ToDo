@@ -4,13 +4,8 @@ https://qiita.com/jyouryuusui/items/14cb1804ba426d7b287f
 https://www.sidefx.com/docs/hdk/_h_d_k__intro.html
 
 ○USDTutorial
-https://openusd.org/release/tut_usd_tutorials.html
 https://qiita.com/snowxcrash
-
-○MayaTutorial
-・動画Tutorial
-https://www.youtube.com/playlist?list=PLhzCDkTROE9vg8DClp3bTHfXDiNW9LN47
-・チーバ君
+https://openusd.org/release/tut_usd_tutorials.html
 
 ○HoudiniTutorial
 ・MegaStructureの調査
@@ -18,25 +13,31 @@ https://gumroad.com/d/496de7a942ce8f21482619ec75e3e772
  -マテリアルの設定
  -UEへの持ち込み
 
+○MayaTutorial
+・動画Tutorial
+https://www.youtube.com/playlist?list=PLhzCDkTROE9vg8DClp3bTHfXDiNW9LN47
+・チーバ君
+
 ■FlatBuffers
 ○force_align(byte)でエンコードとデコードを行う為の調査
+https://flatbuffers.dev/quick_start/
+・CMakeでエンコード、デコードソースをビルドする
 ・byte演算も挑戦してみる
  -ChatGPT
  -エンコード、デコード
-
-○ドキュメント化
-・ソースの解説
+・ドキュメント化
+ -QuickStart
+ -byte演算で実演
 
 ■FileFormatPlugin
+○dancingCubesの調査
+・デバッグ
+・ドキュメント化
+
 ○実装メモの用意
-・Stream
-・StreamIO
-・Translator
+・Geometoryクラス
+・FileFormatPluginクラス
 
-△dancingCubesの調査
-
-△HoudiniGEOの調査
-・データの取得方法を調査
 
 ■お昼の過ごし方
 ●ゲーム
