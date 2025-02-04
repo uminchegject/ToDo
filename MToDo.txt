@@ -1,7 +1,30 @@
-○VisualStudio2019のインストール
+○HAPIを用いた情報取得処理の実装
+HAPI_Result result;
+
+HAPI_Session Session;
+HAPI_CookOptions CookOptions;
+HAPI_SessionInfo sessionInfo;
+CookOptions = HAPI_CookOptions_Create();
+HAPI_CreateInProcessSession(&Session, &sessionInfo);
+HAPI_Initialize(&Session,&CookOptions,true,-1,nullptr,nullptr,nullptr,nullptr,nullptr);
+
+HAPI_NodeId nodeId;
+result = HAPI_CreateNode(&Session, -1, "Sop/box", "Box_Node_Name", true, &nodeId);
+
+std::string geo_path = "C:/Users/yusuke.nakamura/Desktop/box_geo.geo";
+result = HAPI_LoadGeoFromFile(&Session, nodeId, geo_path.c_str());
+
+HAPI_GeoInfo geoInfo;
+result = HAPI_GetGeoInfo(&Session, nodeId, &geoInfo);
+if (result)
+{
+	HAPI_Cleanup(&Session);
+}
+
 
 ■Study
 ○HDKTutorial
+https://www.youtube.com/watch?v=984GWP_dUZk&list=PLDKz2hzFO3nfRfHJYrlphtasgPfNVN0JM
 https://qiita.com/jyouryuusui/items/14cb1804ba426d7b287f
 https://www.sidefx.com/docs/hdk/_h_d_k__intro.html
 
@@ -21,24 +44,41 @@ https://www.youtube.com/playlist?list=PLhzCDkTROE9vg8DClp3bTHfXDiNW9LN47
 ・チーバ君
 
 ■FlatBuffers
-○force_align(byte)でエンコードとデコードを行う為の調査
-https://flatbuffers.dev/quick_start/
-・CMakeでエンコード、デコードソースをビルドする
+○Sample_Binaryにbyteのエンコード、デコード処理を実装
 ・byte演算も挑戦してみる
  -ChatGPT
- -エンコード、デコード
-・ドキュメント化
- -QuickStart
- -byte演算で実演
 
 ■FileFormatPlugin
 ○dancingCubesの調査
-・デバッグ
-・ドキュメント化
+https://openusd.org/dev/api/_usd__page__dynamic_file_format.html
 
-○実装メモの用意
-・Geometoryクラス
-・FileFormatPluginクラス
+○GeometryFileFormatPluginの実装
+
+■Face_Generator
+※Building Generator from Image から 子供都市に拡張していくことを目標にする
+https://www.youtube.com/watch?v=Bh1OuhywtBw
+
+○Detailの配置ロジックの実装
+・配置位置の調整
+・BlockSize
+・配置率
+
+○Modeling(PD)
+※SoulCityのアセットをベースに用意していく
+・Base
+・SignBoard
+ -ImageTextureのパラメーター化
+○EditModeで検証
+
+○UE上におけるModularModelingの実装
+・DataTableを用いた設計
+
+●パラメーター
+・TexturePath
+・ImageSize
+
+●Material
+・仮でImageのみ
 
 
 ■昼休みの過ごし方
@@ -83,31 +123,3 @@ https://flatbuffers.dev/quick_start/
 ・Siositeルート
 ・愛宕神社ルート
 ・日比谷公園ルート
-
-
-
-■Face_Generator
-※Building Generator from Image から 子供都市に拡張していくことを目標にする
-https://www.youtube.com/watch?v=Bh1OuhywtBw
-
-○Detailの配置ロジックの実装
-・配置位置の調整
-・BlockSize
-・配置率
-
-○Modeling(PD)
-※SoulCityのアセットをベースに用意していく
-・Base
-・SignBoard
- -ImageTextureのパラメーター化
-○EditModeで検証
-
-○UE上におけるModularModelingの実装
-・DataTableを用いた設計
-
-●パラメーター
-・TexturePath
-・ImageSize
-
-●Material
-・仮でImageのみ
