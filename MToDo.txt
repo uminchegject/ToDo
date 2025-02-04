@@ -1,3 +1,5 @@
+○VisualStudio2019のインストール
+
 ■Study
 ○HDKTutorial
 https://qiita.com/jyouryuusui/items/14cb1804ba426d7b287f
@@ -39,21 +41,50 @@ https://flatbuffers.dev/quick_start/
 ・FileFormatPluginクラス
 
 
-■お昼の過ごし方
+■昼休みの過ごし方
+●皆さんはどのように昼休みを過ごしてますか?
+
+●ネットにあった昼休みのリフレッシュ法
+・水分をとったりおやつを食べたりする
+・昼寝をする
+・ストレッチや散歩などして体を動かす
+・瞑想する
+・自分の好みの音楽を聴く
+・顔を洗う
+
+●自分のリフレッシュ方法
+・OX時代
+ -ゲーム
+・現在
+ -散歩
+
 ●ゲーム
-・SFC
- -ドラクエ6
- -ロマサガ3
- -クロノトリガー
-・Switch
- -OuterWilds
- -3minit
+
+●具体的なタイトル
+
+●SFC
+・RPGをプレイする機会がなかったため勉強もかねてRPGをプレイ
+
+●ドラクエ6
+
+●ロマサガ3
+
+●クロノトリガー
+
+●インディーゲーム(Switch)
+・OuterWilds
+・3minit
+
+●ボードゲーム
+・街ころ
+・オインクゲームズ
 
 ●散歩
 ・Siositeルート
 ・愛宕神社ルート
 ・日比谷公園ルート
-・Vカットポテト
+
+
 
 ■Face_Generator
 ※Building Generator from Image から 子供都市に拡張していくことを目標にする
