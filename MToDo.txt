@@ -1,59 +1,3 @@
-○返信
-お疲れ様です。
-アスキーから情報を取得する理由につきましては、以下の2つとなります。
-・fbsフォルダに中間フォーマットのデコードファイルがない
-
-・サンプルファイルでもアスキーから文字列を取得する対応が行われている
-
-以上を踏まえて文字列から情報を取得する対応にさせて頂きました。
-総合ファイルにおいてもバイナリ形式である""が存在するのでこちらを使用する場合でしたらデコード対応を行う必要です。
-別途こちらの場合も対応した方が良いでしょうか。
-お手数をおかけしますがご確認お願い致します。
-
-
-○HAPIを用いた情報取得処理の実装
-HAPI_Result result;
-
-HAPI_Session Session;
-HAPI_CookOptions CookOptions;
-HAPI_SessionInfo sessionInfo;
-CookOptions = HAPI_CookOptions_Create();
-HAPI_CreateInProcessSession(&Session, &sessionInfo);
-HAPI_Initialize(&Session,&CookOptions,true,-1,nullptr,nullptr,nullptr,nullptr,nullptr);
-
-HAPI_NodeId nodeId;
-result = HAPI_CreateNode(&Session, -1, "Sop/box", "Box_Node_Name", true, &nodeId);
-
-std::string geo_path = "C:/Users/yusuke.nakamura/Desktop/box_geo.geo";
-result = HAPI_LoadGeoFromFile(&Session, nodeId, geo_path.c_str());
-
-HAPI_GeoInfo geoInfo;
-result = HAPI_GetGeoInfo(&Session, nodeId, &geoInfo);
-if (result)
-{
-	HAPI_Cleanup(&Session);
-}
-
-// 3. パーツ情報取得
-HAPI_PartInfo part_info;
-checkHapiResult(HAPI_GetPartInfo(&session, geo_node, 0, &part_info));
-std::cout << "Point Count: " << part_info.pointCount << std::endl;
-
-// 4. Point座標の取得
-HAPI_AttributeInfo attrib_info;
-checkHapiResult(HAPI_GetAttributeInfo(&session, geo_node, 0, "P", HAPI_AttributeOwner::HAPI_ATTROWNER_POINT, &attrib_info));
-
-// 5. メッシュデータ取得
-std::vector<int> vertex_list(part_info.vertexCount);
-checkHapiResult(HAPI_GetVertexList(&session, geo_node, 0, vertex_list.data(), 0, part_info.vertexCount));
-
-std::vector<int> face_counts(part_info.faceCount);
-checkHapiResult(HAPI_GetFaceCounts(&session, geo_node, 0, face_counts.data(), 0, part_info.faceCount));
-
-// 6. 後処理
-checkHapiResult(HAPI_Cleanup(&session));
-checkHapiResult(HAPI_CloseSession(&session));
-
 ■Study
 ○HoudiniEngineAPI
 https://qiita.com/jyouryuusui/items/3d86ab8e69652d5f951c
@@ -88,6 +32,13 @@ https://www.youtube.com/playlist?list=PLhzCDkTROE9vg8DClp3bTHfXDiNW9LN47
 △dancingCubesの調査
 https://openusd.org/dev/api/_usd__page__dynamic_file_format.html
 
+■Work
+○USDSkelの調査
+https://fereria.github.io/reincarnation_tech/usd/python/usdskel
+https://qiita.com/syoyo/items/94b9a43a6a6e3c251664
+https://fereria.github.io/reincarnation_tech_bk/65_SampleCode/Notebook/USD/UsdSkel/usdskel_02/
+https://openusd.org/dev/api/_usd_skel__intro.html
+
 ■Face_Generator
 ※Building Generator from Image から 子供都市に拡張していくことを目標にする
 https://www.youtube.com/watch?v=Bh1OuhywtBw
@@ -113,47 +64,3 @@ https://www.youtube.com/watch?v=Bh1OuhywtBw
 
 ●Material
 ・仮でImageのみ
-
-
-■昼休みの過ごし方
-●皆さんはどのように昼休みを過ごしてますか?
-
-●ネットにあった昼休みのリフレッシュ法
-・水分をとったりおやつを食べたりする
-・昼寝をする
-・ストレッチや散歩などして体を動かす
-・瞑想する
-・自分の好みの音楽を聴く
-・顔を洗う
-
-●自分のリフレッシュ方法
-・OX時代
- -ゲーム
-・現在
- -散歩
-
-●ゲーム
-
-●具体的なタイトル
-
-●SFC
-・RPGをプレイする機会がなかったため勉強もかねてRPGをプレイ
-
-●ドラクエ6
-
-●ロマサガ3
-
-●クロノトリガー
-
-●インディーゲーム(Switch)
-・OuterWilds
-・3minit
-
-●ボードゲーム
-・街ころ
-・オインクゲームズ
-
-●散歩
-・Siositeルート
-・愛宕神社ルート
-・日比谷公園ルート
