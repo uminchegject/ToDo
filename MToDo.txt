@@ -39,46 +39,20 @@ https://www.youtube.com/playlist?list=PLhzCDkTROE9vg8DClp3bTHfXDiNW9LN47
 ・HAPIの実装
 
 ■Work
-○USDSkelの調査
-https://fereria.github.io/reincarnation_tech/usd/python/usdskel
-https://qiita.com/syoyo/items/94b9a43a6a6e3c251664
-https://fereria.github.io/reincarnation_tech_bk/65_SampleCode/Notebook/USD/UsdSkel/usdskel_02/
-https://fereria.github.io/reincarnation_tech_bk/65_SampleCode/Notebook/USD/UsdSkel/usdskel_01/
-https://openusd.org/dev/api/_usd_skel__intro.html
+○USD側で必要な情報
+・ドキュメント化
 
-○ドキュメントを作成
-・サンプルソースを軸に詳細をまとめていく
+○内製フォーマット側の必要な情報
+・Anim情報の調査
+・ソース化
+・ドキュメント化
 
-■新橋の歩き方
-●愛宕神社ルート
-・愛宕神社
-・虎ノ門ヒルズ
-・麻布台ヒルズ
- -時間に余裕があれば…
+●中間報告内容
+※サンプルソースを軸に詳細をまとめていく
+・USDSkelの構築に必要な情報
+・フォーマット側における必要な情報
 
-●日比谷公園ルート
-・日比谷公園
-・日比谷ミッドタウン
-・Sonyビル
-・国際フォーラム
- -時間に余裕があれば…
 
-●Siositeルート
-・イタリア街
-・汐留
-・竹芝
- -時間に余裕があれば…
-
-●聖地
-・Siosite
- -V
- -とある
-・SL広場
- -かぐや
- -Blue
-・愛宕神社
- -
-・ゴジラ
 
 ■Face_Generator
 ※Building Generator from Image から 子供都市に拡張していくことを目標にする
@@ -104,4 +78,3 @@ https://www.youtube.com/watch?v=Bh1OuhywtBw
 
 ●Material
 ・仮でImageのみ
-
