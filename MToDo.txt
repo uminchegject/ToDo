@@ -1,3 +1,5 @@
+○MegaStructureのマテリアル周りをノードで調査
+
 ■Study
 ○HoudiniEngineAPI
 https://qiita.com/jyouryuusui/items/3d86ab8e69652d5f951c
@@ -24,12 +26,15 @@ https://www.youtube.com/playlist?list=PLhzCDkTROE9vg8DClp3bTHfXDiNW9LN47
 ■FlatBuffers
 ○Sample_Binaryにbyteのエンコード、デコード処理を実装
 ・byte演算も挑戦してみる
+・ドキュメント化
 
 ○fileformatpluginを実装
  -Tableも作ってみる
 
 
 ■FileFormatPlugin
+○必要最低限の実装方法をドキュメント化
+
 ○GeometryFileFormatPluginの実装
 ・HAPIの実装
 
@@ -40,6 +45,9 @@ https://qiita.com/syoyo/items/94b9a43a6a6e3c251664
 https://fereria.github.io/reincarnation_tech_bk/65_SampleCode/Notebook/USD/UsdSkel/usdskel_02/
 https://fereria.github.io/reincarnation_tech_bk/65_SampleCode/Notebook/USD/UsdSkel/usdskel_01/
 https://openusd.org/dev/api/_usd_skel__intro.html
+
+○ドキュメントを作成
+・サンプルソースを軸に詳細をまとめていく
 
 ■新橋の歩き方
 ●愛宕神社ルート
@@ -60,6 +68,17 @@ https://openusd.org/dev/api/_usd_skel__intro.html
 ・汐留
 ・竹芝
  -時間に余裕があれば…
+
+●聖地
+・Siosite
+ -V
+ -とある
+・SL広場
+ -かぐや
+ -Blue
+・愛宕神社
+ -
+・ゴジラ
 
 ■Face_Generator
 ※Building Generator from Image から 子供都市に拡張していくことを目標にする
@@ -85,3 +104,4 @@ https://www.youtube.com/watch?v=Bh1OuhywtBw
 
 ●Material
 ・仮でImageのみ
+
