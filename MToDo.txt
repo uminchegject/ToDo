@@ -1,63 +1,8 @@
-※ドキュメントはソースとコメントをベースに記載し補足情報をテキストと図で書き込む
- -記載する情報の選別、ソースとコメントの完成をまずする
-
-○MegaStructureのマテリアル周りをノードで調査
-
-○HoudiniEngineAPI
-https://qiita.com/jyouryuusui/items/3d86ab8e69652d5f951c
-
-■Study
-○HoudiniEngineAPI
-https://qiita.com/jyouryuusui/items/3d86ab8e69652d5f951c
-
-○HDKTutorial
-https://qiita.com/jyouryuusui/items/14cb1804ba426d7b287f
-https://www.sidefx.com/docs/hdk/_h_d_k__intro.html
-
-○USDTutorial
-https://qiita.com/snowxcrash
-https://openusd.org/release/tut_usd_tutorials.html
-
-○HoudiniTutorial
-・MegaStructureの調査
-https://gumroad.com/d/496de7a942ce8f21482619ec75e3e772
- -マテリアルの設定
- -UEへの持ち込み
-
-○MayaTutorial
-・動画Tutorial
-https://www.youtube.com/playlist?list=PLhzCDkTROE9vg8DClp3bTHfXDiNW9LN47
-・チーバ君
-
-■FlatBuffers
-○fileformatpluginを実装
- -Tableも作ってみる
-
-■FileFormatPlugin
-○GeometryFileFormatPluginの実装
-・ビルドエラーの修正
- -usdGeo_HAPIを消す
- -ソースをコメントアウトし、デバッグ
- -ソースをビルドしてデバッグ
-  -処理ブロックを一つずつ外していく
-
-■Work
-○USD側で必要な情報
-
-○内製フォーマット側の必要な情報
-・Anim情報の調査
-・ソース化
-・ドキュメント化
-
-●中間報告内容
-・USDSkelの構築に必要な情報
-・フォーマット側における必要な情報
-
 ■Face_Generator
 ※Building Generator from Image から 子供都市に拡張していくことを目標にする
 https://www.youtube.com/watch?v=Bh1OuhywtBw
 
-○Detailの配置ロジックの実装
+○Detailの配置ロジックの検証
 
 ○Modeling(PD)
 ※SoulCityのアセットをベースに用意していく
