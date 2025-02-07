@@ -7,6 +7,16 @@
 ※複雑に考えず、最低限かつシンプルに実装する
 ※詰まった場合は調べる時間と検証する時間をセットで明確に設定する
 
+○MegaStructureのマテリアル周りをノードで調査
+
+○HoudiniEngineAPIの実装
+・下記の処理を動かす
+HAPI_CreateInProcessSession(&Session, &sessionInfo);
+result = HAPI_Initialize(&Session,&CookOptions,true,-1,nullptr,nullptr,nullptr,nullptr,nullptr);
+result = HAPI_SaveHIPFile(&Session, "../test.hip", 0);
+
+○FileFormatPluginのエラーを修正
+
 [Private]
 ○携帯のプラン変更
 
