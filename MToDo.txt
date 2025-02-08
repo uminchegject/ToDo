@@ -1,24 +1,11 @@
-■Face_Generator
-※Building Generator from Image から 子供都市に拡張していくことを目標にする
-https://www.youtube.com/watch?v=Bh1OuhywtBw
+○Megastructureの調査
 
-○Detailの配置ロジックの検証
-
-○Modeling(PD)
-※SoulCityのアセットをベースに用意していく
-・Base
-・SignBoard
- -ImageTextureのパラメーター化
-
-○EditModeで検証
-※Detail,Baseの検証を行う
+○Roadの生成ロジックの設計
+・Gridから崩すように実装する
 
 ○UE上におけるModularModelingの実装
 ・DataTableを用いた設計
 
-●パラメーター
-・TexturePath
-・ImageSize
-
-●Material
-・仮でImageのみ
+○CityGeneratorのロジックを調査
+・BlenderのCityGeneratorを参考にする
+https://www.youtube.com/watch?v=Y6-EWYXZG4s
