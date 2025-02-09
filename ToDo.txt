@@ -1,13 +1,7 @@
-[反省]
-※ドキュメントはソースとコメントをベースに記載し補足情報をテキストと図で書き込む
- -記載する情報の選別、ソースとコメントの完成をまずする
-※ChillWorkDayは思考散歩時間をメインに設ける
- -翌週のタスクと勉強の方向性を思考する
- -間時間に思考をメモにまとめた上で1時間を目安に作業を行う。
-※複雑に考えず、最低限かつシンプルに実装する
-※詰まった場合は調べる時間と検証する時間をセットで明確に設定する
-
 ○MegaStructureのマテリアル周りをノードで調査
+
+○Voronoiの調査
+ -Manhattan
 
 ○HoudiniEngineAPIの実装
 ・下記の処理を動かす
@@ -17,10 +11,22 @@ result = HAPI_SaveHIPFile(&Session, "../test.hip", 0);
 
 ○FileFormatPluginのエラーを修正
 
+
+[反省]
+※ドキュメントはソースとコメントをベースに記載し補足情報をテキストと図で書き込む
+ -記載する情報の選別、ソースとコメントの完成をまずする
+※ChillWorkDayは思考散歩時間をメインに設ける
+ -翌週のタスクと勉強の方向性を思考する
+ -間時間に思考をメモにまとめた上で1時間を目安に作業を行う。
+※複雑に考えず、最低限かつシンプルに実装する
+※詰まった場合は調べる時間と検証する時間をセットで明確に設定する
+
+
 [Private]
 ○携帯のプラン変更
 
 ○要らない物の整理
+
 
 [Study]
 ■Study
@@ -46,7 +52,6 @@ https://gumroad.com/d/496de7a942ce8f21482619ec75e3e772
 https://www.youtube.com/playlist?list=PLhzCDkTROE9vg8DClp3bTHfXDiNW9LN47
 ・チーバ君
 
-
 ■FlatBuffers
 ○fileformatpluginを実装
  -Tableも作ってみる
@@ -68,19 +73,19 @@ https://www.youtube.com/playlist?list=PLhzCDkTROE9vg8DClp3bTHfXDiNW9LN47
 ※Building Generator from Image から 子供都市に拡張していくことを目標にする
 https://www.youtube.com/watch?v=Bh1OuhywtBw
 
-○Detailの配置ロジックの検証
+○UE上におけるModularModelingの実装
+・DataTableを用いた設計
+ -AssetPathを管理
 
 ○Modeling(PD)
 ※SoulCityのアセットをベースに用意していく
-・Base
 ・SignBoard
  -ImageTextureのパラメーター化
+・Base
+ -検証のためのバリエーションを用意
 
 ○EditModeで検証
-※Detail,Baseの検証を行う
-
-○UE上におけるModularModelingの実装
-・DataTableを用いた設計
+・Detail,Baseの検証を行う
 
 ●パラメーター
 ・TexturePath
@@ -93,6 +98,10 @@ https://www.youtube.com/watch?v=Bh1OuhywtBw
 ○CityGeneratorのロジックを調査
 ・BlenderのCityGeneratorを参考にする
 https://www.youtube.com/watch?v=Y6-EWYXZG4s
+
+○Roadの生成ロジックの設計
+・Gridから崩すように実装する
+ -VoronoiのBasePointの崩す
 
 △BaseGroundSurfaceのPDを実装
 ・Primitive同士のマージを実装
