@@ -46,12 +46,16 @@ https://www.youtube.com/playlist?list=PLhzCDkTROE9vg8DClp3bTHfXDiNW9LN47
 ○GeometryFileFormatPluginの実装
 ・Geometryソースを入れてビルドした際にusdcatができなくなる原因を調査
  -ChatGPT
- 
 
 [Work]
-○内製フォーマット側の必要な情報
-・スケルトンフォーマットの調査
-・ソースの作成
+○実装及びデバッグ
+・取得した値の確認
+ -BindSkin
+ -Skel
+ -SkelAnim
+・値の設定
+
+○設計の見直し
 
 
 [PD]
