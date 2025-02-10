@@ -1,8 +1,12 @@
 ■FaceGenerator
+○素材集め
+・BaseとDetailの要素が含まれてるFaceの素材を用意する
+・DetailはGridにテクスチャを貼るだけで使用する
+
 ○Modeling(PD)
 ※SoulCityのアセットをベースに用意していく
-・SignBoard
- -ImageTextureのパラメーター化
+・Detail
+ -立方体などのシンプルなモデルにテクスチャを貼る
 ・Base
  -検証のためのバリエーションを用意
 
@@ -27,6 +31,12 @@ https://www.youtube.com/@annoon6732
 ・角度
  -直角
  -乱雑
+ 
+■ProceduralModeling
+○Megastructureの調査
+https://gumroad.com/confirm?destination=download_page&id=496de7a942ce8f21482619ec75e3e772
+
+○DetailAssetの実装
 
 ■Study
 ○HoudiniEngineAPIの実装
