@@ -1,17 +1,3 @@
-○MegaStructureのマテリアル周りをノードで調査
-
-○Voronoiの調査
- -Manhattan
-
-○HoudiniEngineAPIの実装
-・下記の処理を動かす
-HAPI_CreateInProcessSession(&Session, &sessionInfo);
-result = HAPI_Initialize(&Session,&CookOptions,true,-1,nullptr,nullptr,nullptr,nullptr,nullptr);
-result = HAPI_SaveHIPFile(&Session, "../test.hip", 0);
-
-○FileFormatPluginのエラーを修正
-
-
 [反省]
 ※ドキュメントはソースとコメントをベースに記載し補足情報をテキストと図で書き込む
  -記載する情報の選別、ソースとコメントの完成をまずする
@@ -73,10 +59,6 @@ https://www.youtube.com/playlist?list=PLhzCDkTROE9vg8DClp3bTHfXDiNW9LN47
 ※Building Generator from Image から 子供都市に拡張していくことを目標にする
 https://www.youtube.com/watch?v=Bh1OuhywtBw
 
-○UE上におけるModularModelingの実装
-・DataTableを用いた設計
- -AssetPathを管理
-
 ○Modeling(PD)
 ※SoulCityのアセットをベースに用意していく
 ・SignBoard
@@ -86,6 +68,10 @@ https://www.youtube.com/watch?v=Bh1OuhywtBw
 
 ○EditModeで検証
 ・Detail,Baseの検証を行う
+
+○UE上におけるModularModelingの実装
+・DataTableを用いた設計
+ -AssetPathを管理
 
 ●パラメーター
 ・TexturePath
@@ -98,6 +84,17 @@ https://www.youtube.com/watch?v=Bh1OuhywtBw
 ○CityGeneratorのロジックを調査
 ・BlenderのCityGeneratorを参考にする
 https://www.youtube.com/watch?v=Y6-EWYXZG4s
+
+○パラメーターの設計
+※レベルデザインの構築動画を参考に必要なパラメーターをまとめる
+https://www.youtube.com/@unrealenvironments-speedle782
+https://www.youtube.com/@annoon6732
+・スケール
+ -高さ
+ -平面
+・角度
+ -直角
+ -乱雑
 
 ○Roadの生成ロジックの設計
 ・Gridから崩すように実装する
