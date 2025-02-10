@@ -1,18 +1,4 @@
-■Study
-○HoudiniEngineAPIの実装
-・下記の処理を動かす
-HAPI_CreateInProcessSession(&Session, &sessionInfo);
-result = HAPI_Initialize(&Session,&CookOptions,true,-1,nullptr,nullptr,nullptr,nullptr,nullptr);
-result = HAPI_SaveHIPFile(&Session, "../test.hip", 0);
-
-○FileFormatPluginのエラーを修正
-
-■Work
-○内製フォーマット側の必要な情報
-・スケルトンフォーマットの調査
-・ソースの作成
-
-■PD
+■FaceGenerator
 ○Modeling(PD)
 ※SoulCityのアセットをベースに用意していく
 ・SignBoard
@@ -23,6 +9,11 @@ result = HAPI_SaveHIPFile(&Session, "../test.hip", 0);
 ○EditModeで検証
 ・Detail,Baseの検証を行う
 
+△UE上におけるModularModelingの実装
+・DataTableを用いた設計
+ -AssetPathを管理
+
+■CityGenerator
 ○generatecityの調査
 https://dc1b3e5e2031efe23f5cf5d0f6ce6ca2.us-east-1.resend-links.com/CL0/https:%2F%2Fgumroad.com%2Fd%2F963d010b0cb49137a53a99d450e5e3ee/1/01000194e3595f29-c0d863d9-e50d-415f-9eb4-49263888326d-000000/5nNdTIgExTkgAqzX5mLqvUGTINzTnDa3oriSfEbBHOM=391
 
@@ -37,5 +28,35 @@ https://www.youtube.com/@annoon6732
  -直角
  -乱雑
 
+■Study
+○HoudiniEngineAPIの実装
+https://qiita.com/jyouryuusui/items/3d86ab8e69652d5f951c
+
+○FileFormatPluginのエラーを修正
+・序数1003がダイナミックライブラリdbgeng.dllから見つかりませんでした。
+HAPI_Session Session;
+HAPI_CookOptions CookOptions;
+HAPI_SessionInfo sessionInfo;
+CookOptions = HAPI_CookOptions_Create();
+
+result = HAPI_CreateInProcessSession(&Session, &sessionInfo);
+ -dbgeng.dllのバージョンやインストール状態、環境変数設定を確認する。
+ -HAPIの関数呼び出しが正しく行われているかを再確認する。
+ -必要なデバッグツール（Windows SDKやVisual Studio）がインストールされているかを確認する。
+
+
+■Work
+○実装及びデバッグ
+・取得した値の確認
+ -BindSkin
+ -Skel
+ -SkelAnim
+・値の設定
+
+○設計の見直し
+
+
 ■Private
 ○携帯プランの変更
+
+○イヤホンの修理or新調
