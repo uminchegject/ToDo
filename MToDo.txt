@@ -1,4 +1,33 @@
-○開発ブランチ及びHoudiniプロジェクトを用意する
+■Study
+○HoudiniEngineAPIの実装
+https://qiita.com/jyouryuusui/items/3d86ab8e69652d5f951c
+
+○FileFormatPluginのエラーを修正
+・序数1003がダイナミックライブラリdbgeng.dllから見つかりませんでした。
+HAPI_Session Session;
+HAPI_CookOptions CookOptions;
+HAPI_SessionInfo sessionInfo;
+CookOptions = HAPI_CookOptions_Create();
+
+result = HAPI_CreateInProcessSession(&Session, &sessionInfo);
+ -dbgeng.dllのバージョンやインストール状態、環境変数設定を確認する。
+ -HAPIの関数呼び出しが正しく行われているかを再確認する。
+ -必要なデバッグツール（Windows SDKやVisual Studio）がインストールされているかを確認する。
+
+■Work
+○実装及びデバッグ
+・取得した値の確認
+ -BindSkin
+ -Skel
+ -SkelAnim
+・値の設定
+
+○設計の見直し
+
+■Private
+○携帯プランの変更
+
+○イヤホンの修理or新調
 
 ■FaceGenerator
 ○EditModeで検証
@@ -24,42 +53,9 @@ https://www.youtube.com/@annoon6732
 ・角度
  -直角
  -乱雑
- 
+
 ■ProceduralModeling
 ○Megastructureの調査
 https://gumroad.com/confirm?destination=download_page&id=496de7a942ce8f21482619ec75e3e772
 
 ○DetailAssetの実装
-
-■Study
-○HoudiniEngineAPIの実装
-https://qiita.com/jyouryuusui/items/3d86ab8e69652d5f951c
-
-○FileFormatPluginのエラーを修正
-・序数1003がダイナミックライブラリdbgeng.dllから見つかりませんでした。
-HAPI_Session Session;
-HAPI_CookOptions CookOptions;
-HAPI_SessionInfo sessionInfo;
-CookOptions = HAPI_CookOptions_Create();
-
-result = HAPI_CreateInProcessSession(&Session, &sessionInfo);
- -dbgeng.dllのバージョンやインストール状態、環境変数設定を確認する。
- -HAPIの関数呼び出しが正しく行われているかを再確認する。
- -必要なデバッグツール（Windows SDKやVisual Studio）がインストールされているかを確認する。
-
-
-■Work
-○実装及びデバッグ
-・取得した値の確認
- -BindSkin
- -Skel
- -SkelAnim
-・値の設定
-
-○設計の見直し
-
-
-■Private
-○携帯プランの変更
-
-○イヤホンの修理or新調
