@@ -1,28 +1,21 @@
+○開発ブランチ及びHoudiniプロジェクトを用意する
+
 ■FaceGenerator
-○素材集め
-・Base
-・Detail
-
-○Modeling(PD)
-※SoulCityのアセットをベースに用意していく
-・Base
- -Gridにテクスチャを貼ってSplitし、使用する
-・Detail
- -Gridにテクスチャを貼る
-
 ○EditModeで検証
 ・Detail,Baseの検証を行う
 
-△UE上におけるModularModelingの実装
+○UE上におけるModularModelingの実装
 ・DataTableを用いた設計
  -AssetPathを管理
 
 ■CityGenerator
-○generatecityの調査
+○ProceduralCityの調査
 https://dc1b3e5e2031efe23f5cf5d0f6ce6ca2.us-east-1.resend-links.com/CL0/https:%2F%2Fgumroad.com%2Fd%2F963d010b0cb49137a53a99d450e5e3ee/1/01000194e3595f29-c0d863d9-e50d-415f-9eb4-49263888326d-000000/5nNdTIgExTkgAqzX5mLqvUGTINzTnDa3oriSfEbBHOM=391
+・Houdiniについても勉強する
 
 ○パラメーターの設計
 ※レベルデザインの構築動画を参考に必要なパラメーターをまとめる
+https://www.youtube.com/watch?v=Bh1OuhywtBw
 https://www.youtube.com/@unrealenvironments-speedle782
 https://www.youtube.com/@annoon6732
 ・スケール
