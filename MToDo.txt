@@ -1,14 +1,14 @@
 ■FaceGenerator
 ○素材集め
-・BaseとDetailの要素が含まれてるFaceの素材を用意する
-・DetailはGridにテクスチャを貼るだけで使用する
+・Base
+・Detail
 
 ○Modeling(PD)
 ※SoulCityのアセットをベースに用意していく
-・Detail
- -立方体などのシンプルなモデルにテクスチャを貼る
 ・Base
- -検証のためのバリエーションを用意
+ -Gridにテクスチャを貼ってSplitし、使用する
+・Detail
+ -Gridにテクスチャを貼る
 
 ○EditModeで検証
 ・Detail,Baseの検証を行う
