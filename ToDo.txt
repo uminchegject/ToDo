@@ -28,19 +28,14 @@ https://qiita.com/snowxcrash
 https://openusd.org/release/tut_usd_tutorials.html
 
 ○HoudiniTutorial
-・MegaStructureの調査
-https://gumroad.com/d/496de7a942ce8f21482619ec75e3e772
- -マテリアルの設定
- -UEへの持ち込み
+・ProceduralCityの調査
+https://dc1b3e5e2031efe23f5cf5d0f6ce6ca2.us-east-1.resend-links.com/CL0/https:%2F%2Fgumroad.com%2Fd%2F963d010b0cb49137a53a99d450e5e3ee/1/01000194e3595f29-c0d863d9-e50d-415f-9eb4-49263888326d-000000/5nNdTIgExTkgAqzX5mLqvUGTINzTnDa3oriSfEbBHOM=391
+・さつき先生
 
 ○MayaTutorial
 ・動画Tutorial
 https://www.youtube.com/playlist?list=PLhzCDkTROE9vg8DClp3bTHfXDiNW9LN47
 ・チーバ君
-
-■FlatBuffers
-○fileformatpluginを実装
- -Tableも作ってみる
 
 ■FileFormatPlugin
 ○GeometryFileFormatPluginの実装
