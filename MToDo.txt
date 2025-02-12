@@ -1,9 +1,13 @@
-○マトリクス()
+■Study
+○マトリクス
+・Study
  -3*4行列
  -逆行列
  -オイラー・クォータニオン
+・Matrixのライブラリを実装
+ -クラス実装
+ -計算処理とコメント
 
-■Study
 ○HoudiniEngineAPIの実装
 https://qiita.com/jyouryuusui/items/3d86ab8e69652d5f951c
 ・HAPI_SaveHIPFile(&Session, "../test.hip", 0);のエラー原因を調査
@@ -33,6 +37,7 @@ https://dc1b3e5e2031efe23f5cf5d0f6ce6ca2.us-east-1.resend-links.com/CL0/https:%2
 ■Work
 ○ドキュメントの整理
 ・設計の見直し
+ -ToDoリストを解決
 ・Layer構築処理の整理
  -関数化
 ・実装ソースと解説
