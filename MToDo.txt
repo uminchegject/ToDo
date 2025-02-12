@@ -1,3 +1,8 @@
+○マトリクス()
+ -3*4行列
+ -逆行列
+ -オイラー・クォータニオン
+
 ■Study
 ○HoudiniEngineAPIの実装
 https://qiita.com/jyouryuusui/items/3d86ab8e69652d5f951c
@@ -26,12 +31,18 @@ https://dc1b3e5e2031efe23f5cf5d0f6ce6ca2.us-east-1.resend-links.com/CL0/https:%2
  -チーバ君
 
 ■Work
+○ドキュメントの整理
+・設計の見直し
+・Layer構築処理の整理
+ -関数化
+・実装ソースと解説
+
 ○情報の取得処理の実装
 ・実装及びデバッグ
- -Skel
- -SkelAnim
 
 ○USDの構築処理の実装
+・構築処理の関数化
+・実装及びデバッグ
 
 ■Private
 ○携帯プランの変更
