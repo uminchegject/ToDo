@@ -14,6 +14,11 @@ result = HAPI_CreateInProcessSession(&Session, &sessionInfo);
  -HAPIの関数呼び出しが正しく行われているかを再確認する。
  -必要なデバッグツール（Windows SDKやVisual Studio）がインストールされているかを確認する。
 
+○HoudiniTutorial
+・ProceduralCityの調査
+https://dc1b3e5e2031efe23f5cf5d0f6ce6ca2.us-east-1.resend-links.com/CL0/https:%2F%2Fgumroad.com%2Fd%2F963d010b0cb49137a53a99d450e5e3ee/1/01000194e3595f29-c0d863d9-e50d-415f-9eb4-49263888326d-000000/5nNdTIgExTkgAqzX5mLqvUGTINzTnDa3oriSfEbBHOM=391
+・さつき先生
+
 ■Work
 ○実装及びデバッグ
 ・取得した値の確認
@@ -38,10 +43,6 @@ result = HAPI_CreateInProcessSession(&Session, &sessionInfo);
  -AssetPathを管理
 
 ■CityGenerator
-○ProceduralCityの調査
-https://dc1b3e5e2031efe23f5cf5d0f6ce6ca2.us-east-1.resend-links.com/CL0/https:%2F%2Fgumroad.com%2Fd%2F963d010b0cb49137a53a99d450e5e3ee/1/01000194e3595f29-c0d863d9-e50d-415f-9eb4-49263888326d-000000/5nNdTIgExTkgAqzX5mLqvUGTINzTnDa3oriSfEbBHOM=391
-・Houdiniについても勉強する
-
 ○パラメーターの設計
 ※レベルデザインの構築動画を参考に必要なパラメーターをまとめる
 https://www.youtube.com/watch?v=Bh1OuhywtBw
