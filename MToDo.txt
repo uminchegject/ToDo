@@ -10,8 +10,8 @@
 
 ○ボリューム
 https://www.sidefx.com/ja/docs/houdini/model/volumes.html
-・本
- -昨日の説明部分を抜粋して読む
+・本(ビジュアルエフェクト)
+ -説明部分を抜粋して読む
  -サンプルソースから理解する
 
 ○HoudiniEngineAPIの実装
@@ -59,8 +59,6 @@ https://dc1b3e5e2031efe23f5cf5d0f6ce6ca2.us-east-1.resend-links.com/CL0/https:%2
 
 ■FaceGenerator
 ○EditModeで検証
-・Baseの検証
-・Detailの検証
 
 ○UE上におけるModularModelingの実装
 ・DataTableを用いた設計
