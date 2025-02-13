@@ -9,8 +9,10 @@
  -関数を用いた計算処理とコメント
 
 ○ボリューム
+https://www.sidefx.com/ja/docs/houdini/model/volumes.html
 ・本
-　ーサンプルソースから理解する
+ -昨日の説明部分を抜粋して読む
+ -サンプルソースから理解する
 
 ○HoudiniEngineAPIの実装
 https://qiita.com/jyouryuusui/items/3d86ab8e69652d5f951c
@@ -50,6 +52,8 @@ https://dc1b3e5e2031efe23f5cf5d0f6ce6ca2.us-east-1.resend-links.com/CL0/https:%2
 
 ■Private
 ○携帯プランの変更
+
+○携帯の移行
 
 ○イヤホンの修理or新調
 
