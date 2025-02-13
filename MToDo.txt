@@ -6,7 +6,7 @@
  -オイラー・クォータニオン
 ・Matrixのライブラリを実装
  -クラス実装
- -計算処理とコメント
+ -関数を用いた計算処理とコメント
 
 ○HoudiniEngineAPIの実装
 https://qiita.com/jyouryuusui/items/3d86ab8e69652d5f951c
