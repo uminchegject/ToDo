@@ -1,5 +1,5 @@
 ■Study
-○マトリクス
+○マトリクスの実装
 ・Study
  -3*4行列
  -逆行列
@@ -27,7 +27,9 @@ result = HAPI_CreateInProcessSession(&Session, &sessionInfo);
 ○HoudiniTutorial
 ・ProceduralCityの調査
 https://dc1b3e5e2031efe23f5cf5d0f6ce6ca2.us-east-1.resend-links.com/CL0/https:%2F%2Fgumroad.com%2Fd%2F963d010b0cb49137a53a99d450e5e3ee/1/01000194e3595f29-c0d863d9-e50d-415f-9eb4-49263888326d-000000/5nNdTIgExTkgAqzX5mLqvUGTINzTnDa3oriSfEbBHOM=391
-・さつき先生
+・ボリューム
+ -
+ -本(サンプルソース)
 
 ○MayaTutorial
 ・参考資料
@@ -35,18 +37,13 @@ https://dc1b3e5e2031efe23f5cf5d0f6ce6ca2.us-east-1.resend-links.com/CL0/https:%2
  -チーバ君
 
 ■Work
-○ドキュメントの整理
-・設計の見直し
- -ToDoリストを解決
-・Layer構築処理の整理
- -関数化
-・実装ソースと解説
+○細かい部分の修正
+・設計の修正
 
 ○情報の取得処理の実装
 ・実装及びデバッグ
 
 ○USDの構築処理の実装
-・構築処理の関数化
 ・実装及びデバッグ
 
 ■Private
@@ -56,7 +53,8 @@ https://dc1b3e5e2031efe23f5cf5d0f6ce6ca2.us-east-1.resend-links.com/CL0/https:%2
 
 ■FaceGenerator
 ○EditModeで検証
-・Detail,Baseの検証を行う
+・Baseの検証
+・Detailの検証
 
 ○UE上におけるModularModelingの実装
 ・DataTableを用いた設計
