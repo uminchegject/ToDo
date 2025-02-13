@@ -8,6 +8,10 @@
  -クラス実装
  -関数を用いた計算処理とコメント
 
+○ボリューム
+・本
+　ーサンプルソースから理解する
+
 ○HoudiniEngineAPIの実装
 https://qiita.com/jyouryuusui/items/3d86ab8e69652d5f951c
 ・HAPI_SaveHIPFile(&Session, "../test.hip", 0);のエラー原因を調査
@@ -27,9 +31,7 @@ result = HAPI_CreateInProcessSession(&Session, &sessionInfo);
 ○HoudiniTutorial
 ・ProceduralCityの調査
 https://dc1b3e5e2031efe23f5cf5d0f6ce6ca2.us-east-1.resend-links.com/CL0/https:%2F%2Fgumroad.com%2Fd%2F963d010b0cb49137a53a99d450e5e3ee/1/01000194e3595f29-c0d863d9-e50d-415f-9eb4-49263888326d-000000/5nNdTIgExTkgAqzX5mLqvUGTINzTnDa3oriSfEbBHOM=391
-・ボリューム
- -
- -本(サンプルソース)
+
 
 ○MayaTutorial
 ・参考資料
