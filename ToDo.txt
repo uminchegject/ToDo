@@ -37,47 +37,44 @@ https://dc1b3e5e2031efe23f5cf5d0f6ce6ca2.us-east-1.resend-links.com/CL0/https:%2
 https://www.youtube.com/playlist?list=PLhzCDkTROE9vg8DClp3bTHfXDiNW9LN47
 ・チーバ君
 
+■マトリクス
+○マトリクスの実装
+・Study
+ -3*4行列
+ -逆行列
+ -オイラー・クォータニオン
+・Matrixのライブラリを実装
+ -クラス実装
+ -関数を用いた計算処理とコメント
+
 ■FileFormatPlugin
 ○GeometryFileFormatPluginの実装
 ・Geometryソースを入れてビルドした際にusdcatができなくなる原因を調査
  -ChatGPT
 
 [Work]
-○実装及びデバッグ
-・取得した値の確認
- -BindSkin
- -Skel
- -SkelAnim
-・値の設定
+○細かい部分の修正
+・設計の修正
 
-○設計の見直し
+○情報の取得処理の実装
+・実装及びデバッグ
 
+○USDの構築処理の実装
+・実装及びデバッグ
 
 [PD]
 ■Face_Generator
 ※Building Generator from Image から 子供都市に拡張していくことを目標にする
 https://www.youtube.com/watch?v=Bh1OuhywtBw
 
-○Modeling(PD)
-※SoulCityのアセットをベースに用意していく
-・SignBoard
- -ImageTextureのパラメーター化
-・Base
- -検証のためのバリエーションを用意
-
 ○EditModeで検証
-・Detail,Baseの検証を行う
+・Baseの検証
+・Detailの検証
 
 ○UE上におけるModularModelingの実装
 ・DataTableを用いた設計
  -AssetPathを管理
 
-●パラメーター
-・TexturePath
-・ImageSize
-
-●Material
-・仮でImageのみ
 
 ■City_Volume_Generator
 ○CityGeneratorのロジックを調査
@@ -86,6 +83,7 @@ https://www.youtube.com/watch?v=Y6-EWYXZG4s
 
 ○パラメーターの設計
 ※レベルデザインの構築動画を参考に必要なパラメーターをまとめる
+https://www.youtube.com/watch?v=Bh1OuhywtBw
 https://www.youtube.com/@unrealenvironments-speedle782
 https://www.youtube.com/@annoon6732
 ・スケール
