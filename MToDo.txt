@@ -9,15 +9,55 @@
 
 ○SFCの確認
 
+○ポケモンを借りる
+
+○Twitter凍結解除
+
 ■FaceGenerator
 ○EditModeで検証
 
 ○UE上におけるModularModelingの実装
 ・DataTableを用いた設計
- -AssetPathを管理
+ -TypeName
+ -AssetPath
+ 
+・TypeNameをAttributeに設定
+string typeName;
+if(inprimgroup(0, type_name, i@primnum) == 1)
+{
+	append(paramIndexList, paramIndex);
+	typeName = type_name
+}
+s@TypeName = typeName;
+
+・Base
+int assetParamIndexList[];
+for(int i = 0; i < point(1, "PtNum", 0); ++i)
+{
+	string typeName = point(1, "TypeName", i);
+	if(typeName == s@TypeName)
+	{
+		append(assetParamIndexList, i);
+	}
+}
+
+int paramNum = len(assetParamIndexList);
+int index = int(fit01(rand(spawnPos) * paramNum, 0, paramNum));
+if(index == 0) index = 1;
+int paramIndex = assetParamIndexList[index];
+string path = point(1, "AssetPath", paramIndex);
+
+・Detail
+int assetParamNum = chi("../DetailGenerator_AssetList" + itoa(i@ParamIndex));
+for(int paramIndex = 1; paramIndex < assetParamNum + 1; paramIndex++)
+{               
+	string assetPath = chs("../DetailGenerator_Asset" + itoa(i@ParamIndex) + "_" + itoa(paramIndex));
+	float assetRatio = ch("../DetailGenerator_AssetRatio" + itoa(i@ParamIndex) + "_" + itoa(paramIndex));
+	vector assetMinPos = chv("../DetailGenerator_AssetMinPos" + itoa(i@ParamIndex) + "_" + itoa(paramIndex));
+	vector assetMaxPos = chv("../DetailGenerator_AssetMaxPos" + itoa(i@ParamIndex) + "_" + itoa(paramIndex));
 
 ■CityGenerator
-○パラメーターの設計
+○区画設計
 ※レベルデザインの構築動画を参考に必要なパラメーターをまとめる
 https://www.youtube.com/watch?v=Y6-EWYXZG4s
 https://www.youtube.com/watch?v=Bh1OuhywtBw
@@ -26,9 +66,11 @@ https://www.youtube.com/@annoon6732
 ・スケール
  -高さ
  -平面
+ -比率
 ・角度
  -直角
  -乱雑
+
 
 ■ProceduralModeling
 ○Megastructureの調査
