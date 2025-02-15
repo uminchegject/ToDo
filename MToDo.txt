@@ -1,4 +1,6 @@
 ■Private
+○EpicStoreを取得
+
 ○携帯プランの変更
 
 ○携帯の移行
@@ -11,50 +13,17 @@
 
 ○ポケモンを借りる
 
-○Twitter凍結解除
 
 ■FaceGenerator
-○EditModeで検証
+※週末の検証機関に備える
 
-○UE上におけるModularModelingの実装
-・DataTableを用いた設計
- -TypeName
- -AssetPath
- 
-・TypeNameをAttributeに設定
-string typeName;
-if(inprimgroup(0, type_name, i@primnum) == 1)
-{
-	append(paramIndexList, paramIndex);
-	typeName = type_name
-}
-s@TypeName = typeName;
+○EditModeの準備
+・素材を用意
+・検証用のBaseを用意
 
-・Base
-int assetParamIndexList[];
-for(int i = 0; i < point(1, "PtNum", 0); ++i)
-{
-	string typeName = point(1, "TypeName", i);
-	if(typeName == s@TypeName)
-	{
-		append(assetParamIndexList, i);
-	}
-}
+○UE上におけるModularModelingの準備
+・ソースの実装
 
-int paramNum = len(assetParamIndexList);
-int index = int(fit01(rand(spawnPos) * paramNum, 0, paramNum));
-if(index == 0) index = 1;
-int paramIndex = assetParamIndexList[index];
-string path = point(1, "AssetPath", paramIndex);
-
-・Detail
-int assetParamNum = chi("../DetailGenerator_AssetList" + itoa(i@ParamIndex));
-for(int paramIndex = 1; paramIndex < assetParamNum + 1; paramIndex++)
-{               
-	string assetPath = chs("../DetailGenerator_Asset" + itoa(i@ParamIndex) + "_" + itoa(paramIndex));
-	float assetRatio = ch("../DetailGenerator_AssetRatio" + itoa(i@ParamIndex) + "_" + itoa(paramIndex));
-	vector assetMinPos = chv("../DetailGenerator_AssetMinPos" + itoa(i@ParamIndex) + "_" + itoa(paramIndex));
-	vector assetMaxPos = chv("../DetailGenerator_AssetMaxPos" + itoa(i@ParamIndex) + "_" + itoa(paramIndex));
 
 ■CityGenerator
 ○区画設計
