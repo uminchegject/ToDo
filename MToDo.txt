@@ -1,8 +1,6 @@
 ■Private
 ○EpicStoreを取得
 
-○携帯プランの変更
-
 ○携帯の移行
 
 ○イヤホンの修理or新調
@@ -16,12 +14,9 @@
 ※週末の検証期間に備える
 
 ○EditModeの準備
+・BaseとDetailをまとめる
 ・素材を用意
 ・検証用のBaseを用意
-
-○UE上におけるModularModelingの準備
-・ソースの実装
-・挙動確認
 
 ■CityGenerator
 ○区画設計
