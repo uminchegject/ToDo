@@ -7,15 +7,13 @@
 
 ○イヤホンの修理or新調
 
-○アイコン用の写真
-
 ○SFCの確認
 
 ○ポケモンを借りる
 
 
 ■FaceGenerator
-※週末の検証機関に備える
+※週末の検証期間に備える
 
 ○EditModeの準備
 ・素材を用意
@@ -23,7 +21,7 @@
 
 ○UE上におけるModularModelingの準備
 ・ソースの実装
-
+・挙動確認
 
 ■CityGenerator
 ○区画設計
