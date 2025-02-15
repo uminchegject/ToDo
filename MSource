@@ -1,33 +1,38 @@
-for(int width = 0; width < widthPtNum; ++width)
+●TypeNameをAttributeに設定
+string typeName;
+if(inprimgroup(0, type_name, i@primnum) == 1)
 {
-    for(int height = 0; height < heightPtNum; ++height)
-    {
-        vector baseSpawnPos = v@P;
-        baseSpawnPos += width * slider_x + slider_x / 2;
-        baseSpawnPos -= (slider_x * widthPtNum) / 2;
-        baseSpawnPos += height * slider_y + slider_y / 2;
-        baseSpawnPos -= (slider_y * heightPtNum) / 2;
-		
-        if(heightPt1.y == heightPt2.y && widthPt1.y == widthPt2.y) continue;
-		
-	int assetParamNum = chi("../DetailGenerator_AssetList" + itoa(i@ParamIndex));
-	for(int paramIndex = 0; i < len(assetParamNum); paramIndex++)
-	{		
-		string assetPath = chs("../DetailGenerator_AssetPath" + itoa(ParamIndex) + "_" + itoa(assetIndex));
-		float assetRatio = chs("../DetailGenerator_AssetRatio" + itoa(ParamIndex) + "_" + itoa(assetIndex));
-		vector assetMinPos = chs("../DetailGenerator_AssetMinPos" + itoa(ParamIndex) + "_" + itoa(assetIndex));
-		vector assetMaxPos = chs("../DetailGenerator_AssetMaxPos" + itoa(ParamIndex) + "_" + itoa(assetIndex));		
-					
-		vector spawnPos = baseSpawnPos;
-		spawnPos.x += assetMaxPos.x * random(spawnPos) + assetMinPos.x;
-		spawnPos.y += assetMaxPos.y * random(spawnPos) + assetMinPos.y;
-		spawnPos.z += assetMaxPos.z * random(spawnPos) + assetMinPos.z;
-		
-		if(random(spawnPos) < assetRatio) continue;
-		
-		int pt = addpoint(0, spawnPos);
-		setpointattrib(0, "orient", pt, orient);
-		setpointattrib(0, "ObjectPath", pt, assetPath);
-	}	
-    }
+	append(paramIndexList, paramIndex);
+	typeName = type_name
+}
+s@TypeName = typeName;
+
+●Base
+int assetParamIndexList[];
+for(int i = 0; i < point(1, "PtNum", 0); ++i)
+{
+	string typeName = point(1, "TypeName", i);
+	if(typeName == s@TypeName)
+	{
+		append(assetParamIndexList, i);
+	}
+}
+int paramNum = len(assetParamIndexList);
+int index = int(fit01(rand(spawnPos) * paramNum, 0, paramNum));
+if(index == 0) index = 1;
+int paramIndex = assetParamIndexList[index];
+string path = point(1, "AssetPath", paramIndex);
+
+●Detail
+for(int i = 0; i < point(1, "PtNum", 0); ++i)
+{
+	string typeName = point(1, "TypeName", i);
+	if(typeName == s@TypeName)
+	{
+		continue;
+	}
+	string assetPath = point(1, "AssetPath", i);
+	float assetRatio = point(1, "AssetRatio", i);
+	vector assetMinPos = point(1, "AssetMinPos", i);
+	vector assetMaxPos = point(1, "AssetMaxPos", i);
 }
