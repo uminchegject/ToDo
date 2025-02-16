@@ -1,38 +1,90 @@
-●TypeNameをAttributeに設定
-string typeName;
-if(inprimgroup(0, type_name, i@primnum) == 1)
+●Type
+int paramIndexList[];
+for(int paramIndex = 1; paramIndex < chi("../Detail_TypeList") + 1; ++paramIndex)
 {
-	append(paramIndexList, paramIndex);
-	typeName = type_name
+    string type_name = chs("../Detail_TypeName" + itoa(paramIndex));    
+    if(inprimgroup(0, type_name, i@primnum) == 1)
+    {
+        append(paramIndexList, paramIndex);
+    }
 }
-s@TypeName = typeName;
 
-●Base
-int assetParamIndexList[];
-for(int i = 0; i < point(1, "PtNum", 0); ++i)
-{
-	string typeName = point(1, "TypeName", i);
-	if(typeName == s@TypeName)
-	{
-		append(assetParamIndexList, i);
-	}
-}
-int paramNum = len(assetParamIndexList);
-int index = int(fit01(rand(spawnPos) * paramNum, 0, paramNum));
-if(index == 0) index = 1;
-int paramIndex = assetParamIndexList[index];
-string path = point(1, "AssetPath", paramIndex);
+int index = floor(random(v@P) * len(paramIndexList));
+int paramIndex = paramIndexList[index];
+i@DetailParamIndex = paramIndex;
+v@DetailBlockSize = chv("../DetailGenerator_BlockSize" + itoa(paramIndex));
 
-●Detail
-for(int i = 0; i < point(1, "PtNum", 0); ++i)
+
+paramIndexList = [];
+for(int paramIndex = 1; paramIndex < chi("../Base_TypeList") + 1; ++paramIndex)
 {
-	string typeName = point(1, "TypeName", i);
-	if(typeName == s@TypeName)
-	{
-		continue;
-	}
-	string assetPath = point(1, "AssetPath", i);
-	float assetRatio = point(1, "AssetRatio", i);
-	vector assetMinPos = point(1, "AssetMinPos", i);
-	vector assetMaxPos = point(1, "AssetMaxPos", i);
+    string type_name = chs("../Base_TypeName" + itoa(paramIndex));    
+    if(inprimgroup(0, type_name, i@primnum) == 1)
+    {
+        append(paramIndexList, paramIndex);
+    }
 }
+
+index = floor(random(v@P) * len(paramIndexList));
+paramIndex = paramIndexList[index];
+v@DetailBlockSize = chv("../Base_BlockSize" + itoa(paramIndex));
+i@BaseParamIndex = paramIndex;
+
+
+●BasePoint
+for(int width = 0; width < widthPtNum; ++width)
+{
+    for(int height = 0; height < heightPtNum; ++height)
+    {    
+        vector baseSpawnPos = v@P;
+        baseSpawnPos += width * slider_x + slider_x / 2;
+        baseSpawnPos -= (slider_x * widthPtNum) / 2;
+        baseSpawnPos += height * slider_y + slider_y / 2;
+        baseSpawnPos -= (slider_y * heightPtNum) / 2;
+		baseSpawnPos = qrotate(orient, baseSpawnPos);
+                
+        if(heightPt1.y == heightPt2.y && widthPt1.y == widthPt2.y) continue;
+        
+		int isUnreal = chi("../FaceGenerator_IsUnreal");
+		
+        int pt = addpoint(0, spawnPos);
+        setpointattrib(0, "orient", pt, orient);
+        setpointattrib(0, "scale", pt, adjustScale);
+
+        int paramNum = chi("../Base_AssetList" + itoa(i@ParamIndex));
+        int index = floor(random(v@P) * paramNum);
+        string path = chs("../FaceGenerator_Asset" + itoa(i@ParamIndex) + "_" + itoa(index));
+        setpointattrib(0, "ObjectPath", pt, path);
+        setpointattrib(0, "IsUnreal", pt, isUnreal);		
+        
+        int assetParamNum = chi("../Detail_AssetList" + itoa(i@ParamIndex));
+        for(int paramIndex = 1; paramIndex < assetParamNum + 1; paramIndex++)
+        {    
+		
+            string assetPath = chs("../Detail_AssetList" + itoa(i@ParamIndex) + "_" + itoa(paramIndex));
+            float assetRatio = ch("../Detail_AssetList" + itoa(i@ParamIndex) + "_" + itoa(paramIndex));
+            vector assetMinPos = chv("../Detail_AssetList" + itoa(i@ParamIndex) + "_" + itoa(paramIndex));
+            vector assetMaxPos = chv("../Detail_AssetList" + itoa(i@ParamIndex) + "_" + itoa(paramIndex));
+
+            vector spawnPos = 0;
+            spawnPos.x += assetMaxPos.x * random(baseSpawnPos) + assetMinPos.x;
+            spawnPos.y += assetMaxPos.y * random(baseSpawnPos) + assetMinPos.y;
+            spawnPos.z += assetMaxPos.z * random(baseSpawnPos) + assetMinPos.z;
+            spawnPos = qrotate(orient, spawnPos);
+            
+            spawnPos += baseSpawnPos;
+            
+            if(random(spawnPos) < assetRatio) continue;            
+                
+            int pt = addpoint(0, spawnPos);
+            setpointattrib(0, "orient", pt, orient);
+            setpointattrib(0, "ObjectPath", pt, assetPath);
+            setpointattrib(0, "assetRatio", pt, assetRatio);
+            setpointattrib(0, "assetMinPos", pt, assetMinPos);
+            setpointattrib(0, "assetMaxPos", pt, assetMaxPos);
+			setpointattrib(0, "IsUnreal", pt, isUnreal);
+        }
+    }
+}
+
+removeprim(0, @primnum, 1);
