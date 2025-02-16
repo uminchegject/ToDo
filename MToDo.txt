@@ -1,53 +1,8 @@
-■Private
-○EpicStoreを取得
-
-○携帯の移行
-
-○イヤホンの修理or新調
-
-○SFCの確認
-
-○ポケモンを借りる
-
-
-■FaceGenerator
-※週末の検証期間に備える
-
-○BaseとDetailをまとめる
-・挙動確認を行う
-
-○検証
-・1ブロック用意する
- -※密に配置する
- -素材を用意(UEModule, Grid)
-
-●目標 
-https://jp.pinterest.com/pin/829577193896609455/
-
-■CityGenerator
-○区画設計
-※レベルデザインの構築動画を参考に必要なパラメーターをまとめる
-https://www.youtube.com/watch?v=Y6-EWYXZG4s
-https://www.youtube.com/watch?v=Bh1OuhywtBw
-https://www.youtube.com/@unrealenvironments-speedle782
-https://www.youtube.com/@annoon6732
-・スケール
- -高さ
- -平面
- -比率
-・角度
- -直角
- -乱雑
-
-
-■ProceduralModeling
-○Megastructureの調査
-https://gumroad.com/confirm?destination=download_page&id=496de7a942ce8f21482619ec75e3e772
-
-○DetailAssetの実装
-
-
 ■Study
+○TimeSampling
+https://fereria.github.io/reincarnation_tech/usd/time_sampling
+https://qiita.com/snowxcrash/items/34f95c5b2367d6ba4a42
+
 ○マトリクスの実装
 ・Study
  -3*4行列
@@ -62,10 +17,6 @@ https://www.sidefx.com/ja/docs/houdini/model/volumes.html
 ・本(ビジュアルエフェクト)
  -説明部分を抜粋して読む
  -サンプルソースから理解する
- 
-○TimeSampling
-https://fereria.github.io/reincarnation_tech/usd/time_sampling
-https://qiita.com/snowxcrash/items/34f95c5b2367d6ba4a42
 
 ○HoudiniEngineAPIの実装
 https://qiita.com/jyouryuusui/items/3d86ab8e69652d5f951c
@@ -88,9 +39,6 @@ result = HAPI_CreateInProcessSession(&Session, &sessionInfo);
 https://dc1b3e5e2031efe23f5cf5d0f6ce6ca2.us-east-1.resend-links.com/CL0/https:%2F%2Fgumroad.com%2Fd%2F963d010b0cb49137a53a99d450e5e3ee/1/01000194e3595f29-c0d863d9-e50d-415f-9eb4-49263888326d-000000/5nNdTIgExTkgAqzX5mLqvUGTINzTnDa3oriSfEbBHOM=391
 
 ○MayaTutorial
-・参考資料
- -https://www.youtube.com/playlist?list=PLhzCDkTROE9vg8DClp3bTHfXDiNW9LN47
- -チーバ君
 
 ■Work
 ○ソースの修正
@@ -100,3 +48,55 @@ https://dc1b3e5e2031efe23f5cf5d0f6ce6ca2.us-east-1.resend-links.com/CL0/https:%2
 
 ○USDの構築処理の実装
 ・実装及びデバッグ
+
+■Private
+○EpicStoreを取得
+
+○携帯の移行
+
+○ポケモンを借りる
+
+■FaceGenerator
+※週末の検証期間に備える
+
+○BaseとDetailをまとめる
+・挙動確認を行う
+
+○検証
+・※1ブロックずつ対応していく
+・素材を用意
+・DetailとBaseをそれぞれセットで用意していく
+
+●目標 
+https://jp.pinterest.com/pin/829577193896609455/
+
+■CityGenerator
+○区画設計
+※レベルデザインの構築動画を参考に必要なパラメーターをまとめる
+https://www.youtube.com/watch?v=Y6-EWYXZG4s
+https://www.youtube.com/watch?v=Bh1OuhywtBw
+https://www.youtube.com/@unrealenvironments-speedle782
+https://www.youtube.com/@annoon6732
+・スケール
+ -高さ
+ -平面
+ -比率
+・角度
+ -直角
+ -乱雑
+
+○Roadの生成ロジックの設計
+・Gridから崩すように実装する
+ -VoronoiのBasePointの崩す
+
+△BaseGroundSurfaceのPDを実装
+・Primitive同士のマージを実装
+・Greebleノードを修正していく
+ -SideFXLabのノードの中を確認する
+
+
+■ProceduralModeling
+○Megastructureの調査
+https://gumroad.com/confirm?destination=download_page&id=496de7a942ce8f21482619ec75e3e772
+
+○DetailAssetの実装
