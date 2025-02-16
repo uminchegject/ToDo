@@ -1,115 +1,62 @@
 [反省]
+※ToDoには軸となる処理を書く
 ※ドキュメントはソースとコメントをベースに記載し補足情報をテキストと図で書き込む
  -記載する情報の選別、ソースとコメントの完成をまずする
 ※ChillWorkDayは思考散歩時間をメインに設ける
  -翌週のタスクと勉強の方向性を思考する
  -間時間に思考をメモにまとめた上で1時間を目安に作業を行う。
-※複雑に考えず、最低限かつシンプルに実装する
-※詰まった場合は調べる時間と検証する時間をセットで明確に設定する
 
 
 [Private]
-○携帯のプラン変更
+○携帯の整理
 
 ○要らない物の整理
 
 
 [Study]
 ■Study
-○HoudiniEngineAPI
-https://qiita.com/jyouryuusui/items/3d86ab8e69652d5f951c
-
-○HDKTutorial
-https://qiita.com/jyouryuusui/items/14cb1804ba426d7b287f
-https://www.sidefx.com/docs/hdk/_h_d_k__intro.html
-
-○USDTutorial
+●USD
 https://qiita.com/snowxcrash
 https://openusd.org/release/tut_usd_tutorials.html
 
-○HoudiniTutorial
-・ProceduralCityの調査
-https://dc1b3e5e2031efe23f5cf5d0f6ce6ca2.us-east-1.resend-links.com/CL0/https:%2F%2Fgumroad.com%2Fd%2F963d010b0cb49137a53a99d450e5e3ee/1/01000194e3595f29-c0d863d9-e50d-415f-9eb4-49263888326d-000000/5nNdTIgExTkgAqzX5mLqvUGTINzTnDa3oriSfEbBHOM=391
-・さつき先生
+●Math
+・Matrix
 
-○MayaTutorial
+●Houdini
+・HoudiniEngineAPI
+https://qiita.com/jyouryuusui/items/3d86ab8e69652d5f951c
+・HDKTutorial
+https://qiita.com/jyouryuusui/items/14cb1804ba426d7b287f
+https://www.sidefx.com/docs/hdk/_h_d_k__intro.html
+・本
+ -さつき先生
+ -ビジュアルエフェクト
+ -新ビジュアルエフェクト
+
+●Maya
 ・動画Tutorial
 https://www.youtube.com/playlist?list=PLhzCDkTROE9vg8DClp3bTHfXDiNW9LN47
 ・チーバ君
 
-■マトリクス
-○マトリクスの実装
-・Study
- -3*4行列
- -逆行列
- -オイラー・クォータニオン
-・Matrixのライブラリを実装
- -クラス実装
- -関数を用いた計算処理とコメント
-
-■FileFormatPlugin
-○GeometryFileFormatPluginの実装
-・Geometryソースを入れてビルドした際にusdcatができなくなる原因を調査
- -ChatGPT
 
 [Work]
-○細かい部分の修正
-・設計の修正
-
-○情報の取得処理の実装
-・実装及びデバッグ
-
-○USDの構築処理の実装
-・実装及びデバッグ
+●UsdSkel
+・TimeSampling
 
 [PD]
 ■Face_Generator
 ※Building Generator from Image から 子供都市に拡張していくことを目標にする
 https://www.youtube.com/watch?v=Bh1OuhywtBw
 
-○EditModeで検証
-・Baseの検証
-・Detailの検証
-
-○UE上におけるModularModelingの実装
-・DataTableを用いた設計
- -AssetPathを管理
-
 
 ■City_Volume_Generator
-○CityGeneratorのロジックを調査
-・BlenderのCityGeneratorを参考にする
+※BlenderのCityGeneratorを参考にする
 https://www.youtube.com/watch?v=Y6-EWYXZG4s
-
-○パラメーターの設計
-※レベルデザインの構築動画を参考に必要なパラメーターをまとめる
-https://www.youtube.com/watch?v=Bh1OuhywtBw
-https://www.youtube.com/@unrealenvironments-speedle782
-https://www.youtube.com/@annoon6732
-・スケール
- -高さ
- -平面
-・角度
- -直角
- -乱雑
-
-○Roadの生成ロジックの設計
-・Gridから崩すように実装する
- -VoronoiのBasePointの崩す
-
-△BaseGroundSurfaceのPDを実装
-・Primitive同士のマージを実装
-・Greebleノードを修正していく
- -SideFXLabのノードの中を確認する
 
 ●IDEA
 ・Greeble(Divide)
 ・Cluster(Type)
 
 ■Building_Generator
-○JapaneseCastleを調べる
- -Floor1
-
-○配置ロジックを応用
+※Houdini上のProceduralModelingを行うことを目標にする
  
-△アセットをMayaで作成retaasdawsdaswaqea
