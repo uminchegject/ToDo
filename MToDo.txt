@@ -1,16 +1,30 @@
+■Work
+○挙動確認
+・内製フォーマットデータから動きを確認
+
+○ソースの修正及び整理
+
+
 ■Study
+○デバッグ方法の調査
+https://qiita.com/dicepastoso/items/01682bdc88f45e9054f1
+・CityGeneratorの確認方法を検討
+
 ○TimeSampling
+・ドキュメント
 https://fereria.github.io/reincarnation_tech/usd/time_sampling
+・サンプルソースの実装(C++)
 https://qiita.com/snowxcrash/items/34f95c5b2367d6ba4a42
 
 ○マトリクスの実装
-・Study
+・Matrixのライブラリを実装
  -3*4行列
  -逆行列
- -オイラー・クォータニオン
-・Matrixのライブラリを実装
  -クラス実装
- -関数を用いた計算処理とコメント
+・実装内容をドキュメント化
+
+○クォータニオン
+・オイラーとクォータニオン
 
 ○ボリューム
 https://www.sidefx.com/ja/docs/houdini/model/volumes.html
@@ -40,14 +54,6 @@ https://dc1b3e5e2031efe23f5cf5d0f6ce6ca2.us-east-1.resend-links.com/CL0/https:%2
 
 ○MayaTutorial
 
-■Work
-○ソースの修正
-
-○情報の取得処理の実装
-・実装及びデバッグ
-
-○USDの構築処理の実装
-・実装及びデバッグ
 
 ■Private
 ○EpicStoreを取得
@@ -55,6 +61,7 @@ https://dc1b3e5e2031efe23f5cf5d0f6ce6ca2.us-east-1.resend-links.com/CL0/https:%2
 ○携帯の移行
 
 ○ポケモンを借りる
+
 
 ■FaceGenerator
 ※週末の検証期間に備える
@@ -69,6 +76,7 @@ https://dc1b3e5e2031efe23f5cf5d0f6ce6ca2.us-east-1.resend-links.com/CL0/https:%2
 
 ●目標 
 https://jp.pinterest.com/pin/829577193896609455/
+
 
 ■CityGenerator
 ○区画設計
