@@ -16,6 +16,7 @@
 [Study]
 ■Study
 ●USD
+・構造
 https://qiita.com/snowxcrash
 https://openusd.org/release/tut_usd_tutorials.html
 
@@ -41,7 +42,7 @@ https://www.youtube.com/playlist?list=PLhzCDkTROE9vg8DClp3bTHfXDiNW9LN47
 
 [Work]
 ●UsdSkel
-・TimeSampling
+・構築
 
 [PD]
 ■Face_Generator
