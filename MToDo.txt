@@ -6,25 +6,28 @@
 
 
 ■Study
+○TimeSampling
+・ドキュメント
+https://fereria.github.io/reincarnation_tech/usd/time_sampling
+https://qiita.com/snowxcrash/items/34f95c5b2367d6ba4a42
+
+○マトリクスの実装
+・実装内容をドキュメント化
+・ゲームのマトリックス
+ -ローカル
+ -ワールド
+ -ビュー
+ -パースペクティブ
+
 ○デバッグ方法の調査
 https://qiita.com/dicepastoso/items/01682bdc88f45e9054f1
 ・CityGeneratorの確認方法を検討
 
-○TimeSampling
-・ドキュメント
-https://fereria.github.io/reincarnation_tech/usd/time_sampling
-・サンプルソースの実装(C++)
-https://qiita.com/snowxcrash/items/34f95c5b2367d6ba4a42
-
-○マトリクスの実装
-・Matrixのライブラリを実装
- -3*4行列
- -逆行列
- -クラス実装
-・実装内容をドキュメント化
-
 ○クォータニオン
 ・オイラーとクォータニオン
+
+○リグ
+・UsdSkelと比較しながら勉強する
 
 ○ボリューム
 https://www.sidefx.com/ja/docs/houdini/model/volumes.html
