@@ -6,11 +6,6 @@
 
 
 ■Study
-○TimeSampling
-・ドキュメント
-https://fereria.github.io/reincarnation_tech/usd/time_sampling
-https://qiita.com/snowxcrash/items/34f95c5b2367d6ba4a42
-
 ○マトリクスの実装
 ・実装内容をドキュメント化
 ・ゲームのマトリックス
@@ -25,9 +20,6 @@ https://qiita.com/dicepastoso/items/01682bdc88f45e9054f1
 
 ○クォータニオン
 ・オイラーとクォータニオン
-
-○リグ
-・UsdSkelと比較しながら勉強する
 
 ○ボリューム
 https://www.sidefx.com/ja/docs/houdini/model/volumes.html
@@ -56,7 +48,7 @@ result = HAPI_CreateInProcessSession(&Session, &sessionInfo);
 https://dc1b3e5e2031efe23f5cf5d0f6ce6ca2.us-east-1.resend-links.com/CL0/https:%2F%2Fgumroad.com%2Fd%2F963d010b0cb49137a53a99d450e5e3ee/1/01000194e3595f29-c0d863d9-e50d-415f-9eb4-49263888326d-000000/5nNdTIgExTkgAqzX5mLqvUGTINzTnDa3oriSfEbBHOM=391
 
 ○MayaTutorial
-
+・リグ
 
 ■Private
 ○EpicStoreを取得
