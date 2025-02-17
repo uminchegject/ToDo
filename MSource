@@ -41,11 +41,11 @@ for(int width = 0; width < widthPtNum; ++width)
         baseSpawnPos -= (slider_x * widthPtNum) / 2;
         baseSpawnPos += height * slider_y + slider_y / 2;
         baseSpawnPos -= (slider_y * heightPtNum) / 2;
-		baseSpawnPos = qrotate(orient, baseSpawnPos);
+	baseSpawnPos = qrotate(orient, baseSpawnPos);
                 
         if(heightPt1.y == heightPt2.y && widthPt1.y == widthPt2.y) continue;
         
-		int isUnreal = chi("../FaceGenerator_IsUnreal");
+	int isUnreal = chi("../FaceGenerator_IsUnreal");
 		
         int pt = addpoint(0, spawnPos);
         setpointattrib(0, "orient", pt, orient);
@@ -82,7 +82,7 @@ for(int width = 0; width < widthPtNum; ++width)
             setpointattrib(0, "assetRatio", pt, assetRatio);
             setpointattrib(0, "assetMinPos", pt, assetMinPos);
             setpointattrib(0, "assetMaxPos", pt, assetMaxPos);
-			setpointattrib(0, "IsUnreal", pt, isUnreal);
+            setpointattrib(0, "IsUnreal", pt, isUnreal);
         }
     }
 }
