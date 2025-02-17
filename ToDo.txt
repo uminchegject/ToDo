@@ -22,6 +22,7 @@ https://openusd.org/release/tut_usd_tutorials.html
 
 ●Math
 ・Matrix
+・クォータニオン
 
 ●Houdini
 ・HoudiniEngineAPI
@@ -35,10 +36,10 @@ https://www.sidefx.com/docs/hdk/_h_d_k__intro.html
  -新ビジュアルエフェクト
 
 ●Maya
-・動画Tutorial
-https://www.youtube.com/playlist?list=PLhzCDkTROE9vg8DClp3bTHfXDiNW9LN47
-・チーバ君
-
+・モデリング
+・UV
+・マテリアル
+・リギング
 
 [Work]
 ●UsdSkel
