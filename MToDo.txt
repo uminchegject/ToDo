@@ -1,25 +1,16 @@
-※動画を見る
-※インターバルでドキュメントを極力まとめる
-
 ■Work
-○挙動確認
-・内製フォーマットデータから動きを確認
+○実装
+・リグの構築
+・挙動確認
 
 ○ソースの修正及び整理
-
+・Layer構築の関数化
+・各フォーマットのクラス化
 
 ■Study
-○デバッグ方法の調査
-・VoluemTutorialで検討
-・CityGeneratorの確認しながら検討
-
 ○マトリクスの実装
-・実装内容をドキュメント化
 ・ゲームのマトリックス
- -ローカル
- -ワールド
- -ビュー
- -パースペクティブ
+・リグのマトリクス
 
 ○クォータニオン
 ・オイラーとクォータニオン
@@ -46,12 +37,16 @@ result = HAPI_CreateInProcessSession(&Session, &sessionInfo);
  -HAPIの関数呼び出しが正しく行われているかを再確認する。
  -必要なデバッグツール（Windows SDKやVisual Studio）がインストールされているかを確認する。
 
+○UsdTutorial
+https://qiita.com/snowxcrash
+
 ○HoudiniTutorial
 ・ProceduralCityの調査
 https://dc1b3e5e2031efe23f5cf5d0f6ce6ca2.us-east-1.resend-links.com/CL0/https:%2F%2Fgumroad.com%2Fd%2F963d010b0cb49137a53a99d450e5e3ee/1/01000194e3595f29-c0d863d9-e50d-415f-9eb4-49263888326d-000000/5nNdTIgExTkgAqzX5mLqvUGTINzTnDa3oriSfEbBHOM=391
 
 ○MayaTutorial
 https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb6Yd
+
 
 ■Private
 ○EpicStoreを取得
