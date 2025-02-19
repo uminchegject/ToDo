@@ -32,6 +32,11 @@ bindingAPI.CreateJointWeightsPrimvar(false, jointWeights.size()).Set(jointWeight
 
 
 ■Study
+○マトリクス
+・Vexでorientを求める
+
+○Usdのドキュメントを整理する
+
 ○HoudiniEngineAPI
 https://qiita.com/jyouryuusui/items/3d86ab8e69652d5f951c
 
