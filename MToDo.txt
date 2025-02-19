@@ -1,19 +1,17 @@
 ■Work
 ○実装
-・リグの構築
-・挙動確認
+・レイヤーの構築処理を修正
 
 ○ソースの修正及び整理
 ・Layer構築の関数化
 ・各フォーマットのクラス化
 
+
 ■Study
 ○クォータニオン
-・オイラーとクォータニオン
 
 ○HoudiniEngineAPI
 https://qiita.com/jyouryuusui/items/3d86ab8e69652d5f951c
-・HAPI_SaveHIPFile(&Session, "../test.hip", 0);のエラー原因を調査
 
 ○UsdTutorial
 https://qiita.com/snowxcrash
@@ -23,7 +21,6 @@ https://www.sidefx.com/ja/docs/houdini/model/volumes.html
 ・本(ビジュアルエフェクト)
  -説明部分を抜粋して読む
  -サンプルソースから理解する
-
 
 ○HoudiniTutorial
 ・ProceduralCityの調査
@@ -37,9 +34,6 @@ https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb
 ○EpicStoreを取得
 
 ○携帯の移行
-
-○ポケモンを借りる
-
 
 ■FaceGenerator
 ※週末の検証期間に備える
