@@ -1,6 +1,30 @@
 ■Work
 ○実装
 ・レイヤーの構築処理を修正
+ -jointIndicesをJoint2に設定して検証してみる
+
+// ** メッシュの作成 **
+SdfPath meshPath("/World/Root/Geom/pCube1");
+UsdGeomMesh mesh = UsdGeomMesh::Define(stage, meshPath);
+
+// ** UsdSkelBindingAPI を使用してスケルトンをバインド **
+UsdSkelBindingAPI bindingAPI = UsdSkelBindingAPI::Apply(mesh.GetPrim());
+bindingAPI.CreateSkeletonRel().AddTarget(skeleton.GetPath());
+
+// ** ジョイントインデックスとウェイト情報を設定 **
+// 各頂点に対して影響を与えるジョイントのインデックス（ここではすべて "Root" に紐づけ）
+VtArray<int> jointIndices = {0, 0, 0, 0, 0, 0, 0, 0}; // メッシュの各頂点のジョイントインデックス
+
+// 各頂点のウェイト（ここでは "Root" の影響100%）
+VtArray<float> jointWeights = {1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f};
+
+// ジョイントインデックスのPrimvarを作成
+bindingAPI.CreateJointIndicesPrimvar(false, jointIndices.size()).Set(jointIndices);
+
+// ジョイントウェイトのPrimvarを作成
+bindingAPI.CreateJointWeightsPrimvar(false, jointWeights.size()).Set(jointWeights);
+
+
 
 ○ソースの修正及び整理
 ・Layer構築の関数化
@@ -8,8 +32,6 @@
 
 
 ■Study
-○クォータニオン
-
 ○HoudiniEngineAPI
 https://qiita.com/jyouryuusui/items/3d86ab8e69652d5f951c
 
@@ -17,10 +39,7 @@ https://qiita.com/jyouryuusui/items/3d86ab8e69652d5f951c
 https://qiita.com/snowxcrash
 
 ○ボリューム
-https://www.sidefx.com/ja/docs/houdini/model/volumes.html
-・本(ビジュアルエフェクト)
- -説明部分を抜粋して読む
- -サンプルソースから理解する
+・本
 
 ○HoudiniTutorial
 ・ProceduralCityの調査
