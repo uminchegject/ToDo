@@ -1,55 +1,26 @@
 ■Work
-○実装
-・レイヤーの構築処理を修正
- -jointIndicesをJoint2に設定して検証してみる
-
-// ** メッシュの作成 **
-SdfPath meshPath("/World/Root/Geom/pCube1");
-UsdGeomMesh mesh = UsdGeomMesh::Define(stage, meshPath);
-
-// ** UsdSkelBindingAPI を使用してスケルトンをバインド **
-UsdSkelBindingAPI bindingAPI = UsdSkelBindingAPI::Apply(mesh.GetPrim());
-bindingAPI.CreateSkeletonRel().AddTarget(skeleton.GetPath());
-
-// ** ジョイントインデックスとウェイト情報を設定 **
-// 各頂点に対して影響を与えるジョイントのインデックス（ここではすべて "Root" に紐づけ）
-VtArray<int> jointIndices = {0, 0, 0, 0, 0, 0, 0, 0}; // メッシュの各頂点のジョイントインデックス
-
-// 各頂点のウェイト（ここでは "Root" の影響100%）
-VtArray<float> jointWeights = {1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f};
-
-// ジョイントインデックスのPrimvarを作成
-bindingAPI.CreateJointIndicesPrimvar(false, jointIndices.size()).Set(jointIndices);
-
-// ジョイントウェイトのPrimvarを作成
-bindingAPI.CreateJointWeightsPrimvar(false, jointWeights.size()).Set(jointWeights);
-
-
+○ドキュメントの整理
+https://openusd.org/dev/api/_usd_skel__schema_overview.html
+・USDSkel
 
 ○ソースの修正及び整理
+・ソースの確認
+ -デバッグしながら
 ・Layer構築の関数化
 ・各フォーマットのクラス化
 
 
 ■Study
-○マトリクス
-・HoudiniのOrientを求める
-vector up = {0,1,0};  // up ベクトル
-vector N = normalize(@N);  // 法線ベクトルを正規化
-// X軸を計算（Nとupの外積）
-vector x_axis = normalize(cross(up, N));
-// Y軸を計算（NとX軸の外積）
-vector y_axis = normalize(cross(N, x_axis));
-// 3×3 回転行列を作成
-matrix3 m = set(x_axis, y_axis, N);
-// クォータニオンに変換
-@orient = quaternion(m);
+○FileFormatPlugin
+・Tutotorialをドキュメント化
 
 ○HoudiniEngineAPI
 ・まとめ
+ -概要
 
 ○UsdTutorial
 https://qiita.com/snowxcrash
+ -概要
 
 ○ボリューム
 ・本
