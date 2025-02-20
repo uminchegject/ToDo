@@ -1,7 +1,15 @@
+※必ず公式ドキュメントに目を通す
+
 ■Work
 ○ドキュメントの整理
 https://openusd.org/dev/api/_usd_skel__schema_overview.html
-・USDSkel
+・関数化
+・必要な情報
+ -SkelRoot
+ -Mesh
+ -Skelton
+ -SkelAnimation
+
 
 ○ソースの修正及び整理
 ・ソースの確認
@@ -13,14 +21,10 @@ https://openusd.org/dev/api/_usd_skel__schema_overview.html
 ■Study
 ○FileFormatPlugin
 ・Tutotorialをドキュメント化
-
-○HoudiniEngineAPI
-・まとめ
- -概要
+・UsdGeomPrimvarsAPIについて調査
 
 ○UsdTutorial
 https://qiita.com/snowxcrash
- -概要
 
 ○ボリューム
 ・本
@@ -32,7 +36,10 @@ https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb
 ■Private
 ○EpicStoreを取得
 
-○携帯の移行
+○靴擦れ対策
+・ヒールグリップ
+
+○携帯の返却
 
 
 ■FaceGenerator
