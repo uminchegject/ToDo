@@ -1,4 +1,5 @@
 ※必ず公式ドキュメントに目を通す
+※作業フローを見て気になる操作を確認する
 
 ■Work
 ○ドキュメントの整理
@@ -45,8 +46,7 @@ https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb
 ■FaceGenerator
 ※週末の検証期間に備える
 
-○BaseとDetailをまとめる
-・挙動確認を行う
+○UE上での挙動確認
 
 ○検証
 ・※1ブロックずつ対応していく
@@ -58,7 +58,23 @@ https://jp.pinterest.com/pin/829577193896609455/
 
 
 ■CityGenerator
-○区画設計
+○ProceduralCityの調査
+・街の区画生成までの処理を調査する
+
+○区画生成ロジックの調査
+・検索
+ -city grid generator
+ -city map generator
+・Gridから崩すように実装する
+ -VoronoiのBasePointの崩す
+ 
+△BaseGroundSurfaceのPDを実装
+・Primitive同士のマージを実装
+・Greebleノードを修正していく
+ -SideFXLabのノードの中を確認する
+
+
+●区画設計
 ※レベルデザインの構築動画を参考に必要なパラメーターをまとめる
 https://www.youtube.com/watch?v=Y6-EWYXZG4s
 https://www.youtube.com/watch?v=Bh1OuhywtBw
@@ -71,16 +87,6 @@ https://www.youtube.com/@annoon6732
 ・角度
  -直角
  -乱雑
-
-○Roadの生成ロジックの設計
-・Gridから崩すように実装する
- -VoronoiのBasePointの崩す
-
-△BaseGroundSurfaceのPDを実装
-・Primitive同士のマージを実装
-・Greebleノードを修正していく
- -SideFXLabのノードの中を確認する
-
 
 ■ProceduralModeling
 ○Megastructureの調査
