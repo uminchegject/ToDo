@@ -33,12 +33,20 @@ bindingAPI.CreateJointWeightsPrimvar(false, jointWeights.size()).Set(jointWeight
 
 ■Study
 ○マトリクス
-・Vexでorientを求める
-
-○Usdのドキュメントを整理する
+・HoudiniのOrientを求める
+vector up = {0,1,0};  // up ベクトル
+vector N = normalize(@N);  // 法線ベクトルを正規化
+// X軸を計算（Nとupの外積）
+vector x_axis = normalize(cross(up, N));
+// Y軸を計算（NとX軸の外積）
+vector y_axis = normalize(cross(N, x_axis));
+// 3×3 回転行列を作成
+matrix3 m = set(x_axis, y_axis, N);
+// クォータニオンに変換
+@orient = quaternion(m);
 
 ○HoudiniEngineAPI
-https://qiita.com/jyouryuusui/items/3d86ab8e69652d5f951c
+・まとめ
 
 ○UsdTutorial
 https://qiita.com/snowxcrash
@@ -54,6 +62,7 @@ https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb
 ○EpicStoreを取得
 
 ○携帯の移行
+
 
 ■FaceGenerator
 ※週末の検証期間に備える
