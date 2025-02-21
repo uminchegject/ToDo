@@ -1,54 +1,3 @@
-※必ず公式ドキュメントに目を通す
-※作業フローを見て気になる操作を確認する
-
-■Work
-○ドキュメントの整理
-https://openusd.org/dev/api/_usd_skel__schema_overview.html
-・関数化
-・必要な情報
- -SkelRoot
- -Mesh
- -Skelton
- -SkelAnimation
-
-○ソースの修正及び整理
-・ソースの確認
- -デバッグしながら
-・Layer構築の関数化
-・各フォーマットのクラス化
-
-■Study
-○FileFormatPlugin
-・Tutotorialをドキュメント化
-・UsdGeomPrimvarsAPI
-UsdGeomPrimvarsAPI は、Pixar の Universal Scene Description (USD) において、
-ジオメトリのプライム変数 (primvars) を管理するための API です。これは UsdGeomPrimvarsAPIクラスとして提供され、
-ジオメトリプリム (UsdGeomGprim など) に対してプライム変数を簡単に追加・取得・操作できるように設計されています。
-
-・TfToken とは？
-TfToken は、USD (Universal Scene Description) における軽量な文字列管理クラス です。
-主に 頻繁に使われる文字列 (例えばプロパティ名や識別子) を効率的に管理する ために使用されます。
-USD の文字列処理を高速化し、メモリ使用量を削減するために設計されており、C++ の std::string よりも軽量です。
-
-○UsdTutorial
-https://qiita.com/snowxcrash
-
-○ボリューム
-・本
-
-○MayaTutorial
-https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb6Yd
-
-
-■Private
-○EpicStoreを取得
-
-○靴擦れ対策
-・ヒールグリップ
-
-○携帯の返却
-
-
 ■FaceGenerator
 ※週末の検証期間に備える
 
@@ -79,7 +28,6 @@ https://jp.pinterest.com/pin/829577193896609455/
 ・Greebleノードを修正していく
  -SideFXLabのノードの中を確認する
 
-
 ●区画設計
 ※レベルデザインの構築動画を参考に必要なパラメーターをまとめる
 https://www.youtube.com/watch?v=Y6-EWYXZG4s
@@ -94,8 +42,44 @@ https://www.youtube.com/@annoon6732
  -直角
  -乱雑
 
+
 ■ProceduralModeling
 ○Megastructureの調査
 https://gumroad.com/confirm?destination=download_page&id=496de7a942ce8f21482619ec75e3e772
 
 ○DetailAssetの実装
+
+
+■Work
+○ドキュメントの整理
+・情報の取得処理
+
+○ソースの修正及び整理
+・ソースの整理
+・Layer構築の関数化
+ -stageを引数に各primを関数化
+  -apiはmeshを引数にする
+・各フォーマットのクラス化
+
+■Study
+○UsdTutorial
+https://qiita.com/snowxcrash
+・SimpleShadingの調査
+D:\USD\OpenUSD-release\extras\usd\tutorials\simpleShading
+
+○ボリューム
+・本
+
+○MayaTutorial
+https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb6Yd
+
+
+■Private
+○ポイントの交換
+
+○EpicStoreを取得
+
+○靴擦れ対策
+・ヒールグリップ
+
+○携帯の返却
