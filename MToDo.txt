@@ -11,18 +11,24 @@ https://openusd.org/dev/api/_usd_skel__schema_overview.html
  -Skelton
  -SkelAnimation
 
-
 ○ソースの修正及び整理
 ・ソースの確認
  -デバッグしながら
 ・Layer構築の関数化
 ・各フォーマットのクラス化
 
-
 ■Study
 ○FileFormatPlugin
 ・Tutotorialをドキュメント化
-・UsdGeomPrimvarsAPIについて調査
+・UsdGeomPrimvarsAPI
+UsdGeomPrimvarsAPI は、Pixar の Universal Scene Description (USD) において、
+ジオメトリのプライム変数 (primvars) を管理するための API です。これは UsdGeomPrimvarsAPIクラスとして提供され、
+ジオメトリプリム (UsdGeomGprim など) に対してプライム変数を簡単に追加・取得・操作できるように設計されています。
+
+・TfToken とは？
+TfToken は、USD (Universal Scene Description) における軽量な文字列管理クラス です。
+主に 頻繁に使われる文字列 (例えばプロパティ名や識別子) を効率的に管理する ために使用されます。
+USD の文字列処理を高速化し、メモリ使用量を削減するために設計されており、C++ の std::string よりも軽量です。
 
 ○UsdTutorial
 https://qiita.com/snowxcrash
