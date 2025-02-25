@@ -12,14 +12,12 @@
 
 
 [Private]
-○携帯の整理
-
 ○要らない物の整理
 
 
 [Study]
-■Study
 ●USD
+・パイプライン
 ・Tutorial
 https://qiita.com/snowxcrash
 https://openusd.org/release/tut_usd_tutorials.html
@@ -29,6 +27,7 @@ https://openusd.org/release/tut_usd_tutorials.html
 ・クォータニオン
 
 ●Houdini
+・背景
 ・HoudiniEngineAPI
 https://qiita.com/jyouryuusui/items/3d86ab8e69652d5f951c
 ・HDKTutorial
@@ -40,25 +39,44 @@ https://www.sidefx.com/docs/hdk/_h_d_k__intro.html
  -新ビジュアルエフェクト
 
 ●Maya
-※サンプルデータが分かりやすい本を調査する
+・背景
+・基礎
 
 [Work]
 ●UsdSkel
 
-[PD]
-■Face_Generator
-※Building Generator from Image から 子供都市に拡張していくことを目標にする
+
+[Face_Generator]
+Building Generator from Image から 子供都市に拡張していくことを目標にする
 https://www.youtube.com/watch?v=Bh1OuhywtBw
 
+■Layout
+・レベルデザイン
+https://www.youtube.com/@unrealenvironments-speedle782
 
-■City_Volume_Generator
+■Modeling
+・背景アセットの生成
+
+■ProceduralModeling
+・背景アセットの自動生成
+
+■PipeLine
+・USD
+
+■CityGenerator
 ※BlenderのCityGeneratorを参考にする
 https://www.youtube.com/watch?v=Y6-EWYXZG4s
 
-●IDEA
-・Greeble(Divide)
-・Cluster(Type)
-
-■Building_Generator
-※Houdini上のProceduralModelingを行うことを目標にする
- 
+●区画設計
+※レベルデザインの構築動画を参考に必要なパラメーターをまとめる
+https://www.youtube.com/watch?v=Y6-EWYXZG4s
+https://www.youtube.com/watch?v=Bh1OuhywtBw
+https://www.youtube.com/@unrealenvironments-speedle782
+https://www.youtube.com/@annoon6732
+・スケール
+ -高さ
+ -平面
+ -比率
+・角度
+ -直角
+ -乱雑
