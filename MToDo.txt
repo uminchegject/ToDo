@@ -1,38 +1,39 @@
-■FaceGenerator
-※1枚の絵を街にする
-※1つのアセットセットで街を生成する
+■Work
+○mayaのjoint構造への適合
 
-○Baseのモック
+○ドキュメントの整理
+・情報の取得処理
 
-○Detailのモック
-https://www.youtube.com/watch?v=UQJ0-Pnwils
-・必要な素材を集める
- -Sub
- -Vivid
-・レイアウト
- -手作業配置
- -自動配置
+○ソースの修正及び整理
+・ソースの整理
+・Layer構築の関数化
+ -stageを引数に各primを関数化
+  -apiはmeshを引数にする
+・各フォーマットのクラス化
 
 
-○Baseモデリング
-・モジュールのモデリング
-・プロシージャルモデリング
+■Study
+○UsdTutorial
+・PipeLine(※FaceGenerator)
+ -Maya
+ -Houdini
+・基礎
+https://qiita.com/snowxcrash
+・SimpleShadingの調査
+D:\USD\OpenUSD-release\extras\usd\tutorials\simpleShading
 
-○Detailモデリング
-・プロシージャルモデリング
-・手作業配置(Vivid)
-・自動配置(Sub)
+○ボリューム
+・本
 
-○モデリングフローの調査
+○MayaTutorial
+・背景制作(※FaceGenerator)
+・基礎
+https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb6Yd
 
-△UE上での挙動確認
-・アセットセットを用意する
+○ProceduralModeling
+・Megastructureの調査
+https://gumroad.com/confirm?destination=download_page&id=496de7a942ce8f21482619ec75e3e772
 
-●目標 
-https://jp.pinterest.com/pin/829577193896609455/
-
-
-■CityGenerator
 ○区画生成ロジックの調査
 ・検索
  -city grid generator
@@ -40,13 +41,49 @@ https://jp.pinterest.com/pin/829577193896609455/
 ・Gridから崩すように実装する
  -VoronoiのBasePointの崩す
 
-○ProceduralCityの調査
-・街の区画生成までの処理を調査する
- 
-△BaseGroundSurfaceのPDを実装
-・Primitive同士のマージを実装
-・Greebleノードを修正していく
- -SideFXLabのノードの中を確認する
+
+■Private
+○ポイントの交換
+
+○EpicStoreを取得
+
+○靴擦れ対策
+・ヒールグリップ
+
+
+[FaceGenerator]
+※1枚の絵を街にする
+※1つのアセットセットで街を生成する
+
+○Detailの配置ロジック実装
+・Sub
+・Vivit
+
+●目標 
+https://jp.pinterest.com/pin/829577193896609455/
+
+
+■Layout
+○UE上での挙動確認
+
+○UEのアセットセットを用いたレイアウト
+
+
+■Modeling(ProceduralModeling)
+○Baseモデリング
+・モジュールのモデリング
+・プロシージャルモデリング
+
+○Detailモデリング
+・プロシージャルモデリング
+
+
+■PipeLine
+○HoudiniとMayaの連携
+
+
+■CityGenerator
+○区画生成ロジックの実装
 
 ●区画設計
 ※レベルデザインの構築動画を参考に必要なパラメーターをまとめる
@@ -61,45 +98,3 @@ https://www.youtube.com/@annoon6732
 ・角度
  -直角
  -乱雑
-
-
-■ProceduralModeling
-○Megastructureの調査
-https://gumroad.com/confirm?destination=download_page&id=496de7a942ce8f21482619ec75e3e772
-
-○DetailAssetの実装
-
-
-■Work
-○ドキュメントの整理
-・情報の取得処理
-
-○ソースの修正及び整理
-・ソースの整理
-・Layer構築の関数化
- -stageを引数に各primを関数化
-  -apiはmeshを引数にする
-・各フォーマットのクラス化
-
-■Study
-○UsdTutorial
-https://qiita.com/snowxcrash
-・SimpleShadingの調査
-D:\USD\OpenUSD-release\extras\usd\tutorials\simpleShading
-
-○ボリューム
-・本
-
-○MayaTutorial
-https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb6Yd
-
-
-■Private
-○ポイントの交換
-
-○EpicStoreを取得
-
-○靴擦れ対策
-・ヒールグリップ
-
-○携帯の返却
