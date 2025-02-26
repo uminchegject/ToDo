@@ -22,13 +22,11 @@ https://qiita.com/snowxcrash
 ・SimpleShadingの調査
 D:\USD\OpenUSD-release\extras\usd\tutorials\simpleShading
 
-○ボリューム
-・本
-
 ○MayaTutorial
 ・背景制作(※FaceGenerator)
-・基礎
+・基礎操作
 https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb6Yd
+・はじめてのmaya(本)
 
 ○ProceduralModeling
 ・Megastructureの調査
@@ -41,14 +39,14 @@ https://gumroad.com/confirm?destination=download_page&id=496de7a942ce8f21482619e
 ・Gridから崩すように実装する
  -VoronoiのBasePointの崩す
 
+○ボリューム
+・本
+
 
 ■Private
 ○ポイントの交換
 
 ○EpicStoreを取得
-
-○靴擦れ対策
-・ヒールグリップ
 
 
 [FaceGenerator]
@@ -84,13 +82,6 @@ https://jp.pinterest.com/pin/829577193896609455/
 
 ■CityGenerator
 ○区画生成ロジックの実装
-
-●区画設計
-※レベルデザインの構築動画を参考に必要なパラメーターをまとめる
-https://www.youtube.com/watch?v=Y6-EWYXZG4s
-https://www.youtube.com/watch?v=Bh1OuhywtBw
-https://www.youtube.com/@unrealenvironments-speedle782
-https://www.youtube.com/@annoon6732
 ・スケール
  -高さ
  -平面
