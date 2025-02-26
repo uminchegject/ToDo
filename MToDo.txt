@@ -13,18 +13,21 @@
 ・本
 
 ○UsdTutorial
-・PipeLine(※FaceGenerator)
-https://note.com/indyzonecorp/n/ndf9d8f82d7e5
- -Maya
- -Houdini
 ・基礎
 https://qiita.com/snowxcrash
 ・SimpleShadingの調査
 D:\USD\OpenUSD-release\extras\usd\tutorials\simpleShading
+・Solaris(背景)
+https://note.com/indyzonecorp/n/ndf9d8f82d7e5
 
 ○ProceduralModeling
-・Megastructureの調査
+・Megastructure(背景)
 https://gumroad.com/confirm?destination=download_page&id=496de7a942ce8f21482619ec75e3e772
+
+○MayaTutorial
+・基礎操作
+https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb6Yd
+・はじめてのmaya(本)
 
 ○区画生成ロジックの調査
 ・検索
@@ -32,12 +35,6 @@ https://gumroad.com/confirm?destination=download_page&id=496de7a942ce8f21482619e
  -city map generator
 ・Gridから崩すように実装する
  -VoronoiのBasePointの崩す
-
-○MayaTutorial
-・背景制作(※FaceGenerator)
-・基礎操作
-https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb6Yd
-・はじめてのmaya(本)
 
 ○ボリューム
 ・本
@@ -76,10 +73,6 @@ https://jp.pinterest.com/pin/829577193896609455/
 ・プロシージャルモデリング
 
 
-■PipeLine
-○HoudiniとMayaの連携
-
-
 ■CityGenerator
 ○区画生成ロジックの実装
 ・スケール
@@ -89,3 +82,7 @@ https://jp.pinterest.com/pin/829577193896609455/
 ・角度
  -直角
  -乱雑
+
+
+■PipeLine
+○メリットの調査
