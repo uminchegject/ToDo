@@ -17,28 +17,21 @@
 
 [Study]
 ●USD
-・パイプライン
 ・Tutorial
 https://qiita.com/snowxcrash
 https://openusd.org/release/tut_usd_tutorials.html
 
 ●Houdini
-・背景
-・HoudiniEngineAPI
-https://qiita.com/jyouryuusui/items/3d86ab8e69652d5f951c
-・HDKTutorial
-https://qiita.com/jyouryuusui/items/14cb1804ba426d7b287f
-https://www.sidefx.com/docs/hdk/_h_d_k__intro.html
 ・本
  -さつき先生
  -ビジュアルエフェクト
  -新ビジュアルエフェクト
 
 ●Maya
-・背景
 ・基礎
+・背景
+ -最低限
 
-●Math
 
 [Work]
 ●UsdSkel
@@ -58,9 +51,6 @@ https://www.youtube.com/@unrealenvironments-speedle782
 ●ProceduralModeling
 ・背景アセットの自動生成
 
-●ipeLine
-・USD
-
 ●CityGenerator
 ※BlenderのCityGeneratorを参考にする
 https://www.youtube.com/watch?v=Y6-EWYXZG4s
@@ -70,3 +60,8 @@ https://www.youtube.com/watch?v=Y6-EWYXZG4s
 https://www.youtube.com/watch?v=Bh1OuhywtBw
 https://www.youtube.com/@unrealenvironments-speedle782
 https://www.youtube.com/@annoon6732
+
+▲USD
+・Variant
+ -Type
+ -Material
