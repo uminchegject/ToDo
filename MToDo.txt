@@ -1,32 +1,26 @@
 ■Work
-○mayaのjoint構造への適合
-
 ○ドキュメントの整理
 ・情報の取得処理
 
 ○ソースの修正及び整理
-・ソースの整理
 ・Layer構築の関数化
  -stageを引数に各primを関数化
-  -apiはmeshを引数にする
+ -apiはmeshを引数にする
 ・各フォーマットのクラス化
 
-
 ■Study
+○Mayaにおけるリグ
+・本
+
 ○UsdTutorial
 ・PipeLine(※FaceGenerator)
+https://note.com/indyzonecorp/n/ndf9d8f82d7e5
  -Maya
  -Houdini
 ・基礎
 https://qiita.com/snowxcrash
 ・SimpleShadingの調査
 D:\USD\OpenUSD-release\extras\usd\tutorials\simpleShading
-
-○MayaTutorial
-・背景制作(※FaceGenerator)
-・基礎操作
-https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb6Yd
-・はじめてのmaya(本)
 
 ○ProceduralModeling
 ・Megastructureの調査
@@ -38,6 +32,12 @@ https://gumroad.com/confirm?destination=download_page&id=496de7a942ce8f21482619e
  -city map generator
 ・Gridから崩すように実装する
  -VoronoiのBasePointの崩す
+
+○MayaTutorial
+・背景制作(※FaceGenerator)
+・基礎操作
+https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb6Yd
+・はじめてのmaya(本)
 
 ○ボリューム
 ・本
