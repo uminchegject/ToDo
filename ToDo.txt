@@ -12,7 +12,7 @@
 
 
 [Private]
-○要らない物の整理
+●要らない物の整理
 
 
 [Study]
@@ -21,10 +21,6 @@
 ・Tutorial
 https://qiita.com/snowxcrash
 https://openusd.org/release/tut_usd_tutorials.html
-
-●Math
-・Matrix
-・クォータニオン
 
 ●Houdini
 ・背景
@@ -42,6 +38,8 @@ https://www.sidefx.com/docs/hdk/_h_d_k__intro.html
 ・背景
 ・基礎
 
+●Math
+
 [Work]
 ●UsdSkel
 
@@ -50,33 +48,25 @@ https://www.sidefx.com/docs/hdk/_h_d_k__intro.html
 Building Generator from Image から 子供都市に拡張していくことを目標にする
 https://www.youtube.com/watch?v=Bh1OuhywtBw
 
-■Layout
+●Layout
 ・レベルデザイン
 https://www.youtube.com/@unrealenvironments-speedle782
 
-■Modeling
+●Modeling
 ・背景アセットの生成
 
-■ProceduralModeling
+●ProceduralModeling
 ・背景アセットの自動生成
 
-■PipeLine
+●ipeLine
 ・USD
 
-■CityGenerator
+●CityGenerator
 ※BlenderのCityGeneratorを参考にする
 https://www.youtube.com/watch?v=Y6-EWYXZG4s
 
-●区画設計
 ※レベルデザインの構築動画を参考に必要なパラメーターをまとめる
 https://www.youtube.com/watch?v=Y6-EWYXZG4s
 https://www.youtube.com/watch?v=Bh1OuhywtBw
 https://www.youtube.com/@unrealenvironments-speedle782
 https://www.youtube.com/@annoon6732
-・スケール
- -高さ
- -平面
- -比率
-・角度
- -直角
- -乱雑
