@@ -1,18 +1,12 @@
 ■Work
-○ドキュメントの整理
-・情報の取得処理
-
-○ソースの修正及び整理
-・Layer構築の関数化
- -stageを引数に各primを関数化
- -apiはmeshを引数にする
-・各フォーマットのクラス化
+○ドキュメントの記載
+https://chouseisan.com/s?h=e43d87734789456d9109ca348d7285dd
 
 
 ■Study
 ○UsdTutorial
 ・SimpleShadingの調査
-D:\USD\OpenUSD-release\extras\usd\tutorials\simpleShading
+ -ドキュメントの整理
 ・Tutorial
 https://openusd.org/release/tut_usd_tutorials.html
 ・Solaris(背景)
@@ -23,7 +17,6 @@ https://note.com/indyzonecorp/n/ndf9d8f82d7e5
  -本
 ・Megastructure
 https://gumroad.com/confirm?destination=download_page&id=496de7a942ce8f21482619ec75e3e772
-
 
 ○MayaTutorial
 ・基礎操作
@@ -40,7 +33,6 @@ https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb
  -city map generator
 ・Gridから崩すように実装する
  -VoronoiのBasePointの崩す
-
 
 ■Private
 ○ポイントの交換
