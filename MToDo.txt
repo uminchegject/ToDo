@@ -1,4 +1,8 @@
+※夜のToDo(ドキュメント・自主製作)に向けて日中Studyを行い具体的なタスクを考える
+
 ■Work
+○ソース整理
+
 ○ドキュメントの記載
 https://chouseisan.com/s?h=e43d87734789456d9109ca348d7285dd
 
@@ -25,10 +29,6 @@ https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb
  -リグ
  -アセットモデリング
 
-○レベルデザイン
-
- 
-■Night
 ○区画生成ロジックの調査
 ・検索
  -city grid generator
@@ -36,6 +36,9 @@ https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb
 ・Gridから崩すように実装する
  -VoronoiのBasePointの崩す
 
+
+ 
+■Do
 ○プロシージャルモデリング
 ・アセット製作
 
@@ -43,7 +46,7 @@ https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb
 ・アセット製作
 
 ○プロシージャルモジュラーモデリング
-・UE
+・UnrealEngine
 
 
 ■Private
