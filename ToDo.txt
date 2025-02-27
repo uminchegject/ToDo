@@ -20,17 +20,18 @@
 ・Tutorial
 https://qiita.com/snowxcrash
 https://openusd.org/release/tut_usd_tutorials.html
+・作業パイプライン
 
 ●Houdini
-・本
- -さつき先生
- -ビジュアルエフェクト
- -新ビジュアルエフェクト
+・基礎
+さつき先生
+ビジュアルエフェクト
+新ビジュアルエフェクト
+・背景
 
 ●Maya
 ・基礎
 ・背景
- -最低限
 
 
 [Work]
