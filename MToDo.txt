@@ -27,12 +27,24 @@ https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb
 
 ○レベルデザイン
 
+ 
+■Night
 ○区画生成ロジックの調査
 ・検索
  -city grid generator
  -city map generator
 ・Gridから崩すように実装する
  -VoronoiのBasePointの崩す
+
+○プロシージャルモデリング
+・アセット製作
+
+○モデリング
+・アセット製作
+
+○プロシージャルモジュラーモデリング
+・UE
+
 
 ■Private
 ○ポイントの交換
