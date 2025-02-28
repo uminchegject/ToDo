@@ -1,73 +1,97 @@
-[反省]
-※サンプルソース→本の順番で勉強できる本を選ぶ
- -朝一でサンプルソースを確認し、昼本を読む
- -洩れたら夜にやる
-※読書→サンプルソース(ChatGPT)
- -カフェで読書+サンプルソースの用意を行う
- -会社に戻ってドキュメント化する
-※Houdini勉強手順
- -(本・動画)サンプルソースから大まかな処理のフローと分からない箇所の目安をつけといて、そこを重点的に調べる
- -(プロジェクト)コメント化、関数化を行っていく
-※動画の視聴を習慣づける
+※Do(ドキュメント・自主製作)に向けて日中Studyを行い具体的なタスクを考える
+※Doは少しずづでもそれぞれ進めていく
+ -在る知識で最低限のことをする
+
+■Work
+○ソース整理
+
+○ドキュメントの記載
+https://chouseisan.com/s?h=e43d87734789456d9109ca348d7285dd
 
 
-[Private]
-●要らない物の整理
-
-
-[Study]
-●USD
+■Study
+○UsdTutorial
+・SimpleShadingの調査
+ -ドキュメントの整理
 ・Tutorial
-https://qiita.com/snowxcrash
 https://openusd.org/release/tut_usd_tutorials.html
+・Solaris(背景)
+https://note.com/indyzonecorp/n/ndf9d8f82d7e5
 
-●Houdini
-・基礎
-さつき先生
-ビジュアルエフェクト
-新ビジュアルエフェクト
+○Houdini
+・ボリューム
+ -本
+・Megastructure
+https://gumroad.com/confirm?destination=download_page&id=496de7a942ce8f21482619ec75e3e772
 
-●Maya
-・基礎
-・背景
+○MayaTutorial
+・基礎操作
+https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb6Yd
+・はじめてのmaya(本)
+ -リグ
+ -アセットモデリング
 
-[Do]
-●モデリング
+○区画生成ロジックの調査
+・検索
+ -city grid generator
+ -city map generator
+・Gridから崩すように実装する
+ -VoronoiのBasePointの崩す
+ 
+■Do
+○プロシージャルモデリング
+・アセット製作
 
-●プロシージャルモデリング
+○モデリング
+・アセット製作
 
-●プロシージャルモジュラーモデリング
-
-
-[Work]
-●UsdSkel
+○プロシージャルモジュラーモデリング
+・UnrealEngine
 
 
-[Face_Generator]
-Building Generator from Image から 子供都市に拡張していくことを目標にする
-https://www.youtube.com/watch?v=Bh1OuhywtBw
+■Private
+○ポイントの交換
 
-●Layout
-・レベルデザイン
-https://www.youtube.com/@unrealenvironments-speedle782
+○EpicStoreを取得
 
-●Modeling
-・背景アセットの生成
 
-●ProceduralModeling
-・背景アセットの自動生成
+[FaceGenerator]
+※1枚の絵を街にする
+※1つのアセットセットで街を生成する
 
-●CityGenerator
-※BlenderのCityGeneratorを参考にする
-https://www.youtube.com/watch?v=Y6-EWYXZG4s
+○Detailの配置ロジック実装
+・Sub
+・Vivit
 
-※レベルデザインの構築動画を参考に必要なパラメーターをまとめる
-https://www.youtube.com/watch?v=Y6-EWYXZG4s
-https://www.youtube.com/watch?v=Bh1OuhywtBw
-https://www.youtube.com/@unrealenvironments-speedle782
-https://www.youtube.com/@annoon6732
+●目標 
+https://jp.pinterest.com/pin/829577193896609455/
 
-▲USD
-・Variant
- -Type
- -Material
+
+■Modeling(ProceduralModeling)
+○Baseモデリング
+・モジュールのモデリング
+・プロシージャルモデリング
+
+○Detailモデリング
+・プロシージャルモデリング
+
+
+■Layout
+○UE上での挙動確認
+
+○UEのアセットセットを用いたレイアウト
+
+
+■CityGenerator
+○区画生成ロジックの実装
+・スケール
+ -高さ
+ -平面
+ -比率
+・角度
+ -直角
+ -乱雑
+
+
+▲Usd
+○メリットの調査
