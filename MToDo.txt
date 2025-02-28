@@ -1,13 +1,13 @@
+※StudyとDoのタスクはなるべく分散しない
 ※Do(ドキュメント・自主製作)に向けて日中Studyを行い具体的なタスクを考える
-※Doは少しずづでもそれぞれ進めていく
+※Doは少しずづでもできることから進めていく
  -在る知識で最低限のことをする
 
+
 ■Work
-○ソース整理
+○usdviewの不具合修正
 
-○ドキュメントの記載
-https://chouseisan.com/s?h=e43d87734789456d9109ca348d7285dd
-
+○ドキュメントの見直し
 
 ■Study
 ○UsdTutorial
@@ -37,13 +37,14 @@ https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb
  -city map generator
 ・Gridから崩すように実装する
  -VoronoiのBasePointの崩す
- 
-■Do
-○プロシージャルモデリング
-・アセット製作
 
+
+■Do
 ○モデリング
-・アセット製作
+・Houdini
+
+○プロシージャルモデリング
+・Houdini
 
 ○プロシージャルモジュラーモデリング
 ・UnrealEngine
