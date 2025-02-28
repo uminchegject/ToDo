@@ -4,6 +4,7 @@
  -在る知識で最低限のことをする
 
 
+
 ■Work
 ○usdviewの不具合修正
 
@@ -11,8 +12,6 @@
 
 ■Study
 ○UsdTutorial
-・SimpleShadingの調査
- -ドキュメントの整理
 ・Tutorial
 https://openusd.org/release/tut_usd_tutorials.html
 ・Solaris(背景)
