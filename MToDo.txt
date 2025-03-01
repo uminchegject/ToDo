@@ -10,6 +10,7 @@ https://www.youtube.com/watch?v=UCYHV9GJU1Q
 
 ○プロシージャルモデリング
 ・MegaStruture
+・FaceGenerator
 
 △区画生成ロジックの調査
 ・検索
@@ -21,16 +22,28 @@ https://www.youtube.com/watch?v=UCYHV9GJU1Q
 https://www.youtube.com/watch?v=8B5725JVAQY
 
 ■Do
-○Base
+○素材の用意
+https://3dcg-school.pro/free-texture-site-list/
+・Base
+ -窓
+ -枠
+・Detail
+ -看板
+
+●Base
 ※シンプルで最低限のモデルを製作する
 ・モデリング
 ・テクスチャ
+ -窓
+ -枠
 
-○Detail
+●Detail
 ※シンプルで最低限のモデルを製作する
 ・モデリング
  -SoulCityのAssetを参考にする
 ・プロシージャルモデリング
+ -看板
+  -テクスチャを用意
 ・△UE4
 
 △レベルデザイン(モジュラーモデリング)
