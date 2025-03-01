@@ -1,6 +1,10 @@
 ■Study
 ※作業している箇所を並行してStudyする
 ○モデリング
+・子供都市
+https://www.youtube.com/watch?v=Bh1OuhywtBw&t=707s
+・たのしい建物ジェネレーター
+https://www.youtube.com/watch?v=UCYHV9GJU1Q
 ・Maya本
 ・Houdiniサンプル
 
@@ -13,10 +17,18 @@
  -city map generator
 ・Gridから崩すように実装する
  -VoronoiのBasePointの崩す
+・SoulCityレベルデザイン
+https://www.youtube.com/watch?v=8B5725JVAQY
 
 ■Do
-○モデリング
-・子供City
+○Base
+※シンプルで最低限のモデルを製作する
+・モデリング
+・テクスチャ
 
-○レイアウト
-・アセットのサンプルレベル
+○Detail
+※シンプルで最低限のモデルを製作する
+・プロシージャルモデリング
+・△UE4
+
+△レベルデザイン(モジュラーモデリング)
