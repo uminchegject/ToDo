@@ -1,5 +1,26 @@
+■Work
+○usdviewの不具合修正
+
+○ドキュメントの見直し
+
+
 ■Study
-※作業している箇所を並行してStudyする
+○UsdTutorial
+・Tutorial
+https://openusd.org/release/tut_usd_tutorials.html
+・Solaris(背景)
+https://note.com/indyzonecorp/n/ndf9d8f82d7e5
+
+○Houdini
+・ボリューム
+ -本
+
+○MayaTutorial
+・基礎操作
+https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb6Yd
+・はじめてのmaya(本)
+
+
 ○モデリング
 ・子供都市
 https://www.youtube.com/watch?v=Bh1OuhywtBw&t=707s
@@ -30,6 +51,7 @@ https://www.youtube.com/watch?v=bKLgs8CtcyI&list=PLYpQW46POnqI6vfZ39BLErcpbjch02
 ・SoulCityレベルデザイン
 https://www.youtube.com/watch?v=8B5725JVAQY
 
+
 ■Do
 ○Baseモデリング
 ・HoudiniのFacadeGeneratorのやり方でモデリング
@@ -46,3 +68,50 @@ https://3dcg-school.pro/free-texture-site-list/
 ・△UE4
 
 △レベルデザイン(モジュラーモデリング)
+
+■Private
+○ポイントの交換
+
+○EpicStoreを取得
+
+
+[FaceGenerator]
+※1枚の絵を街にする
+※1つのアセットセットで街を生成する
+
+○Detailの配置ロジック実装
+・Sub
+・Vivit
+
+●目標 
+https://jp.pinterest.com/pin/829577193896609455/
+
+
+■Modeling(ProceduralModeling)
+○Baseモデリング
+・モジュールのモデリング
+・プロシージャルモデリング
+
+○Detailモデリング
+・プロシージャルモデリング
+
+
+■Layout
+○UE上での挙動確認
+
+○UEのアセットセットを用いたレイアウト
+
+
+■CityGenerator
+○区画生成ロジックの実装
+・スケール
+ -高さ
+ -平面
+ -比率
+・角度
+ -直角
+ -乱雑
+
+
+▲Usd
+○メリットの調査
