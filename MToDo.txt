@@ -5,12 +5,21 @@
 https://www.youtube.com/watch?v=Bh1OuhywtBw&t=707s
 ・たのしい建物ジェネレーター
 https://www.youtube.com/watch?v=UCYHV9GJU1Q
+・BlenderFacade
+https://www.youtube.com/watch?v=bKLgs8CtcyI&list=PLYpQW46POnqI6vfZ39BLErcpbjch02e7R
 ・Maya本
 ・Houdiniサンプル
 
 ○プロシージャルモデリング
-・MegaStruture
-・FaceGenerator
+・Houdiniサンプル
+ -MegaStructure
+ -SciFi
+
+○マテリアル
+・Houdiniサンプル
+ -Escalator
+ -MegaStructure
+ -FaceGenerator
 
 △区画生成ロジックの調査
 ・検索
@@ -22,28 +31,18 @@ https://www.youtube.com/watch?v=UCYHV9GJU1Q
 https://www.youtube.com/watch?v=8B5725JVAQY
 
 ■Do
-○素材の用意
-https://3dcg-school.pro/free-texture-site-list/
-・Base
- -窓
- -枠
-・Detail
- -看板
+○Baseモデリング
+・HoudiniのFacadeGeneratorのやり方でモデリング
+https://www.youtube.com/watch?v=j-WegUytMA8
 
-●Base
-※シンプルで最低限のモデルを製作する
-・モデリング
-・テクスチャ
- -窓
- -枠
-
-●Detail
+○Detailモデリング
 ※シンプルで最低限のモデルを製作する
 ・モデリング
  -SoulCityのAssetを参考にする
-・プロシージャルモデリング
- -看板
-  -テクスチャを用意
+・素材の用意
+https://3dcg-school.pro/free-texture-site-list/
+・マテリアル設定
+・プロシージャル化
 ・△UE4
 
 △レベルデザイン(モジュラーモデリング)
