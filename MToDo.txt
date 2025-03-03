@@ -1,4 +1,8 @@
 ■Study
+○MegaStructureのマテリアル周りを調査
+・サンプルデータ
+・動画
+
 ○UsdTutorial
 ・Tutorial
 https://openusd.org/release/tut_usd_tutorials.html
