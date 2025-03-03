@@ -1,9 +1,3 @@
-■Work
-○usdviewの不具合修正
-
-○ドキュメントの見直し
-
-
 ■Study
 ○UsdTutorial
 ・Tutorial
@@ -19,6 +13,7 @@ https://note.com/indyzonecorp/n/ndf9d8f82d7e5
 ・基礎操作
 https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb6Yd
 ・はじめてのmaya(本)
+・ハードサーフェス
 
 
 ○モデリング
@@ -31,23 +26,23 @@ https://www.youtube.com/watch?v=bKLgs8CtcyI&list=PLYpQW46POnqI6vfZ39BLErcpbjch02
 ・Maya本
 ・Houdiniサンプル
 
-○プロシージャルモデリング
-・Houdiniサンプル
- -MegaStructure
- -SciFi
-
 ○マテリアル
 ・Houdiniサンプル
  -Escalator
  -MegaStructure
  -FaceGenerator
 
+△プロシージャルモデリング
+・Houdiniサンプル
+ -MegaStructure
+ -SciFi
+
 △区画生成ロジックの調査
 ・検索
  -city grid generator
  -city map generator
 ・Gridから崩すように実装する
- -VoronoiのBasePointの崩す
+ -VoronoiのBasePointを崩す
 ・SoulCityレベルデザイン
 https://www.youtube.com/watch?v=8B5725JVAQY
 
@@ -56,6 +51,13 @@ https://www.youtube.com/watch?v=8B5725JVAQY
 ○Baseモデリング
 ・HoudiniのFacadeGeneratorのやり方でモデリング
 https://www.youtube.com/watch?v=j-WegUytMA8
+ -Base
+・素材の用意
+https://3dcg-school.pro/free-texture-site-list/
+ -窓
+ -壁
+・マテリアル設定
+ 
 
 ○Detailモデリング
 ※シンプルで最低限のモデルを製作する
