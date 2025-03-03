@@ -22,21 +22,24 @@ https://openusd.org/release/tut_usd_tutorials.html
 
 ●Houdini
 ・基礎
-さつき先生
-ビジュアルエフェクト
-新ビジュアルエフェクト
+ -本
+ -サンプル
 
 ●モデリング
 ・Maya
 ・Blender
 ・Houdini
+ -サンプル
 
 ●プロシージャルモデリング
 ・Blender
 ・Houdini
+ -サンプル
 
 ●マテリアル
 ・Houdini
+ -サンプル
+
 
 [Do]
 ●モデリング
