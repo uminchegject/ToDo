@@ -1,123 +1,14 @@
-■Study
-○MegaStructureのマテリアル周りを調査
-・サンプルデータ
-・動画
-https://gumroad.com/d/496de7a942ce8f21482619ec75e3e772
-
-○UsdTutorial
-・Tutorial
-https://openusd.org/release/tut_usd_tutorials.html
-・Solaris(背景)
-https://note.com/indyzonecorp/n/ndf9d8f82d7e5
-
-○Houdini
-・ボリューム
- -本
-
-○MayaTutorial
-・基礎操作
-https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb6Yd
-・はじめてのmaya(本)
-・ハードサーフェス
-
-
+■Base
 ○モデリング
-・子供都市
-https://www.youtube.com/watch?v=Bh1OuhywtBw&t=707s
-・たのしい建物ジェネレーター
-https://www.youtube.com/watch?v=UCYHV9GJU1Q
-・BlenderFacade
-https://www.youtube.com/watch?v=bKLgs8CtcyI&list=PLYpQW46POnqI6vfZ39BLErcpbjch02e7R
-・Maya本
-・Houdiniサンプル
+・プロシージャル化
+
+○UV展開
+・Megastructureを参考にする
 
 ○マテリアル
-・Houdiniサンプル
- -Escalator
- -MegaStructure
- -FaceGenerator
-
-△プロシージャルモデリング
-・Houdiniサンプル
- -MegaStructure
- -SciFi
-
-△区画生成ロジックの調査
-・検索
- -city grid generator
- -city map generator
-・Gridから崩すように実装する
- -VoronoiのBasePointを崩す
-・SoulCityレベルデザイン
-https://www.youtube.com/watch?v=8B5725JVAQY
-
-
-■Do
-○Baseモデリング
-・HoudiniのFacadeGeneratorのやり方でモデリング
-https://www.youtube.com/watch?v=j-WegUytMA8
- -Base
-・素材の用意
-https://3dcg-school.pro/free-texture-site-list/
- -窓
+・素材を用意
  -壁
-・マテリアル設定
- 
-
-○Detailモデリング
-※シンプルで最低限のモデルを製作する
-・モデリング
- -SoulCityのAssetを参考にする
-・素材の用意
+ -窓
 https://3dcg-school.pro/free-texture-site-list/
-・マテリアル設定
-・プロシージャル化
-・△UE4
 
-△レベルデザイン(モジュラーモデリング)
-
-■Private
-○個人目標の記載
-
-
-[FaceGenerator]
-※1枚の絵を街にする
-※1つのアセットセットで街を生成する
-
-○Detailの配置ロジック実装
-・Sub
-・Vivit
-
-●目標 
-https://jp.pinterest.com/pin/829577193896609455/
-
-
-■Modeling(ProceduralModeling)
-○Baseモデリング
-・モジュールのモデリング
-・プロシージャルモデリング
-
-○Detailモデリング
-・プロシージャルモデリング
-
-
-■Layout
-○UE上での挙動確認
-
-○UEのアセットセットを用いたレイアウト
-
-
-■CityGenerator
-○区画生成ロジックの実装
-・スケール
- -高さ
- -平面
- -比率
-・角度
- -直角
- -乱雑
-
-
-▲Usd
-○メリットの調査
-
+○検証
