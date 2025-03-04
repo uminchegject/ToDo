@@ -2,6 +2,7 @@
 ○MegaStructureのマテリアル周りを調査
 ・サンプルデータ
 ・動画
+https://gumroad.com/d/496de7a942ce8f21482619ec75e3e772
 
 ○UsdTutorial
 ・Tutorial
@@ -76,9 +77,7 @@ https://3dcg-school.pro/free-texture-site-list/
 △レベルデザイン(モジュラーモデリング)
 
 ■Private
-○ポイントの交換
-
-○EpicStoreを取得
+○個人目標の記載
 
 
 [FaceGenerator]
@@ -121,3 +120,4 @@ https://jp.pinterest.com/pin/829577193896609455/
 
 ▲Usd
 ○メリットの調査
+
