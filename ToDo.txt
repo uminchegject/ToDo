@@ -4,11 +4,6 @@
 ※Doは少しずづでもできることから進めていく
  -在る知識で最低限のことをする
 ※Doしている箇所を並行してStudyする
-※サンプルデータ勉強手順
- -(本・動画)サンプルソースから大まかな処理のフローと分からない箇所の目安をつけといて、そこを重点的に調べる
- -(プロジェクト)コメント化、関数化を行っていく
-※動画の視聴を習慣づける
-
 
 [Private]
 ●要らない物の整理
@@ -17,7 +12,6 @@
 [Study]
 ●USD
 ・Tutorial
-https://qiita.com/snowxcrash
 https://openusd.org/release/tut_usd_tutorials.html
 
 ●Houdini
