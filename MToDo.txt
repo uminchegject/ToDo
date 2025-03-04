@@ -1,5 +1,6 @@
 ■Base
 ○モデリング
+・ボリューム単位で用意
 ・プロシージャル化
 
 ○UV展開
@@ -11,4 +12,15 @@
  -窓
 https://3dcg-school.pro/free-texture-site-list/
 
-○検証
+○ボリュームの組み立ての検証
+・Megastructureを参考にする
+
+■Megastructure
+●Base
+・ボリュームの組み立て
+ -削る
+ -加える
+ -コピー
+
+●Detail
+・スケール
