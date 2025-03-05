@@ -1,4 +1,3 @@
-■Study
 ○モジュールの仕様設計
 ・モデリング仕様
 ・プロシージャル化
@@ -13,10 +12,16 @@ https://3dcg-school.pro/free-texture-site-list/
  -Megastructureを参考にする
 ・マテリアル
 
+
+■Study
 ○UsdTutorial
 ・Tutorial
 https://openusd.org/release/tut_usd_tutorials.html
-・Solaris(背景)
+
+○SolarisTutorial
+・Lops
+https://www.sidefx.com/ja/docs/houdini/solaris/tutorials.html
+・氷の島
 https://note.com/indyzonecorp/n/ndf9d8f82d7e5
 
 ○Houdini
