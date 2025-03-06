@@ -74,16 +74,8 @@ https://www.youtube.com/watch?v=8B5725JVAQY
 ・DetailAssetの配置
 
 ○BaseModeling
-・PD
- -横
-  -BlockSize
-  -Scale
-  -△Material
- -縦
-  -BlockSize
-  -Scale
-  -△Material
-・UV展開
+・PDをHDA化
+・HDAをパラメーターに設定できるように実装
 
 △Baseのマテリアル化
 ・Houdiniサンプルから調査
