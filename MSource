@@ -1,54 +1,69 @@
-■Volume
+●パラメーター
+vector blockSize = BlockSize
+string windowMaterial = WindowMaterial
+
+float heightSize = HeightSize;
+float heightExtrude = HeightExtrude;
+string heightMaterial = HeightMaterial;
+
+float widthSize = WidthSize;
+float widthExtrude = WidthExtrude;
+float widthMaterial = WidthMaterial;
 
 
-■UsdMaterial
+●ソース
+vector blockSurfaceSize;
+blockSurfaceSize.x = length(widthPt2 - widthPt1);
+blockSurfaceSize.y = length(heightPt2 - heightPt1);
 
+int widthPtNum = int(blockSurfaceSize.x / blockSize.x);
+int heightPtNum = int(blockSurfaceSize.y / blockSize.y);
 
-■HAPI
+vector slider_x = (blockSurfaceSize.x / widthPtNum) * normalize(widthPt2 - widthPt1);
+vector slider_y = (blockSurfaceSize.y / heightPtNum) * normalize(heightPt2 - heightPt1);
 
+vector N = normalize(@N);
+vector up = {0, 1, 0};
 
-■クォータニオン
-・共役
-・純虚クォータニオン
+vector tangent = normalize(cross(up, N));
+vector binormal = normalize(cross(N, tangent));
+matrix3 rotationMatrix = set(tangent, binormal, N);
+vector4 orient = quaternion(rotationMatrix);
 
-●クォータニオン構造体
-#include <iostream>
-#include <cmath>
+vector adjustScale = 1;
+adjustScale.x = blockSurfaceSize.x;
+adjustScale.y = heightSize;
+for(int height = 0; height < heightPtNum; ++height)
+{    
+	vector spawnPos = 0;
+	spawnPos.x = width * slider_x / 2;
+	spawnPos += height * slider_y + slider_y / 2;
+	spawnPos -= (slider_y * heightPtNum) / 2;
+	spawnPos += v@P;
 
-struct Quaternion {
-    double w, x, y, z;
+	if(heightPt1.y == heightPt2.y && widthPt1.y == widthPt2.y) continue;
+	int pt = addpoint(0, spawnPos);
+	setpointattrib(0, "orient", pt, orient);
+	setpointattrib(0, "scale", pt, adjustScale);
+	setpointattrib(0, "ExtrudeHeight", HeightExtrude);
+	setpointattrib(0, "Material", HeightMaterial);
+}
 
-    // 共役を求める
-    Quaternion conjugate() const {
-        return {w, -x, -y, -z};
-    }
+adjustScale.x = widthSize;
+adjustScale.y = blockSurfaceSize.y;
+for(int width = 0; width < widthPtNum; ++width)
+{
+	vector spawnPos = 0;
+	spawnPos += width * slider_x + slider_x / 2;
+	spawnPos -= (slider_x * widthPtNum) / 2;
+	spawnPos += v@P;
 
-    // クォータニオンの乗算
-    Quaternion operator*(const Quaternion& q) const {
-        return {
-            w * q.w - x * q.x - y * q.y - z * q.z,
-            w * q.x + x * q.w + y * q.z - z * q.y,
-            w * q.y - x * q.z + y * q.w + z * q.x,
-            w * q.z + x * q.y - y * q.x + z * q.w
-        };
-    }
+	if(heightPt1.y == heightPt2.y && widthPt1.y == widthPt2.y) continue;
+	int pt = addpoint(0, spawnPos);
+	setpointattrib(0, "orient", pt, orient);
+	setpointattrib(0, "scale", pt, adjustScale);	
+	setpointattrib(0, "ExtrudeHeight", widthExtrude);
+	setpointattrib(0, "Material", widthMaterial);
+}
 
-    // ベクトルをクォータニオンとして回転させる
-    std::array<double, 3> rotateVector(const std::array<double, 3>& v) const {
-        Quaternion vec = {0, v[0], v[1], v[2]};
-        Quaternion result = (*this) * vec * this->conjugate();
-        return {result.x, result.y, result.z};
-    }
-};
-
-●ベクトルの回転処理
-// 回転軸 (0,1,0) の周りに 90 度回転させるクォータニオンを作成
-double angle = M_PI / 2; // 90度をラジアンに変換
-Quaternion q = {std::cos(angle / 2), 0, std::sin(angle / 2), 0};
-
-// 回転させるベクトル
-std::array<double, 3> vec = {1, 0, 0};
-
-// 回転後のベクトル
-std::array<double, 3> rotatedVec = q.rotateVector(vec);
-
+removeprim(0, @primnum, 1);
