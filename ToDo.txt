@@ -4,6 +4,8 @@
 ※Doは少しずづでもできることから進めていく
  -在る知識で最低限のことをする
 ※Doしている箇所を並行してStudyする
+ -Doで必要な知識をStudyする
+
 
 [Private]
 ●要らない物の整理
@@ -31,8 +33,7 @@ https://openusd.org/release/tut_usd_tutorials.html
  -サンプル
 
 ●マテリアル
-・Houdini
- -サンプル
+
 
 
 [Do]
