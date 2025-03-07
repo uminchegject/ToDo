@@ -5,13 +5,16 @@ https://www.sidefx.com/ja/docs/houdini/shade/index.html
 
 ■Work
 ※実際に運用してみる
-
 ○マージの検証
 ・VSCodeのCompareを使用して検証する
  -レイアウト
  -パラメーター
  -HDA
  -スクリプト
+
+○ドキュメント整理(Private)
+・アスキーの構造
+・マージ方法
 
 ○マージ対応方法を大まかにカテゴライズしてドキュメントにまとめる
 
