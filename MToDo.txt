@@ -1,21 +1,29 @@
-○MIMEBOUNDARY
-https://qiita.com/ikedaHi/items/59d6c46a43ac0cb45705
+○UVとマテリアル
+・公式
+https://www.sidefx.com/ja/docs/houdini/shade/index.html
 
-○マテリアルドキュメント
-https://support.borndigital.co.jp/hc/ja/articles/360006928153-Houdini%E5%88%9D%E7%B4%9A%E7%B7%A8-%E3%82%B7%E3%82%A7%E3%83%BC%E3%83%80%E3%83%BC-%E3%83%9E%E3%83%86%E3%83%AA%E3%82%A2%E3%83%AB
-https://note.com/aoi/n/ne0de4551d6f2
 
-○マテリアルTutorial
-https://cgworld.jp/regular/201812-hcb-094.html
+■Work
+※実際に運用してみる
+
+○マージの検証
+・VSCodeのCompareを使用して検証する
+ -レイアウト
+ -パラメーター
+ -HDA
+ -スクリプト
+
+○マージ対応方法を大まかにカテゴライズしてドキュメントにまとめる
+
+△Gitで検証
+・別々の作業をマージする
+ -コンフリクトが起きた際の対応
 
 
 ■Study
 ○マテリアル
 ・公式
 https://www.sidefx.com/ja/docs/houdini/shade/index.html
-・Tutorial
-https://qiita.com/egzao1o9_CG/items/4e9b3c850821b647c303
-https://cgworld.jp/regular/201812-hcb-094.html
 ・ドキュメント
 https://support.borndigital.co.jp/hc/ja/articles/360006928153-Houdini%E5%88%9D%E7%B4%9A%E7%B7%A8-%E3%82%B7%E3%82%A7%E3%83%BC%E3%83%80%E3%83%BC-%E3%83%9E%E3%83%86%E3%83%AA%E3%82%A2%E3%83%AB
 https://note.com/aoi/n/ne0de4551d6f2
@@ -25,6 +33,8 @@ https://indyzone.co.jp/archives/5892#p07
 ○UsdTutorial
 ・Tutorial
 https://openusd.org/release/tut_usd_tutorials.html
+・日本語ドキュメント
+https://fereria.github.io/reincarnation_tech/usd/python/tutorials
 
 ○SolarisTutorial
 ・Lops
@@ -84,22 +94,6 @@ https://www.youtube.com/watch?v=8B5725JVAQY
 ・SoulCityのAssetを参考にする
 ・プロシージャル化
 
-■Work
-○環境準備
-・対応バージョンをインストール
-
-○ドキュメント確認
-・AsciiHDA
-・Houdini開発
-
-○Asciiについてドキュメント化
-
-○検証
-・アスキー化して差分を確認する
- -レイアウト
- -Python
- -HDA
-・ドキュメント化
 
 ■Private
 ○個人目標の記載
