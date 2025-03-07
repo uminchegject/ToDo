@@ -1,144 +1,100 @@
-○UVとマテリアル
-・公式
-https://www.sidefx.com/ja/docs/houdini/shade/index.html
+※アスキーによるバージョン管理を行う
+
+○パラメーターのHDAを参照してBlockに適応させる方法を調査
+
+■HDA
+○プロシージャルモデリング
+
+○UV展開
+
+△マテリアル設定
+
+●パラメーター
+vector blockSize = BlockSize
+string windowMaterial = WindowMaterial
+
+float heightSize = HeightSize;
+float heightExtrude = HeightExtrude;
+string heightMaterial = HeightMaterial;
+
+float widthSize = WidthSize;
+float widthExtrude = WidthExtrude;
+float widthMaterial = WidthMaterial;
 
 
-■Work
-※実際に運用してみる
-○マージの検証
-・VSCodeのCompareを使用して検証する
- -レイアウト
- -パラメーター
- -HDA
- -スクリプト
+●ソース
+vector blockSurfaceSize;
+blockSurfaceSize.x = length(widthPt2 - widthPt1);
+blockSurfaceSize.y = length(heightPt2 - heightPt1);
 
-○ドキュメント整理(Private)
-・アスキーの構造
-・マージ方法
+int widthPtNum = int(blockSurfaceSize.x / blockSize.x);
+int heightPtNum = int(blockSurfaceSize.y / blockSize.y);
 
-○マージ対応方法を大まかにカテゴライズしてドキュメントにまとめる
+vector slider_x = (blockSurfaceSize.x / widthPtNum) * normalize(widthPt2 - widthPt1);
+vector slider_y = (blockSurfaceSize.y / heightPtNum) * normalize(heightPt2 - heightPt1);
 
-△Gitで検証
-・別々の作業をマージする
- -コンフリクトが起きた際の対応
+vector N = normalize(@N);
+vector up = {0, 1, 0};
+
+vector tangent = normalize(cross(up, N));
+vector binormal = normalize(cross(N, tangent));
+matrix3 rotationMatrix = set(tangent, binormal, N);
+vector4 orient = quaternion(rotationMatrix);
+
+vector adjustScale = 1;
+adjustScale.x = blockSurfaceSize.x;
+adjustScale.y = heightSize;
+for(int height = 0; height < heightPtNum; ++height)
+{    
+	vector spawnPos = 0;
+	spawnPos.x = width * slider_x / 2;
+	spawnPos += height * slider_y + slider_y / 2;
+	spawnPos -= (slider_y * heightPtNum) / 2;
+	spawnPos += v@P;
+
+	if(heightPt1.y == heightPt2.y && widthPt1.y == widthPt2.y) continue;
+	int pt = addpoint(0, spawnPos);
+	setpointattrib(0, "orient", pt, orient);
+	setpointattrib(0, "scale", pt, adjustScale);
+	setpointattrib(0, "ExtrudeHeight", HeightExtrude);
+	setpointattrib(0, "Material", HeightMaterial);
+}
+
+adjustScale.x = widthSize;
+adjustScale.y = blockSurfaceSize.y;
+for(int width = 0; width < widthPtNum; ++width)
+{
+	vector spawnPos = 0;
+	spawnPos += width * slider_x + slider_x / 2;
+	spawnPos -= (slider_x * widthPtNum) / 2;
+	spawnPos += v@P;
+
+	if(heightPt1.y == heightPt2.y && widthPt1.y == widthPt2.y) continue;
+	int pt = addpoint(0, spawnPos);
+	setpointattrib(0, "orient", pt, orient);
+	setpointattrib(0, "scale", pt, adjustScale);	
+	setpointattrib(0, "ExtrudeHeight", widthExtrude);
+	setpointattrib(0, "Material", widthMaterial);
+}
+
+removeprim(0, @primnum, 1);
 
 
-■Study
-○マテリアル
-・公式
-https://www.sidefx.com/ja/docs/houdini/shade/index.html
-・ドキュメント
-https://support.borndigital.co.jp/hc/ja/articles/360006928153-Houdini%E5%88%9D%E7%B4%9A%E7%B7%A8-%E3%82%B7%E3%82%A7%E3%83%BC%E3%83%80%E3%83%BC-%E3%83%9E%E3%83%86%E3%83%AA%E3%82%A2%E3%83%AB
-https://note.com/aoi/n/ne0de4551d6f2
-・動画
-https://indyzone.co.jp/archives/5892#p07
+■FaceGenerator
+○HDAをパラメーターに設定できるように実装
 
-○UsdTutorial
-・Tutorial
-https://openusd.org/release/tut_usd_tutorials.html
-・日本語ドキュメント
-https://fereria.github.io/reincarnation_tech/usd/python/tutorials
-
-○SolarisTutorial
-・Lops
-https://www.sidefx.com/ja/docs/houdini/solaris/tutorials.html
-・氷の島
-https://note.com/indyzonecorp/n/ndf9d8f82d7e5
-
-○Houdini
-・ボリューム
- -本
-
-○MayaTutorial
-・基礎操作
-https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb6Yd
-・はじめてのmaya(本)
-・ハードサーフェス
+○DetailAssetにUE4かのトグルを設定する
 
 
-△モデリング
-・子供都市
-https://www.youtube.com/watch?v=Bh1OuhywtBw&t=707s
-・たのしい建物ジェネレーター
-https://www.youtube.com/watch?v=UCYHV9GJU1Q
-・BlenderFacade
-https://www.youtube.com/watch?v=bKLgs8CtcyI&list=PLYpQW46POnqI6vfZ39BLErcpbjch02e7R
-・Maya本
-・Houdiniサンプル
-
-△プロシージャルモデリング
-・Houdiniサンプル
- -MegaStructure
- -SciFi
-
-△区画生成ロジックの調査
-・検索
- -city grid generator
- -city map generator
-・Gridから崩すように実装する
- -VoronoiのBasePointを崩す
-・SoulCityレベルデザイン
-https://www.youtube.com/watch?v=8B5725JVAQY
+■Houdiniエンジンに対応
+○UE上で検証する
+・DetailAssetの配置
 
 
 ■Do
-○Houdiniエンジンに対応
-・BaseModuleの生成
-・DetailAssetの配置
-
-○BaseModeling
-・PDをHDA化
-・HDAをパラメーターに設定できるように実装
-
 △Baseのマテリアル化
 ・Houdiniサンプルから調査
 
 △DetailModeling
 ・SoulCityのAssetを参考にする
 ・プロシージャル化
-
-
-■Private
-○個人目標の記載
-
-○ポイント取得
-
-○枕
-
-
-[FaceGenerator]
-※1枚の絵を街にする
-※1つのアセットセットで街を生成する
-
-○Detailの配置ロジック実装
-・Sub
-・Vivit
-
-●目標 
-https://jp.pinterest.com/pin/829577193896609455/
-
-■Modeling(ProceduralModeling)
-○Baseモデリング
-・モジュールのモデリング
-・プロシージャルモデリング
-
-○Detailモデリング
-・プロシージャルモデリング
-
-■Layout
-○UE上での挙動確認
-
-○UEのアセットセットを用いたレイアウト
-
-■CityGenerator
-○区画生成ロジックの実装
-・スケール
- -高さ
- -平面
- -比率
-・角度
- -直角
- -乱雑
-
-▲Usd
-○メリットの調査
