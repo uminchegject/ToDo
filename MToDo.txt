@@ -1,5 +1,5 @@
 ※アスキーによるバージョン管理を行う
-
+■BaseMaker
 ●Origin
 ※Detailをここで決める
 ・オブジェクト(ブロック単位)
@@ -14,22 +14,9 @@
 ・UV展開
 
 
-■BaseMaker
-○プロシージャルモデリング
-
-○UV展開
-
-△マテリアル設定
-
-
-■FaceGenerator
-○DetailAssetにUE4かのトグルを設定する
-
-△パラメーターの整理
-・BaseMakerのパラメーターを使えるように実装
-
 ■Houdiniエンジンに対応
 ○UE上で検証する
+・DetailAssetにUE4かのトグルを設定する
 ・DetailAssetの配置
 
 
