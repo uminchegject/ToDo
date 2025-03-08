@@ -1,69 +1,48 @@
 ●パラメーター
-vector blockSize = BlockSize
-string windowMaterial = WindowMaterial
+vector blockSize = chi("BlockSize");
+string windowMaterial = chs("WindowMaterial");
 
-float heightSize = HeightSize;
-float heightExtrude = HeightExtrude;
-string heightMaterial = HeightMaterial;
+float bumpHeight = ch("bumpHeight");
+float bumpHeightExtrude = ch("BumpHeightExtrude");
+string bumpHeightMaterial = chs("BumpHeightMaterial");
 
-float widthSize = WidthSize;
-float widthExtrude = WidthExtrude;
-float widthMaterial = WidthMaterial;
+float bumpWidth = ch("BumpWidth");
+float bumpWidthExtrude = ch("BumpWidthExtrude");
+string bumpWidthMaterial = chs("BumpWidthMaterial");
 
 
 ●ソース
-vector blockSurfaceSize;
-blockSurfaceSize.x = length(widthPt2 - widthPt1);
-blockSurfaceSize.y = length(heightPt2 - heightPt1);
-
-int widthPtNum = int(blockSurfaceSize.x / blockSize.x);
-int heightPtNum = int(blockSurfaceSize.y / blockSize.y);
-
-vector slider_x = (blockSurfaceSize.x / widthPtNum) * normalize(widthPt2 - widthPt1);
-vector slider_y = (blockSurfaceSize.y / heightPtNum) * normalize(heightPt2 - heightPt1);
-
-vector N = normalize(@N);
-vector up = {0, 1, 0};
-
-vector tangent = normalize(cross(up, N));
-vector binormal = normalize(cross(N, tangent));
-matrix3 rotationMatrix = set(tangent, binormal, N);
-vector4 orient = quaternion(rotationMatrix);
-
 vector adjustScale = 1;
 adjustScale.x = blockSurfaceSize.x;
-adjustScale.y = heightSize;
+adjustScale.y = bumpHeight;
 for(int height = 0; height < heightPtNum; ++height)
 {    
-	vector spawnPos = 0;
-	spawnPos.x = width * slider_x / 2;
-	spawnPos += height * slider_y + slider_y / 2;
+	vector spawnPos = v@P;
 	spawnPos -= (slider_y * heightPtNum) / 2;
-	spawnPos += v@P;
+	spawnPos += height * slider_y + slider_y / 2;
 
 	if(heightPt1.y == heightPt2.y && widthPt1.y == widthPt2.y) continue;
 	int pt = addpoint(0, spawnPos);
 	setpointattrib(0, "orient", pt, orient);
 	setpointattrib(0, "scale", pt, adjustScale);
-	setpointattrib(0, "ExtrudeHeight", HeightExtrude);
-	setpointattrib(0, "Material", HeightMaterial);
+	setpointattrib(0, "ExtrudeHeight", bumpHeightExtrude);
+	setpointattrib(0, "Material", bumpHeightMaterial);
 }
 
-adjustScale.x = widthSize;
 adjustScale.y = blockSurfaceSize.y;
+adjustScale.x = bumpWidth;
 for(int width = 0; width < widthPtNum; ++width)
 {
-	vector spawnPos = 0;
-	spawnPos += width * slider_x + slider_x / 2;
+	vector spawnPos = v@P;
 	spawnPos -= (slider_x * widthPtNum) / 2;
-	spawnPos += v@P;
+	spawnPos += width * slider_x + slider_x / 2;
 
 	if(heightPt1.y == heightPt2.y && widthPt1.y == widthPt2.y) continue;
 	int pt = addpoint(0, spawnPos);
 	setpointattrib(0, "orient", pt, orient);
 	setpointattrib(0, "scale", pt, adjustScale);	
-	setpointattrib(0, "ExtrudeHeight", widthExtrude);
-	setpointattrib(0, "Material", widthMaterial);
+	setpointattrib(0, "ExtrudeHeight", bumpWidthExtrude);
+	setpointattrib(0, "Material", bumpWidthMaterial);
 }
 
 removeprim(0, @primnum, 1);
