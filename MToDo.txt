@@ -1,29 +1,174 @@
-※アスキーによるバージョン管理を行う
-■Base
-●Origin
-※Detailをここで決める
-・オブジェクト(ブロック単位)
-・Material情報を持たせる(適応するPrimに持たせる)
-・断面(全体単位)
+■Do
+○USD
+・公式Tutorial
+https://openusd.org/release/tut_usd_tutorials.html
+・日本語ドキュメント
+https://fereria.github.io/reincarnation_tech/usd/python/tutorials
 
-●Place
-※配置処理のみをサポートする
+○Solaris
+・公式Tutorial
+https://www.sidefx.com/ja/docs/houdini/solaris/tutorials.html
+
+○Houdini
+・Tutorial本
+ 
+○Maya
+・Tutorial本
+
+○HoudiniMaterial
+・動画
+https://indyzone.co.jp/archives/5892#p07
+
+
+○HDA対応
+
+○修正
 ・上下・左右に挟むように配置するか
 ・ブロック単位か全体単位か
 ・スケール調整(隙間がないようにする)
+
+○HDA化(Base)
+・モデリング
 ・UV展開
+・△マテリアル
+・Parameter
+ -オブジェクト(ブロック単位)
+ -Material情報を持たせる(適応するPrimに持たせる)
+ -断面(全体単位)
 
 
-■Detail
-○UE上で検証する
+■Work
+※実際に運用してみる
+○マージの検証
+・VSCodeのCompareを使用して検証する
+ -レイアウト
+ -パラメーター
+ -HDA
+ -スクリプト
+
+○ドキュメント整理(Private)
+・アスキーの構造
+・マージ方法
+
+○マージ対応方法を大まかにカテゴライズしてドキュメントにまとめる
+
+△Gitで検証
+・別々の作業をマージする
+ -コンフリクトが起きた際の対応
+
+
+■Study
+○マテリアル
+・公式
+https://www.sidefx.com/ja/docs/houdini/shade/index.html
+・ドキュメント
+https://support.borndigital.co.jp/hc/ja/articles/360006928153-Houdini%E5%88%9D%E7%B4%9A%E7%B7%A8-%E3%82%B7%E3%82%A7%E3%83%BC%E3%83%80%E3%83%BC-%E3%83%9E%E3%83%86%E3%83%AA%E3%82%A2%E3%83%AB
+https://note.com/aoi/n/ne0de4551d6f2
+・動画
+https://indyzone.co.jp/archives/5892#p07
+
+○UsdTutorial
+・Tutorial
+https://openusd.org/release/tut_usd_tutorials.html
+・日本語ドキュメント
+https://fereria.github.io/reincarnation_tech/usd/python/tutorials
+
+○SolarisTutorial
+・Lops
+https://www.sidefx.com/ja/docs/houdini/solaris/tutorials.html
+・氷の島
+https://note.com/indyzonecorp/n/ndf9d8f82d7e5
+
+○Houdini
+・ボリューム
+ -本
+
+○MayaTutorial
+・基礎操作
+https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb6Yd
+・はじめてのmaya(本)
+・ハードサーフェス
+
+
+△モデリング
+・子供都市
+https://www.youtube.com/watch?v=Bh1OuhywtBw&t=707s
+・たのしい建物ジェネレーター
+https://www.youtube.com/watch?v=UCYHV9GJU1Q
+・BlenderFacade
+https://www.youtube.com/watch?v=bKLgs8CtcyI&list=PLYpQW46POnqI6vfZ39BLErcpbjch02e7R
+・Maya本
+・Houdiniサンプル
+
+△プロシージャルモデリング
+・Houdiniサンプル
+ -MegaStructure
+ -SciFi
+
+△区画生成ロジックの調査
+・検索
+ -city grid generator
+ -city map generator
+・Gridから崩すように実装する
+ -VoronoiのBasePointを崩す
+・SoulCityレベルデザイン
+https://www.youtube.com/watch?v=8B5725JVAQY
+
+
+■Private
+○個人目標の記載
+
+○ポイント取得
+
+○枕
+
+
+[FaceGenerator]
+※1枚の絵を街にする
+※1つのアセットセットで街を生成する
+
+●目標 
+https://jp.pinterest.com/pin/829577193896609455/
+
+
+■Modular
+※配置処理のみをサポートする
+○HDA対応
+
+○修正
+・上下・左右に挟むように配置するか
+・ブロック単位か全体単位か
+・スケール調整(隙間がないようにする)
+
+
+■ProceduralModeling
+○HDA化(Base)
+・モデリング
+・UV展開
+・△マテリアル
+
+・Parameter
+ -オブジェクト(ブロック単位)
+ -Material情報を持たせる(適応するPrimに持たせる)
+ -断面(全体単位)
+
+○UE上で検証する(Detail)
 ・DetailAssetにUE4かのトグルを設定する
 ・DetailAssetの配置
-
-
-■Do
-△Baseのマテリアル化
-・Houdiniサンプルから調査
 
 △DetailModeling
 ・SoulCityのAssetを参考にする
 ・プロシージャル化
+
+■CityGenerator
+○区画生成ロジックの実装
+・スケール
+ -高さ
+ -平面
+ -比率
+・角度
+ -直角
+ -乱雑
+
+▲Usd
+○メリットの調査
