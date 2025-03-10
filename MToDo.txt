@@ -18,7 +18,7 @@ https://www.sidefx.com/ja/docs/houdini/solaris/tutorials.html
 
 ○Houdini
 ・Tutorial本
- 
+
 ○Maya
 ・Tutorial本
 
@@ -46,20 +46,7 @@ https://indyzone.co.jp/archives/5892#p07
 
 ■Work
 ※実際に運用してみる
-○マージの検証
-・VSCodeのCompareを使用して検証する
- -レイアウト
- -パラメーター
- -HDA
- -スクリプト
-
-○ドキュメント整理(Private)
-・アスキーの構造
-・マージ方法
-
-○マージ対応方法を大まかにカテゴライズしてドキュメントにまとめる
-
-△Gitで検証
+○Gitで検証
 ・別々の作業をマージする
  -コンフリクトが起きた際の対応
 
