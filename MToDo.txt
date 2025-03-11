@@ -8,16 +8,13 @@
 
 
 ■Do
-○HDA
-・HDAを参照しスクリプト内で使用する方法を調査
-
 ○USD
 ・日本語ドキュメント
 https://fereria.github.io/reincarnation_tech/usd/python/tutorials
 
 ○Solaris
 ・公式Tutorial
-https://www.sidefx.com/ja/docs/houdini/solaris/tutorials.html
+FullSceneSetup.hip
 
 ○Houdini
 ・Tutorial本
@@ -31,6 +28,10 @@ https://www.sidefx.com/ja/docs/houdini/solaris/tutorials.html
 https://indyzone.co.jp/archives/5892#p07
 
 
+○HDA
+・HDAを参照しスクリプト内で使用する方法を検証
+ -ChatGPT
+
 ○HDA化(Base)
 ・モデリング
 ・UV展開
@@ -40,8 +41,6 @@ https://indyzone.co.jp/archives/5892#p07
  -Material情報を持たせる(適応するPrimに持たせる)
  -断面(全体単位)
 
-○HDA対応
-
 ○修正
 ・上下・左右に挟むように配置するか
 ・ブロック単位か全体単位か
@@ -50,16 +49,14 @@ https://indyzone.co.jp/archives/5892#p07
 
 ■Work
 ※実際に運用してみる
-○コンフリクトの解消
-・SourceTreeを用いてローカルで行う
-
-○検証内容の調査
-・実際のHoudiniの実務を調査
+○マージの検証
+・スクリプト
+・パラメーター
+・HDA
+・ノード処理(レイアウト・ワイヤー)
 
 ○Gitの検証
-※実際の仕事を想定する
-・作業途中でマージ
-
+・リモートとローカル両方の検証を確認する
 
 ■Study
 ○UsdTutorial
