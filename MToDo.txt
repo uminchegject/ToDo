@@ -30,16 +30,13 @@ https://indyzone.co.jp/archives/5892#p07
 
 ○HDA
 ・HDAを参照しスクリプト内で使用する方法を検証
- -ChatGPT
+ -PythonでHDAを読み込む処理を検証
+ -Pythonでpointを生成し、パラメーターに設定する処理を検証
 
 ○HDA化(Base)
 ・モデリング
 ・UV展開
 ・△マテリアル
-・Parameter
- -オブジェクト(ブロック単位)
- -Material情報を持たせる(適応するPrimに持たせる)
- -断面(全体単位)
 
 ○修正
 ・上下・左右に挟むように配置するか
@@ -48,7 +45,7 @@ https://indyzone.co.jp/archives/5892#p07
 
 
 ■Work
-※実際に運用してみる
+※VSCodeで検証
 ○マージの検証
 ・スクリプト
 ・パラメーター
@@ -57,6 +54,8 @@ https://indyzone.co.jp/archives/5892#p07
 
 ○Gitの検証
 ・リモートとローカル両方の検証を確認する
+
+○懸念点をまとめる
 
 ■Study
 ○UsdTutorial
