@@ -8,6 +8,11 @@
 
 
 ■Do
+○HDAをインストールして処理を読み込むPythonの確認
+○viewer_stateについて確認
+
+○VSCode対策
+
 ○USD
 ・日本語ドキュメント
 https://fereria.github.io/reincarnation_tech/usd/python/tutorials
