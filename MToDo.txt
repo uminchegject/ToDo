@@ -2,16 +2,10 @@
 ※StudyとDoのタスクはなるべく分散しない
 
 
-
 ■Do
-○viewer_stateについて確認
-https://houdinifx.jp/blog/houdni%E3%81%A7viewer-state%E3%82%92%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B%E6%89%8B%E9%A0%86/
-
-○VSCode対策
-
 ○HDA
-・HDA作成ガイドライン
-https://qiita.com/d658t/items/a9f785d741037021e6ee
+・公式ドキュメント(各クラスの概要のみを確認)
+https://www.sidefx.com/ja/docs/houdini/hom/hou/HDADefinition.html
 
 ○USD
 ・日本語ドキュメント
@@ -38,6 +32,8 @@ https://indyzone.co.jp/archives/5892#p07
  -Pythonでpointを生成し、パラメーターに設定する処理を検証
 
 ○HDA化(Base)
+・ガイドラインに沿って実装する
+https://qiita.com/d658t/items/a9f785d741037021e6ee
 ・モデリング
 ・UV展開
 ・△マテリアル
@@ -49,17 +45,22 @@ https://indyzone.co.jp/archives/5892#p07
 
 
 ■Work
-※VSCodeで検証
-○マージの検証
-・スクリプト
-・パラメーター
-・HDA
-・ノード処理(レイアウト・ワイヤー)
+○見直し
 
 ○Gitの検証
-・リモートとローカル両方の検証を確認する
-
-○懸念点をまとめる
+※ファイルの用意からコンフリクト、マージの対応まで詳細に説明を記載する
+・Originファイルの用意
+ -リモートも準備
+・Copyブランチに分割
+・メインブランチでファイルを編集
+・メインブランチをコミット
+ -差分を確認
+・Copyブランチを編集
+・メインブランチをマージ
+・コンフリクトを解消
+ -注意点に沿って無視する箇所を説明
+・リモートにプッシュ
+・リモートでマージ
 
 ■Study
 ○UsdTutorial
