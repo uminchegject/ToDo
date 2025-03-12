@@ -1,25 +1,24 @@
 ■反省
 ※StudyとDoのタスクはなるべく分散しない
-※Do(ドキュメント・自主製作)に向けて日中Studyを行い具体的なタスクを考える
-※Doは少しずづでもできることから進めていく
- -在る知識で最低限のことをする
-※Doしている箇所を並行してStudyする
- -Doで必要な知識をStudyする
+
 
 
 ■Do
-○HDAをインストールして処理を読み込むPythonの確認
 ○viewer_stateについて確認
+https://houdinifx.jp/blog/houdni%E3%81%A7viewer-state%E3%82%92%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B%E6%89%8B%E9%A0%86/
 
 ○VSCode対策
+
+○HDA
+・HDA作成ガイドライン
+https://qiita.com/d658t/items/a9f785d741037021e6ee
 
 ○USD
 ・日本語ドキュメント
 https://fereria.github.io/reincarnation_tech/usd/python/tutorials
 
 ○Solaris
-・公式Tutorial
-FullSceneSetup.hip
+・公式Tutorialプロジェクト
 
 ○Houdini
 ・Tutorial本
