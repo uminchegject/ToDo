@@ -27,6 +27,7 @@ https://indyzone.co.jp/archives/5892#p07
 
 
 ○HDA
+・HDAModuleを用いて検証
 ・HDAを参照しスクリプト内で使用する方法を検証
  -PythonでHDAを読み込む処理を検証
  -Pythonでpointを生成し、パラメーターに設定する処理を検証
