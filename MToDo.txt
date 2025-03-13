@@ -1,11 +1,13 @@
 ■反省
 ※StudyとDoのタスクはなるべく分散しない
-
+※夜カフェでドキュメント作成・タスクの調査を積極的に行う
 
 ■Do
 ○HDA周りのPython処理の実例を調査
 ・公式ドキュメント(各クラスの概要のみを確認)
 https://www.sidefx.com/ja/docs/houdini/hom/hou/HDADefinition.html
+・複数のジオメトリをロードするHDAのご紹介
+https://zenn.dev/kickbase/articles/8cb3faabe53b7a
 
 ○USD
 ・日本語ドキュメント
@@ -81,6 +83,7 @@ https://fereria.github.io/reincarnation_tech/usd/python/tutorials
 ○SolarisTutorial
 ・Lops
 https://www.sidefx.com/ja/docs/houdini/solaris/tutorials.html
+
 
 ○Houdini
 ・エフェクト
