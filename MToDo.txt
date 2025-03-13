@@ -1,6 +1,7 @@
 ■反省
 ※StudyとDoのタスクはなるべく分散しない
 ※夜カフェでドキュメント作成・タスクの調査を積極的に行う
+※ドキュメントか制作か
 
 ■Do
 ○HDA周りのPython処理の実例を調査
@@ -19,6 +20,8 @@ https://fereria.github.io/reincarnation_tech/usd/python/tutorials
 ○Houdini
 ・Tutorial本
  -エフェクト
+・サンプルファイル
+ -MegaStructure
 
 ○Maya
 ・Tutorial本
@@ -28,11 +31,18 @@ https://fereria.github.io/reincarnation_tech/usd/python/tutorials
 https://indyzone.co.jp/archives/5892#p07
 
 
-○HDA
-・HDAModuleを用いて検証
-・HDAを参照しスクリプト内で使用する方法を検証
- -PythonでHDAを読み込む処理を検証
- -Pythonでpointを生成し、パラメーターに設定する処理を検証
+
+○BasePointGenerator
+・Parameter
+ -Size
+ -Ratio
+ -TypeList
+ -ScaleRange
+ -PosRange
+ -IsUnreal
+・Attribute
+ -Type
+ -Scale
 
 ○HDA化(Base)
 ・ガイドラインに沿って実装する
@@ -40,21 +50,14 @@ https://qiita.com/d658t/items/a9f785d741037021e6ee
 ・モデリング
 ・UV展開
 ・△マテリアル
+・パラメーター
+ -BlockHeight
+ -BlockWidth
 
-○修正
-・上下・左右に挟むように配置するか
-・ブロック単位か全体単位か
-・スケール調整(隙間がないようにする)
-
-●BasePointGenerator
-・Parameter
- -Size
- -Ratio
- -TypeList
-・Attribute
- -Type
- -Scale
-
+△HDA
+・HDAを参照しスクリプト内で使用する方法を検証
+ -PythonでHDAを読み込む処理を検証
+ -Pythonでpointを生成し、パラメーターに設定する処理を検証
 
 
 ■Study
