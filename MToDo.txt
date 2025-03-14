@@ -5,8 +5,7 @@
 
 ■Do
 ○HDA周りのPython処理の実例を調査
-・公式ドキュメント(各クラスの概要のみを確認)
-https://www.sidefx.com/ja/docs/houdini/hom/hou/HDADefinition.html
+※確認する
 ・複数のジオメトリをロードするHDAのご紹介
 https://zenn.dev/kickbase/articles/8cb3faabe53b7a
 
