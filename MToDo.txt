@@ -1,35 +1,32 @@
 ■反省
 ※StudyとDoのタスクはなるべく分散しない
-※夜カフェでドキュメント作成・タスクの調査を積極的に行う
+※日中インプット(調査)を行い、夜アウトプット(ドキュメント化)する
+ -行った内容や参考資料をMSourceにまとめて、夜カフェでドキュメント化する
 ※ドキュメントか制作か
 
 ■Do
-○HDA周りのPython処理の実例を調査
-※確認する
-・複数のジオメトリをロードするHDAのご紹介
-https://zenn.dev/kickbase/articles/8cb3faabe53b7a
+○PythonからHDAの処理を呼び出す方法を質問
 
 ○USD
-・日本語ドキュメント
+・安藤ドキュメント(ドキュメント)
 https://fereria.github.io/reincarnation_tech/usd/python/tutorials
 
 ○Solaris
-・公式Tutorialプロジェクト
+・USDYoutubeチャンネル(Tutorial)
+https://www.youtube.com/playlist?list=PLw6ZwRI5IW5DABe6VxyA88Rp1iSqcikDs
+・安藤ドキュメント(ドキュメント)
+https://fereria.github.io/reincarnation_tech/houdini/solaris
 
 ○Houdini
-・Tutorial本
- -エフェクト
-・サンプルファイル
- -MegaStructure
+・エフェクト(Tutorial)
+・MegaStructure(PDTutorial)
 
 ○Maya
-・Tutorial本
+・チーバ本(Tutorial)
 
 ○HoudiniMaterial
 ・動画
 https://indyzone.co.jp/archives/5892#p07
-
-
 
 ○BasePointGenerator
 ・Parameter
@@ -59,6 +56,28 @@ https://qiita.com/d658t/items/a9f785d741037021e6ee
  -Pythonでpointを生成し、パラメーターに設定する処理を検証
 
 
+■Work
+※プッシュを行わない
+
+○作業環境の構築
+・Gitからローカルへデータを取得
+
+○Gitのブランチ表から作業内容を確認
+・コンフリクトさせる内容を調査
+
+○コンフリクトを発生
+・パラメーター
+・サブネット
+・リネーム
+・シェープ
+
+●構成HDA
+・メッシュメーカー
+・キャラスポーン
+・アイテムスポーン
+・JSON
+
+
 ■Study
 ○UsdTutorial
 ・Tutorial
@@ -69,7 +88,10 @@ https://fereria.github.io/reincarnation_tech/usd/python/tutorials
 ○SolarisTutorial
 ・Lops
 https://www.sidefx.com/ja/docs/houdini/solaris/tutorials.html
-
+・USDYoutubeチャンネル(Tutorial)
+https://www.youtube.com/playlist?list=PLw6ZwRI5IW5DABe6VxyA88Rp1iSqcikDs
+・安藤ドキュメント(ドキュメント)
+https://fereria.github.io/reincarnation_tech/houdini/solaris
 
 ○Houdini
 ・エフェクト
