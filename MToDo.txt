@@ -1,3 +1,16 @@
+○BasePointGeneratorHDAの実装
+
+○BaseHDAの実装
+
+○WindowHDAの実装
+
+○DetailBasePoint生成HDAを実装
+
+△UEでアセットを配置(Detail)
+
+△UnrealMaterialの調査
+
+
 ■HDA化(Base)
 ・ガイドラインに沿って実装する
 https://qiita.com/d658t/items/a9f785d741037021e6ee
@@ -24,10 +37,3 @@ https://qiita.com/d658t/items/a9f785d741037021e6ee
 
 ○DetailBasePointの生成
 ・BaseFaceを元にDetailBasePointを生成
-
-■Do
-○Detail配置の設計
-
-△UEでアセットを配置(Detail)
-
-△UnrealMaterialの調査
