@@ -1,19 +1,15 @@
-○HoudiniTutorial(動画・データ)を参考にUEへのマテリアル設定を行う
-
 ○HDA化(Base)
 ・ガイドラインに沿って実装する
 https://qiita.com/d658t/items/a9f785d741037021e6ee
 ・モデリング
 ・UV展開
-・マテリアル
- -UEへの対応
 
 ●処理
 ・Grid
 ・Split
 ・Extrude
 ・Grouping
-・UV
+・UV(MegaStructureをコピペ)
 
 ●パラメーター
 ・BlockSize
@@ -35,3 +31,5 @@ https://qiita.com/d658t/items/a9f785d741037021e6ee
  -Scale
  
 △UEでアセットを配置(Detail)
+
+△UnrealMaterialの調査
