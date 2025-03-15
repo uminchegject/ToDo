@@ -1,3 +1,5 @@
+●BasePointGenerator
+
 for(int paramIndex = 0; paramIndex < chi("../BasePoint_TypeList" + itoa(i@ParamIndex); ++paramIndex)
 {
 	string type = chs("../BasePoint_Type" + itoa(i@ParamIndex) + "_" + itoa(paramIndex));	
