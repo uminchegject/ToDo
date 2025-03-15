@@ -1,35 +1,33 @@
-○HDA化(Base)
+■HDA化(Base)
 ・ガイドラインに沿って実装する
 https://qiita.com/d658t/items/a9f785d741037021e6ee
-・モデリング
-・UV展開
-
-●処理
-・Grid
-・Split
-・Extrude
-・Grouping
-・UV(MegaStructureをコピペ)
 
 ●パラメーター
-・BlockSize
-・BumpSize
-・Material
- -Window
- -Base
+・BlockSize(Random)
+・FaceSize(Random)
+・MaterialList
+ -Front
+ -Side
 
-○BasePointGeneratorの実装
-・Parameter
- -Size
- -Ratio
- -TypeList
- -ScaleRange
- -PosRange
- -IsUnreal
-・Attribute
- -Type
- -Scale
- 
+○BasePoint
+・Material情報を持たせる
+・Type情報を持たせる
+
+○CopyToPoint
+・BasePointにFaceを用意
+・AttributeをTrans
+
+○Extrude
+・SideにMaterial情報を持たせる
+
+○UV展開
+
+○DetailBasePointの生成
+・BaseFaceを元にDetailBasePointを生成
+
+■Do
+○Detail配置の設計
+
 △UEでアセットを配置(Detail)
 
 △UnrealMaterialの調査
