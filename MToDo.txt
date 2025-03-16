@@ -1,26 +1,46 @@
-○BasePointGeneratorHDAの実装
-
 ○BaseHDAの実装
+・In
+ -Prim
+・Out
+ -Prim
 
 ○WindowHDAの実装
+・In
+ -Prim
+・Out
+ -Prim
 
 ○DetailBasePoint生成HDAを実装
+・In
+ -Prim
+・Out
+ -Point
 
 △UEでアセットを配置(Detail)
 
 △UnrealMaterialの調査
 
+●Primitive
+・Type
+・Material
 
-■HDA化(Base)
+●Point
+・Type
+・Scale
+
+
+■BaseHDA
 ・ガイドラインに沿って実装する
 https://qiita.com/d658t/items/a9f785d741037021e6ee
 
 ●パラメーター
 ・BlockSize(Random)
 ・FaceSize(Random)
+・Type
 ・MaterialList
  -Front
  -Side
+
 
 ○BasePoint
 ・Material情報を持たせる
@@ -34,6 +54,3 @@ https://qiita.com/d658t/items/a9f785d741037021e6ee
 ・SideにMaterial情報を持たせる
 
 ○UV展開
-
-○DetailBasePointの生成
-・BaseFaceを元にDetailBasePointを生成
