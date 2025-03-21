@@ -19,12 +19,20 @@ https://qiita.com/d658t/items/a9f785d741037021e6ee
 
 
 ○BaseHDAの実装
+※最低限
 ・buildingGeneratorを参考にする
 ・パラメーター
  -Type
  -Material
+・Split
+・Extrude
 
 ○WindowHDAの実装
+※最低限
+・buildingGeneratorを参考にする
+・パラメーター
+ -Type
+ -Material
 
 ○DetailBasePoint生成HDAを実装
 
@@ -32,139 +40,3 @@ https://qiita.com/d658t/items/a9f785d741037021e6ee
 △UEでアセットを配置(Detail)
 
 △UnrealMaterialの調査
-
-
-■反省
-※StudyとDoのタスクはなるべく分散しない
-※日中インプット(調査)を行い、夜アウトプット(ドキュメント化)する
- -行った内容や参考資料をMSourceにまとめて、夜カフェでドキュメント化する
-※ドキュメントか制作か
-
-
-■Do
-○比較機能の確認
-https://ikatnek.blogspot.com/2018/02/hip-ascii-and-diff.html
-
-○PythonからHDAの処理を呼び出す方法を質問
-
-○USD
-・安藤ドキュメント(ドキュメント)
-https://fereria.github.io/reincarnation_tech/usd/python/tutorials
-
-○Solaris
-・USDYoutubeチャンネル(Tutorial)
-https://www.youtube.com/playlist?list=PLw6ZwRI5IW5DABe6VxyA88Rp1iSqcikDs
-・安藤ドキュメント(ドキュメント)
-https://fereria.github.io/reincarnation_tech/houdini/solaris
-
-○Houdini
-・エフェクト(Tutorial)
-・MegaStructure(PDTutorial)
-
-○Maya
-・チーバ本(Tutorial)
-
-○HoudiniMaterial
-・動画
-https://indyzone.co.jp/archives/5892#p07
-
-
-■Work
-○実際の作業ブランチでマージ検証
-・それぞれのブランチで作業前後のHIP・HDAをアスキー化してコミット
-
-○ドキュメント化
-・ブランチのマージ工程
-・△HDAについて
-
-●コンフリクト検証リスト
-・パラメーター
-・サブネット
-・リネーム
-・シェープ
-
-●構成HDA
-・メッシュメーカー
-・キャラスポーン
-・アイテムスポーン
-・JSON
-
-
-■Study
-○UsdTutorial
-・Tutorial
-https://openusd.org/release/tut_usd_tutorials.html
-・日本語ドキュメント
-https://fereria.github.io/reincarnation_tech/usd/python/tutorials
-
-○SolarisTutorial
-・Lops
-https://www.sidefx.com/ja/docs/houdini/solaris/tutorials.html
-・USDYoutubeチャンネル(Tutorial)
-https://www.youtube.com/playlist?list=PLw6ZwRI5IW5DABe6VxyA88Rp1iSqcikDs
-・安藤ドキュメント(ドキュメント)
-https://fereria.github.io/reincarnation_tech/houdini/solaris
-
-○Houdini
-・エフェクト
-・さつき先生
-
-○MayaTutorial
-・基礎操作
-https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb6Yd
-・はじめてのmaya
-・ハードサーフェス
-
-
-■Private
-○個人目標の記載
-
-○ポイント取得
-
-
-■FaceGenerator
-※1枚の絵を街にする
-※1つのアセットセットで街を生成する
-
-●目標 
-https://jp.pinterest.com/pin/829577193896609455/
-
-○モデリング
-・子供都市
-https://www.youtube.com/watch?v=Bh1OuhywtBw&t=707s
-・たのしい建物ジェネレーター
-https://www.youtube.com/watch?v=UCYHV9GJU1Q
-・BlenderFacade
-https://www.youtube.com/watch?v=bKLgs8CtcyI&list=PLYpQW46POnqI6vfZ39BLErcpbjch02e7R
-・Maya本
-・Houdiniサンプル
-
-○プロシージャルモデリング
-・Houdiniサンプル
- -MegaStructure
- -SciFi
-
-○マテリアル
-・テクスチャとUV
-https://www.sidefx.com/ja/docs/houdini/shade/index.html
-・動画
-https://indyzone.co.jp/archives/5892#p07
-
-○CityGenerator
-・検索
- -city grid generator
- -city map generator
-・Gridから崩すように実装する
- -VoronoiのBasePointを崩す
-・SoulCityレベルデザイン
-https://www.youtube.com/watch?v=8B5725JVAQY
-・スケール
- -高さ
- -平面
- -比率
-・角度
- -直角
- -乱雑
-
-△Usd
-○メリットの調査
