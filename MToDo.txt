@@ -1,3 +1,10 @@
+○BasePointの生成
+・Window
+・平行
+・垂直
+
+○Extrude
+
 ■HDA
 ・ガイドラインに沿って実装する
 https://qiita.com/d658t/items/a9f785d741037021e6ee
