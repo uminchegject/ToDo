@@ -1,12 +1,15 @@
 ■HDA
 ・ガイドラインに沿って実装する
 https://qiita.com/d658t/items/a9f785d741037021e6ee
+
+●処理
 ・モデリング
 ・UV展開
 ・マテリアル
 
 ●Parameter
-・TypeList
+・Type
+・Shape
 ・Randomly
 
 ●Out・In
@@ -24,8 +27,11 @@ https://qiita.com/d658t/items/a9f785d741037021e6ee
 ・パラメーター
  -Type
  -Material
+ -BlockSize
 ・Split
+ -BlockSize
 ・Extrude
+ -Material
 
 ○WindowHDAの実装
 ※最低限
