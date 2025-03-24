@@ -30,6 +30,8 @@
 
 [Work]
 ●Houdiniにおけるバージョン管理
+・HDA
+・HIP
 
 
 [Face_Generator]
