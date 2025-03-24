@@ -9,8 +9,6 @@
 ○比較機能の確認
 https://ikatnek.blogspot.com/2018/02/hip-ascii-and-diff.html
 
-○PythonからHDAの処理を呼び出す方法を質問
-
 ○USD
 ・安藤ドキュメント(ドキュメント)
 https://fereria.github.io/reincarnation_tech/usd/python/tutorials
@@ -62,14 +60,12 @@ https://indyzone.co.jp/archives/5892#p07
 
 ■Work
 ○HDAのアスキーの構成調査
+・Privateドキュメント
+ -それぞれの情報の意味を洗い出す
 
 ○実際の作業ブランチでマージ検証
 ・1つのHDAにフォーカスして作業を行う
  -Subnet
-
-○ドキュメント化
-・ブランチのマージ工程
-・△HDAについて
 
 
 ■Study
