@@ -60,26 +60,16 @@ https://indyzone.co.jp/archives/5892#p07
 △UnrealMaterialの調査
 
 
-
 ■Work
+○HDAのアスキーの構成調査
+
 ○実際の作業ブランチでマージ検証
-・それぞれのブランチで作業前後のHIP・HDAをアスキー化してコミット
+・1つのHDAにフォーカスして作業を行う
+ -Subnet
 
 ○ドキュメント化
 ・ブランチのマージ工程
 ・△HDAについて
-
-●コンフリクト検証リスト
-・パラメーター
-・サブネット
-・リネーム
-・シェープ
-
-●構成HDA
-・メッシュメーカー
-・キャラスポーン
-・アイテムスポーン
-・JSON
 
 
 ■Study
@@ -183,3 +173,5 @@ https://www.youtube.com/watch?v=8B5725JVAQY
 
 △Usd
 ○メリットの調査
+
+convert to unpacked format
