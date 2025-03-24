@@ -1,20 +1,13 @@
-[反省]
-※StudyとDoのタスクはなるべく分散しない
-※Do(ドキュメント・自主製作)に向けて日中Studyを行い具体的なタスクを考える
-※Doは少しずづでもできることから進めていく
- -在る知識で最低限のことをする
-※Doしている箇所を並行してStudyする
- -Doで必要な知識をStudyする
-
-
 [Private]
 ●要らない物の整理
 
 
 [Study]
 ●USD
-・Tutorial
-https://openusd.org/release/tut_usd_tutorials.html
+・基礎
+
+●Solaris
+・基礎
 
 ●Houdini
 ・基礎
@@ -32,27 +25,19 @@ https://openusd.org/release/tut_usd_tutorials.html
 ・Houdini
  -サンプル
 
-●マテリアル
-
-
-
-[Do]
-●モデリング
-
-●プロシージャルモデリング
-
 ●プロシージャルモジュラーモデリング
 
 
 [Work]
-●UsdSkel
+●Houdiniにおけるバージョン管理
 
 
 [Face_Generator]
 Building Generator from Image から 子供都市に拡張していくことを目標にする
 https://www.youtube.com/watch?v=Bh1OuhywtBw
 
-●Layout
+●ModularModeling
+・Layout
 ・レベルデザイン
 https://www.youtube.com/@unrealenvironments-speedle782
 
@@ -65,7 +50,6 @@ https://www.youtube.com/@unrealenvironments-speedle782
 ●CityGenerator
 ※BlenderのCityGeneratorを参考にする
 https://www.youtube.com/watch?v=Y6-EWYXZG4s
-
 ※レベルデザインの構築動画を参考に必要なパラメーターをまとめる
 https://www.youtube.com/watch?v=Y6-EWYXZG4s
 https://www.youtube.com/watch?v=Bh1OuhywtBw
