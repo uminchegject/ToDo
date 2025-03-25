@@ -58,14 +58,13 @@ https://indyzone.co.jp/archives/5892#p07
 △UnrealMaterialの調査
 
 
+
 ■Work
-○HDAのアスキーの構成調査
-・Privateドキュメント
- -それぞれの情報の意味を洗い出す
+○ドキュメント化
 
 ○実際の作業ブランチでマージ検証
-・1つのHDAにフォーカスして作業を行う
- -Subnet
+・一連のコンフリクト解消作業をドキュメント化
+
 
 
 ■Study
