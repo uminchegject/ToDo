@@ -8,10 +8,14 @@
 
 
 ■Work
-●HDA(ASCII)
+○HDA・HIPの構造
 
-●HIP(ASCII)
+○HDA・HIPの懸念点
 
+○実例
+・memeの差分を確認
+・差分を移行
+・挙動を確認
 
 ■Do
 ●ProceduralModeling
