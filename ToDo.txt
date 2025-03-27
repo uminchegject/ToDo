@@ -1,18 +1,11 @@
-[Private]
+■Private
 ●要らない物の整理
 
 
-[Study]
-●USD
-・基礎
+■Study
+●3DCG
 
-●Solaris
-・基礎
-
-●Houdini
-・基礎
- -本
- -サンプル
+●TechnicalArtist
 
 ●モデリング
 ・Maya
@@ -20,21 +13,25 @@
 ・Houdini
  -サンプル
 
+
+■Do
+●バージョン管理
+・HDA
+・HIP
+
+●USD
+
+●Solaris
+
+●Houdini
+
 ●プロシージャルモデリング
 ・Blender
 ・Houdini
  -サンプル
 
-●プロシージャルモジュラーモデリング
 
-
-[Work]
-●Houdiniにおけるバージョン管理
-・HDA
-・HIP
-
-
-[Face_Generator]
+■Interesting
 Building Generator from Image から 子供都市に拡張していくことを目標にする
 https://www.youtube.com/watch?v=Bh1OuhywtBw
 
@@ -57,8 +54,3 @@ https://www.youtube.com/watch?v=Y6-EWYXZG4s
 https://www.youtube.com/watch?v=Bh1OuhywtBw
 https://www.youtube.com/@unrealenvironments-speedle782
 https://www.youtube.com/@annoon6732
-
-▲USD
-・Variant
- -Type
- -Material
