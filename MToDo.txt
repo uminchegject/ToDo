@@ -16,10 +16,6 @@
 
 ■Do
 ○Houdiniのバージョン管理
-・HIPASCII構造(Study)
-・HDAASCII構造(Study)
-・バージョン管理(Do)
-
 
 ○比較機能の確認
 https://ikatnek.blogspot.com/2018/02/hip-ascii-and-diff.html
@@ -55,11 +51,6 @@ https://fereria.github.io/reincarnation_tech/houdini/solaris
 
 ■Private
 ○堀川Houdini本のお願い
-
-○サバゲー確認
-・雨天中止
- -4月に降り越し
- -日曜日に変更
 
 ○個人目標の記載
 
