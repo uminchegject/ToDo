@@ -1,12 +1,16 @@
 ■反省
+※ネットワーク性のあるドキュメントを製作する
+・全体的な立ち位置、関連性が分かるようにする
+
 ●Study
-・知らないことを知る
-・ドキュメント化
-●Do
-・実践レベルのインプット及びアウトプットを行う
-・ドキュメント化 + アウトプット
+・基礎を知る
+・Read(Movie) + Write
+●Do(Work)
+・実践する
+・Read + Write + Do
 ●Interesting
-・面白いことを制作する
+・制作する
+・Read + Do
 
 ※惰性的なアクションを極力控える
  -スマホ
@@ -15,23 +19,15 @@
 
 
 ■Do
-○Houdiniのバージョン管理
-
-○比較機能の確認
-https://ikatnek.blogspot.com/2018/02/hip-ascii-and-diff.html
-
 ○USDのドキュメント調査
-・業務での使用方法について調査
+・Tutorialプロジェクト
 
 ○Solarisのドキュメント調査
-・業務での使用方法について調査
+・Tutorialプロジェクト
 
 ■Study
 ○TA
 ・スターターキット
-
-○3DCG
-・制作
 
 
 ■Interesting
