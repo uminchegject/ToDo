@@ -2,33 +2,21 @@
 ●要らない物の整理
 
 
-■Study
-●3DCG
+■Do
+●Houdini
+・KineFX
 
+
+■Study
 ●TechnicalArtist
 
-●モデリング
-・Maya
-・Blender
-・Houdini
- -サンプル
+●エンジニア
 
-
-■Do
-●バージョン管理
-・HDA
-・HIP
-
-●USD
-
-●Solaris
+●背景デザイン
 
 ●Houdini
-
-●プロシージャルモデリング
-・Blender
-・Houdini
- -サンプル
+・KineFX
+・Solaris
 
 
 ■Interesting
