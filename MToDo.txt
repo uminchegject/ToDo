@@ -20,33 +20,25 @@
 ○比較機能の確認
 https://ikatnek.blogspot.com/2018/02/hip-ascii-and-diff.html
 
+○USDのドキュメント調査
+・業務での使用方法について調査
+
+○Solarisのドキュメント調査
+・業務での使用方法について調査
 
 ■Study
-○USD
-・安藤ドキュメント(ドキュメント)
-https://fereria.github.io/reincarnation_tech/usd/python/tutorials
-
-○Solaris
-・USDYoutubeチャンネル(Tutorial)
-https://www.youtube.com/playlist?list=PLw6ZwRI5IW5DABe6VxyA88Rp1iSqcikDs
-・安藤ドキュメント(ドキュメント)
-https://fereria.github.io/reincarnation_tech/houdini/solaris
-
-○Houdini
-・エフェクト
-・MegaStructure
-
-○Maya
-・チーバ本
-
 ○TA
-・本
+・スターターキット
+
+○3DCG
+・制作
 
 
 ■Interesting
 ○既存プロジェクトの汎用処理をHDA化
 
 ○ProceduralModeling
+
 
 
 ■Private
