@@ -19,15 +19,19 @@
 
 
 ■Do
-○USDのドキュメント調査
-・Tutorialプロジェクト
 
-○Solarisのドキュメント調査
-・Tutorialプロジェクト
 
 ■Study
+○KineFX
+
 ○TA
-・スターターキット
+・本
+
+○背景製作
+・本
+
+○エンジニアリング
+・本
 
 
 ■Interesting
@@ -48,19 +52,8 @@
 
 [ToDo]
 ■Study
-○UsdTutorial
-・Tutorial
-https://openusd.org/release/tut_usd_tutorials.html
-・日本語ドキュメント
-https://fereria.github.io/reincarnation_tech/usd/python/tutorials
-
-○SolarisTutorial
-・Lops
-https://www.sidefx.com/ja/docs/houdini/solaris/tutorials.html
-・USDYoutubeチャンネル(Tutorial)
-https://www.youtube.com/playlist?list=PLw6ZwRI5IW5DABe6VxyA88Rp1iSqcikDs
-・安藤ドキュメント(ドキュメント)
-https://fereria.github.io/reincarnation_tech/houdini/solaris
+○KineFX
+https://www.sidefx.com/ja/docs/houdini/character/kinefx/index.html
 
 ○Houdini
 ・エフェクト
