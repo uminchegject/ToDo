@@ -3,28 +3,31 @@
 ■Study
 ※言語、ツールに関係なく共通する根源部分を勉強する
 ※あまり領域を広げず、基本的部分のみ勉強するように心がける
+※基本情報を読み、派生情報を調査&Write&Doする
 
-●CG
-・モデル
-・ライティング
-・マテリアル
+●3DCG
 
 ●ゲームエンジニアリング
 
-
 ■Do
 ●Houdini
+・KineFX
 
 ●概要
-
+・
 
 ■Interesting
 ※HDA化
+
 ●背景
-・サンプル
+・DetailAsset(PM)
+ -Panel
 
 ●プロシージャルデザイン
-・サンプル
+・BaseModeling
+ -CopyPoint & Boolean
+・DetailAssetBasePoint
+ -Panel
 
 ●幾何学的ロジック
 ・Grasshopperクックブック
