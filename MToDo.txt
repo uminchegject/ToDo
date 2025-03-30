@@ -9,16 +9,17 @@
 
 ■Study
 ※言語、ツールに関係なく共通する根源部分を勉強する
-※あまり領域を広げず、基本的部分のみ勉強するように心がける
 ※読書をしながらアウトプットを何にするか考える
 
 ●3DCG
-・Maya
-・Houdini
+・3DCGにおける基本要素
+ -Maya
+ -Houdini
 
 ●ゲームエンジニアリング
-・UnrealEngine
-・GMod
+・デザインパターン
+ -UnrealEngine
+ -GMOD
 
 
 ■Do
@@ -54,16 +55,15 @@
 
 
 ■動画コンテンツ
+●タルコフ
+・Incursion Red River
+
+●Volve
+・GarrysMod
+・PortalMod
+
 ●サバゲー
 ・立ち回り
 
 ●サッカー
 ・チャント
-
-●タルコフ
-・新マップ及び新イベント
-
-●Volve
-・GarrysMod
-・PortalMod
-・HalfLifeのストーリー
