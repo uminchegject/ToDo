@@ -7,7 +7,8 @@
 
 ■Do
 ○概要の調査
-・Studyすべき内容をリストアップ
+
+○HIP&HDA調査
 
 
 ■Study
@@ -15,24 +16,11 @@
 ※読書をしながらアウトプットを何にするか考える
 
 ○KineFX
-・Houdiniの新しいリギングとアニメーション：KineFX機能まとめ
-https://qiita.com/jyouryuusui/items/cc4c7c529fed71f03df3
-
+・Houdini KineFXについて 1.KineFXの概要（スキニング、スケルトンの作成やウェイトの調整）
+https://www.youtube.com/watch?v=MKMNdG9jWZc
 ○リアルタイムCGのパイプライン
-・レンダリングパイプラインとUnityシェーダ
-https://www.youtube.com/watch?v=8WsWNYNUyeE&list=PLKDiJl9C6HD6m5P7COIEFW271-YtDDs2_
-
-○トポロジー
-・トポロジーの世界
-https://www.youtube.com/watch?v=RI-xt-aC76k
-
-○SubstanceDesiner
-・Adobe Substance 3D Designer 入門
-https://www.youtube.com/watch?v=_gOSGezeb6E
-
-○CityEngine
-・公式
-https://www.esri.com/ja-jp/arcgis/products/arcgis-cityengine/overview
+・作ってわかるレンダリングパイプライン CPUで3D描画
+https://www.youtube.com/watch?v=Ow-ouwxxfP8
 
 
 ●3DCG
