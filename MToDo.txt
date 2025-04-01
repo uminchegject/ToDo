@@ -1,9 +1,12 @@
 ■反省
+※GFのGMailを逐一確認する
 ※勉強、趣味、ゲーム全てにおいて計画・準備することをしっかり意識する
  -カフェ時間をしっかり取る
 ※惰性的なアクションを極力控える
  -スマホ・Youtube
- 
+
+○個人目標
+
 
 ■Study
 ※言語、ツールに関係なく共通する根源部分を勉強する
@@ -16,12 +19,14 @@ https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb
 ○KineFX
 ・kinefx基本ノードとその流れ
 https://support.borndigital.co.jp/hc/ja/articles/7768517710233-kinefx%E5%9F%BA%E6%9C%AC%E3%83%8E%E3%83%BC%E3%83%89%E3%81%A8%E3%81%9D%E3%81%AE%E6%B5%81%E3%82%8C
-・Houdini KineFXについて 1.KineFXの概要（スキニング、スケルトンの作成やウェイトの調整）
-https://www.youtube.com/watch?v=MKMNdG9jWZc
 
 
 ○汎用ビルモデリング
-・ハードサーフェス本
+・窓枠
+ -縦
+ -横
+・天井
+ -窪み
 
 
 ○リアルタイムCGのパイプライン
