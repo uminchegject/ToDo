@@ -17,9 +17,9 @@
 https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb6Yd
 
 ○KineFX
-・kinefx基本ノードとその流れ
-https://support.borndigital.co.jp/hc/ja/articles/7768517710233-kinefx%E5%9F%BA%E6%9C%AC%E3%83%8E%E3%83%BC%E3%83%89%E3%81%A8%E3%81%9D%E3%81%AE%E6%B5%81%E3%82%8C
-
+・サルにもわかる Houdini
+https://ikatnek.blogspot.com/2021/02/kinefx-list-of-tutorials.html
+・プロジェクトHIPをベースに勉強
 
 ○汎用ビルモデリング
 ・窓枠
@@ -32,13 +32,6 @@ https://support.borndigital.co.jp/hc/ja/articles/7768517710233-kinefx%E5%9F%BA%E
 ○リアルタイムCGのパイプライン
 ・作ってわかるレンダリングパイプライン CPUで3D描画
 https://www.youtube.com/watch?v=Ow-ouwxxfP8
-
-○コマンドパターン
-https://qiita.com/Cova8bitdot/items/9a88f7fc0782c729f97c#command%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6
-https://zenn.dev/tardigrader/articles/b844ef6da7ce50
-
-○FlyWeight
-https://zenn.dev/tardigrader/articles/d0c39793aa3719
 
 
 ●3DCG
@@ -66,13 +59,11 @@ https://zenn.dev/tardigrader/articles/d0c39793aa3719
 
 
 ■Do
-○セットアップ
+○挙動確認
 
-○概要の調査
-・処理の調査
+○処理の流れを調査
 
-○HIP&HDA調査
-・デバッグしながらノード、Attributeを確認していく
+○中間報告
 
 
 ■Interesting
@@ -88,6 +79,23 @@ https://zenn.dev/tardigrader/articles/d0c39793aa3719
 
 ●幾何学的ロジック
 ・Grasshopperクックブック
+
+
+■汎用ビルモデリング
+○モデリング
+
+○UV展開
+
+○マテリアル設定
+
+●パラメーター
+・Baseサイズ
+ -3次元ベクトル
+・窓枠サイズ
+ -横
+  -奥行
+ -縦
+  -奥行
 
 
 ■Private
