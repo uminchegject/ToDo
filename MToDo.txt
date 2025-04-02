@@ -6,39 +6,55 @@
  -スマホ・Youtube
 
 ○個人目標
-
+・Houdiniの業務
+ -趣味でやっていたHoudiniと業務のHoudiniにギャップがあり、TAとしてデザイナー業務をサポートするための
+・デザイン側の業務の把握
+ -Houdiniでの貢献に際して、デザイン側の業務の把握も重要かと思うので、デザイン側での業務の理解をしていきたい
+・背景のプロシージャルモデリングの実践
+ -趣味の部分でやっていたHoudiniのプロシージャルモデリングについて、勉強したことを活かして実際に背景のプロシージャルモデリングにチャレンジしたい
 
 ■Study
 ※言語、ツールに関係なく共通する根源部分を勉強する
 ※読書をしながらアウトプットを何にするか考える
 
-○マヤ(リグ)
+○パイプライン調査
+・Pythonの処理
+・Houdiniの処理
+・Mayaの処理
+
+○KineFX
+・プロジェクトHIPをベースに勉強
+・サルにもわかる Houdini
+https://ikatnek.blogspot.com/2021/02/kinefx-list-of-tutorials.html
+
+△マヤ(リグ)
 ・Start@Maya〜Maya で 3DCG をはじめよう〜 1. 基本操作 インタフェース概要
 https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb6Yd
 
-○KineFX
-・サルにもわかる Houdini
-https://ikatnek.blogspot.com/2021/02/kinefx-list-of-tutorials.html
-・プロジェクトHIPをベースに勉強
+
 
 ○汎用ビルモデリング
-・窓枠
- -縦
- -横
-・天井
- -窪み
+・【blender背景】 大都市をモデリング！
+https://www.youtube.com/watch?v=wUxoS5mtkmA&t=1352s
+・ハードサーフェス本
 
 
 ○リアルタイムCGのパイプライン
 ・作ってわかるレンダリングパイプライン CPUで3D描画
 https://www.youtube.com/watch?v=Ow-ouwxxfP8
 
+○デザインパターン
+・ゲームプログラミングパターン本
+
+○マテリアル
+・SubStancePainter本
+
 
 ●3DCG
-・概要
+・ゲームグラフィックス表現技法
 
 ●ゲームエンジニアリング
-・デザインパターン
+・Game Programming Patterns ソフトウェア開発の問題解決メニュー
 
 
 ●ゲーム
@@ -49,22 +65,24 @@ https://www.youtube.com/watch?v=Ow-ouwxxfP8
 ・PortalMod
 
 ●ポケモン
+・SV実況
 ・SV解説
 
 ●サバゲー
 ・銃解説
+・立ち回り解説
 
 ●サッカー
 ・チャント
 
 
 ■Do
-○挙動確認
+○Pythonソース調査
 
-○処理の流れを調査
+○Hip調査
 
 ○中間報告
-
+・現段階の調査
 
 ■Interesting
 ●背景
@@ -79,7 +97,6 @@ https://www.youtube.com/watch?v=Ow-ouwxxfP8
 
 ●幾何学的ロジック
 ・Grasshopperクックブック
-
 
 ■汎用ビルモデリング
 ○モデリング
@@ -96,7 +113,6 @@ https://www.youtube.com/watch?v=Ow-ouwxxfP8
   -奥行
  -縦
   -奥行
-
 
 ■Private
 ○個人目標の記載
