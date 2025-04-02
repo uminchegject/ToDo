@@ -1,36 +1,34 @@
 ■反省
+※Hip調査はAttributeの数値とSceneの差分から処理内容を確認する
 ※GFのGMailを逐一確認する
 ※勉強、趣味、ゲーム全てにおいて計画・準備することをしっかり意識する
  -カフェ時間をしっかり取る
-※惰性的なアクションを極力控える
- -スマホ・Youtube
+
 
 ○個人目標
-・Houdiniの業務
- -趣味でやっていたHoudiniと業務のHoudiniにギャップがあり、TAとしてデザイナー業務をサポートするための
-・デザイン側の業務の把握
- -Houdiniでの貢献に際して、デザイン側の業務の把握も重要かと思うので、デザイン側での業務の理解をしていきたい
-・背景のプロシージャルモデリングの実践
- -趣味の部分でやっていたHoudiniのプロシージャルモデリングについて、勉強したことを活かして実際に背景のプロシージャルモデリングにチャレンジしたい
+●１．チーム／プロジェクトへの貢献目標
+・TAとしてプロジェクトに貢献できるHoudiniの技術を身につける
+●２．個人の技術目標
+デザインにおける業務の把握
+●３．個人の目標（こちらについては、ゲームプレイ調査や生活改善など業務外の内容でかまいません。）
+背景のプロシージャルモデリングの実践
 
 ■Study
 ※言語、ツールに関係なく共通する根源部分を勉強する
 ※読書をしながらアウトプットを何にするか考える
 
-○パイプライン調査
-・Pythonの処理
-・Houdiniの処理
-・Mayaの処理
+○Subprocess.Popen
+・hythonの呼び出し処理について調査
 
-○KineFX
+△Havok
+・概要
+
+△KineFX
 ・プロジェクトHIPをベースに勉強
-・サルにもわかる Houdini
-https://ikatnek.blogspot.com/2021/02/kinefx-list-of-tutorials.html
 
 △マヤ(リグ)
 ・Start@Maya〜Maya で 3DCG をはじめよう〜 1. 基本操作 インタフェース概要
 https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb6Yd
-
 
 
 ○汎用ビルモデリング
@@ -39,15 +37,11 @@ https://www.youtube.com/watch?v=wUxoS5mtkmA&t=1352s
 ・ハードサーフェス本
 
 
-○リアルタイムCGのパイプライン
-・作ってわかるレンダリングパイプライン CPUで3D描画
-https://www.youtube.com/watch?v=Ow-ouwxxfP8
+○SP操作
+https://www.youtube.com/watch?v=RhU8md-6Aws
 
 ○デザインパターン
 ・ゲームプログラミングパターン本
-
-○マテリアル
-・SubStancePainter本
 
 
 ●3DCG
@@ -76,13 +70,21 @@ https://www.youtube.com/watch?v=Ow-ouwxxfP8
 ・チャント
 
 
-■Do
+■Work
+○作業Tipsの調査
+
+○パイプライン調査
+・Pythonの処理
+・Houdiniの処理
+
+
 ○Pythonソース調査
 
 ○Hip調査
 
 ○中間報告
 ・現段階の調査
+
 
 ■Interesting
 ●背景
