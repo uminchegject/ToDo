@@ -1,59 +1,35 @@
-●BasePointGenerator
+■WindowMaker
 
-for(int paramIndex = 0; paramIndex < chi("../BasePoint_TypeList" + itoa(i@ParamIndex); ++paramIndex)
-{
-	string type = chs("../BasePoint_Type" + itoa(i@ParamIndex) + "_" + itoa(paramIndex));	
-	vector blockSize = chv("../BasePoint_BlockSize" + itoa(i@ParamIndex) + "_" + itoa(paramIndex));
-	float ratio = chv("../BasePoint_Ratio" + itoa(i@ParamIndex) + "_" + itoa(paramIndex));
-	vector scaleRange = chv("../BasePoint_ScaleRange" + itoa(i@ParamIndex) + "_" + itoa(paramIndex));
-	vector minPos = chv("../BasePoint_MinPos" + itoa(i@ParamIndex) + "_" + itoa(paramIndex));
-	vector maxPos = chv("../BasePoint_MaxPos" + itoa(i@ParamIndex) + "_" + itoa(paramIndex));	
+○HDA化
+・四角形Primを入力に、窓枠を出力する
 
-	int widthPtNum = int(blockSurfaceSize.x / blockSize.x);
-	int heightPtNum = int(blockSurfaceSize.y / blockSize.y);
+●パラメーター
+・BlockSize
+・ColumnSize
+ -Wide
+ -Depth
+・ColumnMaterial
+・IsSideColumn
+・RowSize
+ -Wide
+ -Depth
+・RowMaterial
+・IsSideRow
 
-	vector slider_x = (blockSurfaceSize.x / widthPtNum) * normalize(widthPt2 - widthPt1);
-	vector slider_y = (blockSurfaceSize.y / heightPtNum) * normalize(heightPt2 - heightPt1);
+●処理
+・Primitiveの形態整理
+・Primitiveのスケール確認
+・BasePoint生成
+・CopyToPoint
 
-	vector adjustScale = 1;
-	adjustScale.x = (blockSurfaceSize.x / widthPtNum) / blockSize.x;
-	adjustScale.y = (blockSurfaceSize.y / heightPtNum) / blockSize.y;
 
-	for(int width = 0; width < widthPtNum; ++width)
-	{
-		for(int height = 0; height < heightPtNum; ++height)
-		{    
-			vector baseSpawnPos = 0;
-			baseSpawnPos += width * slider_x + slider_x / 2;
-			baseSpawnPos -= (slider_x * widthPtNum) / 2;
-			baseSpawnPos += height * slider_y + slider_y / 2;
-			baseSpawnPos -= (slider_y * heightPtNum) / 2;
+■Building
+○プロシージャルモデリング
+・WindowMakerを入れる
 
-			if(heightPt1.y == heightPt2.y && widthPt1.y == widthPt2.y) continue;
-				
-			vector spawnPos = 0;
-			spawnPos.x += assetMaxPos.x * random(baseSpawnPos) + assetMinPos.x;
-			spawnPos.y += assetMaxPos.y * random(baseSpawnPos) + assetMinPos.y;
-			spawnPos.z += assetMaxPos.z * random(baseSpawnPos) + assetMinPos.z;
-			spawnPos = qrotate(orient, spawnPos);
-			spawnPos += v@P;
-			spawnPos += baseSpawnPos;
-			
-			if(ratio < random(spawnPos)) continue;  
-			
-			float scaleCofficient = scaleRange.x + random(spawnPos) * (scaleRange.y - scaleRange.x);
-			vector scale = adjustScale * scaleCofficient;
+●パラメーター
+・サイズ
 
-			int typeParamNum = chi("../BasePoint_PointTypeList" + itoa(i@ParamIndex) + "_" + itoa(paramIndex));
-			int typeParamIndex = floor(random(spawnPos) * typeParamNum) + 1;
-			string type = chs("../BasePoint_PointType" + itoa(i@ParamIndex) + "_" + itoa(paramIndex) + "_" + itoa(typeParamIndex));
-
-			int pt = addpoint(0, spawnPos);
-			setpointattrib(0, "orient", pt, orient);
-			setpointattrib(0, "scale", pt, scale);
-			setpointattrib(0, "Type", pt, type);                       
-			}
-		}
-	}
-}
-removeprim(0, @primnum, 1);
+●モデリング
+・Box
+・PolyExtrude
