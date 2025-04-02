@@ -18,10 +18,14 @@
 ※読書をしながらアウトプットを何にするか考える
 
 ○Subprocess.Popen
-・hythonの呼び出し処理について調査
+・subprocessのPopenを使ってみよう
+https://yokkin.com/blog/subprocess-popen.html
+・外部プロセスの起動
+https://www.sidefx.com/ja/docs/houdini/hom/background_render_plugin.html
 
 △Havok
-・概要
+・Havok 製品 Unreal Engine インテグレーションの紹介
+https://www.youtube.com/watch?v=75yilGKUzww
 
 △KineFX
 ・プロジェクトHIPをベースに勉強
@@ -36,12 +40,16 @@ https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb
 https://www.youtube.com/watch?v=wUxoS5mtkmA&t=1352s
 ・ハードサーフェス本
 
+○HDA化
+・ルール
+・
 
 ○SP操作
 https://www.youtube.com/watch?v=RhU8md-6Aws
 
-○デザインパターン
-・ゲームプログラミングパターン本
+○オブザーバー
+・【Unity】Unityで学ぶデザインパターン19: Observer パターン【デザパタ】
+https://qiita.com/Cova8bitdot/items/632782ad5264baf6a366
 
 
 ●3DCG
@@ -51,39 +59,19 @@ https://www.youtube.com/watch?v=RhU8md-6Aws
 ・Game Programming Patterns ソフトウェア開発の問題解決メニュー
 
 
-●ゲーム
-・ながら作業でできるゲーム
-
-●Volve
-・GarrysMod
-・PortalMod
+●サバゲー
+・銃解説
+・立ち回り解説
 
 ●ポケモン
 ・SV実況
 ・SV解説
 
-●サバゲー
-・銃解説
-・立ち回り解説
+●ゲーム
+・ながら作業でできるゲーム
 
 ●サッカー
 ・チャント
-
-
-■Work
-○作業Tipsの調査
-
-○パイプライン調査
-・Pythonの処理
-・Houdiniの処理
-
-
-○Pythonソース調査
-
-○Hip調査
-
-○中間報告
-・現段階の調査
 
 
 ■Interesting
@@ -100,21 +88,28 @@ https://www.youtube.com/watch?v=RhU8md-6Aws
 ●幾何学的ロジック
 ・Grasshopperクックブック
 
+
 ■汎用ビルモデリング
-○モデリング
-
-○UV展開
-
-○マテリアル設定
+○SurfaceMaker(HDA)の生成
+・モデリング
 
 ●パラメーター
 ・Baseサイズ
  -3次元ベクトル
+・階層サイズ
 ・窓枠サイズ
  -横
   -奥行
  -縦
   -奥行
+  
+●処理
+・BaseSurfaceの生成
+ -Box
+・Surfaceから枠組みの生成
+ -HDA
+
+
 
 ■Private
 ○個人目標の記載
