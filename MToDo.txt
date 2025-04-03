@@ -3,15 +3,14 @@
 ※GFのGMailを逐一確認する
 ※勉強、趣味、ゲーム全てにおいて計画・準備することをしっかり意識する
  -カフェ時間をしっかり取る
-
+※サンプルファイルのモデリング、プロシージャルモデリングを勉強し、参考にする形でPDを進める
 
 ○個人目標
-●１．チーム／プロジェクトへの貢献目標
-・TAとしてプロジェクトに貢献できるHoudiniの技術を身につける
-●２．個人の技術目標
-デザインにおける業務の把握
-●３．個人の目標（こちらについては、ゲームプレイ調査や生活改善など業務外の内容でかまいません。）
-背景のプロシージャルモデリングの実践
+
+○サバゲー
+すみません。
+恐縮なのですが、もし長物の銃が余っているなどあれば1丁貸して頂くことは可能でしょうか。
+
 
 ■Study
 ※言語、ツールに関係なく共通する根源部分を勉強する
@@ -28,6 +27,8 @@ https://www.sidefx.com/ja/docs/houdini/hom/background_render_plugin.html
 https://www.youtube.com/watch?v=75yilGKUzww
 
 △KineFX
+・KineFXでモーションリターゲティング
+https://support.borndigital.co.jp/hc/ja/articles/900003192043-KineFX%E3%81%A7%E3%83%A2%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%AA%E3%82%BF%E3%83%BC%E3%82%B2%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0
 ・プロジェクトHIPをベースに勉強
 
 △マヤ(リグ)
@@ -41,8 +42,8 @@ https://www.youtube.com/watch?v=wUxoS5mtkmA&t=1352s
 ・ハードサーフェス本
 
 ○HDA化
-・ルール
-・
+・HDA作成ガイドライン
+https://qiita.com/d658t/items/a9f785d741037021e6ee
 
 ○SP操作
 https://www.youtube.com/watch?v=RhU8md-6Aws
@@ -87,28 +88,6 @@ https://qiita.com/Cova8bitdot/items/632782ad5264baf6a366
 
 ●幾何学的ロジック
 ・Grasshopperクックブック
-
-
-■汎用ビルモデリング
-○SurfaceMaker(HDA)の生成
-・モデリング
-
-●パラメーター
-・Baseサイズ
- -3次元ベクトル
-・階層サイズ
-・窓枠サイズ
- -横
-  -奥行
- -縦
-  -奥行
-  
-●処理
-・BaseSurfaceの生成
- -Box
-・Surfaceから枠組みの生成
- -HDA
-
 
 
 ■Private
