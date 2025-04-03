@@ -1,5 +1,6 @@
 ■反省
-※Hip調査はAttributeの数値とSceneの差分から処理内容を確認する
+※Hip調査は大まかな処理の概要を確認してから、各ノード処理を調べていく
+ -Attributeの数値とSceneの差分から処理内容を確認する
 ※GFのGMailを逐一確認する
 ※勉強、趣味、ゲーム全てにおいて計画・準備することをしっかり意識する
  -カフェ時間をしっかり取る
@@ -7,20 +8,20 @@
 
 ○個人目標
 
-○サバゲー
-すみません。
-恐縮なのですが、もし長物の銃が余っているなどあれば1丁貸して頂くことは可能でしょうか。
-
-
 ■Study
 ※言語、ツールに関係なく共通する根源部分を勉強する
 ※読書をしながらアウトプットを何にするか考える
 
+○Houdiniデバッグ
+・Houdiniにおけるデバッグ Vol.1 表示・確認について
+https://qiita.com/dicepastoso/items/01682bdc88f45e9054f1
+
+○hython
+・hou で覚える Houdini
+https://qiita.com/sho7noka/items/17b7963d31ae1fb66f3f
+
 ○Subprocess.Popen
-・subprocessのPopenを使ってみよう
-https://yokkin.com/blog/subprocess-popen.html
-・外部プロセスの起動
-https://www.sidefx.com/ja/docs/houdini/hom/background_render_plugin.html
+・実際の処理を確認
 
 △Havok
 ・Havok 製品 Unreal Engine インテグレーションの紹介
@@ -37,20 +38,19 @@ https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb
 
 
 ○汎用ビルモデリング
-・【blender背景】 大都市をモデリング！
-https://www.youtube.com/watch?v=wUxoS5mtkmA&t=1352s
-・ハードサーフェス本
+・サンプルプロジェクト
+ -village(Modeling)
+ -scifi(Modeling)
+ -Megastructure
 
 ○HDA化
 ・HDA作成ガイドライン
 https://qiita.com/d658t/items/a9f785d741037021e6ee
 
-○SP操作
-https://www.youtube.com/watch?v=RhU8md-6Aws
 
-○オブザーバー
-・【Unity】Unityで学ぶデザインパターン19: Observer パターン【デザパタ】
-https://qiita.com/Cova8bitdot/items/632782ad5264baf6a366
+○SD操作
+・【SP解説】ゲーム系モデラー絶対必見‼ベイクの設定や仕組みを分かりやすくモノマネ付き解説‼SubstancePainter
+https://www.youtube.com/watch?v=--3Daat61K0
 
 
 ●3DCG
