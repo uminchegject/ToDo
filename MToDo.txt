@@ -1,12 +1,11 @@
 ■反省
 ※Hip調査は大まかな処理の概要を確認してから、各ノード処理を調べていく
  -Attributeの数値とSceneの差分から処理内容を確認する
+※サンプルファイルのモデリング、プロシージャルモデリングを勉強し、参考にする形でPDを進める
 ※GFのGMailを逐一確認する
 ※勉強、趣味、ゲーム全てにおいて計画・準備することをしっかり意識する
  -カフェ時間をしっかり取る
-※サンプルファイルのモデリング、プロシージャルモデリングを勉強し、参考にする形でPDを進める
 
-○個人目標
 
 ■Study
 ※言語、ツールに関係なく共通する根源部分を勉強する
@@ -39,18 +38,13 @@ https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb
 
 ○汎用ビルモデリング
 ・サンプルプロジェクト
+ -Megastructure
  -village(Modeling)
  -scifi(Modeling)
- -Megastructure
 
 ○HDA化
 ・HDA作成ガイドライン
 https://qiita.com/d658t/items/a9f785d741037021e6ee
-
-
-○SD操作
-・【SP解説】ゲーム系モデラー絶対必見‼ベイクの設定や仕組みを分かりやすくモノマネ付き解説‼SubstancePainter
-https://www.youtube.com/watch?v=--3Daat61K0
 
 
 ●3DCG
@@ -76,6 +70,12 @@ https://www.youtube.com/watch?v=--3Daat61K0
 
 
 ■Interesting
+○Volumeの配置ロジック設計
+・側面Surfaceへのランダム配置
+・中央への自動配置
+
+○VolumeからDetailModelingの自動生成
+
 ●背景
 ・DetailAsset(PM)
  -Panel
