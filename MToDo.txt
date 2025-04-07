@@ -35,14 +35,12 @@ https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb
 https://qiita.com/d658t/items/a9f785d741037021e6ee
 
 ○Houdiniサンプルプロジェクト確認
- -Megastructure
- -village(Modeling)
- -scifi(Modeling)
-
+・Megastructure
+・village(Modeling)
+ -Assembleジオメトリ―を確認
 ○Mayaサンプルプロジェクトの確認
-https://www.borndigital.co.jp/book/5278/
-・DetailPatternロジックの調査
-
+・HardSurfaceTown
+ -各グループを確認
 
 ●3DCG
 ・ゲームグラフィックス表現技法
