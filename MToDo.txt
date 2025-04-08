@@ -13,13 +13,6 @@
 
 ○Python調査
 
-○親jointへの接続jointをベースに計算を行う
-・計算要素
- -SegmentJoints
- -Weight値が割り振られたメッシュ
- -親jointへのベクトル(back_up_N)
- -骨
-
 △KineFX Masterclass
 ・プロジェクトHIPをベースに勉強
 https://www.youtube.com/watch?v=Z04t_OxBshA
@@ -44,7 +37,9 @@ https://qiita.com/d658t/items/a9f785d741037021e6ee
 
 ○Mayaサンプルプロジェクトの確認
 ・y_roofBuilding_model_publish
- -各グループを確認
+ -L_building_front_GPをメインに参考にする
+ 
+○ラフモデルの作成作業を調査
 
 ●3DCG
 ・ゲームグラフィックス表現技法
@@ -72,12 +67,33 @@ https://qiita.com/d658t/items/a9f785d741037021e6ee
 
 ○各パーツを確認しやすくするためのツールを開発
 ・表示するattributeをmultilistで管理するvexを実装する
+string name[] = detail(0, "boneCapture_pCaptPath");
+int index_list[] = point(0, "boneCapture_index", @ptnum);
+int index = index_list[0];
+
+string uniqueStrings[];
+foreach (string str; name)
+{
+
+    if (find(uniqueStrings, str) == -1)  // uniqueStringsにまだ含まれていない場合
+    {
+        append(uniqueStrings, str);  // 新しい文字列を追加
+    }
+}
+
+// 結果を出力
+foreach (string str; uniqueStrings)
+{
+    printf("%s\n", str);
+}
 
 ○ハードサーフェスサンプルからDetailPatternのアイデアを調査
 ・※サンプルプロジェクトを構成するPatternを意識して調べる
 ・各グループを確認
 
 ○ハードサーフェス本からVolumePDのアイデアを調査
+
+○WindowMakerの設計
 
 ○Volumeの配置ロジック設計
 ・側面Surfaceへのランダム配置
