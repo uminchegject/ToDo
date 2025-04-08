@@ -1,15 +1,3 @@
-○VolumePDの設計
-・AddBox
- -Center
- -Side
-
-○DetailPatternMakerのPD設計
-・WindowMaker(凹凸Maker)
-
-○DetailAssetのPD設計
-・アンテナ
-
-
 ■WindowMaker(凹凸Maker)
 ○HDA化
 ・四角形Primを入力に、窓枠を出力する
