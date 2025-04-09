@@ -12,6 +12,11 @@
 ※HoudiniMayaのツール開発における根本部分を勉強する
 
 ○Python調査
+・処理のフローを調査
+・ボタンを押した際のイベントを調査
+
+○Havok調査
+・ドキュメント
 
 △KineFX Masterclass
 ・プロジェクトHIPをベースに勉強
@@ -66,30 +71,15 @@ https://qiita.com/d658t/items/a9f785d741037021e6ee
 ※モデリングはサンプルプロジェクトを実際確認しながら手法を学ぶ
 
 ○各パーツを確認しやすくするためのツールを開発
-・表示するattributeをmultilistで管理するvexを実装する
-string name[] = detail(0, "boneCapture_pCaptPath");
-int index_list[] = point(0, "boneCapture_index", @ptnum);
-int index = index_list[0];
-
-string uniqueStrings[];
-foreach (string str; name)
-{
-
-    if (find(uniqueStrings, str) == -1)  // uniqueStringsにまだ含まれていない場合
-    {
-        append(uniqueStrings, str);  // 新しい文字列を追加
-    }
-}
-
-// 結果を出力
-foreach (string str; uniqueStrings)
-{
-    printf("%s\n", str);
+string block_name = chs("BlockName");
+if(find(s@name, block_name) < 0)
+{    
+    removeprim(0, @primnum, 1);
 }
 
 ○ハードサーフェスサンプルからDetailPatternのアイデアを調査
 ・※サンプルプロジェクトを構成するPatternを意識して調べる
-・各グループを確認
+・調査を行うグループをリストアップ
 
 ○ハードサーフェス本からVolumePDのアイデアを調査
 
