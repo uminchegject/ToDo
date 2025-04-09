@@ -16,7 +16,7 @@ https://qiita.com/kenmatsu4/items/a144047c1b49aa8c7eb0
 
 ○Python調査
 ・パイプライン周りの調査
-・たっきゅん
+・△たっきゅん
 
 ○Houdini調査
 ・シミュレーション処理
@@ -54,6 +54,8 @@ https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb
 ●ゲームエンジニアリング
 ・Game Programming Patterns ソフトウェア開発の問題解決メニュー
 
+●ゲーム数学
+
 
 ●ゲーム
 ・ながら作業でできるゲーム
@@ -82,10 +84,11 @@ if(find(s@name, block_name) < 0)
 ○ハードサーフェスサンプルからDetailPatternのアイデアを調査
 ※サンプルプロジェクトを構成するPatternを意識して調べる
 ・凹凸(窓枠)
- -L_mainWall_GP
+ -Pattern
 ・Pipe
- -L_pipe
-
+ -Random
+・OutsidePanel
+ -Random
 
 ○ハードサーフェス本からVolumePDのアイデアを調査
 
