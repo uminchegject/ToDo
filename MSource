@@ -1,6 +1,34 @@
-■WindowMaker(凹凸Maker)
-○HDA化
-・四角形Primを入力に、窓枠を出力する
+■OutsidePanel
+
+●仕様
+・BaseSurfaceを参照して、多数のSurfaceを配置していく
+・NoiseのOffset,Cofficientで開ける部分を調整する
+
+●パラメーター
+
+●処理
+・NoiseでSurfaceの生成位置を計算
+・BasePointにSurfaceを生成
+
+■PipeMaker
+
+●仕様
+・BaseSurfaceを参照して、ランダムにPipeを配置していく
+・ランダムに曲げる
+・軸を設定する
+・太さをランダムにする
+
+●パラメーター
+
+●処理
+・パイプのボリュームを生成
+・ボリュームに沿ってパイプを生成
+
+■凹凸Maker
+
+●仕様
+・BaseSurfaceを参照して、規則的な凹凸パターンを生成する
+・複数のBaseSurfaceがある場合繋がりをもつようにする
 
 ●パラメーター
 ・BlockSize
@@ -8,38 +36,20 @@
  -Wide
  -Depth
 ・ColumnMaterial
-・IsSideColumn
-・RowSize
- -Wide
- -Depth
-・RowMaterial
-・IsSideRow
 
 ●処理
-・Primitiveの形態整理
-・Primitiveのスケール確認
-・BasePoint生成
-・CopyToPoint
+・軸を計算
+・軸に沿って凹凸を生成
 
 
-■VolumePD
-○BooleanのObjロジックの設計
-・配置ロジック
-・形態
- -Tube
- -Box
+■VolumeMaker
 
-○Base_Shape
-・BaseBoxの生成
- -Scale(パラメーター)
-・Booleanの為のObjBasePointの生成
- -CopyToPoint
-・Boolean
- -Substruct
- -Union
+●仕様
+・BoxでBaseのVolumeを決めて、BoolかVolumeスケールに適応した台形でBaseSurfaceを生成していく
 
-●Basic_Shape(MegaStructure)
-・Baseの形態生成
-・BaseからBooleanを行い形態を整理
- -Tube
- -Box
+●パラメーター
+
+●処理
+・Volumeを生成
+・Volumeを参照してBaseSurfaceを生成
+ 
