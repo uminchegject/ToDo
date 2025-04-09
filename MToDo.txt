@@ -20,6 +20,11 @@ https://qiita.com/kenmatsu4/items/a144047c1b49aa8c7eb0
 
 ○Houdini調査
 ・シミュレーション処理
+ -assemble
+ -DopNetwork
+  -rbdpackedobject
+  -bulletrbdsolver
+ -DopImport
 
 ○ルール規約調査
 ・HDA作成ガイドライン
