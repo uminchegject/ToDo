@@ -11,16 +11,12 @@
 ※ツール処理から根本の部分の実装方法を確認する
 ※HoudiniMayaのツール開発における根本部分を勉強する
 
-○内積
-https://qiita.com/kenmatsu4/items/a144047c1b49aa8c7eb0
-
 ○Python調査
 ・パイプライン周りの調査
 ・△たっきゅん
 
 ○Houdini調査
-・シミュレーション処理
- -assemble
+・Dop
  -DopNetwork
   -rbdpackedobject
   -bulletrbdsolver
@@ -31,7 +27,10 @@ https://qiita.com/kenmatsu4/items/a144047c1b49aa8c7eb0
 https://qiita.com/d658t/items/a9f785d741037021e6ee
 
 △KineFX
-・動画
+・Houdini KineFXについて 1
+https://www.youtube.com/watch?v=MKMNdG9jWZc&t=1s
+・Houdini KineFXについて 2
+https://www.youtube.com/watch?v=urbuNDBrIZA&t=250s
 
 △マヤ(リグ)
 ・Start@Maya〜Maya で 3DCG をはじめよう〜 1. 基本操作 インタフェース概要
@@ -71,6 +70,14 @@ https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb
 
 ●サッカー
 ・チャント
+
+
+■Private
+○ポイント取得
+
+○本棚整理
+
+○PCの掃除
 
 
 ■Interesting
@@ -125,11 +132,3 @@ if(find(s@name, block_name) < 0)
 
 ●幾何学的ロジック
 ・Grasshopperクックブック
-
-
-■Private
-○ポイント取得
-
-○本棚整理
-
-○PCの掃除
