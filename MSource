@@ -1,5 +1,15 @@
-■OutsidePanel
+○LineVolumeから生成する処理を考える
+・Pipe
+・凹凸
 
+○BaseSurfaceで検証
+
+●フロー
+・BaseSurface
+・LineVolume
+・Modeling
+
+■OutsidePanel
 ●仕様
 ・BaseSurfaceを参照して、多数のSurfaceを配置していく
 ・NoiseのOffset,Cofficientで開ける部分を調整する
@@ -10,8 +20,8 @@
 ・NoiseでSurfaceの生成位置を計算
 ・BasePointにSurfaceを生成
 
-■PipeMaker
 
+■PipeMaker
 ●仕様
 ・BaseSurfaceを参照して、ランダムにPipeを配置していく
 ・ランダムに曲げる
@@ -24,8 +34,8 @@
 ・パイプのボリュームを生成
 ・ボリュームに沿ってパイプを生成
 
-■凹凸Maker
 
+■凹凸Maker
 ●仕様
 ・BaseSurfaceを参照して、規則的な凹凸パターンを生成する
 ・複数のBaseSurfaceがある場合繋がりをもつようにする
@@ -43,7 +53,6 @@
 
 
 ■VolumeMaker
-
 ●仕様
 ・BoxでBaseのVolumeを決めて、BoolかVolumeスケールに適応した台形でBaseSurfaceを生成していく
 
