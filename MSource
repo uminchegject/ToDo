@@ -1,15 +1,29 @@
-○LineVolumeから生成する処理を考える
-・Pipe
-・凹凸
+※形態、複数のPrimに問わず対応できるDetailMakerを実装する
 
-○BaseSurfaceで検証
+○VolumeLineを生成する
+・Attribute
+ -Scale
+ -Normal
 
-●フロー
-・BaseSurface
-・LineVolume
-・Modeling
+
+○VolumeLineに沿って凹凸を生成する
+
+△等間隔にオブジェクトを配置する
+
+
+○VolumeLineを参照してPipeBaseLineを生成する
+・RandomAttribute
+ -位置
+ -Scale
+
+○PipeBaseLineからPipeを生成する
+
 
 ■OutsidePanel
+○Prim内でNoiseに沿ったScatterを行う
+
+○Boxを生成し、形をBooleanで生成する
+
 ●仕様
 ・BaseSurfaceを参照して、多数のSurfaceを配置していく
 ・NoiseのOffset,Cofficientで開ける部分を調整する
