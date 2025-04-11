@@ -1,24 +1,7 @@
 ※形態、複数のPrimに問わず対応できるDetailMakerを実装する
 
-○VolumeLineを生成する
-・Attribute
- -Scale
- -Normal
 
-
-○VolumeLineに沿って凹凸を生成する
-
-△等間隔にオブジェクトを配置する
-
-
-○VolumeLineを参照してPipeBaseLineを生成する
-・RandomAttribute
- -位置
- -Scale
-
-○PipeBaseLineからPipeを生成する
-
-
+【Surface】
 ■OutsidePanel
 ○Prim内でNoiseに沿ったScatterを行う
 
@@ -35,21 +18,27 @@
 ・BasePointにSurfaceを生成
 
 
-■PipeMaker
-●仕様
-・BaseSurfaceを参照して、ランダムにPipeを配置していく
-・ランダムに曲げる
-・軸を設定する
-・太さをランダムにする
 
-●パラメーター
+【BaseLine】
+○BaseLineの生成ロジックを設計
+・BooleanでBaseLineサイズを調整する
+
+○BaseLineからのPMロジックを設計
+
+●Attribute
+・Scale
+・Normal
 
 ●処理
-・パイプのボリュームを生成
-・ボリュームに沿ってパイプを生成
+・BaseLineを生成
+・BaseLineに沿ってモデリング
 
 
 ■凹凸Maker
+○VolumeLineに沿って凹凸を生成する
+
+△等間隔にオブジェクトを配置する
+
 ●仕様
 ・BaseSurfaceを参照して、規則的な凹凸パターンを生成する
 ・複数のBaseSurfaceがある場合繋がりをもつようにする
@@ -66,13 +55,23 @@
 ・軸に沿って凹凸を生成
 
 
-■VolumeMaker
+■PipeMaker
+○VolumeLineを参照してPipeBaseLineを生成する
+・RandomAttribute
+ -位置
+ -Scale
+
+○PipeBaseLineからPipeを生成する
+
 ●仕様
-・BoxでBaseのVolumeを決めて、BoolかVolumeスケールに適応した台形でBaseSurfaceを生成していく
+・BaseSurfaceを参照して、ランダムにPipeを配置していく
+・ランダムに曲げる
+・軸を設定する
+・太さをランダムにする
 
 ●パラメーター
 
 ●処理
-・Volumeを生成
-・Volumeを参照してBaseSurfaceを生成
- 
+・パイプのボリュームを生成
+・ボリュームに沿ってパイプを生成
+
