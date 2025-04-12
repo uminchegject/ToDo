@@ -1,12 +1,17 @@
+※祝日の前日は早く帰ってしっかり寝る
 ※形態、複数のPrimに問わず対応できるDetailMakerを実装する
 
+○BaseSurfaceからBaseLineを生成する処理を実装
 
-【Surface】
+○BaseLineから凹凸を生成
+・BaseSurfaceを生成
+・Extrude
+
+○BaseLineに沿ってオブジェクトを等間隔で配置
+
+
+【BaseSurface】
 ■OutsidePanel
-○Prim内でNoiseに沿ったScatterを行う
-
-○Boxを生成し、形をBooleanで生成する
-
 ●仕様
 ・BaseSurfaceを参照して、多数のSurfaceを配置していく
 ・NoiseのOffset,Cofficientで開ける部分を調整する
@@ -18,12 +23,21 @@
 ・BasePointにSurfaceを生成
 
 
+■PipeMaker
+●仕様
+・ランダムに曲げる
+・軸を設定する
+・太さをランダムにする
+
+●パラメーター
+
+●処理
+・BaseSurface上でVolumeを計算
+・Volumeに沿ってTubeを生成
+
+
 
 【BaseLine】
-○BaseLineの生成ロジックを設計
-・BooleanでBaseLineサイズを調整する
-
-○BaseLineからのPMロジックを設計
 
 ●Attribute
 ・Scale
@@ -35,12 +49,7 @@
 
 
 ■凹凸Maker
-○VolumeLineに沿って凹凸を生成する
-
-△等間隔にオブジェクトを配置する
-
 ●仕様
-・BaseSurfaceを参照して、規則的な凹凸パターンを生成する
 ・複数のBaseSurfaceがある場合繋がりをもつようにする
 
 ●パラメーター
@@ -51,27 +60,6 @@
 ・ColumnMaterial
 
 ●処理
-・軸を計算
-・軸に沿って凹凸を生成
-
-
-■PipeMaker
-○VolumeLineを参照してPipeBaseLineを生成する
-・RandomAttribute
- -位置
- -Scale
-
-○PipeBaseLineからPipeを生成する
-
-●仕様
-・BaseSurfaceを参照して、ランダムにPipeを配置していく
-・ランダムに曲げる
-・軸を設定する
-・太さをランダムにする
-
-●パラメーター
-
-●処理
-・パイプのボリュームを生成
-・ボリュームに沿ってパイプを生成
-
+・Boundして、Boundより少し大きめのサイズのGridを配置し、接触部分からBaseLineを生成
+・BaseLineに沿って凹凸を生成
+・BsaeLineに沿ってオブジェクトを等間隔で配置
