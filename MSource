@@ -1,13 +1,50 @@
 ※祝日の前日は早く帰ってしっかり寝る
 ※形態、複数のPrimに問わず対応できるDetailMakerを実装する
 
+○ゲーム
+・MonumentValley
+
+
+【BaseLine】
 ○BaseSurfaceからBaseLineを生成する処理を実装
+・BaseLineへNormalの設定
 
 ○BaseLineから凹凸を生成
-・BaseSurfaceを生成
-・Extrude
+・BaseLineをExtrudeする際にNormalを反映する
 
 ○BaseLineに沿ってオブジェクトを等間隔で配置
+
+
+○凹凸のBaseSurfaceの生成ロジックを設計
+・上下にBaseSurfaceを生成する
+
+○CopyObjectの生成ロジックを設計
+
+●Attribute
+・Scale
+・Normal
+
+●処理
+・BaseLineを生成
+・BaseLineに沿ってモデリング
+
+
+■凹凸Maker
+●仕様
+
+●パラメーター
+・BlockSize
+・ColumnSize
+ -Wide
+ -Depth
+・ColumnMaterial
+
+●処理
+・Boundして、Boundより少し大きめのサイズのGridを配置し、接触部分からBaseLineを生成
+・BaseLineに沿って凹凸を生成
+・BsaeLineに沿ってオブジェクトを等間隔で配置
+
+
 
 
 【BaseSurface】
@@ -36,30 +73,3 @@
 ・Volumeに沿ってTubeを生成
 
 
-
-【BaseLine】
-
-●Attribute
-・Scale
-・Normal
-
-●処理
-・BaseLineを生成
-・BaseLineに沿ってモデリング
-
-
-■凹凸Maker
-●仕様
-・複数のBaseSurfaceがある場合繋がりをもつようにする
-
-●パラメーター
-・BlockSize
-・ColumnSize
- -Wide
- -Depth
-・ColumnMaterial
-
-●処理
-・Boundして、Boundより少し大きめのサイズのGridを配置し、接触部分からBaseLineを生成
-・BaseLineに沿って凹凸を生成
-・BsaeLineに沿ってオブジェクトを等間隔で配置
