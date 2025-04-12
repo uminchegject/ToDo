@@ -1,8 +1,9 @@
 ※祝日の前日は早く帰ってしっかり寝る
 ※形態、複数のPrimに問わず対応できるDetailMakerを実装する
 
-○ゲーム
-・MonumentValley
+○業務におけるHoudiniプロジェクトの調査
+・ドキュメント
+・ソース
 
 
 【BaseLine】
@@ -30,7 +31,6 @@
 ・BaseLineを生成
 ・BaseLineに沿ってモデリング
 
-
 ■凹凸Maker
 ●仕様
 
@@ -48,8 +48,9 @@
 
 
 
-
 【BaseSurface】
+○Greebleの実装
+
 ■OutsidePanel
 ●仕様
 ・Greebleで被らないようにランダムなVolumeを埋める
@@ -60,6 +61,8 @@
 ●処理
 ・NoiseでSurfaceの生成位置を計算
 ・BasePointにSurfaceを生成
+・GreebleでBlockを生成し、noise値に沿って消す
+・縁部分に細長いBoxを配置する
 
 
 ■PipeMaker
@@ -73,5 +76,6 @@
 ●処理
 ・BaseSurface上でVolumeを計算
 ・Volumeに沿ってTubeを生成
-
-
+・GreebleでVolumeを生成
+ -Pipe
+ -球体オブジェクト
