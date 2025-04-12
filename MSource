@@ -13,12 +13,14 @@
 ・BaseLineをExtrudeする際にNormalを反映する
 
 ○BaseLineに沿ってオブジェクトを等間隔で配置
+・NormalAttributeを設定
 
 
 ○凹凸のBaseSurfaceの生成ロジックを設計
-・上下にBaseSurfaceを生成する
+・Line沿ってにBaseSurfaceを生成する
 
 ○CopyObjectの生成ロジックを設計
+・BasePointを生成し、ObjectをCopyToPointする
 
 ●Attribute
 ・Scale
@@ -50,7 +52,7 @@
 【BaseSurface】
 ■OutsidePanel
 ●仕様
-・BaseSurfaceを参照して、多数のSurfaceを配置していく
+・Greebleで被らないようにランダムなVolumeを埋める
 ・NoiseのOffset,Cofficientで開ける部分を調整する
 
 ●パラメーター
