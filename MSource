@@ -5,6 +5,13 @@
 ・ドキュメント
 ・ソース
 
+○掃除
+・ごみ捨て
+・モップ掛け
+・掃除機
+
+○Jリーグチケットリセール
+
 
 【BaseLine】
 ○BaseSurfaceからBaseLineを生成する処理を実装
@@ -50,6 +57,8 @@
 
 【BaseSurface】
 ○Greebleの実装
+・複雑形態の場合Boundした四角形でGreebleを行い、BaseLineに情報を持たせてBooleanする
+
 
 ■OutsidePanel
 ●仕様
