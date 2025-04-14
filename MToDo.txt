@@ -36,11 +36,9 @@
 ・△たっきゅん
 
 ○KineFX
-・Houdini18.5 Kine FX
-https://houdinifx.jp/blog/houdini18-5-kine-fx/
-・Kine-FX Animation Basic Concept #1 Simple Setup
-https://www.youtube.com/watch?v=9irMoNO7N-E
-・「トゥーンキャラクタのコントロール 」
+・Kine-FX Animation Basic Concept
+https://www.youtube.com/watch?v=OErpOnn6lPc&list=PLqovuMX-teVNd499Qmlj9BBc6hrux4yTj&index=5
+・「トゥーンキャラクタのコントロール」
 https://www.sidefx.com/ja/houdini-hive/houdini-hive-japan/#diniko
 
 
@@ -60,14 +58,9 @@ https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb
 ※言語、ツールに関係なく共通する根源部分を勉強する
 ※読書をしながらアウトプットを何にするか考える
 
-○Houdiniサンプルプロジェクト確認
-・Megastructure
-・village(Modeling)
-・SciFi(Modeling)
+○新しい調査プロジェクトの準備
 
-○Mayaサンプルプロジェクトの確認
-・y_roofBuilding_model_publish
- -L_building_front_GPをメインに参考にする
+○Houdiniサンプルプロジェクト確認
  
 ○ラフモデルの作成作業を調査
 
@@ -125,10 +118,6 @@ https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb
  -Random
 ・OutsidePanel
  -Random
-
-○ハードサーフェス本からVolumePDのアイデアを調査
-
-○WindowMakerの設計
 
 ●Volumeの配置ロジック設計
 ・側面Surfaceへのランダム配置
