@@ -1,4 +1,7 @@
 ■反省
+※祝日の前日は早く帰ってしっかり寝る
+※PrivateToDoをしっかり準備し、行うようにする
+ -前日夜、翌日昼前、翌日昼後で分けて準備をしっかり行う
 ※Hip調査は大まかな処理の概要を確認してから、各ノード処理を調べていく
  -Attributeの数値とSceneの差分から処理内容を確認する
 ※GFのGMailを逐一確認する
@@ -23,26 +26,30 @@
 ○Mesh情報を参照した最適解を考える
 ・Centroidした座標を参照したベクトルで検証する
 
+○業務におけるHoudiniプロジェクトの調査
+・ドキュメント
+・ソース
+
+
 ○Python調査
 ・パイプライン周りの調査
 ・△たっきゅん
 
-○Houdini調査
+○KineFX
+・Houdini18.5 Kine FX
+https://houdinifx.jp/blog/houdini18-5-kine-fx/
+・Kine-FX Animation Basic Concept #1 Simple Setup
+https://www.youtube.com/watch?v=9irMoNO7N-E
+・「トゥーンキャラクタのコントロール 」
+https://www.sidefx.com/ja/houdini-hive/houdini-hive-japan/#diniko
+
+
+△Houdini調査
 ・Dop
  -DopNetwork
   -rbdpackedobject
   -bulletrbdsolver
  -DopImport
-
-○ルール規約調査
-・HDA作成ガイドライン
-https://qiita.com/d658t/items/a9f785d741037021e6ee
-
-△KineFX
-・Houdini KineFXについて 1
-https://www.youtube.com/watch?v=MKMNdG9jWZc&t=1s
-・Houdini KineFXについて 2
-https://www.youtube.com/watch?v=urbuNDBrIZA&t=250s
 
 △マヤ(リグ)
 ・Start@Maya〜Maya で 3DCG をはじめよう〜 1. 基本操作 インタフェース概要
@@ -63,6 +70,7 @@ https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb
  -L_building_front_GPをメインに参考にする
  
 ○ラフモデルの作成作業を調査
+
 
 ●3DCG
 ・ゲームグラフィックス表現技法
@@ -102,8 +110,8 @@ https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb
 ○クローゼットの整理
 
 
-
 ■Interesting
+※形態、複数のPrimに問わず対応できるDetailMakerを実装する
 ※Base, DetailPattern, Detailそれぞれのフロー設計を意識する
 ※実際の工程を自動化することを意識する
 ※まずHDAをひたすら実装し、組み合わせを行うことを目標にする。
