@@ -1,13 +1,3 @@
-※祝日の前日は早く帰ってしっかり寝る
-※PrivateToDoをしっかり準備し、行うようにする
- -前日夜、翌日昼前、翌日昼後で分けて準備をしっかり行う
-※形態、複数のPrimに問わず対応できるDetailMakerを実装する
-
-○業務におけるHoudiniプロジェクトの調査
-・ドキュメント
-・ソース
-
-
 【BaseLine】
 ○BaseSurfaceからBaseLineを生成する処理を実装
 ・BaseLineへNormalの設定
