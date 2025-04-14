@@ -1,30 +1,65 @@
-■業務プロジェクトの調査
-○大まかなフローを理解する
-
-
-■サンプルプロジェクトによる勉強
-○JapaneseCastle
-・BasePointの生成
-
-
 【BaseLine】
-○BaseSurfaceからBaseLineを生成する処理を実装
-・BaseLineへNormalの設定
-
-○BaseLineから凹凸を生成
-・BaseLineをExtrudeする際にNormalを反映する
-
-○BaseLineに沿ってオブジェクトを等間隔で配置
-・NormalAttributeを設定
-
-
 ○凹凸のBaseSurfaceの生成ロジックを設計
-・Lineに沿ってBaseSurfaceを生成する
+・Line沿ってにBaseSurfaceを生成する
 
 ○CopyObjectの生成ロジックを設計
 ・BasePointを生成し、ObjectをCopyToPointする
+
+●Attribute
+・Scale
+・Normal
+
+●処理
+・BaseLineを生成
+・BaseLineに沿ってモデリング
+
+■凹凸Maker
+●仕様
+
+●パラメーター
+・BlockSize
+・ColumnSize
+ -Wide
+ -Depth
+・ColumnMaterial
+
+●処理
+・Boundして、Boundより少し大きめのサイズのGridを配置し、接触部分からBaseLineを生成
+・BaseLineに沿って凹凸を生成
+・BsaeLineに沿ってオブジェクトを等間隔で配置
+
 
 
 【BaseSurface】
 ○GreebleVolumeの設計及び実装
 ・複雑形態の場合Boundした四角形でGreebleを行い、BaseSurfaceでBoolする
+
+■OutsidePanel
+●仕様
+・Greebleで被らないようにランダムなVolumeを埋める
+・NoiseのOffset,Cofficientで開ける部分を調整する
+
+●パラメーター
+
+●処理
+・Boundスケールを基にGreebleBlockを生成
+・PrimでGreebleBlockをそれぞれBoolし、形を整える
+・noise値に沿って消す
+・縁部分に細長いBoxを配置する
+
+
+■PipeMaker
+○複雑形態でも対応できるように処理を設計する
+
+●仕様
+・ランダムに曲げる
+・軸を設定する
+・太さをランダムにする
+
+●パラメーター
+
+●処理
+・GreebleVolumeの生成
+・GreebleVolumeに沿ってオブジェクトを生成
+ -Pipe
+ -球体オブジェクト
