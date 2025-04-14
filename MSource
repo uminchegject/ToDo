@@ -34,6 +34,8 @@
 ○GreebleVolumeの設計及び実装
 ・複雑形態の場合Boundした四角形でGreebleを行い、BaseSurfaceでBoolする
 
+○VolumeからDetailへのフロー設計
+
 ■OutsidePanel
 ●仕様
 ・Greebleで被らないようにランダムなVolumeを埋める
