@@ -33,8 +33,6 @@
 ○KineFX
 ・Kine-FX Animation Basic Concept
 https://www.youtube.com/watch?v=OErpOnn6lPc&list=PLqovuMX-teVNd499Qmlj9BBc6hrux4yTj&index=5
-・「トゥーンキャラクタのコントロール」
-https://www.sidefx.com/ja/houdini-hive/houdini-hive-japan/#diniko
 
 
 △Houdini調査
