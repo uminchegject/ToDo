@@ -17,24 +17,18 @@
  -Subは10分を目安にする
 ※概要と詳細をしっかり分けて考える
  -ツール概要を最初に考える
-  
+
 
 ■WorkStudy
 ※ツール処理から根本の部分の実装方法を確認する
+ -※Houdiniにおけるツールの大まかなフローを理解する
 ※HoudiniMayaのツール開発における根本部分を勉強する
-
-○Mesh情報を参照した最適解を考える
-・Centroidした座標を参照したベクトルで検証する
-
-○業務におけるHoudiniプロジェクトの調査
-※大まかなフローを理解する
-・ドキュメント
-・ソース
-
 
 ○Python調査
 ・パイプライン周りの調査
-・△たっきゅん
+
+△Mesh情報を参照した最適解を考える
+・Centroidした座標を参照したベクトルで検証する
 
 ○KineFX
 ・Kine-FX Animation Basic Concept
@@ -119,29 +113,15 @@ https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb
 ・OutsidePanel
  -Random
 
-●Volumeの配置ロジック設計
+●Base
 ・側面Surfaceへのランダム配置
 ・中央への自動配置
 ・AddBox
  -Center
  -Side
 
-●DetailPatternMakerのPD設計
+●DetailPattern
 ・WindowMaker(凹凸Maker)
 
-●DetailAssetのPD設計
+●Detail
 ・アンテナ
-
-
-●背景
-・DetailAsset(PM)
- -Panel
-
-●プロシージャルデザイン
-・BaseModeling
- -CopyPoint & Boolean
-・DetailAssetBasePoint
- -Panel
-
-●幾何学的ロジック
-・Grasshopperクックブック
