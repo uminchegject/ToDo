@@ -1,9 +1,23 @@
 【BaseLine】
+○凹凸の検証
+・ExtrudeでBaseSurfaceを生成
+・凹と凸をそれぞれBaseSurfaceをExtrudeして生成
+
+○BasePoint生成ロジックを実装
+・Pos
+・BlockSize
+・△Rondom
+
+○CopyObjectの検証
+・窓枠の縁をBoxで生成し、検証
+・△室外機をランダムで生成
+
 ○凹凸のBaseSurfaceの生成ロジックを設計
-・Line沿ってにBaseSurfaceを生成する
+・Line沿ってBaseSurfaceを生成する
 
 ○CopyObjectの生成ロジックを設計
 ・BasePointを生成し、ObjectをCopyToPointする
+ -CopyToBox
 
 ●Attribute
 ・Scale
@@ -33,6 +47,7 @@
 【BaseSurface】
 ○GreebleVolumeの設計及び実装
 ・複雑形態の場合Boundした四角形でGreebleを行い、BaseSurfaceでBoolする
+
 
 ○VolumeからDetailへのフロー設計
 
