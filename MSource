@@ -1,7 +1,36 @@
+※形態、複数のPrimに問わず対応できるDetailMakerを実装する
+※Base, DetailPattern, Detailそれぞれのフロー設計を意識する
+※実際の工程を自動化することを意識する
+※まずHDAをひたすら実装し、組み合わせを行うことを目標にする。
+※モデリングはサンプルプロジェクトを実際確認しながら手法を学ぶ
+
+○ハードサーフェスサンプルからDetailPatternのアイデアを調査
+※サンプルプロジェクトを構成するPatternを意識して調べる
+・凹凸(窓枠)
+ -Pattern
+・Pipe
+ -Random
+・OutsidePanel
+ -Random
+
+●Base
+・側面Surfaceへのランダム配置
+・中央への自動配置
+・AddBox
+ -Center
+ -Side
+
+●DetailPattern
+・WindowMaker(凹凸Maker)
+
+●Detail
+・アンテナ
+
+
 【BaseLine】
-○凹凸の検証
-・ExtrudeでBaseSurfaceを生成
-・凹と凸をそれぞれBaseSurfaceをExtrudeして生成
+○BaseLineの自動化
+・BoundsのRadiiからGridのサイズを設定
+・BoundsのRadiiからCopyのTranslateとNumを設定
 
 ○BasePoint生成ロジックを実装
 ・Pos
@@ -45,6 +74,8 @@
 
 
 【BaseSurface】
+○複数Prim上でGreebleする処理を実装
+
 ○GreebleVolumeの設計及び実装
 ・複雑形態の場合Boundした四角形でGreebleを行い、BaseSurfaceでBoolする
 
@@ -80,3 +111,57 @@
 ・GreebleVolumeに沿ってオブジェクトを生成
  -Pipe
  -球体オブジェクト
+ 
+ 
+【ソース】
+○BasePoint生成ロジックを実装
+・Pos
+vector adjust_pos = chv("AdjustPos");
+
+float block_width = ch("BlockWidth");
+int verts[] = primvertices(0, @primnum);
+
+// ループしてvertex Nを取得
+for(int i = 0; i < len(verts) - 1; i++) 
+{
+    int pt1_num = vertexpoint(0, verts[i]);
+    int pt2_num = vertexpoint(0, verts[i + 1]);
+    
+    vector pt1 = point(0, "P", pt1_num);
+    vector pt2 = point(0, "P", pt2_num);
+	
+    vector dir = normalize(pt2 - pt1);
+    float length = length(pt2 - pt1);
+
+    int block_num = int(length / block_width);
+    vector slider = dir * length / block_num;
+	
+	vector up = vertex(0, "up", verts[i]);
+	vector pt1_normal = vertex(0, "N", verts[i]);
+	vector pt2_normal = vertex(0, "N", verts[i + 1]);
+	vector normal = normalize((pt1_normal + pt2_normal) / 2);	   
+
+	vector slider_pos = 0;
+	slider_pos += dir * adjust_pos.x;
+	slider_pos += up * adjust_pos.y;
+	slider_pos += normal * adjust_pos.z;
+
+    for(int j = 0; j < block_num; j++)
+    {
+        vector spawn_pos = pt1 + slider / 2;
+        spawn_pos += j * slider;
+		spawn_pos += slider_pos;
+        int pt = addpoint(0, spawn_pos);
+        
+        setpointattrib(0, "N", pt, normal);
+    }
+}
+
+removeprim(0, @primnum, 1);
+
+○PipeGeneratorロジックの実装
+・複数Primに沿ってBaseLineを生成する
+
+○SurfaceGeneratorロジック実装
+・Blockに斜線を入れる
+ -Boolean
