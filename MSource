@@ -6,12 +6,7 @@
 
 ○ハードサーフェスサンプルからDetailPatternのアイデアを調査
 ※サンプルプロジェクトを構成するPatternを意識して調べる
-・凹凸(窓枠)
- -Pattern
-・Pipe
- -Random
-・OutsidePanel
- -Random
+
 
 ●Base
 ・側面Surfaceへのランダム配置
@@ -35,11 +30,12 @@
 ○BasePoint生成ロジックを実装
 ・Pos
 ・BlockSize
-・△Rondom
+・△Random
 
 ○CopyObjectの検証
 ・窓枠の縁をBoxで生成し、検証
 ・△室外機をランダムで生成
+
 
 ○凹凸のBaseSurfaceの生成ロジックを設計
 ・Line沿ってBaseSurfaceを生成する
@@ -74,10 +70,16 @@
 
 
 【BaseSurface】
-○複数Prim上でGreebleする処理を実装
+○GreebleVolumeの実装
+・四角形で検証
+・△複数Primを跨いでGreebleを行えるように実装
 
-○GreebleVolumeの設計及び実装
-・複雑形態の場合Boundした四角形でGreebleを行い、BaseSurfaceでBoolする
+○PipeGeneratorロジックの実装
+・Volume内に沿ってBaseLineを生成する
+
+○SurfaceGeneratorロジック実装
+・Blockに斜線を入れる
+ -VolumeをBoolean(Add, Sub)する
 
 
 ○VolumeからDetailへのフロー設計
@@ -158,10 +160,3 @@ for(int i = 0; i < len(verts) - 1; i++)
 }
 
 removeprim(0, @primnum, 1);
-
-○PipeGeneratorロジックの実装
-・複数Primに沿ってBaseLineを生成する
-
-○SurfaceGeneratorロジック実装
-・Blockに斜線を入れる
- -Boolean
