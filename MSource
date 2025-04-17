@@ -21,58 +21,10 @@
 ●Detail
 ・アンテナ
 
-
-【BaseLine】
-○BaseLineの自動化
-・BoundsのRadiiからGridのサイズを設定
-・BoundsのRadiiからCopyのTranslateとNumを設定
-
-○BasePoint生成ロジックを実装
-・Pos
-・BlockSize
-・△Random
-
-○CopyObjectの検証
-・窓枠の縁をBoxで生成し、検証
-・△室外機をランダムで生成
-
-
-○凹凸のBaseSurfaceの生成ロジックを設計
-・Line沿ってBaseSurfaceを生成する
-
-○CopyObjectの生成ロジックを設計
-・BasePointを生成し、ObjectをCopyToPointする
- -CopyToBox
-
-●Attribute
-・Scale
-・Normal
-
-●処理
-・BaseLineを生成
-・BaseLineに沿ってモデリング
-
-■凹凸Maker
-●仕様
-
-●パラメーター
-・BlockSize
-・ColumnSize
- -Wide
- -Depth
-・ColumnMaterial
-
-●処理
-・Boundして、Boundより少し大きめのサイズのGridを配置し、接触部分からBaseLineを生成
-・BaseLineに沿って凹凸を生成
-・BsaeLineに沿ってオブジェクトを等間隔で配置
-
-
-
-【BaseSurface】
-○GreebleVolumeの実装
-・四角形で検証
-・△複数Primを跨いでGreebleを行えるように実装
+ 
+【ToDo】
+■BaseSurface
+○Greebleの検証環境を用意
 
 ○PipeGeneratorロジックの実装
 ・Volume内に沿ってBaseLineを生成する
@@ -81,40 +33,11 @@
 ・Volume内で斜線を作りつつ分割して、Blastする
 
 
-○VolumeからDetailへのフロー設計
+■BaseLine
+○BaseLineの自動化
+・BoundsのRadiiからGridのサイズを設定
+・BoundsのRadiiからCopyのTranslateとNumを設定
 
-■OutsidePanel
-●仕様
-・Greebleで被らないようにランダムなVolumeを埋める
-・NoiseのOffset,Cofficientで開ける部分を調整する
-
-●パラメーター
-
-●処理
-・Boundスケールを基にGreebleBlockを生成
-・PrimでGreebleBlockをそれぞれBoolし、形を整える
-・noise値に沿って消す
-・縁部分に細長いBoxを配置する
-
-
-■PipeMaker
-○複雑形態でも対応できるように処理を設計する
-
-●仕様
-・ランダムに曲げる
-・軸を設定する
-・太さをランダムにする
-
-●パラメーター
-
-●処理
-・GreebleVolumeの生成
-・GreebleVolumeに沿ってオブジェクトを生成
- -Pipe
- -球体オブジェクト
- 
- 
-【ソース】
 ○BasePoint生成ロジックを実装
 ・Pos
 vector adjust_pos = chv("AdjustPos");
@@ -159,3 +82,76 @@ for(int i = 0; i < len(verts) - 1; i++)
 }
 
 removeprim(0, @primnum, 1);
+
+○CopyObjectの検証
+・窓枠の縁をBoxで生成し、検証
+・△室外機をランダムで生成
+
+
+【BaseLine】
+○凹凸のBaseSurfaceの生成ロジックを設計
+・Line沿ってBaseSurfaceを生成する
+
+○CopyObjectの生成ロジックを設計
+・BasePointを生成し、ObjectをCopyToPointする
+ -CopyToBox
+
+●Attribute
+・Scale
+・Normal
+
+●処理
+・BaseLineを生成
+・BaseLineに沿ってモデリング
+
+■凹凸Maker
+●仕様
+
+●パラメーター
+・BlockSize
+・ColumnSize
+ -Wide
+ -Depth
+・ColumnMaterial
+
+●処理
+・Boundして、Boundより少し大きめのサイズのGridを配置し、接触部分からBaseLineを生成
+・BaseLineに沿って凹凸を生成
+・BsaeLineに沿ってオブジェクトを等間隔で配置
+
+
+
+【BaseSurface】
+△複数Primを跨いでGreebleを行えるように実装
+
+○VolumeからDetailへのフロー設計
+
+■OutsidePanel
+●仕様
+・Greebleで被らないようにランダムなVolumeを埋める
+・NoiseのOffset,Cofficientで開ける部分を調整する
+
+●パラメーター
+
+●処理
+・Boundスケールを基にGreebleBlockを生成
+・PrimでGreebleBlockをそれぞれBoolし、形を整える
+・noise値に沿って消す
+・縁部分に細長いBoxを配置する
+
+
+■PipeMaker
+○複雑形態でも対応できるように処理を設計する
+
+●仕様
+・ランダムに曲げる
+・軸を設定する
+・太さをランダムにする
+
+●パラメーター
+
+●処理
+・GreebleVolumeの生成
+・GreebleVolumeに沿ってオブジェクトを生成
+ -Pipe
+ -球体オブジェクト
