@@ -22,14 +22,10 @@
  -※Houdiniにおけるツールの大まかなフローを理解する
 ※HoudiniMayaのツール開発における根本部分を勉強する
 
-○パフォーマンス確認方法の調査
-※まず最適化すべき箇所を確認し、それの改善策を考える
-・パフォーマンスモニタペイン
-https://www.sidefx.com/ja/docs/houdini/ref/panes/perfmon.html
-・サルにもわかる Houdini
-https://ikatnek.blogspot.com/2019/06/performance-monitor.html
-・△Houdiniにおけるデバッグ Vol.3 デバッガー・最適化について
-https://qiita.com/dicepastoso/items/b1831e480bf717736c5a
+○コンパイルブロック
+
+○HeightField
+・volumewrangle
 
 ○Python調査
 ・パイプライン周りの調査
@@ -49,6 +45,7 @@ https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb
 ※読書をしながらアウトプットを何にするか考える
 
 ○JapaneseCastleの調査
+※完成形を確認し、気になる配置ロジックを軸に調査を行う
 ・BasePointの生成
  
 
@@ -73,6 +70,8 @@ https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb
 
 
 ■Private
+○5月サバゲー
+
 ○ポイント取得
 
 ○掃除
