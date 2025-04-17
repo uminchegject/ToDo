@@ -22,14 +22,20 @@
  -※Houdiniにおけるツールの大まかなフローを理解する
 ※HoudiniMayaのツール開発における根本部分を勉強する
 
-○コンパイルブロック
-
 ○HeightField
-・volumewrangle
+・【Houdini】HeightFieldの基本的なところ
+https://note.com/futafusa/n/n47cfd51a43d4
+・Height Fieldによる地形の構築
+https://www.sidefx.com/ja/docs/houdini/model/heightfields.html
+・Houdini HeightField -地形の作成- 1.HeightField（地形ツール）の概要
+https://www.youtube.com/watch?app=desktop&v=ZfubGX6dWkc
 
-○Python調査
-・パイプライン周りの調査
-・デバッグ
+△Volume VOP SOP
+・ボリュームのポスト処理
+https://qiita.com/m__a__/items/bb6ed9f6dd0e735a2a5b
+
+△Python調査
+・独立ツールの処理
 
 △KineFX
 ・Kine-FX Animation Basic Concept
