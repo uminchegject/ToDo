@@ -22,12 +22,13 @@
  -※Houdiniにおけるツールの大まかなフローを理解する
 ※HoudiniMayaのツール開発における根本部分を勉強する
 
-○Houdiniパフォーマンス
+○パフォーマンス確認方法の調査
+※まず最適化すべき箇所を確認し、それの改善策を考える
 ・パフォーマンスモニタペイン
 https://www.sidefx.com/ja/docs/houdini/ref/panes/perfmon.html
 ・サルにもわかる Houdini
 https://ikatnek.blogspot.com/2019/06/performance-monitor.html
-・Houdiniにおけるデバッグ Vol.3 デバッガー・最適化について
+・△Houdiniにおけるデバッグ Vol.3 デバッガー・最適化について
 https://qiita.com/dicepastoso/items/b1831e480bf717736c5a
 
 ○Python調査
@@ -46,8 +47,6 @@ https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb
 ■Study
 ※言語、ツールに関係なく共通する根源部分を勉強する
 ※読書をしながらアウトプットを何にするか考える
-
-○複数Primの結合方法を調査
 
 ○JapaneseCastleの調査
 ・BasePointの生成
