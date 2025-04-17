@@ -78,8 +78,7 @@
 ・Volume内に沿ってBaseLineを生成する
 
 ○SurfaceGeneratorロジック実装
-・Blockに斜線を入れる
- -VolumeをBoolean(Add, Sub)する
+・Volume内で斜線を作りつつ分割して、Blastする
 
 
 ○VolumeからDetailへのフロー設計
