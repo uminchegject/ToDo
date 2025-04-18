@@ -4,44 +4,40 @@
 ※まずHDAをひたすら実装し、組み合わせを行うことを目標にする。
 ※モデリングはサンプルプロジェクトを実際確認しながら手法を学ぶ
 
+
+
+【ToDo】
 ○ハードサーフェスサンプルからDetailPatternのアイデアを調査
 ※サンプルプロジェクトを構成するPatternを意識して調べる
 
 
-●Base
+■BaseSurface
+○PipeGeneratorロジックの実装
+・Pipeを配置するのに最適なサイズまで分割する
+・Volume内に沿ってBaseLineを生成する
+
+○SurfaceGeneratorロジック実装
+・Volume内で斜線を作りつつ分割して、Blastする
+・BlockごとにUV展開する
+
+
+■BaseLine
+○BaseLineの自動化
+・位置を調整
+
+○CopyObjectの検証
+・窓枠の縁をBoxで生成し、検証
+・△室外機をランダムで生成
+
+
+■Base
+●IDEA
 ・側面Surfaceへのランダム配置
 ・中央への自動配置
 ・AddBox
  -Center
  -Side
 
-●DetailPattern
-・WindowMaker(凹凸Maker)
-
-●Detail
-・アンテナ
-
- 
-【ToDo】
-■BaseSurface
-○PipeGeneratorロジックの実装
-・Pipeを配置するのに最適なサイズまで分割する
-・Volume内に沿ってBaseLineを生成する
-
-
-○SurfaceGeneratorロジック実装
-・Volume内で斜線を作りつつ分割して、Blastする
-・BlockごとにUV展開する
-
-■BaseLine
-○BaseLineの自動化
-・位置を調整
-
-removeprim(0, @primnum, 1);
-
-○CopyObjectの検証
-・窓枠の縁をBoxで生成し、検証
-・△室外機をランダムで生成
 
 
 【BaseLine】
@@ -59,6 +55,7 @@ removeprim(0, @primnum, 1);
 ●処理
 ・BaseLineを生成
 ・BaseLineに沿ってモデリング
+
 
 ■凹凸Maker
 ●仕様
@@ -81,6 +78,7 @@ removeprim(0, @primnum, 1);
 △複数Primを跨いでGreebleを行えるように実装
 
 ○VolumeからDetailへのフロー設計
+
 
 ■OutsidePanel
 ●仕様
