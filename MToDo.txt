@@ -11,8 +11,6 @@
  -※ロジックの軸となる部分を考えながら調べる
 ※各タスクの期限をしっかり決める
  -デバッグ環境及び目標の準備を行う
-※WorkStudyもメインに組み込む
- -Subは10分を目安にする
 ※概要と詳細をしっかり分けて考える
  -ツール概要を最初に考える
 
@@ -29,10 +27,6 @@ https://note.com/futafusa/n/n47cfd51a43d4
 https://www.sidefx.com/ja/docs/houdini/model/heightfields.html
 ・Houdini HeightField -地形の作成- 1.HeightField（地形ツール）の概要
 https://www.youtube.com/watch?app=desktop&v=ZfubGX6dWkc
-
-△Volume VOP SOP
-・ボリュームのポスト処理
-https://qiita.com/m__a__/items/bb6ed9f6dd0e735a2a5b
 
 △Python調査
 ・独立ツールの処理
