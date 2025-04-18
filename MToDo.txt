@@ -1,82 +1,37 @@
-■反省
-※チケット準備として、ドキュメントから概要を確認し、環境準備及びデバッグ環境を構築し、デバッグから処理の概要を確認する
-※祝日の前日は早く帰ってしっかり寝る
-※PrivateToDoをしっかり準備し、行うようにする
- -前日夜、翌日昼前、翌日昼後で分けて準備をしっかり行う
-※Hip調査は大まかな処理の概要を確認してから、各ノード処理を調べていく
- -Attributeの数値とSceneの差分から処理内容を確認する
+※休み前、定時前は思考を行う準備をすることを心掛ける
+ -休み中、定時前後のカフェ時間にマクロな思考を行う
 
-●Work
-※課題を解決するためのロジックを考える場合は必ず事例をStudyする
- -※ロジックの軸となる部分を考えながら調べる
-※各タスクの期限をしっかり決める
- -デバッグ環境及び目標の準備を行う
-※概要と詳細をしっかり分けて考える
- -ツール概要を最初に考える
+○読んだ本はメルカリで売る
+・ブックカバーでなるべく汚れないようにする
 
-
-■WorkStudy
-※ツール処理から根本の部分の実装方法を確認する
- -※Houdiniにおけるツールの大まかなフローを理解する
-※HoudiniMayaのツール開発における根本部分を勉強する
-
-○HeightField
-・Houdini HeightField -地形の作成- 1.HeightField（地形ツール）の概要
-https://www.youtube.com/watch?app=desktop&v=ZfubGX6dWkc
-
-△KineFX
-・Kine-FX Animation Basic Concept
-https://www.youtube.com/watch?v=OErpOnn6lPc&list=PLqovuMX-teVNd499Qmlj9BBc6hrux4yTj&index=5
-
-△マヤ(リグ)
-・Start@Maya〜Maya で 3DCG をはじめよう〜 1. 基本操作 インタフェース概要
-https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb6Yd
-
-
-■Study
-※言語、ツールに関係なく共通する根源部分を勉強する
-※読書をしながらアウトプットを何にするか考える
-
-○JapaneseCastleの調査
-※完成形を確認し、気になる配置ロジックを軸に調査を行う
-・BasePointの生成
+【ToDo】
+○Baseの設計
+・MegaStructreを参考にする
+ -側面Surfaceへのランダム配置
+ -中央への自動配置
  
+○Detailの設計
+・アンテナ
+・突起物
 
-●3DCG
-・ゲームグラフィックス表現技法
+■BaseSurface
+○Greeble修正
+・適切なサイズになるように実装する
 
-●ゲームエンジニアリング
-・Game Programming Patterns ソフトウェア開発の問題解決メニュー
+○PipeGeneratorロジックの実装
+・Pipeを配置するのに最適なサイズまで分割する
+・Volume内に沿ってBaseLineを生成する
 
-●ゲーム数学
-
-
-●ゲーム
-・ながら作業でできるゲーム
-
-●ポケモン
-・SV実況
-・SV解説
-
-●サッカー
-・チャント
+○SurfaceGeneratorロジック実装
+・Volume内で斜線を作りつつ分割して、Blastする
+ -エラーメッシュを出さないように分割する
+・BlockごとにUV展開する
 
 
-■Private
-○5月サバゲー
+■BaseLine
+○BaseLineの自動化
+・位置を調整
 
-○ポイント取得
-
-○掃除
-・ごみ捨て
-・モップ掛け
-・掃除機
-
-○PCの掃除
-
-○エアソフトガンのメンテナンス
-・油を用意
-
-○本棚整理
-
-○クローゼットの整理
+○CopyObjectの検証
+・窓枠の縁をBoxで生成し、検証
+・△室外機をランダムで生成
