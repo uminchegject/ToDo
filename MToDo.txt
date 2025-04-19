@@ -18,18 +18,27 @@
 
 【ToDo】
 ○Baseの設計
-・BaseVolumeを中央に配置
-・VolumeからPM
-・側面に追加のBaseVolumeを生成
+・BaseBoxからPM
+ -Bool(Sub, Add)
+・VolumeからSurfaceへの変換
+ -SplitしてExtrude
 
-○Detailの設計
+○SurfaceGeneratorロジック実装
+・オフセット
+・Volume内で斜線を作りつつ分割
+ -△PrimでGreebleしつつ、PointをSlideさせていく
+・Noiseで特定PointをRemove
+・Edgeに細長い四角形をCopyToPoint
+・△BlockごとにUV展開する
+
+△Detailの設計
 ・アンテナ
  -Tubeを複数配置
  -Pipeを配置
 ・突起物
  -TubeのExtrudeしていく
 
-○SurfaceGeneratorの分割Primの生成ロジックを設計
+
 
 ■BaseSurface
 ○Greeble修正
