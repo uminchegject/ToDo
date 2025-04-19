@@ -18,10 +18,11 @@
 
 【ToDo】
 ○Baseの設計
-・BaseBoxからPM
- -Bool(Sub, Add)
+・SplitしExtrude
+ -垂直
+ -水平
 ・VolumeからSurfaceへの変換
- -SplitしてExtrude
+ -グループ化を意識してSplitする
 
 ○SurfaceGeneratorロジック実装
 ・オフセット
