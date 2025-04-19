@@ -43,6 +43,7 @@
 ■BaseSurface
 ○Greeble修正
 ・適切なサイズになるように実装する
+・△Prim単位で分割処理を行い、角度をつけて分割する処理を実装する
 
 ○PipeGeneratorロジックの実装
 ・Pipeを配置するのに最適なサイズまで分割する
@@ -52,18 +53,11 @@
  -PolyWire
  -PolyBebel
 
-○SurfaceGeneratorロジック実装
-・オフセット
-・Volume内で斜線を作りつつ分割
- -3等分し、pointの位置をずらす
-・一部Blast
-・Edgeに細長い四角形をCopyToPoint
-・BlockごとにUV展開する
-
 
 ■BaseLine
-○CopyObjectの検証
-・窓枠の縁をBoxで生成し、検証
+○検証
+・凹凸をLineに沿って生成
+・窓枠の縁をBoxで生成
 ・△室外機をランダムで生成
 
 
