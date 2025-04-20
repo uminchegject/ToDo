@@ -4,9 +4,9 @@
 ※まずHDAをひたすら実装し、組み合わせを行うことを目標にする。
 ※モデリングはサンプルプロジェクトを実際確認しながら手法を学ぶ
 
-
 ○ハードサーフェスサンプルからDetailPatternのアイデアを調査
 ※サンプルプロジェクトを構成するPatternを意識して調べる
+
 
 ■Base
 ●IDEA
@@ -14,6 +14,7 @@
  -垂直
  -水平
  -グループ化を意識してSplitする
+
 
 ■Detail
 ●IDEA
@@ -24,7 +25,7 @@
  -TubeのExtrudeしていく
 
 
-【BaseLine】
+■凹凸Maker
 ○検証
 ・複数形態で検証
 ・凹凸をLineに沿って生成
@@ -46,8 +47,6 @@
 ・BaseLineを生成
 ・BaseLineに沿ってモデリング
 
-
-■凹凸Maker
 ●仕様
 
 ●パラメーター
@@ -62,11 +61,6 @@
 ・BaseLineに沿って凹凸を生成
 ・BsaeLineに沿ってオブジェクトを等間隔で配置
 
-
-【BaseSurface】
-△複数Primを跨いでGreebleを行えるように実装
-
-○VolumeからDetailへのフロー設計
 
 ■Greeble
 ○Sub_divisionのソースを調査
@@ -102,7 +96,7 @@
 ・hatch_line(SurfaceGenerator)
 
 
-■OutsidePanel
+■OutsidePanelGenerator
 ○ロジック実装
 ・オフセット
 ・Volume内で斜線を作りつつ分割
