@@ -1,41 +1,85 @@
+■反省
+※休み前、定時前は思考を行う準備をすることを心掛ける
+ -休み中、定時前後のカフェ時間にマクロな思考を行う
+※チケット準備として、ドキュメントから概要を確認し、環境準備及びデバッグ環境を構築し、デバッグから処理の概要を確認する
+※夜本はワクワクする本をビジネス本を用意する
+ -ゲームに関連したビジネス本
+ -著名人に関連したビジネス本
 ※Study本は仕事のベースとなる基本情報とそれらに通ずる情報をインプットすることを意識する
 
-■Baseの設計
-・SplitしExtrude
- -垂直
- -水平
- -グループ化を意識してSplitする
- 
-■Greeble
-○Sub_divisionのソースを調査
-
-○通常のGreeble処理を実装
-
-○適正サイズの反映処理を実装
-
-○斜線処理の実装
-
-○PrimにおけるGreebleHDAを実装
-・Prim単体の分割処理をVexで実装して、それをfor文で回す
+●Work
+※課題を解決するためのロジックを考える場合は必ず事例をStudyする
+ -※ロジックの軸となる部分を考えながら調べる
+※各タスクの期限をしっかり決める
+ -デバッグ環境及び目標の準備を行う
+※概要と詳細をしっかり分けて考える
+ -ツール概要を最初に考える
 
 
-●仕様
-・斜めにも分割することができるようにする
-・サイズ範囲を指定できる
+■WorkStudy
+※ツール処理から根本の部分の実装方法を確認する
+ -※Houdiniにおけるツールの大まかなフローを理解する
+※HoudiniMayaのツール開発における根本部分を勉強する
 
-●SizeRange
-・SizeとスケールListで管理する
-・Divideする際にSizeRange
+○HeightField
+・Houdini HeightField -地形の作成- 1.HeightField（地形ツール）の概要
+https://www.youtube.com/watch?app=desktop&v=ZfubGX6dWkc
 
-●斜線
-・primpointの並びをしっかり管理する
-・台形の場合は短い辺を基準にする
-・分割辺が対角辺より1/2短かった場合は中心で角度をつけて分割する
-・それ以外はランダムな位置で分割する
+△KineFX
+・Kine-FX Animation Basic Concept
+https://www.youtube.com/watch?v=OErpOnn6lPc&list=PLqovuMX-teVNd499Qmlj9BBc6hrux4yTj&index=5
 
-●Attribute(Prim)
-・up
-・normal
-・divide_axis
-・scale
-・hatch_line(SurfaceGenerator)
+△マヤ(リグ)
+・Start@Maya〜Maya で 3DCG をはじめよう〜 1. 基本操作 インタフェース概要
+https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb6Yd
+
+
+■Study
+※言語、ツールに関係なく共通する根源部分を勉強する
+※読書をしながらアウトプットを何にするか考える
+
+○IT Text コンピュータグラフィックスの基礎
+・CGにおける数学の活用方法
+
+○Game Programming Patterns ソフトウェア開発の問題解決メニュー
+・設計思想とデザインパターン
+
+○JapaneseCastleの調査
+※完成形を確認し、気になる配置ロジックを軸に調査を行う
+・BasePointの生成
+
+●ゲーム
+・ながら作業でできるゲーム
+
+●ポケモン
+・SV実況
+・SV解説
+
+●サッカー
+・チャント
+
+
+■Private
+○5月サバゲー
+
+○ポイント取得
+
+○読んだ本はメルカリで売る
+・ブックカバーでなるべく汚れないようにする
+
+○M93Rメンテナンス
+・KSCガンオイル購入
+・HWでオイルを指して作動を確認
+・同じ要領でCo2もメンテナンス
+・△メンテナンス確認のメール
+
+○掃除
+・ごみ捨て
+・モップ掛け
+・掃除機
+
+○PCの掃除
+
+○本棚整理
+
+○クローゼットの整理
