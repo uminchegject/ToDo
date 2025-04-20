@@ -5,42 +5,32 @@
 ※モデリングはサンプルプロジェクトを実際確認しながら手法を学ぶ
 
 
-
-【ToDo】
 ○ハードサーフェスサンプルからDetailPatternのアイデアを調査
 ※サンプルプロジェクトを構成するPatternを意識して調べる
 
-
-■BaseSurface
-○PipeGeneratorロジックの実装
-・Pipeを配置するのに最適なサイズまで分割する
-・Volume内に沿ってBaseLineを生成する
-
-○SurfaceGeneratorロジック実装
-・Volume内で斜線を作りつつ分割して、Blastする
-・BlockごとにUV展開する
-
-
-■BaseLine
-○BaseLineの自動化
-・位置を調整
-
-○CopyObjectの検証
-・窓枠の縁をBoxで生成し、検証
-・△室外機をランダムで生成
-
-
 ■Base
 ●IDEA
-・側面Surfaceへのランダム配置
-・中央への自動配置
-・AddBox
- -Center
- -Side
+・SplitしExtrude
+ -垂直
+ -水平
+ -グループ化を意識してSplitする
 
+■Detail
+●IDEA
+・アンテナ
+ -Tubeを複数配置
+ -Pipeを配置
+・突起物
+ -TubeのExtrudeしていく
 
 
 【BaseLine】
+○検証
+・複数形態で検証
+・凹凸をLineに沿って生成
+・窓枠の縁をBoxで生成
+・△室外機をランダムで生成
+
 ○凹凸のBaseSurfaceの生成ロジックを設計
 ・Line沿ってBaseSurfaceを生成する
 
@@ -73,14 +63,54 @@
 ・BsaeLineに沿ってオブジェクトを等間隔で配置
 
 
-
 【BaseSurface】
 △複数Primを跨いでGreebleを行えるように実装
 
 ○VolumeからDetailへのフロー設計
 
+■Greeble
+○Sub_divisionのソースを調査
+
+○通常のGreeble処理を実装
+
+○適正サイズの反映処理を実装
+
+○斜線処理の実装
+
+○PrimにおけるGreebleHDAを実装
+・Prim単体の分割処理をVexで実装して、それをfor文で回す
+
+●仕様
+・斜めにも分割することができるようにする
+・サイズ範囲を指定できる
+
+●SizeRange
+・SizeとスケールListで管理する
+・Divideする際にSizeRange
+
+●斜線
+・primpointの並びをしっかり管理する
+・台形の場合は短い辺を基準にする
+・分割辺が対角辺より1/2短かった場合は中心で角度をつけて分割する
+・それ以外はランダムな位置で分割する
+
+●Attribute(Prim)
+・up
+・normal
+・divide_axis
+・scale
+・hatch_line(SurfaceGenerator)
+
 
 ■OutsidePanel
+○ロジック実装
+・オフセット
+・Volume内で斜線を作りつつ分割
+ -△PrimでGreebleしつつ、PointをSlideさせていく
+・Noiseで特定PointをRemove
+・Edgeに細長い四角形をCopyToPoint
+・△BlockごとにUV展開する
+
 ●仕様
 ・Greebleで被らないようにランダムなVolumeを埋める
 ・NoiseのOffset,Cofficientで開ける部分を調整する
@@ -95,7 +125,13 @@
 
 
 ■PipeMaker
-○複雑形態でも対応できるように処理を設計する
+○PipeGeneratorロジックの実装
+・Pipeを配置するのに最適なサイズまで分割する
+・Volume内に沿ってBaseLineを生成する
+・BaseLineからPMする
+ -4頂点のPolyLineを生成
+ -PolyWire
+ -PolyBebel
 
 ●仕様
 ・ランダムに曲げる
