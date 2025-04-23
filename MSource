@@ -1,11 +1,15 @@
-●仕様
+○Divide
 ・Divide_Axis, Scale, Posをベースに処理を走らせる
-・分割の際の形態にバリエーションを持たせる
 ・サイズ範囲を指定できる
+・BooleanでDivide
+
+○MakeDetail
+ -分割の際の形態にバリエーションを持たせる
+ -Attributeを修正する
 
 ●SizeRange
 ・Divide位置をサイズ範囲に応じて範囲を計算する
-・SizeとスケールListで管理する
+・SizeとScaleをListで管理する
 
 ●斜線
 ・primpointの並びをしっかり管理する
@@ -14,8 +18,7 @@
 ・それ以外はランダムな位置で分割する
 
 ●Attribute(Prim)
+・scale
 ・up
 ・normal
 ・divide_axis
-・scale
-・hatch_line(SurfaceGenerator)
