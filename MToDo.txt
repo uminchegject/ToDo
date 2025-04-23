@@ -17,10 +17,6 @@
 
 
 ■WorkStudy
-※ツール処理から根本の部分の実装方法を確認する
- -※Houdiniにおけるツールの大まかなフローを理解する
-※HoudiniMayaのツール開発における根本部分を勉強する
-
 ○HeightField
 ・Houdini HeightField -地形の作成- 1.HeightField（地形ツール）の概要
 https://www.youtube.com/watch?app=desktop&v=ZfubGX6dWkc
@@ -37,6 +33,9 @@ https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb
 ■Study
 ※言語、ツールに関係なく共通する根源部分を勉強する
 ※読書をしながらアウトプットを何にするか考える
+
+○画像の幾何学的変換（後編）同次座標・アフィン変換
+https://www.momoyama-usagi.com/entry/info-img05
 
 ○IT Text コンピュータグラフィックスの基礎
 ・CGにおける数学の活用方法
@@ -60,14 +59,6 @@ https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb
 
 
 ■Private
-○5月サバゲー
-お疲れ様です。
-前回はお忙しいところお集まり頂きありがとうございました!!
-ボチボチ5月～6月のサバゲーを計画させて頂こうかと思います!!
-今回のフィールドは都心部の屋内(新宿bravepoint)にさせて頂こうかと思います(屋内と屋外を交互に遊んでいく形で考えています…!)
-また、TAチームのメンバーにもお声掛けさせて頂く予定です。
-調整さんをご用意致しましたので、お手数をおかけしますが参加希望の方は記載をお願い致します。
-
 ○ポイント取得
 
 ○読んだ本はメルカリで売る
