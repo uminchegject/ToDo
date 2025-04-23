@@ -1,7 +1,9 @@
+※しっかりマクロな思考時間を設ける。
+
 ○Divide
 ・Divide_Axis, Scale, Posをベースに処理を走らせる
 ・サイズ範囲を指定できる
-・BooleanでDivide
+・polySplitでDivide
 
 ○MakeDetail
  -分割の際の形態にバリエーションを持たせる
