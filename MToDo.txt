@@ -2,29 +2,26 @@
 ※各タスクの期限をしっかり決める
 ※概要と詳細をしっかり分けて考える
 
-※各Blockごとにやることのメリハリをつける
+●マクロ思考
+※しっかりマクロな思考時間を設ける
+ -全体を明確化し、意識しながら仕事、Studyを進めていく
+ -タスク以外の部分も効率化、勉強について考える
+※新たな作業の際に、マクロ思考を行えるように概要の調査を行う
+※各Blockごとにやることのメリハリをつけることを意識する
  -※終わらせる意思をしっかり持つ
- -※マクロ思考(メモ帳のみ表示)
+ -マクロ思考(メモ帳のみ表示)
  -動画の視聴(なるべく無音)
  -離席
-※休み前、定時前は思考を行う準備をすることを心掛ける
- -休み中、定時前後のカフェ時間にマクロな思考を行う
-※チケット準備として、ドキュメントから概要を確認し、環境準備及びデバッグ環境を構築し、デバッグから処理の概要を確認する
-※Study本は仕事のベースとなる基本情報とそれらに通ずる情報をインプットすることを意識する
+
 
 ■WorkStudy
+※なるべく無音動画
+※現在のタスク内容を意識して、必要な動画を用意する
 
 ○HeightField
 ・Houdini HeightField -地形の作成- 1.HeightField（地形ツール）の概要
 https://www.youtube.com/watch?app=desktop&v=ZfubGX6dWkc
 
-△KineFX
-・Kine-FX Animation Basic Concept
-https://www.youtube.com/watch?v=OErpOnn6lPc&list=PLqovuMX-teVNd499Qmlj9BBc6hrux4yTj&index=5
-
-△マヤ(リグ)
-・Start@Maya〜Maya で 3DCG をはじめよう〜 1. 基本操作 インタフェース概要
-https://www.youtube.com/watch?v=lzOxYqvsu-U&list=PLsQ-vf3x3bqfTmK8kGgeNmoPAGH_bb6Yd
 
 
 ■Study
