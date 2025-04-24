@@ -9,18 +9,16 @@
 ※新たな作業の際に、マクロ思考を行えるように概要の調査を行う
 ※各Blockごとにやることのメリハリをつけることを意識する
  -※終わらせる意思をしっかり持つ
+ -※付箋のToDoを毎ブロック記載しなおす
  -マクロ思考(メモ帳のみ表示)
  -動画の視聴(なるべく無音)
  -離席
-
 
 ■WorkStudy
 ※なるべく無音動画
 ※現在のタスク内容を意識して、必要な動画を用意する
 
-○HeightField
-・Houdini HeightField -地形の作成- 1.HeightField（地形ツール）の概要
-https://www.youtube.com/watch?app=desktop&v=ZfubGX6dWkc
+
 
 
 
