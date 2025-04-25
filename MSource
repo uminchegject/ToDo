@@ -1,81 +1,64 @@
-※形態、複数のPrimに問わず対応できるDetailMakerを実装する
-※Base, DetailPattern, Detailそれぞれのフロー設計を意識する
-※実際の工程を自動化することを意識する
-※まずHDAをひたすら実装し、組み合わせを行うことを目標にする。
-※モデリングはサンプルプロジェクトを実際確認しながら手法を学ぶ
+○BaseMakerのロジック設計
+・モデリング本の斥候
+・国会図書館
 
-
-■ToDo(GW)
-○Greebleの実装
-・SubDivisionを参考にする
-
-○MakeBaseの実装
+○BaseMakerの実装
 ・HardSurfaceTownを参考にする
 
-△凹凸Makerの実装
-・多様な形態のPrimに対応できるように実装
-・パラメーターに柔軟性を持たせる
+○凹凸Makerの実装
+・あらゆる形態のPrimに対応させる
+ -斜め
+ -グループ
 
-○凹凸MakerとMakeBase検証
-・MakeBaseと凹凸Makerを組み合わせて検証する
+○BaseMakerと凹凸Makerで検証
 
-○DetailPatternの実装
+
+△Greebleの実装
+・SubDivisionを参考にする
+
+△DetailPatternの実装
+・Greebleの拡張
 ・Pipe
 ・OutSideSurface
 
 
-■Base
+■BaseMaker
 ●IDEA
 ・SplitしExtrude
  -垂直
  -水平
- -グループ化を意識してSplitする
-
-
-■Detail
-●IDEA
-・アンテナ
- -Tubeを複数配置
- -Pipeを配置
-・突起物
- -TubeのExtrudeしていく
-
-
+ 
+●
+・平面の生成
+ -Greeble
+ -Cluster + Conect
+ -左右対称
+・HeightExtrude
+ -Block内でClusterし、高さを変える
+・垂直分割
+ -変化を持たせる
+ 
+ 
 ■凹凸Maker
-○検証
-・複数形態で検証
-・凹凸をLineに沿って生成
-・窓枠の縁をBoxで生成
-・△室外機をランダムで生成
+○多様な形態への適応
+・斜め
+・グループ
 
-○凹凸のBaseSurfaceの生成ロジックを設計
-・Line沿ってBaseSurfaceを生成する
-
-○CopyObjectの生成ロジックを設計
+△CopyObjectの生成ロジックを設計
 ・BasePointを生成し、ObjectをCopyToPointする
  -CopyToBox
 
 ●Attribute
-・Scale
-・Normal
-
-●処理
-・BaseLineを生成
-・BaseLineに沿ってモデリング
 
 ●仕様
 
 ●パラメーター
 ・BlockSize
-・ColumnSize
- -Wide
- -Depth
-・ColumnMaterial
 
 ●処理
 ・Boundして、Boundより少し大きめのサイズのGridを配置し、接触部分からBaseLineを生成
 ・BaseLineに沿って凹凸を生成
-・BsaeLineに沿ってオブジェクトを等間隔で配置
+・△BsaeLineに沿ってオブジェクトを等間隔で配置
 
 
 ■Greeble
@@ -113,48 +96,3 @@
 ・up
 ・normal
 ・divide_axis
-
-
-■OutsidePanelGenerator
-○ロジック実装
-・オフセット
-・Volume内で斜線を作りつつ分割
- -△PrimでGreebleしつつ、PointをSlideさせていく
-・Noiseで特定PointをRemove
-・Edgeに細長い四角形をCopyToPoint
-・△BlockごとにUV展開する
-
-●仕様
-・Greebleで被らないようにランダムなVolumeを埋める
-・NoiseのOffset,Cofficientで開ける部分を調整する
-
-●パラメーター
-
-●処理
-・Boundスケールを基にGreebleBlockを生成
-・PrimでGreebleBlockをそれぞれBoolし、形を整える
-・noise値に沿って消す
-・縁部分に細長いBoxを配置する
-
-
-■PipeMaker
-○PipeGeneratorロジックの実装
-・Pipeを配置するのに最適なサイズまで分割する
-・Volume内に沿ってBaseLineを生成する
-・BaseLineからPMする
- -4頂点のPolyLineを生成
- -PolyWire
- -PolyBebel
-
-●仕様
-・ランダムに曲げる
-・軸を設定する
-・太さをランダムにする
-
-●パラメーター
-
-●処理
-・GreebleVolumeの生成
-・GreebleVolumeに沿ってオブジェクトを生成
- -Pipe
- -球体オブジェクト
