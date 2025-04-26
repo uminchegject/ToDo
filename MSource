@@ -5,7 +5,6 @@
 
 ○凹凸Makerの検証
 ・手作業でBaseSurfaceを生成する
- -BaseSurfaceMakerのロジックを考える
 
 △Greebleの実装
 ・SubDivisionを参考にする
