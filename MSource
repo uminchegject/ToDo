@@ -1,13 +1,11 @@
-○BaseMakerの実装
-・HardSurfaceTownを参考にする
-
 ○凹凸Makerの実装
 ・あらゆる形態のPrimに対応させる
  -斜め
  -グループ
 
-○BaseMakerと凹凸Makerで検証
-
+○凹凸Makerの検証
+・手作業でBaseSurfaceを生成する
+ -BaseSurfaceMakerのロジックを考える
 
 △Greebleの実装
 ・SubDivisionを参考にする
@@ -18,43 +16,11 @@
 ・OutSideSurface
 
 
-■BaseBlockMaker
-○Block分けロジックを設計
-
-○Boxで検証
-
-●IDEA
-・ランダム
- -Split位置
- -傾き
-
-●Extrude
- -Distance
- -Insert
-
-●Split
- -垂直
- -水平
- -斜め
-
-
-■BaseVolumeMaker
-●処理
-・平面の生成
- -Greeble
- -Cluster
- -左右対称
-・高さ設定
- -Extrude
- -Block内でClusterし、高さを変える
-
-
 ■凹凸Maker
 ○クォータニオンのでの管理
-・bounds内で基準となるedgeを決める
-・edgeを軸にクォータニオンとなる平面の座標系を作る
-・座標系と他のedgeとの交点を求める
-・交点同士を繋げてPrimにする
+・BasePointをBoundsの中心にParamの間隔で生成
+・傾けてBoundsに収まるBoolのためのSurfaceを生成
+・CopyToPoint
 
 ○グループ化
 ・Prim・ClassPieaceごとに処理を走らせる
