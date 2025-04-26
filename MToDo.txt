@@ -1,85 +1,101 @@
-■反省
-※各タスクの期限をしっかり決める
-※概要と詳細をしっかり分けて考える
+○BaseMakerのロジック設計
+・モデリング本の斥候
+・国会図書館
 
-●マクロ思考
-※しっかりマクロな思考時間を設ける
- -全体を明確化し、意識しながら仕事、Studyを進めていく
- -タスク以外の部分も効率化、勉強について考える
-※新たな作業の際に、マクロ思考を行えるように概要の調査を行う
-※各Blockごとにやることのメリハリをつけることを意識する
- -※終わらせる意思をしっかり持つ
- -※付箋のToDoを毎ブロック記載しなおす
- -マクロ思考(メモ帳のみ表示)
- -動画の視聴(なるべく無音)
- -離席
+○BaseMakerの実装
+・HardSurfaceTownを参考にする
 
-■WorkStudy
-※なるべく無音動画
-※現在のタスク内容を意識して、必要な動画を用意する
+○凹凸Makerの実装
+・あらゆる形態のPrimに対応させる
+ -斜め
+ -グループ
 
-○ProjectTitan
-https://www.sidefx.com/ja/titan/
-
-○ProjectPegasus
-https://www.sidefx.com/ja/pegasus/
+○BaseMakerと凹凸Makerで検証
 
 
-■Study
-※言語、ツールに関係なく共通する根源部分を勉強する
-※読書をしながらアウトプットを何にするか考える
+△Greebleの実装
+・SubDivisionを参考にする
 
-○行列
-https://tokoik.github.io/gg/ggnote03.pdf
-・同次座標
-・無限遠点
-・標準座標
-・せん断
-
-○オイラー角(atan2)
-
-○IT Text コンピュータグラフィックスの基礎
-・CGにおける数学の活用方法
-
-○Game Programming Patterns ソフトウェア開発の問題解決メニュー
-・設計思想とデザインパターン
-
-○Subdivisionを調査
-
-○JapaneseCastleの調査
-※完成形を確認し、気になる配置ロジックを軸に調査を行う
-・BasePointの生成
-
-●ゲーム
-・ながら作業でできるゲーム
-
-●ポケモン
-・SV実況
-・SV解説
-
-●サッカー
-・チャント
+△DetailPatternの実装
+・Greebleの拡張
+・Pipe
+・OutSideSurface
 
 
-■Private
-○ポイント取得
+■BaseMaker
+●IDEA
+・SplitしExtrude
+ -垂直
+ -水平
+ 
+●
+・平面の生成
+ -Greeble
+ -Cluster + Conect
+ -左右対称
+・高さ設定
+ -Extrude
+ -Block内でClusterし、高さを変える
+・垂直分割
+ -変化を持たせる
+ -変形
+ 
+■凹凸Maker
+○多様な形態への適応
+・斜め
+ -クォータニオンで管理する
+・グループ
+ -Prim・ClassPieaceごとに処理を走らせる
 
-○読んだ本はメルカリで売る
-・ブックカバーでなるべく汚れないようにする
+△CopyObjectの生成ロジックを設計
+・BasePointを生成し、ObjectをCopyToPointする
+ -CopyToBox
 
-○M93Rメンテナンス
-・KSCガンオイル購入
-・HWでオイルを指して作動を確認
-・同じ要領でCo2もメンテナンス
-・△メンテナンス確認のメール
+●Attribute
 
-○掃除
-・ごみ捨て
-・モップ掛け
-・掃除機
+●仕様
 
-○PCの掃除
+●パラメーター
+・BlockSize
 
-○本棚整理
+●処理
+・Boundして、Boundより少し大きめのサイズのGridを配置し、接触部分からBaseLineを生成
+・BaseLineに沿って凹凸を生成
+・△BsaeLineに沿ってオブジェクトを等間隔で配置
 
-○クローゼットの整理
+
+■Greeble
+○Divide
+・Divide_Axis, Scale, Posをベースに処理を走らせる
+・サイズ範囲を指定できる
+・polySplitでDivide
+ -Pointを生成
+ -BasePointを生成
+ -SplitObjectをCopyToPointで配置
+ -polySplit
+
+○MakeDetail
+ -分割の際の形態にバリエーションを持たせる
+ -Attributeを修正する
+ 
+○PrimにおけるGreebleHDAを実装
+・Prim単体の分割処理をVexで実装して、それをfor文で回す
+
+●仕様
+・斜めにも分割することができるようにする
+・サイズ範囲を指定できる
+
+●SizeRange
+・Divide位置をサイズ範囲に応じて範囲を計算する
+・SizeとScaleをListで管理する
+
+●斜線
+・台形の場合は短い辺を基準にする
+・分割辺が対角辺より1/2短かった場合は中心で角度をつけて分割する
+・それ以外はランダムな位置で分割する
+
+●Attribute(Prim)
+・scale
+・up
+・normal
+・divide_axis
