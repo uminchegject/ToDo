@@ -1,7 +1,3 @@
-○BaseMakerのロジック設計
-・モデリング本の斥候
-・国会図書館
-
 ○BaseMakerの実装
 ・HardSurfaceTownを参考にする
 
@@ -22,27 +18,49 @@
 ・OutSideSurface
 
 
-■BaseMaker
+■BaseBlockMaker
+○Block分けロジックを設計
+
+○Boxで検証
+
 ●IDEA
-・SplitしExtrude
+・ランダム
+ -Split位置
+ -傾き
+
+●Extrude
+ -Distance
+ -Insert
+
+●Split
  -垂直
  -水平
- 
-●
+ -斜め
+
+
+■BaseVolumeMaker
+●処理
 ・平面の生成
  -Greeble
- -Cluster + Conect
+ -Cluster
  -左右対称
-・HeightExtrude
+・高さ設定
+ -Extrude
  -Block内でClusterし、高さを変える
-・垂直分割
- -変化を持たせる
- 
- 
+
+
 ■凹凸Maker
-○多様な形態への適応
-・斜め
-・グループ
+○クォータニオンのでの管理
+・bounds内で基準となるedgeを決める
+・edgeを軸にクォータニオンとなる平面の座標系を作る
+・座標系と他のedgeとの交点を求める
+・交点同士を繋げてPrimにする
+
+○グループ化
+・Prim・ClassPieaceごとに処理を走らせる
+
+○凹凸の高さを揃える
+共有edge部分の基準高さを引継ぎ凹凸処理を行う
 
 △CopyObjectの生成ロジックを設計
 ・BasePointを生成し、ObjectをCopyToPointする
