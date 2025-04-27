@@ -1,19 +1,17 @@
-○BaseMakerのロジック設計
-・モデリング本の斥候
-・国会図書館
+※形態、複数のPrimに問わず対応できるDetailMakerを実装する
+※Base, DetailPattern, Detailそれぞれのフロー設計を意識する
+※実際の工程を自動化することを意識する
+※まずHDAをひたすら実装し、組み合わせを行うことを目標にする。
+※モデリングはサンプルプロジェクトを実際確認しながら手法を学ぶ
 
-○BaseMakerの実装
-・HardSurfaceTownを参考にする
 
+■ToDo
 ○凹凸Makerの実装
 ・あらゆる形態のPrimに対応させる
  -斜め
  -グループ
 
-○BaseMakerと凹凸Makerで検証
-
-
-△Greebleの実装
+○Greebleの実装
 ・SubDivisionを参考にする
 
 △DetailPatternの実装
@@ -21,31 +19,28 @@
 ・Pipe
 ・OutSideSurface
 
+△Volume及びBaseSurfaceのモデリング
+・Primを用意し、DetailPatternを検証
 
-■BaseMaker
+
+■Detail
 ●IDEA
-・SplitしExtrude
- -垂直
- -水平
- 
-●
-・平面の生成
- -Greeble
- -Cluster + Conect
- -左右対称
-・高さ設定
- -Extrude
- -Block内でClusterし、高さを変える
-・垂直分割
- -変化を持たせる
- -変形
- 
+・アンテナ
+ -Tubeを複数配置
+ -Pipeを配置
+・突起物
+ -TubeのExtrudeしていく
+
+
 ■凹凸Maker
-○多様な形態への適応
-・斜め
- -クォータニオンで管理する
-・グループ
- -Prim・ClassPieaceごとに処理を走らせる
+○BoolObjの生成
+ -パラメーターで平面の傾きを設定
+ -平面とedgeの交点を取得
+ -交点を繋ぎPrimにする
+
+○グループ化
+・Prim・ClassPieaceごとに処理を走らせる
+・for_each
 
 △CopyObjectの生成ロジックを設計
 ・BasePointを生成し、ObjectをCopyToPointする
@@ -65,14 +60,9 @@
 
 
 ■Greeble
-○Divide
+○Divide処理をVexで実装
 ・Divide_Axis, Scale, Posをベースに処理を走らせる
 ・サイズ範囲を指定できる
-・polySplitでDivide
- -Pointを生成
- -BasePointを生成
- -SplitObjectをCopyToPointで配置
- -polySplit
 
 ○MakeDetail
  -分割の際の形態にバリエーションを持たせる
@@ -99,3 +89,70 @@
 ・up
 ・normal
 ・divide_axis
+
+
+■OutsidePanelGenerator
+○ロジック実装
+・オフセット
+・Volume内で斜線を作りつつ分割
+ -△PrimでGreebleしつつ、PointをSlideさせていく
+・Noiseで特定PointをRemove
+・Edgeに細長い四角形をCopyToPoint
+・△BlockごとにUV展開する
+
+●仕様
+・Greebleで被らないようにランダムなVolumeを埋める
+・NoiseのOffset,Cofficientで開ける部分を調整する
+
+●パラメーター
+
+●処理
+・Boundスケールを基にGreebleBlockを生成
+・PrimでGreebleBlockをそれぞれBoolし、形を整える
+・noise値に沿って消す
+・縁部分に細長いBoxを配置する
+
+
+■PipeMaker
+○PipeGeneratorロジックの実装
+・Pipeを配置するのに最適なサイズまで分割する
+・Volume内に沿ってBaseLineを生成する
+・BaseLineからPMする
+ -4頂点のPolyLineを生成
+ -PolyWire
+ -PolyBebel
+
+●仕様
+・ランダムに曲げる
+・軸を設定する
+・太さをランダムにする
+
+●パラメーター
+
+●処理
+・GreebleVolumeの生成
+・GreebleVolumeに沿ってオブジェクトを生成
+ -Pipe
+ -球体オブジェクト
+
+
+■BaseBlockMaker
+●Extrude
+ -Distance
+ -Insert
+
+●Split
+ -垂直
+ -水平
+ -斜め
+
+
+■BaseVolume
+●処理
+・平面の生成
+ -Greeble
+ -Cluster
+ -左右対称
+・高さ設定
+ -Extrude
+ -Block内でClusterし、高さを変える
