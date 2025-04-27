@@ -1,81 +1,170 @@
-○凹凸Makerの実装
-・あらゆる形態のPrimに対応させる
- -斜め
- -グループ
+■BoolObjectの生成
+●BasePointの生成
+float pattern_height = ch("../Param/PatternHeight");
+vector bound_size = detail(1 ,"radii", 0);
+bound_size *= 2.2;
 
-○凹凸Makerの検証
-・手作業でBaseSurfaceを生成する
+vector rotate = chv("../Param/PatternRotate");
+matrix3 rot_x = ident();
+rotate(rot_x, rotate.x, {1, 0, 0});
+matrix3 rot_z = ident();
+rotate(rot_z, rotate.y, {0, 0, 1});
+matrix3 rot_total = rot_z * rot_x; 
 
-△Greebleの実装
-・SubDivisionを参考にする
+vector vec = {0, 1, 0};
+vector rotated_vec = rot_total * vec;
+vector4 q_total = dihedral(vec, rotated_vec);
 
-△DetailPatternの実装
-・Greebleの拡張
-・Pipe
-・OutSideSurface
+vector scale = set(bound_size.z / cos(rotate.y), 0, bound_size.x / cos(rotate.x));
+
+int grid_num = int(bound_size.y / pattern_height);
+float pattern_interval = bound_size.y / grid_num;
+
+for(int i = 1; i < grid_num; ++i)
+{
+    vector spawn_pos = prim(1, "P", 4);
+    spawn_pos.y += i * pattern_interval;
+    int pt = addpoint(0, spawn_pos);
+    setpointattrib(0, "scale", pt, scale);
+    setpointattrib(0, "orient", pt, q_total);
+}
+
+●平面とベクトルの交点
+// 線分の2点（テスト用）
+vector p0 = set(0, 0, 0);
+vector p1 = set(0, 2, 0);
+
+// 平面：Y = 1
+vector planeN = normalize(chv("Normal")); // 法線ベクトル
+float d = -1.0; // 平面方程式：dot(N, P) + d = 0
+
+// 線分方向
+vector dir = p1 - p0;
+float denom = dot(planeN, dir);
+
+// 平面法線の可視化：p0 から planeN 方向に矢印を描く
+vector arrow_end = p0 + planeN;
+int n0 = addpoint(0, p0);
+int n1 = addpoint(0, arrow_end);
+int norm_line = addprim(0, "polyline");
+addvertex(0, norm_line, n0);
+addvertex(0, norm_line, n1);
+setprimattrib(0, "Cd", norm_line, {1, 1, 0}, "set"); // 黄色で可視化
+
+// 交差計算
+if (abs(denom) > 1e-6) {
+    float t = -(dot(planeN, p0) + d) / denom;
+
+    if (t >= 0 && t <= 1) {
+        vector isect = p0 + t * dir;
+
+        // 線分と交点の可視化
+        int pt0 = addpoint(0, p0);
+        int pt1 = addpoint(0, p1);
+        int isectpt = addpoint(0, isect);
+
+        int line1 = addprim(0, "polyline");
+        addvertex(0, line1, pt0);
+        addvertex(0, line1, pt1);
+
+        int line2 = addprim(0, "polyline");
+        addvertex(0, line2, pt0);
+        addvertex(0, line2, isectpt);
+
+        // カラー付け
+        setpointattrib(0, "Cd", pt0, {0,1,0}, "set");       // 線の始点：緑
+        setpointattrib(0, "Cd", pt1, {0,0.5,1}, "set");     // 線の終点：青
+        setpointattrib(0, "Cd", isectpt, {1,0,0}, "set");   // 交点：赤
+    }
+}
 
 
-■凹凸Maker
-○クォータニオンのでの管理
-・BasePointをBoundsの中心にParamの間隔で生成
-・傾けてBoundsに収まるBoolのためのSurfaceを生成
-・CopyToPoint
+■Split
+●VexによるPrimのSplit
+vector edgev(int h){
+    vector src = point(0, "P", hedge_srcpoint(0, h));
+    vector dst = point(0, "P", hedge_dstpoint(0, h));
+    return dst - src;
+}
 
-○グループ化
-・Prim・ClassPieaceごとに処理を走らせる
-
-○凹凸の高さを揃える
-共有edge部分の基準高さを引継ぎ凹凸処理を行う
-
-△CopyObjectの生成ロジックを設計
-・BasePointを生成し、ObjectをCopyToPointする
- -CopyToBox
-
-●Attribute
-
-●仕様
-
-●パラメーター
-・BlockSize
-
-●処理
-・Boundして、Boundより少し大きめのサイズのGridを配置し、接触部分からBaseLineを生成
-・BaseLineに沿って凹凸を生成
-・△BsaeLineに沿ってオブジェクトを等間隔で配置
+// inspired by https://iquilezles.org/www/articles/distfunctions/distfunctions.htm
+int on_line( vector p; int edge)
+{
+  vector a = point(0, "P",hedge_srcpoint(0, edge));
+  vector b = point(0, "P",hedge_dstpoint(0, edge)); 
+   
+  vector pa = p - a, ba = b - a;
+  float h = clamp( dot(pa,ba)/dot(ba,ba), 0.0, 1.0 );
+  return  length(pa - ba*h) < 1e-9;
+}
 
 
-■Greeble
-○Divide
-・Divide_Axis, Scale, Posをベースに処理を走らせる
-・サイズ範囲を指定できる
-・polySplitでDivide
- -Pointを生成
- -BasePointを生成
- -SplitObjectをCopyToPointで配置
- -polySplit
+int h = i@cut_edge;
+int temp = h;
 
-○MakeDetail
- -分割の際の形態にバリエーションを持たせる
- -Attributeを修正する
- 
-○PrimにおけるGreebleHDAを実装
-・Prim単体の分割処理をVexで実装して、それをfor文で回す
+vector src = point(0, "P", hedge_srcpoint(0, h));
+vector dst = point(0, "P", hedge_dstpoint(0, h));
+vector edge = dst - src;
 
-●仕様
-・斜めにも分割することができるようにする
-・サイズ範囲を指定できる
+float randomness = clamp(ch("randomness"), 0, 1);
 
-●SizeRange
-・Divide位置をサイズ範囲に応じて範囲を計算する
-・SizeとScaleをListで管理する
+randomness = fit01(randomness, .5, .01);
+vector rand_p = src + edge * fit01(float(rand(@primnum + detail(1, "iteration") + ch("seed"))), randomness, 1 - randomness);
+addpoint(0, rand_p);
 
-●斜線
-・台形の場合は短い辺を基準にする
-・分割辺が対角辺より1/2短かった場合は中心で角度をつけて分割する
-・それ以外はランダムな位置で分割する
+int closest_edge;
+vector hit_p;
+float min_dist = 1e10;
+int i = 0;
+int index = -1;
+int pts[];
+int temp_2 = h;
+do{
+    int next = hedge_next(0, h);
+    vector next_dst = point(0, "P", hedge_dstpoint(0, next));
+    vector next_src = point(0, "P", hedge_srcpoint(0, next));
+   
+    int hit;
+    
+    //set up clip plane
+    vector4 plane =normalize(edge); 
+    plane.w = -dot(normalize(edge), rand_p);
 
-●Attribute(Prim)
-・scale
-・up
-・normal
-・divide_axis
+    vector temp_p = rand_p;
+    vector temp_src = next_src;
+    //addpoint(0, next_src);
+    vector temp_dst = next_dst;
+    clip(hit, next_dst, next_src, plane);
+    float l = distance(temp_src, next_src);
+    // addpoint(0, next_src);
+    if(on_line(next_src, next) && l > 1e-9 && next != temp && distance(rand_p, next_src) < min_dist){
+            min_dist = distance(rand_p, next_src);
+            hit_p = next_src;
+            closest_edge = next;
+            index = i + 1;      
+    }     
+    
+    append(pts, hedge_dstpoint(0, h));
+    h = next;
+    dst = next_dst;
+    i++;
+}while(h != temp);
+
+if(index == -1){
+    @group_remove_me = 0;
+    return;
+}
+
+int start = addpoint(0, rand_p);
+int end = addpoint(0, hit_p);
+
+int prim_1[] = array(start);
+append(prim_1, pts[0:index]);
+append(prim_1, end);
+
+
+int prim_2[] =  array(end);
+append(prim_2, pts[index : len(pts)]);
+append(prim_2, start);
+addprim(0, "poly", prim_1);
+addprim(0, "poly", prim_2);
