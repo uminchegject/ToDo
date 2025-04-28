@@ -1,4 +1,19 @@
 ■BoolObjectの生成
+●平面とベクトルの交点
+vector dir = p1 - p0;
+float denom = dot(plane_normal, dir);
+
+// 交差計算
+if (abs(denom) > 1e-6) 
+{
+    float t = -(dot(plane_normal, p0) + plane_height) / denom;
+
+    if (t >= 0 && t <= 1) 
+	{
+        vector isect = p0 + t * dir;
+    }
+}
+
 ●BasePointの生成
 float pattern_height = ch("../Param/PatternHeight");
 vector bound_size = detail(1 ,"radii", 0);
