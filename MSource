@@ -1,4 +1,7 @@
 ■BoolObjectの生成
+○縦のEdgeをPrim化する
+
+●ソース
 vector intersectPlane(vector p0; vector p1; vector plane_normal; float plane_height)
 {
     vector intersect = set(0, 0, 0);
@@ -23,6 +26,10 @@ vector bound_size = detail(1 ,"radii", 0);
 bound_size *= 2.2;
 
 vector rotate = chv("../Param/PatternRotate");
+
+vector edge_start = 
+vector edge_end = 
+
 matrix3 rot_x = ident();
 rotate(rot_x, rotate.x, {1, 0, 0});
 matrix3 rot_z = ident();
@@ -40,13 +47,13 @@ for(int i = 1; i < grid_num; ++i)
     vector spawn_pos = prim(1, "P", 4);
     spawn_pos.y += i * pattern_interval;
 	
-	float plane_height = pattern_interval * i;
-
-	vector edge_start = 
-	vector edge_end = 
-	
+	float plane_height = pattern_interval * i;	
 	vector intersect_pos IntersectPlane(edge_start, edge_end, plane_normal, plane_height)
+	
+	int pt = addpoint(intersect_pos);
+	setattribute(0, "poly_id", pt, i);
 }
+
 
 
 
