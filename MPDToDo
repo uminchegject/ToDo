@@ -14,7 +14,7 @@
 ○Greebleの実装
 ・SubDivisionを参考にする
 
-△DetailPatternの実装
+○DetailPatternの実装
 ・Greebleの拡張
 ・Pipe
 ・OutSideSurface
@@ -60,6 +60,13 @@
 
 
 ■Greeble
+○clipの挙動を確認
+vector a = {1,1,0};
+vector b = {-1,-1,0};
+vector4 plane = {0, 1, 0, 0};
+int result；
+clip(a, b, plane);
+
 ○Divide処理をVexで実装
 ・Divide_Axis, Scale, Posをベースに処理を走らせる
 ・サイズ範囲を指定できる
