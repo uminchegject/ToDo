@@ -1,6 +1,7 @@
 ■BoolObjectの生成
-int intersectPlane(vector p0, vector p1, vector plane_normal, float plane_height; vector &isect)
+vector intersectPlane(vector p0; vector p1; vector plane_normal; float plane_height)
 {
+    vector intersect = set(0, 0, 0);
     vector dir = p1 - p0;
     float denom = dot(plane_normal, dir);
 
@@ -10,11 +11,11 @@ int intersectPlane(vector p0, vector p1, vector plane_normal, float plane_height
 
         if (t >= 0 && t <= 1) 
         {
-            isect = p0 + t * dir;
-            return 1;
+            intersect = p0 + t * dir;
+            return intersect;
         }
     }
-    return 0;
+    return intersect;
 }
 
 float pattern_height = ch("../Param/PatternHeight");
@@ -28,8 +29,8 @@ matrix3 rot_z = ident();
 rotate(rot_z, rotate.y, {0, 0, 1});
 matrix3 rot_total = rot_z * rot_x; 
 
-vector planeN = {0, 1, 0};
-planeN = rot_total * planeN;
+vector plane_normal = {0, 1, 0};
+plane_normal = rot_total * plane_normal;
 
 int grid_num = int(bound_size.y / pattern_height);
 float pattern_interval = bound_size.y / grid_num;
@@ -38,10 +39,15 @@ for(int i = 1; i < grid_num; ++i)
 {
     vector spawn_pos = prim(1, "P", 4);
     spawn_pos.y += i * pattern_interval;
+	
+	float plane_height = pattern_interval * i;
 
-	pt1
-	int intersectPlane(vector p0, vector p1, vector plane_normal, float plane_height; vector &isect)
+	vector edge_start = 
+	vector edge_end = 
+	
+	vector intersect_pos IntersectPlane(edge_start, edge_end, plane_normal, plane_height)
 }
+
 
 
 ■Split
