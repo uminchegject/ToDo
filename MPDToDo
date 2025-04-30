@@ -60,12 +60,8 @@
 
 
 ■Greeble
-○clipの挙動を確認
-vector a = {1,1,0};
-vector b = {-1,-1,0};
-vector4 plane = {0, 1, 0, 0};
-int result；
-clip(a, b, plane);
+○Primの分割処理を実装
+・For文でGreebleを実装する
 
 ○Divide処理をVexで実装
 ・Divide_Axis, Scale, Posをベースに処理を走らせる
