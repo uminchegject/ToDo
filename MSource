@@ -1,43 +1,21 @@
 ■BoolObjectの生成
-○縦のEdgeをPrim化する
-
 ●ソース
-vector intersectPlane(vector p0; vector p1; vector plane_normal; float plane_height)
-{
-    vector intersect = set(0, 0, 0);
-    vector dir = p1 - p0;
-    float denom = dot(plane_normal, dir);
-
-    if (abs(denom) > 1e-6) 
-    {
-        float t = -(dot(plane_normal, p0) + plane_height) / denom;
-
-        if (t >= 0 && t <= 1) 
-        {
-            intersect = p0 + t * dir;
-            return intersect;
-        }
-    }
-    return intersect;
-}
-
 float pattern_height = ch("../Param/PatternHeight");
 vector bound_size = detail(1 ,"radii", 0);
 bound_size *= 2.2;
 
 vector rotate = chv("../Param/PatternRotate");
-
-vector edge_start = 
-vector edge_end = 
-
 matrix3 rot_x = ident();
 rotate(rot_x, rotate.x, {1, 0, 0});
 matrix3 rot_z = ident();
 rotate(rot_z, rotate.y, {0, 0, 1});
-matrix3 rot_total = rot_z * rot_x; 
-
+matrix3 rot_matrix = rot_z * rot_x; 
 vector plane_normal = {0, 1, 0};
-plane_normal = rot_total * plane_normal;
+plane_normal = rot_matrix * plane_normal;
+
+int prim_point_list[] = primpoints(0, @primnum);
+vector edge_start = prim_point_list[0];
+vector edge_end = prim_point_list[1];
 
 int grid_num = int(bound_size.y / pattern_height);
 float pattern_interval = bound_size.y / grid_num;
@@ -48,16 +26,26 @@ for(int i = 1; i < grid_num; ++i)
     spawn_pos.y += i * pattern_interval;
 	
 	float plane_height = pattern_interval * i;	
-	vector intersect_pos IntersectPlane(edge_start, edge_end, plane_normal, plane_height)
+	vector4 plane = set(plane_normal.x, plane_normal.y, plane_normal.z, plane_height);
+	vector start_pt = edge_start;
+	vector end_pt = edge_end;
 	
-	int pt = addpoint(intersect_pos);
-	setattribute(0, "poly_id", pt, i);
+	int result = 0;
+	clip(result, start_pt, end_pt, plane);
+	
+	if(result = 1)
+	{
+		int pt = addpoint(intersect_pos);
+		setattribute(0, "poly_id", pt, i);	
+	}
 }
 
 
 
-
 ■Split
+○Greeble
+・Planeを定義してSplit
+
 ●VexによるPrimのSplit
 int on_line( vector p; int edge)
 {
