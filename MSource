@@ -1,52 +1,55 @@
-■BoolObjectの生成
-●ソース
-float pattern_height = ch("../Param/PatternHeight");
-vector bound_size = detail(1 ,"radii", 0);
-bound_size *= 2.2;
+■Split
+●SetUp
+int clip_edge_1 = 
+int clip_edge_2 = 
 
-vector rotate = chv("../Param/PatternRotate");
-matrix3 rot_x = ident();
-rotate(rot_x, rotate.x, {1, 0, 0});
-matrix3 rot_z = ident();
-rotate(rot_z, rotate.y, {0, 0, 1});
-matrix3 rot_matrix = rot_z * rot_x; 
-vector plane_normal = {0, 1, 0};
-plane_normal = rot_matrix * plane_normal;
+vector clip_axis = 
+float slide = 
+vector4 clip_plane = set(clip_axis.x, clip_axis.y, clip_axis.z, slide);
 
-int prim_point_list[] = primpoints(0, @primnum);
-vector edge_start = prim_point_list[0];
-vector edge_end = prim_point_list[1];
+●pointの生成
 
-int grid_num = int(bound_size.y / pattern_height);
-float pattern_interval = bound_size.y / grid_num;
 
-for(int i = 1; i < grid_num; ++i)
-{
-    vector spawn_pos = prim(1, "P", 4);
-    spawn_pos.y += i * pattern_interval;
-	
-	float plane_height = pattern_interval * i;	
-	vector4 plane = set(plane_normal.x, plane_normal.y, plane_normal.z, plane_height);
-	vector start_pt = edge_start;
-	vector end_pt = edge_end;
-	
-	int result = 0;
-	clip(result, start_pt, end_pt, plane);
-	
-	if(result = 1)
-	{
-		int pt = addpoint(intersect_pos);
-		setattribute(0, "poly_id", pt, i);	
-	}
+●構築
+int start = addpoint(0, rand_p);
+int end = addpoint(0, hit_p);
+int prim_1[] = array(start);
+append(prim_1, pts[0:index]);
+append(prim_1, end);
+int prim_2[] =  array(end);
+append(prim_2, pts[index : len(pts)]);
+append(prim_2, start);
+addprim(0, "poly", prim_1);
+addprim(0, "poly", prim_2);
+
+
+
+■サンプルソース
+●Find_longest_edge
+vector edgev(int h){
+    vector src = point(0, "P", hedge_srcpoint(0, h));
+    vector dst = point(0, "P", hedge_dstpoint(0, h));
+    return dst - src;
 }
 
+int h = primhedge(0, @primnum);
+int temp = h;
+
+int longest_edge = h;
+float max_l = 0;
+do{
+    float l = length(edgev(h));
+    if(l > max_l){
+        max_l = l;
+        longest_edge = h;
+    }
+     h = hedge_next(0,h);
+   
+}while(h != temp);
+i@cut_edge = longest_edge;
 
 
-■Split
-○Greeble
-・Planeを定義してSplit
-
-●VexによるPrimのSplit
+●Do_Splitting
 int on_line( vector p; int edge)
 {
   vector a = point(0, "P",hedge_srcpoint(0, edge));
@@ -56,7 +59,6 @@ int on_line( vector p; int edge)
   float h = clamp( dot(pa,ba)/dot(ba,ba), 0.0, 1.0 );
   return  length(pa - ba*h) < 1e-9;
 }
-
 
 int h = i@cut_edge;
 int temp = h;
@@ -116,12 +118,9 @@ if(index == -1){
 
 int start = addpoint(0, rand_p);
 int end = addpoint(0, hit_p);
-
 int prim_1[] = array(start);
 append(prim_1, pts[0:index]);
 append(prim_1, end);
-
-
 int prim_2[] =  array(end);
 append(prim_2, pts[index : len(pts)]);
 append(prim_2, start);
