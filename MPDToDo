@@ -22,7 +22,11 @@
 
 
 ■凹凸Maker
-○4方向のエッジと接しているPrimのみを生成する
+○パラメーターの実装
+・幅
+・軸
+・傾き
+・最下層、最上層
 
 ○軸の定義
 ・軸に沿ってPolyLineもExtrudeする
@@ -31,13 +35,7 @@
 ・Prim・ClassPieaceごとに処理を走らせる
 ・for_each
 
-
-●Attribute
-
-●仕様
-
-●パラメーター
-・BlockSize
+○上部、下部をGroup化
 
 ●処理
 ・Boundして、Boundより少し大きめのサイズのGridを配置し、接触部分からBaseLineを生成
@@ -50,16 +48,14 @@
 ・For文でGreebleを実装する
 ・サイズ範囲を指定できる
 
-△MakeDetail
-・分割の際の形態にバリエーションを持たせる
- 
 ○PrimにおけるGreebleHDAを実装
 ・Prim単体の分割処理をVexで実装して、それをfor文で回す
 
-●仕様
-・サイズ範囲を指定できる
+△MakeDetail
+・分割の際の形態にバリエーションを持たせる
 
-●Attribute
+●仕様
+・スケール範囲を設定
 
 ●パラメーター
 ・Range
@@ -71,16 +67,19 @@
 ○OutsidePanelGeneratorの実装
 
 ●仕様
-・Greebleで被らないようにランダムなVolumeを埋める
-・NoiseのOffset,Cofficientで開ける部分を調整する
+・
 
 ●パラメーター
+・くりぬく位置
 
 ●処理
-・Boundスケールを基にGreebleBlockを生成
-・△PrimでGreebleBlockをそれぞれBoolし、形を整える
-・noise値に沿って消す
-・縁部分に細長いBoxを配置する
+・Greebleのサイズを細長く設定
+・パラメーターに沿って切り抜く
+・非共有エッジにPanelを配置
+・△Panel内でGreebleを行いオブジェクトを配置
+
+
+
 
 
 ■PipeMaker
