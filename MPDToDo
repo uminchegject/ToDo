@@ -33,10 +33,10 @@
 
 
 ■凹凸Maker
-○BoolObjの生成
- -パラメーターで平面の傾きを設定
- -平面とedgeの交点を取得
- -交点を繋ぎPrimにする
+○4方向のエッジと接しているPrimのみを生成する
+
+○軸の定義
+・軸に沿ってPolyLineもExtrudeする
 
 ○グループ化
 ・Prim・ClassPieaceごとに処理を走らせる
