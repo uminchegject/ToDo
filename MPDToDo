@@ -12,24 +12,13 @@
  -グループ
 
 ○Greebleの実装
-・SubDivisionを参考にする
 
 ○DetailPatternの実装
-・Greebleの拡張
 ・Pipe
 ・OutSideSurface
 
 △Volume及びBaseSurfaceのモデリング
 ・Primを用意し、DetailPatternを検証
-
-
-■Detail
-●IDEA
-・アンテナ
- -Tubeを複数配置
- -Pipeを配置
-・突起物
- -TubeのExtrudeしていく
 
 
 ■凹凸Maker
@@ -42,9 +31,6 @@
 ・Prim・ClassPieaceごとに処理を走らせる
 ・for_each
 
-△CopyObjectの生成ロジックを設計
-・BasePointを生成し、ObjectをCopyToPointする
- -CopyToBox
 
 ●Attribute
 
@@ -62,46 +48,27 @@
 ■Greeble
 ○Primの分割処理を実装
 ・For文でGreebleを実装する
-
-○Divide処理をVexで実装
-・Divide_Axis, Scale, Posをベースに処理を走らせる
 ・サイズ範囲を指定できる
 
-○MakeDetail
- -分割の際の形態にバリエーションを持たせる
- -Attributeを修正する
+△MakeDetail
+・分割の際の形態にバリエーションを持たせる
  
 ○PrimにおけるGreebleHDAを実装
 ・Prim単体の分割処理をVexで実装して、それをfor文で回す
 
 ●仕様
-・斜めにも分割することができるようにする
 ・サイズ範囲を指定できる
 
-●SizeRange
-・Divide位置をサイズ範囲に応じて範囲を計算する
-・SizeとScaleをListで管理する
+●Attribute
 
-●斜線
-・台形の場合は短い辺を基準にする
-・分割辺が対角辺より1/2短かった場合は中心で角度をつけて分割する
-・それ以外はランダムな位置で分割する
+●パラメーター
+・Range
 
-●Attribute(Prim)
-・scale
-・up
-・normal
-・divide_axis
+●処理
 
 
 ■OutsidePanelGenerator
-○ロジック実装
-・オフセット
-・Volume内で斜線を作りつつ分割
- -△PrimでGreebleしつつ、PointをSlideさせていく
-・Noiseで特定PointをRemove
-・Edgeに細長い四角形をCopyToPoint
-・△BlockごとにUV展開する
+○OutsidePanelGeneratorの実装
 
 ●仕様
 ・Greebleで被らないようにランダムなVolumeを埋める
@@ -111,32 +78,36 @@
 
 ●処理
 ・Boundスケールを基にGreebleBlockを生成
-・PrimでGreebleBlockをそれぞれBoolし、形を整える
+・△PrimでGreebleBlockをそれぞれBoolし、形を整える
 ・noise値に沿って消す
 ・縁部分に細長いBoxを配置する
 
 
 ■PipeMaker
-○PipeGeneratorロジックの実装
-・Pipeを配置するのに最適なサイズまで分割する
-・Volume内に沿ってBaseLineを生成する
-・BaseLineからPMする
- -4頂点のPolyLineを生成
- -PolyWire
- -PolyBebel
+○PipeGeneratorの実装
 
 ●仕様
-・ランダムに曲げる
 ・軸を設定する
 ・太さをランダムにする
 
 ●パラメーター
 
 ●処理
-・GreebleVolumeの生成
-・GreebleVolumeに沿ってオブジェクトを生成
- -Pipe
- -球体オブジェクト
+・Pipeを配置するのに最適なサイズのブロックをGreebleで生成
+・Volume内に沿ってBaseLineを生成する
+・BaseLineからPMする
+ -4頂点のPolyLineを生成
+ -PolyWire
+ -PolyBebel
+
+
+■Detail
+●IDEA
+・アンテナ
+ -Tubeを複数配置
+ -Pipeを配置
+・突起物
+ -TubeのExtrudeしていく
 
 
 ■BaseBlockMaker
