@@ -6,18 +6,17 @@
 
 
 ■ToDo
+※GreebleBaseの実装及び設計
+※LineBaseの実装及び設計
+
 ○凹凸Makerの実装
 ・あらゆる形態のPrimに対応させる
  -斜め
  -グループ
+ 
+○OutSideSurfaceの仮実装
 
-○Greebleの実装
-
-○DetailPatternの実装
-・Pipe
-・OutSideSurface
-
-△Volume及びBaseSurfaceのモデリング
+○Volume及びBaseSurfaceのモデリング
 ・Primを用意し、DetailPatternを検証
 
 
@@ -48,26 +47,19 @@
 ・For文でGreebleを実装する
 ・サイズ範囲を指定できる
 
-○PrimにおけるGreebleHDAを実装
-・Prim単体の分割処理をVexで実装して、それをfor文で回す
-
-△MakeDetail
-・分割の際の形態にバリエーションを持たせる
-
-●仕様
-・スケール範囲を設定
+●Attribute
+・DivideToggle
+・DivideAxis
 
 ●パラメーター
 ・Range
 
-●処理
+●仕様
+・スケール範囲を設定
 
 
 ■OutsidePanelGenerator
 ○OutsidePanelGeneratorの実装
-
-●仕様
-・
 
 ●パラメーター
 ・くりぬく位置
