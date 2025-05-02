@@ -3,6 +3,7 @@
 ・幅
 ・軸
 ・傾き
+・Offset
 
 ○軸の定義
 ・軸に沿ってPolyLineもExtrudeする
@@ -11,25 +12,24 @@
 ・Prim・ClassPieaceごとに処理を走らせる
 ・for_each
 
-○上部、下部をGroup化
-
 ●処理
 ・Boundして、Boundより少し大きめのサイズのGridを配置し、接触部分からBaseLineを生成
 
 ●ソース
+
 float pattern_height = ch("../Param/PatternHeight");
 vector bound_size = detail(1 ,"radii", 0);
 bound_size *= 2;
 float length = length(bound_size);
 
+vector axis = ("../Param/Axis");
 vector rotate = chv("../Param/PatternRotate");
 matrix3 rot_x = ident();
 rotate(rot_x, rotate.x, {1, 0, 0});
 matrix3 rot_z = ident();
 rotate(rot_z, rotate.y, {0, 0, 1});
 matrix3 rot_total = rot_z * rot_x; 
-
-vector vec = {0, 1, 0};
+vector vec = axis;
 vector rotated_vec = rot_total * vec;
 vector4 q_total = dihedral(vec, rotated_vec);
 
@@ -37,11 +37,13 @@ vector scale = set(length, 0, length);
 
 int grid_num = int(bound_size.y / pattern_height);
 float pattern_interval = bound_size.y / grid_num;
+int offset = chi("../Param/Offset");
+grid_num -= offset;
 
-for(int i = 1; i < grid_num + 10; ++i)
+for(int i = offset; i < grid_num; ++i)
 {
     vector spawn_pos = prim(1, "P", 4);
-    spawn_pos.y += i * pattern_interval;
+    spawn_pos += i * pattern_interval * axis;
     int pt = addpoint(0, spawn_pos);
     setpointattrib(0, "scale", pt, scale);
     setpointattrib(0, "orient", pt, q_total);
@@ -50,8 +52,11 @@ for(int i = 1; i < grid_num + 10; ++i)
 
 ■Greeble
 ○Primの分割処理を実装
-・For文でGreebleを実装する
-・サイズ範囲を指定できる
+
+●処理
+・boundsでBoolPlaneの大きさを設定
+・DivideAxisに沿ってBoolPlaneを生成
+・Divide
 
 ●Attribute
 ・DivideToggle
