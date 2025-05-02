@@ -1,76 +1,32 @@
-■BaseLine
-○パラメーターの実装
-・幅
-・軸
-・傾き
+※形態、複数のPrimに問わず対応できるDetailMakerを実装する
+※Base, DetailPattern, Detailそれぞれのフロー設計を意識する
+※実際の工程を自動化することを意識する
+※まずHDAをひたすら実装し、組み合わせを行うことを目標にする。
+※モデリングはサンプルプロジェクトを実際確認しながら手法を学ぶ
 
-○軸の定義
-・軸に沿ってPolyLineもExtrudeする
 
-○グループ化
-・Prim・ClassPieaceごとに処理を走らせる
-・for_each
+■ToDo
+※GreebleBaseの実装及び設計
+※LineBaseの実装及び設計
 
-○上部、下部をGroup化
+○凹凸Makerの実装
+ 
+○OutSideSurfaceの仮実装
 
+○Volume及びBaseSurfaceのモデリング
+・Primを用意し、DetailPatternを検証
+
+
+■凹凸Maker
 ●処理
-・Boundして、Boundより少し大きめのサイズのGridを配置し、接触部分からBaseLineを生成
-
-●ソース
-float pattern_height = ch("../Param/PatternHeight");
-vector bound_size = detail(1 ,"radii", 0);
-bound_size *= 2;
-float length = length(bound_size);
-
-vector rotate = chv("../Param/PatternRotate");
-matrix3 rot_x = ident();
-rotate(rot_x, rotate.x, {1, 0, 0});
-matrix3 rot_z = ident();
-rotate(rot_z, rotate.y, {0, 0, 1});
-matrix3 rot_total = rot_z * rot_x; 
-
-vector vec = {0, 1, 0};
-vector rotated_vec = rot_total * vec;
-vector4 q_total = dihedral(vec, rotated_vec);
-
-vector scale = set(length, 0, length);
-
-int grid_num = int(bound_size.y / pattern_height);
-float pattern_interval = bound_size.y / grid_num;
-
-for(int i = 1; i < grid_num + 10; ++i)
-{
-    vector spawn_pos = prim(1, "P", 4);
-    spawn_pos.y += i * pattern_interval;
-    int pt = addpoint(0, spawn_pos);
-    setpointattrib(0, "scale", pt, scale);
-    setpointattrib(0, "orient", pt, q_total);
-}
-
-
-■Greeble
-○Primの分割処理を実装
-・
-
-●処理
-・boundsでBoolPlaneの大きさを設定
-・DivideAxisに沿ってBoolPlaneを生成
-・Divide
-
-●Attribute
-・DivideToggle
-・DivideAxis
-
-●パラメーター
-・Range
-
-●仕様
-・スケール範囲を設定
+・BaseLineに沿って凹凸を生成
+ -軸に沿ってExtrude
+・上部と下部を切り離し
+ -Group化
+・△BsaeLineに沿ってオブジェクトを等間隔で配置
 
 
 ■OutsidePanelGenerator
-○OutsidePanelGeneratorの実装
-
 ●パラメーター
 ・くりぬく位置
 
@@ -80,108 +36,48 @@ for(int i = 1; i < grid_num + 10; ++i)
 ・非共有エッジにPanelを配置
 ・△Panel内でGreebleを行いオブジェクトを配置
 
-●ソース
+
+■PipeMaker
+●仕様
+・軸を設定する
+・太さをランダムにする
+
+●処理
+・Pipeを配置するのに最適なサイズのブロックをGreebleで生成
+・Volume内に沿ってBaseLineを生成する
+・BaseLineからPMする
+ -4頂点のPolyLineを生成
+ -PolyWire
+ -PolyBebel
 
 
-■サンプルソース
-●Find_longest_edge
-vector edgev(int h){
-    vector src = point(0, "P", hedge_srcpoint(0, h));
-    vector dst = point(0, "P", hedge_dstpoint(0, h));
-    return dst - src;
-}
 
-int h = primhedge(0, @primnum);
-int temp = h;
-
-int longest_edge = h;
-float max_l = 0;
-do{
-    float l = length(edgev(h));
-    if(l > max_l){
-        max_l = l;
-        longest_edge = h;
-    }
-     h = hedge_next(0,h);
-   
-}while(h != temp);
-i@cut_edge = longest_edge;
+■Detail
+●IDEA
+・アンテナ
+ -Tubeを複数配置
+ -Pipeを配置
+・突起物
+ -TubeのExtrudeしていく
 
 
-●Do_Splitting
-int on_line( vector p; int edge)
-{
-  vector a = point(0, "P",hedge_srcpoint(0, edge));
-  vector b = point(0, "P",hedge_dstpoint(0, edge)); 
-   
-  vector pa = p - a, ba = b - a;
-  float h = clamp( dot(pa,ba)/dot(ba,ba), 0.0, 1.0 );
-  return  length(pa - ba*h) < 1e-9;
-}
+■BaseBlockMaker
+●Extrude
+ -Distance
+ -Insert
 
-int h = i@cut_edge;
-int temp = h;
+●Split
+ -垂直
+ -水平
+ -斜め
 
-vector src = point(0, "P", hedge_srcpoint(0, h));
-vector dst = point(0, "P", hedge_dstpoint(0, h));
-vector edge = dst - src;
 
-float randomness = clamp(ch("randomness"), 0, 1);
-
-randomness = fit01(randomness, .5, .01);
-vector rand_p = src + edge * fit01(float(rand(@primnum + detail(1, "iteration") + ch("seed"))), randomness, 1 - randomness);
-addpoint(0, rand_p);
-
-int closest_edge;
-vector hit_p;
-float min_dist = 1e10;
-int i = 0;
-int index = -1;
-int pts[];
-int temp_2 = h;
-do{
-    int next = hedge_next(0, h);
-    vector next_dst = point(0, "P", hedge_dstpoint(0, next));
-    vector next_src = point(0, "P", hedge_srcpoint(0, next));
-   
-    int hit;
-    
-    //set up clip plane
-    vector4 plane =normalize(edge); 
-    plane.w = -dot(normalize(edge), rand_p);
-
-    vector temp_p = rand_p;
-    vector temp_src = next_src;
-    //addpoint(0, next_src);
-    vector temp_dst = next_dst;
-    clip(hit, next_dst, next_src, plane);
-    float l = distance(temp_src, next_src);
-    // addpoint(0, next_src);
-    if(on_line(next_src, next) && l > 1e-9 && next != temp && distance(rand_p, next_src) < min_dist){
-            min_dist = distance(rand_p, next_src);
-            hit_p = next_src;
-            closest_edge = next;
-            index = i + 1;      
-    }     
-    
-    append(pts, hedge_dstpoint(0, h));
-    h = next;
-    dst = next_dst;
-    i++;
-}while(h != temp);
-
-if(index == -1){
-    @group_remove_me = 0;
-    return;
-}
-
-int start = addpoint(0, rand_p);
-int end = addpoint(0, hit_p);
-int prim_1[] = array(start);
-append(prim_1, pts[0:index]);
-append(prim_1, end);
-int prim_2[] =  array(end);
-append(prim_2, pts[index : len(pts)]);
-append(prim_2, start);
-addprim(0, "poly", prim_1);
-addprim(0, "poly", prim_2);
+■BaseVolume
+●処理
+・平面の生成
+ -Greeble
+ -Cluster
+ -左右対称
+・高さ設定
+ -Extrude
+ -Block内でClusterし、高さを変える
