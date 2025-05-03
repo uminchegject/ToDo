@@ -19,11 +19,11 @@
 
 ■凹凸Maker
 ●処理
+・4頂点がSideEdgeに接していないBoolPlaneを削除する
 ・BaseLineに沿って凹凸を生成
  -軸に沿ってExtrude
-・上部と下部を切り離し
+・上部と下部をBoolしたPrimから取得
  -Group化
-・△BsaeLineに沿ってオブジェクトを等間隔で配置
 
 
 ■OutsidePanelGenerator
