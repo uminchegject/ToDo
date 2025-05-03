@@ -1,13 +1,22 @@
+※形態、複数のPrimに問わず対応できるDetailMakerを実装する
+※Base, DetailPattern, Detailそれぞれのフロー設計を意識する
+※実際の工程を自動化することを意識する
+※まずHDAをひたすら実装し、組み合わせを行うことを目標にする。
+※モデリングはサンプルプロジェクトを実際確認しながら手法を学ぶ
+
+
+■ToDo
+○Greebleの実装
+
+○凹凸Makerの実装
+ 
+○OutSideSurfaceの仮実装
+
+○Volume及びBaseSurfaceのモデリング
+・Primを用意し、DetailPatternを検証
+
+
 ■BaseLine
-○パラメーターの実装
-・幅
-・軸
-・傾き
-・Offset
-
-○軸の定義
-・軸に沿ってPolyLineもExtrudeする
-
 ○グループ化
 ・Prim・ClassPieaceごとに処理を走らせる
 ・for_each
@@ -15,104 +24,68 @@
 ●処理
 ・Boundして、Boundより少し大きめのサイズのGridを配置し、接触部分からBaseLineを生成
 
-●ソース
-float pattern_height = ch("../Param/PatternHeight");
-vector bound_size = detail(1 ,"radii", 0);
-bound_size *= 2;
-float length = length(bound_size);
 
-vector axis = ("../Param/Axis");
-vector rotate = chv("../Param/PatternRotate");
-matrix3 rot_x = ident();
-rotate(rot_x, rotate.x, {1, 0, 0});
-matrix3 rot_z = ident();
-rotate(rot_z, rotate.y, {0, 0, 1});
-matrix3 rot_total = rot_z * rot_x; 
-vector vec = axis;
-vector rotated_vec = rot_total * vec;
-vector4 q_total = dihedral(vec, rotated_vec);
-
-vector scale = set(length, 0, length);
-
-int grid_num = int(bound_size.y / pattern_height);
-float pattern_interval = bound_size.y / grid_num;
-int offset = chi("../Param/Offset");
-grid_num -= offset;
-
-for(int i = offset; i < grid_num; ++i)
-{
-    vector spawn_pos = prim(1, "P", 4);
-    spawn_pos += i * pattern_interval * axis;
-    int pt = addpoint(0, spawn_pos);
-    setpointattrib(0, "scale", pt, scale);
-    setpointattrib(0, "orient", pt, q_total);
-}
+■凹凸Maker
+●処理
+・4頂点がSideEdgeに接していないBoolPlaneを削除する
+・BaseLineに沿って凹凸を生成
+ -軸に沿ってExtrude
+・上部と下部をBoolしたPrimから取得
+ -Group化
 
 
-■Greeble
-○Primの分割処理を実装
+■OutsidePanelGenerator
+●パラメーター
+・くりぬく位置
 
 ●処理
-・boundsでBoolPlaneの大きさを設定
-・DivideAxisに沿ってBoolPlaneを生成
-・Divide
+・Greebleのサイズを細長く設定
+・パラメーターに沿って切り抜く
+・非共有エッジにPanelを配置
+・△Panel内でGreebleを行いオブジェクトを配置
 
-●Attribute
-・DivideToggle
-・DivideAxis
 
-●パラメーター
-・Range
-・DivideAngle
-
+■PipeMaker
 ●仕様
-・スケール範囲を設定
-・DivideAngleで斜めも対応する
- -ランダム化
+・軸を設定する
+・太さをランダムにする
 
-●ソース
-//トグルが入ってない場合スキップ
-int divide_toggle = 
-if(divid_toggle != 1) return;
-
-//BasePointの回転値を計算
-vector divide_axis = v@up;
-vector normal = v@N;
-float divide_angle = radians(90);//radians(ch(../Param/DivideAngle));
-
-matrix3 m_rotate = ident();
-rotate(m_rotate, divide_angle, normal);
-divide_axis *= m_rotate;
+●処理
+・Pipeを配置するのに最適なサイズのブロックをGreebleで生成
+・Volume内に沿ってBaseLineを生成する
+・BaseLineからPMする
+ -4頂点のPolyLineを生成
+ -PolyWire
+ -PolyBebel
 
 
-//BasePointの位置
-float divide_ratio = 0.5 //ch(../Param);
 
-vector center_pos;
-for (int i = 0; i < nprimitives(0); i++) 
-{
-	center_pos += prim(0, "P", i);
-}
-center_pos /= nprimitives(0);
+■Detail
+●IDEA
+・アンテナ
+ -Tubeを複数配置
+ -Pipeを配置
+・突起物
+ -TubeのExtrudeしていく
 
-vector min_pos;
-vector max_pos;
-vector uvw;
-intersect(0, center_pos, divide_axis, min_pos, uvw);
-intersect(0, center_pos, -divide_axis, max_pos, uvw);
 
-float length = length(min_pos - max_pos);
+■BaseBlockMaker
+●Extrude
+ -Distance
+ -Insert
 
-vector spawn_pos = base_pos;
-spawn_pos += length * (divide_ratio - 0.5) * divide_axis;
+●Split
+ -垂直
+ -水平
+ -斜め
 
-//BoolPlaneのスケール
-vector pt_edge_1 = point(0, "P", 0);
-vector pt_edge_2 = point(0, "P", 4);
-plane_length = length(pt_edge_1 - pt_edge_2);
-vector scale = set(plane_length, 0, plane_length);
 
-//BoolObjのBasePointを生成
-int pt = add(point, spawn_pos);
-setpointattrib(0, "up", pt, divide_axis);
-setpointattrib(0, "scale", pt, scale);
+■BaseVolume
+●処理
+・平面の生成
+ -Greeble
+ -Cluster
+ -左右対称
+・高さ設定
+ -Extrude
+ -Block内でClusterし、高さを変える
