@@ -1,12 +1,3 @@
-■BaseLine
-○グループ化
-・Prim・ClassPieaceごとに処理を走らせる
-・for_each
-
-●処理
-・Boundして、Boundより少し大きめのサイズのGridを配置し、接触部分からBaseLineを生成
-
-
 ■Greeble
 ○Primの分割処理を実装
 
