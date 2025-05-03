@@ -8,12 +8,45 @@
 ■ToDo
 ○Greebleの実装
 
-○凹凸Makerの実装
- 
 ○OutSideSurfaceの仮実装
+
+○凹凸Makerの実装 
 
 ○Volume及びBaseSurfaceのモデリング
 ・Primを用意し、DetailPatternを検証
+
+
+■Greeble
+○Primの分割処理を実装
+
+●処理
+・boundsでBoolPlaneの大きさを設定
+・DivideAxisに沿ってBoolPlaneを生成
+・Divide
+
+●Attribute
+・DivideToggle
+・DivideAxis
+
+●パラメーター
+・Range
+・DivideAngle
+
+●仕様
+・スケール範囲を設定
+・DivideAngleで斜めも対応する
+ -ランダム化
+
+
+■OutsidePanelGenerator
+●パラメーター
+・くりぬく位置
+
+●処理
+・Greebleのサイズを細長く設定
+・パラメーターに沿って切り抜く
+・非共有エッジにPanelを配置
+・△Panel内でGreebleを行いオブジェクトを配置
 
 
 ■BaseLine
@@ -32,17 +65,6 @@
  -軸に沿ってExtrude
 ・上部と下部をBoolしたPrimから取得
  -Group化
-
-
-■OutsidePanelGenerator
-●パラメーター
-・くりぬく位置
-
-●処理
-・Greebleのサイズを細長く設定
-・パラメーターに沿って切り抜く
-・非共有エッジにPanelを配置
-・△Panel内でGreebleを行いオブジェクトを配置
 
 
 ■PipeMaker
