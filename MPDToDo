@@ -6,7 +6,7 @@
 
 
 ■ToDo
-○Greebleの実装
+※検証最低限の環境を整える
 
 ○OutSideSurfaceの仮実装
 
@@ -14,28 +14,6 @@
 
 ○Volume及びBaseSurfaceのモデリング
 ・Primを用意し、DetailPatternを検証
-
-
-■Greeble
-○Primの分割処理を実装
-
-●処理
-・boundsでBoolPlaneの大きさを設定
-・DivideAxisに沿ってBoolPlaneを生成
-・Divide
-
-●Attribute
-・DivideToggle
-・DivideAxis
-
-●パラメーター
-・Range
-・DivideAngle
-
-●仕様
-・スケール範囲を設定
-・DivideAngleで斜めも対応する
- -ランダム化
 
 
 ■OutsidePanelGenerator
@@ -47,15 +25,6 @@
 ・パラメーターに沿って切り抜く
 ・非共有エッジにPanelを配置
 ・△Panel内でGreebleを行いオブジェクトを配置
-
-
-■BaseLine
-○グループ化
-・Prim・ClassPieaceごとに処理を走らせる
-・for_each
-
-●処理
-・Boundして、Boundより少し大きめのサイズのGridを配置し、接触部分からBaseLineを生成
 
 
 ■凹凸Maker
@@ -80,6 +49,22 @@
  -PolyWire
  -PolyBebel
 
+
+■Greeble
+●仕様
+・スケール範囲を設定
+ -DivideToggle
+・DivideAngleで斜めも対応する
+ -ランダム化
+
+
+■BaseLine
+○グループ化
+・Prim・ClassPieaceごとに処理を走らせる
+・for_each
+
+●処理
+・Boundして、Boundより少し大きめのサイズのGridを配置し、接触部分からBaseLineを生成
 
 
 ■Detail
