@@ -1,4 +1,40 @@
+■修理
+・ブローバッグ後元にに戻らない
+・中古で購入したため、パーツの摩耗が激しいかもしれない
+ -摩耗が酷いパーツは購入及び交換して頂けると有難い
+ -最悪全体的に摩耗が絶望的な場合は新品を購入することも視野に入れています。
+
+
+■OutsidePanelGenerator
+○検証用の仮実装
+・Clusterし、Blast
+
+●処理
+・Greebleのサイズを細長く設定
+・パラメーターに沿って切り抜く
+・非共有エッジにPanelを配置
+・△Panel内でGreebleを行いオブジェクトを配置
+
+
+■凹凸Maker
+○上部と下部を取得
+
+○for_each_pieceで実装
+
+●処理
+・BaseLineに沿って凹凸を生成
+ -軸に沿ってExtrude
+・上部と下部をBoolしたPrimから取得
+ -Group化
+
+
 ■LineBase
+●パラメーター
+・PatternRotate
+・PatternHeight
+・PatternOffset
+・PatternAxis
+
 vector bound_size = detail(1 ,"radii", 0);
 bound_size *= 2;
 float length = length(bound_size);
@@ -33,20 +69,30 @@ for(int i = offset; i < grid_num; ++i)
 }
 
 ■Greeble
-//トグルが入ってない場合スキップ
-int divide_toggle = 1;
-if(divide_toggle != 1) return;
+○パラメーター
+・DivideAngle
+・DivideRatioRange
 
+○レンジ
+//Rangeの確認
+vector BlockScaleRange = chv("../Param/BlockScaleRange");
+float dot = dot(divide_axis, v@up);
+float angle_rad = acos(dot);
+if(length * cos(angle_rad) < BlockScaleRange.x) return;
+if(length * sin(angle_rad) < BlockScaleRange.y) return;
+
+●ソース
 //BasePointの回転値を計算
-vector divide_axis = v@up;
+vector divide_axis = v@DivideAxis;
 vector normal = v@N;
-float divide_angle = radians(90); //radians(ch(../Param/DivideAngle));
+float divide_angle = radians(ch("../Param/DivideAngle"));
 matrix3 m_rotate = ident();
 rotate(m_rotate, divide_angle, normal);
 divide_axis *= m_rotate;
 
 //BasePointの位置
-float divide_ratio = random(@primnum) * 0.5 + 0.2; //ch(../Param);
+vector divide_ratio_range = chv("../Param/DivideRatioRange");
+float divide_ratio = random(v@P) * (divide_ratio_range.y - divide_ratio_range.x) - divide_ratio_range.x;
 
 vector center_pos = set(0, 0, 0);
 for (int i = 0; i < nprimitives(1); i++) 
@@ -61,11 +107,16 @@ vector uvw;
 intersect(1, center_pos, divide_axis * 1000, min_pos, uvw);
 intersect(1, center_pos, -divide_axis * 1000, max_pos, uvw);
 
-
 float length = length(min_pos - max_pos);
-
 vector spawn_pos = center_pos;
 spawn_pos += length * (divide_ratio - 0.5) * divide_axis;
+
+//Rangeの確認
+vector BlockScaleRange = chv("../Param/BlockScaleRange");
+float dot = dot(divide_axis, v@up);
+float angle_rad = acos(dot);
+if(length * cos(angle_rad) < BlockScaleRange.x) return;
+if(length * sin(angle_rad) < BlockScaleRange.y) return;
 
 //BoolPlaneのスケール
 vector pt_edge_1 = point(1, "P", 0);
