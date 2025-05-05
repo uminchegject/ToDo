@@ -6,6 +6,20 @@
 お手数をおかけしますがご確認の程よろしくお願い致します。
 
 
+■LineBase
+○ノード整理
+
+
+■Greeble
+○レンジ
+//Rangeの確認
+vector BlockScaleRange = chv("../Param/BlockScaleRange");
+float dot = dot(divide_axis, v@up);
+float angle_rad = acos(dot);
+if(length * cos(angle_rad) < BlockScaleRange.x) return;
+if(length * sin(angle_rad) < BlockScaleRange.y) return;
+
+
 ■OutsidePanelGenerator
 ○検証用の仮実装
 ・Clusterし、Blast
@@ -18,80 +32,12 @@
 
 
 ■凹凸Maker
-○上部と下部を取得
-
-○for_each_pieceで実装
+○検証用の仮実装
+・サイズの適正化
+・for_each_pieceで実装
 
 ●処理
 ・BaseLineに沿って凹凸を生成
  -軸に沿ってExtrude
 ・上部と下部をBoolしたPrimから取得
  -Group化
-
-
-■LineBase
-○ノード整理
-
-■Greeble
-○パラメーター
-・DivideAngle
-・DivideRatioRange
-
-○レンジ
-//Rangeの確認
-vector BlockScaleRange = chv("../Param/BlockScaleRange");
-float dot = dot(divide_axis, v@up);
-float angle_rad = acos(dot);
-if(length * cos(angle_rad) < BlockScaleRange.x) return;
-if(length * sin(angle_rad) < BlockScaleRange.y) return;
-
-●ソース
-//BasePointの回転値を計算
-vector divide_axis = v@DivideAxis;
-vector normal = v@N;
-float divide_angle = radians(ch("../Param/DivideAngle"));
-matrix3 m_rotate = ident();
-rotate(m_rotate, divide_angle, normal);
-divide_axis *= m_rotate;
-
-//BasePointの位置
-vector divide_ratio_range = chv("../Param/DivideRatioRange");
-float divide_ratio = random(v@P) * (divide_ratio_range.y - divide_ratio_range.x) - divide_ratio_range.x;
-
-vector center_pos = set(0, 0, 0);
-for (int i = 0; i < nprimitives(1); i++) 
-{
-    center_pos += prim(1, "P", i);
-}
-center_pos /= nprimitives(1);
-
-vector min_pos;
-vector max_pos;
-vector uvw;
-intersect(1, center_pos, divide_axis * 1000, min_pos, uvw);
-intersect(1, center_pos, -divide_axis * 1000, max_pos, uvw);
-
-float length = length(min_pos - max_pos);
-vector spawn_pos = center_pos;
-spawn_pos += length * (divide_ratio - 0.5) * divide_axis;
-
-//Rangeの確認
-vector BlockScaleRange = chv("../Param/BlockScaleRange");
-float dot = dot(divide_axis, v@up);
-float angle_rad = acos(dot);
-if(length * cos(angle_rad) < BlockScaleRange.x) return;
-if(length * sin(angle_rad) < BlockScaleRange.y) return;
-
-//BoolPlaneのスケール
-vector pt_edge_1 = point(1, "P", 0);
-vector pt_edge_2 = point(1, "P", 6);
-float plane_length = length(pt_edge_1 - pt_edge_2);
-vector scale = set(plane_length, 0, plane_length);
-
-//BoolObjのBasePointを生成
-int pt = addpoint(0, spawn_pos);
-setpointattrib(0, "up", pt, divide_axis);
-setpointattrib(0, "N", pt, normal);
-setpointattrib(0, "scale", pt, scale);
-
-removeprim(0, @primnum, 1);
