@@ -1,23 +1,5 @@
-■修理
-現在の状況としましては、ブローバッグ後元にに戻らない症状が発生しており、弾を打つとスライドが後進したまま戻らず力を入れてスライドを前進させなければならない状況となっております。
-また、中古で購入した銃のため、パーツの摩耗が激しいかもしれず、摩耗が酷いパーツは購入及び交換して頂けると有難いです。
-(全体的な消耗が絶望的な場合は、最悪新品を買い直すことも視野に入れています…)
-
-お手数をおかけしますがご確認の程よろしくお願い致します。
-
-
 ■LineBase
 ○ノード整理
-
-
-■Greeble
-○レンジ
-//Rangeの確認
-vector BlockScaleRange = chv("../Param/BlockScaleRange");
-float dot = dot(divide_axis, v@up);
-float angle_rad = acos(dot);
-if(length * cos(angle_rad) < BlockScaleRange.x) return;
-if(length * sin(angle_rad) < BlockScaleRange.y) return;
 
 
 ■OutsidePanelGenerator
