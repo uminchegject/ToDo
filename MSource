@@ -1,11 +1,18 @@
 ■LineBase
-○ノード整理
+●OutPut
+・BaseLine
+・ObjLine
+ -Primをクラス化
 
+●パラメーター
+
+■Greeble
+●OutPut
+・BlockPrim
+
+●パラメーター
 
 ■OutsidePanelGenerator
-○検証用の仮実装
-・Clusterし、Blast
-
 ●処理
 ・Greebleのサイズを細長く設定
 ・パラメーターに沿って切り抜く
@@ -14,10 +21,6 @@
 
 
 ■凹凸Maker
-○検証用の仮実装
-・サイズの適正化
-・for_each_pieceで実装
-
 ●処理
 ・BaseLineに沿って凹凸を生成
  -軸に沿ってExtrude
