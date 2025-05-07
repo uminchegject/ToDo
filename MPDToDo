@@ -6,25 +6,33 @@
 
 
 ■ToDo
-※検証最低限の環境を整える
-
 ○パラメーターの整理
 
-○検証環境の用意
-・OutSideSurfaceの仮実装
-・凹凸Makerの実装 
 
-○モデリングの設計
-・Primを用意し、DetailPatternを検証
+■LineBase
+○ID付け
+・For文内でID付け
+ -i@ptnum
 
-○DetailPatternの設計
-・GreeblePattern
-・LinePattern
+○上部下部のgroup化
+・過去の処理を使用する
+
+●Input
+・Prims
+
+●OutPut
+・BaseLine
+・ObjLine
+
+
+■Greeble
+●Input
+・Prims
+
+●OutPut
+・BlockPrim
 
 ■OutsidePanelGenerator
-●パラメーター
-・くりぬく位置
-
 ●処理
 ・Greebleのサイズを細長く設定
 ・パラメーターに沿って切り抜く
@@ -34,11 +42,7 @@
 
 ■凹凸Maker
 ●処理
-・4頂点がSideEdgeに接していないBoolPlaneを削除する
-・BaseLineに沿って凹凸を生成
- -軸に沿ってExtrude
-・上部と下部をBoolしたPrimから取得
- -Group化
+
 
 
 ■PipeMaker
