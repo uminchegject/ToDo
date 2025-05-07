@@ -42,7 +42,7 @@
 
 ■凹凸Maker
 ●処理
-
+・クラスごとに上下分割してExtrudeする
 
 
 ■PipeMaker
