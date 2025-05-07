@@ -1,12 +1,24 @@
 ■LineBase
+
+●Input
+・Prims
+
 ●OutPut
 ・BaseLine
 ・ObjLine
  -Primをクラス化
 
 ●パラメーター
+・
 
 ■Greeble
+○最適化(Vex化)
+・clip(sub_divisionを確認)
+・intersect
+
+●Input
+・Prims
+
 ●OutPut
 ・BlockPrim
 
