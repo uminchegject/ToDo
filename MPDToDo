@@ -8,15 +8,10 @@
 ■ToDo
 ○パラメーターの整理
 
+○HDA化
+
 
 ■LineBase
-○ID付け
-・For文内でID付け
- -i@ptnum
-
-○上部下部のgroup化
-・過去の処理を使用する
-
 ●Input
 ・Prims
 
@@ -31,6 +26,7 @@
 
 ●OutPut
 ・BlockPrim
+
 
 ■OutsidePanelGenerator
 ●処理
@@ -57,23 +53,6 @@
  -4頂点のPolyLineを生成
  -PolyWire
  -PolyBebel
-
-
-■Greeble
-●仕様
-・スケール範囲を設定
- -DivideToggle
-・DivideAngleで斜めも対応する
- -ランダム化
-
-
-■BaseLine
-○グループ化
-・Prim・ClassPieaceごとに処理を走らせる
-・for_each
-
-●処理
-・Boundして、Boundより少し大きめのサイズのGridを配置し、接触部分からBaseLineを生成
 
 
 ■Detail
