@@ -1,40 +1,21 @@
-■LineBase
-
-●Input
-・Prims
-
-●OutPut
-・BaseLine
-・ObjLine
- -Primをクラス化
-
-●パラメーター
-・
+■BaseLine
+○HDA化
 
 ■Greeble
-○最適化(Vex化)
-・clip(sub_divisionを確認)
-・intersect
-
-●Input
-・Prims
-
-●OutPut
-・BlockPrim
-
-●パラメーター
-
-■OutsidePanelGenerator
-●処理
-・Greebleのサイズを細長く設定
-・パラメーターに沿って切り抜く
-・非共有エッジにPanelを配置
-・△Panel内でGreebleを行いオブジェクトを配置
-
-
-■凹凸Maker
-●処理
-・BaseLineに沿って凹凸を生成
- -軸に沿ってExtrude
-・上部と下部をBoolしたPrimから取得
- -Group化
+●Rangeのパラメーター化
+float dot = dot(divide_axis, v@up);
+float angle_rad = acos(dot);
+if(length * abs(cos(angle_rad)) < 3 && 0.5 < abs(cos(angle_rad)))
+{
+    v@DivideAxis = divide_axis;  
+    i@group_DividedToggle = 1;
+}
+else
+{
+    //BoolObjのBasePointを生成
+    int pt = addpoint(0, spawn_pos);
+    setpointattrib(0, "up", pt, divide_axis);
+    setpointattrib(0, "N", pt, normal);
+    setpointattrib(0, "scale", pt, scale);
+    removeprim(0, i@primnum, 1);
+}
