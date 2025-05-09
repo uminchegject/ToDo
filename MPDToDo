@@ -6,7 +6,12 @@
 
 
 ■ToDo
-○HDA化
+○BaseLine修正
+・傾けた際の重なり部分を修正
+
+○GreebleのHDA化
+・DivideAxisとupを設定
+
 
 
 ■BaseBlockMaker
