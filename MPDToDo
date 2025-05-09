@@ -10,8 +10,25 @@
 ・傾けた際の重なり部分を修正
 
 ○GreebleのHDA化
-・DivideAxisとupを設定
+※PrimにDivideAxisとupとNを設定して検証を行う
 
+○凹凸Makerの実装
+
+○OutsidePanelGeneratorの実装
+
+△BaseBlockMakerの実装
+
+
+■凹凸Maker
+●処理
+・クラスごとに上下分割してExtrudeする
+
+■OutsidePanelGenerator
+●処理
+・Greebleのサイズを細長く設定
+・パラメーターに沿って切り抜く
+・非共有エッジにPanelを配置
+・△Panel内でGreebleを行いオブジェクトを配置
 
 
 ■BaseBlockMaker
@@ -23,19 +40,6 @@
  -垂直
  -水平
  -斜め
-
-
-■OutsidePanelGenerator
-●処理
-・Greebleのサイズを細長く設定
-・パラメーターに沿って切り抜く
-・非共有エッジにPanelを配置
-・△Panel内でGreebleを行いオブジェクトを配置
-
-
-■凹凸Maker
-●処理
-・クラスごとに上下分割してExtrudeする
 
 
 ■PipeMaker
