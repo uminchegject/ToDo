@@ -6,26 +6,18 @@
 
 
 ■ToDo
-○パラメーターの整理
-
 ○HDA化
 
 
-■LineBase
-●Input
-・Prims
+■BaseBlockMaker
+●Extrude
+ -Distance
+ -Insert
 
-●OutPut
-・BaseLine
-・ObjLine
-
-
-■Greeble
-●Input
-・Prims
-
-●OutPut
-・BlockPrim
+●Split
+ -垂直
+ -水平
+ -斜め
 
 
 ■OutsidePanelGenerator
@@ -62,17 +54,6 @@
  -Pipeを配置
 ・突起物
  -TubeのExtrudeしていく
-
-
-■BaseBlockMaker
-●Extrude
- -Distance
- -Insert
-
-●Split
- -垂直
- -水平
- -斜め
 
 
 ■BaseVolume
