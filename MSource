@@ -1,26 +1,35 @@
-■BaseLine
-○PrimGroup化
-・Top
-・Bottom
-・BaseObj
-・BsaeLine
+■ToDo
+○Greebleの修正
+・Bounds部分の修正
+ -Boundsする前にPrimのNormalに沿ってExtrudeする
+・エラーPrimの削除
 
-■Greeble
-●Rangeのパラメーター化
-vector max_scale = chv("../Param/MaxScale")
-float dot = dot(divide_axis, v@up);
-float angle_rad = acos(dot);
-if(length * abs(cos(angle_rad)) < max_scale.x && 0.5 < abs(cos(angle_rad)) || length * abs(sin(angle_rad)) < max_scale.y && 0.5 < abs(sin(angle_rad)))
-{
-    v@DivideAxis = divide_axis;  
-    i@group_DividedToggle = 1;
-}
-else
-{
-    //BoolObjのBasePointを生成
-    int pt = addpoint(0, spawn_pos);
-    setpointattrib(0, "up", pt, divide_axis);
-    setpointattrib(0, "N", pt, normal);
-    setpointattrib(0, "scale", pt, scale);
-    removeprim(0, i@primnum, 1);
-}
+○BaseLine修正
+・傾けた際の重なり部分を修正
+height * cos(radius(rotate.x + rotate.y))
+
+○BaseBlockMakerの設計
+
+△OutsidePanelGeneratorの実装
+・Greebleのサイズを細長く設定
+・パラメーターに沿って切り抜く
+・非共有エッジにPanelを配置
+・△Panel内でGreebleを行いオブジェクトを配置
+
+
+■BaseBlockMaker
+○Splitの自動化
+・BoolObjの生成
+・Boolean
+
+○Extrudeの自動化
+ClassごとにExtrude
+
+●Split
+ -垂直
+ -水平
+ -斜め
+
+●Extrude
+ -Distance
+ -Insert
