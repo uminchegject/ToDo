@@ -6,21 +6,16 @@
 
 
 ■ToDo
-○Greebleの修正
-・Bounds部分の修正
- -Boundsする前にPrimのNormalに沿ってExtrudeする
-・エラーPrimの削除
-
 ○BaseLine修正
 ・傾けた際の重なり部分を修正
-height * cos(radius(rotate.x + rotate.y))
+ExtrudeをPatternAxisに沿って行うように修正する
 
 ○BaseBlockMakerの設計
 ・HardSurfaceBuildingの調査
  -Split
  -Extrude
 
-△OutsidePanelGeneratorの実装
+○OutsidePanelGeneratorの実装
 ・Greebleのサイズを細長く設定
 ・パラメーターに沿って切り抜く
 ・非共有エッジにPanelを配置
@@ -31,6 +26,7 @@ height * cos(radius(rotate.x + rotate.y))
 ■凹凸Maker
 ●処理
 ・クラスごとに上下分割してExtrudeする
+
 
 ■OutsidePanelGenerator
 ●処理
