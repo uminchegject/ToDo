@@ -1,16 +1,59 @@
-■ToDo
-○Greebleの修正
-・Bounds部分の修正
- -Boundsする前にPrimのNormalに沿ってExtrudeする
-・エラーPrimの削除
+○さくら通信購入
+・購入
+・メール
 
+○修理の準備
+・書類の用意
+・段ボールの用意及び箱詰め
+
+○本棚の整理
+・Rhinoceros本の用意
+・リサイクル
+
+○ギフト
+今日ギフトショップで軽く見てきた中で、良さげそうなのまとめてリストアップするね!
+
+●調理器具
+以前いとさんの家に行ったとき、料理にハマってるって話してた記憶があったから、実用的にちょうどいいかも…
+・ダクタイルパン18
+https://gds.tokyo/collections/ranking/products/ductile-cast-iron-frying-pan18
+・マルチパスタパン/4w1h
+https://gds.tokyo/collections/ranking/products/multi-pasta-pot-4w1h?variant=43679936413915
+・ガラスのような木のお皿
+https://gds.tokyo/collections/ranking/products/glass-like-wooden-plate-one-person-serving-l
+・調理用包丁 MOKAシリーズ
+https://gds.tokyo/collections/ranking/products/cooking-knife_moka_damascussteel
+
+●アロマディフューザー
+いとさんの家にアロマディフューザーはなかったと思うから、実用的にちょうどいいかも…
+・LUMENAコードレス加湿器
+https://gds.tokyo/collections/ranking/products/lumena_humidifier-h2plus
+・超音波うるおいアロマディフューザー
+https://www.muji.com/jp/ja/store/cmdty/detail/4550344554586
+・Lucy
+https://stadlerform.jp/showroom/lucy/
+
+●その他
+汎用的なものから面白いと思ったものまで適当にリストアップ
+・姿勢サポートシートKURA SEAT（クラシート）/&MEDICAL
+https://gds.tokyo/collections/ranking/products/kura-seat-medical
+・i ＋（アイプラス）012 CONTAINER/ステーショナリーコンテナ
+https://gds.tokyo/collections/ranking/products/mobile-bag-i-012-containeri?variant=39505662345372
+・ポケットオペレーター
+https://hello.minet.jp/teenage.engineering/po/
+
+
+■ToDo
 ○BaseLine修正
 ・傾けた際の重なり部分を修正
-height * cos(radius(rotate.x + rotate.y))
+ExtrudeをPatternAxisに沿って行うように修正する
 
 ○BaseBlockMakerの設計
+・HardSurfaceBuildingの調査
+ -Split
+ -Extrude
 
-△OutsidePanelGeneratorの実装
+○OutsidePanelGeneratorの実装
 ・Greebleのサイズを細長く設定
 ・パラメーターに沿って切り抜く
 ・非共有エッジにPanelを配置
