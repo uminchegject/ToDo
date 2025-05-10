@@ -13,10 +13,12 @@
 ※PrimにDivideAxisとupとNを設定して検証を行う
 
 ○凹凸Makerの実装
+・偶数を凹、奇数と凸
 
-○OutsidePanelGeneratorの実装
 
-△BaseBlockMakerの実装
+○OutsidePanelGeneratorの設計
+
+○BaseBlockMakerの設計
 
 
 ■凹凸Maker
