@@ -6,14 +6,14 @@
 
 
 ■ToDo
+○Greebleの修正
+・傾いていない際のboundの対応
+Extrude
+・エラーPrimの削除
+
 ○BaseLine修正
 ・傾けた際の重なり部分を修正
-
-○GreebleのHDA化
-※PrimにDivideAxisとupとNを設定して検証を行う
-
-○凹凸Makerの実装
-・偶数を凹、奇数と凸
+height * cos(radius(rotate.x + rotate.y))
 
 
 ○OutsidePanelGeneratorの設計
