@@ -1,7 +1,17 @@
 ■ToDo
 ○BaseLine修正
-・傾けた際の重なり部分を修正
-ExtrudeをPatternAxisに沿って行うように修正する
+・TopとBottomを修正
+vector rotate = radians(chv("../Param/PatternRotate"));
+matrix3 rot_x = ident();
+rotate(rot_x, rotate.x, {1, 0, 0});
+matrix3 rot_z = ident();
+rotate(rot_z, rotate.y, {0, 0, 1});
+matrix3 rot_total = rot_x * rot_z; 
+vector base_vec = set(0, 1, 0);
+vector rotated_vec = base_vec * rot_total;
+
+float dot = dot(rotated_vec, v@N);
+if(0.9 < abs(dot))removeprim(0, @primnum, 1);
 
 ○BaseBlockMakerの設計
 ・HardSurfaceBuildingの調査
@@ -34,13 +44,6 @@ ClassごとにExtrude
 
 
 ■Private
-○傘の確認
-・忘れ物の確認
-先週の5/6～5/7にかけて宿泊させて頂いた中村優介と申します。
-宿泊の際に黒い傘を部屋に忘れたと思うのですが、宿泊した1340号室(うる覚えなので間違っているかもしれません)に残っていなかったか確認をさせて頂きたいです。
-お手数をおかけしますがご確認お願い致します。
-
-
 ○さくら通信購入
 ・過去放送一括購入及びその支払いのご相談
 はじめまして、さくら通信をいつも楽しませて頂いるリスナーの者です。
@@ -55,7 +58,6 @@ ClassごとにExtrude
 
 最後に山本さんに質問させて頂きたいのですが(こちらのメールを読んでいる方がさくらさんでしたら申し訳ございません…)
 今月末高知県に観光旅行に行く予定があるため、ご飯が美味しいお店、おすすめの観光地などあれば大変恐縮ですが教えて頂けると幸いです…!
-
 
 
 ○修理の準備
