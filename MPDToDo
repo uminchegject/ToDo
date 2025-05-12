@@ -7,13 +7,6 @@
 
 ■ToDo
 ○BaseLine修正
-・傾けた際の重なり部分を修正
-ExtrudeをPatternAxisに沿って行うように修正する
-
-○BaseBlockMakerの設計
-・HardSurfaceBuildingの調査
- -Split
- -Extrude
 
 ○OutsidePanelGeneratorの実装
 ・Greebleのサイズを細長く設定
@@ -22,11 +15,9 @@ ExtrudeをPatternAxisに沿って行うように修正する
 ・△Panel内でGreebleを行いオブジェクトを配置
 
 
-
 ■凹凸Maker
 ●処理
 ・クラスごとに上下分割してExtrudeする
-
 
 ■OutsidePanelGenerator
 ●処理
@@ -37,21 +28,11 @@ ExtrudeをPatternAxisに沿って行うように修正する
 
 
 ■BaseBlockMaker
-○Splitの自動化
-・BoolObjの生成
-・Boolean
+○モデリング
 
-○Extrudeの自動化
-ClassごとにExtrude
-
-●Split
- -垂直
- -水平
- -斜め
-
-●Extrude
- -Distance
- -Insert
+○パラメーターの設定
+・各パーツのスケール
+・形態的変化
 
 
 ■PipeMaker
