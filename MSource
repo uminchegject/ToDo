@@ -13,6 +13,16 @@ vector rotated_vec = base_vec * rot_total;
 float dot = dot(rotated_vec, v@N);
 if(0.9 < abs(dot))removeprim(0, @primnum, 1);
 
+○NoiseRemove
+float noise = noise(v@P * ch("NoiseCofficient"));
+if(noise < ch("RemoveRatio")) removeprim(0, @primnum, 1);
+
+○非共有エッジの取得
+・Vex
+https://qiita.com/kit2cuz/items/fadcfa40322c3017bf4f
+
+△Panel内でGreebleを行いオブジェクトを配置
+
 
 ■Private
 ●サバゲーの合併案
