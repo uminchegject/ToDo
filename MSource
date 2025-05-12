@@ -1,4 +1,19 @@
-■ToDo
+■Work
+○ドキュメント
+
+○準備
+
+○デバッグ
+
+
+■Study
+○※凹凸Maker
+
+○※OutsideMaker
+
+○※BaseMaker
+
+
 ○BaseLine修正
 ・TopとBottomを修正
 vector rotate = radians(chv("../Param/PatternRotate"));
