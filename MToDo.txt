@@ -31,11 +31,8 @@
 ・Vex
 https://qiita.com/kit2cuz/items/fadcfa40322c3017bf4f
 
-
-○Tutorialの調査
-※予習(経験・サンプルプロジェクト)→動画視聴
-・動画Tutorialの勉強方法を検証
-https://www.sidefx.com/ja/tutorials/
+○PROJECT PEGASUS | 建造物
+https://www.sidefx.com/ja/tutorials/project-pegasus-architecture/
 
 
 ○IT Text コンピュータグラフィックスの基礎
@@ -46,8 +43,6 @@ https://www.sidefx.com/ja/tutorials/
 ○いとさんプレゼント
 
 ○サバゲー
-
-○傘の返信
 
 ○修理の準備
 
