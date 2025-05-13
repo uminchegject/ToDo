@@ -6,8 +6,6 @@
 
 
 ■ToDo
-○BaseLine修正
-
 ○OutsidePanelGeneratorの実装
 ・Greebleのサイズを細長く設定
 ・パラメーターに沿って切り抜く
@@ -18,6 +16,7 @@
 ■凹凸Maker
 ●処理
 ・クラスごとに上下分割してExtrudeする
+
 
 ■OutsidePanelGenerator
 ●処理
