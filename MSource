@@ -1,14 +1,35 @@
 ■PD
-○※凹凸Maker
+○凹凸Maker
+・凹凸生成をツールに実装
 
-○※OutsideMaker
+○BaseMaker
+・PatternのBlock生成
+・SplitでBasePrimからBlockを生成する
+・Splitの手順をパラメーター化し、柔軟なBlock生成を行えるようにする
 
-○※BaseMaker
+●OutsideMaker
+・OutsidePanelGeneratorの実装
+ -非共有エッジの抽出
 
 
 ■Private
+○高知
+・ことりっぷ
+・デザイントラベル
+
+・seahouse
+・司高知本店
+・明神丸
+
+○卓上ガジェットを調査
+
 ●いとさんプレゼント
-・テーマを決める
+・ペン
+・カレンダー
+・ノート
+・マグカップ
+・お守り
+
 
 
 ●さくら通信購入
