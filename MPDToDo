@@ -6,19 +6,16 @@
 
 
 ■ToDo
-○OutsidePanelGeneratorの実装
-・Greebleのサイズを細長く設定
-・パラメーターに沿って切り抜く
-・非共有エッジにPanelを配置
-・△Panel内でGreebleを行いオブジェクトを配置
 
 
 ■凹凸Maker
-●処理
-・クラスごとに上下分割してExtrudeする
+○凹凸生成をツールに実装
+・パラメーターの設計
 
 
 ■OutsidePanelGenerator
+○非共有エッジの抽出
+
 ●処理
 ・Greebleのサイズを細長く設定
 ・パラメーターに沿って切り抜く
@@ -27,11 +24,11 @@
 
 
 ■BaseBlockMaker
-○モデリング
+○PatternのBlock生成を設計
+・SplitでBasePrimからBlockを生成する
+・Splitの手順をパラメーター化し、柔軟なBlock生成を行えるようにする
 
-○パラメーターの設定
-・各パーツのスケール
-・形態的変化
+△モデリング
 
 
 ■PipeMaker
