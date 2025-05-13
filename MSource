@@ -6,44 +6,10 @@
 ○※BaseMaker
 
 
-○BaseLine修正
-・TopとBottomを修正
-vector rotate = radians(chv("../Param/PatternRotate"));
-matrix3 rot_x = ident();
-rotate(rot_x, rotate.x, {1, 0, 0});
-matrix3 rot_z = ident();
-rotate(rot_z, rotate.y, {0, 0, 1});
-matrix3 rot_total = rot_x * rot_z; 
-vector base_vec = set(0, 1, 0);
-vector rotated_vec = base_vec * rot_total;
-
-float dot = dot(rotated_vec, v@N);
-if(0.9 < abs(dot))removeprim(0, @primnum, 1);
-
-○NoiseRemove
-float noise = noise(v@P * ch("NoiseCofficient"));
-if(noise < ch("RemoveRatio")) removeprim(0, @primnum, 1);
-
-
 ■Private
 ●いとさんプレゼント
 ・テーマを決める
 
-●サバゲーの合併案
-・竹山さんに確認
-6月1日のメンバーについてご相談させて頂きたいのですが、
-実はTAメンバーの繋がりで映像系のお仕事をされているメンバーが集まっているサバゲーグループがあって、時々自分も参加させて頂いているのですが、
-今回そちらのグループに声をかけてみようかと考えております。
-そのため一度竹山さんにこの件をご相談をさせて頂いた次第です。
-お手数をおかけしますがご確認お願い致します。
-
-・ラインに招待していいかの確認及びサバゲーの共有
-お疲れ様です。
-自分も元同僚のゲームエンジニアでサバゲーをやっている方がいるのですがこちら招待させて頂いてもよろしいでしょうか?
-
-ありがとうございます!
-補足で共有ですが6/1(日)に新宿にあるフィールドで
-メンバーは自分が勤務している会社のメンバーが中心となりますが、内3名のメンバーがこのグループに入っており、もう1名は今回招待した方になるので
 
 ●さくら通信購入
 ・過去放送一括購入及びその支払いのご相談
