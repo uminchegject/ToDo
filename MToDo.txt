@@ -31,13 +31,13 @@
 ・Vex
 https://qiita.com/kit2cuz/items/fadcfa40322c3017bf4f
 
-○PROJECT PEGASUS | 建造物
-https://www.sidefx.com/ja/tutorials/project-pegasus-architecture/
+○FOUNDATIONS | PDG
+https://www.sidefx.com/ja/tutorials/foundations-build-a-city-with-pdg/
 
 ○IT Text コンピュータグラフィックスの基礎
 ・CGにおける数学の活用方法
 
-○設計
+○オブジェクト設計スタイルガイド
 ・設計
 
 
