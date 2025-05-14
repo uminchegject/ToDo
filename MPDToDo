@@ -2,10 +2,15 @@
 ※Base, DetailPattern, Detailそれぞれのフロー設計を意識する
 ※実際の工程を自動化することを意識する
 ※まずHDAをひたすら実装し、組み合わせを行うことを目標にする。
-※モデリングはサンプルプロジェクトを実際確認しながら手法を学ぶ
-
 
 ■ToDo
+○BaseBlockMakerの設計
+
+○凹凸Makerの設計
+・マルチパラメーターで実装
+
+○OutsidePanelGeneratorの実装
+・非共有エッジの抽出
 
 
 ■凹凸Maker
