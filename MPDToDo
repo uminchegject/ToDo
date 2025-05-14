@@ -4,18 +4,16 @@
 ※まずHDAをひたすら実装し、組み合わせを行うことを目標にする。
 
 ■ToDo
-○BaseBlockMakerの設計
-
-○凹凸Makerの設計
-・マルチパラメーターで実装
+○凹凸Makerの実装
+・Offsetを全体の割合に修正
 
 ○OutsidePanelGeneratorの実装
 ・非共有エッジの抽出
 
+○BaseBlockMakerの設計
+・Split周りの方法
 
 ■凹凸Maker
-○凹凸生成をツールに実装
-・パラメーターの設計
 
 
 ■OutsidePanelGenerator
