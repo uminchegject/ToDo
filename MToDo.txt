@@ -8,6 +8,7 @@
  ー全体の処理をちゃんと把握できていなかった
 
 ●※作業準備手順
+※各チケットごとに意識する
 ・ドキュメント
  -仕様確認
  -処理の概要
@@ -20,8 +21,7 @@
 
 
 ■WorkStudy
-※なるべく無音動画
-※現在のタスク内容を意識して、必要な動画を用意する
+
 
 ■Study
 ※言語、ツールに関係なく共通する根源部分を勉強する
@@ -34,9 +34,11 @@ https://qiita.com/kit2cuz/items/fadcfa40322c3017bf4f
 ○PROJECT PEGASUS | 建造物
 https://www.sidefx.com/ja/tutorials/project-pegasus-architecture/
 
-
 ○IT Text コンピュータグラフィックスの基礎
 ・CGにおける数学の活用方法
+
+○設計
+・設計
 
 
 ■Private
