@@ -52,11 +52,23 @@ setpointattrib(0, "orient", bottom_bool_pt, q_total);
 setpointgroup(0, "BottomBoolPt", bottom_bool_pt, 1);
 
 
+■BaseMaker
+※Surface, L字, 四角形からBlock生成を検証する
+
+●Split
+
+●CopyBox
+・Volume
+
 ■Private
-○高知
+○本
 ・ことりっぷ
 ・デザイントラベル
 
+●場
+・牧野植物園
+
+●飯
 ・seahouse
 ・司高知本店
-・明神丸
+・ひろめ市場(明神丸)
