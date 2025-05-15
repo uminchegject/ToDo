@@ -5,13 +5,17 @@
 
 ■ToDo
 ○凹凸Makerの実装
-・Offsetを全体の割合に修正
+・boundからサイズを測る処理を修正
+ -Offsetを比率で反映させる
 
-○OutsidePanelGeneratorの実装
-・非共有エッジの抽出
+
+○非共有エッジの取得
+・Vex
+https://qiita.com/kit2cuz/items/fadcfa40322c3017bf4f
 
 ○BaseBlockMakerの設計
 ・Split周りの方法
+
 
 ■凹凸Maker
 
@@ -27,12 +31,19 @@
 
 
 ■BaseBlockMaker
-○PatternのBlock生成を設計
-・SplitでBasePrimからBlockを生成する
-・Splitの手順をパラメーター化し、柔軟なBlock生成を行えるようにする
+○様々な作品のBlockPatternを調査
+・HardSurface
+・アニメ背景
+・田島大介
 
-△モデリング
+○※Surface, L字, 四角形からBlock生成を検証する
 
+●Split
+・同軸
+・Greeble
+
+●CopyBox
+・Volume
 
 ■PipeMaker
 ●仕様
