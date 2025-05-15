@@ -52,15 +52,8 @@ setpointattrib(0, "orient", bottom_bool_pt, q_total);
 setpointgroup(0, "BottomBoolPt", bottom_bool_pt, 1);
 
 
-■BaseMaker
-※Surface, L字, 四角形からBlock生成を検証する
 
-●Split
-
-●CopyBox
-・Volume
-
-■Private
+■高知
 ○本
 ・ことりっぷ
 ・デザイントラベル
