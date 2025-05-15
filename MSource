@@ -1,4 +1,10 @@
-●BasePoint
+●OutSidePanelのテスト
+・切り抜き
+・Noiseの境にあるPrim上でCopyToPointを行う
+
+
+
+●BaseLineの修正
 vector rotate = radians(chv("../Param/PatternRotate"));
 matrix3 rot_x = ident();
 rotate(rot_x, rotate.x, {1, 0, 0});
@@ -42,7 +48,6 @@ for(int i = 0; i < grid_num; ++i)
     setpointattrib(0, "PatternInterval", pt, pattern_interval);
     setpointattrib(0, "PatternAxis", pt, axis_vec);
 }
-
 
 vector top_bool_pos = prim(1, "P", 4);
 top_bool_pos = base_line_top_pos;
