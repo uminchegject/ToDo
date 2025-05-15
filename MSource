@@ -1,7 +1,10 @@
 ●OutSidePanelのテスト
-・切り抜き
-・Noiseの境にあるPrim上でCopyToPointを行う
-
+・Boxサイズの調整
+ -細長く
+ 
+・Extrude
+ -Boxはランダム
+ -BaseはClusterし、classごとにランダム
 
 
 ●BaseLineの修正
