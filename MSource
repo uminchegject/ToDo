@@ -1,10 +1,27 @@
-●OutSidePanelのテスト
+■OutsidePanelGenerator
+○OutsidePanelの検証
 ・Boxサイズの調整
  -細長く
- 
 ・Extrude
  -Boxはランダム
  -BaseはClusterし、classごとにランダム
+
+○BaseBlockMakerの設計
+
+●処理
+・Greebleのサイズを細長く設定
+・パラメーターに沿って切り抜く
+・非共有エッジにPanelを配置
+・△Panel内でGreebleを行いオブジェクトを配置
+
+
+■BaseBlockMaker
+○様々な作品のBlockPatternを調査
+・HardSurface
+・アニメ背景
+・田島大介
+
+○※Surface, L字, 四角形からBlock生成を検証する
 
 ■高知
 ○本
