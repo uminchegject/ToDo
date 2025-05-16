@@ -1,73 +1,15 @@
-●BaseLineの修正
-vector rotate = radians(chv("../Param/PatternRotate"));
-matrix3 rot_x = ident();
-rotate(rot_x, rotate.x, {1, 0, 0});
-matrix3 rot_z = ident();
-rotate(rot_z, rotate.y, {0, 0, 1});
-matrix3 rot_total = rot_x * rot_z; 
-
-vector axis_vec = normalize(chv("../Param/PatternAxis"));
-vector rotated_vec = axis_vec * rot_total;
-vector4 q_total = dihedral(rotated_vec, axis_vec);
-
-vector base_line_bottom_pos;
-vector base_line_top_pos;
-vector uvw;
-vector center_pos = ;
-intersect(1, center_pos, axis_vec * 1000, base_line_bottom_pos, uvw);
-intersect(1, center_pos, -axis_vec * 1000, base_line_top_pos, uvw);
-
-float offset_ratio = ch("../Param/PatternOffsetRatio");
-float base_line_length = length(base_line_top_pos - base_line_bottom_pos);
-base_line_bottom_pos += base_line_length * offset_ratio * -axis_vec;
-base_line_top_pos += base_line_length * offset_ratio * axis_vec;
-base_line_length -= base_line_length * offset_ratio * 2;
-
-float pattern_height = ch("../Param/PatternHeight");
-int grid_num = int(base_line_length / pattern_height);
-float pattern_interval = base_line_length / grid_num;
-
-vector bound_size = detail(1 ,"radii", 0);
-bound_size *= 2;
-float length = length(bound_size);
-vector scale = set(length, 0, length);
-
-for(int i = 0; i < grid_num; ++i)
-{
-    vector spawn_pos = prim(1, "P", 4);
-    spawn_pos = base_line_bottom_pos;
-    int pt = addpoint(0, spawn_pos);
-    setpointattrib(0, "scale", pt, scale);
-    setpointattrib(0, "orient", pt, q_total);
-    setpointattrib(0, "PatternInterval", pt, pattern_interval);
-    setpointattrib(0, "PatternAxis", pt, axis_vec);
-}
-
-vector top_bool_pos = prim(1, "P", 4);
-top_bool_pos = base_line_top_pos;
-int top_bool_pt = addpoint(0, top_bool_pos);
-setpointattrib(0, "scale", top_bool_pt, scale);
-setpointattrib(0, "orient", top_bool_pt, q_total);
-setpointgroup(0, "TopBoolPt", top_bool_pt, 1);
-
-vector bottom_bool_pos = prim(1, "P", 4);
-bottom_bool_pos = base_line_bottom_pos;
-int bottom_bool_pt = addpoint(0, bottom_bool_pos);
-setpointattrib(0, "scale", bottom_bool_pt, scale);
-setpointattrib(0, "orient", bottom_bool_pt, q_total);
-setpointgroup(0, "BottomBoolPt", bottom_bool_pt, 1);
-
-
+●OutSidePanelのテスト
+・Boxサイズの調整
+ -細長く
+ 
+・Extrude
+ -Boxはランダム
+ -BaseはClusterし、classごとにランダム
 
 ■高知
 ○本
 ・ことりっぷ
 ・デザイントラベル
-
-●プレゼント
-・fun pun clock for table
-・すすがみ
-・記念500円硬貨
 
 ●場
 ・牧野植物園
