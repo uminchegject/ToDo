@@ -4,10 +4,9 @@
 ※まずHDAをひたすら実装し、組み合わせを行うことを目標にする。
 
 ■ToDo
-○凹凸Makerの実装
-・boundからサイズを測る処理を修正
- -Offsetを比率で反映させる
 
+
+■OutsidePanelGenerator
 ○OutsidePanelの検証
 ・Boxサイズの調整
  -細長く
@@ -16,13 +15,6 @@
  -BaseはClusterし、classごとにランダム
 
 ○BaseBlockMakerの設計
-
-
-■凹凸Maker
-
-
-■OutsidePanelGenerator
-○非共有エッジの抽出
 
 ●処理
 ・Greebleのサイズを細長く設定
