@@ -1,12 +1,3 @@
-●OutSidePanelのテスト
-・Boxサイズの調整
- -細長く
- 
-・Extrude
- -Boxはランダム
- -BaseはClusterし、classごとにランダム
-
-
 ●BaseLineの修正
 vector rotate = radians(chv("../Param/PatternRotate"));
 matrix3 rot_x = ident();
@@ -72,6 +63,11 @@ setpointgroup(0, "BottomBoolPt", bottom_bool_pt, 1);
 ○本
 ・ことりっぷ
 ・デザイントラベル
+
+●プレゼント
+・fun pun clock for table
+・すすがみ
+・記念500円硬貨
 
 ●場
 ・牧野植物園
