@@ -8,13 +8,14 @@
 ・boundからサイズを測る処理を修正
  -Offsetを比率で反映させる
 
-
-○非共有エッジの取得
-・Vex
-https://qiita.com/kit2cuz/items/fadcfa40322c3017bf4f
+○OutsidePanelの検証
+・Boxサイズの調整
+ -細長く
+・Extrude
+ -Boxはランダム
+ -BaseはClusterし、classごとにランダム
 
 ○BaseBlockMakerの設計
-・Split周りの方法
 
 
 ■凹凸Maker
