@@ -6,7 +6,12 @@
  -Boxはランダム
  -BaseはClusterし、classごとにランダム
 
-○BaseBlockMakerの設計
+○長さの範囲に方向性を持たせる
+if(length * abs(cos(angle_rad)) < divide_min_scale.x && 0.5 < abs(cos(angle_rad)) || length * abs(sin(angle_rad)) < divide_min_scale.y && 0.5 < abs(sin(angle_rad)))
+{
+    v@DivideAxis = divide_axis;  
+    i@group_DividedToggle = 1;
+}
 
 ●処理
 ・Greebleのサイズを細長く設定
@@ -27,6 +32,10 @@
 ○本
 ・ことりっぷ
 ・デザイントラベル
+
+○プレゼント
+・すすかみ
+・NFT
 
 ●場
 ・牧野植物園
