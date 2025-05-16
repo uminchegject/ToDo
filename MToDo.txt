@@ -33,6 +33,8 @@ https://www.sidefx.com/tutorials/foundations-205-solaris-market/
 https://www.sidefx.com/ja/tutorials/pdg-for-design-work-pt-1-the-basics/
 ・デザイン向け PDG パート 2 - TOPS を使ったセットアップの高速化
 https://www.sidefx.com/ja/tutorials/pdg-for-design-work-pt-2-speeding-up-your-setups-using-tops/
+・PDG FOR INDIE GAMEDEV | セクション 2 | プロジェクト設定
+https://www.sidefx.com/ja/tutorials/pdf-for-indie-gamedev-section-2-getting-set-up/
 
 ○IT Text コンピュータグラフィックスの基礎
 ・CGにおける数学の活用方法
@@ -44,7 +46,7 @@ https://www.sidefx.com/ja/tutorials/pdg-for-design-work-pt-2-speeding-up-your-se
 ■Private
 ○田島大介本
 
-○サバゲー
+○サバゲー予約
 
 ○修理の準備
 
