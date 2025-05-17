@@ -12,17 +12,9 @@
  -Box(高)
  -Base(低)
 
-
 ○Blockの形態に特徴を持たせるパラメーターを用意する
 ・RangeAxis
 ・斜め
-
-
-●処理
-・Greebleのサイズを細長く設定
-・パラメーターに沿って切り抜く
-・非共有エッジにPanelを配置
-・△Panel内でGreebleを行いオブジェクトを配置
 
 
 ■BaseBlockMaker
@@ -38,7 +30,6 @@
 
 ●CopyBox
 ・Volume
-
 
 
 ■高知
