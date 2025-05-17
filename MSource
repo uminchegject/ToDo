@@ -1,22 +1,9 @@
-■国立図書館
-○NFT
-・NFT解体新書
-・メタバース&NFT
-
-○渡辺誠
-・Induction design
-https://ndlsearch.ndl.go.jp/books/R100000002-I000003703029#bib
+○本購入
 ・建築は、柔らかい科学に近づく
-https://ndlsearch.ndl.go.jp/books/R100000002-I000003642387
+・田島大介(中古)
 
-○BlockPatternを調査
-・HardSurface
-・アニメ背景
-・田島大介
-
-○OutSideSurface調査
-・HardSurface
-・アニメ背景
+○NFTの実践
+・NFT解体新書
 
 
 ■OutsidePanelGenerator
@@ -39,10 +26,8 @@ https://ndlsearch.ndl.go.jp/books/R100000002-I000003642387
 
 
 ■BaseBlockMaker
-○様々な作品のBlockPatternを調査
-・HardSurface
-・アニメ背景
-・田島大介
+○モデリング作品から調査
+・ハードサーフェス
 
 ○※Surface, L字, 四角形からBlock生成を検証する
 
