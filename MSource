@@ -1,3 +1,4 @@
+■Private
 ○本購入
 ・建築は、柔らかい科学に近づく
 ・田島大介(中古)
@@ -5,16 +6,26 @@
 ○NFTの実践
 ・NFT解体新書
 
+○修理
 
-■OutsidePanelGenerator
-○OutsidePanelの検証
-・ExtrudeHeight
- -Box(高)
- -Base(低)
+○家事
 
-○Blockの形態に特徴を持たせるパラメーターを用意する
-・RangeAxis
-・斜め
+△読んだ本はメルカリで売る
+・ブックカバーでなるべく汚れないようにする
+
+
+■BaseLine + Greeble
+○OutSideSurfaceの修正
+・細長くし、方向性を持たせる
+・側面のみを適応
+・Blockを斜めに切るように修正
+
+○凹凸Makerの実装
+・縦にラインを入れる
+
+○様々な形態に対応できるようにする
+・立方体
+・Boolean(Union)
 
 
 ■BaseBlockMaker
