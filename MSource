@@ -1,26 +1,19 @@
 ■Private
-○本購入
-・建築は、柔らかい科学に近づく
-・田島大介(中古)
+○書類棚整理
 
-○NFTの実践
-・NFT解体新書
-
-○修理
-
-○家事
-
-△読んだ本はメルカリで売る
-・ブックカバーでなるべく汚れないようにする
+○メルカリ
 
 
 ■BaseLine + Greeble
-○OutSideSurfaceの修正
+○OutSideSurfaceの検証
 ・細長くし、方向性を持たせる
 ・側面のみを適応
-・Blockを斜めに切るように修正
 
-○凹凸Makerの実装
+○DivideAngleを設計
+・FeedBack
+・PlusAdjust
+
+○凹凸Makerの検証
 ・縦にラインを入れる
 
 ○様々な形態に対応できるようにする
@@ -41,6 +34,17 @@
 
 ●CopyBox
 ・Volume
+
+
+■WebFrame
+○設計
+・絶対条件
+ -角度
+ -分岐
+ -領域
+・意思条件
+ -密度
+ -空間
 
 
 ■高知
