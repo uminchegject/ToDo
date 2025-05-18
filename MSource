@@ -1,14 +1,4 @@
-■Private
-○書類棚整理
-
-○メルカリ
-
-
 ■BaseLine + Greeble
-○OutSideSurfaceの検証
-・細長くし、方向性を持たせる
-・側面のみを適応
-
 ○DivideAngleを設計
 ・FeedBack
 ・PlusAdjust
@@ -22,8 +12,11 @@
 
 
 ■BaseBlockMaker
-○モデリング作品から調査
+○モデリング作品を調査
 ・ハードサーフェス
+
+○OutsidePanel + 凹凸Makerで検証
+・BaseVolume、BaseBlockMakerを意識して検証
 
 ○※Surface, L字, 四角形からBlock生成を検証する
 
