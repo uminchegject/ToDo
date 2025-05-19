@@ -4,22 +4,7 @@
 ※まずHDAをひたすら実装し、組み合わせを行うことを目標にする。
 
 ■ToDo
-○検証
-
 ○BaseBlockMakerの設計
-
-
-■BaseLine + Greeble
-○DivideAngleを設計
-・FeedBack
-・PlusAdjust
-
-○凹凸Makerの検証
-・縦にラインを入れる
-
-○様々な形態に対応できるようにする
-・立方体
-・Boolean(Union)
 
 
 ■BaseBlockMaker
