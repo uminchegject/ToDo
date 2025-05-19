@@ -1,6 +1,11 @@
 ■PDG
-○応用実装
-
+○wedgeを使用した実装
+・組み合わせを複数用意する
+ -Base
+ -Block
+ -Pattern
+  -Greeble
+  -BaseLine
 
 ■BaseLine + Greeble
 ○DivideAngleを設計
