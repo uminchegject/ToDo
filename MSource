@@ -1,23 +1,11 @@
 ■PDG
 ○wedgeを使用した実装
-・組み合わせを複数用意する
- -Base
- -Block
- -Pattern
-  -Greeble
-  -BaseLine
+・OutsidePanel
+ -MinSize
 
-■BaseLine + Greeble
-○DivideAngleを設計
-・FeedBack
-・PlusAdjust
 
-○凹凸Makerの検証
-・縦にラインを入れる
-
-○様々な形態に対応できるようにする
-・立方体
-・Boolean(Union)
+■OutsidePanel + 凹凸Maker
+○都度修正
 
 
 ■BaseBlockMaker
