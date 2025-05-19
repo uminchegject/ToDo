@@ -1,29 +1,60 @@
 ■PDG
 ○wedgeを使用した実装
+・Block
+・Volume
 ・OutsidePanel
  -MinSize
 
 
-■OutsidePanel + 凹凸Maker
-○都度修正
-
-
-■BaseBlockMaker
+■BlockMaker
 ○モデリング作品を調査
 ・ハードサーフェス
 
 ○OutsidePanel + 凹凸Makerで検証
-・BaseVolume、BaseBlockMakerを意識して検証
+・VolumeMaker、BlockMakerを意識して検証
 
-○※Surface, L字, 四角形からBlock生成を検証する
+○Surface, L字, 四角形からBlock生成を検証する
 
 ●Split
 ・Border
 ・Greeble
 ・Grid
 
-●CopyBox
-・Volume
+
+■Volume
+○HoudiniのPDプロジェクトを調査
+・Houdini sci-fi Buildings || Tutorial
+https://www.youtube.com/watch?v=PTVal-t9g1k&t=1s
+・Houdini Tutorial Megastructure Generator
+https://www.youtube.com/watch?v=J5A3Z0qX-Yk
+
+○BaseBoxからBooleanの検証
+
+○CopyToPointの検証
+
+○Volume To Block
+・Booleanし被っている部分を削除
+
+●Base
+・Boolean
+・CopyToPoint
+
+●平面( + Extrude)
+・Greeble
+ -Cluster
+・左右対称
+
+
+■Detail
+○HoudiniのPDプロジェクトを調査
+・Houdini sci-fi Buildings || Tutorial
+https://www.youtube.com/watch?v=PTVal-t9g1k&t=1s
+・Houdini Tutorial Megastructure Generator
+https://www.youtube.com/watch?v=J5A3Z0qX-Yk
+
+
+■OutsidePanel + 凹凸Maker
+○都度修正
 
 
 ■WebFrame
