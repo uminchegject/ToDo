@@ -4,39 +4,54 @@
 ※まずHDAをひたすら実装し、組み合わせを行うことを目標にする。
 
 ■ToDo
-
-
-■OutsidePanelGenerator
-○OutsidePanelの検証
-・Boxサイズの調整
- -細長く
-・Extrude
- -Boxはランダム
- -BaseはClusterし、classごとにランダム
+○検証
 
 ○BaseBlockMakerの設計
 
-●処理
-・Greebleのサイズを細長く設定
-・パラメーターに沿って切り抜く
-・非共有エッジにPanelを配置
-・△Panel内でGreebleを行いオブジェクトを配置
+
+■BaseLine + Greeble
+○DivideAngleを設計
+・FeedBack
+・PlusAdjust
+
+○凹凸Makerの検証
+・縦にラインを入れる
+
+○様々な形態に対応できるようにする
+・立方体
+・Boolean(Union)
 
 
 ■BaseBlockMaker
-○様々な作品のBlockPatternを調査
-・HardSurface
-・アニメ背景
-・田島大介
+○モデリング作品を調査
+・ハードサーフェス
+
+○OutsidePanel + 凹凸Makerで検証
+・BaseVolume、BaseBlockMakerを意識して検証
 
 ○※Surface, L字, 四角形からBlock生成を検証する
 
 ●Split
-・同軸
+・Border
 ・Greeble
+・Grid
 
 ●CopyBox
 ・Volume
+
+
+■BaseVolume
+○OutsidePanel + 凹凸Makerで検証
+
+●処理
+・平面の生成
+ -Greeble
+ -Cluster
+ -左右対称
+・高さ設定
+ -Extrude
+ -Block内でClusterし、高さを変える
+
 
 ■PipeMaker
 ●仕様
@@ -59,14 +74,3 @@
  -Pipeを配置
 ・突起物
  -TubeのExtrudeしていく
-
-
-■BaseVolume
-●処理
-・平面の生成
- -Greeble
- -Cluster
- -左右対称
-・高さ設定
- -Extrude
- -Block内でClusterし、高さを変える
