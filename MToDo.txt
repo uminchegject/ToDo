@@ -23,8 +23,7 @@ https://www.sidefx.com/tutorials/foundations-205-solaris-market/
 ※読書をしながらアウトプットを何にするか考える
 
 ○PDG
-・実践方法の調査
- -ノード同士の組み合わせをPDGで実装
+・
 
 ○IT Text コンピュータグラフィックスの基礎
 ・CGにおける数学の活用方法
