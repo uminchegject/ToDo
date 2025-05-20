@@ -1,3 +1,42 @@
+■パラメーター
+●Parameter
+・FrontAxis
+
+・SubObj
+ -PlacePos
+ -Scale
+ -IsMiller
+ -BooleanObjType
+ -BlockType
+ 
+・AddObj
+ -PlacePos
+ -Scale
+ -IsMiller
+ -BooleanObjType
+ -BlockType
+
+
+●BasePoint
+・Num
+ -Scatter
+
+・Randomly
+ -Range
+ 
+・Pos
+ -Height
+ -Front
+ -Side
+ -Inside
+
+
+●BooleanObjType
+・Box
+・TwistBox
+・Tube
+
+
 ■Volume
 ○HoudiniのPDプロジェクトを調査
 ・Houdini sci-fi Buildings || Tutorial
