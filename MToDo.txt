@@ -18,15 +18,17 @@
 ※言語、ツールに関係なく共通する根源部分を勉強する
 ※読書をしながらアウトプットを何にするか考える
 
-○PDG
-・FOUNDATIONS | PDG による都市構築
-https://www.sidefx.com/ja/tutorials/foundations-build-a-city-with-pdg/
-
 ○Solaris
 ・結局、USD ってなに？～シーンを要領よく管理するには～
 https://www.sidefx.com/ja/tutorials/usd/
-・USD ASSET BUILDING WITH SOLARIS
-https://www.sidefx.com/ja/tutorials/usd-asset-building-with-solaris/
+・LOPS FOR SOLO ARTISTS
+https://www.sidefx.com/tutorials/lops-for-solo-artists/
+
+○PDG
+・【Houdini 講演】PDGを使ってみよう
+https://www.youtube.com/watch?v=JA1N1cKPtTs
+・FOUNDATIONS | PDG による都市構築
+https://www.sidefx.com/ja/tutorials/foundations-build-a-city-with-pdg/
 
 △モデリング
 ・FOUNDATIONS 20.5 | MODEL A REVOLVER
