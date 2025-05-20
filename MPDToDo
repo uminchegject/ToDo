@@ -6,6 +6,14 @@
 ■ToDo
 
 
+■PDG
+○wedgeを使用した実装
+・Block
+・Volume
+・OutsidePanel
+ -MinSize
+
+
 ■PipeMaker
 ●仕様
 ・軸を設定する
