@@ -1,15 +1,76 @@
-○Volume To Block
-・Booleanし被っている部分を削除
+■Volume
+○HoudiniのPDプロジェクトを調査
+・Houdini sci-fi Buildings || Tutorial
+https://www.youtube.com/watch?v=PTVal-t9g1k&t=1s
+・Houdini Tutorial Megastructure Generator
+https://www.youtube.com/watch?v=J5A3Z0qX-Yk
 
-●Boolean
-・BoolObj
- -Box
- -台形
+○Add
+・ObjをCopyToPointし、BaseでBooleanしMerge
 
-●CopyToPoint
-・Volume
-・BooleanObj
+○Substruct
+・ObjをCopyToPointし、BaseからBoolean
 
-●Miller
-・Volume
-・BooleanObj
+○VolumeToBlock
+・PrimをBlockとして使用する
+
+●BasePoint
+・側面
+・Miller
+
+●Obj
+・Box
+・台形
+
+●平面( + Extrude)
+・Greeble
+ -Cluster
+・左右対称
+
+
+■Block
+○モデリング作品を調査
+・ハードサーフェス
+
+○OutsidePanel + 凹凸Makerで検証
+・VolumeMaker、BlockMakerを意識して検証
+
+○Surface, L字, 四角形からBlock生成を検証する
+
+●Split
+・Border
+・Greeble
+・Grid
+
+
+■Detail
+○HoudiniのPDプロジェクトを調査
+・Houdini sci-fi Buildings || Tutorial
+https://www.youtube.com/watch?v=PTVal-t9g1k&t=1s
+・Houdini Tutorial Megastructure Generator
+https://www.youtube.com/watch?v=J5A3Z0qX-Yk
+
+
+■OutsidePanel + 凹凸Maker
+○都度修正
+
+
+■WebFrame
+○設計
+・絶対条件
+ -角度
+ -分岐
+ -領域
+・意思条件
+ -密度
+ -空間
+
+
+■高知
+●場
+・牧野植物園
+
+●飯
+・seahouse
+・司高知本店
+・ひろめ市場(明神丸)
