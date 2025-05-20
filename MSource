@@ -6,21 +6,6 @@
  -MinSize
 
 
-■BlockMaker
-○モデリング作品を調査
-・ハードサーフェス
-
-○OutsidePanel + 凹凸Makerで検証
-・VolumeMaker、BlockMakerを意識して検証
-
-○Surface, L字, 四角形からBlock生成を検証する
-
-●Split
-・Border
-・Greeble
-・Grid
-
-
 ■Volume
 ○HoudiniのPDプロジェクトを調査
 ・Houdini sci-fi Buildings || Tutorial
@@ -43,6 +28,21 @@ https://www.youtube.com/watch?v=J5A3Z0qX-Yk
 ・Greeble
  -Cluster
 ・左右対称
+
+
+■Block
+○モデリング作品を調査
+・ハードサーフェス
+
+○OutsidePanel + 凹凸Makerで検証
+・VolumeMaker、BlockMakerを意識して検証
+
+○Surface, L字, 四角形からBlock生成を検証する
+
+●Split
+・Border
+・Greeble
+・Grid
 
 
 ■Detail
