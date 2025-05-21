@@ -18,12 +18,6 @@
 ※言語、ツールに関係なく共通する根源部分を勉強する
 ※読書をしながらアウトプットを何にするか考える
 
-○Solaris
-・結局、USD ってなに？～シーンを要領よく管理するには～
-https://www.sidefx.com/ja/tutorials/usd/
-・LOPS FOR SOLO ARTISTS
-https://www.sidefx.com/tutorials/lops-for-solo-artists/
-
 ○PDG
 ・【Houdini 講演】PDGを使ってみよう
 https://www.youtube.com/watch?v=JA1N1cKPtTs
@@ -33,7 +27,6 @@ https://www.sidefx.com/ja/tutorials/foundations-build-a-city-with-pdg/
 △モデリング
 ・FOUNDATIONS 20.5 | MODEL A REVOLVER
 https://www.sidefx.com/ja/tutorials/foundations-205-model-a-revolver/
-
 
 ○IT Text コンピュータグラフィックスの基礎
 ・CGにおける数学の活用方法
