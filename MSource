@@ -1,3 +1,14 @@
+※Volumeを意識する
+
+●Edit
+
+●Create
+
+●Split
+
+●Boolean
+
+
 ■Volume
 ○実装
 ・BasePointの生成
@@ -36,10 +47,6 @@
 ・PrimをBlockとして使用する
 ・凹凸MakerとOutsideMakerで検証
 
-●平面( + Extrude)
-・Greeble
- -Cluster
-・左右対称
 
 
 ■Block
@@ -56,6 +63,12 @@
 ・Greeble
 ・Grid
 
+
+■City
+●平面( + Extrude)
+・Greeble
+ -Cluster
+・左右対称
 
 ■Detail
 ○HoudiniのPDプロジェクトを調査
