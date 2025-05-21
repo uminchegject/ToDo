@@ -1,15 +1,6 @@
+■Volume
 ※Volumeを意識する
 
-●Edit
-
-●Create
-
-●Split
-
-●Boolean
-
-
-■Volume
 ○実装
 ・BasePointの生成
 
@@ -20,36 +11,26 @@
 ・BoundBoxでradiiを取得
 ・radiiを参照し、Scale,Posを計算
  -0～1
-・CopyToPointでBooleanObjを配置
+・CopyToPointでVolumeを配置
 
 ●Parameter
 ・FrontAxis
 ・UpAxis
-・AddObj
- -BlockType
- -BooleanObjType
- -BooleanObjScale
- -BasePointNum
- -BasePointBasePos
- -BasePointRandomPos
- -IsMiller
-
-●BooleanObjType
-・Box
-・TwistBox
-・Tube
-
-●ソース
-
-
-
-△VolumeToBlock
-・PrimをBlockとして使用する
-・凹凸MakerとOutsideMakerで検証
-
+・AddVolume
+ -Type
+ -Rotate
+ -Scale
+ -Num
+ -Pos
+  -IsMiller
 
 
 ■Block
+○VolumeToBlockを実装
+
+○BooleanToolの実装
+・VolumeMakerを参照
+
 ○モデリング作品を調査
 ・ハードサーフェス
 
@@ -69,6 +50,7 @@
 ・Greeble
  -Cluster
 ・左右対称
+
 
 ■Detail
 ○HoudiniのPDプロジェクトを調査
