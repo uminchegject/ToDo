@@ -7,11 +7,18 @@
 
 
 ■PDG
-○wedgeを使用した実装
-・Block
-・Volume
-・OutsidePanel
- -MinSize
+○Attributeの整理
+
+○実装
+
+●Attribute
+・
+
+●ノード
+・GenericGenerator
+・AttributeCreate
+・Wedge
+
 
 
 ■PipeMaker
