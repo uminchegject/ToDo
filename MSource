@@ -1,4 +1,16 @@
-■パラメーター
+■Volume
+○実装
+・BasePointの生成
+
+○検証
+・Volumeのみで一度検証
+ 
+●処理
+・BoundBoxでradiiを取得
+・radiiを参照し、Scale,Posを計算
+ -0～1
+・CopyToPointでBooleanObjを配置
+
 ●Parameter
 ・FrontAxis
 ・UpAxis
@@ -17,34 +29,12 @@
 ・Tube
 
 ●ソース
-vector base_pos = chv("BasePos"); //0～1
-vector random_slider = chv("RandomPos")/ //0～1
-int is_miller = chi("IsMiller");
 
 
-■Volume
-○HoudiniのPDプロジェクトを調査
-・Houdini sci-fi Buildings || Tutorial
-https://www.youtube.com/watch?v=PTVal-t9g1k&t=1s
-・Houdini Tutorial Megastructure Generator
-https://www.youtube.com/watch?v=J5A3Z0qX-Yk
 
-○Add
-・ObjをCopyToPointし、BaseでBooleanしMerge
-
-○Substruct
-・ObjをCopyToPointし、BaseからBoolean
-
-○VolumeToBlock
+△VolumeToBlock
 ・PrimをBlockとして使用する
-
-●BasePoint
-・側面
-・Miller
-
-●Obj
-・Box
-・台形
+・凹凸MakerとOutsideMakerで検証
 
 ●平面( + Extrude)
 ・Greeble
