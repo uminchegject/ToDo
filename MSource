@@ -1,10 +1,11 @@
 ■パラメーター
 ●Parameter
 ・FrontAxis
+・UpAxis
 
 ・SubObj
  -PlacePos
- -Scale
+ -ScaleRange
  -IsMiller
  -BooleanObjType
  -BlockType
@@ -16,20 +17,20 @@
  -BooleanObjType
  -BlockType
 
-
 ●BasePoint
 ・Num
  -Scatter
-
 ・Randomly
  -Range
- 
 ・Pos
  -Height
  -Front
  -Side
  -Inside
 
+int scatter_num = chi("ScatterNum");
+vector base_pos = chv("BasePos"); //0～1
+vector random_slider = chv("RandomPos")/ //0～1
 
 ●BooleanObjType
 ・Box
