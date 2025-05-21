@@ -19,8 +19,8 @@
 ※読書をしながらアウトプットを何にするか考える
 
 ○PDG
-・【Houdini 講演】PDGを使ってみよう
-https://www.youtube.com/watch?v=JA1N1cKPtTs
+・Reincarnation
+https://fereria.github.io/reincarnation_tech/houdini/pdg/basic/04
 ・FOUNDATIONS | PDG による都市構築
 https://www.sidefx.com/ja/tutorials/foundations-build-a-city-with-pdg/
 
