@@ -1,14 +1,31 @@
 ■BlockMaker
+○Create
+・BoxVolume
+
+○Split
+・Greeble
+
+○Edit
+・Scale
+
+○VolumeToBlock
+・Class化
+
+○OutsidePanel + 凹凸Makerで検証
+・VolumeMaker、BlockMakerを意識して検証
+
+●Parameter
+・BlockType
+・SplitType
+
+
+■BooleanTool
 ○実装
 ・BasePointの生成
 
 ○検証
 ・Volumeのみで一度検証
 ・Surface, L字, 四角形からBlock生成を検証する
-
-△OutsidePanel + 凹凸Makerで検証
-・VolumeMaker、BlockMakerを意識して検証
-
 
 ●処理
 ・BoundBoxでradiiを取得
@@ -19,18 +36,25 @@
 ●Parameter
 ・FrontAxis
 ・UpAxis
-・AddVolume
+
+・Substruct
  -BlockType
  -ObjType
+ -Num
  -Rotate
  -Scale
- -Num
  -Pos
   -IsMiller
 
-●Substruct
-
-●Split
+・Union
+・AddVolume
+ -BlockType
+ -ObjType
+ -Num
+ -Rotate
+ -Scale
+ -Pos
+  -IsMiller
 
 
 ■City
@@ -62,12 +86,3 @@ https://www.youtube.com/watch?v=J5A3Z0qX-Yk
  -密度
  -空間
 
-
-■高知
-●場
-・牧野植物園
-
-●飯
-・seahouse
-・司高知本店
-・ひろめ市場(明神丸)
