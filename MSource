@@ -1,48 +1,36 @@
-■Volume
-※Volumeを意識する
-
+■BlockMaker
 ○実装
 ・BasePointの生成
 
 ○検証
 ・Volumeのみで一度検証
- 
+・Surface, L字, 四角形からBlock生成を検証する
+
+△OutsidePanel + 凹凸Makerで検証
+・VolumeMaker、BlockMakerを意識して検証
+
+
 ●処理
 ・BoundBoxでradiiを取得
 ・radiiを参照し、Scale,Posを計算
  -0～1
-・CopyToPointでVolumeを配置
+・CopyToPointでBooleanObjを配置
 
 ●Parameter
 ・FrontAxis
 ・UpAxis
 ・AddVolume
- -Type
+ -BlockType
+ -ObjType
  -Rotate
  -Scale
  -Num
  -Pos
   -IsMiller
 
-
-■Block
-○VolumeToBlockを実装
-
-○BooleanToolの実装
-・VolumeMakerを参照
-
-○モデリング作品を調査
-・ハードサーフェス
-
-○OutsidePanel + 凹凸Makerで検証
-・VolumeMaker、BlockMakerを意識して検証
-
-○Surface, L字, 四角形からBlock生成を検証する
+●Substruct
 
 ●Split
-・Border
-・Greeble
-・Grid
 
 
 ■City
