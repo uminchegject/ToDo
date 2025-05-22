@@ -24,9 +24,10 @@ https://fereria.github.io/reincarnation_tech/houdini/pdg/basic/04
 ・FOUNDATIONS | PDG による都市構築
 https://www.sidefx.com/ja/tutorials/foundations-build-a-city-with-pdg/
 
-△モデリング
+○モデリング
 ・FOUNDATIONS 20.5 | MODEL A REVOLVER
 https://www.sidefx.com/ja/tutorials/foundations-205-model-a-revolver/
+
 
 ○IT Text コンピュータグラフィックスの基礎
 ・CGにおける数学の活用方法
@@ -48,9 +49,6 @@ https://www.sidefx.com/ja/tutorials/foundations-205-model-a-revolver/
 
 ○書類棚整理
 ・保証書、重要書類を整理
-
-
-△田島大介本
 
 
 △クローゼットの整理
