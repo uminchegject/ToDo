@@ -1,4 +1,7 @@
 ■BlockMaker
+※HardSurfaceBuildingを目標に必要な処理を整理する
+・PrimのClass化
+
 ○Create
 ・BoxVolume
 
@@ -8,15 +11,14 @@
 ○Edit
 ・Scale
 
-○VolumeToBlock
-・Class化
-
 ○OutsidePanel + 凹凸Makerで検証
 ・VolumeMaker、BlockMakerを意識して検証
 
 ●Parameter
-・BlockType
-・SplitType
+0～1
+・Scale
+・Rotate
+・Translate
 
 
 ■BooleanTool
