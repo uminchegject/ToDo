@@ -1,89 +1,64 @@
-■BooleanTool
-○実装
-・BasePointの生成
+■反省
+※TutorialはPDで応用できそうなら実際に実装してみる
 
-○検証
-・Volumeのみで一度検証
-・Surface, L字, 四角形からBlock生成を検証する
-
-●処理
-・BoundBoxでradiiを取得
-・radiiを参照し、Scale,Posを計算
- -0～1
-・CopyToPointでBooleanObjを配置
-
-●Parameter
-・FrontAxis
-・UpAxis
-
-・Substruct
- -BlockType
- -ObjType
- -Num
- -Rotate
- -Scale
- -Pos
-  -IsMiller
-
-・Union
-・AddVolume
- -BlockType
- -ObjType
- -Num
- -Rotate
- -Scale
- -Pos
-  -IsMiller
+●※作業準備手順
+※各チケットごとに意識する
+・ドキュメント
+ -仕様確認
+ -処理の概要
+ -作業手順(デバッグ手順)
+・準備
+ -作業準備
+ -デバッグ準備
+・デバッグ
+ -処理概要を確認
 
 
-■BlockMaker
-※HardSurfaceBuildingを目標に必要な処理を整理する
-・PrimのClass化
+■Study
+※言語、ツールに関係なく共通する根源部分を勉強する
+※読書をしながらアウトプットを何にするか考える
 
-○Create
-・BoxVolume
+○Group周り
+・grouppromote
+・groupexpand
 
-○Split
-・Greeble
+○ハードとソフトの違い
 
-○Edit
-・Scale
+○PDG
+・Reincarnation
+https://fereria.github.io/reincarnation_tech/houdini/pdg/basic/04
+・FOUNDATIONS | PDG による都市構築
+https://www.sidefx.com/ja/tutorials/foundations-build-a-city-with-pdg/
 
-○OutsidePanel + 凹凸Makerで検証
-・VolumeMaker、BlockMakerを意識して検証
-
-●Parameter
-0～1
-・Scale
-・Rotate
-・Translate
+○モデリング
+・FOUNDATIONS 20.5 | MODEL A REVOLVER
+https://www.sidefx.com/ja/tutorials/foundations-205-model-a-revolver/
 
 
-■City
-●平面( + Extrude)
-・Greeble
- -Cluster
-・左右対称
+○IT Text コンピュータグラフィックスの基礎
+・CGにおける数学の活用方法
+
+○オブジェクト設計スタイルガイド
+・設計
 
 
-■Detail
-○HoudiniのPDプロジェクトを調査
-・Houdini sci-fi Buildings || Tutorial
-https://www.youtube.com/watch?v=PTVal-t9g1k&t=1s
-・Houdini Tutorial Megastructure Generator
-https://www.youtube.com/watch?v=J5A3Z0qX-Yk
+■Private
+○修理の準備
+・営業所にて送付
+
+○サバゲー予約
+
+○読んだ本はメルカリで売る
+・ブックカバーでなるべく汚れないようにする
+
+○ポイント取得
+
+○書類棚整理
+・保証書、重要書類を整理
 
 
-■OutsidePanel + 凹凸Maker
-○都度修正
+△クローゼットの整理
 
+△自転車修理
 
-■WebFrame
-○設計
-・絶対条件
- -角度
- -分岐
- -領域
-・意思条件
- -密度
- -空間
+△PCの掃除
