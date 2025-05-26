@@ -7,18 +7,9 @@
 
 
 ■PDG
-○Attributeの整理
-
-○実装
-
-●Attribute
-・
-
-●ノード
-・GenericGenerator
-・AttributeCreate
-・Wedge
-
+○wedgeを使用した実装
+・OutsidePanel
+ -MinSize
 
 
 ■PipeMaker
