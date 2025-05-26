@@ -1,7 +1,4 @@
-■反省
-※TutorialはPDで応用できそうなら実際に実装してみる
 
-●※作業準備手順
 ※各チケットごとに意識する
 ・ドキュメント
  -仕様確認
@@ -19,10 +16,10 @@
 ※読書をしながらアウトプットを何にするか考える
 
 ○Group周り
-・grouppromote
-・groupexpand
-
-○ハードとソフトの違い
+・Houdini: Groupいろいろ
+https://kickbase.net/entry/houdini-group
+・【Houdini Groupで仲間を作る】1.グループを作る方法
+https://www.youtube.com/watch?v=Jzzv5K4pWr4
 
 ○PDG
 ・Reincarnation
