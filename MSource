@@ -1,6 +1,7 @@
 ■BooleanTool
-○実装
-・BasePointの生成
+○BasePointの生成(Detail)
+・Random周りの修正
+・IsMillerの実装
 
 ○検証
 ・Volumeのみで一度検証
@@ -34,8 +35,6 @@
  -Scale
  -Pos
   -IsMiller
-
-●BasePointの生成(Detail)
 
 
 ■BlockMaker
