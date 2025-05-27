@@ -36,40 +36,14 @@
   -IsMiller
 
 ●BasePointの生成(Detail)
-・posとscaleだけで検証
-
-int obj_num = 5;
-int is_miller = 1;
-
-vector front_axis = v@FrontAxis;
-vector up_axis = v@UpAxis;
-vector base_scale = v@radii;
-vector base_pos = v@center;
-
-vector pos_param_base = chv("PosParamBase");
-vector pos_param_random_range = chv("PosParamRandomRange");
-
-vector scale_param_base = chv("ScaleParamBase");
-vector scale_param_random_range = chv("ScaleParamRandomRange");
-
-for(int i = 0; i < obj_num; ++i)
-{
-	vector pos = base_pos - (base_scale / 2) + base_scale * (pos_param_base + pos_param_random_range * (random(v@P * (i + 1) - 0.5)));
-	vector scale = base_scale * (scale_param_base + scale_param_random_range * (random(v@P * (i + 2) - 0.5))); 
-	
-	if(is_miller == 1)
-	{
-		//○FrontAxisとUpAxisを参照してMiller時のBasePointの位置を計算する
-		
-	}
-	
-	
-}
 
 
 ■BlockMaker
 ・HardSurfaceBuildingを目標に必要な処理を整理する
 ・BoxからVolumeBoxを生成する
+
+○Greebleを3D化する
+・z軸の対応
 
 ○BoxからVolumeを生成するまでの処理を実装する
 
