@@ -1,12 +1,24 @@
+■PDG
+○Attribute設計
+・BooleanTool
+・凹凸Tool
+・OutsidePanelMaker
+
+○wedgeの実装
+
+
 ■BooleanTool
 ○検証
-・Volumeのみで一度検証
-・Surface, L字, 四角形からBlock生成を検証する
+・Boxから検証する
+・△BlockMakerで生成したBlockで検証する
+
+○パラメーターの拡張
+・MultiParam
+・Rotate
+・ObjType
+・BlockType
 
 ●Parameter
-・FrontAxis
-・UpAxis
-
 ・Substruct
  -BlockType
  -ObjType
@@ -15,7 +27,6 @@
  -Scale
  -Pos
   -IsMiller
-
 ・Union
  -BlockType
  -ObjType
