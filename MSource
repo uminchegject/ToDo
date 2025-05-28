@@ -41,10 +41,11 @@
 ・HardSurfaceBuildingを目標に必要な処理を整理する
 ・BoxからVolumeBoxを生成する
 
-○Greebleを3D化する
-・z軸の対応
+○BoxからVolume(Block)を生成するまでの処理を実装する
 
-○BoxからVolumeを生成するまでの処理を実装する
+○既存ノードで検証
+・Split
+・Edit(Scale)
 
 ●Create
 ・Pos
