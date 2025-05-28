@@ -1,32 +1,3 @@
-○BlockMaker調査
-・背景本
-・NightCity
-
-○City(BlockMaker)
-・Greeble
-・Cluster
-・Height
-
-○VolumeToBlock(BlockMaker)
-・Split(平面生成)
-・Height(Scale)
-
-○BooleanToolの検証
-
-○PDGAttributeの設計
-
-
-○名古屋プラン
-・ビジホ
-・カフェ
-
-○早上がりプラン
-・外苑
-・将門殿
-・篝
-・丸の内
-
-
 ■PDG
 ○Attribute設計
 ・BooleanTool
@@ -40,6 +11,10 @@
 ○検証
 ・Boxから検証する
 ・△BlockMakerで生成したBlockで検証する
+
+○BooleanToolの多様化
+・2面,3面,など多様に対応できるようにする
+・x,y,zを設定する
 
 ○パラメーターの拡張
 ・MultiParam
@@ -68,9 +43,11 @@
 
 ■BlockMaker
 ・HardSurfaceBuildingを目標に必要な処理を整理する
-・BoxからVolumeBoxを生成する
+・BoxからVolume(Block)を生成するまでの処理を実装する
 
-○BoxからVolume(Block)を生成するまでの処理を実装する
+○BlockMaker調査
+・背景本
+・NightCity
 
 ○既存ノードで検証
 ・Split
@@ -87,8 +64,21 @@
 ・Scale
 
 
-■WebFrame
-○設計
+●City(BlockMaker)
+・Greeble
+・Cluster
+・Height
+
+●VolumeToBlock(BlockMaker)
+・Split(平面生成)
+・Height(Scale)
+
+
+■Grasshopper
+○Tutorialプロジェクトの調査
+・アレンジを模索
+
+●WebFrame
 ・絶対条件
  -角度
  -分岐
