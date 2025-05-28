@@ -1,17 +1,7 @@
 ■BooleanTool
-○BasePointの生成(Detail)
-・Random周りの修正
-・IsMillerの実装
-
 ○検証
 ・Volumeのみで一度検証
 ・Surface, L字, 四角形からBlock生成を検証する
-
-●処理
-・BoundBoxでradiiを取得
-・radiiを参照し、Scale,Posを計算
- -0～1
-・CopyToPointでBooleanObjを配置
 
 ●Parameter
 ・FrontAxis
@@ -27,7 +17,6 @@
   -IsMiller
 
 ・Union
-・AddVolume
  -BlockType
  -ObjType
  -Num
