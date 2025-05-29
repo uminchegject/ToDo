@@ -9,36 +9,16 @@
 
 ■BooleanTool
 ○検証
-・Boxから検証する
-・△BlockMakerで生成したBlockで検証する
+・Boxで検証
+・多様なObjで検証
+
+○Objのパラメーター化
+
+○BlockTypeパラメーター化
 
 ○BooleanToolの多様化
 ・2面,3面,など多様に対応できるようにする
 ・x,y,zを設定する
-
-○パラメーターの拡張
-・MultiParam
-・Rotate
-・ObjType
-・BlockType
-
-●Parameter
-・Substruct
- -BlockType
- -ObjType
- -Num
- -Rotate
- -Scale
- -Pos
-  -IsMiller
-・Union
- -BlockType
- -ObjType
- -Num
- -Rotate
- -Scale
- -Pos
-  -IsMiller
 
 
 ■BlockMaker
@@ -77,6 +57,12 @@
 ■Grasshopper
 ○Tutorialプロジェクトの調査
 ・アレンジを模索
+ -オブジェクト指向
+ -効率
+ -拡張
+
+○コンピュテーショナルモデリング調査
+・読書
 
 ●WebFrame
 ・絶対条件

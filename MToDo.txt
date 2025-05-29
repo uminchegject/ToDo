@@ -20,8 +20,6 @@
 ※言語、ツールに関係なく共通する根源部分を勉強する
 ※読書をしながらアウトプットを何にするか考える
 
-○eulertoquaternionで角度周りを実装
-
 ○PDG
 ・デザイン向け PDG パート1 - 基本
 https://www.sidefx.com/ja/tutorials/pdg-for-design-work-pt-1-the-basics/
