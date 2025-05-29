@@ -22,26 +22,18 @@
 
 
 ■BlockMaker
-・HardSurfaceBuildingを目標に必要な処理を整理する
 ・BoxからVolume(Block)を生成するまでの処理を実装する
 
 ○BlockMaker調査
 ・背景本
 ・NightCity
 
-○既存ノードで検証
-・Split
-・Edit(Scale)
+○平面生成
+・Greeble(Split)
+・Cluster(City)
 
-●Create
-・Pos
-・Scale
-
-●Split
-・Ratio
-
-●Edit
-・Scale
+○立面
+・BooleanTool(Unit)
 
 
 ●City(BlockMaker)
@@ -52,6 +44,17 @@
 ●VolumeToBlock(BlockMaker)
 ・Split(平面生成)
 ・Height(Scale)
+
+
+●Create
+・Pos
+・Scale
+
+●Split
+・Ratio
+
+●Edit
+・Scale
 
 
 ■Grasshopper
