@@ -7,10 +7,10 @@
 ・x,y,zを設定する
 
 ○立面Block設計
-・BlockExtrude
- -重なっている部分を消す
 
 ○City設計
+
+○Volumeのみの検証
 
 
 ○Grasshopperの準備
