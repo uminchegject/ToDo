@@ -1,12 +1,3 @@
-■PDG
-○Attribute設計
-・BooleanTool
-・凹凸Tool
-・OutsidePanelMaker
-
-○wedgeの実装
-
-
 ■BooleanTool
 ○検証
 ・Boxで検証
@@ -22,26 +13,14 @@
 
 
 ■BlockMaker
-・HardSurfaceBuildingを目標に必要な処理を整理する
 ・BoxからVolume(Block)を生成するまでの処理を実装する
 
-○BlockMaker調査
-・背景本
-・NightCity
+○平面生成
+・Greeble(Split)
+・Cluster(City)
 
-○既存ノードで検証
-・Split
-・Edit(Scale)
-
-●Create
-・Pos
-・Scale
-
-●Split
-・Ratio
-
-●Edit
-・Scale
+○立面
+・BooleanTool(Unit)
 
 
 ●City(BlockMaker)
@@ -54,13 +33,32 @@
 ・Height(Scale)
 
 
+●Create
+・Pos
+・Scale
+
+●Split
+・Ratio
+
+●Edit
+・Scale
+
+
+■PDG
+○Attribute設計
+・BooleanTool
+・凹凸Tool
+・OutsidePanelMaker
+
+○wedgeの実装
+
+
 ■Grasshopper
 ○Grasshopperの準備
 ・インストール
 https://www.rhino3d.com/download/
 ・サンプルファイルの取得
 https://www.applicraft.com/cpmodeling_data/
-
 
 ○Tutorialプロジェクトの調査
 ・アレンジを模索
