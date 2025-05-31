@@ -2,15 +2,30 @@
 ・営業所にて送付
 
 
-○BooleanToolの多様化
-・2面,3面,など多様に対応できるようにする
-・x,y,zを設定する
+○Volumeのみの検証
+・Volume生成
+ -Greeble(Cluster)
+ -ExtrudeHeight
+・BooleanTool
+
+○重なっている箇所を消す
+・各Primで座標がほぼ同じPrimIndexを持たせる
+
+i@duplicate_prim = -1;
+
+foreach(int i = 0; i < nprimitives(0); ++i)
+{
+	if(i == i@primnum) continue;
+	vector target_prim_pos = prim(0, "P", i);
+	if(normalize(target_prim_pos - v@P) < 0.001)
+	{
+		i@duplicate_prim = i;
+	}
+}
 
 ○立面Block設計
 
 ○City設計
-
-○Volumeのみの検証
 
 
 ○Grasshopperの準備
@@ -18,60 +33,6 @@
 https://www.rhino3d.com/download/
 ・サンプルファイルの取得
 https://www.applicraft.com/cpmodeling_data/
-
-
-
-●ソース
-vector front_axis = v@FrontAxis;
-vector up_axis = v@UpAxis;
-vector base_scale = v@radii;
-base_scale *= 2;
-vector base_pos = v@centroid;
-
-for(int param_index = 1; param_index < chi("../Param/ParamList") + 1; param_index++)
-{
-
-    int obj_num = chi("../Param/ObjNum" + itoa(param_index));
-    int is_miller = chi("../Param/IsMiller" + itoa(param_index));
-    int seed = chi("../Param/Seed" + itoa(param_index));
-    
-    vector pos_param_base = chv("../Param/PosParamBase" + itoa(param_index));
-    vector pos_param_random_range = chv("../Param/PosParamRandomRange" + itoa(param_index));
-    
-    vector scale_param_base = chv("../Param/ScaleParamBase" + itoa(param_index));
-    vector scale_param_random_range = chv("../Param/ScaleParamRandomRange" + itoa(param_index));
-    
-    vector rotate_param_base = chv("../Param/RotateParamBase" + itoa(param_index));
-    vector rotate_param_random_range = chv("../Param/RotateParamRandomRange" + itoa(param_index));
-    
-    for(int i = 0; i < obj_num; ++i)
-    {
-        vector random_vec = rand(i + seed * 100);
-        random_vec -= 0.5;
-        vector pos = base_pos + base_scale * (pos_param_base + pos_param_random_range * random_vec);
-        random_vec = rand(i + seed * 200);
-        vector scale = base_scale * (scale_param_base + scale_param_random_range * random_vec);
-        random_vec = rand(i + seed * 300);
-        vector rotate = rotate_param_base + rotate_param_random_range * random_vec;
-        vector radians = radians(rotate);
-        vector4 quat = eulertoquaternion(radians, 0);
-    
-        int pt = addpoint(0, pos);
-        setpointattrib(0, "scale", pt, scale, "set");
-        setpointattrib(0, "orient", pt, quat, "set");
-        
-        if(is_miller == 1)
-        {
-            vector plane_normal = cross(front_axis, up_axis);
-            float dist = dot(pos - base_pos, plane_normal);
-            dist *= 2;
-            vector miller_pos = pos - dist * plane_normal;
-            pt = addpoint(0, miller_pos);
-            setpointattrib(0, "scale", pt, scale, "set");
-            setpointattrib(0, "origin", pt, quat, "set");
-        }        
-    }
-}
 
 
 
