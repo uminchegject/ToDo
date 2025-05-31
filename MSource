@@ -2,13 +2,38 @@
 ・営業所にて送付
 
 
-○Volumeのみの検証
-・Volume生成
- -Greeble(Cluster)
- -ExtrudeHeight
-・BooleanTool
+○BooleanTool検証
+・Substruct
+・Union
 
-○重なっている箇所を消す
+○平面生成の検証
+・Greeble
+・City
+
+
+○Grasshopperの準備
+・インストール
+https://www.rhino3d.com/download/
+・サンプルファイルの取得
+https://www.applicraft.com/cpmodeling_data/
+
+
+■BooleanTool
+○Objのパラメーター化
+
+○BlockTypeパラメーター化
+
+
+
+■平面Maker
+・BoxからVolume(Block)を生成するまでの処理を実装する
+
+●City(BlockMaker)
+・Greeble
+・Cluster
+・Height
+
+●重なっている箇所を消す
 ・各Primで座標がほぼ同じPrimIndexを持たせる
 
 i@duplicate_prim = -1;
@@ -22,64 +47,6 @@ foreach(int i = 0; i < nprimitives(0); ++i)
 		i@duplicate_prim = i;
 	}
 }
-
-○立面Block設計
-
-○City設計
-
-
-○Grasshopperの準備
-・インストール
-https://www.rhino3d.com/download/
-・サンプルファイルの取得
-https://www.applicraft.com/cpmodeling_data/
-
-
-
-■検証
-○BlockMaker検証
-・Greeble
-・Remove(Noise)
-・HeightExtrude
-
-○BooleanTool検証
-・Union
-・Substruct
-
-
-
-■BooleanTool
-○Objのパラメーター化
-
-○BlockTypeパラメーター化
-
-
-
-■BlockMaker
-・BoxからVolume(Block)を生成するまでの処理を実装する
-
-○立面
-・BooleanTool(Unit)
-
-●City(BlockMaker)
-・Greeble
-・Cluster
-・Height
-
-●VolumeToBlock(BlockMaker)
-・Split(平面生成)
-・Height(Scale)
-
-
-●Create
-・Pos
-・Scale
-
-●Split
-・Ratio
-
-●Edit
-・Scale
 
 
 ■PDG
