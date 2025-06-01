@@ -11,13 +11,6 @@
 ・City
 
 
-○Grasshopperの準備
-・インストール
-https://www.rhino3d.com/download/
-・サンプルファイルの取得
-https://www.applicraft.com/cpmodeling_data/
-
-
 ■BooleanTool
 ○Objのパラメーター化
 
@@ -59,12 +52,6 @@ foreach(int i = 0; i < nprimitives(0); ++i)
 
 
 ■Grasshopper
-○Grasshopperの準備
-・インストール
-https://www.rhino3d.com/download/
-・サンプルファイルの取得
-https://www.applicraft.com/cpmodeling_data/
-
 ○Tutorialプロジェクトの調査
 ・アレンジを模索
  -オブジェクト指向
