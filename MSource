@@ -3,19 +3,23 @@
 
 
 ○BooleanTool検証
+・Boxで検証
 ・Substruct
 ・Union
 
 ○平面生成の検証
 ・Greeble
-・City
+・City(Cluster)
+
+○DetailPattern検証
+・凹凸Maker
+・OutsidePanel
 
 
 ■BooleanTool
 ○Objのパラメーター化
 
 ○BlockTypeパラメーター化
-
 
 
 ■平面Maker
