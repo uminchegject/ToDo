@@ -1,30 +1,41 @@
-○修理の準備
-・営業所にて送付
+■自己紹介
+【自己紹介】
+主な業務範囲／得意分野：
+・ツール開発
+Houdini, UnrealEngine ,Maya
+
+勤務形態：本社在中
+Notion職務経歴書ページ：整理中
+その他：
+・CRに入社する前は大学で建築を専攻していました。
+・ボードゲーム、サバイバルゲームに最近はハマっており、その影響でゲームもFPS(EFT, BF)や
+・散歩も
 
 
-○BooleanTool検証
-・Boxで検証
-・Substruct
-・Union
+○Volume生成(Block生成)の検証
+・BooleanToolのみで検証
+ -Substruct
+ -Union
 
-○平面生成の検証
-・Greeble
-・City(Greeble + Scale)
+○CityGeneratorの実装
+・Greeble + Scale
+・Cluster
 
-○DetailPattern検証
-・凹凸Maker
-・OutsidePanel
+○検証
+・City
+・Volume
+・DetailPattern
+ -凹凸Maker
+ -OutsidePanel
 
 
 ■BooleanTool
-○Objのパラメーター化
-
 ○BlockTypeパラメーター化
 
+○Objのパラメーター化
 
-■平面Maker
-・BoxからVolume(Block)を生成するまでの処理を実装する
 
+■CityToVolume
 ●City(BlockMaker)
 ・Greeble
 ・Cluster
@@ -46,16 +57,10 @@ foreach(int i = 0; i < nprimitives(0); ++i)
 }
 
 
-■PDG
-○Attribute設計
-・BooleanTool
-・凹凸Tool
-・OutsidePanelMaker
-
-○wedgeの実装
-
-
 ■Grasshopper
+○事例調査
+・ポートフォリオ
+
 ○Tutorialプロジェクトの調査
 ・アレンジを模索
  -オブジェクト指向

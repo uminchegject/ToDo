@@ -1,7 +1,18 @@
+※事例調査を怠らない
 ※形態、複数のPrimに問わず対応できるDetailMakerを実装する
 ※Base, DetailPattern, Detailそれぞれのフロー設計を意識する
 ※実際の工程を自動化することを意識する
 ※まずHDAをひたすら実装し、組み合わせを行うことを目標にする。
+
+
+■PDG
+○Attribute設計
+・BooleanTool
+・凹凸Tool
+・OutsidePanelMaker
+
+○wedgeの実装
+
 
 ■PipeMaker
 ●仕様
@@ -15,13 +26,6 @@
  -4頂点のPolyLineを生成
  -PolyWire
  -PolyBebel
- 
-
-■City
-●平面( + Extrude)
-・Greeble
- -Cluster
-・左右対称
 
 
 ■Detail
@@ -30,7 +34,3 @@
 https://www.youtube.com/watch?v=PTVal-t9g1k&t=1s
 ・Houdini Tutorial Megastructure Generator
 https://www.youtube.com/watch?v=J5A3Z0qX-Yk
-
-
-■OutsidePanel + 凹凸Maker
-○都度修正
