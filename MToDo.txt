@@ -1,7 +1,10 @@
 ■反省
-※10分以上の場合は離脱
-※いた場合は15分ほど作業した後magmabooksに散歩に行くか帰る
- -散歩の場合は思考準備を行う
+※キャッチアップは何ができるかを大まかに把握のみする
+ -さらに調べたい場合はTutorialに移る
+※夜カフェ・夜作業で翌日の計画をする
+ -基礎
+ -キャッチアップ
+ -PDG
 ※TutorialはPDで応用できそうなら実際に実装してみる
 
 ※各チケットごとに意識する
@@ -25,6 +28,12 @@
  -maya
  -UnrealEngine
  -Houdini
+ 
+○テクスチャマッピングと極座標
+・直交座標から極座標への変換メモ
+https://qiita.com/edo_m18/items/5d61f19512fb05f48501
+・第8回 テクスチャマッピング (1)
+https://tokoik.github.io/gg/ggnote08.pdf
 
 ○モデリング
 ・FOUNDATIONS 20.5 | MODEL A REVOLVER
