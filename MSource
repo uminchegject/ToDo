@@ -1,25 +1,8 @@
-■自己紹介
-【自己紹介】
-主な業務範囲／得意分野：
-・ツール開発
-Houdini, UnrealEngine ,Maya
-
-勤務形態：本社在中
-Notion職務経歴書ページ：整理中
-その他：
-・CRに入社する前は大学で建築を専攻していました。
-・ボードゲーム、サバイバルゲームに最近はハマっており、その影響でゲームもFPS(EFT, BF)や
-・散歩も
-
-
 ○Volume生成(Block生成)の検証
+・CityBoxを使用して検証
 ・BooleanToolのみで検証
  -Substruct
  -Union
-
-○CityGeneratorの実装
-・Greeble + Scale
-・Cluster
 
 ○検証
 ・City
