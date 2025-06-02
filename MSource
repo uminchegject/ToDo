@@ -24,21 +24,6 @@
 ・Cluster
 ・Height
 
-●重なっている箇所を消す
-・各Primで座標がほぼ同じPrimIndexを持たせる
-
-i@duplicate_prim = -1;
-
-foreach(int i = 0; i < nprimitives(0); ++i)
-{
-	if(i == i@primnum) continue;
-	vector target_prim_pos = prim(0, "P", i);
-	if(normalize(target_prim_pos - v@P) < 0.001)
-	{
-		i@duplicate_prim = i;
-	}
-}
-
 
 ■Grasshopper
 ○事例調査
