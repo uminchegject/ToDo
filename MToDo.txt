@@ -30,8 +30,6 @@
  -Houdini
  
 ○テクスチャマッピングと極座標
-・直交座標から極座標への変換メモ
-https://qiita.com/edo_m18/items/5d61f19512fb05f48501
 ・第8回 テクスチャマッピング (1)
 https://tokoik.github.io/gg/ggnote08.pdf
 
