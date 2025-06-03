@@ -34,6 +34,14 @@
 ・これから始めるHoudini Engine Part1：Houdini Engineの概要
 https://www.youtube.com/watch?v=984GWP_dUZk
 
+○Unity
+・Unity Creator Kit: FPS、RPG、Puzzleを解説します
+https://www.youtube.com/watch?v=657jzioQ84Q
+・Creator Kit: Puzzle
+https://learn.unity.com/project/creator-kit-puzzle
+・△Unity チュートリアル「玉転がし」をやってみた
+https://github.com/acronhub/unity-roll-a-ball
+
 ○HoudiniEngineForUnity
 ※Unityについても並行してStudyする
 ・実践 Houdini Engine for Unity
@@ -51,7 +59,7 @@ https://www.sidefx.com/docs/unity18.5/_outputs.html
 ※背景×Houdini×UE
 ・PROJECT TITAN BUILDING TOOL
 https://www.sidefx.com/ja/tutorials/project-titan-building-tool/
-
+・
 
 ○やりたいことをまとめる
 ※イメージがしやすいことを意識する
