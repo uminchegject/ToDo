@@ -27,11 +27,17 @@
 
 
 ■WorkStudy
-○Unity
-・概要
-・操作
+○HoudiniEngineの調査
+※UE×Unityに共通する基礎部分をStudyする
+ -構造
+ -概要
+・これから始めるHoudini Engine Part1：Houdini Engineの概要
+https://www.youtube.com/watch?v=984GWP_dUZk
 
 ○HoudiniEngineForUnity
+※Unityについても並行してStudyする
+・実践 Houdini Engine for Unity
+https://note.com/aoi/n/n8fbfd54c349f
 ・UNITY スターターキット
 https://www.sidefx.com/ja/tutorials/unity-starter-kit/
 ・Events
@@ -40,27 +46,25 @@ https://www.sidefx.com/docs/unity19.0/_assets.html#Assets_HoudiniAsset
 https://www.sidefx.com/docs/unity18.5/_outputs.html
 
 
-○Notion
-・書き方
-・管理
+■CommitteeStudy
+○事例調査
+※背景×Houdini×UE
+・PROJECT TITAN BUILDING TOOL
+https://www.sidefx.com/ja/tutorials/project-titan-building-tool/
+
 
 ○やりたいことをまとめる
 ※イメージがしやすいことを意識する
+ -ModularModeling
+ -ProceduralModeling
 ・TutorialProjectをリストアップ
-・
+・簡単な概要説明を用意
 
 
 ■Study
 ※言語、ツールに関係なく共通する根源部分を勉強する
 ※読書をしながらアウトプットを何にするか考える
 
-○テクスチャマッピングと極座標
-・第8回 テクスチャマッピング (1)
-https://tokoik.github.io/gg/ggnote08.pdf
-
-○モデリング
-・FOUNDATIONS 20.5 | MODEL A REVOLVER
-https://www.sidefx.com/ja/tutorials/foundations-205-model-a-revolver/
 
 ○IT Text コンピュータグラフィックスの基礎
 ・CGにおける数学の活用方法
