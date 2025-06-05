@@ -7,23 +7,10 @@
 ・西原珈琲店 名古屋
 
 
-■ToDo
-○Grasshopper
-・Tutorialの処理確認
-・プロジェクトの選定
-
-○Communitty
-・レイアウト
-・小物
-
-○PD
-・重ならないように凹凸を生成する
-・ClusterでClassごとにBlockを隣接させて高さ変える
-
-
 ■PD
-○修正
-・Substructも検証
+○重ならないように凹凸を生成する
+
+○ClusterでClassごとにBlockを隣接させて高さ変える
 
 ○Volume生成(Block生成)の検証
 ・CityBoxを使用して検証
@@ -53,14 +40,24 @@
 
 
 ■Grasshopper
+・インストール
+https://www.rhino3d.com/download/
+・サンプルファイルの取得
+https://www.applicraft.com/cpmodeling_data/
+
+○スクリプト調査
+・本
+・サンプルデータ
+
+○RoofGalapagos
+・調査
+・設計
+ -可読性
+ -パッケージ化
+ -保守性
+
 ○事例調査
 ・ポートフォリオ
-
-○Tutorialプロジェクトの調査
-・アレンジを模索
- -オブジェクト指向
- -効率
- -拡張
 
 ○コンピュテーショナルモデリング調査
 ・読書
