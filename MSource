@@ -10,7 +10,6 @@
 ■PD
 ○重ならないように凹凸を生成する
 
-○ClusterでClassごとにBlockを隣接させて高さ変える
 
 ○Volume生成(Block生成)の検証
 ・CityBoxを使用して検証
@@ -70,3 +69,5 @@ https://www.applicraft.com/cpmodeling_data/
 ・意思条件
  -密度
  -空間
+
+

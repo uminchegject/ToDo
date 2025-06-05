@@ -26,10 +26,9 @@
 
 
 ■WorkStudy
-○HoudiniEngineの調査
-※UE×Unityに共通する基礎部分をStudyする
- -構造
- -概要
+○UnityEvent
+・【Unity】ActionとUnityEventについて
+https://qiita.com/Yamara/items/334c3f4d2cb97f91bd4f
 
 ○HoudiniEngineForUnity
 ※Unityについても並行してStudyする
@@ -51,14 +50,17 @@ https://www.sidefx.com/ja/docs/houdini19.5/unity/outputs.html
 ・CGWorld
 https://cgworld.jp/feature/201904-cgw248-pe1000.html
 
-○ドキュメント作成
-・メモ
-・Notion
+○ドキュメントメモの作成
 
-●1000の和室
-・小物のプロシージャルモデリング
+○Notion
+
+●やりたいこと
+・プロップのプロシージャルモデリング
 ・レイアウトの自動化
 
+●1000の和室
+・HDAを機能ごとに細分化
+・フルプロシージャルに形作られるものと、先に造形したものを組み込んだ「差分アセット」だ
 
 ■Study
 ※言語、ツールに関係なく共通する根源部分を勉強する
