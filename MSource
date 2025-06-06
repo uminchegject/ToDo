@@ -8,8 +8,10 @@
 
 
 ■PD
-○重ならないように凹凸を生成する
-
+○Divideを実装
+・重点を設定
+・classを設定
+・△密閉させる
 
 ○Volume生成(Block生成)の検証
 ・CityBoxを使用して検証
@@ -44,8 +46,8 @@ https://www.rhino3d.com/download/
 ・サンプルファイルの取得
 https://www.applicraft.com/cpmodeling_data/
 
-○スクリプト調査
-・本
+○スクリプト
+※Pythonのみを勉強
 ・サンプルデータ
 
 ○RoofGalapagos
