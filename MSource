@@ -1,21 +1,6 @@
-●名古屋
-・rocca and friends 名古屋
-・hario cafe 名古屋
-・the apartment store 名古屋
-・天狼院書店 名古屋
-・文喫 名古屋
-・西原珈琲店 名古屋
+○凹凸の修正
 
-
-■PD
-○凹凸の実装
-・△密閉させる
-
-○Volume生成(Block生成)の検証
-・CityBoxを使用して検証
-・BooleanToolのみで検証
- -Substruct
- -Union
+○VolumeMaker + DetailMakerで検証
 
 ○検証
 ・City
@@ -39,27 +24,26 @@
 
 
 ■Grasshopper
-・インストール
-https://www.rhino3d.com/download/
-・サンプルファイルの取得
-https://www.applicraft.com/cpmodeling_data/
+○アカウント作成の依頼
 
-○スクリプト
-※Pythonのみを勉強
-・サンプルデータ
+○ツール実装
+・拡張性
+ -カプセル化
+・可読性
+ -Script化
 
-○RoofGalapagos
-・調査
-・設計
- -可読性
- -パッケージ化
- -保守性
+・インプット
+ -土地
+ -地域施設
+ -時期
+・アウトプット
+ -可視化
 
-○事例調査
-・ポートフォリオ
-
-○コンピュテーショナルモデリング調査
-・読書
+●DDE
+https://www.shimz.co.jp/dde/tools/index.html
+・実用的なツールを実装する
+・日商率の可視化
+・斜線制限の可視化
 
 ●WebFrame
 ・絶対条件
@@ -69,5 +53,3 @@ https://www.applicraft.com/cpmodeling_data/
 ・意思条件
  -密度
  -空間
-
-
