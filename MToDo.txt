@@ -15,20 +15,8 @@
 
 
 ■WorkStudy
-○Unityツールの調査
-・HDAの調査
-・パイプラインの調査
-
-○UnityEvent
-・【Unity】ActionとUnityEventについて
-https://qiita.com/Yamara/items/334c3f4d2cb97f91bd4f
-
 ○HoudiniEngineForUnity
-※Unityについても並行してStudyする
-・これから始めるHoudini Engine Part5：Houdini Engine for Unityを使用した制作事例
-https://www.youtube.com/watch?v=wX91ZGxZnrI
-・△UNITY スターターキット
-https://www.sidefx.com/ja/tutorials/unity-starter-kit/
+・WoodGreen
 
 ・Events
 https://www.sidefx.com/ja/docs/houdini19.5/unity/assets
@@ -40,7 +28,11 @@ https://www.sidefx.com/ja/docs/houdini19.5/unity/outputs.html
 ※言語、ツールに関係なく共通する根源部分を勉強する
 ※読書をしながらアウトプットを何にするか考える
 
-○UE5.6
+○Terrain
+・Houdini Terrain Part3：Height Fieldの解像度の設定と形状の編集
+https://www.youtube.com/watch?v=pGBPwfNytZQ
+・Houdini Foundations: Terrain 2 | Add and Visualize Mask Layers
+https://www.youtube.com/watch?v=zIFwCe1syQQ&t=21s
 
 ○IT Text コンピュータグラフィックスの基礎
 ・CGにおける数学の活用方法
