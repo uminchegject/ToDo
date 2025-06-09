@@ -13,19 +13,12 @@
  -Tutorial
  -講演会(資料)
 
-※各チケットごとに意識する
-・ドキュメント
- -仕様確認
- -処理の概要
- -作業手順(デバッグ手順)
-・準備
- -作業準備
- -デバッグ準備
-・デバッグ
- -処理概要を確認
-
 
 ■WorkStudy
+○Unityツールの調査
+・HDAの調査
+・パイプラインの調査
+
 ○UnityEvent
 ・【Unity】ActionとUnityEventについて
 https://qiita.com/Yamara/items/334c3f4d2cb97f91bd4f
@@ -41,20 +34,6 @@ https://www.sidefx.com/ja/tutorials/unity-starter-kit/
 https://www.sidefx.com/ja/docs/houdini19.5/unity/assets
 ・OutputNamingScheme
 https://www.sidefx.com/ja/docs/houdini19.5/unity/outputs.html
-
-
-■CommitteeStudy
-○100の和室の調査
-・CGWorld
-https://cgworld.jp/feature/201904-cgw248-pe1000.html
-
-●やりたいこと
-・プロップのプロシージャルモデリング
-・レイアウトの自動化
-
-●1000の和室
-・HDAを機能ごとに細分化
-・フルプロシージャルに形作られるものと、先に造形したものを組み込んだ「差分アセット」だ
 
 
 ■Study
