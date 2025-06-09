@@ -1,11 +1,6 @@
 ○VolumeMaker + DetailMakerで検証
-
-○検証
-・City
-・Volume
-・DetailPattern
- -凹凸Maker
- -OutsidePanel
+・凹凸Pattern
+・PanelSurface
 
 
 ■BooleanTool
@@ -14,35 +9,37 @@
 ○Objのパラメーター化
 
 
-■CityToVolume
-●City(BlockMaker)
-・Greeble
-・Cluster
-・Height
-
-
-■Grasshopper
+■GrasshopperTool
 ○アカウント作成の依頼
 
-○ツール実装
+○仕様設計
+※ビジュアル化するツールを実装する
+・
+
+○ロジック設計
+
+
+●インプット
+・周辺環境
+・地域施設
+・時期
+
+●アウトプット
+・可視化
+
+●アピール
 ・拡張性
  -カプセル化
 ・可読性
  -Script化
 
-・インプット
- -土地
- -地域施設
- -時期
-・アウトプット
- -可視化
-
 ●DDE
 https://www.shimz.co.jp/dde/tools/index.html
-・実用的なツールを実装する
 ・日商率の可視化
 ・斜線制限の可視化
 
+
+■GrasshopperPD
 ●WebFrame
 ・絶対条件
  -角度
@@ -51,3 +48,10 @@ https://www.shimz.co.jp/dde/tools/index.html
 ・意思条件
  -密度
  -空間
+ 
+●インプット
+・環境
+・各種パラメーター
+
+●アウトプット
+・建築
