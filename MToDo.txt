@@ -30,6 +30,11 @@ https://www.sidefx.com/ja/docs/houdini19.5/unity/outputs.html
 
 ○Cop
 ※シェーダーと関連づける
+・HightfieldのコンポーネントをCOPに読み込む
+https://support.borndigital.co.jp/hc/ja/articles/360005498953-Hightfield%E3%81%AE%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%82%92COP%E3%81%AB%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%82%80
+・Magic Market | Terrain Concepts 2 | COP Texturing
+https://www.youtube.com/watch?v=erEX_DCrfS4
+
 
 ○Terrain
 ・Houdini Terrain Part3：Height Fieldの解像度の設定と形状の編集
