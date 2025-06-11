@@ -15,19 +15,6 @@
 
 
 ■WorkStudy
-○HoudiniEngineForUnity
-・WoodGreen
-
-・Events
-https://www.sidefx.com/ja/docs/houdini19.5/unity/assets
-・OutputNamingScheme
-https://www.sidefx.com/ja/docs/houdini19.5/unity/outputs.html
-
-
-■Study
-※言語、ツールに関係なく共通する根源部分を勉強する
-※読書をしながらアウトプットを何にするか考える
-
 ○Cop
 ※シェーダーと関連づける
 ・HightfieldのコンポーネントをCOPに読み込む
@@ -40,6 +27,11 @@ https://www.youtube.com/watch?v=erEX_DCrfS4
 https://www.youtube.com/watch?v=pGBPwfNytZQ
 ・Houdini Foundations: Terrain 2 | Add and Visualize Mask Layers
 https://www.youtube.com/watch?v=zIFwCe1syQQ&t=21s
+
+
+■Study
+※言語、ツールに関係なく共通する根源部分を勉強する
+※読書をしながらアウトプットを何にするか考える
 
 ○IT Text コンピュータグラフィックスの基礎
 ・CGにおける数学の活用方法
