@@ -35,7 +35,6 @@ https://support.borndigital.co.jp/hc/ja/articles/360005498953-Hightfield%E3%81%A
 ・Magic Market | Terrain Concepts 2 | COP Texturing
 https://www.youtube.com/watch?v=erEX_DCrfS4
 
-
 ○Terrain
 ・Houdini Terrain Part3：Height Fieldの解像度の設定と形状の編集
 https://www.youtube.com/watch?v=pGBPwfNytZQ
@@ -49,7 +48,20 @@ https://www.youtube.com/watch?v=zIFwCe1syQQ&t=21s
 ・設計
 
 
+■委員会
+○定例会準備
+※スレッドで相談の上話すことをある程度共有しておく
 
+●IDEA
+・スレッドで管理
+ -ノーションの追加事項
+
+●やること相談
+・ドキュメントを作る
+ -ノーションに記事を作る
+・共有会の実施
+・気軽に相談できる人間関係を作る
+ -slackの用意
 
 
 ■Private
