@@ -2,10 +2,11 @@
 ○凹凸Patternの修正
 ・上下ぴったし処理が行われるように修正
 ・サイズがランダムになるように修正
+・Extrudeを追加
 
-○PanelSurfaceの検証
-・OutsideMakerで検証
-・必要があれば改良
+○OutsideMakerの修正
+・ノードを整理
+・Subnet化
 
 ○VolumeMaker + DetailMakerで検証
 ・凹凸Maker
