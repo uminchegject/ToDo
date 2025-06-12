@@ -9,6 +9,12 @@
 
 
 ■WorkStudy
+※作業に関連するツール周りのStudy
+※作業に関連する基礎周りのStudy
+・UVをHeightFieldに描画
+・ブラーを使ったLODのテクスチャ
+・Copsでレンダー
+
 ○Cop
 ※シェーダーと関連づける
 ・CRAFTSMAN: シーンアセンブリ、 COPS、 ライティング & ルックデブ
