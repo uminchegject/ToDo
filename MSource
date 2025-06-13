@@ -1,8 +1,33 @@
+■国会図書館
+●Grasshopper
+・建築実務のプロが作ったRhinoとGrasshopperの本
+
+●PD
+・Maya実践ハードサーフェスモデリング:プロップと背景から学ぶワークフロー (CG Pro Insights)
+・田島大介 超越界限 DAISUKE TAJIMA BEYOND THE LINES
+
+●シェーダー
+・ゲーム制作者になるための3dグラフィックス技術
+・HLSL シェーダーの魔導書 シェーディングの基礎からレイトレーシングまで
+・Unreal Engine 4 マテリアルデザイン入門
+
+
+■シェーダー
+○調査
+・ディゾルブ表現
+https://zenn.dev/r_ngtm/books/shadergraph-cookbook/viewer/recipe-dissolve
+
+
 ■PD
+○VolumeMaker + DetailMakerの設計
+
+○Detailの斥候
+
 ○VolumeMaker修正
 ・重なっている部分の削除
 
 ○OutsideMakerの修正
+・検証を行いつつパラメーターを修正
 
 ○VolumeMaker + DetailMakerで検証
 ・凹凸Maker
@@ -17,6 +42,8 @@
 
 
 ■GrasshopperTool
+※作業の進め方を決定する
+
 ○アカウント作成の依頼
 
 ○仕様設計
@@ -61,3 +88,29 @@ https://www.shimz.co.jp/dde/tools/index.html
 
 ●アウトプット
 ・建築
+
+
+■委員会
+○プロジェクト調査
+・Houdini × UE4によるプロシージャル背景制作！Procedural Environment『1,000の和室』
+https://cgworld.jp/feature/201904-cgw248-pe1000.html
+・Blenderのジオメトリーノード(Geometry Node)を使用して、数学的な２次元、３次元グラフを描く
+https://www.youtube.com/watch?v=9i0gCnLw80c
+・running hippo 🦛
+https://x.com/tinybugbot/status/1912167367490343045?s=46&t=Ctxx8b8ggWpYvMw9AXPRMQ
+
+○メモの用意
+
+○定例会準備
+・アジェンダを用意
+・資料を用意
+
+●IDEA
+・プロシージャルモデリング
+
+●やること相談
+・ドキュメントを作る
+ -ノーションに記事を作る
+・共有会の実施
+・気軽に相談できる人間関係を作る
+ -slackの用意
