@@ -1,7 +1,8 @@
 ■PD
+○VolumeMaker修正
+・重なっている部分の削除
+
 ○OutsideMakerの修正
-・ノードを整理
-・Subnet化
 
 ○VolumeMaker + DetailMakerで検証
 ・凹凸Maker
