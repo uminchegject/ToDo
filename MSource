@@ -45,20 +45,23 @@ https://x.com/tinybugbot/status/1912167367490343045?s=46&t=Ctxx8b8ggWpYvMw9AXPRM
 
 ■PD
 ○VolumeMaker + DetailMakerの設計
-・HardSurfaceTownプロジェクトを調査
+・BigMoc
+ -AddVolume
+ -凹凸Maker
+ -△OutsideMaker
+・SmallMoc
+ -凹凸Maker(※Patternバリエーションを増やせるように改良)
+ -DetailMoc
 
-○Detailの斥候
-
-○VolumeMaker修正
-・重なっている部分の削除
+○凹凸Makerの改良
+※Patternバリエーションを増やせるように改良
+・縦軸も入れる
 
 ○OutsideMakerの修正
 ・検証を行いつつパラメーターを修正
 
-○VolumeMaker + DetailMakerで検証
-・凹凸Maker
-・OutsideMaker
-・AddBoxVolume
+○VolumeMaker修正
+・重なっている部分の削除
 
 
 ■BooleanTool
