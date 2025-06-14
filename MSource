@@ -1,13 +1,15 @@
 ■シェーダーの学び方
-●勉強法
-・実際のシェーダーを確認する
+●構造
+・ゲーム制作者になるための3dグラフィックス技術
+用語、仕組みの分かりやすい説明
+・HLSL シェーダーの魔導書 シェーディングの基礎からレイトレーシングまで
+仕組みの説明、HLSLを用いた実装
 
-●資料
+●実践
 ・ディゾルブ表現
 https://zenn.dev/r_ngtm/books/shadergraph-cookbook/viewer/recipe-dissolve
-・ゲーム制作者になるための3dグラフィックス技術
-・HLSL シェーダーの魔導書 シェーディングの基礎からレイトレーシングまで
 ・Unreal Engine 4 マテリアルデザイン入門
+ノードベースのテクスチャ実装
 
 
 ■範囲拡大
@@ -42,7 +44,6 @@ https://x.com/tinybugbot/status/1912167367490343045?s=46&t=Ctxx8b8ggWpYvMw9AXPRM
  -slackの用意
 
 
-
 ■PD
 ○VolumeMaker + DetailMakerの設計
 ・BigMoc
@@ -70,14 +71,20 @@ https://x.com/tinybugbot/status/1912167367490343045?s=46&t=Ctxx8b8ggWpYvMw9AXPRM
 ○Objのパラメーター化
 
 
-■GrasshopperTool
+■GrasshopperTutorial
 ※土日ベースで週ToDo設計及び作業を行う
 
 ○アカウント作成の依頼
 
 ○Tutorialの調査及び拡張
-・オリジナリティは考えず、処理設計部分を意識して改善する
+※オリジナリティは考えず、処理設計部分を意識して改善する
+・建築実務のプロが作ったRhinoとGrasshopperの本
+https://www.applicraft.com/kj-data/
+・コンピュテーショナル・モデリング 入門から応用
+https://www.applicraft.com/cpmodeling_data/
 
+
+■GrasshopperTool
 ○仕様設計
 ※ビジュアル化するツールを実装する
 
