@@ -1,49 +1,3 @@
-■シェーダーの学び方
-●構造
-・ゲーム制作者になるための3dグラフィックス技術
-用語、仕組みの分かりやすい説明
-・HLSL シェーダーの魔導書 シェーディングの基礎からレイトレーシングまで
-仕組みの説明、HLSLを用いた実装
-
-●実践
-・ディゾルブ表現
-https://zenn.dev/r_ngtm/books/shadergraph-cookbook/viewer/recipe-dissolve
-・Unreal Engine 4 マテリアルデザイン入門
-ノードベースのテクスチャ実装
-
-
-■範囲拡大
-※出向組の作業も考慮する
-
-○参考になりそうなサイトをリストアップ
-
-●プロシージャルモデリング
-・BuildingTool
-・楽しい都市生成
-・CGWorld
-・斎藤さん
-
-●プロシージャルアニメーション
-
-●数学的使用
-・堀川さん(Youtube, 本)
-
-●実例
-・Houdini × UE4によるプロシージャル背景制作！Procedural Environment『1,000の和室』
-https://cgworld.jp/feature/201904-cgw248-pe1000.html
-・Blenderのジオメトリーノード(Geometry Node)を使用して、数学的な２次元、３次元グラフを描く
-https://www.youtube.com/watch?v=9i0gCnLw80c
-・running hippo 🦛
-https://x.com/tinybugbot/status/1912167367490343045?s=46&t=Ctxx8b8ggWpYvMw9AXPRMQ
-
-●やること相談
-・ドキュメントを作る
- -ノーションに記事を作る
-・共有会の実施
-・気軽に相談できる人間関係を作る
- -slackの用意
-
-
 ■PD
 ○VolumeMaker + DetailMakerの設計
 ・BigMoc
@@ -129,3 +83,48 @@ https://www.shimz.co.jp/dde/tools/index.html
 ・建築
 
 
+
+■シェーダーの学び方
+●構造
+・ゲーム制作者になるための3dグラフィックス技術
+用語、仕組みの分かりやすい説明
+・HLSL シェーダーの魔導書 シェーディングの基礎からレイトレーシングまで
+仕組みの説明、HLSLを用いた実装
+
+●実践
+・ディゾルブ表現
+https://zenn.dev/r_ngtm/books/shadergraph-cookbook/viewer/recipe-dissolve
+・Unreal Engine 4 マテリアルデザイン入門
+ノードベースのテクスチャ実装
+
+
+■範囲拡大
+※出向組の作業も考慮する
+
+○参考になりそうなサイトをリストアップ
+
+●プロシージャルモデリング
+・BuildingTool
+・楽しい都市生成
+・CGWorld
+・斎藤さん
+
+●プロシージャルアニメーション
+
+●数学的使用
+・堀川さん(Youtube, 本)
+
+●実例
+・Houdini × UE4によるプロシージャル背景制作！Procedural Environment『1,000の和室』
+https://cgworld.jp/feature/201904-cgw248-pe1000.html
+・Blenderのジオメトリーノード(Geometry Node)を使用して、数学的な２次元、３次元グラフを描く
+https://www.youtube.com/watch?v=9i0gCnLw80c
+・running hippo 🦛
+https://x.com/tinybugbot/status/1912167367490343045?s=46&t=Ctxx8b8ggWpYvMw9AXPRMQ
+
+●やること相談
+・ドキュメントを作る
+ -ノーションに記事を作る
+・共有会の実施
+・気軽に相談できる人間関係を作る
+ -slackの用意
