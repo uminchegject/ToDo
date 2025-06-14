@@ -1,25 +1,51 @@
-■国会図書館
-●Grasshopper
-・建築実務のプロが作ったRhinoとGrasshopperの本
+■シェーダーの学び方
+●勉強法
+・実際のシェーダーを確認する
 
-●PD
-・Maya実践ハードサーフェスモデリング:プロップと背景から学ぶワークフロー (CG Pro Insights)
-・田島大介 超越界限 DAISUKE TAJIMA BEYOND THE LINES
-
-●シェーダー
+●資料
+・ディゾルブ表現
+https://zenn.dev/r_ngtm/books/shadergraph-cookbook/viewer/recipe-dissolve
 ・ゲーム制作者になるための3dグラフィックス技術
 ・HLSL シェーダーの魔導書 シェーディングの基礎からレイトレーシングまで
 ・Unreal Engine 4 マテリアルデザイン入門
 
 
-■シェーダー
-○調査
-・ディゾルブ表現
-https://zenn.dev/r_ngtm/books/shadergraph-cookbook/viewer/recipe-dissolve
+■範囲拡大
+※出向組の作業も考慮する
+
+○参考になりそうなサイトをリストアップ
+
+●プロシージャルモデリング
+・BuildingTool
+・楽しい都市生成
+・CGWorld
+・斎藤さん
+
+●プロシージャルアニメーション
+
+●数学的使用
+・堀川さん(Youtube, 本)
+
+●実例
+・Houdini × UE4によるプロシージャル背景制作！Procedural Environment『1,000の和室』
+https://cgworld.jp/feature/201904-cgw248-pe1000.html
+・Blenderのジオメトリーノード(Geometry Node)を使用して、数学的な２次元、３次元グラフを描く
+https://www.youtube.com/watch?v=9i0gCnLw80c
+・running hippo 🦛
+https://x.com/tinybugbot/status/1912167367490343045?s=46&t=Ctxx8b8ggWpYvMw9AXPRMQ
+
+●やること相談
+・ドキュメントを作る
+ -ノーションに記事を作る
+・共有会の実施
+・気軽に相談できる人間関係を作る
+ -slackの用意
+
 
 
 ■PD
 ○VolumeMaker + DetailMakerの設計
+・HardSurfaceTownプロジェクトを調査
 
 ○Detailの斥候
 
@@ -42,9 +68,12 @@ https://zenn.dev/r_ngtm/books/shadergraph-cookbook/viewer/recipe-dissolve
 
 
 ■GrasshopperTool
-※作業の進め方を決定する
+※土日ベースで週ToDo設計及び作業を行う
 
 ○アカウント作成の依頼
+
+○Tutorialの調査及び拡張
+・オリジナリティは考えず、処理設計部分を意識して改善する
 
 ○仕様設計
 ※ビジュアル化するツールを実装する
@@ -90,27 +119,3 @@ https://www.shimz.co.jp/dde/tools/index.html
 ・建築
 
 
-■委員会
-○プロジェクト調査
-・Houdini × UE4によるプロシージャル背景制作！Procedural Environment『1,000の和室』
-https://cgworld.jp/feature/201904-cgw248-pe1000.html
-・Blenderのジオメトリーノード(Geometry Node)を使用して、数学的な２次元、３次元グラフを描く
-https://www.youtube.com/watch?v=9i0gCnLw80c
-・running hippo 🦛
-https://x.com/tinybugbot/status/1912167367490343045?s=46&t=Ctxx8b8ggWpYvMw9AXPRMQ
-
-○メモの用意
-
-○定例会準備
-・アジェンダを用意
-・資料を用意
-
-●IDEA
-・プロシージャルモデリング
-
-●やること相談
-・ドキュメントを作る
- -ノーションに記事を作る
-・共有会の実施
-・気軽に相談できる人間関係を作る
- -slackの用意
