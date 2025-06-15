@@ -13,8 +13,10 @@
 ※作業に関連するツール周りのStudy
 ※作業に関連する基礎周りのStudy
 
+○シェーダー
+・内製シェーダーの調査
+
 △Cop
-※シェーダーと関連づける
 ・CRAFTSMAN: シーンアセンブリ、 COPS、 ライティング & ルックデブ
 https://www.sidefx.com/ja/tutorials/craftsman-scene-assembly-cops-lighting-lookdev/
 ・Magic Market | Terrain Concepts 2 | COP Texturing
@@ -48,23 +50,6 @@ https://www.youtube.com/watch?v=erEX_DCrfS4
 https://zenn.dev/r_ngtm/books/shadergraph-cookbook/viewer/recipe-dissolve
 ・Unreal Engine 4 マテリアルデザイン入門
 ノードベースのテクスチャ実装
-
-
-
-■委員会
-○定例会準備
-※スレッドで相談の上話すことをある程度共有しておく
-
-●IDEA
-・スレッドで管理
- -ノーションの追加事項
-
-●やること相談
-・ドキュメントを作る
- -ノーションに記事を作る
-・共有会の実施
-・気軽に相談できる人間関係を作る
- -slackの用意
 
 
 ■Private

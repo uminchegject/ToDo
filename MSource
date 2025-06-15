@@ -19,12 +19,6 @@
 ・重なっている部分の削除
 
 
-■BooleanTool
-○BlockTypeパラメーター化
-
-○Objのパラメーター化
-
-
 ■GrasshopperTutorial
 ※土日ベースで週ToDo設計及び作業を行う
 
@@ -32,55 +26,14 @@
 
 ○Tutorialの調査及び拡張
 ※オリジナリティは考えず、処理設計部分を意識して改善する
+・PD
+・Python
+
+●サンプル
 ・建築実務のプロが作ったRhinoとGrasshopperの本
 https://www.applicraft.com/kj-data/
 ・コンピュテーショナル・モデリング 入門から応用
 https://www.applicraft.com/cpmodeling_data/
-
-
-■GrasshopperTool
-○仕様設計
-※ビジュアル化するツールを実装する
-
-○ロジック設計
-
-
-●インプット
-・周辺環境
-・地域施設
-・時期
-
-●アウトプット
-・可視化
-
-●アピール
-・拡張性
- -カプセル化
-・可読性
- -Script化
-
-●DDE
-https://www.shimz.co.jp/dde/tools/index.html
-・日商率の可視化
-・斜線制限の可視化
-
-
-■GrasshopperPD
-●WebFrame
-・絶対条件
- -角度
- -分岐
- -領域
-・意思条件
- -密度
- -空間
- 
-●インプット
-・環境
-・各種パラメーター
-
-●アウトプット
-・建築
 
 
 ■範囲拡大
