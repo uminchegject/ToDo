@@ -32,6 +32,24 @@ https://www.youtube.com/watch?v=erEX_DCrfS4
 ・CGにおける数学の活用方法
 
 
+■シェーダー
+※内製シェーダーの理解を目標に進めていく
+
+○委員会に参加
+
+●構造
+・ゲーム制作者になるための3dグラフィックス技術
+用語、仕組みの分かりやすい説明
+・HLSL シェーダーの魔導書 シェーディングの基礎からレイトレーシングまで
+仕組みの説明、HLSLを用いた実装
+
+●実践
+・ディゾルブ表現
+https://zenn.dev/r_ngtm/books/shadergraph-cookbook/viewer/recipe-dissolve
+・Unreal Engine 4 マテリアルデザイン入門
+ノードベースのテクスチャ実装
+
+
 
 ■委員会
 ○定例会準備
