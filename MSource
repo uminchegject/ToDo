@@ -11,12 +11,16 @@
  -凹凸Maker(※Patternバリエーションを増やせるように改良)
  -DetailMoc
 
-○凹凸Makerの改良
+○凹凸MakerにBlock単位でObjectを管理する処理を実装する
 ※Patternバリエーションを増やせるように改良
-・Subnetのパラメーターをランダム化
- -間隔
- -サイズ
- -縦Gridの有無
+・Volumeを配置するように実装する
+ -BasePointの生成
+ -Normal, Upを設定
+ -Scaleを設定
+・BaseLineに沿ってObjectを配置するように実装する
+ -BasePointの生成
+ -Normal, Upを設定
+ -ObjectPathを設定
 
 ○OutsideMakerの修正
 ・検証を行いつつパラメーターを修正
