@@ -1,8 +1,6 @@
 ■PD
-○共有用プロジェクトの作成
-・Patternをランダム化
-・Volumeのみを配置(屋上)
-
+※色付けてパーツを分かりやすくする
+ -Volumeの色を分かりやすくする
 
 ○VolumeMaker + DetailMakerの設計
 ・BigMoc
@@ -52,8 +50,15 @@ https://www.applicraft.com/cpmodeling_data/
 
 ○MTGの議事録
 ・チームメンバーの確認
+・Houdiniの需要、市場調査について
 ・各個人のやりたいこと、できることを確認
  -次回までにドキュメント化できると嬉しい
+
+●需要についての調査
+・『Houdini 求人企画』 採用数増加の裏側と26社の求人情報を深掘り！
+https://cgworld.jp/regular/vol16-houdini.html
+・Houdini : 3D&VFXセミナー@仙台で登壇してきた話
+https://kickbase.net/entry/houdini-seminar-at-sendai
 
 ●アクション
 ・ドキュメントの作成

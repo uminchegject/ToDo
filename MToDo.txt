@@ -9,16 +9,14 @@
 ※作業に関連するツール周りのStudy
 ※作業に関連する基礎周りのStudy
 
-○シェーダー
-・内製シェーダーの調査
- -HLSL シェーダーの魔導書 シェーディングの基礎からレイトレーシングまで
- -△ゲーム制作者になるための3dグラフィックス技術
+○VolumeWrangle
 
-△Cop
+○Cop
 ・CRAFTSMAN: シーンアセンブリ、 COPS、 ライティング & ルックデブ
 https://www.sidefx.com/ja/tutorials/craftsman-scene-assembly-cops-lighting-lookdev/
 ・Magic Market | Terrain Concepts 2 | COP Texturing
 https://www.youtube.com/watch?v=erEX_DCrfS4
+
 
 ■Study
 ※言語、ツールに関係なく共通する根源部分を勉強する
@@ -29,6 +27,8 @@ https://www.youtube.com/watch?v=erEX_DCrfS4
 
 ○IT Text コンピュータグラフィックスの基礎
 ・CGにおける数学の活用方法
+
+△シェーダー
 
 
 ■Private
