@@ -9,6 +9,9 @@
 ※作業に関連するツール周りのStudy
 ※作業に関連する基礎周りのStudy
 
+○シェーダー
+・UEマテリアル本
+
 ○VolumeWrangle
 
 ○Cop
@@ -28,8 +31,6 @@ https://www.youtube.com/watch?v=erEX_DCrfS4
 ○IT Text コンピュータグラフィックスの基礎
 ・CGにおける数学の活用方法
 
-△シェーダー
-
 
 ■Private
 ○研修
@@ -46,7 +47,6 @@ https://www.amazon.co.jp/%E3%83%8A%E3%82%AB%E3%83%90%E3%83%A4%E3%82%B7-Digio2-%E
 
 ○書類棚整理
 ・保証書、重要書類を整理
-
 
 
 △クローゼットの整理
