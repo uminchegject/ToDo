@@ -4,7 +4,6 @@
  
 ○BaseLineからBasePointを生成
 
-
 ○凹凸MakerにBlock単位でObjectを管理する処理を実装する
 ※Patternバリエーションを増やせるように改良
 ・Volumeを配置するように実装する
