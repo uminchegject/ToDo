@@ -16,6 +16,9 @@
  -Normal, Upを設定
  -ObjectPathを設定
  
+○VolumeMaker修正
+・重なっている部分の削除
+
  
 ○VolumeMaker + DetailMakerの設計
 ・BigMoc
@@ -26,11 +29,8 @@
  -凹凸Maker(※Patternバリエーションを増やせるように改良)
  -DetailMoc
 
-○OutsideMakerの修正
+△OutsideMakerの修正
 ・検証を行いつつパラメーターを修正
-
-○VolumeMaker修正
-・重なっている部分の削除
 
 
 ■GrasshopperTutorial
@@ -40,8 +40,8 @@
 
 ○Tutorialの調査及び拡張
 ※オリジナリティは考えず、処理設計部分を意識して改善する
-・PD
-・Python
+
+○Pythonの勉強及び拡張
 
 ●サンプル
 GPTで要約を確認する
@@ -56,13 +56,17 @@ https://www.applicraft.com/cpmodeling_data/
 ※出向組の作業も考慮する
 ※面白いことを共有する
 
-○資料の用意
-・需要について
-・需要を踏まえた例
-・
+○アジェンダの整理&メモ
 
-○MTGのアジェンダ
+○資料の用意
+
+
+●MTGのアジェンダ
 ・Houdiniの需要、市場調査について
+ -需要について
+ -求められるスキルについて
+・需要を踏まえた例
+ -プロシージャルモデリング
 ・以上を踏まえてアクションを起こしていく
  -すぐに出す必要はないので、まず個々でやりたいことや需要についてなど調べていきたい
 
