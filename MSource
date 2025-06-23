@@ -4,10 +4,12 @@
  -Volumeの色を分かりやすくする
  
 ○TopのPD修正
+・※配置するオブジェクトを整理
 ・高さをランダム化
 ・Volumeと重なってしまう部分を対応
  
 ○Windowの生成
+・※Obj,Volumeを配置する機能を実装
 ・BaseLineからBasePointを生成
 ・GridをCopyToPoint
 ・色付け
