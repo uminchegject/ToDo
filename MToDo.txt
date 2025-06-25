@@ -1,7 +1,4 @@
 ■反省
-※ReadMeは必ず確認する(Git)
-※デバッグを行う際は中間ファイルのdeleteをコメントアウトする
- -deleteを検索する
 
 
 ■WorkStudy
