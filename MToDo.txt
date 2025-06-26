@@ -14,6 +14,11 @@ https://www.youtube.com/watch?v=-aPjs91ZXXE
 https://www.sidefx.com/ja/tutorials/craftsman-scene-assembly-cops-lighting-lookdev/
 
 ○VolumeWrangle
+・※ブレンド(Overlay)のTips郷友会
+・HeightFieldで検証する
+　ーCd
+　ーHeight
+
 
 
 ■Study
