@@ -22,6 +22,14 @@ https://fereria.github.io/reincarnation_tech/houdini/pdg/basic/04
 https://www.sidefx.com/ja/tutorials/foundations-build-a-city-with-pdg/
 
 
+■Detail
+○HoudiniのPDプロジェクトを調査
+・Houdini sci-fi Buildings || Tutorial
+https://www.youtube.com/watch?v=PTVal-t9g1k&t=1s
+・Houdini Tutorial Megastructure Generator
+https://www.youtube.com/watch?v=J5A3Z0qX-Yk
+
+
 ■OutsidePanelMaker
 △OutsideMakerの修正
 ・検証を行いつつパラメーターを修正
@@ -39,11 +47,3 @@ https://www.sidefx.com/ja/tutorials/foundations-build-a-city-with-pdg/
  -4頂点のPolyLineを生成
  -PolyWire
  -PolyBebel
-
-
-■Detail
-○HoudiniのPDプロジェクトを調査
-・Houdini sci-fi Buildings || Tutorial
-https://www.youtube.com/watch?v=PTVal-t9g1k&t=1s
-・Houdini Tutorial Megastructure Generator
-https://www.youtube.com/watch?v=J5A3Z0qX-Yk

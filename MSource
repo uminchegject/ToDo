@@ -2,6 +2,7 @@
 ※MillersEdgeをベースにする
 ※色付けてパーツを分かりやすくする
  -Volumeの色を分かりやすくする
+※共有会の資料を目標に制作を進める
  
 ○TopのPD修正
 ・※配置するオブジェクトを整理
@@ -32,7 +33,6 @@
  -Normal, Upを設定
  -ObjectPathを設定
 
-
 ○VolumeMaker + DetailMakerの設計
 ・BigMoc
  -AddVolume
@@ -46,6 +46,9 @@
 ■GrasshopperTutorial
 ※仕事でのTool実装に通ずるプロジェクトを実装する
 ※オブジェクト指向3要素を含めた実装を行う
+
+○清水のツールと事例を調査する
+https://www.shimz.co.jp/dde/
 
 ○Study
 ・RhinoとGrasshopperとPythonScriptのWiki
@@ -74,6 +77,12 @@ https://www.applicraft.com/cpmodeling_data/
 ※出向組の作業も考慮する
 ※面白いことを共有する
 
+○SamplerとHoudiniのattributeを説明する
+・※ブレンド(Overlay)のTips共有会
+・HeightFieldで検証する
+ -Cd
+ -Height
+
 ○現在のHoudiniに存在するナレッジを確認及びリストアップ
 ※不足している部分を入れていく
 
@@ -82,6 +91,12 @@ https://www.applicraft.com/cpmodeling_data/
 ・結果から見せていく
 ・基礎部分を記載していく
 ・端的にする
+
+●Tips共有会
+※CityGeneratorと紐づけて機能解説を行う
+・鈴木さんの勉強会を踏まえた内容
+・CityGeneratorのプロシージャルワークフローの利点
+・Houdiniの基礎部分
 
 ●IDEA
 ・Q&A
