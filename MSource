@@ -1,11 +1,45 @@
-※休日会社では、昼休憩までは翌週を含めた計画を行い、昼休憩後は作業を行う
-・明確化している作業を行う
- -調べることは極力避ける(ChatGPTのみ)
- -ながら作業しながらできる作業を行う
- -△作業内容を報告
+※土日は極力計画作成、調査、メモに留める
+ -出社時は検証&散歩をメインに行う
 
 ○クローゼットの整理
 ・いらない洋服を整理する
+
+
+■GrasshopperTutorial
+※仕事でのTool実装に通ずるプロジェクトを実装する
+※オブジェクト指向3要素を含めた実装を行う
+
+○機能調査
+・Grasshopperコンポーネント(3-2)
+・データ構造(4-1)
+
+○設計
+・オブジェクト指向を活かせるプロジェクト
+・仕事に通ずるプロジェクト
+
+●クラス設計
+※ツール実装の土台をつくる
+・要素
+ -点
+ -線
+ -面
+
+●オブジェクト指向
+・カプセル化
+・継承
+・ポリフォーリズム
+
+●サンプル
+・建築実務のプロが作ったRhinoとGrasshopperの本
+https://www.applicraft.com/kj-data/
+・コンピュテーショナル・モデリング 入門から応用
+https://www.applicraft.com/cpmodeling_data/
+
+●資料
+・RhinoとGrasshopperとPythonScriptのWiki
+https://mitani.cs.tsukuba.ac.jp/dokuwiki_rhino/doku.php?id=start
+・清水のコンピュテーショナルデザイン
+https://www.shimz.co.jp/dde/
 
 
 ■PD
@@ -51,46 +85,6 @@
 ・SmallMoc
  -凹凸Maker(※Patternバリエーションを増やせるように改良)
  -DetailMoc
-
-
-■GrasshopperTutorial
-※仕事でのTool実装に通ずるプロジェクトを実装する
-※オブジェクト指向3要素を含めた実装を行う
-
-○機能調査
-・Grasshopperコンポーネント(3-2)
-・データ構造(4-1)
-
-○設計
-・オブジェクト指向を活かせるプロジェクト
-・仕事に通ずるプロジェクト
-
-●クラス設計
-※ツール実装の土台をつくる
-・要素
- -点
- -線
- -面
-
-●オブジェクト指向
-・カプセル化
-・継承
-・ポリフォーリズム
-
-●仕事
-・ツール
-
-●サンプル
-・建築実務のプロが作ったRhinoとGrasshopperの本
-https://www.applicraft.com/kj-data/
-・コンピュテーショナル・モデリング 入門から応用
-https://www.applicraft.com/cpmodeling_data/
-
-●資料
-・RhinoとGrasshopperとPythonScriptのWiki
-https://mitani.cs.tsukuba.ac.jp/dokuwiki_rhino/doku.php?id=start
-・清水のコンピュテーショナルデザイン
-https://www.shimz.co.jp/dde/
 
 
 ■BlendSample
