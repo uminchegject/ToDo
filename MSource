@@ -1,73 +1,9 @@
+※休日会社では、昼休憩までは翌週を含めた計画を行い、昼休憩後は作業を行う
+ -明確化している作業を行う
+ -△作業内容を報告
+
 ○クローゼットの整理
 ・いらない洋服を整理する
-
-
-■BlendSample
-○HeightField,VolumeのStudy
-
-○VolumeOverlay
-・2つのマスクをブレンドするサンプルデータを用意
-・volumewrangleで実装
-
-○ドキュメントメモ
-・Attributeの説明
-・ブレンドについて
-
-●Hip
-・HeightFieldのマスクのベースに色を付ける
- -HeightFieldFile
-・VolumeWrangleでブレンドし色付けする
-
-●ソース
-vector overlay_blend(vector bg, vector fg, float mix)
-{
-	float channel;
-	if (bg < 0.5)
-		channel= 2.0 * bg * fg;
-	else
-		channel = 1.0 - 2.0 * (1.0 - bg) * (1.0 - fg);
-	vector result = lerp(bg, channel, mix);
-		
-    return result;
-}
-
-
-■Grasshopper
-○調査
-・Grasshopperコンポーネント(3-2)
-・データ構造(4-1)
-
-●クラス設計
-※ツール実装の土台をつくる
-・要素
- -点
- -線
- -面
-
-●資料
-・RhinoとGrasshopperとPythonScriptのWiki
-https://mitani.cs.tsukuba.ac.jp/dokuwiki_rhino/doku.php?id=start
-・清水のコンピュテーショナルデザイン
-https://www.shimz.co.jp/dde/
-
-
-■PD
-○TopのPD修正
-・※配置するオブジェクトを整理
-・高さをランダム化
-・Volumeと重なってしまう部分を対応
- 
-○Windowの生成
-・※Obj,Volumeを配置する機能を実装
-・BaseLineからBasePointを生成
-・GridをCopyToPoint
-・色付け
-
-○凹凸Makerのランダム化
-・凹凸Makerの幅
-・Windowの幅
-
-
 
 ■PD
 ※MillersEdgeをベースにする
@@ -118,16 +54,20 @@ https://www.shimz.co.jp/dde/
 ※仕事でのTool実装に通ずるプロジェクトを実装する
 ※オブジェクト指向3要素を含めた実装を行う
 
-○清水のツールと事例を調査する
-https://www.shimz.co.jp/dde/
-
-○Study
-・RhinoとGrasshopperとPythonScriptのWiki
-https://mitani.cs.tsukuba.ac.jp/dokuwiki_rhino/doku.php?id=start
+○機能調査
+・Grasshopperコンポーネント(3-2)
+・データ構造(4-1)
 
 ○設計
 ・オブジェクト指向を活かせるプロジェクト
 ・仕事に通ずるプロジェクト
+
+●クラス設計
+※ツール実装の土台をつくる
+・要素
+ -点
+ -線
+ -面
 
 ●オブジェクト指向
 ・カプセル化
@@ -143,16 +83,46 @@ https://www.applicraft.com/kj-data/
 ・コンピュテーショナル・モデリング 入門から応用
 https://www.applicraft.com/cpmodeling_data/
 
+●資料
+・RhinoとGrasshopperとPythonScriptのWiki
+https://mitani.cs.tsukuba.ac.jp/dokuwiki_rhino/doku.php?id=start
+・清水のコンピュテーショナルデザイン
+https://www.shimz.co.jp/dde/
+
+
+■BlendSample
+○HeightField,VolumeのStudy
+
+○VolumeOverlay
+・2つのマスクをブレンドするサンプルデータを用意
+・volumewrangleで実装
+
+○ドキュメントメモ
+・Attributeの説明
+・ブレンドについて
+
+●Hip
+・HeightFieldのマスクのベースに色を付ける
+ -HeightFieldFile
+・VolumeWrangleでブレンドし色付けする
+
+●ソース
+vector overlay_blend(vector bg, vector fg, float mix)
+{
+	float channel;
+	if (bg < 0.5)
+		channel= 2.0 * bg * fg;
+	else
+		channel = 1.0 - 2.0 * (1.0 - bg) * (1.0 - fg);
+	vector result = lerp(bg, channel, mix);
+		
+    return result;
+}
+
 
 ■範囲拡大
 ※出向組の作業も考慮する
 ※面白いことを共有する
-
-○SamplerとHoudiniのattributeを説明する
-・※ブレンド(Overlay)のTips共有会
-・HeightFieldで検証する
- -Cd
- -Height
 
 ○現在のHoudiniに存在するナレッジを確認及びリストアップ
 ※不足している部分を入れていく
