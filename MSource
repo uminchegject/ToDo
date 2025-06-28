@@ -1,9 +1,12 @@
 ※休日会社では、昼休憩までは翌週を含めた計画を行い、昼休憩後は作業を行う
- -明確化している作業を行う
+・明確化している作業を行う
+ -調べることは極力避ける(ChatGPTのみ)
+ -ながら作業しながらできる作業を行う
  -△作業内容を報告
 
 ○クローゼットの整理
 ・いらない洋服を整理する
+
 
 ■PD
 ※MillersEdgeをベースにする
@@ -26,7 +29,7 @@
 ・凹凸Makerの幅
 ・Windowの幅
 
-△VolumeMaker修正
+○VolumeMaker修正
 ・重なっている部分の削除
 
 △凹凸MakerにBlock単位でObjectを管理する処理を実装する
@@ -91,7 +94,8 @@ https://www.shimz.co.jp/dde/
 
 
 ■BlendSample
-○HeightField,VolumeのStudy
+○テクスチャのHeightField化
+・ツールを参照
 
 ○VolumeOverlay
 ・2つのマスクをブレンドするサンプルデータを用意
