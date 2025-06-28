@@ -3,6 +3,8 @@
 
 
 ■BlendSample
+○HeightField,VolumeのStudy
+
 ○VolumeOverlay
 ・2つのマスクをブレンドするサンプルデータを用意
 ・volumewrangleで実装
@@ -31,15 +33,9 @@ vector overlay_blend(vector bg, vector fg, float mix)
 
 
 ■Grasshopper
-○項目処理のみで設計する
-・RhinoとGrasshopperとPythonScriptのWiki
-https://mitani.cs.tsukuba.ac.jp/dokuwiki_rhino/doku.php?id=start
-
-○清水のツールと事例を調査する
-https://www.shimz.co.jp/dde/
-
-○ツールで必要な機能をリストアップする
-https://www.shimz.co.jp/dde/tools/index.html
+○調査
+・Grasshopperコンポーネント(3-2)
+・データ構造(4-1)
 
 ●クラス設計
 ※ツール実装の土台をつくる
@@ -47,6 +43,12 @@ https://www.shimz.co.jp/dde/tools/index.html
  -点
  -線
  -面
+
+●資料
+・RhinoとGrasshopperとPythonScriptのWiki
+https://mitani.cs.tsukuba.ac.jp/dokuwiki_rhino/doku.php?id=start
+・清水のコンピュテーショナルデザイン
+https://www.shimz.co.jp/dde/
 
 
 ■PD
