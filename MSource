@@ -14,27 +14,10 @@
  -HeightFieldFile
 ・VolumeWrangleでブレンドし色付けする
 
-●ソース
-vector overlay_blend(vector bg, vector fg, float mix)
-{
-	float channel;
-	if (bg < 0.5)
-		channel= 2.0 * bg * fg;
-	else
-		channel = 1.0 - 2.0 * (1.0 - bg) * (1.0 - fg);
-	vector result = lerp(bg, channel, mix);
-		
-    return result;
-}
-
 
 ■範囲拡大
 ※出向組の作業も考慮する
 ※面白いことを共有する
-
-○進捗会の資料を用意
-・リグ、プロシージャル、シェーダーの3つの分野にチームに分かれて活動を進めていく
-・ドキュメント、共有会、などを通じてそれぞれの分野における組織全体の技術力向上に向けてアクションを行っていく
 
 ○各個人でやることを明確化する
 ・確認を取る(※テキストベース)
