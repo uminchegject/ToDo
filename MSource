@@ -110,8 +110,10 @@ https://www.shimz.co.jp/dde/
  
 ○Windowの生成
 ・※Obj,Volumeを配置する機能を実装
-・BaseLineからBasePointを生成
-・GridをCopyToPoint
+・パラメーター
+ -位置
+ -scale
+ -Obj
 ・色付け
 
 ○凹凸Makerのランダム化
