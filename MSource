@@ -2,8 +2,9 @@
 ○テクスチャのHeightField化
 ・ツールを参照
 
-○VolumeOverlay
-・ピクセル全体を黒くし、ハート形のマスクを取る
+○Overlayの調査
+・Photoshopの描画モード(ブレンドモード)を理解するための、画像合成は計算だという話
+https://www.cg-ya.net/2dcg/aboutimage/composite-is-math/
 
 ○ドキュメントメモ
 ・Attributeの説明
@@ -107,11 +108,6 @@ https://www.shimz.co.jp/dde/
  -Volumeの色を分かりやすくする
 ※共有会の資料を目標に制作を進める
  
-○TopのPD修正
-・※配置するオブジェクトを整理
-・高さをランダム化
-・Volumeと重なってしまう部分を対応
- 
 ○Windowの生成
 ・※Obj,Volumeを配置する機能を実装
 ・BaseLineからBasePointを生成
@@ -124,6 +120,11 @@ https://www.shimz.co.jp/dde/
 
 ○VolumeMaker修正
 ・重なっている部分の削除
+
+△TopのPD修正
+・※配置するオブジェクトを整理
+・高さをランダム化
+・Volumeと重なってしまう部分を対応
 
 △凹凸MakerにBlock単位でObjectを管理する処理を実装する
 ※Patternバリエーションを増やせるように改良
