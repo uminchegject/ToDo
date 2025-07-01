@@ -13,16 +13,6 @@
 ※作業に関連するツール周りのStudy
 ※作業に関連する基礎周りのStudy
 
-○VolumeWrangle
-
-△Copelnics
-・FULL PBR MATERIAL IN COPERNICUS IN UNDER 10 MINUTES! | COMPLETE BEGINNER WORKFLOW
-https://www.sidefx.com/tutorials/full-pbr-material-in-copernicus-in-under-10-minutes-complete-beginner-workflow/
-・一時間で学ぶ Copernicus【Houdini 20.5 新機能】
-https://www.youtube.com/watch?v=-aPjs91ZXXE
-・CRAFTSMAN: シーンアセンブリ、 COPS、 ライティング & ルックデブ
-https://www.sidefx.com/ja/tutorials/craftsman-scene-assembly-cops-lighting-lookdev/
-
 
 ■Study
 ※言語、ツールに関係なく共通する根源部分を勉強する
