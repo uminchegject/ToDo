@@ -14,6 +14,10 @@
 ※作業に関連するツール周りのStudy
 ※作業に関連する基礎周りのStudy
 
+○キャッシュ
+・シミュレーションのキャッシュ化
+https://www.sidefx.com/ja/docs/houdini/dyno/cache.html
+
 ○Interinsic
 ・Intrinsicを使おう
 https://qiita.com/AokTky_dori/items/de2007716a6a19f26668
@@ -26,6 +30,8 @@ https://qiita.com/AokTky_dori/items/de2007716a6a19f26668
 ※読書をしながらアウトプットを何にするか考える
 
 ○grasshopper
+・コンポーネント機能
+・構造
 
 ○オブジェクト設計スタイルガイド
 ・設計
