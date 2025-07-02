@@ -1,13 +1,6 @@
 ■BlendSample
 https://chatgpt.com/s/t_68647ca9b9e8819197f563f0332789ec
 
-○テクスチャのHeightField化
-・ツールを参照
-
-○Overlayのコントラストをつけるサンプルを実装
-・グラデーションのベースを用意
-・四角形のマスクを用意
-
 ○ドキュメントメモ
 ・Attributeの説明
 ・ブレンドについて
@@ -153,3 +146,44 @@ https://www.shimz.co.jp/dde/
 ・SmallMoc
  -凹凸Maker(※Patternバリエーションを増やせるように改良)
  -DetailMoc
+ 
+●ソース
+float pattern_height = ch("../PatternHeight");
+vector axis_vec = normalize(chv("../PatternAxis"));
+int index = detail(-1, "iteration", 0) + 1;
+vector block_range = chv("../BlockRange" + itoa(index));
+
+int prim_points[] = primpoints(0, i@primnum);
+
+for(int i = 1; i < len(prim_points); ++i)
+{
+    for(int param_index = 0; param_index < ch("../ParamList"); param_index++)
+    {
+        vector obj_scale = chv("../ObjScale" + itoa(param_index));
+        vector obj_transform = chv("../ObjTransform" + itoa(param_index));
+        float block_width = ch("../ObjBlockWidth" + itoa(param_index));
+
+        vector last_pt_pos = point(0, "P", prim_points[i - 1]);
+        vector next_pt_pos = point(0, "P", prim_points[i]);             
+        
+        int block_num = int(length(next_pt_pos - last_pt_pos) / block_width);
+        vector slide_vector = (next_pt_pos - last_pt_pos) / block_num;  
+        block_width = length(slide_vector);
+        vector base_pos = last_pt_pos + slide_vector / 2;
+        base_pos += set(obj_transform.x * block_width, obj_transform.y * pattern_height, obj_transform.z);
+                
+        vector scale = set(obj_scale.x * length(slide_vector), obj_scale.y * pattern_height, obj_scale.z);              
+        vector normal = cross(axis_vec, normalize(slide_vector));
+        
+        for(int j = 0; j < block_num; ++j)
+        {
+            vector pos = base_pos + slide_vector * j;
+            int pt = addpoint(0, pos);
+            setpointattrib(0, "scale", pt, scale);
+            setpointattrib(0, "N", pt, normal);
+            setpointgroup(0, "ObjectBasePoint", pt, 1);
+        }
+    }       
+}
+
+removeprim(0, i@primnum, 1);
