@@ -1,3 +1,5 @@
+○Slackの設定
+
 ■BlendSample
 https://chatgpt.com/s/t_68647ca9b9e8819197f563f0332789ec
 
@@ -64,16 +66,19 @@ https://www.shimz.co.jp/dde/
 ※色付けてパーツを分かりやすくする
  -Volumeの色を分かりやすくする
 ※共有会の資料を目標に制作を進める
+
+○AttributeTransferでNormalを転写
  
 ○Windowの生成
 ・Normalの修正
 
 ○凹凸Makerのランダム化
-・凹凸Makerの幅
-・Windowの幅
+・PrimごとにPatternIdをランダムに設定する
+・手作業でランダムパターンを用意し、switchでランダム生成する
+ -凹凸Makerの幅
+ -Windowの幅
 
 ○VolumeMaker修正
-
 ・重なっている部分の削除
 
 △TopのPD修正
