@@ -6,9 +6,17 @@
 ・凹凸Pattern
 ・WindowPattern
 
-○委員会相談準備
-・自分のやりたいことの説明
+○Houdiniの紹介事例の調査
+・千の和室
+https://www.docswell.com/s/EpicGamesJapan/K3MEJZ-UE4_UFW19_SQEX_JapaneseStyleRoom#p33
+・Houdiniによる日本城郭のプロシージャルモデリング
+https://www.youtube.com/watch?v=Jrg58esmSMM
+・Procedural Hard Surface Design With HOUDINI
+http://cdn2.gran-turismo.com/data/www/pdi_publications/cedec2018_proceduralHardSurfaceDesignWithHoudiniLight.pdf
 
+○委員会におけるCityGeneratorについて
+・プロシージャルモデリングの利点について解説
+・Houdiniの基礎について解説
 
 ■GrasshopperTutorial
 ※Pythonベースで実装
