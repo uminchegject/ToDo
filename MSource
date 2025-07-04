@@ -3,11 +3,9 @@
 ■BlendSample
 https://chatgpt.com/s/t_68647ca9b9e8819197f563f0332789ec
 
-○ドキュメントメモ
-・Attributeの説明
-・ブレンドについて
+●VolumeとHeightField
 
-●Overlayの解説
+●Overlayブレンドについて
 //暗い部分はさらに暗くする
 if (base < 0.5)
     result = 2 * base * blend;
@@ -26,6 +24,9 @@ else
 ○機能調査
 ・Grasshopperコンポーネント(3-2)
 ・データ構造(4-1)
+
+○飯田橋プロジェクト
+・GPTでソースメモの用意
 
 ○遮蔽制限ツール
 ・ChatGPT
