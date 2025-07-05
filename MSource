@@ -1,3 +1,10 @@
+※実装時点での検証
+ -実装済みの機能のみで検証を行う
+※検証を踏まえたFB
+ -追加機能
+ -修正箇所
+
+
 ○ボートハウスのプロシージャル化
 ・Parameter
  -角度
@@ -5,29 +12,40 @@
 1.平面の生成(パラメーター化)
 2.立面の生成(パラメーター化)
 
-○CityGeneratorの検証
-・凹凸Pattern
-・WindowPattern
 
-○Houdiniの紹介事例の調査
+■PD
+※SidePanelは一度除外し、立方体のみのシンプルなPrimでの挙動を確立する
+
+○修正
+・Primの最適化
+ -重なっている部分の削除
+ -小さい面積のPrimは排除
+・Pattern別のグループ化ロジックの設計
+・VolumeとDetail処理の明確化
+・SmallBlockとBigBlockの明確化
+
+△追加機能
+・凹凸Makerのバリエーションを増やす
+・1部分のみの適応
+・1面適応
+・DetailObjの実装
+
+
+■ドキュメント
+●事例
 ・千の和室
 https://www.docswell.com/s/EpicGamesJapan/K3MEJZ-UE4_UFW19_SQEX_JapaneseStyleRoom
 ・Houdiniによる日本城郭のプロシージャルモデリング
 https://www.youtube.com/watch?v=Jrg58esmSMM
 ・Procedural Hard Surface Design With HOUDINI
 http://cdn2.gran-turismo.com/data/www/pdi_publications/cedec2018_proceduralHardSurfaceDesignWithHoudiniLight.pdf
-
-○委員会におけるCityGeneratorについて
-・プロシージャル作業において意識するべき点
- -プロシージャルワークフロー
- -Attribute
- -パラメーター
-・事例としてCityGeneratorの作業フローを提示する
  
-●ドキュメント
-・ワークフローの説明
-・重要点
- -Attribute
+●ワークフロー
+・Volume
+・Detail
+
+●重要点
+・Attribute
 
 
 ■GrasshopperTutorial
