@@ -18,8 +18,16 @@ https://www.youtube.com/watch?v=Jrg58esmSMM
 http://cdn2.gran-turismo.com/data/www/pdi_publications/cedec2018_proceduralHardSurfaceDesignWithHoudiniLight.pdf
 
 ○委員会におけるCityGeneratorについて
-・プロシージャルモデリングの利点について解説
-・Houdiniの基礎について解説
+・プロシージャル作業において意識するべき点
+ -プロシージャルワークフロー
+ -Attribute
+ -パラメーター
+・事例としてCityGeneratorの作業フローを提示する
+ 
+●ドキュメント
+・ワークフローの説明
+・重要点
+ -Attribute
 
 
 ■GrasshopperTutorial
