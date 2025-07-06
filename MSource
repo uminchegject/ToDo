@@ -1,9 +1,19 @@
+■Private
+○ToDo
+・部屋の整理
+・掃除
+・switchコントローラーの修理
+
+○PC
+・switchの購入
+・サッカー日程確認
+
+■Public
 ※実装時点での検証
  -実装済みの機能のみで検証を行う
 ※検証を踏まえたFB
  -追加機能
  -修正箇所
-
 
 ○ボートハウスのプロシージャル化
 ・Parameter
@@ -12,6 +22,9 @@
 1.平面の生成(パラメーター化)
 2.立面の生成(パラメーター化)
 
+○ボートハウスのコンピュテーショナル化
+・幾何学的ロジックをコンピュテーショナル化
+
 
 ■PD
 ※SidePanelは一度除外し、立方体のみのシンプルなPrimでの挙動を確立する
@@ -19,6 +32,7 @@
 ○修正
 ・Primの最適化
  -重なっている部分の削除
+  -徐々にExtrudeする
  -小さい面積のPrimは排除
 ・Pattern別のグループ化ロジックの設計
 ・VolumeとDetail処理の明確化
@@ -39,13 +53,23 @@ https://www.docswell.com/s/EpicGamesJapan/K3MEJZ-UE4_UFW19_SQEX_JapaneseStyleRoo
 https://www.youtube.com/watch?v=Jrg58esmSMM
 ・Procedural Hard Surface Design With HOUDINI
 http://cdn2.gran-turismo.com/data/www/pdi_publications/cedec2018_proceduralHardSurfaceDesignWithHoudiniLight.pdf
- 
-●ワークフロー
-・Volume
-・Detail
 
-●重要点
-・Attribute
+●背景のプロシージャルモデリング(1例)
+・パイプラインの構築
+ -Houdiniでプロシージャルモデリング
+ -ゲームエンジン上でHDAを用いてエクスポート
+・バリエーション
+ -Seed値を用いたバリエーション管理
+・プロシージャルワークフロー
+ -全体的な建物の高さなどを修正
+ -アセット部分をデザイナーにモデリングしてもらう
+
+●アクション(1例)
+・ドキュメントの作成
+ -プロシージャルモデリングを実装した際の手順、要点をドキュメント化
+・実装プロジェクトの共有
+ -プロシージャルワークフローなので作業工程が確認できるため、勉強資料として共有できる
+ -チームメンバーが追加で実装することやパラメーターのフィードバックを行うことができる
 
 
 ■GrasshopperTutorial
