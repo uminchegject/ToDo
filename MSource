@@ -5,31 +5,81 @@
  -Volumeの色を分かりやすくする
 ※共有会の資料を目標に制作を進める
 
-○修正
-・Primの最適化
+○Primの最適化
  -重なっている部分の削除
   -徐々にExtrudeする
  -小さい面積のPrimは排除
+
+○Blockの詳細化
+ -1部分のみの適応
+ -1面適応
+
+○DetailObjの実装
+
+○検証
+・凹凸Makerのバリエーションを増やす
 ・Pattern別のグループ化ロジックの設計
+・凹凸Makerのランダム化
 ・VolumeとDetail処理の明確化
 ・SmallBlockとBigBlockの明確化
 
-△追加機能
-・凹凸Makerのバリエーションを増やす
-・1部分のみの適応
-・1面適応
-・DetailObjの実装
-・凹凸MakerにBlock単位でObjectを管理する処理を実装する
-
-△凹凸Makerのランダム化
-・PrimごとにPatternIdをランダムに設定する
-・手作業でランダムパターンを用意し、switchでランダム生成する
- -凹凸Makerの幅
- -Windowの幅
-
-△DetailPattern
+△BlockPattern
 ・OutsidePanel
 ・Tube
+
+
+
+■Grasshopper
+※Pythonベースで実装
+ -オブジェクト指向
+ -メモを通した実装
+※仕事でのTool実装に通ずるプロジェクトを実装する
+※オブジェクト指向3要素を含めた実装を行う
+
+○機能調査
+・Grasshopperコンポーネント(3-2)
+・データ構造(4-1)
+
+○遮蔽制限ツール
+・ChatGPT
+https://chatgpt.com/share/6860a7b8-a520-8001-ae16-7e14fe989357
+
+○設計
+・オブジェクト指向を活かせるプロジェクト
+・仕事に通ずるプロジェクト
+
+●データ構造
+・数
+・点
+・線
+・面
+
+●オブジェクト指向
+・カプセル化
+・継承
+・ポリフォーリズム
+
+●ボートハウス
+※幾何学的ロジックをコンピュテーショナル化
+・Parameter
+ -角度
+・Flow
+1.平面の生成(パラメーター化)
+2.立面の生成(パラメーター化)
+
+●サンプル
+・建築実務のプロが作ったRhinoとGrasshopperの本
+https://www.applicraft.com/kj-data/
+・コンピュテーショナル・モデリング 入門から応用
+https://www.applicraft.com/cpmodeling_data/
+
+●資料
+・公式Document
+https://developer.rhino3d.com/
+・RhinoとGrasshopperとPythonScriptのWiki
+https://mitani.cs.tsukuba.ac.jp/dokuwiki_rhino/doku.php?id=start
+・清水のコンピュテーショナルデザイン
+https://www.shimz.co.jp/dde/
 
 
  
@@ -61,7 +111,7 @@
 
 ・事例文
 自分はデモとして、背景のプロシージャルモデリングの実装をしつつ、ナレッジにまとめていく活動を行っていこうかと考えています。
-
+具体的には下記のプロジェクトを参考に実装をしつつ、ナレッジとしてドキュメントにまとめていけたらと考えています。
 
 ●ドキュメント 
 ※興味が湧くように工夫する
@@ -69,19 +119,6 @@
 ・基礎部分を記載していく
 ・端的にする
 
-●Tips共有会
-※CityGeneratorと紐づけて機能解説を行う
-・鈴木さんの勉強会を踏まえた内容
-・CityGeneratorのプロシージャルワークフローの利点
-・Houdiniの基礎部分
-
-●IDEA
-・Q&A
-・Tutorialドキュメント
-・Houdiniナレッジにチーム目標に沿った項目を整理していく
-・Houdiniのページ資料を整理するナレッジを用意
-
-■ドキュメント
 ●事例
 ・千の和室
 https://www.docswell.com/s/EpicGamesJapan/K3MEJZ-UE4_UFW19_SQEX_JapaneseStyleRoom
@@ -106,57 +143,3 @@ http://cdn2.gran-turismo.com/data/www/pdi_publications/cedec2018_proceduralHardS
 ・実装プロジェクトの共有
  -プロシージャルワークフローなので作業工程が確認できるため、勉強資料として共有できる
  -チームメンバーが追加で実装することやパラメーターのフィードバックを行うことができる
- 
- 
-
-■Grasshopper
-※Pythonベースで実装
- -オブジェクト指向
- -メモを通した実装
-※仕事でのTool実装に通ずるプロジェクトを実装する
-※オブジェクト指向3要素を含めた実装を行う
-
-○機能調査
-・Grasshopperコンポーネント(3-2)
-・データ構造(4-1)
-
-○遮蔽制限ツール
-・ChatGPT
-https://chatgpt.com/share/6860a7b8-a520-8001-ae16-7e14fe989357
-
-○設計
-・オブジェクト指向を活かせるプロジェクト
-・仕事に通ずるプロジェクト
-
-●データ構造
-・数
-・点
-・線
-・面
-
-●オブジェクト指向
-・カプセル化
-・継承
-・ポリフォーリズ
-
-●ボートハウス
-※幾何学的ロジックをコンピュテーショナル化
-・Parameter
- -角度
-・Flow
-1.平面の生成(パラメーター化)
-2.立面の生成(パラメーター化)
-
-●サンプル
-・建築実務のプロが作ったRhinoとGrasshopperの本
-https://www.applicraft.com/kj-data/
-・コンピュテーショナル・モデリング 入門から応用
-https://www.applicraft.com/cpmodeling_data/
-
-●資料
-・公式Document
-https://developer.rhino3d.com/
-・RhinoとGrasshopperとPythonScriptのWiki
-https://mitani.cs.tsukuba.ac.jp/dokuwiki_rhino/doku.php?id=start
-・清水のコンピュテーショナルデザイン
-https://www.shimz.co.jp/dde/
