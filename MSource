@@ -52,20 +52,6 @@
 ・ChatGPT
 https://chatgpt.com/share/6860a7b8-a520-8001-ae16-7e14fe989357
 
-○引数まで実装
-import Rhino.Geometry as rg
-
-num_samples = 50
-points = siteCrv.DivideByCount(num_samples, True)
-limit_breps = []
-
-for pt in points:
-    p = siteCrv.PointAt(pt)
-    
-    # 最近点を道路に投影
-    t = roadCrv.ClosestPoint(p)[1]
-    closest_pt = roadCrv.PointAt(t)
-
 ○設計
 ・オブジェクト指向を活かせるプロジェクト
 ・仕事に通ずるプロジェクト
@@ -117,17 +103,12 @@ for pt in points:
     t = roadCrv.ClosestPoint(p)[1]
     closest_pt = roadCrv.PointAt(t)
     	
-    # 水平距離
     dist_vec = p - closest_pt
     horizontal_dist = dist_vec.Length
-    
-    # 斜線高さ計算
-    max_z = baseHeight + horizontal_dist / slopeRatio
-    if heightLimit:
-        max_z = min(max_z, heightLimit)
-    
-    # 制限ベクトル作成
+
+    max_z = baseHeight + horizontal_dist
     top_pt = rg.Point3d(p.X, p.Y, max_z)
+	
     line = rg.Line(p, top_pt)
 
  
