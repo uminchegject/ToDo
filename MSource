@@ -7,8 +7,8 @@
  -Volumeの色を分かりやすくする
 ※共有会の資料を目標に制作を進める
 
-○VolumeMakerの実装
-・パラメーターの実装
+○VolumeMakerのパラメーター実装
+・必要なパラメーターをリストアップ
 
 ○凹凸Makerの修正
 ・複雑な形態にも対応できるように修正するヨ
@@ -37,9 +37,11 @@
 ※仕事でのTool実装に通ずるプロジェクトを実装する
 ※オブジェクト指向3要素を含めた実装を行う
 
-○機能調査
-・Grasshopperコンポーネント(3-2)
-・データ構造(4-1)
+○lineとbrepの生成
+line = rg.Line(p, top_pt)
+
+# 周囲のラインをつなげて制限スラブにする
+limit_breps.append(rg.Extrusion.Create(line.ToNurbsCurve(), 0.1, True))  # 0.1で板状に
 
 ○遮蔽制限ツール
 ・ChatGPT
@@ -85,6 +87,8 @@ https://www.shimz.co.jp/dde/
 ●ソース
 import Rhino.Geometry as rg
 
+# 入力: siteCrv (Curve), roadCrv (Curve), baseHeight (float), slopeRatio (float), heightLimit (float)
+
 num_samples = 50
 points = siteCrv.DivideByCount(num_samples, True)
 limit_breps = []
@@ -95,14 +99,35 @@ for pt in points:
     # 最近点を道路に投影
     t = roadCrv.ClosestPoint(p)[1]
     closest_pt = roadCrv.PointAt(t)
-    	
+    
+    # 水平距離
     dist_vec = p - closest_pt
     horizontal_dist = dist_vec.Length
-
-    max_z = baseHeight + horizontal_dist
+    
+    # 斜線高さ計算
+    max_z = baseHeight + horizontal_dist / slopeRatio
+    if heightLimit:
+        max_z = min(max_z, heightLimit)
+    
+    # 制限ベクトル作成
     top_pt = rg.Point3d(p.X, p.Y, max_z)
-	
     line = rg.Line(p, top_pt)
+    
+    # 周囲のラインをつなげて制限スラブにする
+    limit_breps.append(rg.Extrusion.Create(line.ToNurbsCurve(), 0.1, True))  # 0.1で板状に
+
+# 全体をUnionして制限形状に
+from scriptcontext import doc
+import Rhino
+
+joined = rg.Brep.CreateBooleanUnion([b.ToBrep() for b in limit_breps], doc.ModelAbsoluteTolerance)
+
+# 出力
+if joined:
+    a = joined[0]
+else:
+    a = None
+
 
 
  
