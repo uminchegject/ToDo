@@ -21,7 +21,6 @@
 ・凹凸Makerのバリエーションを増やす
 ・Pattern別のグループ化ロジックの設計
 ・凹凸Makerのランダム化
-・VolumeとDetail処理の明確化
 ・SmallBlockとBigBlockの明確化
 
 △BlockPattern
@@ -36,12 +35,6 @@
  -メモを通した実装
 ※仕事でのTool実装に通ずるプロジェクトを実装する
 ※オブジェクト指向3要素を含めた実装を行う
-
-○lineとbrepの生成
-line = rg.Line(p, top_pt)
-
-# 周囲のラインをつなげて制限スラブにする
-limit_breps.append(rg.Extrusion.Create(line.ToNurbsCurve(), 0.1, True))  # 0.1で板状に
 
 ○遮蔽制限ツール
 ・ChatGPT
@@ -136,6 +129,8 @@ else:
 ※面白いことを共有する
 
 ○確認
+
+○鈴木さんサポート
 
 ○サンプルプロジェクトを実装
 ※委員会計画を行う
