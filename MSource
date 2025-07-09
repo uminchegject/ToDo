@@ -1,3 +1,7 @@
+○バッテリーの確認
+
+○映画館予約
+
 ■PD
 ※SidePanelは一度除外し、立方体のみのシンプルなPrimでの挙動を確立する
 ※MillersEdgeをベースにする
@@ -67,7 +71,7 @@
 from scriptcontext import doc
 import Rhino
 
-joined = rg.Brep.CreateBooleanUnion([b.ToBrep() for b in limit_breps], doc.ModelAbsoluteTolerance)
+joined = rg.Brep.CreateBooleanUnion([b.ToBrep() for b in breps], doc.ModelAbsoluteTolerance)
 
 if joined:
     a = joined[0]
