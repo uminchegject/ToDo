@@ -1,5 +1,3 @@
-○サバゲー
-
 ■PD
 ※SidePanelは一度除外し、立方体のみのシンプルなPrimでの挙動を確立する
 ※MillersEdgeをベースにする
@@ -7,11 +5,12 @@
  -Volumeの色を分かりやすくする
 ※共有会の資料を目標に制作を進める
 
+○凹凸Makerの修正
+・TopPrimの生成ロジックの設計
+・PolyLineをExtrudeし、凹凸Primを生成するまでのロジック設計
+
 ○VolumeMakerのパラメーター実装
 ・必要なパラメーターをリストアップ
-
-○凹凸Makerの修正
-・複雑な形態にも対応できるように修正するヨ
 
 △Blockの複雑化
 ・1部分のみの適応
@@ -35,6 +34,17 @@
  -メモを通した実装
 ※仕事でのTool実装に通ずるプロジェクトを実装する
 ※オブジェクト指向3要素を含めた実装を行う
+
+○出力処理の実装
+from scriptcontext import doc
+import Rhino
+
+joined = rg.Brep.CreateBooleanUnion([b.ToBrep() for b in limit_breps], doc.ModelAbsoluteTolerance)
+
+if joined:
+    a = joined[0]
+else:
+    a = None
 
 ○遮蔽制限ツール
 ・ChatGPT
