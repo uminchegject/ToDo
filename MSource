@@ -6,14 +6,11 @@
 ※色付けてパーツを分かりやすくする
  -Volumeの色を分かりやすくする
  
+○VolumeMakerの整理
  
-○TopPrimの生成
-・Greebleブロックの継承
-・セットでBaseLineを揃えるように修正する
+○凹凸Makerの整理
 
-○凹凸Makerの実装
-・TopPrimの生成ロジックの設計
-・PolyLineをExtrudeし、凹凸Primを生成するまでのロジック設計
+○TopAssetVolume処理の整理
 
 ○パラメーター設計
 ・必要なパラメーターをリストアップ
@@ -60,13 +57,9 @@
 ※仕事でのTool実装に通ずるプロジェクトを実装する
 ※オブジェクト指向3要素を含めた実装を行う
 
-○ソースの修正
-limit_breps.append(rg.Extrusion.Create(line.ToNurbsCurve(), 0.1, True))
-joined = rg.Brep.CreateBooleanUnion([b.ToBrep() for b in breps], doc.ModelAbsoluteTolerance)
-if joined:
-    a = joined[0]
-else:
-    a = None
+○ベクトル(ポイント)・ライン調査
+
+○Surface,Brepの調査
 
 ○遮蔽制限ツール
 ・ChatGPT
@@ -160,12 +153,10 @@ else:
 ※出向組の作業も考慮する
 ※面白いことを共有する
 
-○メンバー全体での進め方の提案
-・自分はプロシージャルモデリングをメインに進めていく
-・鈴木さんと川合さんでプロシージャルリギングを進めていく
+○委員会活動計画
+・プロシージャル
 
 ○サンプルプロジェクトを実装
-※委員会計画を行う
 ・ドキュメント化
 ・ナレッジドキュメントを作成
 
