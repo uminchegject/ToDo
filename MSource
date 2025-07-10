@@ -67,6 +67,9 @@
 ※仕事でのTool実装に通ずるプロジェクトを実装する
 ※オブジェクト指向3要素を含めた実装を行う
 
+○コンポーネント調査
+・サンプルファイル
+
 ○出力処理の実装
 from scriptcontext import doc
 import Rhino
