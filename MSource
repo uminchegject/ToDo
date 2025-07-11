@@ -1,19 +1,21 @@
 ○映画館予約
 
+○サバゲー準備
+・初期調整
+
+
 ■PD
 ※SidePanelは一度除外し、立方体のみのシンプルなPrimでの挙動を確立する
 ※MillersEdgeをベースにする
 ※色付けてパーツを分かりやすくする
  -Volumeの色を分かりやすくする
- 
-○VolumeMakerの整理
- 
-○凹凸Makerの整理
-
-○TopAssetVolume処理の整理
 
 ○パラメーター設計
 ・必要なパラメーターをリストアップ
+
+○Blockの複雑化の設計
+・1部分のみの適応
+・1面適応
 
 ○検証&調査
 ・凹凸Makerのバリエーションを増やす
@@ -21,9 +23,9 @@
 ・凹凸Makerのランダム化
 ・SmallBlockとBigBlockの明確化
 
-△Blockの複雑化の設計
-・1部分のみの適応
-・1面適応
+△凹凸Makerの修正
+・デバッグ
+
 
 △BlockPattern
 ・OutsidePanel
@@ -142,7 +144,6 @@ if joined:
     a = joined[0]
 else:
     a = None
-
 
 
  
