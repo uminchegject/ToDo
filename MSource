@@ -59,23 +59,12 @@
 
 ○コンポーネント調査
 ・サンプルファイル
+・ベクトル(ポイント)・ライン調査
+・Surface,Brepの調査
 
-○出力処理の実装
-from scriptcontext import doc
-import Rhino
-
-○ベクトル(ポイント)・ライン調査
-
-
-○Surface,Brepの調査
-
-○遮蔽制限ツール
+○遮蔽制限ツールの再設計
 ・ChatGPT
 https://chatgpt.com/share/6860a7b8-a520-8001-ae16-7e14fe989357
-
-○設計
-・オブジェクト指向を活かせるプロジェクト
-・仕事に通ずるプロジェクト
 
 ●データ構造
 ・数
