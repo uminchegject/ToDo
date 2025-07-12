@@ -3,6 +3,11 @@
 ・初期調整
 
 ■PD
+○OutsidePanelを改良する
+・1Prim
+・1Block
+・1Block(Outside)
+
 ○Blockの複雑化の設計
 ・1部分のみの適応
 ・1面適応
@@ -14,6 +19,9 @@
 ・凹凸Makerのバリエーションを増やす
 ・SmallBlockとBigBlockの明確化
 
+△Block化対応
+・凹凸Maker
+
 
 ■Grasshopper
 ○コンポーネント調査
@@ -21,16 +29,22 @@
 ・ベクトル(ポイント)・ライン調査
 ・Surface,Brepの調査
 
-○遮蔽制限ツールの再設計
-・ChatGPT
-https://chatgpt.com/share/6860a7b8-a520-8001-ae16-7e14fe989357
+○VolumeMakerを実装
+
+○ボートハウス実装において必要なクラスを設計及び実装
+
+○ボートハウスプロジェクト設計
+・平面
+・立面
 
 
-■範囲拡大
-○委員会活動計画
-・プロシージャル
+■委員会
+○範囲拡大活動計画
+・プロシージャルフローの考え方
+ -事例の調査を行う
+ -事例を参考にリストアップする
 
-○サンプルプロジェクトを実装
+○CityGenerator
 ・ドキュメント化
 ・ナレッジドキュメントを作成
 
@@ -69,15 +83,13 @@ https://chatgpt.com/share/6860a7b8-a520-8001-ae16-7e14fe989357
 ・平面
  -Blockの数
  -HeightBlockの数
+
 ●凹凸MakerParamenter
 ・窓
+ -有無
  -サイズ
- -割合
- -DbyH
- -△色
 ・凹凸
  -有無
- -深さ
  -サイズ
 
 
