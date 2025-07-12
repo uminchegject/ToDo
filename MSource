@@ -3,23 +3,33 @@
 ・初期調整
 
 ■PD
-○OutsidePanelを改良する
-・1Prim
-・1Block
-・1Block(Outside)
+○RandomHeightの修正
+・Size、Block数に応じて回数を変化させる
+
+○Volume側のパラメーターを実装
+・高さ
+ -高低差
+ -全体的な高さ
+・平面
+ -Blockの数
+ -HeightBlockの数
+
+○Volume側検証
+※Volumeのみの検証
+・SmallBlockとBigBlockの明確化
+・大きいほどHeightBlockを増やす
+
 
 ○Blockの複雑化の設計
 ・1部分のみの適応
 ・1面適応
 
-○検証&調査
-※パラメーターを意識する
-※クラスごとにPatternを設定する
-・凹凸Makerのランダム化
-・凹凸Makerのバリエーションを増やす
-・SmallBlockとBigBlockの明確化
+○OutsidePanelを改良する
+・1Prim
+・1Block
+・1Block(Outside)
 
-△Block化対応
+○Block化対応
 ・凹凸Maker
 
 
