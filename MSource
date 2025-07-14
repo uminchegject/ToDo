@@ -1,3 +1,27 @@
+●委員会
+・コンテンツ調査
+ -読書
+
+●Volume
+・Cluster
+・Height
+・背景本
+
+●PatternBlock
+・凹凸Makerの修正
+・Divude拡張
+
+●検証
+・凹凸Maker
+・1面
+・OutsidePanel
+
+●Pattern
+※RectangleCity
+・Offset
+・Greeble
+
+
 ■PD
 ※SidePanelは一度除外し、立方体のみのシンプルなPrimでの挙動を確立する
 ※MillersEdgeをベースにする
@@ -115,8 +139,10 @@ https://www.shimz.co.jp/dde/
 
 ●IDEA
 ※面白い部分を抜粋する
-・プロシージャルのコンテンツ化
-・事例のデフォルメ化
+※プロシージャルのコンテンツ化
+※事例のデフォルメ化
+
+●マイクラ
 
 ●VexPD
 ・Vexの勉強
