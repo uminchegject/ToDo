@@ -1,7 +1,3 @@
-○マウス接着
-
-○ケース調査
-
 ■PD
 ※SidePanelは一度除外し、立方体のみのシンプルなPrimでの挙動を確立する
 ※MillersEdgeをベースにする
@@ -9,7 +5,8 @@
  -Volumeの色を分かりやすくする
 
 ○RandomHeightの修正
-・Size、Block数に応じてHeight値、HeightBlock数を変化させる
+・Size、Block数に応じてHeightBlock数を変化させる
+・Height値の幅を広くして、様々なパターンの挙動を確認する
 
 ○Volume側のパラメーターを実装
 ・高さ
