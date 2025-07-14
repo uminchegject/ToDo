@@ -4,11 +4,10 @@
 ※色付けてパーツを分かりやすくする
  -Volumeの色を分かりやすくする
 
-○RandomHeightの修正
+○Volume設計
 ・Size、Block数に応じてHeightBlock数を変化させる
-・Height値の幅を広くして、様々なパターンの挙動を確認する
 
-○Volume側のパラメーターを実装
+○Volumeのパラメーター設計
 ・高さ
  -高低差
  -全体的な高さ
@@ -23,13 +22,12 @@
 
 
 ○Blockの複雑化の設計
+※Divideノードを使用した設計
 ・1部分のみの適応
 ・1面適応
 
-○OutsidePanelを改良する
-・1Prim
-・1Block
-・1Block(Outside)
+○パラメーター設計
+・1面
 
 ○Block化対応
 ・凹凸Maker
@@ -124,6 +122,11 @@ https://www.shimz.co.jp/dde/
 △CityGenerator
 ・ドキュメント化
 ・ナレッジドキュメントを作成
+
+●VexPD
+・Vexの勉強
+・オブジェクト指向
+・RunOverの勉強
 
 ●事例
 ・千の和室
