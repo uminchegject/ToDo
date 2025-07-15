@@ -1,3 +1,6 @@
+○HeightFieldのStudy
+・attribute周りの扱い
+
 ■PD
 ※SidePanelは一度除外し、立方体のみのシンプルなPrimでの挙動を確立する
 ※MillersEdgeをベースにする
@@ -10,7 +13,6 @@
 ・Size、Block数に応じて形態を生成する
  -ClusterBlock
  -Height
-・背景本を調査
 
 ○Volumeのパラメーター設計
 ・Height
@@ -26,7 +28,10 @@
 ・大きいほどHeightBlockを増やす
 
 
-○凹凸Makerの修正
+○Pattern設計
+・Divide位置
+・VolumeMaker処理後に実装
+・Divideノードを使用
 
 ○Divide拡張
 ・OutsidePanel
@@ -37,7 +42,7 @@
 ・AllColor
  -OutsidePanel
 
-○Pattern設計
+○PatternMaker設計
 ※RectangleCity
 ・Offset
 ・Greeble
