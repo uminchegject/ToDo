@@ -9,23 +9,9 @@
  
 ○背景本調査
 
-○Volume設計
-・Size、Block数に応じて形態を生成する
- -ClusterBlock
- -Height
-
-○Volumeのパラメーター設計
-・Height
- -VolumeHeight
- -ClusterBlockHeight
-・Cluster
- -Blockの数
- -HeightBlockの数
-
 ○Volume側検証
-※Volumeのみの検証
-・SmallBlockとBigBlockの明確化
-・大きいほどHeightBlockを増やす
+・ClusterBlock
+・Height
 
 
 ○Pattern設計
