@@ -1,41 +1,22 @@
-●委員会
-・コンテンツ調査
- -読書
-
-●Volume
-・Cluster
-・Height
-・背景本
-
-●PatternBlock
-・凹凸Makerの修正
-・Divude拡張
-
-●検証
-・凹凸Maker
-・1面
-・OutsidePanel
-
-●Pattern
-※RectangleCity
-・Offset
-・Greeble
-
-
 ■PD
 ※SidePanelは一度除外し、立方体のみのシンプルなPrimでの挙動を確立する
 ※MillersEdgeをベースにする
 ※色付けてパーツを分かりやすくする
  -Volumeの色を分かりやすくする
+ 
+○背景本調査
 
 ○Volume設計
-・Size、Block数に応じてHeightBlock数を変化させる
+・Size、Block数に応じて形態を生成する
+ -ClusterBlock
+ -Height
+・背景本を調査
 
 ○Volumeのパラメーター設計
-・高さ
- -高低差
- -全体的な高さ
-・平面
+・Height
+ -VolumeHeight
+ -ClusterBlockHeight
+・Cluster
  -Blockの数
  -HeightBlockの数
 
@@ -45,21 +26,21 @@
 ・大きいほどHeightBlockを増やす
 
 
-○Blockの複雑化の設計
-※Divideノードを使用した設計
-・1部分のみの適応
-・1面適応
+○凹凸Makerの修正
 
-○パラメーター設計
-・1面
-
-○Block化対応
-・凹凸Maker
-
-
-△BlockPattern
+○Divide拡張
 ・OutsidePanel
-・Tube
+・Greeble
+
+○検証
+・凹凸Maker
+・AllColor
+ -OutsidePanel
+
+○Pattern設計
+※RectangleCity
+・Offset
+・Greeble
 
 
 
@@ -123,6 +104,11 @@ https://www.shimz.co.jp/dde/
 ※プロシージャルワークフローの勉強も兼ねる
 ※面白いことを共有する
 
+○マイクラロジック調査
+
+○コンテンツ調査
+・読書
+
 ○事例調査
 ・プロシージャルワークフローにおける要点の調査
 ・アイデア調査
@@ -133,21 +119,15 @@ https://www.shimz.co.jp/dde/
 ・組織全体の技術向上
  -イベント
 
-△CityGenerator
-・ドキュメント化
-・ナレッジドキュメントを作成
-
 ●IDEA
 ※面白い部分を抜粋する
 ※プロシージャルのコンテンツ化
-※事例のデフォルメ化
-
-●マイクラ
-
-●VexPD
-・Vexの勉強
-・オブジェクト指向
-・RunOverの勉強
+※イベント・事例の簡素化
+・マイクラ
+・VexPD
+ -Vexの勉強
+ -オブジェクト指向
+ -RunOverの勉強
 
 ●事例
 ・千の和室
