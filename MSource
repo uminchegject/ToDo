@@ -15,9 +15,14 @@
 
 
 ○Pattern設計
-・Divide位置
 ・VolumeMaker処理後に実装
 ・Divideノードを使用
+
+●PatternIDdea
+・四角系Prim
+ -連続
+・HeightBlockでランダムに分割
+・垂直にランダム分割
 
 ○Divide拡張
 ・OutsidePanel
