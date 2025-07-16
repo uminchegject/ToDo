@@ -6,18 +6,9 @@
  
 ○背景本調査
 
-○Volume側検証
-・ClusterBlock
-・Height
-
-
-○Greeble整理
-
-○HeightBlockのランダム分割処理実装
-
 ○Pattern設計
-・VolumeMaker処理後に実装
-・Divideノードを使用
+・VolumeMakerのPrim統一化前にクラス化を実装
+・ランダムに行う場合はDivide処理を実装
 
 ●PatternIDdea
 ・四角系Prim
@@ -26,10 +17,16 @@
 ・垂直にランダム分割
 ・OutsidePanel
 
-○検証
-・凹凸Maker
-・AllColor
+○Volume側検証
+・Block
+ -ClusterBlock
+ -Height
+・Pattern
+ -HeightBlock
+ -AllColor
  -OutsidePanel
+
+○PatternMakerを含めて検証
 
 ○PatternMaker設計
 ※RectangleCity
@@ -44,7 +41,6 @@
  -メモを通した実装
 ※仕事でのTool実装に通ずるプロジェクトを実装する
 ※オブジェクト指向3要素を含めた実装を行う
-
 
 ○VolumeMakerを設計・実装
 ・BaseSurfaceを生成
@@ -98,10 +94,7 @@ https://www.shimz.co.jp/dde/
 ※プロシージャルワークフローの勉強も兼ねる
 ※面白いことを共有する
 
-○マイクラロジック調査
-
 ○コンテンツ調査
-・読書
 
 ○事例調査
 ・プロシージャルワークフローにおける要点の調査
