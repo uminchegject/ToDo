@@ -6,23 +6,23 @@
  
 ○背景本調査
 
-○Pattern設計
-・VolumeMakerのPrim統一化前にクラス化を実装
-・OutsidePanelでランダムに垂直分割
+○垂直分割処理を修正
+・clusterのブロックごとに垂直確認を行う
 
-●PatternIDdea
+○Pattern設計
 ・垂直分割
+ -四角形になるように垂直分割
 ・水平分割
-・OutsidePanel
+ -HeightBlockで水平分割
+・連続性
+ -SinglePrim
+ -MultiPrim
 
 ○Volume側検証
 ・Block
  -ClusterBlock
  -Height
 ・Pattern
- -HeightBlock
- -AllColor
- -OutsidePanel
 
 ○PatternMakerを含めて検証
 
@@ -39,6 +39,11 @@
  -メモを通した実装
 ※仕事でのTool実装に通ずるプロジェクトを実装する
 ※オブジェクト指向3要素を含めた実装を行う
+
+○EdgeVolumeGeneratorの実装
+※VolumeCheckを想定
+・Edgeの角度調整
+・Surface化処理
 
 ○VolumeMakerを設計・実装
 ・BaseSurfaceを生成
@@ -90,6 +95,11 @@ https://www.shimz.co.jp/dde/
 ■委員会
 ※要点を簡潔に教えて、プロシージャルワークフローを実際に考える機会を設ける
 ※プロシージャルワークフローの勉強も兼ねる
+
+○Facade生成体験会の計画
+・VolumeMakerを流用し、使えるように整理
+・Vexの記載のみでおこなえるようにする
+
 ○ゴールの設定
 ・案件の増加
  -情報発信
