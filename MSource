@@ -2,10 +2,7 @@
 ・attribute周りの扱い
 
 ■PD
-※SidePanelは一度除外し、立方体のみのシンプルなPrimでの挙動を確立する
 ※MillersEdgeをベースにする
-※色付けてパーツを分かりやすくする
- -Volumeの色を分かりやすくする
  
 ○背景本調査
 
@@ -13,6 +10,10 @@
 ・ClusterBlock
 ・Height
 
+
+○Greeble整理
+
+○HeightBlockのランダム分割処理実装
 
 ○Pattern設計
 ・VolumeMaker処理後に実装
@@ -23,10 +24,7 @@
  -連続
 ・HeightBlockでランダムに分割
 ・垂直にランダム分割
-
-○Divide拡張
 ・OutsidePanel
-・Greeble
 
 ○検証
 ・凹凸Maker
