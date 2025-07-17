@@ -45,11 +45,6 @@
 ・Edgeの角度調整
 ・Surface化処理
 
-○VolumeMakerを設計・実装
-・BaseSurfaceを生成
-・BaseSurfaceの形態パラメーター
- -角度
-
 ○ボートハウスプロジェクト設計
 ※幾何学的ロジックをコンピュテーショナル化
 ・Parameter
