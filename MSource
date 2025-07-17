@@ -6,23 +6,29 @@
  
 ○背景本調査
 
-○垂直分割処理を修正
-・clusterのブロックごとに垂直確認を行う
+○水平分割部分と垂直分割部分のクラス化
+
+○水平分割の分割Height位置
+
+○PrimBaseのPatternMakerを実装
+・BoolでSubせず、Addのみ
+ -MultiWindow
+ -SingleWindow
+ -Panel
 
 ○Pattern設計
-・垂直分割
- -四角形になるように垂直分割
 ・水平分割
- -HeightBlockで水平分割
-・連続性
- -SinglePrim
- -MultiPrim
+ -凹凸Makerは水平分割
+・垂直分割
+ -垂直分割はPrimBaseのPatternMaker
 
 ○Volume側検証
 ・Block
  -ClusterBlock
  -Height
 ・Pattern
+ -水平分割
+ -垂直分割
 
 ○PatternMakerを含めて検証
 
