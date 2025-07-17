@@ -6,15 +6,13 @@
  
 ○背景本調査
 
-○水平分割部分と垂直分割部分のクラス化
-
 ○水平分割の分割Height位置
+・Topは処理から外す
+・一定の高さ以上になってからクラス変化を行う
 
-○PrimBaseのPatternMakerを実装
-・BoolでSubせず、Addのみ
- -MultiWindow
- -SingleWindow
- -Panel
+○検証用PatternMakerを実装
+・Offset
+・PatternWindow
 
 ○Pattern設計
 ・水平分割
@@ -34,6 +32,7 @@
 
 ○PatternMaker設計
 ※RectangleCity
+・BoolでSubせず、Addのみ
 ・Offset
 ・Greeble
 
