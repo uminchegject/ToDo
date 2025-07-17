@@ -6,9 +6,10 @@
  
 ○背景本調査
 
-○水平分割の分割Height位置
-・Topは処理から外す
-・一定の高さ以上になってからクラス変化を行う
+○Block生成部分の実装
+・HorizontalClass内でVerticalClassを作る
+ -VerticalClass
+ -HOrizontalClass
 
 ○検証用PatternMakerを実装
 ・Offset
