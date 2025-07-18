@@ -5,11 +5,22 @@
 ・ヒューマンフォールフラット
 ・Portal
 
+○調査
+・Volumeの検証
+・追加Patternの設計
+
+○共有会用Patternの実装
+・ランダム要素を追加
+・複数のパターンを用意
+・VerticalClassで検証
+
+○grasshopper設計
+
+
+
 ■PD
 ※MillersEdgeをベースにする
 ※RectangleCity
-
-○背景本調査
 
 ○Volume側検証
 ・Block
@@ -18,6 +29,8 @@
 ・Pattern
  -水平分割
  -垂直分割
+ 
+○Pattern追加
 
 ●Pattern設計
 ・水平分割
@@ -93,15 +106,13 @@ https://www.shimz.co.jp/dde/
 ※要点を簡潔に教えて、プロシージャルワークフローを実際に考える機会を設ける
 ※プロシージャルワークフローの勉強も兼ねる
 
-○BaseSurfaceGeneratorの実装
-・VolumeMakerを使用
-
-○Facadeのサンプルを実装
-・PatternGeneratorで検証
-
-○Facade生成体験会の計画
-・VolumeMakerを流用し、使えるように整理
-・Vexの記載のみでおこなえるようにする
+○Facade計画
+・プロジェクト検証
+ -VolumeMakerを流用し、使えるように整理
+ -Vexの記載のみでおこなえるようにする
+・発信する計画
+ -街計画の設計から実装までを記事として発信
+・体験会の計画
 
 ●ゴール
 ・案件の増加
