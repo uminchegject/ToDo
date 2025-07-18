@@ -5,26 +5,11 @@
 ・ヒューマンフォールフラット
 ・Portal
 
-
 ■PD
 ※MillersEdgeをベースにする
+※RectangleCity
 
 ○背景本調査
-
-○Block生成部分の実装
-・HorizontalClass内でVerticalClassを作る
- -VerticalClass
- -HOrizontalClass
-
-○検証用PatternMakerを実装
-・Offset
-・PatternWindow
-
-○Pattern設計
-・水平分割
- -凹凸Makerは水平分割
-・垂直分割
- -垂直分割はPrimBaseのPatternMaker
 
 ○Volume側検証
 ・Block
@@ -34,29 +19,12 @@
  -水平分割
  -垂直分割
 
-○PatternMakerを含めて検証
+●Pattern設計
+・水平分割
+ -凹凸Makerは水平分割
+・垂直分割
+ -垂直分割はPrimBaseのPatternMaker
 
-○PatternMaker設計
-※RectangleCity
-・BoolでSubせず、Addのみ
-・Offset
-・Greeble
-
-■PatternMaker(FacadeMaker)
-●要素
-・Grid
-・Single(Offset)
-
-●Randomly
-・サイズ
-・位置
-・色
-
-●attribute
-・up
-・N
-・Cd
-・P
 
 
 ■Grasshopper
@@ -72,14 +40,14 @@
 ・Edgeの角度調整
 ・Surface化処理
 
-●設計
+●EdgeVolumeGenerator設計
 ・連動して設定するオブジェクト管理設計
  -角度(平面,立面)
  -階高
 ・BaseLineからのObjまでを自動生成
  -パラメーターでの形状調整(角度、高さ)
 
-○ボートハウスプロジェクト設計
+●ボートハウスプロジェクト設計
 ※幾何学的ロジックをコンピュテーショナル化
 ・Parameter
  -角度
@@ -158,3 +126,19 @@ https://www.docswell.com/s/EpicGamesJapan/K3MEJZ-UE4_UFW19_SQEX_JapaneseStyleRoo
 https://www.youtube.com/watch?v=Jrg58esmSMM
 ・Procedural Hard Surface Design With HOUDINI
 http://cdn2.gran-turismo.com/data/www/pdi_publications/cedec2018_proceduralHardSurfaceDesignWithHoudiniLight.pdf
+
+■FacadeMaker
+●要素
+・Grid
+・Single(Offset)
+
+●Randomly
+・サイズ
+・位置
+・色
+
+●attribute
+・up
+・N
+・Cd
+・P
