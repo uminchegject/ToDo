@@ -1,9 +1,14 @@
-○HeightFieldのStudy
-・attribute周りの扱い
+○サバゲー
+・2日で設定
+
+○購入
+・ヒューマンフォールフラット
+・Portal
+
 
 ■PD
 ※MillersEdgeをベースにする
- 
+
 ○背景本調査
 
 ○Block生成部分の実装
@@ -37,6 +42,21 @@
 ・Offset
 ・Greeble
 
+■PatternMaker(FacadeMaker)
+●要素
+・Grid
+・Single(Offset)
+
+●Randomly
+・サイズ
+・位置
+・色
+
+●attribute
+・up
+・N
+・Cd
+・P
 
 
 ■Grasshopper
@@ -47,9 +67,17 @@
 ※オブジェクト指向3要素を含めた実装を行う
 
 ○EdgeVolumeGeneratorの実装
-※VolumeCheckを想定
+※様々なEdgeSurfaceのパターンを確認できるようにする
+・BaseLineから自動生成
 ・Edgeの角度調整
 ・Surface化処理
+
+●設計
+・連動して設定するオブジェクト管理設計
+ -角度(平面,立面)
+ -階高
+・BaseLineからのObjまでを自動生成
+ -パラメーターでの形状調整(角度、高さ)
 
 ○ボートハウスプロジェクト設計
 ※幾何学的ロジックをコンピュテーショナル化
@@ -97,11 +125,17 @@ https://www.shimz.co.jp/dde/
 ※要点を簡潔に教えて、プロシージャルワークフローを実際に考える機会を設ける
 ※プロシージャルワークフローの勉強も兼ねる
 
+○BaseSurfaceGeneratorの実装
+・VolumeMakerを使用
+
+○Facadeのサンプルを実装
+・PatternGeneratorで検証
+
 ○Facade生成体験会の計画
 ・VolumeMakerを流用し、使えるように整理
 ・Vexの記載のみでおこなえるようにする
 
-○ゴールの設定
+●ゴール
 ・案件の増加
  -情報発信
 ・組織全体の技術向上
