@@ -1,15 +1,3 @@
-○調査
-・Volumeの検証
-・追加Patternの設計
-
-○共有会用Patternの実装
-・ランダム要素を追加
-・複数のパターンを用意
-・VerticalClassで検証
-
-○grasshopper設計
-
-
 ■万博
 ●ユーザー
 ID::uminchegject
@@ -38,13 +26,28 @@ https://ppap.kinto-jp.com/articles/expo2025-ticket
  -街計画の設計から実装までを記事として発信
 ・体験会の計画
 
+○検証
+
+○追加Patternの設計
+
 
 ■Grasshopper
-○EdgeVolumeGeneratorの実装
 ※様々なEdgeSurfaceのパターンを確認できるようにする
+※かっこよく見せる
+
+○EdgeVolumeGeneratorの実装
 ・BaseLineから自動生成
-・Edgeの角度調整
-・Surface化処理
+・Surface化
+
+●管理システム
+・管理Objの色付け(白、黒)
+・位置
+・角度
+
+●角度
+・平面
+・立面
+・斜面
 
 ●EdgeVolumeGenerator設計
 ・連動して設定するオブジェクト管理設計
@@ -52,7 +55,6 @@ https://ppap.kinto-jp.com/articles/expo2025-ticket
  -階高
 ・BaseLineからのObjまでを自動生成
  -パラメーターでの形状調整(角度、高さ)
-
 
 
 
