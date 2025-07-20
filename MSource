@@ -1,5 +1,3 @@
-○モップ掛け
-
 ○サバゲー
 ・2日で設定
 ・ケース購入
@@ -18,12 +16,12 @@ https://ppap.kinto-jp.com/articles/expo2025-ticket
 
 
 ■PD
-△FacadeMakerのBaseLine化
-
 ○FacadeMakerの複雑化
 ・サイズのランダム化
 ・位置のランダム化
 ・色のランダム化
+
+○検証
 
 ○Facade計画
 ・プロジェクト検証
@@ -33,7 +31,6 @@ https://ppap.kinto-jp.com/articles/expo2025-ticket
  -街計画の設計から実装までを記事として発信
 ・体験会の計画
 
-○検証
 
 ○追加Patternの設計
 
@@ -46,8 +43,10 @@ https://ppap.kinto-jp.com/articles/expo2025-ticket
 ・クラス化
 ・形態編集の汎用化
 
-○EdgeVolumeGeneratorの実装
-・BaseLine(平面ライン)から自動生成
+○フロー
+・Axis設定
+・BaseLine化
+・Volume化
 ・Surface化
 
 ●管理システム
@@ -65,6 +64,8 @@ https://ppap.kinto-jp.com/articles/expo2025-ticket
 ■PD
 ※MillersEdgeをベースにする
 ※RectangleCity
+
+○FacadeMakerのBaseLine化
 
 ○Volume側検証
 ・Block
