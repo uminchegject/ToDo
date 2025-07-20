@@ -47,7 +47,7 @@ https://ppap.kinto-jp.com/articles/expo2025-ticket
 ・形態編集の汎用化
 
 ○EdgeVolumeGeneratorの実装
-・BaseLineから自動生成
+・BaseLine(平面ライン)から自動生成
 ・Surface化
 
 ●管理システム
@@ -55,17 +55,10 @@ https://ppap.kinto-jp.com/articles/expo2025-ticket
 ・位置
 ・角度
 
-●角度
+●角度調整機能
 ・平面
 ・立面
 ・斜面
-
-●EdgeVolumeGenerator設計
-・連動して設定するオブジェクト管理設計
- -角度(平面,立面)
- -階高
-・BaseLineからのObjまでを自動生成
- -パラメーターでの形状調整(角度、高さ)
 
 
 
