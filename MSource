@@ -43,21 +43,32 @@ https://ppap.kinto-jp.com/articles/expo2025-ticket
 ・クラス化
 ・形態編集の汎用化
 
-○フロー
-・Axis設定
+○モジュール化
+※オブジェクト指向
 ・BaseLine化
+ -Axis
 ・Volume化
+ -BaseLine
 ・Surface化
+ -Volume
+ -BaseLine
 
 ●管理システム
 ・管理Objの色付け(白、黒)
 ・位置
 ・角度
 
+●オブジェクト指向
+・カプセル化
+・継承
+・ポリフォーリズム
+
 ●角度調整機能
 ・平面
 ・立面
 ・斜面
+
+
 
 
 
