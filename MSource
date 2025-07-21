@@ -1,31 +1,25 @@
+※ホテル内では作業は極力避ける
+ -散歩、読書をしながら考えてカフェで整理する
+ -ホテルでのスケジュール、思考内容を整理しておく
+
 ○サバゲー
 ・2日で設定
 ・ケース購入
 
 
-■万博
-●ユーザー
-ID::uminchegject
-Pass::B&?hDE%eb6cANsM
-
-●資料
-・大阪・関西万博で失敗しない！用意すべき持ち物と把握すべき11のポイント
-https://www.gltjp.com/ja/article/item/21006/
-・【万博】チケット購入ガイド！流れや注意点、当日のお役立ち情報までご紹介
-https://ppap.kinto-jp.com/articles/expo2025-ticket
-
-
 ■PD
-○Facade計画
-・プロジェクト検証
- -VolumeMakerを流用し、使えるように整理
- -Vexの記載のみでおこなえるようにする
+○RectangleCityProject
+※Houdini16にHDAを２つ追加したらビルが量産できた
+https://cedil.cesa.or.jp/cedil_sessions/view/1710
 ・発信する計画
  -街計画の設計から実装までを記事として発信
 ・体験会の計画
+ -四角形を使用して街並みを自動生成する
 
 ○追加Patternの設計
-※RectangleCity
+・RectangleCity
+・TazimaCity
+・MillersEdgeCity
 
 
 ■Grasshopper
@@ -33,10 +27,9 @@ https://ppap.kinto-jp.com/articles/expo2025-ticket
 ※かっこよく見せる
 
 ○設計
-・クラス設計
- -データ管理
 ・形態編集のモジュール設計
  -パラメーター
+ -データ管理
 
 ●Module
 ※オブジェクト指向
