@@ -21,6 +21,12 @@ https://ppap.kinto-jp.com/articles/expo2025-ticket
 ・位置のランダム化
 ・色のランダム化
 
+●ソース
+//ランダム化
+vector color = random(v@P);
+grid_scale *= 1 - random(v@P) * 0.3;
+window_scale *= 1 + random(v@P);
+
 ○検証
 
 ○Facade計画
@@ -31,20 +37,23 @@ https://ppap.kinto-jp.com/articles/expo2025-ticket
  -街計画の設計から実装までを記事として発信
 ・体験会の計画
 
-
 ○追加Patternの設計
+※RectangleCity
 
 
 ■Grasshopper
 ※様々なEdgeSurfaceのパターンを確認できるようにする
 ※かっこよく見せる
 
-○管理システム設計
-・クラス化
-・形態編集の汎用化
+○設計
+・クラス設計
+ -データ管理
+・形態編集のモジュール設計
+ -パラメーター
 
-○モジュール化
+●Module
 ※オブジェクト指向
+・Axis
 ・BaseLine化
  -Axis
 ・Volume化
@@ -53,8 +62,8 @@ https://ppap.kinto-jp.com/articles/expo2025-ticket
  -Volume
  -BaseLine
 
-●管理システム
-・管理Objの色付け(白、黒)
+●パラメーター
+・色
 ・位置
 ・角度
 
@@ -67,8 +76,6 @@ https://ppap.kinto-jp.com/articles/expo2025-ticket
 ・平面
 ・立面
 ・斜面
-
-
 
 
 
