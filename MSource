@@ -16,19 +16,6 @@ https://ppap.kinto-jp.com/articles/expo2025-ticket
 
 
 ■PD
-○FacadeMakerの複雑化
-・サイズのランダム化
-・位置のランダム化
-・色のランダム化
-
-●ソース
-//ランダム化
-vector color = random(v@P);
-grid_scale *= 1 - random(v@P) * 0.3;
-window_scale *= 1 + random(v@P);
-
-○検証
-
 ○Facade計画
 ・プロジェクト検証
  -VolumeMakerを流用し、使えるように整理
@@ -76,6 +63,7 @@ window_scale *= 1 + random(v@P);
 ・平面
 ・立面
 ・斜面
+
 
 
 
@@ -169,7 +157,7 @@ https://www.shimz.co.jp/dde/
 ※要点を簡潔に教えて、プロシージャルワークフローを実際に考える機会を設ける
 ※プロシージャルワークフローの勉強も兼ねる
 
-○Facade計画
+○RectangleCityProject
 ・プロジェクト検証
  -VolumeMakerを流用し、使えるように整理
  -Vexの記載のみでおこなえるようにする
@@ -200,6 +188,8 @@ https://www.docswell.com/s/EpicGamesJapan/K3MEJZ-UE4_UFW19_SQEX_JapaneseStyleRoo
 https://www.youtube.com/watch?v=Jrg58esmSMM
 ・Procedural Hard Surface Design With HOUDINI
 http://cdn2.gran-turismo.com/data/www/pdi_publications/cedec2018_proceduralHardSurfaceDesignWithHoudiniLight.pdf
+・Houdini16にHDAを２つ追加したらビルが量産できた
+https://cedil.cesa.or.jp/cedil_sessions/view/1710
 
 ■FacadeMaker
 ●要素
