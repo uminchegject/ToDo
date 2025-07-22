@@ -4,32 +4,45 @@
 
 ○サバゲー
 ・2日で設定
+すみません…!
+坂本さんのスケジュール確認せず8/2に設定していました…
+8/2と8/24の2日体制で計画しようかと思うのですがいかがでしょうか…?
+
 ・ケース購入
+https://www.fourstar911.com/shopdetail/000000046402/ct4420/page1/brandname/
 
 
 ■PD
-○RectangleCityProject
-※Houdini16にHDAを２つ追加したらビルが量産できた
-https://cedil.cesa.or.jp/cedil_sessions/view/1710
-・発信する計画
- -街計画の設計から実装までを記事として発信
-・体験会の計画
- -四角形を使用して街並みを自動生成する
+※MillersEdgeをベースにする
+※RectangleCity
 
-○追加Patternの設計
+○FacadeMakerのBaseLine化
+
+○追加Patternの調査
 ・RectangleCity
 ・TazimaCity
 ・MillersEdgeCity
 
+●Pattern設計
+・水平分割
+ -凹凸Makerは水平分割
+・垂直分割
+ -垂直分割はPrimBaseのPatternMaker
+
+
 
 ■Grasshopper
+※幾何学的ロジックをコンピュテーショナル化・モジュール化
+
+○ボートハウス設計
 ※様々なEdgeSurfaceのパターンを確認できるようにする
 ※かっこよく見せる
-
-○設計
-・形態編集のモジュール設計
- -パラメーター
- -データ管理
+・Parameter
+ -角度
+ -高さ
+・Module
+ -BaseLine
+ -Surface
 
 ●Module
 ※オブジェクト指向
@@ -46,84 +59,6 @@ https://cedil.cesa.or.jp/cedil_sessions/view/1710
 ・色
 ・位置
 ・角度
-
-●オブジェクト指向
-・カプセル化
-・継承
-・ポリフォーリズム
-
-●角度調整機能
-・平面
-・立面
-・斜面
-
-
-
-
-■PD
-※MillersEdgeをベースにする
-※RectangleCity
-
-○FacadeMakerのBaseLine化
-
-○Volume側検証
-・Block
- -ClusterBlock
- -Height
-・Pattern
- -水平分割
- -垂直分割
- 
-○Pattern追加
-
-●Pattern設計
-・水平分割
- -凹凸Makerは水平分割
-・垂直分割
- -垂直分割はPrimBaseのPatternMaker
-
-
-
-■Grasshopper
-※Pythonベースで実装
- -オブジェクト指向
- -メモを通した実装
-※仕事でのTool実装に通ずるプロジェクトを実装する
-※オブジェクト指向3要素を含めた実装を行う
-
-○EdgeVolumeGeneratorの実装
-※様々なEdgeSurfaceのパターンを確認できるようにする
-・BaseLineから自動生成
-・Edgeの角度調整
-・Surface化処理
-
-●EdgeVolumeGenerator設計
-・連動して設定するオブジェクト管理設計
- -角度(平面,立面)
- -階高
-・BaseLineからのObjまでを自動生成
- -パラメーターでの形状調整(角度、高さ)
-
-●ボートハウスプロジェクト設計
-※幾何学的ロジックをコンピュテーショナル化
-・Parameter
- -角度
-・Flow
-1.平面の生成(パラメーター化)
-2.立面の生成(パラメーター化)
-
-●エッジ
-・角度
-・面
-
-●曲面
-・BaseCurve
-
-●データ構造
-・数
-・点
-・線
-・面
 
 ●オブジェクト指向
 ・カプセル化
@@ -150,13 +85,16 @@ https://www.shimz.co.jp/dde/
 ※要点を簡潔に教えて、プロシージャルワークフローを実際に考える機会を設ける
 ※プロシージャルワークフローの勉強も兼ねる
 
+○発信準備
+・要点のリストアップ
+ -「Houdini16にHDAを２つ追加したらビルが量産できた」を参考にする
+https://cedil.cesa.or.jp/cedil_sessions/view/1710
+
 ○RectangleCityProject
-・プロジェクト検証
- -VolumeMakerを流用し、使えるように整理
- -Vexの記載のみでおこなえるようにする
 ・発信する計画
  -街計画の設計から実装までを記事として発信
 ・体験会の計画
+ -四角形を使用して街並みを自動生成する
 
 ●ゴール
 ・案件の増加
@@ -169,10 +107,6 @@ https://www.shimz.co.jp/dde/
 ※プロシージャルのコンテンツ化
 ※イベント・事例の簡素化
 ・マイクラ
-・VexPD
- -Vexの勉強
- -オブジェクト指向
- -RunOverの勉強
 
 ●事例
 ・千の和室
@@ -183,19 +117,3 @@ https://www.youtube.com/watch?v=Jrg58esmSMM
 http://cdn2.gran-turismo.com/data/www/pdi_publications/cedec2018_proceduralHardSurfaceDesignWithHoudiniLight.pdf
 ・Houdini16にHDAを２つ追加したらビルが量産できた
 https://cedil.cesa.or.jp/cedil_sessions/view/1710
-
-■FacadeMaker
-●要素
-・Grid
-・Single(Offset)
-
-●Randomly
-・サイズ
-・位置
-・色
-
-●attribute
-・up
-・N
-・Cd
-・P
