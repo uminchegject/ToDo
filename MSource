@@ -2,6 +2,34 @@
 ・ケース購入
 https://www.fourstar911.com/shopdetail/000000046402/ct4420/page1/brandname/
 
+■GrassHopper
+○ボートハウス設計
+※Zahaのデッサンを参考
+・Axis
+・BaseLine
+・SurfaceMaker
+
+●設計
+・入力
+ -BaseLine
+ -BaseVolume
+・パラメーター
+ -Axis
+・Module
+ -VolumeMaker
+ -SurfaceMaker
+
+
+■PD
+※Volume, Detailの2軸で発信していく
+
+○GridWindow, HorizontalWindowの条件で複数生成
+
+●Volume
+・TajimaCity
+・MillersEdgeCity
+
+●Detail
 
 
 ■PD
@@ -28,17 +56,15 @@ https://www.fourstar911.com/shopdetail/000000046402/ct4420/page1/brandname/
 
 ○ボートハウス設計
 ※様々なEdgeSurfaceのパターンを確認できるようにする
-※かっこよく見せる
+※Zahaのデッサンを参考
 ・Parameter
- -角度
- -高さ
+ -Axis
 ・Module
  -BaseLine
  -Surface
 
 ●Module
 ※オブジェクト指向
-・Axis
 ・BaseLine化
  -Axis
 ・Volume化
@@ -48,9 +74,10 @@ https://www.fourstar911.com/shopdetail/000000046402/ct4420/page1/brandname/
  -BaseLine
 
 ●パラメーター
+・Axis
+・角度
 ・色
 ・位置
-・角度
 
 ●オブジェクト指向
 ・カプセル化
