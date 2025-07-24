@@ -1,5 +1,8 @@
 ○bolt
 ・返信
+ご確認ありがとうございます。
+送るためのケースの用意など諸々の準備を週末行う予定なので、来週の週明けに大阪本社に向けて発送させて頂きます。
+お手数をおかけしますが宜しくお願い致します。
 ・ケース購入
 
 
@@ -9,7 +12,14 @@
 
 ○FacadeMakerのBaseLine化
 
-○追加Patternの調査
+○委員会に向けた整理
+・VolumeMakerの多様化
+・SimplePatternの実装
+ -Grid
+ -Horizontal
+ -Vertical
+
+△追加Patternの調査
 ※Rectangleをベースに考える
 ・TajimaCity
 ・MillersEdgeCity
@@ -74,8 +84,22 @@ https://www.shimz.co.jp/dde/
 ■委員会
 ※Volume, Detailの2軸で発信していく
 
-○発信準備
-・要点のリストアップ
+○シンプルなPatternのみを使いVolumeMakerに重点を置いたDemoを作成する
+・Pattern
+ -Grid
+ -Horizontal
+ -Vertical
+
+○VolumeMakerの発信準備
+・アピールポイントを整理
+ -VolumeMakerの複雑さを強調
+・VolumeMakerの要点を整理
+ -多様性
+ -
+
+○PatternMakerの共有会準備
+※Grid, Horizontal, Verticalの組み合わせパターンを複数用意しデザインの多様性を強調
+・さらに広い多様性を目標に設定
 
 ●要点
 ・Volume + Detail
