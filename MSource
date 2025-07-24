@@ -2,34 +2,8 @@
 ・ケース購入
 https://www.fourstar911.com/shopdetail/000000046402/ct4420/page1/brandname/
 
-■GrassHopper
-○ボートハウス設計
-※Zahaのデッサンを参考
-・Axis
-・BaseLine
-・SurfaceMaker
-
-●設計
-・入力
- -BaseLine
- -BaseVolume
-・パラメーター
- -Axis
-・Module
- -VolumeMaker
- -SurfaceMaker
-
-
-■PD
-※Volume, Detailの2軸で発信していく
-
-○GridWindow, HorizontalWindowの条件で複数生成
-
-●Volume
-・TajimaCity
-・MillersEdgeCity
-
-●Detail
+○Unreal Engine 5 レンダリングフロー総おさらい
+https://cedil.cesa.or.jp/cedil_sessions/view/3056
 
 
 ■PD
@@ -39,7 +13,7 @@ https://www.fourstar911.com/shopdetail/000000046402/ct4420/page1/brandname/
 ○FacadeMakerのBaseLine化
 
 ○追加Patternの調査
-・RectangleCity
+※Rectangleをベースに考える
 ・TajimaCity
 ・MillersEdgeCity
 
@@ -50,7 +24,6 @@ https://www.fourstar911.com/shopdetail/000000046402/ct4420/page1/brandname/
  -垂直分割はPrimBaseのPatternMaker
 
 
-
 ■Grasshopper
 ※幾何学的ロジックをコンピュテーショナル化・モジュール化
 
@@ -59,24 +32,25 @@ https://www.fourstar911.com/shopdetail/000000046402/ct4420/page1/brandname/
 ※Zahaのデッサンを参考
 ・Parameter
  -Axis
-・Module
+・Input
  -BaseLine
+・Module
  -Surface
 
 ●Module
 ※オブジェクト指向
-・BaseLine化
+・入力
+ -BaseLine
+ -BaseVolume
+・パラメーター
  -Axis
-・Volume化
- -BaseLine
-・Surface化
- -Volume
- -BaseLine
+・Module
+ -VolumeMaker
+ -SurfaceMaker
 
 ●パラメーター
-・Axis
+※Axisを意識する
 ・角度
-・色
 ・位置
 
 ●オブジェクト指向
@@ -101,19 +75,22 @@ https://www.shimz.co.jp/dde/
 
 
 ■委員会
-※要点を簡潔に教えて、プロシージャルワークフローを実際に考える機会を設ける
-※プロシージャルワークフローの勉強も兼ねる
+※Volume, Detailの2軸で発信していく
 
 ○発信準備
 ・要点のリストアップ
- -「Houdini16にHDAを２つ追加したらビルが量産できた」を参考にする
-https://cedil.cesa.or.jp/cedil_sessions/view/1710
 
 ●要点
 ・Volume + Detail
 ・Module
 ・デザインの多様性
 
+●Volume
+・GridWindow, HorizontalWindowの条件で複数生成
+ -TajimaCity
+ -MillersEdgeCity
+
+●Detail
 
 ○RectangleCityProject
 ・発信する計画
