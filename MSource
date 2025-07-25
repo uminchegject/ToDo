@@ -2,6 +2,61 @@
 ・ケース加工
 ・段ボール準備
 
+■発信
+○発信方法の調査
+・スタイリッシュな発信方法を調査
+ -DemoReelを参考
+・最初は画像をメインにして発信を行う
+ -DemoReel参考
+
+○要点の整理
+・Module
+・多様性
+
+
+■Grasshopper
+※幾何学的ロジックをコンピュテーショナル化・モジュール化
+
+○共通するModuleの実装
+※ZahaのDessan・Volume・Architectureそれぞれに共通する部分をModule化する
+・EdgeMaker
+
+●Module
+※オブジェクト指向
+・入力
+ -BaseLine
+ -BaseVolume
+・パラメーター
+ -Axis
+・Module
+ -VolumeMaker
+ -SurfaceMaker
+
+●パラメーター
+※Axisを意識する
+・角度
+・位置
+
+
+■PD
+○FacadeMakerのBaseLine化
+
+○VolumeMakerの整理
+・VerticalClass
+・HorizontalClass
+
+○委員会に向けた整理
+・VolumeMakerの多様化
+ -TajimaCity(Scale)
+・SimplePatternの実装
+ -Grid
+ -Horizontal
+ -Vertical
+
+
+
+
+
 
 ■PD
 ※MillersEdgeをベースにする
