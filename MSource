@@ -1,9 +1,7 @@
-○bolt
-・返信
-ご確認ありがとうございます。
-送るためのケースの用意など諸々の準備を週末行う予定なので、来週の週明けに大阪本社に向けて発送させて頂きます。
-お手数をおかけしますが宜しくお願い致します。
+○Bolt発送準備
 ・ケース購入
+・ケース加工
+・段ボール準備
 
 
 ■PD
@@ -12,8 +10,13 @@
 
 ○FacadeMakerのBaseLine化
 
+○VolumeMakerの整理
+・VerticalClass
+・HorizontalClass
+
 ○委員会に向けた整理
 ・VolumeMakerの多様化
+ -TajimaCity(Scale)
 ・SimplePatternの実装
  -Grid
  -Horizontal
