@@ -1,29 +1,21 @@
 ※美容室はしっかり指名する
 
 ○Bolt発送準備
-・ケース加工
+・発送方法の調査
 ・段ボール準備
-
-※美容室はしっかり指名する
-
-○言葉のStudy
-・キャッチコピー
-
-○Bolt発送準備
 ・ケース加工
-・段ボール準備
+
+■PD
+○SimplePatternMakerの修正
+・歯抜けしている部分を修正
+
 
 ■発信
+※設計思想、技術の2つに分けて発信する
+
+○メモの作成
+
 ○Quitaの記事調査
-
-○要点の整理
-
-●IDEA
-・建物の高さ管理
- -random
- -Noise
- -DbyH
-・Patternの種類
 
 ●Quita
 ※PD, CDの設計思想を発信する
@@ -37,16 +29,33 @@
 ・多様性
  -Patternの組み合わせ
 
+●PD
+・建物の高さ管理
+ -random
+ -Noise
+ -DbyH
+・Patternの種類
+・Clusterの解説(技術)
+
+●CD
+※BoatHouseを軸に進めていく
+・パラメーター化
+ -角度
+ -位置
+・Module化
+
 
 ■Grasshopper
 ※幾何学的ロジックをコンピュテーショナル化・モジュール化
 
-○EdgeMakerのパラメーター実装
+○EdgeMakerのパラメーター設計
+※管理するObjをTree化(クラス化)し、色付けて分かりやすくする
+※Axisを意識する
 ・角度
 ・位置
 
 ○共通するEdgeMakerのModule設計
-※ZahaのDessan・Volume・Architectureそれぞれに共通する部分をModule化する
+※ZahaのDessan・Volume・Architectureを参考にそれぞれに共通する部分をModule化する
 
 ●EdgeMaker(Module)
 ※オブジェクト指向
@@ -59,13 +68,6 @@
 ・Module
  -VolumeMaker
  -SurfaceMaker
-
-●パラメーター
-※Axisを意識する
-・角度
- -対象Objクラス
-・位置
- -対象Objクラス
 
 
 
