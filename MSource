@@ -1,45 +1,14 @@
+※美容室はしっかり指名する
+
 ○Bolt発送準備
 ・ケース加工
 ・段ボール準備
 
-■発信
-○発信方法の調査
-・スタイリッシュな発信方法を調査
- -DemoReelを参考
-・最初は画像をメインにして発信を行う
- -DemoReel参考
-
-○要点の整理
-・Module
-・多様性
-
-
-■Grasshopper
-※幾何学的ロジックをコンピュテーショナル化・モジュール化
-
-○共通するModuleの実装
-※ZahaのDessan・Volume・Architectureそれぞれに共通する部分をModule化する
-・EdgeMaker
-
-●Module
-※オブジェクト指向
-・入力
- -BaseLine
- -BaseVolume
-・パラメーター
- -Axis
-・Module
- -VolumeMaker
- -SurfaceMaker
-
-●パラメーター
-※Axisを意識する
-・角度
-・位置
-
-
 ■PD
-○FacadeMakerのBaseLine化
+○SimplePatternの実装
+・凹凸部分を削除
+・WindowのBasePointをBaseLineから生成
+・Grid, Vertical, HorizontalをWindowのスケールパラメーターで作成
 
 ○VolumeMakerの整理
 ・VerticalClass
@@ -52,6 +21,51 @@
  -Grid
  -Horizontal
  -Vertical
+
+
+■発信
+
+○Quitaの記事調査
+
+○要点の整理
+
+●Quita
+※PD, CDの設計思想を発信する
+・ポートフォリオとしても機能するようにする
+・委員会でも発信内容を使用する
+・設計だけでなく、技術部分も意識する
+
+●要点
+・Module
+ -Patternの組み合わせ
+・多様性
+ -Patternの組み合わせ
+
+
+■Grasshopper
+※幾何学的ロジックをコンピュテーショナル化・モジュール化
+
+○共通するEdgeMakerの実装
+※ZahaのDessan・Volume・Architectureそれぞれに共通する部分をModule化する
+
+●EdgeMaker(Module)
+※オブジェクト指向
+・入力
+ -BaseLine
+ -BaseVolume
+・パラメーター
+ -角度(Axis)
+ -位置(高さ)
+・Module
+ -VolumeMaker
+ -SurfaceMaker
+
+●パラメーター
+※Axisを意識する
+・角度
+ -対象Objクラス
+・位置
+ -対象Objクラス
 
 
 
