@@ -4,30 +4,26 @@
 ・ケース加工
 ・段ボール準備
 
-■PD
-○SimplePatternの実装
-・凹凸部分を削除
-・WindowのBasePointをBaseLineから生成
-・Grid, Vertical, HorizontalをWindowのスケールパラメーターで作成
+※美容室はしっかり指名する
 
-○VolumeMakerの整理
-・VerticalClass
-・HorizontalClass
+○言葉のStudy
+・キャッチコピー
 
-○委員会に向けた整理
-・VolumeMakerの多様化
- -TajimaCity(Scale)
-・SimplePatternの実装
- -Grid
- -Horizontal
- -Vertical
-
+○Bolt発送準備
+・ケース加工
+・段ボール準備
 
 ■発信
-
 ○Quitaの記事調査
 
 ○要点の整理
+
+●IDEA
+・建物の高さ管理
+ -random
+ -Noise
+ -DbyH
+・Patternの種類
 
 ●Quita
 ※PD, CDの設計思想を発信する
@@ -45,7 +41,11 @@
 ■Grasshopper
 ※幾何学的ロジックをコンピュテーショナル化・モジュール化
 
-○共通するEdgeMakerの実装
+○EdgeMakerのパラメーター実装
+・角度
+・位置
+
+○共通するEdgeMakerのModule設計
 ※ZahaのDessan・Volume・Architectureそれぞれに共通する部分をModule化する
 
 ●EdgeMaker(Module)
@@ -76,19 +76,10 @@
 ※MillersEdgeをベースにする
 ※RectangleCity
 
-○FacadeMakerのBaseLine化
+○SimplePatternMakerの修正
+・歯抜けしている部分を修正
 
-○VolumeMakerの整理
-・VerticalClass
-・HorizontalClass
-
-○委員会に向けた整理
-・VolumeMakerの多様化
- -TajimaCity(Scale)
-・SimplePatternの実装
- -Grid
- -Horizontal
- -Vertical
+○発信に向けた整理
 
 △追加Patternの調査
 ※Rectangleをベースに考える
