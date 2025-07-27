@@ -14,6 +14,7 @@
 ※設計思想、技術の2つに分けて発信する
 
 ○メモの作成
+・SimplePattern
 
 ○Quitaの記事調査
 
@@ -25,9 +26,7 @@
 
 ●要点
 ・Module
- -Patternの組み合わせ
 ・多様性
- -Patternの組み合わせ
 
 ●PD
 ・建物の高さ管理
@@ -68,7 +67,6 @@
 ・Module
  -VolumeMaker
  -SurfaceMaker
-
 
 
 
