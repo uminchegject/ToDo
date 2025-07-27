@@ -1,13 +1,28 @@
 ※美容室はしっかり指名する
 
 ○Bolt発送準備
-・ヤマト運輸の準備
-・梱包準備
-・ケース加工
+・荷物確認
+・伝票用意
+・発送
+
 
 ■PD
+※MillersEdgeをベースにする
+※RectangleCity
+
 ○SimplePatternMakerの修正
 ・歯抜けしている部分を修正
+
+△追加Patternの調査
+※Rectangleをベースに考える
+・TajimaCity
+・MillersEdgeCity
+
+●Pattern設計
+・水平分割
+ -凹凸Makerは水平分割
+・垂直分割
+ -垂直分割はPrimBaseのPatternMaker
 
 
 ■発信
@@ -43,6 +58,28 @@
  -位置
 ・Module化
 
+●ゴール
+・案件の増加
+ -情報発信
+・組織全体の技術向上
+ -イベント
+
+●IDEA
+※面白い部分を抜粋する
+※プロシージャルのコンテンツ化
+※イベント・事例の簡素化
+・マイクラ
+
+●事例
+・千の和室
+https://www.docswell.com/s/EpicGamesJapan/K3MEJZ-UE4_UFW19_SQEX_JapaneseStyleRoom
+・Houdiniによる日本城郭のプロシージャルモデリング
+https://www.youtube.com/watch?v=Jrg58esmSMM
+・Procedural Hard Surface Design With HOUDINI
+http://cdn2.gran-turismo.com/data/www/pdi_publications/cedec2018_proceduralHardSurfaceDesignWithHoudiniLight.pdf
+・Houdini16にHDAを２つ追加したらビルが量産できた
+https://cedil.cesa.or.jp/cedil_sessions/view/1710
+
 
 ■Grasshopper
 ※幾何学的ロジックをコンピュテーショナル化・モジュール化
@@ -67,61 +104,7 @@
 ・Module
  -VolumeMaker
  -SurfaceMaker
-
-
-
-
-
-■PD
-※MillersEdgeをベースにする
-※RectangleCity
-
-○SimplePatternMakerの修正
-・歯抜けしている部分を修正
-
-○発信に向けた整理
-
-△追加Patternの調査
-※Rectangleをベースに考える
-・TajimaCity
-・MillersEdgeCity
-
-●Pattern設計
-・水平分割
- -凹凸Makerは水平分割
-・垂直分割
- -垂直分割はPrimBaseのPatternMaker
-
-
-■Grasshopper
-※幾何学的ロジックをコンピュテーショナル化・モジュール化
-
-○ボートハウス設計
-※様々なEdgeSurfaceのパターンを確認できるようにする
-※Zahaのデッサンを参考
-・Parameter
- -Axis
-・Input
- -BaseLine
-・Module
- -Surface
-
-●Module
-※オブジェクト指向
-・入力
- -BaseLine
- -BaseVolume
-・パラメーター
- -Axis
-・Module
- -VolumeMaker
- -SurfaceMaker
-
-●パラメーター
-※Axisを意識する
-・角度
-・位置
-
+ 
 ●オブジェクト指向
 ・カプセル化
 ・継承
@@ -140,64 +123,3 @@ https://developer.rhino3d.com/
 https://mitani.cs.tsukuba.ac.jp/dokuwiki_rhino/doku.php?id=start
 ・清水のコンピュテーショナルデザイン
 https://www.shimz.co.jp/dde/
-
-
-■委員会
-※Volume, Detailの2軸で発信していく
-
-○シンプルなPatternのみを使いVolumeMakerに重点を置いたDemoを作成する
-・Pattern
- -Grid
- -Horizontal
- -Vertical
-
-○VolumeMakerの発信準備
-・アピールポイントを整理
- -VolumeMakerの複雑さを強調
-・VolumeMakerの要点を整理
- -多様性
- -
-
-○PatternMakerの共有会準備
-※Grid, Horizontal, Verticalの組み合わせパターンを複数用意しデザインの多様性を強調
-・さらに広い多様性を目標に設定
-
-●要点
-・Volume + Detail
-・Module
-・デザインの多様性
-
-●Volume
-・GridWindow, HorizontalWindowの条件で複数生成
- -TajimaCity
- -MillersEdgeCity
-
-●Detail
-
-○RectangleCityProject
-・発信する計画
- -街計画の設計から実装までを記事として発信
-・体験会の計画
- -四角形を使用して街並みを自動生成する
-
-●ゴール
-・案件の増加
- -情報発信
-・組織全体の技術向上
- -イベント
-
-●IDEA
-※面白い部分を抜粋する
-※プロシージャルのコンテンツ化
-※イベント・事例の簡素化
-・マイクラ
-
-●事例
-・千の和室
-https://www.docswell.com/s/EpicGamesJapan/K3MEJZ-UE4_UFW19_SQEX_JapaneseStyleRoom
-・Houdiniによる日本城郭のプロシージャルモデリング
-https://www.youtube.com/watch?v=Jrg58esmSMM
-・Procedural Hard Surface Design With HOUDINI
-http://cdn2.gran-turismo.com/data/www/pdi_publications/cedec2018_proceduralHardSurfaceDesignWithHoudiniLight.pdf
-・Houdini16にHDAを２つ追加したらビルが量産できた
-https://cedil.cesa.or.jp/cedil_sessions/view/1710
