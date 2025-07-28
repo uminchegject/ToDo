@@ -1,9 +1,15 @@
-※美容室はしっかり指名する
+○Bolt発送
 
-○Bolt発送準備
-・荷物確認
-・伝票用意
-・発送
+■Work
+○確認(質問)
+・navmeshの存在確認方法
+ -SceneEditorでの確認方法
+・trcolの存在確認方法
+ -SceneEditorでの確認方法
+・overrideの仕様に沿っているかを確認
+・booleanの意図の確認
+
+○洞窟の不具合原因の調査
 
 
 ■PD
