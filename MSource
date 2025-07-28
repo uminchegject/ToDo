@@ -1,15 +1,30 @@
-○Bolt発送
+※Color + Objの組み合わせでPD,CDで面白いものを作る
+
+○PD
+・TajimaCityの探求
+
+○CD
+・作業の進め方の模索
+・EdgeMakerの実装
+
+○発信
+※あくまで、片手間にPD,CDで面白かったことを記録する
+・Slackのスレッドで記録
+ -画像メイン
+・土日にまとめる
+
 
 ■Work
-○確認(質問)
-・navmeshの存在確認方法
- -SceneEditorでの確認方法
-・trcolの存在確認方法
- -SceneEditorでの確認方法
-・overrideの仕様に沿っているかを確認
-・booleanの意図の確認
+○・質問
+ -trcolとnavmeshの挙動を確認
 
-○洞窟の不具合原因の調査
+○不具合調査
+・w07のoverrideの仕様確認
+・洞窟不具合の調査
+ -処理のフローを確認
+
+○修正
+・env_info_json
 
 
 ■PD
@@ -33,9 +48,6 @@
 
 ■発信
 ※設計思想、技術の2つに分けて発信する
-
-○メモの作成
-・SimplePattern
 
 ○Quitaの記事調査
 
