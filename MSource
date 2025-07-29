@@ -5,8 +5,6 @@
 ○SimplePatternMakerの修正
 ・歯抜けしている部分を修正
 
-○TajimaCityの探求(記録)
-
 △追加Patternの調査
 ※Rectangleをベースに考える
 ・TajimaCity
@@ -18,12 +16,24 @@
 ・垂直分割
  -垂直分割はPrimBaseのPatternMaker
 
+■記事
+○システム単位について
+・システム単位とかGridサイズとか
+http://nomoreretake.net/2014/06/29/houdinigrid/
+
+○Tajima作品の調査
+・建物のスケール感
+
+○実際にスケールを合わせてみる
+
+○合わせた結果
+
+
 
 ■発信
 ※Color + Objの組み合わせでPD,CDで面白いものを作る
 ※あくまで、片手間にPD,CDで面白かったことを記録する
 ※設計思想、技術の2つに分けて発信する
-
 
 ○記録
 ・Slackのスレッドで記録

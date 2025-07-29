@@ -28,22 +28,3 @@ https://www.sidefx.com/ja/tutorials/foundations-build-a-city-with-pdg/
 https://www.youtube.com/watch?v=PTVal-t9g1k&t=1s
 ・Houdini Tutorial Megastructure Generator
 https://www.youtube.com/watch?v=J5A3Z0qX-Yk
-
-
-■OutsidePanelMaker
-△OutsideMakerの修正
-・検証を行いつつパラメーターを修正
-
-
-■PipeMaker
-●仕様
-・軸を設定する
-・太さをランダムにする
-
-●処理
-・Pipeを配置するのに最適なサイズのブロックをGreebleで生成
-・Volume内に沿ってBaseLineを生成する
-・BaseLineからPMする
- -4頂点のPolyLineを生成
- -PolyWire
- -PolyBebel
