@@ -1,20 +1,3 @@
-■Work
-○仕様確認
-・ドキュメント
-・Slack
-
-○質問
-・trcolとnavmeshの挙動を確認
-・w07のoverrideの仕様確認
-
-○不具合調査
-・洞窟不具合の調査
- -処理のフローを確認
-
-○修正
-・env_info_json
-
-
 ■PD
 ※MillersEdgeをベースにする
 ※RectangleCity
