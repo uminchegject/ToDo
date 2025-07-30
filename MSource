@@ -1,3 +1,5 @@
+○
+
 ■PD
 ※RectangleCity
 ※形態、複数のPrimに問わず対応できるModuleを実装する
@@ -12,7 +14,7 @@
 △追加Patternの調査
 ※Rectangleをベースに考える
 ・TajimaCity
-・MillersEdgeCity
+
 
 ●Pattern設計
 ・水平分割
