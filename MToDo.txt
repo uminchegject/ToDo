@@ -17,19 +17,11 @@
  -余計な処理の整理
 
 
-■WorkStudy
+■Study
 ※タスク、チケットごとに使用した技術のWorkStudyを行う
  -※チケット対応期間でのWorkStudyスケジュールをしっかり計画する
  -作業に関連するツール周りのStudy
  -作業に関連する基礎周りのStudy
- 
-
-■Study
-○Quita
-https://qiita.com/tags/houdini
-
-○Cedil
-https://cedil.cesa.or.jp/
 
 ○ProjectSkylark
 https://www.sidefx.com/learn-main-menu/tech-demos/project-skylark/
@@ -40,6 +32,13 @@ https://www.sidefx.com/learn-main-menu/tech-demos/project-skylark/
 
 ○オブジェクト設計スタイルガイド
 ・設計
+
+●資料
+・Quita
+https://qiita.com/tags/houdini
+・Cedil
+https://cedil.cesa.or.jp/
+
 
 
 ■Private
@@ -67,28 +66,3 @@ Pass::B&?hDE%eb6cANsM
 https://www.gltjp.com/ja/article/item/21006/
 ・【万博】チケット購入ガイド！流れや注意点、当日のお役立ち情報までご紹介
 https://ppap.kinto-jp.com/articles/expo2025-ticket
-
-
-■PDG
-○Attribute設計
-・BooleanTool
-・凹凸Tool
-・OutsidePanelMaker
-
-○wedgeの実装
-
-●ドキュメント
-・デザイン向け PDG パート1 - 基本
-https://www.sidefx.com/ja/tutorials/pdg-for-design-work-pt-1-the-basics/
-・Reincarnation
-https://fereria.github.io/reincarnation_tech/houdini/pdg/basic/04
-・FOUNDATIONS | PDG による都市構築
-https://www.sidefx.com/ja/tutorials/foundations-build-a-city-with-pdg/
-
-
-■Detail
-○HoudiniのPDプロジェクトを調査
-・Houdini sci-fi Buildings || Tutorial
-https://www.youtube.com/watch?v=PTVal-t9g1k&t=1s
-・Houdini Tutorial Megastructure Generator
-https://www.youtube.com/watch?v=J5A3Z0qX-Yk

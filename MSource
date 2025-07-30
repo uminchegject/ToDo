@@ -1,15 +1,9 @@
-○Copernicus
-・Copernicus でスイカとレモンの断面
-https://qiita.com/okada_takuya/items/0ce2e247bceaac6ad08e
-
-
 ■PD
+※RectangleCity
 ※形態、複数のPrimに問わず対応できるModuleを実装する
  -Base, DetailPattern, Detailそれぞれのフロー設計を意識する
  -実際の工程を自動化することを意識する
  -まずModuleをひたすら実装し、組み合わせを行うことを目標にする。
-※MillersEdgeをベースにする
-※RectangleCity
 
 ○SimplePatternMakerの修正
 ・prim_points[0]を適切な位置に移動する
@@ -26,121 +20,30 @@ https://qiita.com/okada_takuya/items/0ce2e247bceaac6ad08e
 ・垂直分割
  -垂直分割はPrimBaseのPatternMaker
 
+
 ■記事
-○システム単位について
-・システム単位とかGridサイズとか
-http://nomoreretake.net/2014/06/29/houdinigrid/
+●システム単位
+・システム単位を確認＆変更方法(画像)
+[Edit]→[Preferences]→[Hip File Options]
+・ユニット
+Unit Lenght(m) = 1
+Unit Mass(kg) =1
 
-○Tajima作品の調査
-・スケール
- -平面
- -階層
- -高さ
+○Boxで挙動確認
+・Horizontalのみで検証
 
-○実際にスケールを合わせてみる
-・複数パターンで検証
+●ベーススケールの設定
+・参考資料(画像)
+https://artists-fair.kyoto/2021/artists/daisuke-tajima/
+・平面のスケール感(画像)
+・階層のスケール感(画像)
+・階数(画像)
 
-○Next
+○VolumeMakerで検証
+・Horizontalのみで検証
+
+●CityGeneratorで検証
+・スケール感を意識して検証
+
+●Next
 ・窓の模様にバリエーションを加える
-
-
-
-■発信
-※事例調査を怠らない
-※Color + Objの組み合わせでPD,CDで面白いものを作る
-※あくまで、片手間にPD,CDで面白かったことを記録する
-※設計思想、技術の2つに分けて発信する
-
-○記録
-・Slackのスレッドで記録
- -画像メイン
-・土日にまとめる
- -翌週のまとめる内容も整理する
-
-○Quitaの記事調査
-
-●Quita
-※PD, CDの設計思想を発信する
-・ポートフォリオとしても機能するようにする
-・委員会でも発信内容を使用する
-・設計だけでなく、技術部分も意識する
-
-●要点
-・Module
-・多様性
-
-●PD
-・建物の高さ管理
- -random
- -Noise
- -DbyH
-・Patternの種類
-・Clusterの解説(技術)
-
-●CD
-※BoatHouseを軸に進めていく
-・パラメーター化
- -角度
- -位置
-・Module化
-
-●ゴール
-・案件の増加
- -情報発信
-・組織全体の技術向上
- -イベント
-
-●事例
-・千の和室
-https://www.docswell.com/s/EpicGamesJapan/K3MEJZ-UE4_UFW19_SQEX_JapaneseStyleRoom
-・Houdiniによる日本城郭のプロシージャルモデリング
-https://www.youtube.com/watch?v=Jrg58esmSMM
-・Procedural Hard Surface Design With HOUDINI
-http://cdn2.gran-turismo.com/data/www/pdi_publications/cedec2018_proceduralHardSurfaceDesignWithHoudiniLight.pdf
-・Houdini16にHDAを２つ追加したらビルが量産できた
-https://cedil.cesa.or.jp/cedil_sessions/view/1710
-
-
-
-■Grasshopper
-※幾何学的ロジックをコンピュテーショナル化・モジュール化
-
-○EdgeMakerのパラメーター設計
-※管理するObjをTree化(クラス化)し、色付けて分かりやすくする
-※Axisを意識する
-・角度
-・位置
-
-○共通するEdgeMakerのModule設計
-※ZahaのDessan・Volume・Architectureを参考にそれぞれに共通する部分をModule化する
-
-●EdgeMaker(Module)
-※オブジェクト指向
-・入力
- -BaseLine
- -BaseVolume
-・パラメーター
- -角度(Axis)
- -位置(高さ)
-・Module
- -VolumeMaker
- -SurfaceMaker
- 
-●オブジェクト指向
-・カプセル化
-・継承
-・ポリフォーリズム
-
-●サンプル
-・建築実務のプロが作ったRhinoとGrasshopperの本
-https://www.applicraft.com/kj-data/
-・コンピュテーショナル・モデリング 入門から応用
-https://www.applicraft.com/cpmodeling_data/
-
-●資料
-・公式Document
-https://developer.rhino3d.com/
-・RhinoとGrasshopperとPythonScriptのWiki
-https://mitani.cs.tsukuba.ac.jp/dokuwiki_rhino/doku.php?id=start
-・清水のコンピュテーショナルデザイン
-https://www.shimz.co.jp/dde/
