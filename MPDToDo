@@ -1,10 +1,3 @@
-※事例調査を怠らない
-※形態、複数のPrimに問わず対応できるDetailMakerを実装する
-※Base, DetailPattern, Detailそれぞれのフロー設計を意識する
-※実際の工程を自動化することを意識する
-※まずHDAをひたすら実装し、組み合わせを行うことを目標にする。
-
-
 ■PDG
 ○Attribute設計
 ・BooleanTool

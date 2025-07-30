@@ -1,8 +1,17 @@
 ○サバゲー
 ちょうど土曜日関東直撃ですね…
-一旦金曜日辺りに天気を確認して、各々でキャンセルするか判断
+一旦金曜日辺りに天気を確認した上で、各々の参加の有無を確認させて頂く形にさせて頂いてもいいでしょうか…?
+
+○Copernicus
+・Copernicus でスイカとレモンの断面
+https://qiita.com/okada_takuya/items/0ce2e247bceaac6ad08e
+
 
 ■PD
+※形態、複数のPrimに問わず対応できるModuleを実装する
+ -Base, DetailPattern, Detailそれぞれのフロー設計を意識する
+ -実際の工程を自動化することを意識する
+ -まずModuleをひたすら実装し、組み合わせを行うことを目標にする。
 ※MillersEdgeをベースにする
 ※RectangleCity
 
@@ -38,7 +47,10 @@ http://nomoreretake.net/2014/06/29/houdinigrid/
 ○Next
 ・窓の模様にバリエーションを加える
 
+
+
 ■発信
+※事例調査を怠らない
 ※Color + Objの組み合わせでPD,CDで面白いものを作る
 ※あくまで、片手間にPD,CDで面白かったことを記録する
 ※設計思想、技術の2つに分けて発信する
@@ -91,6 +103,7 @@ https://www.youtube.com/watch?v=Jrg58esmSMM
 http://cdn2.gran-turismo.com/data/www/pdi_publications/cedec2018_proceduralHardSurfaceDesignWithHoudiniLight.pdf
 ・Houdini16にHDAを２つ追加したらビルが量産できた
 https://cedil.cesa.or.jp/cedil_sessions/view/1710
+
 
 
 ■Grasshopper
