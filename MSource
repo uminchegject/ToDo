@@ -1,4 +1,4 @@
-○
+○サバゲーキャンセル
 
 ■PD
 ※RectangleCity
@@ -7,14 +7,9 @@
  -実際の工程を自動化することを意識する
  -まずModuleをひたすら実装し、組み合わせを行うことを目標にする。
 
-○SimplePatternMakerの修正
-・prim_points[0]を適切な位置に移動する
-・どんなに小さいスペースでも最低1つBlockを生成するようにする
-
 △追加Patternの調査
 ※Rectangleをベースに考える
 ・TajimaCity
-
 
 ●Pattern設計
 ・水平分割
@@ -24,28 +19,26 @@
 
 
 ■記事
-●システム単位
-・システム単位を確認＆変更方法(画像)
-[Edit]→[Preferences]→[Hip File Options]
-・ユニット
-Unit Lenght(m) = 1
-Unit Mass(kg) =1
-
 ○Boxで挙動確認
-・Horizontalのみで検証
+・窓枠サイズを調整
 
-●ベーススケールの設定
+●虎ノ門ヒルズビジネスタワーのスケールで検証
+・181×50×70でサイズを設定
+・階高は3mで設定
+・窓の枠のスケールを調整
+・パラメーターを動かすことでプロシージャルに変形できる
+
+○Cluster + Extrudeで検証
+・平面スケールを調整
+・高さをランダムに設定
+・窓枠もランダムに設定
+
+●田島大輔作品の摩天楼を参考に検証
 ・参考資料(画像)
 https://artists-fair.kyoto/2021/artists/daisuke-tajima/
-・平面のスケール感(画像)
-・階層のスケール感(画像)
-・階数(画像)
-
-○VolumeMakerで検証
-・Horizontalのみで検証
-
-●CityGeneratorで検証
-・スケール感を意識して検証
+・平面のサイズ感を小さいものから大きいものまで用意(Cluster)
+・高さのスケール感もランダムに設定(Extrude)
+・窓枠のサイズ感も設定
 
 ●Next
 ・窓の模様にバリエーションを加える
