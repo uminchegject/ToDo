@@ -4,6 +4,17 @@ https://qiita.com/U-MA/items/996ae933ae94c5711883
 ・建築業界向けHoudiniのススメ : Introduction of Houdini to Architecture
 https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
 
+※記事のキーワードを決める
+
+○複数の街並みの参照を調査
+・Box
+ -虎ノ門ヒルズ
+・City
+ -TajimaCity
+
+●キーワード
+・BoxからCityまでの検証フロー
+・パラメーターによる柔軟な生成
 
 ■PD
 ※RectangleCity
