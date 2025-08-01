@@ -4,17 +4,6 @@ https://qiita.com/U-MA/items/996ae933ae94c5711883
 ・建築業界向けHoudiniのススメ : Introduction of Houdini to Architecture
 https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
 
-※記事のキーワードを決める
-
-○複数の街並みの参照を調査
-・Box
- -虎ノ門ヒルズ
-・City
- -TajimaCity
-
-●キーワード
-・BoxからCityまでの検証フロー
-・パラメーターによる柔軟な生成
 
 ■PD
 ※RectangleCity
@@ -22,10 +11,15 @@ https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
  -Base, DetailPattern, Detailそれぞれのフロー設計を意識する
  -実際の工程を自動化することを意識する
  -まずModuleをひたすら実装し、組み合わせを行うことを目標にする。
+ 
+○次の記事の準備
+・複雑な形態
+・窓のパターン
+・凹凸の生成
+・屋上のオブジェクト
 
-△追加Patternの調査
-※Rectangleをベースに考える
-・TajimaCity
+△テクスチャの準備
+・CopernicusのStudy
 
 ●Pattern設計
 ・水平分割
@@ -35,25 +29,36 @@ https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
 
 
 ■記事
-○Boxで挙動確認
-・窓枠サイズを調整
+※記事のキーワードを決める
 
-●虎ノ門ヒルズビジネスタワーのスケールで検証
-・181×50×70でサイズを設定
-・階高は3mで設定
+●キーワード
+・Unit単位
+・BoxからCityまでの検証フロー
+・パラメーターによる柔軟で多様な生成
+
+○複数の街並みの参照を調査
+・Box
+ -虎ノ門ヒルズ
+・City
+ -TajimaCity
+
+○Boxで挙動確認
+・パラメーター
+ -窓枠サイズ
+
+●Boxで検証
+・虎ノ門ヒルズビジネスタワー
+ -181×50×70でサイズを設定
+ -階高は3mで設定
 ・窓の枠のスケールを調整
-・パラメーターを動かすことでプロシージャルに変形できる
+ -パラメーターを動かすことでプロシージャルに変形できる
 
 ○Cluster + Extrudeで検証
-・窓枠サイズ調整
-・高さ調整
+・パラメーター(Randomly)
+ -平面サイズ
+ -高さ
+ -窓枠サイズ
 
-●田島大輔作品の摩天楼を参考に検証
-・参考資料(画像)
-https://artists-fair.kyoto/2021/artists/daisuke-tajima/
-・平面のサイズ感を小さいものから大きいものまで用意(Cluster)
-・高さのスケール感もランダムに設定(Extrude)
-・窓枠のサイズ感も設定
-
-●Next
-・窓の模様にバリエーションを加える
+●Clusterで検証
+・田島大輔作品の摩天楼
+ -参考資料(画像)https://artists-fair.kyoto/2021/artists/daisuke-tajima/
