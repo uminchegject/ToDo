@@ -1,23 +1,32 @@
-※仕様を頭に叩き込む
+■反省
+※花金の音楽と飯はカフェタイムのスケジューリング後
 
-○Qiita書き方
-・Qiita記事作成方法 初心者の備忘録
-https://qiita.com/U-MA/items/996ae933ae94c5711883
-・建築業界向けHoudiniのススメ : Introduction of Houdini to Architecture
-https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
+※仕様(本質)を理解して、意識するように工夫する
+
+●実践的なStudy
+※仕事で使うツールをしっかり勉強する
+ -TutorialProjectの調査
+ -SimpleProjectで実装
+ -PDProjectで実装
+・定時後にPD実装とセットで行う
 
 
 ■PD
-※RectangleCity
+※RectangleCityを軸に進めていく
 ※形態、複数のPrimに問わず対応できるModuleを実装する
  -Base, DetailPattern, Detailそれぞれのフロー設計を意識する
  -実際の工程を自動化することを意識する
  -まずModuleをひたすら実装し、組み合わせを行うことを目標にする。
  
-○看板の設計
-※色の多様化
+○RectanglePattern設計
+・看板の模様
+・窓の模様
+・Copernicus
+
+○パラメーター検証
+※絵になるものを用意する
  
-○記事の準備
+○発信準備
 ・複雑な形態
  -平面の変化
 ・窓のパターン
@@ -37,6 +46,12 @@ https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
 
 ■記事
 ※記事のキーワードを決める
+
+○Qiita書き方
+・Qiita記事作成方法 初心者の備忘録
+https://qiita.com/U-MA/items/996ae933ae94c5711883
+・建築業界向けHoudiniのススメ : Introduction of Houdini to Architecture
+https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
 
 ●キーワード
 ・Unit単位
