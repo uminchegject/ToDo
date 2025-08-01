@@ -34,7 +34,7 @@ https://www.sidefx.com/learn-main-menu/tech-demos/project-skylark/
 ・設計
 
 ●資料
-・Quita
+・Qiita
 https://qiita.com/tags/houdini
 ・Cedil
 https://cedil.cesa.or.jp/
