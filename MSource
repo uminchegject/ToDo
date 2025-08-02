@@ -1,3 +1,9 @@
+○Copernicusの調査
+・RectanglePatternのプロシージャルテクスチャを実装
+
+○HoudiniのGif製作方法の調査
+・柔軟性、多様性を強調することを目的としたGIF制作
+
 ■反省
 ※花金の音楽と飯はカフェタイムのスケジューリング後
 
@@ -18,34 +24,53 @@
  -実際の工程を自動化することを意識する
  -まずModuleをひたすら実装し、組み合わせを行うことを目標にする。
 
-△テクスチャの準備
-・CopernicusのStudy
+○看板のRectanglePatternの設計
 
-●発信準備
+△PT実装
+・RectanglePatternの実装
+ -窓
+ -看板
+
+●Next
 ・複雑な形態
  -下階層の複雑化
 ・窓のパターン
  -街並み風景を構成する窓
 ・色の多様化
  -屋上のオブジェクト
+・ModularModeling
+ -HoudiniForUnreal
 
 ●Pattern設計
 ・水平分割
  -凹凸Makerは水平分割
 ・垂直分割
  -垂直分割はPrimBaseのPatternMaker
+ 
+ 
+■RectanglePattern設計
+※模様(Patternを意識する)
+
+●Object
+・看板
+・窓
+
+●Color
+・パラメーター化
+・配色
+ -BaseColor, VividColor, MiddleColor
+
+●RectangleDesign
+・Layout(Randomly, Grid)
+
+●Study
+・レイアウト
+・配色
+・Copernicus
 
 
 ■記事
 ※記事のキーワードを決める
-
-○Qiita書き方
-・Qiita記事作成方法 初心者の備忘録
-https://qiita.com/U-MA/items/996ae933ae94c5711883
-・建築業界向けHoudiniのススメ : Introduction of Houdini to Architecture
-https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
-
-○HoudiniのGif製作方法の調査
 
 ○アニメーション検証
 ・修正前後の変化
@@ -54,14 +79,20 @@ https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
  -平面(グラデーション)
  -窓枠(グラデーション)
 
+△Qiita書き方
+・Qiita記事作成方法 初心者の備忘録
+https://qiita.com/U-MA/items/996ae933ae94c5711883
+・建築業界向けHoudiniのススメ : Introduction of Houdini to Architecture
+https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
+
+
 ●記事のカテゴリー
 ・設計
 ・拡張
 ・処理解説
 ・技術(Tips)
 
-
-■叩き台
+■ビルジェネレーターと街ジェネレーター
 ●概要
 シンプルなビルジェネレーターと街ジェネレーターを実装して街並み生成の検証を行いました。
 
@@ -85,24 +116,3 @@ Boxの側面に窓に模したPrimを配置するだけのシンプルなBuildin
 
 ●Tips
 Unit単位
-
-
-■RectanglePattern設計
-※模様(Patternを意識する)
-
-●Object
-・看板
-・窓
-
-●Color
-・パラメーター化
-・配色
- -BaseColor, VividColor, MiddleColor
-
-●RectangleDesign
-・Layout(Randomly, Grid)
-
-●Study
-・レイアウト
-・配色
-・Copernicus
