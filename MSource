@@ -17,17 +17,6 @@
  -Base, DetailPattern, Detailそれぞれのフロー設計を意識する
  -実際の工程を自動化することを意識する
  -まずModuleをひたすら実装し、組み合わせを行うことを目標にする。
- 
-○RectanglePattern設計
-・看板の模様
-・窓の模様
-・Copernicus
-
-○複数の街並みの参照を調査
-・Box
- -虎ノ門ヒルズ
-・City
- -TajimaCity
 
 ○パラメーター検証
 ※絵になるものを用意する
@@ -59,21 +48,11 @@ https://qiita.com/U-MA/items/996ae933ae94c5711883
 ・建築業界向けHoudiniのススメ : Introduction of Houdini to Architecture
 https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
 
-●キーワード
-・Unit単位
-・パラメーターによる柔軟性とランダムによる多様性
- -BoxからCityまでのフロー
-
 ○Boxで挙動確認
 ・パラメーター
  -建物スケール
  -階層高さ
  -窓枠サイズ
-
-●パラメーターによる柔軟性
-・パラメーターで多様なサイズに変更できる
-・窓枠スケールを調整できる
- -パラメーターを動かすことでプロシージャルに変形できる
 
 ○Cluster + Extrudeで検証
 ・パラメーター(Randomly)
@@ -81,13 +60,12 @@ https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
  -高さ
  -窓枠サイズ
 
-●ランダムによる多様性
-・平面が同じだと単調なので変化させる
-・高さをランダムにすることでさらに変化を持たせる
-・同じ窓枠スケールもランダムにすることでさらに変化を持たせることができる
+○Gifを用意
+・修正前後の変化
+・パラメーター調整変化
 
-●結論
-必要なパラメーターを意識しながらモデリングをプロシージャル化し柔軟性を持たせて、ランダムなパラメーター化を行うことがプロシージャルデザインの肝になってくると思われる
+○完成形の用意
+TajimaCity
 
 
 ■叩き台
@@ -123,3 +101,24 @@ Boxの側面に窓に模したPrimを配置するだけのシンプルなBuildin
 
 ●Tips
 Unit単位
+
+
+■RectanglePattern設計
+※模様(Patternを意識する)
+
+●Object
+・看板
+・窓
+
+●Color
+・パラメーター化
+・配色
+ -BaseColor, VividColor, MiddleColor
+
+●RectangleDesign
+・Layout(Randomly, Grid)
+
+●Study
+・レイアウト
+・配色
+・Copernicus
