@@ -1,8 +1,18 @@
+○プレゼントの用意
+
+○服の整理
+
+○アニメーション処理をそれぞれ実装
+・Editor上での挙動をエクスポートして確認
+
+
 ○Copernicusの調査
 ・RectanglePatternのプロシージャルテクスチャを実装
 
 ○HoudiniのGif製作方法の調査
 ・柔軟性、多様性を強調することを目的としたGIF制作
+・絶対に挫折しないHoudini入門 8 - レンダリング
+https://note.com/aoi/n/n3dd2bb4e9614
 
 ■反省
 ※花金の音楽と飯はカフェタイムのスケジューリング後
@@ -32,10 +42,11 @@
  -看板
 
 ●Next
-・複雑な形態
- -下階層の複雑化
 ・窓のパターン
  -街並み風景を構成する窓
+・複雑な形態
+ -下階層の複雑化
+ -VerticalBlock, HorizontalBlock
 ・色の多様化
  -屋上のオブジェクト
 ・ModularModeling
@@ -49,7 +60,7 @@
  
  
 ■RectanglePattern設計
-※模様(Patternを意識する)
+※模様(Pattern)を意識する
 
 ●Object
 ・看板
@@ -84,7 +95,6 @@
 https://qiita.com/U-MA/items/996ae933ae94c5711883
 ・建築業界向けHoudiniのススメ : Introduction of Houdini to Architecture
 https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
-
 
 ●記事のカテゴリー
 ・設計
