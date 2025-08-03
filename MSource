@@ -23,7 +23,7 @@ https://note.com/aoi/n/n3dd2bb4e9614
 ・VerticalClass
 ・HorizontalClass
 
-○看板のRectanglePatternの設計
+○RectanglePatternの設計
 
 △PT実装
 ・RectanglePatternの実装
@@ -66,12 +66,7 @@ https://note.com/aoi/n/n3dd2bb4e9614
 ■記事
 ※記事のキーワードを決める
 
-○アニメーション制作
-・修正前後の変化
-・パラメーター調整変化
- -平面(グラデーション)
- -高さ(グラデーション)
- -窓枠(ランダム + グラデーション)
+○委員会に向けたアクション
 
 △Qiita書き方
 ・Qiita記事作成方法 初心者の備忘録
