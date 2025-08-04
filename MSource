@@ -1,3 +1,6 @@
+○primをcollisionごとにflatする処理を実装
+※周辺処理を要確認
+
 ○Copernicusの調査
 ・RectanglePatternのプロシージャルテクスチャを実装
 
@@ -23,7 +26,7 @@ https://note.com/aoi/n/n3dd2bb4e9614
 ・VerticalClass
 ・HorizontalClass
 
-○RectanglePatternの設計
+△RectanglePatternの設計
 
 △PT実装
 ・RectanglePatternの実装
