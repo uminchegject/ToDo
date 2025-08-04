@@ -1,14 +1,12 @@
 ○primをcollisionごとにflatする処理を実装
 ※周辺処理を要確認
+・forのbypeaceで実装
+ -bounds
 
 ○Copernicusの調査
 ・RectanglePatternのプロシージャルテクスチャを実装
-
-○HoudiniのGif製作方法の調査
-・柔軟性、多様性を強調することを目的としたGIF制作
-・絶対に挫折しないHoudini入門 8 - レンダリング
-https://note.com/aoi/n/n3dd2bb4e9614
-
+・Copernicus でスイカとレモンの断面
+https://qiita.com/okada_takuya/items/0ce2e247bceaac6ad08e
 
 ■PD
 ※RectangleCityを軸に進めていく
@@ -17,14 +15,16 @@ https://note.com/aoi/n/n3dd2bb4e9614
  -実際の工程を自動化することを意識する
  -まずModuleをひたすら実装し、組み合わせを行うことを目標にする。
 
+○Areaが大きいPrimはClassを独立するように修正
+
 ○Volume設計
 ・高層
+ -Box
 ・低層
  -複雑化
 
 ○PatternClass設計
 ・VerticalClass
-・HorizontalClass
 
 △RectanglePatternの設計
 
@@ -69,7 +69,18 @@ https://note.com/aoi/n/n3dd2bb4e9614
 ■記事
 ※記事のキーワードを決める
 
+○素材用意
+・同じカメラから撮影
+ -初期画像と完成画像をgif素材から取得
+
+○複雑化
+・WindowPattern
+・Volumeの複雑化
+・Volumeのクラス化
+
 ○委員会に向けたアクション
+・社外の勉強会に参加
+ -参考にしつつ発展させていく
 
 △Qiita書き方
 ・Qiita記事作成方法 初心者の備忘録
