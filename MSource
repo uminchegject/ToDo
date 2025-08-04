@@ -1,7 +1,6 @@
-○primをcollisionごとにflatする処理を実装
-※周辺処理を要確認
-・forのbypeaceで実装
- -bounds
+※後の処理全てをしっかり確認する
+
+○平面、立体の混合した場合の対応方法を模索
 
 ○Copernicusの調査
 ・RectanglePatternのプロシージャルテクスチャを実装
@@ -15,7 +14,8 @@ https://qiita.com/okada_takuya/items/0ce2e247bceaac6ad08e
  -実際の工程を自動化することを意識する
  -まずModuleをひたすら実装し、組み合わせを行うことを目標にする。
 
-○Areaが大きいPrimはClassを独立するように修正
+○高層Blockの処理整理
+・パラメーターの用意
 
 ○Volume設計
 ・高層
