@@ -14,17 +14,16 @@ https://qiita.com/okada_takuya/items/0ce2e247bceaac6ad08e
  -実際の工程を自動化することを意識する
  -まずModuleをひたすら実装し、組み合わせを行うことを目標にする。
 
-○高層Blockの処理整理
-・パラメーターの用意
-
-○Volume設計
+●Volume設計
 ・高層
  -Box
 ・低層
  -複雑化
 
-○PatternClass設計
+●PatternClass設計
 ・VerticalClass
+
+○SimplePatternを複数用意し、Classごとにランダムに設定して検証する
 
 △RectanglePatternの設計
 
