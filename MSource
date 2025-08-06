@@ -1,32 +1,18 @@
-○Copernicusの調査
-・特定の位置に特定の模様を配置する処理
-・模様の色をパラメーターで調整できるようにする
-
-○PTの設計
-・窓の模様
-・看板の模様
-
-○HoudiniArchitecture
-・ロジックのイラスト化
-・ロジックの建築化
-
-
-
-○SOPのアトリビュートを使用したテクスチャ作成
-
-○素材用意
-・初期画像と完成画像を用意
-
-○検証
-
-
 ○サバゲー相談
 お疲れ様です。
 大変恐縮なのですが、8/23自分がリスケをお願いさせて頂きたいです。
 次のサバゲーが9月頃になってしまうと思うのですが、9月頃から
 
+○素材用意
+・初期画像と完成画像を用意
+
+○検証
+・クラス調整
+・高さ調整
+
 ○Copernicusの調査
-・RectanglePatternのプロシージャルテクスチャを実装
+・特定の位置に特定の模様を配置する処理
+・模様の色をパラメーターで調整できるようにする
 ・初めて触るHoudini Copernicus
 https://www.monolithsoft.co.jp/techblog/articles/000620.html
 ・Copernicus でスイカとレモンの断面
@@ -43,20 +29,13 @@ https://qiita.com/okada_takuya/items/0ce2e247bceaac6ad08e
 ○高さ検証
 ・全体的な高さを高くして検証を行う
 
-○Pattern検証
-・高層
- -Vertical
- -Grid
-・低層
- -Horizontal
- -Grid
+△PTの設計
+・窓の模様
+・看板の模様
 
-△RectanglePatternの設計
-
-△PT実装
-・RectanglePatternの実装
- -窓
- -看板
+△CD
+・ロジックのイラスト化
+・ロジックの建築化
 
 ●Next
 ・色の多様化

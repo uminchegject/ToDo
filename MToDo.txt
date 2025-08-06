@@ -1,5 +1,5 @@
 ■反省
-※万博からGrasshopperを本格化する
+※万博からBuildingPDを本格化する
  -それまでにRectangleCityを詰める
  
 ※後の処理全てをしっかり確認する
