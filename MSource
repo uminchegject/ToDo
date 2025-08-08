@@ -14,10 +14,12 @@
 ■ProceduralTexture
 ○substancePanterの実例を調査
 ・模様の作り方を確認
-・設定をする
 
-●Copernicus
+●仕様
 ・CopytoPoint
+・Pattern
+
+●設計
 
 
 ■Architecture
@@ -28,7 +30,7 @@
 
 
 
-○サンプルHipの調査
+△サンプルHipの調査
 ・H20.5: Building a Substance like texturing workflow in Copernicus
 https://www.youtube.com/watch?v=SWHxg1jLwTE&list=PLHXoF_gfqnUrFCrZHCPvxPy47N2S1k2Xh
 
