@@ -1,11 +1,10 @@
+※City、Architectureそれぞれ形態生成実装をする
+
 ○万博準備
 ・Casaの購入
 ・チケットの準備
 
-○area値に比例した高さを設定する
-
-△GIFのアニメーション実装
-・模様の変化
+○GIFのアニメーション実装
 ・模様クラス変化
 ・Volumeの複雑化
 
@@ -50,8 +49,13 @@ sub_division
 
 
 ■ProceduralTexture
-○substancePanterの実例を調査
-・模様の作り方を確認
+○SubstancePainterの教科書
+・substancePanterの実例を調査
+ -模様の作り方を確認
+
+△サンプルHipの調査
+・H20.5: Building a Substance like texturing workflow in Copernicus
+https://www.youtube.com/watch?v=SWHxg1jLwTE&list=PLHXoF_gfqnUrFCrZHCPvxPy47N2S1k2Xh
 
 ●仕様
 ・CopytoPoint
@@ -60,9 +64,6 @@ sub_division
 ●設計
 
 
-△サンプルHipの調査
-・H20.5: Building a Substance like texturing workflow in Copernicus
-https://www.youtube.com/watch?v=SWHxg1jLwTE&list=PLHXoF_gfqnUrFCrZHCPvxPy47N2S1k2Xh
 
 ■PD
 ※RectangleCityを軸に進めていく
