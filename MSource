@@ -10,10 +10,28 @@
  -パリ
  -九龍
 
+●EngineForUnreal
+・九龍
+
+
 ○木造建築調査
 ・木材を使用した建築のPDを調査
  -Pattern
  -Texture(Color)
+
+●GridPattern
+・Pos
+ -Single
+ -Gradation
+ -Randomly
+・Scale
+ -Single
+ -Gradation
+ -Randomly
+・Texture(Color)
+ -Single
+ -Gradation
+ -Randomly
 
 
 ■複雑化
