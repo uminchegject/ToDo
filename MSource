@@ -1,7 +1,19 @@
-※City、Architectureそれぞれ形態生成実装をする
+※休日は瞑想のための散歩(現美)を極力行う
 
 ○万博準備
+・動画
 ・予約
+
+
+■City
+※形態、複数のPrimに問わず対応できるModuleを実装する
+ -Base, DetailPattern, Detailそれぞれのフロー設計を意識する
+ -実際の工程を自動化することを意識する
+ -まずModuleをひたすら実装し、組み合わせを行うことを目標にする。
+
+○PTの設計
+・窓の模様
+・看板の模様
 
 ○街並み調査
 ・都市計画をベースにした街ジェネレーター
@@ -10,9 +22,43 @@
  -パリ
  -九龍
 
-●EngineForUnreal
-・九龍
+●Next
+・色の多様化(東京)
+ -屋上のオブジェクト
+・ModularModeling(九龍)
+ -HoudiniForUnreal
 
+■RectanglePattern設計
+※模様(Pattern)を意識する
+
+●Object
+・看板
+・窓
+
+●Color
+・パラメーター化
+・配色
+ -BaseColor, VividColor, MiddleColor
+
+●RectangleDesign
+・Layout(Randomly, Grid)
+
+●Study
+・レイアウト
+・配色
+・Copernicus
+
+
+■Architecture
+※シンプルなロジックを使用してコンピュテーショナルデザインを行う
+
+○万博の建築を調査
+・Pattern
+・Texture
+
+○PMModuleの設計・実装
+・ボートハウスでの検証用意
+ -木造シミュレーターをボートハウスの躯体で検証する
 
 ○木造建築調査
 ・木材を使用した建築のPDを調査
@@ -21,17 +67,47 @@
 
 ●GridPattern
 ・Pos
- -Single
- -Gradation
- -Randomly
 ・Scale
- -Single
- -Gradation
- -Randomly
 ・Texture(Color)
  -Single
  -Gradation
  -Randomly
+
+
+■ProceduralTexture
+○SubstancePainterの教科書
+・substancePanterの実例を調査
+ -模様の作り方を確認
+
+△サンプルHipの調査
+・H20.5: Building a Substance like texturing workflow in Copernicus
+https://www.youtube.com/watch?v=SWHxg1jLwTE&list=PLHXoF_gfqnUrFCrZHCPvxPy47N2S1k2Xh
+
+●仕様
+・CopytoPoint
+・Pattern
+
+●設計
+
+
+■記事
+※記事のキーワードを決める
+
+○委員会に向けたアクション
+・社外の勉強会に参加
+ -参考にしつつ発展させていく
+
+△Qiita書き方
+・Qiita記事作成方法 初心者の備忘録
+https://qiita.com/U-MA/items/996ae933ae94c5711883
+・建築業界向けHoudiniのススメ : Introduction of Houdini to Architecture
+https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
+
+●記事のカテゴリー
+・設計
+・拡張
+・処理解説
+・技術(Tips)
 
 
 ■複雑化
@@ -59,105 +135,3 @@
 
 ●Tips
 sub_division
-
-
-■Architecture
-※シンプルなロジックを使用してコンピュテーショナルデザインを行う
-
-○万博の建築を調査
-・Pattern
-・Texture
-
-○PMModuleの設計・実装
-・ボートハウスでの検証用意
- -木造シミュレーターをボートハウスの躯体で検証する
-
-
-
-■ProceduralTexture
-○SubstancePainterの教科書
-・substancePanterの実例を調査
- -模様の作り方を確認
-
-△サンプルHipの調査
-・H20.5: Building a Substance like texturing workflow in Copernicus
-https://www.youtube.com/watch?v=SWHxg1jLwTE&list=PLHXoF_gfqnUrFCrZHCPvxPy47N2S1k2Xh
-
-●仕様
-・CopytoPoint
-・Pattern
-
-●設計
-
-
-
-
-■PD
-※RectangleCityを軸に進めていく
-※形態、複数のPrimに問わず対応できるModuleを実装する
- -Base, DetailPattern, Detailそれぞれのフロー設計を意識する
- -実際の工程を自動化することを意識する
- -まずModuleをひたすら実装し、組み合わせを行うことを目標にする。
-
-○高さ検証
-・全体的な高さを高くして検証を行う
-
-△PTの設計
-・窓の模様
-・看板の模様
-
-△CD
-・ロジックのイラスト化
-・ロジックの建築化
-
-●Next
-・色の多様化
- -屋上のオブジェクト
-・ModularModeling
- -HoudiniForUnreal
-
- 
-■RectanglePattern設計
-※模様(Pattern)を意識する
-
-●Object
-・看板
-・窓
-
-●Color
-・パラメーター化
-・配色
- -BaseColor, VividColor, MiddleColor
-
-●RectangleDesign
-・Layout(Randomly, Grid)
-
-●Study
-・レイアウト
-・配色
-・Copernicus
-
-
-■記事
-※記事のキーワードを決める
-
-○複雑化
-・WindowPattern
-・Volumeの複雑化
-・Volumeのクラス化
-
-○委員会に向けたアクション
-・社外の勉強会に参加
- -参考にしつつ発展させていく
-
-△Qiita書き方
-・Qiita記事作成方法 初心者の備忘録
-https://qiita.com/U-MA/items/996ae933ae94c5711883
-・建築業界向けHoudiniのススメ : Introduction of Houdini to Architecture
-https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
-
-●記事のカテゴリー
-・設計
-・拡張
-・処理解説
-・技術(Tips)
