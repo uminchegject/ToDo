@@ -4,6 +4,11 @@
 ・動画
 ・予約
 
+○Copernicusのサンプル実装
+・CopyToPoint
+・Mask
+・カラーパラメーター
+
 
 ■City
 ※形態、複数のPrimに問わず対応できるModuleを実装する
