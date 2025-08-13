@@ -4,11 +4,12 @@
 ・動画
 ・予約
 
-○Box検証
-https://www.monolithsoft.co.jp/techblog/articles/000620.html
-・CopyToPoint
-・Mask
-・カラーパラメーター
+○copernicusをattributeで反映させる
+・Rasterrize Geometryを調査
+ -SampleProject
+・attribute
+ -Color
+ -Obj 
 
 
 ■City
