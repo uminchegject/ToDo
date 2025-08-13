@@ -17,9 +17,16 @@ https://www.monolithsoft.co.jp/techblog/articles/000620.html
  -実際の工程を自動化することを意識する
  -まずModuleをひたすら実装し、組み合わせを行うことを目標にする。
 
+○CopernicusTutorial実装
+・CopyToPoint
+・カラー設定
+
 ○PTの設計
 ・窓の模様
+ -窓枠配置
 ・看板の模様
+ -カラー設定
+ -Text(数字)配置
 
 ○街並み調査
 ・都市計画をベースにした街ジェネレーター
