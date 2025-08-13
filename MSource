@@ -1,3 +1,33 @@
+※しっかり自習時間を管理する
+・朝カフェ
+・朝一
+・AfterBreak
+・夜カフェ
+・定時後
+
+■City
+●設計
+・看板
+ -数字
+ -Color
+・Window
+ -マスク(Black)
+
+○実装 
+・CopyToPoint
+・Attribute
+
+○検証
+・Boxで検証
+
+■Architecture
+○WoodPatternMakerの実装
+
+○WoodTextureの調査
+・SubstancePainter
+
+
+
 ※休日は瞑想のための散歩(現美)を極力行う
 
 ○万博準備
