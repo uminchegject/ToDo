@@ -1,45 +1,8 @@
-※しっかり自習時間を管理する
-・朝カフェ
-・朝一
-・AfterBreak
-・夜カフェ
-・定時後
-
-■City
-●設計
-・看板
- -数字
- -Color
-・Window
- -マスク(Black)
-
-○実装 
-・CopyToPoint
-・Attribute
-
-○検証
-・Boxで検証
-
-■Architecture
-○WoodPatternMakerの実装
-
-○WoodTextureの調査
-・SubstancePainter
-
-
-
 ※休日は瞑想のための散歩(現美)を極力行う
 
 ○万博準備
 ・動画
 ・予約
-
-○copernicusをattributeで反映させる
-・Rasterrize Geometryを調査
- -SampleProject
-・attribute
- -Color
- -Obj 
 
 
 ■City
@@ -48,16 +11,26 @@
  -実際の工程を自動化することを意識する
  -まずModuleをひたすら実装し、組み合わせを行うことを目標にする。
 
-○CopernicusTutorial実装
+○copernicusをattributeで反映させる
+・Rasterrize Geometryを調査
+ -SampleProject
+・attribute
+ -Color
+ -Obj 
+ 
+○実装 
 ・CopyToPoint
-・カラー設定
+・Attribute
+
+○検証
+・Boxで検証
 
 ○PTの設計
-・窓の模様
- -窓枠配置
-・看板の模様
- -カラー設定
- -Text(数字)配置
+・窓
+ -模様
+・看板
+ -カラー
+ -模様
 
 ○街並み調査
 ・都市計画をベースにした街ジェネレーター
@@ -100,9 +73,11 @@
 ・Pattern
 ・Texture(Color)
 
-○PMModuleの設計・実装
+○WoodPatternMakerの実装
 ・ボートハウスでの検証用意
- -木造シミュレーターをボートハウスの躯体で検証する
+
+○WoodTextureの調査
+・SubstancePainterで事例調査
 
 ●GridPattern
 ・Pos
