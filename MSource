@@ -4,33 +4,39 @@
 ・動画
 ・予約
 
+○ProceduralCity調査
+ -立方体に建物テクスチャを張る
+・たのしい都市ジェネレータ
+https://www.youtube.com/watch?v=Y6-EWYXZG4s
+・Procedural City
+https://www.reddit.com/r/Houdini/comments/mm1vxq/procedural_city/
+・FutureCity
+https://www.artstation.com/artwork/RY6VnD
+
+○記事
+・sub_divisionのTips作成
+・記事の整理
+・Qiitaの記載
+
+●City
+・FacadeTexture
+ -UV
+・SignBoard
+ -Copernicus
+・UEAsset
+ -Engine
+
+●Architecture
+・WoodPattern
+ -UV
+ -Copernicus
+
 
 ■City
 ※形態、複数のPrimに問わず対応できるModuleを実装する
  -Base, DetailPattern, Detailそれぞれのフロー設計を意識する
  -実際の工程を自動化することを意識する
  -まずModuleをひたすら実装し、組み合わせを行うことを目標にする。
-
-○copernicusをattributeで反映させる
-・Rasterrize Geometryを調査
- -SampleProject
-・attribute
- -Color
- -Obj 
- 
-○実装 
-・CopyToPoint
-・Attribute
-
-○検証
-・Boxで検証
-
-○PTの設計
-・窓
- -模様
-・看板
- -カラー
- -模様
 
 ○街並み調査
 ・都市計画をベースにした街ジェネレーター
@@ -98,18 +104,15 @@ https://www.youtube.com/watch?v=GdUIp3UPlGY
 ・H20.5: Building a Substance like texturing workflow in Copernicus
 https://www.youtube.com/watch?v=SWHxg1jLwTE&list=PLHXoF_gfqnUrFCrZHCPvxPy47N2S1k2Xh
 
-●仕様
-・CopytoPoint
-・Pattern
+○UVStudy
 
 ●設計
+・CopytoPoint
+・Pattern
 
 
 ■記事
 ※記事のキーワードを決める
-
-○Tips
-・sub_division
 
 ○委員会に向けたアクション
 ・社外の勉強会に参加
@@ -126,26 +129,3 @@ https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
 ・拡張
 ・処理解説
 ・技術(Tips)
-
-
-■複雑化
-●概要
-前回においてシンプルなビルジェネレーターと街ジェネレーターを実装しましたが、
-今回はビルジェネレーターの窓のバリエーションを増やしつつ、街ジェネレーターも複雑な形態を生成するように実装しました。
-
-●模様の多様化
-前回のビルジェネレーターでは横長の窓のみしかありませんでした。
-そこでGrid状の窓、縦長の窓を追加して計3つのバリエーションを用意します。
-また、窓のスケールもパラメーター調整が行えるようにしました。
-
-●建物の形態の複雑化
-前回の街ジェネレーターでは立方体を敷地に埋める形で実装しました。
-そこから、L字やT字など複雑な形態で埋めるように実装しました。
-また、生成した形態をビルジェネレーターで窓を生成する処理において一つの建物に複数の窓の模様を混在するようにすることで、
-街の景観に変化を持たせるようにしました。
-
-●結論
-窓の模様バリエーションを増やすだけでかなり街並みに変化を持たせることができました。
-街の景観は東京、ニューヨーク、ロンドンなどそれぞれにしっかりとした特徴があり、これは都市計画、歴史、など様々な要素が組み合わさって構築されています。
-この要素をロジックに落とし込み、プロシージャルモデリングとして実装することでそれぞれの特徴を持った街ジェネレーターを実装できると考えます。
-今後も街の重要要素をロジック化し街ジェネレーターに反映していきたいです。
