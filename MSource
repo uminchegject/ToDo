@@ -1,9 +1,38 @@
-※休日は瞑想のための散歩(現美)を極力行う
+※週末の夜にPrivateの計画・反省の確認もしっかりする
 
 ○万博準備
-・動画
+・確認
 ・予約
 
+○クローゼットの整理
+・いらない洋服をまとめる
+
+○ノートPCでのHoudini環境の整理
+
+
+■記事
+※記事のキーワードを決める
+
+○記事の整理
+
+○Qiitaの記載
+・Qiita記事作成方法 初心者の備忘録
+https://qiita.com/U-MA/items/996ae933ae94c5711883
+・建築業界向けHoudiniのススメ : Introduction of Houdini to Architecture
+https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
+
+○委員会に向けたアクション
+・社外の勉強会に参加
+ -参考にしつつ発展させていく
+
+●記事のカテゴリー
+・設計
+・拡張
+・処理解説
+・技術(Tips)
+
+
+■City
 ○ProceduralCity調査
  -立方体に建物テクスチャを張る
 ・たのしい都市ジェネレータ
@@ -13,11 +42,6 @@ https://www.reddit.com/r/Houdini/comments/mm1vxq/procedural_city/
 ・FutureCity
 https://www.artstation.com/artwork/RY6VnD
 
-○記事
-・sub_divisionのTips作成
-・記事の整理
-・Qiitaの記載
-
 ●City
 ・FacadeTexture
  -UV
@@ -26,10 +50,28 @@ https://www.artstation.com/artwork/RY6VnD
 ・UEAsset
  -Engine
 
+△UVのStudy
+・ProceduralBuildingのTutorialProjectを調査
+
+
+■Architecture
+○PMの設計
+
+●GridPattern
+・Pos
+・Scale
+・Texture(Color)
+ -Single
+ -Gradation
+ -Randomly
+
 ●Architecture
 ・WoodPattern
  -UV
  -Copernicus
+
+
+
 
 
 ■City
@@ -46,6 +88,8 @@ https://www.artstation.com/artwork/RY6VnD
  -九龍
 
 ●Next
+・簡単なTexture
+ -FacadeTexture
 ・色の多様化(東京)
  -屋上のオブジェクト
 ・ModularModeling(九龍)
@@ -92,23 +136,6 @@ https://www.artstation.com/artwork/RY6VnD
  -Single
  -Gradation
  -Randomly
-
-
-■ProceduralTexture
-○事例調査
-・SubstancePainterの教科書
-・Substance Designer - Stylized Building Material
-https://www.youtube.com/watch?v=GdUIp3UPlGY
-
-△サンプルHipの調査
-・H20.5: Building a Substance like texturing workflow in Copernicus
-https://www.youtube.com/watch?v=SWHxg1jLwTE&list=PLHXoF_gfqnUrFCrZHCPvxPy47N2S1k2Xh
-
-○UVStudy
-
-●設計
-・CopytoPoint
-・Pattern
 
 
 ■記事
