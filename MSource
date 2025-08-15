@@ -1,7 +1,6 @@
 ※週末の夜にPrivateの計画・反省の確認もしっかりする
 
 ○万博準備
-・確認
 ・予約
 
 ○クローゼットの整理
@@ -12,8 +11,6 @@
 
 ■記事
 ※記事のキーワードを決める
-
-○記事の整理
 
 ○Qiitaの記載
 ・Qiita記事作成方法 初心者の備忘録
@@ -42,29 +39,32 @@ https://www.reddit.com/r/Houdini/comments/mm1vxq/procedural_city/
 ・FutureCity
 https://www.artstation.com/artwork/RY6VnD
 
+○都市景観のStudy
+・読書本の斥候
+
 ○Sign
-・Copernicus
+・Top
+・Front
 
 ●City
-・FacadeTexture
- -UV
-・UEAsset
- -Engine
+・RectangleCity
+・RectangleTextureCity
+・AssetCity
 
 △UVのStudy
 ・ProceduralBuildingのTutorialProjectを調査
 
 
 ■Architecture
-○PMの設計
-
-●GridPattern
+○WoodPatternの設計
 ・Pos
 ・Scale
 ・Texture(Color)
  -Single
  -Gradation
  -Randomly
+
+○実装
 
 ●Architecture
 ・WoodPattern
