@@ -1,14 +1,27 @@
 ※週末の夜にPrivateの計画・反省の確認もしっかりする
-※動画を視聴しながらできるゲームをする
+※休日はPrivateのStudy動画を見る
+ -動画を視聴しながらできるゲームをする
 
 ○万博準備
 ・パビリオン調査
  -抽選予約
- -単独予約確認
+・単独予約確認
+お久ぶりです。名古屋ではお世話になりました!
+今月末に万博に行く予定なのですが、万博経験者の菊池君に幾つか質問させて頂きたいです。
+
+お手数をおかけしますが、万博のアドバイス頂けると幸いです!
 
 ○サバゲー準備
 ・翌週の確認
 ・次回の予告
+お疲れ様です!
+今週末サバゲーなのすっかり忘れてました。(すみません…)
+早速予約を行おうと思うのですが、12時から16時予約で大丈夫でしょうか?
+後、ついでに次回以降のサバゲーについてもご相談させて頂きたいのですが、9月頃から気温が落ち着き屋外サバゲーの計画を視野に入れています。
+そこで、場所と移動手段について予め確認させて頂きたいのですが、恐らく参加メンバーの住んでいる場所から考えると下記のフィールドが車を使えることを前提にすると丁度よいかなと考えているのですが、
+いかがでしょうか…?
+
+○健康診断準備
 
 ○ノートPCでのHoudini環境の整理
 
@@ -27,9 +40,9 @@ https://qiita.com/U-MA/items/996ae933ae94c5711883
 https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
 
 ○委員会に向けたアクション
+・TechBlog
 ・社外の勉強会に参加
  -参考にしつつ発展させていく
-
 
 ●記事のカテゴリー
 ・設計
@@ -56,6 +69,12 @@ https://www.artstation.com/artwork/RY6VnD
  -Top
  -Front
 
+○RectangleCity検証
+
+○RectangleTextureCityの実装
+・UV展開
+・material設定
+
 ●City
 ・RectangleCity
 ・RectangleTextureCity
@@ -75,6 +94,9 @@ https://www.artstation.com/artwork/RY6VnD
  -Randomly
 
 ○実装
+
+○WoodTexture設定
+・Copernicus
 
 ●Architecture
 ・WoodPattern
