@@ -29,9 +29,8 @@
 
 
 ■記事
-※記事のキーワードを決める
-
 ○記事修正
+・記事の再確認
 ・gifの修正
 
 ○委員会に向けたアクション
@@ -49,9 +48,13 @@
 ■City
 ○都市景観のStudy
 ・空想地図帳 :架空のまちが描く世界のリアル
+ -空想地図の書き方(3部)
+ -地形・歴史・都市計画(2部)
+ -サンプル(1部)
 
 ○CityGeneratorStudy
 ・Fully Procedural City Generator
+ -幹線道路と区画生成
 https://www.sidefx.com/gallery/fully-procedural-city-generator/
 
 ○UVのStudy
@@ -60,10 +63,9 @@ https://rart.gumroad.com/l/wcrng?layout=profile
 
 ○RectangleCityの拡張
 ・都市計画
- -地形
- -川
- -鉄道
+※平地の都心をベースに設計
  -幹線道路
+ -区画生成
 
 △RectangleTextureCityの実装
 ・UV展開
