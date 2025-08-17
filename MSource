@@ -21,8 +21,6 @@
 そこで、場所と移動手段について予め確認させて頂きたいのですが、恐らく参加メンバーの住んでいる場所から考えると下記のフィールドが車を使えることを前提にすると丁度よいかなと考えているのですが、
 いかがでしょうか…?
 
-○健康診断準備
-
 ○ノートPCでのHoudini環境の整理
 
 ○クローゼットの整理
@@ -60,12 +58,12 @@ https://www.sidefx.com/gallery/fully-procedural-city-generator/
 ・Building Generator from Image
 https://rart.gumroad.com/l/wcrng?layout=profile
 
-○RectangleCity検証
-
-△RectangleCityの拡張
-・Sign
- -Top
- -Front
+○RectangleCityの拡張
+・都市計画
+ -地形
+ -川
+ -鉄道
+ -幹線道路
 
 △RectangleTextureCityの実装
 ・UV展開
