@@ -33,11 +33,8 @@
 ■記事
 ※記事のキーワードを決める
 
-○Qiitaの記載
-・Qiita記事作成方法 初心者の備忘録
-https://qiita.com/U-MA/items/996ae933ae94c5711883
-・建築業界向けHoudiniのススメ : Introduction of Houdini to Architecture
-https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
+○記事修正
+・gifの修正
 
 ○委員会に向けたアクション
 ・TechBlog
@@ -52,26 +49,25 @@ https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
 
 
 ■City
-○ProceduralCity調査
- -立方体に建物テクスチャを張る
-・たのしい都市ジェネレータ
-https://www.youtube.com/watch?v=Y6-EWYXZG4s
-・Procedural City
-https://www.reddit.com/r/Houdini/comments/mm1vxq/procedural_city/
-・FutureCity
-https://www.artstation.com/artwork/RY6VnD
-
 ○都市景観のStudy
-・読書本の斥候
+・空想地図帳 :架空のまちが描く世界のリアル
 
-○RectangleCityの拡張
+○CityGeneratorStudy
+・Fully Procedural City Generator
+https://www.sidefx.com/gallery/fully-procedural-city-generator/
+
+○UVのStudy
+・Building Generator from Image
+https://rart.gumroad.com/l/wcrng?layout=profile
+
+○RectangleCity検証
+
+△RectangleCityの拡張
 ・Sign
  -Top
  -Front
 
-○RectangleCity検証
-
-○RectangleTextureCityの実装
+△RectangleTextureCityの実装
 ・UV展開
 ・material設定
 
@@ -79,9 +75,6 @@ https://www.artstation.com/artwork/RY6VnD
 ・RectangleCity
 ・RectangleTextureCity
 ・AssetCity
-
-△UVのStudy
-・ProceduralBuildingのTutorialProjectを調査
 
 
 ■Architecture
