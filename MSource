@@ -21,31 +21,16 @@
 そこで、場所と移動手段について予め確認させて頂きたいのですが、恐らく参加メンバーの住んでいる場所から考えると下記のフィールドが車を使えることを前提にすると丁度よいかなと考えているのですが、
 いかがでしょうか…?
 
-○ノートPCでのHoudini環境の整理
-
 ○クローゼットの整理
 ・いらない洋服をまとめる
 
 
-
-■記事
-○記事修正
-・記事の再確認
-・gifの修正
-
-○委員会に向けたアクション
-・TechBlog
-・社外の勉強会に参加
- -参考にしつつ発展させていく
-
-●記事のカテゴリー
-・設計
-・拡張
-・処理解説
-・技術(Tips)
-
-
 ■City
+※形態、複数のPrimに問わず対応できるModuleを実装する
+ -Base, DetailPattern, Detailそれぞれのフロー設計を意識する
+ -実際の工程を自動化することを意識する
+ -まずModuleをひたすら実装し、組み合わせを行うことを目標にする。
+
 ○都市景観のStudy
 ・空想地図帳 :架空のまちが描く世界のリアル
  -空想地図の書き方(3部)
@@ -62,22 +47,28 @@ https://www.sidefx.com/gallery/fully-procedural-city-generator/
 https://rart.gumroad.com/l/wcrng?layout=profile
 
 ○RectangleCityの拡張
-・都市計画
-※平地の都心をベースに設計
+※模様(Pattern)を意識する
+・都市計画(※平地の都心をベースに設計)
  -幹線道路
  -区画生成
+・Color
+ -パラメーター化
 
 △RectangleTextureCityの実装
 ・UV展開
 ・material設定
 
-●City
+●CityIdea
 ・RectangleCity
 ・RectangleTextureCity
 ・AssetCity
 
 
 ■Architecture
+○万博の建築を調査
+・Pattern
+・Texture(Color)
+
 ○WoodPatternの設計
 ・Pos
 ・Scale
@@ -87,95 +78,19 @@ https://rart.gumroad.com/l/wcrng?layout=profile
  -Randomly
 
 ○実装
-
-○WoodTexture設定
-・Copernicus
-
-●Architecture
-・WoodPattern
- -UV
- -Copernicus
-
-
-
-
-
-■City
-※形態、複数のPrimに問わず対応できるModuleを実装する
- -Base, DetailPattern, Detailそれぞれのフロー設計を意識する
- -実際の工程を自動化することを意識する
- -まずModuleをひたすら実装し、組み合わせを行うことを目標にする。
-
-○街並み調査
-・都市計画をベースにした街ジェネレーター
- -東京
- -ロンドン
- -パリ
- -九龍
-
-●Next
-・簡単なTexture
- -FacadeTexture
-・色の多様化(東京)
- -屋上のオブジェクト
-・ModularModeling(九龍)
- -HoudiniForUnreal
-
-■RectanglePattern設計
-※模様(Pattern)を意識する
-
-●Object
-・看板
-・窓
-
-●Color
-・パラメーター化
-・配色
- -BaseColor, VividColor, MiddleColor
-
-●RectangleDesign
-・Layout(Randomly, Grid)
-
-●Study
-・レイアウト
-・配色
-・Copernicus
-
-
-■Architecture
-※シンプルなロジックを使用してコンピュテーショナルデザインを行う
-
-○万博の建築を調査
-・Pattern
-・Texture(Color)
-
-○WoodPatternMakerの実装
-・ボートハウスでの検証用意
-
-○WoodTextureの調査
-・SubstancePainterで事例調査
-
-●GridPattern
-・Pos
-・Scale
-・Texture(Color)
- -Single
- -Gradation
- -Randomly
+・PM
+・Texture
 
 
 ■記事
-※記事のキーワードを決める
+○記事修正
+・記事の再確認
+・gifの修正
 
 ○委員会に向けたアクション
+・TechBlog
 ・社外の勉強会に参加
  -参考にしつつ発展させていく
-
-△Qiita書き方
-・Qiita記事作成方法 初心者の備忘録
-https://qiita.com/U-MA/items/996ae933ae94c5711883
-・建築業界向けHoudiniのススメ : Introduction of Houdini to Architecture
-https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
 
 ●記事のカテゴリー
 ・設計
