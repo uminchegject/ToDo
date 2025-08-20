@@ -19,7 +19,8 @@
 
 ○CityGeneratorStudy
 ・Fully Procedural City Generator
- -幹線道路と区画生成
+ -BuildingBlock
+ -Street
 https://www.sidefx.com/gallery/fully-procedural-city-generator/
 
 ○UVのStudy
