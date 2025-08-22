@@ -1,14 +1,70 @@
-○TextureStudy
-
-○UnrealStudy
-・Titan
-・Skylark
+※PD × Study × 調査
+※各工程を細分化し、それぞれの工程を多様化できるように設計する
 
 ○万博準備
 ・バス予約
 
 ○クローゼットの整理
 ・いらない洋服をまとめる
+
+
+■City
+○都市計画調査
+・空想地図帳
+・見えがくれする都市
+
+○CityGeneratorStudy
+・Fully Procedural City Generator
+ -BuildingBlock
+ -Street
+https://www.sidefx.com/gallery/fully-procedural-city-generator/
+
+●区画設計
+・道のPD化
+ -道の形状(直線、曲線)
+ -細分化比率
+ -道幅
+・区画内での平面生成
+ -四角形
+ -多角形
+・幹線道路からの区画生成
+ -四角形
+ -多角形
+・HFから生成
+
+
+■Town
+○Module化
+・VolumeMakerの整理
+・Class化
+
+○PM Study&検証
+・village.hip
+
+○Asset Study&検証
+・PROJECT TITAN BUILDING TOOL
+https://www.sidefx.com/ja/tutorials/project-titan-building-tool/
+・Soul: City
+https://www.fab.com/ja/listings/dd77fee6-0ad2-41ce-b32c-09300c24c9f3
+
+○Texture Study&検証
+・Building Generator from Image
+https://rart.gumroad.com/l/wcrng?layout=profile
+
+
+■CD
+○GridPattern実装
+・Primから生成するModuleを作成
+・Pos
+・Scale
+・Rotate
+・Texture(Color)
+ -Simple
+ -Gradation
+ -Randomly
+
+○CD調査
+・建築は、柔らかい科学に近づく
 
 
 ■City
