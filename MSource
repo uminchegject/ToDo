@@ -8,31 +8,6 @@
 ・いらない洋服をまとめる
 
 
-■City
-○都市計画調査
-・空想地図帳
-・見えがくれする都市
-
-○CityGeneratorStudy
-・Fully Procedural City Generator
- -BuildingBlock
- -Street
-https://www.sidefx.com/gallery/fully-procedural-city-generator/
-
-●区画設計
-・道のPD化
- -道の形状(直線、曲線)
- -細分化比率
- -道幅
-・区画内での平面生成
- -四角形
- -多角形
-・幹線道路からの区画生成
- -四角形
- -多角形
-・HFから生成
-
-
 ■Town
 ○Module化
 ・VolumeMakerの整理
@@ -65,6 +40,32 @@ https://rart.gumroad.com/l/wcrng?layout=profile
 
 ○CD調査
 ・建築は、柔らかい科学に近づく
+
+
+■City
+○都市計画調査
+・空想地図帳
+・見えがくれする都市
+
+○CityGeneratorStudy
+・Fully Procedural City Generator
+ -BuildingBlock
+ -Street
+https://www.sidefx.com/gallery/fully-procedural-city-generator/
+
+●区画設計
+・道のPD化
+ -道の形状(直線、曲線)
+ -細分化比率
+ -道幅
+・区画内での平面生成
+ -四角形
+ -多角形
+・幹線道路からの区画生成
+ -四角形
+ -多角形
+・HFから生成
+
 
 
 ■City
