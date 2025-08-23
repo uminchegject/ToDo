@@ -1,14 +1,21 @@
 ※PD × Study × 調査
 ※各工程を細分化し、それぞれの工程を多様化できるように設計する
 
-○VolumeMakerのClass化処理を修正
-・VerticalClass、HorizontalClassをパラメーター調整できるように修正
+○VolumeMakerのClass処理のパラメーター化
+・BlockCluster
+・HeightCluster
+・Height
 
 ○Moduleの基礎部分の実装
-・PrimからBaseLineの生成処理
+※GridのTrasformの調整部分を実装
+・BaseLine生成
+ -Transform
+・BaseLineの分割
+・sweep
 
 ○記事の構想
 ・投稿
+
 
 ○万博準備
 ・動画
