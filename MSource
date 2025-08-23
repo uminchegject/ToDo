@@ -13,24 +13,25 @@
 ・DetailObj
 ・TopObj
 
-
 ●GridPattern設計
+※検証Moduleの実装
+ -Surface(Prim)を入力し、WoodPatternを生成する
+ -柔軟なパラメーター調整ができるように設計する
 ・クラス化
-
-・Pos
-・Scale
-・Rotate
-・Texture(Color)
-
-・Simple
-・Gradation
- -simple
- -noise
-・Randomly
+・BaseParam
+ -Pos
+ -Scale
+ -Rotate
+ -Texture(Color)
+・PatternParam
+ -Simple
+ -Gradation
+  -simple
+  -noise
+ -Randomly
 
 ○記事の構想
 ・投稿
-
 
 
 ○万博準備
