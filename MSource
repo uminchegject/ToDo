@@ -1,6 +1,23 @@
 ※PD × Study × 調査
 ※各工程を細分化し、それぞれの工程を多様化できるように設計する
 
+○記事の構想
+・投稿
+
+●GridPattern設計
+・クラス化
+
+・Pos
+・Scale
+・Rotate
+・Texture(Color)
+
+・Simple
+・Gradation
+ -simple
+ -noise
+・Randomly
+
 ○万博準備
 ・バス予約
 
@@ -28,6 +45,13 @@ https://rart.gumroad.com/l/wcrng?layout=profile
 
 
 ■CD
+○CD調査
+・建築は、柔らかい科学に近づく
+ -条件
+ -評価
+・杉原コラム
+https://www.archifuture-web.jp/magazine/columnist_sugihara_page4.html
+
 ○GridPattern実装
 ・Primから生成するModuleを作成
 ・Pos
@@ -38,10 +62,6 @@ https://rart.gumroad.com/l/wcrng?layout=profile
  -Gradation
  -Randomly
 
-○CD調査
-・建築は、柔らかい科学に近づく
- -条件
- -評価
 
 
 ■City
@@ -69,6 +89,21 @@ https://www.sidefx.com/gallery/fully-procedural-city-generator/
 ・HFから生成
 
 
+■記事
+※TipsとPDそれぞれに重点においた記事をセットで用意する
+
+○LabsDivisionの記事作成
+
+○委員会に向けたアクション
+・社外の勉強会に参加
+ -参考にしつつ発展させていく
+・TechBlog
+
+●記事のカテゴリー
+・設計
+・拡張
+・処理解説
+・技術(Tips)
 
 
 ■City
@@ -128,18 +163,3 @@ https://rart.gumroad.com/l/wcrng?layout=profile
 ○実装
 ・PM
 ・Texture
-
-
-■記事
-○TechBlog
-・Tipsをメインにし、補足でPDを記事化する
-
-○委員会に向けたアクション
-・社外の勉強会に参加
- -参考にしつつ発展させていく
-
-●記事のカテゴリー
-・設計
-・拡張
-・処理解説
-・技術(Tips)
