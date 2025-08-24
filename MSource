@@ -1,19 +1,24 @@
 ※PD × Study × 調査
 ※各工程を細分化し、それぞれの工程を多様化できるように設計する
 
-○記事の構想
-・投稿
+○Procedural Wall City
+https://www.youtube.com/watch?v=2d7c7dVX-kg
 
-○箱片付け
+○TownGeneratorの準備
+・整理
+・各CityごとにVolumeMakerのパラメーターを設定
 
-○万博準備
-・ボドゲスリーブ
-
-○クローゼットの整理
-・いらない洋服をまとめる
+○CDの準備
+・GridPatternMakerの実装
+・GridPatternMakerのパラメーターの最適化方法の設計
 
 
 ■Town
+※形態、複数のPrimに問わず対応できるModuleを実装する
+ -Base, DetailPattern, Detailそれぞれのフロー設計を意識する
+ -実際の工程を自動化することを意識する
+ -まずModuleをひたすら実装し、組み合わせを行うことを目標にする。
+
 ○整理
 ・ノード
 ・Parameter
@@ -132,9 +137,10 @@ https://www.sidefx.com/gallery/fully-procedural-city-generator/
 ■万博
 ○お盆のパビリオン状況
 
-○ボードゲーム
-・スリーブ
-・立ちながらできる
+○待ち時間用ボードゲーム用意
+
+○つじマップ用意
+https://twitter.com/t_tsuji?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1950886429758034048%7Ctwgr%5E99f5dd886936b9aa10a8a4aafbeecd2967612a72%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fnote.com%2Fearl_n%2Fn%2Fn610799bf7436
 
 ○バス予約
 
@@ -143,8 +149,6 @@ https://www.sidefx.com/gallery/fully-procedural-city-generator/
 https://twitter.com/expo2025_bot?ref_src=twsrc%5Etfw
 ・Wireless LAN & OpenRoaming
 https://www.expo2025.or.jp/future-index/digital/wireless/
-・つじマップ
-https://twitter.com/t_tsuji?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1950886429758034048%7Ctwgr%5E99f5dd886936b9aa10a8a4aafbeecd2967612a72%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fnote.com%2Fearl_n%2Fn%2Fn610799bf7436
 
 ●空きパビリオン
 ・タイ
@@ -153,65 +157,3 @@ https://twitter.com/t_tsuji?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5
 ・マレーシア
 ・オマーン
 ・アラブ
-
-
-
-
-
-■City
-※形態、複数のPrimに問わず対応できるModuleを実装する
- -Base, DetailPattern, Detailそれぞれのフロー設計を意識する
- -実際の工程を自動化することを意識する
- -まずModuleをひたすら実装し、組み合わせを行うことを目標にする。
-
-○都市景観のStudy
-・空想地図帳 :架空のまちが描く世界のリアル
- -空想地図の書き方(3部)
- -地形・歴史・都市計画(2部)
- -サンプル(1部)
-
-○CityGeneratorStudy
-・Fully Procedural City Generator
- -BuildingBlock
- -Street
-https://www.sidefx.com/gallery/fully-procedural-city-generator/
-
-○UVのStudy
-・Building Generator from Image
-https://rart.gumroad.com/l/wcrng?layout=profile
-
-○RectangleCityの拡張
-※模様(Pattern)を意識する
-・都市計画(※平地の都心をベースに設計)
- -パラメーター設計
- -区画生成
- -地形生成
-・Color
- -パラメーター化
-
-△RectangleTextureCityの実装
-・UV展開
-・material設定
-
-●CityIdea
-・RectangleCity
-・RectangleTextureCity
-・AssetCity
-
-
-■Architecture
-○万博の建築を調査
-・Pattern
-・Texture(Color)
-
-○WoodPatternの設計
-・Pos
-・Scale
-・Texture(Color)
- -Single
- -Gradation
- -Randomly
-
-○実装
-・PM
-・Texture
