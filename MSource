@@ -1,79 +1,40 @@
 ※PD × Study × 調査
 ※各工程を細分化し、それぞれの工程を多様化できるように設計する
 
-○VolumeMakerのClass処理のパラメーター化
-・BlockCluster
-・HeightCluster
-・Height
-
-○Moduleの基礎部分の実装
-※GridのTrasformの調整部分を実装
-・BaseLine生成
- -Transform
-・BaseLineの分割
-・sweep
-
 ○記事の構想
 ・投稿
 
+○箱片付け
 
-●万博
-・ボードゲーム
-・バス予約
-
-・万博開放時間Bot
-https://twitter.com/expo2025_bot?ref_src=twsrc%5Etfw
-・Wireless LAN & OpenRoaming
-https://www.expo2025.or.jp/future-index/digital/wireless/
-・つじマップ
-https://twitter.com/t_tsuji?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1950886429758034048%7Ctwgr%5E99f5dd886936b9aa10a8a4aafbeecd2967612a72%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fnote.com%2Fearl_n%2Fn%2Fn610799bf7436
-
-・パビリオン
-タイ
-カタール
-韓国
-マレーシア
-オマーン
-アラブ
+○万博準備
+・ボドゲスリーブ
 
 ○クローゼットの整理
 ・いらない洋服をまとめる
 
 
-●VolumeMaker
-・SoulCity(Asset)
- -Vertical
-・OldCity(PM)
- -Horizontal
-・Tokyo(Texture)
- -Vertical
+■Town
+○整理
+・ノード
+・Parameter
 
-●BasePointMaker
+●VolumeMakerParameter
+・BlockCluster
+・HeightCluster
+・Height
+
+○VolumeMakerParameter検証&設定
+・SoulCity(Asset)
+ -
+・OldCity(PM)
+ -
+・Tokyo(Texture)
+ -Big_Block
+ -
+ 
+○BasePointMakerの実装
 ・DetailObj
 ・TopObj
-
-●GridPattern設計
-※検証Moduleの実装
- -Surface(Prim)を入力し、WoodPatternを生成する
- -柔軟なパラメーター調整ができるように設計する
-・クラス化
-・BaseParam
- -Pos
- -Scale
- -Rotate
- -Texture(Color)
-・PatternParam
- -Simple
- -Gradation
-  -simple
-  -noise
- -Randomly
-
-
-■Town
-○Module化
-・VolumeMakerの整理
-・Class化
 
 ○PM Study&検証
 ・village.hip
@@ -97,16 +58,29 @@ https://rart.gumroad.com/l/wcrng?layout=profile
 ・杉原コラム
 https://www.archifuture-web.jp/magazine/columnist_sugihara_page4.html
 
-○GridPattern実装
-・Primから生成するModuleを作成
-・Pos
-・Scale
-・Rotate
-・Texture(Color)
+○Moduleの基礎部分の実装
+※GridのTrasformの調整部分を実装
+・BaseLine生成
+ -Transform
+・BaseLineの分割
+・sweep
+
+●GridPattern設計
+※検証Moduleの実装
+ -Surface(Prim)を入力し、WoodPatternを生成する
+ -柔軟なパラメーター調整ができるように設計する
+・クラス化
+・BaseParam
+ -Pos
+ -Scale
+ -Rotate
+ -Texture(Color)
+・PatternParam
  -Simple
  -Gradation
+  -simple
+  -noise
  -Randomly
-
 
 
 ■City
@@ -138,6 +112,10 @@ https://www.sidefx.com/gallery/fully-procedural-city-generator/
 ※TipsとPDそれぞれに重点においた記事をセットで用意する
 
 ○LabsDivisionの記事作成
+・処理の大まかな概要
+・詳細説明
+ -分割処理
+ -prim結合処理
 
 ○委員会に向けたアクション
 ・社外の勉強会に参加
@@ -149,6 +127,35 @@ https://www.sidefx.com/gallery/fully-procedural-city-generator/
 ・拡張
 ・処理解説
 ・技術(Tips)
+
+
+■万博
+○お盆のパビリオン状況
+
+○ボードゲーム
+・スリーブ
+・立ちながらできる
+
+○バス予約
+
+●情報
+・万博開放時間Bot
+https://twitter.com/expo2025_bot?ref_src=twsrc%5Etfw
+・Wireless LAN & OpenRoaming
+https://www.expo2025.or.jp/future-index/digital/wireless/
+・つじマップ
+https://twitter.com/t_tsuji?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1950886429758034048%7Ctwgr%5E99f5dd886936b9aa10a8a4aafbeecd2967612a72%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fnote.com%2Fearl_n%2Fn%2Fn610799bf7436
+
+●空きパビリオン
+・タイ
+・カタール
+・韓国
+・マレーシア
+・オマーン
+・アラブ
+
+
+
 
 
 ■City
