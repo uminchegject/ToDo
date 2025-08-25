@@ -1,45 +1,46 @@
-※PD × Study × 調査
-※各工程を細分化し、それぞれの工程を多様化できるように設計する
+○苦情
+https://starbucks-japan.svy.ooo/ng/answers/ccf
 
 ○Procedural Wall City
 https://www.youtube.com/watch?v=2d7c7dVX-kg
 
 ○TownGeneratorの準備
-・整理
+・プロジェクト整理
+ -ノード
+ -パラメーター
 ・各CityごとにVolumeMakerのパラメーターを設定
 
 ○CDの準備
 ・GridPatternMakerの実装
 ・GridPatternMakerのパラメーターの最適化方法の設計
 
+○LabsDivisionの記事作成
+・処理の大まかな概要
+・詳細説明
+ -分割処理
+ -prim結合処理
+
 
 ■Town
-※形態、複数のPrimに問わず対応できるModuleを実装する
- -Base, DetailPattern, Detailそれぞれのフロー設計を意識する
- -実際の工程を自動化することを意識する
- -まずModuleをひたすら実装し、組み合わせを行うことを目標にする。
-
 ○整理
 ・ノード
 ・Parameter
+
+○VolumeMakerParameter検証&設定
+・SoulCity(Asset)
+・OldCity(PM)
+・Tokyo(Texture)
+ -Big_Block
 
 ●VolumeMakerParameter
 ・BlockCluster
 ・HeightCluster
 ・Height
-
-○VolumeMakerParameter検証&設定
-・SoulCity(Asset)
- -
-・OldCity(PM)
- -
-・Tokyo(Texture)
- -Big_Block
- -
  
 ○BasePointMakerの実装
 ・DetailObj
 ・TopObj
+
 
 ○PM Study&検証
 ・village.hip
@@ -55,15 +56,17 @@ https://www.fab.com/ja/listings/dd77fee6-0ad2-41ce-b32c-09300c24c9f3
 https://rart.gumroad.com/l/wcrng?layout=profile
 
 
+
 ■CD
 ○CD調査
+※GridPatternのPDから最適化を行うCDを設計する
 ・建築は、柔らかい科学に近づく
  -条件
  -評価
 ・杉原コラム
 https://www.archifuture-web.jp/magazine/columnist_sugihara_page4.html
 
-○Moduleの基礎部分の実装
+○PMModuleの基礎部分の実装
 ※GridのTrasformの調整部分を実装
 ・BaseLine生成
  -Transform
@@ -71,7 +74,7 @@ https://www.archifuture-web.jp/magazine/columnist_sugihara_page4.html
 ・sweep
 
 ●GridPattern設計
-※検証Moduleの実装
+※多様性を重視したPDを設計する
  -Surface(Prim)を入力し、WoodPatternを生成する
  -柔軟なパラメーター調整ができるように設計する
 ・クラス化

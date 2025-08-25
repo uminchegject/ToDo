@@ -1,22 +1,18 @@
 ■反省
-※週末の夜にPrivateの計画・反省の確認もしっかりする
+※PD × Study × 調査のセット
+※各工程を細分化し、それぞれの工程を多様化できるように設計する
+
+※週のToDoも週末に決めておく
 ※休日はPrivateのStudy動画を見る
  -動画を視聴しながらできるゲームをする
- 
-※しっかり自習時間を管理する
-・朝カフェ
-・朝一
-・AfterBreak
-・夜カフェ
-・定時後
+
+※形態、複数のPrimに問わず対応できるModuleを実装する
+ -Base, DetailPattern, Detailそれぞれのフロー設計を意識する
+ -実際の工程を自動化することを意識する
+ -まずModuleをひたすら実装し、組み合わせを行うことを目標にする。
 
 
-■Study
-※タスク、チケットごとに使用した技術のWorkStudyを行う
- -※チケット対応期間でのWorkStudyスケジュールをしっかり計画する
- -作業に関連するツール周りのStudy
- -作業に関連する基礎周りのStudy
- 
+■Study 
 ○Houdini21
 ・Houdini 21 Keynote
 https://www.sidefx.com/community/houdini-21-keynote/
@@ -46,15 +42,3 @@ https://cedil.cesa.or.jp/
 ・保証書、重要書類を整理
 
 △自転車修理
-
-
-■万博
-●ユーザー
-ID::uminchegject
-Pass::B&?hDE%eb6cANsM
-
-●資料
-・大阪・関西万博で失敗しない！用意すべき持ち物と把握すべき11のポイント
-https://www.gltjp.com/ja/article/item/21006/
-・【万博】チケット購入ガイド！流れや注意点、当日のお役立ち情報までご紹介
-https://ppap.kinto-jp.com/articles/expo2025-ticket
