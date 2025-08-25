@@ -13,10 +13,6 @@
 
 
 ■Study 
-○Houdini21
-・Houdini 21 Keynote
-https://www.sidefx.com/community/houdini-21-keynote/
-
 ○ProjectSkylark
 https://www.sidefx.com/learn-main-menu/tech-demos/project-skylark/
 

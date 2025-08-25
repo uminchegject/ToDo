@@ -3,6 +3,15 @@ https://starbucks-japan.svy.ooo/ng/answers/ccf
 
 ○Procedural Wall City
 https://www.youtube.com/watch?v=2d7c7dVX-kg
+・unit単位での管理
+ -高さ
+ -平面(grid管理)
+
+○LabsDivisionの記事作成
+・処理の大まかな概要
+・詳細説明
+ -分割処理
+ -prim結合処理
 
 ○TownGeneratorの準備
 ・プロジェクト整理
@@ -13,12 +22,6 @@ https://www.youtube.com/watch?v=2d7c7dVX-kg
 ○CDの準備
 ・GridPatternMakerの実装
 ・GridPatternMakerのパラメーターの最適化方法の設計
-
-○LabsDivisionの記事作成
-・処理の大まかな概要
-・詳細説明
- -分割処理
- -prim結合処理
 
 
 ■Town
