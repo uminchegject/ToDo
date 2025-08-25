@@ -1,11 +1,39 @@
-○苦情
-https://starbucks-japan.svy.ooo/ng/answers/ccf
+○VolumeMaker
+・整理
+ -ノード
+ -パラメーター
+・拡張
+ -Unit管理
+・パラメーター設定
+ -Tokyo
+ -OldCity
+ -SoulCity
+ 
+●VolumeMakerParameter
+・BlockCluster
+・HeightCluster
+・Height
 
-○Procedural Wall City
-https://www.youtube.com/watch?v=2d7c7dVX-kg
-・unit単位での管理
- -高さ
- -平面(grid管理)
+○GridPatternMakerの実装
+・Grid配置
+・BaseLine生成
+
+●GridPattern設計
+※多様性を重視したPDを設計する
+ -Surface(Prim)を入力し、WoodPatternを生成する
+ -柔軟なパラメーター調整ができるように設計する
+・クラス化
+・BaseParam
+ -Pos
+ -Scale
+ -Rotate
+ -Texture(Color)
+・PatternParam
+ -Simple
+ -Gradation
+  -simple
+  -noise
+ -Randomly
 
 ○LabsDivisionの記事作成
 ・処理の大まかな概要
@@ -13,32 +41,20 @@ https://www.youtube.com/watch?v=2d7c7dVX-kg
  -分割処理
  -prim結合処理
 
-○TownGeneratorの準備
-・プロジェクト整理
- -ノード
- -パラメーター
-・各CityごとにVolumeMakerのパラメーターを設定
-
-○CDの準備
-・GridPatternMakerの実装
-・GridPatternMakerのパラメーターの最適化方法の設計
-
 
 ■Town
 ○整理
 ・ノード
 ・Parameter
 
+○拡張
+・Unit
+
 ○VolumeMakerParameter検証&設定
 ・SoulCity(Asset)
 ・OldCity(PM)
 ・Tokyo(Texture)
  -Big_Block
-
-●VolumeMakerParameter
-・BlockCluster
-・HeightCluster
-・Height
  
 ○BasePointMakerの実装
 ・DetailObj
@@ -75,23 +91,6 @@ https://www.archifuture-web.jp/magazine/columnist_sugihara_page4.html
  -Transform
 ・BaseLineの分割
 ・sweep
-
-●GridPattern設計
-※多様性を重視したPDを設計する
- -Surface(Prim)を入力し、WoodPatternを生成する
- -柔軟なパラメーター調整ができるように設計する
-・クラス化
-・BaseParam
- -Pos
- -Scale
- -Rotate
- -Texture(Color)
-・PatternParam
- -Simple
- -Gradation
-  -simple
-  -noise
- -Randomly
 
 
 ■City
