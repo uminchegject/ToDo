@@ -1,24 +1,39 @@
-○VolumeMaker整理
-・ノード
-・パラメーター
+■TextureCity
+○Study
+・たのしい都市ジェネレータ
+https://www.youtube.com/watch?v=Y6-EWYXZG4s
+・Building Generator from Image
+https://rart.gumroad.com/l/wcrng?layout=profile
+
+○VolumeMaker拡張
+・多様化・変化の緩急をつける
 
 ○BasePointMakerの実装
 ・DetailObj
 ・TopObj
 
-○Texture Study&検証
-・Building Generator from Image
-https://rart.gumroad.com/l/wcrng?layout=profile
+○イメージ収集
 
-○TokyoGenerator
-
-○記事化
+○記事
 
 
-○GridPatternMakerの実装
-・Grid配置
-・BaseLine生成
+■AssetCity
+○Study
+・blenderで作るたのしい建物ジェネレータ
+https://www.youtube.com/watch?v=YMiLpZyqLE8
 
+○VolumeMaker拡張
+・スケール感を小さくする
+
+○BasePointMakerの拡張
+・細かい配置調整ができるようにする
+
+○イメージ収集
+
+○記事
+
+
+■CD
 ●GridPattern設計
 ※多様性を重視したPDを設計する
  -Surface(Prim)を入力し、WoodPatternを生成する
@@ -35,6 +50,10 @@ https://rart.gumroad.com/l/wcrng?layout=profile
   -simple
   -noise
  -Randomly
+
+●GridPatternMakerの実装方法
+・Grid配置
+・BaseLine生成
 
 
 ■Town
