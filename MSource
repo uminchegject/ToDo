@@ -2,8 +2,6 @@
 ○Study
 ・たのしい都市ジェネレータ
 https://www.youtube.com/watch?v=Y6-EWYXZG4s
-・Building Generator from Image
-https://rart.gumroad.com/l/wcrng?layout=profile
 
 ○VolumeMaker拡張
 ・多様化・変化の緩急をつける
@@ -23,6 +21,9 @@ https://rart.gumroad.com/l/wcrng?layout=profile
 https://www.youtube.com/watch?v=YMiLpZyqLE8
 
 ○VolumeMaker拡張
+・ユニット管理
+・平面に凹凸を用意する
+ -Clusterを大きくする
 ・スケール感を小さくする
 
 ○BasePointMakerの拡張
@@ -39,6 +40,7 @@ https://www.youtube.com/watch?v=YMiLpZyqLE8
  -Surface(Prim)を入力し、WoodPatternを生成する
  -柔軟なパラメーター調整ができるように設計する
 ・クラス化
+ -Gridの角度の適正化
 ・BaseParam
  -Pos
  -Scale
@@ -54,6 +56,7 @@ https://www.youtube.com/watch?v=YMiLpZyqLE8
 ●GridPatternMakerの実装方法
 ・Grid配置
 ・BaseLine生成
+
 
 
 ■Town
