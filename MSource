@@ -1,18 +1,18 @@
-○VolumeMaker
-・整理
- -ノード
- -パラメーター
-・拡張
- -Unit管理
-・パラメーター設定
- -Tokyo
- -OldCity
- -SoulCity
- 
-●VolumeMakerParameter
-・BlockCluster
-・HeightCluster
-・Height
+○VolumeMaker整理
+・ノード
+・パラメーター
+
+○BasePointMakerの実装
+・DetailObj
+・TopObj
+
+○Texture Study&検証
+・Building Generator from Image
+https://rart.gumroad.com/l/wcrng?layout=profile
+
+○TokyoGenerator
+
+○記事化
 
 
 ○GridPatternMakerの実装
@@ -37,45 +37,23 @@
  -Randomly
 
 
-○LabsDivisionの記事作成
-・処理の大まかな概要
-・詳細説明
- -分割処理
- -prim結合処理
-
-
 ■Town
-○整理
-・ノード
-・Parameter
+△SoulCity
+・Unit管理(ModuleMaker拡張)
 
-○拡張
-・Unit
-
-○VolumeMakerParameter検証&設定
-・SoulCity(Asset)
-・OldCity(PM)
-・Tokyo(Texture)
- -Big_Block
- 
-○BasePointMakerの実装
-・DetailObj
-・TopObj
-
-
-○PM Study&検証
-・village.hip
-
-○Asset Study&検証
+△Asset Study&検証
 ・PROJECT TITAN BUILDING TOOL
 https://www.sidefx.com/ja/tutorials/project-titan-building-tool/
 ・Soul: City
 https://www.fab.com/ja/listings/dd77fee6-0ad2-41ce-b32c-09300c24c9f3
 
-○Texture Study&検証
-・Building Generator from Image
-https://rart.gumroad.com/l/wcrng?layout=profile
+△PM Study&検証
+・village.hip
 
+●VolumeMakerParameter
+・BlockCluster
+・HeightCluster
+・Height
 
 
 ■CD
@@ -122,12 +100,6 @@ https://www.sidefx.com/gallery/fully-procedural-city-generator/
 
 ■記事
 ※TipsとPDそれぞれに重点においた記事をセットで用意する
-
-○LabsDivisionの記事作成
-・処理の大まかな概要
-・詳細説明
- -分割処理
- -prim結合処理
 
 ○委員会に向けたアクション
 ・社外の勉強会に参加
