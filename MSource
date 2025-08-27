@@ -1,3 +1,10 @@
+■CD
+○BaseLineにNとupを定義する
+・NはPrimのNormal
+・upはGridの方向
+
+○Nとupに応じてTransformを実装する
+
 ●BoolPrim
 ・GridScaleの適正化
 ・Param
@@ -17,15 +24,11 @@
   -noise
  -Randomly
 
-○BaseLineにNとupを定義する
-・NはPrimのNormal
-・upはGridの方向
-
 ●ソース
 vector scale = set(1, 1, 1);
 vector translate = set(0, 1, 0);
 vector rotate = set(30, 0, 0);
-vector color = 1;
+vector color = set(1, 1, 1);
 
 vector base_prim_pos = prim(1, "P", i@BasePrimNum);
 vector base_prim_normal = prim(1, "N", i@BasePrimNum);
@@ -39,9 +42,15 @@ int prim_pts[] = primpoints(0, i@primnum);
 foreach(int prim_pt; prim_pts)
 {
     vector prim_pt_pos = point(0, "P", prim_pt);
-    prim_pt_pos += base_prim_normal * ;
     setpointattrib(0, "P", prim_pt, prim_pt_pos);
 }
+
+
+■CityTown
+○イメージ収集
+
+○VolumeMaker拡張
+・多様化・変化の緩急をつける
 
 
 ■万博
@@ -73,7 +82,7 @@ ID::uminchegject
 Pass::B&?hDE%eb6cANsM
 
 
-■TextureTown
+■CityTown
 ○Study
 ・たのしい都市ジェネレータ
 https://www.youtube.com/watch?v=Y6-EWYXZG4s
