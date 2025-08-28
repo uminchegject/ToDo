@@ -1,49 +1,20 @@
 ■CD
-○BaseLineにNとupを定義する
-・NはPrimのNormal
-・upはGridの方向
+●BoolPrimParam
+・middle
+・Rotate
 
-○Nとupに応じてTransformを実装する
+●BaseLineParam
+・scale
+・Pos
+・Rotate
+・color
 
-●BoolPrim
-・GridScaleの適正化
-・Param
- -middle
- -Rotate
-
-●BaseLine
-・Param
- -scale
- -Pos
- -Rotate
- -color
-・PatternParam
- -Simple
- -Gradation
-  -simple
-  -noise
- -Randomly
-
-●ソース
-vector scale = set(1, 1, 1);
-vector translate = set(0, 1, 0);
-vector rotate = set(30, 0, 0);
-vector color = set(1, 1, 1);
-
-vector base_prim_pos = prim(1, "P", i@BasePrimNum);
-vector base_prim_normal = prim(1, "N", i@BasePrimNum);
-
-//Gridの傾きをupに設定
-vector up = ;
-vector normal = base_prim_pos;
-matrix3 transform = maketransform(normal, up);
-
-int prim_pts[] = primpoints(0, i@primnum);
-foreach(int prim_pt; prim_pts)
-{
-    vector prim_pt_pos = point(0, "P", prim_pt);
-    setpointattrib(0, "P", prim_pt, prim_pt_pos);
-}
+●BaseLinePatternParam
+・Simple
+・Randomly
+・Gradation
+ -simple
+ -noise
 
 
 ■CityTown
@@ -52,6 +23,10 @@ foreach(int prim_pt; prim_pts)
 
 ○VolumeMaker拡張
 ・多様化・変化の緩急をつける
+
+
+■記事
+●TownCity
 
 
 ■万博
@@ -101,6 +76,34 @@ https://www.youtube.com/watch?v=Y6-EWYXZG4s
 ・TopObj
 
 ○記事
+
+
+○BaseLineにNとupを定義する
+・NはPrimのNormal
+・upはGridの方向
+
+○Nとupに応じてTransformを実装する
+
+●ソース
+vector scale = set(1, 1, 1);
+vector translate = set(0, 1, 0);
+vector rotate = set(30, 0, 0);
+vector color = set(1, 1, 1);
+
+vector base_prim_pos = prim(1, "P", i@BasePrimNum);
+vector base_prim_normal = prim(1, "N", i@BasePrimNum);
+
+//Gridの傾きをupに設定
+vector up = ;
+vector normal = base_prim_pos;
+matrix3 transform = maketransform(normal, up);
+
+int prim_pts[] = primpoints(0, i@primnum);
+foreach(int prim_pt; prim_pts)
+{
+    vector prim_pt_pos = point(0, "P", prim_pt);
+    setpointattrib(0, "P", prim_pt, prim_pt_pos);
+}
 
 
 ■CD
