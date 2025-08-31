@@ -1,4 +1,41 @@
+■CityTown
+○Study
+・たのしい都市ジェネレータ
+https://www.youtube.com/watch?v=Y6-EWYXZG4s
+
+○UVStudy
+・Building Generator from Image
+
+○※イメージ収集
+・素材収集
+
+○VolumeMaker拡張
+・多様化・変化の緩急をつける
+
+○ModularSystemr(BasePointMaker)の実装
+・DetailObj
+・TopObj
+
+○記事
+
+
 ■CD
+○CD調査
+※GridPatternのPDから最適化を行うCDを設計する
+・建築は、柔らかい科学に近づく
+ -条件
+ -評価
+・杉原コラム
+https://www.archifuture-web.jp/magazine/columnist_sugihara_page4.html
+
+○GridPattern設計
+
+○GridPatternの実装
+
+■GridPattern設計
+※多様性を重視したPDを設計する
+ -Surface(Prim)を入力し、WoodPatternを生成する
+ -柔軟なパラメーター調整ができるように設計する
 ●BoolPrimParam
 ・middle
 ・Rotate
@@ -16,68 +53,12 @@
  -simple
  -noise
 
+●GridPatternMaker
+・Grid
+・BaseLine
+・Sweep
 
-■CityTown
-○イメージ収集
-・素材収集
-
-○VolumeMaker拡張
-・多様化・変化の緩急をつける
-
-
-■記事
-●TownCity
-
-
-■万博
-○準備
-・冷感シート
-・つじマップ用意
-https://twitter.com/t_tsuji?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1950886429758034048%7Ctwgr%5E99f5dd886936b9aa10a8a4aafbeecd2967612a72%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fnote.com%2Fearl_n%2Fn%2Fn610799bf7436
-・スクショ用意
- -万博
- -航空券
- -当日予約時間(https://drive.google.com/file/d/1YC3bwndpDc23JrC7DfaMhY1eUWYkRRJN/view)
-
-●情報
-・今週の万博
-https://www.expo2025.or.jp/news/daily/
-・万博開放時間Bot
-https://twitter.com/expo2025_bot?ref_src=twsrc%5Etfw
-
-●空きパビリオン
-・タイ
-・カタール
-・韓国
-・マレーシア
-・オマーン
-・アラブ
-
-●ユーザー
-ID::uminchegject
-Pass::B&?hDE%eb6cANsM
-
-
-■CityTown
-○Study
-・たのしい都市ジェネレータ
-https://www.youtube.com/watch?v=Y6-EWYXZG4s
-
-○UVStudy
-・Building Generator from Image
-
-○イメージ収集
-
-○VolumeMaker拡張
-・多様化・変化の緩急をつける
-
-○BasePointMakerの実装
-・DetailObj
-・TopObj
-
-○記事
-
-
+■実装
 ○BaseLineにNとupを定義する
 ・NはPrimのNormal
 ・upはGridの方向
@@ -106,26 +87,18 @@ foreach(int prim_pt; prim_pts)
 }
 
 
-■CD
-●GridPattern設計
-※多様性を重視したPDを設計する
- -Surface(Prim)を入力し、WoodPatternを生成する
- -柔軟なパラメーター調整ができるように設計する
-・クラス化
- -Gridの角度の適正化
 
-●GridPatternMaker
-・Grid
-・BaseLine
-・Sweep
+■記事
+※PDの設計思想を重点にした記事のみをとりあえず書く
 
-○CD調査
-※GridPatternのPDから最適化を行うCDを設計する
-・建築は、柔らかい科学に近づく
- -条件
- -評価
-・杉原コラム
-https://www.archifuture-web.jp/magazine/columnist_sugihara_page4.html
+○TownCityのメモ作成
+
+○GridPatternMakerのメモ作成
+
+○委員会に向けたアクション
+・社外の勉強会に参加
+ -参考にしつつ発展させていく
+・TechBlog
 
 
 ■DetailTown(Asset・PM)
@@ -179,12 +152,3 @@ https://www.sidefx.com/gallery/fully-procedural-city-generator/
  -四角形
  -多角形
 ・HFから生成
-
-
-■記事
-※PDの設計思想を重点にした記事のみをとりあえず書く
-
-○委員会に向けたアクション
-・社外の勉強会に参加
- -参考にしつつ発展させていく
-・TechBlog
