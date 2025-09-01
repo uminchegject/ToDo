@@ -1,3 +1,10 @@
+○SFCコントローラー購入
+
+○サバゲー
+
+○Study方法の再検討
+
+
 ■CityTown
 ○Study
 ・たのしい都市ジェネレータ
@@ -32,10 +39,11 @@ https://www.archifuture-web.jp/magazine/columnist_sugihara_page4.html
 
 ○GridPatternの実装
 
-■GridPattern設計
+
+■設計
 ※多様性を重視したPDを設計する
  -Surface(Prim)を入力し、WoodPatternを生成する
- -柔軟なパラメーター調整ができるように設計する
+ -柔軟なパラメーター調整ができるように設計する 
 ●BoolPrimParam
 ・middle
 ・Rotate
@@ -58,14 +66,44 @@ https://www.archifuture-web.jp/magazine/columnist_sugihara_page4.html
 ・BaseLine
 ・Sweep
 
+
 ■実装
 ○BaseLineにNとupを定義する
 ・NはPrimのNormal
 ・upはGridの方向
 
-○Nとupに応じてTransformを実装する
+○Nとupに応じてTransformを実装する 
 
-●ソース
+●BoolPrimParam
+・middle
+・Rotate
+
+float middle = ch("Middle");
+vector rotate = chv("Rotate");
+//center_posを取得
+vector center_pos = 
+//rotate角度におけるbound_lengthの取得
+float bound_length = 
+int plane_num = int(bound_length / middle);
+//rotate角度におけるslide_dirを取得
+vector slide_vec = 
+vector slider = (bound_length / plane_num)
+for(int i = 0; i < plane_num; ++i)
+{
+	vector spown_pos = (center_pos - slide_vec * bound_length / 2);
+	spown_pos += slider * i;
+	int pt = addpoint(0, spown_pos);
+	//角度情報をattributeに設定
+	vector4 q = quaternion(angle, axis);
+	setpointattrib(0, "orient", @pt, q, "set");
+}
+
+●BaseLineParam
+・scale
+・Pos
+・Rotate
+・color
+
 vector scale = set(1, 1, 1);
 vector translate = set(0, 1, 0);
 vector rotate = set(30, 0, 0);
