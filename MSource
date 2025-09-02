@@ -1,6 +1,46 @@
+●GridPattern
+・MultiParam
+・BaseParam
+・PatternParam
+
+●City
+・TopVolume
+・DetailVolume
+
+●BaseGridソース修正
+float middle = ch("Middle");
+vector rotate = chv("Rotate");
+vector center_pos = detail(1, "centroid");
+
+vector dir = normalize(rotate); 
+dir = normalize(dir);
+
+float bounds[] = detailintrinsic(1, "bounds");
+vector min_all = set(bounds[0], bounds[2], bounds[4]);
+vector max_all = set(bounds[1], bounds[3], bounds[5]);
+dir *= length(min_all - max_all);
+
+vector min_pos, max_pos, hit_uv;
+intersect(1, center_pos, dir, max_pos, hit_uv);
+addpoint(0, max_pos);
+intersect(1, center_pos, -dir, min_pos, hit_uv);
+addpoint(0, min_pos);
+
+float bound_length = length(max_pos - min_pos);
+int pt_num = int(bound_length / middle);
+vector slider = normalize(dir) * bound_length / pt_num;
+for(int i = 0; i < pt_num; i++)
+{
+    vector spawn_pos = min_pos + slider * i;
+    addpoint(0, spawn_pos);
+}
+
+
+■Private
 ○SFCコントローラー購入
 
 ○サバゲー
+
 
 ■Work
 ○バイトフラグのデコード方法
@@ -92,8 +132,8 @@ https://www.archifuture-web.jp/magazine/columnist_sugihara_page4.html
 ・middle
 ・Rotate
 
-float middle = ch("Middle");
-vector rotate = chv("Rotate");
+float middle = 1;//ch("Middle");
+vector rotate = set(0, 0, 0);//chv("Rotate");
 //center_posを取得
 vector center_pos = 
 //rotate角度におけるbound_lengthの取得
