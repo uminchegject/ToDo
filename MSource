@@ -4,8 +4,10 @@
 ・PatternParam
 
 ●City
-・TopVolume
 ・DetailVolume
+ -TopVolume
+ -SideVolume
+ -BottomVolume
 
 ●BaseGridソース修正
 float middle = ch("Middle");
