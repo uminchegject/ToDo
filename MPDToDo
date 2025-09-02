@@ -1,16 +1,65 @@
+■DetailTown(Asset・PM)
+○Study
+・blenderで作るたのしい建物ジェネレータ
+https://www.youtube.com/watch?v=YMiLpZyqLE8
+
+○Asset Study
+・PROJECT TITAN BUILDING TOOL
+https://www.sidefx.com/ja/tutorials/project-titan-building-tool/
+・Soul: City
+https://www.fab.com/ja/listings/dd77fee6-0ad2-41ce-b32c-09300c24c9f3
+
+○PM Study
+・village.hip
+
+○イメージ収集
+
+○VolumeMaker拡張
+・ユニット管理
+・平面に凹凸を用意する
+ -Clusterを大きくする
+・スケール感を小さくする
+
+○BasePointMakerの拡張
+・細かい配置調整ができるようにする
+
+●Sample
+・Houdini sci-fi Buildings || Tutorial
+https://www.youtube.com/watch?v=PTVal-t9g1k&t=1s
+・Houdini Tutorial Megastructure Generator
+https://www.youtube.com/watch?v=J5A3Z0qX-Yk
+
+
+■City
+○都市計画調査
+・空想地図帳
+・見えがくれする都市
+
+○CityGeneratorStudy
+・Fully Procedural City Generator
+ -BuildingBlock
+ -Street
+https://www.sidefx.com/gallery/fully-procedural-city-generator/
+
+●区画設計
+・道のPD化
+ -道の形状(直線、曲線)
+ -細分化比率
+ -道幅
+・区画内での平面生成
+ -四角形
+ -多角形
+・幹線道路からの区画生成
+ -四角形
+ -多角形
+・HFから生成
+
+
 ■発信
 ※事例調査を怠らない
 ※Color + Objの組み合わせでPD,CDで面白いものを作る
 ※あくまで、片手間にPD,CDで面白かったことを記録する
 ※設計思想、技術の2つに分けて発信する
-
-○記録
-・Slackのスレッドで記録
- -画像メイン
-・土日にまとめる
- -翌週のまとめる内容も整理する
-
-○Quitaの記事調査
 
 ●Qiita
 ※PD, CDの設計思想を発信する
@@ -54,30 +103,8 @@ http://cdn2.gran-turismo.com/data/www/pdi_publications/cedec2018_proceduralHardS
 https://cedil.cesa.or.jp/cedil_sessions/view/1710
 
 
-
 ■Grasshopper
 ※幾何学的ロジックをコンピュテーショナル化・モジュール化
-
-○EdgeMakerのパラメーター設計
-※管理するObjをTree化(クラス化)し、色付けて分かりやすくする
-※Axisを意識する
-・角度
-・位置
-
-○共通するEdgeMakerのModule設計
-※ZahaのDessan・Volume・Architectureを参考にそれぞれに共通する部分をModule化する
-
-●EdgeMaker(Module)
-※オブジェクト指向
-・入力
- -BaseLine
- -BaseVolume
-・パラメーター
- -角度(Axis)
- -位置(高さ)
-・Module
- -VolumeMaker
- -SurfaceMaker
  
 ●オブジェクト指向
 ・カプセル化
@@ -114,11 +141,3 @@ https://www.sidefx.com/ja/tutorials/pdg-for-design-work-pt-1-the-basics/
 https://fereria.github.io/reincarnation_tech/houdini/pdg/basic/04
 ・FOUNDATIONS | PDG による都市構築
 https://www.sidefx.com/ja/tutorials/foundations-build-a-city-with-pdg/
-
-
-■Detail
-○HoudiniのPDプロジェクトを調査
-・Houdini sci-fi Buildings || Tutorial
-https://www.youtube.com/watch?v=PTVal-t9g1k&t=1s
-・Houdini Tutorial Megastructure Generator
-https://www.youtube.com/watch?v=J5A3Z0qX-Yk

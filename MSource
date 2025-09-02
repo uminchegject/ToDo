@@ -1,24 +1,16 @@
-※プロジェクトの処理概要を確認してから復習として動画を見る
-※共通する基礎部分を重点的に読書をする
-※PD,CDにおいてStudy(勉強)とDesign(楽しい)のバランスをしっかりする
-・CityTown
- -Texture(Study)
- -Module(Design)
-・WoodPattern
- -CD(Study)
- -Pattern(Design)
-
 ○SFCコントローラー購入
 
 ○サバゲー
 
 ■CityTown
-○Study
-・たのしい都市ジェネレータ
-https://www.youtube.com/watch?v=Y6-EWYXZG4s
+・Texture(Study)
+・ModuleDesign(Design)
 
-○UVStudy
-・Building Generator from Image
+●Sample
+・CityGeneratorSample
+ -たのしい都市ジェネレータ(https://www.youtube.com/watch?v=Y6-EWYXZG4s)
+・UVSample
+ -Building Generator from Image
 
 ○※イメージ収集
 ・素材収集
@@ -26,14 +18,15 @@ https://www.youtube.com/watch?v=Y6-EWYXZG4s
 ○VolumeMaker拡張
 ・多様化・変化の緩急をつける
 
-○ModularSystemr(BasePointMaker)の実装
+○ModularSystem(BasePointMaker)の実装
 ・DetailObj
 ・TopObj
 
-○記事
-
 
 ■CD
+・最適化(Study)
+・GridPattern(Design)
+
 ○CD調査
 ※GridPatternのPDから最適化を行うCDを設計する
 ・建築は、柔らかい科学に近づく
@@ -144,56 +137,3 @@ foreach(int prim_pt; prim_pts)
 ・社外の勉強会に参加
  -参考にしつつ発展させていく
 ・TechBlog
-
-
-■DetailTown(Asset・PM)
-○Study
-・blenderで作るたのしい建物ジェネレータ
-https://www.youtube.com/watch?v=YMiLpZyqLE8
-
-○Asset Study
-・PROJECT TITAN BUILDING TOOL
-https://www.sidefx.com/ja/tutorials/project-titan-building-tool/
-・Soul: City
-https://www.fab.com/ja/listings/dd77fee6-0ad2-41ce-b32c-09300c24c9f3
-
-○PM Study
-・village.hip
-
-○イメージ収集
-
-○VolumeMaker拡張
-・ユニット管理
-・平面に凹凸を用意する
- -Clusterを大きくする
-・スケール感を小さくする
-
-○BasePointMakerの拡張
-・細かい配置調整ができるようにする
-
-○記事
-
-
-■City
-○都市計画調査
-・空想地図帳
-・見えがくれする都市
-
-○CityGeneratorStudy
-・Fully Procedural City Generator
- -BuildingBlock
- -Street
-https://www.sidefx.com/gallery/fully-procedural-city-generator/
-
-●区画設計
-・道のPD化
- -道の形状(直線、曲線)
- -細分化比率
- -道幅
-・区画内での平面生成
- -四角形
- -多角形
-・幹線道路からの区画生成
- -四角形
- -多角形
-・HFから生成
