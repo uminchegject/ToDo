@@ -2,6 +2,11 @@
 
 ○サバゲー
 
+■Work
+○バイトフラグのデコード方法
+https://chatgpt.com/share/68b6cbbe-0adc-8001-abf8-79afb02ef654
+
+
 ■CityTown
 ・Texture(Study)
 ・ModuleDesign(Design)
@@ -12,15 +17,20 @@
 ・UVSample
  -Building Generator from Image
 
-○※イメージ収集
-・素材収集
-
-○VolumeMaker拡張
+○VolumeMakerの再設計及び修正
+※RectangleCityで検証を行う
 ・建物の独立
 ・形状生成の具体化
  -Classの細分化
  -Cityごとによる形状のDetail化
 ・多様化・変化の緩急をつける
+
+○イメージ収集
+・素材収集
+ -NY
+ -Tokyo
+
+○Module作成
 
 ○ModularSystem(BasePointMaker)の実装
 ・DetailObj
