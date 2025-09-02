@@ -16,6 +16,10 @@
 ・素材収集
 
 ○VolumeMaker拡張
+・建物の独立
+・形状生成の具体化
+ -Classの細分化
+ -Cityごとによる形状のDetail化
 ・多様化・変化の緩急をつける
 
 ○ModularSystem(BasePointMaker)の実装
