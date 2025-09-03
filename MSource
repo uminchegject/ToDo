@@ -1,3 +1,10 @@
+○GridBasePointの修正
+・orientを面に沿って配置するように修正
+ -PrimのNの平均値をnormalにする
+・Gridが全体に配置できるように修正
+・パラメーター設計
+
+
 ○VolumeMakerの再設計及び修正
 ※RectangleCityで検証を行う
 ※多様化・変化の緩急をつける
@@ -7,10 +14,6 @@
  -TopVolume
  -SideVolume
  -BottomVolume
-
-○GridBasePointの修正
-・Gridが全体に配置できるように修正
-・パラメーター設計の修正
 
 
 ■Private
