@@ -1,39 +1,3 @@
-●BaseGridソース修正
-float middle = ch("Middle");
-vector dir_rotate = chv("DirRotate");
-vector grid_rotate = chv("GridRotate");
-vector center_pos = detail(1, "centroid");
-
-vector4 q_dir_rotate = eulertoquaternion(dir_rotate, 0);
-vector base_dir = set(0, 1, 0);
-vector dir = qrotate(q_dir_rotate, base_dir);
-dir = normalize(dir);
-
-float bounds[] = detailintrinsic(1, "bounds");
-vector min_all = set(bounds[0], bounds[2], bounds[4]);
-vector max_all = set(bounds[1], bounds[3], bounds[5]);
-dir *= length(min_all - max_all);
-
-vector min_pos, max_pos, hit_uv;
-intersect(1, center_pos, dir, max_pos, hit_uv);
-addpoint(0, max_pos);
-intersect(1, center_pos, -dir, min_pos, hit_uv);
-addpoint(0, min_pos);
-
-float bound_length = length(max_pos - min_pos);
-int pt_num = int(bound_length / middle);
-vector slider = normalize(dir) * bound_length / pt_num;
-
-vector4 q_grid_rotate = eulertoquaternion(grid_rotate, 0);
-
-for(int i = 0; i < pt_num; i++)
-{
-    vector spawn_pos = min_pos + slider * i;
-    int pt = addpoint(0, spawn_pos);
-	setpointattrib(0, "orient", pt, q_grid_rotate, "set");
-}
-
-
 ■Private
 ○SFCコントローラー購入
 
@@ -125,35 +89,16 @@ https://www.archifuture-web.jp/magazine/columnist_sugihara_page4.html
 
 
 ■実装
+○GridBasePointの修正
+・Gridが全体に配置できるように修正
+・パラメーター設計の修正
+
 ○BaseLineにNとupを定義する
 ・NはPrimのNormal
 ・upはGridの方向
 
-○Nとupに応じてTransformを実装する 
+○Nとupに応じてTransformを実装する
 
-●BoolPrimParam
-・middle
-・Rotate
-
-float middle = 1;//ch("Middle");
-vector rotate = set(0, 0, 0);//chv("Rotate");
-//center_posを取得
-vector center_pos = 
-//rotate角度におけるbound_lengthの取得
-float bound_length = 
-int plane_num = int(bound_length / middle);
-//rotate角度におけるslide_dirを取得
-vector slide_vec = 
-vector slider = (bound_length / plane_num)
-for(int i = 0; i < plane_num; ++i)
-{
-	vector spown_pos = (center_pos - slide_vec * bound_length / 2);
-	spown_pos += slider * i;
-	int pt = addpoint(0, spown_pos);
-	//角度情報をattributeに設定
-	vector4 q = quaternion(angle, axis);
-	setpointattrib(0, "orient", @pt, q, "set");
-}
 
 ●BaseLineParam
 ・scale
