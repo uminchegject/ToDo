@@ -1,20 +1,12 @@
-●GridPattern
-・MultiParam
-・BaseParam
-・PatternParam
-
-●City
-・DetailVolume
- -TopVolume
- -SideVolume
- -BottomVolume
-
 ●BaseGridソース修正
 float middle = ch("Middle");
-vector rotate = chv("Rotate");
+vector dir_rotate = chv("DirRotate");
+vector grid_rotate = chv("GridRotate");
 vector center_pos = detail(1, "centroid");
 
-vector dir = normalize(rotate); 
+vector4 q_dir_rotate = eulertoquaternion(dir_rotate, 0);
+vector base_dir = set(0, 1, 0);
+vector dir = qrotate(q_dir_rotate, base_dir);
 dir = normalize(dir);
 
 float bounds[] = detailintrinsic(1, "bounds");
@@ -31,10 +23,14 @@ addpoint(0, min_pos);
 float bound_length = length(max_pos - min_pos);
 int pt_num = int(bound_length / middle);
 vector slider = normalize(dir) * bound_length / pt_num;
+
+vector4 q_grid_rotate = eulertoquaternion(grid_rotate, 0);
+
 for(int i = 0; i < pt_num; i++)
 {
     vector spawn_pos = min_pos + slider * i;
-    addpoint(0, spawn_pos);
+    int pt = addpoint(0, spawn_pos);
+	setpointattrib(0, "orient", pt, q_grid_rotate, "set");
 }
 
 
@@ -61,11 +57,13 @@ https://chatgpt.com/share/68b6cbbe-0adc-8001-abf8-79afb02ef654
 
 ○VolumeMakerの再設計及び修正
 ※RectangleCityで検証を行う
+※多様化・変化の緩急をつける
 ・建物の独立
-・形状生成の具体化
- -Classの細分化
- -Cityごとによる形状のDetail化
-・多様化・変化の緩急をつける
+・Classの細分化
+・DetailVolume
+ -TopVolume
+ -SideVolume
+ -BottomVolume
 
 ○イメージ収集
 ・素材収集
@@ -92,6 +90,9 @@ https://chatgpt.com/share/68b6cbbe-0adc-8001-abf8-79afb02ef654
 https://www.archifuture-web.jp/magazine/columnist_sugihara_page4.html
 
 ○GridPattern設計
+・MultiParam
+・BaseParam
+・PatternParam
 
 ○GridPatternの実装
 
