@@ -1,20 +1,5 @@
 ○Python本斥候
 
-●TownCity
-・建物独立
-・建物、道路の隣接面をクラス化
-・TopBlockを生成
-
-●BoatHouse
-・検証用Modelの作成
-・角度のパラメーター化
-・BaseLine実装
- -パラメーターで管理できるようにする
-
-●BaseLine検証
-・検証用のBoatModelを用意
-・角度をパラメーター調整できるように実装
-・GridBaseのBaseLine生成を行う
 
 ■Private
 ○SFCコントローラー購入
@@ -30,7 +15,12 @@
 
 ○建物の独立
 
-○Top,Side,Bottomで分割
+○建物、道路の隣接面をクラス化
+・WindowPatternをそれぞれ用意する
+
+○TopBlockの生成
+・形態に特徴をつける
+・Top,Middle,Bottomも視野に入れる
 
 ●VolumeMaker
 ※RectangleCityで検証を行う
@@ -61,6 +51,16 @@
  -評価
 ・杉原コラム
 https://www.archifuture-web.jp/magazine/columnist_sugihara_page4.html
+
+○BoatHouse準備
+・検証用Modelの作成
+ -検証しやすい形態
+ -BoatHouseを捉えた形態
+・角度のPD化
+ -クラス・パラメーターで感覚的に管理できるようにする
+・BaseLine実装
+ -GridBaseでとりあえず実装
+ -クラス・パラメーターで感覚的に管理できるようにする
 
 ○GridPattern設計
 ・MultiParam
