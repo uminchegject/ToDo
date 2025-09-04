@@ -1,8 +1,25 @@
+○Python本斥候
+
+●TownCity
+・建物独立
+・建物、道路の隣接面をクラス化
+・TopBlockを生成
+
+●BoatHouse
+・検証用Modelの作成
+・角度のパラメーター化
+・BaseLine実装
+ -パラメーターで管理できるようにする
+
+●BaseLine検証
+・検証用のBoatModelを用意
+・角度をパラメーター調整できるように実装
+・GridBaseのBaseLine生成を行う
+
 ■Private
 ○SFCコントローラー購入
 
 ○サバゲー
-
 
 ■CityTown
 ●Sample
@@ -81,17 +98,11 @@ https://www.archifuture-web.jp/magazine/columnist_sugihara_page4.html
  -PrimのNの平均値をnormalにする
 ・Gridが全体に配置できるように修正
 
-○GridBasePointの修正
-・Gridが全体に配置できるように修正
-・パラメーター設計の修正
-
 ○BaseLineにNとupを定義する
 ・NはPrimのNormal
 ・upはGridの方向
 
 ○Nとupに応じてTransformを実装する
-
-
 
 
 ■記事
