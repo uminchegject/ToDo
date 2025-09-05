@@ -6,7 +6,11 @@
 
 ○サバゲー
 
+
 ■CityTown
+※RectangleCityで検証を行う
+※多様化・変化の緩急をつける
+
 ●Sample
 ・CityGeneratorSample
  -たのしい都市ジェネレータ(https://www.youtube.com/watch?v=Y6-EWYXZG4s)
@@ -16,20 +20,13 @@
 ○建物の独立
 
 ○建物、道路の隣接面をクラス化
+・class同士でマージしたPrimを参照し、道路の隣接面を計算する
 ・WindowPatternをそれぞれ用意する
 
 ○TopBlockの生成
+・高さの一定比率をTopBlockにする
 ・形態に特徴をつける
 ・Top,Middle,Bottomも視野に入れる
-
-●VolumeMaker
-※RectangleCityで検証を行う
-※多様化・変化の緩急をつける
-・建物の独立
-・DetailVolume・DetailClass
- -Top
- -Side
- -Bottom
 
 ○イメージ収集
 ・素材収集
@@ -52,28 +49,28 @@
 ・杉原コラム
 https://www.archifuture-web.jp/magazine/columnist_sugihara_page4.html
 
-○BoatHouse準備
-・検証用Modelの作成
- -検証しやすい形態
- -BoatHouseを捉えた形態
-・角度のPD化
- -クラス・パラメーターで感覚的に管理できるようにする
-・BaseLine実装
- -GridBaseでとりあえず実装
- -クラス・パラメーターで感覚的に管理できるようにする
+○検証用Modelの作成
+・検証しやすい形態
+・BoatHouseを捉えた形態
+
+○角度のPD化
+・クラス・パラメーターで感覚的に管理できるようにする
+
+○BaseLine実装
+・GridBaseでとりあえず実装
+・クラス・パラメーターで感覚的に管理できるようにする
 
 ○GridPattern設計
 ・MultiParam
 ・BaseParam
 ・PatternParam
 
-○GridPatternの実装
-
 
 ■設計
 ※多様性を重視したPDを設計する
  -Surface(Prim)を入力し、WoodPatternを生成する
  -柔軟なパラメーター調整ができるように設計する 
+
 ●BasePattern
 ・BaseLine
  -Middle
@@ -90,19 +87,6 @@ https://www.archifuture-web.jp/magazine/columnist_sugihara_page4.html
  -Simple
  -Randomly
  -Gradation(simple, noise)
-
-
-■実装
-○GridBasePointの修正
-・orientを面に沿って配置するように修正
- -PrimのNの平均値をnormalにする
-・Gridが全体に配置できるように修正
-
-○BaseLineにNとupを定義する
-・NはPrimのNormal
-・upはGridの方向
-
-○Nとupに応じてTransformを実装する
 
 
 ■記事
