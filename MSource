@@ -1,10 +1,15 @@
+※PD,CDに伴うStudyは最低限のみに留める
+ -PD,CDの設計に重点を置く
+
 ○Python本斥候
 
 
 ■Private
 ○SFCコントローラー購入
 
-○サバゲー
+○サバゲー準備
+・挙動確認
+・提案
 
 
 ■CityTown
@@ -17,16 +22,14 @@
 ・UVSample
  -Building Generator from Image
 
-○建物の独立
+○各都市の構成クラス&PM設計(Tokyo、NY)
+※RectangleCityを前提に一度設計する
+・TopBlock
+・SideBlock
 
-○建物、道路の隣接面をクラス化
-・class同士でマージしたPrimを参照し、道路の隣接面を計算する
-・WindowPatternをそれぞれ用意する
+○検証
+※RectangleCityで検証
 
-○TopBlockの生成
-・高さの一定比率をTopBlockにする
-・形態に特徴をつける
-・Top,Middle,Bottomも視野に入れる
 
 ○イメージ収集
 ・素材収集
