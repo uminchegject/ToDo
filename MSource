@@ -1,34 +1,57 @@
+■反省
 ※PD,CD作業は設計・作業を必ずルーティンにする
  -休みを挟む際もしっかり休み後の準備をする
-※記事化できる作業量を目安にする
- -記事化することを作業内容と共に大まかに決めておく
 ※PD,CDに伴うStudyは最低限のみに留める
  -PD,CDの設計に重点を置く
+※記事化できる作業量を目安にする
+ -記事化することを作業内容と共に大まかに決めておく
+
+※PD,CDにおいてStudy(勉強)とDesign(楽しい)のバランスをしっかりする
+ -1週間のStudy,Design項目のToDoをそれぞれ整理する
+ -週の初日は蔦屋で1週間のDesignをイメージする
+
+※各工程を細分化し、それぞれの工程を多様化できるように設計する
 
 
-■BoatHouse
-○検証用モデルの用意
-※シンプルかつ必要な要素を含めるように実装する
-・2階部分以外をSurfaceで生成する
+■Private
+○SFCコントローラー購入
 
-○角度調整処理実装
+○服の整理
 
-△2階部分を設計
-・屋根(Edge)
-
-△GridPattern実装
-・PrimにBaseLineを引く
-
-●BoatHouseDesign
-・Edge
-・HorizontalLine
-
-●BoatHouseLogic
-・Edge
-・Line
+○Python本斥候
 
 
 ■CityTown
+●Sample
+・CityGeneratorSample
+ -たのしい都市ジェネレータ(https://www.youtube.com/watch?v=Y6-EWYXZG4s)
+・UVSample
+ -Building Generator from Image
+ 
+●BlockModule
+・Class
+・RemoveRatio
+・GridScale
+ -Random
+ 
+●Param
+・Multi
+ -Class
+ -BaseGridScale
+ -RandomlyGridScale
+ -RemoveRatio
+
+●VolumeModule
+・Class
+・Scale
+・RemoveRatio
+
+●Param
+・Multi
+ -Class
+ -MinScale
+ -RemoveRatio
+
 ○Block生成
 ※現在のRectangleCityで検証
 ・幹線道路
@@ -44,50 +67,9 @@
 ●Module設計
 ※Rectangle
 ・Block
- -小道
 ・Volume
- -Scale
 ・DetailVolume
  -Top(段々,SingleVolume)
- 
-
-■記事
-○建築時代の作品をPD化
-・角度を調整できるようにする
-
-○街の区画生成をプロシージャル化
-・街によって区画の形、サイズに違いがある
-
-
-■Private
-○SFCコントローラー購入
-
-○サバゲー準備
-・挙動確認
-・提案
-
-○服の整理
-
-○Python本斥候
-
-
-■CityTown
-※RectangleCityで検証を行う
-※多様化・変化の緩急をつける
-
-●Sample
-・CityGeneratorSample
- -たのしい都市ジェネレータ(https://www.youtube.com/watch?v=Y6-EWYXZG4s)
-・UVSample
- -Building Generator from Image
-
-○各都市の構成クラス&PM設計(Tokyo、NY)
-※RectangleCityを前提に一度設計する
-・TopBlock
-・SideBlock
-
-○検証
-※RectangleCityで検証
 
 
 ○イメージ収集
@@ -103,7 +85,19 @@
 
 
 ■CD
-○CD調査
+○検証用モデルの用意
+※シンプルかつ必要な要素を含めるように実装する
+・2階部分以外をSurfaceで生成する
+
+○角度調整処理実装
+
+△2階部分を設計
+・屋根(Edge)
+
+△GridPattern実装
+・PrimにBaseLineを引く
+
+△CD調査
 ※GridPatternのPDから最適化を行うCDを設計する
 ・建築は、柔らかい科学に近づく
  -条件
@@ -111,27 +105,20 @@
 ・杉原コラム
 https://www.archifuture-web.jp/magazine/columnist_sugihara_page4.html
 
-○検証用Modelの作成
-・検証しやすい形態
-・BoatHouseを捉えた形態
-
-○角度のPD化
-・クラス・パラメーターで感覚的に管理できるようにする
-
-○BaseLine実装
-・GridBaseでとりあえず実装
-・クラス・パラメーターで感覚的に管理できるようにする
-
-○GridPattern設計
-・MultiParam
-・BaseParam
-・PatternParam
 
 
 ■設計
 ※多様性を重視したPDを設計する
  -Surface(Prim)を入力し、WoodPatternを生成する
  -柔軟なパラメーター調整ができるように設計する 
+ 
+●Design
+・Edge
+・HorizontalLine
+
+●ProceduralLogic
+・Edge
+・Line
 
 ●BasePattern
 ・BaseLine
@@ -154,11 +141,13 @@ https://www.archifuture-web.jp/magazine/columnist_sugihara_page4.html
 ■記事
 ※PDの設計思想を重点にした記事のみをとりあえず書く
 
-○TownCityのメモ作成
+○建築時代の作品をPD化
+・角度を調整できるようにする
 
-○GridPatternMakerのメモ作成
+○街の区画生成をプロシージャル化
+・街によって区画の形、サイズに違いがある
 
-○委員会に向けたアクション
+△委員会に向けたアクション
 ・社外の勉強会に参加
  -参考にしつつ発展させていく
 ・TechBlog
