@@ -5,6 +5,7 @@
 ※PD,CDに伴うStudyは最低限のみに留める
  -PD,CDの設計に重点を置く
 
+
 ■BoatHouse
 ○検証用モデルの用意
 ※シンプルかつ必要な要素を含めるように実装する
@@ -12,12 +13,15 @@
 
 ○角度調整処理実装
 
+△2階部分を設計
+・屋根(Edge)
+
 △GridPattern実装
 ・PrimにBaseLineを引く
 
 ●BoatHouseDesign
 ・Edge
-・VerticalSurface
+・HorizontalLine
 
 ●BoatHouseLogic
 ・Edge
@@ -25,12 +29,17 @@
 
 
 ■CityTown
-○Block→VolumeMakerのパラメーター化
-・スケール
+○Block生成
+※現在のRectangleCityで検証
+・幹線道路
+ -手作業
+・通常道路
+ -パラメーター(自動生成)
 
-○Block実装
-・小道を入れる
-・現在のRectangleCityで検証
+○Block→VolumeMaker
+・平面生成処理の設計
+・パラメーター化
+ -スケール
 
 ●Module設計
 ※Rectangle
@@ -51,13 +60,15 @@
 
 
 ■Private
-○Python本斥候
-
 ○SFCコントローラー購入
 
 ○サバゲー準備
 ・挙動確認
 ・提案
+
+○服の整理
+
+○Python本斥候
 
 
 ■CityTown
