@@ -8,7 +8,12 @@
  
 ○実装
 ・BaseLine(PolyLine)の生成
+ -BaseLineをマックスで配置
+ -交点部分でSplit
+ -SplitしたBaseLine、交点を編集(Remove、Transform)
 ・BaseLineから道と区画を生成
+ -BaseLineを基にPrimをSplit
+ -道幅に応じてPrimを縮小
 
 ●BlockModule
 ・Class
@@ -46,8 +51,11 @@
 ※シンプルかつ必要な要素を含めるように実装する
 ・2階部分以外をSurfaceで生成する
 
-○角度調整処理実装
-
+○実装
+・BaseLineを作成
+ -角度調整を行えるようにする
+・BaseLineからPrimを作成
+ -
 
 
 
