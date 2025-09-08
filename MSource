@@ -1,16 +1,12 @@
 ■反省
+※各工程を細分化し、それぞれの工程を多様化できるように設計する
+
 ※PD,CD作業は設計・作業を必ずルーティンにする
  -休みを挟む際もしっかり休み後の準備をする
 ※PD,CDに伴うStudyは最低限のみに留める
  -PD,CDの設計に重点を置く
 ※記事化できる作業量を目安にする
  -記事化することを作業内容と共に大まかに決めておく
-
-※PD,CDにおいてStudy(勉強)とDesign(楽しい)のバランスをしっかりする
- -1週間のStudy,Design項目のToDoをそれぞれ整理する
- -週の初日は蔦屋で1週間のDesignをイメージする
-
-※各工程を細分化し、それぞれの工程を多様化できるように設計する
 
 
 ■Private
@@ -27,7 +23,15 @@
  -たのしい都市ジェネレータ(https://www.youtube.com/watch?v=Y6-EWYXZG4s)
 ・UVSample
  -Building Generator from Image
- 
+
+
+○Block生成
+※現在のRectangleCityで検証
+・幹線道路
+ -手作業
+・通常道路
+ -パラメーター(自動生成)
+
 ●BlockModule
 ・Class
 ・RemoveRatio
@@ -41,6 +45,12 @@
  -RandomlyGridScale
  -RemoveRatio
 
+
+○Block→VolumeMaker
+・平面生成処理の設計
+・パラメーター化
+ -スケール
+
 ●VolumeModule
 ・Class
 ・Scale
@@ -52,17 +62,6 @@
  -MinScale
  -RemoveRatio
 
-○Block生成
-※現在のRectangleCityで検証
-・幹線道路
- -手作業
-・通常道路
- -パラメーター(自動生成)
-
-○Block→VolumeMaker
-・平面生成処理の設計
-・パラメーター化
- -スケール
 
 ●Module設計
 ※Rectangle
