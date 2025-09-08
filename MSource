@@ -1,10 +1,7 @@
 ■City
-○Block生成
-※現在のRectangleCityで検証
-・幹線道路
- -手作業
-・通常道路
- -パラメーター(自動生成)
+○BaseLine生成実装
+・指定した角度でPrim内にPolyLineを配置
+・BaseLineを交点でSplitし、頂点とLineを生成
  
 ○実装
 ・BaseLine(PolyLine)の生成
@@ -14,6 +11,13 @@
 ・BaseLineから道と区画を生成
  -BaseLineを基にPrimをSplit
  -道幅に応じてPrimを縮小
+
+●BlockMaker設計
+※現在のRectangleCityで検証
+・幹線道路
+ -手作業
+・通常道路
+ -パラメーター(自動生成)
 
 ●BlockModule
 ・Class
@@ -51,11 +55,29 @@
 ※シンプルかつ必要な要素を含めるように実装する
 ・2階部分以外をSurfaceで生成する
 
-○実装
+○検証Edgeを実装
 ・BaseLineを作成
  -角度調整を行えるようにする
 ・BaseLineからPrimを作成
- -
+
+●ソース
+//中点を生成
+int pt_center = 
+//距離、角度に応じて端点を生成
+int pt_side_1 = 
+int pt_side_2 = 
+//base_lineを生成
+int poly_line = 
+//高さ、斜角に応じて上部点を生成
+int pt_top = 
+//primを生成
+
+○ロジック設計
+・角度
+ -平面
+ -立面
+・頂点位置
+・長さ
 
 
 
