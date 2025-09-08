@@ -1,3 +1,57 @@
+■City
+○Block生成
+※現在のRectangleCityで検証
+・幹線道路
+ -手作業
+・通常道路
+ -パラメーター(自動生成)
+ 
+○実装
+・BaseLine(PolyLine)の生成
+・BaseLineから道と区画を生成
+
+●BlockModule
+・Class
+・RemoveRatio
+・GridScale
+ -Random
+ 
+●Param
+・Multi
+ -Class
+ -BaseGridScale
+ -RandomlyGridScale
+ -RemoveRatio
+
+
+○Block→VolumeMaker
+・平面生成処理の設計
+・パラメーター化
+ -スケール
+
+●VolumeModule
+・Class
+・Scale
+・RemoveRatio
+
+●Param
+・Multi
+ -Class
+ -MinScale
+ -RemoveRatio
+
+
+■BoatHouse
+○検証用モデルの用意
+※シンプルかつ必要な要素を含めるように実装する
+・2階部分以外をSurfaceで生成する
+
+○角度調整処理実装
+
+
+
+
+
 ■反省
 ※各工程を細分化し、それぞれの工程を多様化できるように設計する
 
