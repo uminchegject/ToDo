@@ -1,97 +1,90 @@
-■GridMaker_Ver.0
-●設計
-※四角形でまず検証
-・多様なサイズのBlockを生成する
- -比率を、スケールをコントロールできるようにする
-
-●実装
+●ソース(Grid)
 ・BaseGridLineの生成
  -ランダム間隔
 ・増減コントロール
  -1本消す
  -1本増やす
 
-■Edge
-●設計
-・角度の管理
-・長さの管理
-
-●実装
-・サイズに収まるようにSplit
-
-
-
-■City
-○BaseLine生成実装
-※GridPatternのロジックを編集
-・BaseLineを交点でSplitし、頂点とLineを生成
-
-○頂点、LineのEdit処理を実装
-・Remove
-・Transform
-
-
-○BaseLineから道と区画を生成
-・BaseLineを基にPrimをSplit
-・道幅に応じてPrimを縮小
- 
-●BlockMaker設計
-※現在のRectangleCityで検証
-・幹線道路
- -手作業
-・通常道路
- -パラメーター(自動生成)
-
-●BlockModule
-・Class
-・RemoveRatio
-・GridScale
- -Random
- 
-●Param
-・Multi
- -Class
- -BaseGridScale
- -RandomlyGridScale
- -RemoveRatio
-
-
-○Block→VolumeMaker
-・平面生成処理の設計
-・パラメーター化
- -スケール
-
-●VolumeModule
-・Class
-・Scale
-・RemoveRatio
-
-●Param
-・Multi
- -Class
- -MinScale
- -RemoveRatio
-
-
-■BoatHouse
-○検証Edgeを実装
-・パラメーターの整理
-
-○検証用モデルの用意
-※シンプルかつ必要な要素を含めるように実装する
-・2階部分以外をSurfaceで生成する
-
-○ロジック設計
+●ソース(Edge)
+・スケール
 ・角度
  -平面
  -立面
-・頂点位置
-・長さ
+ -立面(内角度)
+vector base_size = chv("BaseSize");
+float edge_angle = ch("EdgeAngle");
 
+//中点の生成
+vector pt_center_pos = set(0, 0, 0);
+int pt_center = addpoint(0, pt_center_pos);
 
+//端点の生成
+vector pt_side_1_pos = pt_center_pos;
+pt_side_1_pos.x += base_size.x;
+int pt_side_1 = addpoint(0, pt_side_1_pos);
+
+vector pt_side_2_dir = set(base_size.z, 0, 0);
+vector rotate_axis = {0, 1, 0};
+vector4 q = quaternion(radians(edge_angle), rotate_axis);
+vector pt_side_2_pos = pt_center_pos;
+pt_side_2_pos += qrotate(q, pt_side_2_dir);
+int pt_side_2 = addpoint(0, pt_side_2_pos);
+
+//高さ、斜角に応じて上部点を生成
+vector pt_top_pos = pt_center_pos;
+pt_top_pos.y += base_size.y;
+vector pt_top_dir = normalize((normalize(pt_side_1_pos - pt_center_pos) + normalize(pt_side_2_pos - pt_center_pos)) * 0.5);
+pt_top_dir *= -1 * 2;
+pt_top_pos += pt_top_dir;
+int pt_top = addpoint(0, pt_top_pos);
+
+//primを生成
+int prim = addprim(0, "poly");
+addvertex(0, prim, pt_side_1);
+addvertex(0, prim, pt_center);
+addvertex(0, prim, pt_top);
+
+prim = addprim(0, "poly");
+addvertex(0, prim, pt_side_2);float middle = ch("Middle");
+vector dir_rotate = chv("Dir_Rotate");
+dir_rotate = radians(dir_rotate);
+vector grid_rotate = chv("Grid_Rotate");
+grid_rotate = radians(grid_rotate);
+vector center_pos = detail(1, "centroid");
+
+vector4 q_dir_rotate = eulertoquaternion(dir_rotate, 0);
+vector base_dir = set(0, 1, 0);
+vector dir = qrotate(q_dir_rotate, base_dir);
+dir = normalize(dir);
+
+float bounds[] = detailintrinsic(1, "bounds");
+vector min_all = set(bounds[0], bounds[2], bounds[4]);
+vector max_all = set(bounds[1], bounds[3], bounds[5]);
+vector ray = dir * length(min_all - max_all);
+
+vector min_pos, max_pos, hit_uv;
+intersect(1, center_pos, ray, max_pos, hit_uv);
+intersect(1, center_pos, -ray, min_pos, hit_uv);
+
+float bound_length = length(max_pos - min_pos);
+int pt_num = int(bound_length / middle);
+vector slider = dir * bound_length / pt_num;
+
+vector4 q_grid_rotate = eulertoquaternion(grid_rotate, 0);
+
+for(int i = 0; i < pt_num; i++)
+{
+    vector spawn_pos = min_pos + slider * i;
+    int pt = addpoint(0, spawn_pos);
+    setpointattrib(0, "orient", pt, q_grid_rotate, "set");
+}
+addvertex(0, prim, pt_center);
+addvertex(0, prim, pt_top);
 
 
 ■反省
+※息抜き後は必ず何も聞かずに集中する時間を設ける
+ -計画の振り返りを行う
 ※各工程を細分化し、それぞれの工程を多様化できるように設計する
 
 ※PD,CD作業は設計・作業を必ずルーティンにする
@@ -117,44 +110,12 @@
 ・UVSample
  -Building Generator from Image
 
-
-○Block生成
+●BlockMaker設計
 ※現在のRectangleCityで検証
 ・幹線道路
  -手作業
 ・通常道路
  -パラメーター(自動生成)
-
-●BlockModule
-・Class
-・RemoveRatio
-・GridScale
- -Random
- 
-●Param
-・Multi
- -Class
- -BaseGridScale
- -RandomlyGridScale
- -RemoveRatio
-
-
-○Block→VolumeMaker
-・平面生成処理の設計
-・パラメーター化
- -スケール
-
-●VolumeModule
-・Class
-・Scale
-・RemoveRatio
-
-●Param
-・Multi
- -Class
- -MinScale
- -RemoveRatio
-
 
 ●Module設計
 ※Rectangle
@@ -164,30 +125,80 @@
  -Top(段々,SingleVolume)
 
 
-○イメージ収集
+○GridMaker実装
+・BaseGridLineの生成
+ -ランダム間隔
+・増減コントロール
+ -1本消す
+ -1本増やす
+ 
+○BaseLineから道と区画を生成
+・BaseLineを基にPrimをSplit
+・道幅に応じてPrimを縮小
+
+●GridMaker設計
+※四角形でまず検証
+・多様なサイズのBlockを生成する
+・ブロックの比率、スケールをコントロールできるようにする
+
+●GridMakerParameter
+・Multi
+ -Class
+ -BaseGridScale(縦横)
+ -RandomlyGridScale(縦横)
+ -RemoveRatio
+ -AddRatio
+
+
+○Block→VolumeMaker
+・平面生成処理の設計
+・パラメーター化
+ -スケール
+
+●Param
+・Multi
+ -Class
+ -MinScale
+ -△RemoveRatio
+
+
+△イメージ収集
 ・素材収集
  -NY
  -Tokyo
 
-○Module作成
+△Module作成
 
-○ModularSystem(BasePointMaker)の実装
+△ModularSystem(BasePointMaker)の実装
 ・DetailObj
 ・TopObj
 
 
-■CD
-○検証用モデルの用意
+■CD(BoatHouse)
+※多様性を重視したPDを設計する
+ -Surface(Prim)を入力し、WoodPatternを生成する
+ -柔軟なパラメーター調整ができるように設計する
+
+○パラメーターの整理
+・スケール
+・角度
+ -平面
+ -立面
+ -斜面
+
+○形の調整
+・スケールに収まるようにSplit
+・厚みを持たせる
+
+△WoodPatternの実装
+
+
+△検証用モデルの用意
 ※シンプルかつ必要な要素を含めるように実装する
 ・2階部分以外をSurfaceで生成する
 
-○角度調整処理実装
-
 △2階部分を設計
 ・屋根(Edge)
-
-△GridPattern実装
-・PrimにBaseLineを引く
 
 △CD調査
 ※GridPatternのPDから最適化を行うCDを設計する
@@ -197,12 +208,6 @@
 ・杉原コラム
 https://www.archifuture-web.jp/magazine/columnist_sugihara_page4.html
 
-
-
-■設計
-※多様性を重視したPDを設計する
- -Surface(Prim)を入力し、WoodPatternを生成する
- -柔軟なパラメーター調整ができるように設計する 
  
 ●Design
 ・Edge
