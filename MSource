@@ -1,12 +1,12 @@
 ■City
 ○BaseLine生成実装
 ※GridPatternのロジックを編集
-・指定した角度でPrim内にPolyLineを配置
 ・BaseLineを交点でSplitし、頂点とLineを生成
 
 ○頂点、LineのEdit処理を実装
 ・Remove
 ・Transform
+
 
 ○BaseLineから道と区画を生成
 ・BaseLineを基にPrimをSplit
@@ -51,48 +51,12 @@
 
 
 ■BoatHouse
+○検証Edgeを実装
+・パラメーターの整理
+
 ○検証用モデルの用意
 ※シンプルかつ必要な要素を含めるように実装する
 ・2階部分以外をSurfaceで生成する
-
-○検証Edgeを実装
-・BaseLineを作成
- -角度調整を行えるようにする
-・BaseLineからPrimを作成
-
-●ソース
-vector base_size = chv("BaseSize");
-float edge_angle = ch("EdgeAngle");
-
-
-//中点の生成
-vector pt_center_pos = set(0, 0, 0)
-int pt_center = addpoint(0, pt_center_pos);
-
-//端点の生成
-vector pt_side_1_pos = pt_center_pos;
-pt_side_1_pos.x += base_size.x;
-int pt_side_1 = addpoint(0, pt_side_1_pos)
-
-vector pt_side_2_dir = {base_size.y, 0, 0};
-vector rotate_axis = {0, 1, 0};
-vector4 q = quaternion(radians(edge_angle), axis);
-vector pt_side_2_pos = pt_center_pos;
-vector pt_side_2_pos += qrotate(q, pt_side_2_dir);
-int pt_side_2 = addpoint(0, pt_side_2_pos);
-
-//base_lineを生成
-int poly_line = addprim(0, "polyline");
-addvertex(0, poly_line, pt_side_1);
-addvertex(0, poly_line, pt_center);
-addvertex(0, poly_line, pt_side_2);
-
-//高さ、斜角に応じて上部点を生成
-vector pt_top_pos = pt_center_pos;
-pt_top_pos.y += base_size.y;
-pt_top_dir = -1 * normalize()
-
-//primを生成
 
 ○ロジック設計
 ・角度
