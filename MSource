@@ -1,25 +1,46 @@
-※就業中は作業に集できるように、終業後は計画に集中する
- -定時後は散歩+計画整理をセットで行う
- -仕事、PD、委員会、etc…の中で最重要事項の計画を1つ行う
-
 ●ソース(LineMaker)
-・BaseGridLineの生成
- -ランダム間隔
-//始点と終点を生成
+vector size = 
+float interval = 
+//0～1
+float randomly_interval = 
 
-//繋げてpolyLineを生成
+int line_num = int(size.x / interval);
+vector slier = set(1, 0, 0);
+slider *= size.x / line_num;
+
+for(int i = 0; i < line_num; ++i)
+{
+	int pt_1 = addpoint(0, set(i * slider, 0, 0));
+	int pt_2 = addpoint(0, set(i * slider, 0, size.y));
+	int polyline = addprim(0, "polyline");
+	addvertex(0, polyline, pt_1);
+	addvertex(0, polyline, pt_2);
+}
+
 
 ●ソース(GridMaker)
 ・増減コントロール
  -1本消す
  -1本増やす
-//ラインの始点、終点を取得
+int prim_pts[] = primpoint(0, @primnum);
+vector start_pos = point(0, "P", prim_pts[0]);
+vector end_pos = point(0, "P", prim_pts[1]);
+vector dir = normalize(start_pos - end_pos);
 
-//input1に交点を求めるラインを引数に、連立方程式で交点を取得
+for(int i = 0; i < nprimitives(1); ++i)
+{
+	prim_pts[] = primpoint(1, i);
+	vector prim_start_pos = point(0, "P", prim_pts[0]);
+	vector prim_end_pos = point(0, "P", prim_pts[1]);
+	vector prim_dir = normalize(prim_start_pos - prim_end_pos);
 
-//交点を始点、終点からの距離でsortして、それぞれのpoint同士でpolylineを構築
+	vector intersect = start_pos + cross2d(prim_start_pos - start_pos, prim_dir) / cross2d(dir, prim_dir) * dir;
 
-//パラメーターに応じてpolylineを削除
+	//交点を始点、終点からの距離でsortして、それぞれのpoint同士でpolylineを構築
+		
+	//パラメーターに応じてpolylineを削除
+
+}
 
 
 ●ソース(Edge)
@@ -100,6 +121,10 @@ addvertex(0, prim, pt_top);
 
 
 ■反省
+※就業中は作業に集できるように、終業後は計画に集中する
+ -定時後は散歩+計画整理をセットで行う
+ -仕事、PD、委員会、etc…の中で最重要事項の計画を1つ行う
+
 ※息抜き後は必ず何も聞かずに集中する時間を設ける
  -計画の振り返りを行う
 ※各工程を細分化し、それぞれの工程を多様化できるように設計する
@@ -233,6 +258,7 @@ https://www.archifuture-web.jp/magazine/columnist_sugihara_page4.html
 ●ProceduralLogic
 ・Edge
 ・Line
+
 
 ●BasePattern
 ・BaseLine
