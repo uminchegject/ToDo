@@ -27,6 +27,10 @@ vector start_pos = point(0, "P", prim_pts[0]);
 vector end_pos = point(0, "P", prim_pts[1]);
 vector dir = normalize(start_pos - end_pos);
 
+vector line_pts[];
+float distacne_list[];
+line_pts.append(start_pos);
+line_pts.append(end_pos);
 for(int i = 0; i < nprimitives(1); ++i)
 {
 	prim_pts[] = primpoint(1, i);
@@ -34,12 +38,25 @@ for(int i = 0; i < nprimitives(1); ++i)
 	vector prim_end_pos = point(0, "P", prim_pts[1]);
 	vector prim_dir = normalize(prim_start_pos - prim_end_pos);
 
-	vector intersect = start_pos + cross2d(prim_start_pos - start_pos, prim_dir) / cross2d(dir, prim_dir) * dir;
+	vector intersect_pos = start_pos + cross2d(prim_start_pos - start_pos, prim_dir) / cross2d(dir, prim_dir) * dir;
+	line_pts.append(intersect_pos);
+	disntace_list.append(length(start_pos - intersect_pos));
+}
 
-	//交点を始点、終点からの距離でsortして、それぞれのpoint同士でpolylineを構築
-		
+int order[] = argsort(dist);
+for(int i = 1; i < len(line_pts); ++i)
+{
 	//パラメーターに応じてpolylineを削除
-
+	if(0,5 < random(pt_1_pos)) continue;
+	
+	pt_1_pos = line_pts[order[[i]];
+	pt_2_pos = line_pts[order[i - 1]];
+	int pt_1 = addpoint()
+	int pt_2 = addpoint()
+	
+	int prim = addprim(0, "polyline");
+	addvertex(0, prim, pt_1_pos);
+	addvertex(0, prim, pt_2_pos);
 }
 
 
@@ -50,7 +67,9 @@ for(int i = 0; i < nprimitives(1); ++i)
  -立面
  -立面(内角度)
 vector base_size = chv("BaseSize");
-float edge_angle = ch("EdgeAngle");
+float vertical_edge_angle = ch("EdgeAngle");
+float horizontal_edge_angle = 
+float inside_edge_angle = 
 
 //中点の生成
 vector pt_center_pos = set(0, 0, 0);
@@ -138,8 +157,6 @@ addvertex(0, prim, pt_top);
 
 
 ■Private
-○SFCコントローラー購入
-
 ○服の整理
 
 ○Python本斥候
