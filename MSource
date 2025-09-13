@@ -1,3 +1,53 @@
+●ソース(Edge)
+vector base_size = chv("BaseSize");
+float horizontal_edge_angle = ch("HorizontalEdgeAngle");
+float vertical_edge_angle = ch("VerticalEdgeAngle");
+float inside_edge_angle = ch("InsideEdgeAngle");
+vector pt_center_pos = set(0, 0, 0);
+
+//端点の生成
+vector rotate_axis = {0, 1, 0};
+vector4 q_horizontal = quaternion(radians(horizontal_edge_angle), rotate_axis);
+float edge_width = base_size.y / tan(radians(vertical_edge_angle));
+
+vector pt_side_1_pos = pt_center_pos;
+pt_side_1_pos.x += edge_width;
+int pt_side_1 = addpoint(0, pt_side_1_pos);
+
+vector pt_side_2_dir = set(edge_width, 0, 0);
+vector pt_side_2_pos = pt_center_pos;
+pt_side_2_pos += qrotate(q_horizontal, pt_side_2_dir);
+int pt_side_2 = addpoint(0, pt_side_2_pos);
+
+//高さ、斜角に応じて上部点を生成
+vector pt_top_pos = pt_center_pos;
+pt_top_pos.y += base_size.y;
+int pt_top = addpoint(0, pt_top_pos);
+
+//中点の生成
+vector slider_pt_center = normalize((normalize(pt_side_1_pos - pt_center_pos) + normalize(pt_side_2_pos - pt_center_pos)));
+slider_pt_center = base_size.y / tan(radians(inside_edge_angle));
+pt_center_pos += slider_pt_center;
+int pt_center = addpoint(0, pt_center_pos);
+
+
+○参照資料を調査
+・雑誌
+・ブログ
+
+●画像ベースで記事を書く
+※ビジュアルの説明のみで概要が分かるようにする
+・スライド、動画のスクショをまず整理する
+
+・テーマを決める
+・色んな要素を織り交ぜる 
+ -※様々な視点から取り上げる
+
+・実際の雑誌の構成を参考にする
+・様々なTutorialをまとめる
+ -Tutorialの比較化
+
+
 ○面談準備
 ・上期と下期
 
@@ -7,162 +57,9 @@
 ・個人目標
 
 
-●画像ベースで記事を書く
-※ビジュアルの説明のみで概要が分かるようにする
-・スライド、動画のスクショをまず整理する
-
-・テーマを決める
-・色んな要素を織り交ぜる 
-　ー※様々な視点から取り上げる
-
-・様々なTutorialをまとめる
- -Tutorialの比較化
-・実際の雑誌の構成を参考にする
-
-○参照資料を調査
-・雑誌
-・ブログ
 
 
-●ソース(LineMaker)
-vector size = 
-float interval = 
-//0～1
-float randomly_interval = 
 
-int line_num = int(size.x / interval);
-vector slier = set(1, 0, 0);
-slider *= size.x / line_num;
-
-for(int i = 0; i < line_num; ++i)
-{
-	int pt_1 = addpoint(0, set(i * slider, 0, 0));
-	int pt_2 = addpoint(0, set(i * slider, 0, size.y));
-	int polyline = addprim(0, "polyline");
-	addvertex(0, polyline, pt_1);
-	addvertex(0, polyline, pt_2);
-}
-
-
-●ソース(GridMaker)
-・増減コントロール
- -1本消す
- -1本増やす
-int prim_pts[] = primpoint(0, @primnum);
-vector start_pos = point(0, "P", prim_pts[0]);
-vector end_pos = point(0, "P", prim_pts[1]);
-vector dir = normalize(start_pos - end_pos);
-
-vector line_pts[];
-float distacne_list[];
-line_pts.append(start_pos);
-line_pts.append(end_pos);
-for(int i = 0; i < nprimitives(1); ++i)
-{
-	prim_pts[] = primpoint(1, i);
-	vector prim_start_pos = point(0, "P", prim_pts[0]);
-	vector prim_end_pos = point(0, "P", prim_pts[1]);
-	vector prim_dir = normalize(prim_start_pos - prim_end_pos);
-
-	vector intersect_pos = start_pos + cross2d(prim_start_pos - start_pos, prim_dir) / cross2d(dir, prim_dir) * dir;
-	line_pts.append(intersect_pos);
-	disntace_list.append(length(start_pos - intersect_pos));
-}
-
-int order[] = argsort(dist);
-for(int i = 1; i < len(line_pts); ++i)
-{
-	//パラメーターに応じてpolylineを削除
-	if(0,5 < random(pt_1_pos)) continue;
-	
-	pt_1_pos = line_pts[order[[i]];
-	pt_2_pos = line_pts[order[i - 1]];
-	int pt_1 = addpoint()
-	int pt_2 = addpoint()
-	
-	int prim = addprim(0, "polyline");
-	addvertex(0, prim, pt_1_pos);
-	addvertex(0, prim, pt_2_pos);
-}
-
-
-●ソース(Edge)
-・スケール
-・角度
- -平面
- -立面
- -立面(内角度)
-vector base_size = chv("BaseSize");
-float vertical_edge_angle = ch("EdgeAngle");
-float horizontal_edge_angle = 
-float inside_edge_angle = 
-
-//中点の生成
-vector pt_center_pos = set(0, 0, 0);
-int pt_center = addpoint(0, pt_center_pos);
-
-//端点の生成
-vector pt_side_1_pos = pt_center_pos;
-pt_side_1_pos.x += base_size.x;
-int pt_side_1 = addpoint(0, pt_side_1_pos);
-
-vector pt_side_2_dir = set(base_size.z, 0, 0);
-vector rotate_axis = {0, 1, 0};
-vector4 q = quaternion(radians(edge_angle), rotate_axis);
-vector pt_side_2_pos = pt_center_pos;
-pt_side_2_pos += qrotate(q, pt_side_2_dir);
-int pt_side_2 = addpoint(0, pt_side_2_pos);
-
-//高さ、斜角に応じて上部点を生成
-vector pt_top_pos = pt_center_pos;
-pt_top_pos.y += base_size.y;
-vector pt_top_dir = normalize((normalize(pt_side_1_pos - pt_center_pos) + normalize(pt_side_2_pos - pt_center_pos)) * 0.5);
-pt_top_dir *= -1 * 2;
-pt_top_pos += pt_top_dir;
-int pt_top = addpoint(0, pt_top_pos);
-
-//primを生成
-int prim = addprim(0, "poly");
-addvertex(0, prim, pt_side_1);
-addvertex(0, prim, pt_center);
-addvertex(0, prim, pt_top);
-
-prim = addprim(0, "poly");
-addvertex(0, prim, pt_side_2);float middle = ch("Middle");
-vector dir_rotate = chv("Dir_Rotate");
-dir_rotate = radians(dir_rotate);
-vector grid_rotate = chv("Grid_Rotate");
-grid_rotate = radians(grid_rotate);
-vector center_pos = detail(1, "centroid");
-
-vector4 q_dir_rotate = eulertoquaternion(dir_rotate, 0);
-vector base_dir = set(0, 1, 0);
-vector dir = qrotate(q_dir_rotate, base_dir);
-dir = normalize(dir);
-
-float bounds[] = detailintrinsic(1, "bounds");
-vector min_all = set(bounds[0], bounds[2], bounds[4]);
-vector max_all = set(bounds[1], bounds[3], bounds[5]);
-vector ray = dir * length(min_all - max_all);
-
-vector min_pos, max_pos, hit_uv;
-intersect(1, center_pos, ray, max_pos, hit_uv);
-intersect(1, center_pos, -ray, min_pos, hit_uv);
-
-float bound_length = length(max_pos - min_pos);
-int pt_num = int(bound_length / middle);
-vector slider = dir * bound_length / pt_num;
-
-vector4 q_grid_rotate = eulertoquaternion(grid_rotate, 0);
-
-for(int i = 0; i < pt_num; i++)
-{
-    vector spawn_pos = min_pos + slider * i;
-    int pt = addpoint(0, spawn_pos);
-    setpointattrib(0, "orient", pt, q_grid_rotate, "set");
-}
-addvertex(0, prim, pt_center);
-addvertex(0, prim, pt_top);
 
 
 ■反省
@@ -334,3 +231,104 @@ https://www.archifuture-web.jp/magazine/columnist_sugihara_page4.html
 ・社外の勉強会に参加
  -参考にしつつ発展させていく
 ・TechBlog
+
+
+
+■ソース
+●ソース(LineMaker)
+vector size = 
+float interval = 
+//0～1
+float randomly_interval = 
+
+int line_num = int(size.x / interval);
+vector slier = set(1, 0, 0);
+slider *= size.x / line_num;
+
+for(int i = 0; i < line_num; ++i)
+{
+	int pt_1 = addpoint(0, set(i * slider, 0, 0));
+	int pt_2 = addpoint(0, set(i * slider, 0, size.y));
+	int polyline = addprim(0, "polyline");
+	addvertex(0, polyline, pt_1);
+	addvertex(0, polyline, pt_2);
+}
+
+
+●ソース(GridMaker)
+・増減コントロール
+ -1本消す
+ -1本増やす
+int prim_pts[] = primpoint(0, @primnum);
+vector start_pos = point(0, "P", prim_pts[0]);
+vector end_pos = point(0, "P", prim_pts[1]);
+vector dir = normalize(start_pos - end_pos);
+
+vector line_pts[];
+float distacne_list[];
+line_pts.append(start_pos);
+line_pts.append(end_pos);
+for(int i = 0; i < nprimitives(1); ++i)
+{
+	prim_pts[] = primpoint(1, i);
+	vector prim_start_pos = point(0, "P", prim_pts[0]);
+	vector prim_end_pos = point(0, "P", prim_pts[1]);
+	vector prim_dir = normalize(prim_start_pos - prim_end_pos);
+
+	vector intersect_pos = start_pos + cross2d(prim_start_pos - start_pos, prim_dir) / cross2d(dir, prim_dir) * dir;
+	line_pts.append(intersect_pos);
+	disntace_list.append(length(start_pos - intersect_pos));
+}
+
+int order[] = argsort(dist);
+for(int i = 1; i < len(line_pts); ++i)
+{
+	//パラメーターに応じてpolylineを削除
+	if(0,5 < random(pt_1_pos)) continue;
+	
+	pt_1_pos = line_pts[order[[i]];
+	pt_2_pos = line_pts[order[i - 1]];
+	int pt_1 = addpoint()
+	int pt_2 = addpoint()
+	
+	int prim = addprim(0, "polyline");
+	addvertex(0, prim, pt_1_pos);
+	addvertex(0, prim, pt_2_pos);
+}
+
+●ソース(Grid)
+float middle = ch("Middle");
+vector dir_rotate = chv("Dir_Rotate");
+dir_rotate = radians(dir_rotate);
+vector grid_rotate = chv("Grid_Rotate");
+grid_rotate = radians(grid_rotate);
+vector center_pos = detail(1, "centroid");
+
+vector4 q_dir_rotate = eulertoquaternion(dir_rotate, 0);
+vector base_dir = set(0, 1, 0);
+vector dir = qrotate(q_dir_rotate, base_dir);
+dir = normalize(dir);
+
+float bounds[] = detailintrinsic(1, "bounds");
+vector min_all = set(bounds[0], bounds[2], bounds[4]);
+vector max_all = set(bounds[1], bounds[3], bounds[5]);
+vector ray = dir * length(min_all - max_all);
+
+vector min_pos, max_pos, hit_uv;
+intersect(1, center_pos, ray, max_pos, hit_uv);
+intersect(1, center_pos, -ray, min_pos, hit_uv);
+
+float bound_length = length(max_pos - min_pos);
+int pt_num = int(bound_length / middle);
+vector slider = dir * bound_length / pt_num;
+
+vector4 q_grid_rotate = eulertoquaternion(grid_rotate, 0);
+
+for(int i = 0; i < pt_num; i++)
+{
+    vector spawn_pos = min_pos + slider * i;
+    int pt = addpoint(0, spawn_pos);
+    setpointattrib(0, "orient", pt, q_grid_rotate, "set");
+}
+addvertex(0, prim, pt_center);
+addvertex(0, prim, pt_top);
