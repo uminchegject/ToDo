@@ -1,36 +1,3 @@
-●ソース(Edge)
-vector base_size = chv("BaseSize");
-float horizontal_edge_angle = ch("HorizontalEdgeAngle");
-float vertical_edge_angle = ch("VerticalEdgeAngle");
-float inside_edge_angle = ch("InsideEdgeAngle");
-vector pt_center_pos = set(0, 0, 0);
-
-//端点の生成
-vector rotate_axis = {0, 1, 0};
-vector4 q_horizontal = quaternion(radians(horizontal_edge_angle), rotate_axis);
-float edge_width = base_size.y / tan(radians(vertical_edge_angle));
-
-vector pt_side_1_pos = pt_center_pos;
-pt_side_1_pos.x += edge_width;
-int pt_side_1 = addpoint(0, pt_side_1_pos);
-
-vector pt_side_2_dir = set(edge_width, 0, 0);
-vector pt_side_2_pos = pt_center_pos;
-pt_side_2_pos += qrotate(q_horizontal, pt_side_2_dir);
-int pt_side_2 = addpoint(0, pt_side_2_pos);
-
-//高さ、斜角に応じて上部点を生成
-vector pt_top_pos = pt_center_pos;
-pt_top_pos.y += base_size.y;
-int pt_top = addpoint(0, pt_top_pos);
-
-//中点の生成
-vector slider_pt_center = normalize((normalize(pt_side_1_pos - pt_center_pos) + normalize(pt_side_2_pos - pt_center_pos)));
-slider_pt_center = base_size.y / tan(radians(inside_edge_angle));
-pt_center_pos += slider_pt_center;
-int pt_center = addpoint(0, pt_center_pos);
-
-
 ○参照資料を調査
 ・雑誌
 ・ブログ
@@ -57,8 +24,46 @@ int pt_center = addpoint(0, pt_center_pos);
 ・個人目標
 
 
+ソース(GridMaker)
+・増減コントロール
+ -1本消す
+ -1本増やす
+int prim_pts[] = primpoint(0, @primnum);
+vector start_pos = point(0, "P", prim_pts[0]);
+vector end_pos = point(0, "P", prim_pts[1]);
+vector dir = normalize(start_pos - end_pos);
 
+vector line_pts[];
+float distacne_list[];
+line_pts.append(start_pos);
+line_pts.append(end_pos);
+for(int i = 0; i < nprimitives(1); ++i)
+{
+	prim_pts[] = primpoint(1, i);
+	vector prim_start_pos = point(0, "P", prim_pts[0]);
+	vector prim_end_pos = point(0, "P", prim_pts[1]);
+	vector prim_dir = normalize(prim_start_pos - prim_end_pos);
 
+	vector intersect_pos = start_pos + cross2d(prim_start_pos - start_pos, prim_dir) / cross2d(dir, prim_dir) * dir;
+	line_pts.append(intersect_pos);
+	disntace_list.append(length(start_pos - intersect_pos));
+}
+
+int order[] = argsort(dist);
+for(int i = 1; i < len(line_pts); ++i)
+{
+	//パラメーターに応じてpolylineを削除
+	if(0,5 < random(pt_1_pos)) continue;
+	
+	pt_1_pos = line_pts[order[[i]];
+	pt_2_pos = line_pts[order[i - 1]];
+	int pt_1 = addpoint()
+	int pt_2 = addpoint()
+	
+	int prim = addprim(0, "polyline");
+	addvertex(0, prim, pt_1_pos);
+	addvertex(0, prim, pt_2_pos);
+}
 
 
 
