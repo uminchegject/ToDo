@@ -1,3 +1,21 @@
+○RectangleCityで検証する準備
+・道、区画の生成
+・区画から敷地の生成
+・敷地からVolumeの生成
+
+
+○パラメーター、VolumePrimの追加
+・パラメーター
+ -Size
+・VolumePrim
+ -壁
+ -平面
+
+
+○UIをまとめた記事を作成
+・HoudiniによるUI作成について
+https://cedil.cesa.or.jp/cedil_sessions/view/3076
+
 ○参照資料を調査
 ・雑誌
 ・ブログ
