@@ -24,49 +24,6 @@
 ・個人目標
 
 
-ソース(GridMaker)
-・増減コントロール
- -1本消す
- -1本増やす
-int prim_pts[] = primpoint(0, @primnum);
-vector start_pos = point(0, "P", prim_pts[0]);
-vector end_pos = point(0, "P", prim_pts[1]);
-vector dir = normalize(start_pos - end_pos);
-
-vector line_pts[];
-float distacne_list[];
-line_pts.append(start_pos);
-line_pts.append(end_pos);
-for(int i = 0; i < nprimitives(1); ++i)
-{
-	prim_pts[] = primpoint(1, i);
-	vector prim_start_pos = point(0, "P", prim_pts[0]);
-	vector prim_end_pos = point(0, "P", prim_pts[1]);
-	vector prim_dir = normalize(prim_start_pos - prim_end_pos);
-
-	vector intersect_pos = start_pos + cross2d(prim_start_pos - start_pos, prim_dir) / cross2d(dir, prim_dir) * dir;
-	line_pts.append(intersect_pos);
-	disntace_list.append(length(start_pos - intersect_pos));
-}
-
-int order[] = argsort(dist);
-for(int i = 1; i < len(line_pts); ++i)
-{
-	//パラメーターに応じてpolylineを削除
-	if(0,5 < random(pt_1_pos)) continue;
-	
-	pt_1_pos = line_pts[order[[i]];
-	pt_2_pos = line_pts[order[i - 1]];
-	int pt_1 = addpoint()
-	int pt_2 = addpoint()
-	
-	int prim = addprim(0, "polyline");
-	addvertex(0, prim, pt_1_pos);
-	addvertex(0, prim, pt_2_pos);
-}
-
-
-
 ■反省
 ※就業中は作業に集できるように、終業後は計画に集中する
  -定時後は散歩+計画整理をセットで行う
@@ -240,67 +197,6 @@ https://www.archifuture-web.jp/magazine/columnist_sugihara_page4.html
 
 
 ■ソース
-●ソース(LineMaker)
-vector size = 
-float interval = 
-//0～1
-float randomly_interval = 
-
-int line_num = int(size.x / interval);
-vector slier = set(1, 0, 0);
-slider *= size.x / line_num;
-
-for(int i = 0; i < line_num; ++i)
-{
-	int pt_1 = addpoint(0, set(i * slider, 0, 0));
-	int pt_2 = addpoint(0, set(i * slider, 0, size.y));
-	int polyline = addprim(0, "polyline");
-	addvertex(0, polyline, pt_1);
-	addvertex(0, polyline, pt_2);
-}
-
-
-●ソース(GridMaker)
-・増減コントロール
- -1本消す
- -1本増やす
-int prim_pts[] = primpoint(0, @primnum);
-vector start_pos = point(0, "P", prim_pts[0]);
-vector end_pos = point(0, "P", prim_pts[1]);
-vector dir = normalize(start_pos - end_pos);
-
-vector line_pts[];
-float distacne_list[];
-line_pts.append(start_pos);
-line_pts.append(end_pos);
-for(int i = 0; i < nprimitives(1); ++i)
-{
-	prim_pts[] = primpoint(1, i);
-	vector prim_start_pos = point(0, "P", prim_pts[0]);
-	vector prim_end_pos = point(0, "P", prim_pts[1]);
-	vector prim_dir = normalize(prim_start_pos - prim_end_pos);
-
-	vector intersect_pos = start_pos + cross2d(prim_start_pos - start_pos, prim_dir) / cross2d(dir, prim_dir) * dir;
-	line_pts.append(intersect_pos);
-	disntace_list.append(length(start_pos - intersect_pos));
-}
-
-int order[] = argsort(dist);
-for(int i = 1; i < len(line_pts); ++i)
-{
-	//パラメーターに応じてpolylineを削除
-	if(0,5 < random(pt_1_pos)) continue;
-	
-	pt_1_pos = line_pts[order[[i]];
-	pt_2_pos = line_pts[order[i - 1]];
-	int pt_1 = addpoint()
-	int pt_2 = addpoint()
-	
-	int prim = addprim(0, "polyline");
-	addvertex(0, prim, pt_1_pos);
-	addvertex(0, prim, pt_2_pos);
-}
-
 ●ソース(Grid)
 float middle = ch("Middle");
 vector dir_rotate = chv("Dir_Rotate");
