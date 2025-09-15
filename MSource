@@ -1,8 +1,9 @@
+○Python本斥候
+
 ○RectangleCityで検証する準備
 ・道、区画の生成
 ・区画から敷地の生成
 ・敷地からVolumeの生成
-
 
 ○パラメーター、VolumePrimの追加
 ・パラメーター
@@ -11,14 +12,17 @@
  -壁
  -平面
 
+○参照資料を調査
+・雑誌
 
 ○UIをまとめた記事を作成
 ・HoudiniによるUI作成について
 https://cedil.cesa.or.jp/cedil_sessions/view/3076
-
-○参照資料を調査
-・雑誌
-・ブログ
+・Qittaと同じ分量でまとめる
+ -概要
+ -重要スライド
+ -結論
+ -Tips
 
 ●画像ベースで記事を書く
 ※ビジュアルの説明のみで概要が分かるようにする
@@ -27,19 +31,6 @@ https://cedil.cesa.or.jp/cedil_sessions/view/3076
 ・テーマを決める
 ・色んな要素を織り交ぜる 
  -※様々な視点から取り上げる
-
-・実際の雑誌の構成を参考にする
-・様々なTutorialをまとめる
- -Tutorialの比較化
-
-
-○面談準備
-・上期と下期
-
-●目標
-・チーム／プロジェクト貢献
-・技術
-・個人目標
 
 
 ■反省
@@ -62,7 +53,7 @@ https://cedil.cesa.or.jp/cedil_sessions/view/3076
 ■Private
 ○服の整理
 
-○Python本斥候
+○サバゲーアンケート
 
 
 ■CityTown
