@@ -1,16 +1,40 @@
-○Python本斥候
+○Blockの中間にラインを増やす処理を実装
 
-○RectangleCityで検証する準備
+○BaseLineから道と区画を生成
+・BaseLineを基にPrimをSplit
+・道幅に応じてPrimを縮小
+
+●GridMaker設計
+※四角形でまず検証
+ -多様なサイズのBlockを生成する
+ -ブロックの比率、スケールをコントロールできるようにする
+・BaseGridLineの生成
+ -ランダム間隔
+・増減コントロール
+ -1本消す
+ -1本増やす
+
+●GridMakerParameter
+・Multi
+ -Class
+ -BaseGridScale(縦横)
+ -RandomlyGridScale(縦横)
+ -RemoveRatio
+ -AddRatio
+
+△RectangleCityで検証する準備
 ・道、区画の生成
 ・区画から敷地の生成
 ・敷地からVolumeの生成
 
-○パラメーター、VolumePrimの追加
+
+○パラメーター、BasePrimの追加
 ・パラメーター
  -Size
-・VolumePrim
+・BasePrim
  -壁
  -平面
+
 
 ○参照資料を調査
 ・雑誌
@@ -19,10 +43,13 @@
 ・HoudiniによるUI作成について
 https://cedil.cesa.or.jp/cedil_sessions/view/3076
 ・Qittaと同じ分量でまとめる
- -概要
- -重要スライド
- -結論
- -Tips
+
+●記事のレイアウト設計
+・概要
+ -※トピックとなる重要画像を最初に貼る
+・重要スライド
+・結論
+・Tips
 
 ●画像ベースで記事を書く
 ※ビジュアルの説明のみで概要が分かるようにする
@@ -34,14 +61,11 @@ https://cedil.cesa.or.jp/cedil_sessions/view/3076
 
 
 ■反省
-※就業中は作業に集できるように、終業後は計画に集中する
+※就業中は作業に集中できるように、終業後は計画に集中する
  -定時後は散歩+計画整理をセットで行う
  -仕事、PD、委員会、etc…の中で最重要事項の計画を1つ行う
 
-※息抜き後は必ず何も聞かずに集中する時間を設ける
- -計画の振り返りを行う
 ※各工程を細分化し、それぞれの工程を多様化できるように設計する
-
 ※PD,CD作業は設計・作業を必ずルーティンにする
  -休みを挟む際もしっかり休み後の準備をする
 ※PD,CDに伴うStudyは最低限のみに留める
@@ -55,6 +79,8 @@ https://cedil.cesa.or.jp/cedil_sessions/view/3076
 
 ○サバゲーアンケート
 
+○企業研究読書
+
 
 ■CityTown
 ●Sample
@@ -63,44 +89,12 @@ https://cedil.cesa.or.jp/cedil_sessions/view/3076
 ・UVSample
  -Building Generator from Image
 
-●BlockMaker設計
-※現在のRectangleCityで検証
-・幹線道路
- -手作業
-・通常道路
- -パラメーター(自動生成)
-
 ●Module設計
 ※Rectangle
 ・Block
 ・Volume
 ・DetailVolume
  -Top(段々,SingleVolume)
-
-
-○GridMaker実装
-・BaseGridLineの生成
- -ランダム間隔
-・増減コントロール
- -1本消す
- -1本増やす
- 
-○BaseLineから道と区画を生成
-・BaseLineを基にPrimをSplit
-・道幅に応じてPrimを縮小
-
-●GridMaker設計
-※四角形でまず検証
-・多様なサイズのBlockを生成する
-・ブロックの比率、スケールをコントロールできるようにする
-
-●GridMakerParameter
-・Multi
- -Class
- -BaseGridScale(縦横)
- -RandomlyGridScale(縦横)
- -RemoveRatio
- -AddRatio
 
 
 ○Block→VolumeMaker
@@ -131,13 +125,6 @@ https://cedil.cesa.or.jp/cedil_sessions/view/3076
 ※多様性を重視したPDを設計する
  -Surface(Prim)を入力し、WoodPatternを生成する
  -柔軟なパラメーター調整ができるように設計する
-
-○パラメーターの整理
-・スケール
-・角度
- -平面
- -立面
- -斜面
 
 ○形の調整
 ・スケールに収まるようにSplit
