@@ -4,14 +4,10 @@
  -スライド、動画のスクショをまず整理する
 ※様々な視点から取り上げる
 
-○記事を一読
-
 ○重要スライドの整理
-
-○UIをまとめた記事を作成
-・HoudiniによるUI作成について
-https://cedil.cesa.or.jp/cedil_sessions/view/3076
-・Qittaと同じ分量でまとめる
+・UI作成例からまとめる
+ -Sop
+ -Lop
 
 ●記事のレイアウト設計
 ・概要
@@ -21,26 +17,24 @@ https://cedil.cesa.or.jp/cedil_sessions/view/3076
 ・Tips
 
 
-■RectangleCityの準備
-・道、区画の生成
-・区画から敷地の生成
-・敷地からVolumeの生成
-・RectangleCityの記事作成
+■区画ジェネレーター
+・多様なサイズのBlockを生成する
+・ブロックの比率、スケールをコントロールできるようにする
+
+○道幅パラメーターの実装
+・Polylineに幅の値を持たせる
+ -軸ごとに幅の値を持たせる
+
+○区画生成
+・Polylineの幅に沿ってBoxを生成し、Booleanで区画を導き出す
+
+○クラス化
+・Input、Exportそれぞれにクラスを適応する
 
 ○Module化
 ・Polyline生成
 ・区画生成
 ・クラス化
-
-○Polylineに幅の値を持たせる
-・軸ごとに幅の値を持たせる
-
-○区画生成
-・Polylineの幅に沿ってBoxを生成し、Booleanで区画を導き出す
-・道Primはとりあえず要らない
-
-○クラス化
-・Blockの中間にラインを増やす処理を実装
 
 ●ソース
 vector line_pts[];
@@ -56,17 +50,7 @@ for(int i = 0; i < nprimitives(1); ++i)
 }
 append(line_pts, end_pos);
 
-●GridMaker設計
-※四角形でまず検証
- -多様なサイズのBlockを生成する
- -ブロックの比率、スケールをコントロールできるようにする
-・BaseGridLineの生成
- -ランダム間隔
-・増減コントロール
- -1本消す
- -1本増やす
-
-●GridMakerParameter
+●Parameter
 ・Multi
  -Class
  -BaseGridScale(縦横)
