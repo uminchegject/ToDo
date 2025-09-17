@@ -28,6 +28,12 @@
 ○区画生成
 ・Polylineの幅に沿ってBoxを生成し、Booleanで区画を導き出す
 
+○Parameter化
+・BaseGridScale(縦横)
+・RandomlyGridScale(縦横)
+・RemoveRatio
+・SteetSize
+
 ○クラス化
 ・Input、Exportそれぞれにクラスを適応する
 
@@ -35,28 +41,6 @@
 ・Polyline生成
 ・区画生成
 ・クラス化
-
-●ソース
-vector line_pts[];
-append(line_pts, start_pos);
-for(int i = 0; i < nprimitives(1); ++i)
-{
-    int compare_prim_pts[] = primpoints(1, i);
-    vector prim_start_pos = point(1, "P", compare_prim_pts[0]);
-    vector prim_end_pos = point(1, "P", compare_prim_pts[1]);
-
-    vector intersect_pos = lineIntersect3D(start_pos, end_pos, prim_start_pos, prim_end_pos);   
-    append(line_pts, intersect_pos);  
-}
-append(line_pts, end_pos);
-
-●Parameter
-・Multi
- -Class
- -BaseGridScale(縦横)
- -RandomlyGridScale(縦横)
- -RemoveRatio
- -AddRatio
 
 
 ■パラメーター、BasePrimの追加
