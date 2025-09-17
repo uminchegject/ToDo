@@ -1,12 +1,24 @@
-○サバゲーアンケート
-お疲れ様です。
-中々サバゲーを企画できず申し訳ございません…!
-気温も下がってきたことも踏まえて、久しぶりのサバゲーを企画したいと思います!
-9月下旬から11月にかけて屋外フィールドで遊びたいと考えています!
-フィールドについては以前遊んだ屋外フィールド辺りか、深谷住みで車持ちのTAチーム坂本さんが参加できそうな場合は全員が車で集合できそうなフィールドにしたいと思います!
-屋外には持って来いのシーズンということで、都合を考慮して可能であれば2回程企画出来たらと考えています。
-1回目は調整さんにて9月下旬から10月辺りで企画しようかと思います。(今週の金曜日までにアンケートをして頂けると幸いです)
-2回目は追って決めていこうかと思います!
+■記事
+※画像ベースで記事を書く
+ -ビジュアルの説明のみで概要が分かるようにする
+ -スライド、動画のスクショをまず整理する
+※様々な視点から取り上げる
+
+○記事を一読
+
+○重要スライドの整理
+
+○UIをまとめた記事を作成
+・HoudiniによるUI作成について
+https://cedil.cesa.or.jp/cedil_sessions/view/3076
+・Qittaと同じ分量でまとめる
+
+●記事のレイアウト設計
+・概要
+ -※トピックとなる重要画像を最初に貼る
+・重要スライド
+・結論
+・Tips
 
 
 ■RectangleCityの準備
@@ -15,8 +27,10 @@
 ・敷地からVolumeの生成
 ・RectangleCityの記事作成
 
-○Blockの中間にラインを増やす処理を実装
-・Polylineを生成する処理において、追加でランダムな位置にラインを生成する
+○Module化
+・Polyline生成
+・区画生成
+・クラス化
 
 ○Polylineに幅の値を持たせる
 ・軸ごとに幅の値を持たせる
@@ -24,6 +38,23 @@
 ○区画生成
 ・Polylineの幅に沿ってBoxを生成し、Booleanで区画を導き出す
 ・道Primはとりあえず要らない
+
+○クラス化
+・Blockの中間にラインを増やす処理を実装
+
+●ソース
+vector line_pts[];
+append(line_pts, start_pos);
+for(int i = 0; i < nprimitives(1); ++i)
+{
+    int compare_prim_pts[] = primpoints(1, i);
+    vector prim_start_pos = point(1, "P", compare_prim_pts[0]);
+    vector prim_end_pos = point(1, "P", compare_prim_pts[1]);
+
+    vector intersect_pos = lineIntersect3D(start_pos, end_pos, prim_start_pos, prim_end_pos);   
+    append(line_pts, intersect_pos);  
+}
+append(line_pts, end_pos);
 
 ●GridMaker設計
 ※四角形でまず検証
@@ -54,27 +85,6 @@
 ○壁Prim追加
 
 ○平面Primの追加
-
-
-■記事
-※画像ベースで記事を書く
- -ビジュアルの説明のみで概要が分かるようにする
- -スライド、動画のスクショをまず整理する
-※様々な視点から取り上げる
-
-○重要スライドの整理
-
-○UIをまとめた記事を作成
-・HoudiniによるUI作成について
-https://cedil.cesa.or.jp/cedil_sessions/view/3076
-・Qittaと同じ分量でまとめる
-
-●記事のレイアウト設計
-・概要
- -※トピックとなる重要画像を最初に貼る
-・重要スライド
-・結論
-・Tips
 
 
 
