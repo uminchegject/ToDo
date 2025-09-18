@@ -1,3 +1,20 @@
+○ソースの修正
+
+
+■パラメーター、BasePrimの追加
+・パラメーター
+ -Size
+・BasePrim
+ -壁
+ -平面
+
+○壁Prim追加
+・台形
+
+○平面Primの追加
+・平行四辺形
+
+
 ■記事
 ※画像ベースで記事を書く
  -ビジュアルの説明のみで概要が分かるようにする
@@ -23,6 +40,21 @@
 ・Tips
 
 
+■CityVolumeMaker
+※Volumeのみで様々な街並みを再現する
+●Plot
+・道幅
+・区画サイズ
+・道の増減
+
+●Block
+・敷地サイズ
+
+●Volume
+・敷地比率
+・Volumeサイズ
+
+
 ■区画ジェネレーター
 ・多様なサイズのBlockを生成する
 ・ブロックの比率、スケールをコントロールできるようにする
@@ -43,27 +75,6 @@ ch("RandomlyStreetWidth")
 ・Polyline生成
 ・区画生成
 ・クラス化
-
-
-■CityMaker
-※Volumeのみで様々な街並みを再現する
-●Plot
-
-●Block
-
-●Volume
-
-
-■パラメーター、BasePrimの追加
-・パラメーター
- -Size
-・BasePrim
- -壁
- -平面
-
-○壁Prim追加
-
-○平面Primの追加
 
 
 
@@ -93,12 +104,6 @@ ch("RandomlyStreetWidth")
 ・DetailVolume
  -Top(段々,SingleVolume)
 
-
-○Block→VolumeMaker
-・平面生成処理の設計
-・パラメーター化
- -スケール
-
 ●Param
 ・Multi
  -Class
@@ -116,6 +121,7 @@ ch("RandomlyStreetWidth")
 △ModularSystem(BasePointMaker)の実装
 ・DetailObj
 ・TopObj
+
 
 
 ■CD(BoatHouse)
@@ -173,6 +179,7 @@ https://www.archifuture-web.jp/magazine/columnist_sugihara_page4.html
  -Gradation(simple, noise)
 
 
+
 ■記事
 ※PDの設計思想を重点にした記事のみをとりあえず書く
 
@@ -186,43 +193,3 @@ https://www.archifuture-web.jp/magazine/columnist_sugihara_page4.html
 ・社外の勉強会に参加
  -参考にしつつ発展させていく
 ・TechBlog
-
-
-
-■ソース
-●ソース(Grid)
-float middle = ch("Middle");
-vector dir_rotate = chv("Dir_Rotate");
-dir_rotate = radians(dir_rotate);
-vector grid_rotate = chv("Grid_Rotate");
-grid_rotate = radians(grid_rotate);
-vector center_pos = detail(1, "centroid");
-
-vector4 q_dir_rotate = eulertoquaternion(dir_rotate, 0);
-vector base_dir = set(0, 1, 0);
-vector dir = qrotate(q_dir_rotate, base_dir);
-dir = normalize(dir);
-
-float bounds[] = detailintrinsic(1, "bounds");
-vector min_all = set(bounds[0], bounds[2], bounds[4]);
-vector max_all = set(bounds[1], bounds[3], bounds[5]);
-vector ray = dir * length(min_all - max_all);
-
-vector min_pos, max_pos, hit_uv;
-intersect(1, center_pos, ray, max_pos, hit_uv);
-intersect(1, center_pos, -ray, min_pos, hit_uv);
-
-float bound_length = length(max_pos - min_pos);
-int pt_num = int(bound_length / middle);
-vector slider = dir * bound_length / pt_num;
-
-vector4 q_grid_rotate = eulertoquaternion(grid_rotate, 0);
-
-for(int i = 0; i < pt_num; i++)
-{
-    vector spawn_pos = min_pos + slider * i;
-    int pt = addpoint(0, spawn_pos);
-    setpointattrib(0, "orient", pt, q_grid_rotate, "set");
-}
-addvertex(0, prim, pt_center);
-addvertex(0, prim, pt_top);
