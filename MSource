@@ -1,6 +1,10 @@
-○ソースの修正
-
 ○スライド要約、生成AI
+
+○Houdiniセミナー
+・Houdini60Minites
+https://houdini60minutes.my.canva.site/houdini-60-minutes/
+・Houdini 21 新機能を徹底解説！各種新機能や ML などで広がるゲーム開発の未来
+https://www.creativevillage.ne.jp/category/crv_event/165497/?utm_source=cgworld&utm_medium=cpc&utm_campaign=2025
 
 
 ■パラメーター、BasePrimの追加
@@ -10,11 +14,8 @@
  -壁
  -平面
 
-○平面Primの追加
-・平行四辺形
- -Size
-
 △PMのためのツール実装
+
 
 ■記事
 ※画像ベースで記事を書く
@@ -122,7 +123,6 @@ ch("RandomlyStreetWidth")
 △ModularSystem(BasePointMaker)の実装
 ・DetailObj
 ・TopObj
-
 
 
 ■CD(BoatHouse)
