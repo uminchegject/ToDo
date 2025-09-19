@@ -1,20 +1,30 @@
-○スライド要約、生成AI
-
-○Houdiniセミナー
-・Houdini60Minites
-https://houdini60minutes.my.canva.site/houdini-60-minutes/
-・Houdini 21 新機能を徹底解説！各種新機能や ML などで広がるゲーム開発の未来
-https://www.creativevillage.ne.jp/category/crv_event/165497/?utm_source=cgworld&utm_medium=cpc&utm_campaign=2025
-
-
-■パラメーター、BasePrimの追加
-・パラメーター
- -Size
-・BasePrim
+■CD
+○第二EdgeのPrim追加
+・Prim
+ -中央
  -壁
- -平面
+・パラメーター
+ -Edge
 
-△PMのためのツール実装
+○PMのためのツール設計
+
+
+■CityVolumeMaker
+※Volumeのみで様々な街並みを再現する
+
+○実装フローの設計
+
+●Plot
+・道幅
+・区画サイズ
+・道の増減
+
+●Block
+・敷地サイズ
+
+●Volume
+・敷地比率
+・Volumeサイズ
 
 
 ■記事
@@ -22,6 +32,8 @@ https://www.creativevillage.ne.jp/category/crv_event/165497/?utm_source=cgworld&
  -ビジュアルの説明のみで概要が分かるようにする
  -スライド、動画のスクショをまず整理する
 ※様々な視点から取り上げる
+
+○スライド要約、生成AIの調査
 
 ○各トピックのスライド整理
 
@@ -42,43 +54,6 @@ https://www.creativevillage.ne.jp/category/crv_event/165497/?utm_source=cgworld&
 ・Tips
 
 
-■CityVolumeMaker
-※Volumeのみで様々な街並みを再現する
-●Plot
-・道幅
-・区画サイズ
-・道の増減
-
-●Block
-・敷地サイズ
-
-●Volume
-・敷地比率
-・Volumeサイズ
-
-
-■区画ジェネレーター
-・多様なサイズのBlockを生成する
-・ブロックの比率、スケールをコントロールできるようにする
-
-○Parameter化
-ch("PlaceAngle")
-ch("LineAngle")
-ch("Iterval")
-ch("RandomlyInterval")
-ch("ratio")
-ch("StreetWidth")
-ch("RandomlyStreetWidth")
-
-○クラス化
-・Input、Exportそれぞれにクラスを適応する
-
-○Module化
-・Polyline生成
-・区画生成
-・クラス化
-
-
 
 ■反省
 ※就業中は作業に集中できるように、終業後は計画に集中する
@@ -90,6 +65,13 @@ ch("RandomlyStreetWidth")
 ○服の整理
 
 ○企業研究読書
+
+○Houdiniセミナー
+・Houdini60Minites
+https://houdini60minutes.my.canva.site/houdini-60-minutes/
+・Houdini 21 新機能を徹底解説！各種新機能や ML などで広がるゲーム開発の未来
+https://www.creativevillage.ne.jp/category/crv_event/165497/?utm_source=cgworld&utm_medium=cpc&utm_campaign=2025
+
 
 
 ■CityTown
