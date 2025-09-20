@@ -33,22 +33,10 @@
  -スライド、動画のスクショをまず整理する
 ※様々な視点から取り上げる
 
-○Study設計
-・TutorialHipにおいて重要な処理をNotionでまとめる
-
 ○各トピックのスライド整理
 ・Notionで整理
 
 ○他CEDIL資料の調査
-
-●トピック
-・実装フロー
- -Sop
- -Lop
-・作例
- -タイトル画面
- ーメニュー画面
- ーHUD
 
 ●記事のレイアウト設計
 ・概要
@@ -56,6 +44,17 @@
 ・重要スライド
 ・結論
 ・Tips
+
+
+■Study
+・Cedilの資料を説明
+・Tutorialの重要処理を説明
+
+○Cedil資料調査
+https://cedil.cesa.or.jp/cedil_sessions/search?query=houdini
+
+○HoudiniによるUI作成について
+https://cedil.cesa.or.jp/cedil_sessions/view/3076
 
 
 ■反省
