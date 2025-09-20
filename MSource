@@ -1,5 +1,5 @@
 ■CD
-○EdgeMaker
+○EdgeMakerの実装
 ・傾きパラメーター
 ・高さパラメーター
  -Clamp
@@ -17,37 +17,29 @@
 ■CityVolumeMaker
 ※Volumeのみで様々な街並みを再現する
 
-○実装フローの設計
-
-●Plot
+○PlotMaker
 ・Streetを色付けする
-・パラメーター
- -道幅
- -区画サイズ
- -道の増減
+・道幅
+・区画サイズ
+・道の増減
 
-●Block
+○BlockMaker
 ・Greebleを一定値まで分割し続ける処理を実装
-・パラメーター
- -敷地サイズ
+・敷地サイズ
 
-●Volume
+○Volume
 ・敷地比率
 ・Volumeサイズ
 
 
-■記事
+■ポートフォリオ(記事)
 ※画像ベースで記事を書く
  -ビジュアルの説明のみで概要が分かるようにする
  -スライド、動画のスクショをまず整理する
-※様々な視点から取り上げる
 
-○各トピックのスライド整理
-・Notionで整理
+○CityMaker
 
-○他CEDIL資料の調査
-
-●記事のレイアウト設計
+●レイアウト
 ・概要
  -※トピックとなる重要画像を最初に貼る
 ・重要スライド
@@ -55,11 +47,12 @@
 ・Tips
 
 
-■Study
+■Study(ナレッジ)
+※重要そうな箇所はスクショしてNotionにメモと一緒にひたすら張っていく
 ・Cedilの資料を説明
 ・Tutorialの重要処理を説明
 
-○Cedil資料調査
+○CEDIL資料調査
 https://cedil.cesa.or.jp/cedil_sessions/search?query=houdini
 
 ○HoudiniによるUI作成について
