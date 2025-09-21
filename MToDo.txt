@@ -1,24 +1,119 @@
-■Study 
-○ProjectSkylark
-https://www.sidefx.com/learn-main-menu/tech-demos/project-skylark/
+○小話
+・jリーグとプロ野球の比較
+ -地域密着型
+・チーム名、エンブレム
+ -サンフレッチェ広島
+ -徳島ヴォルティス
+ -ザスパ群馬
+・チームマスコット
+ -ヴィッセル神戸
+ -名古屋グランパス
+・サポーターの地域性
+ -チーム側の地域特性に対して、サポーター側でも地域
+・チャント
+ -
+ -ファジアーノ岡山
+・フラッグ
+ -京都サンガ
+ -サガン鳥栖
 
-○IT Text コンピュータグラフィックスの基礎
-※もう一度読む
-・CGにおける数学の活用方法
+●チーム目標
+・TAとしてプロジェクトに貢献できるHoudiniの技術を身につける
+ -趣味でやっていたHoudiniと業務のHoudiniにギャップがあり、現在のHoudiniの知見ではプロジェクトへの貢献ができないと感じたため、
+ -業務としてプロジェクトへ貢献できるHoudini技術を身につけることを目標にしたい。
+・CEDECのHoudini講演を公聴し、業務として重要な部分をナレッジとしてnotionに共有
+ 
+●個人技術目標
+・デザインにおける業務の把握
+ -Houdiniでのプロジェクト貢献に際してTAとしてデザイン側の業務の把握も重要かと思うので、デザイン側での業務の理解をしていきたい。
+・職種に関する本と、CGに関する本を購読
+ 
+●個人目標
+・背景のプロシージャルモデリングの実践
+ -趣味の部分でやっていたHoudiniのプロシージャルモデリングについて、デザインにおける業務の勉強したことを活かして、背景のプロシージャルモデリングにチャレンジしたい。
+・
 
-○オブジェクト設計スタイルガイド
-・設計
 
-●資料
-・Qiita
-https://qiita.com/tags/houdini
-・Cedil
-https://cedil.cesa.or.jp/
+■CD
+○EdgeMakerの実装
+・傾きパラメーター
+・高さパラメーター
+ -Clamp
+・角度パラメーター
+ -増減
 
+○第二EdgeのPrim追加
+・Prim
+ -中央
+ -壁
+・パラメーター
+ -Edge
+
+
+■CityVolumeMaker
+※Volumeのみで様々な街並みを再現する
+
+○PlotMaker
+・Streetを色付けする
+・道幅
+・区画サイズ
+・道の増減
+
+○BlockMaker
+・Greebleを一定値まで分割し続ける処理を実装
+・敷地サイズ
+
+○Volume
+・敷地比率
+・Volumeサイズ
+
+
+■ポートフォリオ(記事)
+※画像ベースで記事を書く
+ -ビジュアルの説明のみで概要が分かるようにする
+ -スライド、動画のスクショをQiitaの下書きでまず整理する
+※Module、多様性
+※Color + Objの組み合わせでPD,CDで面白いものを作る
+
+○CityMaker
+
+●レイアウト
+・概要
+ -※トピックとなる重要画像を最初に貼る
+・重要スライド
+・結論
+・Tips
+
+
+■Study(ナレッジ)
+※重要そうな箇所はスクショしてNotionにメモと一緒にひたすら張っていく
+・Cedilの資料を説明
+・Tutorialの重要処理を説明
+
+○CEDIL資料調査
+https://cedil.cesa.or.jp/cedil_sessions/search?query=houdini
+
+○HoudiniによるUI作成について
+https://cedil.cesa.or.jp/cedil_sessions/view/3076
+
+
+■反省
+※就業中は作業に集中できるように、終業後は計画に集中する
+ -定時後は散歩+計画整理をセットで行う
+ -仕事、PD、委員会、etc…の中で最重要事項の計画を1つ行う
+
+○Public修正
+・ソース修正
+・attributeを重ねないようにする
+
+○Houdiniセミナー
+・Houdini60Minites
+https://houdini60minutes.my.canva.site/houdini-60-minutes/
+・Houdini 21 新機能を徹底解説！各種新機能や ML などで広がるゲーム開発の未来
+https://www.creativevillage.ne.jp/category/crv_event/165497/?utm_source=cgworld&utm_medium=cpc&utm_campaign=2025
 
 
 ■Private
-○書類棚整理
-・保証書、重要書類を整理
+○服の整理
 
-△自転車修理
+○企業研究読書

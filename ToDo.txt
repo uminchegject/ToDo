@@ -1,0 +1,126 @@
+■City
+●Sample
+・CityGeneratorSample
+ -たのしい都市ジェネレータ(https://www.youtube.com/watch?v=Y6-EWYXZG4s)
+・UVSample
+ -Building Generator from Image
+
+●Module設計
+※Rectangle
+・Block
+・Volume
+・DetailVolume
+ -Top(段々,SingleVolume)
+
+●Param
+・Multi
+ -Class
+ -MinScale
+ -△RemoveRatio
+
+
+△イメージ収集
+・素材収集
+ -NY
+ -Tokyo
+
+△Module作成
+
+△ModularSystem(BasePointMaker)の実装
+・DetailObj
+・TopObj
+
+
+
+■CD(BoatHouse)
+※多様性を重視したPDを設計する
+ -Surface(Prim)を入力し、WoodPatternを生成する
+ -柔軟なパラメーター調整ができるように設計する
+
+○形の調整
+・スケールに収まるようにSplit
+・厚みを持たせる
+
+△WoodPatternの実装
+
+
+△検証用モデルの用意
+※シンプルかつ必要な要素を含めるように実装する
+・2階部分以外をSurfaceで生成する
+
+△2階部分を設計
+・屋根(Edge)
+
+△CD調査
+※GridPatternのPDから最適化を行うCDを設計する
+・建築は、柔らかい科学に近づく
+ -条件
+ -評価
+・杉原コラム
+https://www.archifuture-web.jp/magazine/columnist_sugihara_page4.html
+
+
+●Design
+・Edge
+・HorizontalLine
+
+●ProceduralLogic
+・Edge
+・Line
+
+
+●BasePattern
+・BaseLine
+ -Middle
+ -Rotate
+
+●BaseVolume
+
+●SwingPattern
+・BaseParam
+ -scale
+ -Pos
+ -Rotate
+・PatternParam
+ -Simple
+ -Randomly
+ -Gradation(simple, noise)
+
+
+
+■DetailTown(Asset・PM)
+○Study
+・blenderで作るたのしい建物ジェネレータ
+https://www.youtube.com/watch?v=YMiLpZyqLE8
+
+○Asset Study
+・PROJECT TITAN BUILDING TOOL
+https://www.sidefx.com/ja/tutorials/project-titan-building-tool/
+・Soul: City
+https://www.fab.com/ja/listings/dd77fee6-0ad2-41ce-b32c-09300c24c9f3
+
+○PM Study
+・village.hip
+
+○VolumeMaker拡張
+・ユニット管理
+・平面に凹凸を用意する
+ -Clusterを大きくする
+・スケール感を小さくする
+
+○BasePointMakerの拡張
+・細かい配置調整ができるようにする
+
+●Sample
+・Houdini sci-fi Buildings || Tutorial
+https://www.youtube.com/watch?v=PTVal-t9g1k&t=1s
+・Houdini Tutorial Megastructure Generator
+https://www.youtube.com/watch?v=J5A3Z0qX-Yk
+
+
+
+■Private
+○書類棚整理
+・保証書、重要書類を整理
+
+△自転車修理
