@@ -1,0 +1,83 @@
+■CD
+○EdgeMakerの実装
+・傾きパラメーター
+・高さパラメーター
+ -Clamp
+・角度パラメーター
+ -増減
+
+●ソース
+int prim_pt_list[] = primpoints(i@primnum);
+int new_pt_list[];
+for(int i = 1; i < len(prim_pt_list) - 1; ++i)
+{
+	int last_prim_pt = prim_pt_list[i - 1];
+	int prim_pt = prim_pt_list[i];
+	int next_prim_pt = prim_pt_list[i + 1];
+	
+	vector last_prim_pt_pos = point(0, "P", last_prim_pt);
+	vector prim_pt_pos = point(0, "P", prim_pt);
+	vector next_prim_pt_pos = point(0, "P", next_prim_pt);
+	
+	vector last_prim_pt_dir = normalize(last_prim_pt_pos - prim_pt_pos);
+	vector next_prim_pt_dir = normalize(next_prim_pt_pos - prim_pt_pos);
+	
+	
+	float edge_angle = acos( clamp( dot(last_prim_pt_dir, next_prim_pt_dir), -1, 1 ) );
+	edge_angle = degrees(angle);
+	
+	//next_prim_pt_posを回転
+	vector next_prim_pt_pos = 
+	
+	//新しいポイントを生成
+	vector pt_pos = 
+	
+	//高さ調整
+	pt_pos.y = 
+	
+	//高さ傾き調整
+	vector slider = 
+	pt_pos += slider;
+	
+	//prim生成
+	int pt = addpoint(0, pt_pos);
+	append(new_pt_list, pt);
+}
+
+○第二EdgeのPrim追加
+・Prim
+ -中央
+ -壁
+・パラメーター
+ -Edge
+
+
+■CityVolumeMaker
+※Volumeのみで様々な街並みを再現する
+
+○PlotMaker
+・Streetを色付けする
+・道幅
+・区画サイズ
+・道の増減
+
+○BlockMaker
+・Greebleを一定値まで分割し続ける処理を実装
+・敷地サイズ
+
+●ソース
+・SubDivisionのソースを確認
+ -GPT
+
+○Volume
+・敷地比率
+・Volumeサイズ
+
+●ソース
+vector base_scale = 
+vector base_pos = 
+vector randomly_scale = random();
+vector randomly_pos = random();
+
+vector center_pos = base_pos + randomly_pos * base_scale;
+vector pt1_pos += (center_pos - pt1_pos) * randomly_scale;
