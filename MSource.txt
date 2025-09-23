@@ -7,47 +7,69 @@
  -増減
 
 ●ソース
+float edge_angle = 30;
+float height_angle = 30;
+vector axis = set(0, 1, 0);
+matrix3 rot = ident();
+int prim_pt_list[] = primpoints(0, i@primnum);
+vector new_pt_pos_list[];
 
-float edge_angle = 
-float height_angle = 
-
-int prim_pt_list[] = primpoints(i@primnum);
-int new_pt_list[];
-for(int i = 1; i < len(prim_pt_list) - 1; ++i)
+for(int i = 0; i < len(prim_pt_list); ++i)
 {
-	int last_prim_pt = prim_pt_list[i - 1];
-	int prim_pt = prim_pt_list[i];
-	int next_prim_pt = prim_pt_list[i + 1];
+    int last_prim_pt = prim_pt_list[i - 1];
+    int prim_pt = prim_pt_list[i];
+    int next_prim_pt = prim_pt_list[i + 1];
+    
+    vector last_prim_pt_pos = point(0, "P", last_prim_pt);
+    vector prim_pt_pos = point(0, "P", prim_pt);
+    vector next_prim_pt_pos = point(0, "P", next_prim_pt);
+    
+    vector last_prim_pt_dir = normalize(last_prim_pt_pos - prim_pt_pos);
+    vector next_prim_pt_dir = normalize(next_prim_pt_pos - prim_pt_pos);
 	
-	vector last_prim_pt_pos = point(0, "P", last_prim_pt);
-	vector prim_pt_pos = point(0, "P", prim_pt);
-	vector next_prim_pt_pos = point(0, "P", next_prim_pt);
-	
-	vector last_prim_pt_dir = normalize(last_prim_pt_pos - prim_pt_pos);
-	vector next_prim_pt_dir = normalize(next_prim_pt_pos - prim_pt_pos);
-	
-	//next_prim_pt_posを回転
-	※for文で全体を回転
-	vector axis = normalize(cross(last_prim_pt_dir, next_prim_pt_dir));
-	vector next_prim_pt_vector = last_prim_pt_pos - prim_pt_pos;
-	rotate(next_prim_pt_vector, radians(edge_angle), axis);
-	next_prim_pt_pos = prim_pt_pos + next_prim_pt_vector;
-	
-	//新しいポイントを生成
-	vector pt_pos = 
+	vector pt_pos = prim_pt_pos;	
+	//回転
+    if(0 < i)
+	{		
+		rot = ident();
+		rotate(rot, radians(edge_angle), axis);
+		vector rotate_vector = rot * (last_prim_pt_pos - prim_pt_pos);
+		pt_pos = pt_pos + rotate_vector;
+	}
 	
 	//高さ調整
-	※パラメーター調査
-	pt_pos.y = 
-	
-	//高さ傾き調整
-	※Test_Hipの処理を参考にする
-	vector slider = 
-	pt_pos += slider;
-	
-	//prim生成
-	int pt = addpoint(0, pt_pos);
-	append(new_pt_list, pt);
+	pt_pos.y += 1;
+
+    
+    //高さ傾き調整
+	if(0 == i)
+	{
+		rot = ident();
+		rotate(rot, height_angle, axis);
+		vector rotate_vector = next_prim_pt_dir * rot;
+		rotate_vector *= 1 * tan(radians(height_angle));
+		start_prim_pt_pos += rotate_vector;
+	}
+	else if(i == len(prim_pt_list - 1))
+	{
+		rot = ident();
+		rotate(rot, height_angle, axis);
+		vector rotate_vector = -last_prim_pt_dir * rot;
+		rotate_vector *= 1 * tan(radians(height_angle));
+		start_prim_pt_pos += rotate_vector;		
+	}
+	else{	
+		vector edge_center_dir = normalize(last_prim_pt_dir + next_prim_pt_dir) / 2;
+		edge_center_dir *=  1 * tan(radians(height_angle));
+		pt_pos += -edge_center_dir;
+	}
+
+    append(new_pt_pos_list, pt_pos);
+}
+
+foreach(vector pt_pos; new_pt_pos_list)
+{
+    addpoint(0, pt_pos);
 }
 
 ○第二EdgeのPrim追加
@@ -74,6 +96,117 @@ for(int i = 1; i < len(prim_pt_list) - 1; ++i)
 ●ソース
 ※SubDivisionのソースを確認
  -GPT
+
+
+vector edgev(int h){
+    vector src = point(0, "P", hedge_srcpoint(0, h));
+    vector dst = point(0, "P", hedge_dstpoint(0, h));
+    return dst - src;
+}
+
+int h = primhedge(0, @primnum);
+int temp = h;
+
+int longest_edge = h;
+float max_l = 0;
+do{
+    float l = length(edgev(h));
+    if(l > max_l){
+        max_l = l;
+        longest_edge = h;
+    }
+     h = hedge_next(0,h);
+   
+}while(h != temp);
+i@cut_edge = longest_edge;
+
+
+vector edgev(int h){
+    vector src = point(0, "P", hedge_srcpoint(0, h));
+    vector dst = point(0, "P", hedge_dstpoint(0, h));
+    return dst - src;
+}
+
+// inspired by https://iquilezles.org/www/articles/distfunctions/distfunctions.htm
+int on_line( vector p; int edge)
+{
+  vector a = point(0, "P",hedge_srcpoint(0, edge));
+  vector b = point(0, "P",hedge_dstpoint(0, edge)); 
+   
+  vector pa = p - a, ba = b - a;
+  float h = clamp( dot(pa,ba)/dot(ba,ba), 0.0, 1.0 );
+  return  length(pa - ba*h) < 1e-9;
+}
+
+
+int h = i@cut_edge;
+int temp = h;
+
+vector src = point(0, "P", hedge_srcpoint(0, h));
+vector dst = point(0, "P", hedge_dstpoint(0, h));
+vector edge = dst - src;
+
+float randomness = clamp(ch("randomness"), 0, 1);
+
+randomness = fit01(randomness, .5, .01);
+vector rand_p = src + edge * fit01(float(rand(@primnum + detail(1, "iteration") + ch("seed"))), randomness, 1 - randomness);
+
+
+int closest_edge;
+vector hit_p;
+float min_dist = 1e10;
+int i = 0;
+int index = -1;
+int pts[];
+int temp_2 = h;
+do{
+    int next = hedge_next(0, h);
+    vector next_dst = point(0, "P", hedge_dstpoint(0, next));
+    vector next_src = point(0, "P", hedge_srcpoint(0, next));
+   
+    int hit;
+    
+    //set up clip plane
+    vector4 plane =normalize(edge); 
+    plane.w = -dot(normalize(edge), rand_p);
+
+    vector temp_p = rand_p;
+    vector temp_src = next_src;
+    vector temp_dst = next_dst;
+    clip(hit, next_dst, next_src, plane);
+    float l = distance(temp_src, next_src);
+    if(on_line(next_src, next) && l > 1e-9 && next != temp && distance(rand_p, next_src) < min_dist){
+            min_dist = distance(rand_p, next_src);
+            hit_p = next_src;
+            closest_edge = next;
+            index = i + 1;      
+    }     
+    
+    append(pts, hedge_dstpoint(0, h));
+    h = next;
+    dst = next_dst;
+    i++;
+}while(h != temp);
+
+if(index == -1){
+    @group_remove_me = 0;
+    return;
+}
+
+int start = addpoint(0, rand_p);
+int end = addpoint(0, hit_p);
+
+int prim_1[] = array(start);
+append(prim_1, pts[0:index]);
+append(prim_1, end);
+
+
+int prim_2[] =  array(end);
+append(prim_2, pts[index : len(pts)]);
+append(prim_2, start);
+addprim(0, "poly", prim_1);
+addprim(0, "poly", prim_2);
+
 
 ○Volume
 ・敷地比率
