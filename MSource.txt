@@ -7,6 +7,10 @@
  -増減
 
 ●ソース
+
+float edge_angle = 
+float height_angle = 
+
 int prim_pt_list[] = primpoints(i@primnum);
 int new_pt_list[];
 for(int i = 1; i < len(prim_pt_list) - 1; ++i)
@@ -22,20 +26,22 @@ for(int i = 1; i < len(prim_pt_list) - 1; ++i)
 	vector last_prim_pt_dir = normalize(last_prim_pt_pos - prim_pt_pos);
 	vector next_prim_pt_dir = normalize(next_prim_pt_pos - prim_pt_pos);
 	
-	
-	float edge_angle = acos( clamp( dot(last_prim_pt_dir, next_prim_pt_dir), -1, 1 ) );
-	edge_angle = degrees(angle);
-	
 	//next_prim_pt_posを回転
-	vector next_prim_pt_pos = 
+	※for文で全体を回転
+	vector axis = normalize(cross(last_prim_pt_dir, next_prim_pt_dir));
+	vector next_prim_pt_vector = last_prim_pt_pos - prim_pt_pos;
+	rotate(next_prim_pt_vector, radians(edge_angle), axis);
+	next_prim_pt_pos = prim_pt_pos + next_prim_pt_vector;
 	
 	//新しいポイントを生成
 	vector pt_pos = 
 	
 	//高さ調整
+	※パラメーター調査
 	pt_pos.y = 
 	
 	//高さ傾き調整
+	※Test_Hipの処理を参考にする
 	vector slider = 
 	pt_pos += slider;
 	
@@ -66,7 +72,7 @@ for(int i = 1; i < len(prim_pt_list) - 1; ++i)
 ・敷地サイズ
 
 ●ソース
-・SubDivisionのソースを確認
+※SubDivisionのソースを確認
  -GPT
 
 ○Volume
