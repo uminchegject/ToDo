@@ -1,18 +1,23 @@
-■上期反省
+○サバゲー決定
+・フィールドの確認
+・車の確認
+
+■下期目標
 ●現場で用いられる技術についての勉強
-　ー実際の業務を通じてツールの実装に必要な技術を習得
-　ーCEDILのHoudini講演を通じて、業務として重要な部分勉強した上でナレッジとしてnotionに共有
-・Tutorialの習得
+ -実際の業務を通じてツールの実装に必要な技術を習得
+ -CEDILなどHoudini講演から技術を習得
+・勉強した技術をナレッジに共有していきたい
 
 ●業務フロー、CGに関する知識を習得
-　ーワークフローについての本を読書
-　ーCGについての本を読書
-・インプットはできたが、仕事に直結しているかが微妙…
+ -ワークフローについての本を読書
+ -CGについての本を読書
+・仕事に直結した勉強をしていきたい
+ -インプットはできたが、仕事に直結しているかが微妙…
 
 ●背景プロシージャルモデリングの事例、Tutorialを勉強
-　ーTutorialを勉強(ProjectSkylark、 Tutorial)
-　ー地形生成に関する文献を調査
-・
+ -Tutorialを勉強(ProjectSkylark、 Tutorial)
+ -地形生成に関する文献を調査
+・読書の時間をしっかり設けたい
 
 
 ■CD
@@ -74,11 +79,23 @@
 ・Cedilの資料を説明
 ・Tutorialの重要処理を説明
 
+○HoudiniによるUI作成について
+https://cedil.cesa.or.jp/cedil_sessions/view/3076
+・概要
+ -Sopで素材を用意
+ -Lopでレイアウト
+・ボタン
+ -Sopで生成した素材を画像でまとめる
+ -Lopの全体像を画像
+・HUD
+ -各パーツのSop&Lop
+・Tips
+ -コメントとスライドからTipを調査
+
+
 ○CEDIL資料調査
 https://cedil.cesa.or.jp/cedil_sessions/search?query=houdini
 
-○HoudiniによるUI作成について
-https://cedil.cesa.or.jp/cedil_sessions/view/3076
 
 
 ■反省
