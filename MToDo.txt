@@ -1,15 +1,18 @@
-■振り返り
-・現場で用いられる技術についての勉強
+■上期反省
+●現場で用いられる技術についての勉強
 　ー実際の業務を通じてツールの実装に必要な技術を習得
 　ーCEDILのHoudini講演を通じて、業務として重要な部分勉強した上でナレッジとしてnotionに共有
+・Tutorialの習得
 
-・業務フロー、CGに関する知識を習得
+●業務フロー、CGに関する知識を習得
 　ーワークフローについての本を読書
 　ーCGについての本を読書
+・インプットはできたが、仕事に直結しているかが微妙…
 
-・背景プロシージャルモデリングの事例、Tutorialを勉強
+●背景プロシージャルモデリングの事例、Tutorialを勉強
 　ーTutorialを勉強(ProjectSkylark、 Tutorial)
 　ー地形生成に関する文献を調査
+・
 
 
 ■CD
@@ -34,20 +37,21 @@
 ■CityVolumeMaker
 ※Volumeのみで様々な街並みを再現する
 
-○PlotMaker
-・Streetを色付けする
+○クラス化
+・BlockMaker
+・VolumeMaker
+
+●PlotMaker
 ・道幅
 ・区画サイズ
 ・道の増減
 
-○BlockMaker
-・クラス化
+●BlockMaker
 ・敷地サイズ
 
-○Volume
-・クラス化
+●VolumeMaker
 ・敷地比率
-・Volumeサイズ
+・VolumeHeight
 
 
 ■ポートフォリオ(記事)
