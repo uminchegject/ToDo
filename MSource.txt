@@ -46,6 +46,13 @@
 ○パラメーター設計
 ・Clampで実装
 ・Height設定でテスト
+int prim_pt_list[] = primpoints(0, i@primnum);
+for(int i = 0; i < len(prim_pt_list); ++i)
+{
+	float ramp_pos = i / len(prim_pt_list);
+	float height = chramp("height_param", ramp_pos);
+	pt_pos.y += ramp_height;
+}
 
 ○回転処理実装
 
