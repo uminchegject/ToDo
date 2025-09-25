@@ -1,3 +1,6 @@
+※直近で使う技術を勉強する
+※直近で使う知識を読書する
+
 ■CD
 ○EdgeMakerの実装
 ※LineToSurface
