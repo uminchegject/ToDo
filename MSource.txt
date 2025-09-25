@@ -43,20 +43,29 @@
 
 
 ■CD
-○パラメーター設計
-・Clampで実装
-・Height設定でテスト
-int prim_pt_list[] = primpoints(0, i@primnum);
-for(int i = 0; i < len(prim_pt_list); ++i)
-{
-	float ramp_pos = i / len(prim_pt_list);
-	float height = chramp("height_param", ramp_pos);
-	pt_pos.y += ramp_height;
-}
-
-○回転処理実装
-
 ○傾き処理実装
+//高さ傾き調整
+if(0 == i)
+{
+	rot = ident();
+	rotate(rot, height_angle, axis);
+	vector rotate_vector = next_prim_pt_dir * rot;
+	rotate_vector *= 1 * tan(radians(height_angle));
+	start_prim_pt_pos += rotate_vector;
+}
+else if(i == len(prim_pt_list - 1))
+{
+	rot = ident();
+	rotate(rot, height_angle, axis);
+	vector rotate_vector = -last_prim_pt_dir * rot;
+	rotate_vector *= 1 * tan(radians(height_angle));
+	start_prim_pt_pos += rotate_vector;		
+}
+else{	
+	vector edge_center_dir = normalize(last_prim_pt_dir + next_prim_pt_dir) / 2;
+	edge_center_dir *=  1 * tan(radians(height_angle));
+	pt_pos += -edge_center_dir;
+}
 
 ●EdgeMaker
 ・傾きパラメーター
@@ -65,71 +74,6 @@ for(int i = 0; i < len(prim_pt_list); ++i)
 ・角度パラメーター
  -増減
 
-●ソース
-float edge_angle = 30;
-float height_angle = 30;
-vector axis = set(0, 1, 0);
-matrix3 rot = ident();
-int prim_pt_list[] = primpoints(0, i@primnum);
-vector new_pt_pos_list[];
-
-for(int i = 0; i < len(prim_pt_list); ++i)
-{
-    int last_prim_pt = prim_pt_list[i - 1];
-    int prim_pt = prim_pt_list[i];
-    int next_prim_pt = prim_pt_list[i + 1];
-    
-    vector last_prim_pt_pos = point(0, "P", last_prim_pt);
-    vector prim_pt_pos = point(0, "P", prim_pt);
-    vector next_prim_pt_pos = point(0, "P", next_prim_pt);
-    
-    vector last_prim_pt_dir = normalize(last_prim_pt_pos - prim_pt_pos);
-    vector next_prim_pt_dir = normalize(next_prim_pt_pos - prim_pt_pos);
-	
-	vector pt_pos = prim_pt_pos;	
-	//回転
-    if(0 < i)
-	{		
-		rot = ident();
-		rotate(rot, radians(edge_angle), axis);
-		vector rotate_vector = rot * (last_prim_pt_pos - prim_pt_pos);
-		pt_pos = pt_pos + rotate_vector;
-	}
-	
-	//高さ調整
-	pt_pos.y += 1;
-
-    
-    //高さ傾き調整
-	if(0 == i)
-	{
-		rot = ident();
-		rotate(rot, height_angle, axis);
-		vector rotate_vector = next_prim_pt_dir * rot;
-		rotate_vector *= 1 * tan(radians(height_angle));
-		start_prim_pt_pos += rotate_vector;
-	}
-	else if(i == len(prim_pt_list - 1))
-	{
-		rot = ident();
-		rotate(rot, height_angle, axis);
-		vector rotate_vector = -last_prim_pt_dir * rot;
-		rotate_vector *= 1 * tan(radians(height_angle));
-		start_prim_pt_pos += rotate_vector;		
-	}
-	else{	
-		vector edge_center_dir = normalize(last_prim_pt_dir + next_prim_pt_dir) / 2;
-		edge_center_dir *=  1 * tan(radians(height_angle));
-		pt_pos += -edge_center_dir;
-	}
-
-    append(new_pt_pos_list, pt_pos);
-}
-
-foreach(vector pt_pos; new_pt_pos_list)
-{
-    addpoint(0, pt_pos);
-}
 
 ○第二EdgeのPrim追加
 ・Prim
