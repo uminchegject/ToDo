@@ -45,27 +45,30 @@
 ■CD
 ○傾き処理実装
 //高さ傾き調整
+vector last_rotate_vector;
 if(0 == i)
 {
 	rot = ident();
 	rotate(rot, height_angle, axis);
 	vector rotate_vector = next_prim_pt_dir * rot;
 	rotate_vector *= 1 * tan(radians(height_angle));
-	start_prim_pt_pos += rotate_vector;
+	prim_pt += start_prim_pt_pos + rotate_vector;
+	last_rotate_vector = rotate_vector;
 }
-else if(i == len(prim_pt_list - 1))
+else if(i == len() - 1)
+{
+	pt_pos += last_rotate_vector;
+}
+else
 {
 	rot = ident();
 	rotate(rot, height_angle, axis);
-	vector rotate_vector = -last_prim_pt_dir * rot;
+	vector rotate_vector = next_prim_pt_dir * rot;
 	rotate_vector *= 1 * tan(radians(height_angle));
-	start_prim_pt_pos += rotate_vector;		
+	pt_pos += start_prim_pt_pos + rotate_vector + last_rotate_vector;
+	last_rotate_vector = rotate_vector;
 }
-else{	
-	vector edge_center_dir = normalize(last_prim_pt_dir + next_prim_pt_dir) / 2;
-	edge_center_dir *=  1 * tan(radians(height_angle));
-	pt_pos += -edge_center_dir;
-}
+
 
 ●EdgeMaker
 ・傾きパラメーター

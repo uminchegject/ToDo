@@ -1,6 +1,3 @@
-※直近で使う技術を勉強する
-※直近で使う知識を読書する
-
 ■CD
 ○EdgeMakerの実装
 ※LineToSurface
@@ -79,9 +76,11 @@ https://cedil.cesa.or.jp/cedil_sessions/search?query=houdini
 
 
 ■反省
-※就業中は作業に集中できるように、終業後は計画に集中する
- -定時後は散歩+計画整理をセットで行う
- -仕事、PD、委員会、etc…の中で最重要事項の計画を1つ行う
+※直近で使う技術を勉強する
+ -Study
+ -Tutotorial
+※直近で使う知識を読書する
+ -Read
 
 ○Houdiniセミナー
 ・Houdini60Minites
