@@ -1,3 +1,7 @@
+○クラス化
+
+○傾き処理の実装
+
 ■CD
 ○EdgeMakerの実装
 ※LineToSurface
@@ -42,19 +46,7 @@
 ・Cedilの資料を説明
 ・Tutorialの重要処理を説明
 
-○HoudiniによるUI作成について
-https://cedil.cesa.or.jp/cedil_sessions/view/3076
-・概要
- -Sopで素材を用意
- -Lopでレイアウト
-・ボタン
- -Sopで生成した素材を画像でまとめる
- -Lopの全体像を画像
-・HUD
- -各パーツのSop&Lop
-・Tips
- -コメントとスライドからTipを調査
-
+○
 
 ○CEDIL資料調査
 https://cedil.cesa.or.jp/cedil_sessions/search?query=houdini
