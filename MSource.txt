@@ -49,15 +49,15 @@ vector last_rotate_vector;
 if(0 == i)
 {
 	rot = ident();
-	rotate(rot, height_angle, axis);
+	rotate(rot, radians(90), axis);
 	vector rotate_vector = next_prim_pt_dir * rot;
-	rotate_vector *= 1 * tan(radians(height_angle));
-	prim_pt += start_prim_pt_pos + rotate_vector;
+	rotate_vector *= 5 * tan(radians(ramp_height));
+	pt_pos += rotate_vector;
 	last_rotate_vector = rotate_vector;
 }
 else if(i == len() - 1)
 {
-	pt_pos += last_rotate_vector;
+
 }
 else
 {
@@ -84,3 +84,67 @@ else
  -壁
 ・パラメーター
  -Edge
+ 
+
+●ソース
+function vector lineIntersect3D(vector p0, p1, p2, p3)
+{
+    vector u = p1 - p0;
+    vector v = p3 - p2;
+    vector w = p0 - p2;
+
+    float a = dot(u,u);
+    float b = dot(u,v);
+    float c = dot(v,v);
+    float d = dot(u,w);
+    float e = dot(v,w);
+
+    float sc = (b*e - c*d) / (a*c - b*b);
+    float tc = (a*e - b*d) / (a*c - b*b);    
+
+    vector pA = p0 + sc * u;
+    vector pB = p2 + tc * v;
+
+    return (pA + pB) * 0.5;
+}
+
+
+vector axis = set(0, 1, 0);
+matrix3 rot = ident();
+
+int prim_pt_list[] = primpoints(0, i@primnum);
+vector new_pt_pos_list[];
+
+for(int i = 0; i < len(prim_pt_list); ++i)
+{
+    int last_prim_pt = prim_pt_list[i - 1];
+    int prim_pt = prim_pt_list[i];
+    int next_prim_pt = prim_pt_list[i + 1];
+    
+    vector last_prim_pt_pos = point(0, "P", last_prim_pt);
+    vector prim_pt_pos = point(0, "P", prim_pt);
+    vector next_prim_pt_pos = point(0, "P", next_prim_pt);
+    
+    vector last_prim_pt_dir = normalize(last_prim_pt_pos - prim_pt_pos);
+    vector next_prim_pt_dir = normalize(next_prim_pt_pos - prim_pt_pos);
+    
+    vector pt_pos = prim_pt_pos;
+    float ramp_pos = float(i) / len(prim_pt_list);
+    
+    //回転処理
+    if(0 < i)
+    {               
+        rot = ident();
+        float rotate_angle = chramp("rotate_param", ramp_pos);
+        rotate(rot, radians(rotate_angle * 20), axis);
+        vector rotate_vector = rot * (prim_pt_pos - last_prim_pt_pos);
+        prim_pt_pos = last_prim_pt_pos + rotate_vector;
+        setpointattrib(0, "P", prim_pt, prim_pt_pos);
+    }     
+    
+    //高さ調整
+    float ramp_height = chramp("height_param", ramp_pos);
+    pt_pos.y += ramp_height; 
+        
+    append(new_pt_pos_list, pt_pos);
+}

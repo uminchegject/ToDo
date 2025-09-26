@@ -3,6 +3,7 @@
 ※スポナー生成箇所までは完璧であると仮定し、その後の処理を調査する
 
 ○Attrの調査
+※最初の1時間で済ます
 ・imageにエクスポートできている、いないのenv_infoを比較
 
 ○image出力周りの処理(python)を調査
@@ -29,9 +30,11 @@
 
 ■PD
 ○クラス化処理の実装
+※GridMakerの検証および完了
 ・Noise + Randomで検証
 
 ○区画パラメーター設計
+※BlockMaker+VolumeMakerの検証および完了
 ・nullでパラメーター管理
 ・敷地サイズ
 ・敷地比率
@@ -40,7 +43,6 @@
 ○CityVolumeMakerの検証
 ・CityGeneratorの再現
 https://www.sidefx.com/gallery/fully-procedural-city-generator/
-
 
 
 
