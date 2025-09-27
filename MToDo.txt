@@ -1,7 +1,10 @@
 ■CD(Tool)
 ※BoatHouseを軸にTool開発をする
-○DetailPattern
-・格子の調査
+○WoodPattern
+・Rotate
+・Scale
+・Transform
+・Interval
 
 ○EdgeMaker
 ・修正
