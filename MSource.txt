@@ -43,50 +43,7 @@
 
 
 ■CD
-○傾き処理実装
-//高さ傾き調整
-vector last_rotate_vector;
-if(0 == i)
-{
-	rot = ident();
-	rotate(rot, radians(90), axis);
-	vector rotate_vector = next_prim_pt_dir * rot;
-	rotate_vector *= 5 * tan(radians(ramp_height));
-	pt_pos += rotate_vector;
-	last_rotate_vector = rotate_vector;
-}
-else if(i == len() - 1)
-{
-
-}
-else
-{
-	rot = ident();
-	rotate(rot, height_angle, axis);
-	vector rotate_vector = next_prim_pt_dir * rot;
-	rotate_vector *= 1 * tan(radians(height_angle));
-	pt_pos += start_prim_pt_pos + rotate_vector + last_rotate_vector;
-	last_rotate_vector = rotate_vector;
-}
-
-
 ●EdgeMaker
-・傾きパラメーター
-・高さパラメーター
- -Clamp
-・角度パラメーター
- -増減
-
-
-○第二EdgeのPrim追加
-・Prim
- -中央
- -壁
-・パラメーター
- -Edge
- 
-
-●ソース
 function vector lineIntersect3D(vector p0, p1, p2, p3)
 {
     vector u = p1 - p0;
@@ -108,9 +65,14 @@ function vector lineIntersect3D(vector p0, p1, p2, p3)
     return (pA + pB) * 0.5;
 }
 
+//パラメーター
+float base_rotate =
+float base_height = 
+float base_rotate_height = 
 
 vector axis = set(0, 1, 0);
 matrix3 rot = ident();
+vector last_rotate_vector;
 
 int prim_pt_list[] = primpoints(0, i@primnum);
 vector new_pt_pos_list[];
@@ -128,23 +90,69 @@ for(int i = 0; i < len(prim_pt_list); ++i)
     vector last_prim_pt_dir = normalize(last_prim_pt_pos - prim_pt_pos);
     vector next_prim_pt_dir = normalize(next_prim_pt_pos - prim_pt_pos);
     
-    vector pt_pos = prim_pt_pos;
+	
+	//パラメーター
     float ramp_pos = float(i) / len(prim_pt_list);
+	float rotate_ramp = chramp("rotate_param", ramp_pos);
+    float height_ramp = chramp("height_param", ramp_pos);
+	float rotate_height_ramp = chramp("rotate_height_param", ramp_pos);
+	
+	float rotate_angle = rotate_ramp * base_rotate;
+	float height = height_ramp * base_height;
+	float rotate_height = rotate_height_ramp * base_rotate_height;
     
     //回転処理
     if(0 < i)
     {               
         rot = ident();
-        float rotate_angle = chramp("rotate_param", ramp_pos);
-        rotate(rot, radians(rotate_angle * 20), axis);
+        rotate(rot, radians(rotate_angle), axis);
         vector rotate_vector = rot * (prim_pt_pos - last_prim_pt_pos);
         prim_pt_pos = last_prim_pt_pos + rotate_vector;
         setpointattrib(0, "P", prim_pt, prim_pt_pos);
     }     
-    
-    //高さ調整
-    float ramp_height = chramp("height_param", ramp_pos);
-    pt_pos.y += ramp_height; 
         
+    vector pt_pos = prim_pt_pos;
+
+    //傾き
+    if(0 == i)
+    {
+        rot = ident();
+        rotate(rot, radians(90), axis);
+        vector rotate_vector = next_prim_pt_dir * rot;
+        rotate_vector *= rotate_height * tan(radians(height));
+        pt_pos += rotate_vector;
+        last_rotate_vector = rotate_vector;
+    }
+    else if(i == len(prim_pt_list) - 1)
+    {
+        pt_pos += last_rotate_vector;
+    }
+    else
+    {
+        rot = ident();
+        rotate(rot, radians(90), axis);
+        vector rotate_vector = next_prim_pt_dir * rot;
+        rotate_vector *= rotate_height * tan(radians(height));
+        
+        vector intersect_pos = lineIntersect3D(
+            last_prim_pt_pos + last_rotate_vector,
+            prim_pt_pos + last_rotate_vector,
+            prim_pt_pos + rotate_vector,
+            next_prim_pt_pos + rotate_vector);
+        pt_pos = intersect_pos;
+        
+        last_rotate_vector = rotate_vector;
+    }
+	
+	//高さ調整
+    pt_pos.y += height;
+           
     append(new_pt_pos_list, pt_pos);
+}
+
+int prim = addprim(0, "polyline");
+foreach(vector pt_pos; new_pt_pos_list)
+{
+    int pt = addpoint(0, pt_pos);
+    addvertex(0, prim, pt);
 }
