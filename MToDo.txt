@@ -5,31 +5,33 @@
 
 
 ■CD
-○EdgeMakerの検証
-・操作性
-・Zahaイラストの再現
-
 ○修正
 ・Surfaceが歪まないようにする
+
+●フロー
+・Volume
+・Detail
+・CD
 
 
 ■PD
 ○Grid設計
-・間隔
-・道幅
-・角度
+・クラス化
+ -間隔
+ -道幅
+ -Ratio
 
 ○Block + Volume設計
 ・クラス化
-・敷地サイズ
-・敷地比率
-・VolumeScale
-・VolumeHeight
-
+ -敷地サイズ
+ -敷地比率
+ -VolumeScale
+ -VolumeHeight
 
 △CityVolumeMakerの検証
 ・CityGeneratorの再現
 https://www.sidefx.com/gallery/fully-procedural-city-generator/
+
 
 
 
@@ -43,6 +45,7 @@ https://www.sidefx.com/gallery/fully-procedural-city-generator/
 ○image出力周りの処理(python)を調査
 ・all_itemに入っていない原因を調査
 ・all_itemに情報を入れる箇所を確認
+
 
 ■CD
 ○EdgeMakerの実装
