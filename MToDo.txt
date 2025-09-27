@@ -1,17 +1,11 @@
-■記事
+■CD(Tool)
+※BoatHouseを軸にTool開発をする
+○DetailPattern
+・格子の調査
+
 ○EdgeMaker
-・HeightField上で実演
-・Zahaのイラストを実演
-
-
-■CD
-○修正
-・Surfaceが歪まないようにする
-
-●フロー
-・Volume
-・Detail
-・CD
+・修正
+ -Surfaceが歪まないようにする
 
 
 ■PD
@@ -31,6 +25,7 @@
 △CityVolumeMakerの検証
 ・CityGeneratorの再現
 https://www.sidefx.com/gallery/fully-procedural-city-generator/
+
 
 
 
@@ -93,8 +88,6 @@ https://www.sidefx.com/gallery/fully-procedural-city-generator/
 ・Cedilの資料を説明
 ・Tutorialの重要処理を説明
 
-○
-
 ○CEDIL資料調査
 https://cedil.cesa.or.jp/cedil_sessions/search?query=houdini
 
@@ -112,6 +105,12 @@ https://cedil.cesa.or.jp/cedil_sessions/search?query=houdini
 ・重要スライド
 ・結論
 ・Tips
+
+○DetailPattern
+
+○EdgeMaker
+
+○CityVolumeMaker
 
 
 ■反省
