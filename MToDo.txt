@@ -1,29 +1,33 @@
 ■記事
-○次の記事の準備
-・CityVolumeMaker
- -区画のクラス化
- -パラメーターの管理
+○EdgeMaker
+・HeightField上で実演
+・Zahaのイラストを実演
 
 
 ■CD
-○傾き生成処理の実装
-
 ○EdgeMakerの検証
 ・操作性
 ・Zahaイラストの再現
 
+○修正
+・Surfaceが歪まないようにする
+
 
 ■PD
-○クラス化処理の実装
-・Noise + Randomで検証
+○Grid設計
+・間隔
+・道幅
+・角度
 
-○区画パラメーター設計
-・nullでパラメーター管理
+○Block + Volume設計
+・クラス化
 ・敷地サイズ
 ・敷地比率
+・VolumeScale
 ・VolumeHeight
 
-○CityVolumeMakerの検証
+
+△CityVolumeMakerの検証
 ・CityGeneratorの再現
 https://www.sidefx.com/gallery/fully-procedural-city-generator/
 
