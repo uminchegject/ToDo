@@ -2,7 +2,35 @@
 
 ○粗大ごみ
 
-○スタバカスタマーセンター
+△スタバカスタマーセンター
+
+
+○小話資料準備
+
+
+○CityGenerator調査
+・Procedural City generator
+https://www.youtube.com/watch?v=BlduX70jZRU
+
+○PlotGenerator修正&実装
+・ソース修正
+ -凹型にも対応できるようにする
+ -道の角度をパラメーター化
+・boolean処理の修正
+ -boolean_objの修正
+ -boolean処理がどのような形状でもできるように修正
+
+
+○CD調査
+・杉原聡
+https://www.archifuture-web.jp/magazine/columnist_sugihara.html
+
+○EdgeMakerの修正
+・傾きを修正
+
+○PatternMakerの実装
+・凹凸Makerを参考にする
+
 
 
 ■Public

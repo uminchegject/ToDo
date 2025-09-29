@@ -1,3 +1,25 @@
+○小話資料準備
+
+○CityGenerator調査
+・Procedural City generator
+https://www.youtube.com/watch?v=BlduX70jZRU
+
+○PlotGenerator修正&実装
+・道の角度をパラメーター化
+・形態の形状に関係なく対応できるように実装
+ -boolean処理の修正
+
+○CD調査
+・杉原聡
+https://www.archifuture-web.jp/magazine/columnist_sugihara.html
+
+○EdgeMakerの修正
+・傾きを修正
+
+○PatternMakerの実装
+・凹凸Makerを参考にする
+
+
 ■City
 ●Sample
 ・CityGeneratorSample
