@@ -1,16 +1,34 @@
+○連続性と離散性
+https://www.archifuture-web.jp/magazine/759.html
+
+●連続性
+・Curveに沿った連続性
+・変化の連続性
+
+Private
+○小話資料準備
+
+○リゾナーレ相談
+
+
 ○BBQの入金
 
+
 ○粗大ごみ
+https://www2.sodai-web.jp/koto/index.html
 
 △スタバカスタマーセンター
 
 
-○小話資料準備
+○服の整理
+
+○企業研究読書
+
+○婚約祝い
 
 
-○CityGenerator調査
-・Procedural City generator
-https://www.youtube.com/watch?v=BlduX70jZRU
+■CityVolumeMaker
+※Volumeのみで様々な街並みを再現する
 
 ○PlotGenerator修正&実装
 ・ソース修正
@@ -20,53 +38,6 @@ https://www.youtube.com/watch?v=BlduX70jZRU
  -boolean_objの修正
  -boolean処理がどのような形状でもできるように修正
 
-
-○CD調査
-・杉原聡
-https://www.archifuture-web.jp/magazine/columnist_sugihara.html
-
-○EdgeMakerの修正
-・傾きを修正
-
-○PatternMakerの実装
-・凹凸Makerを参考にする
-
-
-
-■Public
-※imageが更新されない原因を調査
-※スポナー生成箇所までは完璧であると仮定し、その後の処理を調査する
-
-○Attrの調査
-・imageにエクスポートできている、いないのenv_infoを比較
-
-△image出力周りの処理(python)を調査
-・all_itemに入っていない原因を調査
-・all_itemに情報を入れる箇所を確認
-
-
-■CD(Tool)
-※BoatHouseを軸にTool開発をする
-○WoodPattern
-・Rotate
-・Scale
-・Transform
-・Interval
-
-○EdgeMaker
-・修正
- -Surfaceが歪まないようにする
-
-
-■CityVolumeMaker
-※Volumeのみで様々な街並みを再現する
-
-○PlotMaker修正
-・間隔の調整方法
-・booleanするbaseのスケール調整方法
-
-
-
 ○BlockMaker + VolumeMaker実装
 ・クラス化
  -敷地サイズ
@@ -74,9 +45,21 @@ https://www.archifuture-web.jp/magazine/columnist_sugihara.html
  -VolumeScale
  -VolumeHeight
 
-△CityVolumeMakerの検証
-・CityGeneratorの再現
-https://www.sidefx.com/gallery/fully-procedural-city-generator/
+
+■CD(Tool)
+※BoatHouseを軸にTool開発をする
+
+○EdgeMakerの修正
+・傾きを修正
+
+○PatternMakerの実装
+・凹凸Makerを参考にする
+
+●WoodPattern
+ -Rotate
+ -Scale
+ -Transform
+ -Interval
 
 
 ■Study(ナレッジ)
@@ -120,18 +103,3 @@ https://cedil.cesa.or.jp/cedil_sessions/search?query=houdini
  -Tutotorial
 ※直近で使う知識を読書する
  -Read
-
-
-○Houdiniセミナー
-・Houdini60Minites
-https://houdini60minutes.my.canva.site/houdini-60-minutes/
-・Houdini 21 新機能を徹底解説！各種新機能や ML などで広がるゲーム開発の未来
-https://www.creativevillage.ne.jp/category/crv_event/165497/?utm_source=cgworld&utm_medium=cpc&utm_campaign=2025
-
-
-■Private
-○服の整理
-
-○企業研究読書
-
-○婚約祝い
