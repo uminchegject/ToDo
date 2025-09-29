@@ -33,11 +33,11 @@
 ■CityVolumeMaker
 ※Volumeのみで様々な街並みを再現する
 
-○PlotMaker実装
-・クラス化
- -間隔
- -道幅
- -Ratio
+○PlotMaker修正
+・間隔の調整方法
+・booleanするbaseのスケール調整方法
+
+
 
 ○BlockMaker + VolumeMaker実装
 ・クラス化
