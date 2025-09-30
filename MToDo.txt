@@ -1,3 +1,11 @@
+○PlotGenerator修正&実装
+・ソース修正
+ -凹型にも対応できるようにする
+・boolean処理の修正
+ -道primの生成
+ -区画primの生成
+
+
 ○連続性と離散性
 https://www.archifuture-web.jp/magazine/759.html
 
@@ -8,11 +16,6 @@ https://www.archifuture-web.jp/magazine/759.html
 
 ■Private
 ○小話資料準備
-
-○リゾナーレ相談
-確認に時間がかかってしまい申し訳ないです…
-15(土)が満室だったので前後の14(金)、16(日)を今確認している状況です。
-一応まだ決まったわけではないですが、14,16の都合はいかがでしょうか…?
 
 ○BBQの入金
 
