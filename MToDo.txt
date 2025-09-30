@@ -1,24 +1,3 @@
-○区画生成実装(四角)
-・Boolean
-
-○Volume生成実装
-・Subnet化
-・クラス化
-
-○記事
-・区画生成(四角)
-・Volume生成
-・柔軟化
-
-
-○連続性と離散性
-https://www.archifuture-web.jp/magazine/759.html
-
-●連続性
-・Curveに沿った連続性
-・変化の連続性
-
-
 ■Private
 ○小話資料準備
 
@@ -35,24 +14,41 @@ https://www.archifuture-web.jp/magazine/759.html
 ■CityVolumeMaker
 ※Volumeのみで様々な街並みを再現する
 
-○PlotGenerator修正&実装
-・ソース修正
- -凹型にも対応できるようにする
- -道の角度をパラメーター化
-・boolean処理の修正
- -boolean_objの修正
- -boolean処理がどのような形状でもできるように修正
+○PlotGenerator修正
+・Boolean
+
+○PlotGenerator検証
 
 ○BlockMaker + VolumeMaker実装
+・Subnet化
 ・クラス化
  -敷地サイズ
  -敷地比率
  -VolumeScale
  -VolumeHeight
 
+○記事
+・区画生成(四角)
+・Volume生成
+
+△柔軟化
+・PlotMaker
+ -道の角度の柔軟化
+ -BasePrimの柔軟化
+・BlockMaker + VolumeMaker
+ -柔軟化したPlotの対応
+
 
 ■CD(Tool)
 ※BoatHouseを軸にTool開発をする
+
+○Study
+・連続性と離散性
+https://www.archifuture-web.jp/magazine/759.html
+
+●連続性
+・Curveに沿った連続性
+・変化の連続性
 
 ○EdgeMakerの修正
 ・傾きを修正
