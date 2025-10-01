@@ -1,27 +1,12 @@
-○GridMakerの修正
-※四角形で検証できるところまで実装する
-・パラメーターの修正
-
-
-○PatternMakerのベース部分を実装
-・BaseLineの生成まで実装
- -LineのattrにDirを持たせてそれに沿ってlineを生成する
-
-○PatternMakerの設計
-※BaseLineを軸にPatternを生成する
- -Rotate
- -Scale
- -Transform
- -Interval
-
-
 ■Private
 ○個人目標の修正
 ・なぜ(Why)
 ・どう(How)
 
+○サポーターの説明
+
 ○小話資料準備
-・メモの整理
+・サポーター説明
 ・説明スライドの用意
  -いらすとや
 ・チャント音声の用意
@@ -39,20 +24,13 @@
 ■CityVolumeMaker
 ※四角ベースでまず検証し、記事化する
 
-○PlotGenerator修正
-・Boolean
+○GridMakerの修正
+※四角形で検証できるところまで実装する
+・パラメーターの修正
 
-○PlotGenerator検証
-・スケール
-・クラス
-
-○BlockMaker + VolumeMaker実装
-・Subnet化
-・クラス化
- -敷地サイズ
- -敷地比率
- -VolumeScale
- -VolumeHeight
+○クラス設計
+・Gridのクラス化
+・クラスごとのPlotMakerの値
 
 ○記事
 ・区画生成(四角)
@@ -69,25 +47,24 @@
 ■CD(Tool)
 ※BoatHouseを軸にTool開発をする
 
-○Study
-・連続性と離散性
-https://www.archifuture-web.jp/magazine/759.html
+△EdgeMakerの修正
+・傾きを修正
+
+○PatternMakerのベース部分を実装
+・BaseLineの生成まで実装
+ -LineのattrにDirを持たせてそれに沿ってlineを生成する
+
+○PatternMakerの設計
+※BaseLineを軸にPatternを生成する
+ -Rotate
+ -Scale
+ -Transform
+ -Inteal
 
 ●連続性
 ・Curveに沿った連続性
 ・変化の連続性
 
-○EdgeMakerの修正
-・傾きを修正
-
-○PatternMakerの実装
-・凹凸Makerを参考にする
-
-●WoodPattern
- -Rotate
- -Scale
- -Transform
- -Interval
 
 
 ■Study(ナレッジ)
