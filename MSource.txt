@@ -2,7 +2,7 @@
 ●概要
 ・jリーグとプロ野球の比較
  -地域密着型
- -球団のブランド力は強い。
+ -球団のブランド力
 
 ・地域密着型クラブ経営
  -Jリーグ発足当初から「ホームタウン制」を掲げ、クラブは地元に根差した活動を展開。
@@ -38,3 +38,123 @@
 旗の絵柄
  -京都サンガ
  -サガン鳥栖
+ 
+
+
+●MakeLine
+float rotate_angle = detail(-1, "RotateAngleX");
+float place_angle = radians(rotate_angle);
+float line_angle  = radians(rotate_angle + 90);
+int index = detail(4, "iteration");
+float interval = detail(-1, "Interval", 0);
+float randomly_interval = detail(-1, "RandomlyInterval", 0);
+
+function vector rotate2D(vector v; float ang)
+{
+    return set(
+        v.x * cos(ang) - v.z * sin(ang),
+        v.y,
+        v.x * sin(ang) + v.z * cos(ang)
+    );
+}
+
+vector line_dir = normalize(rotate2D(set(1, 0, 0), line_angle));
+vector place_dir = normalize(rotate2D(set(1, 0, 0), place_angle));
+
+float bounds[] = detailintrinsic(1, "bounds");
+vector min_bound = set(bounds[0], bounds[2], bounds[4]);
+vector max_bound = set(bounds[1], bounds[3], bounds[5]);
+float max_length = length(min_bound - max_bound) * 2;
+
+int line_num = int(max_length / interval);
+vector base_slider = place_dir * max_length / line_num;
+vector center_pos = detail(1, "centroid");
+
+for(int i = 0; i < line_num + 1; ++i)
+{
+    vector line_center_pos = center_pos - max_length / 2 * place_dir;
+    vector randomly_slide_dir = base_slider * randomly_interval * (rand(base_slider * i + line_center_pos) - 0.5);
+    line_center_pos += base_slider * i + randomly_slide_dir;
+    
+    vector uv;
+    vector pt_1_pos;
+    vector pt_2_pos;
+    int hit_prim_1 = intersect(2, line_center_pos, line_dir * max_length, pt_1_pos, uv);
+    int hit_prim_2 = intersect(2, line_center_pos, -line_dir * max_length, pt_2_pos, uv);    
+    if(hit_prim_1 < 0 || hit_prim_2 < 0) continue;
+    
+    int pt_1 = addpoint(0, pt_1_pos);
+    int pt_2 = addpoint(0, pt_2_pos);        
+    int polyline = addprim(0, "polyline");
+    addvertex(0, polyline, pt_1);
+    addvertex(0, polyline, pt_2);       
+}
+
+
+●SplitLine
+function vector lineIntersect3D(vector p0, p1, p2, p3)
+{
+    vector u = p1 - p0;
+    vector v = p3 - p2;
+    vector w = p0 - p2;
+
+    float a = dot(u,u);
+    float b = dot(u,v);
+    float c = dot(v,v);
+    float d = dot(u,w);
+    float e = dot(v,w);
+
+    float sc = (b*e - c*d) / (a*c - b*b);
+    float tc = (a*e - b*d) / (a*c - b*b);
+    
+    // 線分範囲内にあるかどうか確認（0〜1の範囲）
+    if (sc < 0.0 || sc > 1.0 || tc < 0.0 || tc > 1.0) {
+        return {0, 0, 0}; // 交点は線分外
+    }    
+
+    vector pA = p0 + sc * u;
+    vector pB = p2 + tc * v;
+
+    return (pA + pB) * 0.5;
+}
+
+int prim_pts[] = primpoints(0, @primnum);
+vector start_pos = point(0, "P", prim_pts[0]);
+vector end_pos = point(0, "P", prim_pts[1]);
+
+vector line_pts[];
+append(line_pts, end_pos);
+for(int i = 0; i < nprimitives(1); ++i)
+{
+    int compare_prim_pts[] = primpoints(1, i);
+    vector prim_start_pos = point(1, "P", compare_prim_pts[0]);
+    vector prim_end_pos = point(1, "P", compare_prim_pts[1]);
+    
+    vector intersect_pos = lineIntersect3D(start_pos, end_pos, prim_start_pos, prim_end_pos);
+    if (0 < length(intersect_pos)) append(line_pts, intersect_pos);  
+}
+append(line_pts, start_pos);
+
+float remove_ratio = detail(-1, "RemoveRatioX", 0);
+float street_width = detail(-1, "StreetWidth", 0);
+float randomly_street_width = detail(-1, "RandomlyStreetWidth", 0);
+street_width = street_width + randomly_street_width * rand(v@P);
+
+for(int i = 1; i < len(line_pts); ++i)
+{    
+    vector pt_1_pos = line_pts[i];
+    vector pt_2_pos = line_pts[i - 1];
+    int pt_1 = addpoint(0, pt_1_pos);
+    int pt_2 = addpoint(0, pt_2_pos);
+    setpointattrib(0, "pscale", pt_1, street_width, "set");
+    setpointattrib(0, "pscale", pt_2, street_width, "set");
+    
+    //パラメーターに応じてpolylineを削除
+    if(rand(pt_1_pos) < remove_ratio) continue;
+    
+    int prim = addprim(0, "polyline");
+    addvertex(0, prim, pt_1);
+    addvertex(0, prim, pt_2);
+}
+
+removeprim(0, @primnum, 1);
