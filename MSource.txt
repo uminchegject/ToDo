@@ -1,17 +1,3 @@
-■小話
-
-●Jリーグとは
-
-●チームの特色
-
-●サポーターの特色
-
-
-
-
- 
-
-
 ●MakeLine
 float rotate_angle = detail(-1, "RotateAngleX");
 float place_angle = radians(rotate_angle);
