@@ -1,21 +1,32 @@
-■Private
-○※講演会登録
-・休みの申請
+■記事
+※多様パターンをパラメーターで表現できることを強調する
 
-○粗大ゴミの準備
+●Plot
+※パラメーターの柔軟性
+・道幅
+・区画サイズ
+・道形状
 
-○BBQの入金
+●Block
+※パラメーターの柔軟性
+・敷地サイズ
 
-○個人目標の修正
-・なぜ(Why)
-・どう(How)
+●Volume
+※パラメーターの柔軟性
+・密度
+・サイズ
+・高さ
 
+●フロー
+・BigPlot
+・SmallPlot
+・Block
+・Volume
 
-○服の整理
-
-○企業研究読書
-
-○婚約祝い
+●クラス
+※複合
+・Plot
+・サイズ
 
 
 ■CityVolumeMaker
@@ -33,10 +44,6 @@
 ○クラス設計
 ・Gridのクラス化
 ・クラスごとのPlotMakerの値
-
-○記事
-・区画生成(四角)
-・Volume生成
 
 △柔軟化
 ・PlotMaker
@@ -66,6 +73,25 @@
 ●連続性
 ・Curveに沿った連続性
 ・変化の連続性
+
+
+■Private
+○講演会登録
+・BigInJapan
+https://www.borndigital.co.jp/seminar/big-in-japan/
+・Hive
+https://www.sidefx.com/houdini-hive/tokyo-hive-workshops-2025/
+
+○個人目標の修正
+・なぜ(Why)
+・どう(How)
+
+
+○BBQの入金
+
+○服の整理
+
+○企業研究読書
 
 
 ■Study(ナレッジ)
