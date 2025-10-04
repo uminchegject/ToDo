@@ -3,15 +3,26 @@
 
 ○隅の区画のサイズが小さくならないように修正
 
+○各モジュールの完成及びHDA化
+・Plot
+・Block
+・Volume
+・Building
+
 ○検証
+※クラス設計で応用することを前提に検証する
+・Grid
+・Plot
+・Block
+・Volume
+・Building
+
+○クラス設計
 ・BigPlot
 ・SmallPlot
 ・Block
 ・Volume
-
-○クラス設計
-・Gridのクラス化
-・クラスごとのPlotMakerの値
+・Building
 
 △柔軟化
 ・PlotMaker
@@ -43,13 +54,30 @@
 ・サイズ
 ・高さ
 
+●Building
+・模様
+
 
 ■記事(クラス化)
 ※クラス管理による複合性
 
 ●概要
-・Plotのクラス化
-・
+・Plot
+・Block
+・Volume
+
+●Plot
+・道幅
+・区画サイズ
+・道形状
+
+●Block
+・敷地サイズ
+
+●Volume
+・密度
+・サイズ
+・高さ
 
 
 
