@@ -155,12 +155,12 @@ https://cedil.cesa.or.jp/cedil_sessions/search?query=houdini
 
 
 ■反省
+※複数種類の読書本を並行して読む
+ -技術
+ -戦略
+ -私用
+ -娯楽
+
 ※デバッグは処理の挙動、出力の挙動の2つをしっかり確認する
  -nullの挙動を確認する
  -複数のデータで挙動確認する
-
-※直近で使う技術を勉強する
- -Study
- -Tutotorial
-※直近で使う知識を読書する
- -Read
