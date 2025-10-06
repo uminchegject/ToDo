@@ -1,11 +1,30 @@
+■ToDO
+○BuildingGeneratorの整理
+
+○BaseLineの生成実装
+
+
+■Memo
+○設計
+・Plot
+ -Interval
+ -Width
+ -RemoveRatio
+・BlockVolume
+ -RemoveRatio
+ -MinimunLotSize
+ -ScaleRange
+ -HeightRange
+
+○個人目標の修正
+
+
 ■CityVolumeMaker
 ※四角ベースでまず検証し、記事化する
 
 ○隅の区画のサイズが小さくならないように修正
 
 ○各モジュールの完成及びHDA化
-・Plot
-・Block&Volume
 ・Building
 
 ○検証
@@ -97,10 +116,6 @@
 https://www.borndigital.co.jp/seminar/big-in-japan/
 ・Hive
 https://www.sidefx.com/houdini-hive/tokyo-hive-workshops-2025/
-
-○個人目標の修正
-・なぜ(Why)
-・どう(How)
 
 ○断捨離
 ※本を購入
