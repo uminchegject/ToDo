@@ -1,11 +1,18 @@
-■ToDO
+○Public
+・実装箇所の再確認
+・挙動確認(w02, ds01)
+
+
+■CityVolumeMaker
+※四角ベースでまず検証し、記事化する
+
+○隅の区画のサイズが小さくならないように修正
+
 ○BuildingGeneratorの整理
 
-○BaseLineの生成実装
-
-
-■Memo
-○設計
+○検証(Plot,Block,Volume記録)
+※クラス設計で応用することを前提に検証する
+※色付けしてGIFのパラメーターを検証する
 ・Plot
  -Interval
  -Width
@@ -15,25 +22,6 @@
  -MinimunLotSize
  -ScaleRange
  -HeightRange
-
-○個人目標の修正
-
-
-■CityVolumeMaker
-※四角ベースでまず検証し、記事化する
-
-○隅の区画のサイズが小さくならないように修正
-
-○各モジュールの完成及びHDA化
-・Building
-
-○検証
-※クラス設計で応用することを前提に検証する
-※記事の際に掲載するGIFのパラメーターを検証する
-・Grid
-・Plot
-・Block
-・Volume
 ・Building
 
 ○クラス設計
@@ -82,8 +70,7 @@
 △EdgeMakerの修正
 ・傾きを修正
 
-○PatternMakerのベース部分を実装準備
-・BaseLineの生成まで実装
+○BaseLineの生成実装
  -LineのattrにDirを持たせてそれに沿ってlineを生成する
 
 ○PatternMakerの設計
@@ -111,6 +98,8 @@
 
 
 ■Private
+○個人目標の修正
+
 ○講演会登録
 ・BigInJapan
 https://www.borndigital.co.jp/seminar/big-in-japan/
