@@ -1,23 +1,20 @@
-○サバゲーフィールド
-
 ○旅行アイデア
 ・温泉地
 ・自然
 ・宿
 
+○個人目標の修正
 
-○区画
-・SimpleModuleの修正
 
-○クラス
+■デバッグツール
+※Export部分のチェックツール
 
-○SimpleModule
+○チェックすべき項目を調査
 
-○DetailPatternMaker
-
-△区画の柔軟化
-
-△ModuleのDetail
+●仕様
+・特定フォルダにjsonをエクスポート
+・カメラのレンダリング
+・パラメーターの表示idとの照らし合わせ
 
 
 ■CityVolumeMaker
@@ -25,7 +22,8 @@
 
 ○隅の区画のサイズが小さくならないように修正
 
-○BuildingGeneratorの整理(BasePointGeneratorの実装)
+○BuildingGeneratorの整理
+※BasePointGeneratorの準備
 ・パラメーターの整理
  -PatternScale
 
@@ -51,12 +49,19 @@
 ・Volume
 ・Building
 
+○SimpleModule
+・BasePointMakerの実装
+・素材用意
+
 △柔軟化
 ・PlotMaker
  -道の角度の柔軟化
  -BasePrimの柔軟化
 ・BlockMaker + VolumeMaker
  -柔軟化したPlotの対応
+
+△ProceduralModeling
+・ModulerModelingの派生
 
 
 ■区画と道の生成(記事)
@@ -87,7 +92,7 @@
 ■CD(Tool)
 ※BoatHouseを軸にTool開発をする
 
-△EdgeMakerの修正
+○EdgeMakerの修正
 ・傾きを修正
 
 ○BaseLineの生成実装
@@ -123,14 +128,13 @@
 
 
 ■Private
-○個人目標の修正
-
 ○講演会登録
 ・BigInJapan
 https://www.borndigital.co.jp/seminar/big-in-japan/
 ・Hive
 https://www.sidefx.com/houdini-hive/tokyo-hive-workshops-2025/
-・
+・プロシージャルデザインを活用したプロダクトデザインの世界～プロダクトデザイナー向けGrasshopperの活用法～
+https://academy.cgworld.jp/contents/1932?fcid=2
 
 ○断捨離
 ※本を購入
