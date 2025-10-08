@@ -1,3 +1,25 @@
+○サバゲーフィールド
+
+○旅行アイデア
+・温泉地
+・自然
+・宿
+
+
+○区画
+・SimpleModuleの修正
+
+○クラス
+
+○SimpleModule
+
+○DetailPatternMaker
+
+△区画の柔軟化
+
+△ModuleのDetail
+
+
 ■CityVolumeMaker
 ※四角ベースでまず検証し、記事化する
 
