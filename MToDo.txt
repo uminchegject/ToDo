@@ -1,15 +1,9 @@
-○デバッグツール
-・Export部分のチェックツール(予定)
- -パラメーターの表示idとの照らし合わせ
- -隠しアイテムとスポナーの確認
-
-
 ■CityVolumeMaker
 ※四角ベースでまず検証し、記事化する
 
 ○隅の区画のサイズが小さくならないように修正
 
-○BuildingGeneratorの整理
+○BuildingGeneratorの整理(BasePointGeneratorの実装)
 ・パラメーターの整理
  -PatternScale
 
@@ -26,6 +20,7 @@
  -ScaleRange
  -HeightRange
 ・Building
+ -WindowPattern
 
 ○クラス設計
 ・BigPlot
@@ -89,6 +84,8 @@
 
 
 ■反省
+※Thinking字業務の効率化のアイデアを練る
+
 ※デバッグ
 ・何も聞かない状態で集中して確認する
 ・デバッグ項目を整理する
@@ -111,6 +108,7 @@
 https://www.borndigital.co.jp/seminar/big-in-japan/
 ・Hive
 https://www.sidefx.com/houdini-hive/tokyo-hive-workshops-2025/
+・
 
 ○断捨離
 ※本を購入
