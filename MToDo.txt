@@ -1,10 +1,17 @@
+○デバッグツール
+・Export部分のチェックツール(予定)
+ -パラメーターの表示idとの照らし合わせ
+ -隠しアイテムとスポナーの確認
+
+
 ■CityVolumeMaker
 ※四角ベースでまず検証し、記事化する
 
 ○隅の区画のサイズが小さくならないように修正
 
 ○BuildingGeneratorの整理
-・PatternHeight
+・パラメーターの整理
+ -PatternScale
 
 ○検証(Plot,Block,Volume記録)
 ※クラス設計で応用することを前提に検証する
