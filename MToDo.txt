@@ -1,20 +1,11 @@
+○ブックカフェ調査
+
 ○旅行アイデア
 ・温泉地
 ・自然
 ・宿
 
-○個人目標の修正
-
-
-■デバッグツール
-※Export部分のチェックツール
-
-○チェックすべき項目を調査
-
-●仕様
-・特定フォルダにjsonをエクスポート
-・カメラのレンダリング
-・パラメーターの表示idとの照らし合わせ
+○※HDAの場所を修正
 
 
 ■CityVolumeMaker
@@ -25,7 +16,12 @@
 ○BuildingGeneratorの整理
 ※BasePointGeneratorの準備
 ・パラメーターの整理
- -PatternScale
+ -PatternHeight
+ -MultiParam
+  -ObjBlockWidth
+  -ObjScale
+  -ObjTransform
+  -ObjColor
 
 ○検証(Plot,Block,Volume記録)
 ※クラス設計で応用することを前提に検証する
@@ -96,7 +92,9 @@
 ・傾きを修正
 
 ○BaseLineの生成実装
- -LineのattrにDirを持たせてそれに沿ってlineを生成する
+・LineのattrにDirを持たせてそれに沿ってlineを生成する
+・Prim上にラインを生成する処理を実装する
+ -※LabsSubDivisionを参考にする
 
 ○PatternMakerの設計
 ※BaseLineを軸にPatternを生成する
