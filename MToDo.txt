@@ -3,7 +3,37 @@
 ・自然
 ・宿
 
-○※HDAの場所を修正
+
+■CD(Tool)
+※BoatHouseを軸にTool開発をする
+
+○調査
+・コンピュテーショナルデザインにおけるファサードとルールのデザイン
+https://www.archifuture-web.jp/magazine/466.html
+
+○実装
+
+
+○EdgeMakerの修正
+・傾きを修正
+
+○BaseLineの生成実装
+・LineのattrにDirを持たせてそれに沿ってlineを生成する
+・Prim上にラインを生成する処理を実装する
+ -※LabsSubDivisionを参考にする
+
+○PatternMakerの設計
+※BaseLineを軸にPatternを生成する
+・Line
+ -Rotate
+ -Scale
+ -Transform
+ -Inteal
+・Block
+
+●連続性
+・Curveに沿った連続性
+・変化の連続性
 
 
 ■CityVolumeMaker
@@ -73,29 +103,6 @@
 ・高さ
 
 ●BuildingGeneratorを適応
-
-
-■CD(Tool)
-※BoatHouseを軸にTool開発をする
-
-○EdgeMakerの修正
-・傾きを修正
-
-○BaseLineの生成実装
-・LineのattrにDirを持たせてそれに沿ってlineを生成する
-・Prim上にラインを生成する処理を実装する
- -※LabsSubDivisionを参考にする
-
-○PatternMakerの設計
-※BaseLineを軸にPatternを生成する
- -Rotate
- -Scale
- -Transform
- -Inteal
-
-●連続性
-・Curveに沿った連続性
-・変化の連続性
 
 
 ■反省
