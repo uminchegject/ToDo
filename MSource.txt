@@ -1,123 +1,15 @@
 ■BuildingGenerator
-●generate__base_point
-vector axis_vec = set(0, 1, 0);
-vector center_pos = detail(1, "centroid");
-vector bound_size =
-
-vector base_line_bottom_pos;
-vector base_line_top_pos;
-vector uvw;
-intersect(1, center_pos, axis_vec * bound_size.y, base_line_bottom_pos, uvw);
-intersect(1, center_pos, -axis_vec * bound_size.y, base_line_top_pos, uvw);
-
-float offset_ratio = ch("../PatternOffsetRatio");
-offset_ratio /= 2;
-float base_line_length = length(base_line_top_pos - base_line_bottom_pos);
-base_line_bottom_pos += base_line_length * offset_ratio * -axis_vec;
-base_line_top_pos += base_line_length * offset_ratio * axis_vec;
-base_line_length -= base_line_length * offset_ratio * 2;
-
-float pattern_height = ch("../PatternHeight");
-int grid_num = int(base_line_length / pattern_height);
-float pattern_interval = base_line_length / grid_num;
-
-vector scale = set(length(bound_size) * 2, 0, length(bound_size) * 2);
-
-for(int i = 1; i < grid_num + 1; ++i)
-{
-    vector spawn_pos = base_line_bottom_pos;
-    spawn_pos -= axis_vec * pattern_interval * i;
-    int pt = addpoint(0, spawn_pos);
-    setpointattrib(0, "scale", pt, scale);
-}
-
-vector top_bool_pos = base_line_top_pos;
-int top_bool_pt = addpoint(0, top_bool_pos);
-setpointattrib(0, "scale", top_bool_pt, scale);
-setpointgroup(0, "BottomBoolPt", top_bool_pt, 1);
-
-vector bottom_bool_pos = base_line_bottom_pos;
-int bottom_bool_pt = addpoint(0, bottom_bool_pos);
-setpointattrib(0, "scale", bottom_bool_pt, scale);
-setpointgroup(0, "TopBoolPt", bottom_bool_pt, 1);
-
-setdetailattrib(0, "PatternInterval", pattern_interval);
-setdetailattrib(0, "BottomPos", base_line_bottom_pos);
-
-
-●slide__top_point
-vector axis_vec = set(0, 1, 0);
-float pattern_height = ch("../PatternHeight");
-
-for(int i = 0; i < npoints(0); i++)
-{
-    vector pt_pos = point(0, "P", i);
-	pt_pos += axis_vec * pattern_height / 2;
-	setpointattrib(0, "P", i, pt_pos);  
-}
-
-
-●generate__obj_base_point
-float pattern_height = detail(0, "PatternInterval");
-vector axis_vec = set(0, 1, 0);
-
-int prim_points[] = primpoints(0, i@primnum);
-
-for(int i = 1; i < len(prim_points); ++i)
-{
-    for(int param_index = 1; param_index < ch("../ObjList") + 1; param_index++)
-    {
-        vector obj_scale = chv("../ObjScale" + itoa(param_index));
-        vector obj_transform = chv("../ObjTransform" + itoa(param_index));
-        vector obj_color = chv("../ObjColor" + itoa(param_index));
-        float block_width = ch("../ObjBlockWidth" + itoa(param_index));
-
-        vector last_pt_pos = point(0, "P", prim_points[i - 1]);
-        vector next_pt_pos = point(0, "P", prim_points[i]);             
-        
-        int block_num = int(length(next_pt_pos - last_pt_pos) / block_width);
-        if(block_num == 0) block_num = 1;
-        
-        vector slide_vector = (next_pt_pos - last_pt_pos) / block_num;  
-        block_width = length(slide_vector);
-                
-        vector scale = set(obj_scale.x * length(slide_vector), obj_scale.y * pattern_height, obj_scale.z);
-                
-        int prim;
-        vector uv;
-        xyzdist(1, (next_pt_pos - last_pt_pos) / 2 + last_pt_pos, prim, uv);
-        vector normal = prim(1, "N", prim);
-    
-        vector base_pos = last_pt_pos + slide_vector / 2;
-        base_pos += normal * obj_transform.z;
-        base_pos += slide_vector * obj_transform.x * block_width;
-        base_pos += axis_vec * obj_transform.y * pattern_height;
-        
-        for(int j = 0; j < block_num; ++j)
-        {
-            vector pos = base_pos + slide_vector * j;
-            int pt = addpoint(0, pos);
-            setpointattrib(0, "scale", pt, scale);
-            setpointattrib(0, "N", pt, normal);
-            setpointattrib(0, "Cd", pt, obj_color);
-        }
-    }       
-}
-
-removeprim(0, i@primnum, 1);
-
-
-●SmallBlockの削除
-float min_length = 
+●remove__small_block
+float min_length = ch("MinLength");
 int prim_points[] = primpoints(0, @primnum);
 for(int i = 1; i < len(prim_points); i++)
 {
-	vector pt_1_pos = point(0, "P", prim_points[i - 1]);
-	vector pt_2_pos = point(0, "P", prim_points[i]);
-	
-	if(length(pt_2_pos - pt_1_pos) < min_length) 
-	{
-		removeprim(0, @primnum, 1);
-		break;
-	}
+    vector pt_1_pos = point(0, "P", prim_points[i - 1]);
+    vector pt_2_pos = point(0, "P", prim_points[i]);
+    
+    if(length(pt_2_pos - pt_1_pos) < min_length) 
+    {
+        removeprim(0, @primnum, 1);
+        break;
+    }
 }

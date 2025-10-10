@@ -10,16 +10,8 @@
 ※四角ベースでまず検証し、記事化する
 
 ○隅の区画のサイズが小さくならないように修正
+・remove__small_block
 
-○BuildingGeneratorの整理
-※BasePointGeneratorの準備
-・パラメーターの整理
- -PatternHeight
- -MultiParam
-  -ObjBlockWidth
-  -ObjScale
-  -ObjTransform
-  -ObjColor
 
 ○検証(Plot,Block,Volume記録)
 ※クラス設計で応用することを前提に検証する
