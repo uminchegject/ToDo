@@ -7,9 +7,11 @@
 ●BaseLine(BaseDir)
 ・デザインの流れとなるライン
 
-●BaseBlock
+●Volume
 ※BaseLineに沿ってBasePointを生成しBaseBlockを配置する
 ・BaseBlockの形態
+
+●Shape
 
 
 ■PD
@@ -18,18 +20,7 @@
 ●Volume
 
 ●Detail
-
-
-・linepattern
-・blackpattern
-・形態
-
-
-・一枚絵
-・tutorial
-
-
-
+※tutorialを軸にVolumeから生成する
 
 
 
