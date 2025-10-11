@@ -20,6 +20,13 @@
 ●Detail
 
 
+・linepattern
+・blackpattern
+・形態
+
+
+・一枚絵
+・tutorial
 
 
 
