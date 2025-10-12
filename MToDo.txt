@@ -3,26 +3,23 @@
 ・自然
 ・宿
 
+
 ■CD
-●BaseLine(BaseDir)
-・デザインの流れとなるライン
+●Param
+・Random
+・Gradation
+
+●Line
+・Interval
+・Rotate
+・Transform
+・Scale
 
 ●Volume
-・ShapeのVolume
-
-●Shape
-・PM
-
-■PD
-●City
-
-●Volume
-
-●Detail
-※tutorialを軸にVolumeから生成する
-
-
-
+・SplitScale
+・Scale
+・Rotate
+・Transform
 
 
 
@@ -61,7 +58,6 @@
 ○隅の区画のサイズが小さくならないように修正
 ・remove__small_block
 
-
 ○検証(Plot,Block,Volume記録)
 ※クラス設計で応用することを前提に検証する
 ※色付けしてGIFのパラメーターを検証する
@@ -84,9 +80,8 @@
 ・Volume
 ・Building
 
-○SimpleModule
-・BasePointMakerの実装
-・素材用意
+○DetailのTutorialを整理
+・FacadeGenerator
 
 △柔軟化
 ・PlotMaker

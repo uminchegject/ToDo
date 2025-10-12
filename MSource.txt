@@ -1,6 +1,7 @@
 ■Tool
 ●BaseLine(BaseDir)
-・CurveLineを生成
+※EdgeMakerで検証
+
 
 ●Volume
 ・BaseLineに沿ってBasePointを生成しBaseBlockを配置する
@@ -8,6 +9,11 @@
  -polyline
 ・Output
  -BasePoint
+
+●パラメーター
+・Transform
+・Scale
+・Rotate
 
 ●Shape
 ・Input
