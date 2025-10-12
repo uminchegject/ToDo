@@ -8,11 +8,10 @@
 ・デザインの流れとなるライン
 
 ●Volume
-※BaseLineに沿ってBasePointを生成しBaseBlockを配置する
-・BaseBlockの形態
+・ShapeのVolume
 
 ●Shape
-
+・PM
 
 ■PD
 ●City

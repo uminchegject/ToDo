@@ -1,3 +1,22 @@
+■Tool
+●BaseLine(BaseDir)
+・CurveLineを生成
+
+●Volume
+・BaseLineに沿ってBasePointを生成しBaseBlockを配置する
+・Input
+ -polyline
+・Output
+ -BasePoint
+
+●Shape
+・Input
+ -BasePoint
+・Output
+ -Object
+
+
+
 ■BuildingGenerator
 ●remove__small_block
 float min_length = ch("MinLength");
