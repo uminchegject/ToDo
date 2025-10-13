@@ -1,10 +1,18 @@
-○旅行アイデア
-・温泉地
-・自然
-・宿
+■CD(Tool)
+※BoatHouseを軸にTool開発をする
 
+○EdgeMakerの修正
+・傾きを修正
 
-■CD
+○BaseLineの生成実装
+※EdgeMakerで検証
+・LineのattrにDirを持たせてそれに沿ってlineを生成する
+・Prim上にラインを生成する処理を実装する
+ -※LabsSubDivisionを参考にする
+
+○BasePointの生成実装
+
+■設計
 ●Param
 ・Random
 ・Gradation
@@ -21,35 +29,6 @@
 ・Rotate
 ・Transform
 
-
-
-
-
-
-
-■CD(Tool)
-※BoatHouseを軸にTool開発をする
-
-○EdgeMakerの修正
-・傾きを修正
-
-○BaseLineの生成実装
-・LineのattrにDirを持たせてそれに沿ってlineを生成する
-・Prim上にラインを生成する処理を実装する
- -※LabsSubDivisionを参考にする
-
-○PatternMakerの設計
-※BaseLineを軸にPatternを生成する
-・Line
- -Rotate
- -Scale
- -Transform
- -Inteal
-・Block
-
-●連続性
-・Curveに沿った連続性
-・変化の連続性
 
 
 ■CityVolumeMaker
