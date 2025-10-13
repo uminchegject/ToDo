@@ -119,35 +119,11 @@ https://www.borndigital.co.jp/seminar/big-in-japan/
 https://www.sidefx.com/houdini-hive/tokyo-hive-workshops-2025/
 
 ○断捨離
-※本を購入
 ・小物
 ・書類
 ・服
 
 △企業研究読書
-
-
-■記事(クラス化)
-※クラス管理による複合性
-※オブジェクト指向に触れる
-
-●概要
-・Plot
-・Block
-・Volume
-
-●Plot
-・道幅
-・区画サイズ
-・道形状
-
-●Block
-・敷地サイズ
-
-●Volume
-・密度
-・サイズ
-・高さ
 
 
 ■Study(ナレッジ)
@@ -175,3 +151,26 @@ https://cedil.cesa.or.jp/cedil_sessions/search?query=houdini
 ・重要スライド
 ・結論
 ・Tips
+
+
+■記事(クラス化)
+※クラス管理による複合性
+※オブジェクト指向に触れる
+
+●概要
+・Plot
+・Block
+・Volume
+
+●Plot
+・道幅
+・区画サイズ
+・道形状
+
+●Block
+・敷地サイズ
+
+●Volume
+・密度
+・サイズ
+・高さ

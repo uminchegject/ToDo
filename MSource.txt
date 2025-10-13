@@ -2,18 +2,12 @@
 ●BaseLine(BaseDir)
 ※EdgeMakerで検証
 
-
 ●Volume
 ・BaseLineに沿ってBasePointを生成しBaseBlockを配置する
 ・Input
  -polyline
 ・Output
  -BasePoint
-
-●パラメーター
-・Transform
-・Scale
-・Rotate
 
 ●Shape
 ・Input
