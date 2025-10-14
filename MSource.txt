@@ -1,9 +1,10 @@
 ■BuildingGenerator
 ●remove__small_block
+float min_length = 10;
 int prim_points[] = primpoints(0, i@primnum);
 
-int prim = addprim(0, "polyline");
-for(int i = 0; i < len(prim_points); ++i)
+float length = 0;
+for(int i = 1; i < len(prim_points); ++i)
 {
 
     int pt = prim_points[i];
@@ -13,13 +14,21 @@ for(int i = 0; i < len(prim_points); ++i)
     vector pt_pos = point(0, "P", pt);
     vector last_pt_pos = point(0, "P", last_pt);
     vector next_pt_pos = point(0, "P", next_pt);
+	
+	length += length(pt_pos - last_pt_pos);
     
     if(0.99 < dot(normalize(pt_pos - last_pt_pos), normalize(next_pt_pos - pt_pos)))
     {
         removepoint(0, pt);
         continue;
-    }        
-    addvertex(0, prim, prim_points[i]);
+    }     
+    
+	if(length < min_length){
+		removeprim(0, i@primnum, 1);
+		break;
+	}
+	
+	length = 0;
 }
 
 removeprim(0, i@primnum, 0);

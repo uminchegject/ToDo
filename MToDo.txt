@@ -1,3 +1,40 @@
+○GridBaseのSplit処理を設計
+※EdgeMakerで検証
+・クラス
+・Interval
+・Rotate
+・Transform
+・Scale
+
+○実装
+・BaseLineにBasePointを生成
+・BasePointにorientを設定
+・GridをCopyToPointしてラインを生成
+
+
+○検証(Plot,Block,Volume記録)
+※クラス設計で応用することを前提に検証する
+・Plot
+ -Interval
+ -Width
+ -RemoveRatio
+・BlockVolume
+ -RemoveRatio
+ -MinimunLotSize
+ -ScaleRange
+ -HeightRange
+・Building
+ -WindowPattern
+
+●クラスフロー
+・BigPlot
+・SmallPlot
+・Block
+・Volume
+・Building
+
+
+
 ■CD(Tool)
 ※BoatHouseを軸にTool開発をする
 
@@ -8,9 +45,6 @@
 ・Transform
 ・Scale
 
-○実装
-
-○BasePointの生成実装
 
 ■設計
 ●Param
@@ -38,7 +72,6 @@
 
 ○検証(Plot,Block,Volume記録)
 ※クラス設計で応用することを前提に検証する
-※色付けしてGIFのパラメーターを検証する
 ・Plot
  -Interval
  -Width
@@ -51,7 +84,7 @@
 ・Building
  -WindowPattern
 
-●クラス
+●クラスフロー
 ・BigPlot
 ・SmallPlot
 ・Block
@@ -63,6 +96,7 @@
 ・Class
 
 △DetailのTutorialを整理
+※ProceduralModeling
 ・FacadeGenerator
 
 △柔軟化
@@ -71,9 +105,6 @@
  -BasePrimの柔軟化
 ・BlockMaker + VolumeMaker
  -柔軟化したPlotの対応
-
-△ProceduralModeling
-・ModulerModelingの派生
 
 
 ■区画と道の生成(記事)
@@ -137,6 +168,17 @@ https://www.sidefx.com/tutorials/a-beginners-guide-to-python-in-houdini/
 
 ○CEDIL資料調査
 https://cedil.cesa.or.jp/cedil_sessions/search?query=houdini
+
+●技術
+・問題解決のPythonプログラミング
+・C++設計
+
+●知識
+・問題定義
+・ファイナンス
+
+●Life
+・断捨離
 
 
 ■ポートフォリオ(記事)
