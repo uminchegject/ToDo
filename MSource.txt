@@ -1,22 +1,3 @@
-■Tool
-●BaseLine(BaseDir)
-※EdgeMakerで検証
-
-●Volume
-・BaseLineに沿ってBasePointを生成しBaseBlockを配置する
-・Input
- -polyline
-・Output
- -BasePoint
-
-●Shape
-・Input
- -BasePoint
-・Output
- -Object
-
-
-
 ■BuildingGenerator
 ●remove__small_block
 float min_length = ch("MinLength");
@@ -32,3 +13,33 @@ for(int i = 1; i < len(prim_points); i++)
         break;
     }
 }
+
+
+
+■Tool
+●BaseLine(BaseDir)
+※EdgeMakerで検証
+・Interval
+・Rotate
+・Transform
+・Scale
+
+float interval = 
+int prim_points[] = primpoints(0, @primnum);
+vector base_pos = point(0, "P", prim_points[0]);
+for(int prim_point = 1; i < len(prim_points); ++i)
+{
+	vector pt1_pos = point(0, "P", prim_points[i]);
+	vector pt2_pos = point(0, "P", prim_points[i - 1]);
+
+	vector slider_dir = normalize(pt2_pos - pt1_pos);
+	
+}
+
+
+●Volume
+・BaseLineに沿ってBasePointを生成しBaseBlockを配置する
+・Input
+ -polyline
+・Output
+ -BasePoint
