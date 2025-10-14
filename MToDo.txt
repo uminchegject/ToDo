@@ -1,11 +1,14 @@
 ■CD(Tool)
 ※BoatHouseを軸にTool開発をする
 
-○BaseLineの生成実装
+○GridBaseのSplit処理を設計
 ※EdgeMakerで検証
-・LineのattrにDirを持たせてそれに沿ってlineを生成する
-・Prim上にラインを生成する処理を実装する
- -※LabsSubDivisionを参考にする
+・Interval
+・Rotate
+・Transform
+・Scale
+
+○実装
 
 ○BasePointの生成実装
 
@@ -27,12 +30,11 @@
 ・Transform
 
 
-
 ■CityVolumeMaker
 ※四角ベースでまず検証し、記事化する
 
-○隅の区画のサイズが小さくならないように修正
-・remove__small_block
+○BigBlock + SmallBlock検証準備
+・SmallBlockの削除
 
 ○検証(Plot,Block,Volume記録)
 ※クラス設計で応用することを前提に検証する
@@ -49,14 +51,18 @@
 ・Building
  -WindowPattern
 
-○クラス設計
+●クラス
 ・BigPlot
 ・SmallPlot
 ・Block
 ・Volume
 ・Building
 
-○DetailのTutorialを整理
+○記事準備
+・Simple
+・Class
+
+△DetailのTutorialを整理
 ・FacadeGenerator
 
 △柔軟化

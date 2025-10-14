@@ -1,19 +1,28 @@
 ■BuildingGenerator
 ●remove__small_block
-float min_length = ch("MinLength");
-int prim_points[] = primpoints(0, @primnum);
-for(int i = 1; i < len(prim_points); i++)
+int prim_points[] = primpoints(0, i@primnum);
+
+int prim = addprim(0, "polyline");
+for(int i = 0; i < len(prim_points); ++i)
 {
-    vector pt_1_pos = point(0, "P", prim_points[i - 1]);
-    vector pt_2_pos = point(0, "P", prim_points[i]);
+
+    int pt = prim_points[i];
+    int last_pt = prim_points[i - 1];
+    int next_pt = prim_points[i + 1];
     
-    if(length(pt_2_pos - pt_1_pos) < min_length) 
+    vector pt_pos = point(0, "P", pt);
+    vector last_pt_pos = point(0, "P", last_pt);
+    vector next_pt_pos = point(0, "P", next_pt);
+    
+    if(0.99 < dot(normalize(pt_pos - last_pt_pos), normalize(next_pt_pos - pt_pos)))
     {
-        removeprim(0, @primnum, 1);
-        break;
-    }
+        removepoint(0, pt);
+        continue;
+    }        
+    addvertex(0, prim, prim_points[i]);
 }
 
+removeprim(0, i@primnum, 0);
 
 
 ■Tool
