@@ -1,9 +1,6 @@
 ■CD(Tool)
 ※BoatHouseを軸にTool開発をする
 
-○EdgeMakerの修正
-・傾きを修正
-
 ○BaseLineの生成実装
 ※EdgeMakerで検証
 ・LineのattrにDirを持たせてそれに沿ってlineを生成する

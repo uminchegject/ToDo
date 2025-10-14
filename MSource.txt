@@ -35,11 +35,3 @@ for(int prim_point = 1; i < len(prim_points); ++i)
 	vector slider_dir = normalize(pt2_pos - pt1_pos);
 	
 }
-
-
-●Volume
-・BaseLineに沿ってBasePointを生成しBaseBlockを配置する
-・Input
- -polyline
-・Output
- -BasePoint
