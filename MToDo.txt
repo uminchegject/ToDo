@@ -1,3 +1,5 @@
+○サバゲー予備日
+
 ○GridBaseのSplit処理を設計
 ※EdgeMakerで検証
 ・クラス
