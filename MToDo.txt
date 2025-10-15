@@ -1,4 +1,12 @@
+※隠れ草コリジョンのenv_infoの設定部分を修正する
+
 ○サバゲー予備日
+
+○USD資料の調査
+・CEDIL
+・FOUNDATIONS 20.5 | SOLARIS MARKET
+https://www.sidefx.com/tutorials/foundations-205-solaris-market/
+
 
 ■CD(Tool)
 ※BoatHouseを軸にTool開発をする
@@ -125,9 +133,6 @@ https://www.borndigital.co.jp/seminar/big-in-japan/
 ※重要そうな箇所はスクショしてNotionにメモと一緒にひたすら張っていく
 ・Cedilの資料を説明
 ・Tutorialの重要処理を説明
-
-○A BEGINNERS GUIDE TO PYTHON
-https://www.sidefx.com/tutorials/a-beginners-guide-to-python-in-houdini/
 
 ○CEDIL資料調査
 https://cedil.cesa.or.jp/cedil_sessions/search?query=houdini

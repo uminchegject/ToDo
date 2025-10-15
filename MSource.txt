@@ -35,12 +35,13 @@ float base_rotate_height = ch("BaseRotateHeight");
 
 vector axis = set(0, 1, 0);
 matrix3 rot = ident();
-vector last_rotate_vector;
 int last_pt = 0;
+float last_height;
+float last_rotate_height;
+vector last_rotate_dir;
 
 int prim_pt_list[] = primpoints(0, i@primnum);
 int new_pt_list[];
-
 
 for(int i = 0; i < len(prim_pt_list); ++i)
 {
@@ -77,40 +78,39 @@ for(int i = 0; i < len(prim_pt_list); ++i)
     }     
         
     vector pt_pos = prim_pt_pos;
+	vector rotate_dir;
 
     //傾き
     if(0 == i)
     {
         rot = ident();
         rotate(rot, radians(90), axis);
-        vector rotate_dir = next_prim_pt_dir * rot;
+        rotate_dir = next_prim_pt_dir * rot;
         vector rotate_vector = rotate_dir * rotate_height * tan(radians(height));
         pt_pos += rotate_vector;
-        last_rotate_vector = rotate_vector;
+		pt_pos.y += height;
     }
     else if(i == len(prim_pt_list) - 1)
     {
-        pt_pos += last_rotate_vector;
+        pt_pos += last_rotate_dir * last_rotate_height * tan(radians(height));
+		pt_pos.y += last_height;
     }
     else
     {
         rot = ident();
         rotate(rot, radians(90), axis);
-        vector rotate_dir = next_prim_pt_dir * rot;
+        rotate_dir = next_prim_pt_dir * rot;
         vector rotate_vector = rotate_dir * rotate_height * tan(radians(height));
         
         vector intersect_pos = lineIntersect3D(
-            last_prim_pt_pos + last_rotate_vector,
-            prim_pt_pos + last_rotate_vector,
+            last_prim_pt_pos + last_rotate_dir * last_rotate_height * tan(radians(height)),
+            prim_pt_pos + last_rotate_dir * last_rotate_height * tan(radians(height)),
             prim_pt_pos + rotate_vector,
             next_prim_pt_pos + rotate_vector);
-        pt_pos = intersect_pos;
-        
-        last_rotate_vector = rotate_vector;
+		pt_pos = intersect_pos;
+		pt_pos.y += height;
     }
         
-    //高さ調整
-    //pt_pos.y += height;
     
     int pt = addpoint(0, pt_pos);
     if(0 < i)
@@ -121,6 +121,10 @@ for(int i = 0; i < len(prim_pt_list); ++i)
         addvertex(0, prim, last_pt);
         addvertex(0, prim, last_prim_pt);
     }
+
+	last_height = height;
+	last_rotate_height = rotate_height;
+	last_rotate_dir = rotate_dir;
     last_pt = pt;
 }
 
