@@ -1,5 +1,8 @@
 ○サバゲー予備日
 
+■CD(Tool)
+※BoatHouseを軸にTool開発をする
+
 ○GridBaseのSplit処理を設計
 ※EdgeMakerで検証
 ・クラス
@@ -9,43 +12,10 @@
 ・Scale
 
 ○実装
+※複数primでBasePointをどう生成するかを決める
 ・BaseLineにBasePointを生成
-・BasePointにorientを設定
+ -BasePointにorientを設定
 ・GridをCopyToPointしてラインを生成
-
-
-○検証(Plot,Block,Volume記録)
-※クラス設計で応用することを前提に検証する
-・Plot
- -Interval
- -Width
- -RemoveRatio
-・BlockVolume
- -RemoveRatio
- -MinimunLotSize
- -ScaleRange
- -HeightRange
-・Building
- -WindowPattern
-
-●クラスフロー
-・BigPlot
-・SmallPlot
-・Block
-・Volume
-・Building
-
-
-
-■CD(Tool)
-※BoatHouseを軸にTool開発をする
-
-○GridBaseのSplit処理を設計
-※EdgeMakerで検証
-・Interval
-・Rotate
-・Transform
-・Scale
 
 
 ■設計
