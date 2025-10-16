@@ -1,13 +1,3 @@
-※隠れ草コリジョンのenv_infoの設定部分を修正する
-
-○サバゲー予備日
-
-○USD資料の調査
-・CEDIL
-・FOUNDATIONS 20.5 | SOLARIS MARKET
-https://www.sidefx.com/tutorials/foundations-205-solaris-market/
-・[CEDEC2021] パイプライン開発者が知っておきたいUSDの使い方
-
 ○講演会登録
 ・Hive
 https://www.sidefx.com/houdini-hive/tokyo-hive-workshops-2025/
@@ -17,8 +7,6 @@ https://www.borndigital.co.jp/seminar/big-in-japan/
 
 ■CD(Tool)
 ※BoatHouseを軸にTool開発をする
-
-○Surface生成の修正
 
 ○GridBaseのSplit処理を設計
 ※EdgeMakerで検証
@@ -110,14 +98,6 @@ https://www.borndigital.co.jp/seminar/big-in-japan/
 ■反省
 ※Thinking時業務の効率化のアイデアを練る
 
-※デバッグ
-・※できるだけデバッグ作業を自動化(ツール化)する
-・何も聞かない状態で集中して確認する
-・デバッグ項目を整理する
-・処理の挙動、出力の挙動の2つをしっかり確認する
- -nullの挙動を確認する
- -複数のデータで挙動確認する
-
 
 ■Private
 ○断捨離
@@ -129,12 +109,16 @@ https://www.borndigital.co.jp/seminar/big-in-japan/
 
 
 ■Study(ナレッジ)
-※重要そうな箇所はスクショしてNotionにメモと一緒にひたすら張っていく
-・Cedilの資料を説明
-・Tutorialの重要処理を説明
+※Cedil、Tutorialは同じテーマを軸に勉強する
+ -Houdiniから枝分かれしていく(https://cedil.cesa.or.jp/cedil_sessions/search?query=houdini)
 
-○CEDIL資料調査
-https://cedil.cesa.or.jp/cedil_sessions/search?query=houdini
+○USD
+・FOUNDATIONS 20.5 | SOLARIS MARKET
+https://www.sidefx.com/tutorials/foundations-205-solaris-market/
+・[CEDEC2021] パイプライン開発者が知っておきたいUSDの使い方
+https://cedil.cesa.or.jp/cedil_sessions/view/2894
+・レイトレ時代のゲームグラフィックス Vol.2 - ハイエンドタイトル制作向けゲーム実行環境とつながる制作環境の取り組み紹介 -【オンライン配信のみ】
+https://cedil.cesa.or.jp/cedil_sessions/view/2847
 
 ●技術
 ・C++設計
