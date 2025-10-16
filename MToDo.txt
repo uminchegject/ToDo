@@ -4,44 +4,18 @@ https://www.sidefx.com/houdini-hive/tokyo-hive-workshops-2025/
 ・BIG in Japan From vision to visualization
 https://www.borndigital.co.jp/seminar/big-in-japan/
 
+○ルヴァンカップチケット申し込み
+https://list.jleague-ticket.jp/lotterylp/top.aspx?slcd=VP332
 
-■CD(Tool)
-※BoatHouseを軸にTool開発をする
-
-○GridBaseのSplit処理を設計
-※EdgeMakerで検証
-※Primを跨いでるLineを繋げるように実装
-・Interval
-・Rotate
-・Transform
-・Scale
-
-○実装
-・Edgeに到達するまでLineを引き続ける
-
-■設計
-●Param
-・Random
-・Gradation
-
-●Line
-・Interval
-・Rotate
-・Transform
-・Scale
-
-●Volume
-・SplitScale
-・Scale
-・Rotate
-・Transform
+○ユニフォーム購入
+https://jp.puma.com/jp/ja/pd/%E3%83%A1%E3%83%B3%E3%82%BA-%E6%A8%AA%E6%B5%9Cfc-2024-%E3%83%AA%E3%83%9F%E3%83%86%E3%83%83%E3%83%89-%E3%83%AC%E3%83%97%E3%83%AA%E3%82%AB-%E5%8D%8A%E8%A2%96-%E3%83%A6%E3%83%8B%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0/763907
 
 
 ■CityVolumeMaker
 ※四角ベースでまず検証し、記事化する
 
-○検証(Plot,Block,Volume記録)
-※クラス設計で応用することを前提に検証する
+○検証
+※多様性と複雑性の2軸で検証を行い、記録する
 ・Plot
  -Interval
  -Width
@@ -54,10 +28,6 @@ https://www.borndigital.co.jp/seminar/big-in-japan/
 ・Building
  -WindowPattern
 
-○記事準備
-・Simple
-・Class
-
 △DetailのTutorialを整理
 ※ProceduralModeling
 ・FacadeGenerator
@@ -69,9 +39,8 @@ https://www.borndigital.co.jp/seminar/big-in-japan/
 ・BlockMaker + VolumeMaker
  -柔軟化したPlotの対応
 
-
 ■区画と道の生成(記事)
-※多様パターンをパラメーターで表現できることを強調する
+※多様性をパラメーターで表現できることを強調する
 ※パラメーターの柔軟性
 
 ●概要
@@ -92,7 +61,55 @@ https://www.borndigital.co.jp/seminar/big-in-japan/
 ・サイズ
 ・高さ
 
-●BuildingGeneratorを適応
+■クラス化(記事)
+※複雑性をクラスで制御できることを強調する
+
+●Plot
+・道幅
+・区画サイズ
+
+●Block
+・敷地サイズ
+
+●Volume
+・密度
+・サイズ
+・高さ
+
+●Building
+・WindowPattern
+
+
+■CD(Tool)
+※BoatHouseを軸にTool開発をする
+
+○LineMakerの実装
+※EdgeMakerで検証
+・BaseLineに沿ってBaseSurface上にLineを生成する
+ -BaseLineからSurface上でOffsetしてLineを配置する
+ -配置したLineをBaseSurfaceをベースにTranslateする
+・Param
+ -Interval
+ -Rotate
+ -Transform
+ -Scale
+
+■設計
+●Param
+・Random
+・Gradation
+
+●Line
+・Interval
+・Rotate
+・Transform
+・Scale
+
+●Volume
+・SplitScale
+・Scale
+・Rotate
+・Transform
 
 
 ■反省
@@ -106,6 +123,16 @@ https://www.borndigital.co.jp/seminar/big-in-japan/
 ・服
 
 △企業研究読書
+
+●軽井沢
+・観光
+ -鬼押
+ -浅間牧場
+・蕎麦
+ -きりさと
+ -東間
+ -まるい
+ -しなの
 
 
 ■Study(ナレッジ)
