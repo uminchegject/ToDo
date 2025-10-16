@@ -6,6 +6,13 @@
 ・CEDIL
 ・FOUNDATIONS 20.5 | SOLARIS MARKET
 https://www.sidefx.com/tutorials/foundations-205-solaris-market/
+・[CEDEC2021] パイプライン開発者が知っておきたいUSDの使い方
+
+○講演会登録
+・Hive
+https://www.sidefx.com/houdini-hive/tokyo-hive-workshops-2025/
+・BIG in Japan From vision to visualization
+https://www.borndigital.co.jp/seminar/big-in-japan/
 
 
 ■CD(Tool)
@@ -22,9 +29,7 @@ https://www.sidefx.com/tutorials/foundations-205-solaris-market/
 ・Scale
 
 ○実装
-・BaseLineにBasePointを生成
- -BasePointにorientを設定
-・GridをCopyToPointしてラインを生成
+・Edgeに到達するまでLineを引き続ける
 
 ■設計
 ●Param
@@ -115,12 +120,6 @@ https://www.sidefx.com/tutorials/foundations-205-solaris-market/
 
 
 ■Private
-○講演会登録
-・Hive
-https://www.sidefx.com/houdini-hive/tokyo-hive-workshops-2025/
-・BIG in Japan From vision to visualization
-https://www.borndigital.co.jp/seminar/big-in-japan/
-
 ○断捨離
 ・小物
 ・書類
@@ -138,7 +137,6 @@ https://www.borndigital.co.jp/seminar/big-in-japan/
 https://cedil.cesa.or.jp/cedil_sessions/search?query=houdini
 
 ●技術
-・問題解決のPythonプログラミング
 ・C++設計
 
 ●知識
