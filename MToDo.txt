@@ -43,6 +43,7 @@ https://jp.puma.com/jp/ja/pd/%E3%83%A1%E3%83%B3%E3%82%BA-%E6%A8%AA%E6%B5%9Cfc-20
 ■区画と道の生成(記事)
 ※多様性をパラメーターで表現できることを強調する
 ※パラメーターの柔軟性
+※完成系と比較した動画を用意
 
 ●概要
 ・区画及び道の生成
@@ -173,26 +174,3 @@ https://fereria.github.io/reincarnation_tech/usd/comp
 ・重要スライド
 ・結論
 ・Tips
-
-
-■記事(クラス化)
-※クラス管理による複合性
-※オブジェクト指向に触れる
-
-●概要
-・Plot
-・Block
-・Volume
-
-●Plot
-・道幅
-・区画サイズ
-・道形状
-
-●Block
-・敷地サイズ
-
-●Volume
-・密度
-・サイズ
-・高さ
