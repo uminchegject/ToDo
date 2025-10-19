@@ -2,10 +2,27 @@
 https://jp.puma.com/jp/ja/pd/%E3%83%A1%E3%83%B3%E3%82%BA-%E6%A8%AA%E6%B5%9Cfc-2024-%E3%83%AA%E3%83%9F%E3%83%86%E3%83%83%E3%83%89-%E3%83%AC%E3%83%97%E3%83%AA%E3%82%AB-%E5%8D%8A%E8%A2%96-%E3%83%A6%E3%83%8B%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0/763907
 
 
-■CityVolumeMaker
-※四角ベースでまず検証し、記事化する
+■ポートフォリオ(記事)
+※画像ベースで記事を書く
+ -ビジュアルの説明のみで概要が分かるようにする
+ -スライド、動画のスクショをQiitaの下書きでまず整理する
+※Module、多様性
+※Color + Objの組み合わせでPD,CDで面白いものを作る
+
+○ポートフォリオ調査
+※ポートフォリオの拡張
 
 ○区画Generatorの記事化
+
+●レイアウト
+・概要
+ -※トピックとなる重要画像を最初に貼る
+ -※結論を概要でまとめる
+・重要スライド
+
+
+■CityVolumeMaker
+※四角ベースでまず検証し、記事化する
 
 ○クラス化の検証
 
@@ -26,17 +43,7 @@ https://jp.puma.com/jp/ja/pd/%E3%83%A1%E3%83%B3%E3%82%BA-%E6%A8%AA%E6%B5%9Cfc-20
 
 ○LineMakerの実装
 ※EdgeMakerで検証
-・BaseLineをOffsetし、Rotateした上でClipする
-https://www.sidefx.com/ja/docs/houdini/vex/functions/clip.html
-・BaseLineに沿ってBaseSurface上にLineを生成する
- -BaseLineをTranslate
- -BaseLineをDuplicate
- -Surface上でclip
-・Param
- -Interval
- -Rotate
- -Transform
- -Scale
+S
 
 ■設計
 ●Param
@@ -107,17 +114,3 @@ https://cedil.cesa.or.jp/cedil_sessions/view/2894
 
 ●Life
 ・断捨離
-
-
-■ポートフォリオ(記事)
-※画像ベースで記事を書く
- -ビジュアルの説明のみで概要が分かるようにする
- -スライド、動画のスクショをQiitaの下書きでまず整理する
-※Module、多様性
-※Color + Objの組み合わせでPD,CDで面白いものを作る
-
-●レイアウト
-・概要
- -※トピックとなる重要画像を最初に貼る
- -※結論を概要でまとめる
-・重要スライド

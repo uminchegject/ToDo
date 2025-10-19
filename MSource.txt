@@ -32,7 +32,24 @@
  -小区画
   -細い路地
 
-●クラス種類
+●クラス
 ・ノイズ
-・選択
-・ランダム
+・△選択
+・△ランダム
+
+
+■LineMaker
+●DetailBaseLineの実装
+・BaseLineをOffsetし、Rotateした上でClipする
+・枠Lineを生成し、端からClipを行いつつBaseLineを生成する
+https://www.sidefx.com/ja/docs/houdini/vex/functions/clip.html
+
+・BaseLineに沿ってBaseSurface上にLineを生成する
+ -BaseLineをTranslate
+ -BaseLineをDuplicate
+ -Surface上でclip
+・Param
+ -Interval
+ -Rotate
+ -Transform
+ -Scale
