@@ -5,6 +5,8 @@ https://jp.puma.com/jp/ja/pd/%E3%83%A1%E3%83%B3%E3%82%BA-%E6%A8%AA%E6%B5%9Cfc-20
 ■CityVolumeMaker
 ※四角ベースでまず検証し、記事化する
 
+○区画Generatorの記事化
+
 ○クラス化の検証
 
 △DetailのTutorialを整理
@@ -61,6 +63,10 @@ https://www.sidefx.com/ja/docs/houdini/vex/functions/clip.html
 ■Private
 ※一人暮らしの準備
 
+○本整理
+・捨てる
+・メルカリ
+
 ○断捨離
 ・小物
 ・書類
@@ -98,7 +104,6 @@ https://cedil.cesa.or.jp/cedil_sessions/view/2894
 
 ●知識
 ・問題定義
-・ファイナンス
 
 ●Life
 ・断捨離
