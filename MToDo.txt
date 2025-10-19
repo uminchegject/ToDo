@@ -5,6 +5,8 @@ https://jp.puma.com/jp/ja/pd/%E3%83%A1%E3%83%B3%E3%82%BA-%E6%A8%AA%E6%B5%9Cfc-20
 ■CityVolumeMaker
 ※四角ベースでまず検証し、記事化する
 
+○クラス化の検証
+
 △DetailのTutorialを整理
 ※ProceduralModeling
 ・FacadeGenerator
@@ -25,8 +27,9 @@ https://jp.puma.com/jp/ja/pd/%E3%83%A1%E3%83%B3%E3%82%BA-%E6%A8%AA%E6%B5%9Cfc-20
 ・BaseLineをOffsetし、Rotateした上でClipする
 https://www.sidefx.com/ja/docs/houdini/vex/functions/clip.html
 ・BaseLineに沿ってBaseSurface上にLineを生成する
- -BaseLineからSurface上でOffsetしてLineを配置する
- -配置したLineをBaseSurfaceをベースにTranslateする
+ -BaseLineをTranslate
+ -BaseLineをDuplicate
+ -Surface上でclip
 ・Param
  -Interval
  -Rotate
@@ -56,6 +59,8 @@ https://www.sidefx.com/ja/docs/houdini/vex/functions/clip.html
 
 
 ■Private
+※一人暮らしの準備
+
 ○断捨離
 ・小物
 ・書類
@@ -109,6 +114,5 @@ https://cedil.cesa.or.jp/cedil_sessions/view/2894
 ●レイアウト
 ・概要
  -※トピックとなる重要画像を最初に貼る
+ -※結論を概要でまとめる
 ・重要スライド
-・結論
-・Tips
