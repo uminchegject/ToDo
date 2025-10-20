@@ -1,22 +1,12 @@
-○RectangleCity
-※設計、技術の説明
-※デザイン、レイアウトの検証
-
-○BaseLineの設計
-
-
 ■ポートフォリオ(記事)
 ※画像ベースで記事を書く
  -ビジュアルの説明のみで概要が分かるようにする
  -スライド、動画のスクショをQiitaの下書きでまず整理する
 ※Color + Objの組み合わせでPD,CDで面白いものを作る
 
-○ポートフォリオ調査
-※ポートフォリオの拡張
-
-○過去の記事に処理説明を入れる
-
-○区画Generatorの記事化
+○RectangleCityの記事化
+・柔軟性
+・複雑性
 
 ●レイアウト
 ・概要
@@ -28,7 +18,14 @@
 ■CityVolumeMaker
 ※四角ベースでまず検証し、記事化する
 
-○クラス化の検証
+○RectangleCity検証
+・Plot
+ -区画スケール
+・Volume
+ -建物密度
+ -建物スケール
+・Pattern
+ -Window(縦、横、中央)
 
 △DetailのTutorialを整理
 ※ProceduralModeling

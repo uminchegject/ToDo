@@ -2,8 +2,6 @@
 ※多様性をパラメーターで表現できることを強調する
 ※パラメーターの柔軟性
 
-○完成系のアニメーションを用意する
-
 ●概要
 ・区画及び道の生成
  -区画のサイズ、幅の調整
@@ -16,8 +14,6 @@
 ■クラス化(記事)
 ※複雑性をクラスで制御できることを強調する
  -クラス種類を検証する
- 
-○都市に応じたパラメーター設定を検証
 
 ●クラス
 ・ノイズ
@@ -27,10 +23,8 @@
 
 ■LineMaker
 ●DetailBaseLineの実装
-・BaseLineをOffsetし、Rotateした上でClipする
-・枠Lineを生成し、端からClipを行いつつBaseLineを生成する
+・底辺、側辺からそれぞれラインを生成する、端でClip
 https://www.sidefx.com/ja/docs/houdini/vex/functions/clip.html
-
 ・BaseLineに沿ってBaseSurface上にLineを生成する
  -BaseLineをTranslate
  -BaseLineをDuplicate
