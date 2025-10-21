@@ -2,12 +2,11 @@
 ※多様性をパラメーターで表現できることを強調する
 ※パラメーターの柔軟性
 
-●概要
-・※モジュール化
- -Plot
- -Block
- -Volume
- -Pattern
+●多様性
+・Plot、Block、Pattern
+・モジュール化
+
+●工程フロー
 ・区画及び道の生成
  -区画のサイズ、幅の調整
  -道をランダムに削除
@@ -20,23 +19,8 @@
 ※複雑性をクラスで制御できることを強調する
  -クラス種類を検証する
 
-●概要
-・※クラス管理
-・モジュールを利用した街生成
+●複雑性
+・
 
-
-■LineMaker
-●DetailBaseLineの実装
-・StartPtを生成
- -回転角度とIntervalを参照して底辺、側辺に生成
-・LinePt,EndPtを生成
- -StartPtから、EdgeまでLineを生成
- -上辺、反対側辺まで、Lineを伸ばす
- -Clip(https://www.sidefx.com/ja/docs/houdini/vex/functions/clip.html)
-
-●Param
-・Interval
-・Rotate
-・Transform
-・Scale
- 
+●検証
+・Plot×Block×Pattern
