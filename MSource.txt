@@ -1,3 +1,18 @@
+■返信
+●委員会を運営してみてよかった事(委員会全体でよかったこと、自分で委員会を運営して効果的だった取り組みや工夫など)
+・チャレンジするきっかけにできる
+
+●委員会運営で改善すべきこと
+・タスクの重さに気を付ける
+ -自分もナレッジの整理が限界でした
+・全体のマネジメントのきつさ
+ -仕事の合間という曖昧
+
+●その他、何かご意見がありましたらお聞かせください
+全員が別々の場所で働いている環境下で、3名で全体をマネジメントするということはかなり至難かと思われます。
+そのため、
+
+
 ■区画と道の生成(記事)
 ※多様性をパラメーターで表現できることを強調する
 ※パラメーターの柔軟性
@@ -20,7 +35,99 @@
  -クラス種類を検証する
 
 ●複雑性
-・
 
 ●検証
 ・Plot×Block×Pattern
+
+
+■BaseLineGenerator
+○BottomStartPointも生成する
+・角度の逆転対応
+
+●ソース
+float rotate_angle = ch("RotateAngle");
+float interval = ch("Interval");
+
+float calculating_length = 0;
+vector side_start_pos_list[];
+vector bottom_start_pos_list[];
+int bottom_line_pt_list[] = primpoints(0, @primnum);
+int top_line_pt_list[] = primpoints(0, i@TopLinePrimNum);
+
+//側辺で生成
+int side_pt_1 = top_line_pt_list[0];
+int side_pt_2 = bottom_line_pt_list[0];
+if(rotate_angle < 0)
+{
+    side_pt_1 = bottom_line_pt_list[len(bottom_line_pt_list) - 1];
+    side_pt_2 = top_line_pt_list[len(top_line_pt_list) - 1];
+}
+vector side_pt_1_pos = point(0, "P", side_pt_1);
+vector side_pt_2_pos = point(0, "P", side_pt_2);
+float side_length = length(side_pt_2_pos - side_pt_1_pos);
+vector side_dir = normalize(side_pt_2_pos - side_pt_1_pos);
+
+int loop_num = 0;
+while(calculating_length < side_length)
+{
+    if(side_length < calculating_length + interval / abs(sin(radians(rotate_angle)))) break;
+    calculating_length += interval / abs(sin(radians(rotate_angle)));
+    vector spawn_pos = side_pt_1_pos + calculating_length * side_dir;    
+    append(side_start_pos_list, spawn_pos);
+    
+    loop_num += 1;
+    if(1000 < loop_num) break;
+}
+
+calculating_length = calculating_length - side_length;
+
+//底辺で生成
+for(int i = 1; i < len(bottom_line_pt_list); ++i)
+{
+    int last_prim_pt = bottom_line_pt_list[i - 1];
+    int prim_pt = bottom_line_pt_list[i];
+    vector last_prim_pt_pos = point(0, "P", last_prim_pt);
+    vector prim_pt_pos = point(0, "P", prim_pt);
+    float bottom_length = length(prim_pt_pos - last_prim_pt_pos);
+    vector bottom_dir = normalize(prim_pt_pos - last_prim_pt_pos);
+
+    loop_num = 0;
+    while(calculating_length < bottom_length)
+    {
+        if(bottom_length < calculating_length + interval / abs(cos(radians(rotate_angle)))) break;    
+        calculating_length += interval / abs(cos(radians(rotate_angle)));
+        vector spawn_pos = last_prim_pt_pos + calculating_length * bottom_dir;
+        append(bottom_start_pos_list, spawn_pos);        
+        
+        loop_num += 1;
+        if(1000 < loop_num) break;
+    }        
+        
+    calculating_length = calculating_length - bottom_length;
+}
+
+foreach(vector spawn_pos; side_start_pos_list){
+    addpoint(0, spawn_pos);
+}
+foreach(vector spawn_pos; bottom_start_pos_list){
+    addpoint(0, spawn_pos);
+}
+
+○Clip処理の検証及び実装
+・StartPtから、EdgeまでLineを生成
+・上辺、反対側辺まで、Lineを伸ばす
+・Clip(https://www.sidefx.com/ja/docs/houdini/vex/functions/clip.html)
+
+●ソース
+vector input_pos_1 = check_pos_1;
+vector input_pos_2 = check_pos_2;
+
+int result;
+clip(result, input_pos_1, input_pos_2, input_plane);
+
+vector intersect_pos;
+if (result == 1)
+{
+    if(input_pos_1 != check_pos_1) intersect_pos = input_pos_1;
+	if(input_pos_2 != check_pos_2) intersect_pos = input_pos_2;
+}
