@@ -29,9 +29,7 @@ https://www.borndigital.co.jp/seminar/houdini21/
 ■CityVolumeMaker
 ※四角ベースでまず検証し、記事化する
 
-○RectangleCity検証
-・複雑性
-・多様性
+○クラス化検証
 
 △DetailのTutorialを整理
 ※ProceduralModeling
@@ -70,9 +68,16 @@ https://www.borndigital.co.jp/seminar/houdini21/
 
 
 ■反省
+※午前に設計・実装メモを行い、午後に実装、デバッグをメインに行う
+
+※定時後は設計・実装メモを優先する
+ -実装メモを用意する場合すぐにカフェに行く
+
 ※magmabooksは終業後基本的に行く
  -magmabooksでその後の計画も考える
+
 ※積極的に音楽を聴く
+
 ※Thinking時業務の効率化のアイデアを練る
 
 
