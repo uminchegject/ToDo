@@ -11,7 +11,6 @@
 
 ○Plot×Volume×Patternの組み合わせをランダムにして検証
 
-
 ■Grid
 ○StartPointの生成
 ・BottomPointの生成
@@ -43,13 +42,8 @@
 ※四角ベースでまず検証し、記事化する
 
 ○RectangleCity検証
-・Plot
- -区画スケール
-・Volume
- -建物密度
- -建物スケール
-・Pattern
- -Window(縦、横、中央)
+・複雑性
+・多様性
 
 △DetailのTutorialを整理
 ※ProceduralModeling
@@ -96,6 +90,8 @@
 
 ■Private
 ※一人暮らしの準備
+
+○Python本斥候
 
 ○本整理
 ・捨てる
