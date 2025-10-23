@@ -1,3 +1,19 @@
+■返信
+●委員会を運営してみてよかった事(委員会全体でよかったこと、自分で委員会を運営して効果的だった取り組みや工夫など)
+・チャレンジするきっかけにできる
+
+●委員会運営で改善すべきこと
+・タスクの重さに気を付ける
+ -自分もナレッジの整理が限界でした
+・全体のマネジメント
+ -目標を明確にして、道のりを細分化し、しっかりメンバーに共有する(3年で案件増加させるための道のりの細分化はマジで分からない…)
+ -タスクの重さにも気を回さなければならないので、計画を練ることはかなり難しい課題でした…
+
+●その他、何かご意見がありましたらお聞かせください
+全員が別々の場所で働いている環境下で、3名で全体をマネジメントするということはかなり至難かと思われます。
+そのため、
+
+
 ■区画と道の生成(記事)
 ※多様性をパラメーターで表現できることを強調する
 ※パラメーターの柔軟性
@@ -23,3 +39,112 @@
 
 ●検証
 ・Plot×Block×Pattern
+
+
+
+■RectangleCity
+※クラス記事の複雑性を強調する検証を行う
+
+○ラインの直角軸のboundを取得する処理を実装
+vector getProjectedBound(vector points[]; vector axis)
+{
+    axis = normalize(axis);
+    float minProj = 1e10;
+    float maxProj = -1e10;
+
+    foreach (vector P; points)
+    {
+        float proj = dot(P, axis);
+        minProj = min(minProj, proj);
+        maxProj = max(maxProj, proj);
+    }
+
+    float size = maxProj - minProj;
+    return set(minProj, maxProj, size);
+}
+
+○make_lineを修正
+float rotate_angle = detail(-1, "RotateAngleY");
+float place_angle = radians(rotate_angle);
+float line_angle  = radians(rotate_angle + 90);
+int index = detail(4, "iteration");
+float min_interval = detail(-1, "MinInterval", 0);
+float max_interval = detail(-1, "MaxInterval", 0);
+float interval_range = max_interval - min_interval;
+float base_interval = min_interval + interval_range / 2;
+
+function vector rotate2D(vector v; float ang)
+{
+    return set(
+        v.x * cos(ang) - v.z * sin(ang),
+        v.y,
+        v.x * sin(ang) + v.z * cos(ang)
+    );
+}
+
+vector line_dir = normalize(rotate2D(set(1, 0, 0), line_angle));
+vector place_dir = normalize(rotate2D(set(1, 0, 0), place_angle));
+
+float bounds[] = detailintrinsic(1, "bounds");
+vector min_bound = set(bounds[0], bounds[2], bounds[4]);
+vector max_bound = set(bounds[1], bounds[3], bounds[5]);
+float max_length = length(min_bound - max_bound) * 2;
+
+int line_num = int(max_length / base_interval);
+vector base_slider = place_dir * max_length / line_num;
+vector center_pos = detail(1, "centroid");
+
+for(int i = 1; i < line_num - 1; ++i)
+{
+    vector line_center_pos = center_pos - max_length / 2 * place_dir;
+    vector randomly_slide_dir = normalize(base_slider) * interval_range;
+    randomly_slide_dir *= rand(base_slider * i + line_center_pos) - 0.5;
+    line_center_pos += base_slider * i + randomly_slide_dir;
+    
+    vector uv;
+    vector pt_1_pos;
+    vector pt_2_pos;
+    int hit_prim_1 = intersect(2, line_center_pos, line_dir * max_length, pt_1_pos, uv);
+    int hit_prim_2 = intersect(2, line_center_pos, -line_dir * max_length, pt_2_pos, uv);    
+    if(hit_prim_1 < 0 || hit_prim_2 < 0) continue;
+    
+    int pt_1 = addpoint(0, pt_1_pos);
+    int pt_2 = addpoint(0, pt_2_pos);        
+    int polyline = addprim(0, "polyline");
+    addvertex(0, polyline, pt_1);
+    addvertex(0, polyline, pt_2);
+}
+
+
+○Plotのクラス検証
+・丸の内&八重洲
+ -大小クラス
+ -細道PlotGeneratorを追加で用意
+
+
+
+■BaseLineGenerator
+○ClipPlaneの生成
+・BottomLineを基準に配置
+・前ブロックを引継ぎしつつ位置の調整
+
+○Clipを各Lineで行う
+
+○Clip処理の検証及び実装
+・StartPtから、EdgeまでLineを生成
+・上辺、反対側辺まで、Lineを伸ばす
+・Clip(https://www.sidefx.com/ja/docs/houdini/vex/functions/clip.html)
+
+●Clipソース
+vector input_pos_1 = check_pos_1;
+vector input_pos_2 = check_pos_2;
+
+int result;
+clip(result, input_pos_1, input_pos_2, input_plane);
+
+vector intersect_pos;
+if (result == 1)
+{
+    if(input_pos_1 != check_pos_1) intersect_pos = input_pos_1;
+	if(input_pos_2 != check_pos_2) intersect_pos = input_pos_2;
+}
