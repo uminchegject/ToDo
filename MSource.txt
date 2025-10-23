@@ -1,26 +1,25 @@
 ■返信
 ●委員会を運営してみてよかった事(委員会全体でよかったこと、自分で委員会を運営して効果的だった取り組みや工夫など)
 ・チャレンジするきっかけにできる
+ -委員会を通じて会社の目標と同時に、自分の目標を立てるきっかけになったのでそこはよかったです。
 
 ●委員会運営で改善すべきこと
-・タスクの重さに気を付ける
- -自分もナレッジの整理が限界でした
-・全体のマネジメント
- -目標を明確にして、道のりを細分化し、しっかりメンバーに共有する(3年で案件増加させるための道のりの細分化はマジで分からない…)
- -タスクの重さにも気を回さなければならないので、計画を練ることはかなり難しい課題でした…
+・計画と共有をしっかり
+ -目標を明確にして、道のりを細分化し、しっかりメンバーに共有する(3年で案件を増加させるための計画は正直できていなかったと思います…)
+・作業量に気を付ける
+ -メイン業務を進めながら、並行して裁くことができる作業量をしっかり管理する(自分はナレッジの整理が限界でした…)
 
 ●その他、何かご意見がありましたらお聞かせください
-全員が別々の場所で働いている環境下で、3名で全体をマネジメントするということはかなり至難かと思われます。
-そのため、
+大変かと思われますが頑張って下さい!
 
-
-■区画と道の生成(記事)
+■区画生成のSubnet化
 ※多様性をパラメーターで表現できることを強調する
 ※パラメーターの柔軟性
 
-●多様性
-・Plot、Block、Pattern
-・モジュール化
+●フローを細かく分けてモジュール化
+・Plot
+・Block
+・Pattern
 
 ●工程フロー
 ・区画及び道の生成
@@ -31,22 +30,25 @@
  -建築スケールの調整
 
 
-■クラス化(記事)
+■組み合わせを多様化(記事)
 ※複雑性をクラスで制御できることを強調する
  -クラス種類を検証する
 
-●複雑性
+●それぞれのSubnetのパラメーターを組み合わせる
 
-●検証
-・Plot×Block×Pattern
+●それぞれのSubnetで違うパラメーターを3種類ずつ用意
+・Plot
+・Volume
+・Pattern
 
+●Plot×Block×Patternをそれぞれ組み合わせて混在させる
 
 
 ■RectangleCity
 ※クラス記事の複雑性を強調する検証を行う
 
-○ラインの直角軸のboundを取得する処理を実装
-vector getProjectedBound(vector points[]; vector axis)
+●make_line
+vector get_bound(vector points[]; vector axis)
 {
     axis = normalize(axis);
     float minProj = 1e10;
@@ -63,16 +65,6 @@ vector getProjectedBound(vector points[]; vector axis)
     return set(minProj, maxProj, size);
 }
 
-○make_lineを修正
-float rotate_angle = detail(-1, "RotateAngleY");
-float place_angle = radians(rotate_angle);
-float line_angle  = radians(rotate_angle + 90);
-int index = detail(4, "iteration");
-float min_interval = detail(-1, "MinInterval", 0);
-float max_interval = detail(-1, "MaxInterval", 0);
-float interval_range = max_interval - min_interval;
-float base_interval = min_interval + interval_range / 2;
-
 function vector rotate2D(vector v; float ang)
 {
     return set(
@@ -82,13 +74,21 @@ function vector rotate2D(vector v; float ang)
     );
 }
 
+float rotate_angle = detail(-1, "RotateAngleY");
+float place_angle = radians(rotate_angle);
+float line_angle  = radians(rotate_angle + 90);
+int index = detail(4, "iteration");
+float min_interval = detail(-1, "MinInterval", 0);
+float max_interval = detail(-1, "MaxInterval", 0);
+float interval_range = max_interval - min_interval;
+float base_interval = min_interval + interval_range / 2;
+
 vector line_dir = normalize(rotate2D(set(1, 0, 0), line_angle));
 vector place_dir = normalize(rotate2D(set(1, 0, 0), place_angle));
 
-float bounds[] = detailintrinsic(1, "bounds");
-vector min_bound = set(bounds[0], bounds[2], bounds[4]);
-vector max_bound = set(bounds[1], bounds[3], bounds[5]);
-float max_length = length(min_bound - max_bound) * 2;
+int prim_points[] = primpoints(0, @primnum);
+vector bound = get_bound(prim_points, line_dir);
+float max_length = bound.x;
 
 int line_num = int(max_length / base_interval);
 vector base_slider = place_dir * max_length / line_num;
@@ -115,7 +115,6 @@ for(int i = 1; i < line_num - 1; ++i)
     addvertex(0, polyline, pt_2);
 }
 
-
 ○Plotのクラス検証
 ・丸の内&八重洲
  -大小クラス
@@ -129,11 +128,25 @@ for(int i = 1; i < line_num - 1; ++i)
 ・前ブロックを引継ぎしつつ位置の調整
 
 ○Clipを各Lineで行う
+・boundの軸をclipのplaneに使う
 
-○Clip処理の検証及び実装
-・StartPtから、EdgeまでLineを生成
-・上辺、反対側辺まで、Lineを伸ばす
-・Clip(https://www.sidefx.com/ja/docs/houdini/vex/functions/clip.html)
+●boundの取得
+vector get_bound(vector points[]; vector axis)
+{
+    axis = normalize(axis);
+    float minProj = 1e10;
+    float maxProj = -1e10;
+
+    foreach (vector P; points)
+    {
+        float proj = dot(P, axis);
+        minProj = min(minProj, proj);
+        maxProj = max(maxProj, proj);
+    }
+
+    float size = maxProj - minProj;
+    return set(minProj, maxProj, size);
+}
 
 ●Clipソース
 vector input_pos_1 = check_pos_1;
