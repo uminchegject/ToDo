@@ -1,17 +1,3 @@
-■返信
-●委員会を運営してみてよかった事(委員会全体でよかったこと、自分で委員会を運営して効果的だった取り組みや工夫など)
-・チャレンジするきっかけにできる
- -委員会を通じて会社の目標と同時に、自分の目標を立てるきっかけになったのでそこはよかったです。
-
-●委員会運営で改善すべきこと
-・明確な計画
- -目標を明確にして、道のりを細分化し、しっかりメンバーに共有する(3年で案件を増加させるための計画は正直できていなかったと思います…)
-・作業量に気を付ける
- -メイン業務を進めながら、並行して裁くことができる作業量をしっかり管理する(自分はナレッジの整理が限界でした…)
-
-●その他、何かご意見がありましたらお聞かせください
-大変かと思われますが頑張って下さい!
-
 ■区画生成のSubnet化
 ※多様性をパラメーターで表現できることを強調する
 ※パラメーターの柔軟性
@@ -47,78 +33,8 @@
 ■RectangleCity
 ※クラス記事の複雑性を強調する検証を行う
 
-●make_line
-vector get_bound(vector points[]; vector axis)
-{
-    axis = normalize(axis);
-    float minProj = 1e10;
-    float maxProj = -1e10;
-
-    foreach (vector P; points)
-    {
-        float proj = dot(P, axis);
-        minProj = min(minProj, proj);
-        maxProj = max(maxProj, proj);
-    }
-
-    float size = maxProj - minProj;
-    return set(minProj, maxProj, size);
-}
-
-function vector rotate2D(vector v; float ang)
-{
-    return set(
-        v.x * cos(ang) - v.z * sin(ang),
-        v.y,
-        v.x * sin(ang) + v.z * cos(ang)
-    );
-}
-
-float rotate_angle = detail(-1, "RotateAngleY");
-float place_angle = radians(rotate_angle);
-float line_angle  = radians(rotate_angle + 90);
-int index = detail(4, "iteration");
-float min_interval = detail(-1, "MinInterval", 0);
-float max_interval = detail(-1, "MaxInterval", 0);
-float interval_range = max_interval - min_interval;
-float base_interval = min_interval + interval_range / 2;
-
-vector line_dir = normalize(rotate2D(set(1, 0, 0), line_angle));
-vector place_dir = normalize(rotate2D(set(1, 0, 0), place_angle));
-
-int prim_points[] = primpoints(0, @primnum);
-vector bound = get_bound(prim_points, line_dir);
-float max_length = bound.x;
-
-int line_num = int(max_length / base_interval);
-vector base_slider = place_dir * max_length / line_num;
-vector center_pos = detail(1, "centroid");
-
-for(int i = 1; i < line_num - 1; ++i)
-{
-    vector line_center_pos = center_pos - max_length / 2 * place_dir;
-    vector randomly_slide_dir = normalize(base_slider) * interval_range;
-    randomly_slide_dir *= rand(base_slider * i + line_center_pos) - 0.5;
-    line_center_pos += base_slider * i + randomly_slide_dir;
-    
-    vector uv;
-    vector pt_1_pos;
-    vector pt_2_pos;
-    int hit_prim_1 = intersect(2, line_center_pos, line_dir * max_length, pt_1_pos, uv);
-    int hit_prim_2 = intersect(2, line_center_pos, -line_dir * max_length, pt_2_pos, uv);    
-    if(hit_prim_1 < 0 || hit_prim_2 < 0) continue;
-    
-    int pt_1 = addpoint(0, pt_1_pos);
-    int pt_2 = addpoint(0, pt_2_pos);        
-    int polyline = addprim(0, "polyline");
-    addvertex(0, polyline, pt_1);
-    addvertex(0, polyline, pt_2);
-}
-
 ○Plotのクラス検証
-・丸の内&八重洲
- -大小クラス
- -細道PlotGeneratorを追加で用意
+
 
 
 
