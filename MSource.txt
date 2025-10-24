@@ -1,3 +1,16 @@
+○モジュール管理調査
+・cedec2018_proceduralHardSurfaceDesignWithHoudiniLight
+
+○多様性調査
+・https://www.youtube.com/watch?v=2d7c7dVX-kg
+
+○CityGenerator、VolumeGeneratorの実装
+
+○VolumeGeneratorの先
+・VolumeToPattern
+・VolumeToPM
+
+
 ■区画生成のSubnet化
 ※多様性をパラメーターで表現できることを強調する
 ※パラメーターの柔軟性
@@ -33,8 +46,18 @@
 ■RectangleCity
 ※クラス記事の複雑性を強調する検証を行う
 
-○Plotのクラス検証
+○Plot
+・BasePlot
+・SubPlot
 
+○Volume
+・HighVolume
+・LowVolume
+
+●Pattern
+・Grid
+・Vertical
+・Horizontal
 
 
 
