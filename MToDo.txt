@@ -1,28 +1,36 @@
 ■ポートフォリオ(記事)
-※画像ベースで記事を書く
- -ビジュアルの説明のみで概要が分かるようにする
- -スライド、動画のスクショをQiitaの下書きでまず整理する
-※Color + Objの組み合わせでPD,CDで面白いものを作る
+※技術部分は平日に作業しながら記事メモを用意する
 
-○RectangleCityの記事化
-・柔軟性
-・複雑性
+○GIFの用意
+
+○記事のメモを用意
+
+●構成
+・パラメーターの説明
+・パラメーターの実演
 
 ●レイアウト
 ・概要
  -※トピックとなる重要画像を最初に貼る
  -※結論を概要でまとめる
-・重要スライド
 
 
 ■CityVolumeMaker
 ※四角ベースでまず検証し、記事化する
 
-○クラス化検証
+○BlockGeneratorの実装
+・Module化
+・SubDivisonを参考にする
 
-△DetailのTutorialを整理
-※ProceduralModeling
-・FacadeGenerator
+○VolumeGeneratorの実装
+・PlotGeneratorから切り分ける
+
+○Classの検証
+
+△Detail
+・ProceduralMoeling
+ -ProceduralCity
+・ModularModeling
 
 △柔軟化
 ・PlotMaker

@@ -1,35 +1,9 @@
-※技術部分は平日に作業しながら記事メモを用意する
-
-○Plot
-・記事作成
- -パラメーターの説明
- -パラメーターの実演
- -Subnet
-
-○Block
-・Module化
-・SubDivisonを参考にする
-
-○Class
-・検証
-
-○PM
-・ProceduralCityの処理を応用
-
-○VolumeGeneratorの先
-・VolumeToPattern
-・VolumeToPM
-
-
-■区画Generator
-
-
 ■区画生成のSubnet化
 ※多様性をパラメーターで表現できることを強調する
 ※パラメーターの柔軟性
 
 ●概要
-・区画と道を生成し、区画内にVolumeを配置し、Volumeから建物Generatorを使用して建物を生成
+・区画と道を生成し、]区画内にVolumeを配置し、Volumeから建物Generatorを使用して建物を生成
 ・フローを細かく分けてSubnet化
  -Plot
  -Volume
@@ -38,18 +12,20 @@
 ●区画及び道の生成
 ・区画のサイズ、幅の調整
 ・道をランダムに削除
+・区画内でさらに区画と道を生成する
 
-
-●区画からVolumeの生成
+●区画から敷地を分割し、Volumeを生成
+・敷地のスケールを調整
 ・建築数の調整
 ・建築スケールの調整
 
-●建物Generatorの生成
+●Volumeから建築を生成
 ・窓の形状
 ・窓のサイズ
 
 ●検証
 ※Classは1つで挙動確認してみる
+・4つのSubnetを繋げて検証
 
 
 
@@ -57,12 +33,12 @@
 ※複雑性をクラスで制御できることを強調する
  -クラス種類を検証する
 
-○クラスの組み合わせをランダム化するソース(wrangle)を用意する
-
 ●概要
-・それぞれのパラメーターをマルチパラメーター化して、クラス付けを行い組み合わせをしやすくする
+・それぞれのパターンを組み合わせし、多様な組み合わせを行えるようにする
 
-●挙動
+●クラス化
+・それぞれのパラメーターをマルチパラメーター化して、クラス付けを行い組み合わせをしやすくする
+・クラスwrangleの実装
 
 ●検証
 ・それぞれのSubnetで違うパラメーターを3種類ずつ用意
@@ -70,23 +46,6 @@
  -Volume
  -Pattern
 ・Plot×Block×Patternをそれぞれ組み合わせて混在させる
-
-
-■RectangleCity
-※クラス記事の複雑性を強調する検証を行う
-
-○Plot
-・BasePlot
-・SubPlot
-
-○Volume
-・HighVolume
-・LowVolume
-
-○Pattern
-・Grid
-・Vertical
-・Horizontal
 
 
 
