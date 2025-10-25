@@ -1,12 +1,27 @@
-●記事構成
-・パラメーターの説明
-・パラメーターの実演
+※技術部分は平日に作業しながら記事メモを用意する
 
-○CityGenerator、VolumeGeneratorの実装
+○Plot
+・記事作成
+ -パラメーターの説明
+ -パラメーターの実演
+ -Subnet
+
+○Block
+・Module化
+・SubDivisonを参考にする
+
+○Class
+・検証
+
+○PM
+・ProceduralCityの処理を応用
 
 ○VolumeGeneratorの先
 ・VolumeToPattern
 ・VolumeToPM
+
+
+■区画Generator
 
 
 ■区画生成のSubnet化
