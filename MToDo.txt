@@ -116,6 +116,11 @@ egeg0304
 https://www.sidefx.com/tutorials/foundations-205-solaris-market/
 ・『グランツーリスモ７』開発におけるUSD活用事例
 https://cedil.cesa.or.jp/cedil_sessions/view/2607
+・【CEDEC2024 講演】USDのゲームアセットへの応用について
+https://www.youtube.com/watch?v=G7pVWDGIvH4
+・USD VFXパイプライン解説と各種インタビュー
+https://www.youtube.com/@usdvfx_japan/videos
+
 
 ●技術
 ・C++設計
