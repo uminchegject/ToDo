@@ -1,5 +1,29 @@
 ○焼肉返信
 
+○PlotMaker記事
+・GIF
+・文
+
+○BlockMaker実装
+・randomness
+・min_size
+・iteration
+
+○BlockMaker検証
+・BigClass(1)からランダムにSmallClass(2)を生成する
+ -randomressは低値
+・区画スケールがランダムなClassn
+ -randomressは高値
+
+○【CEDEC2024 講演】USDのゲームアセットへの応用について
+https://www.youtube.com/watch?v=G7pVWDGIvH4
+
+△Tipsメモ
+
+
+
+
+
 ■ポートフォリオ(記事)
 ※技術部分は平日に作業しながら記事メモを用意する
 
@@ -24,9 +48,6 @@
 ○BlockGeneratorの実装
 ・Module化
 ・SubDivisonを参考にする
-
-○VolumeGeneratorの実装
-・PlotGeneratorから切り分ける
 
 ○Classの検証
 
