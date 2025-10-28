@@ -3,15 +3,14 @@
 ○サバゲー
 
 ○BlockMaker実装
-・randomness
-・min_size
-・iteration
+・Do_Splitの修正
 
 ○BlockMaker検証
 ・BigClass(1)からランダムにSmallClass(2)を生成する
  -randomressは低値
-・区画スケールがランダムなClassn
+・区画スケールがランダムなClass
  -randomressは高値
+ 
 
 
 ■ポートフォリオ(記事)
@@ -53,10 +52,12 @@
 
 
 ■CD(Tool)
-※BoatHouseを軸にTool開発をする
+※EdgeMakerをベースにしたLineGenerator、PatternGeneratorを実装する
 
 ○LineMakerの実装
 ※EdgeMakerで検証
+
+△BoatHouseで検証
 
 ■設計
 ●Param
@@ -77,9 +78,9 @@
 
 
 ■反省
-※定時後は選択肢を広げる
- -本屋によらない
- -日テレスターバックス×日本橋スターバックス
+※定時後のアクションは選択肢を広げる
+ -本屋、散歩
+ -日テレスターバックス、蔦屋、日本橋スターバックス
 
 ※ガムを用意
 
@@ -87,7 +88,6 @@
 
 ※定時後は設計・実装メモを優先する
  -実装メモを用意する場合すぐにカフェに行く
-
 
 
 ■Private
@@ -131,8 +131,6 @@ egeg0304
 https://www.sidefx.com/tutorials/foundations-205-solaris-market/
 ・『グランツーリスモ７』開発におけるUSD活用事例
 https://cedil.cesa.or.jp/cedil_sessions/view/2607
-・【CEDEC2024 講演】USDのゲームアセットへの応用について
-https://www.youtube.com/watch?v=G7pVWDGIvH4
 ・USD VFXパイプライン解説と各種インタビュー
 https://www.youtube.com/@usdvfx_japan/videos
 
