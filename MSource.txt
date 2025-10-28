@@ -1,60 +1,3 @@
-■区画生成のSubnet化
-※多様性をパラメーターで表現できることを強調する
-※パラメーターの柔軟性
-
-●概要
-・区画と道を生成し、]区画内にVolumeを配置し、Volumeから建物Generatorを使用して建物を生成
-・フローを細かく分けてSubnet化
- -Plot
- -Volume
- -WindowGenerator
-
-●区画及び道の生成
-・パラメーター概要
- -道の間隔
- -道幅
- -道の削除比率
-・道幅、間隔の調整
-・道をランダムに削除
-・区画内でさらに区画を生成できる
-
-●区画から敷地を分割し、Volumeを生成
-・パラメーター概要
- -敷地スケール
- -建物割合
- -建物スケール
-・敷地のスケールを調整
-・建築割合の調整
-・建築スケールの調整
-
-●検証
-※Classは1つで挙動確認してみる
-・4つのSubnetを繋げて検証
- -建物Generatorを使用
-
-●Tips
-・LabsSubdivisionを改良
-
-
-■組み合わせを多様化(記事)
-※複雑性をクラスで制御できることを強調する
- -クラス種類を検証する
-
-●概要
-・それぞれのパターンを組み合わせし、多様な組み合わせを行えるようにする
-
-●クラス化
-・それぞれのパラメーターをマルチパラメーター化して、クラス付けを行い組み合わせをしやすくする
-・クラスwrangleの実装
-
-●検証
-・それぞれのSubnetで違うパラメーターを3種類ずつ用意
- -Plot
- -Volume
- -Pattern
-・Plot×Block×Patternをそれぞれ組み合わせて混在させる
-
-
 ■BaseLineGenerator
 ○ClipPlaneの生成
 ・BottomLineを基準に配置
@@ -96,37 +39,7 @@ if (result == 1)
 }
 
 
-
 ■VolumeMaker
-●check__min_size
-float minarea = detail(-1, "MinSize");
-i@group_remove_me = (primintrinsic(0, "measuredarea", @primnum) > minarea) ? 1 : 0;
-
-
-●Find_longest_edge
-vector edgev(int h){
-    vector src = point(0, "P", hedge_srcpoint(0, h));
-    vector dst = point(0, "P", hedge_dstpoint(0, h));
-    return dst - src;
-}
-
-int h = primhedge(0, @primnum);
-int temp = h;
-
-int longest_edge = h;
-float max_l = 0;
-do{
-    float l = length(edgev(h));
-    if(l > max_l){
-        max_l = l;
-        longest_edge = h;
-    }
-     h = hedge_next(0,h);
-   
-}while(h != temp);
-i@cut_edge = longest_edge;
-
-
 ●Do_Splitting
 vector edgev(int h){
     vector src = point(0, "P", hedge_srcpoint(0, h));
@@ -212,3 +125,61 @@ append(prim_2, pts[index : len(pts)]);
 append(prim_2, start);
 addprim(0, "poly", prim_1);
 addprim(0, "poly", prim_2);
+
+
+
+■区画生成のSubnet化
+※多様性をパラメーターで表現できることを強調する
+※パラメーターの柔軟性
+
+●概要
+・区画と道を生成し、]区画内にVolumeを配置し、Volumeから建物Generatorを使用して建物を生成
+・フローを細かく分けてSubnet化
+ -Plot
+ -Volume
+ -WindowGenerator
+
+●区画及び道の生成
+・パラメーター概要
+ -道の間隔
+ -道幅
+ -道の削除比率
+・道幅、間隔の調整
+・道をランダムに削除
+・区画内でさらに区画を生成できる
+
+●区画から敷地を分割し、Volumeを生成
+・パラメーター概要
+ -敷地スケール
+ -建物割合
+ -建物スケール
+・敷地のスケールを調整
+・建築割合の調整
+・建築スケールの調整
+
+●検証
+※Classは1つで挙動確認してみる
+・4つのSubnetを繋げて検証
+ -建物Generatorを使用
+
+●Tips
+・LabsSubdivisionを改良
+
+
+■組み合わせを多様化(記事)
+※複雑性をクラスで制御できることを強調する
+ -クラス種類を検証する
+
+●概要
+・それぞれのパターンを組み合わせし、多様な組み合わせを行えるようにする
+
+●クラス化
+・それぞれのパラメーターをマルチパラメーター化して、クラス付けを行い組み合わせをしやすくする
+・クラスwrangleの実装
+
+●検証
+・それぞれのSubnetで違うパラメーターを3種類ずつ用意
+ -Plot
+ -Volume
+ -Pattern
+・Plot×Block×Patternをそれぞれ組み合わせて混在させる
