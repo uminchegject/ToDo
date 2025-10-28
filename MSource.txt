@@ -1,83 +1,20 @@
-■BaseLineGenerator
-○ClipPlaneの生成
-・BottomLineを基準に配置
-・前ブロックを引継ぎしつつ位置の調整
-
-○Clipを各Lineで行う
-・boundの軸をclipのplaneに使う
-
-●boundの取得
-vector get_bound(vector points[]; vector axis)
-{
-    axis = normalize(axis);
-    float minProj = 1e10;
-    float maxProj = -1e10;
-
-    foreach (vector P; points)
-    {
-        float proj = dot(P, axis);
-        minProj = min(minProj, proj);
-        maxProj = max(maxProj, proj);
-    }
-
-    float size = maxProj - minProj;
-    return set(minProj, maxProj, size);
-}
-
-●Clipソース
-vector input_pos_1 = check_pos_1;
-vector input_pos_2 = check_pos_2;
-
-int result;
-clip(result, input_pos_1, input_pos_2, input_plane);
-
-vector intersect_pos;
-if (result == 1)
-{
-    if(input_pos_1 != check_pos_1) intersect_pos = input_pos_1;
-	if(input_pos_2 != check_pos_2) intersect_pos = input_pos_2;
-}
-
 
 ■VolumeMaker
 ●Do_Splitting
-vector edgev(int h){
-    vector src = point(0, "P", hedge_srcpoint(0, h));
-    vector dst = point(0, "P", hedge_dstpoint(0, h));
-    return dst - src;
-}
-
-int on_line( vector p; int edge)
-{
-  vector a = point(0, "P",hedge_srcpoint(0, edge));
-  vector b = point(0, "P",hedge_dstpoint(0, edge)); 
-   
-  vector pa = p - a, ba = b - a;
-  float h = clamp( dot(pa,ba)/dot(ba,ba), 0.0, 1.0 );
-  return  length(pa - ba*h) < 1e-9;
-}
-
-
 int h = i@cut_edge;
 int temp = h;
 
 vector src = point(0, "P", hedge_srcpoint(0, h));
 vector dst = point(0, "P", hedge_dstpoint(0, h));
-vector edge = dst - src;
-
+vector edge = normalize(dst - src);
 
 float randomness = detail(-1, "Randomness");
-
-randomness = fit01(randomness, .5, .01);
 vector rand_p = src + edge * fit01(float(rand(@primnum + detail(1, "iteration"))), randomness, 1 - randomness);
 
-int closest_edge;
 vector hit_p;
-float min_dist = 1e10;
 int i = 0;
 int index = -1;
 int pts[];
-int temp_2 = h;
 do{
     int next = hedge_next(0, h);
     vector next_dst = point(0, "P", hedge_dstpoint(0, next));
@@ -94,11 +31,9 @@ do{
     vector temp_dst = next_dst;
     clip(hit, next_dst, next_src, plane);
     float l = distance(temp_src, next_src);
-    if(on_line(next_src, next) && l > 1e-9 && next != temp && distance(rand_p, next_src) < min_dist){
-            min_dist = distance(rand_p, next_src);
-            hit_p = next_src;
-            closest_edge = next;
-            index = i + 1;      
+    if(hit == 1){
+		hit_p = next_src;
+		index = i + 1;      
     }     
     
     append(pts, hedge_dstpoint(0, h));
@@ -119,12 +54,86 @@ int prim_1[] = array(start);
 append(prim_1, pts[0:index]);
 append(prim_1, end);
 
-
 int prim_2[] =  array(end);
 append(prim_2, pts[index : len(pts)]);
 append(prim_2, start);
 addprim(0, "poly", prim_1);
 addprim(0, "poly", prim_2);
+
+
+■BaseLineGenerator
+・ClipPlaneの生成
+ -BottomLineを基準に配置
+ -前ブロックを引継ぎしつつ位置の調整
+・Clipを各Lineで行う
+ -boundの軸をclipのplaneに使う
+
+●boundの取得
+vector get_bound(vector points[]; vector axis)
+{
+    axis = normalize(axis);
+    float minProj = 1e10;
+    float maxProj = -1e10;
+
+    foreach (vector P; points)
+    {
+        float proj = dot(P, axis);
+        minProj = min(minProj, proj);
+        maxProj = max(maxProj, proj);
+    }
+
+    float size = maxProj - minProj;
+    return set(minProj, maxProj, size);
+}
+
+●Clip
+vector get_intersect_pos(vector p1; vector p2; vector4 plane)
+{
+    vector pos1 = p1;
+    vector pos2 = p2;
+    int result;
+    clip(result, pos1, pos2, plane);
+
+    // デフォルトは「無効」な値を返す（例：{0,0,0}）
+    vector intersect = {0,0,0};
+
+    // 両点が平面の両側にある場合のみ交点を返す
+    if (result == 1)
+    {
+        if (pos1 != p1)
+            intersect = pos1;
+        else if (pos2 != p2)
+            intersect = pos2;
+        else
+            return {0,0,0}; // 平面上にある場合などは無視
+    }
+    else
+    {
+        // clipされなかった or 完全に同じ側
+        return {0,0,0};
+    }
+
+    return intersect;
+}
+
+vector4 make_plane(vector pos; vector normal)
+{
+    // 正規化（任意）
+    vector n = normalize(normal);
+
+    // 平面の定数項 d を計算
+    float d = -dot(n, pos);
+
+    // vector4形式で返す
+    return set(n.x, n.y, n.z, d);
+}
+
+
+vector plane = {0,1,0,0};
+vector a = {1,2,0};
+vector b = {1,-2,0};
+
+vector hit = get_intersect_pos(a, b, plane);
 
 
 
