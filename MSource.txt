@@ -1,4 +1,3 @@
-
 ■VolumeMaker
 ●Do_Splitting
 int h = i@cut_edge;
@@ -30,7 +29,6 @@ do{
     vector temp_src = next_src;
     vector temp_dst = next_dst;
     clip(hit, next_dst, next_src, plane);
-    float l = distance(temp_src, next_src);
     if(hit == 1){
 		hit_p = next_src;
 		index = i + 1;      
@@ -62,11 +60,14 @@ addprim(0, "poly", prim_2);
 
 
 ■BaseLineGenerator
-・ClipPlaneの生成
- -BottomLineを基準に配置
- -前ブロックを引継ぎしつつ位置の調整
-・Clipを各Lineで行う
- -boundの軸をclipのplaneに使う
+○ClipPlaneの生成
+・2頂点からAxisのBound長さを取得
+・Offsetしてから、PlaneのBasePointを生成
+ -各Primごとに計算する
+ -BaseLineを基準に計算を行う
+
+○ClipをPlaneで行う
+
 
 ●boundの取得
 vector get_bound(vector points[]; vector axis)
@@ -134,7 +135,6 @@ vector a = {1,2,0};
 vector b = {1,-2,0};
 
 vector hit = get_intersect_pos(a, b, plane);
-
 
 
 ■区画生成のSubnet化
