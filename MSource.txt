@@ -1,70 +1,13 @@
-■VolumeMaker
-●Do_Splitting
-int h = i@cut_edge;
-int temp = h;
-
-vector src = point(0, "P", hedge_srcpoint(0, h));
-vector dst = point(0, "P", hedge_dstpoint(0, h));
-vector edge = normalize(dst - src);
-
-float randomness = detail(-1, "Randomness");
-vector rand_p = src + edge * fit01(float(rand(@primnum + detail(1, "iteration"))), randomness, 1 - randomness);
-
-vector hit_p;
-int i = 0;
-int index = -1;
-int pts[];
-do{
-    int next = hedge_next(0, h);
-    vector next_dst = point(0, "P", hedge_dstpoint(0, next));
-    vector next_src = point(0, "P", hedge_srcpoint(0, next));
-   
-    int hit;
-    
-    //set up clip plane
-    vector4 plane =normalize(edge); 
-    plane.w = -dot(normalize(edge), rand_p);
-
-    vector temp_p = rand_p;
-    vector temp_src = next_src;
-    vector temp_dst = next_dst;
-    clip(hit, next_dst, next_src, plane);
-    if(hit == 1){
-		hit_p = next_src;
-		index = i + 1;      
-    }     
-    
-    append(pts, hedge_dstpoint(0, h));
-    h = next;
-    dst = next_dst;
-    i++;
-}while(h != temp);
-
-if(index == -1){
-    @group_remove_me = 0;
-    return;
-}
-
-int start = addpoint(0, rand_p);
-int end = addpoint(0, hit_p);
-
-int prim_1[] = array(start);
-append(prim_1, pts[0:index]);
-append(prim_1, end);
-
-int prim_2[] =  array(end);
-append(prim_2, pts[index : len(pts)]);
-append(prim_2, start);
-addprim(0, "poly", prim_1);
-addprim(0, "poly", prim_2);
-
-
 ■BaseLineGenerator
-○ClipPlaneの生成
-・2頂点からAxisのBound長さを取得
-・Offsetしてから、PlaneのBasePointを生成
- -各Primごとに計算する
- -BaseLineを基準に計算を行う
+※処理を細分化して1つずつ実装を進めていく
+・各Primごとに計算する
+・BaseLineを基準に計算を行う
+
+○2頂点からAxisのBound長さを取得
+・BasePointから回転した軸のBound値を取得する
+
+○Offsetしてから、PlaneのBasePointを生成
+・
 
 ○ClipをPlaneで行う
 
