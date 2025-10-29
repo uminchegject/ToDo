@@ -1,15 +1,16 @@
 ■BaseLineGenerator
 ※処理を細分化して1つずつ実装を進めていく
 ・各Primごとに計算する
-・BaseLineを基準に計算を行う
 
-○2頂点からAxisのBound長さを取得
-・BasePointから回転した軸のBound値を取得する
+○LastPrimのBaseLineのPointを参照してPlaneのBasePointを生成
+・PrimSurfaceにLastPrimのBasePointを落とし込んで引き続き配置していく
 
-○Offsetしてから、PlaneのBasePointを生成
-・
+○PrimからBoundSurfaceを生成
+・BoundSurface上でPlaneを埋める
 
-○ClipをPlaneで行う
+○BoundSurfaceを埋めるようにPlaneを配置
+
+○ClipでIntersectPtを生成
 
 
 ●boundの取得
@@ -71,13 +72,6 @@ vector4 make_plane(vector pos; vector normal)
     // vector4形式で返す
     return set(n.x, n.y, n.z, d);
 }
-
-
-vector plane = {0,1,0,0};
-vector a = {1,2,0};
-vector b = {1,-2,0};
-
-vector hit = get_intersect_pos(a, b, plane);
 
 
 ■区画生成のSubnet化

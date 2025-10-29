@@ -1,11 +1,9 @@
 ■CityVolumeMaker
 ※四角ベースでまず検証し、記事化する
 
-○BlockGeneratorの実装
-
 ○Classの検証
 
-△Detail
+△Detail調査
 ・ProceduralMoeling
  -ProceduralCity(https://www.sidefx.com/gallery/fully-procedural-city-generator/)
 ・ModularModeling
@@ -63,6 +61,9 @@
 
 
 ■反省
+※記事は工程が完了してからまとめていく
+ -拡張アイデアも考える
+
 ※定時後のアクションは選択肢を広げる
  -本屋、散歩
  -日テレスターバックス、蔦屋、日本橋スターバックス
