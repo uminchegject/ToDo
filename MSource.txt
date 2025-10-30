@@ -1,77 +1,19 @@
+■CityGenerator
+
+○クラス検証
+
+
 ■BaseLineGenerator
 ※処理を細分化して1つずつ実装を進めていく
 ・各Primごとに計算する
 
-○LastPrimのBaseLineのPointを参照してPlaneのBasePointを生成
-・PrimSurfaceにLastPrimのBasePointを落とし込んで引き続き配置していく
-
 ○PrimからBoundSurfaceを生成
-・BoundSurface上でPlaneを埋める
+
+○間隔の管理
+
+○引継ぎ処理
 
 ○BoundSurfaceを埋めるようにPlaneを配置
-
-○ClipでIntersectPtを生成
-
-
-●boundの取得
-vector get_bound(vector points[]; vector axis)
-{
-    axis = normalize(axis);
-    float minProj = 1e10;
-    float maxProj = -1e10;
-
-    foreach (vector P; points)
-    {
-        float proj = dot(P, axis);
-        minProj = min(minProj, proj);
-        maxProj = max(maxProj, proj);
-    }
-
-    float size = maxProj - minProj;
-    return set(minProj, maxProj, size);
-}
-
-●Clip
-vector get_intersect_pos(vector p1; vector p2; vector4 plane)
-{
-    vector pos1 = p1;
-    vector pos2 = p2;
-    int result;
-    clip(result, pos1, pos2, plane);
-
-    // デフォルトは「無効」な値を返す（例：{0,0,0}）
-    vector intersect = {0,0,0};
-
-    // 両点が平面の両側にある場合のみ交点を返す
-    if (result == 1)
-    {
-        if (pos1 != p1)
-            intersect = pos1;
-        else if (pos2 != p2)
-            intersect = pos2;
-        else
-            return {0,0,0}; // 平面上にある場合などは無視
-    }
-    else
-    {
-        // clipされなかった or 完全に同じ側
-        return {0,0,0};
-    }
-
-    return intersect;
-}
-
-vector4 make_plane(vector pos; vector normal)
-{
-    // 正規化（任意）
-    vector n = normalize(normal);
-
-    // 平面の定数項 d を計算
-    float d = -dot(n, pos);
-
-    // vector4形式で返す
-    return set(n.x, n.y, n.z, d);
-}
 
 
 ■区画生成のSubnet化
