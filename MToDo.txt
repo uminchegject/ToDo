@@ -1,9 +1,20 @@
 ○検証プロジェクトの用意
-※ランダム性と機能性をそれぞれGIFで用意する
-※それぞれで用意したパラメーターを応用
-・PlotMaker
-・BlockMaker
-・VolumeMaker
+・Simple
+ -BlockMaker
+ -PlotMaker
+ -VolumeMaker
+ -Building(×3)
+・Multi
+ -BlockMaker(×2)
+ -PlotMaker(×2)
+ -VolumeMaker(×2)
+ -Building(×3)
+
+○素材用意
+・たのしい都市ジェネレータ（https://www.youtube.com/watch?v=Y6-EWYXZG4s）
+・グラデーションGIF
+・コマ送りGIF
+ -フレームの
 
 ○間隔の管理
 ・直情ベクトルとSurfaceの傾きの差から間隔の値を調整する
