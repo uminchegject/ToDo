@@ -1,3 +1,19 @@
+○検証プロジェクトの用意
+※ランダム性と機能性をそれぞれGIFで用意する
+※それぞれで用意したパラメーターを応用
+・PlotMaker
+・BlockMaker
+・VolumeMaker
+
+○間隔の管理
+・直情ベクトルとSurfaceの傾きの差から間隔の値を調整する
+・平行状態で同間隔で検証
+
+△PrimからBoundSurfaceを生成
+・BoundSurfaceを埋めるようにPlaneを配置
+
+
+
 ■CityVolumeMaker
 ※四角ベースでまず検証し、記事化する
 
