@@ -2,15 +2,15 @@
 ※処理を細分化して1つずつ実装を進めていく
 ・各Primごとに計算する
 
-○PrimからBoundSurfaceを生成
-・BoundSurfaceを埋めるようにPlaneを配置
-
 ○間隔の管理
 ・直情ベクトルとSurfaceの傾きの差から間隔の値を調整する
 ・平行状態で同間隔で検証
 
-○引継ぎ処理
+○PrimからBoundSurfaceを生成
+・BoundSurfaceを埋めるようにPlaneを配置
+・BoundSurfaceを生成して検証
 
+△引継ぎ処理
 
 ●Bound
 // -------------------------------

@@ -16,13 +16,7 @@
 ・コマ送りGIF
  -フレームの
 
-○間隔の管理
-・直情ベクトルとSurfaceの傾きの差から間隔の値を調整する
-・平行状態で同間隔で検証
-
-△PrimからBoundSurfaceを生成
-・BoundSurfaceを埋めるようにPlaneを配置
-
+○BaseLineGeneratorの実装
 
 
 ■CityVolumeMaker
