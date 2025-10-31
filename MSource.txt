@@ -1,191 +1,31 @@
+■CityGenerator
+○検証プロジェクトの用意
+・Simple
+ -BlockMaker
+ -PlotMaker
+ -VolumeMaker
+ -Building(×3)
+・Multi
+ -BlockMaker(×2)
+ -PlotMaker(×2)
+ -VolumeMaker(×2)
+ -Building(×3)
+
+○素材用意
+・たのしい都市ジェネレータ（https://www.youtube.com/watch?v=Y6-EWYXZG4s）
+・グラデーションGIF
+・コマ送りGIF
+ -フレームの
+
+
 ■BaseLineGenerator
 ※処理を細分化して1つずつ実装を進めていく
 ・各Primごとに計算する
 
-○間隔の管理
-・直情ベクトルとSurfaceの傾きの差から間隔の値を調整する
-・平行状態で同間隔で検証
-
-○PrimからBoundSurfaceを生成
-・BoundSurfaceを埋めるようにPlaneを配置
-・BoundSurfaceを生成して検証
-
-△引継ぎ処理
-
-●Bound
-// -------------------------------
-// パラメータ
-float extend = chf("extend"); // オプション余白
-// -------------------------------
-
-// 入力4点（順番: A,B,C,D）
-vector A = point(0, "P", 0);
-vector B = point(0, "P", 1);
-vector C = point(0, "P", 2);
-vector D = point(0, "P", 3);
-
-// -------------------------------------
-// 1. 平面法線を推定（A,B,Cから）
-// -------------------------------------
-vector nml = normalize(cross(B - A, C - A));
-
-// CD方向（x軸）
-vector xdir = normalize(D - C);
-
-// CD方向と法線が平行に近い場合、代替の法線を計算
-if (abs(dot(xdir, nml)) > 0.99)
-    nml = normalize(cross(xdir, B - A));
-
-// y軸 = 法線 × x軸
-vector ydir = normalize(cross(nml, xdir));
-
-// -------------------------------------
-// 2. 4点をこのローカル座標系に投影
-// -------------------------------------
-vector pts[] = array(A,B,C,D);
-float u[] = array();
-float v[] = array();
-
-int i;
-for (i=0; i<len(pts); i++){
-    vector rel = pts[i] - C;
-    append(u, dot(rel, xdir)); // CD軸方向
-    append(v, dot(rel, ydir)); // CDに垂直方向
-}
-
-// -------------------------------------
-// 3. バウンディングボックス算出
-// -------------------------------------
-float umin = min(u);
-float umax = max(u);
-float vmin = min(v);
-float vmax = max(v);
-
-umin -= extend;
-umax += extend;
-vmin -= extend;
-vmax += extend;
-
-// -------------------------------------
-// 4. 2D→3D変換で矩形を構築
-// -------------------------------------
-vector2 rect2d[4];
-rect2d[0] = set(umin, vmin);
-rect2d[1] = set(umax, vmin);
-rect2d[2] = set(umax, vmax);
-rect2d[3] = set(umin, vmax);
-
-int pts_new[4];
-for (i=0; i<4; i++){
-    vector pos = C + xdir * rect2d[i].x + ydir * rect2d[i].y;
-    pts_new[i] = addpoint(0, pos);
-}
-
-// -------------------------------------
-// 5. 四角形をポリゴンとして作成
-// -------------------------------------
-int prim = addprim(0, "poly");
-for (i=0; i<4; i++){
-    addvertex(0, prim, pts_new[i]);
-}
-
-
-●ソース
-vector4 make_plane(vector pos; vector normal)
-{
-    vector n = normalize(normal);
-    float d = -dot(n, pos);
-    return set(n.x, n.y, n.z, d);
-}
-
-vector get_intersect_pos(vector p1; vector p2; vector4 plane)
-{
-    vector pos1 = p1;
-    vector pos2 = p2;
-    int result;
-    clip(result, pos1, pos2, plane);
-        
-    vector intersect = {0,0,0};
-    if (result == 1)
-    {
-        if (pos1 != p1)
-            intersect = pos1;
-        else if (pos2 != p2)
-            intersect = pos2;
-        else
-            return {0,0,0};
-    }
-    else
-    {
-        return {0,0,0};
-    }
-        
-    return intersect;
-}
-
-int bottom_line_pt_list[] = primpoints(0, @primnum);
-int top_line_pt_list[] = primpoints(0, i@TopLinePrimNum);
-float angle = radians(ch("angle")); //Parameterでスライダーを作る
-
-for(int i = 1; i < len(top_line_pt_list); ++i)
-{
-    int bottom_pt_1 = bottom_line_pt_list[i - 1];
-    int bottom_pt_2 = bottom_line_pt_list[i];
-    int top_pt_1 = top_line_pt_list[i - 1];
-    int top_pt_2 = top_line_pt_list[i];
-    
-    vector bottom_pt_1_pos = point(0, "P", bottom_pt_1);
-    vector bottom_pt_2_pos = point(0, "P", bottom_pt_2);
-    vector top_pt_1_pos = point(0, "P", top_pt_1);
-    vector top_pt_2_pos = point(0, "P", top_pt_2);
-    
-    vector normal = normalize(cross(bottom_pt_2_pos - bottom_pt_1_pos, top_pt_1_pos - bottom_pt_1_pos));
-    matrix3 rot = ident();
-    rotate(rot, angle, normal);
-    
-    vector axis_dir = normalize(bottom_pt_2_pos - bottom_pt_1_pos);
-    axis_dir *= rot;
-   
-    for(int j = 0; j < 10; ++j)
-    {           
-        vector pt_pos = bottom_pt_1_pos;
-        pt_pos += axis_dir * j * 0.2;
-        addpoint(0, pt_pos);
-        vector4 plane = make_plane(pt_pos, axis_dir);
-
-        int pt_1 = -1;
-        int pt_2 = -1;
-        vector intersect_pos;
-             
-        intersect_pos = get_intersect_pos(bottom_pt_1_pos, top_pt_1_pos, plane);
-        if(length(intersect_pos) != 0){         
-            if(pt_1 < 0) pt_1 = addpoint(0, intersect_pos);
-            else if(pt_2 < 0) pt_2 = addpoint(0, intersect_pos);
-        }        
-        intersect_pos = get_intersect_pos(bottom_pt_2_pos, top_pt_2_pos, plane);
-        if(length(intersect_pos) != 0){         
-            if(pt_1 < 0) pt_1 = addpoint(0, intersect_pos);
-            else if(pt_2 < 0) pt_2 = addpoint(0, intersect_pos);
-        }
-        intersect_pos = get_intersect_pos(top_pt_1_pos, top_pt_2_pos, plane);
-        if(length(intersect_pos) != 0){         
-            if(pt_1 < 0) pt_1 = addpoint(0, intersect_pos);
-            else if(pt_2 < 0) pt_2 = addpoint(0, intersect_pos);
-        }                               
-        intersect_pos = get_intersect_pos(bottom_pt_1_pos, bottom_pt_2_pos, plane);
-        if(length(intersect_pos) != 0){         
-            if(pt_1 < 0) pt_1 = addpoint(0, intersect_pos);
-            else if(pt_2 < 0) pt_2 = addpoint(0, intersect_pos);
-        }
-
-        if(pt_1 < 0) continue;
-        if(pt_2 < 0) continue;
-        
-        int prim = addprim(0, "polyline");
-        addvertex(0, prim, pt_1);
-        addvertex(0, prim, pt_2);
-    }
-}
+○AxisBasePointの生成
+・Boundの隅からAxisDirを設定
+・Bound内でAxisDir上にBasePointを生成する
+・引継ぎ処理
 
 
 ■区画生成のSubnet化
