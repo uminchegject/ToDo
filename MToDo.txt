@@ -1,28 +1,5 @@
-○検証プロジェクトの用意
-・Simple
- -BlockMaker
- -PlotMaker
- -VolumeMaker
- -Building(×3)
-・Multi
- -BlockMaker(×2)
- -PlotMaker(×2)
- -VolumeMaker(×2)
- -Building(×3)
-
-○素材用意
-・たのしい都市ジェネレータ（https://www.youtube.com/watch?v=Y6-EWYXZG4s）
-・グラデーションGIF
-・コマ送りGIF
- -フレームの
-
-○BaseLineGeneratorの実装
-
-
 ■CityVolumeMaker
 ※四角ベースでまず検証し、記事化する
-
-○Classの検証
 
 △Detail調査
 ・ProceduralMoeling
@@ -101,6 +78,8 @@
 ※一人暮らしの準備
 
 ○年末調整
+
+○保険証
 
 ○Python本斥候
 

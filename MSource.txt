@@ -1,21 +1,16 @@
 ■CityGenerator
-○検証プロジェクトの用意
-・Simple
- -BlockMaker
- -PlotMaker
- -VolumeMaker
- -Building(×3)
-・Multi
- -BlockMaker(×2)
- -PlotMaker(×2)
- -VolumeMaker(×2)
- -Building(×3)
+※ベースとなる資料をまとめる
 
-○素材用意
-・グラデーションGIF
-・コマ送りGIF
+○資料調査
 
-●SimpleAnimation
+○資料作成
+・Param
+ -Animation
+・Class
+ -Color
+
+●ParamAnimation
+※グラデーションGIF・コマ送りGIF
 ・Plot
  -Interval
  -Width
@@ -28,6 +23,10 @@
  -ScaleRange
  -HeightRange
 
+●Color
+・Plot
+・Block
+・Volume
 
 
 ■BaseLineGenerator
@@ -39,6 +38,9 @@
 ・Bound内でAxisDir上にBasePointを生成する
 ・引継ぎ処理
 
+○BaseLineの設計
+・ランダム
+・グラデーション
 
 
 ■区画生成のSubnet化
