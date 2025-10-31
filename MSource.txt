@@ -12,10 +12,22 @@
  -Building(×3)
 
 ○素材用意
-・たのしい都市ジェネレータ（https://www.youtube.com/watch?v=Y6-EWYXZG4s）
 ・グラデーションGIF
 ・コマ送りGIF
- -フレームの
+
+●SimpleAnimation
+・Plot
+ -Interval
+ -Width
+ -RemoveRatio
+・Block
+ -Iterations
+ -Randomness
+・Volume
+ -RemoveRatio
+ -ScaleRange
+ -HeightRange
+
 
 
 ■BaseLineGenerator
@@ -26,6 +38,7 @@
 ・Boundの隅からAxisDirを設定
 ・Bound内でAxisDir上にBasePointを生成する
 ・引継ぎ処理
+
 
 
 ■区画生成のSubnet化
@@ -64,6 +77,7 @@
 
 ●Tips
 ・LabsSubdivisionを改良
+
 
 
 ■組み合わせを多様化(記事)
