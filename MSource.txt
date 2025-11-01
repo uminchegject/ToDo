@@ -32,6 +32,7 @@
 
 ■BaseLineGenerator
 ※処理を細分化して1つずつ実装を進めていく
+ -※モジュール設計
 ・各Primごとに計算する
 
 ○AxisBasePointの生成
@@ -39,9 +40,11 @@
 ・Bound内でAxisDir上にBasePointを生成する
 ・引継ぎ処理
 
-○BaseLineの設計
-・ランダム
-・グラデーション
+○BaseLineの編集
+・Plane(Transform)
+・BaseLine(2Point)
+ -ランダム
+ -グラデーション
 
 
 ■区画生成のSubnet化
