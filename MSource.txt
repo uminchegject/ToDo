@@ -1,13 +1,14 @@
 ■CityGenerator
 ※ベースとなる資料をまとめる
 
-○資料調査
+●フロー
+・パラメーターによる多様化
+ -アニメーション
 
-○資料作成
-・Param
- -Animation
-・Class
- -Color
+●クラス化
+・パラメーターの範囲を管理
+ -各フロー結果をカラー化
+
 
 ●ParamAnimation
 ※グラデーションGIF・コマ送りGIF
@@ -23,7 +24,7 @@
  -ScaleRange
  -HeightRange
 
-●Color
+●ClassColor
 ・Plot
 ・Block
 ・Volume
