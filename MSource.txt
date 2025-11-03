@@ -1,3 +1,30 @@
+○BaseLine設計
+・Plane(Transform)
+・BaseLine(2Point)
+ -ランダム
+ -グラデーション
+
+○設計要点の整理
+※画像、GIFのまとめ方を整理
+ 
+●Module化
+・EdgeMaker
+ -Block
+ -Plot
+ -Volume
+ -Pattern
+・CityGenerator
+ -Line
+ -Surface
+ -BaseLine
+ -Pattern
+
+●クラス化
+・処理を走らせる範囲を管理
+
+
+
+
 ■CityGenerator
 ※ベースとなる資料をまとめる
 
@@ -8,7 +35,6 @@
 ●クラス化
 ・パラメーターの範囲を管理
  -各フロー結果をカラー化
-
 
 ●ParamAnimation
 ※グラデーションGIF・コマ送りGIF
@@ -33,7 +59,6 @@
 ■BaseLineGenerator
 ※処理を細分化して1つずつ実装を進めていく
  -※モジュール設計
-・各Primごとに計算する
 
 ○AxisBasePointの生成
 ・Boundの隅からAxisDirを設定
