@@ -1,13 +1,6 @@
-○BaseLine設計
-・Plane(Transform)
-・BaseLine(2Point)
- -ランダム
- -グラデーション
+○オブジェクト指向のStudy
 
-○設計要点の整理
-※画像、GIFのまとめ方を整理
- 
-●Module化
+●カプセル化
 ・EdgeMaker
  -Block
  -Plot
@@ -19,10 +12,17 @@
  -BaseLine
  -Pattern
 
-●クラス化
+●継承
 ・処理を走らせる範囲を管理
 
+●ポリフォーズム(多様性)
 
+●BaseLine設計
+・Plane(Transform)
+・BaseLine(2Point)
+ -ランダム
+ -グラデーション
+ 
 
 
 ■CityGenerator
