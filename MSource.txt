@@ -1,61 +1,3 @@
-■オブジェクト指向
-●ポリフォーズム(多様性)
-・EdgeMaker
- -Block
- -Plot
- -Volume
- -Pattern
-・CityGenerator
- -Line
- -Surface
- -BaseLine
- -Pattern
-
-●カプセル化
-・EdgeMaker
- -Block
- -Plot
- -Volume
- -Pattern
-・CityGenerator
- -Line
- -Surface
- -BaseLine
- -Pattern
-
-
-■CityGenerator
-※ベースとなる資料をまとめる
-
-●フロー
-・パラメーターによる多様化
- -アニメーション
-
-●クラス化
-・パラメーターの範囲を管理
- -各フロー結果をカラー化
-
-●ParamAnimation
-※グラデーションGIF・コマ送りGIF
-・Plot
- -Interval
- -Width
- -RemoveRatio
-・Block
- -Iterations
- -Randomness
-・Volume
- -RemoveRatio
- -ScaleRange
- -HeightRange
-
-●ClassColor
-・Plot
-・Block
-・Volume
-
-
-
 ■BaseLineGenerator
 ※処理を細分化して1つずつ実装を進めていく
  -※モジュール設計
@@ -71,11 +13,33 @@
  -ランダム
  -グラデーション
 
+△Pattern設計
+・カプセル化
+・ポリフォーズム(多様性)
 
 
 ■区画生成のSubnet化
 ※多様性をパラメーターで表現できることを強調する
 ※パラメーターの柔軟性
+
+●視覚資料
+・ParamAnimation
+ -各HDAの解説
+ -検証
+
+○ParamAnimation
+※グラデーションGIF・コマ送りGIF
+・Plot
+ -Interval
+ -Width
+ -RemoveRatio
+・Block
+ -Iterations
+ -Randomness
+・Volume
+ -RemoveRatio
+ -ScaleRange
+ -HeightRange
 
 ●概要
 ・区画と道を生成し、]区画内にVolumeを配置し、Volumeから建物Generatorを使用して建物を生成
@@ -115,6 +79,16 @@
 ■組み合わせを多様化(記事)
 ※複雑性をクラスで制御できることを強調する
  -クラス種類を検証する
+ 
+●視覚資料
+・ClassColorAnimation
+ -検証
+ -クラス化
+
+○ClassColorAnimation
+・Plot
+・Block
+・Volume
 
 ●概要
 ・それぞれのパターンを組み合わせし、多様な組み合わせを行えるようにする
