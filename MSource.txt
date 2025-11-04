@@ -1,4 +1,15 @@
-○オブジェクト指向のStudy
+■オブジェクト指向
+●ポリフォーズム(多様性)
+・EdgeMaker
+ -Block
+ -Plot
+ -Volume
+ -Pattern
+・CityGenerator
+ -Line
+ -Surface
+ -BaseLine
+ -Pattern
 
 ●カプセル化
 ・EdgeMaker
@@ -11,18 +22,6 @@
  -Surface
  -BaseLine
  -Pattern
-
-●継承
-・処理を走らせる範囲を管理
-
-●ポリフォーズム(多様性)
-
-●BaseLine設計
-・Plane(Transform)
-・BaseLine(2Point)
- -ランダム
- -グラデーション
- 
 
 
 ■CityGenerator
@@ -56,6 +55,7 @@
 ・Volume
 
 
+
 ■BaseLineGenerator
 ※処理を細分化して1つずつ実装を進めていく
  -※モジュール設計
@@ -70,6 +70,7 @@
 ・BaseLine(2Point)
  -ランダム
  -グラデーション
+
 
 
 ■区画生成のSubnet化
