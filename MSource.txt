@@ -71,9 +71,6 @@
 ・4つのSubnetを繋げて検証
  -建物Generatorを使用
 
-●Tips
-・LabsSubdivisionを改良
-
 
 
 ■組み合わせを多様化(記事)

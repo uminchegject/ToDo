@@ -1,7 +1,14 @@
+○焼肉
+
+○サバゲー
+
+○セミナー報告
+
+
 ■CityVolumeMaker
 ※四角ベースでまず検証し、記事化する
 
-△Detail調査
+○Detail調査
 ・ProceduralMoeling
  -ProceduralCity(https://www.sidefx.com/gallery/fully-procedural-city-generator/)
 ・ModularModeling
@@ -22,7 +29,6 @@
 
 △BoatHouseで検証
 
-■設計
 ●Param
 ・Random
 ・Gradation
@@ -76,16 +82,12 @@
  -日テレスターバックス、蔦屋、日本橋スターバックス
 
 
-
-
 ■Private
 ※一人暮らしの準備
 
 ○年末調整
 
 ○保険証
-
-○Python本斥候
 
 ○メルカリ
 ・本
@@ -120,7 +122,6 @@
 https://www.sidefx.com/tutorials/foundations-205-solaris-market/
 ・『グランツーリスモ７』開発におけるUSD活用事例
 https://cedil.cesa.or.jp/cedil_sessions/view/2607
-
 
 ●技術
 ・C++設計
