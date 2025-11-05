@@ -1,3 +1,10 @@
+○焼肉
+
+○サバゲー
+
+○セミナー報告
+
+
 ■BaseLineGenerator
 ※処理を細分化して1つずつ実装を進めていく
  -※モジュール設計
@@ -16,6 +23,14 @@
 △Pattern設計
 ・カプセル化
 ・ポリフォーズム(多様性)
+
+
+■CityGenerator
+○Detailの準備
+ProceduralCity(https://www.sidefx.com/gallery/fully-procedural-city-generator/)
+
+○視覚資料と記事化
+※各項目を1つずつ対応していく
 
 
 ■区画生成のSubnet化
