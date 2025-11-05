@@ -1,8 +1,20 @@
-○焼肉
+○記事化
+※デザインのオブジェクト思考化
+・オブジェクト指向本
+・ビジュアル資料の用意
 
-○サバゲー
+○Detail調査
+・ProceduralCityの調査
 
-○セミナー報告
+○EdgeMakerのPatternのBase部分を実装
+・BaseLineGeneratorの実装
+・BasePointGeneratorの実装
+
+○Patternの設計
+
+○Private
+・サバゲー
+・焼肉
 
 
 ■BaseLineGenerator
@@ -52,8 +64,7 @@ ProceduralCity(https://www.sidefx.com/gallery/fully-procedural-city-generator/)
  -Iterations
  -Randomness
 ・Volume
- -RemoveRatio
- -ScaleRange
+ -RemoveRati -ScaleRange
  -HeightRange
 
 ●概要
@@ -115,3 +126,158 @@ ProceduralCity(https://www.sidefx.com/gallery/fully-procedural-city-generator/)
  -Volume
  -Pattern
 ・Plot×Block×Patternをそれぞれ組み合わせて混在させる
+
+
+■ソース
+●BoundSurface
+int bottom_line_pt_list[] = primpoints(0, @primnum);
+int top_line_pt_list[] = primpoints(0, i@TopLinePrimNum);
+float angle = radians(ch("angle")); //Parameterでスライダーを作る
+
+for(int i = 1; i < len(top_line_pt_list); ++i)
+{
+    int bottom_pt_1 = bottom_line_pt_list[i - 1];
+    int bottom_pt_2 = bottom_line_pt_list[i];
+    int top_pt_1 = top_line_pt_list[i - 1];
+    int top_pt_2 = top_line_pt_list[i];
+    
+    vector bottom_pt_1_pos = point(0, "P", bottom_pt_1);
+    vector bottom_pt_2_pos = point(0, "P", bottom_pt_2);
+    vector top_pt_1_pos = point(0, "P", top_pt_1);
+    vector top_pt_2_pos = point(0, "P", top_pt_2);
+    
+    vector normal = normalize(cross(bottom_pt_2_pos - bottom_pt_1_pos, top_pt_1_pos - bottom_pt_1_pos));
+
+    vector x_dir = normalize(bottom_pt_2_pos - bottom_pt_1_pos);
+    vector y_dir = normalize(cross(normal, x_dir));
+    
+    vector pts[] = array(bottom_pt_1_pos, bottom_pt_2_pos, top_pt_1_pos, top_pt_2_pos);
+    float u[] = array();
+    float v[] = array();
+    
+    for (int j = 0; j < len(pts); j++){
+        vector rel = pts[j] - bottom_pt_1_pos;
+        append(u, dot(rel, x_dir)); 
+        append(v, dot(rel, y_dir));             
+    }       
+    
+    float u_min = min(u);
+    float u_max = max(u);
+    float v_min = min(v);
+    float v_max = max(v);
+    
+    int prim = addprim(0, "poly");
+    
+    int pt_1 = addpoint(0, bottom_pt_1_pos + x_dir * u_min + y_dir * v_min);
+    int pt_2 = addpoint(0, bottom_pt_1_pos + x_dir * u_max + y_dir * v_min);
+    int pt_3 = addpoint(0, bottom_pt_1_pos + x_dir * u_max + y_dir * v_max);
+    int pt_4 = addpoint(0, bottom_pt_1_pos + x_dir * u_min + y_dir * v_max);
+    
+    addvertex(0, prim, pt_1);
+    addvertex(0, prim, pt_2);
+    addvertex(0, prim, pt_3);
+    addvertex(0, prim, pt_4);
+    
+    
+    
+}
+
+
+●BaseLine
+vector4 make_plane(vector pos; vector normal)
+{
+    vector n = normalize(normal);
+    float d = -dot(n, pos);
+    return set(n.x, n.y, n.z, d);
+}
+
+vector get_intersect_pos(vector p1; vector p2; vector4 plane)
+{
+    vector pos1 = p1;
+    vector pos2 = p2;
+    int result;
+    clip(result, pos1, pos2, plane);
+        
+    vector intersect = {0,0,0};
+    if (result == 1)
+    {
+        if (pos1 != p1)
+            intersect = pos1;
+        else if (pos2 != p2)
+            intersect = pos2;
+        else
+            return {0,0,0};
+    }
+    else
+    {
+        return {0,0,0};
+    }
+        
+    return intersect;
+}
+
+int bottom_line_pt_list[] = primpoints(0, @primnum);
+int top_line_pt_list[] = primpoints(0, i@TopLinePrimNum);
+float angle = radians(ch("angle")); //Parameterでスライダーを作る
+
+for(int i = 1; i < len(top_line_pt_list); ++i)
+{
+    int bottom_pt_1 = bottom_line_pt_list[i - 1];
+    int bottom_pt_2 = bottom_line_pt_list[i];
+    int top_pt_1 = top_line_pt_list[i - 1];
+    int top_pt_2 = top_line_pt_list[i];
+    
+    vector bottom_pt_1_pos = point(0, "P", bottom_pt_1);
+    vector bottom_pt_2_pos = point(0, "P", bottom_pt_2);
+    vector top_pt_1_pos = point(0, "P", top_pt_1);
+    vector top_pt_2_pos = point(0, "P", top_pt_2);
+    
+    vector normal = normalize(cross(bottom_pt_2_pos - bottom_pt_1_pos, top_pt_1_pos - bottom_pt_1_pos));
+    matrix3 rot = ident();
+    rotate(rot, angle, normal);
+    
+    vector axis_dir = normalize(bottom_pt_2_pos - bottom_pt_1_pos);
+    axis_dir *= rot;
+    
+    float surface_angle = acos( dot( axis_dir, {0,1,0} ) );
+   
+    for(int j = 0; j < 10; ++j)
+    {           
+        vector pt_pos = bottom_pt_1_pos;
+        pt_pos += axis_dir * j * 0.2 / cos(surface_angle);;
+        addpoint(0, pt_pos);
+        vector4 plane = make_plane(pt_pos, axis_dir);
+
+        int pt_1 = -1;
+        int pt_2 = -1;
+        vector intersect_pos;
+             
+        intersect_pos = get_intersect_pos(bottom_pt_1_pos, top_pt_1_pos, plane);
+        if(length(intersect_pos) != 0){         
+            if(pt_1 < 0) pt_1 = addpoint(0, intersect_pos);
+            else if(pt_2 < 0) pt_2 = addpoint(0, intersect_pos);
+        }        
+        intersect_pos = get_intersect_pos(bottom_pt_2_pos, top_pt_2_pos, plane);
+        if(length(intersect_pos) != 0){         
+            if(pt_1 < 0) pt_1 = addpoint(0, intersect_pos);
+            else if(pt_2 < 0) pt_2 = addpoint(0, intersect_pos);
+        }
+        intersect_pos = get_intersect_pos(top_pt_1_pos, top_pt_2_pos, plane);
+        if(length(intersect_pos) != 0){         
+            if(pt_1 < 0) pt_1 = addpoint(0, intersect_pos);
+            else if(pt_2 < 0) pt_2 = addpoint(0, intersect_pos);
+        }                               
+        intersect_pos = get_intersect_pos(bottom_pt_1_pos, bottom_pt_2_pos, plane);
+        if(length(intersect_pos) != 0){         
+            if(pt_1 < 0) pt_1 = addpoint(0, intersect_pos);
+            else if(pt_2 < 0) pt_2 = addpoint(0, intersect_pos);
+        }
+
+        if(pt_1 < 0) continue;
+        if(pt_2 < 0) continue;
+        
+        int prim = addprim(0, "polyline");
+        addvertex(0, prim, pt_1);
+        addvertex(0, prim, pt_2);
+    }
+}
