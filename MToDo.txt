@@ -2,8 +2,7 @@
 ※四角ベースでまず検証し、記事化する
 
 ○Detail調査
-・ProceduralMoeling
- -ProceduralCity(https://www.sidefx.com/gallery/fully-procedural-city-generator/)
+・ProceduralModeling
 ・ModularModeling
 
 △柔軟化
@@ -12,15 +11,21 @@
  -BasePrimの柔軟化
 ・BlockMaker + VolumeMaker
  -柔軟化したPlotの対応
+・HeightField
 
 
 ■CD(Tool)
 ※EdgeMakerをベースにしたLineGenerator、PatternGeneratorを実装する
 
-○LineMakerの実装
-※EdgeMakerで検証
+○配置ロジックの設計・実装
+・BaseLineGenerator
+・BasePointGenerator
 
-△BoatHouseで検証
+○Pattern設計・実装
+・立方体で検証
+
+○検証
+・BoatHouseで検証
 
 ●Param
 ・Random
@@ -40,12 +45,17 @@
 
 
 ■ポートフォリオ(記事)
-※技術部分は平日に作業しながら記事メモを用意する
+※デザインのオブジェクト思考化
 
-○GIFの用意
+○オブジェクト指向のStudy
+・オブジェクト指向はなぜ
 
-○記事のメモを用意
-・Tips
+○説明資料の調査
+
+○ビジュアル資料の用意
+・GIFの用意
+
+△記事のメモを用意
 
 ●オブジェクト指向
 ・カプセル化
@@ -106,6 +116,7 @@
 
 
 ■Study(ナレッジ)
+※ポートフォリオ(記事)の参考にする
 ※Cedil、Tutorialは同じテーマを軸に勉強する
  -Houdiniから枝分かれしていく(https://cedil.cesa.or.jp/cedil_sessions/search?query=houdini)
  -Cedilからさらに詳細な調査をおこなっていく
@@ -118,6 +129,7 @@ https://cedil.cesa.or.jp/cedil_sessions/view/2607
 
 ●技術
 ・C++設計
+・オブジェクト指向
 
 ●知識
 ・問題定義

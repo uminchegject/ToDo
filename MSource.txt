@@ -1,20 +1,6 @@
-○記事化
-※デザインのオブジェクト思考化
-・オブジェクト指向本
-・ビジュアル資料の用意
-
-○Detail調査
-・ProceduralCityの調査
-
-○EdgeMakerのPatternのBase部分を実装
-・BaseLineGeneratorの実装
-・BasePointGeneratorの実装
-
-○Patternの設計
-
-○Private
-・サバゲー
-・焼肉
+○焼肉
+・2人
+・予約
 
 
 ■BaseLineGenerator
@@ -31,28 +17,40 @@
 ・BaseLine(2Point)
  -ランダム
  -グラデーション
+・立方体で検証
+ -格子
 
 △Pattern設計
-・カプセル化
-・ポリフォーズム(多様性)
+※カプセル化・ポリフォーズム(多様性)
+
 
 
 ■CityGenerator
-○Detailの準備
-ProceduralCity(https://www.sidefx.com/gallery/fully-procedural-city-generator/)
+○ProceduralCity調査
+※PMの設計を調査する
+https://www.sidefx.com/gallery/fully-procedural-city-generator/
 
-○視覚資料と記事化
-※各項目を1つずつ対応していく
+
+
+■記事
+○ビジュアル資料
+・ParamAnimation
+ -各HDAの解説
+ -検証
+・ClassColorAnimation
+ -検証
+ -クラス化
+
+○メモ
+※課題と成果をリストアップ
+・区画生成のSubnet化
+・フローのクラス化
+
 
 
 ■区画生成のSubnet化
 ※多様性をパラメーターで表現できることを強調する
 ※パラメーターの柔軟性
-
-●視覚資料
-・ParamAnimation
- -各HDAの解説
- -検証
 
 ○ParamAnimation
 ※グラデーションGIF・コマ送りGIF
@@ -102,11 +100,6 @@ ProceduralCity(https://www.sidefx.com/gallery/fully-procedural-city-generator/)
 ■組み合わせを多様化(記事)
 ※複雑性をクラスで制御できることを強調する
  -クラス種類を検証する
- 
-●視覚資料
-・ClassColorAnimation
- -検証
- -クラス化
 
 ○ClassColorAnimation
 ・Plot
@@ -126,6 +119,7 @@ ProceduralCity(https://www.sidefx.com/gallery/fully-procedural-city-generator/)
  -Volume
  -Pattern
 ・Plot×Block×Patternをそれぞれ組み合わせて混在させる
+
 
 
 ■ソース
