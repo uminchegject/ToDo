@@ -29,8 +29,8 @@
 ○ProceduralCity調査
 ※PMの設計を調査する
 https://www.sidefx.com/gallery/fully-procedural-city-generator/
-
-
+・再現
+https://cgworld.jp/flashnews/202501-Houdini-CityGen.html
 
 ■記事
 ○ビジュアル資料
