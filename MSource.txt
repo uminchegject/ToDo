@@ -38,6 +38,7 @@
 ・procedural_city_tall_residential_generator
 ・procedural_city_residential_generator
 
+○背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装
 
 ■記事
 ○ビジュアル資料
@@ -165,36 +166,30 @@ int bottom_line_pt_list[] = primpoints(0, @primnum);
 int top_line_pt_list[] = primpoints(0, i@TopLinePrimNum);
 float angle = radians(ch("angle")); //Parameterでスライダーを作る
 
-for(int i = 1; i < len(top_line_pt_list); ++i)
-{
-    int bottom_pt_1 = bottom_line_pt_list[i - 1];
-    int bottom_pt_2 = bottom_line_pt_list[i];
-    int top_pt_1 = top_line_pt_list[i - 1];
-    int top_pt_2 = top_line_pt_list[i];
-    
-    vector bottom_pt_1_pos = point(0, "P", bottom_pt_1);
-    vector bottom_pt_2_pos = point(0, "P", bottom_pt_2);
-    vector top_pt_1_pos = point(0, "P", top_pt_1);
-    vector top_pt_2_pos = point(0, "P", top_pt_2);
-    
-    vector normal = normalize(cross(bottom_pt_2_pos - bottom_pt_1_pos, top_pt_1_pos - bottom_pt_1_pos));
-    matrix3 rot = ident();
-    rotate(rot, radians(90), normal);
-    vector axis_dir = normalize(bottom_pt_2_pos - bottom_pt_1_pos);
-    float surface_angle = acos( dot(axis_dir * rot, {0,1,0}));
-    
-    vector test_dir = axis_dir * rot;
-    rot = ident();
-    rotate(rot, angle, normal);
-    axis_dir *= rot;
-       
-    for(int j = 0; j < 30; ++j)
-    {           
-        vector pt_pos = bottom_pt_1_pos;
-        pt_pos += {0,1,0} * j * 0.2;
-        addpoint(0, pt_pos);
-        vector4 plane = make_plane(pt_pos, {0,5, 0.5, 0});
+matrix3 rot = ident();
+rotate(rot, angle, {1, 0, 0});
+vector plane_axis = {0, 1, 0};
+plane_axis *= rot;
 
+for(int j = 0; j < 30; ++j)
+{           
+	vector pt_pos = set(0, 0, 0);
+	pt_pos.y += j * 0.2;
+	addpoint(0, pt_pos);
+	vector4 plane = make_plane(pt_pos, plane_axis);
+
+	for(int i = 1; i < len(top_line_pt_list); ++i)
+	{
+		int bottom_pt_1 = bottom_line_pt_list[i - 1];
+		int bottom_pt_2 = bottom_line_pt_list[i];
+		int top_pt_1 = top_line_pt_list[i - 1];
+		int top_pt_2 = top_line_pt_list[i];
+		
+		vector bottom_pt_1_pos = point(0, "P", bottom_pt_1);
+		vector bottom_pt_2_pos = point(0, "P", bottom_pt_2);
+		vector top_pt_1_pos = point(0, "P", top_pt_1);
+		vector top_pt_2_pos = point(0, "P", top_pt_2);
+    
         int pt_1 = -1;
         int pt_2 = -1;
         vector intersect_pos;
