@@ -130,6 +130,7 @@
 
 
 ■ソース
+●ソース
 vector4 make_plane(vector pos; vector normal)
 {
     vector n = normalize(normal);
@@ -164,7 +165,7 @@ vector get_intersect_pos(vector p1; vector p2; vector4 plane)
 
 int bottom_line_pt_list[] = primpoints(0, @primnum);
 int top_line_pt_list[] = primpoints(0, i@TopLinePrimNum);
-float angle = radians(ch("angle")); //Parameterでスライダーを作る
+float angle = radians(ch("angle"));
 
 matrix3 rot = ident();
 rotate(rot, angle, {1, 0, 0});
@@ -173,22 +174,22 @@ plane_axis *= rot;
 
 for(int j = 0; j < 30; ++j)
 {           
-	vector pt_pos = set(0, 0, 0);
-	pt_pos.y += j * 0.2;
-	addpoint(0, pt_pos);
-	vector4 plane = make_plane(pt_pos, plane_axis);
+        vector pt_pos = set(0, 0, 0);
+        pt_pos.y += j * 0.2;
+        addpoint(0, pt_pos);
+        vector4 plane = make_plane(pt_pos, plane_axis);
 
-	for(int i = 1; i < len(top_line_pt_list); ++i)
-	{
-		int bottom_pt_1 = bottom_line_pt_list[i - 1];
-		int bottom_pt_2 = bottom_line_pt_list[i];
-		int top_pt_1 = top_line_pt_list[i - 1];
-		int top_pt_2 = top_line_pt_list[i];
-		
-		vector bottom_pt_1_pos = point(0, "P", bottom_pt_1);
-		vector bottom_pt_2_pos = point(0, "P", bottom_pt_2);
-		vector top_pt_1_pos = point(0, "P", top_pt_1);
-		vector top_pt_2_pos = point(0, "P", top_pt_2);
+        for(int i = 1; i < len(top_line_pt_list); ++i)
+        {
+                int bottom_pt_1 = bottom_line_pt_list[i - 1];
+                int bottom_pt_2 = bottom_line_pt_list[i];
+                int top_pt_1 = top_line_pt_list[i - 1];
+                int top_pt_2 = top_line_pt_list[i];
+                
+                vector bottom_pt_1_pos = point(0, "P", bottom_pt_1);
+                vector bottom_pt_2_pos = point(0, "P", bottom_pt_2);
+                vector top_pt_1_pos = point(0, "P", top_pt_1);
+                vector top_pt_2_pos = point(0, "P", top_pt_2);
     
         int pt_1 = -1;
         int pt_2 = -1;
