@@ -1,5 +1,6 @@
 ○焼肉
 
+
 ■BaseLineGenerator
 ※処理を細分化して1つずつ実装を進めていく
  -※モジュール設計
@@ -7,10 +8,8 @@
 ○引継ぎ処理
 ・全体で傾きを統一する処理で検証
 
-△Bound周りの処理
-・Boundの取得処理
-・Boundの隅からBasePointを生成するAxisを取得
-・Bound内でAxis上にBasePointを生成する
+○Bound周りの処理
+・仮の処理を実装
 
 ○BaseLineの編集
 ・Plane(MakePlane)
@@ -21,11 +20,15 @@
 ・要素 
  -ランダム
  -グラデーション
+
+○BoatHouse検証
+※平行方向をメインに検証
 ・立方体で検証
  -格子
 
 △Pattern設計
 ※カプセル化・ポリフォーズム(多様性)
+
 
 
 ■CityGenerator
@@ -129,98 +132,3 @@
 ・Plot×Block×Patternをそれぞれ組み合わせて混在させる
 
 
-■ソース
-●ソース
-vector4 make_plane(vector pos; vector normal)
-{
-    vector n = normalize(normal);
-    float d = -dot(n, pos);
-    return set(n.x, n.y, n.z, d);
-}
-
-vector get_intersect_pos(vector p1; vector p2; vector4 plane)
-{
-    vector pos1 = p1;
-    vector pos2 = p2;
-    int result;
-    clip(result, pos1, pos2, plane);
-        
-    vector intersect = {0,0,0};
-    if (result == 1)
-    {
-        if (pos1 != p1)
-            intersect = pos1;
-        else if (pos2 != p2)
-            intersect = pos2;
-        else
-            return {0,0,0};
-    }
-    else
-    {
-        return {0,0,0};
-    }
-        
-    return intersect;
-}
-
-int bottom_line_pt_list[] = primpoints(0, @primnum);
-int top_line_pt_list[] = primpoints(0, i@TopLinePrimNum);
-float angle = radians(ch("angle"));
-
-matrix3 rot = ident();
-rotate(rot, angle, {1, 0, 0});
-vector plane_axis = {0, 1, 0};
-plane_axis *= rot;
-
-for(int j = 0; j < 30; ++j)
-{           
-        vector pt_pos = set(0, 0, 0);
-        pt_pos.y += j * 0.2;
-        addpoint(0, pt_pos);
-        vector4 plane = make_plane(pt_pos, plane_axis);
-
-        for(int i = 1; i < len(top_line_pt_list); ++i)
-        {
-                int bottom_pt_1 = bottom_line_pt_list[i - 1];
-                int bottom_pt_2 = bottom_line_pt_list[i];
-                int top_pt_1 = top_line_pt_list[i - 1];
-                int top_pt_2 = top_line_pt_list[i];
-                
-                vector bottom_pt_1_pos = point(0, "P", bottom_pt_1);
-                vector bottom_pt_2_pos = point(0, "P", bottom_pt_2);
-                vector top_pt_1_pos = point(0, "P", top_pt_1);
-                vector top_pt_2_pos = point(0, "P", top_pt_2);
-    
-        int pt_1 = -1;
-        int pt_2 = -1;
-        vector intersect_pos;
-             
-        intersect_pos = get_intersect_pos(bottom_pt_1_pos, top_pt_1_pos, plane);
-        if(length(intersect_pos) != 0){         
-            if(pt_1 < 0) pt_1 = addpoint(0, intersect_pos);
-            else if(pt_2 < 0) pt_2 = addpoint(0, intersect_pos);
-        }        
-        intersect_pos = get_intersect_pos(bottom_pt_2_pos, top_pt_2_pos, plane);
-        if(length(intersect_pos) != 0){         
-            if(pt_1 < 0) pt_1 = addpoint(0, intersect_pos);
-            else if(pt_2 < 0) pt_2 = addpoint(0, intersect_pos);
-        }
-        intersect_pos = get_intersect_pos(top_pt_1_pos, top_pt_2_pos, plane);
-        if(length(intersect_pos) != 0){         
-            if(pt_1 < 0) pt_1 = addpoint(0, intersect_pos);
-            else if(pt_2 < 0) pt_2 = addpoint(0, intersect_pos);
-        }                               
-        intersect_pos = get_intersect_pos(bottom_pt_1_pos, bottom_pt_2_pos, plane);
-        if(length(intersect_pos) != 0){         
-            if(pt_1 < 0) pt_1 = addpoint(0, intersect_pos);
-            else if(pt_2 < 0) pt_2 = addpoint(0, intersect_pos);
-        }
-
-        if(pt_1 < 0) continue;
-        if(pt_2 < 0) continue;
-        
-        int prim = addprim(0, "polyline");
-        addvertex(0, prim, pt_1);
-        addvertex(0, prim, pt_2);
-    }
-}
