@@ -5,24 +5,24 @@
 ※処理を細分化して1つずつ実装を進めていく
  -※モジュール設計
 
-○引継ぎ処理
-・全体で傾きを統一する処理で検証
+○全体で傾きを統一する処理を実装
+・Bound周りの処理
 
-○Bound周りの処理
-・仮の処理を実装
-
-○BaseLineの編集
+○Edit設計
 ・Plane(MakePlane)
  -BasePoint
  -Axis
 ・BaseLine
- -2Point
+※各Surfaceを軸に動かす
+ -BaseLinePoints
 ・要素 
  -ランダム
  -グラデーション
 
 ○BoatHouse検証
 ※平行方向をメインに検証
+・検証用のデザインに修正
+ -EdgeBlockの構成
 ・立方体で検証
  -格子
 
