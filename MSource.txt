@@ -1,21 +1,46 @@
-○焼肉
-連絡遅れてしまい申し訳ございません:man-bowing: (先週末体調を崩しておりお休みしていました…)
-参加メンバーについても告知を行っていないため現状は2人ですが、当日ですが一応確認してみようと思います…!
-もし二人の場合は、奥さまのご都合も踏まえ今回は1時間ほどで切り上げて、次回は他のメンバーも誘ってゆっくりお食事できれば嬉しいです!
-
+○サバゲー
 お疲れ様です。
-本日ロイさんとBNS近く(門前仲町)の焼肉に行く予定なのですが、もし、ご都合の良い方がいましたらご一緒いかがでしょうか…?
-門前仲町に7時～8時を目安に到着できる方がいましたら是非ご一緒できたら幸いです!
-(当日の急な告知すみません…、機会があればまた企画をするかもしれないのでその際は余裕を持って告知させて頂きます…!)
+先週はサバゲーのキャンセル申し訳ございませんでした。:man-bowing: 
+次回のサバゲーについてご相談なのですが、調整さんを確認したところ11/22(土)が大丈夫差し支えなければ11/22(土)に行くのはいかがでしょうか…?
+
+○Texture(UV)のStudy
+・Building Generator from Imageを調査
+
+○procedural_city_residential_generatorのHDA化
+・処理の整理
+
+○パラメーター設計
+※ランダム・グラデーション
+・Rotate
+・Interval
+
+●ソース
+vector interval_range = chv("IntervalRange");
+vector plane_axis = chv("PlaneAxis");
+plane_axis = normalize(plane_axis);
+
+float base_interval = (interval_range.y - interval_range.x) / 2 + interval_range.x;
+int plane_num = int(length(bound) * 2 / base_interval);
+vector base_pos = centroid - plane_axis * length(bound);
+
+
+for(int j = 0; j < plane_num; j++)
+{
+	matrix3 rot = ident();
+	rotate(rot, j * 0.2, {1, 0, 0});
+	vector new_plane_axis = rot * plane_axis;
+
+	vector plane_pos = base_pos;
+	plane_pos += j * base_interval * new_plane_axis;
+	plane_pos += new_plane_axis * (random(plane_pos) - 0.5) * (interval_range.y - interval_range.x) / 2;
+	addpoint(0,plane_pos);
+	vector4 plane = make_plane(plane_pos, new_plane_axis);
 
 
 
 ■BaseLineGenerator
 ※処理を細分化して1つずつ実装を進めていく
  -※モジュール設計
-
-○全体で傾きを統一する処理を実装
-・Bound周りの処理
 
 ○Edit設計
 ・Plane(MakePlane)
@@ -24,11 +49,8 @@
 ・BaseLine
 ※各Surfaceを軸に動かす
  -BaseLinePoints
-・要素 
- -ランダム
- -グラデーション
 
-○BoatHouse検証
+△BoatHouse検証
 ※平行方向をメインに検証
 ・検証用のデザインに修正
  -EdgeBlockの構成
@@ -38,50 +60,15 @@
 △Pattern設計
 ※カプセル化・ポリフォーズム(多様性)
 
-○Edit(PlaneMakePlane)
-・BasePointInterval
-・Axis
-
-vector interval_range = 
-vector plane_axis = 
-vector centroid
-
-float base_interval = (interval_range.y - interval_range.x) / 2 + interval_range.x;
-int plane_num = int(length(bound) * 2 / base_interval);
-vector base_pos = centroid - plane_axis * length(bound);
-
-for(int i = 0; plane_num; i++)
-{
-	vector plane_pos = base_pos;
-	plane_pos += i * base_interval;
-	plane_pos += (random(plane_pos) - 0.5) * (interval_range.y - interval_range.x) / 2;
-
-	vector4 = make_plane(plane_pos, plane_axis);
-}
-
-○Bound周りの処理
-int bottom_line_pt_list[] = primpoints(0, @primnum);
-int top_line_pt_list[] = primpoints(0, i@TopLinePrimNum);
-
-float bottom_line_bounds[] = primintrinsic(0, "bounds", @primnum);
-float top_line_bounds[] = 
-vector bottom_line_min_bound = set(bounds[0], bounds[2], bounds[4]);
-vector bottom_line_max_bound
-
-vector bound = 
-
 
 
 ■CityGenerator
-○Textureの検証
-・Building Generator from Imageを調査
-
 ○ProceduralModelingの実装
 ・procedural_city_skyscraper_generator
 ・procedural_city_tall_residential_generator
 ・procedural_city_residential_generator
 
-○背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装
+△背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装
 
 
 
@@ -177,7 +164,6 @@ vector bound =
 
 
 ■ソース
-●ソース
 vector4 make_plane(vector pos; vector normal)
 {
     vector n = normalize(normal);
@@ -212,32 +198,38 @@ vector get_intersect_pos(vector p1; vector p2; vector4 plane)
 
 int bottom_line_pt_list[] = primpoints(0, @primnum);
 int top_line_pt_list[] = primpoints(0, i@TopLinePrimNum);
-float angle = radians(ch("angle"));
 
-matrix3 rot = ident();
-rotate(rot, angle, {1, 0, 0});
-vector plane_axis = {0, 1, 0};
-plane_axis *= rot;
+vector interval_range = chv("IntervalRange");
+vector plane_axis = chv("PlaneAxis");
+plane_axis = normalize(plane_axis);
 
-for(int j = 0; j < 30; ++j)
-{           
-        vector pt_pos = set(0, 0, 0);
-        pt_pos.y += j * 0.2;
-        addpoint(0, pt_pos);
-        vector4 plane = make_plane(pt_pos, plane_axis);
+vector bound = detail(1, "bound");
+vector centroid = detail(1, "centroid");
 
-        for(int i = 1; i < len(top_line_pt_list); ++i)
-        {
-                int bottom_pt_1 = bottom_line_pt_list[i - 1];
-                int bottom_pt_2 = bottom_line_pt_list[i];
-                int top_pt_1 = top_line_pt_list[i - 1];
-                int top_pt_2 = top_line_pt_list[i];
-                
-                vector bottom_pt_1_pos = point(0, "P", bottom_pt_1);
-                vector bottom_pt_2_pos = point(0, "P", bottom_pt_2);
-                vector top_pt_1_pos = point(0, "P", top_pt_1);
-                vector top_pt_2_pos = point(0, "P", top_pt_2);
+float base_interval = (interval_range.y - interval_range.x) / 2 + interval_range.x;
+int plane_num = int(length(bound) * 2 / base_interval);
+vector base_pos = centroid - plane_axis * length(bound);
+
+for(int i = 1; i < len(top_line_pt_list); ++i)
+{
+    int bottom_pt_1 = bottom_line_pt_list[i - 1];
+    int bottom_pt_2 = bottom_line_pt_list[i];
+    int top_pt_1 = top_line_pt_list[i - 1];
+    int top_pt_2 = top_line_pt_list[i];
     
+    vector bottom_pt_1_pos = point(0, "P", bottom_pt_1);
+    vector bottom_pt_2_pos = point(0, "P", bottom_pt_2);
+    vector top_pt_1_pos = point(0, "P", top_pt_1);
+    vector top_pt_2_pos = point(0, "P", top_pt_2);    
+   
+    for(int j = 0; j < plane_num; j++)
+    {
+        vector plane_pos = base_pos;
+        plane_pos += j * base_interval * plane_axis;
+        plane_pos += plane_axis * (random(plane_pos) - 0.5) * (interval_range.y - interval_range.x) / 2;
+        addpoint(0,plane_pos);
+        vector4 plane = make_plane(plane_pos, plane_axis);
+
         int pt_1 = -1;
         int pt_2 = -1;
         vector intersect_pos;
