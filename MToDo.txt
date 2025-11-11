@@ -1,7 +1,8 @@
 ■CityVolumeMaker
 ※四角ベースでまず検証し、記事化する
 
-○Detail調査
+○DetailのModule実装
+※ProceduralCityProjectをベース
 ・ProceduralModeling
 ・ModularModeling
 
@@ -18,7 +19,9 @@
 ※EdgeMakerをベースにしたLineGenerator、PatternGeneratorを実装する
 
 ○配置ロジックの設計・実装
-・BaseLineGenerator
+・PlaneEditor
+・BaseLinePointsEditor
+・LineGenerator
 ・BasePointGenerator
 
 ○Pattern設計・実装
@@ -27,21 +30,6 @@
 ○検証
 ・BoatHouseで検証
 
-●Param
-・Random
-・Gradation
-
-●Line
-・Interval
-・Rotate
-・Transform
-・Scale
-
-●Volume
-・SplitScale
-・Scale
-・Rotate
-・Transform
 
 
 ■ポートフォリオ(記事)
@@ -74,9 +62,6 @@
 ※Privateな本として著者の仕事論、人生論についての本を読む
 
 ※極力9時までには退社し、カフェに行く
-
-※記事は工程が完了してからまとめていく
- -拡張アイデアも考える
 
 ※定時後のアクションは選択肢を広げる
  -本屋、散歩

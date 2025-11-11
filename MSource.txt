@@ -1,46 +1,50 @@
 ○サバゲー
 
-○BaseLineのEdit実装
-※各Surfaceを軸に動かす
+○BaseLinePointのEdit実装
+・Transform(Rotate)
 
-○PlaneMakerとBaseLineMakerで検証する
-・パラメーターの設計
+int base_line_points[] = 
+//始点と終点以外は跨いでいる2つのSurfaceを軸にTransform
 
-○procedural_city_residential_generatorのHDA化
-・平面生成
- -階層
-・立面生成
- -Extrude
-・Roof化
- -Extrude
-・UV
+//始点と終点はSurfaceのNormalを軸にTransform
+
+
+○平面生成の実装
+
 
 ○区画及び道の生成記事
-・パラメーター概要
+・パラメーター概要(画像)
+パラメーターで管理するのは主に下記3つになる
  -道の間隔
  -道幅
  -道の削除比率
-・道幅、間隔の調整
-・道をランダムに削除
-・区画内でさらに区画を生成できる
+・HDAの説明(GIF)
+道幅、間隔の調整や分割するをランダムに削除することで区画のサイズに変化を持たせる
+・補足(説明)
+また、区画内でさらに区画を分割を生成できるようにした
+
 
 
 ■BaseLineGenerator
 ※処理を細分化して1つずつ実装を進めていく
  -※モジュール設計
 
-○Edit設計
+○LineのEdit処理実装
+・分割
+・Transform
+
+●Edit設計
 ・Plane
  -Interval
  -Axis
-・BaseLine(BaseLinePoints)
+・BaseLinePoints
  -Transform
- -Scale
- -Rotate
+・Lines
+ -分割
+ -Transform
  
-○パラメーター設計
+●パラメーター設計
 ※Base + Gradation + Random
-
 
 △BoatHouse検証
 ※平行方向をメインに検証
@@ -55,11 +59,20 @@
 
 
 ■CityGenerator
-○ProceduralModelingの実装
-※モジュール化
-・procedural_city_skyscraper_generator
-・procedural_city_tall_residential_generator
-・procedural_city_residential_generator
+○Textureを使用したBuildingGeneratorを実装
+※procedural_city_residential_generatorをベースに実装
+・クラス化
+・平面生成
+ -敷地で平面の形態を生成(Subdivision + Cluster + Subdivision)
+・立面生成
+ -凹凸
+・Roof化
+ -Extrude
+・テクスチャー化
+ -UV
+ 
+○ProceduralModelingBuildingGeneratorを実装
+※procedural_city_skyscraper_generatorをベースに実装
 
 △背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装
 
