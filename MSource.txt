@@ -1,12 +1,28 @@
 ○サバゲー
-確認ありがとうございます!
-それでは22日を候補にした上で計画させて頂こうと思います!
 
-○夕食確認
-クリスマス期間を警戒してリゾナーレの夕食の予約を予めしとこうと思うんだけど、バイキング予約しても大丈夫でしょうか?
+○BaseLineのEdit実装
+※各Surfaceを軸に動かす
 
-後、万座温泉の夕飯ってホテルのバイキングにする予定だっけ…?
-周り何もないからこっちも夕飯の計画立てといた方がいいかも…
+○PlaneMakerとBaseLineMakerで検証する
+・パラメーターの設計
+
+○procedural_city_residential_generatorのHDA化
+・平面生成
+ -階層
+・立面生成
+ -Extrude
+・Roof化
+ -Extrude
+・UV
+
+○区画及び道の生成記事
+・パラメーター概要
+ -道の間隔
+ -道幅
+ -道の削除比率
+・道幅、間隔の調整
+・道をランダムに削除
+・区画内でさらに区画を生成できる
 
 
 ■BaseLineGenerator
@@ -14,12 +30,17 @@
  -※モジュール設計
 
 ○Edit設計
-・Plane(MakePlane)
- -BasePoint
+・Plane
+ -Interval
  -Axis
-・BaseLine
-※各Surfaceを軸に動かす
- -BaseLinePoints
+・BaseLine(BaseLinePoints)
+ -Transform
+ -Scale
+ -Rotate
+ 
+○パラメーター設計
+※Base + Gradation + Random
+
 
 △BoatHouse検証
 ※平行方向をメインに検証
