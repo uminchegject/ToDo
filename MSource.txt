@@ -1,67 +1,12 @@
 ○サバゲー
-お疲れ様です。
-先週はサバゲーのキャンセル申し訳ございませんでした。:man-bowing: 
-次回のサバゲーについてご相談なのですが、
-調整さんを確認したところ、11/22（土）は片山さんのスケジュールが空いているようでしたので、
-差し支えなければこの日にサバゲーを計画させて頂いても大丈夫でしょうか…?
-ご確認のほどよろしくお願いいたします！
+確認ありがとうございます!
+それでは22日を候補にした上で計画させて頂こうと思います!
 
-○焼肉
-こちらこそありがとう御座いました!
-とても楽しかったです!
-また、機会があれば是非ご飯行きましょう!
+○夕食確認
+クリスマス期間を警戒してリゾナーレの夕食の予約を予めしとこうと思うんだけど、バイキング予約しても大丈夫でしょうか?
 
-○procedural_city_residential_generatorのHDA化
-・処理の整理
- -平面生成
- -立面生成
- -Roof化
- -UV
-
-○Planeパラメーター設計
-※ランダム・グラデーション(Base + Gradation + Random)
-・Rotate
-・Interval
-
-○Edit設計
-・Plane
- -Interval
- -Axis
-・BaseLine(BaseLinePoints)
- -
-
-●ソース
-vector interval_range = chv("IntervalRange");
-vector plane_axis = chv("PlaneAxis");
-plane_axis = normalize(plane_axis);
-
-float base_interval = (interval_range.y - interval_range.x) / 2 + interval_range.x;
-int plane_num = int(length(bound) * 2 / base_interval);
-vector base_pos = centroid - plane_axis * length(bound);
-
-
-for(int j = 0; j < plane_num; j++)
-{
-	matrix3 rot = ident();
-	rotate(rot, j * 0.2, {1, 0, 0});
-	vector new_plane_axis = rot * plane_axis;
-
-	vector plane_pos = base_pos;
-	plane_pos += j * base_interval * new_plane_axis;
-	plane_pos += new_plane_axis * (random(plane_pos) - 0.5) * (interval_range.y - interval_range.x) / 2;
-	addpoint(0,plane_pos);
-	vector4 plane = make_plane(plane_pos, new_plane_axis);
-
-
-
-■Study
-○Python
-
-○USD
-・FOUNDATIONS 20.5 | SOLARIS MARKET
-https://www.sidefx.com/tutorials/foundations-205-solaris-market/
-・『グランツーリスモ７』開発におけるUSD活用事例
-https://cedil.cesa.or.jp/cedil_sessions/view/2607
+後、万座温泉の夕飯ってホテルのバイキングにする予定だっけ…?
+周り何もないからこっちも夕飯の計画立てといた方がいいかも…
 
 
 ■BaseLineGenerator
@@ -114,6 +59,23 @@ https://cedil.cesa.or.jp/cedil_sessions/view/2607
 ※課題と成果をリストアップ
 ・区画生成のSubnet化
 ・フローのクラス化
+
+
+
+■Study(ナレッジ)
+○Python
+・Python による大規模ゲーム開発環境 ～Cyllista Game Engine 開発事例～
+https://cedil.cesa.or.jp/cedil_sessions/view/2278
+・Maya + Python でインハウスツールを作ろう！
+https://cedil.cesa.or.jp/cedil_sessions/view/1633
+・プロシージャルゲームコンテンツ制作ブートキャンプ 2019 Part 1 バリエーション生成
+https://cedil.cesa.or.jp/cedil_sessions/view/2111
+
+○USD
+・FOUNDATIONS 20.5 | SOLARIS MARKET
+https://www.sidefx.com/tutorials/foundations-205-solaris-market/
+・『グランツーリスモ７』開発におけるUSD活用事例
+https://cedil.cesa.or.jp/cedil_sessions/view/2607
 
 
 

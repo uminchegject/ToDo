@@ -119,12 +119,6 @@
  -Houdiniから枝分かれしていく(https://cedil.cesa.or.jp/cedil_sessions/search?query=houdini)
  -Cedilからさらに詳細な調査をおこなっていく
 
-○USD
-・FOUNDATIONS 20.5 | SOLARIS MARKET
-https://www.sidefx.com/tutorials/foundations-205-solaris-market/
-・『グランツーリスモ７』開発におけるUSD活用事例
-https://cedil.cesa.or.jp/cedil_sessions/view/2607
-
 ●技術
 ・C++設計
 ・オブジェクト指向
@@ -137,4 +131,5 @@ https://cedil.cesa.or.jp/cedil_sessions/view/2607
 
 ●空き時間
 ・GameMakers
+https://www.docswell.com/user/gamemakers
 https://www.youtube.com/@GameMakersJP/videos
