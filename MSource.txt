@@ -1,18 +1,34 @@
 ○サバゲー
 お疲れ様です。
 先週はサバゲーのキャンセル申し訳ございませんでした。:man-bowing: 
-次回のサバゲーについてご相談なのですが、調整さんを確認したところ11/22(土)が大丈夫差し支えなければ11/22(土)に行くのはいかがでしょうか…?
+次回のサバゲーについてご相談なのですが、
+調整さんを確認したところ、11/22（土）は片山さんのスケジュールが空いているようでしたので、
+差し支えなければこの日にサバゲーを計画させて頂いても大丈夫でしょうか…?
+ご確認のほどよろしくお願いいたします！
 
-○Texture(UV)のStudy
-・Building Generator from Imageを調査
+○焼肉
+こちらこそありがとう御座いました!
+とても楽しかったです!
+また、機会があれば是非ご飯行きましょう!
 
 ○procedural_city_residential_generatorのHDA化
 ・処理の整理
+ -平面生成
+ -立面生成
+ -Roof化
+ -UV
 
-○パラメーター設計
-※ランダム・グラデーション
+○Planeパラメーター設計
+※ランダム・グラデーション(Base + Gradation + Random)
 ・Rotate
 ・Interval
+
+○Edit設計
+・Plane
+ -Interval
+ -Axis
+・BaseLine(BaseLinePoints)
+ -
 
 ●ソース
 vector interval_range = chv("IntervalRange");
@@ -36,6 +52,16 @@ for(int j = 0; j < plane_num; j++)
 	addpoint(0,plane_pos);
 	vector4 plane = make_plane(plane_pos, new_plane_axis);
 
+
+
+■Study
+○Python
+
+○USD
+・FOUNDATIONS 20.5 | SOLARIS MARKET
+https://www.sidefx.com/tutorials/foundations-205-solaris-market/
+・『グランツーリスモ７』開発におけるUSD活用事例
+https://cedil.cesa.or.jp/cedil_sessions/view/2607
 
 
 ■BaseLineGenerator
@@ -64,6 +90,7 @@ for(int j = 0; j < plane_num; j++)
 
 ■CityGenerator
 ○ProceduralModelingの実装
+※モジュール化
 ・procedural_city_skyscraper_generator
 ・procedural_city_tall_residential_generator
 ・procedural_city_residential_generator
