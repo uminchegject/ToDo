@@ -1,24 +1,25 @@
 ○サバゲー
 
-○万座夕食
 
-
-○BaseLinePointにPlane情報を持たせておく
-vector normal;
-vector up;
-//始点と終点はSurfaceのNormalを軸にTransform
-normal = 
-up = 
-//始点と終点以外は跨いでいる2つのSurfaceを軸にTransform
-
-○BaseLinePointのEdit実装
-・Transform(Rotate)
+●Edit設計
+・Plane
+ -Interval
+ -Axis
+・BaseLinePoints
+ -Transform
+・Lines
+ -分割
+ -Transform
+ 
+●パラメーター設計
+※Base + Gradation + Random
 
 
 ○平面生成の実装
+・HardSurfaceTownを参照
+・Subdivision(Cluster)
+・Classを階層化
 
-
-○ナレッジ調査
 
 ○区画及び道の生成記事
 ・パラメーター概要(画像)
@@ -28,7 +29,7 @@ up =
  -道の削除比率
 ・HDAの説明(GIF)
 道幅、間隔の調整や分割するをランダムに削除することで区画のサイズに変化を持たせる
-・補足(説明)
+・補足(画像)
 また、区画内でさらに区画を分割を生成できるようにした
 
 
