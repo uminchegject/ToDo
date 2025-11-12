@@ -1,36 +1,52 @@
-○サバゲー
+○記事
 
 
-●Edit設計
-・Plane
- -Interval
- -Axis
-・BaseLinePoints
- -Transform
-・Lines
- -分割
- -Transform
- 
-●パラメーター設計
-※Base + Gradation + Random
+○Top実装
+int class = 
+
+//階層のクラスは除外
+if(iteration == class){
+	i@top = 1;
+	return;
+}
+
+//高さ移動処理
+int prim_points[]
+foreach()
+{
+
+}
 
 
-○平面生成の実装
-・HardSurfaceTownを参照
-・Subdivision(Cluster)
-・Classを階層化
+○BasePoints
+・Transform
+・Rotate
 
+vector start_pt_pos
+vector end_pt_pos
+vector middle_pos = start_pt_pos + (end_pt_pos - start_pt_pos) / 2;
 
-○区画及び道の生成記事
-・パラメーター概要(画像)
-パラメーターで管理するのは主に下記3つになる
- -道の間隔
- -道幅
- -道の削除比率
-・HDAの説明(GIF)
-道幅、間隔の調整や分割するをランダムに削除することで区画のサイズに変化を持たせる
-・補足(画像)
-また、区画内でさらに区画を分割を生成できるようにした
+//Surface,Lineを基準にEditするように実装
+vector surface_normal
+vector start_pt_axis = normalize(start_pt_pos - middle_pos);
+vector end_pt_axis = normalize(end_pt_pos - middle_pos);
+
+//Edit
+//※検証
+vector N  = normalize(@N);        // 基準の法線（Z軸相当）
+vector up = normalize(chv("up")); // 目標のup軸（例: {0,1,0}）
+
+// upからN方向の成分を引いて接線Tを作る
+vector T = normalize(up - dot(up, N) * N);
+vector B = cross(N, T);           // 右手系のもう1軸
+
+// 回転行列（ローカル→ワールド）
+matrix3 m = set(T, B, N);
+
+// 例：原点からのオフセットを変換
+vector origin = chv("origin");
+@P = origin + m * (@P - origin);
+
 
 
 
