@@ -1,16 +1,24 @@
 ○サバゲー
 
-○BaseLinePointのEdit実装
-・Transform(Rotate)
+○万座夕食
 
-int base_line_points[] = 
+
+○BaseLinePointにPlane情報を持たせておく
+vector normal;
+vector up;
+//始点と終点はSurfaceのNormalを軸にTransform
+normal = 
+up = 
 //始点と終点以外は跨いでいる2つのSurfaceを軸にTransform
 
-//始点と終点はSurfaceのNormalを軸にTransform
+○BaseLinePointのEdit実装
+・Transform(Rotate)
 
 
 ○平面生成の実装
 
+
+○ナレッジ調査
 
 ○区画及び道の生成記事
 ・パラメーター概要(画像)
