@@ -1,59 +1,43 @@
-○サバゲー
+○返信
+・インフル
+了解しました
+いっくんと彼女さんの体調を優先して動いてもらえたら幸いです!
+ホテルから駅までそこまで離れてないから、いっくんが来れるタイミングに合わせて迎えに行きます。(終電とかでも気合で迎えに行きます!)
+体調に気を付けてお大事になさってください。
 
-○スライドの要約
+・アウトレット
+いとさんに行きの新幹線について相談なんだけど…
+ちょっと自分がアウトレットを数店舗見ときたいことろがあるから、添付した新幹線が到着する1時間前位に先入りして、軽井沢駅に新幹線が到着するタイミングで軽井沢駅で合流させて頂いてもいいですか…?
 
-○記事
+○LineEditorの実装
+int prim_points[] = primpoints(0, @primnum);
 
+int start_pt = prim_points[0];
+int end_pt = prim_points[1];
 
-○Top実装
-int class = 
-
-//階層のクラスは除外
-if(iteration == class){
-	i@top = 1;
-	return;
-}
-
-//高さ移動処理
-int prim_points[]
-foreach(int prim_pt; prim_points)
-{
-	vector pt_pos = point(0, "P", prim_pt);
-	pt_pos.y += 5;
-	setpointattrib(0, "P", @ptnum, pt_pos);
-}
-
-
-○BasePoints
-・Transform
-・Rotate
-
-vector start_pt_pos
-vector end_pt_pos
+vector start_pt_pos = point(0, "P", start_pt);
+vector end_pt_pos = point(0, "P", prim_points[1]);
 vector middle_pos = start_pt_pos + (end_pt_pos - start_pt_pos) / 2;
 
-//Surface,Lineを基準にEditするように実装
-vector surface_normal
+vector surface_normal = v@N;
 vector start_pt_axis = normalize(start_pt_pos - middle_pos);
 vector end_pt_axis = normalize(end_pt_pos - middle_pos);
 
-//Edit
-//※検証
-vector N  = normalize(@N);        // 基準の法線（Z軸相当）
-vector up = normalize(chv("up")); // 目標のup軸（例: {0,1,0}）
+vector start_pt_tangent = normalize(start_pt_axis - dot(start_pt_axis, surface_normal) * surface_normal);
+vector start_pt_binormal = cross(surface_normal, start_pt_tangent);
+vector end_pt_tangent = normalize(end_pt_axis - dot(end_pt_axis, surface_normal) * surface_normal);
+vector end_pt_binormal = cross(surface_normal, end_pt_tangent);
 
-// upからN方向の成分を引いて接線Tを作る
-vector T = normalize(up - dot(up, N) * N);
-vector B = cross(N, T);           // 右手系のもう1軸
+matrix3 m_start_pt = set(start_pt_tangent, start_pt_binormal, surface_normal);
+matrix3 m_end_pt = set(end_pt_tangent, end_pt_binormal, surface_normal);
 
-// 回転行列（ローカル→ワールド）
-matrix3 m = set(T, B, N);
-
-// 例：原点からのオフセットを変換
 vector origin = chv("origin");
-@P = origin + m * (@P - origin);
+setpointattrib(0, "P", start_pt, start_pt_pos + m_start_pt * origin);
+setpointattrib(0, "P", end_pt, end_pt_pos + m_end_pt * origin);
 
 
+○ImageBuildingの形態検証
+・楽しい都市生成を調査
 
 
 ■BaseLineGenerator
