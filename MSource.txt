@@ -1,15 +1,16 @@
-○返信
-・インフル
-了解しました。いっくんと彼女さんの体調を最優先で動いてもらえたら幸いです!
-ホテルから駅まではそれほど離れていないので、いっくんが来られるタイミングに合わせて迎えに行きます。(終電とかでも気合で迎えに行きます!)
-どうか無理せず、体調に気を付けてお大事になさってください。
+○ImageBuildingの設計
+※楽しい都市生成を参考
+・Texture
+・形態
 
-・アウトレット
-いとさんに行きの新幹線について相談なんだけど…
-ちょっと自分がアウトレットで数店舗見ときたいことろがあるから、機能添付した新幹線が到着する1時間前位に先入りして、軽井沢駅に新幹線が到着するタイミングで軽井沢駅で合流させて頂いてもいいですか…?
+○LineEditorの設計
+・分割
+・Edit
+ -Transform
+ -Rotate
 
 
-○LineEditorの実装
+●ソース
 int prim_points[] = primpoints(0, @primnum);
 
 int start_pt = prim_points[0];
@@ -43,10 +44,6 @@ setpointattrib(0, "P", end_pt, end_pt_pos + m_end_pt * origin);
 ■BaseLineGenerator
 ※処理を細分化して1つずつ実装を進めていく
  -※モジュール設計
-
-○LineのEdit処理実装
-・分割
-・Transform
 
 ●Edit設計
 ・Plane
