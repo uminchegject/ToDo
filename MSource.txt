@@ -1,3 +1,7 @@
+○サバゲー
+
+○スライドの要約
+
 ○記事
 
 
@@ -12,9 +16,11 @@ if(iteration == class){
 
 //高さ移動処理
 int prim_points[]
-foreach()
+foreach(int prim_pt; prim_points)
 {
-
+	vector pt_pos = point(0, "P", prim_pt);
+	pt_pos.y += 5;
+	setpointattrib(0, "P", @ptnum, pt_pos);
 }
 
 
@@ -62,8 +68,6 @@ vector origin = chv("origin");
 ・Plane
  -Interval
  -Axis
-・BaseLinePoints
- -Transform
 ・Lines
  -分割
  -Transform
