@@ -1,9 +1,28 @@
-○ImageBuildingの設計
-※楽しい都市生成を参考
+○パラメーター
+・Class
+・Texture
+ -ImagePath
+ -階層高
+・階層数
+ -範囲
+・△凹凸
+
+●ImageBuildingの設計
 ・Texture
 ・形態
 
-○LineEditorの設計
+
+○BoatHouseのデフォルメ
+・平面Surface
+・立面Surface
+・Edge×2
+
+○パラメーター
+・Transform(Range)
+ -AxisDir
+ -NormalDir
+
+●LineEditorの設計
 ・分割
 ・Edit
  -Transform
@@ -39,7 +58,7 @@ setpointattrib(0, "P", end_pt, end_pt_pos + m_end_pt * origin);
 
 ○ImageBuildingの形態検証
 ・楽しい都市生成を調査
-
+・UVの検証
 
 ■BaseLineGenerator
 ※処理を細分化して1つずつ実装を進めていく
