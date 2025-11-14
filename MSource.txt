@@ -1,17 +1,28 @@
+●軽井沢
+・観光
+ -鬼押
+ -浅間牧場
+ -雲上池
+・蕎麦
+ -まるい
+ -しなの
+
+
+
+■ImageBuilding
 ○パラメーター
 ・Class
 ・Texture
  -ImagePath
  -階層高
-・階層数
- -範囲
-・△凹凸
+・階層数(Range)
 
 ●ImageBuildingの設計
 ・Texture
-・形態
+・形態(立方体)
 
 
+■EdgeMaker
 ○BoatHouseのデフォルメ
 ・平面Surface
 ・立面Surface
