@@ -1,16 +1,7 @@
-●軽井沢
-・観光
- -鬼押
- -浅間牧場
- -雲上池
-・蕎麦
- -まるい
- -しなの
+○UVの検証
+・立方体で検証
 
-
-
-■ImageBuilding
-○パラメーター
+●パラメーター
 ・Class
 ・Texture
  -ImagePath
@@ -22,13 +13,7 @@
 ・形態(立方体)
 
 
-■EdgeMaker
-○BoatHouseのデフォルメ
-・平面Surface
-・立面Surface
-・Edge×2
-
-○パラメーター
+○LineEditor実装
 ・Transform(Range)
  -AxisDir
  -NormalDir
@@ -38,7 +23,6 @@
 ・Edit
  -Transform
  -Rotate
-
 
 ●ソース
 int prim_points[] = primpoints(0, @primnum);
@@ -67,11 +51,8 @@ setpointattrib(0, "P", start_pt, start_pt_pos + m_start_pt * origin);
 setpointattrib(0, "P", end_pt, end_pt_pos + m_end_pt * origin);
 
 
-○ImageBuildingの形態検証
-・楽しい都市生成を調査
-・UVの検証
 
-■BaseLineGenerator
+■EdgeMaker
 ※処理を細分化して1つずつ実装を進めていく
  -※モジュール設計
 
@@ -86,12 +67,11 @@ setpointattrib(0, "P", end_pt, end_pt_pos + m_end_pt * origin);
 ●パラメーター設計
 ※Base + Gradation + Random
 
-△BoatHouse検証
+●BoatHouse
 ※平行方向をメインに検証
-・検証用のデザインに修正
- -EdgeBlockの構成
-・立方体で検証
- -格子
+・平面Surface
+・立面Surface
+・Edge×2
 
 △Pattern設計
 ※カプセル化・ポリフォーズム(多様性)
