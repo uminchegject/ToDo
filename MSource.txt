@@ -1,3 +1,8 @@
+○UVTutorialを調査
+・EASY UV UNWRAPPING
+https://www.sidefx.com/ja/tutorials/use-houdinis-tools-to-create-uvs-easily/
+・Procedural City Generator Tutorial
+
 ○UVの検証
 ・立方体で検証
 
@@ -14,41 +19,15 @@
 
 
 ○LineEditor実装
-・Transform(Range)
- -AxisDir
- -NormalDir
+・立方体の角度
+・スケール
+・傾き
 
 ●LineEditorの設計
 ・分割
 ・Edit
  -Transform
  -Rotate
-
-●ソース
-int prim_points[] = primpoints(0, @primnum);
-
-int start_pt = prim_points[0];
-int end_pt = prim_points[1];
-
-vector start_pt_pos = point(0, "P", start_pt);
-vector end_pt_pos = point(0, "P", prim_points[1]);
-vector middle_pos = start_pt_pos + (end_pt_pos - start_pt_pos) / 2;
-
-vector surface_normal = v@N;
-vector start_pt_axis = normalize(start_pt_pos - middle_pos);
-vector end_pt_axis = normalize(end_pt_pos - middle_pos);
-
-vector start_pt_tangent = normalize(start_pt_axis - dot(start_pt_axis, surface_normal) * surface_normal);
-vector start_pt_binormal = cross(surface_normal, start_pt_tangent);
-vector end_pt_tangent = normalize(end_pt_axis - dot(end_pt_axis, surface_normal) * surface_normal);
-vector end_pt_binormal = cross(surface_normal, end_pt_tangent);
-
-matrix3 m_start_pt = set(start_pt_tangent, start_pt_binormal, surface_normal);
-matrix3 m_end_pt = set(end_pt_tangent, end_pt_binormal, surface_normal);
-
-vector origin = chv("origin");
-setpointattrib(0, "P", start_pt, start_pt_pos + m_start_pt * origin);
-setpointattrib(0, "P", end_pt, end_pt_pos + m_end_pt * origin);
 
 
 
