@@ -2,9 +2,11 @@
 ・EASY UV UNWRAPPING
 https://www.sidefx.com/ja/tutorials/use-houdinis-tools-to-create-uvs-easily/
 ・Procedural City Generator Tutorial
+materialノードをを確認する
 
 ○UVの検証
 ・立方体で検証
+
 
 ●パラメーター
 ・Class
@@ -18,17 +20,18 @@ https://www.sidefx.com/ja/tutorials/use-houdinis-tools-to-create-uvs-easily/
 ・形態(立方体)
 
 
-○LineEditor実装
-・立方体の角度
+○BasePointEditorの実装
+※BaseLineを参照してBasePointEditorを実装する
+・姿勢角度(傾き)
 ・スケール
-・傾き
-
-●LineEditorの設計
 ・分割
-・Edit
- -Transform
- -Rotate
+int base_point_num = 
+vector scale =
+vector4 qrotate = 
 
+○BaseLineEditorの実装
+・分割
+・Rotate(Transform)
 
 
 ■EdgeMaker
@@ -40,8 +43,12 @@ https://www.sidefx.com/ja/tutorials/use-houdinis-tools-to-create-uvs-easily/
  -Interval
  -Axis
 ・Lines
- -分割
- -Transform
+ -BasePointsTransform
+・BasePoints
+・姿勢角度(傾き)
+・スケール
+・分割
+
  
 ●パラメーター設計
 ※Base + Gradation + Random
