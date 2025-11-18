@@ -1,14 +1,12 @@
 ○サバゲー予約
 
-
-○BuildingGeneratorを実際に動かし挙動を確認
-・materialノードをを確認する
-・TestHip上で挙動を確認してみる
-
 ○UVの検証
-※Procedural City Generator Tutorialベース
-・立方体で検証
+・QuickShadeのattribute化
+$JOB/Desktop/TEXTURE/tall_residential__$F.jpg
 
+○回転処理の実装
+vector rot = radians(chv("rot"));
+vector4 q_rot = eulertoquaternion(rot, 0);
 
 ○BasePointEdigtor設計
 ※Base + Gradation + Random
@@ -22,29 +20,36 @@
 ・スケール
 
 ●ソース
-float block_length = ch("")
-vector scale = 
+float block_length = ch("BlockLength");
+vector base_scale = chv("BaseScale");
+vector adjust_scale = chv("AdjustScale");
+vector base_rotate = chv("BaseRotate");
+vector adjust_rotate = chv("AdjustRotate");
 
-int start_pt =
-int end_pt = 
-vector start_pt_pos =
-vector end_pt_pos =
+int prim_points[] = primpoints(0, @ptnum);
+int start_pt = prim_points[0];
+int end_pt = prim_points[1];
+vector start_pt_pos = point(0, "P", start_pt);
+vector end_pt_pos = point(0, "P", end_pt);
 
 float base_line_length = normalize(start_pt_pos - end_pt_pos);
 vector line_dir = normalize(end_pt_pos - start_pt_pos);
+
 int base_point_num = int(base_line_length / block_length);
 float fixed_block_length = base_line_length / base_point_num;
-
 for(int i = 0; i < base_point_num; ++i){
 	spawn_pos = start_pt_pos;
 	spawn_pos +=  line_dir * fixed_block_length * (i + 0.5);
 	int pt = addpoint(0, spawn_pos);
 	
-	vector scale = 
-	vector4 qrotate = 
-
+	vector scale = base_scale + random(spawn_pos) * adjust_scale;
+	scale.y = fixed_block_length;
+	
+	vector rotate = base_rotate + random(spawn_pos * 10) * adjust_rotate;
+	rotate = radians(rotate);
+	vector4 q_rotate = eulertoquaternion(rotate, 0);
+	
 }
-
 
 
 ■EdgeMaker
