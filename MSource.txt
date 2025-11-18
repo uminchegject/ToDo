@@ -1,20 +1,40 @@
 ○サバゲー予約
 
+
 ○UVの検証
 ・QuickShadeのattribute化
 $JOB/Desktop/TEXTURE/tall_residential__$F.jpg
 
+○Textureを使用したBuildingGeneratorを実装
+※procedural_city_residential_generatorをベースに実装
+・クラス化
+・テクスチャ周りのパラメーター
+ -ImagePath
+ -階層高
+・高さ設定
+ -階層数(Range)
+
+△拡張
+・平面生成
+ -敷地で平面の形態を生成(Subdivision + Cluster + Subdivision)
+・立面生成
+ -凹凸
+・Roof化
+ -Extrude
+
+●ImageBuildingの設計
+・Texture
+・形態(立方体) 
+ 
+
 ○回転処理の実装
 vector rot = radians(chv("rot"));
 vector4 q_rot = eulertoquaternion(rot, 0);
-
-○BasePointEdigtor設計
-※Base + Gradation + Random
-・姿勢角度(傾き)
-・スケール
+quaternion q3 = qmultiply(q1, q_rot);
 
 ○BasePointEditorの実装
 ※BaseLineを参照してBasePointEditorを実装する
+※Base + Gradation + Random
 ・分割
 ・姿勢角度(傾き)
 ・スケール
@@ -52,6 +72,7 @@ for(int i = 0; i < base_point_num; ++i){
 }
 
 
+
 ■EdgeMaker
 ※処理を細分化して1つずつ実装を進めていく
  -※モジュール設計
@@ -63,9 +84,9 @@ for(int i = 0; i < base_point_num; ++i){
 ・Lines
  -Transform
 ・BasePoint
- -姿勢角度(傾き)
- -スケール
- -分割
+ -Rotate
+ -Scale
+ -PointNum
  
 ●パラメーター設計
 ※Base + Gradation + Random
@@ -82,29 +103,6 @@ for(int i = 0; i < base_point_num; ++i){
 
 
 ■CityGenerator
-○Textureを使用したBuildingGeneratorを実装
-※procedural_city_residential_generatorをベースに実装
-・クラス化
-・平面生成
- -敷地で平面の形態を生成(Subdivision + Cluster + Subdivision)
-・立面生成
- -凹凸
-・Roof化
- -Extrude
-・テクスチャー化
- -UV
- 
-●パラメーター
-・Class
-・Texture
- -ImagePath
- -階層高
-・階層数(Range)
-
-●ImageBuildingの設計
-・Texture
-・形態(立方体) 
- 
 ○ProceduralModelingBuildingGeneratorを実装
 ※procedural_city_skyscraper_generatorをベースに実装
 
