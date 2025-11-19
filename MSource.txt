@@ -1,75 +1,82 @@
 ○サバゲー予約
 
+●Public
+out = rf'^{text}\d{{2}}'
+out = rf'{text}\d{{2}}'
 
-○UVの検証
-・QuickShadeのattribute化
-$JOB/Desktop/TEXTURE/tall_residential__$F.jpg
 
-○Textureを使用したBuildingGeneratorを実装
+○LinePointsの順番を統一する
+
+●Edit設計
+・Plane
+ -Interval
+ -Axis
+・Lines
+ -Transform
+・BasePoint
+ -Rotate
+ -Scale
+ -BlockLength
+ 
+●パラメーター設計
+※Base + Gradation + Random
+
+
+○Module作成
+・Building Generator from Imageを参照
+
+○ModuleBuildingGeneratorを実装
 ※procedural_city_residential_generatorをベースに実装
-・クラス化
-・テクスチャ周りのパラメーター
- -ImagePath
- -階層高
-・高さ設定
- -階層数(Range)
+・クラス
+・スケール
 
 △拡張
+・DetailBlock
+ -Roof
 ・平面生成
- -敷地で平面の形態を生成(Subdivision + Cluster + Subdivision)
 ・立面生成
  -凹凸
-・Roof化
- -Extrude
 
 ●ImageBuildingの設計
 ・Texture
-・形態(立方体) 
- 
-
-○回転処理の実装
-vector rot = radians(chv("rot"));
-vector4 q_rot = eulertoquaternion(rot, 0);
-quaternion q3 = qmultiply(q1, q_rot);
-
-○BasePointEditorの実装
-※BaseLineを参照してBasePointEditorを実装する
-※Base + Gradation + Random
-・分割
-・姿勢角度(傾き)
-・スケール
+・形態(立方体)
 
 ●ソース
-float block_length = ch("BlockLength");
-vector base_scale = chv("BaseScale");
-vector adjust_scale = chv("AdjustScale");
-vector base_rotate = chv("BaseRotate");
-vector adjust_rotate = chv("AdjustRotate");
+・BasePointの生成
+vector block_scale = 
+vector base_scale = 
+int block_num_x = int(base_scale.x / block_scale.x);
+int block_num_y = int(base_scale.y / block_scale.y);
+vector fixed_block_scale.x = {1, 1, 1};
+fixed_block_scale.x = base_scale.x / (base_scale.x / block_num_x)
+fixed_block_scale.y = base_scale.y / (base_scale.y / block_num_y)
+vector x_axis_dir = 
+vector y_axis_dir = 
 
-int prim_points[] = primpoints(0, @ptnum);
-int start_pt = prim_points[0];
-int end_pt = prim_points[1];
-vector start_pt_pos = point(0, "P", start_pt);
-vector end_pt_pos = point(0, "P", end_pt);
+vector spawn_base_pos = v@P;
+spawn_base_pos -= x_axis_dir * base_scale.x / 2 + fixed_block_scale.x / 2;
+spawn_base_pos -= y_axis_dir * base_scale.y / 2 + fixed_block_scale.y / 2;
 
-float base_line_length = normalize(start_pt_pos - end_pt_pos);
-vector line_dir = normalize(end_pt_pos - start_pt_pos);
-
-int base_point_num = int(base_line_length / block_length);
-float fixed_block_length = base_line_length / base_point_num;
-for(int i = 0; i < base_point_num; ++i){
-	spawn_pos = start_pt_pos;
-	spawn_pos +=  line_dir * fixed_block_length * (i + 0.5);
-	int pt = addpoint(0, spawn_pos);
-	
-	vector scale = base_scale + random(spawn_pos) * adjust_scale;
-	scale.y = fixed_block_length;
-	
-	vector rotate = base_rotate + random(spawn_pos * 10) * adjust_rotate;
-	rotate = radians(rotate);
-	vector4 q_rotate = eulertoquaternion(rotate, 0);
-	
+for(int x_index = 0; block_num_x; ++x_index)
+{
+	for(int y_index = 0; block_num_y; ++y_index)
+	{
+		vector spawn_pos = spawn_base_pos;
+		spawn_pos += x_axis_dir * x_index * fixed_block_scale.x;
+		spawn_pos += y_axis_dir * y_index * fixed_block_scale.y;
+		
+		int pt = addpoint(spawn_pos, 0);
+	}
 }
+
+・CopyObjの選択
+int class = 
+if(class != i@Class){
+	removeprim(0, @primnum, 1);
+}
+
+・CopyToPoint
+
 
 
 ■EdgeMaker
