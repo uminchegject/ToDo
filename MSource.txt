@@ -72,7 +72,6 @@ for(int i = 0; i < base_point_num; ++i){
 }
 
 
-
 ■EdgeMaker
 ※処理を細分化して1つずつ実装を進めていく
  -※モジュール設計
