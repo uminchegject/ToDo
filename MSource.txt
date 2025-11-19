@@ -51,6 +51,13 @@ for(int i = 0; i < base_point_num; ++i){
 
 
 ■ModuleBuildingGenerator
+●Module + ProceduralModeling
+・DetailBlock
+ -Bottom
+ -Top
+・Modeling
+ -Roof
+ 
 ○Module作成
 ・Building Generator from Imageを参照
 
@@ -59,12 +66,6 @@ for(int i = 0; i < base_point_num; ++i){
 ・クラス
 ・スケール
 
-△拡張
-・DetailBlock
- -Bottom
- -Top
-・Modeling
- -Roof
 
 ●ソース
 ・BasePointの生成
