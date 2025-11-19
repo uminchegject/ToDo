@@ -5,15 +5,15 @@ out = rf'^{text}\d{{2}}'
 out = rf'{text}\d{{2}}'
 
 
-○LinePointsの順番を統一する
+■EdgeGenerator
+○PlaneGenerator + BasePointGeneratorで検証
 
 ●Edit設計
 ・Plane
  -Interval
  -Axis
-・Lines
- -Transform
 ・BasePoint
+ -Transform
  -Rotate
  -Scale
  -BlockLength
@@ -21,37 +21,42 @@ out = rf'{text}\d{{2}}'
 ●パラメーター設計
 ※Base + Gradation + Random
 
+△BaseLineEditorの実装
 
+
+■ModuleBuildingGenerator
 ○Module作成
 ・Building Generator from Imageを参照
 
-○ModuleBuildingGeneratorを実装
+○実装
 ※procedural_city_residential_generatorをベースに実装
 ・クラス
 ・スケール
 
 △拡張
 ・DetailBlock
+ -Bottom
+ -Top
+・Modeling
  -Roof
-・平面生成
-・立面生成
- -凹凸
-
-●ImageBuildingの設計
-・Texture
-・形態(立方体)
 
 ●ソース
 ・BasePointの生成
-vector block_scale = 
-vector base_scale = 
+vector block_scale = detail()
+float bounds[] = primintrinsic(0, "bounds", @primnum);
+vector min_bound = set(bounds[0], 0, bounds[4]);
+vector max_bound = set(bounds[1], 0, bounds[5]);
+vector base_scale = set(0, 0, 0);
+base_scale.x = length(max_bound - min_bound);
+base_scale.y = bounds[3] - bounds[1];
+vector x_axis_dir = normalize(max_bound - min_bound);
+vector y_axis_dir = set(0, 1, 0);
+
 int block_num_x = int(base_scale.x / block_scale.x);
 int block_num_y = int(base_scale.y / block_scale.y);
 vector fixed_block_scale.x = {1, 1, 1};
 fixed_block_scale.x = base_scale.x / (base_scale.x / block_num_x)
 fixed_block_scale.y = base_scale.y / (base_scale.y / block_num_y)
-vector x_axis_dir = 
-vector y_axis_dir = 
 
 vector spawn_base_pos = v@P;
 spawn_base_pos -= x_axis_dir * base_scale.x / 2 + fixed_block_scale.x / 2;
@@ -76,7 +81,6 @@ if(class != i@Class){
 }
 
 ・CopyToPoint
-
 
 
 ■EdgeMaker
