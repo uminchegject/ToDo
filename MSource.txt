@@ -5,6 +5,7 @@ out = rf'^{text}\d{{2}}'
 out = rf'{text}\d{{2}}'
 
 
+
 ■EdgeGenerator
 ○PlaneGenerator + BasePointGeneratorで検証
 
@@ -22,6 +23,28 @@ out = rf'{text}\d{{2}}'
 ※Base + Gradation + Random
 
 △BaseLineEditorの実装
+
+●ソース
+vector base_transform = 
+vector adjust_transform = 
+
+float base_line_length = length(start_pt_pos - end_pt_pos);
+vector line_dir = normalize(end_pt_pos - start_pt_pos);
+vector normal = normalize(v@N);
+vector tangent = normalize(line_dir - dot(line_dir, normal) * normal);
+vector binormal = cross(normal, tangent);
+vector4 q_line_dir = quaternion(set(binormal, tangent, normal));
+matrix3 m_transform = set(tangent, normal, binormal);
+
+
+for(int i = 0; i < base_point_num; ++i){
+    vector spawn_pos = start_pt_pos;
+    spawn_pos +=  line_dir * fixed_block_length * (i + 0.5);
+	vector transform = base_transform + random(spawn_pos) * adjust_transform;
+	spawn_pos += transform * m_transform;
+    int pt = addpoint(0, spawn_pos);
+}
+
 
 
 ■ModuleBuildingGenerator
@@ -83,6 +106,9 @@ if(class != i@Class){
 ・CopyToPoint
 
 
+
+
+
 ■EdgeMaker
 ※処理を細分化して1つずつ実装を進めていく
  -※モジュール設計
@@ -91,9 +117,8 @@ if(class != i@Class){
 ・Plane
  -Interval
  -Axis
-・Lines
- -Transform
 ・BasePoint
+ -Transform
  -Rotate
  -Scale
  -PointNum
@@ -111,9 +136,8 @@ if(class != i@Class){
 ※カプセル化・ポリフォーズム(多様性)
 
 
-
 ■CityGenerator
-○ProceduralModelingBuildingGeneratorを実装
+△ProceduralModelingBuildingGeneratorを実装
 ※procedural_city_skyscraper_generatorをベースに実装
 
 △背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装
