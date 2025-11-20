@@ -1,14 +1,11 @@
-○サバゲー予約
-
-●Public
-out = rf'^{text}\d{{2}}'
-out = rf'{text}\d{{2}}'
-
-
 ■EdgeGenerator
+※処理を細分化して1つずつ実装を進めていく
+ -※モジュール設計
+
 ○PlaneGenerator + BasePointGeneratorで検証
 
 ●Edit設計
+※Base + Gradation + Random
 ・Plane
  -Interval
  -Axis
@@ -17,44 +14,29 @@ out = rf'{text}\d{{2}}'
  -Rotate
  -Scale
  -BlockLength
- 
-●パラメーター設計
-※Base + Gradation + Random
+
+●BoatHouseDesign
+※平行方向をメインに検証
+・平面Surface
+・立面Surface
+・Edge×2
 
 △BaseLineEditorの実装
 
-●ソース
-vector base_transform = 
-vector adjust_transform = 
-
-float base_line_length = length(start_pt_pos - end_pt_pos);
-vector line_dir = normalize(end_pt_pos - start_pt_pos);
-vector normal = normalize(v@N);
-vector tangent = normalize(line_dir - dot(line_dir, normal) * normal);
-vector binormal = cross(normal, tangent);
-vector4 q_line_dir = quaternion(set(binormal, tangent, normal));
-matrix3 m_transform = set(tangent, normal, binormal);
-
-for(int i = 0; i < base_point_num; ++i){
-    vector spawn_pos = start_pt_pos;
-    spawn_pos +=  line_dir * fixed_block_length * (i + 0.5);
-	vector transform = base_transform + random(spawn_pos) * adjust_transform;
-	spawn_pos += transform * m_transform;
-    int pt = addpoint(0, spawn_pos);
-
-	scale.y *= base_scale.y + random() * adjust_scale.y;	
-}
+△Pattern設計
+※カプセル化・ポリフォーズム(多様性)
 
 
-
-■ModuleBuildingGenerator
-●Module + ProceduralModeling
+■BuildingGenerator
+●ModuleBlock + ProceduralModeling
 ※Procedural City Projectをベースに実装
-・DetailBlock
+・ModuleBlock
+ -Side
  -Bottom
  -Top
 ・Modeling
  -Roof
+ -TopObj
  
 ○Module作成
 ・Building Generator from Imageを参照
@@ -64,81 +46,9 @@ for(int i = 0; i < base_point_num; ++i){
 ・クラス
 ・スケール
 
-○VolumeからDetailBlockの実装
+○VolumeからModuleBlock + ProceduralModelingの実装
 
 ○ProceduralModelingの調査
-
-●ソース
-・BasePointの生成
-vector block_scale = detail()
-float bounds[] = primintrinsic(0, "bounds", @primnum);
-vector min_bound = set(bounds[0], 0, bounds[4]);
-vector max_bound = set(bounds[1], 0, bounds[5]);
-vector base_scale = set(0, 0, 0);
-base_scale.x = length(max_bound - min_bound);
-base_scale.y = bounds[3] - bounds[1];
-vector x_axis_dir = normalize(max_bound - min_bound);
-vector y_axis_dir = set(0, 1, 0);
-
-int block_num_x = int(base_scale.x / block_scale.x);
-int block_num_y = int(base_scale.y / block_scale.y);
-vector fixed_block_scale.x = {1, 1, 1};
-fixed_block_scale.x = base_scale.x / (base_scale.x / block_num_x)
-fixed_block_scale.y = base_scale.y / (base_scale.y / block_num_y)
-
-vector spawn_base_pos = v@P;
-spawn_base_pos -= x_axis_dir * base_scale.x / 2 + fixed_block_scale.x / 2;
-spawn_base_pos -= y_axis_dir * base_scale.y / 2 + fixed_block_scale.y / 2;
-
-for(int x_index = 0; block_num_x; ++x_index)
-{
-	for(int y_index = 0; block_num_y; ++y_index)
-	{
-		vector spawn_pos = spawn_base_pos;
-		spawn_pos += x_axis_dir * x_index * fixed_block_scale.x;
-		spawn_pos += y_axis_dir * y_index * fixed_block_scale.y;
-		
-		int pt = addpoint(spawn_pos, 0);
-	}
-}
-
-・CopyObjの選択
-int class = 
-if(class != i@Class){
-	removeprim(0, @primnum, 1);
-}
-
-・CopyToPoint
-
-
-
-
-
-■EdgeMaker
-※処理を細分化して1つずつ実装を進めていく
- -※モジュール設計
-
-●Edit設計
-・Plane
- -Interval
- -Axis
-・BasePoint
- -Transform
- -Rotate
- -Scale
- -PointNum
- 
-●パラメーター設計
-※Base + Gradation + Random
-
-●BoatHouse
-※平行方向をメインに検証
-・平面Surface
-・立面Surface
-・Edge×2
-
-△Pattern設計
-※カプセル化・ポリフォーズム(多様性)
 
 
 ■CityGenerator
