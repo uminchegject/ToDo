@@ -5,7 +5,6 @@ out = rf'^{text}\d{{2}}'
 out = rf'{text}\d{{2}}'
 
 
-
 ■EdgeGenerator
 ○PlaneGenerator + BasePointGeneratorで検証
 
@@ -36,7 +35,6 @@ vector binormal = cross(normal, tangent);
 vector4 q_line_dir = quaternion(set(binormal, tangent, normal));
 matrix3 m_transform = set(tangent, normal, binormal);
 
-
 for(int i = 0; i < base_point_num; ++i){
     vector spawn_pos = start_pt_pos;
     spawn_pos +=  line_dir * fixed_block_length * (i + 0.5);
@@ -44,14 +42,14 @@ for(int i = 0; i < base_point_num; ++i){
 	spawn_pos += transform * m_transform;
     int pt = addpoint(0, spawn_pos);
 
-	scale.y *= base_scale.y + random() * adjust_scale.y; 
-	
+	scale.y *= base_scale.y + random() * adjust_scale.y;	
 }
 
 
 
 ■ModuleBuildingGenerator
 ●Module + ProceduralModeling
+※Procedural City Projectをベースに実装
 ・DetailBlock
  -Bottom
  -Top
@@ -61,11 +59,14 @@ for(int i = 0; i < base_point_num; ++i){
 ○Module作成
 ・Building Generator from Imageを参照
 
-○実装
+○ModuleEditor実装
 ※procedural_city_residential_generatorをベースに実装
 ・クラス
 ・スケール
 
+○VolumeからDetailBlockの実装
+
+○ProceduralModelingの調査
 
 ●ソース
 ・BasePointの生成
@@ -141,11 +142,11 @@ if(class != i@Class){
 
 
 ■CityGenerator
-△ProceduralModelingBuildingGeneratorを実装
-※procedural_city_skyscraper_generatorをベースに実装
+●BuildingGenerator
+・ModulerModeling
+・ProceduralModeling
 
 △背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装
-
 
 
 ■記事
