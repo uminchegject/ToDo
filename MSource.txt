@@ -1,3 +1,10 @@
+○BasePointGeneraotrの修正
+・クォータニオンの統一
+
+○ModuleEditorの修正
+・BasePointの配置修正
+
+
 ■EdgeGenerator
 ※処理を細分化して1つずつ実装を進めていく
  -※モジュール設計
