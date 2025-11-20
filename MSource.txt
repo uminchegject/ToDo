@@ -1,15 +1,16 @@
-○BasePointGeneraotrの修正
+■EdgeGenerator
+○PlaneEditorの実装
+・クラス化
+・複数化
+
+○BasePointEditorの実装
+・クラス化
+・複数化
 ・クォータニオンの統一
 
-○ModuleEditorの修正
-・BasePointの配置修正
-
-
-■EdgeGenerator
-※処理を細分化して1つずつ実装を進めていく
- -※モジュール設計
-
-○PlaneGenerator + BasePointGeneratorで検証
+○PatternGenerator検証
+※PlaneEditor + BasePointEditor
+※BoatHouse
 
 ●Edit設計
 ※Base + Gradation + Random
@@ -28,15 +29,24 @@
 ・立面Surface
 ・Edge×2
 
-△BaseLineEditorの実装
-
 △Pattern設計
 ※カプセル化・ポリフォーズム(多様性)
 
 
 ■BuildingGenerator
-●ModuleBlock + ProceduralModeling
 ※Procedural City Projectをベースに実装
+
+○VolumeToDetail
+・ProceduralModeling
+・ModularModelign
+
+○ModuleEditorの実装
+・BasePointの配置修正
+
+○ProceduralModelingの拡張
+・※Procedural City ProjectのHDAをPM化
+
+●ModuleBlock + ProceduralModeling
 ・ModuleBlock
  -Side
  -Bottom
@@ -44,26 +54,12 @@
 ・Modeling
  -Roof
  -TopObj
- 
-○Module作成
-・Building Generator from Imageを参照
 
-○ModuleEditor実装
-※procedural_city_residential_generatorをベースに実装
-・クラス
-・スケール
-
-○VolumeからModuleBlock + ProceduralModelingの実装
-
-○ProceduralModelingの調査
 
 
 ■CityGenerator
-●BuildingGenerator
-・ModulerModeling
-・ProceduralModeling
+△背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実
 
-△背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装
 
 
 ■記事

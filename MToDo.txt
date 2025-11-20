@@ -20,7 +20,6 @@
 
 ○配置ロジックの設計・実装
 ・PlaneEditor
-・LineGenerator
 ・BasePointGenerator
 
 ○Pattern設計・実装
