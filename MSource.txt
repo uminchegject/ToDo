@@ -1,21 +1,5 @@
-○Procedural City Projectの調査
-・モデリング部分の調査
-
-○PlaneEditorの実装
-・パラメーターのクラス化、複数化
-
-○BasePointEditorの実装
-・パラメーターのクラス化、複数化
-・クォータニオンの統一
-
-
 ■EdgeGenerator
-○PlaneEditorの実装
-・パラメーターのクラス化、複数化
-
-○BasePointEditorの実装
-・パラメーターのクラス化、複数化
-・クォータニオンの統一
+○パラメーターのクラス化、複数化
 
 ○PatternGenerator検証
 ・PlaneEditor + BasePointEditor
@@ -53,7 +37,6 @@
 ・MB部分のPrimをクラス化
 
 ○ModuleEditorの実装
-・BasePointの配置修正
 ・Moduleの生成
 
 ●ModuleBlock + ProceduralModeling
