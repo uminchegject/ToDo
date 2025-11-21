@@ -1,16 +1,25 @@
-■EdgeGenerator
+○Procedural City Projectの調査
+・モデリング部分の調査
+
 ○PlaneEditorの実装
-・クラス化
-・複数化
+・パラメーターのクラス化、複数化
 
 ○BasePointEditorの実装
-・クラス化
-・複数化
+・パラメーターのクラス化、複数化
+・クォータニオンの統一
+
+
+■EdgeGenerator
+○PlaneEditorの実装
+・パラメーターのクラス化、複数化
+
+○BasePointEditorの実装
+・パラメーターのクラス化、複数化
 ・クォータニオンの統一
 
 ○PatternGenerator検証
-※PlaneEditor + BasePointEditor
-※BoatHouse
+・PlaneEditor + BasePointEditor
+・BoatHouse
 
 ●Edit設計
 ※Base + Gradation + Random
@@ -35,31 +44,29 @@
 
 ■BuildingGenerator
 ※Procedural City Projectをベースに実装
+※PMとMBの関係を意識する
 
-○VolumeToDetail
-・ProceduralModeling
-・ModularModelign
+○ProceduralModelingの実装
+※形態部分を詰める
+※Procedural City ProjectのHDAをPM化
+・VolumeToPM
+・MB部分のPrimをクラス化
 
 ○ModuleEditorの実装
 ・BasePointの配置修正
-
-○ProceduralModelingの拡張
-・※Procedural City ProjectのHDAをPM化
+・Moduleの生成
 
 ●ModuleBlock + ProceduralModeling
-・ModuleBlock
- -Side
- -Bottom
- -Top
-・Modeling
+・ProceduralModeling
+※形態
  -Roof
+・ModuleBlock
+ -Window
  -TopObj
 
 
-
 ■CityGenerator
-△背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実
-
+△背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装
 
 
 ■記事
