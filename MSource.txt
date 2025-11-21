@@ -1,3 +1,14 @@
+○PatternGenerator検証
+※PlaneEditor + BasePointEditor
+※BoatHouse
+
+○ProceduralModelingの設計
+※Procedural City ProjectのTextureをベースに実装
+ -NY
+・VolumeToPM
+・MB部分のPrimをクラス化
+
+
 ■EdgeGenerator
 ○パラメーターのクラス化、複数化
 
@@ -30,7 +41,7 @@
 ※Procedural City Projectをベースに実装
 ※PMとMBの関係を意識する
 
-○ProceduralModelingの実装
+○ProceduralModelingの設計
 ※形態部分を詰める
 ※Procedural City ProjectのHDAをPM化
 ・VolumeToPM
