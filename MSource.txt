@@ -1,3 +1,19 @@
+○BoatHouseDesign
+・
+
+○記事準備(素材)
+・Base + Gradation + Random
+
+○SimpleBuildingGenerator
+・Detail
+ -Top(Roof)
+ -Bottom
+ -Side
+・MB
+ -Top
+ -Side
+
+
 ■EdgeGenerator
 ○パラメーターのクラス化、複数化
 
