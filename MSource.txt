@@ -1,18 +1,24 @@
 ○BoatHouseDesign
-・
+※適応パーツ部分を整理
+・Edge
+・Roof
+・VerticalEdge
 
 ○記事準備(素材)
+※BoatHouseDesignのパーツに沿ったDesignを設計する
 ・Base + Gradation + Random
 
-○SimpleBuildingGenerator
+○BuildingGenerator
+※世界観をしっかり決めて、参考資料・リファレンスをしっかり用意する
+※最初は立方体でシンプルに
 ・Detail
  -Top(Roof)
  -Bottom
- -Side
+ -Edge
 ・MB
  -Top
  -Side
-
+ 
 
 ■EdgeGenerator
 ○パラメーターのクラス化、複数化
