@@ -1,15 +1,17 @@
 ■EdgeGenerator
-○BoatHousePattern設計
-※適応パーツ部分を整理
-・Edge
-・Roof
-・VerticalEdge
-
 ○BoatHouseModeling
 ・Patternを生成するパーツをベースにモデリング
+・シンプルなEdgeパーツで構成するように修正
+ -窓を削除
+・屋根を用意
 ・△Procedural化
  -角度
  -高さ
+
+●BoatHousePatternPart
+・Edge
+・Roof
+・VerticalEdge
 
 ○パラメーターのクラス化、複数化
 
@@ -30,23 +32,31 @@
 
 △Pattern設計
 ※カプセル化・ポリフォーズム(多様性)
-
+・カラー化(Texture化)
 
 
 ■BuildingGenerator
 ※Procedural City Projectをベースに実装
 ※PMとMBの関係を意識する
 
-○BuildingGenerator設計
+○BaseBuildingGenerator実装
+・VolumeからPM
+ -Roof
+・MB部分のPrimをクラス化
+ -Side
+ -Top
+
+○MBのTexture設定ツールを実装
+・PrimをUV化
+・Textureの設定
+
+●BaseBuildingGenerator
 ※世界観をしっかり決めて、参考資料・リファレンスをしっかり用意する
 ※Volume + Textureベースで実装
  -プラスαでPMのDetailを用意
 ・参考資料
  -たのしい都市ジェネレータ(https://www.youtube.com/watch?v=Y6-EWYXZG4s)
  -Procedural City generator(https://www.youtube.com/watch?v=BlduX70jZRU)
-・実装
- -VolumeからPM
- -MB部分のPrimをクラス化
 ・形態
 ※最初は立方体でシンプルに
  -Top(Roof)
@@ -54,12 +64,7 @@
  -Top
  -Side(Window)
 
-○MBのTexture設定ツールを実装
-・PrimをUV化
-・Textureの設定
-
 △背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装
-
 
 
 ■記事
