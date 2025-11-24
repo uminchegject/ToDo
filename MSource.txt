@@ -1,31 +1,21 @@
-○BoatHouseDesign
+■EdgeGenerator
+○BoatHousePattern設計
 ※適応パーツ部分を整理
 ・Edge
 ・Roof
 ・VerticalEdge
 
+○BoatHouseModeling
+・Patternを生成するパーツをベースにモデリング
+・△Procedural化
+ -角度
+ -高さ
+
+○パラメーターのクラス化、複数化
+
 ○記事準備(素材)
 ※BoatHouseDesignのパーツに沿ったDesignを設計する
 ・Base + Gradation + Random
-
-○BuildingGenerator
-※世界観をしっかり決めて、参考資料・リファレンスをしっかり用意する
-※最初は立方体でシンプルに
-・Detail
- -Top(Roof)
- -Bottom
- -Edge
-・MB
- -Top
- -Side
- 
-
-■EdgeGenerator
-○パラメーターのクラス化、複数化
-
-○PatternGenerator検証
-・PlaneEditor + BasePointEditor
-・BoatHouse
 
 ●Edit設計
 ※Base + Gradation + Random
@@ -38,38 +28,38 @@
  -Scale
  -BlockLength
 
-●BoatHouseDesign
-※平行方向をメインに検証
-・平面Surface
-・立面Surface
-・Edge×2
-
 △Pattern設計
 ※カプセル化・ポリフォーズム(多様性)
+
 
 
 ■BuildingGenerator
 ※Procedural City Projectをベースに実装
 ※PMとMBの関係を意識する
 
-○ProceduralModelingの設計
-※形態部分を詰める
-※Procedural City ProjectのTextureをベースに実装
- -NY
-・VolumeToPM
-・MB部分のPrimをクラス化
+○BuildingGenerator設計
+※世界観をしっかり決めて、参考資料・リファレンスをしっかり用意する
+※Volume + Textureベースで実装
+ -プラスαでPMのDetailを用意
+・参考資料
+ -たのしい都市ジェネレータ(https://www.youtube.com/watch?v=Y6-EWYXZG4s)
+ -Procedural City generator(https://www.youtube.com/watch?v=BlduX70jZRU)
+・実装
+ -VolumeからPM
+ -MB部分のPrimをクラス化
+・形態
+※最初は立方体でシンプルに
+ -Top(Roof)
+・MB
+ -Top
+ -Side(Window)
 
-●ModuleBlock + ProceduralModeling
-・ProceduralModeling
-※形態
- -Roof
-・ModuleBlock
- -Window
- -TopObj
+○MBのTexture設定ツールを実装
+・PrimをUV化
+・Textureの設定
 
-
-■CityGenerator
 △背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装
+
 
 
 ■記事
