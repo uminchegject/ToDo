@@ -1,41 +1,29 @@
-○TopObjEditor
-・HardSurface本を参考にPM
-
-○TextureEditor
-・Textureパスのパラメーター化
-
-○BuildingGenerator実装
-・パラメーター実装
-
-○BoatHouseのPM実装
-・EdgeMakerとPatternMakerに適応
- -BottomLineとTopLineを生成
-・パーツの追加
- -VerticalEdge × 2
- -Roof
-・EdgeMakerでPatternを検証
-
-
 ■EdgeGenerator
 ○BoatHouseModeling
-・Patternを生成するパーツをベースにモデリング
+※BaseLineからSurfaceを生成する
+ -各階層にBaseLineを生成し、それらを参照してSurfaceを生成する
 ・シンプルなEdgeパーツで構成するように修正
- -窓を削除
 ・屋根を用意
-・△Procedural化
- -角度
- -高さ
 
-○パラメーターのクラス化、複数化
+○BoatHouseProceduralModeling
+※BaseLineをEditする
+・EdgeMakerとPatternMakerに適応
+ -BottomLineとTopLineを生成
+・パラメータ
+ -Height
+ -EdgeAngle
 
 ○記事準備(素材)
 ※BoatHouseDesignのパーツに沿ったDesignを設計する
 ・Base + Gradation + Random
 
 ●BoatHousePatternPart
-・Edge
-・Roof
-・VerticalEdge
+・Vertical
+ -Edge
+ -VerticalEdge
+・Horizontal
+ -Roof
+ -SideRoof
 
 ●Edit設計
 ※Base + Gradation + Random
@@ -58,17 +46,21 @@
 ※Procedural City Projectをベースに実装
 ※PMとMBの関係を意識する
 
-○BaseBuildingGenerator実装
-※立方体で検証
-・VolumeからPM
- -Roof
-・MB部分のPrimをクラス化
- -Side
- -Top
+○TextureEditor
+・Textureパスのパラメーター化
 
-○MBのTexture設定ツールを実装
-・PrimをUV化
-・Textureの設定
+○BuildingGenerator実装
+・クラス化
+・パラメーター実装
+ -Class
+ -Scale(Height)
+ -MaterialPath
+ -MaterialScale(補正)
+・DetailAsset
+
+△Detail
+・TopAsset
+・SideAsset
 
 ●BaseBuildingGenerator
 ※世界観をしっかり決めて、参考資料・リファレンスをしっかり用意する
