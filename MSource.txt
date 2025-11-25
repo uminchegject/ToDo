@@ -1,12 +1,19 @@
+○TopObjEditor
+・HardSurface本を参考にPM
+
+○TextureEditor
+・Textureパスのパラメーター化
+
 ○BuildingGenerator実装
-・TopObjEditor実装
-・TextureEditor実装
+・パラメーター実装
 
 ○BoatHouseのPM実装
 ・EdgeMakerとPatternMakerに適応
+ -BottomLineとTopLineを生成
 ・パーツの追加
-　ーVerticalEdge × 2
-　ーRoof
+ -VerticalEdge × 2
+ -Roof
+・EdgeMakerでPatternを検証
 
 
 ■EdgeGenerator
