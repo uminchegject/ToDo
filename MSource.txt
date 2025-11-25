@@ -8,16 +8,16 @@
  -角度
  -高さ
 
-●BoatHousePatternPart
-・Edge
-・Roof
-・VerticalEdge
-
 ○パラメーターのクラス化、複数化
 
 ○記事準備(素材)
 ※BoatHouseDesignのパーツに沿ったDesignを設計する
 ・Base + Gradation + Random
+
+●BoatHousePatternPart
+・Edge
+・Roof
+・VerticalEdge
 
 ●Edit設計
 ※Base + Gradation + Random
@@ -35,11 +35,13 @@
 ・カラー化(Texture化)
 
 
+
 ■BuildingGenerator
 ※Procedural City Projectをベースに実装
 ※PMとMBの関係を意識する
 
 ○BaseBuildingGenerator実装
+※立方体で検証
 ・VolumeからPM
  -Roof
 ・MB部分のPrimをクラス化
@@ -57,14 +59,9 @@
 ・参考資料
  -たのしい都市ジェネレータ(https://www.youtube.com/watch?v=Y6-EWYXZG4s)
  -Procedural City generator(https://www.youtube.com/watch?v=BlduX70jZRU)
-・形態
-※最初は立方体でシンプルに
- -Top(Roof)
-・MB
- -Top
- -Side(Window)
 
 △背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装
+
 
 
 ■記事

@@ -1,7 +1,7 @@
 ■CityVolumeMaker
 ※四角ベースでまず検証し、記事化する
 
-○DetailのModule実装
+○BuildingGenerator
 ※ProceduralCityProjectをベース
 ・ProceduralModeling
 ・ModularModeling
@@ -60,7 +60,7 @@
 ■反省
 ※調査内容をメモに報告する
 
-※HoudiniForamにアクセスする場合はシークレットモード
+※HoudiniForumにアクセスする場合はシークレットモード
 
 ※30分ベース
 
