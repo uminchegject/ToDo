@@ -1,3 +1,14 @@
+○BuildingGenerator実装
+・TopObjEditor実装
+・TextureEditor実装
+
+○BoatHouseのPM実装
+・EdgeMakerとPatternMakerに適応
+・パーツの追加
+　ーVerticalEdge × 2
+　ーRoof
+
+
 ■EdgeGenerator
 ○BoatHouseModeling
 ・Patternを生成するパーツをベースにモデリング
