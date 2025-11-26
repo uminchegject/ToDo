@@ -1,5 +1,3 @@
-○資料のPDF化
-
 ■EdgeGenerator
 ○BoatHouseModeling
 ※BaseLineからSurfaceを生成する
@@ -11,9 +9,6 @@
 ※BaseLineをEditする
 ・EdgeMakerとPatternMakerに適応
  -BottomLineとTopLineを生成
-・パラメータ
- -Height
- -EdgeAngle
 
 ○記事準備(素材)
 ※BoatHouseDesignのパーツに沿ったDesignを設計する
@@ -48,13 +43,7 @@
 ※Procedural City Projectをベースに実装
 ※PMとMBの関係を意識する
 
-○TextureのMB化
-※ProceduralCityFromImageを参照
-
-○BuildingGenerator実装
-・パラメーター
- -BlockClass
- -BlockScale
+○レンダリングの調査・検証
 
 △SkySclaperの設定
 
@@ -129,7 +118,7 @@ https://cedil.cesa.or.jp/cedil_sessions/view/2607
  -HeightRange
 
 ●概要
-・区画と道を生成し、]区画内にVolumeを配置し、Volumeから建物Generatorを使用して建物を生成
+・区画と道を生成し、区画内にVolumeを配置し、Volumeから建物Generatorを使用して建物を生成
 ・フローを細かく分けてSubnet化
  -Plot
  -Volume
@@ -181,3 +170,186 @@ https://cedil.cesa.or.jp/cedil_sessions/view/2607
  -Volume
  -Pattern
 ・Plot×Block×Patternをそれぞれ組み合わせて混在させる
+
+
+
+■区画生成のSubnet化
+※多様性をパラメーターで表現できることを強調する
+※パラメーターの柔軟性
+
+○ParamAnimation
+※グラデーションGIF・コマ送りGIF
+・Plot
+ -Interval
+ -Width
+ -RemoveRatio
+・Block
+ -Iterations
+ -Randomness
+・Volume
+ -RemoveRatio 
+ -ScaleRange
+ -HeightRange
+
+●概要
+・区画と道を生成し、区画内にVolumeを配置し、Volumeから建物Generatorを使用して建物を生成
+・フローを細かく分けてSubnet化
+ -Plot
+ -Volume
+
+●区画及び道の生成
+・パラメーター概要
+ -道の間隔
+ -道幅
+ -道の削除比率
+・道幅、間隔の調整
+・道をランダムに削除
+・区画内でさらに区画を生成できる
+
+●区画から敷地を分割し、Volumeを生成
+・パラメーター概要
+ -敷地スケール
+ -建物割合
+ -建物スケール
+・敷地のスケールを調整
+・建築割合の調整
+・建築スケールの調整
+
+●検証
+※Classは1つで挙動確認してみる
+・4つのSubnetを繋げて検証
+ -建物Generatorを使用
+
+
+
+■組み合わせを多様化(記事)
+※複雑性をクラスで制御できることを強調する
+ -クラス種類を検証する
+
+○ClassColorAnimation
+・Plot
+・Block
+・Volume
+
+●概要
+・それぞれのパターンを組み合わせし、多様な組み合わせを行えるようにする
+
+●クラス化
+・それぞれのパラメーターをマルチパラメーター化して、クラス付けを行い組み合わせをしやすくする
+・クラスwrangleの実装
+
+●検証
+・それぞれのSubnetで違うパラメーターを3種類ずつ用意
+ -Plot
+ -Volume
+ -Pattern
+・Plot×Block×Patternをそれぞれ組み合わせて混在させる
+
+
+■BaseLine
+●ソース
+function vector lineIntersect3D(vector p0, p1, p2, p3)
+{
+    vector u = p1 - p0;
+    vector v = p3 - p2;
+    vector w = p0 - p2;
+
+    float a = dot(u,u);
+    float b = dot(u,v);
+    float c = dot(v,v);
+    float d = dot(u,w);
+    float e = dot(v,w);
+
+    float sc = (b*e - c*d) / (a*c - b*b);
+    float tc = (a*e - b*d) / (a*c - b*b);    
+
+    vector pA = p0 + sc * u;
+    vector pB = p2 + tc * v;
+
+    return (pA + pB) * 0.5;
+}
+
+
+//------- main ----------------------
+vector plan_size = chv("PlanSize");
+float plane_base_edge_angle = ch("PlaneBaseEdgeAngle");
+float plane_center_edge_angle = ch("PlaneCenterEdgeAngle");
+float edge_height = ch("EdgeHeight");
+float side_vertical_edge_angle = ch("SideVerticalEdgeAngle");
+float side_vertical_edge_inside_angle = ch("SideVerticalEdgeInsideAngle");
+
+vector plan_base_pos = set(0, 0, 0);
+vector rotate_axis = {0, 1, 0};
+vector4 q_plane_base_edge = quaternion(radians(plane_base_edge_angle), rotate_axis);
+
+
+//BasePlanePoints
+vector base_plan_width_vec = set(plan_size.x, 0, 0);
+vector base_plan_depth_vec = set(plan_size.z / sin(radians(plane_base_edge_angle)), 0, 0);
+base_plan_depth_vec = qrotate(q_plane_base_edge, base_plan_depth_vec);
+
+vector base_plan_pt1_pos = plan_base_pos + base_plan_width_vec;
+vector base_plan_pt2_pos = plan_base_pos + base_plan_depth_vec;
+vector base_plan_pt3_pos = plan_base_pos + base_plan_width_vec + base_plan_depth_vec;
+
+int base_plan_pt1 = addpoint(0, plan_base_pos);
+int base_plan_pt2 = addpoint(0, base_plan_pt1_pos);
+int base_plan_pt3 = addpoint(0, base_plan_pt2_pos);
+int base_plan_pt4 = addpoint(0, base_plan_pt3_pos);
+
+
+//EdgePoint
+vector4 q_plane_center_edge = quaternion(radians(plane_center_edge_angle), rotate_axis);
+vector center_edge_dir = set(1, 0, 0);
+center_edge_dir = qrotate(q_plane_center_edge, center_edge_dir);
+vector center_edge_pt_pos = lineIntersect3D(
+        base_plan_pt1_pos,
+        base_plan_pt1_pos + base_plan_depth_vec * 10000,
+        plan_base_pos,
+        plan_base_pos + center_edge_dir * 10000);
+int center_edge_pt = addpoint(0, center_edge_pt_pos);
+
+
+//VerticalEdge
+float vertical_edge_pos_interpolation = 0.6;
+vector vertical_edge_pos_1 = lerp(plan_base_pos, base_plan_pt1_pos, vertical_edge_pos_interpolation);
+float vertical_edge_length = 18;
+vector vertical_edge_pos_2 = vertical_edge_pos_1 + vertical_edge_length * center_edge_dir;
+
+int vertical_edge_pt_1 = addpoint(0, vertical_edge_pos_1);
+int vertical_edge_pt_2 = addpoint(0, vertical_edge_pos_2);
+
+float edge_length = edge_height / tan(radians(side_vertical_edge_angle));
+vector side_vertical_edge_bottom_pt1_pos = plan_base_pos;
+side_vertical_edge_bottom_pt1_pos += edge_length * normalize(base_plan_width_vec);
+
+vector side_vertical_edge_top_pt1_pos = plan_base_pos;
+vector edge_center_dir = normalize(normalize(base_plan_width_vec) + normalize(base_plan_depth_vec));
+edge_center_dir *= edge_height * tan(radians(side_vertical_edge_inside_angle));
+side_vertical_edge_top_pt1_pos -= edge_center_dir;
+side_vertical_edge_top_pt1_pos.y += edge_height;
+
+int side_vertical_edge_bottom_pt1 = addpoint(0, side_vertical_edge_bottom_pt1_pos);
+int side_vertical_edge_top_pt1 = addpoint(0, side_vertical_edge_top_pt1_pos);
+
+
+//debug
+int prim = addprim(0, "poly");
+addvertex(0, prim, base_plan_pt3);
+addvertex(0, prim, base_plan_pt4);
+addvertex(0, prim, base_plan_pt2);
+addvertex(0, prim, base_plan_pt1);
+
+prim = addprim(0, "polyline");
+addvertex(0, prim, base_plan_pt1);
+addvertex(0, prim, center_edge_pt);
+addvertex(0, prim, base_plan_pt2);
+
+prim = addprim(0, "polyline");
+addvertex(0, prim, vertical_edge_pt_1);
+addvertex(0, prim, vertical_edge_pt_2);
+
+prim = addprim(0, "poly");
+addvertex(0, prim, base_plan_pt1);
+addvertex(0, prim, side_vertical_edge_bottom_pt1);
+addvertex(0, prim, side_vertical_edge_top_pt1);
