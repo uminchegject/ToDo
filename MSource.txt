@@ -1,3 +1,5 @@
+○資料のPDF化
+
 ■EdgeGenerator
 ○BoatHouseModeling
 ※BaseLineからSurfaceを生成する
@@ -46,17 +48,15 @@
 ※Procedural City Projectをベースに実装
 ※PMとMBの関係を意識する
 
-○TextureEditor
-・Textureパスのパラメーター化
+○TextureのMB化
+※ProceduralCityFromImageを参照
 
 ○BuildingGenerator実装
-・クラス化
-・パラメーター実装
- -Class
- -Scale(Height)
- -MaterialPath
- -MaterialScale(補正)
-・DetailAsset
+・パラメーター
+ -BlockClass
+ -BlockScale
+
+△SkySclaperの設定
 
 △Detail
 ・TopAsset
@@ -76,6 +76,7 @@
 
 ■記事
 ※各項目ごとにQiita上でメモ、素材、清書をセットで進めていく
+※写真×2 + GIF×1
 
 ○ビジュアル資料
 ・ParamAnimation
@@ -123,7 +124,8 @@ https://cedil.cesa.or.jp/cedil_sessions/view/2607
  -Iterations
  -Randomness
 ・Volume
- -RemoveRati -ScaleRange
+ -RemoveRatio 
+ -ScaleRange
  -HeightRange
 
 ●概要
@@ -131,7 +133,6 @@ https://cedil.cesa.or.jp/cedil_sessions/view/2607
 ・フローを細かく分けてSubnet化
  -Plot
  -Volume
- -WindowGenerator
 
 ●区画及び道の生成
 ・パラメーター概要
