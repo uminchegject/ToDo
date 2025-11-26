@@ -1,16 +1,35 @@
+○レンダリングの調査・検証
+・Houdini初級編：レンダリング
+https://support.borndigital.co.jp/hc/ja/articles/360007012673-Houdini%E5%88%9D%E7%B4%9A%E7%B7%A8-%E3%83%AC%E3%83%B3%E3%83%80%E3%83%AA%E3%83%B3%E3%82%B0
+
+
+■Daily
+※定時後、朝にDailyの準備をする
+○各SkySclaperのHDA化
+
+○各パーツのBasePoint生成実装
+・SideEdge
+
+○記事
+・
+
+○オブジェクト指向
+・オブジェクト指向でなぜつくるのか
+
+○プロシージャルモデリング
+・スライド
+
+
 ■EdgeGenerator
-○BoatHouseModeling
+○BoatHouseProceduralModeling
 ※BaseLineからSurfaceを生成する
  -各階層にBaseLineを生成し、それらを参照してSurfaceを生成する
 ・シンプルなEdgeパーツで構成するように修正
 ・屋根を用意
-
-○BoatHouseProceduralModeling
-※BaseLineをEditする
 ・EdgeMakerとPatternMakerに適応
  -BottomLineとTopLineを生成
 
-○記事準備(素材)
+○EdgeGenerator + Patternの検証(記事化準備)
 ※BoatHouseDesignのパーツに沿ったDesignを設計する
 ・Base + Gradation + Random
 
@@ -43,9 +62,7 @@
 ※Procedural City Projectをベースに実装
 ※PMとMBの関係を意識する
 
-○レンダリングの調査・検証
-
-△SkySclaperの設定
+○SkySclaperのHDA化
 
 △Detail
 ・TopAsset
@@ -103,20 +120,6 @@ https://cedil.cesa.or.jp/cedil_sessions/view/2607
 ※多様性をパラメーターで表現できることを強調する
 ※パラメーターの柔軟性
 
-○ParamAnimation
-※グラデーションGIF・コマ送りGIF
-・Plot
- -Interval
- -Width
- -RemoveRatio
-・Block
- -Iterations
- -Randomness
-・Volume
- -RemoveRatio 
- -ScaleRange
- -HeightRange
-
 ●概要
 ・区画と道を生成し、区画内にVolumeを配置し、Volumeから建物Generatorを使用して建物を生成
 ・フローを細かく分けてSubnet化
@@ -152,11 +155,6 @@ https://cedil.cesa.or.jp/cedil_sessions/view/2607
 ※複雑性をクラスで制御できることを強調する
  -クラス種類を検証する
 
-○ClassColorAnimation
-・Plot
-・Block
-・Volume
-
 ●概要
 ・それぞれのパターンを組み合わせし、多様な組み合わせを行えるようにする
 
@@ -171,79 +169,6 @@ https://cedil.cesa.or.jp/cedil_sessions/view/2607
  -Pattern
 ・Plot×Block×Patternをそれぞれ組み合わせて混在させる
 
-
-
-■区画生成のSubnet化
-※多様性をパラメーターで表現できることを強調する
-※パラメーターの柔軟性
-
-○ParamAnimation
-※グラデーションGIF・コマ送りGIF
-・Plot
- -Interval
- -Width
- -RemoveRatio
-・Block
- -Iterations
- -Randomness
-・Volume
- -RemoveRatio 
- -ScaleRange
- -HeightRange
-
-●概要
-・区画と道を生成し、区画内にVolumeを配置し、Volumeから建物Generatorを使用して建物を生成
-・フローを細かく分けてSubnet化
- -Plot
- -Volume
-
-●区画及び道の生成
-・パラメーター概要
- -道の間隔
- -道幅
- -道の削除比率
-・道幅、間隔の調整
-・道をランダムに削除
-・区画内でさらに区画を生成できる
-
-●区画から敷地を分割し、Volumeを生成
-・パラメーター概要
- -敷地スケール
- -建物割合
- -建物スケール
-・敷地のスケールを調整
-・建築割合の調整
-・建築スケールの調整
-
-●検証
-※Classは1つで挙動確認してみる
-・4つのSubnetを繋げて検証
- -建物Generatorを使用
-
-
-
-■組み合わせを多様化(記事)
-※複雑性をクラスで制御できることを強調する
- -クラス種類を検証する
-
-○ClassColorAnimation
-・Plot
-・Block
-・Volume
-
-●概要
-・それぞれのパターンを組み合わせし、多様な組み合わせを行えるようにする
-
-●クラス化
-・それぞれのパラメーターをマルチパラメーター化して、クラス付けを行い組み合わせをしやすくする
-・クラスwrangleの実装
-
-●検証
-・それぞれのSubnetで違うパラメーターを3種類ずつ用意
- -Plot
- -Volume
- -Pattern
-・Plot×Block×Patternをそれぞれ組み合わせて混在させる
 
 
 ■BaseLine
