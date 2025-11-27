@@ -14,7 +14,7 @@ https://support.borndigital.co.jp/hc/ja/articles/360007012673-Houdini%E5%88%9D%E
 
 ○記事
 ※参考資料をしっかり参考にする
-・街ジェネレーター
+・街ジェネレーターのやりたいこと
 
 ○オブジェクト指向
 ・オブジェクト指向でなぜつくるのか
@@ -27,7 +27,6 @@ https://support.borndigital.co.jp/hc/ja/articles/360007012673-Houdini%E5%88%9D%E
 ○必要な処理を関数化
 ・Planeの生成
 ・PlaneとIntersect
-・
 
 ○BoatHouseProceduralModeling
 ※BaseLineからSurfaceを生成する
@@ -91,9 +90,9 @@ https://support.borndigital.co.jp/hc/ja/articles/360007012673-Houdini%E5%88%9D%E
 ■記事
 ※つかみの部分をしっかり用意する
 ※各項目ごとにQiita上でメモ、素材、清書をセットで進めていく
-※写真×2 + GIF×1
 
 ○ビジュアル資料
+※写真×2 + GIF×1
 ・ParamAnimation
  -各HDAの解説
  -検証
@@ -137,13 +136,17 @@ https://cedil.cesa.or.jp/cedil_sessions/view/2607
 これらをプロシージャルモデリングに落とし込み街ジェネレーターに落とし込みたい。
 
 ●目標
-・柔軟性
-区画のサイズから各建物のサイズを柔軟に調整できるように考えています。
 ・カプセル化
 フローを細かく分けてHDA化することで各処理をカプセル化しインターフェースを整える(パラメーターを設定する)
+・柔軟性
+区画のサイズから各建物のサイズを柔軟に調整できるようにしたい。
 
 ●処理の概要
-区画と道を生成し、区画内にVolumeを配置し、Volumeから建物Generatorを使用して建物を生成します。
+以上を踏まえて…
+・カプセル化
+道と区画を生成する処理と、区画から建物のVolumeを生成する処理をHDA化することでカプセル化する
+・柔軟性
+上記2つのHDAにおいて必要なパラメーターを設定する
 
 ●区画及び道の生成
 ・やりたいこと
@@ -173,6 +176,7 @@ https://cedil.cesa.or.jp/cedil_sessions/view/2607
 ※Classは1つで挙動確認してみる
 ・4つのSubnetを繋げて検証
  -建物Generatorを使用
+
 
 
 ■組み合わせを多様化(記事)
