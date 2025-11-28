@@ -1,11 +1,106 @@
-△BaseLine生成処理をオブジェクト思考化
+■BaseLine + BaseSurface
+○BasePointの生成
+・SecondFloor
+・Roof
+ -vertical_edgeからside_edgeを繋げて屋根の棟とする
+
+○BasePoint生成処理をオブジェクト思考化
+※手作業も含める
+・BasePointの生成
+・BasePointの関係を設定
+
+○BaseSurfaceにPattern適応
+・TopLineとBottomLineを生成
+
+
+■八重洲・丸の内化
+○ModularModeling
+・素材を用意
+・DetailAssetをPM化
+
+○ProceduralModeling
+※ProceduralCityProjectのSkyscraperを参照
+
+
+■仕事準備(参考資料の調査)
+※起動時のセットアップ処理を実装
+○起動時のinit処理の実装方法を調査
+
+○GUI周りの実装
+ -シーンビュー、パラメーターのみ表示
+ -操作の制限
+
+
+■街ジェネレーターの実装
+※八重洲、丸の内を参照
+※多様性をパラメーターで表現できることを強調する
+※パラメーターの柔軟性
+
+●やりたいこと
+街の区画から建物のボリュームまでをプロシージャルに生成する処理を実装したい。
+まず、街の区画と建物のボリュームスケールの
+東京駅を挟んだ丸の内と八重洲を比較すると区画のサイズ、建物のスケールが違うことが分かる。
+丸の内は区画のスケールが大きいことに加えて建物ボリュームが大きいため、スタイリッシュな街並みなのに対し、
+八重洲は丸の内と比べると、区画及び建物のボリュームが小さいため、複雑な街並みをしている。
+このことを踏まえて街の区画から建物のボリュームを柔軟に調整できることを目標に、街ジェネレーターを実装したい。
+
+●処理の概要
+街ジェネレーターの実装にあたり実装処理のカプセル化とパラメーターの柔軟性に重きを置いて実装する
+・カプセル化
+フローを細かく分けてHDA化することで各処理をカプセル化しインターフェースを整える(パラメーターを設定する)
+道と区画を生成する処理と、区画から建物のVolumeを生成する処理をHDA化することでカプセル化する
+・柔軟性
+区画のサイズから各建物のサイズまで柔軟に調整できるようにしたい。
+上記2つのHDAにおいて必要なパラメーターを設定する
+
+●区画及び道の生成
+※八重洲、丸の内を参照
+・道と区画の生成
+まず、道と区画を生成する処理を実装します。
+シンプルな区画生成をすることを目標に縦横に道を生成し、同時に区画も生成します。
+また、幹線道路、一方通行道路など道幅にも変化を持たせます。
+最後にT字路や区画スケールに変化を持たせるために道をランダムに削除します。
+
+・パラメーターで区画、道を編集できるようにする
+実装した処理をパラメーターで調整できるようにします。
+できることについては下記の3つになるのでこれらをパラメーターで調整できるようにします
+ -道幅、間隔の調整
+ -道をランダムに削除
+ -区画内でさらに区画を生成できる
+・パラメーター(インターフェース)
+ -道の間隔
+ -道幅
+ -道の削除比率
+
+●区画から敷地を分割し、Volumeを生成
+・やりたいこと
+ -区画からさらに敷地を分割生成する
+ -敷地から建物のボリュームを生成する
+ -区画→敷地→建物ボリュームの工程をパラメーターで柔軟に調整できるようにする
+・パラメーター概要
+ -敷地スケール
+ -建物割合
+ -建物スケール
+・できること
+ -敷地のスケールを調整
+ -建築割合の調整
+ -建築スケールの調整
+
+●全体の処理
+※Classは1つで挙動確認してみる
+※八重洲、丸の内を再現
+・4つのSubnetを繋げて検証
+ -建物Generatorを使用
+
+
+
+
+
+
 
 
 ■Daily
 ○各パーツのBasePoint生成実装
-・PatternPartsをメインに実装し、Patternを検証できる状態にする
- -SecondFloor
- -Roof
 
 ○記事
 ※参考資料をしっかり参考にする
@@ -83,12 +178,6 @@
 
 ○ビジュアル資料
 ※写真×2 + GIF×1
-・ParamAnimation
- -各HDAの解説
- -検証
-・ClassColorAnimation
- -検証
- -クラス化
 
 ○メモ
 ※課題と成果をリストアップ
@@ -110,115 +199,6 @@ https://cedil.cesa.or.jp/cedil_sessions/view/2607
 
 
 
-■Public
-○起動方法の調査
-・Pythonの呼び出し
-
-○Pythonの実装
-※Editor上で呼び出す
-・シーンビューのみを表示
-・操作の制限
-
-●ソース
-import hou
-from PySide2 import QtWidgets
-
-def run_sceneview_kiosk():
-    """
-    Houdini のメインウィンドウを隠して
-    Scene View のみフルスクリーン表示するキオスクモード
-    """
-    # Houdini メインウィンドウを非表示
-    main_win = hou.ui.mainQtWindow()
-    if main_win.isVisible():
-        main_win.hide()
-
-    # Scene View のみを残す前提
-    # Desktop をあらかじめ Scene View のみのレイアウトにしておくこと
-    scene_view = hou.ui.paneTabOfType(hou.paneTabType.SceneViewer)
-
-    # 補助ラベルだけの簡単フルスクリーンウィンドウ
-    window = QtWidgets.QWidget()
-    window.setWindowTitle("Scene View Kiosk")
-    window.showFullScreen()
-
-    layout = QtWidgets.QVBoxLayout()
-    label = QtWidgets.QLabel("Houdini Scene View Active")
-    label.setAlignment(QtWidgets.Qt.AlignCenter)
-    layout.addWidget(label)
-    window.setLayout(layout)
-
-    # ウィンドウを表示
-    window.show()
-
-# Shelf Tool 実行時に呼ぶ
-run_sceneview_kiosk()
-
-
-
-■街ジェネレーターの実装
-※多様性をパラメーターで表現できることを強調する
-※パラメーターの柔軟性
-※八重洲、丸の内を参照
-
-●やりたいこと
-街の区画から建物のボリュームまでをプロシージャルに生成する処理を実装したい。
-まず、街の区画と建物のボリュームスケールの
-東京駅を挟んだ丸の内と八重洲を比較すると区画のサイズ、建物のスケールが違うことが分かる。
-丸の内は区画のスケールが大きいことに加えて建物ボリュームが大きいため、スタイリッシュな街並みなのに対し、
-八重洲は丸の内と比べると、区画及び建物のボリュームが小さいため、複雑な街並みをしている。
-このことを踏まえて街の区画から建物のボリュームを柔軟に調整できることを目標に、街ジェネレーターを実装したい。
-
-●処理の概要
-街ジェネレーターの実装にあたり実装処理のカプセル化とパラメーターの柔軟性に重きを置いて実装する
-・カプセル化
-フローを細かく分けてHDA化することで各処理をカプセル化しインターフェースを整える(パラメーターを設定する)
-道と区画を生成する処理と、区画から建物のVolumeを生成する処理をHDA化することでカプセル化する
-・柔軟性
-区画のサイズから各建物のサイズまで柔軟に調整できるようにしたい。
-上記2つのHDAにおいて必要なパラメーターを設定する
-
-●区画及び道の生成
-※八重洲、丸の内を参照
-・道と区画の生成
-まず、道と区画を生成する処理を実装します。
-シンプルな区画生成をすることを目標に縦横に道を生成し、同時に区画も生成します。
-また、幹線道路、一方通行道路など道幅にも変化を持たせます。
-最後にT字路や区画スケールに変化を持たせるために道をランダムに削除します。
-
-・パラメーターで区画、道を編集できるようにする
-実装した処理をパラメーターで調整できるようにします。
-できることについては下記の3つになるのでこれらをパラメーターで調整できるようにします
- -道幅、間隔の調整
- -道をランダムに削除
- -区画内でさらに区画を生成できる
-・パラメーター(インターフェース)
- -道の間隔
- -道幅
- -道の削除比率
-
-●区画から敷地を分割し、Volumeを生成
-・やりたいこと
- -区画からさらに敷地を分割生成する
- -敷地から建物のボリュームを生成する
- -区画→敷地→建物ボリュームの工程をパラメーターで柔軟に調整できるようにする
-・パラメーター概要
- -敷地スケール
- -建物割合
- -建物スケール
-・できること
- -敷地のスケールを調整
- -建築割合の調整
- -建築スケールの調整
-
-●全体の処理
-※Classは1つで挙動確認してみる
-※八重洲、丸の内を再現
-・4つのSubnetを繋げて検証
- -建物Generatorを使用
-
-
-
 ■組み合わせを多様化(記事)
 ※複雑性をクラスで制御できることを強調する
  -クラス種類を検証する
@@ -236,113 +216,3 @@ run_sceneview_kiosk()
  -Volume
  -Pattern
 ・Plot×Block×Patternをそれぞれ組み合わせて混在させる
-
-
-
-■BaseLine
-●ソース
-function vector lineIntersect3D(vector p0, p1, p2, p3)
-{
-    vector u = p1 - p0;
-    vector v = p3 - p2;
-    vector w = p0 - p2;
-
-    float a = dot(u,u);
-    float b = dot(u,v);
-    float c = dot(v,v);
-    float d = dot(u,w);
-    float e = dot(v,w);
-
-    float sc = (b*e - c*d) / (a*c - b*b);
-    float tc = (a*e - b*d) / (a*c - b*b);    
-
-    vector pA = p0 + sc * u;
-    vector pB = p2 + tc * v;
-
-    return (pA + pB) * 0.5;
-}
-
-
-//------- main ----------------------
-vector plan_size = chv("PlanSize");
-float plane_base_edge_angle = ch("PlaneBaseEdgeAngle");
-float plane_center_edge_angle = ch("PlaneCenterEdgeAngle");
-float edge_height = ch("EdgeHeight");
-float side_vertical_edge_angle = ch("SideVerticalEdgeAngle");
-float side_vertical_edge_inside_angle = ch("SideVerticalEdgeInsideAngle");
-
-vector plan_base_pos = set(0, 0, 0);
-vector rotate_axis = {0, 1, 0};
-vector4 q_plane_base_edge = quaternion(radians(plane_base_edge_angle), rotate_axis);
-
-
-//BasePlanePoints
-vector base_plan_width_vec = set(plan_size.x, 0, 0);
-vector base_plan_depth_vec = set(plan_size.z / sin(radians(plane_base_edge_angle)), 0, 0);
-base_plan_depth_vec = qrotate(q_plane_base_edge, base_plan_depth_vec);
-
-vector base_plan_pt1_pos = plan_base_pos + base_plan_width_vec;
-vector base_plan_pt2_pos = plan_base_pos + base_plan_depth_vec;
-vector base_plan_pt3_pos = plan_base_pos + base_plan_width_vec + base_plan_depth_vec;
-
-int base_plan_pt1 = addpoint(0, plan_base_pos);
-int base_plan_pt2 = addpoint(0, base_plan_pt1_pos);
-int base_plan_pt3 = addpoint(0, base_plan_pt2_pos);
-int base_plan_pt4 = addpoint(0, base_plan_pt3_pos);
-
-
-//EdgePoint
-vector4 q_plane_center_edge = quaternion(radians(plane_center_edge_angle), rotate_axis);
-vector center_edge_dir = set(1, 0, 0);
-center_edge_dir = qrotate(q_plane_center_edge, center_edge_dir);
-vector center_edge_pt_pos = lineIntersect3D(
-        base_plan_pt1_pos,
-        base_plan_pt1_pos + base_plan_depth_vec * 10000,
-        plan_base_pos,
-        plan_base_pos + center_edge_dir * 10000);
-int center_edge_pt = addpoint(0, center_edge_pt_pos);
-
-
-//VerticalEdge
-float vertical_edge_pos_interpolation = 0.6;
-vector vertical_edge_pos_1 = lerp(plan_base_pos, base_plan_pt1_pos, vertical_edge_pos_interpolation);
-float vertical_edge_length = 18;
-vector vertical_edge_pos_2 = vertical_edge_pos_1 + vertical_edge_length * center_edge_dir;
-
-int vertical_edge_pt_1 = addpoint(0, vertical_edge_pos_1);
-int vertical_edge_pt_2 = addpoint(0, vertical_edge_pos_2);
-
-float edge_length = edge_height / tan(radians(side_vertical_edge_angle));
-vector side_vertical_edge_bottom_pt1_pos = plan_base_pos;
-side_vertical_edge_bottom_pt1_pos += edge_length * normalize(base_plan_width_vec);
-
-vector side_vertical_edge_top_pt1_pos = plan_base_pos;
-vector edge_center_dir = normalize(normalize(base_plan_width_vec) + normalize(base_plan_depth_vec));
-edge_center_dir *= edge_height * tan(radians(side_vertical_edge_inside_angle));
-side_vertical_edge_top_pt1_pos -= edge_center_dir;
-side_vertical_edge_top_pt1_pos.y += edge_height;
-
-int side_vertical_edge_bottom_pt1 = addpoint(0, side_vertical_edge_bottom_pt1_pos);
-int side_vertical_edge_top_pt1 = addpoint(0, side_vertical_edge_top_pt1_pos);
-
-
-//debug
-int prim = addprim(0, "poly");
-addvertex(0, prim, base_plan_pt3);
-addvertex(0, prim, base_plan_pt4);
-addvertex(0, prim, base_plan_pt2);
-addvertex(0, prim, base_plan_pt1);
-
-prim = addprim(0, "polyline");
-addvertex(0, prim, base_plan_pt1);
-addvertex(0, prim, center_edge_pt);
-addvertex(0, prim, base_plan_pt2);
-
-prim = addprim(0, "polyline");
-addvertex(0, prim, vertical_edge_pt_1);
-addvertex(0, prim, vertical_edge_pt_2);
-
-prim = addprim(0, "poly");
-addvertex(0, prim, base_plan_pt1);
-addvertex(0, prim, side_vertical_edge_bottom_pt1);
-addvertex(0, prim, side_vertical_edge_top_pt1);
