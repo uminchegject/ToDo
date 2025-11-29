@@ -1,5 +1,6 @@
 ■BaseLine + BaseSurface
 ○BasePointの生成
+※靖国神社側からの視点で実装する
 ・SecondFloor
 ・Roof
  -vertical_edgeからside_edgeを繋げて屋根の棟とする
@@ -14,6 +15,8 @@
 
 
 ■八重洲・丸の内化
+○PlotMaker・BlockMaker・VolumeMakerｄで八重洲・丸の内を再現
+
 ○ModularModeling
 ・素材を用意
 ・DetailAssetをPM化
