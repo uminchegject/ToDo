@@ -5,24 +5,30 @@
 ・Roof
  -vertical_edgeからside_edgeを繋げて屋根の棟とする
 
-○BasePoint生成処理をオブジェクト思考化
-※手作業も含める
-・BasePointの生成
-・BasePointの関係を設定
-
 ○BaseSurfaceにPattern適応
 ・TopLineとBottomLineを生成
 
 
 ■八重洲・丸の内化
-○PlotMaker・BlockMaker・VolumeMakerｄで八重洲・丸の内を再現
+○PlotMaker・BlockMaker・VolumeMakerで八重洲・丸の内を再現
 
-○ModularModeling
+○ModularModeling(Side)
 ・素材を用意
-・DetailAssetをPM化
+・DetailAsset
 
-○ProceduralModeling
+○ProceduralModeling(Side)
 ※ProceduralCityProjectのSkyscraperを参照
+・Pattern実装
+・TopBlockの分別化
+
+○TopAsset
+
+
+■記事化
+○道と区画を生成する処理の実装の記事化
+※他工程も同じ要領で記事化する
+・文章
+・ビジュアル資料
 
 
 ■仕事準備(参考資料の調査)
