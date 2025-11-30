@@ -72,6 +72,7 @@ vertical_edgeからside_edgeを繋げて屋根の棟とする
 ○ModularModeling(Side)
 ※Texture + Roofのみ
 ・素材を用意
+ -ProceduralCityの素材から八重洲にありそうなTextureを複数選択
 
 ○ProceduralModeling(Side)
 ※ProceduralCityProjectのSkyscraperを参照
