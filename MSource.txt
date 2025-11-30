@@ -1,11 +1,20 @@
 ■BaseLine + BaseSurface
-○BasePointの生成
 ※靖国神社側からの視点で実装する
+
+○BasePointの生成
 ・Roof
  -vertical_edgeからside_edgeを繋げて屋根の棟とする
 
 ○BaseSurfaceにPattern適応
 ・TopLineとBottomLineを生成
+
+○Patternの検証
+・Vertical
+ -SideEdge
+ -CenterEdge
+・Horizontal
+ -SideRoof
+ -CenterRoof
 
 
 ■八重洲・丸の内化
