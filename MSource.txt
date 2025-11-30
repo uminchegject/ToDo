@@ -1,60 +1,4 @@
-■BaseLine + BaseSurface
-※靖国神社側からの視点で実装する
-
-○BasePointの生成
-・Roof
- -vertical_edgeからside_edgeを繋げて屋根の棟とする
-
-○BaseSurfaceにPattern適応
-・TopLineとBottomLineを生成
-
-○Patternの検証
-・Vertical
- -SideEdge
- -CenterEdge
-・Horizontal
- -SideRoof
- -CenterRoof
-
-
-■八重洲・丸の内化
-○PlotMaker・BlockMaker・VolumeMakerで八重洲・丸の内を再現
-
-○ModularModeling(Side)
-※Texture + Roofのみ
-・素材を用意
-
-○ProceduralModeling(Side)
-※ProceduralCityProjectのSkyscraperを参照
-・Pattern実装
-・TopBlockの分別化
-
-○TopAsset
-
-
-■記事化
-○道と区画を生成する処理の実装の記事化
-※他工程も同じ要領で記事化する
-・文章
-・ビジュアル資料
-
-
-■仕事準備(参考資料の調査)
-※起動時のセットアップ処理を実装
-○起動時のinit処理の実装方法を調査
-・コマンドラインからHoudiniを起動
-https://www.sidefx.com/ja/docs/houdini/ref/commandline.html
-・Redshift for Houdini が使える状態で起動する .bat
-https://scrapbox.io/hounotes/Redshift_for_Houdini_%E3%81%8C%E4%BD%BF%E3%81%88%E3%82%8B%E7%8A%B6%E6%85%8B%E3%81%A7%E8%B5%B7%E5%8B%95%E3%81%99%E3%82%8B_.bat
-
-○GUI周りの実装(Python)
- -シーンビュー、パラメーターのみ表示
- -操作の制限
-
-
 ■Daily
-○各パーツのBasePoint生成実装
-
 ○記事
 ※参考資料をしっかり参考にする
 ・各HDAの説明
@@ -66,26 +10,42 @@ https://scrapbox.io/hounotes/Redshift_for_Houdini_%E3%81%8C%E4%BD%BF%E3%81%88%E3
 ・スライド
 
 
+■仕事準備(参考資料の調査)
+※起動時のセットアップ処理を実装
+
+○起動時のinit処理の実装方法を調査
+※試したいコマンドをリストアップ
+・コマンドラインからHoudiniを起動
+https://www.sidefx.com/ja/docs/houdini/ref/commandline.html
+・Redshift for Houdini が使える状態で起動する .bat
+https://scrapbox.io/hounotes/Redshift_for_Houdini_%E3%81%8C%E4%BD%BF%E3%81%88%E3%82%8B%E7%8A%B6%E6%85%8B%E3%81%A7%E8%B5%B7%E5%8B%95%E3%81%99%E3%82%8B_.bat
+
+○GUI周りの実装(Python)
+ -シーンビュー、パラメーターのみ表示
+ -操作の制限
+
+
+
 ■EdgeGenerator
-○BoatHouseProceduralModeling
-※BaseLineからSurfaceを生成する
+○Roofの生成
+vertical_edgeからside_edgeを繋げて屋根の棟とする
+
+○BaseSurfaceにPattern適応
+・TopLineとBottomLineを生成
+
+●BoatHouseProceduralModeling
+・靖国神社側からの視点で実装する
+・BaseLineからSurfaceを生成する
  -各階層にBaseLineを生成し、それらを参照してSurfaceを生成する
 ・シンプルなEdgeパーツで構成するように修正
-・屋根を用意
-・EdgeMakerとPatternMakerに適応
- -BottomLineとTopLineを生成
 
-○EdgeGenerator + Patternの検証(記事化準備)
-※BoatHouseDesignのパーツに沿ったDesignを設計する
-・Base + Gradation + Random
-
-●BoatHousePatternPart
+○Patternの検証(記事化準備)
 ・Vertical
- -Edge
- -VerticalEdge
+ -SideEdge
+ -CenterEdge
 ・Horizontal
- -Roof
  -SideRoof
+ -CenterRoof
 
 ●Edit設計
 ※Base + Gradation + Random
@@ -107,11 +67,18 @@ https://scrapbox.io/hounotes/Redshift_for_Houdini_%E3%81%8C%E4%BD%BF%E3%81%88%E3
 ■BuildingGenerator
 ※Procedural City Projectをベースに実装
 
-○丸の内、八重洲化
+○PlotMaker・BlockMaker・VolumeMakerで八重洲・丸の内を再現
 
-△Detail
-・TopAsset
-・SideAsset
+○ModularModeling(Side)
+※Texture + Roofのみ
+・素材を用意
+
+○ProceduralModeling(Side)
+※ProceduralCityProjectのSkyscraperを参照
+・Pattern実装
+・TopBlockの分別化
+
+○TopAsset
 
 ●BaseBuildingGenerator
 ※世界観をしっかり決めて、参考資料・リファレンスをしっかり用意する
@@ -125,17 +92,17 @@ https://scrapbox.io/hounotes/Redshift_for_Houdini_%E3%81%8C%E4%BD%BF%E3%81%88%E3
 
 
 
+
 ■記事
 ※つかみの部分をしっかり用意する
 ※各項目ごとにQiita上でメモ、素材、清書をセットで進めていく
 
-○ビジュアル資料
-※写真×2 + GIF×1
+○道と区画を生成する処理の実装の記事化
+※他工程も同じ要領で記事化する
+・文章
+・ビジュアル資料
 
-○メモ
-※課題と成果をリストアップ
-・街ジェネレーター
-・クラス化
+○クラス化記事のメモ
 
 ●参考資料
 ・階段のプロシージャルモデリング : Stairs Procedural Modeling
@@ -144,11 +111,6 @@ https://qiita.com/TaroOzaki/items/f249ae4b5e8dc46f16f3
 
 
 ■Study(ナレッジ)
-○USD
-・FOUNDATIONS 20.5 | SOLARIS MARKET
-https://www.sidefx.com/tutorials/foundations-205-solaris-market/
-・『グランツーリスモ７』開発におけるUSD活用事例
-https://cedil.cesa.or.jp/cedil_sessions/view/2607
 
 
 
