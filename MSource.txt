@@ -1,3 +1,19 @@
+○道と区画を生成する処理の実装の記事化
+※他工程も同じ要領で記事化する
+・文章
+・ビジュアル資料
+
+○PlotMaker・BlockMaker・VolumeMakerで八重洲・丸の内を再現
+
+○ModularModeling(Side)
+※Texture + Roofのみ
+・素材を用意
+ -ProceduralCityの素材から八重洲にありそうなTextureを複数選択
+
+○Roofの生成
+vertical_edgeからside_edgeを繋げて屋根の棟とする
+
+
 ■Daily
 ○記事
 ※参考資料をしっかり参考にする
@@ -8,6 +24,7 @@
 
 ○プロシージャルモデリング
 ・スライド
+
 
 
 ■仕事準備(参考資料の調査)
@@ -67,13 +84,6 @@ vertical_edgeからside_edgeを繋げて屋根の棟とする
 ■BuildingGenerator
 ※Procedural City Projectをベースに実装
 
-○PlotMaker・BlockMaker・VolumeMakerで八重洲・丸の内を再現
-
-○ModularModeling(Side)
-※Texture + Roofのみ
-・素材を用意
- -ProceduralCityの素材から八重洲にありそうなTextureを複数選択
-
 ○ProceduralModeling(Side)
 ※ProceduralCityProjectのSkyscraperを参照
 ・Pattern実装
@@ -97,11 +107,6 @@ vertical_edgeからside_edgeを繋げて屋根の棟とする
 ■記事
 ※つかみの部分をしっかり用意する
 ※各項目ごとにQiita上でメモ、素材、清書をセットで進めていく
-
-○道と区画を生成する処理の実装の記事化
-※他工程も同じ要領で記事化する
-・文章
-・ビジュアル資料
 
 ○クラス化記事のメモ
 
