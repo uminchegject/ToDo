@@ -36,6 +36,8 @@ vertical_edgeからside_edgeを繋げて屋根の棟とする
 https://www.sidefx.com/ja/docs/houdini/ref/commandline.html
 ・Redshift for Houdini が使える状態で起動する .bat
 https://scrapbox.io/hounotes/Redshift_for_Houdini_%E3%81%8C%E4%BD%BF%E3%81%88%E3%82%8B%E7%8A%B6%E6%85%8B%E3%81%A7%E8%B5%B7%E5%8B%95%E3%81%99%E3%82%8B_.bat
+・GPT
+https://chatgpt.com/s/t_692ce155b85c8191aa12f12e96b737d5
 
 ○GUI周りの実装(Python)
  -シーンビュー、パラメーターのみ表示
