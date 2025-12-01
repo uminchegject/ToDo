@@ -1,3 +1,8 @@
+●PatternHDA
+※それぞれのHDAの処理と多様性を記事化する
+・Plane(※繋がり)
+・BasePoints(※独立)
+
 ○QT周りの調査(Python)
 ・操作制限
 ・GUI
