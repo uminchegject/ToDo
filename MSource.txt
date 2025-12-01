@@ -1,9 +1,11 @@
+○QT周りの調査(Python)
+・操作制限
+・GUI
+
 ○道と区画を生成する処理の実装の記事化
 ※他工程も同じ要領で記事化する
 ・文章
 ・ビジュアル資料
-
-○PlotMaker・BlockMaker・VolumeMakerで八重洲・丸の内を再現
 
 ○ModularModeling(Side)
 ※Texture + Roofのみ
@@ -12,6 +14,25 @@
 
 ○Roofの生成
 vertical_edgeからside_edgeを繋げて屋根の棟とする
+
+○プロシージャル資料の整理
+・プロシージャル技術の動向
+https://cedil.cesa.or.jp/cedil_sessions/view/178
+・フォトグラメトリーとプロシージャルを用いた最新ハイエンドゲーム3DCG背景制作手法 ～ハイエンドゲーム開発の経験がない会社がいかにしてそれらを生み出したか～
+https://cedil.cesa.or.jp/cedil_sessions/view/2118
+・オープンワールドを、自然に意思を持って埋める。 LUMINOUS ENGINEのプロシージャルへの取り組み
+https://cedil.cesa.or.jp/cedil_sessions/view/2221
+・エンタメ系TAの挑戦！　UE4によるエンタープライズ向け開発事例の紹介 　～AIの教師データ量産におけるプロシージャル技術の応用～
+https://cedil.cesa.or.jp/cedil_sessions/view/2244
+・『星のカービィ　ディスカバリー』 プロシージャル地形生成への取り組み
+https://cedil.cesa.or.jp/cedil_sessions/view/2569
+・Unreal Engine 5 ElectricDreams環境サンプルにみるプロシージャル生成テクニック
+https://cedil.cesa.or.jp/cedil_sessions/view/2762
+・Procedural PLATEAU: プロシージャル技術と3D都市モデル「Project PLATEAU」を組み合わせたファサード自動生成とテクスチャ付き3Dモデル自動生成の取り組み
+https://cedil.cesa.or.jp/cedil_sessions/view/2794
+・地理空間情報のススメ！オープンデータ×データドリブンな プロシージャル処理による都市の樹木自動配置
+https://cedil.cesa.or.jp/cedil_sessions/view/3042
+
 
 
 ■Daily
@@ -28,20 +49,36 @@ vertical_edgeからside_edgeを繋げて屋根の棟とする
 
 
 ■仕事準備(参考資料の調査)
-※起動時のセットアップ処理を実装
+○ドキュメント化
+・コマンドライン
+ -起動処理
+・QT
+ -操作制限
+ -GUI
 
-○起動時のinit処理の実装方法を調査
-※試したいコマンドをリストアップ
-・コマンドラインからHoudiniを起動
+●起動処理の調査
+・コマンドライン
+ -コマンドラインからHoudiniを起動
 https://www.sidefx.com/ja/docs/houdini/ref/commandline.html
-・Redshift for Houdini が使える状態で起動する .bat
+ -Redshift for Houdini が使える状態で起動する .bat
 https://scrapbox.io/hounotes/Redshift_for_Houdini_%E3%81%8C%E4%BD%BF%E3%81%88%E3%82%8B%E7%8A%B6%E6%85%8B%E3%81%A7%E8%B5%B7%E5%8B%95%E3%81%99%E3%82%8B_.bat
-・GPT
-https://chatgpt.com/s/t_692ce155b85c8191aa12f12e96b737d5
 
-○GUI周りの実装(Python)
- -シーンビュー、パラメーターのみ表示
- -操作の制限
+●GUI周りの調査
+・DeskTop
+ -デスクトップとペイン
+https://www.sidefx.com/ja/docs/houdini/basics/panes.html
+
+▲スタンドアローンツール
+ -スタンドアローンのユーティリティ
+https://www.sidefx.com/ja/docs/houdini/ref/utils/index.html
+ -Houdiniかんたんレシピ 23 ～ スタンドアローンツール ～
+https://houdinifx.jp/blog/houdini%E3%81%8B%E3%82%93%E3%81%9F%E3%82%93%E3%83%AC%E3%82%B7%E3%83%94-23-%EF%BD%9E-%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%89%E3%82%A2%E3%83%AD%E3%83%BC%E3%83%B3%E3%83%84%E3%83%BC%E3%83%AB-%EF%BD%9E/
+
+●ToDo
+・特定ビュー(ペイン)のみ表示した状態で起動
+ -HDAパラメーターの操作できる状態
+ -シーンビューを表示した状態
+・不要なショートカットキーの無効化
 
 
 
@@ -119,7 +156,23 @@ https://qiita.com/TaroOzaki/items/f249ae4b5e8dc46f16f3
 
 
 ■Study(ナレッジ)
-○Next調査
+○プロシージャル
+・プロシージャル技術の動向
+https://cedil.cesa.or.jp/cedil_sessions/view/178
+・フォトグラメトリーとプロシージャルを用いた最新ハイエンドゲーム3DCG背景制作手法 ～ハイエンドゲーム開発の経験がない会社がいかにしてそれらを生み出したか～
+https://cedil.cesa.or.jp/cedil_sessions/view/2118
+・オープンワールドを、自然に意思を持って埋める。 LUMINOUS ENGINEのプロシージャルへの取り組み
+https://cedil.cesa.or.jp/cedil_sessions/view/2221
+・エンタメ系TAの挑戦！　UE4によるエンタープライズ向け開発事例の紹介 　～AIの教師データ量産におけるプロシージャル技術の応用～
+https://cedil.cesa.or.jp/cedil_sessions/view/2244
+・『星のカービィ　ディスカバリー』 プロシージャル地形生成への取り組み
+https://cedil.cesa.or.jp/cedil_sessions/view/2569
+・Unreal Engine 5 ElectricDreams環境サンプルにみるプロシージャル生成テクニック
+https://cedil.cesa.or.jp/cedil_sessions/view/2762
+・Procedural PLATEAU: プロシージャル技術と3D都市モデル「Project PLATEAU」を組み合わせたファサード自動生成とテクスチャ付き3Dモデル自動生成の取り組み
+https://cedil.cesa.or.jp/cedil_sessions/view/2794
+・地理空間情報のススメ！オープンデータ×データドリブンな プロシージャル処理による都市の樹木自動配置
+https://cedil.cesa.or.jp/cedil_sessions/view/3042
 
 
 ■組み合わせを多様化(記事)
