@@ -1,25 +1,9 @@
 ○Roofの生成
-vertical_edgeからside_edgeを繋げて屋根の棟とする
-float roof_height = 4;
-vector roof_pt1_pos = plane_base_pos;
-vector roof_pt2_pos = center_edge_bottom_pos;
-roof_pt1_pos.y += roof_height;
-roof_pt2_pos.y += roof_height;
-vector4 roof_pt1_plane = make_plane(
-    plan_base_pos,
-    get_normal(side_vertical_edge_bottom_pt1_pos, plan_base_pos, side_vertical_edge_top_pt1_pos));
-second_floor_pt1_pos = get_plane_intersect_pos(
-    roof_pt2_pos, 
-    roof_pt2_pos + (roof_pt2_pos - roof_pt1_pos),
-    roof_pt1_plane);
+RoofのBottomPtを生成する
+ -BaseLineを生成
+ -BaseLineとVerticalEdge, SideEdgeのIntersect_PosをBottomPtにする
 
-○ModularModeling(Side)
-※Texture + Roofのみ
-※八重洲側で検証
-・素材を用意
- -ProceduralCityの素材から八重洲にありそうなTextureを複数選択
-・Moduleの生成
-・ModuleEditorで検証
+○ModularModelingのRoofを修正
 
 ○パラメーターの修正
 ・BlockMaker
@@ -38,6 +22,8 @@ HDAのパラメーターやカスタムGUIの操作管理は、QT周りの処理
 hou.qt packageに入力に関する処理が複数確認できたのでそれらの中から必要な処理を使用し管理するように実装する予定です。
 ・Houdiniで始めるGUIツール作成【PySide2】
 https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
+・hou.qt package
+https://www.sidefx.com/ja/docs/houdini/hom/hou/qt/index.html
 
 ○Viewer Stateの操作管理
 ビュワーの操作周りについてはpython viewer stateで操作周りの管理を行うことができそうです。
