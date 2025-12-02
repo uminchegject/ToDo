@@ -2,9 +2,6 @@
 ※他工程も同じ要領で記事化する
 ・ビジュアル資料
 
-○BlockMaker_marunouchiのパラメーター修正
-・skip_ratioを0.3にし、iterationを2回にする
-
 ○ModularModeling(Side)
 ※Texture + Roofのみ
 ・素材を用意
@@ -30,34 +27,30 @@ second_floor_pt1_pos = get_plane_intersect_pos(
 	
 
 ■仕事準備(参考資料の調査)
-○QT周りの調査(Python)
-・操作制限
-・GUI
+○操作制限
 ・資料
- -hou.qt package
-https://www.sidefx.com/ja/docs/houdini/hom/hou/qt/index.html
-・GPT
-https://chatgpt.com/s/t_692e35959dac8191849a45727c01ab6f
-https://chatgpt.com/s/t_692e35ab7a188191892d43b944489f31
+ -Pythonステート ユーザインターフェースイベント
+https://www.sidefx.com/ja/docs/houdini/hom/state_events.html
+ -Pythonで独自のViewer Stateを記述する方法
+https://www.sidefx.com/ja/docs/houdini/hom/python_states.html
 
-○ドキュメント化
-・コマンドライン
- -起動処理
-・QT
- -操作制限
- -GUI
+ -Houdini Python Viewer State イベントハンドラーの基本とマウスイベントを扱う手順
+https://houdinifx.jp/blog/houdini-python-viewer-state-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%83%8F%E3%83%B3%E3%83%89%E3%83%A9%E3%83%BC%E3%81%AE%E5%9F%BA%E6%9C%AC%E3%81%A8%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%A4%E3%83%99%E3%83%B3/
+ -Viewer Stateのマウスの入力イベント
+https://technical-notes.com/houdini/2024/09/10/viewer-state-mouse-event/
 
 ●起動処理の調査
 ・コマンドライン
  -コマンドラインからHoudiniを起動
 https://www.sidefx.com/ja/docs/houdini/ref/commandline.html
- -Redshift for Houdini が使える状態で起動する .bat
-https://scrapbox.io/hounotes/Redshift_for_Houdini_%E3%81%8C%E4%BD%BF%E3%81%88%E3%82%8B%E7%8A%B6%E6%85%8B%E3%81%A7%E8%B5%B7%E5%8B%95%E3%81%99%E3%82%8B_.bat
 
 ●GUI周りの調査
 ・DeskTop
  -デスクトップとペイン
 https://www.sidefx.com/ja/docs/houdini/basics/panes.html
+・QT
+ -hou.qt package
+https://www.sidefx.com/ja/docs/houdini/hom/hou/qt/index.html
 
 ▲スタンドアローンツール
  -スタンドアローンのユーティリティ
