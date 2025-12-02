@@ -1,14 +1,3 @@
-●PatternHDA
-※それぞれのHDAの処理と多様性を記事化する
-・Plane(※繋がり)
-・BasePoints(※独立)
-
-○QT周りの調査(Python)
-・操作制限
-・GUI
-・hou.qt package
-https://www.sidefx.com/ja/docs/houdini/hom/hou/qt/index.html
-
 ○道と区画を生成する処理の実装の記事化
 ※他工程も同じ要領で記事化する
 ・ビジュアル資料
@@ -38,21 +27,19 @@ second_floor_pt1_pos = get_plane_intersect_pos(
     roof_pt2_pos + (roof_pt2_pos - roof_pt1_pos),
     roof_pt1_plane);
 
-
-■Daily
-○記事
-※参考資料をしっかり参考にする
-・各HDAの説明
-
-○オブジェクト指向
-・オブジェクト指向でなぜつくるのか
-
-○プロシージャルモデリング
-・スライド
-
-
+	
 
 ■仕事準備(参考資料の調査)
+○QT周りの調査(Python)
+・操作制限
+・GUI
+・資料
+ -hou.qt package
+https://www.sidefx.com/ja/docs/houdini/hom/hou/qt/index.html
+・GPT
+https://chatgpt.com/s/t_692e35959dac8191849a45727c01ab6f
+https://chatgpt.com/s/t_692e35ab7a188191892d43b944489f31
+
 ○ドキュメント化
 ・コマンドライン
  -起動処理
@@ -86,6 +73,19 @@ https://houdinifx.jp/blog/houdini%E3%81%8B%E3%82%93%E3%81%9F%E3%82%93%E3%83%AC%E
 
 
 
+■Daily
+○記事
+※参考資料をしっかり参考にする
+・各HDAの説明
+
+○オブジェクト指向
+・オブジェクト指向でなぜつくるのか
+
+○プロシージャルモデリング
+・スライド
+
+
+
 ■EdgeGenerator
 ○Roofの生成
 vertical_edgeからside_edgeを繋げて屋根の棟とする
@@ -106,6 +106,11 @@ vertical_edgeからside_edgeを繋げて屋根の棟とする
 ・Horizontal
  -SideRoof
  -CenterRoof
+ 
+○記事
+※それぞれのHDAの処理と多様性を記事化する
+・Plane(※繋がり)
+・BasePoints(※独立)
 
 ●Edit設計
 ※Base + Gradation + Random
