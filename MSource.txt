@@ -1,14 +1,3 @@
-○道と区画を生成する処理の実装の記事化
-※他工程も同じ要領で記事化する
-・ビジュアル資料
-
-○ModularModeling(Side)
-※Texture + Roofのみ
-・素材を用意
- -ProceduralCityの素材から八重洲にありそうなTextureを複数選択
-・Moduleの生成
-・ModuleEditorで検証
-
 ○Roofの生成
 vertical_edgeからside_edgeを繋げて屋根の棟とする
 float roof_height = 4;
@@ -24,19 +13,42 @@ second_floor_pt1_pos = get_plane_intersect_pos(
     roof_pt2_pos + (roof_pt2_pos - roof_pt1_pos),
     roof_pt1_plane);
 
-	
+○ModularModeling(Side)
+※Texture + Roofのみ
+※八重洲側で検証
+・素材を用意
+ -ProceduralCityの素材から八重洲にありそうなTextureを複数選択
+・Moduleの生成
+・ModuleEditorで検証
+
+○パラメーターの修正
+・BlockMaker
+・VolumeMaker
+
+○ビジュアル資料の用意
+※ModularModelingを含めて八重洲を検証した上で記事をまとめる
+・パラメーター
+・アウトプット
+
+
 
 ■仕事準備(参考資料の調査)
-○操作制限
-・資料
- -Pythonステート ユーザインターフェースイベント
-https://www.sidefx.com/ja/docs/houdini/hom/state_events.html
- -Pythonで独自のViewer Stateを記述する方法
-https://www.sidefx.com/ja/docs/houdini/hom/python_states.html
+○QTの操作管理
+HDAのパラメーターやカスタムGUIの操作管理は、QT周りの処理から管理を行う必要がありそうです。
+hou.qt packageに入力に関する処理が複数確認できたのでそれらの中から必要な処理を使用し管理するように実装する予定です。
+・Houdiniで始めるGUIツール作成【PySide2】
+https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
 
- -Houdini Python Viewer State イベントハンドラーの基本とマウスイベントを扱う手順
+○Viewer Stateの操作管理
+ビュワーの操作周りについてはpython viewer stateで操作周りの管理を行うことができそうです。
+viewer stateの管理方法については現在調査中です。
+・Pythonステート ユーザインターフェースイベント
+https://www.sidefx.com/ja/docs/houdini/hom/state_events.html
+・Pythonで独自のViewer Stateを記述する方法
+https://www.sidefx.com/ja/docs/houdini/hom/python_states.html
+・Houdini Python Viewer State イベントハンドラーの基本とマウスイベントを扱う手順
 https://houdinifx.jp/blog/houdini-python-viewer-state-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%83%8F%E3%83%B3%E3%83%89%E3%83%A9%E3%83%BC%E3%81%AE%E5%9F%BA%E6%9C%AC%E3%81%A8%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%A4%E3%83%99%E3%83%B3/
- -Viewer Stateのマウスの入力イベント
+・Viewer Stateのマウスの入力イベント
 https://technical-notes.com/houdini/2024/09/10/viewer-state-mouse-event/
 
 ●起動処理の調査
