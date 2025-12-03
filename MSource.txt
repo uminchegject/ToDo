@@ -18,12 +18,13 @@ RoofのBottomPtを生成する
 
 ■仕事準備(参考資料の調査)
 ○QTの操作管理
-HDAのパラメーターやカスタムGUIの操作管理は、QT周りの処理から管理を行う必要がありそうです。
-hou.qt packageに入力に関する処理が複数確認できたのでそれらの中から必要な処理を使用し管理するように実装する予定です。
+・シグナルとスロットを調査する
 ・Houdiniで始めるGUIツール作成【PySide2】
 https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
 ・hou.qt package
 https://www.sidefx.com/ja/docs/houdini/hom/hou/qt/index.html
+・シンプルなイベント処理
+https://unpyside.com/blog/2017/11/21/qtsimpleevent/
 
 ○Viewer Stateの操作管理
 ビュワーの操作周りについてはpython viewer stateで操作周りの管理を行うことができそうです。
