@@ -1,10 +1,3 @@
-○Roofの生成
-RoofのBottomPtを生成する
- -BaseLineを生成
- -BaseLineとVerticalEdge, SideEdgeのIntersect_PosをBottomPtにする
-
-○ModularModelingのRoofを修正
-
 ○パラメーターの修正
 ・BlockMaker
 ・VolumeMaker
@@ -13,6 +6,7 @@ RoofのBottomPtを生成する
 ※ModularModelingを含めて八重洲を検証した上で記事をまとめる
 ・パラメーター
 ・アウトプット
+
 
 ■Daily
 ○記事
@@ -28,9 +22,6 @@ RoofのBottomPtを生成する
 
 
 ■EdgeGenerator
-○Roofの生成
-vertical_edgeからside_edgeを繋げて屋根の棟とする
-
 ○BaseSurfaceにPattern適応
 ・TopLineとBottomLineを生成
 
@@ -147,7 +138,13 @@ https://cedil.cesa.or.jp/cedil_sessions/view/3042
 
 
 ■仕事準備(参考資料の調査)
-○Viewer Stateの操作管理
+○resolveKeyEventの調査
+※Ctr + Bのホットキーを無効化する
+ -調査ではホットキーの無効化のみを報告して、他は実実装でやることを伝える
+・hou.qt.resolveKeyEvent HOM function
+https://www.sidefx.com/ja/docs/houdini/hom/hou/qt/resolveKeyEvent.html
+
+△Viewer Stateの操作管理
 ・Pythonステート ユーザインターフェースイベント
 https://www.sidefx.com/ja/docs/houdini/hom/state_events.html
 ・Pythonで独自のViewer Stateを記述する方法
