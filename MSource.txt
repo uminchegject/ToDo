@@ -140,143 +140,80 @@ https://cedil.cesa.or.jp/cedil_sessions/view/3042
 ・Plot×Block×Patternをそれぞれ組み合わせて混在させる
 
 
-■仕事準備(参考資料の調査)
-○resolveKeyEventの検証
-https://chatgpt.com/s/t_6930d8a7f0c88191abf0647c39682725
 
-○resolveKeyEventの調査
-※Ctr + Bのホットキーを無効化する
- -調査ではホットキーの無効化のみを報告して、他は実実装でやることを伝える
-・hou.qt.resolveKeyEvent HOM function
+■hou.qtの管理
+
+●資料
+・hou.qt
+https://www.sidefx.com/ja/docs/houdini/hom/hou/qt/index.html
+・hou.qt.resolveKeyEvent 
 https://www.sidefx.com/ja/docs/houdini/hom/hou/qt/resolveKeyEvent.html
 
-△Viewer Stateの操作管理
-・Pythonステート ユーザインターフェースイベント
-https://www.sidefx.com/ja/docs/houdini/hom/state_events.html
-・Pythonで独自のViewer Stateを記述する方法
-https://www.sidefx.com/ja/docs/houdini/hom/python_states.html
-・Houdini Python Viewer State イベントハンドラーの基本とマウスイベントを扱う手順
-https://houdinifx.jp/blog/houdini-python-viewer-state-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%83%8F%E3%83%B3%E3%83%89%E3%83%A9%E3%83%BC%E3%81%AE%E5%9F%BA%E6%9C%AC%E3%81%A8%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%A4%E3%83%99%E3%83%B3/
-・Viewer Stateのマウスの入力イベント
-https://technical-notes.com/houdini/2024/09/10/viewer-state-mouse-event/
+●ソース
+from PySide2 import QtWidgets
+import hou
 
-●起動処理の調査
-・コマンドライン
- -コマンドラインからHoudiniを起動
-https://www.sidefx.com/ja/docs/houdini/ref/commandline.html
+class MyWidget(QtWidgets.QWidget):
 
-●GUI周りの調査
-・DeskTop
- -デスクトップとペイン
-https://www.sidefx.com/ja/docs/houdini/basics/panes.html
-・QT
- -hou.qt package
-https://www.sidefx.com/ja/docs/houdini/hom/hou/qt/index.html
+    def __init__(self):
+        super().__init__()
+        hou.qt.registerKeyResolveInfoCallback(self, self.key_resolve_info_callback)
 
-▲スタンドアローンツール
- -スタンドアローンのユーティリティ
-https://www.sidefx.com/ja/docs/houdini/ref/utils/index.html
- -Houdiniかんたんレシピ 23 ～ スタンドアローンツール ～
-https://houdinifx.jp/blog/houdini%E3%81%8B%E3%82%93%E3%81%9F%E3%82%93%E3%83%AC%E3%82%B7%E3%83%94-23-%EF%BD%9E-%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%89%E3%82%A2%E3%83%AD%E3%83%BC%E3%83%B3%E3%83%84%E3%83%BC%E3%83%AB-%EF%BD%9E/
+    def __del__(self):
+        hou.qt.unregisterKeyResolveInfoCallback(self)
+        super().__del__()
 
-●UI
-・hou.ui module
- -hou.ShelfDock class
-  -hou.ShelfSet class
- -hou.Pane class
-  -hou.PaneTab class
-  -hou.FloatingPanel class
+    def key_resolve_info_callback(self, **kwargs):
+        return {'contexts':['h.my.widget.context']}
 
-●ToDo
-・特定ビュー(ペイン)のみ表示した状態で起動
- -HDAパラメーターの操作できる状態
- -シーンビューを表示した状態
-・不要なショートカットキーの無効化
+    def keyPressEvent(self, event):
+        symbol = hou.qt.resolveKeyEvent(event)
+        if symbol == "h.my.widget.category.action":
+            # バインドしたい処理を設定
+            # ...
+            event.accept()
+
+
+
+■hou.hotkeysの管理
+
+●資料
+・hotkeys
+https://www.sidefx.com/ja/docs/houdini/hom/hou/hotkeys.html
+・installDefinitions(definitions)
 
 ●ソース
-import hou
-from PySide2 import QtWidgets
+definitions = hou.PluginHotkeyDefinitions()
 
-# パラメーターノードを選択
-select_node_path = "/obj/box1/box1"
-select_node = hou.node(select_node_path)
-hou.clearAllSelected() 
-select_node.setSelected(True, clear_all_selected=False)
+# demo Pythonステートにコマンドカテゴリを追加します。
+demo_category = "h.pane.gview.state.sop.demo"
+definitions.addCommandCategory(demo_category, "demo Operation", "These actions apply to the demo operation")
 
-# 表示ノードをプレビュー状態に設定
-display_node_path = "/obj/box1/box1"
-display_node = hou.node(display_node_path)
-display_node.setDisplayFlag(True)
+# demo Pythonステートのコマンドカテゴリ下にコマンドを追加します。
+delete_symbol = demo_category + ".delete"
+definitions.addCommand(
+    delete_symbol,
+    "Delete Selected",
+    "Delete the selected geometry"
+)
+commit_symbol = demo_category + ".commit"
+definitions.addCommand(
+    commit_symbol,
+    "Commit Changes",
+    "Save changes to parameters and start a new cache"
+)
+cancel_symbol = demo_category + ".cancel"
+definitions.addCommand(
+    cancel_symbol,
+    "Cancel Changes",
+    "Discard any  changes and return to an empty cache"
+)
 
-# 全てのペインでタブを非表示
-for pane in hou.ui.panes():
-    pane.setShowPaneTabs(False)
+# demo Pythonステートが自身のステートのキーバインドを保持するコンテキストを追加します。
+demo_context = "h.pane.gview.state.sop.demo"
+definitions.addContext(demo_context, "demo Operation", "These keys apply to the demo operation")
 
-# ペインタブごとの表示設定
-for tab in hou.ui.paneTabs():
-    if tab.type() != hou.paneTabType.NetworkEditor:
-        tab.setShowNetworkControls(False)
-
-    if tab.type() == hou.paneTabType.Parm:
-        tab.setShowNetworkControls(False)
-    elif tab.type() == hou.paneTabType.SceneViewer:
-        tab.showDisplayOptionsBar(False)
-        tab.showOperationBar(False)
-        tab.showSelectionBar(False)
-        if tab.includeColorCorrectionBar():
-            tab.showColorCorrectionBar(False)
-        if tab.includeMemoryBar():
-            tab.showMemoryBar(False)
-    else:
-        # その他のタブは閉じる
-        tab.close()
-
-# ShelfDockを非表示
-hou.ui.curDesktop().shelfDock().show(False)
-
-# MenuBarを非表示
-hou.setPreference('showmenu.val', ['0','1'][False])
-
-# Stowbarsを非表示
-hou.ui.setHideAllMinimizedStowbars(True)
-
-●bat処理
-@echo off
-"C:\Program Files\Side Effects Software\Houdini 20.5.487\bin\houdinifx.exe" -s build C:\Users\yusuke.nakamura\Desktop\test.hip waitforui C:\Users\yusuke.nakamura\Desktop\test.py21/qtsimpleevent/
-
-○Viewer Stateの操作管理
-ビュワーの操作周りについてはpython viewer stateで操作周りの管理を行うことができそうです。
-viewer stateの管理方法については現在調査中です。
-・Pythonステート ユーザインターフェースイベント
-https://www.sidefx.com/ja/docs/houdini/hom/state_events.html
-・Pythonで独自のViewer Stateを記述する方法
-https://www.sidefx.com/ja/docs/houdini/hom/python_states.html
-・Houdini Python Viewer State イベントハンドラーの基本とマウスイベントを扱う手順
-https://houdinifx.jp/blog/houdini-python-viewer-state-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%83%8F%E3%83%B3%E3%83%89%E3%83%A9%E3%83%BC%E3%81%AE%E5%9F%BA%E6%9C%AC%E3%81%A8%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%A4%E3%83%99%E3%83%B3/
-・Viewer Stateのマウスの入力イベント
-https://technical-notes.com/houdini/2024/09/10/viewer-state-mouse-event/
-
-●起動処理の調査
-・コマンドライン
- -コマンドラインからHoudiniを起動
-https://www.sidefx.com/ja/docs/houdini/ref/commandline.html
-
-●GUI周りの調査
-・DeskTop
- -デスクトップとペイン
-https://www.sidefx.com/ja/docs/houdini/basics/panes.html
-・QT
- -hou.qt package
-https://www.sidefx.com/ja/docs/houdini/hom/hou/qt/index.html
-
-▲スタンドアローンツール
- -スタンドアローンのユーティリティ
-https://www.sidefx.com/ja/docs/houdini/ref/utils/index.html
- -Houdiniかんたんレシピ 23 ～ スタンドアローンツール ～
-https://houdinifx.jp/blog/houdini%E3%81%8B%E3%82%93%E3%81%9F%E3%82%93%E3%83%AC%E3%82%B7%E3%83%94-23-%EF%BD%9E-%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%89%E3%82%A2%E3%83%AD%E3%83%BC%E3%83%B3%E3%83%84%E3%83%BC%E3%83%AB-%EF%BD%9E/
-
-●ToDo
-・特定ビュー(ペイン)のみ表示した状態で起動
- -HDAパラメーターの操作できる状態
- -シーンビューを表示した状態
-・不要なショートカットキーの無効化
+# コマンドのデフォルトのキーバインドをそのコンテキストに追加します。
+definitions.addDefaultBinding(demo_context, delete_symbol, ("Del",))
+definitions.addDefaultBinding(demo_context, commit_symbol, ())
+definitions.addDefaultBinding(demo_context, cancel_symbol, ())
