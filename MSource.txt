@@ -2,19 +2,35 @@
 自分の小さな「箱」から脱出する方法
 
 
+■BoatHouse
 ○パラメーター検証
 ・パラメーターレンジの設定
 
+○SideEdgeで検証
+
 ○EdgeMaker化
+※各パーツごとに挙動確認する
 ・TopLine,BottomLineの生成
 ・TopLinePrimNum, group_BottomLine, group_TopLineの設定
 
+○Patternの検証(記事化準備)
+・Vertical
+ -SideEdge
+ -CenterEdge
+・Horizontal
+ -SideRoof
+ -CenterRoof
 
+
+■ModuleGenerator
 ○八重洲検証
+・ビジュアル資料を用意
 
 ○PlotMaker,BlockMaker,VolumeMakerを記事化
 
-●BuildingPatternGenerator
+
+■ProceduralBuildingGenerator
+○BuildingPatternGenerator設計
 ・Block
  -Resample + PolyExtrude(Divisions)
 ・RoofBlock
@@ -34,6 +50,9 @@
  -GroupRange
 ・Color
 
+○TopAssetの設計
+
+
 
 
 ■Daily
@@ -50,23 +69,6 @@
 
 
 ■EdgeGenerator
-○BaseSurfaceにPattern適応
-・TopLineとBottomLineを生成
-
-●BoatHouseProceduralModeling
-・靖国神社側からの視点で実装する
-・BaseLineからSurfaceを生成する
- -各階層にBaseLineを生成し、それらを参照してSurfaceを生成する
-・シンプルなEdgeパーツで構成するように修正
-
-○Patternの検証(記事化準備)
-・Vertical
- -SideEdge
- -CenterEdge
-・Horizontal
- -SideRoof
- -CenterRoof
- 
 ○記事
 ※それぞれのHDAの処理と多様性を記事化する
 ・Plane(※繋がり)
@@ -89,25 +91,18 @@
 
 
 
-■BuildingGenerator
-※Procedural City Projectをベースに実装
-
-○ProceduralModeling(Side)
-※ProceduralCityProjectのSkyscraperを参照
-・Pattern実装
-・TopBlockの分別化
-
-○TopAsset
-
-●BaseBuildingGenerator
+■CityGenerator
 ※世界観をしっかり決めて、参考資料・リファレンスをしっかり用意する
-※Volume + Textureベースで実装
- -プラスαでPMのDetailを用意
-・参考資料
- -たのしい都市ジェネレータ(https://www.youtube.com/watch?v=Y6-EWYXZG4s)
- -Procedural City generator(https://www.youtube.com/watch?v=BlduX70jZRU)
 
 △背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装
+
+△Sci-Fiでの検証準備
+
+●参考資料
+・たのしい都市ジェネレータ
+https://www.youtube.com/watch?v=Y6-EWYXZG4s
+・Procedural City generator
+https://www.youtube.com/watch?v=BlduX70jZRU
 
 
 
@@ -120,6 +115,7 @@
 ●参考資料
 ・階段のプロシージャルモデリング : Stairs Procedural Modeling
 https://qiita.com/TaroOzaki/items/f249ae4b5e8dc46f16f3
+
 
 
 
