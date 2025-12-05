@@ -158,3 +158,273 @@ https://cedil.cesa.or.jp/cedil_sessions/view/3042
  -Volume
  -Pattern
 ・Plot×Block×Patternをそれぞれ組み合わせて混在させる
+
+
+■ソース
+function vector get_points_intersect_pos(vector p0, p1, p2, p3)
+{
+    vector u = p1 - p0;
+    vector v = p3 - p2;
+    vector w = p0 - p2;
+
+    float a = dot(u,u);
+    float b = dot(u,v);
+    float c = dot(v,v);
+    float d = dot(u,w);
+    float e = dot(v,w);
+
+    float sc = (b*e - c*d) / (a*c - b*b);
+    float tc = (a*e - b*d) / (a*c - b*b);    
+
+    vector pA = p0 + sc * u;
+    vector pB = p2 + tc * v;
+
+    return (pA + pB) * 0.5;
+}
+
+vector4 make_plane(vector pos; vector normal)
+{
+    vector n = normalize(normal);
+    float d = -dot(n, pos);
+    return set(n.x, n.y, n.z, d);
+}
+
+vector get_plane_intersect_pos(vector p1; vector p2; vector4 plane)
+{
+    vector pos1 = p1;
+    vector pos2 = p2;
+    int result;
+    clip(result, pos1, pos2, plane);
+        
+    vector intersect = {0,0,0};
+    if (result == 1)
+    {
+        if (pos1 != p1)
+            intersect = pos1;
+        else if (pos2 != p2)
+            intersect = pos2;
+        else
+            return {0,0,0};
+    }
+    else
+    {
+        return {0,0,0};
+    }
+        
+    return intersect;
+}
+
+vector get_normal(vector p0; vector p1; vector p2)
+{
+    vector e1 = p1 - p0;
+    vector e2 = p2 - p0;
+    return normalize(cross(e1, e2));
+}
+
+
+//------- main ----------------------
+vector plan_size = chv("PlanSize");
+float plane_base_edge_angle = ch("PlaneBaseEdgeAngle");
+float plane_center_edge_angle = ch("PlaneCenterEdgeAngle");
+
+float edge_height = ch("EdgeHeight");
+
+float side_vertical_edge_angle = ch("SideVerticalEdgeAngle");
+float side_vertical_edge_inside_angle = ch("SideVerticalEdgeInsideAngle");
+
+float center_vertical_edge_pos_interpolation = ch("center_vertical_edge_pos_interpolation"); //0.7;
+float center_vertical_edge_length = ch("center_vertical_edge_length"); //18;
+
+float second_floor_height = ch("second_floor_height"); //2;
+
+float roof_height = ch("roof_height"); //4.5;
+float roof_angle = ch("roof_angle"); //-25;
+float roof_length = ch("roof_length"); //2.5;
+
+vector plan_base_pos = set(0, 0, 0);
+vector rotate_axis = {0, 1, 0};
+vector4 q_plane_base_edge = quaternion(radians(plane_base_edge_angle), rotate_axis);
+
+
+//BasePlane
+vector base_plan_width_vec = set(plan_size.x, 0, 0);
+vector base_plan_depth_vec = set(plan_size.z / sin(radians(plane_base_edge_angle)), 0, 0);
+base_plan_depth_vec = qrotate(q_plane_base_edge, base_plan_depth_vec);
+
+vector base_plan_pt1_pos = plan_base_pos + base_plan_width_vec;
+vector base_plan_pt2_pos = plan_base_pos + base_plan_depth_vec;
+vector base_plan_pt3_pos = plan_base_pos + base_plan_width_vec + base_plan_depth_vec;
+
+int base_plan_pt1 = addpoint(0, plan_base_pos);
+int base_plan_pt2 = addpoint(0, base_plan_pt1_pos);
+int base_plan_pt3 = addpoint(0, base_plan_pt2_pos);
+int base_plan_pt4 = addpoint(0, base_plan_pt3_pos);
+
+
+//CenterEdge
+vector4 q_plane_center_edge = quaternion(radians(plane_center_edge_angle), rotate_axis);
+vector center_edge_dir = set(1, 0, 0);
+center_edge_dir = qrotate(q_plane_center_edge, center_edge_dir);
+vector center_edge_pt_pos = get_points_intersect_pos(
+    base_plan_pt1_pos,
+    base_plan_pt1_pos + base_plan_depth_vec * 10000,
+    plan_base_pos,
+    plan_base_pos + center_edge_dir * 10000);
+int center_edge_pt = addpoint(0, center_edge_pt_pos);
+
+
+//SideVerticalEdge
+float edge_length = edge_height / tan(radians(side_vertical_edge_angle));
+vector side_vertical_edge_bottom_pt1_pos = plan_base_pos;
+side_vertical_edge_bottom_pt1_pos += edge_length * normalize(base_plan_width_vec);
+
+vector side_vertical_edge_top_pt1_pos = plan_base_pos;
+side_vertical_edge_top_pt1_pos -= center_edge_dir * edge_height * tan(radians(side_vertical_edge_inside_angle));;
+side_vertical_edge_top_pt1_pos.y += edge_height;
+
+int side_vertical_edge_bottom_pt1 = addpoint(0, side_vertical_edge_bottom_pt1_pos);
+int side_vertical_edge_top_pt1 = addpoint(0, side_vertical_edge_top_pt1_pos);
+
+vector side_vertical_edge_bottom_pt2_pos = plan_base_pos;
+side_vertical_edge_bottom_pt2_pos += edge_length * normalize(base_plan_depth_vec);
+vector4 side_vertical_edge_plane = make_plane(base_plan_pt2_pos, set(0, 0, 1));
+vector side_vertical_edge_top_pt2_pos = get_plane_intersect_pos(side_vertical_edge_bottom_pt2_pos, side_vertical_edge_top_pt1_pos, side_vertical_edge_plane);
+int side_vertical_edge_top_pt2 = addpoint(0, side_vertical_edge_top_pt2_pos);
+
+
+//CenterVerticalEdge
+vector center_vertical_edge_bottom_pt1_pos = lerp(plan_base_pos, base_plan_pt1_pos, center_vertical_edge_pos_interpolation);
+vector center_vertical_edge_bottom_pt2_pos = center_vertical_edge_bottom_pt1_pos + center_vertical_edge_length * center_edge_dir;
+vector center_vertical_edge_top_pt1_pos = center_vertical_edge_bottom_pt2_pos;
+center_vertical_edge_top_pt1_pos.y += edge_height;
+
+vector4 center_vertical_edge_plane = make_plane(
+    center_vertical_edge_bottom_pt1_pos,
+    get_normal(center_vertical_edge_bottom_pt1_pos, center_vertical_edge_bottom_pt2_pos, center_vertical_edge_top_pt1_pos));
+vector center_vertical_edge_top_pt2_pos = get_plane_intersect_pos(
+    side_vertical_edge_top_pt1_pos, 
+    side_vertical_edge_bottom_pt1_pos,
+    center_vertical_edge_plane);
+
+int center_vertical_edge_bottom_pt1 = addpoint(0, center_vertical_edge_bottom_pt1_pos);
+int center_vertical_edge_bottom_pt2 = addpoint(0, center_vertical_edge_bottom_pt2_pos);
+int center_vertical_edge_top_pt1 = addpoint(0, center_vertical_edge_top_pt1_pos);
+int center_vertical_edge_top_pt2 = addpoint(0, center_vertical_edge_top_pt2_pos);
+
+
+//SecondFloor
+vector second_floor_pt1_pos = base_plan_pt1_pos;
+vector second_floor_pt2_pos = plan_base_pos;
+vector second_floor_pt3_pos = base_plan_pt2_pos;
+vector second_floor_pt4_pos = base_plan_pt3_pos;
+second_floor_pt1_pos.y = second_floor_height;
+second_floor_pt2_pos.y = second_floor_height;
+second_floor_pt3_pos.y = second_floor_height;
+second_floor_pt4_pos.y = second_floor_height;
+
+vector4 second_floor_pt1_plane = make_plane(
+    plan_base_pos,
+    get_normal(side_vertical_edge_bottom_pt1_pos, plan_base_pos, side_vertical_edge_top_pt1_pos));
+second_floor_pt1_pos = get_plane_intersect_pos(
+    second_floor_pt4_pos, 
+    second_floor_pt1_pos + (second_floor_pt1_pos - second_floor_pt4_pos),
+    second_floor_pt1_plane);
+vector4 second_floor_pt3_plane = make_plane(
+    plan_base_pos,
+    get_normal(side_vertical_edge_bottom_pt2_pos, plan_base_pos, side_vertical_edge_top_pt1_pos));
+second_floor_pt3_pos = get_plane_intersect_pos(
+    second_floor_pt4_pos, 
+    second_floor_pt3_pos + (second_floor_pt3_pos - second_floor_pt4_pos),
+    second_floor_pt3_plane);
+second_floor_pt2_pos = get_points_intersect_pos(
+    second_floor_pt1_pos,
+    second_floor_pt1_pos + (plan_base_pos - base_plan_pt1_pos) * 2,
+    second_floor_pt3_pos,
+    second_floor_pt3_pos + (plan_base_pos - base_plan_pt2_pos) * 2);    
+
+int second_floor_pt1 = addpoint(0, second_floor_pt1_pos);
+int second_floor_pt2 = addpoint(0, second_floor_pt2_pos);
+int second_floor_pt3 = addpoint(0, second_floor_pt3_pos);
+int second_floor_pt4 = addpoint(0, second_floor_pt4_pos);
+
+
+//Roof
+vector roof_top_pt1_pos = plan_base_pos;
+vector roof_top_pt2_pos = center_edge_pt_pos;
+roof_top_pt1_pos.y += roof_height;
+roof_top_pt2_pos.y += roof_height;
+vector4 roof_top_pt1_plane = make_plane(
+    plan_base_pos,
+    get_normal(side_vertical_edge_bottom_pt1_pos, plan_base_pos, side_vertical_edge_top_pt1_pos));
+roof_top_pt1_pos = get_plane_intersect_pos(
+    roof_top_pt1_pos, 
+    roof_top_pt1_pos + (roof_top_pt1_pos - roof_top_pt2_pos) * 2,
+    roof_top_pt1_plane);
+roof_top_pt2_pos = center_vertical_edge_bottom_pt2_pos;
+roof_top_pt2_pos.y += roof_height;
+
+vector roof_dir = normalize(roof_top_pt1_pos - roof_top_pt2_pos);
+matrix3 mRot = ident();
+rotate(mRot, radians(90), {0, 1, 0});
+rotate(mRot, radians(roof_angle), normalize(roof_top_pt1_pos - roof_top_pt2_pos));
+roof_dir *= mRot;
+vector roof_bottom_pt1_pos = roof_top_pt1_pos;
+vector roof_bottom_pt2_pos = roof_top_pt2_pos;
+roof_bottom_pt1_pos += roof_dir * roof_length;
+roof_bottom_pt2_pos += roof_dir * roof_length;
+
+vector4 roof_bottom_pt1_plane = make_plane(
+    plan_base_pos,
+    get_normal(side_vertical_edge_bottom_pt1_pos, plan_base_pos, side_vertical_edge_top_pt1_pos));
+roof_bottom_pt1_pos = get_plane_intersect_pos(
+    roof_bottom_pt1_pos, 
+    roof_bottom_pt2_pos,
+    roof_bottom_pt1_plane);
+vector4 roof_bottom_pt2_plane = make_plane(
+    center_vertical_edge_top_pt1_pos,
+    get_normal(center_vertical_edge_bottom_pt1_pos, center_vertical_edge_bottom_pt2_pos, center_vertical_edge_top_pt1_pos));
+roof_bottom_pt2_pos = get_plane_intersect_pos(
+    roof_bottom_pt1_pos, 
+    roof_bottom_pt2_pos,
+    roof_bottom_pt2_plane);
+
+int roof_top_pt1 = addpoint(0, roof_top_pt1_pos);
+int roof_top_pt2 = addpoint(0, roof_top_pt2_pos);
+int roof_bottom_pt1 = addpoint(0, roof_bottom_pt1_pos);
+int roof_bottom_pt2 = addpoint(0, roof_bottom_pt2_pos);
+
+//debug
+int prim = addprim(0, "poly");
+addvertex(0, prim, base_plan_pt3);
+addvertex(0, prim, base_plan_pt4);
+addvertex(0, prim, base_plan_pt2);
+addvertex(0, prim, base_plan_pt1);
+
+prim = addprim(0, "poly");
+addvertex(0, prim, center_vertical_edge_bottom_pt1);
+addvertex(0, prim, center_vertical_edge_bottom_pt2);
+addvertex(0, prim, center_vertical_edge_top_pt1);
+addvertex(0, prim, center_vertical_edge_top_pt2);
+
+prim = addprim(0, "poly");
+addvertex(0, prim, base_plan_pt1);
+addvertex(0, prim, side_vertical_edge_bottom_pt1);
+addvertex(0, prim, side_vertical_edge_top_pt1);
+
+prim = addprim(0, "poly");
+addvertex(0, prim, base_plan_pt1);
+addvertex(0, prim, base_plan_pt3);
+addvertex(0, prim, side_vertical_edge_top_pt2);
+addvertex(0, prim, side_vertical_edge_top_pt1);
+
+prim = addprim(0, "poly");
+addvertex(0, prim, second_floor_pt1);
+addvertex(0, prim, second_floor_pt2);
+addvertex(0, prim, second_floor_pt3);
+addvertex(0, prim, second_floor_pt4);
+
+prim = addprim(0, "poly");
+addvertex(0, prim, roof_top_pt1);
+addvertex(0, prim, roof_top_pt2);
+addvertex(0, prim, roof_bottom_pt2);
+addvertex(0, prim, roof_bottom_pt1);
