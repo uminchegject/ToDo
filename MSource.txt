@@ -1,6 +1,16 @@
+○レストラン予約報告
+
+○サバゲー企画報告
+
+○CityEngine
+
+○viewer state
+・hotkeysのバインドを外す処理を検証する
+ -hotkeys
+https://www.sidefx.com/ja/docs/houdini/hom/hou/hotkeys.html
+
 ○パラメーターの修正
 ・BlockMaker
-・VolumeMaker
 
 ○ビジュアル資料の用意
 ※ModularModelingを含めて八重洲を検証した上で記事をまとめる
