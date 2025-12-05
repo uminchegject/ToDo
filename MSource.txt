@@ -1,25 +1,39 @@
-○レストラン予約報告
+○本の斥候
+自分の小さな「箱」から脱出する方法
 
-○サバゲー企画報告
 
-○CityEngine
+○パラメーター検証
+・パラメーターレンジの設定
 
-○viewer state
-・hotkeysのバインドを外す処理を検証する
- -hotkeys
-https://www.sidefx.com/ja/docs/houdini/hom/hou/hotkeys.html
+○EdgeMaker化
+・TopLine,BottomLineの生成
+・TopLinePrimNum, group_BottomLine, group_TopLineの設定
 
-○パラメーターの修正
-・BlockMaker
 
-○ビジュアル資料の用意
-※ModularModelingを含めて八重洲を検証した上で記事をまとめる
-・パラメーター
-・アウトプット
+○八重洲検証
 
-○BoatHouseGeneratorの整理
-・ソース整理
-・パラメーター整理
+○PlotMaker,BlockMaker,VolumeMakerを記事化
+
+●BuildingPatternGenerator
+・Block
+ -Resample + PolyExtrude(Divisions)
+・RoofBlock
+ -Resample + PolyExtrude
+・SideBlock
+ -GroupExpand
+・凹凸
+ -PolyBevel
+ -PolyExtrude
+・WIndow
+ -PolyExtrude
+・Edge
+ -PolyBevel
+・NonePattern
+ -GroupRange
+・縞々
+ -GroupRange
+・Color
+
 
 
 ■Daily
