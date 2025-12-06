@@ -1,7 +1,3 @@
-○本の斥候
-自分の小さな「箱」から脱出する方法
-
-
 ■BoatHouse
 ○パラメーター検証
 ・パラメーターレンジの設定
@@ -25,11 +21,23 @@ setprimattrib(0, "TopLinePrimNum", bottom_line, top_line);
  -SideRoof
  -CenterRoof
 
+●Edit設計
+※Base + Gradation + Random
+・Plane
+ -Interval
+ -Axis
+・BasePoint
+ -Transform
+ -Rotate
+ -Scale
+ -BlockLength
+
 
 ■ModuleGenerator
-○PlotMaker,BlockMaker,VolumeMakerを記事化
+○八重洲検証
+・ビジュアル資料を用意
 
-○八重洲検証を記事化
+○PlotMaker,BlockMaker,VolumeMakerを記事化
 
 
 ■ProceduralBuildingGenerator
@@ -53,8 +61,7 @@ setprimattrib(0, "TopLinePrimNum", bottom_line, top_line);
  -GroupRange
 ・Color
 
-○TopAssetの設計
-
+△TopAssetの設計
 
 
 ■Daily
@@ -76,17 +83,6 @@ setprimattrib(0, "TopLinePrimNum", bottom_line, top_line);
 ・Plane(※繋がり)
 ・BasePoints(※独立)
 
-●Edit設計
-※Base + Gradation + Random
-・Plane
- -Interval
- -Axis
-・BasePoint
- -Transform
- -Rotate
- -Scale
- -BlockLength
-
 △Pattern設計
 ※カプセル化・ポリフォーズム(多様性)
 ・カラー化(Texture化)
@@ -95,6 +91,8 @@ setprimattrib(0, "TopLinePrimNum", bottom_line, top_line);
 
 ■CityGenerator
 ※世界観をしっかり決めて、参考資料・リファレンスをしっかり用意する
+
+○クラスの記事化
 
 △背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装
 
