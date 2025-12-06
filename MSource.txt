@@ -27,10 +27,9 @@ setprimattrib(0, "TopLinePrimNum", bottom_line, top_line);
 
 
 ■ModuleGenerator
-○八重洲検証
-・ビジュアル資料を用意
-
 ○PlotMaker,BlockMaker,VolumeMakerを記事化
+
+○八重洲検証を記事化
 
 
 ■ProceduralBuildingGenerator
@@ -55,7 +54,6 @@ setprimattrib(0, "TopLinePrimNum", bottom_line, top_line);
 ・Color
 
 ○TopAssetの設計
-
 
 
 
