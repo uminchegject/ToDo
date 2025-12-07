@@ -1,3 +1,35 @@
+■ProceduralBuildingGenerator
+○BuildingPatternGenerator設計
+
+●Param
+・Block
+ -Window
+ -凹凸
+・Side
+ -Top
+ -Side
+・Detail
+ -Roof
+ -SideEdge
+・Pattern
+ -縞々
+ -Skip
+・Color
+
+●処理
+・Block (Resample + PolyExtrude(Divisions))
+・RoofBlock （Resample + PolyExtrude)
+・SideBlock (GroupExpand)
+・凹凸 (PolyBevel・PolyExtrude)
+・Window (PolyExtrude)
+・Edge (PolyBevel)
+・NonePattern (GroupRange)
+・縞々 (GroupRange)
+・Color
+
+△TopAssetの設計
+
+
 ■BoatHouse
 ○パラメーター検証
 ・パラメーターレンジの設定
@@ -38,30 +70,6 @@ setprimattrib(0, "TopLinePrimNum", bottom_line, top_line);
 ・ビジュアル資料を用意
 
 ○PlotMaker,BlockMaker,VolumeMakerを記事化
-
-
-■ProceduralBuildingGenerator
-○BuildingPatternGenerator設計
-・Block
- -Resample + PolyExtrude(Divisions)
-・RoofBlock
- -Resample + PolyExtrude
-・SideBlock
- -GroupExpand
-・凹凸
- -PolyBevel
- -PolyExtrude
-・WIndow
- -PolyExtrude
-・Edge
- -PolyBevel
-・NonePattern
- -GroupRange
-・縞々
- -GroupRange
-・Color
-
-△TopAssetの設計
 
 
 ■Daily
