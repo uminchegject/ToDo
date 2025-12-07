@@ -1,5 +1,19 @@
+■Daily
+○記事
+※つかみの部分をしっかり用意する
+・CityGenerator
+・八重洲検証
+
+○オブジェクト指向
+・オブジェクト指向でなぜつくるのか
+
+○プロシージャルモデリング
+・スライド
+
+
+
 ■ProceduralBuildingGenerator
-○BuildingPatternGenerator設計
+○各Param項目をPrcedural化
 
 ●Param
 ・Block
@@ -28,6 +42,7 @@
 ・Color
 
 △TopAssetの設計
+
 
 
 ■BoatHouse
@@ -65,25 +80,6 @@ setprimattrib(0, "TopLinePrimNum", bottom_line, top_line);
  -BlockLength
 
 
-■ModuleGenerator
-○八重洲検証
-・ビジュアル資料を用意
-
-○PlotMaker,BlockMaker,VolumeMakerを記事化
-
-
-■Daily
-○記事
-※参考資料をしっかり参考にする
-・各HDAの説明
-
-○オブジェクト指向
-・オブジェクト指向でなぜつくるのか
-
-○プロシージャルモデリング
-・スライド
-
-
 
 ■EdgeGenerator
 ○記事
@@ -111,19 +107,6 @@ setprimattrib(0, "TopLinePrimNum", bottom_line, top_line);
 https://www.youtube.com/watch?v=Y6-EWYXZG4s
 ・Procedural City generator
 https://www.youtube.com/watch?v=BlduX70jZRU
-
-
-
-■記事
-※つかみの部分をしっかり用意する
-※各項目ごとにQiita上でメモ、素材、清書をセットで進めていく
-
-○クラス化記事のメモ
-
-●参考資料
-・階段のプロシージャルモデリング : Stairs Procedural Modeling
-https://qiita.com/TaroOzaki/items/f249ae4b5e8dc46f16f3
-
 
 
 
