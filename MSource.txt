@@ -1,12 +1,28 @@
 ■仕事
-○hotkeys調査
-・コンフィグファイルをそれぞれ調査する
+○コンフィグファイルの構造をドキュメント化
+※"h.pane.maximize_full"をベースに調査する
+・HotkeyActions.json
+ -ホットキーを管理しているファイル
+・HotkeyContexts.json
+ -コンテキストを管理しているファイル
+・HotkeyDefaultBindings.json
+ -ホットキーのデフォルト値を管理しているファイル
 
+○対応
+・HotKeyManagerでショートカットが登録されている、Hotkeyのみ無効化対応を行う
+・関連しているネットワークのコンテキストのみ対応する
+-Houdini
+ -Panes
+  -SceneView
+  -Parameter
+
+●資料
 ・コンフィグファイル
 https://www.sidefx.com/ja/docs/houdini/basics/hotkeys.html
 ・hotkeys
 https://www.sidefx.com/ja/docs/houdini/hom/hou/hotkeys.html
 
+●ソース
 hou.hotkeys.addAssignment("h.pane", "h.pane.split_lr", "alt+k")
 hou.hotkeys.removeAssignment("h.pane", "h.pane.split_lr", "alt+k")
 
@@ -15,11 +31,6 @@ hou.hotkeys.removeAssignment("h.pane", "h.pane.maximize_full", "Ctrl+B")
 
 
 ■BoatHouse
-○EdgeMaker化
-・BaseLineの生成
-・クラス化
- -各BaseLineごとにパラメーターを独立させるようにする
-
 ○パラメーター検証
 ※1つずつ進めていく
 ・BoatHouseMaker
@@ -42,15 +53,16 @@ hou.hotkeys.removeAssignment("h.pane", "h.pane.maximize_full", "Ctrl+B")
 
 ■ProceduralBuildingGenerator
 ○Blockの生成実装
-・block_scale
 ・vertical_block
  -height
+ -color
 ・horizontal_block
  -width
-・window
- -extrude_value
+ -color
 
 ●Param
+・Volume
+ -SideCut
 ・Side
  -Top
  -Side
@@ -77,9 +89,9 @@ hou.hotkeys.removeAssignment("h.pane", "h.pane.maximize_full", "Ctrl+B")
 ■記事
 ○CityGeneratorビジュアル資料
 ・PlotMaker
- ーGIF * 3
+ ーGIF * 3(color)
 ・VolumeMaker
- ーGIF * 3
+ ーGIF * 3(color)
 
 ●八重洲検証
 500×500 メートルのフィールド内で区画生成を行い、2つの街の検証を進める。
