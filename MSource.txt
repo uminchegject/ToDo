@@ -1,34 +1,46 @@
-○CityGeneratorビジュアル資料
+■仕事
+○hotkeys調査
+・コンフィグファイル
+https://www.sidefx.com/ja/docs/houdini/basics/hotkeys.html
+・hotkeys
+https://www.sidefx.com/ja/docs/houdini/hom/hou/hotkeys.html
 
-●八重洲検証
-500×500 メートルのフィールド内で区画生成を行い、2つの街の検証を進める。
-・パラメーター
- -BlockGenerator
- -PlotGenerator
- -VolumeGenerator
-・出力
- -GIF
+hou.hotkeys.addAssignment("h.pane", "h.pane.split_lr", "alt+k")
+hou.hotkeys.removeAssignment("h.pane", "h.pane.split_lr", "alt+k")
 
-■Daily
-○記事
-※つかみの部分をしっかり用意する
+hou.hotkeys.addAssignment("h.pane", "h.pane.maximize_full", "Ctrl+B")
+hou.hotkeys.removeAssignment("h.pane", "h.pane.maximize_full", "Ctrl+B")
 
-○オブジェクト指向
-・オブジェクト指向でなぜつくるのか
 
-○プロシージャルモデリング
-・スライド
+■BoatHouse
+○EdgeMaker化
+・各BaseLineごとにパラメーターを独立させるようにする
 
+○パラメーター検証
+・BoatHouseMaker
+・BaseLineMaker
+・BasePointMaker
+
+●Edit設計
+※Base + Gradation + Random
+・Plane
+ -Interval
+ -Axis
+・BasePoint
+ -Transform
+ -Rotate
+ -Scale
+ -BlockLength
+
+△BasePointの位置をズラすように追加実装
 
 
 ■ProceduralBuildingGenerator
-○各Param項目をPrcedural化
-・Block
-
 ●Param
 ・Block
- -Window
- -凹凸
+ -vertical_block
+ -horizontal_block
+ -window
 ・Side
  -Top
  -Side
@@ -51,43 +63,34 @@
 ・縞々 (GroupRange)
 ・Color
 
-△TopAssetの設計
+
+■記事
+○CityGeneratorビジュアル資料
+・PlotMaker
+　ーGIF * 3
+・VolumeMaker
+　ーGIF * 3
+
+●八重洲検証
+500×500 メートルのフィールド内で区画生成を行い、2つの街の検証を進める。
+・パラメーター
+ -BlockGenerator
+ -PlotGenerator
+ -VolumeGenerator
+・出力
+ -GIF * 3
 
 
 
-■BoatHouse
-○パラメーター検証
-・パラメーターレンジの設定
+■Daily
+○記事
+※つかみの部分をしっかり用意する
 
-○EdgeMaker化
-※各パーツごとに挙動確認する
-・TopLine,BottomLineの生成
-・TopLinePrimNum, BottomLine, TopLineの設定
-int top_line = addprim(0, "polyline");
-int bottom_line = addprim(0, "polyline");
+○オブジェクト指向
+・オブジェクト指向でなぜつくるのか
 
-setprimgroup(0, "TopLine", top_line, 1);
-setprimgroup(0, "BottomLine", bottom_line, 1);
-setprimattrib(0, "TopLinePrimNum", bottom_line, top_line);
-
-○Patternの検証(記事化準備)
-・Vertical
- -SideEdge
- -CenterEdge
-・Horizontal
- -SideRoof
- -CenterRoof
-
-●Edit設計
-※Base + Gradation + Random
-・Plane
- -Interval
- -Axis
-・BasePoint
- -Transform
- -Rotate
- -Scale
- -BlockLength
+○プロシージャルモデリング
+・スライド
 
 
 
@@ -121,8 +124,6 @@ https://www.youtube.com/watch?v=BlduX70jZRU
 
 
 ■Study(ナレッジ)
-・プロシージャル技術の動向
-https://cedil.cesa.or.jp/cedil_sessions/view/178
 ・フォトグラメトリーとプロシージャルを用いた最新ハイエンドゲーム3DCG背景制作手法 ～ハイエンドゲーム開発の経験がない会社がいかにしてそれらを生み出したか～
 https://cedil.cesa.or.jp/cedil_sessions/view/2118
 ・エンタメ系TAの挑戦！　UE4によるエンタープライズ向け開発事例の紹介 　～AIの教師データ量産におけるプロシージャル技術の応用～
