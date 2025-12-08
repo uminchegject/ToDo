@@ -1,5 +1,7 @@
 ■仕事
 ○hotkeys調査
+・コンフィグファイルをそれぞれ調査する
+
 ・コンフィグファイル
 https://www.sidefx.com/ja/docs/houdini/basics/hotkeys.html
 ・hotkeys
@@ -14,9 +16,12 @@ hou.hotkeys.removeAssignment("h.pane", "h.pane.maximize_full", "Ctrl+B")
 
 ■BoatHouse
 ○EdgeMaker化
-・各BaseLineごとにパラメーターを独立させるようにする
+・BaseLineの生成
+・クラス化
+ -各BaseLineごとにパラメーターを独立させるようにする
 
 ○パラメーター検証
+※1つずつ進めていく
 ・BoatHouseMaker
 ・BaseLineMaker
 ・BasePointMaker
@@ -36,11 +41,16 @@ hou.hotkeys.removeAssignment("h.pane", "h.pane.maximize_full", "Ctrl+B")
 
 
 ■ProceduralBuildingGenerator
+○Blockの生成実装
+・block_scale
+・vertical_block
+ -height
+・horizontal_block
+ -width
+・window
+ -extrude_value
+
 ●Param
-・Block
- -vertical_block
- -horizontal_block
- -window
 ・Side
  -Top
  -Side
@@ -67,17 +77,22 @@ hou.hotkeys.removeAssignment("h.pane", "h.pane.maximize_full", "Ctrl+B")
 ■記事
 ○CityGeneratorビジュアル資料
 ・PlotMaker
-　ーGIF * 3
+ ーGIF * 3
 ・VolumeMaker
-　ーGIF * 3
+ ーGIF * 3
 
 ●八重洲検証
 500×500 メートルのフィールド内で区画生成を行い、2つの街の検証を進める。
+
 ・パラメーター
  -BlockGenerator
+ 
  -PlotGenerator
+
  -VolumeGenerator
+
 ・出力
+出力結果はこの通りです。
  -GIF * 3
 
 
@@ -124,13 +139,6 @@ https://www.youtube.com/watch?v=BlduX70jZRU
 
 
 ■Study(ナレッジ)
-・フォトグラメトリーとプロシージャルを用いた最新ハイエンドゲーム3DCG背景制作手法 ～ハイエンドゲーム開発の経験がない会社がいかにしてそれらを生み出したか～
-https://cedil.cesa.or.jp/cedil_sessions/view/2118
-・エンタメ系TAの挑戦！　UE4によるエンタープライズ向け開発事例の紹介 　～AIの教師データ量産におけるプロシージャル技術の応用～
-https://cedil.cesa.or.jp/cedil_sessions/view/2244
-・Unreal Engine 5 ElectricDreams環境サンプルにみるプロシージャル生成テクニック
-https://cedil.cesa.or.jp/cedil_sessions/view/2762
-
 ・オープンワールドを、自然に意思を持って埋める。 LUMINOUS ENGINEのプロシージャルへの取り組み
 https://cedil.cesa.or.jp/cedil_sessions/view/2221
 ・『星のカービィ　ディスカバリー』 プロシージャル地形生成への取り組み
@@ -141,6 +149,12 @@ https://cedil.cesa.or.jp/cedil_sessions/view/2794
 ・地理空間情報のススメ！オープンデータ×データドリブンな プロシージャル処理による都市の樹木自動配置
 https://cedil.cesa.or.jp/cedil_sessions/view/3042
 
+・フォトグラメトリーとプロシージャルを用いた最新ハイエンドゲーム3DCG背景制作手法 ～ハイエンドゲーム開発の経験がない会社がいかにしてそれらを生み出したか～
+https://cedil.cesa.or.jp/cedil_sessions/view/2118
+・エンタメ系TAの挑戦！　UE4によるエンタープライズ向け開発事例の紹介 　～AIの教師データ量産におけるプロシージャル技術の応用～
+https://cedil.cesa.or.jp/cedil_sessions/view/2244
+・Unreal Engine 5 ElectricDreams環境サンプルにみるプロシージャル生成テクニック
+https://cedil.cesa.or.jp/cedil_sessions/view/2762
 
 
 ■組み合わせを多様化(記事)
