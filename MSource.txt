@@ -1,8 +1,17 @@
+○CityGeneratorビジュアル資料
+
+●八重洲検証
+500×500 メートルのフィールド内で区画生成を行い、2つの街の検証を進める。
+・パラメーター
+ -BlockGenerator
+ -PlotGenerator
+ -VolumeGenerator
+・出力
+ -GIF
+
 ■Daily
 ○記事
 ※つかみの部分をしっかり用意する
-・CityGenerator
-・八重洲検証
 
 ○オブジェクト指向
 ・オブジェクト指向でなぜつくるのか
@@ -14,6 +23,7 @@
 
 ■ProceduralBuildingGenerator
 ○各Param項目をPrcedural化
+・Block
 
 ●Param
 ・Block
