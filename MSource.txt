@@ -59,6 +59,8 @@ hou.hotkeys.removeAssignment("h.pane", "h.pane.maximize_full", "Ctrl+B")
 ・horizontal_block
  -width
  -color
+・window
+ -color
 
 ●Param
 ・Volume
@@ -97,15 +99,14 @@ hou.hotkeys.removeAssignment("h.pane", "h.pane.maximize_full", "Ctrl+B")
 500×500 メートルのフィールド内で区画生成を行い、2つの街の検証を進める。
 
 ・パラメーター
- -BlockGenerator
- 
- -PlotGenerator
-
- -VolumeGenerator
+八重洲は建物が大小様々な大きさの建物が密集しているため、この特徴を表現するためそれぞれのパラメーターを下記の通り設定した。
+・BlockGenerator
+・PlotGenerator
+・VolumeGenerator
 
 ・出力
-出力結果はこの通りです。
- -GIF * 3
+これらを前回のBuildingGeneratorに接続した出力結果です。
+
 
 
 
