@@ -1,13 +1,15 @@
 ■仕事
+○一部無効化できないhotkeyを調査
+・removeAssignmentで直接解除して挙動確認する
+
+○非無効化hotkeyの除外
+
 ○対応
 ・HotKeyManagerでショートカットが登録されている、Hotkeyのみ無効化対応を行う
 ・関連しているネットワークのコンテキストのみ対応する
 ・h.pane
 ・h.pane.parms
 ・h.pane.gview
-
-○一部無効化できないhotkeyを調査
-・removeAssignmentで直接解除して挙動確認する
 
 ○コンフィグファイルの構造をドキュメント化
 ※"h.pane.maximize_full"をベースに調査する
@@ -36,7 +38,24 @@ hou.hotkeys.addAssignment("h.pane.parms", "h.pane.parms.open_parm_filter", "F")
 
 
 ■BoatHouse
-○BasePoint + Pattern設計
+○BasePointMakerの修正
+・BlockLengthをランダムにする
+・各SurfaceごとにBasePointMakerを独立化
+
+○SimpleGridの検証
+
+○BasePoint + Pattern検証
+※Gridで検証
+・SimpleGrid
+ -RandomWidth
+・RandomGrid
+ -RandomRotate
+ -RandomScale
+ -RandomTransform
+・RoofGrid
+ -RandomSize
+・△PatternGrid
+ -
 
 ○パラメーター検証
 ※1つずつ進めていく
@@ -50,39 +69,38 @@ hou.hotkeys.addAssignment("h.pane.parms", "h.pane.parms.open_parm_filter", "F")
  -Interval
  -Axis
 ・BasePoint
+ -BlockLength
  -Transform
  -Rotate
  -Scale
- -BlockLength
 
 △BasePointの位置をズラすように追加実装
 
 
 ■ProceduralBuildingGenerator
 ○実装
-・BlockSize
-・vertical_block
+・block
+ -block_size
+・vertical_column
  -height
  -color
-・horizontal_block
+・horizontal_column
  -width
  -color
 ・window
- -color
-・Side
- -Top
- -Side
-・Roof
+ -color(rondom)
+・roof
+
 ●Component
 ・BlockPattern
 ・Color
-・Side
- -Top
- -Side
 ・Detail
  -Roof
 
 ▲Component+
+・Side
+ -Top
+ -Side
 ・Volume
  -SideCut
 ・Pattern
@@ -112,7 +130,7 @@ hou.hotkeys.addAssignment("h.pane.parms", "h.pane.parms.open_parm_filter", "F")
 ・VolumeGenerator
 
 ・出力
-これらを前回のBuildingGeneratorに接続した出力結果です。
+これらを前回のBuildingGeneratorに接続した出力結果でう。
 
 
 
