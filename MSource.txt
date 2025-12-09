@@ -1,4 +1,14 @@
 ■仕事
+○対応
+・HotKeyManagerでショートカットが登録されている、Hotkeyのみ無効化対応を行う
+・関連しているネットワークのコンテキストのみ対応する
+・h.pane
+・h.pane.parms
+・h.pane.gview
+
+○一部無効化できないhotkeyを調査
+・removeAssignmentで直接解除して挙動確認する
+
 ○コンフィグファイルの構造をドキュメント化
 ※"h.pane.maximize_full"をベースに調査する
 ・HotkeyActions.json
@@ -7,14 +17,6 @@
  -コンテキストを管理しているファイル
 ・HotkeyDefaultBindings.json
  -ホットキーのデフォルト値を管理しているファイル
-
-○対応
-・HotKeyManagerでショートカットが登録されている、Hotkeyのみ無効化対応を行う
-・関連しているネットワークのコンテキストのみ対応する
--Houdini
- -Panes
-  -SceneView
-  -Parameter
 
 ●資料
 ・コンフィグファイル
@@ -29,8 +31,13 @@ hou.hotkeys.removeAssignment("h.pane", "h.pane.split_lr", "alt+k")
 hou.hotkeys.addAssignment("h.pane", "h.pane.maximize_full", "Ctrl+B")
 hou.hotkeys.removeAssignment("h.pane", "h.pane.maximize_full", "Ctrl+B")
 
+hou.hotkeys.removeAssignment("h.pane.parms", "h.pane.parms.open_parm_filter", "F")
+hou.hotkeys.addAssignment("h.pane.parms", "h.pane.parms.open_parm_filter", "F")
+
 
 ■BoatHouse
+○BasePoint + Pattern設計
+
 ○パラメーター検証
 ※1つずつ進めていく
 ・BoatHouseMaker
@@ -52,7 +59,8 @@ hou.hotkeys.removeAssignment("h.pane", "h.pane.maximize_full", "Ctrl+B")
 
 
 ■ProceduralBuildingGenerator
-○Blockの生成実装
+○実装
+・BlockSize
 ・vertical_block
  -height
  -color
@@ -61,20 +69,25 @@ hou.hotkeys.removeAssignment("h.pane", "h.pane.maximize_full", "Ctrl+B")
  -color
 ・window
  -color
-
-●Param
-・Volume
- -SideCut
+・Side
+ -Top
+ -Side
+・Roof
+●Component
+・BlockPattern
+・Color
 ・Side
  -Top
  -Side
 ・Detail
  -Roof
- -SideEdge
+
+▲Component+
+・Volume
+ -SideCut
 ・Pattern
  -縞々
  -Skip
-・Color
 
 ●処理
 ・Block (Resample + PolyExtrude(Divisions))
@@ -89,24 +102,17 @@ hou.hotkeys.removeAssignment("h.pane", "h.pane.maximize_full", "Ctrl+B")
 
 
 ■記事
-○CityGeneratorビジュアル資料
-・PlotMaker
- ーGIF * 3(color)
-・VolumeMaker
- ーGIF * 3(color)
-
 ●八重洲検証
 500×500 メートルのフィールド内で区画生成を行い、2つの街の検証を進める。
 
 ・パラメーター
-八重洲は建物が大小様々な大きさの建物が密集しているため、この特徴を表現するためそれぞれのパラメーターを下記の通り設定した。
+八重洲は大小様々な大きさの建物が密集している街並みとなっており、この特徴を表現するためそれぞれのパラメーターを下記の通り設定した。
 ・BlockGenerator
 ・PlotGenerator
 ・VolumeGenerator
 
 ・出力
 これらを前回のBuildingGeneratorに接続した出力結果です。
-
 
 
 
@@ -168,6 +174,7 @@ https://cedil.cesa.or.jp/cedil_sessions/view/2118
 https://cedil.cesa.or.jp/cedil_sessions/view/2244
 ・Unreal Engine 5 ElectricDreams環境サンプルにみるプロシージャル生成テクニック
 https://cedil.cesa.or.jp/cedil_sessions/view/2762
+
 
 
 ■組み合わせを多様化(記事)
