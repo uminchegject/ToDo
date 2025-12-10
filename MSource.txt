@@ -13,16 +13,21 @@ https://www.sidefx.com/ja/docs/houdini/hom/hou/hotkeys.html
 
 
 ■BoatHouse
+○gradationの実装
+ -cofficient
+
+○removeの実装
+if(random(spawn_pos) < remove_ratio) continue;
+
+○各SurfaceごとにBasePointMakerを独立化
+setprimgroup(0, "BaseLine_SecondFloor", prim, 1);
+
+●pattern
+・rotate
+・scale
+
 ○SimpleGridの検証
 ※Base, Gradation, Randomの検証
-・removeの実装
-・gradationの実装
- -cofficient
-・各SurfaceごとにBasePointMakerを独立化
-setprimgroup(0, "BaseLine_SecondFloor", prim, 1);
-・pattern
- -rotate
- -scale
 
 △BlockLengthの修正
 
@@ -51,23 +56,18 @@ setprimgroup(0, "BaseLine_SecondFloor", prim, 1);
 
 
 ■ProceduralBuildingGenerator
-○Detailの調査
-
+○カラーパラメーターの調査
 ○vertical, horizontal化実装
-
-○パラメーター実装
-・block
- -block_size
-・vertical_column
- -height
- -extrude
- -color
-・horizontal_column
- -width
- -extrude
- -color
-・window
- -color(random)
+if(i@group_horizontal_block == 1 && i@group_vertical_block == 1){
+	float horizontal_block = 
+	float vertical_block = 
+	
+	if (horizontal_block < vertical_block) i@group_horizontal_block = 0;
+	else i@group_vertical_block = 0;
+}
+if(i@group_horizontal_block == 0 && i@group_vertical_block == 0){
+    i@group_window_block = 1;
+}
 
 ○カラー実装
 ・random
@@ -81,8 +81,8 @@ setprimgroup(0, "BaseLine_SecondFloor", prim, 1);
 ○Detail実装
 ※リアリティを上げる
 ・Side
- -Top
- -Side
+ -TopBlock
+ -SideBlock
 ・Detail
  -Roof
 
@@ -92,6 +92,7 @@ setprimgroup(0, "BaseLine_SecondFloor", prim, 1);
  -Side
 ・Volume
  -SideCut
+ -L字
 ・Pattern
  -縞々
  -Skip
@@ -106,22 +107,6 @@ setprimgroup(0, "BaseLine_SecondFloor", prim, 1);
 ・NonePattern (GroupRange)
 ・縞々 (GroupRange)
 ・Color
-
-
-■記事
-●八重洲検証
-500×500 メートルのフィールド内で区画生成を行い、2つの街の検証を進める。
-
-・パラメーター
-八重洲は大小様々な大きさの建物が密集している街並みとなっており、この特徴を表現するためそれぞれのパラメーターを画像の通り設定した。
-・BlockGenerator
-・PlotGenerator
-・VolumeGenerator
-
-・出力
-以上の工程を経て得られた建物のボリュームに前回のBuildingGeneratorを設定させた結果が画像の通りである。
-
-
 
 
 ■Daily
