@@ -1,214 +1,139 @@
-■仕事
-○一部無効化できないhotkeyを調査
-・removeAssignmentで直接解除して挙動確認する
+■ドキュメント
+●HotKeysファイル
+HOUDINI_UI_PATH内のhoudini/config/HotkeysフォルダにHotKeyに関するデータが収納されています。
 
-○非無効化hotkeyの除外
-
-○対応
-・HotKeyManagerでショートカットが登録されている、Hotkeyのみ無効化対応を行う
-・関連しているネットワークのコンテキストのみ対応する
-・h.pane
-・h.pane.parms
-・h.pane.gview
-
-○コンフィグファイルの構造をドキュメント化
-※"h.pane.maximize_full"をベースに調査する
 ・HotkeyActions.json
- -ホットキーを管理しているファイル
+ -各ホットキー情報を管理しているjsonデータ
 ・HotkeyContexts.json
- -コンテキストを管理しているファイル
+ -各コンテキスト情報を管理しているjsonデータ
 ・HotkeyDefaultBindings.json
- -ホットキーのデフォルト値を管理しているファイル
+ -「デフォルトのキーバインド」を、コンテキストに対して割り当てるjsonデータ
+・hotkeysファイル
+ コンテキスト・アクション・キーバインドを行単位のテキスト形式で定義されているアスキーデータ。
+ 各コンテキストごとにデータが分かれており、Hotkeyの定義・割り当てがそれぞれ記述されている。
 
-●資料
-・コンフィグファイル
-https://www.sidefx.com/ja/docs/houdini/basics/hotkeys.html
-・hotkeys
-https://www.sidefx.com/ja/docs/houdini/hom/hou/hotkeys.html
+以上を踏まえて、無効化したいhotkeysファイルから無効化したいホットキーデータを取得し、無効化する処理を実装します。
 
-●ソース
-hou.hotkeys.addAssignment("h.pane", "h.pane.split_lr", "alt+k")
-hou.hotkeys.removeAssignment("h.pane", "h.pane.split_lr", "alt+k")
+●HotKeyの無効化処理
+Hotkeysファイルからコンテキストとアクション情報を取得し、下記処理で無効化を行います。
+clearAssignments(context, hotkey_symbol) → bool
+指定したコンテキスト内のホットキーシンボルに割り当てられているキーを削除します。
+ou.hotkeys.clearAssignments("h.pane.gview.state.sop.demo", "h.pane.gview.state.sop.demo.delete")
 
-hou.hotkeys.addAssignment("h.pane", "h.pane.maximize_full", "Ctrl+B")
-hou.hotkeys.removeAssignment("h.pane", "h.pane.maximize_full", "Ctrl+B")
-
-hou.hotkeys.removeAssignment("h.pane.parms", "h.pane.parms.open_parm_filter", "F")
-hou.hotkeys.addAssignment("h.pane.parms", "h.pane.parms.open_parm_filter", "F")
+以上を踏まえ実装した無効化した処理が下記の通りにないます。
 
 
-■BoatHouse
-○BasePointMakerの修正
-・BlockLengthをランダムにする
-・各SurfaceごとにBasePointMakerを独立化
+■ソース
+import hou
+import os
+import re
+from PySide2 import QtWidgets
 
-○SimpleGridの検証
-※Base + Gradation + Random
+def select_node(node_path):
+    """
+    指定したノードを選択する関数
+    """
+    node = hou.node(node_path)
+    if node is None:
+        raise ValueError(f"指定されたノードパスが存在しません: {node_path}")
 
-○BasePoint + Pattern検証
-※Gridで検証
-・SimpleGrid
- -RandomWidth
-・RandomGrid
- -RandomRotate
- -RandomScale
- -RandomTransform
-・RoofGrid
- -RandomSize
-・△PatternGrid
-
-○パラメーター検証
-※1つずつ進めていく
-・BoatHouseMaker
-・BaseLineMaker
-・BasePointMaker
-
-●Edit設計
-※Base + Gradation + Random
-・Plane
- -Interval
- -Axis
-・BasePoint
- -BlockLength
- -Transform
- -Rotate
- -Scale
-
-△BasePointの位置をズラすように追加実装
+    hou.clearAllSelected()
+    node.setSelected(True, clear_all_selected=False)
 
 
-■ProceduralBuildingGenerator
-○実装
-・block
- -block_size
-・vertical_column
- -height
- -color
-・horizontal_column
- -width
- -color
-・window
- -color(rondom)
-・roof
+def display_node(node_path):
+    """
+    指定したノードを表示フラグを立てる関数
+    """
+    node = hou.node(node_path)
+    if node is None:
+        raise ValueError(f"指定されたノードパスが存在しません: {node_path}")
 
-●Component
-・BlockPattern
-・Color
-・Detail
- -Roof
-
-▲Component+
-・Side
- -Top
- -Side
-・Volume
- -SideCut
-・Pattern
- -縞々
- -Skip
-
-●処理
-・Block (Resample + PolyExtrude(Divisions))
-・RoofBlock （Resample + PolyExtrude)
-・SideBlock (GroupExpand)
-・凹凸 (PolyBevel・PolyExtrude)
-・Window (PolyExtrude)
-・Edge (PolyBevel)
-・NonePattern (GroupRange)
-・縞々 (GroupRange)
-・Color
+    node.setDisplayFlag(True)
 
 
-■記事
-●八重洲検証
-500×500 メートルのフィールド内で区画生成を行い、2つの街の検証を進める。
+def setup_gui():
+    """
+    不要なペインやバーを非表示にし、GUIをキオスクモードに構築する処理
+    """    
+    # ペインごとの表示設定
+    for pane in hou.ui.panes():
+        pane.setShowPaneTabs(False)
+        # シーンビュアーをペインに生成
+        if pane.tabOfType(hou.paneTabType.NetworkEditor, 0):
+            pane.createTab(hou.paneTabType.SceneViewer)
 
-・パラメーター
-八重洲は大小様々な大きさの建物が密集している街並みとなっており、この特徴を表現するためそれぞれのパラメーターを画像の通り設定した。
-・BlockGenerator
-・PlotGenerator
-・VolumeGenerator
+    # ペインタブごとの表示設定
+    for tab in hou.ui.paneTabs():
+        # パラメーターペインタブの表示設定
+        if tab.type() == hou.paneTabType.Parm:
+            tab.setShowNetworkControls(False)
+        # シーンビュアーペインタブの表示設定
+        elif tab.type() == hou.paneTabType.SceneViewer:
+            tab.setShowNetworkControls(False)
+            tab.showDisplayOptionsBar(False)
+            tab.showOperationBar(False)
+            tab.showSelectionBar(False)
+            if tab.includeColorCorrectionBar():
+                tab.showColorCorrectionBar(False)
+            if tab.includeMemoryBar():
+                tab.showMemoryBar(False)
+        # その他のタブは閉じる
+        else:
+            tab.close()
 
-・出力
-以上の工程を経て得られた建物のボリュームに前回のBuildingGeneratorを設定させた結果が画像の通りである。
+    # ShelfDockを非表示
+    hou.ui.curDesktop().shelfDock().show(False)
 
+    # MenuBarを非表示
+    hou.setPreference('showmenu.val', ['0','1'][False])
 
-
-■Daily
-○記事
-※つかみの部分をしっかり用意する
-
-○オブジェクト指向
-・オブジェクト指向でなぜつくるのか
-
-○プロシージャルモデリング
-・スライド
-
-
-
-■EdgeGenerator
-○記事
-※それぞれのHDAの処理と多様性を記事化する
-・Plane(※繋がり)
-・BasePoints(※独立)
-
-△Pattern設計
-※カプセル化・ポリフォーズム(多様性)
-・カラー化(Texture化)
-
-
-
-■CityGenerator
-※世界観をしっかり決めて、参考資料・リファレンスをしっかり用意する
-
-○クラスの記事化
-
-△背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装
-
-△Sci-Fiでの検証準備
-
-●参考資料
-・たのしい都市ジェネレータ
-https://www.youtube.com/watch?v=Y6-EWYXZG4s
-・Procedural City generator
-https://www.youtube.com/watch?v=BlduX70jZRU
+    # Stowbarsを非表示
+    hou.ui.setHideAllMinimizedStowbars(True)
 
 
+def uninstall_hotkey():
+    """
+    不要なホットキーを無効化する
+    """ 
+    # ホットキーフォルダのファイルパス
+    file_path = r"C:\Program Files\Side Effects Software\Houdini 20.5.487\houdini\config\Hotkeys"
+    # 無効化したいhotkeyのコンテキスト情報をまとめる
+    hotkey_file_list = [
+        {"file_name": "h", "pattern": r'\bh\.\w+\b', "exclusion_hotkey": ["h", "h.undo", "h.redo", "h.copy", "h.paste"]},	
+        {"file_name": "h.pane", "pattern": r"h\.pane\S*", "exclusion_hotkey": ["h.pane"]},
+        {"file_name": "h.pane.parms", "pattern": r"h\.pane\.parms\S*", "exclusion_hotkey": ["h.pane.parms"]},
+        {"file_name": "h.pane.wsheet", "pattern": r"h\.pane\.wsheet\S*", "exclusion_hotkey": ["h.pane.wsheet"]},
+        {"file_name": "h.pane.gview", "pattern": r"h\.pane\.gview\S*", "exclusion_hotkey": ["h.pane.gview"]},
+        {"file_name": "h.pane.gview.state", "pattern": r"h\.pane\.gview\.state\S*", "exclusion_hotkey": ["h.pane.gview.state", "h.pane.gview.state.view.volatile_nav.forward", "h.pane.gview.state.view.volatile_nav.backward"]},
+        {"file_name": "h.pane.chlist", "pattern": r"h\.pane\.gview\.chlist\S*", "exclusion_hotkey": ["h.pane.chlist"]}
+    ]
+    
+    # 各コンテキストデータごとに無効化処理を行う
+    for hotkey_flie in hotkey_file_list:
+        pattern = hotkey_flie["pattern"]
+        file_name = hotkey_flie["file_name"]
+        exclusion_hotkey = hotkey_flie["exclusion_hotkey"]
 
-■Study(ナレッジ)
-・オープンワールドを、自然に意思を持って埋める。 LUMINOUS ENGINEのプロシージャルへの取り組み
-https://cedil.cesa.or.jp/cedil_sessions/view/2221
-・『星のカービィ　ディスカバリー』 プロシージャル地形生成への取り組み
-https://cedil.cesa.or.jp/cedil_sessions/view/2569
-
-・Procedural PLATEAU: プロシージャル技術と3D都市モデル「Project PLATEAU」を組み合わせたファサード自動生成とテクスチャ付き3Dモデル自動生成の取り組み
-https://cedil.cesa.or.jp/cedil_sessions/view/2794
-・地理空間情報のススメ！オープンデータ×データドリブンな プロシージャル処理による都市の樹木自動配置
-https://cedil.cesa.or.jp/cedil_sessions/view/3042
-
-・フォトグラメトリーとプロシージャルを用いた最新ハイエンドゲーム3DCG背景制作手法 ～ハイエンドゲーム開発の経験がない会社がいかにしてそれらを生み出したか～
-https://cedil.cesa.or.jp/cedil_sessions/view/2118
-・エンタメ系TAの挑戦！　UE4によるエンタープライズ向け開発事例の紹介 　～AIの教師データ量産におけるプロシージャル技術の応用～
-https://cedil.cesa.or.jp/cedil_sessions/view/2244
-・Unreal Engine 5 ElectricDreams環境サンプルにみるプロシージャル生成テクニック
-https://cedil.cesa.or.jp/cedil_sessions/view/2762
+        # コンテキストデータのパスからアスキー情報を取得
+        full_path = os.path.join(file_path, file_name)        
+        with open(full_path, "r", encoding="utf-8") as f:            
+            hotkey_data = f.read()           
+            # シンボル情報をアスキーから抽出
+            symbol_list = re.findall(pattern, hotkey_data)            
+            for symbol in symbol_list:
+                # 無効化したくないキーを除外
+                if symbol in exclusion_hotkey:
+                    continue
+                # ホットキーを無効化
+                contexts = ".".join(symbol.split(".")[:-1])
+                hou.hotkeys.clearAssignments(contexts, symbol)
 
 
+## m a i n ###################################################
+select_node("/obj/box1/box1")
+display_node("/obj/box1/box1")
 
-■組み合わせを多様化(記事)
-※複雑性をクラスで制御できることを強調する
- -クラス種類を検証する
+setup_gui()
 
-●概要
-・それぞれのパターンを組み合わせし、多様な組み合わせを行えるようにする
-
-●クラス化
-・それぞれのパラメーターをマルチパラメーター化して、クラス付けを行い組み合わせをしやすくする
-・クラスwrangleの実装
-
-●検証
-・それぞれのSubnetで違うパラメーターを3種類ずつ用意
- -Plot
- -Volume
- -Pattern
-・Plot×Block×Patternをそれぞれ組み合わせて混在させる
+uninstall_hotkey()
