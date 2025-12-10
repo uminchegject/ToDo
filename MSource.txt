@@ -2,6 +2,8 @@
 ○右クリックの無効化
 
 ○環境変数化
+・Houdiniと環境変数の魔導書 〜補助魔法導入で失敗しないために〜
+https://qiita.com/takavfx/items/b58cae65984b15e5ad29
 
 ●資料
 ・コンフィグファイル
@@ -11,15 +13,18 @@ https://www.sidefx.com/ja/docs/houdini/hom/hou/hotkeys.html
 
 
 ■BoatHouse
-○BlockLengthの修正
-
-○Base, Gradation, Randomの検証
-・Gradation
-
-○各SurfaceごとにBasePointMakerを独立化
-setprimgroup(0, "BaseLine_SecondFloor", prim, 1);
-
 ○SimpleGridの検証
+※Base, Gradation, Randomの検証
+・removeの実装
+・gradationの実装
+ -cofficient
+・各SurfaceごとにBasePointMakerを独立化
+setprimgroup(0, "BaseLine_SecondFloor", prim, 1);
+・pattern
+ -rotate
+ -scale
+
+△BlockLengthの修正
 
 ○BasePoint + Pattern検証
 ※Gridで検証
@@ -33,12 +38,6 @@ setprimgroup(0, "BaseLine_SecondFloor", prim, 1);
  -RandomSize
 ・△PatternGrid
 
-○パラメーター検証
-※1つずつ進めていく
-・BoatHouseMaker
-・BaseLineMaker
-・BasePointMaker
-
 ●Edit設計
 ※Base + Gradation + Random
 ・Plane
@@ -50,22 +49,28 @@ setprimgroup(0, "BaseLine_SecondFloor", prim, 1);
  -Rotate
  -Scale
 
-△BasePointの位置をズラすように追加実装
-
 
 ■ProceduralBuildingGenerator
-○実装
+○Detailの調査
+
+○vertical, horizontal化実装
+
+○パラメーター実装
 ・block
  -block_size
 ・vertical_column
  -height
+ -extrude
  -color
 ・horizontal_column
  -width
+ -extrude
  -color
 ・window
- -color(rondom)
-・roof
+ -color(random)
+
+○カラー実装
+・random
 
 ●Component
 ・BlockPattern
@@ -73,7 +78,15 @@ setprimgroup(0, "BaseLine_SecondFloor", prim, 1);
 ・Detail
  -Roof
 
-▲Component+
+○Detail実装
+※リアリティを上げる
+・Side
+ -Top
+ -Side
+・Detail
+ -Roof
+
+●Component+
 ・Side
  -Top
  -Side
