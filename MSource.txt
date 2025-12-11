@@ -1,30 +1,25 @@
+○removeの実装
+if(random(spawn_pos) < remove_ratio) continue;
+
 ○PlaneAxisのGradationの修正
 ・回転に修正
+
+○BasePointMakerの修正
+・Gradationの実装
 
 ○SideBlockの生成
 ・SideのPrimをグループ化する
  -GroupExpand
 
-○BasePointMakerの修正
-・Gradationの実装
-
 
 ■BoatHouse
-○gradationの実装
- -cofficient
-
-○removeの実装
-if(random(spawn_pos) < remove_ratio) continue;
-
-○各SurfaceごとにBasePointMakerを独立化
-・各wrangleノードを用意
+○SimpleGridの検証
+※Base, Gradation, Randomの検証
 
 ●pattern
 ・rotate
 ・scale
 
-○SimpleGridの検証
-※Base, Gradation, Randomの検証
 
 △BlockLengthの修正
 
@@ -53,15 +48,6 @@ if(random(spawn_pos) < remove_ratio) continue;
 
 
 ■ProceduralBuildingGenerator
-○カラー実装
-・vertical_block
-・horizontal_block
-・window(random)
-
-●Component
-・BlockPattern
-・Color
-
 ○Detail実装
 ※リアリティを上げる
 ・Side
