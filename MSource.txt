@@ -20,7 +20,6 @@ if(random(spawn_pos) < remove_ratio) continue;
 ・rotate
 ・scale
 
-
 △BlockLengthの修正
 
 ○BasePoint + Pattern検証
@@ -48,7 +47,15 @@ if(random(spawn_pos) < remove_ratio) continue;
 
 
 ■ProceduralBuildingGenerator
-○Detail実装
+○丸の内検証
+
+○クラス化検証
+
+△記事用意
+・BuildingPatternGenerator・BuildingModelingGenerator
+・クラス化
+
+△Detail実装
 ※リアリティを上げる
 ・Side
  -TopBlock
