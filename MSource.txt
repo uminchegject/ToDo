@@ -1,24 +1,12 @@
-○gradationの実装
- -cofficient
- 
-○カラーパラメーターの調査
+○PlaneAxisのGradationの修正
+・回転に修正
 
-○カラー実装
-・random
+○SideBlockの生成
+・SideのPrimをグループ化する
+ -GroupExpand
 
-
-■Public
-○右クリックの無効化
-
-○環境変数化
-・Houdiniと環境変数の魔導書 〜補助魔法導入で失敗しないために〜
-https://qiita.com/takavfx/items/b58cae65984b15e5ad29
-
-●資料
-・コンフィグファイル
-https://www.sidefx.com/ja/docs/houdini/basics/hotkeys.html
-・hotkeys
-https://www.sidefx.com/ja/docs/houdini/hom/hou/hotkeys.html
+○BasePointMakerの修正
+・Gradationの実装
 
 
 ■BoatHouse
@@ -65,22 +53,10 @@ if(random(spawn_pos) < remove_ratio) continue;
 
 
 ■ProceduralBuildingGenerator
-○カラーパラメーターの調査
-
-○vertical, horizontal化実装
-if(i@group_horizontal_block == 1 && i@group_vertical_block == 1){
-	float horizontal_block = 
-	float vertical_block = 
-	
-	if (horizontal_block < vertical_block) i@group_horizontal_block = 0;
-	else i@group_vertical_block = 0;
-}
-if(i@group_horizontal_block == 0 && i@group_vertical_block == 0){
-    i@group_window_block = 1;
-}
-
 ○カラー実装
-・random
+・vertical_block
+・horizontal_block
+・window(random)
 
 ●Component
 ・BlockPattern
@@ -198,13 +174,26 @@ https://cedil.cesa.or.jp/cedil_sessions/view/2762
 ・Plot×Block×Patternをそれぞれ組み合わせて混在させる
 
 
-■ソースfloat block_length_range = ch("block_length_range");
+■ソース
+float block_length = ch("block_length");
+
 vector base_scale = chv("base_scale");
 vector adjust_scale = chv("adjust_scale");
+float scale_randomly_cofficient = ch("scale_randomly_cofficient");
+float scale_gradation_cofficient = ch("scale_gradation_cofficient");
+float scale_noise_cofficient = ch("scale_noise_cofficient");
+
 vector base_rotate = chv("base_rotate");
 vector adjust_rotate = chv("adjust_rotate");
+float rotate_randomly_cofficient = ch("rotate_randomly_cofficient");
+float rotate_gradation_cofficient = ch("rotate_gradation_cofficient");
+float rotate_noise_cofficient = ch("rotate_noise_cofficient");
+
 vector base_transform = chv("base_transform");
 vector adjust_transform = chv("adjust_transform");
+float transform_randomly_cofficient = ch("transform_randomly_cofficient");
+float transform_gradation_cofficient = ch("transform_gradation_cofficient");
+float transform_noise_cofficient = ch("transform_noise_cofficient");
 
 int prim_points[] = primpoints(0, @primnum);
 int start_pt = prim_points[0];
@@ -220,7 +209,6 @@ vector binormal = cross(normal, tangent);
 vector4 q_line_dir = quaternion(set(binormal, tangent, normal));
 matrix3 m_transform = set(tangent, normal, binormal);
 
-float block_length = block_length_range.x + (block_length_range.y - block_length_range.x) / 2;
 int base_point_num = int(base_line_length / block_length);
 if(base_point_num == 0) base_point_num = 1;
 float fixed_block_length = base_line_length / base_point_num;
