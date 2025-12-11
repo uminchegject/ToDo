@@ -1,3 +1,12 @@
+○gradationの実装
+ -cofficient
+ 
+○カラーパラメーターの調査
+
+○カラー実装
+・random
+
+
 ■Public
 ○右クリックの無効化
 
@@ -20,7 +29,7 @@ https://www.sidefx.com/ja/docs/houdini/hom/hou/hotkeys.html
 if(random(spawn_pos) < remove_ratio) continue;
 
 ○各SurfaceごとにBasePointMakerを独立化
-setprimgroup(0, "BaseLine_SecondFloor", prim, 1);
+・各wrangleノードを用意
 
 ●pattern
 ・rotate
@@ -57,6 +66,7 @@ setprimgroup(0, "BaseLine_SecondFloor", prim, 1);
 
 ■ProceduralBuildingGenerator
 ○カラーパラメーターの調査
+
 ○vertical, horizontal化実装
 if(i@group_horizontal_block == 1 && i@group_vertical_block == 1){
 	float horizontal_block = 
@@ -75,8 +85,6 @@ if(i@group_horizontal_block == 0 && i@group_vertical_block == 0){
 ●Component
 ・BlockPattern
 ・Color
-・Detail
- -Roof
 
 ○Detail実装
 ※リアリティを上げる
@@ -107,6 +115,7 @@ if(i@group_horizontal_block == 0 && i@group_vertical_block == 0){
 ・NonePattern (GroupRange)
 ・縞々 (GroupRange)
 ・Color
+
 
 
 ■Daily
