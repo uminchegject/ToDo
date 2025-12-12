@@ -2,14 +2,33 @@
 if(random(spawn_pos) < remove_ratio) continue;
 
 ○PlaneAxisのGradationの修正
-・回転に修正
+・値の修正
+・Offsetパラメーターの追加
 
 ○BasePointMakerの修正
 ・Gradationの実装
 
 ○SideBlockの生成
+https://chatgpt.com/s/t_693b63ea06c4819188123cb1b4bf4b97
 ・SideのPrimをグループ化する
  -GroupExpand
+ 
+// 隣接プリム取得
+int prims[] = edgeprims(0, @elemnum);
+if (len(prims) != 2)
+    return;
+
+// 法線取得
+vector n1 = prim_normal(0, prims[0], 0.5, 0.5);
+vector n2 = prim_normal(0, prims[1], 0.5, 0.5);
+
+// 角度を計算（ラジアン）
+float angle = degrees(acos( clamp( dot(normalize(n1), normalize(n2)), -1, 1 ) ));
+
+// 90度 ± 5度の範囲でグループ化
+if (abs(angle - 90.0) < 5.0)
+    setedgegroup(0, "edge_90deg", @elemnum, 1);
+
 
 
 ■BoatHouse
@@ -119,6 +138,8 @@ if(random(spawn_pos) < remove_ratio) continue;
 △背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装
 
 △Sci-Fiでの検証準備
+・ProceduralSciFiProject
+・ハードサーフェス本
 
 ●参考資料
 ・たのしい都市ジェネレータ
