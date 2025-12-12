@@ -4,15 +4,60 @@ float noise = sin(i * noise_cofficient) * gradation_cofficient
 ■パラメーター設計
 ●BaseLineMaker
 ・Gradation
-・remove
+ -Interval
+ -Axis
+・Randomly
+ -Interval
+ -Axis
+ -Remove
 
 ●BasePointMaker
 ・Gradation
-・remove
+ -Scale
+ -Rotate
+ -Transform
+・Randomly
+ -Scale
+ -Rotate
+ -Transform
+ -Remove
 
 ●BuildingPatternGenerator
 ・TopBlock
+ -ExpandNum
+ -Extrude
+ -PatternToggle
+ -Color
 ・SideBlock
+ -ExpandNum
+ -Extrude
+ -PatternToggle
+ -Color
+
+
+■記事化
+○BuildingPatternGenerator・BuildingModelingGenerator
+
+○クラス化
+
+
+■組み合わせを多様化(記事)
+※複雑性をクラスで制御できることを強調する
+ -クラス種類を検証する
+
+●概要
+・それぞれのパターンを組み合わせし、多様な組み合わせを行えるようにする
+
+●クラス化
+・それぞれのパラメーターをマルチパラメーター化して、クラス付けを行い組み合わせをしやすくする
+・クラスwrangleの実装
+
+●検証
+・それぞれのSubnetで違うパラメーターを3種類ずつ用意
+ -Plot
+ -Volume
+ -Pattern
+・Plot×Block×Patternをそれぞれ組み合わせて混在させる
 
 
 ■BoatHouse
@@ -117,8 +162,6 @@ float noise = sin(i * noise_cofficient) * gradation_cofficient
 ■CityGenerator
 ※世界観をしっかり決めて、参考資料・リファレンスをしっかり用意する
 
-○クラスの記事化
-
 △背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装
 
 △Sci-Fiでの検証準備
@@ -153,20 +196,3 @@ https://cedil.cesa.or.jp/cedil_sessions/view/2762
 
 
 
-■組み合わせを多様化(記事)
-※複雑性をクラスで制御できることを強調する
- -クラス種類を検証する
-
-●概要
-・それぞれのパターンを組み合わせし、多様な組み合わせを行えるようにする
-
-●クラス化
-・それぞれのパラメーターをマルチパラメーター化して、クラス付けを行い組み合わせをしやすくする
-・クラスwrangleの実装
-
-●検証
-・それぞれのSubnetで違うパラメーターを3種類ずつ用意
- -Plot
- -Volume
- -Pattern
-・Plot×Block×Patternをそれぞれ組み合わせて混在させる
