@@ -1,34 +1,18 @@
-○removeの実装
-if(random(spawn_pos) < remove_ratio) continue;
+○仮想noiseを実装
+float noise = sin(i * noise_cofficient) * gradation_cofficient
 
-○PlaneAxisのGradationの修正
-・値の修正
-・Offsetパラメーターの追加
+■パラメーター設計
+●BaseLineMaker
+・Gradation
+・remove
 
-○BasePointMakerの修正
-・Gradationの実装
+●BasePointMaker
+・Gradation
+・remove
 
-○SideBlockの生成
-https://chatgpt.com/s/t_693b63ea06c4819188123cb1b4bf4b97
-・SideのPrimをグループ化する
- -GroupExpand
- 
-// 隣接プリム取得
-int prims[] = edgeprims(0, @elemnum);
-if (len(prims) != 2)
-    return;
-
-// 法線取得
-vector n1 = prim_normal(0, prims[0], 0.5, 0.5);
-vector n2 = prim_normal(0, prims[1], 0.5, 0.5);
-
-// 角度を計算（ラジアン）
-float angle = degrees(acos( clamp( dot(normalize(n1), normalize(n2)), -1, 1 ) ));
-
-// 90度 ± 5度の範囲でグループ化
-if (abs(angle - 90.0) < 5.0)
-    setedgegroup(0, "edge_90deg", @elemnum, 1);
-
+●BuildingPatternGenerator
+・TopBlock
+・SideBlock
 
 
 ■BoatHouse
@@ -186,64 +170,3 @@ https://cedil.cesa.or.jp/cedil_sessions/view/2762
  -Volume
  -Pattern
 ・Plot×Block×Patternをそれぞれ組み合わせて混在させる
-
-
-■ソース
-float block_length = ch("block_length");
-
-vector base_scale = chv("base_scale");
-vector adjust_scale = chv("adjust_scale");
-float scale_randomly_cofficient = ch("scale_randomly_cofficient");
-float scale_gradation_cofficient = ch("scale_gradation_cofficient");
-float scale_noise_cofficient = ch("scale_noise_cofficient");
-
-vector base_rotate = chv("base_rotate");
-vector adjust_rotate = chv("adjust_rotate");
-float rotate_randomly_cofficient = ch("rotate_randomly_cofficient");
-float rotate_gradation_cofficient = ch("rotate_gradation_cofficient");
-float rotate_noise_cofficient = ch("rotate_noise_cofficient");
-
-vector base_transform = chv("base_transform");
-vector adjust_transform = chv("adjust_transform");
-float transform_randomly_cofficient = ch("transform_randomly_cofficient");
-float transform_gradation_cofficient = ch("transform_gradation_cofficient");
-float transform_noise_cofficient = ch("transform_noise_cofficient");
-
-int prim_points[] = primpoints(0, @primnum);
-int start_pt = prim_points[0];
-int end_pt = prim_points[1];
-vector start_pt_pos = point(0, "P", start_pt);
-vector end_pt_pos = point(0, "P", end_pt);
-
-float base_line_length = length(start_pt_pos - end_pt_pos);
-vector line_dir = normalize(end_pt_pos - start_pt_pos);
-vector normal = normalize(v@N);
-vector tangent = normalize(line_dir - dot(line_dir, normal) * normal);
-vector binormal = cross(normal, tangent);
-vector4 q_line_dir = quaternion(set(binormal, tangent, normal));
-matrix3 m_transform = set(tangent, normal, binormal);
-
-int base_point_num = int(base_line_length / block_length);
-if(base_point_num == 0) base_point_num = 1;
-float fixed_block_length = base_line_length / base_point_num;
-
-for(int i = 0; i < base_point_num; ++i)
-{
-    vector spawn_pos = start_pt_pos;
-    spawn_pos +=  line_dir * fixed_block_length * (i + 0.5);
-    vector transform = base_transform + random(spawn_pos) * adjust_transform;
-    spawn_pos += transform * m_transform;
-    int pt = addpoint(0, spawn_pos);
-    
-    vector scale = base_scale + random(spawn_pos) * adjust_scale;
-    scale.y *= fixed_block_length;
-    setpointattrib(0, "scale", pt, scale);
-    
-    vector rotate = base_rotate + random(spawn_pos * 10) * adjust_rotate;
-    rotate = radians(rotate);
-    vector4 q_rotate = eulertoquaternion(rotate, 0);
-    q_rotate = qmultiply(q_line_dir, q_rotate);
-    setpointattrib(0, "orient", pt, q_rotate);
-}
-
-removeprim(0, @primnum, 1);
