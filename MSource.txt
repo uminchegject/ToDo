@@ -1,7 +1,7 @@
+■BoatHouse
 ○仮想noiseを実装
 float noise = sin(i * noise_cofficient) * gradation_cofficient
 
-■パラメーター設計
 ●BaseLineMaker
 ・Gradation
  -Interval
@@ -22,23 +22,26 @@ float noise = sin(i * noise_cofficient) * gradation_cofficient
  -Transform
  -Remove
 
-●BuildingPatternGenerator
+
+■CityGenerator
+○パラメーター実装
 ・TopBlock
  -ExpandNum
- -Extrude
  -PatternToggle
- -Color
+ -Extrude
+ -Color(Roofも統一)
 ・SideBlock
  -ExpandNum
- -Extrude
  -PatternToggle
+ -Extrude
  -Color
 
+○BuildingPatternGenerator・BuildingModelingGenerator記事化
+・ModularModeling
+・ProceduralModeling
 
-■記事化
-○BuildingPatternGenerator・BuildingModelingGenerator
-
-○クラス化
+○クラス化記事
+・HDAのポリフォーズム化
 
 
 ■組み合わせを多様化(記事)
