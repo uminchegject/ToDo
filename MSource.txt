@@ -1,7 +1,4 @@
 ■BoatHouse
-○仮想noiseを実装
-float noise = sin(i * noise_cofficient) * gradation_cofficient
-
 ●BaseLineMaker
 ・Gradation
  -Interval
