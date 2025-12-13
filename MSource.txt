@@ -1,19 +1,15 @@
+■BoatHouse
 ○BasePointGenerator実装
 ・removePatternを設計
+ -Pattern
+ -Randomly
 
-○Pattern設計
+△Pattern設計
 ・BoxPatternをそのままVolumeとして使用する
 
-○記事化
+△記事化
 ※検証も同時に行う
 
-
-○BuldingPatternGeneratorの実装
-
-○色の配色
-
-
-■BoatHouse
 ●BaseLineMaker
 ・Gradation
  -Interval
@@ -21,13 +17,13 @@
 ・Randomly
  -Interval
  -Axis
- -Remove
 
 ●BasePointMaker
 ・Gradation
  -Scale
  -Rotate
  -Transform
+ -Remove
 ・Randomly
  -Scale
  -Rotate
@@ -47,6 +43,8 @@
  -PatternToggle
  -Extrude
  -Color
+
+○色の配色
 
 ○BuildingPatternGenerator・BuildingModelingGenerator記事化
 ・ModularModeling
