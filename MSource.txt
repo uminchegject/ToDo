@@ -1,14 +1,6 @@
 ■BoatHouse
-○BasePointGenerator実装
-・removePatternを設計
- -Pattern
- -Randomly
-
-△Pattern設計
-・BoxPatternをそのままVolumeとして使用する
-
-△記事化
-※検証も同時に行う
+○SimpleGridの検証&記事化
+※Base, Gradation, Randomの検証
 
 ●BaseLineMaker
 ・Gradation
@@ -31,8 +23,33 @@
  -Remove
 
 
+○BlockLengthの修正
+・removePatternを設計
+ -Pattern
+ -Randomly
+
+○BasePoint + Pattern検証
+※Gridで検証
+・RandomGrid
+ -RandomRotate
+ -RandomScale
+ -RandomTransform
+・RoofGrid
+ -RandomSize
+・△PatternGrid
+
+
+△Pattern設計
+・BoxPatternをそのままVolumeとして使用する
+
+
+
 ■CityGenerator
-○パラメーター実装
+○ModularModelingをカラー化
+
+○八重洲検証&記事化
+
+○BuildingPatternGeneratorパラメーター実装
 ・TopBlock
  -ExpandNum
  -PatternToggle
@@ -44,87 +61,11 @@
  -Extrude
  -Color
 
-○色の配色
-
-○BuildingPatternGenerator・BuildingModelingGenerator記事化
-・ModularModeling
-・ProceduralModeling
-
-○クラス化記事
-・HDAのポリフォーズム化
-
-
-■組み合わせを多様化(記事)
-※複雑性をクラスで制御できることを強調する
- -クラス種類を検証する
-
-●概要
-・それぞれのパターンを組み合わせし、多様な組み合わせを行えるようにする
-
-●クラス化
-・それぞれのパラメーターをマルチパラメーター化して、クラス付けを行い組み合わせをしやすくする
-・クラスwrangleの実装
-
-●検証
-・それぞれのSubnetで違うパラメーターを3種類ずつ用意
- -Plot
- -Volume
- -Pattern
-・Plot×Block×Patternをそれぞれ組み合わせて混在させる
-
-
-■BoatHouse
-○SimpleGridの検証
-※Base, Gradation, Randomの検証
-
-●pattern
-・rotate
-・scale
-
-△BlockLengthの修正
-
-○BasePoint + Pattern検証
-※Gridで検証
-・SimpleGrid
- -RandomWidth
-・RandomGrid
- -RandomRotate
- -RandomScale
- -RandomTransform
-・RoofGrid
- -RandomSize
-・△PatternGrid
-
-●Edit設計
-※Base + Gradation + Random
-・Plane
- -Interval
- -Axis
-・BasePoint
- -BlockLength
- -Transform
- -Rotate
- -Scale
-
-
-■ProceduralBuildingGenerator
-○丸の内検証
-
-○クラス化検証
-
-△記事用意
-・BuildingPatternGenerator・BuildingModelingGenerator
-・クラス化
+○丸の内検証&記事化
+・色の配色
 
 △Detail実装
 ※リアリティを上げる
-・Side
- -TopBlock
- -SideBlock
-・Detail
- -Roof
-
-●Component+
 ・Side
  -Top
  -Side
@@ -145,6 +86,34 @@
 ・NonePattern (GroupRange)
 ・縞々 (GroupRange)
 ・Color
+
+
+○BuildingPatternGenerator・BuildingModelingGenerator記事化
+・ModularModeling
+・ProceduralModeling
+
+○クラス化記事
+・HDAのポリフォーズム化
+
+
+
+■組み合わせを多様化(記事)
+※複雑性をクラスで制御できることを強調する
+ -クラス種類を検証する
+
+●概要
+・それぞれのパターンを組み合わせし、多様な組み合わせを行えるようにする
+
+●クラス化
+・それぞれのパラメーターをマルチパラメーター化して、クラス付けを行い組み合わせをしやすくする
+・クラスwrangleの実装
+
+●検証
+・それぞれのSubnetで違うパラメーターを3種類ずつ用意
+ -Plot
+ -Volume
+ -Pattern
+・Plot×Block×Patternをそれぞれ組み合わせて混在させる
 
 
 
