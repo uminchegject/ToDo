@@ -92,7 +92,7 @@
 ・ModularModeling
 ・ProceduralModeling
 
-○クラス化記事
+○クラス検証&記事化
 ・HDAのポリフォーズム化
 
 
