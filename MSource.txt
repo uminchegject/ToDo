@@ -1,77 +1,48 @@
+○資料のPDF化
+
+
+○HoudiniEngineForMayaのビルド調査
+C:\Program Files\Side Effects Software\Houdini 20.5.xxx\
+ └─ engine\
+     └─ maya\
+         └─ HoudiniEngineForMaya
+
+
+○SimpleGridの検証&記事化
+※Base, Gradation, Randomの検証
+・各工程をビジュアル資料化
+
+●BaseLineMaker
+・Gradation
+ -Interval
+ -Axis
+・Randomly
+ -Interval
+
+●BasePointMaker
+・Gradation
+ -Scale
+ -Rotate
+・Randomly
+ -Scale
+ -Rotate
+
+
+○BuildingPatternGeneratorの検証
+・複数パターンを用意
+ -vertical
+ -horizontal
+ -grid
+・CityGeneratorで検証
+
+
+
 ■Public
 ○CMakeビルドの調査
+・【超入門】1日で理解するCmake
+https://qiita.com/sunrise_lover/items/589c4353d9547effc74b
 ・HoudiniEngineForMaya
-https://github.com/sideeffects/HoudiniEngineForMaya/tree/Houdini20.5?utm_source=chatgpt.com
-・Houdiniプラグイン開発備忘録2 ～ CMakeでのビルド編
-https://www.technical-artist.net/?p=2219
-・Houdini HDK ビルドメモ (18.0.460)
-https://nagakagachi.hatenablog.com/entry/2020/05/24/190639
-
-○エラーの調査
-D:\HoudiniEngineForMaya-Houdini20.5\build-maya2025>cmake --build . --config Release
-MSBuild のバージョン 17.12.12+1cce77968 (.NET Framework)
-Checking Build System
-Building Custom Rule D:/HoudiniEngineForMaya-Houdini20.5/CMakeLists.txt
-Asset.C
-AssetCommand.C
-AssetNode.C
-AssetNodeOptions.C
-AssetSubCommandLoadAsset.C
-AssetSubCommandSync.C
-EngineCommand.C
-D:\HoudiniEngineForMaya-Houdini20.5\EngineCommand.C(146,21): error C2065: 'HAPI_VERSION_HOUDINI_MAJOR': undeclared identi
-fier [D:\HoudiniEngineForMaya-Houdini20.5\build-maya2025\plugin.vcxproj]
-D:\HoudiniEngineForMaya-Houdini20.5\EngineCommand.C(147,21): error C2065: 'HAPI_VERSION_HOUDINI_MINOR': undeclared identi
-fier [D:\HoudiniEngineForMaya-Houdini20.5\build-maya2025\plugin.vcxproj]
-D:\HoudiniEngineForMaya-Houdini20.5\EngineCommand.C(148,21): error C2065: 'HAPI_VERSION_HOUDINI_BUILD': undeclared identi
-fier [D:\HoudiniEngineForMaya-Houdini20.5\build-maya2025\plugin.vcxproj]
-D:\HoudiniEngineForMaya-Houdini20.5\EngineCommand.C(165,21): error C2065: 'HAPI_VERSION_HOUDINI_ENGINE_MAJOR': undeclared
-identifier [D:\HoudiniEngineForMaya-Houdini20.5\build-maya2025\plugin.vcxproj]
-D:\HoudiniEngineForMaya-Houdini20.5\EngineCommand.C(166,21): error C2065: 'HAPI_VERSION_HOUDINI_ENGINE_MINOR': undeclared
-identifier [D:\HoudiniEngineForMaya-Houdini20.5\build-maya2025\plugin.vcxproj]
-D:\HoudiniEngineForMaya-Houdini20.5\EngineCommand.C(167,21): error C2065: 'HAPI_VERSION_HOUDINI_ENGINE_API': undeclared i
-dentifier [D:\HoudiniEngineForMaya-Houdini20.5\build-maya2025\plugin.vcxproj]
-FluidGridConvert.C
-HoudiniApi.C
-D:\HoudiniEngineForMaya-Houdini20.5\HoudiniApi.C(27,10): fatal  error C1083: Cannot open include file: 'Platform.h': No s
-uch file or directory [D:\HoudiniEngineForMaya-Houdini20.5\build-maya2025\plugin.vcxproj]
-Input.C
-InputCurve.C
-InputCurveNode.C
-InputGeometryNode.C
-InputMergeNode.C
-InputMesh.C
-InputParticle.C
-InputTransformNode.C
-OutputGeometry.C
-OutputGeometryObject.C
-OutputGeometryPart.C
-Generating Code...
-Compiling...
-OutputInstancerObject.C
-OutputMaterial.C
-OutputObject.C
-Platform.C
-D:\HoudiniEngineForMaya-Houdini20.5\Platform.C(1,10): fatal  error C1083: Cannot open include file: 'Platform.h': No such
-file or directory [D:\HoudiniEngineForMaya-Houdini20.5\build-maya2025\plugin.vcxproj]
-plugin.C
-D:\HoudiniEngineForMaya-Houdini20.5\plugin.C(22,10): fatal  error C1083: Cannot open include file: 'Platform.h': No such
-file or directory [D:\HoudiniEngineForMaya-Houdini20.5\build-maya2025\plugin.vcxproj]
-SubCommand.C
-SyncAttribute.C
-SyncOutputGeometryPart.C
-SyncOutputInstance.C
-SyncOutputMaterial.C
-SyncOutputObject.C
-util.C
-D:\HoudiniEngineForMaya-Houdini20.5\util.C(1170,22): error C2065: 'HAPI_VERSION_HOUDINI_MAJOR': undeclared identifier [D:
-\HoudiniEngineForMaya-Houdini20.5\build-maya2025\plugin.vcxproj]
-D:\HoudiniEngineForMaya-Houdini20.5\util.C(1171,22): error C2065: 'HAPI_VERSION_HOUDINI_MINOR': undeclared identifier [D:
-\HoudiniEngineForMaya-Houdini20.5\build-maya2025\plugin.vcxproj]
-D:\HoudiniEngineForMaya-Houdini20.5\util.C(1172,22): error C2065: 'HAPI_VERSION_HOUDINI_BUILD': undeclared identifier [D:
-\HoudiniEngineForMaya-Houdini20.5\build-maya2025\plugin.vcxproj]
-Generating Code...
-
+https://github.com/sideeffects/HoudiniEngineForMaya/blob/Houdini20.5/CMakeLists.txt
 ●GPT
 https://github.com/sideeffects/HoudiniEngineForMaya?utm_source=chatgpt.com このサイトを参考にして、Houdini 21.0.512とMaya2026.3のビルドをしたい
 
