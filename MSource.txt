@@ -1,13 +1,3 @@
-○資料のPDF化
-
-
-○HoudiniEngineForMayaのビルド調査
-C:\Program Files\Side Effects Software\Houdini 20.5.xxx\
- └─ engine\
-     └─ maya\
-         └─ HoudiniEngineForMaya
-
-
 ○SimpleGridの検証&記事化
 ※Base, Gradation, Randomの検証
 ・各工程をビジュアル資料化
@@ -36,13 +26,16 @@ C:\Program Files\Side Effects Software\Houdini 20.5.xxx\
 ・CityGeneratorで検証
 
 
-
 ■Public
 ○CMakeビルドの調査
 ・【超入門】1日で理解するCmake
 https://qiita.com/sunrise_lover/items/589c4353d9547effc74b
 ・HoudiniEngineForMaya
 https://github.com/sideeffects/HoudiniEngineForMaya/blob/Houdini20.5/CMakeLists.txt
+
+○ビルドエラー調査
+・Platform.hについて調査
+
 ●GPT
 https://github.com/sideeffects/HoudiniEngineForMaya?utm_source=chatgpt.com このサイトを参考にして、Houdini 21.0.512とMaya2026.3のビルドをしたい
 
