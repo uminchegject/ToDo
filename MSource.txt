@@ -1,5 +1,7 @@
 ○SimpleGridの検証&記事化
 ※Base, Gradation, Randomの検証
+・他パーツでも適応
+・スケール位置をランダム化
 ・各工程をビジュアル資料化
 
 ●BaseLineMaker
@@ -34,6 +36,7 @@ https://qiita.com/sunrise_lover/items/589c4353d9547effc74b
 https://github.com/sideeffects/HoudiniEngineForMaya/blob/Houdini20.5/CMakeLists.txt
 
 ○ビルドエラー調査
+※4カ月以上前のバージョンを確認する
 ・Platform.hについて調査
 
 ●GPT
@@ -41,30 +44,6 @@ https://github.com/sideeffects/HoudiniEngineForMaya?utm_source=chatgpt.com こ�
 
 
 ■BoatHouse
-○SimpleGridの検証&記事化
-※Base, Gradation, Randomの検証
-
-●BaseLineMaker
-・Gradation
- -Interval
- -Axis
-・Randomly
- -Interval
- -Axis
-
-●BasePointMaker
-・Gradation
- -Scale
- -Rotate
- -Transform
- -Remove
-・Randomly
- -Scale
- -Rotate
- -Transform
- -Remove
-
-
 ○BasePointの生成位置を調整
 ・Pattern
 ・Randomly
@@ -84,13 +63,12 @@ https://github.com/sideeffects/HoudiniEngineForMaya?utm_source=chatgpt.com こ�
 
 
 ■CityGenerator
-○BuildingPatternGeneratorの検証
-※CityGeneratorと組み合わせる
-
 ○八重洲検証&記事化
 
 ○丸の内検証&記事化
 ・色の配色
+
+○BuildingGenerator + ModularEditorの検証
 
 △Detail実装
 ※リアリティを上げる
@@ -122,23 +100,6 @@ https://github.com/sideeffects/HoudiniEngineForMaya?utm_source=chatgpt.com こ�
 
 ○クラス検証&記事化
 ・HDAのポリフォーズム化
-
-
-
-■Private
-※一人暮らしの準備
-
-○メルカリ
-・本
-
-○断捨離
-・本
-・小物
-・書類
-・服
-
-△企業研究読書
-・業界地図
 
 
 
