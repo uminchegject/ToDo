@@ -3,23 +3,16 @@
 
 ○SimpleGridの検証
 ※Gradation, Randomの検証
-
-●BaseLineMaker
-・Gradation
- -Interval
- -Axis
-・Randomly
- -Interval
-
-●BasePointMaker
-・Gradation
- -Scale
- -Rotate
-・Randomly
- -Scale
- -Rotate
  
 ○EdgeMakerの記事化
+・Gradation & Randomly
+・BaseLineMaker
+ -Interval
+ -Axis
+・BasePointMaker
+ -Scale
+ -Rotate
+ -Transform
 
 
 ○BasePointの生成位置を調整
@@ -36,6 +29,9 @@
 ・△PatternGrid
 
 ○EdgeMakerの記事拡張
+・BsaePointMaker
+ -BlockLength
+
 
 △Pattern設計
 ・BoxPatternをそのままVolumeとして使用する
@@ -44,7 +40,9 @@
 
 ■CityGenerator
 ○ModularEditorの記事化
-
+・Class
+・BlockScale
+・Roof
 
 ○BuildingPatternGeneratorの検証
 ※配色
@@ -53,7 +51,13 @@
 ・grid
 
 ○BuildingPatternGeneratorの記事化 
-
+・Pattern
+ -VerticalBlock
+ -HorizontalBlock
+ -Window
+・Side
+ -TopBlock
+ -SideBlock
 
 ○BuildingGenerator + ModularEditorの検証
 ※配色
