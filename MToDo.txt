@@ -1,6 +1,4 @@
 ■CityVolumeMaker
-※四角ベースでまず検証し、記事化する
-
 ○BuildingGenerator
 ※ProceduralCityProjectをベース
 ・ProceduralModeling
@@ -16,8 +14,6 @@
 
 
 ■CD(Tool)
-※EdgeMakerをベースにしたLineGenerator、PatternGeneratorを実装する
-
 ○配置ロジックの設計・実装
 ・PlaneEditor
 ・BasePointGenerator

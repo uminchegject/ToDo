@@ -1,8 +1,24 @@
+■Daily
+○記事
+※つかみの部分をしっかり用意する
+
+○オブジェクト指向
+・オブジェクト指向でなぜつくるのか
+
+○プロシージャルモデリング
+・スライド
+
+
+
 ■BoatHouse
+※インド大使館からの向きで検証
+
 ○他パーツでも適応
 
 ○SimpleGridの検証
 ※Gradation, Randomの検証
+・GradationBase
+・RandomlyBase
  
 ○EdgeMakerの記事化
 ・Gradation & Randomly
@@ -46,9 +62,9 @@
 
 ○BuildingPatternGeneratorの検証
 ※配色
-・vertical
-・horizontal
-・grid
+・VerticalBase
+・HorizontalBase
+・GridBase
 
 ○BuildingPatternGeneratorの記事化 
 ・Pattern
@@ -65,17 +81,6 @@
 ○クラス化の記事化
 ・HDAのポリフォーズム化
 
-
-
-■Daily
-○記事
-※つかみの部分をしっかり用意する
-
-○オブジェクト指向
-・オブジェクト指向でなぜつくるのか
-
-○プロシージャルモデリング
-・スライド
 
 
 
