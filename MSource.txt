@@ -32,8 +32,7 @@
 
 
 ○BasePointの生成位置を調整
-・Pattern
-・Randomly
+・Planeとの接点にBasePointを生成する
 
 ○BasePoint + Pattern検証
 ・RandomGrid
@@ -48,6 +47,8 @@
 ・BsaePointMaker
  -BlockLength
 
+
+△複雑な組手を検証
 
 △Pattern設計
 ・BoxPatternをそのままVolumeとして使用する
@@ -75,12 +76,18 @@
  -TopBlock
  -SideBlock
 
+
 ○BuildingGenerator + ModularEditorの検証
 ※配色
 
 ○クラス化の記事化
 ・HDAのポリフォーズム化
 
+
+△CityGeneratorの複雑化
+
+△他世界観の検証
+・SCI-FI
 
 
 
