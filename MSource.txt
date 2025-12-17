@@ -1,3 +1,17 @@
+○BasePointの生成位置を調整
+・Planeとの接点にBasePointを生成する
+
+○他パーツでも適応
+※SideEdgeとCenterEdgeで検証
+
+
+○BuildingPatternGeneratorの検証
+※配色
+・VerticalBase
+・HorizontalBase
+・GridBase
+
+
 ■Daily
 ○記事
 ※つかみの部分をしっかり用意する
@@ -158,3 +172,66 @@ https://cedil.cesa.or.jp/cedil_sessions/view/2762
  -Pattern
 ・Plot×Block×Patternをそれぞれ組み合わせて混在させる
 
+
+
+■ソース
+vector4 make_plane(vector pos; vector normal)
+{
+    vector n = normalize(normal);
+    float d = -dot(n, pos);
+    return set(n.x, n.y, n.z, d);
+}
+
+vector get_intersect_pos(vector p1; vector p2; vector4 plane)
+{
+    vector pos1 = p1;
+    vector pos2 = p2;
+    int result;
+    clip(result, pos1, pos2, plane);
+        
+    vector intersect = {0,0,0};
+    if (result == 1)
+    {
+        if (pos1 != p1)
+            intersect = pos1;
+        else if (pos2 != p2)
+            intersect = pos2;
+        else
+            return {0,0,0};
+    }
+    else
+    {
+        return {0,0,0};
+    }
+        
+    return intersect;
+}
+
+
+for(int i = 0; i < base_point_num; ++i)
+{
+    vector spawn_pos = start_pt_pos;
+    spawn_pos +=  line_dir * fixed_block_length * (i + 0.5);
+    vector transform = base_transform;
+    transform += adjust_transform * transform_randomly_cofficient * rand(spawn_pos);
+    transform += adjust_transform * transform_gradation_cofficient * sin(@primnum * transform_noise_cofficient);
+    
+    vector scale = base_scale;
+    scale += adjust_scale * scale_randomly_cofficient * rand(spawn_pos);
+    scale += adjust_scale * scale_gradation_cofficient * sin(@primnum * scale_noise_cofficient);    
+
+    spawn_pos += transform * m_transform;
+    spawn_pos += line_dir * ((1 - scale.y) * fixed_block_length) * (rand(scale) - 0.5);
+    int pt = addpoint(0, spawn_pos);
+        
+    scale.y *= fixed_block_length;
+    setpointattrib(0, "scale", pt, scale);
+    
+    vector rotate = base_rotate;
+    rotate += adjust_rotate * rotate_randomly_cofficient * rand(spawn_pos);
+    rotate += adjust_rotate * rotate_gradation_cofficient * sin(@primnum * rotate_noise_cofficient);
+    rotate = radians(rotate);
+    vector4 q_rotate = eulertoquaternion(rotate, 0);
+    q_rotate = qmultiply(q_line_dir, q_rotate);
+    setpointattrib(0, "orient", pt, q_rotate);
+}
