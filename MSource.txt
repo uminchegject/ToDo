@@ -1,20 +1,58 @@
+○RandomlyBlockの検証
+・multi
+・color
+・BaseLine
+ -Axis
+ -Interval
+・BasePoint
+ -Scale
+ -Rotate
+ -Transform
+
+○RandomlyBlockの記事化
+
+
+○HoudiniForMaya
+・【初心者向けHoudiniトライアル005】Houdini Engine for MayaでHoudini デジタルアセットを使用する
+https://support.borndigital.co.jp/hc/ja/articles/900000756146--%E5%88%9D%E5%BF%83%E8%80%85%E5%90%91%E3%81%91Houdini%E3%83%88%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%AB005-Houdini-Engine-for-Maya%E3%81%A7Houdini-%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E3%82%A2%E3%82%BB%E3%83%83%E3%83%88%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B
+・Houdini Engine For Maya を調べてみる
+https://qiita.com/yuya_torii/items/001642040a5354cd9f89
+
+
+
 ○BasePointの生成位置を調整
+・軸を設定する
 ・Planeとの接点にBasePointを生成する
-
-○他パーツでも適応
-※SideEdgeとCenterEdgeで検証
-
-
-○BuildingPatternGeneratorの検証
-※配色
-・VerticalBase
-・HorizontalBase
-・GridBase
+・scaleを調整する
+for(int plane_index = 0; plane_index < plane_num; ++plane_index)
+{	
+	if(i % 3)
+	{
+		vector4 plane = make_plane();
+		vector base_point_pos = get_intersect_pos(start_pt_pos, end_pt_pos);
+		
+		if(length(base_point_pos) == 0)continue;
+		
+		if(length(base_point_pos - start_pt_pos) < block_length){
+			scale = length(base_point_pos - start_pt_pos);
+		}		
+		else if(length(base_point_pos - end_pt_pos) < block_length){
+			scale = length(base_point_pos - end_pt_pos);
+		}
+		else{
+			scale = block_length;
+		}
+	}
+}
 
 
 ■Daily
+○検証
+・RandomlyBlock(BoatHouse)
+
 ○記事
 ※つかみの部分をしっかり用意する
+・Randomly
 
 ○オブジェクト指向
 ・オブジェクト指向でなぜつくるのか
@@ -23,11 +61,11 @@
 ・スライド
 
 
-
 ■BoatHouse
 ※インド大使館からの向きで検証
 
 ○他パーツでも適応
+※SideEdgeとCenterEdgeで検証
 
 ○SimpleGridの検証
 ※Gradation, Randomの検証
@@ -61,11 +99,8 @@
 ・BsaePointMaker
  -BlockLength
 
-
-△複雑な組手を検証
-
-△Pattern設計
-・BoxPatternをそのままVolumeとして使用する
+○複雑な組手を検証
+・同じSurfaceで複数のPatternを生成する
 
 
 
@@ -100,20 +135,18 @@
 
 △CityGeneratorの複雑化
 
-△他世界観の検証
+△他世界観の検証準備
 ・SCI-FI
+ -ProceduralSciFiProject
+ -ハードサーフェス本
 
 
 
 ■EdgeGenerator
-○記事
-※それぞれのHDAの処理と多様性を記事化する
-・Plane(※繋がり)
-・BasePoints(※独立)
-
 △Pattern設計
 ※カプセル化・ポリフォーズム(多様性)
 ・カラー化(Texture化)
+・BoxPatternをそのままVolumeとして使用する
 
 
 
@@ -122,9 +155,10 @@
 
 △背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装
 
-△Sci-Fiでの検証準備
-・ProceduralSciFiProject
-・ハードサーフェス本
+△他世界観の検証準備
+・SCI-FI
+ -ProceduralSciFiProject
+ -ハードサーフェス本
 
 ●参考資料
 ・たのしい都市ジェネレータ
@@ -135,22 +169,19 @@ https://www.youtube.com/watch?v=BlduX70jZRU
 
 
 ■Study(ナレッジ)
-・オープンワールドを、自然に意思を持って埋める。 LUMINOUS ENGINEのプロシージャルへの取り組み
-https://cedil.cesa.or.jp/cedil_sessions/view/2221
-・『星のカービィ　ディスカバリー』 プロシージャル地形生成への取り組み
-https://cedil.cesa.or.jp/cedil_sessions/view/2569
-
-・Procedural PLATEAU: プロシージャル技術と3D都市モデル「Project PLATEAU」を組み合わせたファサード自動生成とテクスチャ付き3Dモデル自動生成の取り組み
-https://cedil.cesa.or.jp/cedil_sessions/view/2794
-・地理空間情報のススメ！オープンデータ×データドリブンな プロシージャル処理による都市の樹木自動配置
-https://cedil.cesa.or.jp/cedil_sessions/view/3042
-
 ・フォトグラメトリーとプロシージャルを用いた最新ハイエンドゲーム3DCG背景制作手法 ～ハイエンドゲーム開発の経験がない会社がいかにしてそれらを生み出したか～
 https://cedil.cesa.or.jp/cedil_sessions/view/2118
 ・エンタメ系TAの挑戦！　UE4によるエンタープライズ向け開発事例の紹介 　～AIの教師データ量産におけるプロシージャル技術の応用～
 https://cedil.cesa.or.jp/cedil_sessions/view/2244
 ・Unreal Engine 5 ElectricDreams環境サンプルにみるプロシージャル生成テクニック
 https://cedil.cesa.or.jp/cedil_sessions/view/2762
+
+
+・Procedural PLATEAU: プロシージャル技術と3D都市モデル「Project PLATEAU」を組み合わせたファサード自動生成とテクスチャ付き3Dモデル自動生成の取り組み
+https://cedil.cesa.or.jp/cedil_sessions/view/2794
+・地理空間情報のススメ！オープンデータ×データドリブンな プロシージャル処理による都市の樹木自動配置
+https://cedil.cesa.or.jp/cedil_sessions/view/3042
+
 
 
 
@@ -171,67 +202,3 @@ https://cedil.cesa.or.jp/cedil_sessions/view/2762
  -Volume
  -Pattern
 ・Plot×Block×Patternをそれぞれ組み合わせて混在させる
-
-
-
-■ソース
-vector4 make_plane(vector pos; vector normal)
-{
-    vector n = normalize(normal);
-    float d = -dot(n, pos);
-    return set(n.x, n.y, n.z, d);
-}
-
-vector get_intersect_pos(vector p1; vector p2; vector4 plane)
-{
-    vector pos1 = p1;
-    vector pos2 = p2;
-    int result;
-    clip(result, pos1, pos2, plane);
-        
-    vector intersect = {0,0,0};
-    if (result == 1)
-    {
-        if (pos1 != p1)
-            intersect = pos1;
-        else if (pos2 != p2)
-            intersect = pos2;
-        else
-            return {0,0,0};
-    }
-    else
-    {
-        return {0,0,0};
-    }
-        
-    return intersect;
-}
-
-
-for(int i = 0; i < base_point_num; ++i)
-{
-    vector spawn_pos = start_pt_pos;
-    spawn_pos +=  line_dir * fixed_block_length * (i + 0.5);
-    vector transform = base_transform;
-    transform += adjust_transform * transform_randomly_cofficient * rand(spawn_pos);
-    transform += adjust_transform * transform_gradation_cofficient * sin(@primnum * transform_noise_cofficient);
-    
-    vector scale = base_scale;
-    scale += adjust_scale * scale_randomly_cofficient * rand(spawn_pos);
-    scale += adjust_scale * scale_gradation_cofficient * sin(@primnum * scale_noise_cofficient);    
-
-    spawn_pos += transform * m_transform;
-    spawn_pos += line_dir * ((1 - scale.y) * fixed_block_length) * (rand(scale) - 0.5);
-    int pt = addpoint(0, spawn_pos);
-        
-    scale.y *= fixed_block_length;
-    setpointattrib(0, "scale", pt, scale);
-    
-    vector rotate = base_rotate;
-    rotate += adjust_rotate * rotate_randomly_cofficient * rand(spawn_pos);
-    rotate += adjust_rotate * rotate_gradation_cofficient * sin(@primnum * rotate_noise_cofficient);
-    rotate = radians(rotate);
-    vector4 q_rotate = eulertoquaternion(rotate, 0);
-    q_rotate = qmultiply(q_line_dir, q_rotate);
-    setpointattrib(0, "orient", pt, q_rotate);
-}
