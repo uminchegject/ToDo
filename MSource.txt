@@ -6,8 +6,7 @@ https://qiita.com/yuya_torii/items/001642040a5354cd9f89
 
 ○RandomlyBlockの検証
 ・multi
-・color
-
+ -多重
 ・Parts
  -CenterEdge
  -SideEdge
@@ -24,6 +23,7 @@ https://qiita.com/yuya_torii/items/001642040a5354cd9f89
  -color
 
 ○RandomlyBlockの記事化
+・
 
 ○BasePointの生成位置を調整
 ・軸を設定する
