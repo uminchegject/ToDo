@@ -1,4 +1,51 @@
 ■BoatHouse
+●Components
+・Parts
+ -CenterEdge
+ -SideEdge
+ -△Roof
+ -△SecondFloor
+・BaseLine
+ -Axis
+ -Interval
+・BasePoint
+ -BlockLengh(PlaneのIntervalをRandomにする)
+ -Rotate
+ -Scale
+ -Transform
+ -color
+
+●概要
+・パラメーターによるプロシージャルなPattern生成
+
+●工程
+・BoatHouseのプロシージャルデザイン化
+・BaseLineGenerator
+・BasePointGenerator
+
+
+
+■CityGenerator
+●概要
+・クラス化
+・HDAのポリフォーズム化
+
+●工程
+・ModularEditor
+ -Class
+ -BlockScale
+ -Roof
+・BuildingPatternGenerator
+ -VerticalBlock
+ -HorizontalBlock
+ -Window
+ -TopBlock
+ -SideBlock
+
+
+
+
+■BoatHouse
 ※インド大使館からの向きで検証
 
 ○BaseLineにIndexをつける
@@ -44,8 +91,6 @@
  -color
 
 
-○記事化
-
 
 
 ■CityGenerator
@@ -61,22 +106,6 @@
 
 ○CityGeneratorの記事完成
 
-○ModularEditorの記事化
-・Class
-・BlockScale
-・Roof
-
-○BuildingPatternGeneratorの記事化 
-・Pattern
- -VerticalBlock
- -HorizontalBlock
- -Window
-・Side
- -TopBlock
- -SideBlock
-
-○クラス化の記事化
-・HDAのポリフォーズム化
 
 
 △ModularModeling拡張
