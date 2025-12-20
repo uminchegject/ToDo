@@ -16,7 +16,10 @@
  -color
 
 ●概要
+・BoatHouseのパラメーターによる柔軟な調整
+ -建物のエッジを柔軟に検証できるようにする
 ・パラメーターによるプロシージャルなPattern生成
+ -Patternを検証しつつ確認できるようにする
 
 ●工程
 ・BoatHouseのプロシージャルデザイン化
@@ -27,10 +30,15 @@
 
 ■CityGenerator
 ●概要
+・ビルの模様をプロシージャルに簡単に生成できるツールを実装
+ -丸の内で検証
+・ビルのファザードをモジュールとして組み立てるツールを実装
+ -八重洲として検証
 ・クラス化
-・HDAのポリフォーズム化
+ -BigBuildingとSmallBuildingが場所によって混在するように検証
 
 ●工程
+・八重洲(ModularEditor)と丸の内(BuildingPatternGenerator)を用意
 ・ModularEditor
  -Class
  -BlockScale
@@ -113,6 +121,7 @@
 
 △BuildingPatternGenerator拡張
 ・BuildingPatternGeneratorのみでCityGeneratorを生成してみる
+
 
 △CityGeneratorの複雑化
 
