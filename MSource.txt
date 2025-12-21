@@ -1,31 +1,48 @@
+○年末年始に読む本を用意する
+
+
 ■BoatHouse
+※新年会のポートフォリオを目指す
 ※インド大使館からの向きで検証
 
 ○BaseLineにIndexをつける
+
+○BoatHouseGenerator整理
+・SurfaceのNormalを整理
+ -Extrude方向の整理
+・躯体の生成
+・クラス化
+ -BaseLine
+・パラメーター整理
+ -Folderで整理
+・HDA化
+
+○BaseLineGenerator整理
+・ソース整理
+・パラメーター整理
+ -Folderで整理
+・HDA化
+
+○BasePointGenerator整理
+・ソース整理
+・パラメーター整理
+ -Folderで整理
+・HDA化
 
 △BasePointのPlane周りの処理を整理
 ・Simple
 ・Gradation
 ・Randomly
 
-○クラス化
-・各面ごとにMultiParamでPatternを生成する
-
-○パラメーター整理
-・Folderで整理する
-
-○BaseLineGenerator整理
-・ソース整理
-・HDA化
-
-○BasePointGenerator整理
-・ソース整理
-・HDA化
-
 
 ○Randomly検証
 
-○組手検証
+○木組み検証
+・EdgeGeneratorで検証
+
+
+○木組み研究
+・隈研吾
 
 
 ●Components
@@ -56,6 +73,14 @@
 ・BoatHouseのプロシージャルデザイン化
 ・BaseLineGenerator
 ・BasePointGenerator
+
+
+■記事(木組み)
+●概要
+・木組みについて
+
+●検証
+・EdgeGeneratorで検証
 
 
 
@@ -145,11 +170,6 @@
 ※世界観をしっかり決めて、参考資料・リファレンスをしっかり用意する
 
 △背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装
-
-△他世界観の検証準備
-・SCI-FI
- -ProceduralSciFiProject
- -ハードサーフェス本
 
 ●参考資料
 ・たのしい都市ジェネレータ
