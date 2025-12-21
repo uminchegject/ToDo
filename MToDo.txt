@@ -4,13 +4,10 @@
 ・ProceduralModeling
 ・ModularModeling
 
-△柔軟化
-・PlotMaker
- -道の角度の柔軟化
- -BasePrimの柔軟化
-・BlockMaker + VolumeMaker
- -柔軟化したPlotの対応
-・HeightField
+○他世界観の検証
+・SCI-FI
+ -ProceduralSciFiProject
+ -ハードサーフェス本
 
 
 ■CD(Tool)

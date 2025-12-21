@@ -1,64 +1,9 @@
 ■BoatHouse
-●Components
-・Parts
- -CenterEdge
- -SideEdge
- -△Roof
- -△SecondFloor
-・BaseLine
- -Axis
- -Interval
-・BasePoint
- -BlockLengh(PlaneのIntervalをRandomにする)
- -Rotate
- -Scale
- -Transform
- -color
-
-●概要
-・BoatHouseのパラメーターによる柔軟な調整
- -建物のエッジを柔軟に検証できるようにする
-・パラメーターによるプロシージャルなPattern生成
- -Patternを検証しつつ確認できるようにする
-
-●工程
-・BoatHouseのプロシージャルデザイン化
-・BaseLineGenerator
-・BasePointGenerator
-
-
-
-■CityGenerator
-●概要
-・ビルの模様をプロシージャルに簡単に生成できるツールを実装
- -丸の内で検証
-・ビルのファザードをモジュールとして組み立てるツールを実装
- -八重洲として検証
-・クラス化
- -BigBuildingとSmallBuildingが場所によって混在するように検証
-
-●工程
-・八重洲(ModularEditor)と丸の内(BuildingPatternGenerator)を用意
-・ModularEditor
- -Class
- -BlockScale
- -Roof
-・BuildingPatternGenerator
- -VerticalBlock
- -HorizontalBlock
- -Window
- -TopBlock
- -SideBlock
-
-
-
-
-■BoatHouse
 ※インド大使館からの向きで検証
 
 ○BaseLineにIndexをつける
 
-○BasePointのPlane周りの処理を整理
+△BasePointのPlane周りの処理を整理
 ・Simple
 ・Gradation
 ・Randomly
@@ -82,6 +27,7 @@
 
 ○組手検証
 
+
 ●Components
 ・Parts
  -CenterEdge
@@ -99,6 +45,18 @@
  -color
 
 
+■記事(BoatHouse)
+●概要
+・BoatHouseのパラメーターによる柔軟な調整
+ -建物のエッジを柔軟に検証できるようにする
+・パラメーターによるプロシージャルなPattern生成
+ -Patternを検証しつつ確認できるようにする
+
+●工程
+・BoatHouseのプロシージャルデザイン化
+・BaseLineGenerator
+・BasePointGenerator
+
 
 
 ■CityGenerator
@@ -115,7 +73,6 @@
 ○CityGeneratorの記事完成
 
 
-
 △ModularModeling拡張
 ・Moduleをモデリング
 
@@ -123,12 +80,40 @@
 ・BuildingPatternGeneratorのみでCityGeneratorを生成してみる
 
 
-△CityGeneratorの複雑化
+■記事(ModularEditor + BuildingPatternGenerator)
+●概要
+・ビルの模様をプロシージャルに簡単に生成できるツールを実装
+ -丸の内で検証
+・ビルのファザードをモジュールとして組み立てるツールを実装
+ -八重洲として検証
 
-△他世界観の検証準備
-・SCI-FI
- -ProceduralSciFiProject
- -ハードサーフェス本
+●工程
+・ModularEditor
+ -Class
+ -BlockScale
+ -Roof
+・BuildingPatternGenerator
+ -VerticalBlock
+ -HorizontalBlock
+ -Window
+ -TopBlock
+ -SideBlock
+
+●検証
+・八重洲
+・丸の内
+
+
+■記事(Class化)
+●概要
+・各処理ごとに処理を反映するPrimを定義する
+
+●工程
+・各HDAに適応するクラス値を設定
+・特定のクラスからさらにクラスを設定するwrangleを実装
+
+●検証
+・八重洲 + 丸の内
 
 
 
