@@ -1,4 +1,6 @@
-■CityVolumeMaker
+■CityGenerator
+※世界観をしっかり決めて、参考資料・リファレンスをしっかり用意する
+
 ○BuildingGenerator
 ※ProceduralCityProjectをベース
 ・ProceduralModeling
@@ -9,6 +11,15 @@
  -ProceduralSciFiProject
  -ハードサーフェス本
 
+△パイプライン化
+・背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装
+
+●参考資料
+・たのしい都市ジェネレータ
+https://www.youtube.com/watch?v=Y6-EWYXZG4s
+・Procedural City generator
+https://www.youtube.com/watch?v=BlduX70jZRU
+
 
 ■CD(Tool)
 ○配置ロジックの設計・実装
@@ -16,7 +27,9 @@
 ・BasePointGenerator
 
 ○Pattern設計・実装
-・立方体で検証
+※カプセル化・ポリフォーズム(多様性)
+・カラー化(Texture化)
+・BoxPatternをそのままVolumeとして使用する
 
 
 ■ポートフォリオ(記事)

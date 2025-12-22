@@ -1,3 +1,10 @@
+○module
+・Maya Moduleについて
+https://nagakagachi.hatenablog.com/entry/2020/05/27/204919
+・Maya モジュールのパス、フォルダ、およびバージョン
+https://help.autodesk.com/view/MAYAUL/2017/JPN/?guid=__files_GUID_130A3F57_2A5D_4E56_B066_6B86F68EEA22_htm
+
+
 ○BoatHouseGenerator整理
 ・クラス化
  -BaseLine
@@ -8,6 +15,7 @@
 
 ○CityGeneratorの完成
 ・パラメーターの調整
+ -道幅の修正
 ・BuildingGeneratorの設定
  -Roofを設定
 
@@ -23,13 +31,6 @@
 ・パラメーター画像
 以上の工程で生成した建物ボリュームに前回のBuildingGeneratorを適用したところ、その結果は画像のとおりとなった。
 ・アウトプットGIF
-
-
-○
-+ houdiniEngine 1.0 D:/HoudiniEngineForMaya-Houdini20.5/install_maya2025/maya2025
-PATH += D:/HoudiniEngineForMaya-Houdini20.5/install_maya2025/maya2025/C:/Program Files/Side Effects Software/Houdini 20.5.487/bin
-HOUDINI_DSO_EXCLUDE_PATTERN={CHOP_Mouse3D,COP2_GPULighting,COP2_GPUFog,COP2_GPUEnvironment,COP2_GPUZComposite,COP2_EnableGPU,SHOP_OGL,SOP_VDBUI,VEX_OpRender,USD_Ops}*
-
 
 
 
@@ -49,29 +50,10 @@ HOUDINI_DSO_EXCLUDE_PATTERN={CHOP_Mouse3D,COP2_GPULighting,COP2_GPUFog,COP2_GPUE
 ・スライド
 
 
-■年末年始準備
-※早起き(午前作業)
-
-○ポートフォリオ
-
-○年末年始に読む本を用意する
-
-○断捨離計画
-
 
 ■BoatHouse
 ※新年会のポートフォリオを目指す
 ※インド大使館からの向きで検証
-
-○BoatHouseGenerator整理
-・SurfaceのNormalを整理
- -Extrude方向の整理
-・躯体の生成
-・クラス化
- -BaseLine
-・パラメーター整理
- -Folderで整理
-・HDA化
 
 ○BaseLineGenerator整理
 ・BaseLineにIndexを設定
@@ -86,21 +68,21 @@ HOUDINI_DSO_EXCLUDE_PATTERN={CHOP_Mouse3D,COP2_GPULighting,COP2_GPUFog,COP2_GPUE
  -Folderで整理
 ・HDA化
 
+△EdgeGenerator整理
+
 △BasePointのPlane周りの処理を整理
 ・Simple
 ・Gradation
 ・Randomly
 
 
-○Randomly検証
-
 ○木組み検証
-・EdgeGeneratorで検証
-
-
-○木組み研究
-・隈研吾
-
+・木組み研究
+ -隈研吾
+・EdgeGenerator検証
+ -PatternOnlyの検証
+・BoatHouse検証
+ -躯体+Patterの検証
 
 ●Components
 ・Parts
@@ -196,27 +178,6 @@ HOUDINI_DSO_EXCLUDE_PATTERN={CHOP_Mouse3D,COP2_GPULighting,COP2_GPUFog,COP2_GPUE
 
 
 
-■EdgeGenerator
-△Pattern設計
-※カプセル化・ポリフォーズム(多様性)
-・カラー化(Texture化)
-・BoxPatternをそのままVolumeとして使用する
-
-
-
-■CityGenerator
-※世界観をしっかり決めて、参考資料・リファレンスをしっかり用意する
-
-△背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装
-
-●参考資料
-・たのしい都市ジェネレータ
-https://www.youtube.com/watch?v=Y6-EWYXZG4s
-・Procedural City generator
-https://www.youtube.com/watch?v=BlduX70jZRU
-
-
-
 ■Study(ナレッジ)
 ・フォトグラメトリーとプロシージャルを用いた最新ハイエンドゲーム3DCG背景制作手法 ～ハイエンドゲーム開発の経験がない会社がいかにしてそれらを生み出したか～
 https://cedil.cesa.or.jp/cedil_sessions/view/2118
@@ -232,6 +193,20 @@ https://cedil.cesa.or.jp/cedil_sessions/view/2794
 https://cedil.cesa.or.jp/cedil_sessions/view/3042
 
 
+
+■年末年始準備
+※早起き(午前作業)
+
+○ポートフォリオ
+
+○年末年始に読む本を用意する
+
+○断捨離計画
+
+○初売り
+・サイト
+・マウス
+・ズボン
 
 
 ■組み合わせを多様化(記事)
