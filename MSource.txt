@@ -1,7 +1,4 @@
 ○BoatHouseGenerator整理
-・SurfaceのNormalを整理
- -Extrude方向の整理
-・躯体の生成
 ・クラス化
  -BaseLine
 ・パラメーター整理
@@ -26,6 +23,14 @@
 ・パラメーター画像
 以上の工程で生成した建物ボリュームに前回のBuildingGeneratorを適用したところ、その結果は画像のとおりとなった。
 ・アウトプットGIF
+
+
+○
++ houdiniEngine 1.0 D:/HoudiniEngineForMaya-Houdini20.5/install_maya2025/maya2025
+PATH += D:/HoudiniEngineForMaya-Houdini20.5/install_maya2025/maya2025/C:/Program Files/Side Effects Software/Houdini 20.5.487/bin
+HOUDINI_DSO_EXCLUDE_PATTERN={CHOP_Mouse3D,COP2_GPULighting,COP2_GPUFog,COP2_GPUEnvironment,COP2_GPUZComposite,COP2_EnableGPU,SHOP_OGL,SOP_VDBUI,VEX_OpRender,USD_Ops}*
+
+
 
 
 ■Daily
