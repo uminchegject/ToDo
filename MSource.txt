@@ -1,11 +1,62 @@
+○BoatHouseGenerator整理
+・SurfaceのNormalを整理
+ -Extrude方向の整理
+・躯体の生成
+・クラス化
+ -BaseLine
+・パラメーター整理
+ -Folderで整理
+・HDA化
+
+
+○CityGeneratorの完成
+・パラメーターの調整
+・BuildingGeneratorの設定
+ -Roofを設定
+
+○アウトプットGIFの用意
+・BlockMaker
+・PlotMaker
+・VolumeMaker
+・BuildingGenerator
+
+○CityGeneratorの記事完成
+・丸の内
+丸の内は区画スケールが大きく、建物ボリュームも大きいため、この特徴を再現するために、各パラメーターを画像の通りに設定した。
+・パラメーター画像
+以上の工程で生成した建物ボリュームに前回のBuildingGeneratorを適用したところ、その結果は画像のとおりとなった。
+・アウトプットGIF
+
+
+■Daily
+○検証
+・BuildingPatternGenerator
+
+○記事
+※つかみの部分をしっかり用意する
+・CityGenerator
+・ModularEditor + BuildingPatternGenerator
+
+○オブジェクト指向
+・オブジェクト指向でなぜつくるのか
+
+○プロシージャルモデリング
+・スライド
+
+
+■年末年始準備
+※早起き(午前作業)
+
+○ポートフォリオ
+
 ○年末年始に読む本を用意する
+
+○断捨離計画
 
 
 ■BoatHouse
 ※新年会のポートフォリオを目指す
 ※インド大使館からの向きで検証
-
-○BaseLineにIndexをつける
 
 ○BoatHouseGenerator整理
 ・SurfaceのNormalを整理
@@ -18,6 +69,7 @@
 ・HDA化
 
 ○BaseLineGenerator整理
+・BaseLineにIndexを設定
 ・ソース整理
 ・パラメーター整理
  -Folderで整理
@@ -95,9 +147,6 @@
 ※配色
 
 
-○CityGeneratorの記事完成
-
-
 △ModularModeling拡張
 ・Moduleをモデリング
 
@@ -139,22 +188,6 @@
 
 ●検証
 ・八重洲 + 丸の内
-
-
-
-■Daily
-○検証
-・RandomlyBlock(BoatHouse)
-
-○記事
-※つかみの部分をしっかり用意する
-・Randomly
-
-○オブジェクト指向
-・オブジェクト指向でなぜつくるのか
-
-○プロシージャルモデリング
-・スライド
 
 
 
