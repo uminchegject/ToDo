@@ -1,3 +1,6 @@
+※サンプルプロジェクトを研究＆拡張
+※特定の作品をベースに模写＆拡張
+
 ○HDA化(BoatHouseGenerator,BaseLineGenerator,BasePointGenerator)
 ・グループ処理実装
 ・パラメーター実装
