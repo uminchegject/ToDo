@@ -6,18 +6,17 @@ https://help.autodesk.com/view/MAYAUL/2017/JPN/?guid=__files_GUID_130A3F57_2A5D_
 
 
 ○BoatHouseGenerator整理
-・クラス化
- -BaseLine
 ・パラメーター整理
  -Folderで整理
 ・HDA化
 
 
 ○CityGeneratorの完成
+・BuildingGeneratorの整理
+ -モノクロでランダム化
+ -Roofを設定
 ・パラメーターの調整
  -道幅の修正
-・BuildingGeneratorの設定
- -Roofを設定
 
 ○アウトプットGIFの用意
 ・BlockMaker
@@ -58,12 +57,15 @@ https://help.autodesk.com/view/MAYAUL/2017/JPN/?guid=__files_GUID_130A3F57_2A5D_
 ○BaseLineGenerator整理
 ・BaseLineにIndexを設定
 ・ソース整理
+・クラス設定
+ -BaseLine
 ・パラメーター整理
  -Folderで整理
 ・HDA化
 
 ○BasePointGenerator整理
 ・ソース整理
+・クラス認証
 ・パラメーター整理
  -Folderで整理
 ・HDA化
