@@ -1,16 +1,13 @@
+○HDA化(BoatHouseGenerator,BaseLineGenerator,BasePointGenerator)
+・グループ処理実装
+・パラメーター実装
 
+○SunnyHills模写
 
+○UnderConstruction模写
 
 
 ■Daily
-○検証
-・BuildingPatternGenerator
-
-○記事
-※つかみの部分をしっかり用意する
-・CityGenerator
-・ModularEditor + BuildingPatternGenerator
-
 ○オブジェクト指向
 ・オブジェクト指向でなぜつくるのか
 
@@ -23,18 +20,13 @@
 ※新年会のポートフォリオを目指す
 ※インド大使館からの向きで検証
 
-○HDA化
-・BoatHouseGenerator
-・BaseLineGenerator
-・BasePointGenerator
-
 ○木組み検証
 ・木組み研究
  -隈研吾
-・EdgeGenerator検証
- -PatternOnlyの検証
 ・BoatHouse検証
  -躯体+Patterの検証
+・△EdgeGenerator検証
+ -PatternOnlyの検証
 
 ●Components
 ・Parts
@@ -52,14 +44,30 @@
  -Transform
  -color
 
-
 △Edgeの繋ぎ部分の処理を実装
 ・EdgeGeneratorで検証
 
+
+■SunnyHills検証
 △BasePointのPlane周りの処理を整理
 ・Simple
 ・Gradation
 ・Randomly
+
+●拡張
+・Gradation
+・Randomly
+
+●Components
+・parts
+ -VerticalEdge
+ -CenterEdge
+ -Roof(Under)
+ -SecondFloor(Under)
+・Parameter
+ -SurfaceAngle
+ -WoodLength
+ -GridAngle
 
 
 ■記事(BoatHouse)
@@ -75,31 +83,38 @@
 ・BasePointGenerator
 
 
-■記事(木組み)
+■記事(SunnyHills)
 ●概要
-・木組みについて
+・模写
+・拡張
 
 ●検証
-・EdgeGeneratorで検証
 
 
 
 ■CityGenerator
 ○BuildingPatternGeneratorの検証
-※配色
-・VerticalBase
-・HorizontalBase
-・GridBase
+・Color
+・Pattern
+ -VerticalBase
+ -HorizontalBase
+ -GridBase
 
 ○BuildingGenerator + ModularEditorの検証
-※配色
-
+・GridId
+ -Noise
 
 △ModularModeling拡張
 ・Moduleをモデリング
 
 △BuildingPatternGenerator拡張
 ・BuildingPatternGeneratorのみでCityGeneratorを生成してみる
+
+
+■UnderConstruction検証
+●Components
+・Color
+・Pattern
 
 
 ■記事(CityGenerator)
@@ -120,9 +135,7 @@
 ■記事(ModularEditor + BuildingPatternGenerator)
 ●概要
 ・ビルの模様をプロシージャルに簡単に生成できるツールを実装
- -丸の内で検証
 ・ビルのファザードをモジュールとして組み立てるツールを実装
- -八重洲として検証
 
 ●工程
 ・ModularEditor
@@ -137,11 +150,11 @@
  -SideBlock
 
 ●検証
-・八重洲
-・丸の内
+・八重洲のVolumeで検証してみる
+・丸の内のVolumeで検証してみる
 
 
-■記事(Class化)
+■記事(ID化)
 ●概要
 ・各処理ごとに処理を反映するPrimを定義する
 
@@ -150,15 +163,11 @@
 ・特定のクラスからさらにクラスを設定するwrangleを実装
 
 ●検証
-・八重洲 + 丸の内
+・様々な特徴の街並みを混合する
 
 
 
 ■Study(ナレッジ)
-・フォトグラメトリーとプロシージャルを用いた最新ハイエンドゲーム3DCG背景制作手法 ～ハイエンドゲーム開発の経験がない会社がいかにしてそれらを生み出したか～
-https://cedil.cesa.or.jp/cedil_sessions/view/2118
-・エンタメ系TAの挑戦！　UE4によるエンタープライズ向け開発事例の紹介 　～AIの教師データ量産におけるプロシージャル技術の応用～
-https://cedil.cesa.or.jp/cedil_sessions/view/2244
 ・Unreal Engine 5 ElectricDreams環境サンプルにみるプロシージャル生成テクニック
 https://cedil.cesa.or.jp/cedil_sessions/view/2762
 
@@ -172,6 +181,7 @@ https://cedil.cesa.or.jp/cedil_sessions/view/3042
 
 ■年末年始準備
 ※早起き(午前作業)
+※午前ポートフォリオ、午後断捨離
 
 ○ポートフォリオ
 
