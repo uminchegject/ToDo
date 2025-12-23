@@ -1,35 +1,4 @@
-○module
-・Maya Moduleについて
-https://nagakagachi.hatenablog.com/entry/2020/05/27/204919
-・Maya モジュールのパス、フォルダ、およびバージョン
-https://help.autodesk.com/view/MAYAUL/2017/JPN/?guid=__files_GUID_130A3F57_2A5D_4E56_B066_6B86F68EEA22_htm
 
-
-○BoatHouseGenerator整理
-・パラメーター整理
- -Folderで整理
-・HDA化
-
-
-○CityGeneratorの完成
-・BuildingGeneratorの整理
- -モノクロでランダム化
- -Roofを設定
-・パラメーターの調整
- -道幅の修正
-
-○アウトプットGIFの用意
-・BlockMaker
-・PlotMaker
-・VolumeMaker
-・BuildingGenerator
-
-○CityGeneratorの記事完成
-・丸の内
-丸の内は区画スケールが大きく、建物ボリュームも大きいため、この特徴を再現するために、各パラメーターを画像の通りに設定した。
-・パラメーター画像
-以上の工程で生成した建物ボリュームに前回のBuildingGeneratorを適用したところ、その結果は画像のとおりとなった。
-・アウトプットGIF
 
 
 
@@ -54,29 +23,10 @@ https://help.autodesk.com/view/MAYAUL/2017/JPN/?guid=__files_GUID_130A3F57_2A5D_
 ※新年会のポートフォリオを目指す
 ※インド大使館からの向きで検証
 
-○BaseLineGenerator整理
-・BaseLineにIndexを設定
-・ソース整理
-・クラス設定
- -BaseLine
-・パラメーター整理
- -Folderで整理
-・HDA化
-
-○BasePointGenerator整理
-・ソース整理
-・クラス認証
-・パラメーター整理
- -Folderで整理
-・HDA化
-
-△EdgeGenerator整理
-
-△BasePointのPlane周りの処理を整理
-・Simple
-・Gradation
-・Randomly
-
+○HDA化
+・BoatHouseGenerator
+・BaseLineGenerator
+・BasePointGenerator
 
 ○木組み検証
 ・木組み研究
@@ -101,6 +51,15 @@ https://help.autodesk.com/view/MAYAUL/2017/JPN/?guid=__files_GUID_130A3F57_2A5D_
  -Scale
  -Transform
  -color
+
+
+△Edgeの繋ぎ部分の処理を実装
+・EdgeGeneratorで検証
+
+△BasePointのPlane周りの処理を整理
+・Simple
+・Gradation
+・Randomly
 
 
 ■記事(BoatHouse)
@@ -141,6 +100,21 @@ https://help.autodesk.com/view/MAYAUL/2017/JPN/?guid=__files_GUID_130A3F57_2A5D_
 
 △BuildingPatternGenerator拡張
 ・BuildingPatternGeneratorのみでCityGeneratorを生成してみる
+
+
+■記事(CityGenerator)
+○アウトプットGIFの用意
+・BlockMaker
+・PlotMaker
+・VolumeMaker
+・BuildingGenerator
+
+○CityGeneratorの記事完成
+・丸の内
+丸の内は区画スケールが大きく、建物ボリュームも大きいため、この特徴を再現するために、各パラメーターを画像の通りに設定した。
+・パラメーター画像
+以上の工程で生成した建物ボリュームに前回のBuildingGeneratorを適用したところ、その結果は画像のとおりとなった。
+・アウトプットGIF
 
 
 ■記事(ModularEditor + BuildingPatternGenerator)
