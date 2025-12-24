@@ -1,6 +1,3 @@
-※サンプルプロジェクトを研究＆拡張
-※特定の作品をベースに模写＆拡張
-
 ○HDA化(BoatHouseGenerator,BaseLineGenerator,BasePointGenerator)
 ・グループ処理実装
 ・パラメーター実装
@@ -183,7 +180,7 @@ https://cedil.cesa.or.jp/cedil_sessions/view/3042
 
 
 ■年末年始準備
-※早起き(午前作業)
+※早起き
 ※午前ポートフォリオ、午後断捨離
 
 ○ポートフォリオ
