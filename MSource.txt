@@ -1,10 +1,12 @@
-○HDA化(BoatHouseGenerator,BaseLineGenerator,BasePointGenerator)
-・グループ処理実装
-・パラメーター実装
+○SunnyHills検証
 
-○SunnyHills模写
-
-○UnderConstruction模写
+○UnderConstruction検証
+※Color × Pattern
+・Color
+※色合いが違う3種類を用意する
+ -Top + HorizontalBlock
+ -Side + VerticalBlock
+ -Windows
 
 
 ■Daily
