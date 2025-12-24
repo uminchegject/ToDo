@@ -1,5 +1,8 @@
 ○SunnyHills検証
 
+○ModuleGenerater検証
+・大小の種類で素材を分ける
+
 ○UnderConstruction検証
 ※Color × Pattern
 ・Color
@@ -7,6 +10,7 @@
  -Top + HorizontalBlock
  -Side + VerticalBlock
  -Windows
+・大小用意する
 
 
 ■Daily
