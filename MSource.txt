@@ -1,9 +1,28 @@
-○HDA整理
-・ソース整理
-・パラメーター整理
- -PatternIndexを追加
+■Public
+○Houdini側の処理の実装を簡潔
+・頂点追加
+・頂点カラー
+・パラメーター
+ -オフセット値
+ -ランプ
+・HDA化
+
+○HoudiniEngineForMayaの調査
+・Mayaのメッシュのインポート
+・Mayaへのエクスポート
+ -mesh
+ -頂点カラー
+
+●ノード
+・skin
+・polypath
+
+
+■Private
+※検証+修正を各テーマごとに繰り返す
 
 ○SunnyHills検証
+・Gradationモチーフを調査
 
 
 ○ModuleGenerater検証
@@ -20,6 +39,7 @@
 ・丸の内、八重洲で検証
 
 
+
 ■Daily
 ○オブジェクト指向
 ・オブジェクト指向でなぜつくるのか
@@ -32,6 +52,11 @@
 ■BoatHouse
 ※新年会のポートフォリオを目指す
 ※インド大使館からの向きで検証
+
+△BasePointのPlane周りの処理を整理
+・Simple
+・Gradation
+・Randomly
 
 ○木組み検証
 ・木組み研究
@@ -57,8 +82,23 @@
  -Transform
  -color
 
+●追加ソース
+・BasePointの位置をランダム調整
+spawn_pos += line_dir * ((1 - scale.y) * block_length) * (rand(scale) - 0.5);
+・スキップ処理
+if(i@BaseLineId % 2 == 1){
+	if(i % 2 == 0) continue;
+}
+else{
+	if(i % 2 != 0) continue;
+}
+
 △Edgeの繋ぎ部分の処理を実装
 ・EdgeGeneratorで検証
+
+△木目をCopernicusで表現
+
+
 
 
 ■SunnyHills検証
