@@ -1,11 +1,10 @@
-○SunnyHills検証
-・Randomly検証
- -他パーツの設定
- -△位置の調整
-・Gradation検証
- -Wood角度
- -WoodLength
- -△Planeの位置
+○他パーツの設定
+
+○角度Gradation
+rotate += adjust_rotate * rotate_gradation_cofficient * sin((@primnum + i) * rotate_noise_cofficient);
+
+△位置の調整
+
 
 ○ModuleGenerater検証
 ・大小の種類で素材を分ける
