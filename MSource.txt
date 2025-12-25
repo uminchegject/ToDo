@@ -1,16 +1,23 @@
+○HDA整理
+・ソース整理
+・パラメーター整理
+ -PatternIndexを追加
+
 ○SunnyHills検証
+
 
 ○ModuleGenerater検証
 ・大小の種類で素材を分ける
+・丸の内、八重洲で検証
 
 ○UnderConstruction検証
 ※Color × Pattern
-・Color
-※色合いが違う3種類を用意する
+・Color(※色合いが違う3種類を用意する)
  -Top + HorizontalBlock
  -Side + VerticalBlock
  -Windows
 ・大小用意する
+・丸の内、八重洲で検証
 
 
 ■Daily
@@ -99,13 +106,6 @@
 
 
 ■CityGenerator
-○BuildingPatternGeneratorの検証
-・Color
-・Pattern
- -VerticalBase
- -HorizontalBase
- -GridBase
-
 ○BuildingGenerator + ModularEditorの検証
 ・GridId
  -Noise
