@@ -1,20 +1,45 @@
 ※モチーフを模写し、拡張する
 
-○BoatHouseProject記事作成
+●Topic
+・PatternGenerator
+ -BaseLineMaker
+ -BasePointMaker
+・BoatHouse
+検証モデル
+ -実物
+ -角度、高さ調整
+・SunnyHills
+ -実物
+ -SimplePattern
+ -RandomPattern
+ -GradationPattern
+
+●概要
 ・形態の柔軟化
 ・模様の柔軟化
 
-○CityGenerator検証
-・楽しい都市Generator
-※横から画角(側面上部を見せる)
- -大小のコントラスト
- -奥行
-・UnderConstruction
-※Patternのコントラスト
-・ID化
+
+○楽しい都市Generator模写
+※横からの画角(側面上部を見せる)
+・大小のコントラスト
+・奥行をつける
+
+○UnderConstruction模写
+・Patternのコントラスト
+・大小のコントラスト
+※Color × Pattern
+・Color(※色合いが違う3種類を用意する)
+ -Top + HorizontalBlock
+ -Side + VerticalBlock
+ -Windows
+・Pattern
+ -VerticalBase
+  -VerticalBlockWidth
+ -HorizontalBase
+  -HorizontalBlockWidth
 
 
-■年末年始準備
+■年末年始
 ※早起き
 ※午前ポートフォリオ、午後断捨離
 
@@ -35,13 +60,10 @@
 ・ズボン
 
 
-
 ■SunnyHills検証
-○他パーツの設定
-
-○SunnyHills検証
-・Randomly
-・Gradation
+○検証
+・他パーツの設定
+・位置の調整
 
 △BasePointのPlane周りの処理を整理
 ・Simple
@@ -85,23 +107,9 @@
 
 
 ■CityGenerator検証
-○ModuleEditor検証
-・大小の種類で素材を分ける
-・丸の内、八重洲で検証
+○楽しい都市Generator検証
 
 ○UnderConstruction検証
-※Color × Pattern
-・Color(※色合いが違う3種類を用意する)
- -Top + HorizontalBlock
- -Side + VerticalBlock
- -Windows
-・Pattern
- -VerticalBase
-  -VerticalBlockWidth
- -HorizontalBase
-  -HorizontalBlockWidth
-・大小用意する
-・丸の内、八重洲で検
 
 ○Id複雑化の検証
 
