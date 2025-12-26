@@ -24,25 +24,9 @@ rotate += adjust_rotate * rotate_gradation_cofficient * sin((@primnum + i) * rot
  -HorizontalBase
   -HorizontalBlockWidth
 ・大小用意する
-・丸の内、八重洲で検証
+・丸の内、八重洲で検
 
-
-■Public
-○HoudiniEngineForMayaの検証
-・Houdini Engine for MayaでHoudini デジタルアセットを使用する
-https://support.borndigital.co.jp/hc/ja/articles/900000756146
-
-○Houdini側の処理の実装を簡潔
-・頂点追加
-・頂点カラー
-・パラメーター
- -オフセット値
- -ランプ
-・HDA化
-
-●ノード
-・skin
-・polypath
+○Id複雑化の検証
 
 
 ■年末年始準備
@@ -63,13 +47,6 @@ https://support.borndigital.co.jp/hc/ja/articles/900000756146
 ・マウス
 ・ズボン
 
-
-■Daily
-○オブジェクト指向
-・オブジェクト指向でなぜつくるのか
-
-○プロシージャルモデリング
-・スライド
 
 
 ■SunnyHills検証
@@ -114,17 +91,6 @@ https://support.borndigital.co.jp/hc/ja/articles/900000756146
 
 ●検証
 
-
-■CityGenerator
-○BuildingGenerator + ModularEditorの検証
-・GridId
- -Noise
-
-△ModularModeling拡張
-・Moduleをモデリング
-
-△BuildingPatternGenerator拡張
-・BuildingPatternGeneratorのみでCityGeneratorを生成してみる
 
 
 ■UnderConstruction検証
@@ -182,15 +148,6 @@ https://support.borndigital.co.jp/hc/ja/articles/900000756146
 ・様々な特徴の街並みを混合する
 
 
-
-■Study(ナレッジ)
-・Procedural PLATEAU: プロシージャル技術と3D都市モデル「Project PLATEAU」を組み合わせたファサード自動生成とテクスチャ付き3Dモデル自動生成の取り組み
-https://cedil.cesa.or.jp/cedil_sessions/view/2794
-・地理空間情報のススメ！オープンデータ×データドリブンな プロシージャル処理による都市の樹木自動配置
-https://cedil.cesa.or.jp/cedil_sessions/view/3042
-
-
-
 ■組み合わせを多様化(記事)
 ※複雑性をクラスで制御できることを強調する
  -クラス種類を検証する
@@ -208,3 +165,84 @@ https://cedil.cesa.or.jp/cedil_sessions/view/3042
  -Volume
  -Pattern
 ・Plot×Block×Patternをそれぞれ組み合わせて混在させる
+
+
+
+
+■Daily
+○オブジェクト指向
+・オブジェクト指向でなぜつくるのか
+
+○プロシージャルモデリング
+・スライド
+
+■Study(ナレッジ)
+・Procedural PLATEAU: プロシージャル技術と3D都市モデル「Project PLATEAU」を組み合わせたファサード自動生成とテクスチャ付き3Dモデル自動生成の取り組み
+https://cedil.cesa.or.jp/cedil_sessions/view/2794
+・地理空間情報のススメ！オープンデータ×データドリブンな プロシージャル処理による都市の樹木自動配置
+https://cedil.cesa.or.jp/cedil_sessions/view/3042
+
+
+■BoatHouse
+※新年会のポートフォリオを目指す
+※インド大使館からの向きで検証
+
+△BasePointのPlane周りの処理を整理
+・Simple
+・Gradation
+・Randomly
+
+○木組み検証
+・木組み研究
+ -隈研吾
+・BoatHouse検証
+ -躯体+Patterの検証
+・△EdgeGenerator検証
+ -PatternOnlyの検証
+
+●Components
+・Parts
+ -CenterEdge
+ -SideEdge
+ -△Roof
+ -△SecondFloor
+・BaseLine
+ -Axis
+ -Interval
+・BasePoint
+ -BlockLengh(PlaneのIntervalをRandomにする)
+ -Rotate
+ -Scale
+ -Transform
+ -color
+
+●追加ソース
+・BasePointの位置をランダム調整
+spawn_pos += line_dir * ((1 - scale.y) * block_length) * (rand(scale) - 0.5);
+・スキップ処理
+if(i@BaseLineId % 2 == 1){
+	if(i % 2 == 0) continue;
+}
+else{
+	if(i % 2 != 0) continue;
+}
+
+△Edgeの繋ぎ部分の処理を実装
+・EdgeGeneratorで検証
+
+△木目をCopernicusで表現
+
+
+■Public
+○Houdini側の処理の実装
+・Mesh生成
+・ソース整理
+
+○CLで実装+検証
+
+○中間報告
+・操作GIFを用意
+
+●ノード
+・skin
+・polypath
