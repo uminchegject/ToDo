@@ -1,34 +1,3 @@
-○他パーツの設定
-
-○角度Gradation
-rotate += adjust_rotate * rotate_gradation_cofficient * sin((@primnum + i) * rotate_noise_cofficient);
-
-○SunnyHills検証
-・Randomly
-・Gradation
-
-
-○ModuleGenerater検証
-・大小の種類で素材を分ける
-・丸の内、八重洲で検証
-
-○UnderConstruction検証
-※Color × Pattern
-・Color(※色合いが違う3種類を用意する)
- -Top + HorizontalBlock
- -Side + VerticalBlock
- -Windows
-・Pattern
- -VerticalBase
-  -VerticalBlockWidth
- -HorizontalBase
-  -HorizontalBlockWidth
-・大小用意する
-・丸の内、八重洲で検
-
-○Id複雑化の検証
-
-
 ■年末年始準備
 ※早起き
 ※午前ポートフォリオ、午後断捨離
@@ -50,6 +19,12 @@ rotate += adjust_rotate * rotate_gradation_cofficient * sin((@primnum + i) * rot
 
 
 ■SunnyHills検証
+○他パーツの設定
+
+○SunnyHills検証
+・Randomly
+・Gradation
+
 △BasePointのPlane周りの処理を整理
 ・Simple
 ・Gradation
@@ -90,13 +65,31 @@ rotate += adjust_rotate * rotate_gradation_cofficient * sin((@primnum + i) * rot
 ・拡張
 
 ●検証
+※GIFを用意
+ -Gradationで動きのある処理をレンダリングで見せる
+ 
 
 
+■CityGenerator検証
+○ModuleEditor検証
+・大小の種類で素材を分ける
+・丸の内、八重洲で検証
 
-■UnderConstruction検証
-●Components
-・Color
+○UnderConstruction検証
+※Color × Pattern
+・Color(※色合いが違う3種類を用意する)
+ -Top + HorizontalBlock
+ -Side + VerticalBlock
+ -Windows
 ・Pattern
+ -VerticalBase
+  -VerticalBlockWidth
+ -HorizontalBase
+  -HorizontalBlockWidth
+・大小用意する
+・丸の内、八重洲で検
+
+○Id複雑化の検証
 
 
 ■記事(CityGenerator)
@@ -137,50 +130,26 @@ rotate += adjust_rotate * rotate_gradation_cofficient * sin((@primnum + i) * rot
 
 
 ■記事(ID化)
+※複雑性をIDで制御できることを強調する
+
 ●概要
+・それぞれのパターンを組み合わせし、多様な組み合わせを行えるようにする
 ・各処理ごとに処理を反映するPrimを定義する
 
 ●工程
 ・各HDAに適応するクラス値を設定
+・それぞれのパラメーターをマルチパラメーター化して、クラス付けを行い組み合わせをしやすくする
 ・特定のクラスからさらにクラスを設定するwrangleを実装
 
 ●検証
 ・様々な特徴の街並みを混合する
 
 
-■組み合わせを多様化(記事)
-※複雑性をクラスで制御できることを強調する
- -クラス種類を検証する
-
-●概要
-・それぞれのパターンを組み合わせし、多様な組み合わせを行えるようにする
-
-●クラス化
-・それぞれのパラメーターをマルチパラメーター化して、クラス付けを行い組み合わせをしやすくする
-・クラスwrangleの実装
-
-●検証
-・それぞれのSubnetで違うパラメーターを3種類ずつ用意
- -Plot
- -Volume
- -Pattern
-・Plot×Block×Patternをそれぞれ組み合わせて混在させる
 
 
 
 
-■Daily
-○オブジェクト指向
-・オブジェクト指向でなぜつくるのか
 
-○プロシージャルモデリング
-・スライド
-
-■Study(ナレッジ)
-・Procedural PLATEAU: プロシージャル技術と3D都市モデル「Project PLATEAU」を組み合わせたファサード自動生成とテクスチャ付き3Dモデル自動生成の取り組み
-https://cedil.cesa.or.jp/cedil_sessions/view/2794
-・地理空間情報のススメ！オープンデータ×データドリブンな プロシージャル処理による都市の樹木自動配置
-https://cedil.cesa.or.jp/cedil_sessions/view/3042
 
 
 ■BoatHouse
@@ -233,6 +202,15 @@ else{
 △木目をCopernicusで表現
 
 
+
+■Daily
+○オブジェクト指向
+・オブジェクト指向でなぜつくるのか
+
+○プロシージャルモデリング
+・スライド
+
+
 ■Public
 ○Houdini側の処理の実装
 ・Mesh生成
@@ -246,3 +224,10 @@ else{
 ●ノード
 ・skin
 ・polypath
+
+
+■Study(ナレッジ)
+・Procedural PLATEAU: プロシージャル技術と3D都市モデル「Project PLATEAU」を組み合わせたファサード自動生成とテクスチャ付き3Dモデル自動生成の取り組み
+https://cedil.cesa.or.jp/cedil_sessions/view/2794
+・地理空間情報のススメ！オープンデータ×データドリブンな プロシージャル処理による都市の樹木自動配置
+https://cedil.cesa.or.jp/cedil_sessions/view/3042
