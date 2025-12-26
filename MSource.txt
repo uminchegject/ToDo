@@ -1,13 +1,25 @@
+○BoatHouseProject記事作成
+・形態の柔軟化
+・模様の柔軟化
+
+○CityGenerator検証
+・ModuleEditor
+・UnderConstruction
+・ID化
+
+
 ■年末年始準備
 ※早起き
 ※午前ポートフォリオ、午後断捨離
 
 ○年末年始に読む本を用意する
+・私の履歴書
 
 ○ポートフォリオ
 ・検証
  -資料作成
 ・記事
+ -メモ
 
 ○断捨離
 
@@ -27,10 +39,6 @@
 
 △BasePointのPlane周りの処理を整理
 ・Simple
-・Gradation
-・Randomly
-
-●拡張
 ・Gradation
 ・Randomly
 
