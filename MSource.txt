@@ -1,10 +1,16 @@
+※モチーフを模写し、拡張する
+
 ○BoatHouseProject記事作成
 ・形態の柔軟化
 ・模様の柔軟化
 
 ○CityGenerator検証
-・ModuleEditor
+・楽しい都市Generator
+※横から画角(側面上部を見せる)
+ -大小のコントラスト
+ -奥行
 ・UnderConstruction
+※Patternのコントラスト
 ・ID化
 
 
