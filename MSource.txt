@@ -3,7 +3,9 @@
 ○角度Gradation
 rotate += adjust_rotate * rotate_gradation_cofficient * sin((@primnum + i) * rotate_noise_cofficient);
 
-△位置の調整
+○SunnyHills検証
+・Randomly
+・Gradation
 
 
 ○ModuleGenerater検証
@@ -26,6 +28,10 @@ rotate += adjust_rotate * rotate_gradation_cofficient * sin((@primnum + i) * rot
 
 
 ■Public
+○HoudiniEngineForMayaの検証
+・Houdini Engine for MayaでHoudini デジタルアセットを使用する
+https://support.borndigital.co.jp/hc/ja/articles/900000756146
+
 ○Houdini側の処理の実装を簡潔
 ・頂点追加
 ・頂点カラー
@@ -34,19 +40,28 @@ rotate += adjust_rotate * rotate_gradation_cofficient * sin((@primnum + i) * rot
  -ランプ
 ・HDA化
 
-○HoudiniEngineForMayaの調査
-・Mayaのメッシュのインポート
-・Mayaへのエクスポート
- -mesh
- -頂点カラー
-・Houdini Engine for MayaでHoudini デジタルアセットを使用する
-https://support.borndigital.co.jp/hc/ja/articles/900000756146--%E5%88%9D%E5%BF%83%E8%80%85%E5%90%91%E3%81%91Houdini%E3%83%88%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%AB005-Houdini-Engine-for-Maya%E3%81%A7Houdini-%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E3%82%A2%E3%82%BB%E3%83%83%E3%83%88%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B
-・Houdini Engine For Maya を調べてみる
-https://qiita.com/yuya_torii/items/001642040a5354cd9f89#object%E3%81%A8sop%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6
-
 ●ノード
 ・skin
 ・polypath
+
+
+■年末年始準備
+※早起き
+※午前ポートフォリオ、午後断捨離
+
+○年末年始に読む本を用意する
+
+○ポートフォリオ
+・検証
+ -資料作成
+・記事
+
+○断捨離
+
+○初売り
+・サイト
+・マウス
+・ズボン
 
 
 ■Daily
@@ -55,56 +70,6 @@ https://qiita.com/yuya_torii/items/001642040a5354cd9f89#object%E3%81%A8sop%E3%81
 
 ○プロシージャルモデリング
 ・スライド
-
-
-■BoatHouse
-※新年会のポートフォリオを目指す
-※インド大使館からの向きで検証
-
-△BasePointのPlane周りの処理を整理
-・Simple
-・Gradation
-・Randomly
-
-○木組み検証
-・木組み研究
- -隈研吾
-・BoatHouse検証
- -躯体+Patterの検証
-・△EdgeGenerator検証
- -PatternOnlyの検証
-
-●Components
-・Parts
- -CenterEdge
- -SideEdge
- -△Roof
- -△SecondFloor
-・BaseLine
- -Axis
- -Interval
-・BasePoint
- -BlockLengh(PlaneのIntervalをRandomにする)
- -Rotate
- -Scale
- -Transform
- -color
-
-●追加ソース
-・BasePointの位置をランダム調整
-spawn_pos += line_dir * ((1 - scale.y) * block_length) * (rand(scale) - 0.5);
-・スキップ処理
-if(i@BaseLineId % 2 == 1){
-	if(i % 2 == 0) continue;
-}
-else{
-	if(i % 2 != 0) continue;
-}
-
-△Edgeの繋ぎ部分の処理を実装
-・EdgeGeneratorで検証
-
-△木目をCopernicusで表現
 
 
 ■SunnyHills検証
@@ -148,7 +113,6 @@ else{
 ・拡張
 
 ●検証
-
 
 
 ■CityGenerator
@@ -225,22 +189,6 @@ https://cedil.cesa.or.jp/cedil_sessions/view/2794
 ・地理空間情報のススメ！オープンデータ×データドリブンな プロシージャル処理による都市の樹木自動配置
 https://cedil.cesa.or.jp/cedil_sessions/view/3042
 
-
-
-■年末年始準備
-※早起き
-※午前ポートフォリオ、午後断捨離
-
-○ポートフォリオ
-
-○年末年始に読む本を用意する
-
-○断捨離計画
-
-○初売り
-・サイト
-・マウス
-・ズボン
 
 
 ■組み合わせを多様化(記事)
