@@ -1,24 +1,8 @@
 ※モチーフを模写し、拡張する
 
+○パラメーターの微調整
+
 △位置調整
-
-●Topic
-・PatternGenerator
- -BaseLineMaker
- -BasePointMaker
-・BoatHouse
-検証モデル
- -実物
- -角度、高さ調整
-・SunnyHills
- -実物
- -SimplePattern
- -RandomPattern
- -GradationPattern
-
-●概要
-・形態の柔軟化
-・模様の柔軟化
 
 
 ○Moduleモデリング検証
@@ -26,8 +10,11 @@
 ・Bigブロックで適応
 
 ○Pattern検証
-・△SideBlock幅修正
-・大証混在化検証
+・SideBlockGroupを外す
+・Big
+ -GridBlock
+・Small
+ -SimpleBlock
 
 ○楽しい都市Generator模写
 ※横からの画角(側面上部を見せる)
@@ -92,27 +79,34 @@
  -GridAngle
 
 
-■記事(BoatHouse)
+■記事(SunnyHills)
 ●概要
 ・BoatHouseのパラメーターによる柔軟な調整
  -建物のエッジを柔軟に検証できるようにする
 ・パラメーターによるプロシージャルなPattern生成
  -Patternを検証しつつ確認できるようにする
-
-●工程
-・BoatHouseのプロシージャルデザイン化
-・BaseLineGenerator
-・BasePointGenerator
-
-
-■記事(SunnyHills)
-●概要
 ・模写
 ・拡張
+・形態の柔軟化
+・模様の柔軟化
 
 ●検証
 ※GIFを用意
  -Gradationで動きのある処理をレンダリングで見せる
+ 
+●Topic
+・PatternGenerator
+ -BaseLineMaker
+ -BasePointMaker
+・BoatHouse
+検証モデル
+ -実物
+ -角度、高さ調整
+・SunnyHills
+ -実物
+ -SimplePattern
+ -RandomPattern
+ -GradationPattern
  
 
 
@@ -175,8 +169,6 @@
 
 ●検証
 ・様々な特徴の街並みを混合する
-
-
 
 
 
