@@ -1,5 +1,7 @@
 ※モチーフを模写し、拡張する
 
+△位置調整
+
 ●Topic
 ・PatternGenerator
  -BaseLineMaker
@@ -18,6 +20,14 @@
 ・形態の柔軟化
 ・模様の柔軟化
 
+
+○Moduleモデリング検証
+・シンプルなブロックで検証
+・Bigブロックで適応
+
+○Pattern検証
+・△SideBlock幅修正
+・大証混在化検証
 
 ○楽しい都市Generator模写
 ※横からの画角(側面上部を見せる)
