@@ -1,7 +1,5 @@
 ○様々な画角からレンダリング
 
-○WoodPatternカラー検証
-
 ○ビジュアル資料の設計
 ・他の色で検証
 
@@ -156,8 +154,8 @@
 
 ■SunnyHills検証
 △Pattern追加
-・Roof
-・Cube
+・陽澄湖旅客集散中心
+・Cube(調査)
 
 △BasePointのPlane周りの処理を整理
 ・Simple
