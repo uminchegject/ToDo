@@ -1,22 +1,9 @@
-○パラメーター微調整
+○WoodPatternカラー検証
 
+○Pattern追加
+・Roof
+・Cube
 
-○Moduleモデリング検証
-・シンプルなブロックで検証
-・Bigブロックで適応
-
-
-○SideBlockGroupを外す
-
-○色を3色コントラスト化
-
-○Pattern検証
-・Big
- -GridBlock
-・Small
- -SimpleBlock
- 
- 
 
 ■記事(SunnyHills)
 ●BoatHouse
