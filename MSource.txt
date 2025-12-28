@@ -1,8 +1,67 @@
+○様々な画角からレンダリング
+
 ○WoodPatternカラー検証
 
-○Pattern追加
-・Roof
-・Cube
+○ビジュアル資料の設計
+
+■年末年始
+※早起き
+※午前ポートフォリオ、午後断捨離
+
+○年末年始に読む本を用意する
+・私の履歴書
+
+○ポートフォリオ
+・検証
+ -資料作成
+・記事
+ -メモ
+
+○断捨離
+・籠をごみ捨て
+・床のアクリルを捨てる
+
+○初売り
+・サイト
+・マウス
+・ズボン
+
+
+■SunnyHills(記事)
+●BoatHouse
+・BoatHouseの設計思想
+ -対岸の桜に開くことを概念に設計した作品です。
+・形態の柔軟化
+・BoatHouseのパラメーターによる柔軟な調整
+ -建物の角度、高さを柔軟に検証できるようにする
+
+●SunnyHills模写
+・PatternGenerator
+ -BaseLineMaker
+ -BasePointMaker
+
+●SunnyHills拡張
+・模様の柔軟化
+・パラメーターによるプロシージャルなPattern生成
+ -Patternを検証しつつ確認できるようにする
+
+●ビジュアル資料
+※GIFを用意
+・Gradationで動きのある処理をレンダリングで見せる
+
+
+■楽しい都市Generator(記事)
+●ModularModelingEditorの実装
+
+●検証
+・都市Generatorと組み合わせて検証
+
+
+■UnderConstruction(記事)
+●BuildingGeneratorの実装
+
+●検証
+・都市Generatorと組み合わせて検証
 
 
 ■記事(SunnyHills)
@@ -38,75 +97,6 @@
 ※GIFを用意
  -Gradationで動きのある処理をレンダリングで見せる
  -Gradationで動きのある処理をレンダリングで見せる
-
-
-■年末年始
-※早起き
-※午前ポートフォリオ、午後断捨離
-
-○年末年始に読む本を用意する
-・私の履歴書
-
-○ポートフォリオ
-・検証
- -資料作成
-・記事
- -メモ
-
-○断捨離
-・籠をごみ捨て
-・床のアクリルを捨てる
-
-○初売り
-・サイト
-・マウス
-・ズボン
-
-
-■SunnyHills検証
-△パラメーターの微調整
-
-○検証
-・他パーツの設定
-・位置の調整
-
-△BasePointのPlane周りの処理を整理
-・Simple
-・Gradation
-・Randomly
-
-●Components
-・parts
- -VerticalEdge
- -CenterEdge
- -Roof(Under)
- -SecondFloor(Under)
-・Parameter
- -SurfaceAngle
- -WoodLength
- -GridAngle
-
-
-■CityGenerator検証
-○Id複雑化の検証
-
-●楽しい都市Generator模写
-※横からの画角(側面上部を見せる)
-・大小のコントラスト
-・奥行をつける
-
-●UnderConstruction模写
-・Patternのコントラスト
-・大小のコントラスト
-※Color × Pattern
-・Color(※色合いが違う3種類を用意する)
- -Top + HorizontalBlock
- -Side + VerticalBlock
- -Windows
-・Pattern
- -GridBase
- -WindowBase
-
 
 
 ■記事(CityGenerator)
@@ -160,6 +150,55 @@
 
 ●検証
 ・様々な特徴の街並みを混合する
+
+
+
+■SunnyHills検証
+△Pattern追加
+・Roof
+・Cube
+
+△BasePointのPlane周りの処理を整理
+・Simple
+・Gradation
+・Randomly
+
+●検証
+・パラメーターの微調整
+・他パーツの設定
+・位置の調整
+
+●Components
+・parts
+ -VerticalEdge
+ -CenterEdge
+ -Roof(Under)
+ -SecondFloor(Under)
+・Parameter
+ -SurfaceAngle
+ -WoodLength
+ -GridAngle
+
+
+■CityGenerator検証
+○Id複雑化の検証
+
+●楽しい都市Generator模写
+※側面上部を見せる
+・大小のコントラスト
+
+●UnderConstruction模写
+・Patternのコントラスト
+・大小のコントラスト
+※Color × Pattern
+・Color(※色合いが違う3種類を用意する)
+ -Top + HorizontalBlock
+ -Side + VerticalBlock
+ -Windows
+・Pattern
+ -GridBase
+ -WindowBase
+
 
 
 
