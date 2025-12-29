@@ -4,17 +4,24 @@
 ・他の色で検証
 
 
-○CityGeneratorId化サンプルを完成させる
-
 ■CityGenerator(記事)
-○アウトプットGIFの用意
-・BlockMaker
-・PlotMaker
-・VolumeMaker
-・BuildingGenerator
+●ビジュアル資料
+・検証の工程GIF
+ -BlockMaker
+ -PlotMaker
+ -VolumeMaker
+ -BuildingGenerator
+・検証結果
 
 
 ■ID化(記事)
+●ビジュアル資料
+・工程GIF
+ -カラーによるIDのビジュアル化
+ -平面図(区画 + Volume)
+ -Perspective(区画 + Volume)
+・検証結果
+
 ●ポリフォーズム
 ・組み合わせの柔軟化
 ・それぞれのパターンを組み合わせし、多様な組み合わせを行えるようにする
@@ -27,6 +34,32 @@
 
 ●検証
 ・八重洲と丸の内の区画を混合する
+
+
+■楽しい都市Generator(記事)
+●ModularModelingEditorの実装
+・ビルのファザードをモジュールとして組み立てるツールを実装
+・工程
+ -Class
+ -BlockScale
+ -Roof
+
+●検証
+・都市Generatorと組み合わせて検証
+
+
+■UnderConstruction(記事)
+●BuildingGeneratorの実装
+・ビルの模様をプロシージャルに簡単に生成できるツールを実装
+・BuildingPatternGenerator
+ -VerticalBlock
+ -HorizontalBlock
+ -Window
+ -TopBlock
+ -SideBlock
+
+●検証
+・都市Generatorと組み合わせて検証
 
 
 ■年末年始
@@ -54,7 +87,6 @@
 ・ズボン
 
 
-
 ■SunnyHills(記事)
 ●BoatHouse
 ・BoatHouseの設計思想
@@ -78,30 +110,7 @@
 ・Gradationで動きのある処理をレンダリングで見せる
 
 
-■楽しい都市Generator(記事)
-●ModularModelingEditorの実装
-・ビルのファザードをモジュールとして組み立てるツールを実装
-・工程
- -Class
- -BlockScale
- -Roof
 
-●検証
-・都市Generatorと組み合わせて検証
-
-
-■UnderConstruction(記事)
-●BuildingGeneratorの実装
-・ビルの模様をプロシージャルに簡単に生成できるツールを実装
-・BuildingPatternGenerator
- -VerticalBlock
- -HorizontalBlock
- -Window
- -TopBlock
- -SideBlock
-
-●検証
-・都市Generatorと組み合わせて検証
 
 
 
