@@ -3,6 +3,32 @@
 ○ビジュアル資料の設計
 ・他の色で検証
 
+
+○CityGeneratorId化サンプルを完成させる
+
+■CityGenerator(記事)
+○アウトプットGIFの用意
+・BlockMaker
+・PlotMaker
+・VolumeMaker
+・BuildingGenerator
+
+
+■ID化(記事)
+●ポリフォーズム
+・組み合わせの柔軟化
+・それぞれのパターンを組み合わせし、多様な組み合わせを行えるようにする
+・各処理ごとに処理を反映するPrimを定義する
+
+●工程
+・各HDAに適応するクラス値を設定
+・それぞれのパラメーターをマルチパラメーター化して、クラス付けを行い組み合わせをしやすくする
+・特定のクラスからさらにクラスを設定するwrangleを実装
+
+●検証
+・八重洲と丸の内の区画を混合する
+
+
 ■年末年始
 ※早起き
 ※午前ポートフォリオ、午後断捨離
@@ -17,13 +43,16 @@
  -メモ
 
 ○断捨離
+・棚組み立て
+・床材
+ -床のアクリルを捨てる
 ・籠をごみ捨て
-・床のアクリルを捨てる
 
 ○初売り
 ・サイト
 ・マウス
 ・ズボン
+
 
 
 ■SunnyHills(記事)
@@ -51,6 +80,11 @@
 
 ■楽しい都市Generator(記事)
 ●ModularModelingEditorの実装
+・ビルのファザードをモジュールとして組み立てるツールを実装
+・工程
+ -Class
+ -BlockScale
+ -Roof
 
 ●検証
 ・都市Generatorと組み合わせて検証
@@ -58,71 +92,7 @@
 
 ■UnderConstruction(記事)
 ●BuildingGeneratorの実装
-
-●検証
-・都市Generatorと組み合わせて検証
-
-
-■記事(SunnyHills)
-●BoatHouse
-・形態の柔軟化
-・BoatHouseのパラメーターによる柔軟な調整
- -建物のエッジを柔軟に検証できるようにする
-
-●SunnyHills模写
-・BaseLineGenerator
-・BasePointGenerator
-
-●SunnyHills拡張
-・模様の柔軟化
-・パラメーターによるプロシージャルなPattern生成
- -Patternを検証しつつ確認できるようにする
- 
-●Topic
-・PatternGenerator
- -BaseLineMaker
- -BasePointMaker
-・BoatHouse
-検証モデル
- -実物
- -角度、高さ調整
-・SunnyHills
- -実物
- -SimplePattern
- -RandomPattern
- -GradationPattern
-
-●ビジュアル資料
-※GIFを用意
- -Gradationで動きのある処理をレンダリングで見せる
- -Gradationで動きのある処理をレンダリングで見せる
-
-
-■記事(CityGenerator)
-○アウトプットGIFの用意
-・BlockMaker
-・PlotMaker
-・VolumeMaker
-・BuildingGenerator
-
-○CityGeneratorの記事完成
-・丸の内
-丸の内は区画スケールが大きく、建物ボリュームも大きいため、この特徴を再現するために、各パラメーターを画像の通りに設定した。
-・パラメーター画像
-以上の工程で生成した建物ボリュームに前回のBuildingGeneratorを適用したところ、その結果は画像のとおりとなった。
-・アウトプットGIF
-
-
-■記事(ModularEditor + BuildingPatternGenerator)
-●概要
 ・ビルの模様をプロシージャルに簡単に生成できるツールを実装
-・ビルのファザードをモジュールとして組み立てるツールを実装
-
-●工程
-・ModularEditor
- -Class
- -BlockScale
- -Roof
 ・BuildingPatternGenerator
  -VerticalBlock
  -HorizontalBlock
@@ -131,24 +101,7 @@
  -SideBlock
 
 ●検証
-・八重洲のVolumeで検証してみる
-・丸の内のVolumeで検証してみる
-
-
-■記事(ID化)
-※複雑性をIDで制御できることを強調する
-
-●概要
-・それぞれのパターンを組み合わせし、多様な組み合わせを行えるようにする
-・各処理ごとに処理を反映するPrimを定義する
-
-●工程
-・各HDAに適応するクラス値を設定
-・それぞれのパラメーターをマルチパラメーター化して、クラス付けを行い組み合わせをしやすくする
-・特定のクラスからさらにクラスを設定するwrangleを実装
-
-●検証
-・様々な特徴の街並みを混合する
+・都市Generatorと組み合わせて検証
 
 
 
@@ -180,7 +133,7 @@
 
 
 ■CityGenerator検証
-○Id複雑化の検証
+△City生成の拡張
 
 ●楽しい都市Generator模写
 ※側面上部を見せる
