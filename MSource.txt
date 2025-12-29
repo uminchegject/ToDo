@@ -1,5 +1,8 @@
 ○街の複雑化検証
 
+○Pattern追加検証
+・陽澄湖旅客集散中心
+・Cube(調査)
 
 ■CityGenerator(記事)
 ●ビジュアル資料
@@ -35,11 +38,12 @@
 
 ■楽しい都市Generator(記事)
 ●ビジュアル資料
-・
+・都市Generator検証結果
 
-●ModularModelingEditorの実装
+●ModularModelingEditor(HDA)の説明
 ・ビルのファザードをモジュールとして組み立てるツールを実装
-・工程
+ -モジュールを用意
+・パラメーター
  -Class
  -BlockScale
  -Roof
@@ -49,9 +53,13 @@
 
 
 ■UnderConstruction(記事)
-●BuildingGeneratorの実装
+●ビジュアル資料
+・UnderConstruction模写結果
+・都市Generator検証結果
+
+●BuildingGenerator(HDA)の説明
 ・ビルの模様をプロシージャルに簡単に生成できるツールを実装
-・BuildingPatternGenerator
+・編集パーツ
  -VerticalBlock
  -HorizontalBlock
  -Window
@@ -59,14 +67,18 @@
  -SideBlock
 
 ●検証
+・UnderConstructionを参考に模写
 ・都市Generatorと組み合わせて検証
 
 
 ■SunnyHills(記事)
+●ビジュアル資料
+・BoatHouseの調整(GIF)
+・Gradationでの動き(GIF)
+
 ●BoatHouse
 ・BoatHouseの設計思想
- -対岸の桜に開くことを概念に設計した作品です。
-・形態の柔軟化
+ -対岸の桜に開くことを概念に設計
 ・BoatHouseのパラメーターによる柔軟な調整
  -建物の角度、高さを柔軟に検証できるようにする
 
@@ -80,9 +92,6 @@
 ・パラメーターによるプロシージャルなPattern生成
  -Patternを検証しつつ確認できるようにする
 
-●ビジュアル資料
-※GIFを用意
-・Gradationで動きのある処理をレンダリングで見せる
 
 
 ■年末年始
