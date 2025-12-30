@@ -11,110 +11,80 @@
  -Gradation検証
 
 
-■CityGenerator(記事)
-●ビジュアル資料
-・検証の工程GIF
- -BlockMaker
- -PlotMaker
- -VolumeMaker
- -BuildingGenerator
-・検証結果
+○参考資料を調査
+・重要部分をメモ
 
+○やりたいこと・実装の重点をまとめる
 
 ■ID化(記事)
-●ビジュアル資料
-・工程GIF
- -カラーによるIDのビジュアル化
- -平面図(区画 + Volume)
- -Perspective(区画 + Volume)
-・検証結果
-
 ●やりたいこと
-・丸の内のように高層ビルが並んでいる箇所もあれば、八重洲のようにビルが密集している箇所もあるように、様々な場所が混合するようにしてみたい
+・丸の内付近は高層ビルが密集しつつ、八重洲付近は低層と高層ビルが混在しており、隅田川付近は低層ビルが密集している。
+このように街ごとに建物の形状に特徴がある。これらの場所によって建物の特徴も変化するように実装したい。
 
 ●実装の重点
 ・ポリフォーズム
  -組み合わせの柔軟化
  -それぞれのパターンを組み合わせし、多様な組み合わせを行えるようにする
  -各処理ごとに処理を反映するPrimを定義する
+オブジェクトに対して行う処理を場所、種類によって別々の処理が走るようにしたい、
+具体的にはパラメーターを複数用意し、入力オブジェクトのIDによって処理が適応されるパラメーターが選択されるようにしたい。
+区画、敷地、ボリュームにIDを設定して、適応する処理を管理するように実装する
 
-●実装内容
-・各HDAに適応するクラス値を設定
-・それぞれのパラメーターをマルチパラメーター化して、クラス付けを行い組み合わせをしやすくする
-・特定のクラスからさらにクラスを設定するwrangleを実装
-
-●検証
-・八重洲と丸の内の区画を混合する
+●ビジュアル資料
+・工程(GIF)
+ -カラーによるIDのビジュアル化
+ -平面図(区画 + Volume)
+ -Perspective(区画 + Volume)
+・検証結果
 
 
 ■楽しい都市Generator(記事)
-●ビジュアル資料
-・都市Generator検証結果
+○資料調査
+・たのしい建物ジェネレーター
+https://booth.pm/ja/items/4014205
+・たのしい都市ジェネレータ
+https://booth.pm/ja/items/4303994
 
 ●やりたいこと
 ・ModularModelingの実装
-・楽しい都市Generatorを参照
 
-●ModularModelingEditor(HDA)の説明
-・ビルのファザードをモジュールとして組み立てるツールを実装
- -モジュールを用意
-・パラメーター
- -Class
- -BlockScale
- -Roof
+●実装の重点
+・IDによる管理
 
-●検証
-・都市Generatorと組み合わせて検証
+●ビジュアル資料
+・都市Generator検証結果
+
 
 
 ■UnderConstruction(記事)
-●ビジュアル資料
-・UnderConstruction模写結果
-・都市Generator検証結果
+○資料調査
+・Houdini16にHDAを２つ追加したらビルが量産できた
+https://cedil.cesa.or.jp/cedil_sessions/view/1710
 
 ●やりたいこと
 ・ProceduralModelingの実装
-・斎藤さんの建築Generatorを参照
-
-●BuildingGenerator(HDA)の説明
-・ビルの模様をプロシージャルに簡単に生成できるツールを実装
-・編集パーツ
- -VerticalBlock
- -HorizontalBlock
- -Window
- -TopBlock
- -SideBlock
-
-●検証
-・UnderConstructionを参考に模写
-・都市Generatorと組み合わせて検証
-
-
-■SunnyHills(記事)
-●ビジュアル資料
-・BoatHouseの調整(GIF)
-・Gradationでの動き(GIF)
-
-●やりたいこと
 
 ●実装の重点
 
-●BoatHouse
-・BoatHouseの設計思想
- -対岸の桜に開くことを概念に設計
-・BoatHouseのパラメーターによる柔軟な調整
- -建物の角度、高さを柔軟に検証できるようにする
+●ビジュアル資料
+・UnderConstruction模写結果
 
-●SunnyHills模写
-・PatternGenerator
- -BaseLineMaker
- -BasePointMaker
 
-●SunnyHills拡張
-・模様の柔軟化
-・パラメーターによるプロシージャルなPattern生成
- -Patternを検証しつつ確認できるようにする
+■SunnyHills(記事)
+○資料調査
+・コンピュテーショナルデザインにおけるファサードとルールのデザイン
+https://www.archifuture-web.jp/magazine/466.html
 
+●やりたいこと
+・コンピュテーショナルデザインを行える簡単なツールを実装したい
+
+●実装の重点
+・カプセル化
+・柔軟性
+
+●ビジュアル資料
+・BoatHouseの調整(GIF)
+・Gradationでの動き(GIF)
 
 
 ■年末年始
@@ -190,6 +160,71 @@
  -GridBase
  -WindowBase
 
+
+■CityGenerator(記事)
+●ビジュアル資料
+・検証の工程GIF
+ -BlockMaker
+ -PlotMaker
+ -VolumeMaker
+ -BuildingGenerator
+・検証結果
+
+
+■ID化(記事)
+●実装内容
+・各HDAに適応するクラス値を設定
+・それぞれのパラメーターをマルチパラメーター化して、クラス付けを行い組み合わせをしやすくする
+・特定のクラスからさらにクラスを設定するwrangleを実装
+
+●検証
+・八重洲と丸の内の区画を混合する
+
+
+■楽しい都市Generator(記事)
+●ModularModelingEditor(HDA)の説明
+・ビルのファザードをモジュールとして組み立てるツールを実装
+ -モジュールを用意
+・パラメーター
+ -Class
+ -BlockScale
+ -Roof
+
+●検証
+・都市Generatorと組み合わせて検証
+
+
+■UnderConstruction(記事)
+●BuildingGenerator(HDA)の説明
+・ビルの模様をプロシージャルに簡単に生成できるツールを実装
+・編集パーツ
+ -VerticalBlock
+ -HorizontalBlock
+ -Window
+ -TopBlock
+ -SideBlock
+
+●検証
+・UnderConstructionを参考に模写
+・都市Generatorと組み合わせて検証
+
+
+■SunnyHills(記事)
+●BoatHouse
+・BoatHouseの設計思想
+ -対岸の桜に開くことを概念に設計
+・BoatHouseのパラメーターによる柔軟な調整
+ -建物の角度、高さを柔軟に検証できるようにする
+
+●SunnyHills模写
+・PatternGenerator
+ -BaseLineMaker
+ -BasePointMaker
+
+●SunnyHills拡張
+・模様の柔軟化
+・パラメーターによるプロシージャルなPattern生成
+ -Patternを検証しつつ確認できるようにする
 
 
 
