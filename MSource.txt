@@ -17,6 +17,7 @@
 
 ○Pattern追加検証
 ・陽澄湖旅客集散中心
+ -BaseLineを90度回転させる
  -BaseLineにおけるBasePointの生成位置をランダムにする
 spawn_pos += line_dir * ((1 - scale.y) * block_length) * (rand(scale) - 0.5);
 ・Cube(調査)
