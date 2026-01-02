@@ -1,5 +1,11 @@
 ※4時まで寝ない
 
+○レンダリング検証
+・画角
+・レンダリング環境
+
+
+■Private
 ○机掃除
 ・水ぶき
 
@@ -8,32 +14,29 @@
 ・掃除機
 ・水ぶき
 
-
-○Cube検証
-・有無パターンを繰り返す
-・頂点が法線上に来るように位置を調整する(角度調整→Scale調整)
-・Gradation検証
-
-○レンダリング検証
-・画角
-・レンダリング環境
-
-
-○やりたいこと・実装の重点をまとめる
-
-△説明・検証をまとめる
+○初売り
+・サイト
+・マウス
+・ズボン
 
 
 ■ID化(記事)
 ●やりたいこと
-丸の内付近は高層ビルが密集しつつ、八重洲付近は低層と高層ビルが混在しており、隅田川付近は低層ビルが密集している。
-このように街ごとに建物の形状に特徴がある。これらの場所によって建物の特徴も変化するように実装したい。
+八重洲を見ると大きい建物がある区画、小さい建物が密集している区画が混在している。
+区画ごとに種類(ID)を設定して、区画の種類に応じて生成される建物を管理できるようにしたい。
 
 ●実装の重点
-・ポリフォーズム(組み合わせの柔軟化)
 オブジェクトに対して行う処理を場所、種類によって別々の処理が走るようにしたい、
 具体的にはパラメーターを複数用意し、入力オブジェクトのIDによって処理が適応されるパラメーターが選択されるようにしたい。
-区画、敷地、ボリュームにIDを設定して、適応する処理を管理するように実装し、それぞれのパラメーターのパターンを組み合わせし、多様な組み合わせを行えるようにする
+区画、敷地、ボリュームにIDを設定して、適応する処理を管理するように実装し、
+それぞれのパラメーターのパターンを組み合わせし、多様な組み合わせを行えるようにする
+
+●実装内容
+・各HDAに適応するクラス値を設定
+・それぞれのパラメーターをマルチパラメーター化して、クラス付けを行い組み合わせをしやすくする
+
+●検証
+・シンプルパターンジェネレーター
 
 ●ビジュアル資料
 ・工程(GIF)
@@ -43,32 +46,43 @@
 ・検証結果
 
 
-■楽しい都市Generator(記事)
+■様々な街並み検証
 ●やりたいこと
+実装したCityGeneratorを用いて様々なプロシージャル手法を用いた街並み生成を検証したい
+具体的には、Moduleを用意しVolumeに配置していくModularModeling
+ビルのプロシージャルモデリングを行うツールをそれぞれ実装し、CityGeneratorで生成したボリュームに適応して検証を行っていく
+
+●ModularModeling
 Moduleを使用した建物Generatorを実装したい。
 具体的にはVolumeからModuleを建物ごとに配置していくツールを実装する。
 使用するModuleのサイズ、適応するVolumeのIDをパラメーターで管理することで柔軟に実装できるようにする。
+・パラメーター
+ -Class
+ -BlockScale
+ -Roof
+
+●ProceduralModeling
+Proceduralにビルのモデリングを行うツールを実装したい。
+具体的にはビルの各パーツのサイズや色をパラメーターで設定できるように実装する。
+・編集パーツ
+ -VerticalBlock
+ -HorizontalBlock
+ -Window
+ -TopBlock
+ -SideBlock
+
+●検証
+・建物のファザードの写真をモジュールにして検証
+・UnderConstructionを参考にファザードの模様を構築
+・3つを同じVolumeから比較
 
 ●ビジュアル資料
+・SimplePatterGeneratorの検証結果
+・UnderConstruction模写結果
 ・都市Generator検証結果
 
 
-■UnderConstruction(記事)
-●やりたいこと
-Proceduralにビルのモデリングを行うツールを実装したい。
-具体的にはビルの各パーツのサイズや色をパラメーターで設定できるように実装する。
-
-●ビジュアル資料
-・UnderConstruction模写結果
-
-
 ■SunnyHills(記事)
-●コンピュテーショナルデザインとは
-https://www.archifuture-web.jp/magazine/466.html
-コンピュテーショナルデザインとはルールやアルゴリズムの記述によりジオメトリやデータの生成、操作を行うことである
-全体としてはファサード設計のプロジェクトが多い。それは多数のパネルで構成されるファサードを細部のパネルと全体
-の構成を同時にデザインすることにコンピュテーショナルデザインの強みが発揮されるためである。
-
 ●やりたいこと
 ファザード設計におけるコンピュテーショナルデザインを行える簡単なツールを実装したい
 具体的には木組みを使用したファザード生成をプロシージャルに行えるツールを実装したい。
@@ -79,49 +93,17 @@ https://www.archifuture-web.jp/magazine/466.html
  -パーツを配置する軸となるライン生成
  -パーツの座標、スケール、回転情報を持たせたPoint生成
 
-●ビジュアル資料
-・BoatHouseの調整(GIF)
-・Gradationでの動き(GIF)
+●HDA説明
+・BaseLineMaker
+ -パーツを配置する軸となるライン生成
+・BasePointMaker
+ -パーツの座標、スケール、回転情報を持たせたPoint生成
 
-
-■年末年始
-※早起き
-※午前ポートフォリオ、午後断捨離
-
-○年末年始に読む本を用意する
-・私の履歴書
-
-○ポートフォリオ
-・検証
- -資料作成
-・記事
- -メモ
-
-○断捨離
-・籠をごみ捨て
-
-○初売り
-・サイト
-・マウス
-・ズボン
-
-
-■SunnyHills検証
-△Pattern追加
-・陽澄湖旅客集散中心
-・Cube(調査)
-
-△BasePointのPlane周りの処理を整理
-・Simple
-・Gradation
-・Randomly
-
-●検証
-・パラメーターの微調整
-・他パーツの設定
-・位置の調整
-
-●Components
+●BoatHouseのプロシージャル化
+・BoatHouseの設計思想
+ -対岸の桜に開くことを概念に設計
+・BoatHouseのパラメーターによる柔軟な調整
+ -建物の角度、高さを柔軟に検証できるようにする
 ・parts
  -VerticalEdge
  -CenterEdge
@@ -130,29 +112,22 @@ https://www.archifuture-web.jp/magazine/466.html
 ・Parameter
  -SurfaceAngle
  -WoodLength
- -GridAngle
+ -GridAnglesdc
 
+●SunnyHills検証
+木組みの中で印象的な隈さんのSunnyHillsをモチーフにコンピュテーショナル化してみる
+・菱形をブロックとしてプロシージャルに配置していく
+ -模様の柔軟化
 
-■CityGenerator検証
-△City生成の拡張
+●ビジュアル資料
+・BoatHouseの調整(GIF)
+・Gradationでの動き(GIF)
 
-△UnderConstructionを他の色で検証
-
-●楽しい都市Generator模写
-※側面上部を見せる
-・大小のコントラスト
-
-●UnderConstruction模写
-・Patternのコントラスト
-・大小のコントラスト
-※Color × Pattern
-・Color(※色合いが違う3種類を用意する)
- -Top + HorizontalBlock
- -Side + VerticalBlock
- -Windows
-・Pattern
- -GridBase
- -WindowBase
+●コンピュテーショナルデザインとは
+https://www.archifuture-web.jp/magazine/466.html
+コンピュテーショナルデザインとはルールやアルゴリズムの記述によりジオメトリやデータの生成、操作を行うことである
+全体としてはファサード設計のプロジェクトが多い。それは多数のパネルで構成されるファサードを細部のパネルと全体
+の構成を同時にデザインすることにコンピュテーショナルデザインの強みが発揮されるためである。
 
 
 ■CityGenerator(記事)
@@ -165,81 +140,27 @@ https://www.archifuture-web.jp/magazine/466.html
 ・検証結果
 
 
-■ID化(記事)
-●実装内容
-・各HDAに適応するクラス値を設定
-・それぞれのパラメーターをマルチパラメーター化して、クラス付けを行い組み合わせをしやすくする
-・特定のクラスからさらにクラスを設定するwrangleを実装
+■CityGenerator
+△City生成の拡張
 
-●検証
-・八重洲と丸の内の区画を混合する
+△UnderConstructionを他の色で検証
 
 
-■楽しい都市Generator(記事)
-●ModularModelingEditor(HDA)の説明
-・ビルのファザードをモジュールとして組み立てるツールを実装
- -モジュールを用意
-・パラメーター
- -Class
- -BlockScale
- -Roof
-
-●検証
-・都市Generatorと組み合わせて検証
-
-
-■UnderConstruction(記事)
-●BuildingGenerator(HDA)の説明
-・ビルの模様をプロシージャルに簡単に生成できるツールを実装
-・編集パーツ
- -VerticalBlock
- -HorizontalBlock
- -Window
- -TopBlock
- -SideBlock
-
-●検証
-・UnderConstructionを参考に模写
-・都市Generatorと組み合わせて検証
-
-
-■SunnyHills(記事)
-●BoatHouse
-・BoatHouseの設計思想
- -対岸の桜に開くことを概念に設計
-・BoatHouseのパラメーターによる柔軟な調整
- -建物の角度、高さを柔軟に検証できるようにする
-
-●SunnyHills模写
-・PatternGenerator
- -BaseLineMaker
- -BasePointMaker
-
-●SunnyHills拡張
-・模様の柔軟化
-・パラメーターによるプロシージャルなPattern生成
- -Patternを検証しつつ確認できるようにする
-
-
-
-
-
-■BoatHouse
+■PatternGenerator
 ※新年会のポートフォリオを目指す
 ※インド大使館からの向きで検証
+
+△Pattern追加
 
 △BasePointのPlane周りの処理を整理
 ・Simple
 ・Gradation
 ・Randomly
 
-○木組み検証
-・木組み研究
- -隈研吾
-・BoatHouse検証
- -躯体+Patterの検証
-・△EdgeGenerator検証
- -PatternOnlyの検証
+●検証
+・パラメーターの微調整
+・他パーツの設定
+・位置の調整
 
 ●Components
 ・Parts
@@ -272,7 +193,6 @@ else{
 ・EdgeGeneratorで検証
 
 △木目をCopernicusで表現
-
 
 
 ■Daily
