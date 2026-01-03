@@ -1,6 +1,6 @@
 ※4時まで寝ない
 
-○SunnyHills検証の画像を完成化
+○SunnyHills検証の画像化
 ※実際のモデルで写真を撮って画角を決定する
 ・調整
  -パラメーターの微調整
@@ -10,122 +10,15 @@
  -Randomly
  -Gradation
 
-△CityGeneratorのレンダリング画像を微調整
+○CityGeneratorの画像化
+・Class別色画像
+ -平面
+ -Perspective
+・完成画像(※同じ画角)
 
 ○重要箇所を記事化
 
 ○説明箇所の概要をまとめる
-
-
-■ID化(記事)
-●やりたいこと
-八重洲を見ると大きい建物がある区画、小さい建物が密集している区画が混在している。
-区画ごとに種類(ID)を設定して、区画の種類に応じてHDAの処理を管理できるようにしたい。
-
-●実装の重点
-パラメーターを複数用意し、入力オブジェクトのIDによって処理が適応されるパラメーターが選択されるようにする。
-区画、敷地、ボリュームにIDを設定して、適応するパラメーターを管理するように実装し、
-それぞれのパラメーターのIDの組み合わせに応じて、多様な組み合わせを行えるようにする。
-
-▲実装内容
-・各HDAに適応するクラス値を設定
-・それぞれのパラメーターをマルチパラメーター化して、クラス付けを行い組み合わせをしやすくする
-
-▲検証
-・シンプルパターンジェネレーター
-
-▲ビジュアル資料
-・工程(GIF)
- -カラーによるIDのビジュアル化
- -平面図(区画 + Volume)
- -Perspective(区画 + Volume)
-・検証結果
-
-
-■様々な街並み検証
-●やりたいこと
-実装したCityGeneratorを用いて様々なプロシージャル手法を用いた街並み生成を検証したい
-具体的には、Moduleを用意しVolumeに配置していくModularModelingのツール、
-ビルのプロシージャルモデリングを行うツールをそれぞれ実装し、CityGeneratorで生成したボリュームに適応して検証を行っていく
-
-●ModularModeling
-Moduleを使用した建物Generatorを実装したい。
-具体的にはVolumeからModuleを建物ごとに配置していくツールを実装する。
-使用するModuleのサイズ、適応するVolumeのIDをパラメーターで管理することで柔軟に実装できるようにする。
-・パラメーター
- -Class
- -BlockScale
- -Roof
-
-●ProceduralModeling
-Proceduralにビルのモデリングを行うツールを実装したい。
-具体的にはビルの各パーツのサイズや色をパラメーターで設定できるように実装する。
-・編集パーツ
- -VerticalBlock
- -HorizontalBlock
- -Window
- -TopBlock
- -SideBlock
-
-▲検証
-・建物のファザードの写真をモジュールにして検証
-・UnderConstructionを参考にファザードの模様を構築
-・3つを同じVolumeから比較
-
-▲ビジュアル資料
-・SimplePatterGeneratorの検証結果
-・UnderConstruction模写結果
- -別色で設定する
-・都市Generator検証結果
-
-
-■SunnyHills(記事)
-●やりたいこと
-建築学生時代に勉強していたコンピュテーショナルデザインをHoudiniで検証したい。
-学生時代に参考にさせて頂いていた記事を参照するとコンピュテーショナルデザインとは、
-
-コンピュテーショナルデザインとはルールやアルゴリズムの記述によりジオメトリやデータの生成、操作を行うことである
-全体としてはファサード設計のプロジェクトが多い。それは多数のパネルで構成されるファサードを細部のパネルと全体
-の構成を同時にデザインすることにコンピュテーショナルデザインの強みが発揮されるためである。
-
-とあり、このファザード設計におけるコンピュテーショナルデザインを行える簡単なツールを実装したい。
-今回は木組みを使用したファザード生成をプロシージャルに行えるツールを実装する。
-
-●実装の重点
-木のパーツを配置する処理を実装する上で、下記2点を重点に実装する
-・パーツを配置する軸となるライン生成
-・パーツの座標、スケール、回転情報を持たせたPoint生成
-上記処理をそれぞれHDAとして実装しカプセル化をしつつ、柔軟に木組みのデザインを調整できるように実装を行う。
-
-▲HDA説明
-・BaseLineMaker
- -パーツを配置する軸となるライン生成
-・BasePointMaker
- -パーツの座標、スケール、回転情報を持たせたPoint生成
-
-▲BoatHouseのプロシージャル化
-・BoatHouseの設計思想
- -対岸の桜に開くことを概念に設計
-・BoatHouseのパラメーターによる柔軟な調整
- -建物の角度、高さを柔軟に検証できるようにする
-・parts
- -VerticalEdge
- -CenterEdge
- -Roof(Under)
- -SecondFloor(Under)
-・Parameter
- -SurfaceAngle
- -WoodLength
- -GridAnglesdc
-
-▲SunnyHills検証
-木組みの中で印象的な隈さんのSunnyHillsをモチーフにコンピュテーショナル化してみる
-・菱形をブロックとしてプロシージャルに配置していく
- -模様の柔軟化
-
-▲ビジュアル資料
-・BoatHouseの調整(GIF)
-・Gradationでの動き(GIF)
 
 
 ■Private
@@ -140,14 +33,31 @@ Proceduralにビルのモデリングを行うツールを実装したい。
 ・ズボン
 
 
-■CityGenerator(記事)
-●ビジュアル資料
+■ビジュアル資料
+●CityGenerator
 ・検証の工程GIF
  -BlockMaker
  -PlotMaker
  -VolumeMaker
  -BuildingGenerator
 ・検証結果
+
+●ID化
+・工程(GIF)
+ -カラーによるIDのビジュアル化
+ -平面図(区画 + Volume)
+ -Perspective(区画 + Volume)
+・検証結果
+
+●様々な街の検証
+・SimplePatterGeneratorの検証結果
+・UnderConstruction模写結果
+ -別色で設定する
+・都市Generator検証結果
+
+●SunnyHills
+・BoatHouseの調整(GIF)
+・Gradationでの動き(GIF)
 
 
 ■CityGenerator
