@@ -1,24 +1,13 @@
 ※4時まで寝ない
 
-○SunnyHills検証の画像化
-※実際のモデルで写真を撮って画角を決定する
-・調整
- -パラメーターの微調整
- -他パーツの設定
- -位置の調整
-・比較画像の用意
- -Randomly
- -Gradation
+○ポンピドゥーセンター
+・建物の構造や配管（空調は青、水道は緑など）を外部に露出させた「内部の透明性」と「機能性の可視化」
 
-○CityGeneratorの画像化
-・Class別色画像
- -平面
- -Perspective
-・完成画像(※同じ画角)
+○SciFi
+・Volumeの構築
+・Pattern
 
-○重要箇所を記事化
-
-○説明箇所の概要をまとめる
+○PatternDesignの調査
 
 
 ■Private
@@ -29,8 +18,11 @@
 
 ○初売り
 ・サイト
+ -メルカリ
 ・マウス
+ -接着剤
 ・ズボン
+ -ロッポンギ
 
 
 ■ビジュアル資料
@@ -61,20 +53,28 @@
 
 
 ■CityGenerator
+△UnderConstructionを他の色で検証
+
 △City生成の拡張
 
-△UnderConstructionを他の色で検証
+△SciFiProject
 
 
 ■PatternGenerator
 ※新年会のポートフォリオを目指す
 
 △Pattern追加
+・モチーフ調査
 
 △BasePointのPlane周りの処理を整理
 ・Simple
 ・Gradation
 ・Randomly
+
+△Edgeの繋ぎ部分の処理を実装
+・EdgeGeneratorで検証
+
+△木目をCopernicusで表現
 
 ●検証
 ・パラメーターの微調整
@@ -107,11 +107,6 @@ if(i@BaseLineId % 2 == 1){
 else{
 	if(i % 2 != 0) continue;
 }
-
-△Edgeの繋ぎ部分の処理を実装
-・EdgeGeneratorで検証
-
-△木目をCopernicusで表現
 
 
 ■Daily
