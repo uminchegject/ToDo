@@ -14,12 +14,6 @@
 △パイプライン化
 ・背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装
 
-●参考資料
-・たのしい都市ジェネレータ
-https://www.youtube.com/watch?v=Y6-EWYXZG4s
-・Procedural City generator
-https://www.youtube.com/watch?v=BlduX70jZRU
-
 
 ■CD(Tool)
 ○配置ロジックの設計・実装
@@ -47,6 +41,8 @@ https://www.youtube.com/watch?v=BlduX70jZRU
 
 
 ■反省
+※4時まで寝ない
+
 ※検証+修正を各テーマごとに繰り返す
 
 ※検証は具体的なモチーフを模写した上で拡張を行う

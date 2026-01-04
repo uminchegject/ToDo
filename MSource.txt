@@ -1,28 +1,52 @@
-※4時まで寝ない
+○記事化
+※1つずつ完成着手する
+・街ジェネレーター
+https://qiita.com/drafts/e6fd91bf31701d515dc6/edit
+ -パラメーター画像
+ -アウトプットGIF
 
-○ポンピドゥーセンター
-・建物の構造や配管（空調は青、水道は緑など）を外部に露出させた「内部の透明性」と「機能性の可視化」
+○NewProject準備
+・PatternDesignの調査
+・SciFiプロジェクト調査
+・ポンピドゥーセンター調査
 
-○SciFi
-・Volumeの構築
-・Pattern
-
-○PatternDesignの調査
-
-
-■Private
-○クローゼット掃除
-・箱の整理
-・掃除機
-・水ぶき
-
-○初売り
+○Private
 ・サイト
  -メルカリ
 ・マウス
  -接着剤
 ・ズボン
  -ロッポンギ
+
+
+■Daily
+○オブジェクト指向
+・オブジェクト指向でなぜつくるのか
+
+○プロシージャルモデリング
+・スライド
+
+
+■Public
+○Houdini側の処理の実装
+・Mesh生成
+・ソース整理
+
+○CLで実装+検証
+
+○中間報告
+・操作GIFを用意
+
+●ノード
+・skin
+・polypath
+
+
+■Study(ナレッジ)
+・Procedural PLATEAU: プロシージャル技術と3D都市モデル「Project PLATEAU」を組み合わせたファサード自動生成とテクスチャ付き3Dモデル自動生成の取り組み
+https://cedil.cesa.or.jp/cedil_sessions/view/2794
+・地理空間情報のススメ！オープンデータ×データドリブンな プロシージャル処理による都市の樹木自動配置
+https://cedil.cesa.or.jp/cedil_sessions/view/3042
 
 
 ■ビジュアル資料
@@ -50,6 +74,15 @@
 ●SunnyHills
 ・BoatHouseの調整(GIF)
 ・Gradationでの動き(GIF)
+
+
+■IDEA
+●ポンピドゥーセンター
+・建物の構造や配管（空調は青、水道は緑など）を外部に露出させた「内部の透明性」と「機能性の可視化」
+
+●SciFi
+・Volumeの構築
+・Pattern
 
 
 ■CityGenerator
@@ -107,33 +140,3 @@ if(i@BaseLineId % 2 == 1){
 else{
 	if(i % 2 != 0) continue;
 }
-
-
-■Daily
-○オブジェクト指向
-・オブジェクト指向でなぜつくるのか
-
-○プロシージャルモデリング
-・スライド
-
-
-■Public
-○Houdini側の処理の実装
-・Mesh生成
-・ソース整理
-
-○CLで実装+検証
-
-○中間報告
-・操作GIFを用意
-
-●ノード
-・skin
-・polypath
-
-
-■Study(ナレッジ)
-・Procedural PLATEAU: プロシージャル技術と3D都市モデル「Project PLATEAU」を組み合わせたファサード自動生成とテクスチャ付き3Dモデル自動生成の取り組み
-https://cedil.cesa.or.jp/cedil_sessions/view/2794
-・地理空間情報のススメ！オープンデータ×データドリブンな プロシージャル処理による都市の樹木自動配置
-https://cedil.cesa.or.jp/cedil_sessions/view/3042
