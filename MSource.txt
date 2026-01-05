@@ -5,6 +5,7 @@ https://qiita.com/drafts/e6fd91bf31701d515dc6/edit
  -パラメーター画像
  -アウトプットGIF
 
+
 ○NewProject準備
 ・PatternDesignの調査
 ・SciFiプロジェクト調査
@@ -89,8 +90,6 @@ https://cedil.cesa.or.jp/cedil_sessions/view/3042
 △UnderConstructionを他の色で検証
 
 △City生成の拡張
-
-△SciFiProject
 
 
 ■PatternGenerator
