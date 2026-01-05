@@ -81,12 +81,14 @@ https://qiita.com/drafts/ff556c35ac73125b146d/edit
 
 ■IDEA
 ●蔦屋Pattern
+・斜めにライン化
 
 ●高根沢Pattern
 
 ●SciFi
 ・Volumeの構築
 ・Pattern
+・AssetToPoint
 
 ▲ポンピドゥーセンター
 ・建物の構造や配管（空調は青、水道は緑など）を外部に露出させた「内部の透明性」と「機能性の可視化」
