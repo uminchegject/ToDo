@@ -1,25 +1,41 @@
 ○サバゲーリスケ
 ・OX
+片山さんが参加できない
+坂本さんが1月なら参加できるかも
+大変恐縮ですが、1月10日のサバゲーはリスケして再度調整さんで確認の上企画させて頂こうと思います。
 ・TA
+あけましておめでとうございます!
+今年1発目のサバゲーを企画しようと思います。
 
 
-○NewProject準備
-・PatternDesignの調査
-・SciFiプロジェクト調査
-・ポンピドゥーセンター調査
+○DetailPattern設計
+※VolumeからDetailにするための準備
+・模写
+・パラメーター設計
+ -BaseParam
+ -PlusParam
+
+
+○SciFi調査
+・MegastructureProject調査
+・HardSurface本調査
+
 
 ○街ジェネレーターの記事化
 https://qiita.com/drafts/e6fd91bf31701d515dc6/edit
 ・パラメーターと検証結果を画像化
 
+○ID化
+https://qiita.com/drafts/ff556c35ac73125b146d/edit
+・工程(カラーによるIDのビジュアル化)
+ -平面図(区画 + Volume)
+ -Perspective(区画 + Volume)
+・検証
+ -高層ビル区画(丸の内)と低層ビル区画(八重洲)を混在させる(色付け)
 
-○HoudiniEngineForMayaStudy
-
-○Study(ナレッジ)
-・Procedural PLATEAU: プロシージャル技術と3D都市モデル「Project PLATEAU」を組み合わせたファサード自動生成とテクスチャ付き3Dモデル自動生成の取り組み
-https://cedil.cesa.or.jp/cedil_sessions/view/2794
-・地理空間情報のススメ！オープンデータ×データドリブンな プロシージャル処理による都市の樹木自動配置
-https://cedil.cesa.or.jp/cedil_sessions/view/3042
+○Maya(DCC)Study準備
+・基礎操作
+・HoudiniEngineForMaya
 
 
 ○Private
@@ -33,32 +49,7 @@ https://cedil.cesa.or.jp/cedil_sessions/view/3042
 
 ■Daily
 ○オブジェクト指向
-・オブジェクト指向でなぜつくるのか
-
-○プロシージャルモデリング
-・スライド
-
-
-■Public
-○Houdini側の処理の実装
-・Mesh生成
-・ソース整理
-
-○CLで実装+検証
-
-○中間報告
-・操作GIFを用意
-
-●ノード
-・skin
-・polypath
-
-
-■Study(ナレッジ)
-・Procedural PLATEAU: プロシージャル技術と3D都市モデル「Project PLATEAU」を組み合わせたファサード自動生成とテクスチャ付き3Dモデル自動生成の取り組み
-https://cedil.cesa.or.jp/cedil_sessions/view/2794
-・地理空間情報のススメ！オープンデータ×データドリブンな プロシージャル処理による都市の樹木自動配置
-https://cedil.cesa.or.jp/cedil_sessions/view/3042
+・良いコード悪いコード
 
 
 ■ビジュアル資料
@@ -89,12 +80,16 @@ https://cedil.cesa.or.jp/cedil_sessions/view/3042
 
 
 ■IDEA
-●ポンピドゥーセンター
-・建物の構造や配管（空調は青、水道は緑など）を外部に露出させた「内部の透明性」と「機能性の可視化」
+●蔦屋Pattern
+
+●高根沢Pattern
 
 ●SciFi
 ・Volumeの構築
 ・Pattern
+
+▲ポンピドゥーセンター
+・建物の構造や配管（空調は青、水道は緑など）を外部に露出させた「内部の透明性」と「機能性の可視化」
 
 
 ■CityGenerator

@@ -2,14 +2,11 @@
 ※世界観をしっかり決めて、参考資料・リファレンスをしっかり用意する
 
 ○BuildingGenerator
-※ProceduralCityProjectをベース
 ・ProceduralModeling
 ・ModularModeling
 
-○他世界観の検証
-・SCI-FI
- -ProceduralSciFiProject
- -ハードサーフェス本
+○VolumeとDetailの複雑化
+・HardSurface
 
 △パイプライン化
 ・背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装
@@ -21,13 +18,13 @@
 ・BasePointGenerator
 
 ○Pattern設計・実装
-※カプセル化・ポリフォーズム(多様性)
-・カラー化(Texture化)
 ・BoxPatternをそのままVolumeとして使用する
+・カラー化(Texture化)
 
 
 ■ポートフォリオ(記事)
 ※下書きをどんどん用意する
+ -qiitaの下書きにまとめて、清書を進めていく
 ※デザインのオブジェクト思考化
 
 ○記事作成
@@ -67,16 +64,13 @@
 ■Study(ナレッジ)
 ※ポートフォリオ(記事)の参考にする
 ※Cedil、Tutorialは同じテーマを軸に勉強する
- -Houdiniから枝分かれしていく(https://cedil.cesa.or.jp/cedil_sessions/search?query=houdini)
- -Cedilからさらに詳細な調査をおこなっていく
 
 ●技術
-・C++設計
 ・オブジェクト指向
 ・良いコード悪いコード
 
 ●知識
-・問題定義
+・人生の履歴書
 
 ●空き時間
 ・GameMakers
