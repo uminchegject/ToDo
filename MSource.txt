@@ -1,15 +1,26 @@
-○記事化
-※1つずつ完成着手する
-・街ジェネレーター
-https://qiita.com/drafts/e6fd91bf31701d515dc6/edit
- -パラメーター画像
- -アウトプットGIF
+○サバゲーリスケ
+・OX
+・TA
 
 
 ○NewProject準備
 ・PatternDesignの調査
 ・SciFiプロジェクト調査
 ・ポンピドゥーセンター調査
+
+○街ジェネレーターの記事化
+https://qiita.com/drafts/e6fd91bf31701d515dc6/edit
+・パラメーターと検証結果を画像化
+
+
+○HoudiniEngineForMayaStudy
+
+○Study(ナレッジ)
+・Procedural PLATEAU: プロシージャル技術と3D都市モデル「Project PLATEAU」を組み合わせたファサード自動生成とテクスチャ付き3Dモデル自動生成の取り組み
+https://cedil.cesa.or.jp/cedil_sessions/view/2794
+・地理空間情報のススメ！オープンデータ×データドリブンな プロシージャル処理による都市の樹木自動配置
+https://cedil.cesa.or.jp/cedil_sessions/view/3042
+
 
 ○Private
 ・サイト
