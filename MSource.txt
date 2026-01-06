@@ -41,6 +41,14 @@ https://qiita.com/drafts/ff556c35ac73125b146d/edit
  -高層ビル区画(丸の内)と低層ビル区画(八重洲)を混在させる(色付け)
 
 
+■Private
+○rampパラメーターのIndexをソート
+
+○Docのメモ
+・処理概要
+・使用手順
+
+
 ○Private
 ・サイト
  -メルカリ
