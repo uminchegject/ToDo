@@ -1,16 +1,23 @@
-○サバゲーリスケ
-・OX
-片山さんが参加できない
-坂本さんが1月なら参加できるかも
-大変恐縮ですが、1月10日のサバゲーはリスケして再度調整さんで確認の上企画させて頂こうと思います。
-・TA
+○サバゲー計画
 あけましておめでとうございます!
 今年1発目のサバゲーを企画しようと思います。
 
 
-○DetailPattern設計
+○PLATOUプロジェクト
+
+○Maya(DCC)Study準備
+・基礎操作
+・HoudiniEngineForMaya
+
+○本斥候
+・良いコード、悪いコード
+・HardSurface本
+
+
+○蔦屋Pattern模写
+
+△DetailPattern設計
 ※VolumeからDetailにするための準備
-・模写
 ・パラメーター設計
  -BaseParam
  -PlusParam
@@ -25,17 +32,13 @@
 https://qiita.com/drafts/e6fd91bf31701d515dc6/edit
 ・パラメーターと検証結果を画像化
 
-○ID化
+△ID化の記事化
 https://qiita.com/drafts/ff556c35ac73125b146d/edit
 ・工程(カラーによるIDのビジュアル化)
  -平面図(区画 + Volume)
  -Perspective(区画 + Volume)
 ・検証
  -高層ビル区画(丸の内)と低層ビル区画(八重洲)を混在させる(色付け)
-
-○Maya(DCC)Study準備
-・基礎操作
-・HoudiniEngineForMaya
 
 
 ○Private
