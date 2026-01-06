@@ -1,20 +1,41 @@
+■Public
+○色設定の不具合を修正
+
+○rampパラメーターのIndexをソート
+//rampパラメーターのIndexをソート
+float param_position_list [];
+for(int i = 0)
+int sorted_param_index_list[] = argsort(0, param_position_list);
+
+for(int j = 0){
+	int param_index = sorted_param_index_list[j];
+}
+
+●処理概要
+※ノードごとに画像を用意
+・boolean(seam)
+・凸包
+・パラメーターを参照し、メッシュを生成
+・マテリアルを設定
+ -mayaにおいて、meshにマテリアルが設定されず、頂点カラーが確認できないため
+
+●使用手順
+・HDAのロード
+・パラメーターの説明
+ -offset
+ -color_ramp
+ -sea_level
+・Meshにインプットし、パラメーターで調整
+
+
 ○サバゲー計画
 あけましておめでとうございます!
 今年1発目のサバゲーを企画しようと思います。
 
 
-○PLATOUプロジェクト
-
-○Maya(DCC)Study準備
-・基礎操作
-・HoudiniEngineForMaya
-
-○本斥候
-・良いコード、悪いコード
-・HardSurface本
-
-
 ○蔦屋Pattern模写
+・簡単に検証
+ -ラインを強調(斜め)
 
 △DetailPattern設計
 ※VolumeからDetailにするための準備
@@ -26,6 +47,19 @@
 ○SciFi調査
 ・MegastructureProject調査
 ・HardSurface本調査
+
+●SciFi
+・Volumeの構築
+・Pattern
+・AssetToPoint
+
+
+○Studyの整理
+・Maya(DCC)
+ -基礎操作
+ -HoudiniEngineForMaya
+・オブジェクト指向
+ -良いコード悪いコード
 
 
 ○街ジェネレーターの記事化
@@ -39,14 +73,6 @@ https://qiita.com/drafts/ff556c35ac73125b146d/edit
  -Perspective(区画 + Volume)
 ・検証
  -高層ビル区画(丸の内)と低層ビル区画(八重洲)を混在させる(色付け)
-
-
-■Private
-○rampパラメーターのIndexをソート
-
-○Docのメモ
-・処理概要
-・使用手順
 
 
 ○Private
@@ -91,15 +117,7 @@ https://qiita.com/drafts/ff556c35ac73125b146d/edit
 
 
 ■IDEA
-●蔦屋Pattern
-・斜めにライン化
-
 ●高根沢Pattern
-
-●SciFi
-・Volumeの構築
-・Pattern
-・AssetToPoint
 
 ▲ポンピドゥーセンター
 ・建物の構造や配管（空調は青、水道は緑など）を外部に露出させた「内部の透明性」と「機能性の可視化」
