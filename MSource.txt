@@ -1,16 +1,30 @@
-○サバゲー告知
+○BasePointでラインを繋げて検証
+・位置をGradation化
+・複数のラインをマルチ化
 
+○立体化
+・T字ブロック化
 
 ○蔦屋Pattern模写
 ※縦線、横線、T要素
  -ラインを強調(斜め)
 
-△DetailPattern設計
-※VolumeからDetailにするための準備
+○T字Pattern設計
+・VerticalBlock
+ -ラインを強調(斜め)
+・HorizontalBlock
+ -ラインを強調(斜め)
+・TPattern
+ -Block化
 ・パラメーター設計
  -BaseParam
  -PlusParam
 
+
+○MegastructureProject調査
+・Volumeの構築
+・Pattern
+・AssetToPoint
 
 ○SciFi調査
 ・HardSurface本調査
@@ -28,6 +42,7 @@
  -パラメーターと検証結果を画像化
 ・ID化
  -クラス別色付け検証結果
+・様々な街の検証
 
 ○街ジェネレーターの記事化
 https://qiita.com/drafts/e6fd91bf31701d515dc6/edit
