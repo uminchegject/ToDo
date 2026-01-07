@@ -1,5 +1,11 @@
+○BasePointsの位置調整処理を整理
+
+○BasePointsのライン化
+・BasePointsにIDを設定してIDPointsでPolyLineを生成する
+
 ○BasePointでラインを繋げて検証
 ・位置をGradation化
+ -BaseLineのInterbalをGradation化
 ・複数のラインをマルチ化
 
 ○立体化
@@ -9,7 +15,7 @@
 ※縦線、横線、T要素
  -ラインを強調(斜め)
 
-○T字Pattern設計
+●T字Pattern設計
 ・VerticalBlock
  -ラインを強調(斜め)
 ・HorizontalBlock
@@ -23,8 +29,11 @@
 
 ○MegastructureProject調査
 ・Volumeの構築
+ -Boolean(Add + Sub)
 ・Pattern
+ -溝Pattern
 ・AssetToPoint
+ -Pipe
 
 ○SciFi調査
 ・HardSurface本調査
@@ -37,15 +46,10 @@
 ・AssetToPoint
 
 
-○ビジュアル資料作成
-・街ジェネレーター
- -パラメーターと検証結果を画像化
-・ID化
- -クラス別色付け検証結果
-・様々な街の検証
-
 ○街ジェネレーターの記事化
 https://qiita.com/drafts/e6fd91bf31701d515dc6/edit
+・パラメーター画像
+・検証画像
 
 △ID化の記事化
 https://qiita.com/drafts/ff556c35ac73125b146d/edit
