@@ -1,3 +1,13 @@
+○TPattern
+・Lineを基準にTのVerticalBlockを回転
+・HorizontalBlockに沿ってLine上にBasePointを生成
+・スケールを調整
+・ずらす
+
+○MegaStructureベース
+・Volume構築
+ -Miller
+
 ○蔦屋Pattern模写
 ・TにTを挟んでブロックを作る
 
