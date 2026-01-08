@@ -1,18 +1,9 @@
-○BasePointsの位置調整処理を整理
-
-○BasePointsのライン化
-・BasePointsにIDを設定してIDPointsでPolyLineを生成する
-
-○BasePointでラインを繋げて検証
-・位置をGradation化
- -BaseLineのInterbalをGradation化
-・複数のラインをマルチ化
-
-○立体化
-・T字ブロック化
-・カラー化
-
 ○蔦屋Pattern模写
+・TにTを挟んでブロックを作る
+
+○ライン検証
+・VerticalBlockを繋げるように位置、回転値を調整
+・HOrizontaBlockを繋げるように位置、回転値を調整
 
 ●T字Pattern設計
 ・VerticalBlock
@@ -26,41 +17,38 @@
  -PlusParam
 
 
-○MegastructureProject調査
+○検証
+・Volumeの構築
+ -MegaStructure
+・Pattern
+ -HardSurface本プロジェクト
+・△AssetToPoint
+ -SciFiProject
+ 
+●設計
 ・Volumeの構築
  -Boolean(Add + Sub)
 ・Pattern
  -溝Pattern
 ・AssetToPoint
- -Pipe
- 
-○模写
-・Houdini上でモデリング
- -SciFiプロジェクトを参照
-
-○SciFi調査
-・HardSurface本調査
- -サンプルプロジェクトを調査
-・MegastructureProject調査
-
-●SciFi
-・Volumeの構築
-・Pattern
-・AssetToPoint
 
 
 ○街ジェネレーターの記事化
 https://qiita.com/drafts/e6fd91bf31701d515dc6/edit
-・パラメーター画像
-・検証画像
+・検証結果
+ -パラメーター
+ -結果
 
-△ID化の記事化
+○ID化の記事化
 https://qiita.com/drafts/ff556c35ac73125b146d/edit
-・工程(カラーによるIDのビジュアル化)
- -平面図(区画 + Volume)
- -Perspective(区画 + Volume)
-・検証
- -高層ビル区画(丸の内)と低層ビル区画(八重洲)を混在させる(色付け)
+・実装内容
+ -カラー付きボリューム
+ -パラメーター
+・検証(パラメーター + 結果)
+※工程をビジュアル化
+ -区画生成
+ -敷地生成
+ -Volume生成
 
 
 ○Private
@@ -80,13 +68,7 @@ https://qiita.com/drafts/ff556c35ac73125b146d/edit
  -HardSurface調査
 
 ●オブジェクト指向
-・CEDIL
-https://cedil.cesa.or.jp/cedil_sessions/search?query=%E8%A8%AD%E8%A8%88
-https://cedil.cesa.or.jp/cedil_sessions/view/1200
-https://cedil.cesa.or.jp/cedil_sessions/view/288
-https://cedil.cesa.or.jp/cedil_sessions/view/364
-https://cedil.cesa.or.jp/cedil_sessions/view/429
-https://cedil.cesa.or.jp/cedil_sessions/view/2765
+
 
 ■ビジュアル資料
 ●ID化
@@ -109,7 +91,7 @@ https://cedil.cesa.or.jp/cedil_sessions/view/2765
 ■IDEA
 ●高根沢Pattern
 
-▲ポンピドゥーセンター
+●ポンピドゥーセンター
 ・建物の構造や配管（空調は青、水道は緑など）を外部に露出させた「内部の透明性」と「機能性の可視化」
 
 
@@ -120,8 +102,6 @@ https://cedil.cesa.or.jp/cedil_sessions/view/2765
 
 
 ■PatternGenerator
-※新年会のポートフォリオを目指す
-
 △Pattern追加
 ・モチーフ調査
 

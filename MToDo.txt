@@ -1,3 +1,13 @@
+■CD(Tool)
+○配置ロジックの設計・実装
+・PlaneEditor
+・BasePointGenerator
+
+○Pattern設計・実装
+・BoxPatternをそのままVolumeとして使用する
+・カラー化(Texture化)
+
+
 ■CityGenerator
 ※世界観をしっかり決めて、参考資料・リファレンスをしっかり用意する
 
@@ -10,16 +20,6 @@
 
 △パイプライン化
 ・背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装
-
-
-■CD(Tool)
-○配置ロジックの設計・実装
-・PlaneEditor
-・BasePointGenerator
-
-○Pattern設計・実装
-・BoxPatternをそのままVolumeとして使用する
-・カラー化(Texture化)
 
 
 ■ポートフォリオ(記事)
