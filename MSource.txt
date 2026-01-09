@@ -1,19 +1,13 @@
-○TPattern
-・Lineを基準にTのVerticalBlockを回転
-・HorizontalBlockに沿ってLine上にBasePointを生成
-・スケールを調整
+○TPatternGenerator
+※蔦屋Pattern模写
+・LineにIDを設定
+・PrevLineの頂点から90度回転させたベクトルとLineの交点にBasePointを生成
+・BasePointにLineに沿った回転値を設定
 ・ずらす
 
-○MegaStructureベース
-・Volume構築
- -Miller
-
-○蔦屋Pattern模写
-・TにTを挟んでブロックを作る
-
-○ライン検証
-・VerticalBlockを繋げるように位置、回転値を調整
-・HOrizontaBlockを繋げるように位置、回転値を調整
+○検証
+・曲面で挙動確認
+・曲線で挙動確認
 
 ●T字Pattern設計
 ・VerticalBlock
@@ -28,12 +22,15 @@
 
 
 ○検証
-・Volumeの構築
- -MegaStructure
-・Pattern
- -HardSurface本プロジェクト
-・△AssetToPoint
- -SciFiProject
+※汎用ビルを目標
+※MegaStructureベース
+・Volumeの構築(※MegaStructure参照)
+ -Miller
+・Pattern(※HardSurface本プロジェクト参照)
+ -溝Pattern
+・AssetToPoint(※HardSurface本プロジェクト・SciFiProject参照)
+ -小物の組み合わせ
+・△Panel
  
 ●設計
 ・Volumeの構築
@@ -65,7 +62,7 @@ https://qiita.com/drafts/ff556c35ac73125b146d/edit
 ・サイト
  -メルカリ
 ・マウス
- -接着剤
+ -Logicool
 ・ズボン
  -ロッポンギ
 
