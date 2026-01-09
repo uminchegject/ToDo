@@ -1,25 +1,18 @@
-○TPatternGenerator
-※蔦屋Pattern模写
-・HorizontalBlockを繋げる
- -HorizontalBlockをラインのベースにする
- -VerticalBlockで分割するように配置する
-・VerticalBlockは分割する
- -膨らみをつける
+●Pattern
+※3次元的Pattern
+※遊びのあるPattern
+※複数のパーツで構成し合っているPattern
 
-○検証
-・曲面で挙動確認
-・曲線で挙動確認
+○TPattern検証
 
-●T字Pattern設計
-・VerticalBlock
- -ラインを強調(斜め)
-・HorizontalBlock
- -ラインを強調(斜め)
-・TPattern
- -Block化
-・パラメーター設計
- -BaseParam
- -PlusParam
+●TPattern
+・Parts
+ -VerticalBlock
+ -HorizontalBlock
+・Construct
+ -T字
+ -HorizontalBlockをVerticalBlockで分割
+
 
 
 ○検証
@@ -91,13 +84,6 @@ https://qiita.com/drafts/ff556c35ac73125b146d/edit
 ●SunnyHills
 ・BoatHouseの調整(GIF)
 ・Gradationでの動き(GIF)
-
-
-■IDEA
-●高根沢Pattern
-
-●ポンピドゥーセンター
-・建物の構造や配管（空調は青、水道は緑など）を外部に露出させた「内部の透明性」と「機能性の可視化」
 
 
 ■CityGenerator
