@@ -1,9 +1,10 @@
 ○TPatternGenerator
 ※蔦屋Pattern模写
-・LineにIDを設定
-・PrevLineの頂点から90度回転させたベクトルとLineの交点にBasePointを生成
-・BasePointにLineに沿った回転値を設定
-・ずらす
+・HorizontalBlockを繋げる
+ -HorizontalBlockをラインのベースにする
+ -VerticalBlockで分割するように配置する
+・VerticalBlockは分割する
+ -膨らみをつける
 
 ○検証
 ・曲面で挙動確認
@@ -42,9 +43,6 @@
 
 ○街ジェネレーターの記事化
 https://qiita.com/drafts/e6fd91bf31701d515dc6/edit
-・検証結果
- -パラメーター
- -結果
 
 ○ID化の記事化
 https://qiita.com/drafts/ff556c35ac73125b146d/edit
