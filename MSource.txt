@@ -1,15 +1,12 @@
+○移動処理の修正
+
 ●Pattern
 ※3次元的Pattern
 ※遊びのあるPattern
 ※複数のパーツで構成し合っているPattern
 
-○TPattern模写
-※VerticalBlock, HorizontalBlockを分ける
-・HorizontalBlockを3層に分けて配置するように調整する
-・VerticalBlockを配置
-・スケール調整
-
 ○TPattern検証
+・T字を連結する
 
 ●TPattern
 ・Parts
@@ -19,6 +16,9 @@
  -T字
  -HorizontalBlockをVerticalBlockで分割
 
+
+○MegaStructure調査
+https://www.youtube.com/watch?v=J5A3Z0qX-Yk
 
 ○MayaStudy
 ・HardSurface
