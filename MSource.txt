@@ -6,7 +6,7 @@
 ※複数のパーツで構成し合っているPattern
 
 ○TPattern検証
-・T字を連結する
+・SmallParts
 
 ●TPattern
 ・Parts
@@ -17,33 +17,31 @@
  -HorizontalBlockをVerticalBlockで分割
 
 
-○MegaStructure調査
-https://www.youtube.com/watch?v=J5A3Z0qX-Yk
-
 ○MayaStudy
 ・HardSurface
 
-○検証
-※汎用ビルを目標
-※MegaStructureベース
-・Volumeの構築(※MegaStructure参照)
- -Miller
-・Pattern(※HardSurface本プロジェクト参照)
- -溝Pattern
-・AssetToPoint(※HardSurface本プロジェクト・SciFiProject参照)
- -小物の組み合わせ
-・△Panel
- 
-●設計
-・Volumeの構築
- -Boolean(Add + Sub)
-・Pattern
- -溝Pattern
-・AssetToPoint
+●リファレンス
+・NightCity
+https://www.youtube.com/watch?v=tOWGsyt40t8&t=1616s
+・MegaStructure
+https://www.youtube.com/watch?v=J5A3Z0qX-Yk
 
+■設計
+●Volume構築
+・Add
+ -VolumePattern
+・Boolean
+ -斜め
+ -円柱
+・Miller
 
-○街ジェネレーターの記事化
-https://qiita.com/drafts/e6fd91bf31701d515dc6/edit
+●Pattern
+・溝Pattern
+・HardCaver
+
+●AssetToPoint
+・小物の組み合わせ
+
 
 ○ID化の記事化
 https://qiita.com/drafts/ff556c35ac73125b146d/edit
