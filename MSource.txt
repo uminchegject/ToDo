@@ -1,3 +1,12 @@
+○EdgeVolumeGenerator
+・ZAHA参照
+
+○PatternGenerater記事化
+※ポートフォリオのベース
+・設計思想
+・蔦屋Pattern検証
+
+
 ○移動処理の修正
 
 ●Pattern
