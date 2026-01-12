@@ -1,12 +1,12 @@
-○Private
+○秋葉原
 ・サイト
  -メルカリ
 ・マウス
  -Logicool
-・ズボン
- -ロッポンギ
+ -ヨドバシ
 
 
+■曲面化
 ○BasePointGenerator修正
 ・BaseLineのカーブ対応
 ・移動処理の修正
@@ -14,6 +14,8 @@
 ○曲面でのPatternGenerator検証
 ・モチーフ調査
 
+
+■PatternGenerator記事化
 ○TPattern検証
 ・Rotate角度の調整
 ・Y軸Scale値の調整
@@ -23,8 +25,13 @@
 ・蔦屋Pattern検証
 
 
+■NightCity
+○中銀カプセルタワーのプロシージャル化
+
 ○MayaStudy
-・NightCitySimpleBuilding
+・カプセルのモデリング、UV、Texture化
+
+○カプセルの柔軟化
 
 ●リファレンス
 ・NightCity
@@ -32,7 +39,7 @@ https://www.youtube.com/watch?v=tOWGsyt40t8&t=1616s
 ・MegaStructure
 https://www.youtube.com/watch?v=J5A3Z0qX-Yk
 
-●NithtCityIdea
+●設計
 ・ベースボリュームを細長くしてビジュアルを複雑にする
 ・幾何学的Patternのカプセルタワー化
  -sub_boolean
@@ -42,22 +49,8 @@ https://www.youtube.com/watch?v=J5A3Z0qX-Yk
  -HardCaver
  -Asset(看板、設備)
 
-●Volume構築
-・Add
- -VolumePattern
-・Boolean
- -斜め
- -円柱
-・Miller
 
-●Pattern
-・溝Pattern
-・HardCaver
-
-●AssetToPoint
-・小物の組み合わせ
-
-
+■CityGenerator記事化
 ○ID化ビジュアル資料化
 https://qiita.com/drafts/ff556c35ac73125b146d/edit
 ・実装内容
@@ -81,29 +74,8 @@ https://qiita.com/drafts/ff556c35ac73125b146d/edit
 ■Study
 ●Maya(DCC)
 ※工程を理解
-・Maya実施ハードサーフェス(工程を確認する)
- -CEDILでの調査内容を整理
- -HardSurface調査
 
 ●オブジェクト指向
-
-
-■ビジュアル資料
-●ID化
-・工程
- -カラーによるIDのビジュアル化
- -平面図(区画 + Volume)
- -Perspective(区画 + Volume)
-
-●様々な街の検証
-・SimplePatterGeneratorの検証結果
-・UnderConstruction模写結果
- -別色で設定する
-・都市Generator検証結果
-
-●SunnyHills
-・BoatHouseの調整(GIF)
-・Gradationでの動き(GIF)
 
 
 ■CityGenerator

@@ -4,7 +4,6 @@
 ・BasePointGenerator
 
 ○Pattern設計・実装
-・BoxPatternをそのままVolumeとして使用する
 ・カラー化(Texture化)
 
 
