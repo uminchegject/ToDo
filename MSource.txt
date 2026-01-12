@@ -1,33 +1,32 @@
-○EdgeVolumeGenerator
-・ZAHA参照
+○Private
+・ホテル予約
+ -那須高原&水庭
+・サイト
+ -メルカリ
+・マウス
+ -Logicool
+・ズボン
+ -ロッポンギ
+
+
+○BasePointGenerator修正
+・BaseLineのカーブ対応
+・移動処理の修正
+
+○曲面でのPatternGenerator検証
+・モチーフ調査
+
+○TPattern検証
+・Rotate角度の調整
+・Y軸Scale値の調整
 
 ○PatternGenerater記事化
 ※ポートフォリオのベース
-・設計思想
 ・蔦屋Pattern検証
 
 
-○移動処理の修正
-
-●Pattern
-※3次元的Pattern
-※遊びのあるPattern
-※複数のパーツで構成し合っているPattern
-
-○TPattern検証
-・SmallParts
-
-●TPattern
-・Parts
- -VerticalBlock
- -HorizontalBlock
-・Construct
- -T字
- -HorizontalBlockをVerticalBlockで分割
-
-
 ○MayaStudy
-・HardSurface
+・NightCitySimpleBuilding
 
 ●リファレンス
 ・NightCity
@@ -35,7 +34,16 @@ https://www.youtube.com/watch?v=tOWGsyt40t8&t=1616s
 ・MegaStructure
 https://www.youtube.com/watch?v=J5A3Z0qX-Yk
 
-■設計
+●NithtCityIdea
+・ベースボリュームを細長くしてビジュアルを複雑にする
+・幾何学的Patternのカプセルタワー化
+ -sub_boolean
+ -add_boolean
+・外装のレイヤー化
+ -多様な窓
+ -HardCaver
+ -Asset(看板、設備)
+
 ●Volume構築
 ・Add
  -VolumePattern
@@ -52,7 +60,7 @@ https://www.youtube.com/watch?v=J5A3Z0qX-Yk
 ・小物の組み合わせ
 
 
-○ID化の記事化
+○ID化ビジュアル資料化
 https://qiita.com/drafts/ff556c35ac73125b146d/edit
 ・実装内容
  -カラー付きボリューム
@@ -63,19 +71,13 @@ https://qiita.com/drafts/ff556c35ac73125b146d/edit
  -敷地生成
  -Volume生成
 
-△様々な街並みの検証
+△様々な街並みのビジュアル資料化
 ・ModularModeling
+ -パラメーター
+ -出力(コメント付き)
 ・ProceduralModeling
-
-
-
-○Private
-・サイト
- -メルカリ
-・マウス
- -Logicool
-・ズボン
- -ロッポンギ
+ -パラメーター
+ -出力(コメント付き)
 
 
 ■Study
@@ -113,8 +115,15 @@ https://qiita.com/drafts/ff556c35ac73125b146d/edit
 
 
 ■PatternGenerator
-△Pattern追加
-・モチーフ調査
+●Pattern設計
+※3次元的Pattern
+※遊びのあるPattern
+※複数のパーツで構成し合っているPattern
+
+●検証
+・パラメーターの微調整
+・他パーツの設定
+・位置の調整
 
 △BasePointのPlane周りの処理を整理
 ・Simple
@@ -125,27 +134,6 @@ https://qiita.com/drafts/ff556c35ac73125b146d/edit
 ・EdgeGeneratorで検証
 
 △木目をCopernicusで表現
-
-●検証
-・パラメーターの微調整
-・他パーツの設定
-・位置の調整
-
-●Components
-・Parts
- -CenterEdge
- -SideEdge
- -△Roof
- -△SecondFloor
-・BaseLine
- -Axis
- -Interval
-・BasePoint
- -BlockLengh(PlaneのIntervalをRandomにする)
- -Rotate
- -Scale
- -Transform
- -color
 
 ●追加ソース
 ・BasePointの位置をランダム調整
