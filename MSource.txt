@@ -1,9 +1,15 @@
-○検証モチーフの調査
+○検証用にLineGeneratorを実装
 ・直線Pattern
 ・曲線Pattern
 
+○BasePointGenerator修正
+※BasePlaneを統一する
+・間隔が広がる不具合を修正
+・ライン隅のBasePointを修正
+・移動処理の修正
 
-○旅行キャンセル保険加入
+
+○旅行キャンセル保険加入うい
 ※被保険者に注意
 
 ○秋葉原
@@ -15,23 +21,19 @@
 
 
 ■曲面化
-○BasePointGenerator修正
-・間隔が広がる不具合を修正
-・ライン隅のBasePointを修正
-・移動処理の修正
+○SunnyHills検証
 
 ○曲面でのPatternGenerator検証
 ・モチーフ調査
 
 
 ■PatternGenerator記事化
-○TPattern検証
-・Rotate角度の調整
-・Y軸Scale値の調整
+○検証用LineGeneratorで再検証
+・SunnyHills
+・蔦屋Pattern
 
 ○PatternGenerater記事化
 ※ポートフォリオのベース
-・蔦屋Pattern検証
 
 △ボートハウス記事化
 
@@ -85,6 +87,8 @@ https://www.youtube.com/watch?v=J5A3Z0qX-Yk
 ■Study
 ●Maya(DCC)
 ※工程を理解
+・中銀カプセルホテル
+・本
 
 ●オブジェクト指向
 
