@@ -1,20 +1,15 @@
+○曲線(曲面)設計
+※数式をベースに実装
+
+○サバゲー告知
+サバゲーを
+
 ○BasePointGenerator修正
 ※BasePlaneを統一する
 ・回転値の修正
  -v@Nをpointに設定する
 ・ライン隅のBasePointを修正
 ・移動処理の修正
-
-
-○旅行キャンセル保険加入
-※被保険者に注意
-
-○秋葉原
-・サイト22×33
- -メルカリ
-・マウスm240
- -Logicool
- -ヨドバシ
 
 
 ■PatternGenerator
