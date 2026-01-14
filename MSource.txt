@@ -1,6 +1,11 @@
 ○検証用にLineGeneratorを実装
-・直線Pattern
-・曲線Pattern
+・直線Pattern(I字)
+ -Interval
+ -Length
+・曲線Pattern(S字)
+ -Interval
+ -Length
+ -Angle
 
 ○BasePointGenerator修正
 ※BasePlaneを統一する
@@ -9,7 +14,7 @@
 ・移動処理の修正
 
 
-○旅行キャンセル保険加入うい
+○旅行キャンセル保険加入
 ※被保険者に注意
 
 ○秋葉原
@@ -20,22 +25,25 @@
  -ヨドバシ
 
 
-■曲面化
-○SunnyHills検証
-
-○曲面でのPatternGenerator検証
-・モチーフ調査
-
-
-■PatternGenerator記事化
+■PatternGenerator
 ○検証用LineGeneratorで再検証
 ・SunnyHills
 ・蔦屋Pattern
+ -モデルをキッチリする
+
+○曲面でのPatternGenerator検証
+
+○レンダリング
+・SunnlyHills
+ -木目
+・蔦屋Pattern
+ -金属
 
 ○PatternGenerater記事化
 ※ポートフォリオのベース
-
-△ボートハウス記事化
+・基礎部分
+・曲線対応
+・ボートハウス
 
 
 ■CityGenerator記事化
