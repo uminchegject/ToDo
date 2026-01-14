@@ -1,6 +1,7 @@
 ○BasePointGenerator修正
 ※BasePlaneを統一する
-・間隔が広がる不具合を修正
+・回転値の修正
+ -v@Nをpointに設定する
 ・ライン隅のBasePointを修正
 ・移動処理の修正
 
@@ -47,7 +48,6 @@
 ○ID化ビジュアル資料化
 https://qiita.com/drafts/ff556c35ac73125b146d/edit
 ・実装内容
- -カラー付きボリューム
  -パラメーター
 ・検証(パラメーター + 結果)
 ※工程をビジュアル化
@@ -64,13 +64,19 @@ https://qiita.com/drafts/ff556c35ac73125b146d/edit
  -出力(コメント付き)
 
 
+
 ■NightCity
-○中銀カプセルタワーのプロシージャル化
+※中銀カプセルタワーのプロシージャル化
 
-○MayaStudy
-・カプセルのモデリング、UV、Texture化
+○カプセル用意
+※MayaStudy
+・カプセルのモデリング
+・UV
+・Texture化
 
-○カプセルの柔軟化
+○カプセル構築処理の実装
+
+○カプセルの柔軟化・拡張化
 
 ●リファレンス
 ・NightCity
@@ -80,9 +86,7 @@ https://www.youtube.com/watch?v=J5A3Z0qX-Yk
 
 ●設計
 ・ベースボリュームを細長くしてビジュアルを複雑にする
-・幾何学的Patternのカプセルタワー化
- -sub_boolean
- -add_boolean
+・カプセルデザイン
 ・外装のレイヤー化
  -多様な窓
  -HardCaver
