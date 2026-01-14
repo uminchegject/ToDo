@@ -1,11 +1,13 @@
-○検証用にLineGeneratorを実装
-・直線Pattern(I字)
- -Interval
- -Length
-・曲線Pattern(S字)
- -Interval
- -Length
- -Angle
+○SubmoduleStudy
+・Git submodule の基礎
+https://qiita.com/sotarok/items/0d525e568a6088f6f6bb
+・Visual Studio Code の git submodule 対応を試してみる
+https://qiita.com/diescake/items/814c1cadf3302d2273c5
+
+
+○LineGeneratorを実装
+・PrimをInputにラインを生成
+・直線、曲線を出力できる
 
 ○BasePointGenerator修正
 ※BasePlaneを統一する
