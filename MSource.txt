@@ -74,6 +74,7 @@ https://qiita.com/drafts/ff556c35ac73125b146d/edit
 ・カプセルのモデリング
 ・UV
 ・Texture化
+・SciFiBoxのTutorial
 
 ○カプセル構築処理の実装
 
