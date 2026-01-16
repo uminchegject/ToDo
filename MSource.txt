@@ -1,21 +1,10 @@
-○サバゲー告知
-お疲れ様です!
-アンケート回答ありがとうございました。
-調整さんのスケジュールを踏まえて2/12を第一候補に進めていこうと思います。
-場所はbrave point 新宿でお願い致します。
-2月上旬を目途に予約をする予定なので、アンケート未回答の方もそれまでに参加が可能そうであれば調整さんに記載頂けると幸いです。
-
-念のためリマインドです。
-
-
 ■PatternGenerator
 ○検証用LineGeneratorで再検証
 ・SunnyHills
 ・蔦屋Pattern
- -モデルをキッチリする
 
-○曲面でのPatternGenerator検証
-・S字
+○LineGeneratorの実装
+※様々なPrimに対応する
 
 △レンダリング
 ・SunnlyHills
@@ -48,8 +37,6 @@ https://qiita.com/drafts/ff556c35ac73125b146d/edit
 ・ProceduralModeling
  -パラメーター
  -出力(コメント付き)
-
-
 
 
 ■NightCity
