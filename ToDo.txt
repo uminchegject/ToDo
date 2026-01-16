@@ -38,11 +38,16 @@ https://chatgpt.com/s/t_69698f5a1a708191960d6d0121053350
 ※ポートフォリオの軸に沿った説明
 
 ○GPT
+https://chatgpt.com/s/t_696a21455e548191b4664cf0cf6e7dce
 
-●各Moduleを生成
-・ModuleをID化
+●CityGeneratorの設計
 
-●様々なModuleで検証
+●八重洲の検証
+・区画ごとに処理を分別する
+
+
+▲様々なModuleで検証
+・
 
 
 ■履歴
@@ -51,3 +56,6 @@ https://chatgpt.com/s/t_69698f5a1a708191960d6d0121053350
 ●エンジニア
 
 ●TA
+
+
+■WantToTA

@@ -1,7 +1,8 @@
 ■PatternGenerator
-○検証用LineGeneratorで再検証
-・SunnyHills
-・蔦屋Pattern
+○検証モデルのデザイン
+※柔軟性を強調する
+・平面
+・曲面
 
 ○LineGeneratorの実装
 ※様々なPrimに対応する
