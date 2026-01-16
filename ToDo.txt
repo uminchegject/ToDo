@@ -1,8 +1,23 @@
 ■PatternGenerator
-○プロシージャルデザインとは
+○GPT
+・プロシージャルデザインとは
+・ポリモーフィズムとは
 
-○オブジェクト指向とは
+この記事のファザード生成をプロシージャルに行えるHoudiniのHDAで実装した。
+HDAはパネルの形状をモデルとして引数にし、スケール、位置、回転ををパラメーターで調整できるようにしている。
+このHDAをポリモーフィズムとプロシージャルモデリングをベースに設計とメリットを説明をしたい
+https://www.archifuture-web.jp/magazine/466.html
 
+https://chatgpt.com/s/t_69698f07fc548191bfe5e9d1674936dc
+https://chatgpt.com/s/t_69698f5a1a708191960d6d0121053350
+
+
+○BasePointGenerator修正
+※BasePlaneを統一する
+・回転値の修正
+ -v@Nをpointに設定する
+・ライン隅のBasePointを修正
+・移動処理の修正
 
 ○LineGeneratorの実装
 ※様々なPrimに対応する
@@ -24,16 +39,18 @@
 
 ●検証
 ・パネルデザイン
-　SunnyHills
-　蔦屋
+ -SunnyHills
+ -蔦屋
 ・サーフェス
-　直面
-　曲面
+ -直面
+ -曲面
 
 
 ■CityGenerator
 ※記事を完成
 ※ポートフォリオの軸に沿った説明
+
+○GPT
 
 ●各Moduleを生成
 ・ModuleをID化

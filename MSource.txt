@@ -7,13 +7,6 @@
 
 念のためリマインドです。
 
-○BasePointGenerator修正
-※BasePlaneを統一する
-・回転値の修正
- -v@Nをpointに設定する
-・ライン隅のBasePointを修正
-・移動処理の修正
-
 
 ■PatternGenerator
 ○検証用LineGeneratorで再検証
@@ -21,28 +14,20 @@
 ・蔦屋Pattern
  -モデルをキッチリする
 
-○曲線(曲面)設計
-※数式をベースに実装
-
 ○曲面でのPatternGenerator検証
+・S字
 
-○レンダリング
+△レンダリング
 ・SunnlyHills
  -木目
 ・蔦屋Pattern
  -金属
  
-○ボートハウス
+△ボートハウス
 ・LineGeneratorを実装
  -PrimをInputにラインを生成
  -直線、曲線を出力できる
 ・Primのみ生成
-
-○PatternGenerater記事化
-※ポートフォリオのベース
-・基礎部分
-・曲線対応
-・ボートハウス
 
 
 ■CityGenerator記事化
@@ -63,6 +48,7 @@ https://qiita.com/drafts/ff556c35ac73125b146d/edit
 ・ProceduralModeling
  -パラメーター
  -出力(コメント付き)
+
 
 
 
