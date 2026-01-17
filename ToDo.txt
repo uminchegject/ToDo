@@ -100,12 +100,18 @@ https://chatgpt.com/s/t_696aecade0ac8191b79b0682fa1a2f93
 ・区画ごとに処理を分別する
 
 
-■履歴
+■経歴
 ●学生
+・コンピュテーショナルデザイン
 
 ●エンジニア
+・EFootball
+UE,C++
+・BlueProtocol
+UE,C++
+・IZON
 
 ●TA
-
-
-■WantToTA
+・Gaia
+Maya・Houdini・内製エンジン、パイプライン
+Python,C++
