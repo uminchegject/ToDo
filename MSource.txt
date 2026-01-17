@@ -1,4 +1,6 @@
 ○PFフォーマットの整理方法を調査
+・marp
+https://qiita.com/tomo_makes/items/aafae4021986553ae1d8
 
 ○作品の整理
 ・PatternGenerator
