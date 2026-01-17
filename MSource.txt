@@ -1,3 +1,25 @@
+○BaseLineを縦ラインに修正
+・I字(平面)とS字(曲面)で比較
+
+○経歴の整理
+※経歴書参考
+※使用ツール・言語をまとめる
+・大学
+・EFootball
+・BlueProtocol
+・IZON
+・Gaia
+Maya・Houdini・内製エンジン、パイプライン
+Python,C++
+
+○PFの整理
+・経歴
+
+○PF書式整理
+・pandoc + markdownでいい感じの執筆環境を作る
+https://qiita.com/sin_tanaka/items/099c5be9be5253501f90
+
+
 ■PatternGenerator
 ○検証モデルのデザイン
 ※柔軟性を強調する
