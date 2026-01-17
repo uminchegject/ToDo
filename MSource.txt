@@ -1,52 +1,26 @@
-○BaseLineを縦ラインに修正
-・I字(平面)とS字(曲面)で比較
+○PFフォーマットの整理方法を調査
+
+○作品の整理
+・PatternGenerator
+・CityGenerator
 
 ○経歴の整理
 ※経歴書参考
 ※使用ツール・言語をまとめる
 ※使用技術を再確認する
 
-○作品の整理
-・PatternGenerator
-・CityGenerator
-
 ○PF作成
 ・pandoc + markdownでいい感じの執筆環境を作る
 https://qiita.com/sin_tanaka/items/099c5be9be5253501f90
 
 
-■PatternGenerator
-△レンダリング
-・SunnlyHills
- -木目
-・蔦屋Pattern
- -金属
- 
-△ボートハウス
-・LineGeneratorを実装
- -PrimをInputにラインを生成
- -直線、曲線を出力できる
-・Primのみ生成
+■Study
+●Maya(DCC)
+※工程を理解
+・中銀カプセルホテル
+・本
 
-
-■CityGenerator記事化
-○ID化ビジュアル資料化
-https://qiita.com/drafts/ff556c35ac73125b146d/edit
-・実装内容
- -パラメーター
-・検証(パラメーター + 結果)
-※工程をビジュアル化
- -区画生成
- -敷地生成
- -Volume生成
-
-△様々な街並みのビジュアル資料化
-・ModularModeling
- -パラメーター
- -出力(コメント付き)
-・ProceduralModeling
- -パラメーター
- -出力(コメント付き)
+●オブジェクト指向
 
 
 ■NightCity
@@ -77,14 +51,6 @@ https://www.youtube.com/watch?v=J5A3Z0qX-Yk
  -HardCaver
  -Asset(看板、設備)
 
-
-■Study
-●Maya(DCC)
-※工程を理解
-・中銀カプセルホテル
-・本
-
-●オブジェクト指向
 
 
 ■CityGenerator
