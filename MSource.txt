@@ -1,6 +1,13 @@
-○PFフォーマットの整理方法を調査
-・marp
+●marp
 https://qiita.com/tomo_makes/items/aafae4021986553ae1d8
+
+○PF環境整理
+・MDデータを用意
+・Git環境準備(ToDoリポジトリ)
+
+○サンプルPFを用意
+・サンプル調査
+・GPTで作成
 
 ○作品の整理
 ・PatternGenerator
@@ -10,10 +17,6 @@ https://qiita.com/tomo_makes/items/aafae4021986553ae1d8
 ※経歴書参考
 ※使用ツール・言語をまとめる
 ※使用技術を再確認する
-
-○PF作成
-・pandoc + markdownでいい感じの執筆環境を作る
-https://qiita.com/sin_tanaka/items/099c5be9be5253501f90
 
 
 ■Study
