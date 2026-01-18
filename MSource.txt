@@ -1,5 +1,10 @@
-●marp
+※本の章を読み終えたら振り返る
+
+●PF資料
+・【VS Code + Marp】Markdownから爆速・自由自在なデザインで、プレゼンスライドを作る
 https://qiita.com/tomo_makes/items/aafae4021986553ae1d8
+・A4縦サイズの高品質なポートフォリオテンプレート
+https://sdesignlabo.com/design/portfolio-template-tate/
 
 ○PF環境整理
 ・MDデータを用意
