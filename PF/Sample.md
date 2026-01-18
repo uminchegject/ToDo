@@ -31,16 +31,24 @@ footer {
 _color: white
 -->
 
-![bg brightness:0.6](Picture/test.jpg)
+![bg brightness:0.6](Picture/FacadeGenerator_Cover.jpg)
 
 # ファザード生成ツール
-
-Brightnessを落とし、文字の視認性を上げました
 
 ---
 
 
-![bg left:40%](Picture/test.jpg)
+![bg left:40%](Picture/FacadeGenerator_Overview.jpg)
+
+### 左に画像をいれる
+
+- 表示場所、比率を指定する
+- 次頁では、複数画像を並べます
+- footerで画像クレジット表示も
+
+---
+
+![bg left:40%](Picture/FacadeGenerator_ObjectiveBackground.jpg)
 
 ### 左に画像をいれる
 
@@ -51,19 +59,30 @@ Brightnessを落とし、文字の視認性を上げました
 ---
 
 <!--
-_backgroundColor: white
-_footer: 'Photo by Chris Campbell, Dan on Unsplash'
+_color: white
 -->
 
-![bg right:60% contrast:1.5 brightness:1.2](Picture/test.jpg)
-![bg 350% contrast:1.2 brightness:1](Picture/test.jpg)
+![bg brightness:0.6](Picture/CityGenerator_Cover.jpg)
 
-# 進め、
-#### 新しいわたし。
-
-<small>
-なんて、  
-小洒落た感じにも。
-</small>
+# 街生成ツール
 
 ---
+
+
+![bg left:40%](Picture/CityGenerator_Overview.jpg)
+
+### 左に画像をいれる
+
+- 表示場所、比率を指定する
+- 次頁では、複数画像を並べます
+- footerで画像クレジット表示も
+
+---
+
+![bg left:40%](Picture/CityGenerator_ObjectiveBackground.jpg)
+
+### 左に画像をいれる
+
+- 表示場所、比率を指定する
+- 次頁では、複数画像を並べます
+- footerで画像クレジット表示も

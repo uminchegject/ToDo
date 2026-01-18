@@ -1,24 +1,23 @@
-※本の章を読み終えたら振り返る
-
 ●PF資料
 ・【VS Code + Marp】Markdownから爆速・自由自在なデザインで、プレゼンスライドを作る
 https://qiita.com/tomo_makes/items/aafae4021986553ae1d8
 ・A4縦サイズの高品質なポートフォリオテンプレート
 https://sdesignlabo.com/design/portfolio-template-tate/
 
-○PF環境整理
-・MDデータを用意
-・Git環境準備(ToDoリポジトリ)
+○表紙・概要・目的背景項目のPFを整理
+・テンプレートを用意
+ -サンプル調査
+ -GPTで作成
+・生える画像をサイドに配置
 
-○サンプルPFを用意
-・サンプル調査
-・GPTで作成
+○ビジュアル資料の用意
+・生え画像の用意
+・アプローチ、設計思想をUMLで図解
+・実装内容、成果特徴をHoudiniから取得
 
-○作品の整理
-・PatternGenerator
-・CityGenerator
+○実装内容・成果特徴のメモ
 
-○経歴の整理
+○経歴のメモ
 ※経歴書参考
 ※使用ツール・言語をまとめる
 ※使用技術を再確認する
