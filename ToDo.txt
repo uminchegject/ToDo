@@ -20,6 +20,34 @@ Houdiniのプロシージャルモデリングを用いて、ファサード設�
 * 同一のHDAインターフェースで異なる形状に対応できるポリモーフィズム的構成
 * 生成ロジックをHDAとしてカプセル化し、パラメーター操作のみで形状バリエーションを生成
 
+[ Input : Panel Shape ]
+┌──────────┐   ┌──────────┐   ┌──────────┐
+│ Panel A  │   │ Panel B  │   │ Panel C  │
+│ (Any)    │   │ (Any)    │   │ (Any)    │
+└──────────┘   └──────────┘   └──────────┘
+        │           │           │
+        └───────────┴───────────┘
+                    │
+                    ▼
+        ┌──────────────────────────┐
+        │   PatternGenerator HDA   │
+        │--------------------------│
+        │ Common Interface         │
+        │  Scale                   │
+        │  Translate               │
+        │  Rotate                  │
+        │  Repeat / Align          │
+        └──────────────────────────┘
+                    │
+                    ▼
+        ┌──────────────────────────┐
+        │  Generated Variations    │
+        │--------------------------│
+        │  Pattern A               │
+        │  Pattern B               │
+        │  Pattern C               │
+        └──────────────────────────┘
+
 ●実装内容（Implementation）
 * Houdini Digital Asset（HDA）として実装
 * 主な制御パラメーター
@@ -78,6 +106,42 @@ https://chatgpt.com/s/t_696aecade0ac8191b79b0682fa1a2f93
 ・パラメーターによる柔軟な制御
 街の形状やスケールを数値的にコントロールできるよう、
 各処理に必要なパラメーターを整理・公開し、調整コストを最小限に抑える設計とした。
+[ City Generation Process ]
+
+┌────────────────┐
+│ Road / Block   │
+│ HDA            │
+│ (Black Box)    │
+│----------------│
+│ Parameters     │
+│ ・Width        │
+│ ・Interval      │
+└────────────────┘
+        │
+        ▼
+┌────────────────┐
+│ Plot            │
+│ HDA             │
+│ (Black Box)     │
+│----------------│
+│ Parameters     │
+│ ・Plot Size    │
+│ ・Split Ratio  │
+└────────────────┘
+        │
+        ▼
+┌────────────────┐
+│ Building        │
+│ HDA             │
+│ (Black Box)     │
+│----------------│
+│ Parameters     │
+│ ・Height       │
+│ ・Coverage     │
+└────────────────┘
+        │
+        ▼
+      City Result
 
 ●実装内容
 街生成の処理を以下の3段階に分けて実装している。
