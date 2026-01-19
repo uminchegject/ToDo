@@ -4,10 +4,14 @@ https://qiita.com/tomo_makes/items/aafae4021986553ae1d8
 ・A4縦サイズの高品質なポートフォリオテンプレート
 https://sdesignlabo.com/design/portfolio-template-tate/
 
-○設計思想、実装内容のメモ
-・Qiitaを参考
 
 ○UMLの用意
+・【VS Code + Marp】Markdownから爆速・自由自在なデザインで、プレゼンスライドを作る
+https://qiita.com/tomo_makes/items/aafae4021986553ae1d8
+
+○実装内容のメモ
+・Qiitaを参考
+
 
 ○PF整理
 ・概要
@@ -19,11 +23,13 @@ https://sdesignlabo.com/design/portfolio-template-tate/
 ○成果特徴メモ
 ※柔軟性をアピール
 ・Qiitaを参考
-・ビジュアル資料の整理
 
-○ビジュアル資料の用意
-・完成
-・成果特徴
+○検証ビジュアル資料の用意
+・4×4の検証画像で柔軟性を強調する
+・行ごとに検証の工程、種類を統一する
+ -PatternGenerator(曲面・平面・蔦屋・SunnyHills)
+ -CityGenerator(ModularModeling・ProceduralModeling・) 
+
 
 △経歴のメモ
 ※経歴書参考
@@ -45,12 +51,22 @@ https://sdesignlabo.com/design/portfolio-template-tate/
 
 ○カプセルのモデリング
 ・Houdiniでモデルだけ用意
+・色付け
 
-○カプセル配置ロジックの設計
-・凹凸のBaseを用意
-・カプセルの向きのランダム性
- -向ける方向の管理
-・向きを生成する
+○カプセルタワーのプロシージャル化
+※Volumeからタワーを生成する処理を実装
+
+●カプセルタワー設計
+・BaseBlockで分割を行いCore + Cupselをセットで配置していく
+・角のカプセルの方向をランダムにする
+・カプセルの配置数を調整する
+
+●パラメーター
+・カプセルサイズ
+・カプセルID
+・カプセル密度
+・Core高さ
+
 
 ○モデリング資料の調査
 ※簡単でシンプルなやつ

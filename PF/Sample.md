@@ -35,12 +35,6 @@ _color: white
 
 # ファザード生成ツール
 
----
-
-![bg left:40%](Picture/FacadeGenerator_Overview.jpg)
-
-### 概要
-
 Houdiniのプロシージャルモデリングを用いて、  
 ファサード設計をルールとして定義し、  
 パネル形状・配置ロジックを切り替え可能なツールを実装した。
@@ -52,7 +46,8 @@ Houdiniのプロシージャルモデリングを用いて、
 
 ---
 
-![bg left:40%](Picture/FacadeGenerator_ObjectiveBackground.jpg)
+
+![bg left:40%](Picture/FacadeGenerator_Overview.jpg)
 
 ### 目的・背景（Background）
 
@@ -74,6 +69,22 @@ Houdiniのプロシージャルモデリングを用いて、
 
 ---
 
+
+![bg left:40%](Picture/FacadeGenerator_ObjectiveBackground.jpg)
+
+## アプローチ / 設計思想
+
+### プロシージャル × ポリモーフィズム
+
+- 入力として任意のパネル形状モデルを受け取る設計  
+- 同一のHDAインターフェースで異なる形状に対応できる  
+  ポリモーフィズム的構成  
+- 生成ロジックをHDAとしてカプセル化し、  
+  パラメーター操作のみで形状バリエーションを生成
+
+---
+
+
 <!--
 _color: white
 -->
@@ -81,13 +92,6 @@ _color: white
 ![bg brightness:0.6](Picture/CityGenerator_Cover.jpg)
 
 # 街生成ツール
-
----
-
-
-![bg left:40%](Picture/CityGenerator_Overview.jpg)
-
-### 概要
 
 本ツールは、Houdini上で動作する  
 **プロシージャルな街ジェネレーターHDA**である。
@@ -98,9 +102,11 @@ _color: white
 街並みのスケールや密度を  
 柔軟に制御できる。
 
+
 ---
 
-![bg left:40%](Picture/CityGenerator_ObjectiveBackground.jpg)
+
+![bg left:40%](Picture/CityGenerator_Overview.jpg)
 
 ### 目的・背景
 
@@ -119,3 +125,24 @@ _color: white
 設計段階から  
 プロシージャルワークフローを前提とした  
 実装を行った。
+
+
+---
+
+
+![bg left:40%](Picture/CityGenerator_ObjectiveBackground.jpg)
+
+## アプローチ・設計思想
+
+設計においては、以下の2点を重視した。
+
+### 1. 処理のカプセル化
+- 街生成の処理を細かく分割し、  
+  それぞれを独立したHDAとして実装  
+- 各工程をブラックボックス化しつつ、  
+  組み合わせによる拡張性を確保
+
+### 2. パラメーターによる柔軟な制御
+- 街の形状やスケールを数値的にコントロール可能  
+- 各処理に必要なパラメーターを整理・公開し、  
+  調整コストを最小限に抑える設計
