@@ -1,13 +1,5 @@
-●PF資料
-・【VS Code + Marp】Markdownから爆速・自由自在なデザインで、プレゼンスライドを作る
-https://qiita.com/tomo_makes/items/aafae4021986553ae1d8
-・A4縦サイズの高品質なポートフォリオテンプレート
-https://sdesignlabo.com/design/portfolio-template-tate/
-
 
 ○UMLの用意
-・【VS Code + Marp】Markdownから爆速・自由自在なデザインで、プレゼンスライドを作る
-https://qiita.com/tomo_makes/items/aafae4021986553ae1d8
 
 ○実装内容のメモ
 ・Qiitaを参考
@@ -24,6 +16,10 @@ https://qiita.com/tomo_makes/items/aafae4021986553ae1d8
 ※柔軟性をアピール
 ・Qiitaを参考
 
+○レンダリング準備
+・完成画像
+・検証画像
+
 ○検証ビジュアル資料の用意
 ・4×4の検証画像で柔軟性を強調する
 ・行ごとに検証の工程、種類を統一する
@@ -36,6 +32,13 @@ https://qiita.com/tomo_makes/items/aafae4021986553ae1d8
 ※使用ツール・言語をまとめる
 ※使用技術を再確認する
 
+●PF資料
+・【VS Code + Marp】Markdownから爆速・自由自在なデザインで、プレゼンスライドを作る
+https://qiita.com/tomo_makes/items/aafae4021986553ae1d8
+・A4縦サイズの高品質なポートフォリオテンプレート
+https://sdesignlabo.com/design/portfolio-template-tate/
+
+
 
 ■Study
 ●Maya(DCC)
@@ -47,18 +50,24 @@ https://qiita.com/tomo_makes/items/aafae4021986553ae1d8
 
 
 ■NightCity
-※中銀カプセルタワーのプロシージャル化
-
 ○カプセルのモデリング
 ・Houdiniでモデルだけ用意
 ・色付け
 
 ○カプセルタワーのプロシージャル化
 ※Volumeからタワーを生成する処理を実装
+・Coreの生成
+・BasePointの生成
+・Attributeの設定
+ -Scale
+ -Quotanion
+・CopyToPoint
 
 ●カプセルタワー設計
 ・BaseBlockで分割を行いCore + Cupselをセットで配置していく
+ -6×6ブロック
 ・角のカプセルの方向をランダムにする
+ -偶数階は左回り、奇数階は右回り
 ・カプセルの配置数を調整する
 
 ●パラメーター
@@ -66,7 +75,6 @@ https://qiita.com/tomo_makes/items/aafae4021986553ae1d8
 ・カプセルID
 ・カプセル密度
 ・Core高さ
-
 
 ○モデリング資料の調査
 ※簡単でシンプルなやつ
