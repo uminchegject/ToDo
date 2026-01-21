@@ -27,6 +27,26 @@ footer {
 }
 </style>
 
+<style>
+/* 左側に余白付き画像エリアを作る */
+.image-box {
+  position: absolute;
+  left: 4%;
+  top: 10%;
+  width: 32%;
+  height: 80%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* 右側テキストの安全領域 */
+.text-area {
+  margin-left: 40%;
+}
+</style>
+
+
 <!--
 _color: white
 -->
@@ -34,12 +54,6 @@ _color: white
 ![bg brightness:0.6](Picture/FacadeGenerator_Cover.jpg)
 
 # ファザード生成ツール
-
----
-
-![bg left:40%](Picture/FacadeGenerator_Overview.jpg)
-
-### 概要
 
 Houdiniのプロシージャルモデリングを用いて、  
 ファサード設計をルールとして定義し、  
@@ -52,7 +66,8 @@ Houdiniのプロシージャルモデリングを用いて、
 
 ---
 
-![bg left:40%](Picture/FacadeGenerator_ObjectiveBackground.jpg)
+
+![bg left:40%](Picture/FacadeGenerator_Overview.jpg)
 
 ### 目的・背景（Background）
 
@@ -74,6 +89,68 @@ Houdiniのプロシージャルモデリングを用いて、
 
 ---
 
+
+![bg left:40%](Picture/FacadeGenerator_ObjectiveBackground.jpg)
+
+## アプローチ / 設計思想
+
+### プロシージャル × ポリモーフィズム
+
+- 入力として任意のパネル形状モデルを受け取る設計  
+- 同一のHDAインターフェースで異なる形状に対応できる  
+  ポリモーフィズム的構成  
+- 生成ロジックをHDAとしてカプセル化し、  
+  パラメーター操作のみで形状バリエーションを生成
+
+---
+
+![bg left:40%](Picture/FacadeGenerator_ObjectiveBackground.jpg)
+
+## 実装内容（Implementation）
+
+### パネル形状の引数化  
+パネル形状をHDA内部に固定せず、  
+外部モデルとして入力可能な設計とした。
+
+- 表現の差し替え
+- 複数案の比較
+- 再利用性の向上
+
+### パラメーターの柔軟性  
+配置ルールの切り替えにより、  
+均質／不均質なファサード表現を制御可能。
+
+- パネルのスケール
+- 配置位置
+- 回転
+- 整列・反復ルール
+
+
+---
+
+
+![bg left:40%](Picture/FacadeGenerator_ObjectiveBackground.jpg)
+
+### 検証内容（T-Pattern）
+
+SunnyHillsおよび蔦屋書店の  
+**T-Pattern** をモチーフとして検証を行った。
+木組み構造とTブロックを引数として用意し、  
+Patternを生成することで、  
+異なるパネル形状に対しても  
+同一ルールで生成可能な高い再利用性を実現している。
+
+また、配置ルールを制御する  
+パラメーターを変更することで、  
+ファサード表現を柔軟に調整可能とした。
+これにより、パラメーター操作のみで  
+ファサードバリエーションの  
+全体構成を高速に一括調整できる。
+
+
+---
+
+
 <!--
 _color: white
 -->
@@ -81,13 +158,6 @@ _color: white
 ![bg brightness:0.6](Picture/CityGenerator_Cover.jpg)
 
 # 街生成ツール
-
----
-
-
-![bg left:40%](Picture/CityGenerator_Overview.jpg)
-
-### 概要
 
 本ツールは、Houdini上で動作する  
 **プロシージャルな街ジェネレーターHDA**である。
@@ -98,9 +168,11 @@ _color: white
 街並みのスケールや密度を  
 柔軟に制御できる。
 
+
 ---
 
-![bg left:40%](Picture/CityGenerator_ObjectiveBackground.jpg)
+
+![bg right:40%](Picture/CityGenerator_Overview.jpg)
 
 ### 目的・背景
 
@@ -119,3 +191,26 @@ _color: white
 設計段階から  
 プロシージャルワークフローを前提とした  
 実装を行った。
+
+
+---
+
+
+![bg right:40%](Picture/CityGenerator_ObjectiveBackground.jpg)
+
+## アプローチ・設計思想
+
+設計においては、以下の2点を重視した。
+
+### 1. 処理のカプセル化
+- 街生成の処理を細かく分割し、  
+  それぞれを独立したHDAとして実装  
+- 各工程をブラックボックス化しつつ、  
+  組み合わせによる拡張性を確保
+
+### 2. パラメーターによる柔軟な制御
+- 街の形状やスケールを数値的にコントロール可能  
+- 各処理に必要なパラメーターを整理・公開し、  
+  調整コストを最小限に抑える設計
+
+
