@@ -145,37 +145,48 @@ Python,C++
 		
 		
 ●CityGenerator
-┌────────────────┐
-│ Road / Block   │
-│ HDA            │
-│ (Black Box)    │
-│----------------│
-│ Parameters     │
-│ ・Width        │
-│ ・Interval      │
-└────────────────┘
-        │
-        ▼
-┌────────────────┐
-│ Plot            │
-│ HDA             │
-│ (Black Box)     │
-│----------------│
-│ Parameters     │
-│ ・Plot Size    │
-│ ・Split Ratio  │
-└────────────────┘
-        │
-        ▼
-┌────────────────┐
-│ Building        │
-│ HDA             │
-│ (Black Box)     │
-│----------------│
-│ Parameters     │
-│ ・Height       │
-│ ・Coverage     │
-└────────────────┘
-        │
-        ▼
-      City Result
+┌────────────────────────┐
+│ 1. Road / Block        │
+│    Generation Tool     │
+│    (HDA / Black Box)   │
+│------------------------│
+│ Parameters             │
+│ ・Road Width           │
+│ ・Road Interval        │
+└────────────────────────┘
+            │
+            ▼
+┌────────────────────────┐
+│ 2. Plot Generation     │
+│    Tool                │
+│    (HDA / Black Box)   │
+│------------------------│
+│ Parameters             │
+│ ・Plot Size            │
+│ ・Split Ratio          │
+└────────────────────────┘
+            │
+            ▼
+┌────────────────────────┐
+│ 3. Building Volume     │
+│    Generation Tool     │
+│    (HDA / Black Box)   │
+│------------------------│
+│ Parameters             │
+│ ・Height               │
+│ ・Coverage Ratio       │
+└────────────────────────┘
+            │
+            ▼
+┌────────────────────────┐
+│ 4. Building Detail     │
+│    Generation Tool     │
+│    (HDA / Black Box)   │
+│------------------------│
+│ Parameters             │
+│ ・Facade Pattern       │
+│ ・Detail Density       │
+└────────────────────────┘
+            │
+            ▼
+        City Result
