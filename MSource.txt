@@ -1,27 +1,16 @@
-■Public
-※プロジェクト調査をしっかりする
-・ドキュメントの確認
-・処理
-・Study項目の整理
+※処理を確認する際はクラス→関数→処理の順番で確認していく
 
-○調査
-・Study
- -Python
- -環境変数(Houdini, Maya)
+○PublicStudy準備
+・Python
+・環境変数(Houdini, Maya)
 
-
-○UMLの用意
-
-○レンダリング準備
-・完成画像
-・検証画像
 
 ○検証ビジュアル資料の用意
 ・4×4の検証画像で柔軟性を強調する
 ・行ごとに検証の工程、種類を統一する
  -PatternGenerator(曲面・平面・蔦屋・SunnyHills)
- -CityGenerator(ModularModeling・ProceduralModeling・) 
-
+ -CityGenerator(ModularModeling・ProceduralModeling)
+  -ClassSetterの比率を変える
 
 ○レイアウトの整理
 ・実装内容(サイドに枠を設けて写真を配置)
