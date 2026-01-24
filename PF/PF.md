@@ -103,7 +103,8 @@ _color: white
 
 ---
 
-![bg left:40%](Picture/PatternGenerator_UML.jpg)
+
+![bg left:40%](Drawio/FacadeGenerator_UML.png)
 
 ## 実装内容
 
@@ -121,7 +122,7 @@ _color: white
 ---
 
 
-![bg left:40%](Picture/FacadeGenerator_ObjectiveBackground.jpg)
+![bg left:40%](Drawio/FacadeGenerator_Sample_Layout.png)
 
 ### ツール検証
 
@@ -138,6 +139,12 @@ Patternを生成することで、
 これにより、パラメーター操作のみで  
 ファサードバリエーションの  
 全体構成を高速に一括調整できる。
+
+
+---
+
+
+![bg](Drawio/FacadeGenerator_Validation_Layout.png)
 
 
 ---
@@ -193,8 +200,7 @@ _color: white
 ---
 
 
-![bg right:40%](Picture/CityGenerator_ObjectiveBackground.jpg)
-
+![bg right:40%](Drawio/CityGenerator_UML.png)
 ## 実装内容
 
 街生成の処理を、以下の4段階に分けてツール実装している。
@@ -222,7 +228,7 @@ _color: white
 ---
 
 
-![bg right:40%](Picture/CityGenerator_ObjectiveBackground.jpg)
+![bg right:40%](Drawio/CityGenerator_Sample_Layout.png)
 
 ## 検証
 
@@ -230,3 +236,9 @@ _color: white
 高層ビルと低層建物が混在する都市構造を想定した。  
 区画ごとに建物の高さや密度を変化させることで、  
 エリア単位で異なる街並みが生成されることを確認した。
+
+
+---
+
+
+![bg](Drawio/CityGenerator_Validation_Layout.png)
