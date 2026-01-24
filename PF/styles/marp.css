@@ -1,0 +1,12 @@
+section table {
+    margin: 10px auto;
+}
+
+section table th {
+    background-color: var(--background-theme);
+}
+
+section table td img {
+    display: block;
+    margin: 0 auto;
+}
