@@ -103,7 +103,7 @@ _color: white
 
 ---
 
-![bg left:40%](Picture/FacadeGenerator_ObjectiveBackground.jpg)
+![bg left:40%](Picture/PatternGenerator_UML.jpg)
 
 ## 実装内容
 
