@@ -7,6 +7,7 @@ theme: uncover
 /* 全体の基本文字サイズ */
 section {
   font-size: 20px;
+  text-align: left;
 }
 
 /* 見出しサイズ調整（uncover対策） */
@@ -51,6 +52,7 @@ footer {
 _color: white
 -->
 
+
 ![bg brightness:0.6](Picture/FacadeGenerator_Cover.jpg)
 
 # ファサード生成ツール
@@ -63,36 +65,31 @@ _color: white
 ---
 
 
-![bg left:40%](Picture/FacadeGenerator_Overview.jpg)
+![bg right:40%](Picture/FacadeGenerator_Overview.jpg)
 
 ## 目的・背景
 
-コンピュテーショナルデザインにおける  
-ファサード設計初期段階では、  
-配置密度・リズム・不均質性などを  
-反復的に検討する必要がある。
+コンピュテーショナルデザインにおけるファサード設計初期段階では、配置密度・リズム・不均質性などを反復的に検討する必要がある。
 
-本ツールは、こうした検討を  
-効率的に行うことを目的として  
-以下の点に着目して実装した。
+本ツールは、こうした検討を効率的に行うことを目的として以下の点に着目して実装した。
 
-- 反復作業・バリエーション検討の効率化  
-- ルール設計と形状生成の関係性の整理  
-- 生成プロセスそのものの再利用性の確保  
+* 反復作業・バリエーション検討の効率化  
+* ルール設計と形状生成の関係性の整理  
+* 生成プロセスそのものの再利用性の確保  
 
 
 ---
 
 
-![bg left:40%](Picture/FacadeGenerator_ObjectiveBackground.jpg)
+![bg right:40%](Picture/FacadeGenerator_ObjectiveBackground.jpg)
 
 ## アプローチ / 設計思想
 
 ### プロシージャル × ポリモーフィズム
 
 本設計では形状ごとに専用ロジックを持たせるのではなく、  
-共通の生成ルールを用いて
-多様な形状に対応できる構成を目指した。
+共通の生成ルールを用いて多様な形状に対応できる構成を
+目指した。
 
 - 入力として任意のパネル形状モデルを受け取る設計  
 - 同一のインターフェースで異なる形状に対応できる  
@@ -104,25 +101,25 @@ _color: white
 ---
 
 
-![bg left:40%](Drawio/FacadeGenerator_UML.png)
+![bg right:40%](Drawio/FacadeGenerator_UML.png)
 
 ## 実装内容
 
 ### パネル形状の引数化
 パネル形状をモジュール内部に固定せず、外部モデルとして入力可能な設計とした。  
-これにより、表現の差し替えや複数案の比較を容易にし、  
+これにより、表現の差し替えや複数案の比較を容易にし、
 同一ロジックを用いた高い再利用性を確保している。
 
 ### パラメーターによる柔軟な制御
-配置ルールをパラメーター化することで、  
-パネルのスケール・配置位置・回転・整列／反復ルールを制御可能とした。  
+配置ルールをパラメーター化することで、パネルの
+スケール・配置位置・回転・反復ルールを制御可能とした。  
 これにより、均質から不均質まで幅広いファサード表現を調整できる。
 
 
 ---
 
 
-![bg left:40%](Drawio/FacadeGenerator_Sample_Layout.png)
+![bg right:40%](Drawio/FacadeGenerator_Sample_Layout.png)
 
 ### ツール検証
 
