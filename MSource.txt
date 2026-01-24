@@ -1,18 +1,13 @@
 ※処理を確認する際はクラス→関数→処理の順番で確認していく
 
-○City_Sample_Layoutの写真を高層ビル群と低層ビル群の2つを用意する
+
+○検証ビジュアル資料の用意
+・Pattern検証を1つ追加
 
 ○整理
 ・文章
  -レイアウト
 ・ビジュアル資料
-
-○検証ビジュアル資料の用意
-・4×4の検証画像で柔軟性を強調する
-・行ごとに検証の工程、種類を統一する
- -PatternGenerator(曲面・平面・蔦屋・SunnyHills)
- -CityGenerator(ModularModeling・ProceduralModeling)
-  -ClassSetterの比率を0から1に変えてく
 
 ●PF資料
 ・【VS Code + Marp】Markdownから爆速・自由自在なデザインで、プレゼンスライドを作る
