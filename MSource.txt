@@ -1,16 +1,3 @@
-■Study
-○PublicStudy準備
-・Python
-・環境変数(Houdini, Maya)
-
-●Maya(DCC)
-※工程を理解
-・中銀カプセルホテル
-
-●オブジェクト指向
-
-
-■NightCity
 ○カプセルのモデリング
 ・Houdiniでモデルだけ用意
 ・色付け
@@ -25,6 +12,29 @@
  -Quotanion
 ・CopyToPoint
 
+
+○BaseLineの配置検証
+※躯体の生成ロジックも設計
+・Simple
+・Gradation
+・Randomly
+
+△BasePointGeneratorの拡張検証
+
+
+■Study
+○PublicStudy準備
+・Python
+・環境変数(Houdini, Maya)
+
+●Maya(DCC)
+※工程を理解
+・中銀カプセルホテル
+
+●オブジェクト指向
+
+
+■NightCity
 ●カプセルタワー設計
 ・BaseBlockで分割を行いCore + Cupselをセットで配置していく
  -6×6ブロック
@@ -66,31 +76,11 @@ https://www.youtube.com/watch?v=J5A3Z0qX-Yk
  -Asset(看板、設備)
 
 
-
-■CityGenerator
-△UnderConstructionを他の色で検証
-
-△City生成の拡張
-
-
 ■PatternGenerator
 ●Pattern設計
 ※3次元的Pattern
 ※遊びのあるPattern
 ※複数のパーツで構成し合っているPattern
-
-●検証
-・パラメーターの微調整
-・他パーツの設定
-・位置の調整
-
-△BasePointのPlane周りの処理を整理
-・Simple
-・Gradation
-・Randomly
-
-△Edgeの繋ぎ部分の処理を実装
-・EdgeGeneratorで検証
 
 △木目をCopernicusで表現
 
