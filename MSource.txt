@@ -1,25 +1,26 @@
+○LineGradation検証
+・S字カーブに+sin(v@P)を行い曲面を生成する
+
+○検証処理を整理
+・ボートハウスを一旦消す
+・スケールの調整
+ -indie版を参照
+
+
 ○カプセルのモデリング
 ・Houdiniでモデルだけ用意
 ・色付け
 
-○カプセルタワーのプロシージャル化検証
-※Volumeからタワーを生成する処理を実装
-・Blockで分割
-・Coreの生成
-・BasePointの生成
-・Attributeの設定
- -Scale
- -Quotanion
-・CopyToPoint
+○検証準備
 
 
-○BaseLineの配置検証
-※躯体の生成ロジックも設計
-・Simple
-・Gradation
-・Randomly
+■Public
+○Study項目の整理
 
-△BasePointGeneratorの拡張検証
+○確認
+・enviroment設定をする際にdccではなくroot側に設定する対応をすべきか
+ -具体的には下記処理部分をdcc側ではなく、root側のmaya_env.pyで設定してあげるべきか。
+
 
 
 ■Study
@@ -35,6 +36,16 @@
 
 
 ■NightCity
+○カプセルタワーのプロシージャル化検証
+※Volumeからタワーを生成する処理を実装
+・Blockで分割
+・Coreの生成
+・BasePointの生成
+・Attributeの設定
+ -Scale
+ -Quotanion
+・CopyToPoint
+
 ●カプセルタワー設計
 ・BaseBlockで分割を行いCore + Cupselをセットで配置していく
  -6×6ブロック
@@ -77,6 +88,14 @@ https://www.youtube.com/watch?v=J5A3Z0qX-Yk
 
 
 ■PatternGenerator
+○BaseLineの配置検証
+※躯体の生成ロジックも設計
+・Simple
+・Gradation
+・Randomly
+
+△BasePointGeneratorの拡張検証
+
 ●Pattern設計
 ※3次元的Pattern
 ※遊びのあるPattern
