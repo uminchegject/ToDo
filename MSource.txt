@@ -1,5 +1,9 @@
 ○LineGradation検証
 ・S字カーブに+sin(v@P)を行い曲面を生成する
+// ===== Z軸回転（位置）=====
+float x_rot = x_pos * cos(z_angle) - y_pos * sin(z_angle);
+float y_rot = x_pos * sin(z_angle) + y_pos * cos(z_angle);
+vector pos = set(x_rot, y_rot, z_pos);
 
 ○検証処理を整理
 ・ボートハウスを一旦消す
@@ -12,15 +16,6 @@
 ・色付け
 
 ○検証準備
-
-
-■Public
-○Study項目の整理
-
-○確認
-・enviroment設定をする際にdccではなくroot側に設定する対応をすべきか
- -具体的には下記処理部分をdcc側ではなく、root側のmaya_env.pyで設定してあげるべきか。
-
 
 
 ■Study
