@@ -1,43 +1,12 @@
-○BaseLineの生成処理を確認
+○BaseLineGenerator設計
+※連続性に変化を持たせる
+※躯体の生成ロジックも設計
+・グループ化
+・複雑性
+・(Simple、Gradation、Randomly)
 
-○LineGradation検証
-・S字カーブに+sin(v@P)を行い曲面を生成する
-// ===== Z軸回転（位置）=====
-float x_rot = x_pos * cos(z_angle) - y_pos * sin(z_angle);
-float y_rot = x_pos * sin(z_angle) + y_pos * cos(z_angle);
-vector pos =6 set(x_rot, y_rot, z_pos);
-
-○BaseLineGeneratorIDEA調査
-
-
-○カプセルタワーのプロシージャル化検証
-※Volumeからタワーを生成する処理を実装
-・Attributeの設定
- -Scale
- -Quotanion
-・CopyToPoint
-
-float unit_scale = 
-vector scale = 
-int base_block_num_x = int(scale.x / unit_scale * 6);
-int base_block_num_z = int(scale.z / unit_scale * 6);
-if(base_block_num_x == 0) base_block_num_x = 1;
-if(base_block_num_z == 0) base_block_num_z = 1;
-
-for(int x = 0; x < base_block_num_x; x++)
-{
-	for(int z = 0; z < base_block_num_z; z++)
-	{
-		//Core生成
-		
-		//BasePoint生成
-	}
-}
-
-
-○カプセルのモデリング
-・Houdiniでモデルだけ用意
-・色付け
+○BaseLineGenerator検証
+※BasePointGeneratorをSimple設定でTPattern + SunnyHillsで検証
 
 
 ■Study
@@ -95,11 +64,6 @@ https://www.youtube.com/watch?v=J5A3Z0qX-Yk
 
 
 ■PatternGenerator
-○BaseLineの配置検証
-※躯体の生成ロジックも設計
-・Simple
-・Gradation
-・Randomly
 
 △BasePointGeneratorの拡張検証
 
