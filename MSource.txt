@@ -1,55 +1,40 @@
-○BaseLineGeneratorS字検証
-・Randomly(Parent)
-・Gradation(Child)
+○飲み会アンケート
 
-line_idx
-float z_pos = sin(t * M_PI * 2) * line_amp;
-z_pos += rand(int(line_idx / 5)) * 4;
-z_pos += sin((x_pos + y_pos) * 0.4) * line_amp * 0.3;
+○ラインサーフェスの検証
+・ライン群から法線を取得
 
-
-●カプセル設計
-※Coreの個数は固定して、カプセルのスケールを柔軟化する
-・SideBlockDirType
- -r×r
- -r×l
- -l×l
-・BaseBlockType
-・※サイズの最適化
- -1×1
- -1×2
- -2×1
-
-
-○BaseLineGenerator設計
-※連続性に変化を持たせる
-※躯体の生成ロジックも設計
-・グループ化
-・複雑性
-・(Simple、Gradation、Randomly)
-
-○BaseLineGenerator検証
-※BasePointGeneratorをSimple設定でTPattern + SunnyHillsで検証
+○カプセルタワーBasePoint生成
+・Core
+・SideCupsel
+・EdgeCupsel
 
 
 ■Study
-○PublicStudy準備
-・Python
+○パイプライン
 ・環境変数(Houdini, Maya)
+・PS1
 
 ●Maya(DCC)
 ※工程を理解
 ・中銀カプセルホテル
 
 ●オブジェクト指向
+・Python
 
 
 ■NightCity
 ●カプセルタワー設計
-・BaseBlockで分割を行いCore + Cupselをセットで配置していく
- -6×6ブロック
+※Coreの個数は固定して、カプセルのスケールを柔軟化する
 ・角のカプセルの方向をランダムにする
  -偶数階は左回り、奇数階は右回り
+ -r×r
+ -r×l
+ -l×l
+・サイズタイプ
+※サイズの最適化
+ -1×1
+ -1×2
+ -2×1
 ・カプセルの配置数を調整する
 
 ●パラメーター
@@ -87,6 +72,28 @@ https://www.youtube.com/watch?v=J5A3Z0qX-Yk
 
 
 ■PatternGenerator
+○BaseLineGeneratorS字検証
+・BaseLine
+ -Randomly
+・SurfaceLine
+ -Gradation
+
+line_idx
+float z_pos = sin(t * M_PI * 2) * line_amp;
+z_pos += rand(int(line_idx / 5)) * 4;
+z_pos += sin((x_pos + y_pos) * 0.4) * line_amp * 0.3;
+
+○BaseLineGenerator検証
+※BaseLineSurfaceの法線に沿ってPatterを生成する
+※BasePointGeneratorをSimple設定でTPattern + SunnyHillsで検証
+
+●BaseLineGenerator設計
+※連続性に変化を持たせる
+※躯体の生成ロジックも設計
+・グループ化
+・複雑性
+・(Simple、Gradation、Randomly)
+
 
 △BasePointGeneratorの拡張検証
 
