@@ -1,21 +1,43 @@
+○BaseLineの生成処理を確認
+
 ○LineGradation検証
 ・S字カーブに+sin(v@P)を行い曲面を生成する
 // ===== Z軸回転（位置）=====
 float x_rot = x_pos * cos(z_angle) - y_pos * sin(z_angle);
 float y_rot = x_pos * sin(z_angle) + y_pos * cos(z_angle);
-vector pos = set(x_rot, y_rot, z_pos);
+vector pos =6 set(x_rot, y_rot, z_pos);
 
-○検証処理を整理
-・ボートハウスを一旦消す
-・スケールの調整
- -indie版を参照
+○BaseLineGeneratorIDEA調査
+
+
+○カプセルタワーのプロシージャル化検証
+※Volumeからタワーを生成する処理を実装
+・Attributeの設定
+ -Scale
+ -Quotanion
+・CopyToPoint
+
+float unit_scale = 
+vector scale = 
+int base_block_num_x = int(scale.x / unit_scale * 6);
+int base_block_num_z = int(scale.z / unit_scale * 6);
+if(base_block_num_x == 0) base_block_num_x = 1;
+if(base_block_num_z == 0) base_block_num_z = 1;
+
+for(int x = 0; x < base_block_num_x; x++)
+{
+	for(int z = 0; z < base_block_num_z; z++)
+	{
+		//Core生成
+		
+		//BasePoint生成
+	}
+}
 
 
 ○カプセルのモデリング
 ・Houdiniでモデルだけ用意
 ・色付け
-
-○検証準備
 
 
 ■Study
@@ -31,16 +53,6 @@ vector pos = set(x_rot, y_rot, z_pos);
 
 
 ■NightCity
-○カプセルタワーのプロシージャル化検証
-※Volumeからタワーを生成する処理を実装
-・Blockで分割
-・Coreの生成
-・BasePointの生成
-・Attributeの設定
- -Scale
- -Quotanion
-・CopyToPoint
-
 ●カプセルタワー設計
 ・BaseBlockで分割を行いCore + Cupselをセットで配置していく
  -6×6ブロック
