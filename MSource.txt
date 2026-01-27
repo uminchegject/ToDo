@@ -1,3 +1,26 @@
+○BaseLineGeneratorS字検証
+・Randomly(Parent)
+・Gradation(Child)
+
+line_idx
+float z_pos = sin(t * M_PI * 2) * line_amp;
+z_pos += rand(int(line_idx / 5)) * 4;
+z_pos += sin((x_pos + y_pos) * 0.4) * line_amp * 0.3;
+
+
+●カプセル設計
+※Coreの個数は固定して、カプセルのスケールを柔軟化する
+・SideBlockDirType
+ -r×r
+ -r×l
+ -l×l
+・BaseBlockType
+・※サイズの最適化
+ -1×1
+ -1×2
+ -2×1
+
+
 ○BaseLineGenerator設計
 ※連続性に変化を持たせる
 ※躯体の生成ロジックも設計
