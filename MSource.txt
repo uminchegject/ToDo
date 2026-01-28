@@ -3,14 +3,6 @@
 ○クォータニオンの修正
 ・up, Nから値を設定する
 
-○カプセルタワーBasePoint生成
-・Core
-中心かBaseBlockの0.25分スライドさせた位置に配置
-・Cupsel
-Coreから1 + 0.5スライドさせた位置に配置
-・方向設定
-BasePointスライド + 回転値の設定
-
 
 
 ■Study
@@ -26,7 +18,28 @@ BasePointスライド + 回転値の設定
 ・Python
 
 
-■NightCity
+■カプセルタワー
+○※カプセルタワーのフラクタル化
+
+○Volumeのサイズ最適化
+
+○カプセルタワー向き処理設計
+・中間カプセルの方向を固定
+・偶数階は左回り、奇数階は右回り
+・ランダム
+ -r×r
+ -r×l
+ -l×l
+
+○カプセルタワーBasePoint生成
+・Core
+ -中心かBaseBlockの0.25分スライドさせた位置に配置
+・Cupsel
+ -Coreから1 + 0.5スライドさせた位置に配置
+ -配置数の管理
+・方向設定
+ -BasePointスライド + 回転値の設定
+
 ●カプセルタワー設計
 ※Coreの個数は固定して、カプセルのスケールを柔軟化する
 ・角のカプセルの方向をランダムにする
@@ -35,7 +48,6 @@ BasePointスライド + 回転値の設定
  -r×l
  -l×l
 ・サイズタイプ
-※サイズの最適化
  -1×1
  -1×2
  -2×1
@@ -47,6 +59,8 @@ BasePointスライド + 回転値の設定
 ・カプセル密度
 ・Core高さ
 
+
+■NightCity
 ○モデリング資料の調査
 ※簡単でシンプルなやつ
 ・SciFiBox
@@ -76,27 +90,29 @@ https://www.youtube.com/watch?v=J5A3Z0qX-Yk
 
 
 ■PatternGenerator
-○BaseLineGeneratorS字検証
-・BaseLine
- -Randomly
+●BaseLineGenerator設計
+※連続性に変化を持たせる
+※Simple、Gradation、Randomlyベース
 ・SurfaceLine
  -Gradation
+・BaseLine
+ -※SurfaceLineと関連性を持たせる
+ -Randomly
+ -グループ化
+ -複雑性
+
+・△躯体の生成ロジックも設計(ラインベースで)
+
+
+○BaseLineGenerator検証
+※SurfaceLine→BaseLineの順番で検証する
+※BaseLineSurfaceの法線に沿ってPatterを生成する
+※BasePointGeneratorをSimple設定でTPattern + SunnyHillsで検証
 
 line_idx
 float z_pos = sin(t * M_PI * 2) * line_amp;
 z_pos += rand(int(line_idx / 5)) * 4;
 z_pos += sin((x_pos + y_pos) * 0.4) * line_amp * 0.3;
-
-○BaseLineGenerator検証
-※BaseLineSurfaceの法線に沿ってPatterを生成する
-※BasePointGeneratorをSimple設定でTPattern + SunnyHillsで検証
-
-●BaseLineGenerator設計
-※連続性に変化を持たせる
-※躯体の生成ロジックも設計
-・グループ化
-・複雑性
-・(Simple、Gradation、Randomly)
 
 
 △BasePointGeneratorの拡張検証
@@ -120,123 +136,3 @@ else{
 }
 
 
-■ソース
-vector4 make_plane(vector pos; vector normal)
-{
-    vector n = normalize(normal);
-    float d = -dot(n, pos);
-    return set(n.x, n.y, n.z, d);
-}
-
-vector get_intersect_pos(vector p1; vector p2; vector4 plane)
-{
-    vector pos1 = p1;
-    vector pos2 = p2;
-    int result;
-    clip(result, pos1, pos2, plane);
-        
-    vector intersect = {0,0,0};
-    if (result == 1)
-    {
-        if (pos1 != p1)
-            intersect = pos1;
-        else if (pos2 != p2)
-            intersect = pos2;
-        else
-            return {0,0,0};
-    }
-    else
-    {
-        return {0,0,0};
-    }
-        
-    return intersect;
-}
-    
-float block_length = ch("block_length");
-
-vector base_scale = chv("base_scale");
-vector adjust_scale = chv("adjust_scale");
-float scale_randomly_cofficient = ch("scale_randomly_cofficient");
-float scale_gradation_cofficient = ch("scale_gradation_cofficient");
-float scale_noise_cofficient = ch("scale_noise_cofficient");
-
-vector base_rotate = chv("base_rotate");
-vector adjust_rotate = chv("adjust_rotate");
-float rotate_randomly_cofficient = ch("rotate_randomly_cofficient");
-float rotate_gradation_cofficient = ch("rotate_gradation_cofficient");
-float rotate_noise_cofficient = ch("rotate_noise_cofficient");
-
-vector base_transform = chv("base_transform");
-vector adjust_transform = chv("adjust_transform");
-float transform_randomly_cofficient = ch("transform_randomly_cofficient");
-float transform_gradation_cofficient = ch("transform_gradation_cofficient");
-float transform_noise_cofficient = ch("transform_noise_cofficient");
-
-vector bound = detail(1, "bound");
-vector centroid = detail(1, "centroid");
-
-int prim_pt_list[] = primpoints(0, @primnum);
-vector line_base_start_pt_pos = point(0, "P", prim_pt_list[0]);
-vector line_base_end_pt_pos = point(0, "P", prim_pt_list[len(prim_pt_list) - 1]);
-vector line_base_dir = normalize(line_base_start_pt_pos - line_base_end_pt_pos);
-
-int plane_num = int(length(bound) * 2 / block_length);
-vector base_pos = centroid - line_base_dir * length(bound);
-
-for(int i = 0; i < plane_num; ++i)
-{
-    vector plane_pos = base_pos;
-    plane_pos += i * block_length * line_base_dir;
-
-    for(int prim_pt_index = 1; prim_pt_index < len(prim_pt_list); prim_pt_index++)
-    {
-        int start_pt = prim_pt_list[prim_pt_index - 1];
-        int end_pt = prim_pt_list[prim_pt_index];
-        
-        vector start_pt_normal = point(0, "N", start_pt);
-        vector end_pt_normal = point(0, "N", end_pt);
-        vector normal = (start_pt_normal + end_pt_normal) / 2;    
-        
-        vector start_pt_pos = point(0, "P", start_pt);
-        vector end_pt_pos = point(0, "P", end_pt);
-        
-        float base_line_length = length(start_pt_pos - end_pt_pos);
-        vector line_dir = normalize(end_pt_pos - start_pt_pos);
-        vector tangent = normalize(line_dir - dot(line_dir, normal) * normal);
-        vector binormal = cross(normal, tangent);
-        vector4 q_line_dir = quaternion(set(binormal, tangent, normal));
-        matrix3 m_transform = set(tangent, normal, binormal);    
-        
-        vector4 plane = make_plane(plane_pos ,line_base_dir);
-        vector spawn_pos = get_intersect_pos(start_pt_pos, end_pt_pos, plane);
-        
-        if(length(spawn_pos) == 0) continue;    
-        //if(length(spawn_pos - start_pt_pos) < block_length) continue;             
-        //if(length(spawn_pos - end_pt_pos) < block_length) continue;    
-        
-        vector transform = base_transform;
-        transform += adjust_transform * transform_randomly_cofficient * rand(spawn_pos);
-        transform += adjust_transform * transform_gradation_cofficient * sin((@primnum + i) * transform_noise_cofficient);
-        
-        vector scale = base_scale;
-        scale += adjust_scale * scale_randomly_cofficient * rand(spawn_pos);
-        scale += adjust_scale * scale_gradation_cofficient * sin((@primnum + i) * scale_noise_cofficient);    
-    
-        spawn_pos += transform * m_transform;
-        int pt = addpoint(0, spawn_pos);
-
-        //scale.y *= block_length;
-        setpointattrib(0, "scale", pt, scale);
-        
-        vector rotate = base_rotate;
-        rotate += adjust_rotate * rotate_randomly_cofficient * rand(spawn_pos);
-        rotate += adjust_rotate * rotate_gradation_cofficient * sin((@primnum + i) * rotate_noise_cofficient);
-        rotate = radians(rotate);
-        vector4 q_rotate = eulertoquaternion(rotate, 0);
-        q_rotate = qmultiply(q_line_dir, q_rotate);
-        setpointattrib(0, "orient", pt, q_rotate);
-    }
-}
-
-removeprim(0, @primnum, 1);
