@@ -3,6 +3,14 @@
 ○クォータニオンの修正
 ・up, Nから値を設定する
 
+●カプセルタワーフラクタル化
+・カプセルのボリュームに沿ってさらにカプセルを生成する
+
+●S字BaseLineGenerator
+・パラメーターでSimpleなS字から複雑なラインまで調整できるようにする
+ -BaseLine
+ -SurfaceLine
+・PFの2ライン目をBaseLineGeneratorにする
 
 
 ■Study
