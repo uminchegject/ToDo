@@ -1,25 +1,8 @@
 ○飲み会アンケート
 ※新メンバーが入ったタイミング
 
-●カプセルタワーフラクタル化
-・接地面は無効化
-・カプセルをボリュームに置き換える
-
-
-●SurfaceLineGenerator
-※Gradation
-・transform
- -cofficient
- -transform
-・△multiparam
-
-●BaseLineGenerator
-※Gradation + Randomly
-・transform(multi)
- -cofficient
- -transform
-・up
-・normal
+○PublicStudy
+・ドキュメントから環境周りを調査
 
 
 ■Study
@@ -36,19 +19,6 @@
 
 
 ■PatternGenerator
-●BaseLineGenerator設計
-※連続性に変化を持たせる
-※Simple、Gradation、Randomlyベース
-・SurfaceLine
- -Gradation
-・BaseLine
- -※SurfaceLineと関連性を持たせる
- -Randomly
- -グループ化
- -複雑性
-・△躯体の生成ロジックも設計(ラインベースで)
-
-
 ○BaseLineGenerator検証
 ※SurfaceLine→BaseLineの順番で検証する
 ※BasePointGeneratorをSimple設定でTPattern + SunnyHillsで検証
@@ -61,6 +31,31 @@ line_idx
 float z_pos = sin(t * M_PI * 2) * line_amp;
 z_pos += rand(int(line_idx / 5)) * 4;
 z_pos += sin((x_pos + y_pos) * 0.4) * line_amp * 0.3;
+
+●BaseLineGenerator
+※連続性に変化を持たせる
+※Simple、Gradation、Randomlyベース
+・SurfaceLine
+ -Gradation
+・BaseLine
+ -※SurfaceLineと関連性を持たせる
+ -Randomly
+ -グループ化
+ -複雑性
+・△躯体の生成ロジックも設計(ラインベースで)
+
+●SurfaceLineGenerator
+・transform
+ -cofficient
+ -transform
+・△multiparam
+
+●BaseLineGenerator
+・transform(multi)
+ -cofficient
+ -transform
+・up
+・normal
 
 
 △BasePointGeneratorの拡張検証
@@ -85,9 +80,6 @@ else{
 
 
 ■カプセルタワー
-※カプセルタワーのフラクタル設計
- -・カプセルのボリュームに沿ってさらにカプセルを生成する
-
 ○Volumeのサイズ最適化
 
 ○カプセルタワー向き処理設計
@@ -106,6 +98,12 @@ else{
  -配置数の管理
 ・方向設定
  -BasePointスライド + 回転値の設定
+
+
+●カプセルタワーのフラクタル設計
+・カプセルのボリュームに沿ってさらにカプセルを生成する
+・接地面は無効化
+・カプセルをボリュームに置き換える
 
 ●カプセルタワー設計
 ※Coreの個数は固定して、カプセルのスケールを柔軟化する
