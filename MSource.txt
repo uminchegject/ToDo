@@ -1,9 +1,17 @@
 ○飲み会アンケート
+※新メンバーが入ったタイミング
 
 ○BaseLineGeneratorのup, Nの設定
 
 ○BasePointGeneratorクォータニオンの修正
 ・up, Nから値を設定する
+
+
+○カプセル配置ロジック設計
+
+○Line生成ロジック設計
+・BaseLine
+・SurfaceLine
 
 
 ■Study
