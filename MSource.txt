@@ -1,20 +1,25 @@
 ○飲み会アンケート
 ※新メンバーが入ったタイミング
 
-
-○カプセル配置ロジック設計
-・方向設定ロジック設計
+●カプセルタワーフラクタル化
 ・接地面は無効化
-・Core 2 or 1
+・カプセルをボリュームに置き換える
 
-○Line生成ロジック設計(S字)
-・SurfaceLineGenerator
- -BaseLineをベースに生成
-  -※BaseLineのP, up, normalを参照
- -Gradation
-・BaseLineGenerator
- -up, normalを設定
- -Randomly
+
+●SurfaceLineGenerator
+※Gradation
+・transform
+ -cofficient
+ -transform
+・△multiparam
+
+●BaseLineGenerator
+※Gradation + Randomly
+・transform(multi)
+ -cofficient
+ -transform
+・up
+・normal
 
 
 ■Study
@@ -149,3 +154,64 @@ https://www.youtube.com/watch?v=J5A3Z0qX-Yk
  -多様な窓
  -HardCaver
  -Asset(看板、設備)
+ 
+ 
+■ソース
+// パラメータ
+int n_pts         = chi("n_pts");
+float line_length = ch("line_length");
+float line_amp    = ch("line_amp");
+int line_count    = chi("line_count");
+float y_gap       = ch("y_gap");
+
+vector cofficent = chv("cofficent");
+vector transform = chv("transform");
+
+vector last_line_pts_pos[];
+resize(last_line_pts_pos, n_pts);
+
+for (int line_idx = 0; line_idx < line_count; line_idx++)
+{
+    int point_list[];
+    float y_offset = line_idx * y_gap;
+    vector last_pos;
+
+    for (int pt_idx = 0; pt_idx < n_pts; pt_idx++)
+    {
+        float t = float(pt_idx) / float(n_pts - 1);
+
+        float x_pos = t * line_length;
+        float y_pos = y_offset;
+        float z_pos = sin(t * M_PI * 2) * line_amp;
+        vector pos = set(x_pos, y_pos, z_pos);
+
+        vector cofficient_pos = cofficent;
+        vector adjust_transform = transform;
+        cofficient_pos.x *= x_pos;
+        cofficient_pos.y *= y_pos;
+        cofficient_pos.z *= z_pos;
+        adjust_transform *= sin(cofficient_pos.x + cofficient_pos.y + cofficient_pos.z);                
+        pos += adjust_transform;
+
+        int pt = addpoint(0, pos);
+                
+        vector up;
+        if(0 < line_idx){            
+            vector last_pt_pos = last_line_pts_pos[pt_idx];
+            up = normalize(pos - last_pt_pos);
+            setpointattrib(0, "up", pt, -up);
+        }
+        last_line_pts_pos[pt_idx] = pos;
+
+        if(0 < pt_idx){
+            vector line_dir = normalize(pos - last_pos);
+            vector normal = cross(up, line_dir);
+            setpointattrib(0, "N", pt, -normal);
+        }
+        last_pos = pos;        
+        
+        append(point_list, pt);
+    }
+
+    addprim(0, "polyline", point_list);
+}
