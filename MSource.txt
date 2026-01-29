@@ -3,10 +3,18 @@
 
 
 ○カプセル配置ロジック設計
+・方向設定ロジック設計
+・接地面は無効化
+・Core 2 or 1
 
-○Line生成ロジック設計
-・BaseLine
-・SurfaceLine
+○Line生成ロジック設計(S字)
+・SurfaceLineGenerator
+ -BaseLineをベースに生成
+  -※BaseLineのP, up, normalを参照
+ -Gradation
+・BaseLineGenerator
+ -up, normalを設定
+ -Randomly
 
 
 ■Study
