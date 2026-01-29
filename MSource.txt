@@ -1,16 +1,9 @@
 ○飲み会アンケート
 
-○クォータニオンの修正
+○BaseLineGeneratorのup, Nの設定
+
+○BasePointGeneratorクォータニオンの修正
 ・up, Nから値を設定する
-
-●カプセルタワーフラクタル化
-・カプセルのボリュームに沿ってさらにカプセルを生成する
-
-●S字BaseLineGenerator
-・パラメーターでSimpleなS字から複雑なラインまで調整できるようにする
- -BaseLine
- -SurfaceLine
-・PFの2ライン目をBaseLineGeneratorにする
 
 
 ■Study
@@ -26,8 +19,58 @@
 ・Python
 
 
+■PatternGenerator
+●BaseLineGenerator設計
+※連続性に変化を持たせる
+※Simple、Gradation、Randomlyベース
+・SurfaceLine
+ -Gradation
+・BaseLine
+ -※SurfaceLineと関連性を持たせる
+ -Randomly
+ -グループ化
+ -複雑性
+・△躯体の生成ロジックも設計(ラインベースで)
+
+
+○BaseLineGenerator検証
+※SurfaceLine→BaseLineの順番で検証する
+※BasePointGeneratorをSimple設定でTPattern + SunnyHillsで検証
+・パラメーターでSimpleなS字から複雑なラインまで調整できるようにする
+ -BaseLine
+ -SurfaceLine
+・PFの2ライン目をBaseLineGeneratorにする
+
+line_idx
+float z_pos = sin(t * M_PI * 2) * line_amp;
+z_pos += rand(int(line_idx / 5)) * 4;
+z_pos += sin((x_pos + y_pos) * 0.4) * line_amp * 0.3;
+
+
+△BasePointGeneratorの拡張検証
+
+●Pattern設計
+※3次元的Pattern
+※遊びのあるPattern
+※複数のパーツで構成し合っているPattern
+
+△木目をCopernicusで表現
+
+●追加ソース
+・BasePointの位置をランダム調整
+spawn_pos += line_dir * ((1 - scale.y) * block_length) * (rand(scale) - 0.5);
+・スキップ処理
+if(i@BaseLineId % 2 == 1){
+	if(i % 2 == 0) continue;
+}
+else{
+	if(i % 2 != 0) continue;
+}
+
+
 ■カプセルタワー
-○※カプセルタワーのフラクタル化
+※カプセルタワーのフラクタル設計
+ -・カプセルのボリュームに沿ってさらにカプセルを生成する
 
 ○Volumeのサイズ最適化
 
@@ -95,52 +138,3 @@ https://www.youtube.com/watch?v=J5A3Z0qX-Yk
  -多様な窓
  -HardCaver
  -Asset(看板、設備)
-
-
-■PatternGenerator
-●BaseLineGenerator設計
-※連続性に変化を持たせる
-※Simple、Gradation、Randomlyベース
-・SurfaceLine
- -Gradation
-・BaseLine
- -※SurfaceLineと関連性を持たせる
- -Randomly
- -グループ化
- -複雑性
-
-・△躯体の生成ロジックも設計(ラインベースで)
-
-
-○BaseLineGenerator検証
-※SurfaceLine→BaseLineの順番で検証する
-※BaseLineSurfaceの法線に沿ってPatterを生成する
-※BasePointGeneratorをSimple設定でTPattern + SunnyHillsで検証
-
-line_idx
-float z_pos = sin(t * M_PI * 2) * line_amp;
-z_pos += rand(int(line_idx / 5)) * 4;
-z_pos += sin((x_pos + y_pos) * 0.4) * line_amp * 0.3;
-
-
-△BasePointGeneratorの拡張検証
-
-●Pattern設計
-※3次元的Pattern
-※遊びのあるPattern
-※複数のパーツで構成し合っているPattern
-
-△木目をCopernicusで表現
-
-●追加ソース
-・BasePointの位置をランダム調整
-spawn_pos += line_dir * ((1 - scale.y) * block_length) * (rand(scale) - 0.5);
-・スキップ処理
-if(i@BaseLineId % 2 == 1){
-	if(i % 2 == 0) continue;
-}
-else{
-	if(i % 2 != 0) continue;
-}
-
-
