@@ -4,12 +4,14 @@
 ○PublicStudy
 ・ドキュメントから環境周りを調査
 
-
 ○複数のSurfaceLineで検証
+※サンプルを参考にする
+ -4つのBaseLine + SurfaceLineを用意する
 ・LineGeneratoｒノードを複数用意
 ・LineSurfaceに変化をつける
  -ライン数調整
  -cofficient調整
+
 
 ■Study
 ○パイプライン
