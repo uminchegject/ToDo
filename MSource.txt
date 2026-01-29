@@ -5,6 +5,12 @@
 ・ドキュメントから環境周りを調査
 
 
+○複数のSurfaceLineで検証
+・LineGeneratoｒノードを複数用意
+・LineSurfaceに変化をつける
+ -ライン数調整
+ -cofficient調整
+
 ■Study
 ○パイプライン
 ・環境変数(Houdini, Maya)
