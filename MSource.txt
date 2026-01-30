@@ -1,22 +1,14 @@
+※Study準備
+・必読ドキュメントを整理しておく
+・朝、昼前、終業前の集中時間にドキュメントに目を通す
+
 ○飲み会アンケート
 ※新メンバーが入ったタイミング
-
-○PublicStudy
-・ドキュメントから環境周りを調査
-
-○複数のSurfaceLineで検証
-※サンプルを参考にする
- -4つのBaseLine + SurfaceLineを用意する
- -振れ幅、触れ高さ、位置(スライド)、SurfaceLine幅
-・LineGeneratoｒノードを複数用意
-・LineSurfaceに変化をつける
- -ライン数調整
- -cofficient調整
 
 
 ■Study
 ○パイプライン
-・環境変数(Houdini, Maya)
+・poetry
 ・PS1
 
 ●Maya(DCC)
@@ -28,18 +20,17 @@
 
 
 ■PatternGenerator
-○BaseLineGenerator検証
-※SurfaceLine→BaseLineの順番で検証する
-※BasePointGeneratorをSimple設定でTPattern + SunnyHillsで検証
-・パラメーターでSimpleなS字から複雑なラインまで調整できるようにする
- -BaseLine
- -SurfaceLine
-・PFの2ライン目をBaseLineGeneratorにする
+●BaseLineGenerator設計
+・ブロック単位のノイズ処理
+・全体のノイズ処理
 
-line_idx
-float z_pos = sin(t * M_PI * 2) * line_amp;
-z_pos += rand(int(line_idx / 5)) * 4;
-z_pos += sin((x_pos + y_pos) * 0.4) * line_amp * 0.3;
+○複数のSurfaceLineで検証
+※サンプルを参考にする
+　ー4つのBaseLine + SurfaceLineを用意する
+ 　ー振れ幅、触れ高さ、位置(スライド)、SurfaceLine幅
+・LineSurfaceに変化をつける
+　ーライン数調整
+　ーcofficient調整
 
 ●BaseLineGenerator
 ※連続性に変化を持たせる
@@ -89,6 +80,17 @@ else{
 
 
 ■カプセルタワー
+●カプセルタワー生成処理
+・Core生成
+ -中心かBaseBlockの0.25分スライドさせた位置に配置
+・Cupsel生成
+ -※縦置きをデフォルトにする
+ -Coreから1 + 0.5スライドさせた位置に配置
+ -配置数の管理
+・回転
+ -回転可能ブロックの管理
+ -BasePointスライド + 回転値の設定
+
 ○Volumeのサイズ最適化
 
 ○カプセルタワー向き処理設計
@@ -98,15 +100,6 @@ else{
  -r×r
  -r×l
  -l×l
-
-●カプセルタワー生成処理
-・Core生成
- -中心かBaseBlockの0.25分スライドさせた位置に配置
-・Cupsel生成
- -Coreから1 + 0.5スライドさせた位置に配置
- -配置数の管理
-・方向設定
- -BasePointスライド + 回転値の設定
 
 ●カプセルタワーフラクタル設計
 ・カプセルのボリュームに沿ってさらにカプセルを生成する
@@ -163,6 +156,46 @@ https://www.youtube.com/watch?v=J5A3Z0qX-Yk
  
  
 ■ソース
+●Coreに対してカプセルBasePointを生成する関数(Wrangle)を実装
+・引数
+ -接地面
+・返値
+ -BasePoint
+ -向き
+・角ごとに方向を設定
+
+string dir;
+if(s@group_north_close == 1){
+	dir = e;
+}
+else if(s@group_east_close == 1){
+	dir = n;
+}
+else{
+	dir = ne;
+}
+vector pt_n_e_pos = core_pos;
+pt_n_e_pos.x += unit_scale;
+pt_n_e_pos.z += unit_scale / 2;
+int pt_n_e = addpoint(0, pt_n_e_pos);
+setpointattrib(0, "dir", pt_n_e, dir);
+vector pt_e_n_pos = core_pos;
+pt_e_n_pos.x += unit_scale;
+pt_e_n_pos.z += unit_scale / 2;
+int pt_e_n = addpoint(0, pt_e_n_pos);
+setpointattrib(0, "dir", pt_e_n, dir);
+
+int pt_e_s
+int pt_s_e
+
+int pt_s_w
+int pt_w_s
+
+int pt_w_n
+int pt_n_w
+
+
+●LineGenerator(Test)
 // パラメータ
 int n_pts         = chi("n_pts");
 float line_length = ch("line_length");
@@ -190,14 +223,18 @@ for (int line_idx = 0; line_idx < line_count; line_idx++)
         float y_pos = y_offset;
         float z_pos = sin(t * M_PI * 2) * line_amp;
         vector pos = set(x_pos, y_pos, z_pos);
+        
+        int block_idx = int(line_idx / 5);
+        float block_cofficient = ch("block_cofficient");        
 
         vector cofficient_pos = cofficent;
         vector adjust_transform = transform;
+        adjust_transform *= block_cofficient;
         cofficient_pos.x *= x_pos;
         cofficient_pos.y *= y_pos;
         cofficient_pos.z *= z_pos;
         adjust_transform *= sin(cofficient_pos.x + cofficient_pos.y + cofficient_pos.z);                
-        pos += adjust_transform;
+        pos += adjust_transform * block_idx;
 
         int pt = addpoint(0, pos);
                 
