@@ -20,41 +20,30 @@
 
 
 ■PatternGenerator
-●BaseLineGenerator設計
-・ブロック単位のノイズ処理
-・全体のノイズ処理
-
 ○複数のSurfaceLineで検証
 ※サンプルを参考にする
-　ー4つのBaseLine + SurfaceLineを用意する
- 　ー振れ幅、触れ高さ、位置(スライド)、SurfaceLine幅
+ -4つのBaseLine + SurfaceLineを用意する
+  -振れ幅、触れ高さ、位置(スライド)、SurfaceLine幅
 ・LineSurfaceに変化をつける
-　ーライン数調整
-　ーcofficient調整
+ -ライン数調整
+ -cofficient調整
 
 ●BaseLineGenerator
 ※連続性に変化を持たせる
 ※Simple、Gradation、Randomlyベース
-・SurfaceLine
- -Gradation
-・BaseLine
- -※SurfaceLineと関連性を持たせる
- -Randomly
- -グループ化
- -複雑性
-・△躯体の生成ロジックも設計(ラインベースで)
+・処理
+ -ブロック単位のノイズ処理
+ -全体のノイズ処理
 
-●SurfaceLineGenerator
+●パラメーター
+※複雑性
+・LineNum(Block)
 ・transform
  -cofficient
  -transform
 ・△multiparam
 
-●BaseLineGenerator
-・transform(multi)
- -cofficient
- -transform
-・up
+△躯体の生成ロジックも設計(ラインベースで)
 ・normal
 
 
@@ -157,104 +146,66 @@ https://www.youtube.com/watch?v=J5A3Z0qX-Yk
  
 ■ソース
 ●Coreに対してカプセルBasePointを生成する関数(Wrangle)を実装
-・引数
- -接地面
-・返値
- -BasePoint
- -向き
+※カプセルの方向は固定かランダムで検証
+・Attribute
+ -close_dir_list
+ -front_dir
+ -right_dir
+・CupsuleのBasePointを生成
+ -回転値
 ・角ごとに方向を設定
 
-string dir;
-if(s@group_north_close == 1){
-	dir = e;
-}
-else if(s@group_east_close == 1){
-	dir = n;
-}
-else{
-	dir = ne;
-}
-vector pt_n_e_pos = core_pos;
-pt_n_e_pos.x += unit_scale;
-pt_n_e_pos.z += unit_scale / 2;
-int pt_n_e = addpoint(0, pt_n_e_pos);
-setpointattrib(0, "dir", pt_n_e, dir);
-vector pt_e_n_pos = core_pos;
-pt_e_n_pos.x += unit_scale;
-pt_e_n_pos.z += unit_scale / 2;
-int pt_e_n = addpoint(0, pt_e_n_pos);
-setpointattrib(0, "dir", pt_e_n, dir);
-
-int pt_e_s
-int pt_s_e
-
-int pt_s_w
-int pt_w_s
-
-int pt_w_n
-int pt_n_w
-
-
-●LineGenerator(Test)
-// パラメータ
-int n_pts         = chi("n_pts");
-float line_length = ch("line_length");
-float line_amp    = ch("line_amp");
-int line_count    = chi("line_count");
-float y_gap       = ch("y_gap");
-
-vector cofficent = chv("cofficent");
-vector transform = chv("transform");
-
-vector last_line_pts_pos[];
-resize(last_line_pts_pos, n_pts);
-
-for (int line_idx = 0; line_idx < line_count; line_idx++)
+void generate_cupsule_base_point(
+	vector core_pos,
+	vector unit_scale,
+	vector first_move_dir,
+	vector second_move_dir,
+	int bool_turn
+	)
 {
-    int point_list[];
-    float y_offset = line_idx * y_gap;
-    vector last_pos;
+	vector spawn_pos = core_pos;
+	spawn_pos += first_move_dir * unit_scale * 1.5;
+	spawn_pos += second_move_dir * unit_scale * 0.5;
+	if(bool_turn == 1){
+		spawn_pos += second_move_dir * unit_scale * 0.5;
+	}
+	else{
+		spawn_pos += first_move_dir * unit_scale * 0.5;
+	}
+};
 
-    for (int pt_idx = 0; pt_idx < n_pts; pt_idx++)
-    {
-        float t = float(pt_idx) / float(n_pts - 1);
 
-        float x_pos = t * line_length;
-        float y_pos = y_offset;
-        float z_pos = sin(t * M_PI * 2) * line_amp;
-        vector pos = set(x_pos, y_pos, z_pos);
-        
-        int block_idx = int(line_idx / 5);
-        float block_cofficient = ch("block_cofficient");        
 
-        vector cofficient_pos = cofficent;
-        vector adjust_transform = transform;
-        adjust_transform *= block_cofficient;
-        cofficient_pos.x *= x_pos;
-        cofficient_pos.y *= y_pos;
-        cofficient_pos.z *= z_pos;
-        adjust_transform *= sin(cofficient_pos.x + cofficient_pos.y + cofficient_pos.z);                
-        pos += adjust_transform * block_idx;
+●ベースパラメーター
+・Gradation
+vector base_cofficent = chv("cofficent");
+vector base_transform = chv("transform");
 
-        int pt = addpoint(0, pos);
-                
-        vector up;
-        if(0 < line_idx){            
-            vector last_pt_pos = last_line_pts_pos[pt_idx];
-            up = normalize(pos - last_pt_pos);
-            setpointattrib(0, "up", pt, -up);
-        }
-        last_line_pts_pos[pt_idx] = pos;
+vector cofficient_pos = base_cofficent;
+cofficient_pos.x *= x_pos;
+cofficient_pos.y *= y_pos;
+cofficient_pos.z *= z_pos;
+vector transform = base_transform;
+transform *= sin(cofficient_pos.x + cofficient_pos.y + cofficient_pos.z);                
+pos += transform;
 
-        if(0 < pt_idx){
-            vector line_dir = normalize(pos - last_pos);
-            vector normal = cross(up, line_dir);
-            setpointattrib(0, "N", pt, -normal);
-        }
-        last_pos = pos;        
-        
-        append(point_list, pt);
-    }
 
-    addprim(0, "polyline", point_list);
-}
+●ブロックパラメーター
+・Gradation
+・Randomly
+
+vector block_gradation_cofficient = ch("block_gradation_cofficient");
+vector block_randomly_cofficient = ch("block_randomly_cofficient");
+vector block_transform = chv("block_transform");
+vector block_cofficient = chv("block_cofficient");
+
+int block_num = chi("block_num");
+int block_idx = int(line_idx / block_num);
+
+cofficient_pos;
+cofficient_pos.x *= x_pos * block_gradation_cofficient.x * block_idx + block_randomly_cofficient.x * randomly(block_idx);
+cofficient_pos.y *= y_pos * block_gradation_cofficient.y * block_idx + block_randomly_cofficient.y * randomly(block_idx);
+cofficient_pos.z *= z_pos * block_gradation_cofficient.z * block_idx + block_randomly_cofficient.z * randomly(block_idx);
+
+transform *= sin(cofficient_pos.x + cofficient_pos.y + cofficient_pos.z);                
+pos += transform;
