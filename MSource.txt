@@ -2,19 +2,34 @@
 ・必読ドキュメントを整理しておく
 ・朝、昼前、終業前の集中時間にドキュメントに目を通す
 
-
 ○自己PRをまとめる
 ※エンジニア・テクニカルアーティストを通じて学んだこと
 
-
-○BlockCofficientの設計
-int block_idx = int(line_idx / block_num);
-cofficient_pos.x = x_pos * block_gradation_cofficient.x + block_randomly_cofficient.x * random(block_idx);
-cofficient_pos.y = y_pos * block_gradation_cofficient.y + block_randomly_cofficient.y * random(block_idx);
-cofficient_pos.z = z_pos * block_gradation_cofficient.z + block_randomly_cofficient.z * random(block_idx);
-cofficient_pos *= block_cofficient;
+○LineSurfaceの検証&修正
+・TPattern,SunnyHillsで検証
+・ラインの幅に変化を持たせる
+・up,Normalを全てのpointに設定する
 
 
+■Public
+○飲み会アンケート
+※新メンバーが入ったタイミング
+
+
+■Study
+○パイプライン
+・poetry
+・PS1
+
+●Maya(DCC)
+※工程を理解
+・中銀カプセルホテル
+
+●オブジェクト指向
+・Python
+
+
+■PatternGenerator
 ○複数のSurfaceLineで検証
 ※サンプルを参考にする
  -4つのBaseLine + SurfaceLineを用意する
@@ -42,25 +57,6 @@ cofficient_pos *= block_cofficient;
 ・normal
 
 
-■Public
-○飲み会アンケート
-※新メンバーが入ったタイミング
-
-
-■Study
-○パイプライン
-・poetry
-・PS1
-
-●Maya(DCC)
-※工程を理解
-・中銀カプセルホテル
-
-●オブジェクト指向
-・Python
-
-
-■PatternGenerator
 △BasePointGeneratorの拡張検証
 
 ●Pattern設計
