@@ -7,6 +7,14 @@
 ※エンジニア・テクニカルアーティストを通じて学んだこと
 
 
+○BlockCofficientの設計
+int block_idx = int(line_idx / block_num);
+cofficient_pos.x = x_pos * block_gradation_cofficient.x + block_randomly_cofficient.x * random(block_idx);
+cofficient_pos.y = y_pos * block_gradation_cofficient.y + block_randomly_cofficient.y * random(block_idx);
+cofficient_pos.z = z_pos * block_gradation_cofficient.z + block_randomly_cofficient.z * random(block_idx);
+cofficient_pos *= block_cofficient;
+
+
 ○複数のSurfaceLineで検証
 ※サンプルを参考にする
  -4つのBaseLine + SurfaceLineを用意する
@@ -179,38 +187,3 @@ void generate_cupsule_base_point(
 		spawn_pos += first_move_dir * unit_scale * 0.5;
 	}
 };
-
-
-●ベースパラメーター
-・Gradation
-vector base_cofficent = chv("cofficent");
-vector base_transform = chv("transform");
-
-vector cofficient_pos = base_cofficent;
-cofficient_pos.x *= x_pos;
-cofficient_pos.y *= y_pos;
-cofficient_pos.z *= z_pos;
-vector transform = base_transform;
-transform *= sin(cofficient_pos.x + cofficient_pos.y + cofficient_pos.z);                
-pos += transform;
-
-
-●ブロックパラメーター
-・Gradation
-・Randomly
-
-vector block_gradation_cofficient = ch("block_gradation_cofficient");
-vector block_randomly_cofficient = ch("block_randomly_cofficient");
-vector block_transform = chv("block_transform");
-vector block_cofficient = chv("block_cofficient");
-
-int block_num = chi("block_num");
-int block_idx = int(line_idx / block_num);
-
-cofficient_pos;
-cofficient_pos.x *= x_pos * block_gradation_cofficient.x * block_idx + block_randomly_cofficient.x * randomly(block_idx);
-cofficient_pos.y *= y_pos * block_gradation_cofficient.y * block_idx + block_randomly_cofficient.y * randomly(block_idx);
-cofficient_pos.z *= z_pos * block_gradation_cofficient.z * block_idx + block_randomly_cofficient.z * randomly(block_idx);
-
-transform *= sin(cofficient_pos.x + cofficient_pos.y + cofficient_pos.z);                
-pos += transform;
