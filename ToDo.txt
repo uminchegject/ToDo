@@ -22,6 +22,10 @@ https://directscout.recruit.co.jp/contents/article/4994/
 
 ○自己分析
 ・整理すべき項目をまとめて、経歴を食わせたGPTでまとめる
+・キャリアプラン
+ -キャリアゴール
+ -転職目的
+・自己診断チャート
 
 
 ○スキルの自己啓発(Study)

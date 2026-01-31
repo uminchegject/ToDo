@@ -5,11 +5,6 @@
 ○自己PRをまとめる
 ※エンジニア・テクニカルアーティストを通じて学んだこと
 
-○LineSurfaceの検証&修正
-・TPattern,SunnyHillsで検証
-・ラインの幅に変化を持たせる
-・up,Normalを全てのpointに設定する
-
 
 ■Public
 ○飲み会アンケート
@@ -30,6 +25,11 @@
 
 
 ■PatternGenerator
+○LineSurfaceの検証&修正
+・TPattern,SunnyHillsで検証
+・ラインの幅に変化を持たせる
+・up,Normalを全てのpointに設定する
+
 ○複数のSurfaceLineで検証
 ※サンプルを参考にする
  -4つのBaseLine + SurfaceLineを用意する
