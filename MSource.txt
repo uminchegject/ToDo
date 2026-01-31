@@ -2,24 +2,11 @@
 ・必読ドキュメントを整理しておく
 ・朝、昼前、終業前の集中時間にドキュメントに目を通す
 
-○飲み会アンケート
-※新メンバーが入ったタイミング
+
+○自己PRをまとめる
+※エンジニア・テクニカルアーティストを通じて学んだこと
 
 
-■Study
-○パイプライン
-・poetry
-・PS1
-
-●Maya(DCC)
-※工程を理解
-・中銀カプセルホテル
-
-●オブジェクト指向
-・Python
-
-
-■PatternGenerator
 ○複数のSurfaceLineで検証
 ※サンプルを参考にする
  -4つのBaseLine + SurfaceLineを用意する
@@ -47,6 +34,25 @@
 ・normal
 
 
+■Public
+○飲み会アンケート
+※新メンバーが入ったタイミング
+
+
+■Study
+○パイプライン
+・poetry
+・PS1
+
+●Maya(DCC)
+※工程を理解
+・中銀カプセルホテル
+
+●オブジェクト指向
+・Python
+
+
+■PatternGenerator
 △BasePointGeneratorの拡張検証
 
 ●Pattern設計
@@ -173,7 +179,6 @@ void generate_cupsule_base_point(
 		spawn_pos += first_move_dir * unit_scale * 0.5;
 	}
 };
-
 
 
 ●ベースパラメーター
