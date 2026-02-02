@@ -9,6 +9,7 @@ https://qiita.com/sunrise_lover/items/589c4353d9547effc74b
 ・ソース修正
 ・TPattern検証
 ・ラインの幅に変化を持たせるパラメーターを検証
+・シンプルグラデーションをブロックで検証
 
 ○複数のSurfaceLineで検証
 ※サンプルを参考にする
