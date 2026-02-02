@@ -168,27 +168,22 @@ https://www.youtube.com/watch?v=J5A3Z0qX-Yk
  
 ■ソース
 ●BaseLineGenerator修正
-int offset_num = 20;
 int block_idx = int(line_idx / block_num);
 float random = random(block_idx);
-int offset = int(random * 20);
-
-float gradation_cofficient = float(pt_idx - offset) / float(n_pts - offset * 2);
+float gradation_cofficient = float(pt_idx) / float(n_pts);
 gradation_cofficient *= 0.5;
 gradation_cofficient *= cos(gradation_cofficient * M_PI);
-if(pt_idx < offset_num || (n_pts - pt_idx) < offset_num){
-	gradation_cofficient = 0;
-}
 
-cofficient_pos.x = (x_pos + 100) * block_cofficient.x * random;
-cofficient_pos.y = (y_pos + 100) * block_cofficient.y * random;
-cofficient_pos.z = (z_pos + 100) * block_cofficient.z * random;
+cofficient_pos.x = (x_pos + 100) * block_cofficient.x;// * random;
+cofficient_pos.y = (y_pos + 100) * block_cofficient.y;// * random;
+cofficient_pos.z = (z_pos + 100) * block_cofficient.z;// * random;
 transform = block_transform;
-transform *= sin(cofficient_pos.x + cofficient_pos.y + cofficient_pos.z + block_adjust_cofficient);
+
+transform *= sin(cofficient_pos.x + cofficient_pos.y + cofficient_pos.z + block_adjust_cofficient * block_idx);
+transform *= (line_idx % block_num) * 0.2;
 transform *= block_base_coffienct;
 transform *= gradation_cofficient;
 pos += transform;
-
 
 ●Coreに対してカプセルBasePointを生成する関数(Wrangle)を実装
 ※カプセルの方向は固定かランダムで検証
