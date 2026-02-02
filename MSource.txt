@@ -1,12 +1,10 @@
 ○飲み会アンケート
 ※新メンバーが入ったタイミング
 
-
 ○LineSurfaceの検証&修正
 ・TPattern,SunnyHillsで検証
 ・up,Normalを全てのpointに設定する
 ・△ラインの幅に変化を持たせる
-
 
 ●カプセルタワー生成処理
 ・Core生成
@@ -21,9 +19,13 @@
 
 
 ■Study
-○パイプライン
-・poetry
-・PS1
+○プラグインビルド
+・HoudiniEngine for maya調査
+ -CMakeList.txt
+  -target_link_libraries( plugin HoudiniEngine )
+ -FindHoudiniEngine.cmake
+ -FindMaya.cmake
+
 
 ●Maya(DCC)
 ※工程を理解
@@ -164,6 +166,25 @@ https://www.youtube.com/watch?v=J5A3Z0qX-Yk
  
  
 ■ソース
+●BaseLineGenerator修正
+・adjust_cofficientからrandomを外して検証
+・中心から端に向かってcofficientを調整
+
+float gradation_cofficient = (float(pt_idx) - float(n_pts) / 2) / (float(n_pts) / 2);
+gradation_cofficient = abs(1 - abs(gradation_cofficient));
+
+int block_idx = int(line_idx / block_num);
+float random = random(block_idx) - 0.5;
+cofficient_pos.x = x_pos * block_cofficient.x * random + block_adjust_cofficient * block_idx;
+cofficient_pos.y = y_pos * block_cofficient.y * random + block_adjust_cofficient * block_idx;
+cofficient_pos.z = z_pos * block_cofficient.z * random + block_adjust_cofficient * block_idx;
+cofficient_pos *= block_base_coffienct;
+cofficient_pos *= gradation_cofficient;
+transform = block_transform;
+transform *= sin(cofficient_pos.x + cofficient_pos.y + cofficient_pos.z);                
+pos += transform;     
+
+
 ●Coreに対してカプセルBasePointを生成する関数(Wrangle)を実装
 ※カプセルの方向は固定かランダムで検証
 ・Attribute
@@ -191,4 +212,14 @@ void generate_cupsule_base_point(
 	else{
 		spawn_pos += first_move_dir * unit_scale * 0.5;
 	}
+	
+	vector up = normalize(cross(first_move_dir, second_move_dir));
+	vector normal = first_move_dir;
+	if(bool_turn == 1){
+		normal = second_move_dir;
+	}
+		
+	int pt = addpoint(0, spawn_pos);
+	setpointattrib(0, "up", pt, up);
+	setpointattrib(0, "N", pt, normal);
 };
