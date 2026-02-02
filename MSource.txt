@@ -1,10 +1,23 @@
 ○飲み会アンケート
 ※新メンバーが入ったタイミング
 
+○【超入門】1日で理解するCmake
+https://qiita.com/sunrise_lover/items/589c4353d9547effc74b
+
+
 ○LineSurfaceの検証&修正
-・TPattern,SunnyHillsで検証
-・up,Normalを全てのpointに設定する
-・△ラインの幅に変化を持たせる
+・ソース修正
+・TPattern検証
+・ラインの幅に変化を持たせるパラメーターを検証
+
+○複数のSurfaceLineで検証
+※サンプルを参考にする
+ -4つのBaseLine + SurfaceLineを用意する
+  -振れ幅、触れ高さ、位置(スライド)、SurfaceLine幅
+・LineSurfaceに変化をつける
+ -ライン数調整
+ -cofficient調整
+
 
 ●カプセルタワー生成処理
 ・Core生成
@@ -36,19 +49,6 @@
 
 
 ■PatternGenerator
-○LineSurfaceの検証&修正
-・TPattern,SunnyHillsで検証
-・up,Normalを全てのpointに設定する
-・△ラインの幅に変化を持たせる
-
-○複数のSurfaceLineで検証
-※サンプルを参考にする
- -4つのBaseLine + SurfaceLineを用意する
-  -振れ幅、触れ高さ、位置(スライド)、SurfaceLine幅
-・LineSurfaceに変化をつける
- -ライン数調整
- -cofficient調整
-
 ●BaseLineGenerator
 ※連続性に変化を持たせる
 ※Simple、Gradation、Randomlyベース
@@ -167,14 +167,17 @@ https://www.youtube.com/watch?v=J5A3Z0qX-Yk
  
 ■ソース
 ●BaseLineGenerator修正
-・adjust_cofficientからrandomを外して検証
-・中心から端に向かってcofficientを調整
-
+int offset_num = 20;
 int block_idx = int(line_idx / block_num);
 float random = random(block_idx);
-float gradation_cofficient = float(pt_idx) / float(n_pts);
+int offset = int(random * 20);
+
+float gradation_cofficient = float(pt_idx - offset) / float(n_pts - offset * 2);
 gradation_cofficient *= 0.5;
 gradation_cofficient *= cos(gradation_cofficient * M_PI);
+if(pt_idx < offset_num || (n_pts - pt_idx) < offset_num){
+	gradation_cofficient = 0;
+}
 
 cofficient_pos.x = (x_pos + 100) * block_cofficient.x * random;
 cofficient_pos.y = (y_pos + 100) * block_cofficient.y * random;
@@ -184,6 +187,7 @@ transform *= sin(cofficient_pos.x + cofficient_pos.y + cofficient_pos.z + block_
 transform *= block_base_coffienct;
 transform *= gradation_cofficient;
 pos += transform;
+
 
 ●Coreに対してカプセルBasePointを生成する関数(Wrangle)を実装
 ※カプセルの方向は固定かランダムで検証
