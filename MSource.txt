@@ -170,20 +170,20 @@ https://www.youtube.com/watch?v=J5A3Z0qX-Yk
 ・adjust_cofficientからrandomを外して検証
 ・中心から端に向かってcofficientを調整
 
-float gradation_cofficient = (float(pt_idx) - float(n_pts) / 2) / (float(n_pts) / 2);
-gradation_cofficient = abs(1 - abs(gradation_cofficient));
-
 int block_idx = int(line_idx / block_num);
-float random = random(block_idx) - 0.5;
-cofficient_pos.x = x_pos * block_cofficient.x * random + block_adjust_cofficient * block_idx;
-cofficient_pos.y = y_pos * block_cofficient.y * random + block_adjust_cofficient * block_idx;
-cofficient_pos.z = z_pos * block_cofficient.z * random + block_adjust_cofficient * block_idx;
-cofficient_pos *= block_base_coffienct;
-cofficient_pos *= gradation_cofficient;
-transform = block_transform;
-transform *= sin(cofficient_pos.x + cofficient_pos.y + cofficient_pos.z);                
-pos += transform;     
+float random = random(block_idx);
+float gradation_cofficient = float(pt_idx) / float(n_pts);
+gradation_cofficient *= 0.5;
+gradation_cofficient *= cos(gradation_cofficient * M_PI);
 
+cofficient_pos.x = (x_pos + 100) * block_cofficient.x * random;
+cofficient_pos.y = (y_pos + 100) * block_cofficient.y * random;
+cofficient_pos.z = (z_pos + 100) * block_cofficient.z * random;
+transform = block_transform;
+transform *= sin(cofficient_pos.x + cofficient_pos.y + cofficient_pos.z + block_adjust_cofficient);
+transform *= block_base_coffienct;
+transform *= gradation_cofficient;
+pos += transform;
 
 ●Coreに対してカプセルBasePointを生成する関数(Wrangle)を実装
 ※カプセルの方向は固定かランダムで検証
