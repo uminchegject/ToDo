@@ -1,20 +1,3 @@
-●パラメーター
-・Transform
-・sin_cofficient(x, y, z)
-・base_cofficient
-
-・gradation_cofficient
-・randomly_cofficient
-・adjust_cofficient
-
-vector transform = base_transform;
-transform.z *= sin(x_pos * base_cofficient_x.x + y_pos * base_cofficient_x.y + z_pos * base_cofficient_x.z);
-//transform.y *= sin(base_cofficent.y * (x_pos + y_pos + z_pos));
-//transform.z *= sin(base_cofficent.z * (x_pos + y_pos + z_pos));
-transform *= base_base_cofficient;
-transform *= line_idx * 0.1;
-pos += transform;
-
 
 ○飲み会アンケート
 ※新メンバーが入ったタイミング
@@ -189,24 +172,6 @@ https://www.youtube.com/watch?v=J5A3Z0qX-Yk
  
  
 ■ソース
-●BaseLineGenerator修正
-int block_idx = int(line_idx / block_num);
-float random = random(block_idx);
-float gradation_cofficient = float(pt_idx) / float(n_pts);
-gradation_cofficient *= 0.5;
-gradation_cofficient *= cos(gradation_cofficient * M_PI);
-
-cofficient_pos.x = (x_pos + 100) * block_cofficient.x;// * random;
-cofficient_pos.y = (y_pos + 100) * block_cofficient.y;// * random;
-cofficient_pos.z = (z_pos + 100) * block_cofficient.z;// * random;
-transform = block_transform;
-
-transform *= sin(cofficient_pos.x + cofficient_pos.y + cofficient_pos.z + block_adjust_cofficient * block_idx);
-transform *= (line_idx % block_num) * 0.2;
-transform *= block_base_coffienct;
-transform *= gradation_cofficient;
-pos += transform;
-
 ●Coreに対してカプセルBasePointを生成する関数(Wrangle)を実装
 ※カプセルの方向は固定かランダムで検証
 ・Attribute
@@ -245,3 +210,102 @@ void generate_cupsule_base_point(
 	setpointattrib(0, "up", pt, up);
 	setpointattrib(0, "N", pt, normal);
 };
+
+●BaseLineGenerator修正
+・パラメーター整理
+ -マルチ化
+ -
+
+// パラメータ
+int n_pts         = chi("n_pts");
+float line_length = ch("line_length");
+int line_count    = chi("line_count");
+float y_gap       = ch("y_gap");
+
+float base_base_cofficient = ch("base_base_cofficient");
+vector base_cofficent = chv("base_cofficent");
+vector base_transform = chv("base_transform");
+
+int block_num = chi("block_num");
+float block_base_coffienct = ch("block_base_cofficient");
+vector block_transform = chv("block_transform");
+float block_gradation_transform = ch("block_gradation_transform");
+vector block_cofficient = chv("block_cofficient");
+float block_randomly_cofficient = ch("block_randomly_cofficient");
+float block_adjust_cofficient = ch("block_adjust_cofficient");
+
+
+int last_line_pts[];
+resize(last_line_pts, n_pts);
+vector last_line_pts_pos[];
+resize(last_line_pts_pos, n_pts);
+
+for (int line_idx = 0; line_idx < line_count; line_idx++)
+{
+    int point_list[];
+    float y_offset = line_idx * y_gap;
+    vector last_pos = {0, 0, 0};
+
+    for (int pt_idx = 0; pt_idx < n_pts; pt_idx++)
+    {
+        float x_pos = line_length * float(pt_idx) / float(n_pts - 1);
+        float y_pos = y_offset;
+        float z_pos = 0;
+        vector pos = set(x_pos, y_pos, z_pos);
+
+        vector cofficient_pos = base_cofficent;
+        cofficient_pos.x *= x_pos;
+        cofficient_pos.y *= y_pos;
+        cofficient_pos.z *= z_pos;
+        vector transform = base_transform;
+        transform *= sin(cofficient_pos.x + cofficient_pos.y + cofficient_pos.z);
+        transform *= base_base_cofficient;
+        pos += transform;
+        
+        int block_idx = int(line_idx / block_num);
+        float random = random(block_idx);
+        float gradation_cofficient = float(pt_idx) / float(n_pts);
+        gradation_cofficient *= 0.5;
+        gradation_cofficient *= cos(gradation_cofficient * M_PI);
+        
+        cofficient_pos = block_cofficient;
+        cofficient_pos.x *= x_pos;
+        cofficient_pos.y *= y_pos;
+        cofficient_pos.z *= z_pos;
+        transform = block_transform;
+        transform *= sin(cofficient_pos.x + cofficient_pos.y + cofficient_pos.z + block_adjust_cofficient * block_idx);
+        transform *= gradation_cofficient;
+        transform *= block_base_coffienct;
+        //transform *= block_gradation_transform * (line_idx % block_num);
+        pos += transform;        
+        
+        int pt = addpoint(0, pos);
+                
+        vector up;
+        if(0 < line_idx % block_num){ 
+            vector last_pt_pos = last_line_pts_pos[pt_idx];
+            up = normalize(pos - last_pt_pos);
+            setpointattrib(0, "up", pt, -up);
+            if(1 == line_idx % block_num){
+                int last_lint_pt = last_line_pts[pt_idx];
+                setpointattrib(0, "up", last_lint_pt, -up);
+            }
+        }
+
+        if(0 < pt_idx){
+            vector line_dir = normalize(pos - last_pos);
+            setpointattrib(0, "line_dir", pt, line_dir);
+            if(1 == pt_idx){
+                int last_pt = last_line_pts[0];
+                setpointattrib(0, "line_dir", last_pt, line_dir);
+            }            
+        }
+        
+        append(point_list, pt);
+        last_pos = pos;        
+        last_line_pts[pt_idx] = pt;
+        last_line_pts_pos[pt_idx] = pos;
+    }
+
+    addprim(0, "polyline", point_list);
+}
