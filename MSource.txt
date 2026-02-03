@@ -6,8 +6,18 @@
 参加希望の方は調整さんにアンケート回答を宜しくお願い致します。
 
 ○修正
-・マルチパラメーター化し、独立させる
+・マルチパラメーター化し独立させる
 ・ブロック内のAdjustパラメーターを追加する
+cofficient_pos = block_cofficient;
+cofficient_pos.x *= x_pos;
+cofficient_pos.y *= y_pos;
+cofficient_pos.z *= z_pos;
+
+transform = block_transform;
+transform.z *= sin(cofficient_pos.x + block_adjust_cofficient * block_idx);
+transform.y *= sin(cofficient_pos.x + block_adjust_cofficient * block_idx + M_PI * 0.5);
+transform *= block_base_coffienct;
+transform *=  1 + 0.1 * (line_idx % block_num);
 
 ○シンプルで幾何学的なLine生成で検証
 ・回転させてadjustでスライドする
