@@ -1,9 +1,27 @@
+●パラメーター
+・Transform
+・sin_cofficient(x, y, z)
+・base_cofficient
+
+・gradation_cofficient
+・randomly_cofficient
+・adjust_cofficient
+
+vector transform = base_transform;
+transform.z *= sin(x_pos * base_cofficient_x.x + y_pos * base_cofficient_x.y + z_pos * base_cofficient_x.z);
+//transform.y *= sin(base_cofficent.y * (x_pos + y_pos + z_pos));
+//transform.z *= sin(base_cofficent.z * (x_pos + y_pos + z_pos));
+transform *= base_base_cofficient;
+transform *= line_idx * 0.1;
+pos += transform;
+
+
 ○飲み会アンケート
 ※新メンバーが入ったタイミング
 お疲れ様です!
 突然ですが2/25に飲み会を計画したので告知させて頂きます!
 場所については新橋の木曽路で八時頃を目途に始める予定です!
-参加希望の方は調整さんにアンケート回答を宜しくお願い致します。
+参加希望の方は調整さんにアンケート回答を宜しくお願い致します。(締め切りは2/13でお願い致します)
 
 ○【超入門】1日で理解するCmake
 https://qiita.com/sunrise_lover/items/589c4353d9547effc74b
