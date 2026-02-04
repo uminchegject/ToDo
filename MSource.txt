@@ -1,24 +1,6 @@
-○飲み会アンケート
-※新メンバーが入ったタイミング
-お疲れ様です。
-突然ですが2/25(水)にお食事会(飲み会)を計画したので告知させて頂きます!
-場所については新橋の木曽路で八時頃を目途に始める予定です!
-参加希望の方は調整さんにアンケート回答を宜しくお願い致します!(締め切りは2/13まででお願い致します。)
+○デザインセンスの確認
+・コンピュテーショナルデザインの作例から社を調査
 
-
-○修正
-・マルチパラメーター化し独立させる
-・△ブロック内のAdjustパラメーターを追加する
-cofficient_pos = block_cofficient;
-cofficient_pos.x *= x_pos;
-cofficient_pos.y *= y_pos;
-cofficient_pos.z *= z_pos;
-
-transform = block_transform;
-transform.z *= sin(cofficient_pos.x + block_adjust_cofficient * block_idx);
-transform.y *= sin(cofficient_pos.x + block_adjust_cofficient * block_idx + M_PI * 0.5);
-transform *= block_base_coffienct;
-transform *=  1 + 0.1 * (line_idx % block_num);
 
 ○シンプルで幾何学的なLine生成で検証
 ・回転させてadjustでスライドする
@@ -35,7 +17,7 @@ transform *=  1 + 0.1 * (line_idx % block_num);
 ・比較画像にBaseLineGeneratorを加える
  -2行目、4行目を入れ替え
 
- 
+
 ■PatternGenerator
 ○LineGeneratorの複雑化
 ※サンプルを参考にする
@@ -202,3 +184,102 @@ void generate_cupsule_base_point(
 	setpointattrib(0, "up", pt, up);
 	setpointattrib(0, "N", pt, normal);
 };
+
+
+●BaseLineGenerator
+
+int n_pts         = chi("n_pts");
+float line_length = ch("line_length");
+int line_count    = chi("line_count");
+float y_gap       = ch("y_gap");
+
+int last_line_pts[];
+resize(last_line_pts, n_pts);
+vector last_line_pts_pos[];
+resize(last_line_pts_pos, n_pts);
+int block_num = line_count;
+
+for (int line_idx = 0; line_idx < line_count; line_idx++)
+{
+    int point_list[];
+    float y_offset = line_idx * y_gap;
+    vector last_pos = {0, 0, 0};
+
+    for (int pt_idx = 0; pt_idx < n_pts; pt_idx++)
+    {
+        float x_pos = line_length * float(pt_idx) / float(n_pts - 1);
+        float y_pos = y_offset;
+        float z_pos = 0;
+        vector pos = set(x_pos, y_pos, z_pos);
+
+        for(int param_idx = 0; param_idx < chi("base_line_param"); ++param_idx)
+        {
+            float base_base_cofficient = ch("base_base_cofficient" + itoa(param_idx + 1));
+            vector base_cofficent = chv("base_cofficent" + itoa(param_idx + 1));
+            vector base_transform = chv("base_transform" + itoa(param_idx + 1));
+            
+            vector cofficient_pos = base_cofficent;
+            cofficient_pos.x *= x_pos;
+            cofficient_pos.y *= y_pos;
+            cofficient_pos.z *= z_pos;
+            vector transform = base_transform;
+            transform *= sin(cofficient_pos.x + cofficient_pos.y + cofficient_pos.z);
+            transform *= base_base_cofficient;
+            pos += transform;
+        }
+        
+        for(int param_idx = 0; param_idx < chi("block_line_param"); param_idx++)
+        {
+            block_num = chi("block_num" + itoa(param_idx + 1));
+            float block_base_coffienct = ch("block_base_cofficient" + itoa(param_idx + 1));
+            vector block_transform = chv("block_transform" + itoa(param_idx + 1));
+            vector block_cofficient = chv("block_cofficient" + itoa(param_idx + 1));
+            float block_adjust_cofficient = ch("block_adjust_cofficient" + itoa(param_idx + 1));
+            float block_slide_cofficient = ch("block_slide_cofficient" + itoa(param_idx + 1));
+            
+            int block_idx = int(line_idx / block_num);
+            float random = random(block_idx);
+            float gradation_cofficient = float(pt_idx) / float(n_pts);
+            gradation_cofficient *= 0.5;
+            gradation_cofficient *= cos(gradation_cofficient * M_PI);
+            
+            vector cofficient_pos = block_cofficient;
+            cofficient_pos.x *= x_pos;
+            cofficient_pos.y *= y_pos;
+            cofficient_pos.z *= z_pos;
+            vector transform = block_transform;
+            transform *= sin(cofficient_pos.x + cofficient_pos.y + cofficient_pos.z + block_adjust_cofficient + block_slide_cofficient * block_idx);
+            transform *= block_base_coffienct;
+            pos += transform; 
+        }
+                
+        int pt = addpoint(0, pos);
+                
+        vector up;
+        if(0 < line_idx % block_num){ 
+            vector last_pt_pos = last_line_pts_pos[pt_idx];
+            up = normalize(pos - last_pt_pos);
+            setpointattrib(0, "up", pt, -up);
+            if(1 == line_idx % block_num){
+                int last_lint_pt = last_line_pts[pt_idx];
+                setpointattrib(0, "up", last_lint_pt, -up);
+            }
+        }
+
+        if(0 < pt_idx){
+            vector line_dir = normalize(pos - last_pos);
+            setpointattrib(0, "line_dir", pt, line_dir);
+            if(1 == pt_idx){
+                int last_pt = last_line_pts[0];
+                setpointattrib(0, "line_dir", last_pt, line_dir);
+            }            
+        }
+        
+        append(point_list, pt);
+        last_pos = pos;        
+        last_line_pts[pt_idx] = pt;
+        last_line_pts_pos[pt_idx] = pos;
+    }
+
+    addprim(0, "polyline", point_list);
+}
