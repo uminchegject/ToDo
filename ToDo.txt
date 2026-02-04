@@ -8,15 +8,6 @@ https://directscout.recruit.co.jp/contents/article/4994/
 ※整理すべき項目をまとめて経歴棚卸を食わせたGPTでまとめる(棚卸側も修正する)
 
 
-○ポートフォリオ
-・表紙用意
- -表題(ポートフォリオ)
- -名前(中村優介)
- -ポートフォリオのHDAとHoudiniの説明
- -仕事で実装したツールは機密保持のため、個人で実装していたツールを記載
-・比較画像にBaseLineGeneratorを加える
-
-
 ■ToDo
 ○スキルの自己啓発(Study)
 ・コンピュテーショナルデザインの作例
@@ -31,13 +22,17 @@ https://directscout.recruit.co.jp/contents/article/4994/
 ・記事・作品経由
 
 ●会社
-・noiz
 ・丹青社
-・乃村工藝社(nomlab)
+https://www.tanseisha.co.jp/recruit/career/?pid=229
 ・日建設計
-・日本設計
-・梓設計
+https://hrmos.co/pages/nikkensekkei/jobs/0106/apply
 ・清水建設
+https://hrmos.co/pages/shimz/jobs/1827581375466557483/apply
+・AMDLab
+https://www.amd-lab.com/entry
+・日本設計
+・乃村工藝社(nomlab)
+・梓設計
 ・竹中工務店
 
 △転職力自己診断チャート
