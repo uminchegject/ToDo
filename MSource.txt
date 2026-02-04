@@ -1,10 +1,10 @@
-○デザインセンスの確認
-・コンピュテーショナルデザインの作例から社を調査
-
-
-○シンプルで幾何学的なLine生成で検証
-・回転させてadjustでスライドする
-・ミルフィーユ構造
+○検証
+※上下、左右の振りをベースに検証する
+※中央部分をカメラで切り取る
+・block_slide_cofficient
+・block_cofficient + block_transform
+・base_cofficient + base_transform
+・△ミルフィーユ構造
 
 ○ポートフォリオ
 ・表紙用意
@@ -24,7 +24,6 @@
  -4つのBaseLine + SurfaceLineを用意する
   -振れ幅、触れ高さ、位置(スライド)、SurfaceLine幅
 ・ランダム要素の追加
- -
 ・LineSurfaceに変化をつける
  -ライン数調整
  -cofficient調整
@@ -185,19 +184,19 @@ void generate_cupsule_base_point(
 	setpointattrib(0, "N", pt, normal);
 };
 
-
 ●BaseLineGenerator
+・block_numをマルチパラムから外す
 
 int n_pts         = chi("n_pts");
 float line_length = ch("line_length");
 int line_count    = chi("line_count");
 float y_gap       = ch("y_gap");
+int block_num = chi("block_num");
 
 int last_line_pts[];
 resize(last_line_pts, n_pts);
 vector last_line_pts_pos[];
 resize(last_line_pts_pos, n_pts);
-int block_num = line_count;
 
 for (int line_idx = 0; line_idx < line_count; line_idx++)
 {
@@ -230,7 +229,6 @@ for (int line_idx = 0; line_idx < line_count; line_idx++)
         
         for(int param_idx = 0; param_idx < chi("block_line_param"); param_idx++)
         {
-            block_num = chi("block_num" + itoa(param_idx + 1));
             float block_base_coffienct = ch("block_base_cofficient" + itoa(param_idx + 1));
             vector block_transform = chv("block_transform" + itoa(param_idx + 1));
             vector block_cofficient = chv("block_cofficient" + itoa(param_idx + 1));
@@ -252,9 +250,9 @@ for (int line_idx = 0; line_idx < line_count; line_idx++)
             transform *= block_base_coffienct;
             pos += transform; 
         }
-                
+		
         int pt = addpoint(0, pos);
-                
+		
         vector up;
         if(0 < line_idx % block_num){ 
             vector last_pt_pos = last_line_pts_pos[pt_idx];
