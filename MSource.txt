@@ -1,16 +1,15 @@
 ○LineGeneratorの複雑化
-・ランダム要素の追加
- -
-・LineSurfaceに変化をつける
- -ライン数調整
- -cofficient調整
-・サンプルの模写
- -4つのBaseLine + SurfaceLineを用意する
- -振れ幅、触れ高さ、位置(スライド)、SurfaceLine幅
-
-●BaseLineGenerator設計
 ※連続性に変化を持たせる
 ※Simple、Gradation、Randomlyベース
+・ランダム要素の追加
+ -ライン数
+ -振れ幅
+ -スライド位置
+
+○サンプルの模写
+・端部分の0化
+・4つのSurfaceLine
+ -振れ幅、位置(スライド)、SurfaceLine幅
 
 
 ●カプセルタワー生成処理
