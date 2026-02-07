@@ -1,3 +1,28 @@
+○LineGeneratorの複雑化
+・ランダム要素の追加
+ -
+・LineSurfaceに変化をつける
+ -ライン数調整
+ -cofficient調整
+・サンプルの模写
+ -4つのBaseLine + SurfaceLineを用意する
+ -振れ幅、触れ高さ、位置(スライド)、SurfaceLine幅
+
+●BaseLineGenerator設計
+※連続性に変化を持たせる
+※Simple、Gradation、Randomlyベース
+
+
+●カプセルタワー生成処理
+・Core生成
+ -中心かBaseBlockの0.25分スライドさせた位置に配置
+・Cupsel生成
+ -※縦置きをデフォルトにする
+ -Coreから1 + 0.5スライドさせた位置に配置
+ -配置数の管理
+・回転
+ -回転可能ブロックの管理
+ -BasePointスライド + 回転値の設定
 
 
 ■PatternGenerator
@@ -10,20 +35,9 @@
  -ライン数調整
  -cofficient調整
 
-●BaseLineGenerator
+●BaseLineGenerator設計
 ※連続性に変化を持たせる
 ※Simple、Gradation、Randomlyベース
-・処理
- -ブロック単位のノイズ処理
- -全体のノイズ処理
-
-●パラメーター
-※複雑性
-・LineNum(Block)
-・transform
- -cofficient
- -transform
-・△multiparam
 
 △躯体の生成ロジックも設計(ラインベースで)
 ・normal
