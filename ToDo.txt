@@ -1,12 +1,12 @@
-○応募
-・日建設計を志望する理由
-
-
 ○業界・職種・企業研究
 ・企業研究シート(GPTでまとめる)
 https://job.rikunabi.com/contents/company/2536/
 ・転職の企業研究のやり方は？選考プロセスごとに情報収集のポイントを解説
 https://directscout.recruit.co.jp/contents/article/4994/
+
+○応募
+・日建設計を志望する理由
+
 
 △自己分析
 ※整理すべき項目をまとめて経歴棚卸を食わせたGPTでまとめる(棚卸側も修正する)
