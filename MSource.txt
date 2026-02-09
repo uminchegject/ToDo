@@ -2,15 +2,13 @@
 ※縦置きをデフォルトにする
 ・角ごとに方向を設定
 ・回転可能ブロックの管理
-・BasePointスライド + 回転値の設定
 
 ●カプセルタワー生成処理
-・Attribute
- -close_dir_list
- -front_dir
- -right_dir
-・Core生成
+・Coreの複数化
+ -Attribute(close_dir_list, front_dir, right_dir)
+ -CoreBoxをパック化しAttrを設定
 ・Cupsel生成
+ -向きランダム化
  -配置数の管理
 
 
