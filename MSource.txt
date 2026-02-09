@@ -1,7 +1,3 @@
-○書類修正
-・各社書類を用意
-
-
 ●カプセルタワー生成処理
 ・Core生成
  -中心かBaseBlockの0.25分スライドさせた位置に配置
@@ -12,6 +8,16 @@
 ・回転
  -回転可能ブロックの管理
  -BasePointスライド + 回転値の設定
+
+●Coreに対してカプセルBasePointを生成する関数(Wrangle)を実装
+※カプセルの方向は固定かランダムで検証
+・Attribute
+ -close_dir_list
+ -front_dir
+ -right_dir
+・CupsuleのBasePointを生成
+ -回転値
+・角ごとに方向を設定
 
 
 ○LineGeneratorの複雑化
@@ -142,44 +148,3 @@ https://www.youtube.com/watch?v=J5A3Z0qX-Yk
  -HardCaver
  -Asset(看板、設備)
  
- 
-■ソース
-●Coreに対してカプセルBasePointを生成する関数(Wrangle)を実装
-※カプセルの方向は固定かランダムで検証
-・Attribute
- -close_dir_list
- -front_dir
- -right_dir
-・CupsuleのBasePointを生成
- -回転値
-・角ごとに方向を設定
-
-void generate_cupsule_base_point(
-	vector core_pos,
-	vector unit_scale,
-	vector first_move_dir,
-	vector second_move_dir,
-	int bool_turn
-	)
-{
-	vector spawn_pos = core_pos;
-	spawn_pos += first_move_dir * unit_scale * 1.5;
-	spawn_pos += second_move_dir * unit_scale * 0.5;
-	if(bool_turn == 1){
-		spawn_pos += second_move_dir * unit_scale * 0.5;
-	}
-	else{
-		spawn_pos += first_move_dir * unit_scale * 0.5;
-	}
-	
-	vector up = normalize(cross(first_move_dir, second_move_dir));
-	vector normal = first_move_dir;
-	if(bool_turn == 1){
-		normal = second_move_dir;
-	}
-		
-	int pt = addpoint(0, spawn_pos);
-	setpointattrib(0, "up", pt, up);
-	setpointattrib(0, "N", pt, normal);
-};
-
