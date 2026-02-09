@@ -1,23 +1,17 @@
-●カプセルタワー生成処理
-・Core生成
- -中心かBaseBlockの0.25分スライドさせた位置に配置
-・Cupsel生成
- -※縦置きをデフォルトにする
- -Coreから1 + 0.5スライドさせた位置に配置
- -配置数の管理
-・回転
- -回転可能ブロックの管理
- -BasePointスライド + 回転値の設定
+○回転管理
+※縦置きをデフォルトにする
+・角ごとに方向を設定
+・回転可能ブロックの管理
+・BasePointスライド + 回転値の設定
 
-●Coreに対してカプセルBasePointを生成する関数(Wrangle)を実装
-※カプセルの方向は固定かランダムで検証
+●カプセルタワー生成処理
 ・Attribute
  -close_dir_list
  -front_dir
  -right_dir
-・CupsuleのBasePointを生成
- -回転値
-・角ごとに方向を設定
+・Core生成
+・Cupsel生成
+ -配置数の管理
 
 
 ○LineGeneratorの複雑化
@@ -28,21 +22,12 @@
  -振れ幅
  -スライド位置
 
+
+■PatternGenerator
 ○サンプルの模写
 ・端部分の0化
 ・4つのSurfaceLine
  -振れ幅、位置(スライド)、SurfaceLine幅
-
-
-■PatternGenerator
-○LineGeneratorの複雑化
-※サンプルを参考にする
- -4つのBaseLine + SurfaceLineを用意する
-  -振れ幅、触れ高さ、位置(スライド)、SurfaceLine幅
-・ランダム要素の追加
-・LineSurfaceに変化をつける
- -ライン数調整
- -cofficient調整
 
 ●BaseLineGenerator設計
 ※連続性に変化を持たせる
@@ -74,17 +59,6 @@ else{
 
 
 ■カプセルタワー
-●カプセルタワー生成処理
-・Core生成
- -中心かBaseBlockの0.25分スライドさせた位置に配置
-・Cupsel生成
- -※縦置きをデフォルトにする
- -Coreから1 + 0.5スライドさせた位置に配置
- -配置数の管理
-・回転
- -回転可能ブロックの管理
- -BasePointスライド + 回転値の設定
-
 ○Volumeのサイズ最適化
 
 ○カプセルタワー向き処理設計
