@@ -1,11 +1,25 @@
 ○LineGeneratorの複雑化
+・連続性に変化を持たせる
+ -係数を増やす
+・連続性を維持する
+ -ブロックの中央から係数を小さくする
+・ランダム要素の追加
+ -ブロックライン数
+ -振れ幅
+ -スライド位置
+
+transform_cofficient.x *= x_pos;
+transform_cofficient.y *= y_pos;
+transform_cofficient.z *= z_pos;
+transform *= sin(transform_cofficient.x + transform_cofficient.y + transform_cofficient.z + adjust_cofficient + slide_block_cofficient * block_idx);
+transform *= 1 + (line_idx % block_num) * slide_line_cofficient;
+transform *= base_cofficient;
+
 
 ○カプセル配置ロジック設計
 ※DCCStudy
-
-
-○回転管理
-※縦置きをデフォルトにする
+・凹凸配置(デフォルト)
+ -左右回転を交互に設定
 ・角ごとに方向を設定
 ・回転可能ブロックの管理
 
@@ -16,15 +30,6 @@
 ・Cupsel生成
  -向きランダム化
  -配置数の管理
-
-
-○LineGeneratorの複雑化
-※連続性に変化を持たせる
-※Simple、Gradation、Randomlyベース
-・ランダム要素の追加
- -ライン数
- -振れ幅
- -スライド位置
 
 
 ■PatternGenerator
