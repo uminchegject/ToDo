@@ -1,17 +1,50 @@
-○折り紙Generator
-・折半構造
- -Line上にBasePointをずらして生成し、Primを生成する
+○折半Generator
+・頂点位置の調整
 ・BaseLineGeneratorを拡張
+
+
+○カプセル配置検証
+・向きをデフォルト状態から曲げるランダム値の割合をパラメーターで調整
+・パラメーターの削除比率をパラメーターで調整
+
+float turn_ratio = 0.5;
+float delete_ratio = 0.3;
+int turn_toggle = 0;
+
+for(int i = 0; i < 9; i++)
+{
+    core_pos.y += unit_scale;
+
+    turn_toggle = i % 2;
+    if(random((dir_x + dir_z) * i) < turn_ratio) turn_toggle = turn_toggle ? 0 : 1;
+	
+    if(delete_ratio < random((dir_x + dir_z) * (i + 10))
+    {
+        generate_cupsule_base_point(
+            core_pos,
+            unit_scale,
+            dir_x,
+            dir_z,
+            turn_toggle ? 0 : 1
+        );
+    }
+	
+    if(delete_ratio < random((dir_x + dir_z) * (i + 20)))
+    {
+        generate_cupsule_base_point(
+            core_pos,
+            unit_scale,
+            dir_z,
+            dir_x,
+            turn_toggle ? 1 : 0
+        );
+    }
 
 
 ○カプセル向きのランダム化
 ※デフォルト凹凸配置(左右回転を交互に設定)
 ※デフォルトの凹凸感を崩さない
 ・角ごとに方向を設定
-
-○カプセル配置検証
-・向きをデフォルト状態から曲げるランダム値の割合をパラメーターで調整
-・パラメーターの削除比率をパラメーターで調整
 
 ○DCCStudy
 
