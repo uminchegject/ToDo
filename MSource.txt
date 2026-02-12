@@ -1,5 +1,12 @@
-○折半Generator
-・折り紙調査
+●折半Generator設計
+※柔軟化
+・頂点の凹凸Pattern
+・頂点同士のつなぎ方
+ -primの構築方法
+
+●折半Generator処理
+・Plane生成
+・BasePoint生成
 ・頂点位置調整
  -ずらし調整(パラメーター化)
  -間隔調整
@@ -8,31 +15,44 @@
 
 
 ○DCCStudy
+・カプセルとCore
+
+○カプセル複数化
 
 ●カプセルタワー生成処理
 ・Cupsule生成
  -向きランダム化
  -配置数の管理
+・Coreの複数化
 ・ChildCupsule
  -CloseDir
  -回転固定ブロックの管理
-・Coreの複数化
 
 
 ○Qiita準備
 ・過去の記事を削除
 ・構成を整理(※シンプル)
- -デザインの重要部分
- -PM化範囲
+ -デザイン特徴
+ -PM化
+ -柔軟化
  -結果
-・記事化
- -ModuleCity
- -ConstructionCity
- -SunnyHills
- -TPattern
+
+●SunnyHills
+・木組みを構築し連続して配置する
+・向きに変化を持たせる
+・木のサイズに変化を持たせる
+
+●TPattern
+・Tブロックを連続して配置する
+・向きに変化を持たせる
+・奥行サイズに変化を持たせる
+
+●ModuleCity
+
+●ConstructionCity
+
 
 ○LinkedIn準備
-・
 
 
 ■PatternGenerator
