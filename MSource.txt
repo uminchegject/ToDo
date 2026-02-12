@@ -1,8 +1,11 @@
 ●折半Generator設計
 ※柔軟化
-・頂点の凹凸Pattern
-・頂点同士のつなぎ方
- -primの構築方法
+・Base
+ -BaseLine
+ -BasePoint
+・Generate
+ -Pattern
+ -SlideVector
 
 ●折半Generator処理
 ・Plane生成
