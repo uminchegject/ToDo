@@ -1,8 +1,14 @@
+○ずらし検証
+・ソース整理
+・パラメーター化
+
 ○折半Generator
 ・折り紙調査
 ・頂点位置調整
  -ずらし調整(パラメーター化)
+ -間隔調整
 ・BaseLine調整
+ -間隔調整
 
 
 ○DCCStudy
@@ -28,6 +34,9 @@
  -ConstructionCity
  -SunnyHills
  -TPattern
+
+○LinkedIn準備
+・
 
 
 ■PatternGenerator
