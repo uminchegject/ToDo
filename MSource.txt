@@ -1,3 +1,11 @@
+○poetryStudy
+・poetryの意味
+ -poetry install
+ -poetry add
+ -poetry build
+・Labsの対応方法調査
+
+
 ○検証準備
 ・Patternのパラメーター化
 ・Slider実装
