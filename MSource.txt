@@ -9,8 +9,7 @@
 ・Slider実装
 
 ○Cupsuleモデリング
-・Maya
-Houdini(PM)
+・Houdini(PM)
 
 ○Poetry Study
 ・poetry基礎
