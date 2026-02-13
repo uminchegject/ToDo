@@ -1,8 +1,16 @@
-○LinkedIn準備
+○発信方法の調査
+・LinkedIn
+ -houdini
+ -rhinoceros
+・Qiita
 
 ○Pattern設計
 ・Patternのパラメーター化
 ・Slider実装
+
+○Cupsuleモデリング
+・Maya
+Houdini(PM)
 
 ○Poetry Study
 ・poetry基礎
