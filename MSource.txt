@@ -1,3 +1,9 @@
+○検証準備
+・Patternのパラメーター化
+・Slider実装
+・△BaseLineGenerator修正
+・△BasePointGenerator修正
+
 ●折半Generator設計
 ※柔軟化
 ・Base
@@ -8,17 +14,19 @@
  -SlideVector
 
 ●折半Generator処理
-・Plane生成
-・BasePoint生成
 ・頂点位置調整
  -ずらし調整(パラメーター化)
  -間隔調整
 ・BaseLine調整
  -間隔調整
+・Plane生成
+・BasePoint生成
 
 
-○DCCStudy
-・カプセルとCore
+○Maya準備
+※・HoudiniEngineForMaya準備
+・カプセル用意
+・Tutorial用意
 
 ○カプセル複数化
 
