@@ -1,16 +1,22 @@
-○poetryStudy
-・poetryの意味
+○LinkedIn準備
+
+○Pattern設計
+・Patternのパラメーター化
+・Slider実装
+
+○Poetry Study
+・poetry基礎
+※poetry(build)を行う意図を確認する
  -poetry install
  -poetry add
  -poetry build
-・Labsの対応方法調査
+・△Labsの対応方法調査
 
 
-○検証準備
-・Patternのパラメーター化
-・Slider実装
-・△BaseLineGenerator修正
-・△BasePointGenerator修正
+■PatternGenerator
+△BaseLineGenerator修正
+
+△BasePointGenerator修正
 
 ●折半Generator設計
 ※柔軟化
@@ -31,12 +37,32 @@
 ・BasePoint生成
 
 
+●Pattern設計
+※3次元的Pattern
+※遊びのあるPattern
+※複数のパーツで構成し合っているPattern
+
+●追加ソース
+・BasePointの位置をランダム調整
+spawn_pos += line_dir * ((1 - scale.y) * block_length) * (rand(scale) - 0.5);
+・スキップ処理
+if(i@BaseLineId % 2 == 1){
+	if(i % 2 == 0) continue;
+}
+else{
+	if(i % 2 != 0) continue;
+}
+
+
+■カプセルタワー
 ○Maya準備
 ※・HoudiniEngineForMaya準備
 ・カプセル用意
 ・Tutorial用意
 
 ○カプセル複数化
+
+△Volumeのサイズ最適化
 
 ●カプセルタワー生成処理
 ・Cupsule生成
@@ -47,7 +73,27 @@
  -CloseDir
  -回転固定ブロックの管理
 
+●カプセルタワーフラクタル設計
+・カプセルのボリュームに沿ってさらにカプセルを生成する
+・接地面は無効化
+・カプセルをボリュームに置き換える
 
+●カプセルタワー設計
+※Coreの個数は固定して、カプセルのスケールを柔軟化する
+・サイズタイプ
+ -1×1
+ -1×2
+ -2×1
+・カプセルの配置数を調整する
+
+●パラメーター
+・カプセルサイズ
+・カプセルID
+・カプセル密度
+・Core高さ
+
+
+■記事化
 ○Qiita準備
 ・過去の記事を削除
 ・構成を整理(※シンプル)
@@ -69,55 +115,6 @@
 ●ModuleCity
 
 ●ConstructionCity
-
-
-○LinkedIn準備
-
-
-■PatternGenerator
-△躯体の生成ロジックも設計(ラインベースで)
-・normal
-
-●Pattern設計
-※3次元的Pattern
-※遊びのあるPattern
-※複数のパーツで構成し合っているPattern
-
-△木目をCopernicusで表現
-
-●追加ソース
-・BasePointの位置をランダム調整
-spawn_pos += line_dir * ((1 - scale.y) * block_length) * (rand(scale) - 0.5);
-・スキップ処理
-if(i@BaseLineId % 2 == 1){
-	if(i % 2 == 0) continue;
-}
-else{
-	if(i % 2 != 0) continue;
-}
-
-
-■カプセルタワー
-○Volumeのサイズ最適化
-
-●カプセルタワーフラクタル設計
-・カプセルのボリュームに沿ってさらにカプセルを生成する
-・接地面は無効化
-・カプセルをボリュームに置き換える
-
-●カプセルタワー設計
-※Coreの個数は固定して、カプセルのスケールを柔軟化する
-・サイズタイプ
- -1×1
- -1×2
- -2×1
-・カプセルの配置数を調整する
-
-●パラメーター
-・カプセルサイズ
-・カプセルID
-・カプセル密度
-・Core高さ
 
 
 ■NightCity
