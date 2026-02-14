@@ -12,8 +12,7 @@
 
 ○発信方法の調査
 ・LinkedIn
- -houdini
- -rhinoceros
+ -体験談を調査
 ・Qiita
 
 ○Poetry Study
