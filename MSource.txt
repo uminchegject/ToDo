@@ -19,11 +19,11 @@
 ○Poetry Study
 ・poetry基礎
 ※poetry(build)を行う意図を確認する
- -poetry install
  -poetry add
+ -poetry install
  -poetry build
-・△Labsの対応方法調査
-
+・Labsの対応方法調査
+ -gitの内容を確認
 
 ■PatternGenerator
 △BaseLineGenerator修正
