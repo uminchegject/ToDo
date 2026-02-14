@@ -1,15 +1,20 @@
+○Pattern設計
+※RectanglePatternをベースに検証
+ -BaseLineを洞窟型に設定
+ -頂点を2/1スライド
+・Slider実装
+・Slider適応頂点選択ロジック(凹凸Pattern)
+
+○Cupsuleモデリング
+・模写
+ -SciFiProject調査
+・PM化
+
 ○発信方法の調査
 ・LinkedIn
  -houdini
  -rhinoceros
 ・Qiita
-
-○Pattern設計
-・Patternのパラメーター化
-・Slider実装
-
-○Cupsuleモデリング
-・Houdini(PM)
 
 ○Poetry Study
 ・poetry基礎
