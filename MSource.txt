@@ -1,35 +1,15 @@
-○Poetry Study
-・poetry基礎
-※poetry(build)を行う意図を確認する
- -poetry add
- -poetry install
- -poetry build
-・Labsの対応方法調査
- -gitの内容を確認
-
-・GPT
-https://github.com/sideeffects/SideFXLabs
-このプロジェクトを下記poetryの手順に沿ってbuildを用意したい
-init
-add
-install
-build
-
+○RectanglePatternの生成
+・BaseLineGenerator修正
+・BasePointGenerator修正
 
 ○Pattern設計
 ※RectanglePatternをベースに検証
- -BaseLineを洞窟型に設定
- -頂点を2/1スライド
 ・Slider実装
 ・Slider適応頂点選択ロジック(凹凸Pattern)
 
 
-○カプセルタワー模写
-※業務時間のみ
-・MayaStudy
-・HoudiniStudy
-
 ○カプセル複数化
+・ボリュームのスケールを最適化
 ・カプセルのボリュームに沿ってさらにカプセルを生成する
 ・接地面は無効化
 ・カプセルをボリュームに置き換える
@@ -38,6 +18,11 @@ build
 ・模写
  -SciFiProject調査
 ・PM化
+
+△カプセルタワー模写
+※業務時間のみ
+・MayaStudy
+・HoudiniStudy
 
 
 ○発信事例の調査
@@ -68,10 +53,6 @@ build
 
 
 ■PatternGenerator
-△BaseLineGenerator修正
-
-△BasePointGenerator修正
-
 ●折半Generator設計
 ※柔軟化
 ・Base
