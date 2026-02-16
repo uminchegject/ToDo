@@ -1,22 +1,62 @@
-○RectanglePatternの生成
+○RectanglePattern生成
+※RectanglePatternを崩さないように実装する
 ・BaseLineGenerator修正
+ -GapにGradation
 ・BasePointGenerator修正
+ -IntervalにGradation
 
-○Pattern設計
+○Pattern生成
 ※RectanglePatternをベースに検証
-・Slider実装
 ・Slider適応頂点選択ロジック(凹凸Pattern)
+ -point_idxをずらすパラメーター
+・△Slider実装
+ -※上下のスライドのみで検証(gradation)
 
 
-○カプセル複数化
-・ボリュームのスケールを最適化
-・カプセルのボリュームに沿ってさらにカプセルを生成する
+○スケールの最適化
+
+○カプセルの方向管理
+・角ごとに管理する
+
+turn_toggle = i % 2;
+if(random((dir_x + dir_z) * (i + 1)) < turn_ratio) turn_toggle = turn_toggle ? 0 : 1;
+if(delete_ratio < random((dir_x + dir_z) * (i + 10)))
+{
+	generate_cupsule_base_point(
+		core_pos,
+		unit_scale,
+		dir_x,
+		dir_z,
+		turn_toggle ? 0 : 1
+	);
+}
+if(delete_ratio <  random((dir_x + dir_z) * (i + 20)))
+{
+	generate_cupsule_base_point(
+		core_pos,
+		unit_scale,
+		dir_z,
+		dir_x,
+		turn_toggle ? 1 : 0
+	);
+}
+
+○HDA化
+・Input
+ -Volume
+ -CloseDir
+・Output
+ -CupsuleVolume + Core
+ -CloseDir
+
+○カプセルフラクタル化
+※カプセルのボリュームに沿ってさらにカプセルを生成する
 ・接地面は無効化
 ・カプセルをボリュームに置き換える
 
 ○NightCityCupsuleモデリング
+・NightCityのファザードを調査
 ・模写
- -SciFiProject調査
 ・PM化
 
 △カプセルタワー模写
