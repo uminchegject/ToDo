@@ -1,3 +1,9 @@
+○Poetry
+https://chatgpt.com/share/6993b8f7-d924-8001-a029-7fba121bcba0
+
+
+○斜めラインで検証
+
 ○RectanglePattern生成
 ※RectanglePatternを崩さないように実装する
 ・BaseLineGenerator修正
@@ -17,7 +23,6 @@
 
 ○カプセルの方向管理
 ・角ごとに管理する
-
 turn_toggle = i % 2;
 if(random((dir_x + dir_z) * (i + 1)) < turn_ratio) turn_toggle = turn_toggle ? 0 : 1;
 if(delete_ratio < random((dir_x + dir_z) * (i + 10)))
