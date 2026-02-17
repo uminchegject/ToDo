@@ -1,20 +1,15 @@
-○Poetry調査
-・コマンド調査
- -m poetry add --group dev --editable $hogehoge
-・ラップパッケージ形式の意図を確認
-https://github.com/sideeffects/SideFXLabs
-このプロジェクトをpoetryを使用して、init、build、installしたい
+○他プロジェクトのPoetry管理範囲の確認
+・include
+・package
 
 
-
-○斜めラインで検証
-
-○RectanglePattern生成
+○BasePoint生成
 ※RectanglePatternを崩さないように実装する
-・BaseLineGenerator修正
- -GapにGradation
-・BasePointGenerator修正
- -IntervalにGradation
+・BaseLine上に間隔に沿ってBasePointを生成
+
+△RectanglePatternに変化
+・BasePointのIntervalにGradation
+・BaseLineのGapにGradation
 
 ○Pattern生成
 ※RectanglePatternをベースに検証
@@ -24,32 +19,15 @@ https://github.com/sideeffects/SideFXLabs
  -※上下のスライドのみで検証(gradation)
 
 
-○スケールの最適化
+○CoreBasePointの生成
+・1 or 2
+・Attr
+ -CloseDir
+ -Scale
 
-○カプセルの方向管理
-・角ごとに管理する
-turn_toggle = i % 2;
-if(random((dir_x + dir_z) * (i + 1)) < turn_ratio) turn_toggle = turn_toggle ? 0 : 1;
-if(delete_ratio < random((dir_x + dir_z) * (i + 10)))
-{
-	generate_cupsule_base_point(
-		core_pos,
-		unit_scale,
-		dir_x,
-		dir_z,
-		turn_toggle ? 0 : 1
-	);
-}
-if(delete_ratio <  random((dir_x + dir_z) * (i + 20)))
-{
-	generate_cupsule_base_point(
-		core_pos,
-		unit_scale,
-		dir_z,
-		dir_x,
-		turn_toggle ? 1 : 0
-	);
-}
+○CupsulePoint, CorePointの生成
+・CoreBasePointに対応
+・角ごとにカプセル方向を管理する
 
 ○HDA化
 ・Input
