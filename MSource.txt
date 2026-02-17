@@ -1,5 +1,10 @@
-○Poetry
-https://chatgpt.com/share/6993b8f7-d924-8001-a029-7fba121bcba0
+○Poetry調査
+・コマンド調査
+ -m poetry add --group dev --editable $hogehoge
+・ラップパッケージ形式の意図を確認
+https://github.com/sideeffects/SideFXLabs
+このプロジェクトをpoetryを使用して、init、build、installしたい
+
 
 
 ○斜めラインで検証
