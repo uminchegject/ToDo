@@ -3,31 +3,49 @@
 ・package
 
 
-○BasePoint生成
-※RectanglePatternを崩さないように実装する
-・BaseLine上に間隔に沿ってBasePointを生成
+○BaseLineGeneratorを拡張
+・中間BasePointのスライド
+ -スライドさせた上で位置を調整する
+・Priｍを生成
 
-△RectanglePatternに変化
-・BasePointのIntervalにGradation
-・BaseLineのGapにGradation
-
-○Pattern生成
+○Pattern生成(頂点移動処理)
 ※RectanglePatternをベースに検証
 ・Slider適応頂点選択ロジック(凹凸Pattern)
  -point_idxをずらすパラメーター
 ・△Slider実装
  -※上下のスライドのみで検証(gradation)
 
+○RectanglePatternの変化検証
+・BasePointのIntervalにGradation
+・BaseLineのGapにGradation
+
 
 ○CoreBasePointの生成
 ・1 or 2
 ・Attr
  -CloseDir
- -Scale
+ -BaseScale
 
 ○CupsulePoint, CorePointの生成
 ・CoreBasePointに対応
 ・角ごとにカプセル方向を管理する
+vector core_pos = v@P;
+int close_dir_id_list[] = i[]@CloseDirId;
+float base_scale = @BaseScale;
+float unit_scale = base_scale.x / 6;
+
+turn_toggle = i % 2;
+if(random((dir_x + dir_z) * (i + 1)) < turn_ratio) turn_toggle = turn_toggle ? 0 : 1;
+if(delete_ratio < random((dir_x + dir_z) * (i + 10)) || find(close_dir_id_list, 1);
+{
+	generate_cupsule_base_point(
+		core_pos,
+		unit_scale,
+		dir_x,
+		dir_z,
+		turn_toggle ? 0 : 1
+	);
+}
 
 ○HDA化
 ・Input
