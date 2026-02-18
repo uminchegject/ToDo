@@ -1,20 +1,35 @@
+○ZigZag検証
+・斜め線をBlockとする
+・Gradationをつけて凹凸を生成
+ -sinで調整(パラメーター)
+・線ごとにsinにadjustする
+
+float cofficient = ch()
+float slider = ch()
+
+int line_pts[] = primpoints(0, @primnum);
+for(int pt_idx = 0; pt_idx < len(line_pts) - 1; ++pt_idx){
+
+	int prim_idx = @primnum;
+	vector slider = v@N;
+	slider *= sin(prim_idx * cofficient + (pt_idx - prim_idx) * slider);
+	vector pt_pos = 
+	pt_pos += slider;
+	setpointattrib()
+
 ○Pattern生成(頂点移動処理)
 ※RectanglePatternをベースに検証
+※zigzag_base_line_generatorのパラメーターを参考
 ・Slider適応頂点選択ロジック(凹凸Pattern)
  -point_idxをずらすパラメーター
 ・△Slider実装
  -※上下のスライドのみで検証(gradation)
 
 ○RectanglePatternの変化検証
+※zigzag_base_line_generatorを調整する
 ・BasePointのIntervalにGradation
 ・BaseLineのGapにGradation
 
-
-○CoreBasePointの生成
-・1 or 2
-・Attr
- -CloseDir
- -BaseScale
 
 ○CupsulePoint, CorePointの生成
 ・CoreBasePointに対応
@@ -36,6 +51,13 @@ if(delete_ratio < random((dir_x + dir_z) * (i + 10)) || find(close_dir_id_list, 
 		turn_toggle ? 0 : 1
 	);
 }
+
+○CoreBasePointの生成
+・1 or 2
+・Attr
+ -CloseDir
+ -BaseScale
+
 
 ○HDA化
 ・Input
