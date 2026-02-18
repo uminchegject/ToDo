@@ -1,13 +1,3 @@
-○他プロジェクトのPoetry管理範囲の確認
-・include
-・package
-
-
-○BaseLineGeneratorを拡張
-・中間BasePointのスライド
- -スライドさせた上で位置を調整する
-・Priｍを生成
-
 ○Pattern生成(頂点移動処理)
 ※RectanglePatternをベースに検証
 ・Slider適応頂点選択ロジック(凹凸Pattern)
