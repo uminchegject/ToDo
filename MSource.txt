@@ -3,6 +3,13 @@
 ・Gradationをつけて凹凸を生成
  -sinで調整(パラメーター)
 ・線ごとにsinにadjustする
+int prim_idx = @primnum;
+vector slider = point(0, "N", line_pts[pt_idx]);
+slider *= sin(prim_idx * cofficient + (pt_idx - prim_idx * 100) * adjust);
+slider *= base_cofficient;
+vector pt_pos = point(0, "P", line_pts[pt_idx]);
+pt_pos += slider;
+setpointattrib(0, "P", line_pts[pt_idx], pt_pos);  
 
 ○RectanglePatternの変化検証
 ※zigzag_base_line_generatorを調整する
