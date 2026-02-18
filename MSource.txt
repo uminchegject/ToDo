@@ -40,7 +40,6 @@ if(delete_ratio < random((dir_x + dir_z) * (i + 10)) || find(close_dir_id_list, 
  -CloseDir
  -BaseScale
 
-
 ○HDA化
 ・Input
  -Volume
@@ -56,6 +55,7 @@ if(delete_ratio < random((dir_x + dir_z) * (i + 10)) || find(close_dir_id_list, 
 
 ○NightCityCupsuleモデリング
 ・NightCityのファザードを調査
+ -Coreのモデリングフロー
 ・模写
 ・PM化
 
