@@ -1,3 +1,6 @@
+※配置に重きをおく
+ -シンプルモデリング + Color
+
 ○RectanglePatternの変化検証
 ※zigzag_base_line_generatorを調整する
 ・BasePointのIntervalにGradation
@@ -12,65 +15,18 @@
  -※上下のスライドのみで検証(gradation)
 
 
-○CoreBasePointに対応
-vector base_scale = v@scale;
+○2coreのスケールを修正
+・BaseScaleにぴったり収まるように修正
 
-// uniform scale
-float unit_scale = base_scale.x;
+○CloseDirの引継ぎ
+・Cupsule_Base_Pointで設定
 
-○CoreBasePointの生成
-・1 or 2
-・Attr
- -CloseDir
-・CoreBasePos
- -SetGroup
- -SetScale
+○Scaleの修正
+・方向に沿ってScaleを修正
 
-vector core_pos = v@P;
-int close_dir_id_list[] = i[]@CloseDirId;
-vector base_scale = v@BaseScale;
-
-float ratio = base_scale.x / base_scale.z;
-float base_len = base_scale.x < base_scale.z ? base_scale.x : base_scale.z;
-float unit_scale = base_len / 6;
-//core 1
-if ( 0.5f < ratio && ratio < 2.0f){
-	int pt = addpoint(0, core_pos);
-	setpointgroup(0, "Core", pt, 1);
-	vector core_scale = set(unit_scale, base_scale.y, unit_scale);
-	setpointattrib(0, "scale", pt, core_scale);
-}
-//core 2
-else {
-	vector pt_1_pos = core_pos;
-	vector pt_2_pos = core_pos;
-	if(base_scale.x < base_scale.z){
-		pt_1_pos.z += base_len / 2;
-		pt_2_pos.z += base_len / 2;
-	}
-	else{
-		pt_1_pos.x += base_len / 2;
-		pt_2_pos.x += base_len / 2;
-	}
-
-	int pt_1 = addpoint(0, pt_1_pos);
-	int pt_2 = addpoint(0, pt_2_pos);
-	setpointgroup(0, "Core", pt_1, 1);
-	setpointgroup(0, "Core", pt_2, 1);
-	vector core_scale = set(unit_scale, base_scale.y, unit_scale);
-	setpointattrib(0, "scale", pt_1, core_scale);
-	setpointattrib(0, "scale", pt_2, core_scale);
-}
-
-○CloseDirに対応
-vector base_scale = v@scale;
-
-// uniform scale
-float unit_scale = base_scale.x;
-
-turn_toggle = i % 2;
-if(random((dir_x + dir_z) * (i + 1)) < turn_ratio) turn_toggle = turn_toggle ? 0 : 1;
-turn_toggle = find(close_dir_id_list, 1) ? turn_toggle : 1;
+○検証
+・DeleteRatio
+・TurnRatio
 
 
 ○HDA化
