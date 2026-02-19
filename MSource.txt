@@ -15,19 +15,14 @@
  -※上下のスライドのみで検証(gradation)
 
 
-○2coreのスケールを修正
-・BaseScaleにぴったり収まるように修正
+○Core_Base_Point修正
+・N対応
+ -位置を修正
+ -スケールを修正
 
-○CloseDirの引継ぎ
-・Cupsule_Base_Pointで設定
-
-○Scaleの修正
-・方向に沿ってScaleを修正
-
-○検証
-・DeleteRatio
-・TurnRatio
-
+○Core_Base_Point修正
+・CloseDirの引継ぎ
+ -Cupsule_Base_Pointで設定
 
 ○HDA化
 ・Input(Point)
@@ -41,6 +36,16 @@
 ※カプセルのボリュームに沿ってさらにカプセルを生成する
 ・接地面は無効化
 ・カプセルをボリュームに置き換える
+
+○検証
+・DeleteRatio
+・TurnRatio
+
+
+○カプセルタワー多様設計
+※Coreの個数は固定して、カプセルのスケールを柔軟化する
+・スケールを1～0.5
+・カプセルの配置数を調整する
 
 ○NightCityCupsuleモデリング
 ・NightCityのファザードを調査
@@ -68,11 +73,6 @@
 ・ChildCupsule
  -CloseDir
  -回転固定ブロックの管理
-
-●カプセルタワー多様設計
-※Coreの個数は固定して、カプセルのスケールを柔軟化する
-・スケールを1～0.5
-・カプセルの配置数を調整する
 
 ●パラメーター
 ・カプセルサイズ
