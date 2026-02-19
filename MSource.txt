@@ -1,16 +1,3 @@
-○ZigZag検証
-・斜め線をBlockとする
-・Gradationをつけて凹凸を生成
- -sinで調整(パラメーター)
-・線ごとにsinにadjustする
-int prim_idx = @primnum;
-vector slider = point(0, "N", line_pts[pt_idx]);
-slider *= sin(prim_idx * cofficient + (pt_idx - prim_idx * 100) * adjust);
-slider *= base_cofficient;
-vector pt_pos = point(0, "P", line_pts[pt_idx]);
-pt_pos += slider;
-setpointattrib(0, "P", line_pts[pt_idx], pt_pos);  
-
 ○RectanglePatternの変化検証
 ※zigzag_base_line_generatorを調整する
 ・BasePointのIntervalにGradation
@@ -25,34 +12,73 @@ setpointattrib(0, "P", line_pts[pt_idx], pt_pos);
  -※上下のスライドのみで検証(gradation)
 
 
-○CupsulePoint, CorePointの生成
-・CoreBasePointに対応
-・角ごとにカプセル方向を管理する
-turn_toggle = i % 2;
-if(random((dir_x + dir_z) * (i + 1)) < turn_ratio) turn_toggle = turn_toggle ? 0 : 1;
-if(delete_ratio < random((dir_x + dir_z) * (i + 10)) || find(close_dir_id_list, 1);
-{
-	generate_cupsule_base_point(
-		core_pos,
-		unit_scale,
-		dir_x,
-		dir_z,
-		turn_toggle ? 0 : 1
-	);
-}
+○CoreBasePointに対応
+vector base_scale = v@scale;
+
+// uniform scale
+float unit_scale = base_scale.x;
 
 ○CoreBasePointの生成
 ・1 or 2
 ・Attr
  -CloseDir
- -BaseScale
+・CoreBasePos
+ -SetGroup
+ -SetScale
+
+vector core_pos = v@P;
+int close_dir_id_list[] = i[]@CloseDirId;
+vector base_scale = v@BaseScale;
+
+float ratio = base_scale.x / base_scale.z;
+float base_len = base_scale.x < base_scale.z ? base_scale.x : base_scale.z;
+float unit_scale = base_len / 6;
+//core 1
+if ( 0.5f < ratio && ratio < 2.0f){
+	int pt = addpoint(0, core_pos);
+	setpointgroup(0, "Core", pt, 1);
+	vector core_scale = set(unit_scale, base_scale.y, unit_scale);
+	setpointattrib(0, "scale", pt, core_scale);
+}
+//core 2
+else {
+	vector pt_1_pos = core_pos;
+	vector pt_2_pos = core_pos;
+	if(base_scale.x < base_scale.z){
+		pt_1_pos.z += base_len / 2;
+		pt_2_pos.z += base_len / 2;
+	}
+	else{
+		pt_1_pos.x += base_len / 2;
+		pt_2_pos.x += base_len / 2;
+	}
+
+	int pt_1 = addpoint(0, pt_1_pos);
+	int pt_2 = addpoint(0, pt_2_pos);
+	setpointgroup(0, "Core", pt_1, 1);
+	setpointgroup(0, "Core", pt_2, 1);
+	vector core_scale = set(unit_scale, base_scale.y, unit_scale);
+	setpointattrib(0, "scale", pt_1, core_scale);
+	setpointattrib(0, "scale", pt_2, core_scale);
+}
+
+○CloseDirに対応
+vector base_scale = v@scale;
+
+// uniform scale
+float unit_scale = base_scale.x;
+
+turn_toggle = i % 2;
+if(random((dir_x + dir_z) * (i + 1)) < turn_ratio) turn_toggle = turn_toggle ? 0 : 1;
+turn_toggle = find(close_dir_id_list, 1) ? turn_toggle : 1;
+
 
 ○HDA化
-・Input
- -Volume
+・Input(Point)
+ -Scale
  -CloseDir
-・Output
- -CupsuleVolume + Core
+・Output(Point Core + Cupsule)
+ -Scale
  -CloseDir
 
 ○カプセルフラクタル化
