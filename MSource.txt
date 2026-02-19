@@ -1,10 +1,6 @@
 ※配置に重きをおく
  -シンプルモデリング + Color
 
-○RectanglePatternの変化検証
-※zigzag_base_line_generatorを調整する
-・BasePointのIntervalにGradation
-・BaseLineのGapにGradation
 
 ○Pattern設計(頂点移動処理)
 ※RectanglePatternをベースに検証
@@ -15,6 +11,27 @@
  -※上下のスライドのみで検証(gradation)
 
 
+○カプセルタワー多様設計
+※Coreの個数は固定して、カプセルのスケールを柔軟化する
+・スケールを1～0.5
+・カプセルの配置数を調整する
+
+○NightCityCupsuleモデリング
+・NightCityのファザードを調査
+ -Coreのモデリングフロー
+・模写
+・PM化
+
+
+○発信事例の調査
+・LinkedIn
+・Qiita
+
+○LinkedIn準備
+・プロフィール作成
+
+
+■カプセルタワー
 ○Core_Base_Point修正
 ・N対応
  -位置を修正
@@ -41,30 +58,6 @@
 ・DeleteRatio
 ・TurnRatio
 
-
-○カプセルタワー多様設計
-※Coreの個数は固定して、カプセルのスケールを柔軟化する
-・スケールを1～0.5
-・カプセルの配置数を調整する
-
-○NightCityCupsuleモデリング
-・NightCityのファザードを調査
- -Coreのモデリングフロー
-・模写
-・PM化
-
-△カプセルタワー模写
-※業務時間のみ
-・MayaStudy
-・HoudiniStudy
-
-
-○発信事例の調査
-・LinkedIn
-・Qiita
-
-
-■カプセルタワー
 ●カプセルタワー生成処理
 ・Cupsule生成
  -向きランダム化
@@ -82,6 +75,11 @@
 
 
 ■PatternGenerator
+○RectanglePatternの変化検証
+※zigzag_base_line_generatorを調整する
+・BasePointのIntervalにGradation
+・BaseLineのGapにGradation
+
 ●折半Generator設計
 ※柔軟化
 ・Base
@@ -100,22 +98,11 @@
 ・Plane生成
 ・BasePoint生成
 
-
 ●Pattern設計
 ※3次元的Pattern
 ※遊びのあるPattern
 ※複数のパーツで構成し合っているPattern
 
-●追加ソース
-・BasePointの位置をランダム調整
-spawn_pos += line_dir * ((1 - scale.y) * block_length) * (rand(scale) - 0.5);
-・スキップ処理
-if(i@BaseLineId % 2 == 1){
-	if(i % 2 == 0) continue;
-}
-else{
-	if(i % 2 != 0) continue;
-}
 
 
 ■発信
