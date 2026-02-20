@@ -2,36 +2,50 @@
  -シンプルモデリング + Color
 
 
-○Pattern設計(頂点移動処理)
-※RectanglePatternをベースに検証
+○Slider検証
+・x, y, zパラメーターを追加して検証
+
+○多様なBaseLineで検証
+・モチーフ調査
+
+●Pattern設計(頂点移動処理)
 ※zigzag_base_line_generatorのパラメーターを参考
-・Slider適応頂点選択ロジック(凹凸Pattern)
- -point_idxをずらすパラメーター
-・Slider実装
- -※上下のスライドのみで検証(gradation)
+・凹凸Pattern生成
+ -Adjustの調整
+・Slider
 
 
-○カプセルタワー多様設計
+○CityVolume検証
+・配置比率の検証
+・回転比率の検証
+・カプセルのスケールをランダム化して検証
+
+●カプセルタワー多様設計
 ※Coreの個数は固定して、カプセルのスケールを柔軟化する
-・スケールを1～0.5
+・BaseScaleを基準にScaleを多様にする
 ・カプセルの配置数を調整する
 
 ○NightCityCupsuleモデリング
 ・NightCityのファザードを調査
- -Coreのモデリングフロー
-・模写
+ -※窓のデザインパターンを調査
 ・PM化
+ -模写
 
 
 ○発信事例の調査
 ・LinkedIn
 ・Qiita
 
-○LinkedIn準備
-・プロフィール作成
+○発信準備
+・LinkedInプロフィール作成
+・発信記事準備
+ -Qiita
+ -LinkedIn
 
 
 ■カプセルタワー
+○CityProjectのVolumeで検証
+
 ○Core_Base_Point修正
 ・N対応
  -位置を修正
