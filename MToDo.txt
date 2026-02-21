@@ -9,6 +9,8 @@
 
 ■CityGenerator
 ※世界観をしっかり決めて、参考資料・リファレンスをしっかり用意する
+※配置に重きをおく
+ -シンプルモデリング + Color
 
 ○BuildingGenerator
 ・ProceduralModeling
