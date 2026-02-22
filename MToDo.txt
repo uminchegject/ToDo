@@ -1,31 +1,3 @@
-■CD(Tool)
-○配置ロジックの設計・実装
-・BaseLineEditor
-・BasePointGenerator
-
-○Pattern設計・実装
-・カラー化(Texture化)
-
-
-■CityGenerator
-※世界観をしっかり決めて、参考資料・リファレンスをしっかり用意する
-※配置に重きをおく
- -シンプルモデリング + Color
-
-○BuildingGenerator
-・ProceduralModeling
-・ModularModeling
-
-○VolumeとDetailの複雑化
-
-△パイプライン化
-・背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装
-
-
-■発信
-※PFをベースにする
-
-
 ■反省
 ※公式ドキュメントを確認する癖をつける
 
@@ -56,6 +28,32 @@
  -本
  -映画
 ※日程中の天気予報を確認
+
+
+■CD(Tool)
+○配置ロジックの設計・実装
+・BaseLineEditor
+・BasePointGenerator
+
+○Pattern設計・実装
+・カラー化(Texture化)
+
+
+■CityGenerator
+※世界観をしっかり決めて、参考資料・リファレンスをしっかり用意する
+
+○BuildingGenerator
+・ProceduralModeling
+・ModularModeling
+
+○VolumeとDetailの複雑化
+
+△パイプライン化
+・背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装
+
+
+■発信
+※PFをベースにする
 
 
 ■Private

@@ -1,21 +1,16 @@
-○誕生日プレゼント
-
-○訪問準備
-・ゲーム
-・ケーキ
-
-
 ○Slider検証
 ・x, y, zパラメーターを追加して検証
-
-○多様なBaseLineで検証
-・モチーフ調査
 
 ●Pattern設計(頂点移動処理)
 ※zigzag_base_line_generatorのパラメーターを参考
 ・凹凸Pattern生成
  -Adjustの調整
 ・Slider
+int prim_idx = @primnum;
+vector slider = chv("slider");
+vector normal = point(0, "N", line_pts[pt_idx]);
+slider += normal;
+slider = normalize(slider);
 
 
 ○CityVolume検証
@@ -28,7 +23,9 @@
 ・BaseScaleを基準にScaleを多様にする
 ・カプセルの配置数を調整する
 
-○NightCityCupsuleモデリング
+△NightCityCupsuleモデリング
+※配置に重きをおく
+ -シンプルモデリング + Color
 ・NightCityのファザードを調査
  -※窓のデザインパターンを調査
 ・PM化
@@ -45,12 +42,49 @@
  -Qiita
  -LinkedIn
 
-△目標設定
+
+○Public
+・もつ鍋報告
+・目標設定の報告
+ -目標設定
+
+○訪問準備
+・ゲーム
+・ケーキ
+
+
+■PatternGenerator
+○RectanglePatternの変化検証
+※zigzag_base_line_generatorを調整する
+※モチーフ調査
+・BasePointのIntervalにGradation
+・BaseLineのGapにGradation
+
+●折半Generator設計
+※柔軟化
+・Base
+ -BaseLine
+ -BasePoint
+・Generate
+ -Pattern
+ -SlideVector
+
+●折半Generator処理
+・頂点位置調整
+ -ずらし調整(パラメーター化)
+ -間隔調整
+・BaseLine調整
+ -間隔調整
+・Plane生成
+・BasePoint生成
+
+●Pattern設計
+※3次元的Pattern
+※遊びのあるPattern
+※複数のパーツで構成し合っているPattern
 
 
 ■カプセルタワー
-○CityProjectのVolumeで検証
-
 ○Core_Base_Point修正
 ・N対応
  -位置を修正
@@ -91,37 +125,6 @@
 ・カプセルID
 ・カプセル密度
 ・Core高さ
-
-
-■PatternGenerator
-○RectanglePatternの変化検証
-※zigzag_base_line_generatorを調整する
-・BasePointのIntervalにGradation
-・BaseLineのGapにGradation
-
-●折半Generator設計
-※柔軟化
-・Base
- -BaseLine
- -BasePoint
-・Generate
- -Pattern
- -SlideVector
-
-●折半Generator処理
-・頂点位置調整
- -ずらし調整(パラメーター化)
- -間隔調整
-・BaseLine調整
- -間隔調整
-・Plane生成
-・BasePoint生成
-
-●Pattern設計
-※3次元的Pattern
-※遊びのあるPattern
-※複数のパーツで構成し合っているPattern
-
 
 
 ■発信
