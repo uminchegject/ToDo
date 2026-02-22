@@ -1,3 +1,50 @@
+○RectanglePatternの変化検証
+※zigzag_base_line_generatorを調整する
+※モチーフ調査
+・BasePointのIntervalにGradation
+・BaseLineのGapにGradation
+
+○Slider検証
+
+●Pattern設計(頂点移動処理)
+※zigzag_base_line_generatorのパラメーターを参考
+・凹凸Pattern生成
+ -Adjustの調整
+・Slider
+
+
+○CityVolume検証
+・配置比率の検証
+・回転比率の検証
+・カプセルのスケールをランダム化して検証
+
+●カプセルタワー多様設計
+※Coreの個数は固定して、カプセルのスケールを柔軟化する
+・BaseScaleを基準にScaleを多様にする
+・カプセルの配置数を調整する
+
+△NightCityCupsuleモデリング
+※配置に重きをおく
+ -シンプルモデリング + Color
+・NightCityのファザードを調査
+ -※窓のデザインパターンを調査
+・PM化
+ -模写
+
+
+○記事準備
+・Qiita
+・Notion
+
+
+○Public
+・もつ鍋報告
+・目標設定の報告
+ -目標設定
+
+○訪問準備
+・ゲーム
+・ケーキ
 
 
 ■PatternGenerator
