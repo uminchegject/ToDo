@@ -1,3 +1,5 @@
+○本屋斥候
+
 ○Study設計
 ※仕事のように目標を明確にする
 ※CPとは差別化して考える
@@ -5,21 +7,14 @@
  -インプット
  -アウトプット
 
+
+○メモ作成
+
 ○発信準備
-・Notion
 ・Twitter
 ・Qiita
+・Notion
 ・△LinkedIn
-
-●コンピュテーショナルデザイン
-・コンピュテーショナルデザインの定義
-・Houdiniとの相性
-・実装内容
-
-●モジュラーモデリング
-・楽しい街ジェネレーターを再現
-・道、区画、敷地、建物のボリュームを生成
-・ボリュームのファザードをモジュールサイズに沿ってBasePointを配置して、生成する
 
 
 ○Public
@@ -27,9 +22,6 @@
 https://zenn.dev/yoichi/articles/git-subtree-internals
 ・提案メモ
 
-
-○横浜港大さん橋国際客船ターミナル模写
-・アーチ
 
 ○横浜港大さん橋国際客船ターミナルPM化
 ・Pane数の調整
@@ -50,60 +42,7 @@ https://zenn.dev/yoichi/articles/git-subtree-internals
  -シンプルモデリング + Color
 ・PM化
  -模写
-
-
-■カプセルタワー
-●カプセルタワー多様設計
-※Coreの個数は固定して、カプセルのスケールを柔軟化する
-・BaseScaleを基準にScaleを多様にする
-・カプセルの配置数を調整する
-
-●カプセルタワー生成処理
-・Cupsule生成
- -向きランダム化
- -配置数の管理
-・Coreの複数化
-・ChildCupsule
- -CloseDir
- -回転固定ブロックの管理
-
-●パラメーター
-・カプセルサイズ
-・カプセルID
-・カプセル密度
-・Core高さ
-
-
-■PatternGenerator
-●Pattern設計(頂点移動処理)
-※zigzag_base_line_generatorのパラメーターを参考
-・凹凸Pattern生成
- -Adjustの調整
-・Slider
-
-●折半Generator設計
-※柔軟化
-・Base
- -BaseLine
- -BasePoint
-・Generate
- -Pattern
- -SlideVector
-
-●折半Generator処理
-・頂点位置調整
- -ずらし調整(パラメーター化)
- -間隔調整
-・BaseLine調整
- -間隔調整
-・Plane生成
-・BasePoint生成
-
-●Pattern設計
-※3次元的Pattern
-※遊びのあるPattern
-※複数のパーツで構成し合っているPattern
-
+ 
 
 ■発信
 ○Notion作成
@@ -112,6 +51,16 @@ https://zenn.dev/yoichi/articles/git-subtree-internals
 
 △Qiita準備
 ・過去の記事を削除
+
+●コンピュテーショナルデザイン
+・コンピュテーショナルデザインの定義
+・Houdiniとの相性
+・実装内容
+
+●モジュラーモデリング
+・楽しい街ジェネレーターを再現
+・道、区画、敷地、建物のボリュームを生成
+・ボリュームのファザードをモジュールサイズに沿ってBasePointを配置して、生成する
 
 ●SunnyHills
 ・木組みを構築し連続して配置する
@@ -128,25 +77,49 @@ https://zenn.dev/yoichi/articles/git-subtree-internals
 ●ProceduralCity
 
 
-■NightCity
-○モデリング資料の調査
-※簡単でシンプルなやつ
-・SciFiBox
+■PatternGenerator
+●折半Generator設計
+※柔軟化
+・Base
+ -BaseLine
+ -BasePoint
+・Generate
+ -Pattern
+ -SlideVector
 
-●リファレンス
+●Pattern設計
+※3次元的Pattern
+※遊びのあるPattern
+※複数のパーツで構成し合っているPattern
+
+
+■CupsuleNightCity
+●カプセルタワー多様設計
+※Coreの個数は固定して、カプセルのスケールを柔軟化する
+・Scaleを多様化
+・カプセルの配置数を調整する
+
+●パラメーター
+・カプセルサイズ
+・カプセルID
+・カプセル密度
+・Core高さ
+
+●NightCityリファレンス
 ・NightCity
 https://www.youtube.com/watch?v=tOWGsyt40t8&t=1616s
 ・MegaStructure
 https://www.youtube.com/watch?v=J5A3Z0qX-Yk
 
-●設計
+●NightCityCupsule設計
 ・ベースボリュームを細長くしてビジュアルを複雑にする
 ・カプセルデザイン
 ・外装のレイヤー化
  -多様な窓
  -HardCaver
  -Asset(看板、設備)
- 
+
+
 
 ■振り返り
 ◆チーム／プロジェクトへの貢献目標
