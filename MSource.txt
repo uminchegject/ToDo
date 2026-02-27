@@ -1,6 +1,3 @@
-○ボードゲーム確認
-
-
 ○Study設計
 ※仕事のように目標を明確にする
 ※CPとは差別化して考える
@@ -25,6 +22,12 @@
 ・ボリュームのファザードをモジュールサイズに沿ってBasePointを配置して、生成する
 
 
+○Public
+・subtreeの確認
+https://zenn.dev/yoichi/articles/git-subtree-internals
+・提案メモ
+
+
 ○横浜港大さん橋国際客船ターミナル模写
 ・アーチ
 
@@ -39,16 +42,12 @@
 
 
 ○カプセルのサイズを柔軟化
-・高いカプセル
-・奥行がランダムなカプセル
+・高さをランダム化
+・CupsuleTowerで検証
 
-○BuildingGeneratorをカプセル化に対応
-
-●Cupsule模写
+○NightCityCupsule模写
 ※配置に重きをおく
  -シンプルモデリング + Color
-・NightCityのファザードを調査
- -※窓のデザインパターンを調査
 ・PM化
  -模写
 
