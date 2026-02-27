@@ -25,15 +25,17 @@
 ・ボリュームのファザードをモジュールサイズに沿ってBasePointを配置して、生成する
 
 
-○Slider検証
-・折半構造を再現
-・起伏にグラデーションをつける
+○横浜港大さん橋国際客船ターミナル模写
+・アーチ
 
-○RectanglePatternの変化検証
-※zigzag_base_line_generatorを調整する
-※モチーフ調査
-・BasePointのIntervalにGradation
-・BaseLineのGapにGradation
+○横浜港大さん橋国際客船ターミナルPM化
+・Pane数の調整
+・グラデーション化
+ -BasePointのIntervalにGradation
+ -BaseLineのGapにGradation
+・パラメーター調整
+ -RectanglePattern
+ -Slider
 
 
 ○カプセルのサイズを柔軟化
@@ -42,18 +44,13 @@
 
 ○BuildingGeneratorをカプセル化に対応
 
-●NightCityCupsule
+●Cupsule模写
 ※配置に重きをおく
  -シンプルモデリング + Color
 ・NightCityのファザードを調査
  -※窓のデザインパターンを調査
 ・PM化
  -模写
-
-
-○訪問準備
-・ゲーム
-・ケーキ
 
 
 ■カプセルタワー
@@ -116,12 +113,6 @@
 
 △Qiita準備
 ・過去の記事を削除
-
-●構成を整理(※シンプル)
-・デザイン特徴
-・PM化
-・柔軟化
-・結果
 
 ●SunnyHills
 ・木組みを構築し連続して配置する
