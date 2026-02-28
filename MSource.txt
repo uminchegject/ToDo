@@ -8,19 +8,20 @@
  -Slider
 
 
-○カプセルのサイズを柔軟化
-・高さをランダム化
-・CupsuleTowerで検証
-
 ○NightCityCupsule模写
 ※配置に重きをおく
  -シンプルモデリング + Color
+・要素
+ -BasePattern
+ -ResidencePattern
+ -PanelPattern
 ・PM化
  -模写
 
 
 ■発信
-○メモ作成
+○BasicLogicメモ作成
+・PFのMDを参照
 
 ●発信先
 ・Twitter
@@ -65,7 +66,7 @@
 
 ●楽しい街ジェネレーター(Twitter, Qiita)
 
-●ProceduralCity()
+●ProceduralCity(
 
 
 ■Other
