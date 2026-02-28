@@ -1,28 +1,3 @@
-○本屋斥候
-
-○Study設計
-※仕事のように目標を明確にする
-※CPとは差別化して考える
-・本をベースに検証
- -インプット
- -アウトプット
-
-
-○メモ作成
-
-○発信準備
-・Twitter
-・Qiita
-・Notion
-・△LinkedIn
-
-
-○Public
-・subtreeの確認
-https://zenn.dev/yoichi/articles/git-subtree-internals
-・提案メモ
-
-
 ○横浜港大さん橋国際客船ターミナルPM化
 ・Pane数の調整
 ・グラデーション化
@@ -42,7 +17,73 @@ https://zenn.dev/yoichi/articles/git-subtree-internals
  -シンプルモデリング + Color
 ・PM化
  -模写
- 
+
+
+■発信
+○メモ作成
+
+●発信先
+・Twitter
+・Qiita
+・Notion
+・△LinkedIn
+
+●CityGenerator
+・BaseLogic
+・ProceduralCityProject
+・楽しい街ジェネレーター
+・CupsuleTower
+・NightCity
+
+●PatternGenerator
+・BaseLogic
+・SunnyHills
+・TPattern
+・横浜港大さん橋国際客船ターミナル
+
+
+●PatternGenerator_BaseLogic(Notion, Qiita)
+・楽しい街ジェネレーターを再現
+・道、区画、敷地、建物のボリュームを生成
+・ボリュームのファザードをモジュールサイズに沿ってBasePointを配置して、生成する
+
+●SunnyHills(Twitter, Qiita)
+・木組みを構築し連続して配置する
+・向きに変化を持たせる
+・木のサイズに変化を持たせる
+
+●TPattern
+・Tブロックを連続して配置する
+・向きに変化を持たせる
+・奥行サイズに変化を持たせる
+
+
+●CityGenerator_BaseLogic(Notion, Qiita)
+・コンピュテーショナルデザインの定義
+・Houdiniとの相性
+・実装内容
+
+●楽しい街ジェネレーター(Twitter, Qiita)
+
+●ProceduralCity()
+
+
+■Other
+○Public
+・提案メモ
+
+○AMDLab調査
+・Note
+・PRメモ
+
+○本Study
+※仕事のように目標を明確にする
+※CPとは差別化して考える
+※手を動かす(アウトプット)
+・Mayaスターターブック
+・たっきゅんのガチンコツール開発部
+・H19.5 FOUNDATIONS BOOK
+
 
 ■発信
 ○Notion作成
