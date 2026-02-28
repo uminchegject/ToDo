@@ -1,3 +1,5 @@
+○BaseLine,BasePointの検証
+
 ○横浜港大さん橋国際客船ターミナルPM化
 ・Pane数の調整
 ・グラデーション化
@@ -7,6 +9,9 @@
  -RectanglePattern
  -Slider
 
+
+○Houdini sci-fi Buildings || Tutorial調査
+https://www.youtube.com/watch?v=PTVal-t9g1k
 
 ○NightCityCupsule模写
 ※配置に重きをおく
@@ -18,6 +23,8 @@
 ・PM化
  -模写
 
+○カプセル配置ロジックの多様化
+・シンプル配置
 
 ■発信
 ○BasicLogicメモ作成
