@@ -1,3 +1,13 @@
+○Public
+・提案メモ
+
+○BasicLogicメモ作成
+・PFのMDを参照
+ -メモにまとめる
+
+○買取見積
+
+
 ○凹凸Patternの検証
 
 ○BaseLine,BasePointの検証
@@ -29,61 +39,6 @@ https://www.youtube.com/watch?v=PTVal-t9g1k
 ・シンプル配置
 
 
-■発信
-○BasicLogicメモ作成
-・PFのMDを参照
- -メモにまとめる
-
-●発信先
-・Twitter
-・Qiita
-・Notion
-・△LinkedIn
-
-●CityGenerator
-・BaseLogic
-・ProceduralCityProject
-・楽しい街ジェネレーター
-・CupsuleTower
-・NightCity
-
-●PatternGenerator
-・BaseLogic
-・SunnyHills
-・TPattern
-・横浜港大さん橋国際客船ターミナル
-
-
-●PatternGenerator_BaseLogic(Notion, Qiita)
-・楽しい街ジェネレーターを再現
-・道、区画、敷地、建物のボリュームを生成
-・ボリュームのファザードをモジュールサイズに沿ってBasePointを配置して、生成する
-
-●SunnyHills(Twitter, Qiita)
-・木組みを構築し連続して配置する
-・向きに変化を持たせる
-・木のサイズに変化を持たせる
-
-●TPattern
-・Tブロックを連続して配置する
-・向きに変化を持たせる
-・奥行サイズに変化を持たせる
-
-
-●CityGenerator_BaseLogic(Notion, Qiita)
-・コンピュテーショナルデザインの定義
-・Houdiniとの相性
-・実装内容
-
-●楽しい街ジェネレーター(Twitter, Qiita)
-
-●ProceduralCity
-
-
-■Other
-○Public
-・提案メモ
-
 ○AMDLab調査
 ・Note
 ・PRメモ
@@ -95,39 +50,6 @@ https://www.youtube.com/watch?v=PTVal-t9g1k
 ・Mayaスターターブック
 ・たっきゅんのガチンコツール開発部
 ・H19.5 FOUNDATIONS BOOK
-
-
-■発信
-○Notion作成
-※製作面の整理
-・モジュラーモデリング
-
-△Qiita準備
-・過去の記事を削除
-
-●コンピュテーショナルデザイン
-・コンピュテーショナルデザインの定義
-・Houdiniとの相性
-・実装内容
-
-●モジュラーモデリング
-・楽しい街ジェネレーターを再現
-・道、区画、敷地、建物のボリュームを生成
-・ボリュームのファザードをモジュールサイズに沿ってBasePointを配置して、生成する
-
-●SunnyHills
-・木組みを構築し連続して配置する
-・向きに変化を持たせる
-・木のサイズに変化を持たせる
-
-●TPattern
-・Tブロックを連続して配置する
-・向きに変化を持たせる
-・奥行サイズに変化を持たせる
-
-●楽しい街ジェネレーター
-
-●ProceduralCity
 
 
 ■PatternGenerator
@@ -172,6 +94,52 @@ https://www.youtube.com/watch?v=J5A3Z0qX-Yk
  -HardCaver
  -Asset(看板、設備)
 
+
+■発信
+●発信先
+・Twitter
+・Qiita
+・Notion
+・△LinkedIn
+
+●PatternGenerator
+・BaseLogic
+・SunnyHills
+・TPattern
+・横浜港大さん橋国際客船ターミナル
+
+●CityGenerator
+・BaseLogic
+・ProceduralCityProject
+・楽しい街ジェネレーター
+・CupsuleTower
+・NightCity
+
+
+●PatternGenerator_BaseLogic(Notion, Qiita)
+・コンピュテーショナルデザインの定義
+・Houdiniとの相性
+・実装内容
+
+●SunnyHills(Twitter, Qiita)
+・木組みを構築し連続して配置する
+・向きに変化を持たせる
+・木のサイズに変化を持たせる
+
+●TPattern
+・Tブロックを連続して配置する
+・向きに変化を持たせる
+・奥行サイズに変化を持たせる
+
+
+●CityGenerator_BaseLogic(Notion, Qiita)
+・楽しい街ジェネレーターを再現
+・道、区画、敷地、建物のボリュームを生成
+・ボリュームのファザードをモジュールサイズに沿ってBasePointを配置して、生成する
+
+●楽しい街ジェネレーター(Twitter, Qiita)
+
+●ProceduralCity
 
 
 ■振り返り
