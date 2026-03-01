@@ -5,7 +5,12 @@
 ・PFのMDを参照
  -メモにまとめる
 
-○買取見積
+○AMDLab調査
+・TechBlog
+https://amdlaboratory.com/
+・△Note
+https://note.com/amdlab/all
+・PRメモ
 
 
 ○凹凸Patternの検証
@@ -39,10 +44,6 @@ https://www.youtube.com/watch?v=PTVal-t9g1k
 ・シンプル配置
 
 
-○AMDLab調査
-・Note
-・PRメモ
-
 ○本Study
 ※仕事のように目標を明確にする
 ※CPとは差別化して考える
@@ -50,6 +51,8 @@ https://www.youtube.com/watch?v=PTVal-t9g1k
 ・Mayaスターターブック
 ・たっきゅんのガチンコツール開発部
 ・H19.5 FOUNDATIONS BOOK
+
+○買取見積
 
 
 ■PatternGenerator
