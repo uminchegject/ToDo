@@ -1,3 +1,5 @@
+○凹凸Patternの検証
+
 ○BaseLine,BasePointの検証
 
 ○横浜港大さん橋国際客船ターミナルPM化
@@ -26,9 +28,11 @@ https://www.youtube.com/watch?v=PTVal-t9g1k
 ○カプセル配置ロジックの多様化
 ・シンプル配置
 
+
 ■発信
 ○BasicLogicメモ作成
 ・PFのMDを参照
+ -メモにまとめる
 
 ●発信先
 ・Twitter
@@ -73,7 +77,7 @@ https://www.youtube.com/watch?v=PTVal-t9g1k
 
 ●楽しい街ジェネレーター(Twitter, Qiita)
 
-●ProceduralCity(
+●ProceduralCity
 
 
 ■Other
