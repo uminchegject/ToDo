@@ -1,9 +1,8 @@
 ○Public
 ・提案メモ
-
-○BasicLogicメモ作成
-・PFのMDを参照
- -メモにまとめる
+お時間頂いてしまい申し訳ございません。
+mdファイルとxmlファイルについて、パッケージ化に含める調査を行ったのですが、
+代替案として
 
 ○AMDLab調査
 ・TechBlog
@@ -42,6 +41,16 @@ https://www.youtube.com/watch?v=PTVal-t9g1k
 
 ○カプセル配置ロジックの多様化
 ・シンプル配置
+
+
+○BasicLogicメモ作成
+・PFのMDを参照
+ -メモにまとめる
+
+●CityGenerator_BaseLogic(Notion, Qiita)
+・楽しい街ジェネレーターを再現
+・道、区画、敷地、建物のボリュームを生成
+・ボリュームのファザードをモジュールサイズに沿ってBasePointを配置して、生成する
 
 
 ○本Study
