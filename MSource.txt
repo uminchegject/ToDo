@@ -1,8 +1,7 @@
-○Public
-・提案メモ
-お時間頂いてしまい申し訳ございません。
-mdファイルとxmlファイルについて、パッケージ化に含める調査を行ったのですが、
-代替案として
+○ReadMe
+・概要
+・初回対応
+・更新方法
 
 ○AMDLab調査
 ・TechBlog
@@ -11,10 +10,24 @@ https://amdlaboratory.com/
 https://note.com/amdlab/all
 ・PRメモ
 
+○本Study
+※仕事のように目標を明確にする
+※CPとは差別化して考える
+※手を動かす(アウトプット)
+・Mayaスターターブック
+・たっきゅんのガチンコツール開発部
+・H19.5 FOUNDATIONS BOOK
 
+○買取見積
+
+
+■Design
 ○凹凸Patternの検証
 
 ○BaseLine,BasePointの検証
+・Pane数を多くして検証
+ -幅を拡張
+ -曲げ角度を大きくして、PointNumを増やす
 
 ○横浜港大さん橋国際客船ターミナルPM化
 ・Pane数の調整
@@ -28,6 +41,12 @@ https://note.com/amdlab/all
 
 ○Houdini sci-fi Buildings || Tutorial調査
 https://www.youtube.com/watch?v=PTVal-t9g1k
+・BaseBlock
+ -5角形
+・Pattern
+ -Boolean
+・Panel
+ -Boolean
 
 ○NightCityCupsule模写
 ※配置に重きをおく
@@ -51,17 +70,6 @@ https://www.youtube.com/watch?v=PTVal-t9g1k
 ・楽しい街ジェネレーターを再現
 ・道、区画、敷地、建物のボリュームを生成
 ・ボリュームのファザードをモジュールサイズに沿ってBasePointを配置して、生成する
-
-
-○本Study
-※仕事のように目標を明確にする
-※CPとは差別化して考える
-※手を動かす(アウトプット)
-・Mayaスターターブック
-・たっきゅんのガチンコツール開発部
-・H19.5 FOUNDATIONS BOOK
-
-○買取見積
 
 
 ■PatternGenerator
