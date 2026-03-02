@@ -1,4 +1,4 @@
-○ReadMe
+○ReadMe調査
 ・概要
 ・初回対応
 ・更新方法
@@ -15,19 +15,25 @@ https://note.com/amdlab/all
 ※CPとは差別化して考える
 ※手を動かす(アウトプット)
 ・Mayaスターターブック
-・たっきゅんのガチンコツール開発部
 ・H19.5 FOUNDATIONS BOOK
+・たっきゅんのガチンコツール開発部
 
 ○買取見積
 
 
 ■Design
-○凹凸Patternの検証
+○Pane数を増加
+・幅を拡張
+・曲げ角度を大きくして、PointNumを増やす
 
-○BaseLine,BasePointの検証
-・Pane数を多くして検証
- -幅を拡張
- -曲げ角度を大きくして、PointNumを増やす
+○斜めラインの高さを統一するように実装
+
+○BasePoint間の間隔に変化を持たせる実装
+
+○グラデーション検証
+・Line間のグラデーション
+・BasePoint間のグラデーション
+・凹凸高さのグラデーション
 
 ○横浜港大さん橋国際客船ターミナルPM化
 ・Pane数の調整
@@ -39,7 +45,7 @@ https://note.com/amdlab/all
  -Slider
 
 
-○Houdini sci-fi Buildings || Tutorial調査
+○Houdini sci-fi Buildings 実装&PM検証
 https://www.youtube.com/watch?v=PTVal-t9g1k
 ・BaseBlock
  -5角形
@@ -48,7 +54,7 @@ https://www.youtube.com/watch?v=PTVal-t9g1k
 ・Panel
  -Boolean
 
-○NightCityCupsule模写
+○NightCityCupsule実装
 ※配置に重きをおく
  -シンプルモデリング + Color
 ・要素
@@ -66,10 +72,12 @@ https://www.youtube.com/watch?v=PTVal-t9g1k
 ・PFのMDを参照
  -メモにまとめる
 
-●CityGenerator_BaseLogic(Notion, Qiita)
-・楽しい街ジェネレーターを再現
-・道、区画、敷地、建物のボリュームを生成
-・ボリュームのファザードをモジュールサイズに沿ってBasePointを配置して、生成する
+●PatternGenerator_BaseLogic(Notion, Qiita)
+・目的背景
+ -コンピュテーショナルデザインの定義
+・Houdiniとの相性
+・設計思想
+・実装内容
 
 
 ■PatternGenerator
