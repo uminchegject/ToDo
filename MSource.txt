@@ -17,37 +17,38 @@ https://note.com/amdlab/all
 
 
 ■Design
-○グラデーション検証
+○ベースモデル用意
+※Lineをベースにデザインする
+・ボートハウス(直線)
+・U字、S字(曲線)
+・パラメーター化
+
+○Generator拡張
 ・Line間のグラデーション
 ・BasePoint間のグラデーション
 ・凹凸高さのグラデーション
 
-○横浜港大さん橋国際客船ターミナルPM化
-・Pane数の調整
+●横浜港大さん橋国際客船ターミナル
+・パラメーター
+ -Pane数の調整
 ・グラデーション化
  -BasePointのIntervalにGradation
  -BaseLineのGapにGradation
-・パラメーター調整
- -RectanglePattern
- -Slider
+ -凹凸高さのグラデーション
 
 
-○Houdini sci-fi Buildings 実装&PM検証
+○Houdini sci-fi Buildings 実装&CupsuleTower検証
 https://www.youtube.com/watch?v=PTVal-t9g1k
 ・Pattern
- -Boolean
 ・Panel
- -Boolean
 
-○NightCityCupsule実装
+●NightCityCupsule設計
 ※配置に重きをおく
  -シンプルモデリング + Color
 ・要素
  -BasePattern
  -ResidencePattern
  -PanelPattern
-・PM化
- -模写
 
 ○カプセル配置ロジックの多様化
 ・シンプル配置
