@@ -1,14 +1,3 @@
-○ReadMe調査
-・概要
-・初回対応
-・更新方法
-使用している主な技術
-プロジェクトの概要
-必要な環境変数やコマンド一覧
-ディレクトリ構成
-開発環境の構築方法
-トラブルシューティング
-
 ○AMDLab調査
 ・TechBlog
 https://amdlaboratory.com/
@@ -28,14 +17,6 @@ https://note.com/amdlab/all
 
 
 ■Design
-○Pane数を増加
-・幅を拡張
-・曲げ角度を大きくして、PointNumを増やす
-
-○斜めラインの高さを統一するように実装
-
-○BasePoint間の間隔に変化を持たせる実装
-
 ○グラデーション検証
 ・Line間のグラデーション
 ・BasePoint間のグラデーション
@@ -53,8 +34,6 @@ https://note.com/amdlab/all
 
 ○Houdini sci-fi Buildings 実装&PM検証
 https://www.youtube.com/watch?v=PTVal-t9g1k
-・BaseBlock
- -5角形
 ・Pattern
  -Boolean
 ・Panel
