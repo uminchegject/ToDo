@@ -18,15 +18,19 @@ https://note.com/amdlab/all
 
 ■Design
 ○ベースモデル用意
-※Lineをベースにデザインする
+※Lineデザインに重点を置く
 ・ボートハウス(直線)
 ・U字、S字(曲線)
 ・パラメーター化
 
 ○Generator拡張
-・Line間のグラデーション
-・BasePoint間のグラデーション
-・凹凸高さのグラデーション
+※ラインを構築する式に則ってPointを配置、移動、回転させる
+・LineGenerator
+ -Line間のグラデーション
+・BasePointGenerator
+ -BasePoint間のグラデーション
+・△折半PatternGenerator
+ -凹凸Pattern
 
 ●横浜港大さん橋国際客船ターミナル
 ・パラメーター
