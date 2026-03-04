@@ -23,13 +23,16 @@ https://note.com/amdlab/all
 ・U字、S字(曲線)
 ・パラメーター化
 
-○Generator拡張
+○Generator修正
 ※ラインを構築する式に則ってPointを配置、移動、回転させる
-・LineGenerator
- -Line間のグラデーション
-・BasePointGenerator
- -BasePoint間のグラデーション
-・△折半PatternGenerator
+・Line
+ -ラインの式を用意する
+ -式に変化をつける
+・BasePoint
+ -ラインに則って、座標、N,upを設定
+ -配置位置、方角に変化を持たせる
+
+△折半PatternGenerator
  -凹凸Pattern
 
 ●横浜港大さん橋国際客船ターミナル
@@ -63,11 +66,20 @@ https://www.youtube.com/watch?v=PTVal-t9g1k
  -メモにまとめる
 
 ●PatternGenerator_BaseLogic(Notion, Qiita)
+※Houdiniの機能の説明も含める
 ・目的背景
  -コンピュテーショナルデザインの定義
-・Houdiniとの相性
+ -学生時代研究していたため、Houdiniでも
 ・設計思想
+・Houdiniとの相性
+ -Transformの扱い(回転、座標、スケール)
 ・実装内容
+ -ラインを式で用意
+ -ライン上に決められたロジックに沿ってPointを生成
+ -PointのAttributeに設定
+・検証例
+ -SunnyHills
+ -TPattern
 
 
 ■PatternGenerator
