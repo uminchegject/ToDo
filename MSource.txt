@@ -17,23 +17,17 @@ https://note.com/amdlab/all
 
 
 ■Design
-○ベースモデル用意
+●ベースモデル
 ※Lineデザインに重点を置く
 ・ボートハウス(直線)
 ・U字、S字(曲線)
 ・パラメーター化
 
-○Generator修正
-※ラインを構築する式に則ってPointを配置、移動、回転させる
-・Line
- -ラインの式を用意する
- -式に変化をつける
-・BasePoint
- -ラインに則って、座標、N,upを設定
- -配置位置、方角に変化を持たせる
-
-△折半PatternGenerator
- -凹凸Pattern
+●Generator設計
+※U字、直線などのInputに対して綺麗にPatternを生成できるツールを実装する
+・Input
+ -Line&BasePoint(※等間隔)
+・EditBasePoint
 
 ●横浜港大さん橋国際客船ターミナル
 ・パラメーター
@@ -44,10 +38,13 @@ https://note.com/amdlab/all
  -凹凸高さのグラデーション
 
 
-○Houdini sci-fi Buildings 実装&CupsuleTower検証
+○Houdini sci-fi Buildings Cupsule化
 https://www.youtube.com/watch?v=PTVal-t9g1k
+・Window
 ・Pattern
+ -Color
 ・Panel
+ -Color
 
 ●NightCityCupsule設計
 ※配置に重きをおく
@@ -57,7 +54,7 @@ https://www.youtube.com/watch?v=PTVal-t9g1k
  -ResidencePattern
  -PanelPattern
 
-○カプセル配置ロジックの多様化
+△カプセル配置ロジックの多様化
 ・シンプル配置
 
 
