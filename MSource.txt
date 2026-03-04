@@ -1,3 +1,15 @@
+※夜カフェ・夜作業・朝カフェでは作業は行わず、確認・計画・準備を基本にする
+※夜の作業時間はEditorを使用した確認・計画・準備をベースにする
+ -必要であれば他タスクの準備を行う
+
+※15分単位でできるタスクを夜計画する
+ -Study
+ -Design
+ -Output
+
+
+○ファミマ支払い
+
 ○AMDLab調査
 ・TechBlog
 https://amdlaboratory.com/
@@ -17,17 +29,40 @@ https://note.com/amdlab/all
 
 
 ■Design
+○テストラインGenerator実装
+・Type
+ -直線
+ -曲線(S字、U字)
+・パラメーター
+ -N Pts
+ -Line Length
+ -Line Count
+ -Gap
+・Attribute
+ -normal
+ -up
+
+○PointEditor修正
+・InputしたLineのPointsをEditするように修正
+
+○Block管理設計
+・折半構造対応
+・Line生成
+
 ●ベースモデル
 ※Lineデザインに重点を置く
 ・ボートハウス(直線)
 ・U字、S字(曲線)
-・パラメーター化
 
 ●Generator設計
 ※U字、直線などのInputに対して綺麗にPatternを生成できるツールを実装する
 ・Input
  -Line&BasePoint(※等間隔)
 ・EditBasePoint
+
+●SunnyHills
+
+●TPattern
 
 ●横浜港大さん橋国際客船ターミナル
 ・パラメーター
@@ -40,6 +75,16 @@ https://note.com/amdlab/all
 
 ○Houdini sci-fi Buildings Cupsule化
 https://www.youtube.com/watch?v=PTVal-t9g1k
+・カプセルごとに処理
+ -foreach
+・Panel処理の実装
+ -Top, Bottomを独立させる
+・溝生成処理
+ -Left, Right再度に溝を生成
+・Window
+ -Boolean
+
+●Houdini sci-fi Buildings Cupsule設計
 ・Window
 ・Pattern
  -Color
@@ -80,15 +125,6 @@ https://www.youtube.com/watch?v=PTVal-t9g1k
 
 
 ■PatternGenerator
-●折半Generator設計
-※柔軟化
-・Base
- -BaseLine
- -BasePoint
-・Generate
- -Pattern
- -SlideVector
-
 ●Pattern設計
 ※3次元的Pattern
 ※遊びのあるPattern
