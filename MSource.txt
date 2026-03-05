@@ -1,3 +1,6 @@
+○CMake調査
+・set_target_properties
+
 ○図書カード
 
 ○AMDLab調査
@@ -19,22 +22,6 @@ https://note.com/amdlab/all
 
 
 ■Design
-○テストラインGenerator実装
-・Type
- -直線
- -曲線(S字、U字)
-・パラメーター
- -N Pts
- -Line Length
- -Line Count
- -Gap
-・Attribute
- -normal
- -up
-
-○PointEditor修正
-・InputしたLineのPointsをEditするように修正
-
 ○Block管理設計
 ・折半構造対応
 ・Line生成
@@ -65,14 +52,16 @@ https://note.com/amdlab/all
 
 ○Houdini sci-fi Buildings Cupsule化
 https://www.youtube.com/watch?v=PTVal-t9g1k
-・カプセルごとに処理
- -foreach
 ・Panel処理の実装
  -Top, Bottomを独立させる
 ・溝生成処理
  -Left, Right再度に溝を生成
 ・Window
  -Boolean
+ 
+○Cupsule配置
+・方向を適応
+・ランダム化
 
 ●Houdini sci-fi Buildings Cupsule設計
 ・Window
@@ -96,28 +85,6 @@ https://www.youtube.com/watch?v=PTVal-t9g1k
 ○BasicLogicメモ作成
 ・PFのMDを参照
  -メモにまとめる
-
-●PatternGenerator_BaseLogic(Notion, Qiita)
-※Houdiniの機能の説明も含める
-・目的背景
- -コンピュテーショナルデザインの定義
- -学生時代研究していたため、Houdiniでも
-・設計思想
-・Houdiniとの相性
- -Transformの扱い(回転、座標、スケール)
-・実装内容
- -ラインを式で用意
- -ライン上に決められたロジックに沿ってPointを生成
- -PointのAttributeに設定
-・検証例
- -SunnyHills
- -TPattern
- 
-●CityGenerator_BaseLogic(Notion, Qiita)
-
-・楽しい街ジェネレーターを再現
-・道、区画、敷地、建物のボリュームを生成
-・ボリュームのファザードをモジュールサイズに沿ってBasePointを配置して、生成する
 
 
 ■PatternGenerator
