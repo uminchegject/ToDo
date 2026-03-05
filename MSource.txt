@@ -1,14 +1,4 @@
-※夜カフェ・夜作業・朝カフェでは作業は行わず、確認・計画・準備を基本にする
-※夜の作業時間はEditorを使用した確認・計画・準備をベースにする
- -必要であれば他タスクの準備を行う
-
-※15分単位でできるタスクを夜計画する
- -Study
- -Design
- -Output
-
-
-○ファミマ支払い
+○図書カード
 
 ○AMDLab調査
 ・TechBlog
@@ -122,6 +112,12 @@ https://www.youtube.com/watch?v=PTVal-t9g1k
 ・検証例
  -SunnyHills
  -TPattern
+ 
+●CityGenerator_BaseLogic(Notion, Qiita)
+
+・楽しい街ジェネレーターを再現
+・道、区画、敷地、建物のボリュームを生成
+・ボリュームのファザードをモジュールサイズに沿ってBasePointを配置して、生成する
 
 
 ■PatternGenerator
