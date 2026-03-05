@@ -23,19 +23,10 @@ https://note.com/amdlab/all
 
 ■Design
 ○Block管理設計
-・折半構造対応
-・Line生成
+・入り組んだLineSurface生成
+・△折半構造対応
 
-●ベースモデル
-※Lineデザインに重点を置く
-・ボートハウス(直線)
-・U字、S字(曲線)
-
-●Generator設計
-※U字、直線などのInputに対して綺麗にPatternを生成できるツールを実装する
-・Input
- -Line&BasePoint(※等間隔)
-・EditBasePoint
+△ボートハウス入り組んだLineSurface成
 
 ●SunnyHills
 
@@ -54,8 +45,10 @@ https://note.com/amdlab/all
 https://www.youtube.com/watch?v=PTVal-t9g1k
 ・Panel処理の実装
  -Top, Bottomを独立させる
+ -Color
 ・溝生成処理
  -Left, Right再度に溝を生成
+ -Color
 ・Window
  -Boolean
  
@@ -69,14 +62,6 @@ https://www.youtube.com/watch?v=PTVal-t9g1k
  -Color
 ・Panel
  -Color
-
-●NightCityCupsule設計
-※配置に重きをおく
- -シンプルモデリング + Color
-・要素
- -BasePattern
- -ResidencePattern
- -PanelPattern
 
 △カプセル配置ロジックの多様化
 ・シンプル配置
