@@ -21,16 +21,12 @@
 ・処理
 ・Study項目の整理
 
-※検証+修正を各テーマごとに繰り返す
- -検証は具体的なモチーフを模写した上で拡張を行う
- -※サンプルプロジェクトを研究＆拡張
- -※特定の作品をベースに模写＆拡張
-
 
 ■CD(Tool)
-○配置ロジックの設計・実装
-・BaseLineEditor
-・BasePointGenerator
+●Type
+・Point
+・Curve
+・Surface
 
 ○Pattern設計・実装
 ・カラー化(Texture化)
@@ -41,11 +37,9 @@
 ※配置に重きをおく
  -シンプルモデリング + Color
 
-○BuildingGenerator
+●Type
 ・ProceduralModeling
 ・ModularModeling
-
-○VolumeとDetailの複雑化
 
 △パイプライン化
 ・背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装
@@ -64,14 +58,8 @@
 ■Private
 ※一人暮らしの準備
 
-○メルカリ
-・本
-
 ○断捨離
 ・本
 ・小物
 ・書類
 ・服
-
-△企業研究読書
-・業界地図

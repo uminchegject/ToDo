@@ -1,7 +1,6 @@
 ○CMake調査
 ・set_target_properties
-
-○図書カード
+https://qiita.com/osamu0329/items/3b417f8934688fd186ba
 
 ○AMDLab調査
 ・TechBlog
@@ -18,7 +17,13 @@ https://note.com/amdlab/all
 ・H19.5 FOUNDATIONS BOOK
 ・たっきゅんのガチンコツール開発部
 
+○カジュアル面談申し込み
+・自己PR作成
+
 ○買取見積
+
+○図書カード
+・音楽
 
 
 ■Design
@@ -31,6 +36,7 @@ https://note.com/amdlab/all
 
 ○カラー設定
 ・BasePointに設定
+・マルチパラメーター化
 
 ○折半構造
 ・模写
@@ -66,9 +72,7 @@ https://www.youtube.com/watch?v=PTVal-t9g1k
 
 
 ○BasicLogicメモ作成
-・PFのMDを参照
- -メモにまとめる
-
+・Houdiniの使用技術、実装方法をまとめる
 
 ■PatternGenerator
 ●Pattern設計
