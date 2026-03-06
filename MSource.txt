@@ -1,39 +1,19 @@
-○CMake調査
-・set_target_properties
-https://qiita.com/osamu0329/items/3b417f8934688fd186ba
-
-○AMDLab調査
-・TechBlog
-https://amdlaboratory.com/
-・△Note
-https://note.com/amdlab/all
-・PRメモ
-
-○本Study
-※仕事のように目標を明確にする
-※CPとは差別化して考える
-※手を動かす(アウトプット)
-・Mayaスターターブック
-・H19.5 FOUNDATIONS BOOK
-・たっきゅんのガチンコツール開発部
+○1on1準備
+・Notion作成
+ -※記事に繋げる
+ -Houdiniの使用技術、実装方法をまとめる
+・振り返り
+・小話準備
+ -sinの強み
 
 ○カジュアル面談申し込み
 ・自己PR作成
 
-○買取見積
-
-○図書カード
-・音楽
+○自転車
 
 
 ■Design
-●GradationPointEditor
-・transform
-・rotate
-・scale
-・color
-
-●RandomlyPointEditor
+○RandomlyPointEditor設計
 ・transform
 ・rotate
 ・scale
@@ -42,9 +22,11 @@ https://note.com/amdlab/all
 ○GradationPointEditor検証
 ・パラメーター修正
 
-△ボートハウス整理
+△折半構造
 
 △曲線庇
+
+△ボートハウス整理
 
 
 ○Pattern設計
@@ -69,24 +51,38 @@ https://www.youtube.com/watch?v=PTVal-t9g1k
  -マルチパラメーター化
 
 ○SciFiCupsule多様化
-・Panel
-・Pattern
-・Window
-・△カプセル配置ロジックの多様化
- -シンプル配置
+・スケール
 
 ○街化
 
 
-○1on1準備
-・Notion作成
- -※記事に繋げる
- -Houdiniの使用技術、実装方法をまとめる
-・振り返り
-・小話準備
- -sinの強み
+■ToDo
+○AMDLab調査
+・TechBlog
+https://amdlaboratory.com/
+・△Note
+https://note.com/amdlab/all
+・PRメモ
+
+○本Study
+※仕事のように目標を明確にする
+※CPとは差別化して考える
+※手を動かす(アウトプット)
+・Mayaスターターブック
+・H19.5 FOUNDATIONS BOOK
+・たっきゅんのガチンコツール開発部
+
+○図書カード
+・音楽
+
 
 ■PatternGenerator
+●GradationPointEditor
+・transform
+・rotate
+・scale
+・color
+
 ●Pattern設計
 ※3次元的Pattern
 ※遊びのあるPattern
@@ -94,23 +90,6 @@ https://www.youtube.com/watch?v=PTVal-t9g1k
 
 
 ■CupsuleNightCity
-●カプセルタワー多様設計
-※Coreの個数は固定して、カプセルのスケールを柔軟化する
-・Scaleを多様化
-・カプセルの配置数を調整する
-
-●パラメーター
-・カプセルサイズ
-・カプセルID
-・カプセル密度
-・Core高さ
-
-●NightCityリファレンス
-・NightCity
-https://www.youtube.com/watch?v=tOWGsyt40t8&t=1616s
-・MegaStructure
-https://www.youtube.com/watch?v=J5A3Z0qX-Yk
-
 ●NightCityCupsule設計
 ・ベースボリュームを細長くしてビジュアルを複雑にする
 ・カプセルデザイン
@@ -118,6 +97,12 @@ https://www.youtube.com/watch?v=J5A3Z0qX-Yk
  -多様な窓
  -HardCaver
  -Asset(看板、設備)
+
+●NightCityリファレンス
+・NightCity
+https://www.youtube.com/watch?v=tOWGsyt40t8&t=1616s
+・MegaStructure
+https://www.youtube.com/watch?v=J5A3Z0qX-Yk
 
 
 ■発信
