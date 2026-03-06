@@ -27,39 +27,46 @@ https://note.com/amdlab/all
 
 
 ■Design
-○BasePointGeneratorを修正
-・PointEditorに統合
+●GradationPointEditor
+・transform
+・rotate
+・scale
+・color
 
-○Block管理設計
-・入り組んだLineSurface生成
-・△折半構造対応
+●RandomlyPointEditor
+・transform
+・rotate
+・scale
+・color
 
-○カラー設定
-・BasePointに設定
-・マルチパラメーター化
-
-○折半構造
-・模写
-・変化
+○GradationPointEditor検証
+・パラメーター修正
 
 △ボートハウス整理
 
 △曲線庇
 
 
-○Houdini sci-fi Buildings Cupsule化
+○Pattern設計
+・溝の幅をランダム化
+・ZigZagの幅、数をランダム化
+・縦 or 横 or 縦横
+
+○Houdini sci-fi Buildings CupsulePM実装
 https://www.youtube.com/watch?v=PTVal-t9g1k
-・Panel処理の実装
+・Panel
  -Top, Bottomを独立させる
-・溝生成処理
+ -スケールランダム化
+・Pattern
  -Left, Right再度に溝を生成
+ -溝の幅、ZigZagの幅をランダム化
+ -縦 or 横 or 縦横
 ・Window
  -Boolean
+ -固定
 ・カラー設定 
- 
-○Cupsule配置
-・方向を適応
-・ランダム化
+ -ランダム化
+ -マルチパラメーター化
 
 ○SciFiCupsule多様化
 ・Panel
@@ -71,8 +78,13 @@ https://www.youtube.com/watch?v=PTVal-t9g1k
 ○街化
 
 
-○BasicLogicメモ作成
-・Houdiniの使用技術、実装方法をまとめる
+○1on1準備
+・Notion作成
+ -※記事に繋げる
+ -Houdiniの使用技術、実装方法をまとめる
+・振り返り
+・小話準備
+ -sinの強み
 
 ■PatternGenerator
 ●Pattern設計
