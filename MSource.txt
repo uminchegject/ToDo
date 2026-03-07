@@ -1,3 +1,8 @@
+○コンピュテーショナルデザイン整理
+・ファザードジェネレーター
+・sinの魅力
+・振り返り
+
 ○1on1準備
 ・Notion作成
  -※記事に繋げる
@@ -6,21 +11,27 @@
 ・小話準備
  -sinの強み
 
-○カジュアル面談申し込み
-・自己PR作成
-
-○自転車
+●Sinの魅力
+・Sinとは
+・コンピュテーショナルデザインとの相性
+ -Sinの曲線が美しい
+ -Cosではだめなのか(原点を通っている曲線だから)
+・実際にどう使えるか
+ -ファサードデザインにおけるグラデーションを表現する際にsin曲線の相性がいい
 
 
 ■Design
-○RandomlyPointEditor設計
+○GradationPointEditor検証
+・パラメーター修正
+・SunnyHills模写&PM検証
+・Sin検証
+ -Box
+
+△RandomlyPointEditor設計
 ・transform
 ・rotate
 ・scale
 ・color
-
-○GradationPointEditor検証
-・パラメーター修正
 
 △折半構造
 
@@ -57,12 +68,17 @@ https://www.youtube.com/watch?v=PTVal-t9g1k
 
 
 ■ToDo
+○自転車
+
 ○AMDLab調査
 ・TechBlog
 https://amdlaboratory.com/
 ・△Note
 https://note.com/amdlab/all
 ・PRメモ
+
+○カジュアル面談申し込み
+・自己PR作成
 
 ○本Study
 ※仕事のように目標を明確にする
@@ -192,126 +208,3 @@ https://www.youtube.com/watch?v=J5A3Z0qX-Yk
 ◆貢献 ／「組織・周囲への貢献」（Contribution）
 　目的：チーム・プロジェクト全体への貢献度向上
 ・ツール実装の使用技術のナレッジ共有
-
-
-
-■BasePointGenerator
-vector4 make_plane(vector pos; vector normal)
-{
-    vector n = normalize(normal);
-    float d = -dot(n, pos);
-    return set(n.x, n.y, n.z, d);
-}
-
-vector get_intersect_pos(vector p1; vector p2; vector4 plane)
-{
-    vector pos1 = p1;
-    vector pos2 = p2;
-    int result;
-    clip(result, pos1, pos2, plane);
-        
-    vector intersect = {0,0,0};
-    if (result == 1)
-    {
-        if (pos1 != p1)
-            intersect = pos1;
-        else if (pos2 != p2)
-            intersect = pos2;
-        else
-            return {0,0,0};
-    }
-    else
-    {
-        return {0,0,0};
-    }
-        
-    return intersect;
-}
-    
-float block_length = ch("block_length");
-
-vector base_scale = chv("base_scale");
-vector adjust_scale = chv("adjust_scale");
-float scale_randomly_cofficient = ch("scale_randomly_cofficient");
-float scale_gradation_cofficient = ch("scale_gradation_cofficient");
-float scale_noise_cofficient = ch("scale_noise_cofficient");
-
-vector base_rotate = chv("base_rotate");
-vector adjust_rotate = chv("adjust_rotate");
-float rotate_randomly_cofficient = ch("rotate_randomly_cofficient");
-float rotate_gradation_cofficient = ch("rotate_gradation_cofficient");
-float rotate_noise_cofficient = ch("rotate_noise_cofficient");
-
-vector base_transform = chv("base_transform");
-vector adjust_transform = chv("adjust_transform");
-float transform_randomly_cofficient = ch("transform_randomly_cofficient");
-float transform_gradation_cofficient = ch("transform_gradation_cofficient");
-float transform_noise_cofficient = ch("transform_noise_cofficient");
-
-vector bound = detail(1, "bound");
-vector centroid = detail(1, "centroid");
-
-int prim_pt_list[] = primpoints(0, @primnum);
-vector line_base_start_pt_pos = point(0, "P", prim_pt_list[0]);
-vector line_base_end_pt_pos = point(0, "P", prim_pt_list[len(prim_pt_list) - 1]);
-vector line_base_dir = normalize(line_base_start_pt_pos - line_base_end_pt_pos);
-
-int plane_num = int(length(bound) * 2 / block_length);
-vector base_pos = centroid - line_base_dir * length(bound);
-
-for(int i = 0; i < plane_num; ++i)
-{
-    vector plane_pos = base_pos;
-    plane_pos += i * block_length * line_base_dir;
-
-    for(int prim_pt_index = 1; prim_pt_index < len(prim_pt_list); prim_pt_index++)
-    {
-        int start_pt = prim_pt_list[prim_pt_index - 1];
-        int end_pt = prim_pt_list[prim_pt_index];
-        
-        vector start_pt_normal = point(0, "N", start_pt);
-        vector end_pt_normal = point(0, "N", end_pt);
-        vector normal = (start_pt_normal + end_pt_normal) / 2;    
-        
-        vector start_pt_pos = point(0, "P", start_pt);
-        vector end_pt_pos = point(0, "P", end_pt);
-        
-        float base_line_length = length(start_pt_pos - end_pt_pos);
-        vector line_dir = normalize(end_pt_pos - start_pt_pos);
-        vector tangent = normalize(line_dir - dot(line_dir, normal) * normal);
-        vector binormal = cross(normal, tangent);
-        vector4 q_line_dir = quaternion(set(binormal, tangent, normal));
-        matrix3 m_transform = set(tangent, normal, binormal);    
-        
-        vector4 plane = make_plane(plane_pos ,line_base_dir);
-        vector spawn_pos = get_intersect_pos(start_pt_pos, end_pt_pos, plane);
-        
-        if(length(spawn_pos) == 0) continue;    
-        //if(length(spawn_pos - start_pt_pos) < block_length) continue;             
-        //if(length(spawn_pos - end_pt_pos) < block_length) continue;    
-        
-        vector transform = base_transform;
-        transform += adjust_transform * transform_randomly_cofficient * rand(spawn_pos);
-        transform += adjust_transform * transform_gradation_cofficient * sin((@primnum + i) * transform_noise_cofficient);
-        
-        vector scale = base_scale;
-        scale += adjust_scale * scale_randomly_cofficient * rand(spawn_pos);
-        scale += adjust_scale * scale_gradation_cofficient * sin((@primnum + i) * scale_noise_cofficient);    
-    
-        spawn_pos += transform * m_transform;
-        int pt = addpoint(0, spawn_pos);
-
-        //scale.y *= block_length;
-        setpointattrib(0, "scale", pt, scale);
-        
-        vector rotate = base_rotate;
-        rotate += adjust_rotate * rotate_randomly_cofficient * rand(spawn_pos);
-        rotate += adjust_rotate * rotate_gradation_cofficient * sin((@primnum + i) * rotate_noise_cofficient);
-        rotate = radians(rotate);
-        vector4 q_rotate = eulertoquaternion(rotate, 0);
-        q_rotate = qmultiply(q_line_dir, q_rotate);
-        setpointattrib(0, "orient", pt, q_rotate);
-    }
-}
-
-removeprim(0, @primnum, 1);
