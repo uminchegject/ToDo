@@ -22,10 +22,11 @@
 
 ■Design
 ○GradationPointEditor検証
-・パラメーター修正
-・SunnyHills模写&PM検証
+・SunnyHills検証
 ・Sin検証
  -Box
+ 
+○パラメーター修正
 
 △RandomlyPointEditor設計
 ・transform
