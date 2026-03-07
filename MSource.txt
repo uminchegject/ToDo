@@ -1,4 +1,8 @@
-○自転車
+○買取
+・自転車
+https://kaitori.buychari.com/valuation/
+・本
+https://www.netoff.co.jp/
 
 ○Sinの魅力
 ・Sinとは
@@ -33,6 +37,7 @@
 ○折半構造
 ※Surface
 ・Gradation検証
+ -斜め線を綺麗にGradationをつける
 
 △曲線庇
 
@@ -40,22 +45,27 @@
 
 
 ○Pattern設計
+・縦 or 横 or 縦横
+ -ZigZag 縦 or 横
 ・溝の幅をランダム化
 ・ZigZagの幅、数をランダム化
-・縦 or 横 or 縦横
 
-○Houdini sci-fi Buildings CupsulePM実装
+○カラー実装
+・ランダム化
+・マルチパラメーター化
+
+●Houdini sci-fi Buildings Cupsule
 https://www.youtube.com/watch?v=PTVal-t9g1k
 ・Panel
  -Top, Bottomを独立させる
  -スケールランダム化
+・Window
+ -Boolean
+ -固定
 ・Pattern
  -Left, Right再度に溝を生成
  -溝の幅、ZigZagの幅をランダム化
  -縦 or 横 or 縦横
-・Window
- -Boolean
- -固定
 ・カラー設定 
  -ランダム化
  -マルチパラメーター化
