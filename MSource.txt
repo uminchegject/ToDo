@@ -1,17 +1,6 @@
-○コンピュテーショナルデザイン整理
-・ファザードジェネレーター
-・sinの魅力
-・振り返り
+○自転車
 
-○1on1準備
-・Notion作成
- -※記事に繋げる
- -Houdiniの使用技術、実装方法をまとめる
-・振り返り
-・小話準備
- -sinの強み
-
-●Sinの魅力
+○Sinの魅力
 ・Sinとは
 ・コンピュテーショナルデザインとの相性
  -Sinの曲線が美しい
@@ -19,21 +8,31 @@
 ・実際にどう使えるか
  -ファサードデザインにおけるグラデーションを表現する際にsin曲線の相性がいい
 
+○コンピュテーショナルデザイン整理
+※1on1準備
+・ファザードジェネレーター
+ -Notion作成
+・sinの魅力
+ -Notion作成
+ -小話
+・振り返り
+
 
 ■Design
 ○GradationPointEditor検証
 ・パラメーター修正
-・SunnyHills模写&PM検証
-・Sin検証
- -Box
+・SunnyHillsPM検証
+・Sin検証(Box)
 
-△RandomlyPointEditor設計
+○RandomlyPointEditor設計
 ・transform
 ・rotate
 ・scale
 ・color
 
-△折半構造
+○折半構造
+※Surface
+・Gradation検証
 
 △曲線庇
 
@@ -64,12 +63,9 @@ https://www.youtube.com/watch?v=PTVal-t9g1k
 ○SciFiCupsule多様化
 ・スケール
 
-○街化
-
+△街化
 
 ■ToDo
-○自転車
-
 ○AMDLab調査
 ・TechBlog
 https://amdlaboratory.com/
