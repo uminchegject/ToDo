@@ -1,4 +1,8 @@
-○Sinの魅力
+○自転車買取出張
+
+○ファサードジェネレーターのNotion記載
+
+○Sinの魅力整理
 ・Sinとは
 ・コンピュテーショナルデザインとの相性
  -Sinの曲線が美しい
@@ -23,6 +27,7 @@
 ・Sin検証(Box)
 
 ○RandomlyPointEditor設計
+※事例を調査
 ・transform
 ・rotate
 ・scale
@@ -69,6 +74,7 @@ https://www.youtube.com/watch?v=PTVal-t9g1k
 
 △街化
 
+
 ■ToDo
 ○AMDLab調査
 ・TechBlog
@@ -93,11 +99,17 @@ https://note.com/amdlab/all
 
 ○本&ソフト買取
 https://www.netoff.co.jp/
-・要らない本をまとめる
+・要らない本,ソフトをまとめる
 
 
 ■PatternGenerator
 ●GradationPointEditor
+・transform
+・rotate
+・scale
+・color
+
+▲RandomlyPointEditor
 ・transform
 ・rotate
 ・scale
