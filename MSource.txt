@@ -1,6 +1,23 @@
-○自転車買取出張
+○GradationPointEditor検証
+※Notion資料用
+※GIFでアニメーションを用意する
+・SunnyHillsPM検証
+ -rotate
+ -transform(z)
+・Sin検証(Box)
+ -transform
+ -rotate
+ -scale
+ -color
 
-○Notion記載
+○ファサード生成ツール清書
+・概要
+・目的・背景
+・設計
+
+○Sin清書
+・Sinとは
+・コンピュテーショナルデザインとの相性
 
 ○コンピュテーショナルデザイン整理
 ※1on1準備
@@ -14,14 +31,13 @@
 
 
 ■Design
-○GradationPointEditor検証
-※Notion資料用
-・パラメーター修正
-・SunnyHillsPM検証
-・Sin検証(Box)
+○SunnyHills
+・transform(長さ)
+・color(色)
 
-○RandomlyPointEditor設計
-※事例を調査
+●RandomlyPointEditor設計
+※GradationPointEditorと組み合わせる
+※事例を明確化
 ・transform
 ・rotate
 ・scale
@@ -29,15 +45,26 @@
 
 ○折半構造
 ※Surface
-・Gradation検証
- -斜め線を綺麗にGradationをつける
+・GradationPointEditorを拡張
+ -斜め線をベースにGradationをつける
+・S字をベースにGradation検証を行う
 
 △曲線庇
 
 △ボートハウス整理
 
 
-○Pattern設計
+○Pattern実装
+・溝
+ -位置を設定
+  -縦 or 横 or 縦横
+ -溝の幅を設定
+・ZigZag
+ -ZigZagの有無
+  -縦 or 横
+ -ZigZagの幅、数
+
+●Pattern設計
 ・縦 or 横 or 縦横
  -ZigZag 縦 or 横
 ・溝の幅をランダム化
