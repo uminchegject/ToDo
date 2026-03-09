@@ -1,3 +1,22 @@
+○FacadeGenerator
+・模写
+・Transform調整
+
+○GradationPointEditor
+・sinの説明
+・マルチパラメーターで複雑化
+
+○RandomlyPointEditor
+・SunnyHillsで検証
+・別モチーフを用意
+
+○折半構造
+・斜め方向でGradationPointEditorを検証
+
+○SciFiCupsule実装
+・Pattern, Panel ,Colorで多様化
+
+
 ○GradationPointEditor検証
 ※Notion資料用
 ※GIFでアニメーションを用意する
