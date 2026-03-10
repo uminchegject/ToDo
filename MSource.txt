@@ -1,43 +1,3 @@
-○FacadeGenerator
-・模写
-・Transform調整
-
-○GradationPointEditor
-・sinの説明
-・マルチパラメーターで複雑化
-
-○RandomlyPointEditor
-・SunnyHillsで検証
-・別モチーフを用意
-
-○折半構造
-・斜め方向でGradationPointEditorを検証
-
-○SciFiCupsule実装
-・Pattern, Panel ,Colorで多様化
-
-
-○GradationPointEditor検証
-※Notion資料用
-※GIFでアニメーションを用意する
-・SunnyHillsPM検証
- -rotate
- -transform(z)
-・Sin検証(Box)
- -transform
- -rotate
- -scale
- -color
-
-○ファサード生成ツール清書
-・概要
-・目的・背景
-・設計
-
-○Sin清書
-・Sinとは
-・コンピュテーショナルデザインとの相性
-
 ○コンピュテーショナルデザイン整理
 ※1on1準備
 ・ファザードジェネレーター
@@ -50,22 +10,44 @@
 
 
 ■Design
-○SunnyHills
-・transform(長さ)
-・color(色)
+○FacadeGenerator
+ -模写
+ -Transform調整
+・ファサード生成ツール清書
+ -概要
+ -目的・背景
+ -設計
 
-●RandomlyPointEditor設計
+○GradationPointEditor
+※GIFでアニメーションを用意する
+ -sinの説明
+ -マルチパラメーターで複雑化
+・Sin清書
+ -Sinとは
+ -コンピュテーショナルデザインとの相性
+・SunnyHillsPM検証
+ -rotate
+ -transform(z)
+・Sin検証(Box)
+ -transform
+ -rotate
+ -scale
+ -color
+
+○RandomlyPointEditor
 ※GradationPointEditorと組み合わせる
-※事例を明確化
-・transform
-・rotate
-・scale
-・color
+ -SunnyHillsで検証
+ -別モチーフを用意
+・パラメーター
+ -transform
+ -rotate
+ -scale
+ -color
 
 ○折半構造
 ※Surface
-・GradationPointEditorを拡張
- -斜め線をベースにGradationをつける
+ -頂点同士の繋がり
+・斜め方向でGradationPointEditorを検証
 ・S字をベースにGradation検証を行う
 
 △曲線庇
@@ -73,7 +55,8 @@
 △ボートハウス整理
 
 
-○Pattern実装
+○SciFiCupsule実装
+※Pattern, Panel ,Colorで多様化
 ・溝
  -位置を設定
   -縦 or 横 or 縦横
@@ -108,9 +91,6 @@ https://www.youtube.com/watch?v=PTVal-t9g1k
 ・カラー設定 
  -ランダム化
  -マルチパラメーター化
-
-○SciFiCupsule多様化
-・スケール
 
 △街化
 
