@@ -1,24 +1,15 @@
-※昼休憩前にタスクの整理を行う
- -付箋にメモ
-
-
 ○SinCurveのサンプル実装
-・マルチパラメーター検証
-　ーz軸のパラメーター×4で検証
-
-○折半構造実装
-・斜め方向でGradationPointEditorを行う
-
-
-○RandomlyPointEditor実装
-※AttributeをEdit
-・Pos(orientベース)
-・orient
-・scale
-・Cd
-
-○SciFiCupsule実装
-
+※アニメーションを重点的にアピールする
+ -Editorノードを追加していくことでアニメーションの柔軟性を強調
+・テスト用にシンプルなノードを実装
+ -translate, scale, rotate, color
+ -フレームを参照してアニメーションになるようにする
+ -cofficientを調整できるようにする
+・テスト環境
+ -xz軸にpoint_gridを用意する
+ -pointにattributeを設定
+ -Editorで編集
+ -CopyToPointsでBoxを視覚化
 
 ○コンピュテーショナルデザイン整理
 ※1on1準備
@@ -29,6 +20,19 @@
  -Tips共有会
 ・△街ジェネレーター
 ・振り返り
+
+
+○折半構造実装
+・斜め方向でGradationPointEditorを行う
+
+○RandomlyPointEditor実装
+※AttributeをEdit
+・Pos(orientベース)
+・orient
+・scale
+・Cd
+
+○SciFiCupsule実装
 
 
 ■Design
