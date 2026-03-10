@@ -1,6 +1,6 @@
 ○PointEditor修正
 ・マルチパラメーターを廃止
-　-初期値を設定
+ -初期値を設定
 ・FrameCofficientパラメーターを追加
 
 ○検証
@@ -80,11 +80,6 @@ https://www.youtube.com/watch?v=pjvjDUn0-Q8
 ・SunnyHillsPM検証
  -rotate
  -transform(z)
-・Sin検証(Box)
- -transform
- -rotate
- -scale
- -color
 
 ○RandomlyPointEditor
 ※GradationPointEditorと組み合わせる
