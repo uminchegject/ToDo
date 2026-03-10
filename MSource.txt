@@ -1,4 +1,22 @@
-○SinCurveのサンプル実装
+○検証
+※動きに幅を持たせる
+ -敷き詰められている状態から
+ -パラメーターによる変化にも幅を持たせる
+・ツートンカラー
+
+●ソース
+vector value = chv("value");
+vector cofficient = chv("cofficient");
+vector pos = v@pos;
+float frame = @Frame * 0.1;
+value *= sin(pos.x * cofficient.x + pos.y * cofficient.y + pos.z * cofficient.z + frame)
+v@scale += value;
+
+●資料
+・Cube animation in Houdini
+https://www.youtube.com/watch?v=pjvjDUn0-Q8
+
+●SinAnimation
 ※アニメーションを重点的にアピールする
  -Editorノードを追加していくことでアニメーションの柔軟性を強調
 ・テスト用にシンプルなノードを実装
@@ -10,6 +28,7 @@
  -pointにattributeを設定
  -Editorで編集
  -CopyToPointsでBoxを視覚化
+
 
 ○コンピュテーショナルデザイン整理
 ※1on1準備
