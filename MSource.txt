@@ -1,142 +1,8 @@
-○TestCurveをorientに変更
+※明確にモチーフを模写する
+ -空間、形も模写する(シンプル)
 
-○SunnyHills
-・模写
- -Starbacks(コの字)
-・検証
- -Gradation(Scale, Rotate)
- -Animation
-
-○折半構造実装
-・Test_Curveを中点に設定
-・Gradation_Point_Editorを修正
-・横浜港大さん橋国際客船ターミナル模写(アーチ)
-・斜め方向でGradationPointEditorを行う
-
-○コンピュテーショナルデザイン整理
-※1on1準備
-・ファザードジェネレーター
- -Notion作成
-・sinの魅力
- -Notion作成
- -Tips共有会
-・△街ジェネレーター
-・振り返り
-
-
-○溝の実装
-・溝の幅を設定
-・位置の計算
- -幅に応じてRangeを設定
- -Range内で配置位置を設定
-・配置方向を設定
- -縦 or 横 or 縦横
-・溝BoolObjを配置
- -配置位置を基準にBooleanObjを配置
-・ZigzagBoolObjを配置
- -ZigZag幅の設定
- -溝 / zigzagで数を計算
- -BoolObjを配置
-
-○SciFiCupsule実装
-※Pattern, Panel ,Colorで多様化
-・溝
- -位置を設定
-  -縦 or 横 or 縦横
- -溝の幅を設定
-・ZigZag
- -ZigZagの有無
-  -縦 or 横
- -ZigZagの幅、数
-
-
-△RandomlyPointEditor
-※モチーフ調査
-※AttributeをEdit
-・Pos(orientベース)
-・orient
-・scale
-・Cd
-
-
-■Design
-○FacadeGenerator
- -模写
- -Transform調整
-・ファサード生成ツール清書
- -概要
- -目的・背景
- -設計
-
-○GradationPointEditor
-※GIFでアニメーションを用意する
- -sinの説明
- -マルチパラメーターで複雑化
-・Sin清書
- -Sinとは
- -コンピュテーショナルデザインとの相性
-・SunnyHillsPM検証
- -rotate
- -transform(z)
-
-○RandomlyPointEditor
-※GradationPointEditorと組み合わせる
- -Randomly特化のモチーフを調査
-・パラメーター
- -transform
- -rotate
- -scale
- -color
-
-○折半構造
-※Surface
- -頂点同士の繋がり
-・斜め方向でGradationPointEditorを検証
-・S字をベースにGradation検証を行う
-
-△曲線庇
-
-△ボートハウス整理
-
-
-○SciFiCupsule実装
-※Pattern, Panel ,Colorで多様化
-・溝
- -位置を設定
-  -縦 or 横 or 縦横
- -溝の幅を設定
-・ZigZag
- -ZigZagの有無
-  -縦 or 横
- -ZigZagの幅、数
-
-●Pattern設計
-・縦 or 横 or 縦横
- -ZigZag 縦 or 横
-・溝の幅をランダム化
-・ZigZagの幅、数をランダム化
-
-○カラー実装
-・ランダム化
-・マルチパラメーター化
-
-●Houdini sci-fi Buildings Cupsule
-https://www.youtube.com/watch?v=PTVal-t9g1k
-・Panel
- -Top, Bottomを独立させる
- -スケールランダム化
-・Window
- -Boolean
- -固定
-・Pattern
- -Left, Right再度に溝を生成
- -溝の幅、ZigZagの幅をランダム化
- -縦 or 横 or 縦横
-・カラー設定 
- -ランダム化
- -マルチパラメーター化
-
-△街化
+○FacadeGenerator記事
+・PM化
 
 
 ■ToDo
@@ -169,17 +35,51 @@ https://www.netoff.co.jp/
 
 
 ■PatternGenerator
-●GradationPointEditor
-・transform
-・rotate
-・scale
-・color
+○TestCurveをorientに変更
 
-▲RandomlyPointEditor
-・transform
-・rotate
+○大宰府Starbucks
+・模写
+ -コの字
+・PM化
+ -角度
+ -スケール
+ -密度
+・検証
+ -Gradation(Scale, Rotate)
+ -マルチパラメーターで複雑化
+ -Animation
+
+○折半構造実装
+※Surface
+・Test_Curveを中点に設定
+・Gradation_Point_Editorを修正
+・横浜港大さん橋国際客船ターミナル模写(アーチ)
+・斜め方向でGradationPointEditorを行う
+・PM化
+ -密度
+
+○コンピュテーショナルデザイン整理
+※1on1準備
+・ファザードジェネレーター
+ -Notion作成
+・sinの魅力
+ -Notion作成
+ -Tips共有会
+・△街ジェネレーター
+・振り返り
+
+△RandomlyPointEditor
+※GradationPointEditorと組み合わせる
+※AttributeをEdit
+・Pos(orientベース)
+・orient
 ・scale
-・color
+・Cd
+
+△ミラノ万博中国館準備
+
+△曲線庇
+・モチーフ調査
 
 ●Pattern設計
 ※3次元的Pattern
@@ -187,7 +87,54 @@ https://www.netoff.co.jp/
 ※複数のパーツで構成し合っているPattern
 
 
-■CupsuleNightCity
+■Cupsule
+○溝の実装
+・溝の幅を設定
+・位置の計算
+ -幅に応じてRangeを設定
+ -Range内で配置位置を設定
+・配置方向を設定
+ -縦 or 横 or 縦横
+・溝BoolObjを配置
+ -配置位置を基準にBooleanObjを配置
+・ZigzagBoolObjを配置
+ -ZigZag幅の設定
+ -溝 / zigzagで数を計算
+ -BoolObjを配置
+
+●Pattern設計
+※Pattern, Panel ,Colorで多様化
+・溝
+ -位置を設定
+  -縦 or 横 or 縦横
+ -溝の幅を設定
+・ZigZag
+ -ZigZagの有無
+  -縦 or 横
+ -ZigZagの幅、数
+
+○カラー実装
+・ランダム化
+・マルチパラメーター化
+
+●Houdini sci-fi Buildings Cupsule
+https://www.youtube.com/watch?v=PTVal-t9g1k
+・Panel
+ -Top, Bottomを独立させる
+ -スケールランダム化
+・Window
+ -Boolean
+ -固定
+・Pattern
+ -Left, Right再度に溝を生成
+ -溝の幅、ZigZagの幅をランダム化
+ -縦 or 横 or 縦横
+・カラー設定 
+ -ランダム化
+ -マルチパラメーター化
+
+△街化
+
 ●NightCityCupsule設計
 ・ベースボリュームを細長くしてビジュアルを複雑にする
 ・カプセルデザイン

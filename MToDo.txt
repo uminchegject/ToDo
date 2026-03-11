@@ -27,6 +27,13 @@
 ・Curve
 ・Surface
 
+●Flow
+・PM化(検証)
+ -角度
+ -スケール
+・Gradation
+・Randomly
+
 ○Pattern設計・実装
 ・カラー化(Texture化)
 
