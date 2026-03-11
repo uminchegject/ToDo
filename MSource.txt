@@ -1,175 +1,20 @@
+○ツートンカラーの実装
+
+○拡張
+※動きに幅を持たせる
+・rotate
+・translate
+
+
 ○PointEditor修正
 ・マルチパラメーターを廃止
  -初期値を設定
 ・FrameCofficientパラメーターを追加
 
-○検証
-※動きに幅を持たせる
- -敷き詰められている状態から
- -パラメーターによる変化にも幅を持たせる
-・参考動画調査
-・シングルノードの検証
-・ツートンカラー
-
-●Init
-v@scale = set(1, 1, 1);
-v@Cd = set(0.5, 0.5, 0.5);
-v@orient = {0,0,0,1};
-
-●Translate
-vector value = chv("value");
-vector cofficient = chv("cofficient");
-vector pos = v@pos;
-float frame = @Frame * 0.1;
-value *= sin(pos.x * cofficient.x + pos.y * cofficient.y + pos.z * cofficient.z + frame)
-v@P += value;
-
-●Scale
-vector value = chv("value");
-vector cofficient = chv("cofficient");
-vector pos = v@pos;
-float frame = @Frame * 0.1;
-value *= sin(pos.x * cofficient.x + pos.y * cofficient.y + pos.z * cofficient.z + frame)
-v@scale += value;
-
-●回転
-vector value = chv("value");
-vector cofficient = chv("cofficient");
-vector pos = v@pos;
-float frame = @Frame * 0.1;
-value *= sin(pos.x * cofficient.x + pos.y * cofficient.y + pos.z * cofficient.z + frame)
-vector4 orient = eulertoquaternion(value, XFORM_XYZ);
-v@orient = qmultiply(v@orient, orient);
-v@scale += value;
-
-●color
-vector value = chv("value");
-vector cofficient = chv("cofficient");
-vector pos = v@pos;
-float frame = @Frame * 0.1;
-value *= sin(pos.x * cofficient.x + pos.y * cofficient.y + pos.z * cofficient.z + frame)
-v@Cd += value;
-
-●資料
-・Cube animation in Houdini
-https://www.youtube.com/watch?v=pjvjDUn0-Q8
-
-●SinAnimation
-※アニメーションを重点的にアピールする
- -Editorノードを追加していくことでアニメーションの柔軟性を強調
-・テスト用にシンプルなノードを実装
- -translate, scale, rotate, color
- -フレームを参照してアニメーションになるようにする
- -cofficientを調整できるようにする
-・テスト環境
- -xz軸にpoint_gridを用意する
- -pointにattributeを設定
- -Editorで編集
- -CopyToPointsでBoxを視覚化
-
-○コンピュテーショナルデザイン整理
-※1on1準備
-・ファザードジェネレーター
- -Notion作成
-・sinの魅力
- -Notion作成
- -Tips共有会
-・△街ジェネレーター
-・振り返り
-
-
 ○折半構造実装
 ・斜め方向でGradationPointEditorを行う
 
-○RandomlyPointEditor
-※モチーフ調査
-※AttributeをEdit
-・Pos(orientベース)
-・orient
-・scale
-・Cd
-
 ○SciFiCupsule実装
-
-
-■Design
-○FacadeGenerator
- -模写
- -Transform調整
-・ファサード生成ツール清書
- -概要
- -目的・背景
- -設計
-
-○GradationPointEditor
-※GIFでアニメーションを用意する
- -sinの説明
- -マルチパラメーターで複雑化
-・Sin清書
- -Sinとは
- -コンピュテーショナルデザインとの相性
-・SunnyHillsPM検証
- -rotate
- -transform(z)
-
-○RandomlyPointEditor
-※GradationPointEditorと組み合わせる
- -Randomly特化のモチーフを調査
-・パラメーター
- -transform
- -rotate
- -scale
- -color
-
-○折半構造
-※Surface
- -頂点同士の繋がり
-・斜め方向でGradationPointEditorを検証
-・S字をベースにGradation検証を行う
-
-△曲線庇
-
-△ボートハウス整理
-
-
-○SciFiCupsule実装
-※Pattern, Panel ,Colorで多様化
-・溝
- -位置を設定
-  -縦 or 横 or 縦横
- -溝の幅を設定
-・ZigZag
- -ZigZagの有無
-  -縦 or 横
- -ZigZagの幅、数
-
-●Pattern設計
-・縦 or 横 or 縦横
- -ZigZag 縦 or 横
-・溝の幅をランダム化
-・ZigZagの幅、数をランダム化
-
-○カラー実装
-・ランダム化
-・マルチパラメーター化
-
-●Houdini sci-fi Buildings Cupsule
-https://www.youtube.com/watch?v=PTVal-t9g1k
-・Panel
- -Top, Bottomを独立させる
- -スケールランダム化
-・Window
- -Boolean
- -固定
-・Pattern
- -Left, Right再度に溝を生成
- -溝の幅、ZigZagの幅をランダム化
- -縦 or 横 or 縦横
-・カラー設定 
- -ランダム化
- -マルチパラメーター化
-
-△街化
 
 
 ■ToDo
