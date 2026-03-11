@@ -11,13 +11,44 @@
 ・シングルノードの検証
 ・ツートンカラー
 
-●ソース
+●Init
+v@scale = set(1, 1, 1);
+v@Cd = set(0.5, 0.5, 0.5);
+v@orient = {0,0,0,1};
+
+●Translate
+vector value = chv("value");
+vector cofficient = chv("cofficient");
+vector pos = v@pos;
+float frame = @Frame * 0.1;
+value *= sin(pos.x * cofficient.x + pos.y * cofficient.y + pos.z * cofficient.z + frame)
+v@P += value;
+
+●Scale
 vector value = chv("value");
 vector cofficient = chv("cofficient");
 vector pos = v@pos;
 float frame = @Frame * 0.1;
 value *= sin(pos.x * cofficient.x + pos.y * cofficient.y + pos.z * cofficient.z + frame)
 v@scale += value;
+
+●回転
+vector value = chv("value");
+vector cofficient = chv("cofficient");
+vector pos = v@pos;
+float frame = @Frame * 0.1;
+value *= sin(pos.x * cofficient.x + pos.y * cofficient.y + pos.z * cofficient.z + frame)
+vector4 orient = eulertoquaternion(value, XFORM_XYZ);
+v@orient = qmultiply(v@orient, orient);
+v@scale += value;
+
+●color
+vector value = chv("value");
+vector cofficient = chv("cofficient");
+vector pos = v@pos;
+float frame = @Frame * 0.1;
+value *= sin(pos.x * cofficient.x + pos.y * cofficient.y + pos.z * cofficient.z + frame)
+v@Cd += value;
 
 ●資料
 ・Cube animation in Houdini
@@ -36,7 +67,6 @@ https://www.youtube.com/watch?v=pjvjDUn0-Q8
  -Editorで編集
  -CopyToPointsでBoxを視覚化
 
-
 ○コンピュテーショナルデザイン整理
 ※1on1準備
 ・ファザードジェネレーター
@@ -51,7 +81,8 @@ https://www.youtube.com/watch?v=pjvjDUn0-Q8
 ○折半構造実装
 ・斜め方向でGradationPointEditorを行う
 
-○RandomlyPointEditor実装
+○RandomlyPointEditor
+※モチーフ調査
 ※AttributeをEdit
 ・Pos(orientベース)
 ・orient
@@ -83,8 +114,7 @@ https://www.youtube.com/watch?v=pjvjDUn0-Q8
 
 ○RandomlyPointEditor
 ※GradationPointEditorと組み合わせる
- -SunnyHillsで検証
- -別モチーフを用意
+ -Randomly特化のモチーフを調査
 ・パラメーター
  -transform
  -rotate
