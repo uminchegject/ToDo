@@ -1,19 +1,17 @@
-●資料
-・Cube animation in Houdini
-https://www.youtube.com/watch?v=pjvjDUn0-Q8
+○TestCurveをorientに変更
 
-●SinAnimation
-※アニメーションを重点的にアピールする
- -Editorノードを追加していくことでアニメーションの柔軟性を強調
-・テスト用にシンプルなノードを実装
- -translate, scale, rotate, color
- -フレームを参照してアニメーションになるようにする
- -cofficientを調整できるようにする
-・テスト環境
- -xz軸にpoint_gridを用意する
- -pointにattributeを設定
- -Editorで編集
- -CopyToPointsでBoxを視覚化
+○SunnyHills
+・模写
+ -Starbacks(コの字)
+・検証
+ -Gradation(Scale, Rotate)
+ -Animation
+
+○折半構造実装
+・Test_Curveを中点に設定
+・Gradation_Point_Editorを修正
+・横浜港大さん橋国際客船ターミナル模写(アーチ)
+・斜め方向でGradationPointEditorを行う
 
 ○コンピュテーショナルデザイン整理
 ※1on1準備
@@ -26,22 +24,39 @@ https://www.youtube.com/watch?v=pjvjDUn0-Q8
 ・振り返り
 
 
-○TestCurveをorientに変更
+○溝の実装
+・溝の幅を設定
+・位置の計算
+ -幅に応じてRangeを設定
+ -Range内で配置位置を設定
+・配置方向を設定
+ -縦 or 横 or 縦横
+・溝BoolObjを配置
+ -配置位置を基準にBooleanObjを配置
+・ZigzagBoolObjを配置
+ -ZigZag幅の設定
+ -溝 / zigzagで数を計算
+ -BoolObjを配置
 
-○折半構造実装
-・Test_Curveを中点に設定
-・Gradation_Point_Editorを修正
-・斜め方向でGradationPointEditorを行う
+○SciFiCupsule実装
+※Pattern, Panel ,Colorで多様化
+・溝
+ -位置を設定
+  -縦 or 横 or 縦横
+ -溝の幅を設定
+・ZigZag
+ -ZigZagの有無
+  -縦 or 横
+ -ZigZagの幅、数
 
-○RandomlyPointEditor
+
+△RandomlyPointEditor
 ※モチーフ調査
 ※AttributeをEdit
 ・Pos(orientベース)
 ・orient
 ・scale
 ・Cd
-
-○SciFiCupsule実装
 
 
 ■Design
