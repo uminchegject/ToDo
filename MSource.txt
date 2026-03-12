@@ -1,4 +1,6 @@
 ■PatternGenerator
+○InitEditor実装
+
 ○木組み模写
 ※2つPointEditorを用意しRefParamで必要なパラメーターをコピーする
 
