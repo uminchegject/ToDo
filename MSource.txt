@@ -1,8 +1,8 @@
 ※明確にモチーフを模写する
  -空間、形も模写する(シンプル)
 
-○FacadeGenerator記事
-・PM化
+○目的・背景、ツール設計を修正
+・UMLも守勢
 
 
 ■ToDo
@@ -36,6 +36,13 @@ https://www.netoff.co.jp/
 
 ■PatternGenerator
 ○TestCurveをorientに変更
+ 
+○RandomlyPointEditor
+※AttributeをEdit
+・Pos(orientベース)
+・orient
+・scale
+・Cd
 
 ○大宰府Starbucks
 ・模写
@@ -44,19 +51,14 @@ https://www.netoff.co.jp/
  -角度
  -スケール
  -密度
-・検証
- -Gradation(Scale, Rotate)
+・Gradation
+ -Scale
+ -Rotate
  -マルチパラメーターで複雑化
  -Animation
-
-○折半構造実装
-※Surface
-・Test_Curveを中点に設定
-・Gradation_Point_Editorを修正
-・横浜港大さん橋国際客船ターミナル模写(アーチ)
-・斜め方向でGradationPointEditorを行う
-・PM化
- -密度
+・Randomly
+ -Scale
+ -Rotate
 
 ○コンピュテーショナルデザイン整理
 ※1on1準備
@@ -68,13 +70,14 @@ https://www.netoff.co.jp/
 ・△街ジェネレーター
 ・振り返り
 
-△RandomlyPointEditor
-※GradationPointEditorと組み合わせる
-※AttributeをEdit
-・Pos(orientベース)
-・orient
-・scale
-・Cd
+△折半構造実装
+※Surface
+・Test_Curveを中点に設定
+・Gradation_Point_Editorを修正
+・横浜港大さん橋国際客船ターミナル模写(アーチ)
+・斜め方向でGradationPointEditorを行う
+・PM化
+ -密度
 
 △ミラノ万博中国館準備
 
