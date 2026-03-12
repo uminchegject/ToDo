@@ -1,8 +1,10 @@
 ○BasePoint生成処理実装
+※CopyToPoints前のBasePointを参照して計算
 ・Panel
 ・Pattern
 
 ○Boolean処理
+※BoxをCopyToPointsしてモデリング処理を行う
 ・Panel
 ・Pattern
 
