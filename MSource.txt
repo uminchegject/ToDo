@@ -1,17 +1,12 @@
-○BasePoint生成処理実装
-※CopyToPoints前のBasePointを参照して計算
-・Panel
-・Pattern
+○目的・背景、ツール設計を修正
+・UMLも修正
 
-○Boolean処理
-※BoxをCopyToPointsしてモデリング処理を行う
-・Panel
-・Pattern
-
-
+■PatternGenerator
 ○木組み模写
 
-○大宰府Starbucks検証
+○大宰府Starbucks
+・模写
+ -コの字
 ・PM化
  -角度
  -スケール
@@ -24,6 +19,147 @@
 ・Randomly
  -Scale
  -Rotate
+
+○コンピュテーショナルデザイン整理
+※1on1準備
+・ファザードジェネレーター
+ -Notion作成
+・sinの魅力
+ -Notion作成
+ -Tips共有会
+・△街ジェネレーター
+・振り返り
+
+△折半構造実装
+※Surface
+・Test_Curveを中点に設定
+・Gradation_Point_Editorを修正
+・横浜港大さん橋国際客船ターミナル模写(アーチ)
+・斜め方向でGradationPointEditorを行う
+・PM化
+ -密度
+
+△ミラノ万博中国館準備
+
+△曲線庇
+・モチーフ調査
+
+●Pattern設計
+※3次元的Pattern
+※遊びのあるPattern
+※複数のパーツで構成し合っているPattern
+
+
+■Cupsule
+○BasePoint生成処理実装
+※CopyToPoints前のBasePointを参照して計算
+・Panel
+・Pattern
+
+○Boolean処理
+※BoxをCopyToPointsしてモデリング処理を行う
+・Panel
+・Pattern
+
+○Window修正
+・Brickと同じ要領
+
+○Patternの実装
+・溝の幅を設定
+・位置の計算
+ -幅に応じてRangeを設定
+ -Range内で配置位置を設定
+・配置方向を設定
+ -縦 or 横 or 縦横
+・溝BoolObjを配置
+ -配置位置を基準にBooleanObjを配置
+・ZigzagBoolObjを配置
+ -ZigZag幅の設定
+ -溝 / zigzagで数を計算
+ -BoolObjを配置
+
+●Pattern設計
+※Pattern, Panel ,Colorで多様化
+・溝
+ -位置を設定
+  -縦 or 横 or 縦横
+ -溝の幅を設定
+・ZigZag
+ -ZigZagの有無
+  -縦 or 横
+ -ZigZagの幅、数
+
+●ソース
+vector cupsule_size = v@scale;
+vector cupsule_normal = v@N;
+vector cupsule_up = v@up;
+vector side_dir = normalize(cross(cupsule_normal, cupsule_up));
+
+float horizontal_wide = ch("horizontal_wide");
+float vertical_wide = ch("vertical_wide");
+
+vector pt1_pos = v@P;
+vector pt2_pos = v@P;
+pt1_pos += side_dir * cupsule_size.x / 2;
+pt2_pos += side_dir * cupsule_size.x / 2;
+pt1_pos += (rand(pt1_pos) - 0.5) * (cupsule_size.z - horizontal_wide);
+pt2_pos += (rand(pt2_pos) - 0.5) * (cupsule_size.z - horizontal_wide);
+int pt1 = addpoint(0, pt1_pos);
+int pt2 = addpoint(0, pt2_pos);
+
+vector pt1_scale = cupsule_size;
+pt1_scale.x *= 0.1;
+pt1_scale.y *= 0.4;
+pt1_scale.z *= 2;
+setpointattrib(0, "scale", pt1, pt1_scale);
+setpointattrib(0, "N", pt1, cupsule_normal);
+setpointattrib(0, "up", pt1, cupsule_up);
+
+vector pt2_scale = cupsule_size;
+pt2_scale.x *= 0.1;
+pt2_scale.y *= 2;
+pt2_scale.z *= 0.2;
+setpointattrib(0, "scale", pt2, pt2_scale);
+setpointattrib(0, "N", pt2, cupsule_normal);
+setpointattrib(0, "up", pt2, cupsule_up);
+
+removepoint(0, @ptnum);
+
+○カラー実装
+・ランダム化
+・マルチパラメーター化
+
+●Houdini sci-fi Buildings Cupsule
+https://www.youtube.com/watch?v=PTVal-t9g1k
+・Panel
+ -Top, Bottomを独立させる
+ -スケールランダム化
+・Window
+ -Boolean
+ -固定
+・Pattern
+ -Left, Right再度に溝を生成
+ -溝の幅、ZigZagの幅をランダム化
+ -縦 or 横 or 縦横
+・カラー設定 
+ -ランダム化
+ -マルチパラメーター化
+
+△街化
+
+●NightCityCupsule設計
+・ベースボリュームを細長くしてビジュアルを複雑にする
+・カプセルデザイン
+・外装のレイヤー化
+ -多様な窓
+ -HardCaver
+ -Asset(看板、設備)
+
+●NightCityリファレンス
+・NightCity
+https://www.youtube.com/watch?v=tOWGsyt40t8&t=1616s
+・MegaStructure
+https://www.youtube.com/watch?v=J5A3Z0qX-Yk
 
 
 ■ToDo
