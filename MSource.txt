@@ -1,5 +1,16 @@
+○素材用意(GIF)
+各Editノードの挙動をそれぞれGIFにする
+
+○1on1準備
+※Houdiniを使用して発信をしたい
+ -堀川さんのような発信をしたい
+・コンピュテーショナルデザインツール
+・sinの魅力
+・振り返り
+
+
 ■PatternGenerator
-○InitEditor実装
+○PointEditor実装
 
 ○木組み模写
 ※2つPointEditorを用意しRefParamで必要なパラメーターをコピーする
@@ -13,16 +24,6 @@
  -マルチパラメーターで複雑化
  -Animation
 ・Randomly
-
-○コンピュテーショナルデザイン整理
-※1on1準備
-・ファザードジェネレーター
- -Notion作成
-・sinの魅力
- -Notion作成
- -Tips共有会
-・△街ジェネレーター
-・振り返り
 
 △折半構造実装
 ※Surface
@@ -101,7 +102,7 @@ https://www.youtube.com/watch?v=PTVal-t9g1k
  -ランダム化
  -マルチパラメーター化
 
-△街化
+○街化
 
 ●NightCityCupsule設計
 ・ベースボリュームを細長くしてビジュアルを複雑にする
