@@ -1,24 +1,46 @@
-○AsciiHDAについて調査
+○素材用意(GIF)
+各Editノードの挙動をそれぞれGIFにする
+
+○1on1準備
+※Houdiniを使用して発信をしたい
+ -堀川さんのような発信をしたい
+・コンピュテーショナルデザインツール
+・sinの魅力
+・振り返り
 
 
-○模写
-・コード整理
-
-○検証
-・Gradation
-　ーAnimation
-・Randomly
-
-○検証記事準備
+■PatternGenerator
+○大宰府Starbucks
+※Scale(長さ)&Rotate(Y軸)をベースに検証する
 ※GIF
 ・PointEditor
-・GradationPointEditor
-・RandomlyPointEditor
+ -PM化
+・Gradation
+ -マルチパラメーターで複雑化
+ -Animation
+・Randomly
+
+△折半構造実装
+※Surface
+・Test_Curveを中点に設定
+・Gradation_Point_Editorを修正
+・横浜港大さん橋国際客船ターミナル模写(アーチ)
+・斜め方向でGradationPointEditorを行う
+・PM化
+ -密度
+
+△ミラノ万博中国館準備
+
+△曲線庇
+・モチーフ調査
+
+●Pattern設計
+※3次元的Pattern
+※遊びのあるPattern
+※複数のパーツで構成し合っているPattern
 
 
-○溝生成処理実装
-・BasePointにCopyToPointし、BevelしてBool
-
+■Cupsule
 ○ZigZag処理実装
 ・BasePointの生成処理を追加
 ・Bool
@@ -28,8 +50,82 @@
 ・ランダム化
 ・マルチパラメーター化
 
+●ソース
+float child_wide = 1;
+if(toggle == 0)
+{
+	horizontal_wide *= 0.8;
+	int child_num = int(horizontal_wide / child_wide);
+	if(child_num == 1) child_num = 0;
+	child_wide = horizontal_wide / child_num;
+		
+	for(int i = 0; i < child_num; ++i)
+	{
+		vector pos = left_pos;
+		pos -= horizontal_wide * 0.5 * cupsule_up * i;
+		addpoint(0, pos);
+	}	
+}
+
 ○Window修正
 ・Brickと同じ要領
+
+○Patternの実装
+・溝の幅を設定
+・位置の計算
+ -幅に応じてRangeを設定
+ -Range内で配置位置を設定
+・配置方向を設定
+ -縦 or 横 or 縦横
+・溝BoolObjを配置
+ -配置位置を基準にBooleanObjを配置
+・ZigzagBoolObjを配置
+ -ZigZag幅の設定
+ -溝 / zigzagで数を計算
+ -BoolObjを配置
+
+●Pattern設計
+※Pattern, Panel ,Colorで多様化
+・溝
+ -位置を設定
+  -縦 or 横 or 縦横
+ -溝の幅を設定
+・ZigZag
+ -ZigZagの有無
+  -縦 or 横
+ -ZigZagの幅、数
+
+●Houdini sci-fi Buildings Cupsule
+https://www.youtube.com/watch?v=PTVal-t9g1k
+・Panel
+ -Top, Bottomを独立させる
+ -スケールランダム化
+・Window
+ -Boolean
+ -固定
+・Pattern
+ -Left, Right再度に溝を生成
+ -溝の幅、ZigZagの幅をランダム化
+ -縦 or 横 or 縦横
+・カラー設定 
+ -ランダム化
+ -マルチパラメーター化
+
+○街化
+
+●NightCityCupsule設計
+・ベースボリュームを細長くしてビジュアルを複雑にする
+・カプセルデザイン
+・外装のレイヤー化
+ -多様な窓
+ -HardCaver
+ -Asset(看板、設備)
+
+●NightCityリファレンス
+・NightCity
+https://www.youtube.com/watch?v=tOWGsyt40t8&t=1616s
+・MegaStructure
+https://www.youtube.com/watch?v=J5A3Z0qX-Yk
 
 
 ■ToDo
@@ -157,114 +253,3 @@ Houdini Foundationsを読みながら、実際にTutorialの実装を行って�
 ・ツール実装の使用技術のナレッジ共有
 
 
-●ソース
-vector cupsule_size = v@scale;
-vector cupsule_normal = v@N;
-vector cupsule_up = v@up;
-vector side_dir = normalize(cross(cupsule_normal, cupsule_up));
-
-vector left_pos = v@P;
-vector right_pos = v@P;
-left_pos += side_dir * cupsule_size.x / 2;
-right_pos -= side_dir * cupsule_size.x / 2;
-
-vector horizontal_wide_range = chv("horizontal_wide_range");
-vector vertical_wide_range = chv("vertical_wide_range");
-float horizontal_wide = 0
-float vertical_wide = 0
-int toggle = int(rand(v@P) * 3);
-if(toggle == 0)
-{
-	horizontal_wide = horizontal_wide_range.x;
-	horizontal_wide += rand(left_pos) * (horizontal_wide_range.y - horizontal_wide_range.x);
-}
-else if(toggle == 1)
-{
-	vertical_wide = vertical_wide_range.x
-	vertical_wide += rand(right_pos) * (vertical_wide_range.y - vertical_wide_range.x);
-}
-else
-{
-	horizontal_wide = horizontal_wide_range.x;
-	horizontal_wide += rand(left_pos) * (horizontal_wide_range.y - horizontal_wide_range.x);
-	vertical_wide = vertical_wide_range.x
-	vertical_wide += rand(right_pos) * (vertical_wide_range.y - vertical_wide_range.x);
-}
-
-vector horizontal_scale = cupsule_size;
-horizontal_scale.x *= 0.1;
-horizontal_scale.y *= horizontal_wide;
-horizontal_scale.z *= 2;
-
-vector vertical_scale = cupsule_size;
-vertical_scale.x *= 0.1;
-vertical_scale.y *= 2;
-vertical_scale.z *= vertical_wide;
-
-vector block_pos = set(0, 0, 0);
-block_pos += (rand(left_pt_pos) - 0.5) * (cupsule_size.z - vertical_wide) * cupsule_normal;
-block_pos += (rand(right_pt_pos) - 0.5) * (cupsule_size.y - horizontal_wide) * cupsule_up;
-
-
-if(toggle == 0)
-{
-	left_pt_pos += block_pos;
-	
-	int left_horizontal_pt = addpoint(0, left_pt_pos);	
-	setpointattrib(0, "scale", left_horizontal_pt, horizontal_scale);
-	setpointattrib(0, "N", left_horizontal_pt, cupsule_normal);
-	setpointattrib(0, "up", left_horizontal_pt, cupsule_up);
-
-	right_pt_pos += block_pos;
-	
-	int right_horizontal_pt = addpoint(0, right_pt_pos);	
-	setpointattrib(0, "scale", right_horizontal_pt, horizontal_scale);
-	setpointattrib(0, "N", right_horizontal_pt, cupsule_normal);
-	setpointattrib(0, "up", right_horizontal_pt, cupsule_up);
-}
-if(toggle == 1)
-{
-	left_pt_pos += block_pos;
-	
-	int left_vertical_pt = addpoint(0, left_pt_pos);	
-	setpointattrib(0, "scale", left_vertical_pt, vertical_scale);
-	setpointattrib(0, "N", left_vertical_pt, cupsule_normal);
-	setpointattrib(0, "up", left_vertical_pt, cupsule_up);
-
-	right_pt_pos += block_pos;
-	
-	int right_vertical_pt = addpoint(0, right_pt_pos);	
-	setpointattrib(0, "scale", right_vertical_pt, vertical_scale);
-	setpointattrib(0, "N", right_vertical_pt, cupsule_normal);
-	setpointattrib(0, "up", right_vertical_pt, cupsule_up);
-
-}
-else()
-{
-	left_pt_pos += block_pos;
-	
-	int left_vertical_pt = addpoint(0, left_pt_pos);	
-	setpointattrib(0, "scale", left_vertical_pt, vertical_scale);
-	setpointattrib(0, "N", left_vertical_pt, cupsule_normal);
-	setpointattrib(0, "up", left_vertical_pt, cupsule_up);
-	
-	int left_horizontal_pt = addpoint(0, left_pt_pos);	
-	setpointattrib(0, "scale", left_horizontal_pt, horizontal_scale);
-	setpointattrib(0, "N", left_horizontal_pt, cupsule_normal);
-	setpointattrib(0, "up", left_horizontal_pt, cupsule_up);
-
-	right_pt_pos += block_pos;
-	
-	int right_vertical_pt = addpoint(0, right_pt_pos);	
-	setpointattrib(0, "scale", right_vertical_pt, vertical_scale);
-	setpointattrib(0, "N", right_vertical_pt, cupsule_normal);
-	setpointattrib(0, "up", right_vertical_pt, cupsule_up);
-	
-	int right_horizontal_pt = addpoint(0, right_pt_pos);	
-	setpointattrib(0, "scale", right_horizontal_pt, horizontal_scale);
-	setpointattrib(0, "N", right_horizontal_pt, cupsule_normal);
-	setpointattrib(0, "up", right_horizontal_pt, cupsule_up);
-	
-}
-
-removepoint(0, @ptnum);
