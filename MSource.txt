@@ -1,51 +1,21 @@
-○素材用意(GIF)
-各Editノードの挙動をそれぞれGIFにする
-
-○1on1準備
-※Houdiniを使用して発信をしたい
- -堀川さんのような発信をしたい
-・コンピュテーショナルデザインツール
-・sinの魅力
-・振り返り
+○AsciiHDAについて調査
 
 
-■PatternGenerator
-○PointEditor実装
+○模写
+・コード整理
 
-○木組み模写
-※2つPointEditorを用意しRefParamで必要なパラメーターをコピーする
-
-○大宰府Starbucks
-※Scale(長さ)&Rotate(Y軸)をベースに検証する
-・模写
- -コの字
-・PM化
+○検証
 ・Gradation
- -マルチパラメーターで複雑化
- -Animation
+　ーAnimation
 ・Randomly
 
-△折半構造実装
-※Surface
-・Test_Curveを中点に設定
-・Gradation_Point_Editorを修正
-・横浜港大さん橋国際客船ターミナル模写(アーチ)
-・斜め方向でGradationPointEditorを行う
-・PM化
- -密度
-
-△ミラノ万博中国館準備
-
-△曲線庇
-・モチーフ調査
-
-●Pattern設計
-※3次元的Pattern
-※遊びのあるPattern
-※複数のパーツで構成し合っているPattern
+○検証記事準備
+※GIF
+・PointEditor
+・GradationPointEditor
+・RandomlyPointEditor
 
 
-■Cupsule
 ○溝生成処理実装
 ・BasePointにCopyToPointし、BevelしてBool
 
@@ -60,63 +30,6 @@
 
 ○Window修正
 ・Brickと同じ要領
-
-○Patternの実装
-・溝の幅を設定
-・位置の計算
- -幅に応じてRangeを設定
- -Range内で配置位置を設定
-・配置方向を設定
- -縦 or 横 or 縦横
-・溝BoolObjを配置
- -配置位置を基準にBooleanObjを配置
-・ZigzagBoolObjを配置
- -ZigZag幅の設定
- -溝 / zigzagで数を計算
- -BoolObjを配置
-
-●Pattern設計
-※Pattern, Panel ,Colorで多様化
-・溝
- -位置を設定
-  -縦 or 横 or 縦横
- -溝の幅を設定
-・ZigZag
- -ZigZagの有無
-  -縦 or 横
- -ZigZagの幅、数
-
-●Houdini sci-fi Buildings Cupsule
-https://www.youtube.com/watch?v=PTVal-t9g1k
-・Panel
- -Top, Bottomを独立させる
- -スケールランダム化
-・Window
- -Boolean
- -固定
-・Pattern
- -Left, Right再度に溝を生成
- -溝の幅、ZigZagの幅をランダム化
- -縦 or 横 or 縦横
-・カラー設定 
- -ランダム化
- -マルチパラメーター化
-
-○街化
-
-●NightCityCupsule設計
-・ベースボリュームを細長くしてビジュアルを複雑にする
-・カプセルデザイン
-・外装のレイヤー化
- -多様な窓
- -HardCaver
- -Asset(看板、設備)
-
-●NightCityリファレンス
-・NightCity
-https://www.youtube.com/watch?v=tOWGsyt40t8&t=1616s
-・MegaStructure
-https://www.youtube.com/watch?v=J5A3Z0qX-Yk
 
 
 ■ToDo

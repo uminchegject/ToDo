@@ -15,4 +15,120 @@ Sin曲線は滑らかに増減を繰り返すため、単純なルールから�
 
 
 ## 検証
-こちらのアニメーションをsinを使用して実装してみる
+こちらのCubeを使用したアニメーションを参考に、Sinを使用した実装をHoudiniで行ってみる
+
+### アニメーションのベースとなる立方体を配置する
+
+### Attributeに必要な情報を設定する
+
+### scale値をsinで編集
+
+```
+// 再生スピード
+float frameRate = 0.03;
+
+// 変化量
+vector amplitude = {0.5, 0.5, 0.5};
+
+// 位置に対するサイン係数
+vector sinCoef = {0.4, 0.4, 0.4};
+
+// 現在フレーム
+float time = @Frame * frameRate;
+
+// 位置
+vector pos = @P;
+
+// サイン波計算
+float wave =
+    pos.x * sinCoef.x +
+    pos.y * sinCoef.y +
+    pos.z * sinCoef.z +
+    time;
+
+// スケール変化
+vector offset = amplitude * sin(wave);
+
+// scaleに加算
+v@scale += offset;
+```
+
+### color値をsinで編集
+
+```
+// 再生スピード
+float frameRate = 0.03;
+
+// 変化量
+vector amplitude = {0.5, 0.5, 0.5};
+
+// 位置に対するサイン係数
+vector sinCoef = {0.4, 0.4, 0.4};
+
+// 係数調整
+float timeScale = 0.5;
+float coefScale = 0.5;
+
+// 現在フレーム
+float time = @Frame * frameRate;
+
+// 係数調整
+time *= timeScale;
+sinCoef *= coefScale;
+
+// 位置
+vector pos = @P;
+
+// サイン波計算
+float wave =
+    pos.x * sinCoef.x +
+    pos.y * sinCoef.y +
+    pos.z * sinCoef.z +
+    time;
+
+// 色変化
+vector offset = amplitude * sin(wave);
+
+// Cdに加算
+v@Cd += offset;
+```
+
+### rotate値をsinで編集
+
+```
+// 再生スピード
+float frameRate = 0.03;
+
+// 変化量（度）
+vector amplitude = {90, 90, 90};
+
+// ラジアンに変換
+amplitude = radians(amplitude);
+
+// 位置に対するサイン係数
+vector sinCoef = {0.4, 0.4, 0.4};
+
+// 現在フレーム
+float time = @Frame * frameRate;
+
+// 位置
+vector pos = @P;
+
+// サイン波計算
+float wave =
+    pos.x * sinCoef.x +
+    pos.y * sinCoef.y +
+    pos.z * sinCoef.z +
+    time;
+
+// 回転変化
+vector offset = amplitude * sin(wave);
+
+// Quaternion変換
+vector4 quat = eulertoquaternion(offset, XFORM_XYZ);
+
+// orientに加算
+p@orient = qmultiply(p@orient, quat);
+```
+
+### 3つのノードを繋げて完成
