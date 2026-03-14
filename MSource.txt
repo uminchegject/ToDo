@@ -1,23 +1,20 @@
-○コンピュテーショナルデザインツール
-※建築業界向けHoudiniのススメ : Introduction of Houdini to Architectureを参照
-・ドキュメント
-・実装例
- -説明(最低限)
- -GIF生成
+○1on1準備
+※プロシージャルデザイン・コンピュテーショナルデザインの魅力をHoudiniを用いて発信をしたい
+・きっかけとなったTaroさんの記事を参考にナレッジをまとめてみる
+・堀川さんのような魅力あるTutorialを発信したい
+
+○委員会の資料を整理
 
 ○sinの魅力清書
-※堀川さんを参照
-・GIF作成
-・実装例
- -説明(最低限)
- -GIF作成
+※Gradient Box Animation with Geometry Nodes in Blender for Beginners
+https://www.youtube.com/watch?v=Q9VyHFib0-E
 
-○1on1準備
-※Houdiniを使用して発信をしたい
- -堀川さんのような発信をしたい
-・sinの魅力
-・コンピュテーショナルデザインツール(設計部分のみ)
-・振り返り
+○コンピュテーショナルデザインツール
+※建築業界向けHoudiniのススメ : Introduction of Houdini to Architecture
+https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
+・UMLの修正
+
+○振り返り
 
 
 ■PatternGenerator
@@ -262,5 +259,3 @@ Houdini Foundationsを読みながら、実際にTutorialの実装を行って�
 ◆貢献 ／「組織・周囲への貢献」（Contribution）
 　目的：チーム・プロジェクト全体への貢献度向上
 ・ツール実装の使用技術のナレッジ共有
-
-
