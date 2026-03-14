@@ -1,20 +1,15 @@
 ○1on1準備
 ※プロシージャルデザイン・コンピュテーショナルデザインの魅力をHoudiniを用いて発信をしたい
 ・きっかけとなったTaroさんの記事を参考にナレッジをまとめてみる
-・堀川さんのような魅力あるTutorialを発信したい
-
-○委員会の資料を整理
-
-○sinの魅力清書
-※Gradient Box Animation with Geometry Nodes in Blender for Beginners
+ -Gradient Box Animation with Geometry Nodes in Blender for Beginners
 https://www.youtube.com/watch?v=Q9VyHFib0-E
-
-○コンピュテーショナルデザインツール
-※建築業界向けHoudiniのススメ : Introduction of Houdini to Architecture
+・堀川さんのような魅力あるTutorialを発信したい
+ -建築業界向けHoudiniのススメ : Introduction of Houdini to Architecture
 https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
-・UMLの修正
 
 ○振り返り
+
+○記事準備
 
 
 ■PatternGenerator
@@ -28,7 +23,7 @@ https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
  -Animation
 ・Randomly
 
-△折半構造実装
+○折半構造実装
 ※Surface
 ・Test_Curveを中点に設定
 ・Gradation_Point_Editorを修正
