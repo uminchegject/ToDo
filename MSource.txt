@@ -7,13 +7,20 @@ https://www.youtube.com/watch?v=Q9VyHFib0-E
  -建築業界向けHoudiniのススメ : Introduction of Houdini to Architecture
 https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
 
+○発信整理
+・平日の記事化準備
+・Notion→Qiita
+
 ○振り返り
 
-○記事準備
+○Cube_Animation記事化
 
 
 ■PatternGenerator
-○大宰府Starbucks
+○大宰府Starbucks検証準備
+・天井をGradation化
+
+○大宰府Starbucks検証
 ※Scale(長さ)&Rotate(Y軸)をベースに検証する
 ※GIF
 ・PointEditor
@@ -160,10 +167,8 @@ https://www.netoff.co.jp/
 
 ■発信
 ●発信先
-・Twitter
-・Qiita
-・Notion
-・△LinkedIn
+・Notion、Qiita
+・△Twitter、LinkedIn
 
 ●PatternGenerator
 ・BaseLogic
