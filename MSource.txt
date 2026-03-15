@@ -139,8 +139,6 @@ https://www.youtube.com/watch?v=J5A3Z0qX-Yk
 
 
 ■ToDo
-○街ジェネレーター記事化
-
 ○AMDLab調査
 
 ○カジュアル面談申し込み
@@ -164,7 +162,6 @@ https://www.netoff.co.jp/
 ・要らない本,ソフトをまとめる
 
 
-
 ■発信
 ●発信先
 ・Notion、Qiita
@@ -173,7 +170,6 @@ https://www.netoff.co.jp/
 ●PatternGenerator
 ・BaseLogic
 ・SunnyHills
-・TPattern
 ・横浜港大さん橋国際客船ターミナル
 
 ●CityGenerator
@@ -181,33 +177,6 @@ https://www.netoff.co.jp/
 ・ProceduralCityProject
 ・楽しい街ジェネレーター
 ・CupsuleTower
-・NightCity
-
-
-●PatternGenerator_BaseLogic(Notion, Qiita)
-・コンピュテーショナルデザインの定義
-・Houdiniとの相性
-・実装内容
-
-●SunnyHills(Twitter, Qiita)
-・木組みを構築し連続して配置する
-・向きに変化を持たせる
-・木のサイズに変化を持たせる
-
-●TPattern
-・Tブロックを連続して配置する
-・向きに変化を持たせる
-・奥行サイズに変化を持たせる
-
-
-●CityGenerator_BaseLogic(Notion, Qiita)
-・楽しい街ジェネレーターを再現
-・道、区画、敷地、建物のボリュームを生成
-・ボリュームのファザードをモジュールサイズに沿ってBasePointを配置して、生成する
-
-●楽しい街ジェネレーター(Twitter, Qiita)
-
-●ProceduralCity
 
 
 ■振り返り
