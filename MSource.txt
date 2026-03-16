@@ -1,6 +1,18 @@
 ○Cube_Animation記事化
-・アニメーションのベースとなる立方体を配置する
-・Attributeに必要な情報を設定する
+##アニメーションのベースとなる立方体を配置する
+GridとCopyAndTransformでPointを立方体状に配置し、配置したPointにCopyToPointsでBoxを配置する
+
+##Attributeに必要な情報を設定する
+Attributeを用いてCopyToPointsで配置する箱の情報を編集する
+具体的には下記の情報を設定する
+・scale
+・rotate
+・Cd
+AttributeCreateノードで上記情報を設定する。
+
+##VEXを用いたAttributeの編集
+ここからVEXを用いてAttributeの編集を行いアニメーションを生成する。
+ここでSinが重要になってくる。
 
 ○振り返り
 
@@ -50,29 +62,18 @@ https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
 
 
 ■Cupsule
+○Coreの拡張
+・カプセル数を少なくする
+・カプセルの配置ロジックを複雑化
+
 ○カラー実装
-・色付けPrimにBoolでグループ設定
 ・ランダム化
 ・マルチパラメーター化
+・リファレンス調査
+ -ファベーラ
+・Window + Cubeのシンプルなデザインでカラー検証
 
-○Window修正
-・Brickと同じ要領
-
-○Patternの実装
-・溝の幅を設定
-・位置の計算
- -幅に応じてRangeを設定
- -Range内で配置位置を設定
-・配置方向を設定
- -縦 or 横 or 縦横
-・溝BoolObjを配置
- -配置位置を基準にBooleanObjを配置
-・ZigzagBoolObjを配置
- -ZigZag幅の設定
- -溝 / zigzagで数を計算
- -BoolObjを配置
-
-●Pattern設計
+○Pattern整理
 ※Pattern, Panel ,Colorで多様化
 ・溝
  -位置を設定
@@ -84,7 +85,7 @@ https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
  -ZigZagの幅、数
 
 ●Houdini sci-fi Buildings Cupsule
-https://www.youtube.com/watch?v=PTVal-t9g1k
+https://www.youtube.com/watch?v=zd6f5tkl5dc
 ・Panel
  -Top, Bottomを独立させる
  -スケールランダム化
