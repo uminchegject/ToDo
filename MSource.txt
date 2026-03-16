@@ -1,3 +1,9 @@
+○Cube_Animation記事化
+・アニメーションのベースとなる立方体を配置する
+・Attributeに必要な情報を設定する
+
+○振り返り
+
 ○1on1準備
 ※プロシージャルデザイン・コンピュテーショナルデザインの魅力をHoudiniを用いて発信をしたい
 ・きっかけとなったTaroさんの記事を参考にナレッジをまとめてみる
@@ -7,18 +13,11 @@ https://www.youtube.com/watch?v=Q9VyHFib0-E
  -建築業界向けHoudiniのススメ : Introduction of Houdini to Architecture
 https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
 
-○発信整理
-・平日の記事化準備
-・Notion→Qiita
-
-○振り返り
-
-○Cube_Animation記事化
-
 
 ■PatternGenerator
 ○大宰府Starbucks検証準備
 ・天井をGradation化
+・天井と壁のBaseLineを修正
 
 ○大宰府Starbucks検証
 ※Scale(長さ)&Rotate(Y軸)をベースに検証する
@@ -51,31 +50,10 @@ https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
 
 
 ■Cupsule
-○ZigZag処理実装
-・BasePointの生成処理を追加
-・Bool
-
 ○カラー実装
 ・色付けPrimにBoolでグループ設定
 ・ランダム化
 ・マルチパラメーター化
-
-●ソース
-float child_wide = 1;
-if(toggle == 0)
-{
-	horizontal_wide *= 0.8;
-	int child_num = int(horizontal_wide / child_wide);
-	if(child_num == 1) child_num = 0;
-	child_wide = horizontal_wide / child_num;
-		
-	for(int i = 0; i < child_num; ++i)
-	{
-		vector pos = left_pos;
-		pos -= horizontal_wide * 0.5 * cupsule_up * i;
-		addpoint(0, pos);
-	}	
-}
 
 ○Window修正
 ・Brickと同じ要領
@@ -149,8 +127,9 @@ https://www.youtube.com/watch?v=J5A3Z0qX-Yk
 ※CPとは差別化して考える
 ※手を動かす(アウトプット)
 ・Mayaスターターブック
+https://www.sidefx.com/tutorials/foundations-nodes-networks-assets/
 ・H19.5 FOUNDATIONS BOOK
-・たっきゅんのガチンコツール開発部
+https://itami.info/maya-starter-book
 
 ○図書カード
 ・GiantKilling
