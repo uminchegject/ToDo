@@ -62,6 +62,10 @@ for (int line_idx = 0; line_idx < nprimitives(0); line_idx++)
 ■Cupsule
 ※Pattern, Panel ,Colorで多様化
 
+○CupsuleTowerCity
+・スケールの多様化
+・Grooveの多様化
+
 ○Volume生成
 ・Core
 ・Cupsule
