@@ -1,22 +1,3 @@
-○大宰府Starbucks
-・MultiWave
-　-block化
-・GradationBaseのRandomly検証
-
-○ルイヴィトン美術館
-・grasshopper
-・RandomlyBox
-・Panel(Voronoi)
-
-
-○VolumeGenerator
-
-○GrooveGenerator
-・リファレンス調査(多様化)
-・ChildGroove
-
-○PanelGenerator
-
 ○Cube_Animation記事化
 ##アニメーションのベースとなる立方体を配置する
 GridとCopyAndTransformでPointを立方体状に配置し、配置したPointにCopyToPointsでBoxを配置する
@@ -46,6 +27,9 @@ https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
 
 
 ■PatternGenerator
+○Block複雑化
+・ラインで検証
+
 ○大宰府Starbucks検証準備
 ・天井をGradation化
 ・天井と壁のBaseLineを修正
@@ -56,9 +40,11 @@ https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
 ・PointEditor
  -PM化
 ・Gradation
+ -MultiWave
  -マルチパラメーターで複雑化
  -Animation
 ・Randomly
+ -GradationBaseのRandomly検証
 
 ○折半構造実装
 ※Surface
@@ -69,10 +55,14 @@ https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
 ・PM化
  -密度
 
-△ミラノ万博中国館準備
+△ミラノ万博中国館
 
 △曲線庇
 ・モチーフ調査
+
+△ルイヴィトン美術館(grasshopper)
+・RandomlyBox
+・Panel(Voronoi)
 
 ●Pattern設計
 ※3次元的Pattern
@@ -81,6 +71,25 @@ https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
 
 
 ■Cupsule
+※Pattern, Panel ,Colorで多様化
+
+○GrooveGenerator
+・Paramenter
+ -位置
+ -角度
+ -幅
+ -間隔
+ -ZigZag
+  -Ratio
+  -幅
+  -間隔
+・リファレンス調査(多様化)
+
+○VolumeGenerator
+
+○PanelGenerator
+・InputをVolume
+
 ○Coreの拡張
 ・カプセル数を少なくする
 ・カプセルの配置ロジックを複雑化
@@ -91,17 +100,6 @@ https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
 ・リファレンス調査
  -ファベーラ
 ・Window + Cubeのシンプルなデザインでカラー検証
-
-○Pattern整理
-※Pattern, Panel ,Colorで多様化
-・溝
- -位置を設定
-  -縦 or 横 or 縦横
- -溝の幅を設定
-・ZigZag
- -ZigZagの有無
-  -縦 or 横
- -ZigZagの幅、数
 
 ●Houdini sci-fi Buildings Cupsule
 https://www.youtube.com/watch?v=zd6f5tkl5dc
