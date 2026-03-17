@@ -1,28 +1,6 @@
-○複線対応
-int block_num = chi("block_num");
-for (int line_idx = 0; line_idx < nprimitives(0); line_idx++)
-{
-	line_id = prim(0, "LineId", line_idx);
-    int prim_pt_list[] = primpoints(0, line_idx);
-
-
-○GrooveGenerator
-・Paramenter
- -位置
- -角度
- -幅
- -間隔
- -ZigZag
-  -Ratio
-  -幅
-  -間隔
-・リファレンス調査(多様化)
-
-
 ○VEXを用いたAttributeの編集
 ここからVEXを用いてAttributeの編集を行いアニメーションを生成する。
 ここでSinが重要になってくる。
-
 
 ○1on1準備
 ※プロシージャルデザイン・コンピュテーショナルデザインの魅力をHoudiniを用いて発信をしたい
@@ -35,8 +13,12 @@ https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
 
 
 ■PatternGenerator
-○Block複雑化
-・ラインで検証
+○複線対応
+int block_num = chi("block_num");
+for (int line_idx = 0; line_idx < nprimitives(0); line_idx++)
+{
+	line_id = prim(0, "LineId", line_idx);
+    int prim_pt_list[] = primpoints(0, line_idx);
 
 ○大宰府Starbucks検証準備
 ・天井をGradation化
@@ -49,7 +31,6 @@ https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
  -PM化
 ・Gradation
  -MultiWave
- -マルチパラメーターで複雑化
  -Animation
 ・Randomly
  -GradationBaseのRandomly検証
@@ -81,26 +62,14 @@ https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
 ■Cupsule
 ※Pattern, Panel ,Colorで多様化
 
-○GrooveGenerator
-・Paramenter
- -位置
- -角度
- -幅
- -間隔
- -ZigZag
-  -Ratio
-  -幅
-  -間隔
+○Volume生成
+・Core
+・Cupsule
+
+○GrooveGenerator修正
 ・リファレンス調査(多様化)
-
-○VolumeGenerator
-
-○PanelGenerator
-・InputをVolume
-
-○Coreの拡張
-・カプセル数を少なくする
-・カプセルの配置ロジックを複雑化
+・複数Groove生成
+ -等間隔
 
 ○カラー実装
 ・ランダム化
