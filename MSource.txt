@@ -1,14 +1,10 @@
-○検証
-・Blockの複雑化
-・GradationBaseのRandomly検証
-
 ○複線対応
 int block_num = chi("block_num");
 for (int line_idx = 0; line_idx < nprimitives(0); line_idx++)
 {
 	line_id = prim(0, "LineId", line_idx);
     int prim_pt_list[] = primpoints(0, line_idx);
-	
+
 
 ○GrooveGenerator
 ・Paramenter
@@ -28,15 +24,122 @@ for (int line_idx = 0; line_idx < nprimitives(0); line_idx++)
 ここでSinが重要になってくる。
 
 
+○1on1準備
+※プロシージャルデザイン・コンピュテーショナルデザインの魅力をHoudiniを用いて発信をしたい
+・きっかけとなったTaroさんの記事を参考にナレッジをまとめてみる
+ -Gradient Box Animation with Geometry Nodes in Blender for Beginners
+https://www.youtube.com/watch?v=Q9VyHFib0-E
+・堀川さんのような魅力あるTutorialを発信したい
+ -建築業界向けHoudiniのススメ : Introduction of Houdini to Architecture
+https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
 
 
+■PatternGenerator
+○Block複雑化
+・ラインで検証
+
+○大宰府Starbucks検証準備
+・天井をGradation化
+・天井と壁のBaseLineを修正
+
+○大宰府Starbucks検証
+※Scale(長さ)&Rotate(Y軸)をベースに検証する
+※GIF
+・PointEditor
+ -PM化
+・Gradation
+ -MultiWave
+ -マルチパラメーターで複雑化
+ -Animation
+・Randomly
+ -GradationBaseのRandomly検証
+
+○折半構造実装
+※Surface
+・Test_Curveを中点に設定
+・Gradation_Point_Editorを修正
+・横浜港大さん橋国際客船ターミナル模写(アーチ)
+・斜め方向でGradationPointEditorを行う
+・PM化
+ -密度
+
+△ミラノ万博中国館
+
+△曲線庇
+・モチーフ調査
+
+△ルイヴィトン美術館(grasshopper)
+・RandomlyBox
+・Panel(Voronoi)
+
+●Pattern設計
+※3次元的Pattern
+※遊びのあるPattern
+※複数のパーツで構成し合っているPattern
 
 
+■Cupsule
+※Pattern, Panel ,Colorで多様化
 
+○GrooveGenerator
+・Paramenter
+ -位置
+ -角度
+ -幅
+ -間隔
+ -ZigZag
+  -Ratio
+  -幅
+  -間隔
+・リファレンス調査(多様化)
 
+○VolumeGenerator
 
+○PanelGenerator
+・InputをVolume
 
+○Coreの拡張
+・カプセル数を少なくする
+・カプセルの配置ロジックを複雑化
 
+○カラー実装
+・ランダム化
+・マルチパラメーター化
+・リファレンス調査
+ -ファベーラ
+・Window + Cubeのシンプルなデザインでカラー検証
+
+●Houdini sci-fi Buildings Cupsule
+https://www.youtube.com/watch?v=zd6f5tkl5dc
+・Panel
+ -Top, Bottomを独立させる
+ -スケールランダム化
+・Window
+ -Boolean
+ -固定
+・Pattern
+ -Left, Right再度に溝を生成
+ -溝の幅、ZigZagの幅をランダム化
+ -縦 or 横 or 縦横
+・カラー設定 
+ -ランダム化
+ -マルチパラメーター化
+
+○街化
+
+●NightCityCupsule設計
+・ベースボリュームを細長くしてビジュアルを複雑にする
+・カプセルデザイン
+・外装のレイヤー化
+ -多様な窓
+ -HardCaver
+ -Asset(看板、設備)
+
+●NightCityリファレンス
+・NightCity
+https://www.youtube.com/watch?v=tOWGsyt40t8&t=1616s
+・MegaStructure
+https://www.youtube.com/watch?v=J5A3Z0qX-Yk
 
 
 ■ToDo
