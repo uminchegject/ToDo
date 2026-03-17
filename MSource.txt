@@ -1,77 +1,14 @@
-○Cube_Animation記事化
-##アニメーションのベースとなる立方体を配置する
-GridとCopyAndTransformでPointを立方体状に配置し、配置したPointにCopyToPointsでBoxを配置する
+○検証
+・Blockの複雑化
+・GradationBaseのRandomly検証
 
-##Attributeに必要な情報を設定する
-Attributeを用いてCopyToPointsで配置する箱の情報を編集する
-具体的には下記の情報を設定する
-・scale
-・rotate
-・Cd
-AttributeCreateノードで上記情報を設定する。
-
-##VEXを用いたAttributeの編集
-ここからVEXを用いてAttributeの編集を行いアニメーションを生成する。
-ここでSinが重要になってくる。
-
-○振り返り
-
-○1on1準備
-※プロシージャルデザイン・コンピュテーショナルデザインの魅力をHoudiniを用いて発信をしたい
-・きっかけとなったTaroさんの記事を参考にナレッジをまとめてみる
- -Gradient Box Animation with Geometry Nodes in Blender for Beginners
-https://www.youtube.com/watch?v=Q9VyHFib0-E
-・堀川さんのような魅力あるTutorialを発信したい
- -建築業界向けHoudiniのススメ : Introduction of Houdini to Architecture
-https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
-
-
-■PatternGenerator
-○Block複雑化
-・ラインで検証
-
-○大宰府Starbucks検証準備
-・天井をGradation化
-・天井と壁のBaseLineを修正
-
-○大宰府Starbucks検証
-※Scale(長さ)&Rotate(Y軸)をベースに検証する
-※GIF
-・PointEditor
- -PM化
-・Gradation
- -MultiWave
- -マルチパラメーターで複雑化
- -Animation
-・Randomly
- -GradationBaseのRandomly検証
-
-○折半構造実装
-※Surface
-・Test_Curveを中点に設定
-・Gradation_Point_Editorを修正
-・横浜港大さん橋国際客船ターミナル模写(アーチ)
-・斜め方向でGradationPointEditorを行う
-・PM化
- -密度
-
-△ミラノ万博中国館
-
-△曲線庇
-・モチーフ調査
-
-△ルイヴィトン美術館(grasshopper)
-・RandomlyBox
-・Panel(Voronoi)
-
-●Pattern設計
-※3次元的Pattern
-※遊びのあるPattern
-※複数のパーツで構成し合っているPattern
-
-
-■Cupsule
-※Pattern, Panel ,Colorで多様化
+○複線対応
+int block_num = chi("block_num");
+for (int line_idx = 0; line_idx < nprimitives(0); line_idx++)
+{
+	line_id = prim(0, "LineId", line_idx);
+    int prim_pt_list[] = primpoints(0, line_idx);
+	
 
 ○GrooveGenerator
 ・Paramenter
@@ -85,53 +22,21 @@ https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
   -間隔
 ・リファレンス調査(多様化)
 
-○VolumeGenerator
 
-○PanelGenerator
-・InputをVolume
+○VEXを用いたAttributeの編集
+ここからVEXを用いてAttributeの編集を行いアニメーションを生成する。
+ここでSinが重要になってくる。
 
-○Coreの拡張
-・カプセル数を少なくする
-・カプセルの配置ロジックを複雑化
 
-○カラー実装
-・ランダム化
-・マルチパラメーター化
-・リファレンス調査
- -ファベーラ
-・Window + Cubeのシンプルなデザインでカラー検証
 
-●Houdini sci-fi Buildings Cupsule
-https://www.youtube.com/watch?v=zd6f5tkl5dc
-・Panel
- -Top, Bottomを独立させる
- -スケールランダム化
-・Window
- -Boolean
- -固定
-・Pattern
- -Left, Right再度に溝を生成
- -溝の幅、ZigZagの幅をランダム化
- -縦 or 横 or 縦横
-・カラー設定 
- -ランダム化
- -マルチパラメーター化
 
-○街化
 
-●NightCityCupsule設計
-・ベースボリュームを細長くしてビジュアルを複雑にする
-・カプセルデザイン
-・外装のレイヤー化
- -多様な窓
- -HardCaver
- -Asset(看板、設備)
 
-●NightCityリファレンス
-・NightCity
-https://www.youtube.com/watch?v=tOWGsyt40t8&t=1616s
-・MegaStructure
-https://www.youtube.com/watch?v=J5A3Z0qX-Yk
+
+
+
+
+
 
 
 ■ToDo
@@ -174,54 +79,3 @@ https://www.netoff.co.jp/
 ・ProceduralCityProject
 ・楽しい街ジェネレーター
 ・CupsuleTower
-
-
-■振り返り
-◆チーム／プロジェクトへの貢献目標
-上期はインプットを中心に取り組んでいたため、下後はアウトプットを目標に、
-勉強している内容をNotionでナレッジとして整理・共有していきたいと考えています。
-
-個人で制作してきたHoudiniプロジェクトの内容をNotionに整理しました。
-具体的には、大学で研究していたコンピュテーショナルデザインを題材に、
-ツールの実装方法や検証の進め方、どのような手順で設計ルールをアルゴリズムに落とし込んでいるかといった一連のフローをまとめました。
-
-◆個人の技術目標
-上期はCGの基礎的な部分を中心に勉強していましたが、業務に直接結びつく内容ではなかったため、
-今後は現在の案件内容を踏まえ、実務に直結するスキルの習得を目指したいと考えています。
-特に、Houdiniを活用した業務効率化の技術について重点的に学んでいきたいです。
-
-・GF案件では、多様な対応内容に応じて、直結する技術の勉強を行っていました。
- -Git でのプロジェクト管理方法(SubTreeを用いたLabsデータの管理)
-
-
-◆個人の目標（こちらについては、ゲームプレイ調査や生活改善など業務外の内容でかまいません。）
-技術書の読書時間が不足しているため、毎朝会社に来る前にしっかりと読書の時間を設けて、
-継続的に知識を深めていきたいと考えています。
-業務の合間を活用して技術書を読み、知識の習得に取り組みました。
-
-主にオライリーの技術書を中心に学習を進めるとともに、
-Houdini Foundationsを読みながら、実際にTutorialの実装を行っていましました。
- 
-
-■目標設定
-※業務をベースに整理
-
-◆質 ／「仕事の質向上」（Quality）
-　目的：ツール・リグ・シェーダー・パイプラインの品質向上
-・Houdiniのツールによる作業工程の効率化
-
-◆量 ／「成果の量・生産性」（Productivity / Output）
-　目的：生産性向上・処理量の増加
-・Houdiniツールを月2本改善
-
-◆価値創造 ／「価値の創出」（Value Creation）
-　目的：制作チームへの新しい価値提供
-・Houdiniツールによる工数削減
-
-◆マインド ／「思考・姿勢（マインドセット）」（Mindset）
-　目的：課題発見・学習・連携姿勢の強化
-・ツール実装におけるベースとなる技術のキャッチアップ
-
-◆貢献 ／「組織・周囲への貢献」（Contribution）
-　目的：チーム・プロジェクト全体への貢献度向上
-・ツール実装の使用技術のナレッジ共有
