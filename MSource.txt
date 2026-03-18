@@ -62,25 +62,24 @@ for (int line_idx = 0; line_idx < nprimitives(0); line_idx++)
 ■Cupsule
 ※Pattern, Panel ,Colorで多様化
 
-○CupsuleTowerCity
-・スケールの多様化
-・Grooveの多様化
-
-○Volume生成
+○CupsuleVolume生成処理
+※スケールの多様化
 ・Core
 ・Cupsule
 
-○GrooveGenerator修正
-・リファレンス調査(多様化)
-・複数Groove生成
- -等間隔
-
 ○カラー実装
+※多様化
 ・ランダム化
 ・マルチパラメーター化
 ・リファレンス調査
  -ファベーラ
 ・Window + Cubeのシンプルなデザインでカラー検証
+
+○GrooveGenerator修正
+※多様化
+・リファレンス調査(多様化)
+・複数Groove生成
+ -等間隔
 
 ●Houdini sci-fi Buildings Cupsule
 https://www.youtube.com/watch?v=zd6f5tkl5dc
@@ -97,8 +96,6 @@ https://www.youtube.com/watch?v=zd6f5tkl5dc
 ・カラー設定 
  -ランダム化
  -マルチパラメーター化
-
-○街化
 
 ●NightCityCupsule設計
 ・ベースボリュームを細長くしてビジュアルを複雑にする
