@@ -1,3 +1,19 @@
+○木組み検証
+・木組み複製
+・Gradation検証
+・Randomly検証
+
+○ボリューム検証
+・立方体のみで検証
+
+○街化準備
+・カプセルの配置高さを設定
+・多様化
+　ースケール
+　ーGroove
+　ーカラー
+
+
 ○VEXを用いたAttributeの編集
 ここからVEXを用いてAttributeの編集を行いアニメーションを生成する。
 ここでSinが重要になってくる。
@@ -13,14 +29,7 @@ https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
 
 
 ■PatternGenerator
-○複線対応
-int block_num = chi("block_num");
-for (int line_idx = 0; line_idx < nprimitives(0); line_idx++)
-{
-	line_id = prim(0, "LineId", line_idx);
-    int prim_pt_list[] = primpoints(0, line_idx);
-
-○大宰府Starbucks検証準備
+○大宰府Starbucks検証
 ・天井をGradation化
 ・天井と壁のBaseLineを修正
 
@@ -67,15 +76,13 @@ for (int line_idx = 0; line_idx < nprimitives(0); line_idx++)
 ・Core
 ・Cupsule
 
-○カラー実装
+○カラー検証
 ※多様化
-・ランダム化
-・マルチパラメーター化
 ・リファレンス調査
  -ファベーラ
 ・Window + Cubeのシンプルなデザインでカラー検証
 
-○GrooveGenerator修正
+△GrooveGenerator修正
 ※多様化
 ・リファレンス調査(多様化)
 ・複数Groove生成
