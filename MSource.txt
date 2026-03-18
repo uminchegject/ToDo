@@ -1,7 +1,3 @@
-○VEXを用いたAttributeの編集
-ここからVEXを用いてAttributeの編集を行いアニメーションを生成する。
-ここでSinが重要になってくる。
-
 ○1on1準備
 ※プロシージャルデザイン・コンピュテーショナルデザインの魅力をHoudiniを用いて発信をしたい
 ・きっかけとなったTaroさんの記事を参考にナレッジをまとめてみる
@@ -13,9 +9,10 @@ https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
 
 
 ■PatternGenerator
-○大宰府Starbucks検証
-・天井をGradation化
-・天井と壁のBaseLineを修正
+○木組み模写
+・X型
+・門型
+ -逆さまで木組みを配置していき、両端のBaseLineにcopynumを設定する
 
 ○大宰府Starbucks検証
 ※Scale(長さ)&Rotate(Y軸)をベースに検証する
@@ -28,7 +25,8 @@ https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
 ・Randomly
  -GradationBaseのRandomly検証
 
-○折半構造実装
+
+△折半構造実装
 ※Surface
 ・Test_Curveを中点に設定
 ・Gradation_Point_Editorを修正
@@ -54,67 +52,29 @@ https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
 
 ■Cupsule
 ※Pattern, Panel ,Colorで多様化
+○アーキグラム式街ジェネレーター
+・菱形のCore
+・Cupsule斜め配置
 
-○CupsuleVolume生成
-※スケールの多様化
-・Core
-・Cupsule
+○カプセル修正
+・シンプルカプセル
+・カラーパラメーター
+ -Base
+ -Window
 
-○カラー検証
+○アーキグラム調査
 ※多様化
-・リファレンス調査
- -ファベーラ
-・Window + Cubeのシンプルなデザインでカラー検証
+・カプセルタワーに関する調査
+ -デザインDetail調査
+・街の生成ロジックに関する調査
+ -街～Volumeの生成ロジック調査
 
-△GrooveGenerator修正
-※多様化
-・リファレンス調査(多様化)
-・複数Groove生成
- -等間隔
- 
-○街化準備
-・カプセルの配置高さを設定
-・多様化
-　ースケール
-　ーGroove
-　ーカラー
-
-●Houdini sci-fi Buildings Cupsule
-https://www.youtube.com/watch?v=zd6f5tkl5dc
-・Panel
- -Top, Bottomを独立させる
- -スケールランダム化
-・Window
- -Boolean
- -固定
-・Pattern
- -Left, Right再度に溝を生成
- -溝の幅、ZigZagの幅をランダム化
- -縦 or 横 or 縦横
-・カラー設定 
- -ランダム化
- -マルチパラメーター化
-
-●NightCityCupsule設計
-・ベースボリュームを細長くしてビジュアルを複雑にする
-・カプセルデザイン
-・外装のレイヤー化
- -多様な窓
- -HardCaver
- -Asset(看板、設備)
-
-●NightCityリファレンス
-・NightCity
-https://www.youtube.com/watch?v=tOWGsyt40t8&t=1616s
-・MegaStructure
-https://www.youtube.com/watch?v=J5A3Z0qX-Yk
 
 
 ■ToDo
-○AMDLab調査
-
-○カジュアル面談申し込み
-・自己PR作成
+○Public設計
+・仕事
+・私生活
 
 ○本Study
 ※仕事のように目標を明確にする
@@ -136,6 +96,15 @@ https://www.netoff.co.jp/
 
 
 ■発信
+○CityGeneratorの整理
+・プロジェクトをHip化
+・色を複数用意
+・ビジュアル資料の用意
+
+○UnderConstruction記事化
+・街生成の設計
+・カラーの多様化
+
 ●発信先
 ・Notion、Qiita
 ・△Twitter、LinkedIn
