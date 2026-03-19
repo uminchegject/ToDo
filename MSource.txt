@@ -8,70 +8,34 @@ https://www.youtube.com/watch?v=Q9VyHFib0-E
 https://qiita.com/TaroOzaki/items/0f870e6c441f8e38d67f
 
 
-■PatternGenerator
-○木組み模写
-・X型
-・門型
- -逆さまで木組みを配置していき、両端のBaseLineにcopynumを設定する
+■振り返り
+◆チーム／プロジェクトへの貢献目標
+上期はインプットを中心に取り組んでいたため、下後はアウトプットを目標に、
+勉強している内容をNotionでナレッジとして整理・共有していきたいと考えています。
+・プロシージャルチームのNotionを更新
+ -チュートリアルの整理
+ -自習目的で実装したチュートリアルや、趣味で開発したツールに関するナレッジを整理
 
-○大宰府Starbucks検証
-※Scale(長さ)&Rotate(Y軸)をベースに検証する
-※GIF
-・PointEditor
- -PM化
-・Gradation
- -MultiWave
- -Animation
-・Randomly
- -GradationBaseのRandomly検証
+◆個人の技術目標
+上期はCGの基礎的な部分を中心に勉強していましたが、業務に直接結びつく内容ではなかったため、
+今後は現在の案件内容を踏まえ、実務に直結するスキルの習得を目指したいと考えています。
+特に、Houdiniを活用した業務効率化の技術について重点的に学んでいきたいです。
+・多種多様な案件に対応するため、裏付けを目的とした技術学習を実施
+ -案件プロジェクトにおけるLabsデータのGit管理手法について学習し、subtreeを用いてLabsプロジェクトを参照・更新対応できる仕組みを整理
+ -HoudiniEngineプラグインのビルド検証において、CMakeの記述方法やビルドコマンドを学習し、公式のオープンソースをもとに不適切な実装箇所の調査および報告を実施
 
-
-△折半構造実装
-※Surface
-・Test_Curveを中点に設定
-・Gradation_Point_Editorを修正
-・横浜港大さん橋国際客船ターミナル模写(アーチ)
-・斜め方向でGradationPointEditorを行う
-・PM化
- -密度
-
-△ミラノ万博中国館
-
-△曲線庇
-・モチーフ調査
-
-△ルイヴィトン美術館(grasshopper)
-・RandomlyBox
-・Panel(Voronoi)
-
-●Pattern設計
-※3次元的Pattern
-※遊びのあるPattern
-※複数のパーツで構成し合っているPattern
-
-
-■Cupsule
-※Pattern, Panel ,Colorで多様化
-○アーキグラム式街ジェネレーター
-・菱形のCore
-・Cupsule斜め配置
-
-○カプセル修正
-・シンプルカプセル
-・カラーパラメーター
- -Base
- -Window
-
-○アーキグラム調査
-※多様化
-・カプセルタワーに関する調査
- -デザインDetail調査
-・街の生成ロジックに関する調査
- -街～Volumeの生成ロジック調査
-
+◆個人の目標（こちらについては、ゲームプレイ調査や生活改善など業務外の内容でかまいません。）
+技術書の読書時間が不足しているため、毎朝会社に来る前にしっかりと読書の時間を設けて、
+継続的に知識を深めていきたいと考えています。
+・業務の合間を活用して技術書を読み、知識の習得に取り組んできた
+ -主にオライリーなどの技術書を中心に学習を進めた
+ -Houdini Foundationsを読みながら、チュートリアルの実装も並行して実施した 
 
 
 ■ToDo
+○画像生成AIの調査
+※PMのスタディ用途
+
 ○Public設計
 ・仕事
 ・私生活
@@ -93,6 +57,68 @@ https://itami.info/maya-starter-book
 ○本&ソフト買取
 https://www.netoff.co.jp/
 ・要らない本,ソフトをまとめる
+
+
+■PatternGenerator
+○木組み模写
+・X型
+・門型
+ -逆さまで木組みを配置していき、両端のBaseLineにcopynumを設定する
+
+○大宰府Starbucks検証
+※Scale(長さ)&Rotate(Y軸)をベースに検証する
+※GIF
+・PointEditor
+ -PM化
+・Gradation
+ -MultiWave(X型のPanelを左右でズラす)
+ -Animation
+・Randomly
+ -GradationBaseのRandomly
+
+
+△折半構造実装
+※Surface
+・Test_Curveを中点に設定
+・Gradation_Point_Editorを修正
+・横浜港大さん橋国際客船ターミナル模写(アーチ)
+・斜め方向でGradation検証を行う
+・PM化
+ -密度
+
+△ミラノ万博中国館
+
+△曲線庇
+・モチーフ調査
+
+△ルイヴィトン美術館(grasshopper)
+・RandomlyBox
+・Panel(Voronoi)
+
+●Pattern設計
+※3次元的Pattern
+※遊びのあるPattern
+※複数のパーツで構成し合っているPattern
+
+
+■Cupsule
+○カプセル修正
+・シンプルカプセル
+・カラーパラメーター
+ -Base
+ -Window
+
+※Pattern, Panel ,Colorで多様化
+○アーキグラム式街ジェネレーター
+・菱形のCore
+・Cupsule斜め配置
+
+○アーキグラム調査
+※多様化
+・カプセルタワーに関する調査
+ -デザインDetail調査
+・街の生成ロジックに関する調査
+ -街～Volumeの生成ロジック調査
 
 
 ■発信
