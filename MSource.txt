@@ -1,6 +1,16 @@
-○画像生成AIの調査
-※PMのスタディ用途
-・GPTを1ヶ月体験
+○ラウンジ予約
+https://onlineservice.maruzenjunkudo.co.jp/pages/lounge-reservation
+
+○アマゾン解約
+・DMMTV
+
+○GPT契約
+
+○プレゼント
+
+○準備
+・ゲーム、映画
+・タスク
 
 
 ■PatternGenerator
@@ -90,6 +100,7 @@
 ●CityGenerator
 ・Under Construction
 ・MetaborithmCity
+・ModuleCity
 
 
 ■ToDo
@@ -101,6 +112,9 @@
 https://www.sidefx.com/profile/rmagee/
 ・H19.5 FOUNDATIONS BOOK
 https://itami.info/maya-starter-book
+
+○画像生成AIの調査
+※PMのスタディ用途
 
 ○湘南ベルマーレチケット
 
