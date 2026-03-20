@@ -5,14 +5,13 @@
 ■PatternGenerator
 ○検証
 ※Scale(長さ)&Rotate(Y軸)をベースに検証する
-※GIF
+※1→2→4の順番で検証する
+※色をつけて検証する
 ・PointEditor
  -PM化
 ・Gradation
- -MultiWave(※ミラーの独立)
+ -MultiWave
  -Animation
-・Randomly
- -GradationBaseのRandomly
 
 ○ミラーオブジェクトを独立
 
