@@ -73,6 +73,7 @@
 
 ■発信
 ○SinAnimationTutorial発信
+・10MG以下のGIFを用意
 
 ○CityGeneratorの整理
 ・プロジェクトをHip化
