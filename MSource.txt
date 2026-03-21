@@ -8,7 +8,7 @@
  -PM化
 ・Gradation
  -MultiWave(Base + Child)
-・SlideLine + SlideBlock
+ -SlideLine + SlideBlock
 
 ○修正
 ・HDA化
@@ -40,21 +40,30 @@
 
 
 ■City
-○アーキグラム調査
-※多様化
-・カプセルタワーに関する調査
- -デザインDetail調査
-・街の生成ロジックに関する調査
- -街～Volumeの生成ロジック調査
+○アーキグラム実装
 ・GPTでStudyImage
-
-○アーキグラム式街ジェネレーター
-※Pattern, Panel ,Colorで多様化
 ・菱形のCore
-・Cupsule斜め配置
+ -PM化
+・BasePoint生成
+ -Ｃｏｌｏｒ
+ -CupsuleType
+・カプセル生成
 
+●アーキグラム設計
+・幾何学的かつ多様なカプセル配置
+ -ダイヤモンド型
+・幾何学的かつ多様なカプセルデザイン
+ -立方体
+ -球体
+ -連続
+・多様な色づかい
+ -マルチパラメーター
+ -コラージュ
+ -背景
 
 ○ModularAssets調査
+※シンプルな配置、多様なアセット
+・Base + 小物
 ・所有アセットを確認
 
 ○設計
