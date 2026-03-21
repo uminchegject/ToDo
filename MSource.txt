@@ -3,19 +3,16 @@
 ※Scale(長さ)&Rotate(Y軸)をベースに検証する
 ※1→2→4の順番で検証する
 ※色をつけて検証する
+※Animation
 ・PointEditor
  -PM化
 ・Gradation
- -MultiWave
- -Animation
+ -MultiWave(Base + Child)
+・SlideLine + SlideBlock
 
-○ミラーオブジェクトを独立
-
-△HDA化
-・GradationPointEditor
-・RandomlyPointEditor
-・PointEditor
-
+○修正
+・HDA化
+・Animationの方向を修正
 
 
 △折半構造実装
@@ -73,6 +70,10 @@
 ・色を複数用意
 ・ビジュアル資料の用意
  -UML
+ 
+○木組み記事メモ
+・CityGeneratorを参照
+
 
 ●発信先
 ・Notion、Qiita
