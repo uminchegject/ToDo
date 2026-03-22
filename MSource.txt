@@ -84,7 +84,9 @@
  
 ○木組み記事メモ
 ・CityGeneratorを参照
-
+ -設計
+ -PM
+ -Animation
 
 ●発信先
 ・Notion、Qiita
