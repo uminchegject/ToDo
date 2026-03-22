@@ -61,6 +61,7 @@
  -コラージュ
  -背景
 
+
 ○ModularAssets調査
 ※シンプルな配置、多様なアセット
 ・Base + 小物
@@ -109,6 +110,13 @@ https://www.sidefx.com/profile/rmagee/
 ・H19.5 FOUNDATIONS BOOK
 https://itami.info/maya-starter-book
 
+○Roppongi
+・ジーパン(ベックマン)
+・リュック(キャンバス)
+
+○ジム準備
+・講習
+
 ○図書カード
 ・GiantKilling
 
@@ -117,6 +125,8 @@ https://itami.info/maya-starter-book
 ○本&ソフト買取
 https://www.netoff.co.jp/
 ・要らない本,ソフトをまとめる
+
+
 
 
 ■目標
