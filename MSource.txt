@@ -76,7 +76,7 @@
 ・菱形のCore
  -PM化
 ・BasePoint生成
- -Ｃｏｌｏｒ
+ -Color
  -CupsuleType
 ・カプセル生成
 
@@ -93,12 +93,12 @@
  -背景
 
 
-○ModularAssets調査
+△ModularAssets調査
 ※シンプルな配置、多様なアセット
 ・Base + 小物
 ・所有アセットを確認
 
-○設計
+△設計
 ・BasePointの配置
 ・DataTable管理
 
