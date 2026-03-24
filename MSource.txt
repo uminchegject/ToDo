@@ -62,18 +62,15 @@
 
 
 ■発信
-○SinAnimationTutorial発信
-・10MG以下のGIFを用意
-
 ○木組みProject修正
 ・BasePointEditorHDA化
 ・HIP化
 
 ○UnderConstruction整理
 ・高層、低層割合変更
-　ーClassSetter
+ -ClassSetter
 ・色を複数用意
-　ーbuilding_pattern_generator3
+ -building_pattern_generator3
 
 
 ●発信先
