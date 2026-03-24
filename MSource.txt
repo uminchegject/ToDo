@@ -1,29 +1,8 @@
 ■PatternGenerator
-○木組み記事メモ
-・CityGeneratorを参照
- -設計
- -PM
- -Animation
+○Normal, Up設定
 
-○検証
-※Scale(長さ)&Rotate(Y軸)をベースに検証する
-※1→2→4の順番で検証する
-※色をつけて検証する
-※Animation
-・PointEditor
- -PM化
-・Gradation
- -MultiWave(Base + Child)
- -SlideLine + SlideBlock
-
-○修正
-・HDA化
-・Animationの方向を修正
-
-
-○斜め方向BaseLine生成
-・横浜港大さん橋国際客船ターミナル
- -GradationTransform
+○横浜港大さん橋国際客船ターミナル検証
+・GradationTransform
 
 ○ガーキン
 ・Base(鉄骨)
@@ -48,17 +27,26 @@
 
 
 ■City
-○CupusleBasePointGenerator
-※1×2×1のカプセルを配置していく処理
-・BaseLine配置●アーキグラム設計
- -斜めに対応・幾何学的かつ多様なカプセル配置
- -角単位で管理 -ダイヤモンド型
- -8 or 4 or 2・幾何学的かつ多様なカプセルデザイン
-・△面配置 -立方体
+○斜めLineに対応
+
+○CupsuleBasePointGenerator
+・BaseLine配置
+ -角単位で管理
+ -8 or 4 or 2
+
+○CupsuleCity
+※1×2×1のカプセルの配置
+・カプセルの密度をCoreごとに調整する
+
+●アーキグラム設計
+・幾何学的かつ多様なカプセル配置
+ -ダイヤモンド型
+・幾何学的かつ多様なカプセルデザイン
+ -立方体
  -球体
-○ダイアモンド街区 -連続
-・立方体を斜めにする・多様な色づかい
- -カプセルの密度をCoreごとに調整する -マルチパラメーター
+ -連続
+・多様な色づかい
+ -マルチパラメーター
  -コラージュ
  -背景
 
@@ -77,11 +65,15 @@
 ○SinAnimationTutorial発信
 ・10MG以下のGIFを用意
 
-○CityGeneratorの整理
-・プロジェクトをHip化
+○木組みProject修正
+・BasePointEditorHDA化
+・HIP化
+
+○UnderConstruction整理
+・高層、低層割合変更
+　ーClassSetter
 ・色を複数用意
-・ビジュアル資料の用意
- -UML
+　ーbuilding_pattern_generator3
 
 
 ●発信先
