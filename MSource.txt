@@ -27,16 +27,20 @@
 
 
 ■City
-○斜めLineに対応
-
-○CupsuleBasePointGenerator
-・BaseLine配置
- -角単位で管理
- -8 or 4 or 2
+※CityGenerator一式をBaseにする
+ -※VolumeをEditする
 
 ○CupsuleCity
 ※1×2×1のカプセルの配置
+・ユニット
+ -枠
+・アニメーション
+ -道上を飛ばす
 ・カプセルの密度をCoreごとに調整する
+
+○CupsuleBasePointGenerator
+・面
+・8 or 4 or 2
 
 ●アーキグラム設計
 ・幾何学的かつ多様なカプセル配置
