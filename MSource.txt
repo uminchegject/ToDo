@@ -1,27 +1,3 @@
-○斜め方向BaseLine生成
-・横浜港大さん橋国際客船ターミナル
- -GradationTransform
-
-○ガーキン
-・Base(鉄骨)
- -Color
-・Child(Window)
- -Rotate
-
-
-○CupusleBasePointGenerator
-※1×2×1のカプセルを配置していく処理
-・BaseLine配置
- -斜めに対応
- -角単位で管理
- -8 or 4 or 2
-・△面配置
-
-○ダイアモンド街区
-・立方体を斜めにする
- -カプセルの密度をCoreごとに調整する
-
-
 ■PatternGenerator
 ○木組み記事メモ
 ・CityGeneratorを参照
@@ -45,14 +21,15 @@
 ・Animationの方向を修正
 
 
-○折半構造実装
-※Surface
-・Test_Curveを中点に設定
-・Gradation_Point_Editorを修正
-・横浜港大さん橋国際客船ターミナル模写(アーチ)
-・斜め方向でGradation検証を行う
-・PM化
- -密度
+○斜め方向BaseLine生成
+・横浜港大さん橋国際客船ターミナル
+ -GradationTransform
+
+○ガーキン
+・Base(鉄骨)
+ -Color
+・Child(Window)
+ -Rotate
 
 
 △ミラノ万博中国館
@@ -71,24 +48,17 @@
 
 
 ■City
-○アーキグラム実装
-・GPTでStudyImage
-・菱形のCore
- -PM化
-・BasePoint生成
- -Color
- -CupsuleType
-・カプセル生成
-
-●アーキグラム設計
-・幾何学的かつ多様なカプセル配置
- -ダイヤモンド型
-・幾何学的かつ多様なカプセルデザイン
- -立方体
+○CupusleBasePointGenerator
+※1×2×1のカプセルを配置していく処理
+・BaseLine配置●アーキグラム設計
+ -斜めに対応・幾何学的かつ多様なカプセル配置
+ -角単位で管理 -ダイヤモンド型
+ -8 or 4 or 2・幾何学的かつ多様なカプセルデザイン
+・△面配置 -立方体
  -球体
- -連続
-・多様な色づかい
- -マルチパラメーター
+○ダイアモンド街区 -連続
+・立方体を斜めにする・多様な色づかい
+ -カプセルの密度をCoreごとに調整する -マルチパラメーター
  -コラージュ
  -背景
 
