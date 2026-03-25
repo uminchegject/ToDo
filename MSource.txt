@@ -1,3 +1,6 @@
+○USD資料
+
+
 ■PatternGenerator
 ○Normal, Up設定
 
@@ -34,28 +37,19 @@
 ※1×2×1のカプセルの配置
 ・ユニット
  -枠
+・CupsuleBasePointGenerator
+ -面(Unit)
+ -8 or 4
 ・アニメーション
  -道上を飛ばす
 ・カプセルの密度をCoreごとに調整する
-
-○CupsuleBasePointGenerator
-・面
-・8 or 4 or 2
-
-●アーキグラム設計
-・幾何学的かつ多様なカプセル配置
- -ダイヤモンド型
-・幾何学的かつ多様なカプセルデザイン
- -立方体
- -球体
- -連続
 ・多様な色づかい
  -マルチパラメーター
  -コラージュ
  -背景
 
 
-△ModularAssets調査
+○ModularAssets調査
 ※シンプルな配置、多様なアセット
 ・Base + 小物
 ・所有アセットを確認
@@ -116,7 +110,3 @@ https://itami.info/maya-starter-book
 ○本&ソフト買取
 https://www.netoff.co.jp/
 ・要らない本,ソフトをまとめる
-
-
-
-
