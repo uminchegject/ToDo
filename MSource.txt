@@ -1,3 +1,16 @@
+○ユニット実装
+・ブロック化
+・角
+
+○ユニット設計
+・凹凸
+・空白
+・サイドブロック
+
+○円柱対応
+・Point寄せ
+
+
 ○PFStudy
 ※効率化をテーマ
 ※基礎部分ベース
@@ -8,9 +21,7 @@
 ・△PatternProject
 
 
-nGenerator
-○円柱対応
-
+■PatternGenerator
 ○横浜港大さん橋国際客船ターミナル検証
 ・GradationTransform
 
@@ -40,13 +51,10 @@ nGenerator
 ※CityGenerator一式をBaseにする
  -※VolumeをEditする
 
-○BasePoint設計
-・面
-・角
+○BasePoint生成
 
-○ユニットパターン
-・凹凸
-・スキップ
+○BasePointへのAttribute設定
+・面 or 角
 
 ○CupsuleCity
 ※1×2×1のカプセルの配置
