@@ -8,7 +8,7 @@
 ・△PatternProject
 
 
-■PatternGenerator
+nGenerator
 ○横浜港大さん橋国際客船ターミナル検証
 ・GradationTransform
 
@@ -68,10 +68,6 @@
 
 
 ■発信
-○木組みProject修正
-・BasePointEditorHDA化
-・HIP化
-
 ○UnderConstruction整理
 ・高層、低層割合変更
  -ClassSetter
@@ -120,6 +116,7 @@ https://www.netoff.co.jp/
 ・要らない本,ソフトをまとめる
 
 
+
 ■目標
 ※効率化をテーマに考える
 
@@ -141,7 +138,7 @@ https://www.netoff.co.jp/
 - 工数削減の数値目標（手動作業を◯%自動化）
 ・作業環境の整備
  -vscodeの拡張
- -aiの利用
+ -HoudiniのDesktopを整理
 
 ---
 ## **③ 価値創造 ／「価値の創出」（Value Creation）**
@@ -159,9 +156,8 @@ https://www.netoff.co.jp/
 - プロアクティブな課題の拾い上げ（例：アニメーターやモデル担当との定例ヒアリング）
 - コードレビュー・技術レビューへの積極参加
 - 設計時に「チーム全体の負荷」を考える思考習慣の定着
-・プロフェッショナルの生涯価値の向上
 ・効率化の意識を常につける
- -自動化
+ -Houdiniの作業における効率化できる部分を効率化する
 
 ---
 ## **⑤貢献 ／「組織・周囲への貢献」（Contribution）**
@@ -171,6 +167,4 @@ https://www.netoff.co.jp/
 - 後輩・アーティストへの技術サポート（例：週◯回のQA対応）
 - 他部署（エンジニア・アート）との連携強化プロジェクトへの参加
 ・ナレッジの共有
- -Houdini Chanel
- -Tips共有会
- -Coyote Blog
+ -Tips共有会への投稿
