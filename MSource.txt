@@ -9,6 +9,8 @@
 
 
 nGenerator
+○円柱対応
+
 ○横浜港大さん橋国際客船ターミナル検証
 ・GradationTransform
 
@@ -42,9 +44,9 @@ nGenerator
 ・面
 ・角
 
-○ユニット設計
-・4×4
-・枠
+○ユニットパターン
+・凹凸
+・スキップ
 
 ○CupsuleCity
 ※1×2×1のカプセルの配置
