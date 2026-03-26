@@ -1,11 +1,5 @@
-○BasePoint生成
-・ユニット化
-・パラメーター
-　ーPatternHeight
-　ーSpaceWidth
-　ーPatternNum
-・BasePointへのAttribute設定
-・検証
+○GUIツール作成
+https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
 
 ○PFStudy
 ※効率化をテーマ
@@ -28,6 +22,8 @@
 ■PatternGenerator
 ○横浜港大さん橋国際客船ターミナル検証
 ・GradationTransform
+
+○ガーキン準備
 
 ○ガーキン
 ・Base(鉄骨)
@@ -57,11 +53,14 @@
 
 ○BasePoint生成
 ・ユニット化
+・パラメーター
+ ーPatternHeight
+ ーSpaceWidth
+ ーPatternNum
 ・BasePointへのAttribute設定
-・検証
+・検
 
 ○角対応
-
 
 ●ユニット設計
 ・凹凸
@@ -90,8 +89,6 @@
 
 
 ■発信
-
-
 ●発信先
 ・Notion、Qiita
 ・△Twitter、LinkedIn
