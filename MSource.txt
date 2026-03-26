@@ -21,9 +21,13 @@ https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
 
 ■PatternGenerator
 ○横浜港大さん橋国際客船ターミナル検証
-・GradationTransform
+・スケール感を模写
+・人を配置
+・Point密度検証
 
 ○ガーキン準備
+・模写
+・△内装
 
 ○ガーキン
 ・Base(鉄骨)
