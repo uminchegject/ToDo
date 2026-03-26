@@ -1,27 +1,24 @@
-○ユニット実装
-・ブロック化
-・角
-
-○ユニット設計
-・凹凸
-・空白
-・サイドブロック
-
-○円柱対応
-・Point寄せ
-
-
 ○PFStudy
 ※効率化をテーマ
 ※基礎部分ベース
 ※形に残す
-・Tutorial
-・仕事Study
-・△CityProject
-・△PatternProject
+・業務を踏まえた効率化
+・TechBlogを参考
+ -建築DX
+ -Houdini
+・Studyをベース
+ -Tutorial
+ -仕事Study
+ -△CityProject
+ -△PatternProject
 
 
 ■PatternGenerator
+○円柱対応
+・BasePointGeneratorを修正
+・Gradationを繋げる
+・BasePointEditorで円柱状にGradationを生成するようにする
+
 ○横浜港大さん橋国際客船ターミナル検証
 ・GradationTransform
 
@@ -51,12 +48,20 @@
 ※CityGenerator一式をBaseにする
  -※VolumeをEditする
 
+○角対応
+
 ○BasePoint生成
+・ユニット化
 
 ○BasePointへのAttribute設定
 ・面 or 角
 
-○CupsuleCity
+●ユニット設計
+・凹凸
+・空白
+・サイドブロック
+
+●CupsuleCity
 ※1×2×1のカプセルの配置
 ・アニメーション
  -道上を飛ばす
@@ -78,6 +83,9 @@
 
 
 ■発信
+○WoodPattern整理
+・Gradation検証
+
 ○UnderConstruction整理
 ・高層、低層割合変更
  -ClassSetter
