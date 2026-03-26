@@ -62,7 +62,7 @@ https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
  ーSpaceWidth
  ーPatternNum
 ・BasePointへのAttribute設定
-・検
+・BasePointEditor形式
 
 ○角対応
 
