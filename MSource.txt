@@ -56,13 +56,13 @@ https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
  -※VolumeをEditする
 
 ○BasePoint生成
-・ユニット化
+※BasePointEditor形式
+※ユニット化
 ・パラメーター
  ーPatternHeight
  ーSpaceWidth
  ーPatternNum
 ・BasePointへのAttribute設定
-・BasePointEditor形式
 
 ○角対応
 
@@ -86,7 +86,7 @@ https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
 ※シンプルな配置、多様なアセット
 ・Base + 小物
 ・TajimaCity
-・細々した小物をアセットで配置
+ -細々した小物をアセットで配置
 
 △ModularAssets設計
 ・BasePointの配置
