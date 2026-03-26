@@ -85,7 +85,8 @@ https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
 ○ModularAssets調査
 ※シンプルな配置、多様なアセット
 ・Base + 小物
-・所有アセットを確認
+・TajimaCity
+・細々した小物をアセットで配置
 
 △ModularAssets設計
 ・BasePointの配置
