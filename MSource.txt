@@ -1,7 +1,20 @@
+○BasePoint生成
+・ユニット化
+・パラメーター
+　ーPatternHeight
+　ーSpaceWidth
+　ーPatternNum
+・BasePointへのAttribute設定
+・検証
+
+
 ○PFStudy
 ※効率化をテーマ
 ※基礎部分ベース
 ※形に残す
+※簡単かつシンプルに
+ -社内のみ(Tips共有会、Notion)
+ -良かったらQiita
 ・業務を踏まえた効率化
 ・TechBlogを参考
  -建築DX
@@ -14,11 +27,6 @@
 
 
 ■PatternGenerator
-○円柱対応
-・BasePointGeneratorを修正
-・Gradationを繋げる
-・BasePointEditorで円柱状にGradationを生成するようにする
-
 ○横浜港大さん橋国際客船ターミナル検証
 ・GradationTransform
 
@@ -48,13 +56,13 @@
 ※CityGenerator一式をBaseにする
  -※VolumeをEditする
 
-○角対応
-
 ○BasePoint生成
 ・ユニット化
+・BasePointへのAttribute設定
+・検証
 
-○BasePointへのAttribute設定
-・面 or 角
+○角対応
+
 
 ●ユニット設計
 ・凹凸
@@ -83,14 +91,6 @@
 
 
 ■発信
-○WoodPattern整理
-・Gradation検証
-
-○UnderConstruction整理
-・高層、低層割合変更
- -ClassSetter
-・色を複数用意
- -building_pattern_generator3
 
 
 ●発信先
@@ -136,8 +136,6 @@ https://www.netoff.co.jp/
 
 
 ■目標
-※効率化をテーマに考える
-
 ## **① 質 ／「仕事の質向上」（Quality）**
 **目的：ツール・リグ・シェーダー・パイプラインの品質向上**
 - キャラクター・プロップのリグ品質（例：破綻率◯%以下、アニメーターからの修正依頼◯件以内）
@@ -165,7 +163,7 @@ https://www.netoff.co.jp/
 - 新技術の導入（例：プロシージャルワークフロー、MLリグ、リアルタイムGIなど）
 - 技術的課題の解決（例：LOD最適化、ストリーミング改善）
 - 表現力向上に直結する技術提供（例：新しいVFXシェーダー開発）
-・CoyoteBlogの投稿
+
 
 ---
 ## **④ マインド ／「思考・姿勢（マインドセット）」（Mindset）**
@@ -184,5 +182,5 @@ https://www.netoff.co.jp/
 - テクニカルとアーティストの橋渡し役（例：要件整理、技術仕様書の作成）
 - 後輩・アーティストへの技術サポート（例：週◯回のQA対応）
 - 他部署（エンジニア・アート）との連携強化プロジェクトへの参加
-・ナレッジの共有
- -Tips共有会への投稿
+・案件で学んだ技術をナレッジに記載及び共有
+ -Tips共有会でも積極的に共有したい
