@@ -7,7 +7,6 @@
 ・BasePointへのAttribute設定
 ・検証
 
-
 ○PFStudy
 ※効率化をテーマ
 ※基礎部分ベース
@@ -112,9 +111,9 @@
 ※仕事のように目標を明確にする
 ※CPとは差別化して考える
 ※手を動かす(アウトプット)
-・Mayaスターターブック
-https://www.sidefx.com/profile/rmagee/
 ・H19.5 FOUNDATIONS BOOK
+https://www.sidefx.com/profile/rmagee/
+・Mayaスターターブック
 https://itami.info/maya-starter-book
 
 ○Roppongi
