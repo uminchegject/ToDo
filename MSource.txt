@@ -1,6 +1,3 @@
-○記事化準備(UnderConstruction・WoodPattern)
-・ビジュアル資料
-
 ○GUIツール作成
 https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
 ・Windowの表示
@@ -29,22 +26,15 @@ https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
  -ただ、まだ仕事はこなせても自主的に動くことができるレベルではないのでその力をクリークで身につけたい
 
 
-
 ■PatternGenerator
 ○横浜港大さん橋国際客船ターミナル検証
-・スケール感を模写
-・人を配置
-・Point密度検証
-
-○ガーキン準備
-・模写
-・△内装
 
 ○ガーキン
 ・Base(鉄骨)
  -Color
 ・Child(Window)
  -Rotate
+・△内装
 
 
 △ミラノ万博中国館
@@ -66,33 +56,6 @@ https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
 ※CityGenerator一式をBaseにする
  -※VolumeをEditする
 
-○BasePoint生成
-※BasePointEditor形式
-※ユニット化
-・パラメーター
- ーPatternHeight
- ーSpaceWidth
- ーPatternNum
-・BasePointへのAttribute設定
-
-○角対応
-
-●ユニット設計
-・凹凸
-・空白
-・サイドブロック
-
-●CupsuleCity
-※1×2×1のカプセルの配置
-・アニメーション
- -道上を飛ばす
-・カプセルの密度をCoreごとに調整する
-・多様な色づかい
- -マルチパラメーター
- -コラージュ
- -背景
-
-
 ○ModularAssets調査
 ※シンプルな配置、多様なアセット
 ・Base + 小物
@@ -102,6 +65,49 @@ https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
 △ModularAssets設計
 ・BasePointの配置
 ・DataTable管理
+
+
+■CupsuleCity
+※BasePointEditor形式
+※ユニット化
+
+●BasePoint(Surface)
+・Attribute
+ -scale
+ -up, Normal
+
+●BlockGenerator
+・パラメーター
+　ーPatternSize
+　ーPatternHeight
+　ーSpaceWidth
+・Attribute
+　ーscale
+　ー△ID
+　ーUp, Normal
+　ーBaseColor
+
+●BasePointGenerator
+・パラメーター
+　ーユニットスケール
+・Attribute
+ -scale
+ -color
+ -Up, Normal
+ 
+●ユニット設計
+・凹凸
+・UnitBlock
+
+●City設計
+※1×2×1のカプセルの配置
+・アニメーション
+ -道上を飛ばす
+・カプセルの密度をCoreごとに調整する
+・多様な色づかい
+ -マルチパラメーター
+ -コラージュ
+ -背景
 
 
 ■発信
