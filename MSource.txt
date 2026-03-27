@@ -1,8 +1,3 @@
-○GUIツール作成
-https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
-・Windowの表示
-・アイテムの配置
-
 ○PFStudy
 ※効率化をテーマ
 ※基礎部分ベース
@@ -24,133 +19,6 @@ https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
 ※目標のテーマに繋げる
 ・30までには別の会社でも経験を積みたい
  -ただ、まだ仕事はこなせても自主的に動くことができるレベルではないのでその力をクリークで身につけたい
-
-
-■PatternGenerator
-○横浜港大さん橋国際客船ターミナル検証
-
-○ガーキン
-・Base(鉄骨)
- -Color
-・Child(Window)
- -Rotate
-・△内装
-
-
-△ミラノ万博中国館
-
-△曲線庇
-・モチーフ調査
-
-△ルイヴィトン美術館(grasshopper)
-・RandomlyBox
-・Panel(Voronoi)
-
-●Pattern設計
-※3次元的Pattern
-※遊びのあるPattern
-※複数のパーツで構成し合っているPattern
-
-
-■City
-※CityGenerator一式をBaseにする
- -※VolumeをEditする
-
-○ModularAssets調査
-※シンプルな配置、多様なアセット
-・Base + 小物
-・TajimaCity
- -細々した小物をアセットで配置
-
-△ModularAssets設計
-・BasePointの配置
-・DataTable管理
-
-
-■CupsuleCity
-※BasePointEditor形式
-※ユニット化
-
-●BasePoint(Surface)
-・Attribute
- -scale
- -up, Normal
-
-●BlockGenerator
-・パラメーター
-　ーPatternSize
-　ーPatternHeight
-　ーSpaceWidth
-・Attribute
-　ーscale
-　ー△ID
-　ーUp, Normal
-　ーBaseColor
-
-●BasePointGenerator
-・パラメーター
-　ーユニットスケール
-・Attribute
- -scale
- -color
- -Up, Normal
- 
-●ユニット設計
-・凹凸
-・UnitBlock
-
-●City設計
-※1×2×1のカプセルの配置
-・アニメーション
- -道上を飛ばす
-・カプセルの密度をCoreごとに調整する
-・多様な色づかい
- -マルチパラメーター
- -コラージュ
- -背景
-
-
-■発信
-●発信先
-・Notion、Qiita
-・△Twitter、LinkedIn
-
-●PatternGenerator
-・木組み
-・折半構造
-
-●CityGenerator
-・Under Construction
-・MetaborithmCity
-・ModuleCity
-
-
-■ToDo
-○本Study
-※仕事のように目標を明確にする
-※CPとは差別化して考える
-※手を動かす(アウトプット)
-・H19.5 FOUNDATIONS BOOK
-https://www.sidefx.com/profile/rmagee/
-・Mayaスターターブック
-https://itami.info/maya-starter-book
-
-○Roppongi
-・ジーパン(ベックマン)
-・リュック(キャンバス)
-
-○ジム準備
-・講習
-
-○図書カード
-・GiantKilling
-
-○衣類整理
-
-○本&ソフト買取
-https://www.netoff.co.jp/
-・要らない本,ソフトをまとめる
-
 
 
 ■目標
@@ -202,3 +70,136 @@ https://www.netoff.co.jp/
 - 他部署（エンジニア・アート）との連携強化プロジェクトへの参加
 ・案件で学んだ技術をナレッジに記載及び共有
  -Tips共有会でも積極的に共有したい
+
+
+■PatternGenerator
+○横浜港大さん橋国際客船ターミナル検証
+
+○ガーキン
+・Base(鉄骨)
+ -Color
+・Child(Window)
+ -Rotate
+・△内装
+
+
+△ミラノ万博中国館
+
+△曲線庇
+・モチーフ調査
+
+△ルイヴィトン美術館(grasshopper)
+・RandomlyBox
+・Panel(Voronoi)
+
+●Pattern設計
+※3次元的Pattern
+※遊びのあるPattern
+※複数のパーツで構成し合っているPattern
+
+
+■CupsuleCity
+※BasePointEditor形式
+※ユニット化
+
+○Rectangleで検証
+
+●BasePoint(Surface)
+・Attribute
+ -scale
+ -up, Normal
+
+●BlockGenerator
+・パラメーター(MultiParam)
+ -PatternSize
+ -SideSize
+ -Height
+・Attribute
+ -△id
+ -scale
+ -up, normal
+ -base_color
+
+●BasePointGenerator
+・パラメーター
+ -ユニットスケール
+・Attribute
+ -scale
+ -color
+ -Up, Normal
+ 
+●ユニット設計
+・凹凸
+・UnitBlock
+
+●City設計
+※1×2×1のカプセルの配置
+・アニメーション
+ -道上を飛ばす
+・カプセルの密度をCoreごとに調整する
+・多様な色づかい
+ -マルチパラメーター
+ -コラージュ
+ -背景
+
+
+■City
+※CityGenerator一式をBaseにする
+ -※VolumeをEditする
+
+○ModularAssets調査
+※シンプルな配置、多様なアセット
+・Base + 小物
+・TajimaCity
+ -細々した小物をアセットで配置
+
+△ModularAssets設計
+・BasePointの配置
+・DataTable管理
+
+
+■発信
+●発信先
+・Notion、Qiita
+・△Twitter、LinkedIn
+
+●PatternGenerator
+・木組み
+・折半構造
+
+●CityGenerator
+・Under Construction
+・MetaborithmCity
+・ModuleCity
+
+
+■ToDo
+○GUIツール作成
+https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
+・Windowの表示
+・アイテムの配置
+
+○本Study
+※仕事のように目標を明確にする
+※CPとは差別化して考える
+※手を動かす(アウトプット)
+・H19.5 FOUNDATIONS BOOK
+https://www.sidefx.com/profile/rmagee/
+・Mayaスターターブック
+https://itami.info/maya-starter-book
+
+○Roppongi
+・ジーパン(ベックマン)
+・リュック(キャンバス)
+
+○ジム準備
+・講習
+
+○図書カード
+・GiantKilling
+
+○衣類整理
+
+○本&ソフト買取
+https://www.netoff.co.jp/
+・要らない本,ソフトをまとめる
