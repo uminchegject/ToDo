@@ -170,7 +170,6 @@
 ・アニメーション作成
 
 
-
 ●発信先
 ・Notion、Qiita
 ・△Twitter、LinkedIn
