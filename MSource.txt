@@ -160,6 +160,10 @@
 
 
 ■発信
+○木組みプロシージャル化記事整理
+
+○Under Construction記事整理
+
 ●発信先
 ・Notion、Qiita
 ・△Twitter、LinkedIn
