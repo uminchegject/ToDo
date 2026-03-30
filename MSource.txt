@@ -1,16 +1,17 @@
+○USD(C++)
+・ビルド
+
 ○GUIツール作成
 https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
-・Windowの表示
-・アイテムの配置
-
-○Blue Tokyo レンダリング環境整理
-・HDRI
-・ライティング
-・レンダリング
+・GFのコーディング規約をベースにツールを実装
 
 
 ■PatternGenerator
 ○横浜港大さん橋国際客船ターミナル検証
+
+
+○ラインをブロック化
+・管理単位をブロック化
 
 ○ガーキン
 ・Base(鉄骨)
@@ -99,6 +100,11 @@ https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
 ※章ごとにドキュメントと画像を用意し、Notionで整理していく
 
 ○木組み記事整理
+
+○Blue Tokyo レンダリング環境整理
+・HDRI
+・ライティング
+・レンダリング
 
 ○Blue Tokyo記事整理
 
