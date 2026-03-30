@@ -1,3 +1,14 @@
+○GUIツール作成
+https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
+・Windowの表示
+・アイテムの配置
+
+○Blue Tokyo レンダリング環境整理
+・HDRI
+・ライティング
+・レンダリング
+
+
 ■PatternGenerator
 ○横浜港大さん橋国際客船ターミナル検証
 
@@ -87,9 +98,9 @@
 ■発信
 ※章ごとにドキュメントと画像を用意し、Notionで整理していく
 
-○木組みプロシージャル化記事整理
+○木組み記事整理
 
-○Under Construction記事整理
+○Blue Tokyo記事整理
 
 ○横浜港大さん橋国際客船ターミナル記事メモ
 ・アニメーション作成
@@ -122,11 +133,6 @@
 ・趣味
  -CityProject
  -PatternProject
-
-○GUIツール作成
-https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
-・Windowの表示
-・アイテムの配置
 
 ○本Study
 ※仕事のように目標を明確にする
