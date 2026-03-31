@@ -1,16 +1,9 @@
-○シンプル
-・東熱ビル
-・大さん橋
-
-○新実装
-・ガーキン
-・ポルトガル館
-
-○カプセル
-
-
 ○USD(C++)
-・ビルド
+・GFドキュメント
+・NewSchemaClass
+https://fereria.github.io/reincarnation_tech/usd/cpp/custom_schema
+・C++実装
+https://fereria.github.io/reincarnation_tech/usd/cpp/start_usdcpp
 
 ○GUIツール作成
 https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
@@ -18,7 +11,15 @@ https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
 
 
 ■PatternGenerator
-○横浜港大さん橋国際客船ターミナル検証
+※応用と新実装をそれぞれ行う
+ -シンプル
+  -東熱ビル
+  -大さん橋
+ -新実装
+  -CurveSurface(ガーキン)
+  -GradationMotion(ポルトガル館)
+
+○東熱ビル検証準備
 
 
 ○ラインをブロック化
