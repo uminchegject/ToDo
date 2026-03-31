@@ -23,9 +23,9 @@ https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
 ・BasePointをGrid状に生成
 ・GradationPointEditorでY軸回転で変化
 
-
 ○ガーキン検証準備
-・GradationPointEditorでBlockごとにカラーを設定
+・BaseLine整理
+・GradationPointEditorでBlockごとにColor,TransformをGradation
 
 △Block検証
 ・位置
