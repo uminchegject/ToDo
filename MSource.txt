@@ -1,14 +1,10 @@
-※前半(効率化の種 + 仕事Study メイン) + 後半(Tutorial + Private + 記事 メイン)
+○SdfFileFormat ,SdfAbstractData調査
 
-○USDプラグイン(C++)
-・GFドキュメント
-・Abcソース
-・オリジナルの New Schema Class を作る
-https://fereria.github.io/reincarnation_tech/usd/cpp/custom_schema
-
-○GUIツール作成
-https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
-・GFのコーディング規約をベースにツールを実装
+○Private
+・SdfFileFormat ,SdfAbstractDataの説明
+・WritePrimの処理を説明
+ -Layerごとにusdの情報を取得して、それらをalembicに代入している
+・報告
 
 
 ■PatternGenerator
@@ -21,9 +17,6 @@ https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
 ○ガーキン検証準備
 ・模写
 ・GradationPointEditorでBlockごとにColor,TransformをGradation
-
-△Block検証
-・位置
 
 △BlockごとにBaseSurface分離対応
 int block_idx = int(line_id / block_num);
