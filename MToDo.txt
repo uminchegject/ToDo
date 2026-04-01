@@ -1,5 +1,5 @@
 ■反省
-※日曜日は午前中はPrivateに全力を注ぐ
+※日曜日の午前中はPrivateに全力を注ぐ
  -昼寝は夕方以降
 
 ※面接、面談の際は事前に文章で伝える
@@ -20,14 +20,12 @@
 ・Point
 ・Curve
 ・Surface
+・Pattern
 
 ●Flow
 ・PM化(検証)
 ・Gradation
 ・Randomly
-
-○Pattern設計・実装
-・カラー化(Texture化)
 
 
 ■CityGenerator

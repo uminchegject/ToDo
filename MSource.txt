@@ -1,9 +1,10 @@
-○USD(C++)
+○USDプラグイン(C++)
 ・GFドキュメント
-・NewSchemaClass
+・Abcソース
+・オリジナルの New Schema Class を作る
 https://fereria.github.io/reincarnation_tech/usd/cpp/custom_schema
-・C++実装
-https://fereria.github.io/reincarnation_tech/usd/cpp/start_usdcpp
+・USDプラグインをcmakeでビルドする
+https://fereria.github.io/reincarnation_tech/usd/cpp/cmakebuild
 
 ○GUIツール作成
 https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
@@ -12,12 +13,6 @@ https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
 
 ■PatternGenerator
 ※応用と新実装をそれぞれ行う
- -シンプル
-  -東熱ビル
-  -大さん橋
- -新実装
-  -CurveSurface(ガーキン)
-  -GradationMotion(ポルトガル館)
 
 ○東熱ビル検証準備
 ・BasePointをGrid状に生成
@@ -25,6 +20,7 @@ https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
 
 ○ガーキン検証準備
 ・BaseLine整理
+・Block内で同じ変化量にする
 ・GradationPointEditorでBlockごとにColor,TransformをGradation
 
 △Block検証
@@ -44,14 +40,14 @@ if(last_block_line == 1) return;
 ・△内装
 
 
-△ミラノ万博中国館
-
-△曲線庇
-・モチーフ調査
-
-△ルイヴィトン美術館(grasshopper)
-・RandomlyBox
-・Panel(Voronoi)
+●IDEA
+・ポルトガル館
+・ミラノ万博中国館
+・曲線庇
+ -モチーフ調査
+・ルイヴィトン美術館(grasshopper)
+ -RandomlyBox
+ -Panel(Voronoi)
 
 ●Pattern設計
 ※3次元的Pattern
@@ -178,19 +174,9 @@ for(int block_idx = 0; block_idx < block_num; ++ block_num)
 これにより、形状のバリエーションやスケールの変化に柔軟に対応しつつ、
 構造的な特徴を保ったまま効率的に形態の生成と検証を行える作品となっています。
 
-
 ●発信先
 ・Notion、Qiita
 ・△Twitter、LinkedIn
-
-●PatternGenerator
-・木組み
-・折半構造
-
-●CityGenerator
-・Under Construction
-・MetaborithmCity
-・ModuleCity
 
 
 ■ToDo
