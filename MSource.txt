@@ -1,10 +1,10 @@
+※前半(効率化の種 + 仕事Study メイン) + 後半(Tutorial + Private + 記事 メイン)
+
 ○USDプラグイン(C++)
 ・GFドキュメント
 ・Abcソース
 ・オリジナルの New Schema Class を作る
 https://fereria.github.io/reincarnation_tech/usd/cpp/custom_schema
-・USDプラグインをcmakeでビルドする
-https://fereria.github.io/reincarnation_tech/usd/cpp/cmakebuild
 
 ○GUIツール作成
 https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
@@ -15,12 +15,11 @@ https://qiita.com/70_cg_art/items/2cf6a4b82b23a0f303ad
 ※応用と新実装をそれぞれ行う
 
 ○東熱ビル検証準備
-・BasePointをGrid状に生成
-・GradationPointEditorでY軸回転で変化
+・模写
+
 
 ○ガーキン検証準備
-・BaseLine整理
-・Block内で同じ変化量にする
+・模写
 ・GradationPointEditorでBlockごとにColor,TransformをGradation
 
 △Block検証
@@ -59,67 +58,13 @@ if(last_block_line == 1) return;
 ※BasePointEditor形式
 ※ユニット化
 
+○Editorの実装
+・VertexBlockEditor
+・HorizontalBlockEditor
+・BasePointGenerator
+
 ○Rectangleで検証
 
-●BasePoint(垂直分割)
-vector base_pos = 
-vector normal = 
-vector scale = 
-float height = scale.y;
-
-float block_height = 0
-for(int i = 0; i < chi("param"); ++i)
-{
-	float pattern_size = chi("pattern_size")
-	block_height += pattern_size;	
-}
-
-int block_num = int(height / block_height);
-float adjust_block_height = height / block_num;
-
-vector pos = base_pos;
-pos.y -= height / 2;
-for(int block_idx = 0; block_idx < block_num; ++ block_num)
-{
-	for(int param_idx = 0; param_idx < chi("param"); ++param_idx)
-	{
-		float pattern_size = ch("pattern_size");
-		float pattern_height = ch("pattern_height");
-		
-		pos.y += (pattern_size / block_height) * adjust_block_height / 2;
-		
-		vector spawn_pos = pos;
-		spawn_pos += normal * pattern_height;
-		int pt = addpoint(0, spawn_pos);
-		
-		pos.y += (pattern_size / block_height) * adjust_block_height / 2;
-	}
-}
-
-●BasePoint(Surface)
-・Attribute
- -scale
- -up, Normal
-
-●BlockGenerator
-・パラメーター(MultiParam)
- -PatternSize
- -SideSize
- -Height
-・Attribute
- -△id
- -scale
- -up, normal
- -base_color
-
-●BasePointGenerator
-・パラメーター
- -ユニットスケール
-・Attribute
- -scale
- -color
- -Up, Normal
- 
 ●ユニット設計
 ・凹凸
 ・UnitBlock
@@ -161,6 +106,7 @@ for(int block_idx = 0; block_idx < block_num; ++ block_num)
 ・レンダリング
 
 ○Blue Tokyo記事整理
+
 
 ○横浜港大さん橋国際客船ターミナル記事メモ
 ・アニメーション作成
@@ -216,3 +162,63 @@ https://itami.info/maya-starter-book
 ○本&ソフト買取
 https://www.netoff.co.jp/
 ・要らない本,ソフトをまとめる
+
+
+■ソース
+●VertexBlockEditor
+・パラメーター(MultiParam)
+ -PatternSize
+ -SideSize
+ -Height
+・Attribute
+ -scale
+ -up, normal
+
+vector base_pos = v@P;
+vector normal = v@N
+vector base_scale = v@scale;
+float height = base_scale.y;
+
+float block_height = 0
+for(int i = 0; i < chi("param_list"); ++i)
+{
+	float pattern_size = chi("pattern_size")
+	block_height += pattern_size;	
+}
+
+int block_num = int(height / block_height);
+float adjust_block_height = height / block_num;
+
+vector pos = base_pos;
+pos.y -= height / 2;
+for(int block_idx = 0; block_idx < block_num; ++ block_num)
+{
+	for(int param_idx = 0; param_idx < chi("param"); ++param_idx)
+	{
+	
+		float pattern_size = ch("pattern_size" + itoa(param_idx + 1));
+		float pattern_height = ch("pattern_height" + itoa(param_idx + 1));
+		
+		pos.y += (pattern_size / block_height) * adjust_block_height / 2;
+		
+		vector spawn_pos = pos;
+		spawn_pos += normal * pattern_height;
+		vector scale = base_scale;
+		scale.y = pattern_size;
+		int pt = addpoint(0, spawn_pos);
+		setpointattrib(0, "scale", pt, scale);
+		setpointattrib(0, "N", pt, normal);
+		
+		pos.y += (pattern_size / block_height) * adjust_block_height / 2;
+	}
+}
+
+
+●BasePointGenerator
+・パラメーター
+ -ユニットスケール
+ -color
+・Attribute
+ -scale
+ -color
+ -Up, Normal
