@@ -5,6 +5,27 @@ https://chatgpt.com/s/t_69ce3560d2ec81919a58f92ecb601290
 ・デバッグ調査
  -UsdObjFileFormat::WriteToFile
 
+○USDプラグインドキュメント
+※exampleをベース
+ -alembic, adobe参照
+・プラグイン
+ -plugin.json
+ -cmake.txt
+・FileFormatPlugin
+ -sdffileformatplugin
+
+○ビジュアル資料
+・WoodPattern
+・Under Construction
+
+○記事メモ
+・東熱ビル
+・大さん橋
+
+○実装・検証
+・ガーキン
+・カプセルシティ
+
 
 ■PatternGenerator
 ※応用と新実装をそれぞれ行う
