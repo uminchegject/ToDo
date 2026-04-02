@@ -1,10 +1,9 @@
-○SdfFileFormat ,SdfAbstractData調査
-
-○Private
-・SdfFileFormat ,SdfAbstractDataの説明
-・WritePrimの処理を説明
- -Layerごとにusdの情報を取得して、それらをalembicに代入している
-・報告
+○Adobe USDFileFormatPlugin調査
+・ビルド
+https://chatgpt.com/s/t_69ce3560d2ec81919a58f92ecb601290
+・デバッグ準備
+・デバッグ調査
+ -UsdObjFileFormat::WriteToFile
 
 
 ■PatternGenerator
@@ -92,14 +91,15 @@ if(last_block_line == 1) return;
 ※章ごとにドキュメントと画像を用意し、Notionで整理していく
 
 ○木組み記事整理
+・ビジュアル資料
 
-○Blue Tokyo レンダリング環境整理
+○Blue Tokyo記事整理
+・ビジュアル資料
+
+△Blue Tokyo レンダリング環境整理
 ・HDRI
 ・ライティング
 ・レンダリング
-
-○Blue Tokyo記事整理
-
 
 ○横浜港大さん橋国際客船ターミナル記事メモ
 ・アニメーション作成
@@ -165,7 +165,7 @@ https://www.netoff.co.jp/
  -Height
 ・Attribute
  -scale
- -up, normal
+ -normal
 
 vector base_pos = v@P;
 vector normal = v@N
@@ -214,4 +214,38 @@ for(int block_idx = 0; block_idx < block_num; ++ block_num)
 ・Attribute
  -scale
  -color
- -Up, Normal
+ -Normal
+
+vector unit_scale = chv("unit_scale");
+vector color = chv("color");
+
+vector base_pos = v@P;
+vector base_scale = v@scale;
+vector normal = v@N;
+vector up = set(0, 1, 0);
+vector tangent = normalize(cross(normal, up));
+
+int width_num = int(base_scale.x / unit_scale.x);
+int height_num = int(base_scale.y / unit_scale.y);
+
+vector adjusted_unit_scale = unit_scale;
+adjusted_unit_scale.x = base_scale.x / width_num;
+adjusted_unit_scale.y = base_scale.y / height_num;
+
+for(int width_idx = 0; width_idx < width_num; width_idx++)
+{
+	for(int height_idx = 0; height_idx < height_num; height_idx++)
+	{
+		vector pos = base_pos;
+		pos -= tangent * base_scale.x / 2;
+		pos -= up * base_scale.y / 2;
+		
+		pos += unit_scale.x * tangent;
+		pos += unit_scale.y * up;
+		
+		int pt = addpoint(0, pos);
+		setpointattrib(0, "scale", pt, adjusted_unit_scale);
+		setpointattrib(0, "N", pt, normal);
+		setpointattrib(0, "Cd", pt, color);		
+	}
+}
