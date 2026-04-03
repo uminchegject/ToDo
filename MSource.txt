@@ -1,30 +1,23 @@
-○Adobe USDFileFormatPlugin調査
-・ビルド
-https://chatgpt.com/s/t_69ce3560d2ec81919a58f92ecb601290
-・Adobeプラグインの起動
-・Adobeプラグインのデバッグ
- -UsdObjFileFormat::WriteToFile
-
-○USDプラグインドキュメント
-※exampleをベース
- -alembic
-・プラグイン
- -plugin.json
- -cmake.txt
-・FileFormatPlugin
- -sdffileformatplugin
+○記事メモ
+・東熱ビル
+・大さん橋
 
 ○ビジュアル資料
 ・WoodPattern
 ・Under Construction
 
-○記事メモ
-・東熱ビル
-・大さん橋
-
 ○実装・検証
 ・ガーキン
 ・カプセルシティ
+
+△USDプラグインドキュメント
+※exampleをベース
+ -△alembic
+・プラグイン
+ -plugin.json
+ -cmake.txt
+・FileFormatPlugin
+ -sdffileformatplugin
 
 
 ■PatternGenerator
@@ -140,6 +133,13 @@ if(last_block_line == 1) return;
 
 
 ■ToDo
+○Adobe USDFileFormatPlugin調査
+・ビルド
+https://chatgpt.com/s/t_69ce3560d2ec81919a58f92ecb601290
+・Adobeプラグインの起動
+・Adobeプラグインのデバッグ
+ -UsdObjFileFormat::WriteToFile
+
 ○PFStudy
 ※効率化をテーマ
 ※基礎ベース
@@ -148,7 +148,7 @@ if(last_block_line == 1) return;
 ・効率化の種(作業効率化のための環境整理)
  -ツール(GUI)
 ・仕事Study(※メモ代わり)
- -USD
+ -USD(※サンプルプロジェクトをまとめる)
 ・趣味
  -CityProject
  -PatternProject
