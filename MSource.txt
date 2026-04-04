@@ -194,6 +194,12 @@ if(last_block_line == 1) return;
 
 
 ■ToDo
+○いちご狩り提案
+・4月にいちご狩り
+・5月に筑波
+
+○門前仲町確認
+
 ○Adobe USDFileFormatPlugin調査
 ・ビルド
 https://chatgpt.com/s/t_69ce3560d2ec81919a58f92ecb601290
