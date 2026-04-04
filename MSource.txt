@@ -1,8 +1,10 @@
+※まずは模写
+
 ■記事
-●記事レイアウト
-・概要
-・簡単な工程説明
-・検証
+※記事レイアウト
+ -概要
+ -簡単な工程説明
+ -検証
 
 ●横浜港大さん橋国際客船ターミナル
 ・実装
@@ -36,41 +38,36 @@
   -長さ
   -傾き
 
-
-■CupsuleCity
-○Rectangleで検証
-・正確な正方形になる値で検証
-
-○Editorの実装
-・VertexBlockEditor
-・HorizontalBlockEditor
-・BasePointGenerator
+●CupsuleTown
+・概要
+ -カプセルタワー
+・実装
+ -凹凸の表現
+・検証
+ -凹凸
 
 
-●ユニット設計
-・凹凸
-・UnitBlock
+■模写 + PD実装
+○Gerkin模写
+・BaseLine + ChildLine
+・Primグループ化
 
-●City設計
-※1×2×1のカプセルの配置
-・アニメーション
- -道上を飛ばす
-・カプセルの密度をCoreごとに調整する
-・多様な色づかい
- -マルチパラメーター
- -コラージュ
- -背景
+○カプセルタワー模写
+・凹凸Pattern
+ -1凹凸
+ -2凹凸
 
 
-■USD
-●USDプラグインドキュメント
-※exampleをベース
- -△alembic
-・プラグイン
- -plugin.json
- -cmake.txt
-・FileFormatPlugin
- -sdffileformatplugin
+■拡張
+●ルーパーPattern
+・複雑化
+
+●CupsuleTown
+・Unit化
+ -NightCity
+
+●Gerkin
+・PatternのTransform調整
  
 
 
@@ -196,6 +193,15 @@ https://chatgpt.com/s/t_69ce3560d2ec81919a58f92ecb601290
 ・Adobeプラグインの起動
 ・Adobeプラグインのデバッグ
  -UsdObjFileFormat::WriteToFile
+
+○USDObjドキュメント
+・プラグイン
+ -plugin.json
+ -cmake.txt
+・FileFormatPlugin
+ -sdffileformatplugin
+・△alembic参照
+
 
 ○PFStudy
 ※効率化をテーマ
