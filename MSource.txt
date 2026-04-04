@@ -42,14 +42,17 @@
 ・正確な正方形になる値で検証
 
 ○Editorの実装
+※カプセルタワーの配置ロジックをベース
 ・VertexBlockEditor
 ・HorizontalBlockEditor
 ・BasePointGenerator
 
-
-●ユニット設計
+○配置設計
 ・凹凸
-・UnitBlock
+
+△Unit設計
+・外殻
+・オフセット
 
 ●City設計
 ※1×2×1のカプセルの配置
@@ -63,15 +66,16 @@
 
 
 ■USD
-●USDプラグインドキュメント
-※exampleをベース
- -△alembic
+○usdObj調査
+・ソース調査
+・デバッグ調査
+
+●usdObjドキュメント
 ・プラグイン
  -plugin.json
  -cmake.txt
 ・FileFormatPlugin
  -sdffileformatplugin
- 
 
 
 
@@ -194,6 +198,7 @@ if(last_block_line == 1) return;
 ・ビルド
 https://chatgpt.com/s/t_69ce3560d2ec81919a58f92ecb601290
 ・Adobeプラグインの起動
+ -dllのエラー原因を調査
 ・Adobeプラグインのデバッグ
  -UsdObjFileFormat::WriteToFile
 
