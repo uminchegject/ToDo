@@ -1,10 +1,84 @@
-※まずは模写
+○いちご狩り提案
+・4月にいちご狩り
+・5月に筑波
 
-■記事
-※記事レイアウト
- -概要
- -簡単な工程説明
- -検証
+○門前仲町確認
+
+○Adobe USDFileFormatPlugin調査
+・ビルド
+https://chatgpt.com/s/t_69ce3560d2ec81919a58f92ecb601290
+・Adobeプラグインの起動
+ -dllのエラー原因を調査
+・Adobeプラグインのデバッグ
+ -UsdObjFileFormat::WriteToFile
+
+○usdObj調査
+・ソース調査
+・デバッグ調査
+・△alembic参照
+
+○USDObjドキュメント
+・プラグイン
+ -plugin.json
+ -cmake.txt
+・FileFormatPlugin
+ -sdffileformatplugin
+
+
+■PatternGenerator
+※応用と新実装をそれぞれ行う
+
+○Gerkin模写
+・BaseLine + ChildLine
+・Primグループ化
+
+△GerkinPattern柔軟化
+
+
+△ルーパー柔軟化・複雑化
+・サンプル調査
+
+
+■CupsuleCity
+※BasePointEditor形式
+※ユニット化
+
+○カプセルタワー模写
+・凹凸Pattern
+ -1凹凸
+ -2凹凸
+
+▲CupsuleTown
+・Unit化
+ -NightCity
+ -外殻
+ -オフセット
+
+▲City設計
+※1×2×1のカプセルの配置
+・アニメーション
+ -道上を飛ばす
+・カプセルの密度をCoreごとに調整する
+・多様な色づかい
+ -マルチパラメーター
+ -コラージュ
+ -背景
+
+
+■発信
+※章ごとにドキュメントと画像を用意し、Notionで整理していく
+
+○木組み記事整理
+・ビジュアル資料
+
+○Blue Tokyo記事整理
+・ビジュアル資料
+
+△Blue Tokyo レンダリング環境整理
+・HDRI
+・ライティング
+・レンダリング
+
 
 ●横浜港大さん橋国際客船ターミナル
 ・実装
@@ -47,172 +121,12 @@
  -凹凸
 
 
-■模写 + PD実装
-○Gerkin模写
-・BaseLine + ChildLine
-・Primグループ化
-
-○カプセルタワー模写
-・凹凸Pattern
- -1凹凸
- -2凹凸
-
-
-■拡張
-●ルーパーPattern
-・複雑化
-
-●CupsuleTown
-・Unit化
- -NightCity
- -外殻
- -オフセット
-
-●Gerkin
-・PatternのTransform調整
-
-
-
-■PatternGenerator
-※応用と新実装をそれぞれ行う
-
-○東熱ビル検証準備
-・模写
-
-
-○ガーキン検証準備
-・模写
-・GradationPointEditorでBlockごとにColor,TransformをGradation
-
-△BlockごとにBaseSurface分離対応
-int block_idx = int(line_id / block_num);
-if(line_idx % block_num == block_num - 1) setprimgroup(0, "last_block_line", 1ine_idx, 1);
-
-if(last_block_line == 1) return;
-
-●ガーキン
-・Base(鉄骨)
- -Color
-・Child(Window)
- -Rotate
-・△内装
-
-
-●IDEA
-・ポルトガル館
-・ミラノ万博中国館
-・曲線庇
- -モチーフ調査
-・ルイヴィトン美術館(grasshopper)
- -RandomlyBox
- -Panel(Voronoi)
-
-●Pattern設計
-※3次元的Pattern
-※遊びのあるPattern
-※複数のパーツで構成し合っているPattern
-
-
-■CupsuleCity
-※BasePointEditor形式
-※ユニット化
-
-○Editorの実装
-・VertexBlockEditor
-・HorizontalBlockEditor
-・BasePointGenerator
-
-○Rectangleで検証
-
-●ユニット設計
-・凹凸
-・UnitBlock
-
-●City設計
-※1×2×1のカプセルの配置
-・アニメーション
- -道上を飛ばす
-・カプセルの密度をCoreごとに調整する
-・多様な色づかい
- -マルチパラメーター
- -コラージュ
- -背景
-
-
-■City
-※CityGenerator一式をBaseにする
- -※VolumeをEditする
-
-○ModularAssets調査
-※シンプルな配置、多様なアセット
-・Base + 小物
-・TajimaCity
- -細々した小物をアセットで配置
-
-△ModularAssets設計
-・BasePointの配置
-・DataTable管理
-
-
-■発信
-※章ごとにドキュメントと画像を用意し、Notionで整理していく
-
-○木組み記事整理
-・ビジュアル資料
-
-○Blue Tokyo記事整理
-・ビジュアル資料
-
-△Blue Tokyo レンダリング環境整理
-・HDRI
-・ライティング
-・レンダリング
-
-○横浜港大さん橋国際客船ターミナル記事メモ
-・アニメーション作成
-本作品は、横浜港大さん橋国際客船ターミナルの特徴的な形態をプロシージャルに再構築したものであり、
-全体の構成を単一のモデリング工程に依存させるのではなく、
-形状生成のルールやパラメーターを段階的に分離・整理することで制作しています。
-まず基礎となる平面形状と動線を定義し、
-その後、傾斜や折れによって生まれる連続的な床・壁面をアルゴリズム的に生成します。
-さらに、面の分割や角度、スケールといったパラメーターを調整することで、
-特徴的な折板状の空間構成やリズミカルな陰影を再現しています。
-これにより、形状のバリエーションやスケールの変化に柔軟に対応しつつ、
-構造的な特徴を保ったまま効率的に形態の生成と検証を行える作品となっています。
-
 ●発信先
 ・Notion、Qiita
 ・△Twitter、LinkedIn
 
 
 ■ToDo
-○いちご狩り提案
-・4月にいちご狩り
-・5月に筑波
-
-○門前仲町確認
-
-○Adobe USDFileFormatPlugin調査
-・ビルド
-https://chatgpt.com/s/t_69ce3560d2ec81919a58f92ecb601290
-・Adobeプラグインの起動
- -dllのエラー原因を調査
-・Adobeプラグインのデバッグ
- -UsdObjFileFormat::WriteToFile
-
-○usdObj調査
-・ソース調査
-・デバッグ調査
-・△alembic参照
-
-○USDObjドキュメント
-・プラグイン
- -plugin.json
- -cmake.txt
-・FileFormatPlugin
- -sdffileformatplugin
-
-
 ○PFStudy
 ※効率化をテーマ
 ※基礎ベース
@@ -249,5 +163,3 @@ https://itami.info/maya-starter-book
 ○本&ソフト買取
 https://www.netoff.co.jp/
 ・要らない本,ソフトをまとめる
-
-
