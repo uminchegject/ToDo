@@ -2,6 +2,22 @@
 ・2 × 5 + 1 × 5のPrimIdとGroupを設定する
 ・GradationEditorを2つに分けて設定する
 ・PrimMakerで検証
+int pt_count = chi("pt_count");
+float radius = ch("radius");
+float gap = ch("gap");
+int lines = chi("line_count");
+
+float tip = ch("tip"); 
+float bulge = ch("bulge");
+
+int block_num = 5;
+
+int total = lines * 2 + 1;
+for (int l = 0; l < lines; l++)
+{
+    int prim = addprim(0, "polyline");
+    int block_idx = int(l / block_num);
+    setprimattrib(0, "linenum", prim, block_idx);
 
 ○Gerkin模写
 ・PrimのGradationEditor適応
@@ -14,6 +30,8 @@
 ・Unit整理
 ・凹凸(2Unit) + 角(1Unit)
 ・角管理
+vector base_scale = 
+float unit_size = 
 
 ○カプセルタワー模写
 ・凹凸Pattern
