@@ -1,41 +1,23 @@
-○いちご狩り提案
-・4月にいちご狩り
-・5月に筑波
-
-○門前仲町確認
-
 ○Adobe USDFileFormatPlugin調査
 ・ビルド
-https://chatgpt.com/s/t_69ce3560d2ec81919a58f92ecb601290
 ・Adobeプラグインの起動
  -dllのエラー原因を調査
 ・Adobeプラグインのデバッグ
  -UsdObjFileFormat::WriteToFile
 
-○usdObj調査
-・ソース調査
-・デバッグ調査
-・△alembic参照
-
-○USDObjドキュメント
-・プラグイン
- -plugin.json
- -cmake.txt
-・FileFormatPlugin
- -sdffileformatplugin
-
 
 ○Gerkin模写
-・BaseLine + ChildLine
- -4 × 4
- -柱生成(polyline)
-・Primグループ化
- -(2 + 1)
+・BaseLine
+ -2 + 1
+ -柱生成(4 × 4)
+・ChildLine
+・prim化
  
 ○カプセルタワー模写
 ・凹凸Pattern
  -2Block
  -角Dir
+
 
 
 ■PatternGenerator
@@ -75,67 +57,6 @@ https://chatgpt.com/s/t_69ce3560d2ec81919a58f92ecb601290
  -マルチパラメーター
  -コラージュ
  -背景
-
-
-■発信
-※章ごとにドキュメントと画像を用意し、Notionで整理していく
-
-○木組み記事整理
-・ビジュアル資料
-
-○Blue Tokyo記事整理
-・ビジュアル資料
-
-△Blue Tokyo レンダリング環境整理
-・HDRI
-・ライティング
-・レンダリング
-
-
-●横浜港大さん橋国際客船ターミナル
-・実装
- -ライン上にPointを生成
- -ポイントごとにPrimを生成
- -横にして、地面を配置
-・検証
- -Panel
-  -DbyH
-  -スケール
-
-●Gerkin
-・実装
- -螺旋状のラインを生成
-  -Base + Child
- -Primitiveを生成
-・検証
- -BaseLine
-  -膨らみ
-  -傾き
- -Pattern
-  -Base(鉄骨)
-  -Child(Window)
-
-●東熱ビル
-・実装
- -BasePointの生成
- -CopyToPoint
-・検証
- -ルーパー
-  -長さ
-  -傾き
-
-●CupsuleTown
-・概要
- -カプセルタワー
-・実装
- -凹凸の表現
-・検証
- -凹凸
-
-
-●発信先
-・Notion、Qiita
-・△Twitter、LinkedIn
 
 
 ■ToDo
