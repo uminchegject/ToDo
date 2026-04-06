@@ -1,9 +1,18 @@
 ○Adobe USDFileFormatPlugin調査
-・ビルド
-・Adobeプラグインの起動
- -dllのエラー原因を調査
 ・Adobeプラグインのデバッグ
  -UsdObjFileFormat::WriteToFile
+
+○usdObj調査
+・ソース調査
+・デバッグ調査
+・△alembic参照
+
+○USDObjドキュメント
+・プラグイン
+ -plugin.json
+ -cmake.txt
+・FileFormatPlugin
+ -sdffileformatplugin
 
 
 ○Gerkin模写
@@ -17,7 +26,6 @@
 ・凹凸Pattern
  -2Block
  -角Dir
-
 
 
 ■PatternGenerator
