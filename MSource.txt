@@ -25,6 +25,19 @@ https://chatgpt.com/s/t_69ce3560d2ec81919a58f92ecb601290
  -sdffileformatplugin
 
 
+○Gerkin模写
+・BaseLine + ChildLine
+ -4 × 4
+ -柱生成(polyline)
+・Primグループ化
+ -(2 + 1)
+ 
+○カプセルタワー模写
+・凹凸Pattern
+ -2Block
+ -角Dir
+
+
 ■PatternGenerator
 ※応用と新実装をそれぞれ行う
 
@@ -48,11 +61,10 @@ https://chatgpt.com/s/t_69ce3560d2ec81919a58f92ecb601290
  -1凹凸
  -2凹凸
 
-▲CupsuleTown
-・Unit化
- -NightCity
- -外殻
- -オフセット
+△Unit化
+・外殻
+・オフセット
+・NightCity
 
 ▲City設計
 ※1×2×1のカプセルの配置
