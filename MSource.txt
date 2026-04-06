@@ -1,8 +1,34 @@
+○BaseLineGenerator修正
+・2 × 5 + 1 × 5のPrimIdとGroupを設定する
+・GradationEditorを2つに分けて設定する
+・PrimMakerで検証
+
+○Gerkin模写
+・PrimのGradationEditor適応
+・BaseBlockは独立
+ -2 + 1
+ -2 × 4をGradationEditorで管理
+
+
+○BasePointGeneratorを実装
+・Unit整理
+・凹凸(2Unit) + 角(1Unit)
+・角管理
+
+○カプセルタワー模写
+・凹凸Pattern
+ -2(凹凸) + 1(角)
+
+
+○ビルド + デバッグ
+・TF_Debug
+・release + debug
+
 ○Adobe USDFileFormatPlugin調査
 ・Adobeプラグインのデバッグ
  -UsdObjFileFormat::WriteToFile
 
-○usdObj調査
+△usdObj調査
 ・ソース調査
 ・デバッグ調査
 ・△alembic参照
@@ -15,25 +41,10 @@
  -sdffileformatplugin
 
 
-○Gerkin模写
-・BaseLine
- -2 + 1
- -柱生成(4 × 4)
-・ChildLine
-・prim化
- 
-○カプセルタワー模写
-・凹凸Pattern
- -2Block
- -角Dir
-
-
 ■PatternGenerator
 ※応用と新実装をそれぞれ行う
 
 ○Gerkin模写
-・BaseLine + ChildLine
-・Primグループ化
 
 △GerkinPattern柔軟化
 
@@ -43,13 +54,8 @@
 
 
 ■CupsuleCity
-※BasePointEditor形式
-※ユニット化
 
 ○カプセルタワー模写
-・凹凸Pattern
- -1凹凸
- -2凹凸
 
 △Unit化
 ・外殻
