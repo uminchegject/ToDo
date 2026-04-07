@@ -1,5 +1,21 @@
+●ビジュアル資料
+・CityGenerator
+ -街並み(回転)
+・ComputetionalDesign
+ -柔軟性
+ -変化性(グラデーション)
+
+●記事
+・箇条書き→GPT
+
+
+○PFStudy準備
+・UsdObj(example)
+ -read比較
+
 ○UsdObj整理
 ・処理の流れ
+※WriteToFileから
 -readLayer
 -exportObj
  -writeNode
@@ -7,6 +23,7 @@
   -writeNode
 -writeObj
 ・データ構造
+※USD側のデータ管理構造
 -usdlayer
 
 △Alembic整理
@@ -18,10 +35,11 @@
 
 
 ○ビジュアル資料整理
-・木組み
- ー密度変更アニメーション
- ー角度変更アニメーション
- ー通常 → 変化アニメーション
+・木組み柔軟性
+ -角度(Y, Z)
+ -長さ
+ -太さ
+・通常 → 変化
 ・Blue Tokyo
 ※回転
  ー道路GIF
@@ -92,7 +110,9 @@ else{
 
 
 ■ToDo
-○AMANサプライズケーキ
+○プレゼンStudy
+・本
+・共有会
 
 ○PFStudy
 ※効率化をテーマ
@@ -118,6 +138,8 @@ https://itami.info/maya-starter-book
 
 ○東京都ポイント
 
+○AMANサプライズケーキ
+
 ○ダイエット
 ・糖質制限
 ・ランニング
@@ -130,3 +152,54 @@ https://itami.info/maya-starter-book
 ○本&ソフト買取
 https://www.netoff.co.jp/
 ・要らない本,ソフトをまとめる
+
+
+■記事
+※GPTのベースを用意
+
+●横浜港大さん橋国際客船ターミナル
+・実装
+ -ライン上にPointを生成
+ -ポイントごとにPrimを生成
+ -横にして、地面を配置
+・柔軟性
+ -Panel
+  -DbyH
+  -スケール
+
+●東熱ビル
+・実装
+ -BasePointの生成
+ -CopyToPoint
+・柔軟性
+ -ルーパー
+  -長さ
+  -傾き
+・変化
+ -ルーパー
+  -長さ
+  -傾き
+  -色
+  
+●CupsuleTown
+・概要
+ -カプセルタワー
+・実装
+ -凹凸の表現
+・柔軟性
+ -カラー
+ 
+●Gerkin
+・実装
+ -螺旋状のラインを生成
+  -Base + Child
+ -Primitiveを生成
+・柔軟性
+ -BaseLine
+  -膨らみ
+  -傾き
+ -Pattern
+  -Base(鉄骨)
+  -Child(Window)
+・変化
+ -色
