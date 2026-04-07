@@ -2,22 +2,13 @@
 ・2 × 5 + 1 × 5のPrimIdとGroupを設定する
 ・GradationEditorを2つに分けて設定する
 ・PrimMakerで検証
-int pt_count = chi("pt_count");
-float radius = ch("radius");
-float gap = ch("gap");
-int lines = chi("line_count");
-
-float tip = ch("tip"); 
-float bulge = ch("bulge");
-
 int block_num = 5;
-
-int total = lines * 2 + 1;
-for (int l = 0; l < lines; l++)
+int block_line_num = 5;
+int line_num = block_num * block_line_num;
+for(int block_idx = 0; block_idx < block_num; block_idx++)
 {
-    int prim = addprim(0, "polyline");
-    int block_idx = int(l / block_num);
-    setprimattrib(0, "linenum", prim, block_idx);
+	for(int block_line_idx = 0; block_line_idx < block_line_num; block_line_num++)
+	{
 
 ○Gerkin模写
 ・PrimのGradationEditor適応
@@ -32,26 +23,27 @@ for (int l = 0; l < lines; l++)
 ・角管理
 vector base_scale = 
 float unit_size = 
+int unit_num_x = int(base_scale.x / unit_size * 4) * 4;
 
 ○カプセルタワー模写
 ・凹凸Pattern
  -2(凹凸) + 1(角)
 
 
-○ビルド + デバッグ
-・TF_Debug
-・release + debug
-
 ○Adobe USDFileFormatPlugin調査
 ・Adobeプラグインのデバッグ
  -UsdObjFileFormat::WriteToFile
+
+△ビルド + デバッグ調査
+・TF_Debug
+・release + debug
 
 △usdObj調査
 ・ソース調査
 ・デバッグ調査
 ・△alembic参照
 
-○USDObjドキュメント
+△USDObjドキュメント
 ・プラグイン
  -plugin.json
  -cmake.txt
