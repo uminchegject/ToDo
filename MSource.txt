@@ -1,54 +1,27 @@
-○BaseLineGenerator修正
-・2 × 5 + 1 × 5のPrimIdとGroupを設定する
-・GradationEditorを2つに分けて設定する
-・PrimMakerで検証
-int block_num = 5;
-int block_line_num = 5;
-int line_num = block_num * block_line_num;
-for(int block_idx = 0; block_idx < block_num; block_idx++)
-{
-	for(int block_line_idx = 0; block_line_idx < block_line_num; block_line_num++)
-	{
+○UsdObj調査
+・処理の流れ
+　ーUSDからの情報取得処理
+・データ構造(USD)
 
-○Gerkin模写
-・PrimのGradationEditor適応
-・BaseBlockは独立
- -2 + 1
- -2 × 4をGradationEditorで管理
+△Alembic調査
+※UsdObjをベースに調査
+
+△ドキュメント
+・処理の流れ
 
 
-○BasePointGeneratorを実装
-・Unit整理
-・凹凸(2Unit) + 角(1Unit)
-・角管理
-vector base_scale = 
-float unit_size = 
-int unit_num_x = int(base_scale.x / unit_size * 4) * 4;
-
-○カプセルタワー模写
-・凹凸Pattern
- -2(凹凸) + 1(角)
-
-
-○Adobe USDFileFormatPlugin調査
-・Adobeプラグインのデバッグ
- -UsdObjFileFormat::WriteToFile
-
-△ビルド + デバッグ調査
-・TF_Debug
-・release + debug
-
-△usdObj調査
-・ソース調査
-・デバッグ調査
-・△alembic参照
-
-△USDObjドキュメント
-・プラグイン
- -plugin.json
- -cmake.txt
-・FileFormatPlugin
- -sdffileformatplugin
+○ビジュアル資料整理
+・木組み
+　ー密度変更アニメーション
+　ー角度変更アニメーション
+　ー通常 → 変化アニメーション
+・Blue Tokyo
+※回転
+　ー道路GIF
+　ー敷地GIF
+　ー建物ボリュームGIF
+　ー建物ディテールGIF
+　ー工程GIF
 
 
 ■PatternGenerator
