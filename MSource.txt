@@ -14,21 +14,51 @@
 ・旧Abcドキュメント参照
 
 △ドキュメント
-・処理の流れ
+※UsdObjとAlembicを比較する形で整理
 
 
 ○ビジュアル資料整理
 ・木組み
-　ー密度変更アニメーション
-　ー角度変更アニメーション
-　ー通常 → 変化アニメーション
+ ー密度変更アニメーション
+ ー角度変更アニメーション
+ ー通常 → 変化アニメーション
 ・Blue Tokyo
 ※回転
-　ー道路GIF
-　ー敷地GIF
-　ー建物ボリュームGIF
-　ー建物ディテールGIF
-　ー工程GIF
+ ー道路GIF
+ ー敷地GIF
+ ー建物ボリュームGIF
+ ー建物ディテールGIF
+ ー工程GIF
+
+
+○Gerkin模写
+・GradationEditorを2つに分けて設定する
+・PrimMakerで検証
+・BaseBlockを独立
+ -2 + 1
+ -2 × 4 を GradationEditorで管理
+
+△PrimのGradationEditor適応
+
+●Set_LineId
+int block_set_num = chi("block_set_num");
+int block_line_num = chi("block_line_num");
+
+if(i@block_idx % block_set_num != 0)｛
+	setgroup(0, "vivid", @primnum, 1);
+	@line_id = i@block_line_idx;
+｝
+else{
+	@line_id = (i@block_idx % block_set_num) * block_line_num + i@block_line_idx;
+}
+
+
+○BasePointGenerator実装
+・凹凸管理
+・角管理 
+・凹凸Pattern
+ -2(凹凸) + 1(角)
+
 
 
 ■PatternGenerator
@@ -54,8 +84,6 @@
 
 ▲City設計
 ※1×2×1のカプセルの配置
-・アニメーション
- -道上を飛ばす
 ・カプセルの密度をCoreごとに調整する
 ・多様な色づかい
  -マルチパラメーター
@@ -64,6 +92,8 @@
 
 
 ■ToDo
+○AMANサプライズケーキ
+
 ○PFStudy
 ※効率化をテーマ
 ※基礎ベース
@@ -100,186 +130,3 @@ https://itami.info/maya-starter-book
 ○本&ソフト買取
 https://www.netoff.co.jp/
 ・要らない本,ソフトをまとめる
-
-
-■ソース
-○Gerkin模写
-・PrimのGradationEditor適応
-・BaseBlockは独立
- -2 + 1
- -2 × 4 をGradationEditorで管理
-
-●BaseLineGenerator修正
-・GradationEditorを2つに分けて設定する
-・PrimMakerで検証
-
-int pt_count = chi("pt_count");
-float radius = ch("radius");
-float gap = ch("gap");
-
-float tip = ch("tip"); 
-float bulge = ch("bulge");
-
-int block_num = chi("block_num");
-int block_line_num = chi("block_line_num");
-int line_num = block_num * block_line_num;
-
-for(int block_idx = 0; block_idx < block_num; block_idx++)
-{
-    for(int block_line_idx = 0; block_line_idx < block_line_num; block_line_idx++)
-    {
-    
-        int line_idx = block_line_idx + block_line_num * block_idx;
-
-        int prim = addprim(0, "polyline");
-        setprimattrib(0, "block_line_idx", prim, block_line_idx);
-        setprimattrib(0, "block_idx", prim, block_idx);
-
-        int pt_list[];
-        vector pt_pos_list[];       
-
-        for (int i = 0; i < pt_count; i++)
-        {
-            float h = float(i) / (pt_count - 1);
-
-            float profile = pow(sin(h * M_PI), bulge);
-            float r = radius * (tip + (1 - tip) * profile);
-
-            float u = float(i + line_idx) / (line_num);
-            float angle = u * M_PI * 2;
-
-            vector pos = set(
-                cos(angle) * r,
-                i * gap,
-                sin(angle) * r
-            );
-
-            int pt = addpoint(0, pos);
-            addvertex(0, prim, pt);
-            append(pt_list, pt);
-            append(pt_pos_list, pos);            
-        }               
-    }
-}
-
-●Set_LineId
-vector color = {1, 1, 1};
-if(i@block_idx % 4 != 0) color *= 0;
-
-int prim_pts[] = primpoints(0, @primnum);
-foreach(int pt; prim_pts){
-    setpointattrib(0, "Cd", pt, color);
-}
-
-
-○カプセルタワー模写
-・凹凸Pattern
- -2(凹凸) + 1(角)
-
-●BasePointGeneratorを実装
-・Unit整理
-・凹凸(2Unit) + 角(1Unit)
-・角管理
-float bounds[] = primintrinsic(0, "bounds", @primnum);
-vector bmin = set(bounds[0], bounds[2], bounds[4]);
-vector bmax = set(bounds[1], bounds[3], bounds[5]);
-vector base_pos = (bmin + bmax) * 0.5;
-vector base_scale = bmax - bmin;
-
-float unit_size = ch("unit_size");
-int unit_num_x = int(base_scale.x / (unit_size * 4)) * 4;
-int unit_num_y = int(base_scale.y / (unit_size * 4)) * 4;
-int unit_num_z = int(base_scale.z / (unit_size * 4)) * 4;
-
-vector adjusted_base_scale;
-adjusted_base_scale.x = unit_num_x * unit_size;
-adjusted_base_scale.y = unit_num_y * unit_size;
-adjusted_base_scale.z = unit_num_z * unit_size;
-
-vector pos = base_pos;
-pos.y -= base_scale.y / 2 + unit_size / 2;
-
-for(int unit_idx_y = 0; unit_idx_y < unit_num_y; unit_idx_y++){
-    pos.y += unit_size;
-    
-    for(int unit_idx_x = 0; unit_idx_x < unit_num_x; unit_idx_x++){
-        vector pt1_pos = pos;
-        pt1_pos.z -= adjusted_base_scale.x / 2;        
-        pt1_pos.x -= adjusted_base_scale.x / 2;
-        pt1_pos.x += unit_size / 2 + unit_idx_x * unit_size;
-        int pt1 = addpoint(0, pt1_pos);
-        setpointattrib(0, "scale", pt1, set(unit_size, unit_size, unit_size * 2));
-        setpointattrib(0, "N", pt1, {0, 0, 1});
-        
-        
-        vector pt2_pos = pos;
-        pt2_pos.z += adjusted_base_scale.z / 2;        
-        pt2_pos.x -= adjusted_base_scale.x / 2;
-        pt2_pos.x += unit_size / 2 + unit_idx_x * unit_size;
-        int pt2 = addpoint(0, pt2_pos);
-        setpointattrib(0, "scale", pt2, set(unit_size, unit_size, unit_size * 2));
-        setpointattrib(0, "N", pt2, {0, 0, -1});
-    }
-    
-    for(int unit_idx_z = 0; unit_idx_z < unit_num_z; unit_idx_z++){
-        vector pt1_pos = pos;
-        pt1_pos.x -= adjusted_base_scale.x / 2;
-        pt1_pos.z -= adjusted_base_scale.z / 2;
-        pt1_pos.z += unit_size / 2 + unit_idx_z * unit_size;
-        int pt1 = addpoint(0, pt1_pos);
-        setpointattrib(0, "scale", pt1, set(unit_size, unit_size, unit_size * 2));
-        setpointattrib(0, "N", pt1, {1, 0, 0});
-        
-        vector pt2_pos = pos;
-        pt2_pos.x += adjusted_base_scale.x / 2;
-        pt2_pos.z -= adjusted_base_scale.z / 2;
-        pt2_pos.z += unit_size / 2 + unit_idx_z * unit_size;
-        int pt2 = addpoint(0, pt2_pos);
-        setpointattrib(0, "scale", pt2, set(unit_size, unit_size, unit_size * 2));
-        setpointattrib(0, "N", pt2, {-1, 0, 0});
-    }    
-}
-
-removeprim(0, @primnum, 1);
-
-
-■記事
-●横浜港大さん橋国際客船ターミナル
-・実装
- -ライン上にPointを生成
- -ポイントごとにPrimを生成
- -横にして、地面を配置
-・検証
- -Panel
-  -DbyH
-  -スケール
-
-●Gerkin
-・実装
- -螺旋状のラインを生成
-  -Base + Child
- -Primitiveを生成
-・検証
- -BaseLine
-  -膨らみ
-  -傾き
- -Pattern
-  -Base(鉄骨)
-  -Child(Window)
-
-●東熱ビル
-・実装
- -BasePointの生成
- -CopyToPoint
-・検証
- -ルーパー
-  -長さ
-  -傾き
-
-●CupsuleTown
-・概要
- -カプセルタワー
-・実装
- -凹凸の表現
-・検証
- -凹凸
