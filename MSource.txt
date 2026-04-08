@@ -1,18 +1,3 @@
-●ビジュアル資料
-・CityGenerator
- -街並み(回転)
-・ComputetionalDesign
- -柔軟性
- -変化性(グラデーション)
-
-●記事
-・箇条書き→GPT
-
-
-○PFStudy準備
-・UsdObj(example)
- -read比較
-
 ○UsdObj整理
 ・処理の流れ
 ※WriteToFileから
@@ -26,12 +11,16 @@
 ※USD側のデータ管理構造
 -usdlayer
 
-△Alembic整理
+○Alembic整理
 ※UsdObjをベースに調査
 ・旧Abcドキュメント参照
 
-△ドキュメント
+○ドキュメント
 ※UsdObjとAlembicを比較する形で整理
+
+△PFStudy準備
+・UsdObj(example)
+ -read比較
 
 
 ○ビジュアル資料整理
@@ -42,11 +31,11 @@
 ・通常 → 変化
 ・Blue Tokyo
 ※回転
- ー道路GIF
- ー敷地GIF
- ー建物ボリュームGIF
- ー建物ディテールGIF
- ー工程GIF
+ -道路GIF
+ -敷地GIF
+ -建物ボリュームGIF
+ -建物ディテールGIF
+ -工程GIF
 
 
 ○Gerkin模写
@@ -76,6 +65,18 @@ else{
 ・角管理 
 ・凹凸Pattern
  -2(凹凸) + 1(角)
+if(idx % 4 == 0 || idx % 4 == 3) 
+ 
+●横浜港大さん橋国際客船ターミナル
+・概要
+・実装
+ -ライン上にPointを生成
+ -ポイントごとにPrimを生成
+ -横にして、地面を配置
+・柔軟性
+ -Panel
+  -DbyH
+  -スケール
 
 
 
@@ -87,20 +88,13 @@ else{
 △GerkinPattern柔軟化
 
 
-△ルーパー柔軟化・複雑化
-・サンプル調査
+○ルーパー柔軟化・変化
 
 
 ■CupsuleCity
-
 ○カプセルタワー模写
 
-△Unit化
-・外殻
-・オフセット
-・NightCity
-
-▲City設計
+●City設計
 ※1×2×1のカプセルの配置
 ・カプセルの密度をCoreごとに調整する
 ・多様な色づかい
