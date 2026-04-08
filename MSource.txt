@@ -1,3 +1,21 @@
+○Gerkin
+・Prim化
+ -orient
+・PrimEditor
+・カラー
+ -ランダム
+ -床屋マーク
+ 
+○トリノ万博
+
+ 
+○CupsuleTower
+・角管理
+・カラー管理
+
+○ポンピドゥータウン
+
+
 ○Objドキュメント
 ・処理の流れ
  -readLayer
