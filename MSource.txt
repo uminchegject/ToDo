@@ -1,27 +1,23 @@
-○UsdObj整理
-・処理の流れ
-※WriteToFileから
--readLayer
--exportObj
- -writeNode
-  -exportMesh
-  -writeNode
--writeObj
-・データ構造
-※USD側のデータ管理構造
--usdlayer
+※昼休み時、午後のタスクをできる状態にしておく
 
-○Alembic整理
-※UsdObjをベースに調査
-・旧Abcドキュメント参照
+○ドキュメント調査
+※要点のまとめ方を参考
+・FileFormatPluginについて
+https://fereria.github.io/reincarnation_tech/usd/fileformat_plugin
+・Creating a File Format Plugin
+https://openusd.org/dev/api/sdf_page_front.html#sdf_file_format_plugins
 
-○ドキュメント
-※UsdObjとAlembicを比較する形で整理
-
-△PFStudy準備
+○PFStudy準備
 ・UsdObj(example)
  -read比較
+・VisualStudioデバッグ手順
 
+
+○街の環境
+・BackGroundの色をGradation設定
+・ライティング
+・Houdiniで街のある景観をつくる！
+https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa
 
 ○ビジュアル資料整理
 ・木組み柔軟性
@@ -39,36 +35,30 @@
 
 
 ○Gerkin模写
-・GradationEditorを2つに分けて設定する
+・PrimのGradationEditor適応
+・柱
+
+○Gerkinカラーロジック
 ・PrimMakerで検証
-・BaseBlockを独立
- -2 + 1
- -2 × 4 を GradationEditorで管理
-
-△PrimのGradationEditor適応
-
-●Set_LineId
-int block_set_num = chi("block_set_num");
-int block_line_num = chi("block_line_num");
-
-if(i@block_idx % block_set_num != 0)｛
-	setgroup(0, "vivid", @primnum, 1);
-	@line_id = i@block_line_idx;
-｝
-else{
-	@line_id = (i@block_idx % block_set_num) * block_line_num + i@block_line_idx;
-}
 
 
 ○BasePointGenerator実装
-・凹凸管理
-・角管理 
-・凹凸Pattern
- -2(凹凸) + 1(角)
-if(idx % 4 == 0 || idx % 4 == 3) 
- 
+・角管理
+・カラー管理
+・△凹凸管理
+
+
 ●横浜港大さん橋国際客船ターミナル
 ・概要
+本作品は、横浜港大さん橋国際客船ターミナルの特徴的な形態をプロシージャルに再構築したものであり、
+全体の構成を単一のモデリング工程に依存させるのではなく、
+形状生成のルールやパラメーターを段階的に分離・整理することで制作しています。
+まず基礎となる平面形状と動線を定義し、
+その後、傾斜や折れによって生まれる連続的な床・壁面をアルゴリズム的に生成します。
+さらに、面の分割や角度、スケールといったパラメーターを調整することで、
+特徴的な折板状の空間構成やリズミカルな陰影を再現しています。
+これにより、形状のバリエーションやスケールの変化に柔軟に対応しつつ、
+構造的な特徴を保ったまま効率的に形態の生成と検証を行える作品となっています。
 ・実装
  -ライン上にPointを生成
  -ポイントごとにPrimを生成
@@ -77,7 +67,6 @@ if(idx % 4 == 0 || idx % 4 == 3)
  -Panel
   -DbyH
   -スケール
-
 
 
 ■PatternGenerator
@@ -127,6 +116,7 @@ if(idx % 4 == 0 || idx % 4 == 3)
 ※手を動かす(アウトプット)
 ・H19.5 FOUNDATIONS BOOK
 https://www.sidefx.com/profile/rmagee/
+https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
 ・Mayaスターターブック
 https://itami.info/maya-starter-book
 
@@ -197,3 +187,232 @@ https://www.netoff.co.jp/
   -Child(Window)
 ・変化
  -色
+ 
+
+■Alembic
+●_WritePrim
+・schemaでwriterを設定(_WriterSchemaBuilder)
+・primのコンテキストを定義(_PrimWriterContext)
+・primに対応したwriterを取得
+・_PrimWriterContextを引数にwriterで書き込み処理
+
+●_WriterContext
+
+●_PrimWriterContext
+
+●_WriterSchema
+・_WriterSchemaBuilder
+・typedef std::vector<PrimWriter> PrimWriterVector;
+・書き込み処理(Copy)
+
+●static void _WritePrim(
+    _WriterContext& context,
+    const _Parent& parent,
+    const SdfPath& path)
+{
+    _Parent prim;
+    {
+        // Compute the type name.
+        const TfToken typeName = _ComputeTypeName(context, path);
+
+        // Write the properties.
+        _PrimWriterContext primContext(context, parent, path);
+        for (const auto& writer :
+                 context.GetSchema().GetPrimWriters(typeName)) {
+            TRACE_SCOPE("UsdAbc_AlembicDataWriter:_WritePrim");
+            writer(&primContext);
+        }
+        prim = primContext.GetParent();
+    }
+
+    // Write the name children.
+    const VtValue childrenNames =
+        context.GetData().Get(path, SdfChildrenKeys->PrimChildren);
+    if (childrenNames.IsHolding<TfTokenVector>()) {
+        for (const auto& childName :
+                 childrenNames.UncheckedGet<TfTokenVector>()) {
+            _WritePrim(context, prim, path.AppendChild(childName));
+        }
+    }
+}
+
+
+
+static
+TfToken
+_ComputeTypeName(
+    const _WriterContext& context,
+    const SdfPath& path)
+{
+    // Special case.
+    if (path == SdfPath::AbsoluteRootPath()) {
+        return UsdAbcPrimTypeNames->PseudoRoot;
+    }
+
+    // General case.
+    VtValue value = context.GetData().Get(path, SdfFieldKeys->TypeName);
+    if (! value.IsHolding<TfToken>()) {
+        return TfToken();
+    }
+    TfToken typeName = value.UncheckedGet<TfToken>();
+
+    // Special cases.
+    if (typeName == UsdAbcPrimTypeNames->Mesh) {
+        
+        SdfPath propPath(path.GetPrimPath().AppendProperty(
+                             UsdGeomTokens->subdivisionScheme));
+        value = context.GetData().Get(propPath, SdfFieldKeys->Default);
+        if (value.IsHolding<TfToken>() && 
+                value.UncheckedGet<TfToken>() == "none") {
+            typeName = UsdAbcPrimTypeNames->PolyMesh;
+        }
+    }
+
+    return typeName;
+}
+
+
+■Obj
+●処理の流れ
+※WriteToFileから
+-readLayer
+ -readPrim
+ -readMeshOrPoints
+  -readMeshOrPointsData
+-exportObj
+ -writeNode
+  -exportMesh
+-writeObj
+ -writeObjHeader(comments)
+ -writeObjGeometry(objects)
+
+●UsdData
+・rootNodes
+・nodes
+・meshes
+・upAxis
+
+●Obj
+・objects
+・comments
+
+●bool readLayer(const ReadLayerOptions& options,
+          const SdfLayer& constLayer,
+          UsdData& usd,
+          const std::string& debugTag)
+{
+    TF_DEBUG_MSG(FILE_FORMAT_UTIL, "%s: layer::read Start\n", debugTag.c_str());
+    auto layer = SdfCreateNonConstHandle<SdfLayer>(&constLayer);
+    auto stage = UsdStage::Open(layer);
+    ReadLayerContext ctx;
+    ctx.stage = stage;
+    ctx.usd = &usd;
+    ctx.options = &options;
+    ctx.debugTag = debugTag;
+    usd.upAxis = UsdGeomGetStageUpAxis(ctx.stage);
+    if (UsdGeomStageHasAuthoredMetersPerUnit(ctx.stage)) {
+        usd.metersPerUnit = UsdGeomGetStageMetersPerUnit(ctx.stage);
+    }
+    usd.metadata = stage->GetRootLayer()->GetCustomLayerData();
+    usd.timeCodesPerSecond = stage->GetTimeCodesPerSecond();
+
+    UsdPrim defaultPrim;
+    if (ctx.stage->HasDefaultPrim()) {
+        defaultPrim = ctx.stage->GetDefaultPrim();
+        if (!defaultPrim.IsValid()) {
+            TF_WARN("Stage has default prim %s, which is not valid",
+                    ctx.stage->GetRootLayer()->GetDefaultPrim().GetText());
+        }
+    }
+    if (defaultPrim) {
+        readPrim(ctx, defaultPrim, -1);
+    } else {
+        for (const UsdPrim& rootPrim : ctx.stage->GetPseudoRoot().GetChildren()) {
+            readPrim(ctx, rootPrim, -1);
+        }
+    }
+
+    readAnimationTracks(usd);
+
+    splitAnimationTracks(usd);
+
+    resolveMaterialBindings(ctx);
+    TF_DEBUG_MSG(FILE_FORMAT_UTIL, "%s: layer::read End\n", ctx.debugTag.c_str());
+
+    // These checks are only active when the the FILE_FORMAT_UTIL TfDebug flag is on
+    checkAndPrintMeshIssues(usd);
+
+    return true;
+}
+
+
+■ソース
+●BasePointGenerator(CupsuleTower)
+float bounds[] = primintrinsic(0, "bounds", @primnum);
+vector bmin = set(bounds[0], bounds[2], bounds[4]);
+vector bmax = set(bounds[1], bounds[3], bounds[5]);
+vector base_pos = (bmin + bmax) * 0.5;
+vector base_scale = bmax - bmin;
+
+float unit_size = ch("unit_size");
+int unit_num_x = int(base_scale.x / (unit_size * 4)) * 4;
+int unit_num_y = int(base_scale.y / (unit_size * 4)) * 4;
+int unit_num_z = int(base_scale.z / (unit_size * 4)) * 4;
+
+vector adjusted_base_scale;
+adjusted_base_scale.x = unit_num_x * unit_size;
+adjusted_base_scale.y = unit_num_y * unit_size;
+adjusted_base_scale.z = unit_num_z * unit_size;
+
+vector pos = base_pos;
+pos.y -= base_scale.y / 2 + unit_size / 2;
+
+for(int unit_idx_y = 0; unit_idx_y < unit_num_y; unit_idx_y++){
+    pos.y += unit_size;
+    
+    for(int unit_idx_x = 0; unit_idx_x < unit_num_x; unit_idx_x++){
+        vector pt1_pos = pos;
+        pt1_pos.z -= adjusted_base_scale.x / 2;        
+        pt1_pos.x -= adjusted_base_scale.x / 2;
+        pt1_pos.x += unit_size / 2 + unit_idx_x * unit_size;        
+        if(unit_idx_x % 4 == 1 || unit_idx_x % 4 == 2)pt1_pos.z -= unit_size;
+        
+        int pt1 = addpoint(0, pt1_pos);
+        setpointattrib(0, "scale", pt1, set(unit_size, unit_size, unit_size * 2));
+        setpointattrib(0, "N", pt1, {0, 0, 1});      
+        
+        vector pt2_pos = pos;
+        pt2_pos.z += adjusted_base_scale.z / 2;        
+        pt2_pos.x -= adjusted_base_scale.x / 2;
+        pt2_pos.x += unit_size / 2 + unit_idx_x * unit_size;
+        if(unit_idx_x % 4 == 1 || unit_idx_x % 4 == 2)pt2_pos.z += unit_size;
+        
+        int pt2 = addpoint(0, pt2_pos);
+        setpointattrib(0, "scale", pt2, set(unit_size, unit_size, unit_size * 2));
+        setpointattrib(0, "N", pt2, {0, 0, -1});
+    }
+    
+    for(int unit_idx_z = 0; unit_idx_z < unit_num_z; unit_idx_z++){
+        vector pt1_pos = pos;
+        pt1_pos.x -= adjusted_base_scale.x / 2;
+        pt1_pos.z -= adjusted_base_scale.z / 2;
+        pt1_pos.z += unit_size / 2 + unit_idx_z * unit_size;
+        if(unit_idx_z % 4 == 1 || unit_idx_z % 4 == 2) pt1_pos.x -= unit_size;
+        
+        int pt1 = addpoint(0, pt1_pos);        
+        setpointattrib(0, "scale", pt1, set(unit_size, unit_size, unit_size * 2));
+        setpointattrib(0, "N", pt1, {1, 0, 0});
+        
+        vector pt2_pos = pos;
+        pt2_pos.x += adjusted_base_scale.x / 2;
+        pt2_pos.z -= adjusted_base_scale.z / 2;
+        pt2_pos.z += unit_size / 2 + unit_idx_z * unit_size;
+        if(unit_idx_z % 4 == 1 || unit_idx_z % 4 == 2) pt2_pos.x += unit_size;
+        
+        int pt2 = addpoint(0, pt2_pos);
+        setpointattrib(0, "scale", pt2, set(unit_size, unit_size, unit_size * 2));
+        setpointattrib(0, "N", pt2, {-1, 0, 0});
+    }    
+}
+
+removeprim(0, @primnum, 1);
