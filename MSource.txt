@@ -1,19 +1,49 @@
-○ルーパー柔軟化・変化
+○街記事
+・Houdiniで街のある景観をつくる！
+https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa
 
-○木組みビジュアル資料準備
-
-△PFStudy準備
+○PFStudy準備
 ・UsdObj(example)
  -read比較
 ・VisualStudioデバッグ手順
 ・C++におけるusdの構造
 
 
-■PatternGenerator
+○PrimEditor
+・linnum→line_id
+・カラーのみ
+
 ○Gerkin模写
-・Prim化
- -orient
-・PrimEditor
+・色
+・柱
+
+○Gerkinカラーロジック
+・ランダム
+・床屋マーク
+
+
+○ルーパー柔軟化・変化
+
+
+○関数化
+vector generate_base_point(vector dir, vector pos, float unit_scale, float pattern[])
+{
+	
+}
+
+○BasePointGenerator実装
+・角管理
+・凹凸管理
+・△カラー管理
+
+
+■PatternGenerator
+○PrimEditor
+・linnum→line_id
+・カラーのみ
+
+○Gerkin模写
+・色
 ・柱
 
 ○Gerkinカラーロジック
@@ -21,7 +51,10 @@
 ・床屋マーク
 
 △GerkinPattern柔軟化
+・PrimEditor拡張
+ -PrimにAttributeを設定
 ・トリノ万博中国館準備
+
 
 ○ルーパー柔軟化・変化
 
@@ -47,11 +80,8 @@
 ■記事
 ※GPTのベースを用意
 
-○街の環境
-・BackGroundの色をGradation設定
-・ライティング
-・Houdiniで街のある景観をつくる！
-https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa
+○UnderConstrucitionビジュアル資料整理
+・背景込みのMPlayエクスポート
 
 ○ビジュアル資料整理
 ・Blue Tokyo
@@ -159,3 +189,40 @@ https://itami.info/maya-starter-book
 ○本&ソフト買取
 https://www.netoff.co.jp/
 ・要らない本,ソフトをまとめる
+
+
+■ソース
+●Gradation_Prim_Editor
+int block_num = chi("block_num");
+for (int line_idx = 0; line_idx < nprimitives(0); line_idx++)
+{
+    int line_id = prim(0, "line_id", line_idx);
+    
+    int prim_pt_list[] = primpoints(0, line_idx);
+        
+    for (int pt_idx = 0; pt_idx < len(prim_pt_list); pt_idx++)
+    {        
+        int block_idx = int(line_id / block_num);
+        int pt = prim_pt_list[pt_idx];
+        vector pos = prim(0, "P", line_idx);
+        vector color = prim(0, "Cd", line_idx);
+        
+        float base_cofficient = ch("base_cofficient");
+        float slide_block_cofficient = ch("slide_block_cofficient");
+        float slide_line_cofficient = ch("slide_line_cofficient"); 
+        
+        vector pos_cofficient = chv("pos_cofficient");
+        float line_cofficient = line_id * pos_cofficient.x;                    
+        float pt_cofficient = pt_idx * pos_cofficient.y;
+        
+        float animation_cofficient = ch("animation_cofficient");
+        animation_cofficient *= @Frame;
+        
+        vector adjust_color = chv("color");
+        adjust_color *= sin(line_cofficient + pt_cofficient + slide_block_cofficient * block_idx + animation_cofficient);
+        adjust_color *= 1 + (line_id % block_num) * slide_line_cofficient;
+        adjust_color *= base_cofficient;
+        color += adjust_color;
+        setprimattrib(0, "Cd", line_idx, color);
+    }
+}
