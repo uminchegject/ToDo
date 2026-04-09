@@ -1,16 +1,4 @@
-○街記事
-・Houdiniで街のある景観をつくる！
-https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa
-
-○PFStudy準備
-・UsdObj(example)
- -read比較
-・VisualStudioデバッグ手順
-・C++におけるusdの構造
-
-
 ○PrimEditor
-・linnum→line_id
 ・カラーのみ
 
 ○Gerkin模写
@@ -22,24 +10,25 @@ https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa
 ・床屋マーク
 
 
-○ルーパー柔軟化・変化
-
-
-○関数化
-vector generate_base_point(vector dir, vector pos, float unit_scale, float pattern[])
-{
-	
-}
-
 ○BasePointGenerator実装
 ・角管理
 ・凹凸管理
 ・△カラー管理
 
 
+○ルーパー柔軟化・変化
+
+
+○PFStudy準備
+・UsdObj(example)
+ -read比較
+・VisualStudioデバッグ手順
+ -もっと早く知りたかった作業速度を上げる小技集(https://qiita.com/SY81517/items/1481255bbd1ae9a4c982)
+・C++におけるusdの構造
+
+
 ■PatternGenerator
 ○PrimEditor
-・linnum→line_id
 ・カラーのみ
 
 ○Gerkin模写
@@ -192,37 +181,54 @@ https://www.netoff.co.jp/
 
 
 ■ソース
-●Gradation_Prim_Editor
+●Prim_Gradation_Editor
+int block_idx = @block_idx;
+int block_line_idx = @block_line_idx;
+int prim_idx = @prim_idx;
+vector pos = v@P;
+vector color = v@Cd;
+
+float base_cofficient = ch("base_cofficient");
+float slide_block_cofficient = ch("slide_block_cofficient");
+float slide_line_cofficient = ch("slide_line_cofficient"); 
+
 int block_num = chi("block_num");
-for (int line_idx = 0; line_idx < nprimitives(0); line_idx++)
+int line_id = block_line_idx;
+int block_idx = int(line_id / block_num);
+
+vector pos_cofficient = chv("pos_cofficient");
+float line_cofficient = line_id * pos_cofficient.x;                    
+float pt_cofficient = pt_idx * pos_cofficient.y;
+
+float animation_cofficient = ch("animation_cofficient");
+animation_cofficient *= @Frame;
+
+vector adjust_color = chv("color");
+adjust_color *= sin(line_cofficient + pt_cofficient + slide_block_cofficient * block_idx + animation_cofficient);
+adjust_color *= 1 + (line_id % block_num) * slide_line_cofficient;
+adjust_color *= base_cofficient;
+color += adjust_color;
+setprimattrib(0, "Cd", line_idx, color);
+
+
+●関数
+void generate_base_point(vector dir, vector pos, float unit_scale, int unit_num, float pattern_list[])
 {
-    int line_id = prim(0, "line_id", line_idx);
-    
-    int prim_pt_list[] = primpoints(0, line_idx);
-        
-    for (int pt_idx = 0; pt_idx < len(prim_pt_list); pt_idx++)
-    {        
-        int block_idx = int(line_id / block_num);
-        int pt = prim_pt_list[pt_idx];
-        vector pos = prim(0, "P", line_idx);
-        vector color = prim(0, "Cd", line_idx);
-        
-        float base_cofficient = ch("base_cofficient");
-        float slide_block_cofficient = ch("slide_block_cofficient");
-        float slide_line_cofficient = ch("slide_line_cofficient"); 
-        
-        vector pos_cofficient = chv("pos_cofficient");
-        float line_cofficient = line_id * pos_cofficient.x;                    
-        float pt_cofficient = pt_idx * pos_cofficient.y;
-        
-        float animation_cofficient = ch("animation_cofficient");
-        animation_cofficient *= @Frame;
-        
-        vector adjust_color = chv("color");
-        adjust_color *= sin(line_cofficient + pt_cofficient + slide_block_cofficient * block_idx + animation_cofficient);
-        adjust_color *= 1 + (line_id % block_num) * slide_line_cofficient;
-        adjust_color *= base_cofficient;
-        color += adjust_color;
-        setprimattrib(0, "Cd", line_idx, color);
-    }
+	vector up = {0, 1, 0};
+	vector tangent = normalize(dir, up);
+	
+	for (int unit_idx = 0; unit_idx < unit_num; unit_idx++)
+	{
+		vector spawn_pos = pos + dir * len(pattern_list) * unit_scale * unit_idx;
+		for(int pattern_idx = 0; pattern_idx < len(pattern_list); pattern_idx++)
+		{
+			spawn_pos += dir * unit_scale * pattern_idx;
+		
+			float pattern = pattern_list[pattern_idx];
+			spawn_pos += tangent * unit_scale * pattern;
+			int pt = addpoint(0, spawn_pos);
+			setpointattrib(0, "N", pt, tangent);
+			
+		}
+	}
 }
