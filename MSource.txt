@@ -1,19 +1,30 @@
-○Gerkin
+○linnum→line_id
+
+○Gerkin模写
 ・Prim化
  -orient
 ・PrimEditor
-・カラー
- -ランダム
- -床屋マーク
- 
-○トリノ万博
+・柱
 
- 
-○CupsuleTower
+if(block_line_idx == 0) return;
+int last_block_line = @primnum - 1;
+int block_line = @primnum
+
+setprimattrib(0, "block_line_idx", prim, @block_line_idx);
+setprimattrib(0, "block_idx", prim, @block_idx);
+
+
+○BasePointGenerator実装
 ・角管理
 ・カラー管理
+・△凹凸管理
 
-○ポンピドゥータウン
+・関数化
+vector generate_base_point(vector dir, vector pos, float unit_scale, float pattern[]);
+
+
+○ルーパー柔軟化・変化
+
 
 
 ○Objドキュメント
@@ -31,7 +42,7 @@
  -nodeの階層ごとに情報を取得
  -primのtypeごとに情報の取得関数を設定している
 
-○PFStudy準備
+△PFStudy準備
 ・UsdObj(example)
  -read比較
 ・VisualStudioデバッグ手順
@@ -41,13 +52,17 @@
 
 ■PatternGenerator
 ○Gerkin模写
-・PrimのGradationEditor適応
+・Prim化
+ -orient
+・PrimEditor
 ・柱
 
 ○Gerkinカラーロジック
+・ランダム
+・床屋マーク
 
 △GerkinPattern柔軟化
-
+・トリノ万博中国館準備
 
 ○ルーパー柔軟化・変化
 
