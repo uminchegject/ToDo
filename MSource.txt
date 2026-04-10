@@ -1,40 +1,29 @@
-○ロイさん返信
+※ブックラウンジではタスク整理に加えて、1記事・1本Studyを目標にする
 
-○PFStudy準備
+○吉川さん返信
+
+○PFStudy
 ・UsdObj(example)
  -read比較
 ・VisualStudioデバッグ手順
  -もっと早く知りたかった作業速度を上げる小技集(https://qiita.com/SY81517/items/1481255bbd1ae9a4c982)
 ・C++におけるusdの構造
 
-
-○PrimEditor
-・カラーのみ
-
 ○Gerkinカラー検証
+・模写
 ・ランダム
 ・床屋マーク
 
-○Gerkin模写
-・色
-・柱
-
-
-○BasePointGenerator実装
-・角管理
-・凹凸管理
-・△カラー管理
-
 ○カプセルタワー模写
-
+・柔軟化検証
 
 ○ルーパー柔軟化・変化
 
 
 ■PatternGenerator
-○PrimEditor
-
 ○Gerkin模写
+・色
+・柱
 
 ○Gerkinカラーロジック
 
@@ -65,9 +54,6 @@
 ■記事
 ※GPTのベースを用意
 
-○UnderConstrucitionビジュアル資料整理
-・背景込みのMPlayエクスポート
-
 ○ビジュアル資料整理
 ・Blue Tokyo
 ※回転
@@ -77,7 +63,7 @@
  -建物ディテールGIF
  -工程GIF
 
-○木組みビジュアル資料準備
+○木組みビジュアル資料
 
 ●横浜港大さん橋国際客船ターミナル
 ・概要
@@ -177,10 +163,9 @@ https://www.netoff.co.jp/
 
 
 ■ソース
-●Prim_Gradation_Editor
-int block_idx = @block_idx;
-int block_line_idx = @block_line_idx;
-int prim_idx = @prim_idx;
+●gradation_prim_editor
+int block_line_idx = i@block_line_idx;
+int prim_idx = i@primnum;
 vector pos = v@P;
 vector color = v@Cd;
 
@@ -194,37 +179,86 @@ int block_idx = int(line_id / block_num);
 
 vector pos_cofficient = chv("pos_cofficient");
 float line_cofficient = line_id * pos_cofficient.x;                    
-float pt_cofficient = pt_idx * pos_cofficient.y;
+float prim_cofficient = prim_idx * pos_cofficient.y;
 
 float animation_cofficient = ch("animation_cofficient");
 animation_cofficient *= @Frame;
 
 vector adjust_color = chv("color");
-adjust_color *= sin(line_cofficient + pt_cofficient + slide_block_cofficient * block_idx + animation_cofficient);
+adjust_color *= sin(line_cofficient + prim_cofficient + slide_block_cofficient * block_idx + animation_cofficient);
 adjust_color *= 1 + (line_id % block_num) * slide_line_cofficient;
 adjust_color *= base_cofficient;
 color += adjust_color;
-setprimattrib(0, "Cd", line_idx, color);
+setprimattrib(0, "Cd", prim_idx, color);
 
 
-●関数
-void generate_base_point(vector dir, vector pos, float unit_scale, int unit_num, float pattern_list[])
+●Generator_Cupsule_Base_Point
+void generate_base_point(vector dir; vector pos; float unit_size; int unit_num; float pattern_list[])
 {
-	vector up = {0, 1, 0};
-	vector tangent = normalize(dir, up);
-	
-	for (int unit_idx = 0; unit_idx < unit_num; unit_idx++)
-	{
-		vector spawn_pos = pos + dir * len(pattern_list) * unit_scale * unit_idx;
-		for(int pattern_idx = 0; pattern_idx < len(pattern_list); pattern_idx++)
-		{
-			spawn_pos += dir * unit_scale * pattern_idx;
-		
-			float pattern = pattern_list[pattern_idx];
-			spawn_pos += tangent * unit_scale * pattern;
-			int pt = addpoint(0, spawn_pos);
-			setpointattrib(0, "N", pt, tangent);
-			
-		}
-	}
+    vector up = {0, 1, 0};
+    vector fwd = normalize(dir);
+    vector tangent = normalize(cross(fwd, up));
+    
+    int pattern_len = len(pattern_list);
+    
+    for (int unit_idx = 0; unit_idx < unit_num; unit_idx++)
+    {
+        for (int pattern_idx = 0; pattern_idx < pattern_len; pattern_idx++)
+        {
+            float pattern = pattern_list[pattern_idx];
+            
+            vector spawn_pos = pos
+                + fwd * unit_size * (unit_idx * pattern_len + pattern_idx)
+                + tangent * unit_size * pattern;
+            
+            int pt = addpoint(0, spawn_pos);
+            
+            setpointattrib(0, "scale", pt, set(unit_size, unit_size, unit_size * 2), "set");
+            setpointattrib(0, "N", pt, tangent, "set");
+        }
+    }
 }
+
+float bounds[] = primintrinsic(0, "bounds", @primnum);
+vector bmin = set(bounds[0], bounds[2], bounds[4]);
+vector bmax = set(bounds[1], bounds[3], bounds[5]);
+vector base_pos = (bmin + bmax) * 0.5;
+vector base_scale = bmax - bmin;
+
+float unit_size = ch("unit_size");
+int unit_num_x = int(base_scale.x / (unit_size * 4)) * 4;
+int unit_num_y = int(base_scale.y / (unit_size * 4)) * 4;
+int unit_num_z = int(base_scale.z / (unit_size * 4)) * 4;
+
+vector adjusted_base_scale;
+adjusted_base_scale.x = unit_num_x * unit_size;
+adjusted_base_scale.y = unit_num_y * unit_size;
+adjusted_base_scale.z = unit_num_z * unit_size;
+
+
+float pattern_list[] = array(0, -1, -1, 0);
+
+for(int unit_idx_y = 0; unit_idx_y < unit_num_y; unit_idx_y++){
+
+    vector pos = base_pos;
+    pos.y += unit_size * (unit_idx_y + 0.5) - base_scale.y / 2;
+    pos.x -= adjusted_base_scale.x / 2 - unit_size / 2;        
+    pos.z -= adjusted_base_scale.z / 2 - unit_size;  
+    
+    generate_base_point({1, 0, 0}, pos, unit_size, unit_num_x / 4, pattern_list);
+
+    pos.x += adjusted_base_scale.x - unit_size * 1.5;
+    pos.z -= unit_size / 2;    
+    generate_base_point({0, 0, 1}, pos, unit_size, unit_num_z / 4, pattern_list);
+
+    pos.z += adjusted_base_scale.z - unit_size * 1.5;
+    pos.x += unit_size / 2;
+    generate_base_point({-1, 0, 0}, pos, unit_size, unit_num_x / 4, pattern_list);
+    
+    pos.x -= adjusted_base_scale.x - unit_size * 1.5;
+    pos.z += unit_size / 2;    
+    generate_base_point({0, 0, -1}, pos, unit_size, unit_num_z / 4, pattern_list);
+    
+}
+
+removeprim(0, @primnum, 1);
