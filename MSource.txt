@@ -35,6 +35,16 @@
  -建物ボリュームGIF
  -建物ディテールGIF
  -工程GIF
+ 
+
+△吉川さん返信
+
+△USD(PFStudy)
+・UsdObj(example)
+ -read比較
+・VisualStudioデバッグ手順
+ -もっと早く知りたかった作業速度を上げる小技集(https://qiita.com/SY81517/items/1481255bbd1ae9a4c982)
+・C++におけるusdの構造
 
 
 ■PatternGenerator
@@ -133,15 +143,6 @@
  
 
 ■ToDo
-○吉川さん返信
-
-○USD(PFStudy)
-・UsdObj(example)
- -read比較
-・VisualStudioデバッグ手順
- -もっと早く知りたかった作業速度を上げる小技集(https://qiita.com/SY81517/items/1481255bbd1ae9a4c982)
-・C++におけるusdの構造
-
 ○PFStudy
 ※効率化をテーマ
 ※基礎ベース
@@ -181,33 +182,3 @@ https://itami.info/maya-starter-book
 ○本&ソフト買取
 https://www.netoff.co.jp/
 ・要らない本,ソフトをまとめる
-
-
-■ソース
-●gradation_prim_editor
-int block_line_idx = i@block_line_idx;
-int line_prim_idx = i@line_prim_idx;
-vector pos = v@P;
-vector color = v@Cd;
-
-float base_cofficient = ch("base_cofficient");
-float slide_block_cofficient = ch("slide_block_cofficient");
-float slide_line_cofficient = ch("slide_line_cofficient"); 
-
-int block_num = chi("block_num");
-int line_id = block_line_idx;
-int block_idx = int(line_id / block_num);
-
-vector pos_cofficient = chv("pos_cofficient");
-float line_cofficient = line_id * pos_cofficient.x;           
-float line_prim_cofficient = line_prim_idx * pos_cofficient.y;
-
-float animation_cofficient = ch("animation_cofficient");
-animation_cofficient *= @Frame;
-
-vector adjust_color = chv("color");
-adjust_color *= sin(line_cofficient + line_prim_cofficient + animation_cofficient + slide_block_cofficient * block_idx);
-adjust_color *= 1 + (line_id % block_num) * slide_line_cofficient;
-adjust_color *= base_cofficient;
-color += adjust_color;
-setprimattrib(0, "Cd", line_prim_idx, color);
