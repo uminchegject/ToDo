@@ -1,23 +1,4 @@
-○PrimEditor
-・カラーのみ
-
-○Gerkin模写
-・色
-・柱
-
-○Gerkinカラーロジック
-・ランダム
-・床屋マーク
-
-
-○BasePointGenerator実装
-・角管理
-・凹凸管理
-・△カラー管理
-
-
-○ルーパー柔軟化・変化
-
+○ロイさん返信
 
 ○PFStudy準備
 ・UsdObj(example)
@@ -27,17 +8,35 @@
 ・C++におけるusdの構造
 
 
-■PatternGenerator
 ○PrimEditor
 ・カラーのみ
+
+○Gerkinカラー検証
+・ランダム
+・床屋マーク
 
 ○Gerkin模写
 ・色
 ・柱
 
+
+○BasePointGenerator実装
+・角管理
+・凹凸管理
+・△カラー管理
+
+○カプセルタワー模写
+
+
+○ルーパー柔軟化・変化
+
+
+■PatternGenerator
+○PrimEditor
+
+○Gerkin模写
+
 ○Gerkinカラーロジック
-・ランダム
-・床屋マーク
 
 △GerkinPattern柔軟化
 ・PrimEditor拡張
@@ -50,9 +49,6 @@
 
 ■CupsuleCity
 ○BasePointGenerator実装
-・角管理
-・カラー管理
-・△凹凸管理
 
 ○カプセルタワー模写
 
@@ -108,15 +104,7 @@
   -長さ
   -傾き
   -色
-  
-●CupsuleTown
-・概要
- -カプセルタワー
-・実装
- -凹凸の表現
-・柔軟性
- -カラー
- 
+   
 ●Gerkin
 ・実装
  -螺旋状のラインを生成
@@ -131,6 +119,14 @@
   -Child(Window)
 ・変化
  -色
+ 
+●CupsuleTown
+・概要
+ -カプセルタワー
+・実装
+ -凹凸の表現
+・柔軟性
+ -カラー
 
  
 

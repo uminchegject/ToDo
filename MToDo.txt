@@ -77,7 +77,7 @@
 ・CityGenerator
  -街並み(回転)
 ・ComputetionalDesign
- -柔軟性
+ -柔軟性(※Patternにフォーカスして変化をGif化する)
  -変化性(グラデーション)
 
 
