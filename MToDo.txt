@@ -74,6 +74,7 @@
 ・変化
 
 ●ビジュアル資料
+※コマ数を10mgになるように制限
 ・CityGenerator
  -街並み(回転)
 ・ComputetionalDesign
