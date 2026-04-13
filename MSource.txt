@@ -1,5 +1,9 @@
-○吉川さん返信
-・午前中なら大丈夫
+○面談準備
+・キャリア像
+ -サポーター
+・経験者に確認
+・正社員登用
+
 
 ○UsdObj(example)
 ※PFStudyは基本テキストベース
@@ -9,15 +13,20 @@
 ・VisualStudioデバッグ手順
  -もっと早く知りたかった作業速度を上げる小技集(https://qiita.com/SY81517/items/1481255bbd1ae9a4c982)
 
+●UsdObjFileFormat
+ -オーバーライド
+  -仮想関数
+ -マクロ
+
 
 ○木組み記事化
+・見直し
 
 ○UnderConstruction記事準備
+・各HDAの結果
 
 
 ○Gerkinカラー検証
-・模写
- -3 + 1
 ・グラデーション
 
 
@@ -37,20 +46,6 @@
 ○プレゼンStudy
 ・「伝え方の本質」購入
 ・共有会
-
-
-■PatternGenerator
-○Gerkin模写
-・色
-・柱
-
-△GerkinPattern柔軟化
-・PrimEditor拡張
- -PrimにAttributeを設定
-・トリノ万博中国館準備
-
-
-○ルーパー柔軟化・変化
 
 
 ■CupsuleCity
@@ -183,3 +178,76 @@ https://www.netoff.co.jp/
  -散歩(Starbucks)
  -反省(18:00)
  -息抜き
+
+
+■ソース
+●generate_base_point
+void generate_base_point(vector dir; vector pos; float unit_size; int unit_num; float pattern_list[])
+{
+    vector up = {0, 1, 0};
+    vector fwd = normalize(dir);
+    vector tangent = normalize(cross(fwd, up));
+    
+    int pattern_len = len(pattern_list);
+    
+    for (int unit_idx = 0; unit_idx < unit_num; unit_idx++)
+    {
+        for (int pattern_idx = 0; pattern_idx < pattern_len; pattern_idx++)
+        {
+            float pattern = pattern_list[pattern_idx];
+            
+            vector spawn_pos = pos
+                + fwd * unit_size * (unit_idx * pattern_len + pattern_idx)
+                + tangent * unit_size * pattern;
+            
+            int pt = addpoint(0, spawn_pos);
+            
+            setpointattrib(0, "scale", pt, set(unit_size, unit_size, unit_size * 2), "set");
+            setpointattrib(0, "N", pt, tangent, "set");
+        }
+    }
+}
+
+float bounds[] = primintrinsic(0, "bounds", @primnum);
+vector bmin = set(bounds[0], bounds[2], bounds[4]);
+vector bmax = set(bounds[1], bounds[3], bounds[5]);
+vector base_pos = (bmin + bmax) * 0.5;
+vector base_scale = bmax - bmin;
+
+float unit_size = ch("unit_size");
+int unit_num_x = int(base_scale.x / (unit_size * 4)) * 4;
+int unit_num_y = int(base_scale.y / (unit_size * 4)) * 4;
+int unit_num_z = int(base_scale.z / (unit_size * 4)) * 4;
+
+vector adjusted_base_scale;
+adjusted_base_scale.x = unit_num_x * unit_size;
+adjusted_base_scale.y = unit_num_y * unit_size;
+adjusted_base_scale.z = unit_num_z * unit_size;
+
+
+float pattern_list[] = array(0, -1, -1, 0);
+
+for(int unit_idx_y = 0; unit_idx_y < unit_num_y; unit_idx_y++){
+
+    vector pos = base_pos;
+    pos.y += unit_size * (unit_idx_y + 0.5) - base_scale.y / 2;
+    pos.x -= adjusted_base_scale.x / 2 - unit_size / 2;        
+    pos.z -= adjusted_base_scale.z / 2 - unit_size;  
+    
+    generate_base_point({1, 0, 0}, pos, unit_size, unit_num_x / 4, pattern_list);
+
+    pos.x += adjusted_base_scale.x - unit_size * 1.5;
+    pos.z -= unit_size / 2;    
+    generate_base_point({0, 0, 1}, pos, unit_size, unit_num_z / 4, pattern_list);
+
+    pos.z += adjusted_base_scale.z - unit_size * 1.5;
+    pos.x += unit_size / 2;
+    generate_base_point({-1, 0, 0}, pos, unit_size, unit_num_x / 4, pattern_list);
+    
+    pos.x -= adjusted_base_scale.x - unit_size * 1.5;
+    pos.z += unit_size / 2;    
+    generate_base_point({0, 0, -1}, pos, unit_size, unit_num_z / 4, pattern_list);
+    
+}
+
+removeprim(0, @primnum, 1);
