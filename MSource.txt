@@ -21,7 +21,8 @@
 
 
 ○Gerkinカラー検証
-・グラデーション
+・2+1
+・line_idxで管理
 
 
 ○方向付け
@@ -33,10 +34,13 @@ float side_pattern_list[] = array(0, -1);
 	
     generate_base_point({1, 0, 0}, pos, unit_size, unit_num_x / 4 - 1, pattern_list);
 
-
 ○Cupsule_Base_Point_Generator設計
 ・空白を用意
-・y軸でもpattern管理
+ -0
+・pattern管理
+ -xy軸
+ -ユニット管理
+ -角引継ぎ
 
 
 △カプセルタワー模写
@@ -44,7 +48,7 @@ float side_pattern_list[] = array(0, -1);
 
 
 ○ルーパー柔軟化・変化
-・アニメーション検証
+・アニメーションの組見合せ検証
 
 
 ○UnderConstruction記事準備
