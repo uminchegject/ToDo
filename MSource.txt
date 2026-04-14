@@ -1,5 +1,3 @@
-※夜定時直前 + 夜カフェ は 蔦屋でIDEAを練る + 翌日作業 の準備をする
-
 ○面談準備
 ・キャリア像
  -サポーター
@@ -25,7 +23,7 @@
  -8 + 4
 
 
-○方向付け
+○角引継ぎ
 float side_pattern_list[] = array(0, -1);
 
 	pos.x += unit_size * 2;
@@ -40,7 +38,6 @@ float side_pattern_list[] = array(0, -1);
 ・pattern管理
  -xy軸
  -ユニット管理
- -角引継ぎ
 
 △カプセルタワー模写
 ・柔軟化検証
@@ -73,6 +70,20 @@ float side_pattern_list[] = array(0, -1);
 ・共有会
 
 
+■PatternGenerator
+○Gerkin模写
+・色
+・柱
+
+△GerkinPattern柔軟化
+・PrimEditor拡張
+ -PrimにAttributeを設定
+・トリノ万博中国館準備
+
+
+○ルーパー柔軟化・変化
+
+
 ■CupsuleCity
 ○BasePointGenerator実装
 
@@ -85,7 +96,6 @@ float side_pattern_list[] = array(0, -1);
  -マルチパラメーター
  -コラージュ
  -背景
-
 
 
 ■記事
