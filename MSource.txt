@@ -3,12 +3,17 @@
  -サポーター
 
 
+○C++でのUSD構築方法
+・translator.cpp整理
+・他formatpluginのソースも調査
+
 ○UsdObj(example)
 ※PFStudyは基本テキストベース
  -※記事を書く手間を極限まで省く
  -文章からシークエンス図までGPTにテキストで生成する
 ・usdの構造
- -
+ -マクロ
+ -TfTokens
 ・VisualStudioデバッグ手順
  -もっと早く知りたかった作業速度を上げる小技集(https://qiita.com/SY81517/items/1481255bbd1ae9a4c982)
 
@@ -19,8 +24,6 @@
 
 
 ○Gerkinカラー検証
-・2 + 1
- -8 + 4
 
 
 ○角引継ぎ
@@ -43,6 +46,8 @@ float side_pattern_list[] = array(0, -1);
 ・柔軟化検証
 
 
+○複数GradationNodeを用意
+
 ○ルーパー柔軟化・変化
 ・アニメーションの組見合せ検証
 
@@ -53,16 +58,16 @@ float side_pattern_list[] = array(0, -1);
 ○横浜大さん橋記事メモ
 ※木組みを参考
 ・概要
- -折半構造
+ -横浜港大さん橋国際客船ターミナルを表現
+ -折半構造を表現
 ・横浜港大さん橋国際客船ターミナルとは
+ -折半構造的特徴
 ・折半構造の表現
- -ライン上にPointを生成
+ -円柱状にPointを生成
  -ポイントごとにPrimを生成
- -横にして、地面を配置
 ・折半構造のプロシージャル検証
- -Panel
-  -DbyH
-  -スケール
+ -DbyHの変更
+ -スケールの変更
 
 
 ○プレゼンStudy
@@ -217,3 +222,72 @@ https://www.netoff.co.jp/
 
 ■ソース
 ●generate_base_point
+void generate_base_point(vector dir; vector pos; float unit_size; int unit_num; float pattern_list[])
+{
+    vector up = {0, 1, 0};
+    vector fwd = normalize(dir);
+    vector tangent = normalize(cross(fwd, up));
+    
+    int pattern_len = len(pattern_list);
+    
+    for (int unit_idx = 0; unit_idx < unit_num; unit_idx++)
+    {
+        for (int pattern_idx = 0; pattern_idx < pattern_len; pattern_idx++)
+        {
+            float pattern = pattern_list[pattern_idx];
+            
+            vector spawn_pos = pos
+                + fwd * unit_size * (unit_idx * pattern_len + pattern_idx)
+                + tangent * unit_size * pattern;
+            
+            int pt = addpoint(0, spawn_pos);
+            
+            setpointattrib(0, "scale", pt, set(unit_size, unit_size, unit_size * 2), "set");
+            setpointattrib(0, "N", pt, tangent, "set");
+        }
+    }
+}
+
+float bounds[] = primintrinsic(0, "bounds", @primnum);
+vector bmin = set(bounds[0], bounds[2], bounds[4]);
+vector bmax = set(bounds[1], bounds[3], bounds[5]);
+vector base_pos = (bmin + bmax) * 0.5;
+vector base_scale = bmax - bmin;
+
+float unit_size = ch("unit_size");
+int unit_num_x = int(base_scale.x / (unit_size * 4)) * 4;
+int unit_num_y = int(base_scale.y / (unit_size * 4)) * 4;
+int unit_num_z = int(base_scale.z / (unit_size * 4)) * 4;
+
+vector adjusted_base_scale;
+adjusted_base_scale.x = unit_num_x * unit_size;
+adjusted_base_scale.y = unit_num_y * unit_size;
+adjusted_base_scale.z = unit_num_z * unit_size;
+
+
+float pattern_list[] = array(0, -1, -1, 0);
+
+for(int unit_idx_y = 0; unit_idx_y < unit_num_y; unit_idx_y++){
+
+    vector pos = base_pos;
+    pos.y += unit_size * (unit_idx_y + 0.5) - base_scale.y / 2;
+    pos.x -= adjusted_base_scale.x / 2 - unit_size / 2;        
+    pos.z -= adjusted_base_scale.z / 2 - unit_size;  
+    
+    generate_base_point({1, 0, 0}, pos, unit_size, unit_num_x / 4, pattern_list);
+
+    pos.x += adjusted_base_scale.x - unit_size * 1.5;
+    pos.z -= unit_size / 2;    
+    generate_base_point({0, 0, 1}, pos, unit_size, unit_num_z / 4, pattern_list);
+
+    pos.z += adjusted_base_scale.z - unit_size * 1.5;
+    pos.x += unit_size / 2;
+    generate_base_point({-1, 0, 0}, pos, unit_size, unit_num_x / 4, pattern_list);
+    
+    pos.x -= adjusted_base_scale.x - unit_size * 1.5;
+    pos.z += unit_size / 2;    
+    generate_base_point({0, 0, -1}, pos, unit_size, unit_num_z / 4, pattern_list);
+    
+}
+
+removeprim(0, @primnum, 1);
