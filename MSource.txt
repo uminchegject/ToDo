@@ -40,10 +40,11 @@
 
 ○角引継ぎ
 float side_pattern_list[] = array(0, -1);
-	pos.x += unit_size * 2;
-	generate_base_point({1, 0, 0}, pos, unit_size, 1, side_pattern_list);
-	pos.x += unit_size * 2;	
+    generate_base_point({1, 0, 0}, pos, unit_size, 1, side_pattern_list);
+    pos.x +=  unit_size * 2;
     generate_base_point({1, 0, 0}, pos, unit_size, unit_num_x / 4 - 1, pattern_list);
+    pos.x += adjusted_base_scale.x - unit_size * 5.5;
+    pos.z -= unit_size / 2;
 
 ○カプセルタワー模写
 ・City検証
