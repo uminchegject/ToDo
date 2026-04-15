@@ -1,17 +1,3 @@
-○BBQ企画
-お疲れ様です。
-5月下旬から6月上旬で
-
-COYOTE + TAチームで企画しているBBQを
-TA内でもBBQ企画してみてもいいかなと思い、企画してみました。
-
-場所は木場公園
-予算は 場所 + 機材代(2000円) + 材料・飲料
-
-3人以上集まりそうであれば
-
-○サバゲー予約完了連絡
-
 ○面談準備
 ・キャリア像
  -サポーター
@@ -38,29 +24,14 @@ TA内でもBBQ企画してみてもいいかなと思い、企画してみまし
 
 
 ○Gerkinカラー検証
-・1Set,Sameカラースライド
-
-○柱実装
-・柱部分のラインを生成
- -block_line_idx == 0
- -block_prim_idx % 4 == 0
-・polywireで検証
 
 △フロア実装
 
 
-○角引継ぎ
-float side_pattern_list[] = array(0, -1);
-    generate_base_point({1, 0, 0}, pos, unit_size, 1, side_pattern_list);
-    pos.x +=  unit_size * 2;
-    generate_base_point({1, 0, 0}, pos, unit_size, unit_num_x / 4 - 1, pattern_list);
-    pos.x += adjusted_base_scale.x - unit_size * 5.5;
-    pos.z -= unit_size / 2;
-
 ○カプセルタワー模写
 ・City検証
 
-△Cupsule_Base_Point_Generator設計
+○Cupsule_Base_Point_Generator設計
 ・空白を用意
  -0
 ・pattern管理
@@ -80,19 +51,7 @@ float side_pattern_list[] = array(0, -1);
 ○UnderConstruction記事準備
 ・各HDAの結果
 
-○横浜大さん橋記事メモ
-※木組みを参考
-・概要
- -横浜港大さん橋国際客船ターミナルを表現
- -折半構造を表現
-・横浜港大さん橋国際客船ターミナルとは
- -折半構造的特徴
-・折半構造の表現
- -円柱状にPointを生成
- -ポイントごとにPrimを生成
-・折半構造のプロシージャル検証
- -DbyHの変更
- -スケールの変更
+○横浜大さん橋記事整理
 
 
 ○プレゼンStudy
