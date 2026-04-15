@@ -1,5 +1,16 @@
 ○BBQ企画
-・
+お疲れ様です。
+5月下旬から6月上旬で
+
+COYOTE + TAチームで企画しているBBQを
+TA内でもBBQ企画してみてもいいかなと思い、企画してみました。
+
+場所は木場公園
+予算は 場所 + 機材代(2000円) + 材料・飲料
+
+3人以上集まりそうであれば
+
+○サバゲー予約完了連絡
 
 ○面談準備
 ・キャリア像
@@ -27,9 +38,9 @@
 
 
 ○Gerkinカラー検証
-・カラーランダム + Gradation
+・1Set,Sameカラースライド
 
-△柱実装
+○柱実装
 ・柱部分のラインを生成
  -block_line_idx == 0
  -block_prim_idx % 4 == 0
@@ -58,10 +69,12 @@ float side_pattern_list[] = array(0, -1);
  -角対応
 
 
-○複数GradationNodeを用意
+○幾何学的GradationNodeを用意
+・縦、横、斜め
+・短い,長い
 
-○ルーパー柔軟化・変化
-・アニメーションの組見合せ検証
+△GradationNode拡張
+・円状
 
 
 ○UnderConstruction記事準備
