@@ -1,16 +1,17 @@
-○C++でのUSD構築方法
-・translator.cpp整理
-・他formatpluginのソースも調査
+○サバゲーメンション確認
 
-○UsdObj(example)
-※PFStudyは基本テキストベース
- -※記事を書く手間を極限まで省く
- -文章からシークエンス図までGPTにテキストで生成する
-・usdの構造
- -マクロ
- -TfTokens
-・VisualStudioデバッグ手順
- -もっと早く知りたかった作業速度を上げる小技集(https://qiita.com/SY81517/items/1481255bbd1ae9a4c982)
+
+○Public
+・usd情報取得処理の整理
+ -シンプルな実装
+・社内フォーマットの出力周り調査
+ -必要ソースの整理
+・報告内容整理
+・△ビルド対応
+
+
+○C&R
+・所信表明メモ
 
 
 ○Gerkinカラー検証
@@ -37,9 +38,23 @@
 ・各HDAの結果
 
 ○横浜大さん橋記事整理
-## 概要
-横浜港大さん橋国際客船ターミナルの特徴的な折半構造をプロシージャルに再現しました。
-折半構造のベースとなる三角形の構造体をメッシュとして生成していき、全体として連続的かつ有機的なフォルムを構築してみました。
+## 折半構造の再現
+折半構造は、ポイント生成とプリミティブ生成によって再現しています。
+
+まず、円柱状にポイントを生成し、構造の基盤となる配置を作ります。
+このとき、半径や高さの分割数を調整することで、全体の密度や形状をコントロールします。
+
+>次に、各ポイントに対してスケールや向きなどのAttributeを設定し、構造体（Prim）の形状を決定します。
+その後、「Copy to Points」を使用して、各ポイントに対して> Primを配置します。
+
+このプロセス（ポイント生成 → Attribute設定 → Prim配置）を繰り返すことで、折半構造のような連続的なパターンを形成しています。
+最後に、全体の配置やスケールを調整することで、横浜港大さん橋のような流れる形状を再現します。
+
+○OpenUSD超入門
+※PFStudyは基本テキストベース
+ -※記事を書く手間を極限まで省く
+ -文章からシークエンス図までGPTにテキストで生成する
+https://chatgpt.com/s/t_69e0cdf0d58c8191ac665c8cbafb2f9e
 
 
 ○USDStudy
@@ -51,16 +66,13 @@
 https://www.sidefx.com/profile/rmagee/
 https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
 
+
 ○プレゼンStudy
 ・「伝え方の本質」購入
 ・共有会
 
 
 ■PatternGenerator
-○Gerkin模写
-・色
-・柱
-
 △GerkinPattern柔軟化
 ・PrimEditor拡張
  -PrimにAttributeを設定
@@ -71,9 +83,7 @@ https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
 
 
 ■CupsuleCity
-○カプセルタワー模写
-
-●City設計
+○City設計
 ※1×2×1のカプセルの配置
 ・カプセルの密度をCoreごとに調整する
 ・多様な色づかい
