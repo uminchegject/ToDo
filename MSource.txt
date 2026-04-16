@@ -1,11 +1,3 @@
-○焼肉
-
-○フロア
-・primpointsをidxごとにprimを生成する
-
-○cupsuleCity検証
-
-
 ■面談準備
 ・クライアントの価値創造への貢献
 ・プロフェッショナルの生涯価値の向上
@@ -37,17 +29,12 @@
  -もっと早く知りたかった作業速度を上げる小技集(https://qiita.com/SY81517/items/1481255bbd1ae9a4c982)
 
 
+○フロア実装
+
 ○Gerkinカラー検証
 
-△フロア実装
 
-
-○Volume To Detailを整理
-・y軸を修正
-・カプセルHDAを使用
-
-○カプセルタワー模写
-・City検証
+○City検証
 
 ○Cupsule_Base_Point_Generator設計
 ・空白を用意
