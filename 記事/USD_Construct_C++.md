@@ -1,3 +1,9 @@
+
+## UsdGeomMeshの構築
+モデルの基本となるメッシュ情報を構築する処理をSampleデータのソースを用いて解説していきます。
+
+
+## ソース
 SdfLayerRefPtr
 UsdObjTranslateObjToUsd(const UsdObjStream &objStream)
 {

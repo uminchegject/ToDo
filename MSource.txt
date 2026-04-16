@@ -1,19 +1,3 @@
-■面談準備
-・クライアントの価値創造への貢献
-・プロフェッショナルの生涯価値の向上
-
-●今できること
-※現場の改善
-・Houdiniのツール実装
-・C++を用いたパイプラインの実装
- -USDのプラグイン実装
-
-●目標
-※価値の創造
-・制作フローの提案
- -パイプラインの設計
-
-
 ○C++でのUSD構築方法
 ・translator.cpp整理
 ・他formatpluginのソースも調査
@@ -29,12 +13,8 @@
  -もっと早く知りたかった作業速度を上げる小技集(https://qiita.com/SY81517/items/1481255bbd1ae9a4c982)
 
 
-○フロア実装
-
 ○Gerkinカラー検証
 
-
-○City検証
 
 ○Cupsule_Base_Point_Generator設計
 ・空白を用意
@@ -57,7 +37,19 @@
 ・各HDAの結果
 
 ○横浜大さん橋記事整理
+## 概要
+横浜港大さん橋国際客船ターミナルの特徴的な折半構造をプロシージャルに再現しました。
+折半構造のベースとなる三角形の構造体をメッシュとして生成していき、全体として連続的かつ有機的なフォルムを構築してみました。
 
+
+○USDStudy
+・USD Tutorials(https://openusd.org/release/tut_usd_tutorials.html)
+・USD Examples
+
+○HoudiniStudy
+・H19.5 FOUNDATIONS BOOK
+https://www.sidefx.com/profile/rmagee/
+https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
 
 ○プレゼンStudy
 ・「伝え方の本質」購入
@@ -142,7 +134,7 @@
 ・効率化の種(作業効率化のための環境整理)
  -ツール(GUI)
 ・仕事Study(※メモ代わり)
- -USD(※サンプルプロジェクトをまとめる)
+ -USD Tutorials(https://openusd.org/release/tut_usd_tutorials.html)
 ・趣味
  -CityProject
  -PatternProject
