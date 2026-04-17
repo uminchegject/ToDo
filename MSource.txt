@@ -19,10 +19,22 @@ stage.GetRootLayer().Save()
 https://chatgpt.com/s/t_69e0cdf0d58c8191ac665c8cbafb2f9e
 
 
-○Gerkin生成アニメーション
-・柱
-・フロア
-・窓(スライド)
+
+○カメラワーク
+・螺旋
+・ズーム
+
+○柱
+・BasePointScale
+・Color
+
+○フロア
+・Scale
+・ROtate
+
+○Window
+・Scale
+・Trasform
 
 △Gerkinカラー検証
 
