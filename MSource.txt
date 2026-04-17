@@ -1,21 +1,3 @@
-○カプセル多様化
-・色
-・形態
-
-○Gerkin生成アニメーション
-・柱
-・フロア
-・窓(スライド)
-
-○幾何学的GradationNodeを用意
-・カラーで分かりやすく
- -プロジェクションマッピング
- -カラーのみで検証
-
-
-○サバゲーメンション確認
-
-
 ○Public
 ・usd情報取得処理の整理
  -シンプルな実装
@@ -24,32 +6,11 @@
 ・報告内容整理
 ・△ビルド対応
 
-
 ○C&R
 ・所信表明メモ
 
 
-○Gerkinカラー検証
-
-
-○Cupsule_Base_Point_Generator設計
-・空白を用意
- -0
-・pattern管理
- -xy軸
- -ユニット管理
- -角対応
-
-
-○幾何学的GradationNodeを用意
-・縦、横、斜め
-・短い,長い
-
-△GradationNode拡張
-・円状
-
-
-○UnderConstruction記事準備
+○Blue Tokyo 記事準備
 ・各HDAの結果
 
 ○横浜大さん橋記事整理
@@ -69,7 +30,41 @@
 ※PFStudyは基本テキストベース
  -※記事を書く手間を極限まで省く
  -文章からシークエンス図までGPTにテキストで生成する
+・ソース確認
+・文章整理
 https://chatgpt.com/s/t_69e0cdf0d58c8191ac665c8cbafb2f9e
+
+
+○Gerkin生成アニメーション
+・柱
+・フロア
+・窓(スライド)
+
+△Gerkinカラー検証
+
+
+○カプセル設計
+※規格化
+・色
+・形態
+
+○配置設計
+・pattern管理
+ -xy軸
+ -ユニット管理
+ -角対応
+・△空白を用意
+ -0
+
+
+○幾何学的GradationNode設計
+※カラーのみで検証
+・プロジェクションマッピング参照
+
+○幾何学的GradationNodeを用意
+・縦、横、斜め
+・短い,長い
+
 
 
 ○USDStudy
@@ -80,7 +75,6 @@ https://chatgpt.com/s/t_69e0cdf0d58c8191ac665c8cbafb2f9e
 ・H19.5 FOUNDATIONS BOOK
 https://www.sidefx.com/profile/rmagee/
 https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
-
 
 ○プレゼンStudy
 ・「伝え方の本質」購入
