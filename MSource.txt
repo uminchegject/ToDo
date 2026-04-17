@@ -1,17 +1,7 @@
-※午前中にすべてのタスクに手を付けて、午後のタスクを整理しておく。
-
-○Public
-・usd情報取得処理の整理
- -シンプルな実装
-・社内フォーマットの出力周り調査
- -必要ソースの整理
-・報告内容整理
-・△ビルド対応
-
 ○C&R
 ・所信表明メモ
 
-○Blue Tokyo 記事
+○Blue Tokyo 記事化
 
 ○横浜大さん橋記事整理
 
@@ -55,7 +45,7 @@ https://chatgpt.com/s/t_69e0cdf0d58c8191ac665c8cbafb2f9e
 ※カラーのみで検証
 ・プロジェクションマッピング参照
 
-○幾何学的GradationNodeを用意
+△幾何学的GradationNodeを用意
 ・縦、横、斜め
 ・短い,長い
 
@@ -75,6 +65,8 @@ https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
 
 
 ■PatternGenerator
+○Gerkin模写
+
 △GerkinPattern柔軟化
 ・PrimEditor拡張
  -PrimにAttributeを設定
