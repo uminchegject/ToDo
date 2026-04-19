@@ -1,3 +1,24 @@
+○※カラー検証
+・CapsuleCity
+・東熱ビル
+・Gerkin
+
+
+○生成アニメーション
+・カメラワーク
+ -螺旋
+ -ズーム
+・柱
+ -BasePointScale
+ -Color
+・フロア
+ -Scale
+ -ROtate
+・Window
+ -Scale
+ -Trasform
+
+
 ○配置設計
 ・pattern管理
  -xy軸
@@ -39,23 +60,6 @@ stage.GetRootLayer().Save()
 ・記事メモ
  -stage
  -prim
-
-
-△Gerkinカラー検証
-
-○生成アニメーション
-・カメラワーク
- -螺旋
- -ズーム
-・柱
- -BasePointScale
- -Color
-・フロア
- -Scale
- -ROtate
-・Window
- -Scale
- -Trasform
 
 
 ○USDStudy
@@ -186,7 +190,6 @@ https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
 ・Blue Tokyoで検証
 
 ○PFStudy
-※効率化をテーマ
 ※基礎ベース
 ※簡単かつシンプルに
  -社内ベース(Tips共有会、Notion)
