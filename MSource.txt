@@ -1,45 +1,21 @@
-望遠レンズ
-
-
-○C&R
-・所信表明メモ
+○所信表明メモ
 
 ○Blue Tokyo 記事化
 
-○横浜大さん橋記事整理
+○横浜港大さん橋国際客船ターミナル
+・折半構造の再現
+・折半構造のプロシージャル検証
 
-○OpenUSD超入門
-※PFStudyは基本テキストベース
- -※記事を書く手間を極限まで省く
- -文章からシークエンス図までGPTにテキストで生成する
+○Hello World(USD)
 ・ソース確認
 from pxr import Usd, UsdGeom
 stage = Usd.Stage.CreateNew('HelloWorld.usda')
 xformPrim = UsdGeom.Xform.Define(stage, '/hello')
 spherePrim = UsdGeom.Sphere.Define(stage, '/hello/world')
 stage.GetRootLayer().Save()
-・文章整理
-https://chatgpt.com/s/t_69e0cdf0d58c8191ac665c8cbafb2f9e
-
-
-
-○カメラワーク
-・螺旋
-・ズーム
-
-○柱
-・BasePointScale
-・Color
-
-○フロア
-・Scale
-・ROtate
-
-○Window
-・Scale
-・Trasform
-
-△Gerkinカラー検証
+・記事メモ
+ -stage
+ -prim
 
 
 ○カプセル設計
@@ -65,6 +41,23 @@ https://chatgpt.com/s/t_69e0cdf0d58c8191ac665c8cbafb2f9e
 ・短い,長い
 
 
+△Gerkinカラー検証
+
+○生成アニメーション
+・カメラワーク
+ -螺旋
+ -ズーム
+・柱
+ -BasePointScale
+ -Color
+・フロア
+ -Scale
+ -ROtate
+・Window
+ -Scale
+ -Trasform
+
+
 ○USDStudy
 ・USD Tutorials(https://openusd.org/release/tut_usd_tutorials.html)
 ・USD Examples
@@ -77,6 +70,40 @@ https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
 ○プレゼンStudy
 ・「伝え方の本質」購入
 ・共有会
+
+
+■所信表明メモ
+●今できること
+※現場の改善
+・Houdiniのツール実装
+・C++を用いたパイプラインの実装
+ -USDのプラグイン実装
+
+●目標
+※価値の創造
+・制作フローの提案
+ -パイプラインの設計
+
+
+○C&Rで何を経験してきたか
+・エンジニア
+ -UE
+ -C++
+・TA
+ -R&D
+ -ツール実装
+
+○エンジニア・TAを経て今後どのようなキャリアを進むべきと考えたか
+・ゲーム開発におけるパイプラインの効率化
+
+
+○正社員として実現したいこと
+
+○どのように実現していくか
+
+○GFS(TA)の正社員としてどのようなことができるのか
+
+○TA、およびDGにどのような影響があるか
 
 
 ■PatternGenerator
@@ -103,8 +130,17 @@ https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
 
 ■記事
 ※GPTのベースを用意
+※PFStudyは基本テキストベース
+ -※記事を書く手間を極限まで省く
+ -文章からシークエンス図までGPTにテキストで生成する
 
 ○横浜港大さん橋国際客船ターミナル
+・折半構造の再現
+・折半構造のプロシージャル検証
+
+○Hello World(USD)
+・stage
+・prim
 
 ●東熱ビル
 ・実装
@@ -145,6 +181,10 @@ https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
  
 
 ■ToDo
+○望遠レンズ
+・カメラの仕組み
+・Blue Tokyoで検証
+
 ○PFStudy
 ※効率化をテーマ
 ※基礎ベース
