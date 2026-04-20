@@ -1,8 +1,23 @@
+○門前仲町居酒屋 予約
+https://y-smile.co.jp/monzennakacho
+
+○flatbuffrers Study
+・FlatBuffers Docs
+https://flatbuffers.dev/
+
+
+○所信表明メモ
+・C&Rで何を経験してきたか
+・エンジニア・TAを経て今後どのようなキャリアを進むべきと考えたか
+
+
 ○※カラー検証
 ・CapsuleCity
 ・東熱ビル
 ・Gerkin
 
+
+○スケールアニメーション実装
 
 ○生成アニメーション
 ・カメラワーク
@@ -10,20 +25,23 @@
  -ズーム
 ・柱
  -BasePointScale
- -Color
 ・フロア
  -Scale
  -ROtate
 ・Window
  -Scale
  -Trasform
+ -Color
 
 
 ○検証
-・スケール拡大
-・縦に配色
+・スケール感
+　ーBig・Small
+・配色
+　ー縦に配色
 
-○配置設計
+
+●配置設計
 ・pattern管理
  -xy軸
  -ユニット管理
@@ -31,7 +49,7 @@
 ・△空白を用意
  -0
 
-○カプセル設計
+●カプセル設計
 ※規格化
 ・色
 ・形態
@@ -40,7 +58,7 @@
 ○東熱ビル模写
 ・x字型
 
-○幾何学的GradationNode設計
+△幾何学的GradationNode設計
 ※カラーのみで検証
 ・プロジェクションマッピング参照
 
@@ -49,26 +67,25 @@
 ・短い,長い
 
 
-○所信表明メモ
-・C&Rで何を経験してきたか
-・エンジニア・TAを経て今後どのようなキャリアを進むべきと考えたか
-
 ○Blue Tokyo 記事化
+・GIF用意
+ -フレームレート調整
 
 ○横浜港大さん橋国際客船ターミナル
-・折半構造の再現
-・折半構造のプロシージャル検証
+## 折半構造の再現
+・円柱状にPointを配置
+・生成したPointを用いて、折半構造の面となるPrimを生成
+・生成したPrimのサイズ、向きを修正して、地面となるGridを配置し表現完了
 
 ○Hello World(USD)
-・ソース確認
-from pxr import Usd, UsdGeom
-stage = Usd.Stage.CreateNew('HelloWorld.usda')
-xformPrim = UsdGeom.Xform.Define(stage, '/hello')
-spherePrim = UsdGeom.Sphere.Define(stage, '/hello/world')
-stage.GetRootLayer().Save()
-・記事メモ
- -stage
- -prim
+・サンプルUSD
+ -Stage：シーン全体 
+ -Prim：オブジェクト（ノード） 
+ -階層構造：パス（/hello/world）で管理
+・Pythonでの構築処理
+ -Stage
+ -Prim
+ -RootLayer
 
 
 ○USDStudy
@@ -257,3 +274,30 @@ https://www.netoff.co.jp/
  -反省(18:00)
  -息抜き
 
+
+■ソース
+●柱
+
+
+●Floor
+float delete_ratio = ch("delete_ratio");
+float prim_num = nprimitives(0);
+
+if(delete_ratio < @primnum / prim_num){
+    removeprim(0, @primnum, 1);
+}
+
+int gradation_num = 10;
+float scale = 1.0;
+scale -= (@primnum - gradation_num) / int(prim_num * delete_ratio)
+
+
+●window
+float delete_ratio = ch("delete_ratio");
+float block_line_idx = i@block_line_idx;
+float line_prim_idx = i@line_prim_idx;
+float line_prim_num = 48;
+
+if (delete_ratio < (line_prim_idx + block_line_idx * 4) / line_prim_num){
+    removeprim(0, @primnum, 1);
+}
