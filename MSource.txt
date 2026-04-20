@@ -11,12 +11,6 @@ https://flatbuffers.dev/
 ・エンジニア・TAを経て今後どのようなキャリアを進むべきと考えたか
 
 
-○※カラー検証
-・CapsuleCity
-・東熱ビル
-・Gerkin
-
-
 ○スケールアニメーション実装
 
 ○生成アニメーション
@@ -39,7 +33,6 @@ https://flatbuffers.dev/
 　ーBig・Small
 ・配色
 　ー縦に配色
-
 
 ●配置設計
 ・pattern管理
