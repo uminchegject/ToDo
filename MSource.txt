@@ -37,7 +37,7 @@ https://flatbuffers.dev/languages/cpp/
 
 ○配置設計
 ・pattern管理
- -xy軸
+ -y軸
  -色管理(種類管理)
  -ユニット管理
 ・△空白を用意
