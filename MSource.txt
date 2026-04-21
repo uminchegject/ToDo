@@ -1,21 +1,8 @@
-■キャリアメモ
-●今できること
-※現場の改善
-・Houdiniのツール実装
-・C++を用いたパイプラインの実装
- -USDのプラグイン実装
-
-●目標
-※価値の創造
-・制作フローの提案
- -パイプラインの設計
-
-
-○flatbuffrers Study
-・FlatBuffers Docs
-https://flatbuffers.dev/
-・Language Guide: C++
-https://flatbuffers.dev/languages/cpp/
+○Public
+・AdobeObjFileFormatPlugin
+・flatbuffrers
+ -FlatBuffers Docs(https://flatbuffers.dev/)
+ -Language Guide: C++(https://flatbuffers.dev/languages/cpp/)
 
 
 ○スケールアニメーション検証
