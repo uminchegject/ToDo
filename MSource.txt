@@ -1,40 +1,21 @@
-■所信表明テンプレート
-①正社員として実現したいこと
-・パイプライン開発によるゲーム開発の効率化を実現
- -クリエイターが表現や品質向上に集中できる環境の構築
- -制作プロセスの最適化による新たなクリエイターの価値の創出
+■キャリアメモ
+●今できること
+※現場の改善
+・Houdiniのツール実装
+・C++を用いたパイプラインの実装
+ -USDのプラグイン実装
 
-②C&Rで何を経験してきたか
-・エンジニアとしての経験
- -UI周りの開発
- -CS機への移植対応
- -バグ修正・運用対応
-・TAとしての経験
- -R&Dによるパイプラインの調査・検証
- -ツール開発による業務効率化
-
-③②を経て今後どのようなキャリアを進むべきと考えたか
-・エンジニアとして培った開発能力を活かしつつ、TAとしてパイプライン開発によるゲーム開発の効率化に貢献したい
-
-④③からGFS(TA)の正社員としてどのようなことができるのか
-・クライアントへの開発現場における課題分析及び、パイプライン構築・ツール提供による開発の効率化
-
-④具体的に①をどのように実現していくか
-・クライアントに対するパイプラインの設計及び提案
- -Houdini・USDを活用したパイプライン設計・提案
- -効率化ツールの開発・導入
-
-⑤①がTA、およびDGにどのような影響があるか
-
-
-
-○門前仲町居酒屋 予約
-https://y-smile.co.jp/monzennakacho
+●目標
+※価値の創造
+・制作フローの提案
+ -パイプラインの設計
 
 
 ○flatbuffrers Study
 ・FlatBuffers Docs
 https://flatbuffers.dev/
+・Language Guide: C++
+https://flatbuffers.dev/languages/cpp/
 
 
 ○スケールアニメーション実装
@@ -54,10 +35,6 @@ https://flatbuffers.dev/
  -Color
 
 
-○検証
-・スケール感
- ーBig・Small
-
 ○配置設計
 ・pattern管理
  -xy軸
@@ -67,42 +44,41 @@ https://flatbuffers.dev/
 ・空白を用意
  -0
 
+○配置検証
+・スケール感
+ ーBig・Small 
+
 ●カプセル設計
 ※規格化
 ・色
 ・形態
 
 
-○東熱ビル説明
-
-△幾何学的GradationNode設計
-※カラーのみで検証
-・プロジェクションマッピング参照
-
-△幾何学的GradationNodeを用意
-・縦、横、斜め
-・短い,長い
-
-
 ○Blue Tokyo 記事化
 ・GIF用意
  -フレームレート調整
 
-○横浜港大さん橋国際客船ターミナル
-## 折半構造の再現
-・円柱状にPointを配置
-・生成したPointを用いて、折半構造の面となるPrimを生成
-・生成したPrimのサイズ、向きを修正して、地面となるGridを配置し表現完了
+○横浜港大さん橋国際客船ターミナル 
+・プロシージャル検証
 
 ○Hello World(USD)
-・サンプルUSD
- -Stage：シーン全体 
- -Prim：オブジェクト（ノード） 
- -階層構造：パス（/hello/world）で管理
-・Pythonでの構築処理
- -Stage
- -Prim
- -RootLayer
+・hello worldをベースに USDとは を説明
+https://fereria.github.io/reincarnation_tech/usd/what_is_usd
+
+○東熱ビル
+## 概要
+東熱ビルのファサードをプロシージャルに表現しました。
+本建築は、都心型中小オフィスビルとして計画された省CO₂モデルビルであり、外装にはアルミルーバーを用いた特徴的なファサードが採用されています。
+これらのルーバーは角度や陰影を持ちながら連続的に配置されており、「空気の流れ」を可視化するような表情を生み出しています。
+プロシージャル表現では、このリズム性を再現するために、まずファサード面に沿ってポイントを生成し、各ポイントに対して回転・スケール・密度などの属性を付与します。
+その後、ルーバー要素をインスタンスとして配置し、環境性能とデザイン性が融合した外観構成を再現しました。
+
+## 東熱ビルとは
+東熱ビルは、東京都中央区京橋に建つオフィスビルで、建築設備工事会社の新社屋として計画された建築です。
+この建物は、省エネルギー性と快適な執務環境の両立を目指した「都市型中小オフィスビルの省CO₂モデル」として設計されており、
+対流併用型放射空調や自然換気支援システムなど、先進的な環境制御技術が導入されています。
+また外装デザインにおいては、グラデーション状に構成されたアルミルーバーが特徴で、
+建築設備企業としての技術的なイメージを象徴するとともに、日射制御や熱負荷低減にも寄与する機能的なファサードとなっています。
 
 
 ○USDStudy
@@ -256,28 +232,119 @@ https://www.netoff.co.jp/
 
 
 ■ソース
-●柱
-
-
-●Floor
-float delete_ratio = ch("delete_ratio");
-float prim_num = nprimitives(0);
-
-if(delete_ratio < @primnum / prim_num){
-    removeprim(0, @primnum, 1);
+●Cupsule
+void generate_base_point(vector dir; vector pos; float unit_size; int unit_num; float pattern_list[])
+{
+    vector up = {0, 1, 0};
+    vector fwd = normalize(dir);
+    vector tangent = normalize(cross(fwd, up));
+    
+    int pattern_len = len(pattern_list);
+    
+    for (int unit_idx = 0; unit_idx < unit_num; unit_idx++)
+    {
+        for (int pattern_idx = 0; pattern_idx < pattern_len; pattern_idx++)
+        {
+            float pattern = pattern_list[pattern_idx];
+            
+            vector spawn_pos = pos
+                + fwd * unit_size * (unit_idx * pattern_len + pattern_idx)
+                + tangent * unit_size * pattern;
+            
+            int pt = addpoint(0, spawn_pos);
+            
+            setpointattrib(0, "scale", pt, set(unit_size, unit_size, unit_size * 2), "set");
+            setpointattrib(0, "N", pt, tangent, "set");
+        }
+    }
 }
 
-int gradation_num = 10;
-float scale = 1.0;
-scale -= (@primnum - gradation_num) / int(prim_num * delete_ratio)
+float bounds[] = primintrinsic(0, "bounds", @primnum);
+vector bmin = set(bounds[0], bounds[2], bounds[4]);
+vector bmax = set(bounds[1], bounds[3], bounds[5]);
+vector base_pos = (bmin + bmax) * 0.5;
+vector base_scale = bmax - bmin;
 
+float unit_size = ch("unit_size");
+int unit_num_x = int(base_scale.x / (unit_size * 4)) * 4;
+int unit_num_y = int(base_scale.y / unit_size);
+int unit_num_z = int(base_scale.z / (unit_size * 4)) * 4;
 
-●window
-float delete_ratio = ch("delete_ratio");
-float block_line_idx = i@block_line_idx;
-float line_prim_idx = i@line_prim_idx;
-float line_prim_num = 48;
+vector adjusted_base_scale;
+adjusted_base_scale.x = unit_num_x * unit_size;
+adjusted_base_scale.y = unit_num_y * unit_size;
+adjusted_base_scale.z = unit_num_z * unit_size;
 
-if (delete_ratio < (line_prim_idx + block_line_idx * 4) / line_prim_num){
-    removeprim(0, @primnum, 1);
+for(int unit_idx_y = 0; unit_idx_y < unit_num_y; unit_idx_y++){
+
+    vector pos = base_pos;
+    pos.y += unit_size * (unit_idx_y + 0.5) - base_scale.y / 2;
+        
+        if (unit_idx_y % 2 == 0){
+            float pattern_list[] = array(-1, 0, 0, -1);
+            float side_pattern_list[] = array(0, -1);                
+        
+            pos.x -= adjusted_base_scale.x / 2 - unit_size / 2;        
+            pos.z -= adjusted_base_scale.z / 2 - unit_size;  
+            
+            generate_base_point({1, 0, 0}, pos, unit_size, 1, side_pattern_list);
+            pos.x += unit_size * 2;
+            generate_base_point({1, 0, 0}, pos, unit_size, unit_num_x / 4 - 1, pattern_list);
+            
+            pos.x += unit_size * (unit_num_x - 1.5 - 2);
+            pos.z -= unit_size / 2;
+
+            generate_base_point({0, 0, 1}, pos, unit_size, 1, side_pattern_list);
+            pos.z += unit_size * 2;
+            generate_base_point({0, 0, 1}, pos, unit_size, unit_num_z / 4 - 1, pattern_list);
+            
+            pos.z += unit_size * (unit_num_z - 1.5 - 2);
+            pos.x += unit_size / 2;
+
+            generate_base_point({-1, 0, 0}, pos, unit_size, 1, side_pattern_list);
+            pos.x -= unit_size * 2;     
+            generate_base_point({-1, 0, 0}, pos, unit_size, unit_num_x / 4 - 1, pattern_list);
+            
+            pos.x -= unit_size * (unit_num_x - 1.5 - 2);
+            pos.z += unit_size / 2;
+
+            generate_base_point({0, 0, -1}, pos, unit_size, 1, side_pattern_list);
+            pos.z -= unit_size * 2;     
+            generate_base_point({0, 0, -1}, pos, unit_size, unit_num_z / 4 - 1, pattern_list);    
+        }
+        else {
+            float pattern_list[] = array(1, 0, 0, 1);
+            float side_pattern_list[] = array(0, 1);        
+        
+            pos.x -= adjusted_base_scale.x / 2 - unit_size;        
+            pos.z -= adjusted_base_scale.z / 2 - unit_size / 2;  
+            
+            generate_base_point({0, 0, 1}, pos, unit_size, 1, side_pattern_list);
+            pos.z += unit_size * 2;
+            generate_base_point({0, 0, 1}, pos, unit_size, unit_num_z / 4 - 1, pattern_list);
+            
+            pos.z += unit_size * (unit_num_z - 1.5 - 2);
+            pos.x -= unit_size / 2;
+            
+            generate_base_point({1, 0, 0}, pos, unit_size, 1, side_pattern_list);
+            pos.x += unit_size * 2;
+            generate_base_point({1, 0, 0}, pos, unit_size, unit_num_x / 4 - 1, pattern_list);
+            
+            pos.x += unit_size * (unit_num_x - 1.5 - 2);
+            pos.z += unit_size / 2;
+            
+            generate_base_point({0, 0, -1}, pos, unit_size, 1, side_pattern_list);
+            pos.z -= unit_size * 2;     
+            generate_base_point({0, 0, -1}, pos, unit_size, unit_num_z / 4 - 1, pattern_list); 
+            
+            pos.z -= unit_size * (unit_num_z - 1.5 - 2);
+            pos.x += unit_size / 2;
+            
+            generate_base_point({-1, 0, 0}, pos, unit_size, 1, side_pattern_list);
+            pos.x -= unit_size * 2;     
+            generate_base_point({-1, 0, 0}, pos, unit_size, unit_num_x / 4 - 1, pattern_list);
+                       
+        }
 }
+
+removeprim(0, @primnum, 1);
