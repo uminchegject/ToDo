@@ -21,18 +21,18 @@ https://flatbuffers.dev/languages/cpp/
 ○スケールアニメーション検証
 
 ○生成アニメーション
-・カメラワーク
- -螺旋
- -ズーム
 ・柱
  -BasePointScale
 ・フロア
  -Scale
- -ROtate
 ・Window
  -Scale
  -Trasform
  -Color
+
+○カメラワーク
+ -螺旋
+ -ズーム
 
 
 ○配置設計
