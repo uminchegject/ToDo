@@ -2,6 +2,9 @@
 ・経歴棚卸
  -Notion
 
+○Public
+・fbsのGenerated_hの関数確認
+ -fbstableから必要なデータを確認
 
 ○Public Study
 ・USD
@@ -15,7 +18,7 @@
 
 ○生成アニメーション
 ・柱
- -BasePointScale
+ -BasePoinPubl
 ・フロア
  -Scale
 ・Window
