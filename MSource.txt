@@ -1,47 +1,55 @@
 ○Employ Study
 ・経歴棚卸
  -Notion
+・カジュアル面談
+
 
 ○Public
+・USD(クラス化)
+ -AIでコーディング(参照ソースを整理)
+ -Primの種類ごとの対応内容
 ・fbsのGenerated_hの関数確認
  -fbstableから必要なデータを確認
 
 ○Public Study
 ・USD
- -コンポーネントアーク
-・△flatbuffrers
- -FlatBuffers Docs(https://flatbuffers.dev/)
- -Language Guide: C++(https://flatbuffers.dev/languages/cpp/)
+ -コンポジションアーク
 
 
 ○スケールアニメーション検証
 
-○生成アニメーション
+○HDA化
+
+●生成アニメーション
 ・柱
- -BasePoinPubl
+ -BasePoint
 ・フロア
  -Scale
 ・Window
  -Scale
  -Trasform
- -Color
+ -Color(Gradation)
 
 ○カメラワーク
  -螺旋
  -ズーム
 
 
-○配置設計
+○horizontalのみで実装・検証
+・色管理
+・オフセット管理
+ -空白(0)
+・ユニット管理
+
+○vertical対応
+
+●配置設計
 ・pattern管理
  -y軸
  -色管理(種類管理)
  -ユニット管理
 ・△空白を用意
  -0
-
-○配置検証
-・スケール感
- ーBig・Small 
 
 ●カプセル設計
 ※規格化
@@ -86,7 +94,6 @@ https://www.sidefx.com/profile/rmagee/
 https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
 
 ○プレゼンStudy
-・「伝え方の本質」購入
 ・共有会
 
 
