@@ -5,15 +5,10 @@
 
 
 ○Public
-・USD(クラス化)
+・LayerLoad調査
+・LayerLoadクラス実装
  -AIでコーディング(参照ソースを整理)
  -Primの種類ごとの対応内容
-・fbsのGenerated_hの関数確認
- -fbstableから必要なデータを確認
-
-○Public Study
-・USD
- -コンポジションアーク
 
 
 ○スケールアニメーション検証
@@ -64,17 +59,17 @@
 ○横浜港大さん橋国際客船ターミナル 
 ・プロシージャル検証
 
-○Hello World(USD)
-・hello worldをベースに USDとは を説明
+○USD Study
+・コンポジションアーク
+・hello worldをベースに USDとは を説明(記事)
 https://fereria.github.io/reincarnation_tech/usd/what_is_usd
 
 ○東熱ビル
 ## 概要
-東熱ビルのファサードをプロシージャルに表現しました。
-本建築は、都心型中小オフィスビルとして計画された省CO₂モデルビルであり、外装にはアルミルーバーを用いた特徴的なファサードが採用されています。
-これらのルーバーは角度や陰影を持ちながら連続的に配置されており、「空気の流れ」を可視化するような表情を生み出しています。
-プロシージャル表現では、このリズム性を再現するために、まずファサード面に沿ってポイントを生成し、各ポイントに対して回転・スケール・密度などの属性を付与します。
-その後、ルーバー要素をインスタンスとして配置し、環境性能とデザイン性が融合した外観構成を再現しました。
+東熱ビルのアルミルーバーを用いた特徴的なファサードを、プロシージャルに表現しました。
+これらのルーバーは、角度や陰影の変化を伴いながら連続的に配置されており、「空気の流れ」を可視化するような表情を生み出しています。
+プロシージャル表現では、このリズム性を再現するため、ファサード面に沿ってポイントを生成し、
+各ポイントに回転・スケール・密度といったアトリビュートを付与したうえで、Copy to Pointsを用いてルーバーを配置しています。
 
 ## 東熱ビルとは
 東熱ビルは、東京都中央区京橋に建つオフィスビルで、建築設備工事会社の新社屋として計画された建築です。
@@ -87,6 +82,7 @@ https://fereria.github.io/reincarnation_tech/usd/what_is_usd
 ○USDStudy
 ・USD Tutorials(https://openusd.org/release/tut_usd_tutorials.html)
 ・USD Examples
+・Reincarnation+#Tech(https://fereria.github.io/reincarnation_tech/usd)
 
 ○HoudiniStudy
 ・H19.5 FOUNDATIONS BOOK
@@ -233,32 +229,4 @@ https://www.netoff.co.jp/
  -息抜き
  
 
-■ソース
-●generate_base_point
-void generate_base_point(vector dir; vector pos; float unit_size; int unit_num; float slide_pattern_list[]; vector color_pattern_list[])
-{
-    vector up = {0, 1, 0};
-    vector fwd = normalize(dir);
-    vector tangent = normalize(cross(fwd, up));
-    
-    int pattern_len = len(slide_pattern_list);
-    
-    for (int unit_idx = 0; unit_idx < unit_num; unit_idx++)
-    {
-        for (int pattern_idx = 0; pattern_idx < pattern_len; pattern_idx++)
-        {
-            float slider = slide_pattern_list[pattern_idx];
-			vector color = color_pattern_list[pattern_idx];
-            
-            vector spawn_pos = pos
-                + fwd * unit_size * (unit_idx * pattern_len + pattern_idx)
-                + tangent * unit_size * slider;
-            
-            int pt = addpoint(0, spawn_pos);
-            
-            setpointattrib(0, "scale", pt, set(unit_size, unit_size, unit_size * 2), "set");
-			setpointattrib(0, "Cd", pt, color, "set");
-            setpointattrib(0, "N", pt, tangent, "set");
-        }
-    }
-}
+
