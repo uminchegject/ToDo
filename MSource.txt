@@ -1,14 +1,5 @@
-○Public
-・LayerLoad調査
-※ObjFileFormatPlugin + SampleUSD の構造を理解する
- -ShaderMaterial
-・LayerLoadクラス実装
- -UsdObj(Sample)で実装
- -Primの種類ごとの対応内容
- -AIでコーディング(参照ソースを整理)
-
-
 ○スケールアニメーション検証
+・調整処理実装
 
 ●生成アニメーション
 ・柱
@@ -25,8 +16,6 @@
 ○カメラワーク
  -螺旋
  -ズーム
- 
-○GerkinFarmer
 
 
 ○UnitGenerator設計
@@ -91,6 +80,25 @@ https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
 
 ○プレゼンStudy
 ・共有会
+
+
+○Public
+※ObjFileFormatPlugin + SampleUSD の構造を理解する
+・XTransform
+ -ソース整理(https://chatgpt.com/s/t_69eb3f2a560481919156945c3a835c05
+ -ビルド
+・UsdGeomMesh
+ -処理のメモ
+ -ソースメモにGPTで整理
+ -ビルド
+・Flatbuffer
+ -処理のメモ
+ -※USD側の処理を踏まえて実装
+・処理
+ -readLayer
+ -readPrim
+ -readMeshOrPoints
+ -readXform
 
 
 ■PatternGenerator
