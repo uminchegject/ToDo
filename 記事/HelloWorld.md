@@ -27,6 +27,7 @@ def Xform "hello"
 
 
 ## Pythonでの構築処理
+上記USDを構築するための処理
 
 ```
 from pxr import Usd, UsdGeom
