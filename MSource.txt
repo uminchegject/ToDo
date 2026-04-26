@@ -1,72 +1,3 @@
-○UnitEditor設計
-※乗算形式
-・PosPattern
- -空白(0)
-・TypePattern
- -Color
-
-●カプセル設計
-※規格化
-・色
-・形態
-
-○角対応
-
-
-○アニメーション微調整
-・window
- -色によるグラデーション協調
- -移動による変化
-・フロア
- -楕円型
-
-△HDA化
-・調整処理実装
-
-
-○東熱ビル
-・noise検証
- -noise(https://qiita.com/DefaultVFX/items/b0777536b566a813dd63)
-## 概要
-東熱ビルのアルミルーバーを用いた特徴的なファサードを、プロシージャルに表現しました。
-これらのルーバーは、角度や陰影の変化を伴いながら連続的に配置されており、「空気の流れ」を可視化するような表情を生み出しています。
-プロシージャル表現では、このリズム性を再現するため、ファサード面に沿ってポイントを生成し、
-各ポイントに回転・スケール・密度といったアトリビュートを付与したうえで、Copy to Pointsを用いてルーバーを配置しています。
-
-
-○横浜港大さん橋国際客船ターミナル(ビジュアル資料)
-・工程
-・プロシージャル検証
-※側面の固定カメラ
- -Pt Count
- -Line Count
- -Radius
-
-
-○Blue Tokyo 記事化
-
-
-○USD Tutorial
-※ドキュメントに書かれていることをベースにまとめる
-・Hello World
- -USDの構造説明を整理(https://chatgpt.com/s/t_69ec1ddb376081919bc318356100f27d)
- -USDKitchenも同じ構造
- -○SolarisShelfチェック
-
-○USDStudy
-・USD Tutorials(https://openusd.org/release/tut_usd_tutorials.html)
-・USD Examples
-・Reincarnation+#Tech(https://fereria.github.io/reincarnation_tech/usd)
-
-○HoudiniStudy
-・H19.5 FOUNDATIONS BOOK
-https://www.sidefx.com/profile/rmagee/
-https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
-
-○プレゼンStudy
-・共有会
-
-
 ○引っ越し準備
 ・SFC
 ・棚
@@ -92,13 +23,89 @@ https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
  -readMeshOrPoints
  -readXform
 
-○Employ Study(準備)
+
+○UnitEditor設計
+※カプセルタワーのスケール感を保つユニット設計を行う
+ -Core + Unit
+・PosPattern
+ -空白(0)
+・TypePattern
+ -Color
+
+●カプセル設計
+※規格化
+・色
+・形態
+
+○角対応
+
+
+○東熱ビル
+・noise検証
+ -noise(https://qiita.com/DefaultVFX/items/b0777536b566a813dd63)
+## 概要
+東熱ビルのアルミルーバーを用いた特徴的なファサードを、プロシージャルに表現しました。
+これらのルーバーは、角度や陰影の変化を伴いながら連続的に配置されており、「空気の流れ」を可視化するような表情を生み出しています。
+プロシージャル表現では、このリズム性を再現するため、ファサード面に沿ってポイントを生成し、
+各ポイントに回転・スケール・密度といったアトリビュートを付与したうえで、Copy to Pointsを用いてルーバーを配置しています。
+
+
+○アニメーション微調整
+・window
+ -色によるグラデーション協調
+ -移動による変化
+・フロア
+ -楕円型
+
+△HDA化
+・調整処理実装
+
+
+○Blue Tokyo 記事化
+
+○横浜港大さん橋国際客船ターミナル(ビジュアル資料)
+・工程
+・プロシージャル検証
+※側面の固定カメラ
+ -Pt Count
+ -Line Count
+ -Radius
+
+○USD Tutorial
+※ドキュメントに書かれていることをベースにまとめる
+・Hello World
+ -○メモ整理
+  -USDKitchenも同じ構造
+ -○SolarisShelfチェック
+
+
+○USDStudy
+・USD Tutorials(https://openusd.org/release/tut_usd_tutorials.html)
+・USD Examples
+・Reincarnation+#Tech(https://fereria.github.io/reincarnation_tech/usd)
+
+○HoudiniStudy
+・H19.5 FOUNDATIONS BOOK
+https://www.sidefx.com/profile/rmagee/
+https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
+
+○プレゼンStudy
+・共有会
+
+
+■Employ
+※GWメインテーマ
+
+○Employ Study
 ・メモ整理
  -https://chatgpt.com/s/t_69ec435eb0c0819199f5cb1fd142ab0e
 ・本(キャリアづくりの教科書)
+
+○Employ 準備
 ・経歴棚卸
  -Notion
 ・カジュアル面談
+・書類準備
 
 
 ■PatternGenerator
@@ -216,25 +223,6 @@ https://itami.info/maya-starter-book
 https://www.netoff.co.jp/
 ・要らない本,ソフトをまとめる
 
-●magmaラウンジ
-※次回のラウンジまでに趣味記事 + 技術記事 + 読書を1つずつ済ませておく
-※記事化の用意は極力しておく
- -ビジュアル資料のレンダリング + GIF化
- -md形式で記事のメモ
-※課題解決の為の本と、集中読書の本をしっかり斥候しておく
-・タスク
- -IDEA整理
- -趣味記事
- -技術記事
- -本斥候
- -集中読書
-・スケジュール
- -記事メモ整理(12:00)
- -記事化 + IDEA斥候(15:00)
- -読書 + お昼ご飯 + お昼寝(17:00)
- -散歩(Starbucks)
- -反省(18:00)
- -息抜き
  
 
 ■ソース
