@@ -1,3 +1,9 @@
+・BasePointGenerator
+・BasePointEditor
+
+※低層と高層の設計を明確に別にする
+
+
 ○BBQリマインド
 TAチーム内BBQのリマインドです。
 アンケートの回答期限が【5/1（今週末）】までなのでご報告させて頂きます。
