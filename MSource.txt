@@ -1,8 +1,3 @@
-○引っ越し準備
-・SFC
-・棚
-・布類
-
 ○BBQリマインド
 BBQのリマインドになります!
 5/1(今週末)が期限になるので宜しくお願い致します。
@@ -23,11 +18,7 @@ BBQのリマインドになります!
 ・Flatbuffer
  -処理のメモ
  -※USD側の処理を踏まえて実装
-・処理
- -readLayer
- -readPrim
- -readMeshOrPoints
- -readXform
+・ドキュメント化
 
 
 ○UnitEditor設計
@@ -71,7 +62,19 @@ BBQのリマインドになります!
 
 
 ○Blue Tokyo 記事化
-・フローGIF用意
+・見直し
+・投稿
+
+○Hello World
+・Notion整理
+ -USDKitchenも同じ構造
+○SolarisShelfチェック
+
+○USD Tutorial
+※ドキュメントに書かれていることをベースにまとめる
+・Inspecting and Authoring Properties
+ -概要確認 & 実装
+
 
 ○横浜港大さん橋国際客船ターミナル(ビジュアル資料)
 ・工程
@@ -80,15 +83,6 @@ BBQのリマインドになります!
  -Pt Count
  -Line Count
  -Radius
-
-○USD Tutorial
-※ドキュメントに書かれていることをベースにまとめる
-・Hello World
- -○Notion整理
-  -USDKitchenも同じ構造
- -○SolarisShelfチェック
-・Inspecting and Authoring Properties
- -概要確認 & 実装
 
 
 ○USDStudy
