@@ -1,40 +1,108 @@
-○BBQリマインド
+○引っ越し準備
+・SFC
+・棚
+・布類
 
-○段ボール確認
+○BBQリマインド
+BBQのリマインドになります!
+5/1(今週末)が期限になるので宜しくお願い致します。
+日程を決めるアンケートなので
+そのため、参加の有無に関係なく日時をアンケートで答えて頂けると幸いです
+アンケートを踏まえて日時を決めた後、その日時で再度アンケートを行い、4名以上参加希望者がいれば改めてBBQの開催を決定させて頂きます!
 
 ○セコンド
+お疲れ様です!
+先週は飲み会にお誘い頂きありがとうございました!
+飲み会でHoudini60minit のセコンドのはなしをしてたと思うのですが、差し支えなければ自分にやらせていただいてもよろしいでしょうか?
 
 
-○UsdDataクラス実装
-・デバッグ
+○Public
+※ObjFileFormatPlugin + SampleUSD の構造を理解する
+・UsdData
+ -Node管理部分を修正
+・Flatbuffer
+ -処理のメモ
+ -※USD側の処理を踏まえて実装
+・処理
+ -readLayer
+ -readPrim
+ -readMeshOrPoints
+ -readXform
+
+
+○UnitEditor設計
+※カプセルタワーのスケール感を保つユニット設計を行う
+ -Core + Unit
+・PosPattern
+ -空白(0)
+・TypePattern
+ -Color
+
+●カプセル設計
+※規格化
+・色
+・形態
+
+○角対応
+
+
+○noise検証環境
+・noise種類(https://qiita.com/DefaultVFX/items/b0777536b566a813dd63)
+・東熱ビル
+・ポルトガル館
+
+○東熱ビル
+## 概要
+東熱ビルのアルミルーバーを用いた特徴的なファサードを、プロシージャルに表現しました。
+これらのルーバーは、角度や陰影の変化を伴いながら連続的に配置されており、「空気の流れ」を可視化するような表情を生み出しています。
+プロシージャル表現では、このリズム性を再現するため、ファサード面に沿ってポイントを生成し、
+各ポイントに回転・スケール・密度といったアトリビュートを付与したうえで、Copy to Pointsを用いてルーバーを配置しています。
+
+
+○アニメーション微調整
+・window
+ -色によるグラデーション協調
+ -移動による変化
+・フロア
+ -楕円型
+
+△HDA化
+・調整処理実装
 
 
 ○Blue Tokyo 記事化
-
-○Hello World Notion整理
-
+・フローGIF用意
 
 ○横浜港大さん橋国際客船ターミナル(ビジュアル資料)
 ・工程
 ・プロシージャル検証
+※側面の固定カメラ
+ -Pt Count
+ -Line Count
+ -Radius
+
+○USD Tutorial
+※ドキュメントに書かれていることをベースにまとめる
+・Hello World
+ -○Notion整理
+  -USDKitchenも同じ構造
+ -○SolarisShelfチェック
+・Inspecting and Authoring Properties
+ -概要確認 & 実装
 
 
-○アニメーション微調整
-・window（色グラデーション、移動変化)
-・フロア（楕円型）
+○USDStudy
+・USD Tutorials(https://openusd.org/release/tut_usd_tutorials.html)
+・USD Examples
+・Reincarnation+#Tech(https://fereria.github.io/reincarnation_tech/usd)
 
-○noise検証環境
-・東熱ビル
-・ポルトガル館
+○HoudiniStudy
+・H19.5 FOUNDATIONS BOOK
+https://www.sidefx.com/profile/rmagee/
+https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
 
-○UnitEditor設計
-※カプセルタワーのスケール感を保つユニット設計を行う
-
-
-●USD Tutorial
-・Hello World(Notion)
-・Inspecting and Authoring Properties(概要確認 & 実装)
-
+○プレゼンStudy
+・共有会
 
 
 ■Employ
