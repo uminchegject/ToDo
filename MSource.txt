@@ -1,100 +1,40 @@
-○引っ越し準備
-・SFC
-・棚
-・布類
+○BBQリマインド
+
+○段ボール確認
 
 ○セコンド
 
 
-○Public
-※ObjFileFormatPlugin + SampleUSD の構造を理解する
-・XTransform
- -ソース整理(https://chatgpt.com/s/t_69eb3f2a560481919156945c3a835c05
- -ビルド
-・UsdGeomMesh
- -処理のメモ
- -ソースメモにGPTで整理
- -ビルド
-・Flatbuffer
- -処理のメモ
- -※USD側の処理を踏まえて実装
-・処理
- -readLayer
- -readPrim
- -readMeshOrPoints
- -readXform
-
-
-○UnitEditor設計
-※カプセルタワーのスケール感を保つユニット設計を行う
- -Core + Unit
-・PosPattern
- -空白(0)
-・TypePattern
- -Color
-
-●カプセル設計
-※規格化
-・色
-・形態
-
-○角対応
-
-
-○東熱ビル
-・noise検証
- -noise(https://qiita.com/DefaultVFX/items/b0777536b566a813dd63)
- -ポルトガル館
-## 概要
-東熱ビルのアルミルーバーを用いた特徴的なファサードを、プロシージャルに表現しました。
-これらのルーバーは、角度や陰影の変化を伴いながら連続的に配置されており、「空気の流れ」を可視化するような表情を生み出しています。
-プロシージャル表現では、このリズム性を再現するため、ファサード面に沿ってポイントを生成し、
-各ポイントに回転・スケール・密度といったアトリビュートを付与したうえで、Copy to Pointsを用いてルーバーを配置しています。
-
-
-○アニメーション微調整
-・window
- -色によるグラデーション協調
- -移動による変化
-・フロア
- -楕円型
-
-△HDA化
-・調整処理実装
+○UsdDataクラス実装
+・デバッグ
 
 
 ○Blue Tokyo 記事化
 
+○Hello World Notion整理
+
+
 ○横浜港大さん橋国際客船ターミナル(ビジュアル資料)
 ・工程
 ・プロシージャル検証
-※側面の固定カメラ
- -Pt Count
- -Line Count
- -Radius
-
-○USD Tutorial
-※ドキュメントに書かれていることをベースにまとめる
-・Hello World
- -○メモ整理
-  -USDKitchenも同じ構造
- -○SolarisShelfチェック
-・Inspecting and Authoring Properties
- -概要確認 & 実装
 
 
-○USDStudy
-・USD Tutorials(https://openusd.org/release/tut_usd_tutorials.html)
-・USD Examples
-・Reincarnation+#Tech(https://fereria.github.io/reincarnation_tech/usd)
+○アニメーション微調整
+・window（色グラデーション、移動変化)
+・フロア（楕円型）
 
-○HoudiniStudy
-・H19.5 FOUNDATIONS BOOK
-https://www.sidefx.com/profile/rmagee/
-https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
+○noise検証環境
+・東熱ビル
+・ポルトガル館
 
-○プレゼンStudy
-・共有会
+○UnitEditor設計
+※カプセルタワーのスケール感を保つユニット設計を行う
+
+
+●USD Tutorial
+・Hello World(Notion)
+・Inspecting and Authoring Properties(概要確認 & 実装)
+
 
 
 ■Employ

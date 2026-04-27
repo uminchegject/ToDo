@@ -1,5 +1,9 @@
+# USD Hello World Tutorial
+Pixarが開発したフォーマットである[USD(Universal Scene Description)](https://openusd.org/release/index.html)の[公式Tutorial](https://openusd.org/release/tut_usd_tutorials.html)をもとに、USDの構造を解説します。 
+まずは、チュートリアルの最初の項目である[Hello World](https://openusd.org/release/tut_helloworld.html)について説明します。
+
 ## サンプルUSD
-実際にTutorialで紹介されているサンプルソースをベースに解説します。
+ここでは、チュートリアルで紹介されているサンプルコードをもとに解説します。
 ```
 #usda 1.0
 
@@ -40,7 +44,7 @@ Xformはトランスフォーム情報（位置・回転・スケール）を持
 
 
 ## Pythonでの構築処理
-上記USDを構築するための処理
+上記のサンプルUSDを構築する手順について、Pythonを用いて解説します。
 
 ```
 from pxr import Usd, UsdGeom
