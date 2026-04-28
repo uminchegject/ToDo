@@ -1,9 +1,3 @@
-・BasePointGenerator
-・BasePointEditor
-
-※低層と高層の設計を明確に別にする
-
-
 ○BBQリマインド
 TAチーム内BBQのリマインドです。
 アンケートの回答期限が【5/1（今週末）】までなのでご報告させて頂きます。
@@ -39,6 +33,7 @@ TAチーム内BBQのリマインドです。
 ○UnitEditor設計
 ※カプセルタワーのスケール感を保つユニット設計を行う
  -Core + Unit
+・BasePointGenerator + BasePointEditor
 ・PosPattern
  -空白(0)
 ・TypePattern
@@ -130,22 +125,28 @@ https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
 
 
 ■PatternGenerator
-○Gerkin模写
+○Gerkin
+・模写
+・△Pattern柔軟化
+ -PrimEditor拡張
+  -PrimにAttributeを設定
+ -トリノ万博中国館準備
 
-△GerkinPattern柔軟化
-・PrimEditor拡張
- -PrimにAttributeを設定
-・トリノ万博中国館準備
+○Noise検証
+・ポルトガル館
+・東熱ビル
 
 
-■CupsuleCity
-○City設計
+■City
+○CupsuleCity
 ※1×2×1のカプセルの配置
-・カプセルの密度をCoreごとに調整する
 ・多様な色づかい
  -マルチパラメーター
  -コラージュ
  -背景
+
+○ポンピドゥーセンター
+・模写
 
 
 ■記事
