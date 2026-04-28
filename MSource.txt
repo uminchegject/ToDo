@@ -1,3 +1,17 @@
+■Employ
+○Employ Study
+・メモ整理
+ -https://chatgpt.com/s/t_69ec435eb0c0819199f5cb1fd142ab0e
+・本(キャリアづくりの教科書)
+
+○Employ 準備
+・経歴棚卸
+ -Notion
+・カジュアル面談
+・書類準備
+
+
+
 ○UnitEditor設計
 ※カプセルタワーのスケール感を保つユニット設計を行う
  -Core + Unit
@@ -77,20 +91,13 @@ https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
 ・共有会
 
 
-
-■Employ
-※GWメインテーマ
-
-○Employ Study
-・メモ整理
- -https://chatgpt.com/s/t_69ec435eb0c0819199f5cb1fd142ab0e
-・本(キャリアづくりの教科書)
-
-○Employ 準備
-・経歴棚卸
- -Notion
-・カジュアル面談
-・書類準備
+○Public
+※クライアントPCメイン
+・デバッグ環境
+ -プラグインビルド
+・Flatbuffer
+ -※ソースをAIに入れて情報収集
+ -シンプルなテーブルで検証
 
 
 ■PatternGenerator
