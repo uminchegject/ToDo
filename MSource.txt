@@ -1,3 +1,6 @@
+※ラウンジはお菓子とパンのみ
+
+
 ■Employ
 ○転職本に沿った自己分析整理
 ※資料
@@ -26,8 +29,15 @@
 
 
 ■Make
+○アニメーション調整
+※0～240で完結するように実装
+float delete_ratio = ch("delete_ratio");
+float prim_num = nprimitives(0);
+int gradation_num = 20;
+float scale = @primnum / prim_num - delete_ratio;
+scale = fit(scale, 0, gradation_num / prim_num, 0, 1);
+
 ○アニメーション微調整
-※生成アニメーションを完成
 ・window
  -色によるグラデーション協調
  -△移動による変化
@@ -48,36 +58,40 @@
 
 
 ■Design
-○noise検証環境
-・noise種類(https://qiita.com/DefaultVFX/items/b0777536b566a813dd63)
+●Noise
+※noise種類(https://qiita.com/DefaultVFX/items/b0777536b566a813dd63)
 ・東熱ビル
+ -傾き
+  -色による可視化
 ・ポルトガル館
-
-○東熱ビル
-## 概要
-東熱ビルのアルミルーバーを用いた特徴的なファサードを、プロシージャルに表現しました。
-これらのルーバーは、角度や陰影の変化を伴いながら連続的に配置されており、「空気の流れ」を可視化するような表情を生み出しています。
-プロシージャル表現では、このリズム性を再現するため、ファサード面に沿ってポイントを生成し、
-各ポイントに回転・スケール・密度といったアトリビュートを付与したうえで、Copy to Pointsを用いてルーバーを配置しています。
+ -揺れ
+  -位置に対する力学の付け方
+  -色による可視化
 
 
-○Volume設計
+●City
+・Base
+ -Volume
+ -Surface
+・Point(Pos)
+ -BasePoint
+ -BaseLine
+・Detail
+ -Cupsule
+ -Pipe
 
-○UnitEditor設計
+●CupsuleCity
 ※カプセルタワーのスケール感を保つユニット設計を行う
  -Core + Unit
-・BasePointGenerator + BasePointEditor
-・PosPattern
- -空白(0)
-・TypePattern
- -Color
+・Pattern
+ -Pos(Offset, Empty) 
+ -Type
+ -△角対応
+・CupsuleType
+ -色
+ -形態
 
-●カプセル設計
-※規格化
-・色
-・形態
-
-○角対応
+●PipeCity
 
 
 ■Study
