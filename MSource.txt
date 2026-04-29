@@ -1,20 +1,31 @@
 ■Employ
-○Employ Study
-・メモ整理
- -https://chatgpt.com/s/t_69ec435eb0c0819199f5cb1fd142ab0e
-・本(キャリアづくりの教科書)
+○転職本に沿った自己分析整理
+※資料
+ -M_所信表明
+ -GPT(https://chatgpt.com/share/69f17f0e-0090-8322-8d1d-944f4f60b40a)
 
-○Employ 準備
+○書類用意
 ・経歴棚卸
  -Notion
 ・書類準備(メモ)
  -履歴書
  -職務経歴書
  -所信表明
-・カジュアル面談
+
+○カジュアル面談
 
 
+■Write
+○Hello World
+・記事化(Notion + Qiita)
 
+○Inspecting and Authoring Properties
+・概要メモ(AI素材)
+
+○SolarisShelfチェック
+
+
+■Make
 ○アニメーション微調整
 ※生成アニメーションを完成
 ・window
@@ -36,20 +47,7 @@
  -Radius
 
 
-
-○Hello World
-・Notion整理
- -USDKitchenも同じ構造
-
-○USD Tutorial
-※ドキュメントに書かれていることをベースにまとめる
-・Inspecting and Authoring Properties
- -概要確認 & 実装
-
-○SolarisShelfチェック
-
-
-
+■Design
 ○noise検証環境
 ・noise種類(https://qiita.com/DefaultVFX/items/b0777536b566a813dd63)
 ・東熱ビル
@@ -62,6 +60,8 @@
 プロシージャル表現では、このリズム性を再現するため、ファサード面に沿ってポイントを生成し、
 各ポイントに回転・スケール・密度といったアトリビュートを付与したうえで、Copy to Pointsを用いてルーバーを配置しています。
 
+
+○Volume設計
 
 ○UnitEditor設計
 ※カプセルタワーのスケール感を保つユニット設計を行う
@@ -80,8 +80,7 @@
 ○角対応
 
 
-
-
+■Study
 ○USDStudy
 ・USD Tutorials(https://openusd.org/release/tut_usd_tutorials.html)
 ・USD Examples

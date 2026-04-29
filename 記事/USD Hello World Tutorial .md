@@ -1,11 +1,6 @@
 # USD Tuotorial --Hello World--
 
-Pixarが開発したフォーマットである[USD(Universal Scene Description)](https://openusd.org/release/index.html)の[公式Tutorial](https://openusd.org/release/tut_usd_tutorials.html)をもとに、USDの構造を解説します。まずは、チュートリアルの最初の項目である[Hello World](https://openusd.org/release/tut_helloworld.html)について説明します。
-
-## サンプルUSD
-
-ここではチュートリアルで紹介されている下記サンプルコードをもとに、Stage・Primの2つの要素を解説します。
-
+Pixarが開発したフォーマットである[USD(Universal Scene Description)](https://openusd.org/release/index.html)の[公式Tutorial](https://openusd.org/release/tut_usd_tutorials.html)の最初の項目である[Hello World](https://openusd.org/release/tut_helloworld.html)と以下のサンプルUSDをもとに、USDにおける重要な要素であるStageとPrimについて解説するとともに、Pythonによる実装手順についても説明します。
 ```
 #usda 1.0
 
@@ -17,36 +12,29 @@ def Xform "hello"
 }
 ```
 
-### Stage
-
-StageはUSDシーン全体を管理するルートオブジェクトです。
-
+## Stage
+Stageは、USDシーン全体を管理するルートオブジェクトです。
 複数のレイヤーや参照関係を解決した結果としての「最終的なシーン」を表します。
-
 このTutorialではhelloというノードの中に、worldという球体があるシーンということになります。
-
 ```
 Stage（シーン全体）
  └── /hello
       └── /hello/world
 ```
 
-### Prim
-
-USDではシーン内のオブジェクトはPrimという単位で表現されます。Primはオブジェクトの型として機能し、階層構造の中でシーンを構成する要素となります。
-
+## Prim
+Primは、型情報を持つシーン内のオブジェクトであり、階層構造の中で管理される基本単位です。
 このサンプルコードでは、2つのPrimが定義されています。
 
-1つ目は def Xform "hello" で定義されるPrimで型はXformです。Xformはトランスフォーム情報（位置・回転・スケール）を持つノードであり、他のPrimをまとめるグループとしての役割も持ちます。つまりこのPrimはシーン内の親ノードとして機能しています。
+1つ目は def Xform "hello" で定義されるPrimで型はXformです。Xformはトランスフォーム情報（位置・回転・スケール）を持つPrimであり、他のPrimをまとめるグループとしての役割も持ちます。
 
-2つ目は def Sphere "world" で定義されるPrimで型はSphereです。こちらは球体ジオメトリを表すPrimであり、実際に描画されるオブジェクトです。このSphereはXformである「hello」の子として配置されることで、親の変換の影響を受けながらシーン内に配置されます。
+2つ目は def Sphere "world" で定義されるPrimで型はSphereです。こちらは球体ジオメトリを表すPrimであり、実際に描画されるオブジェクトです。
+このSphereはXformである「hello」の子として配置されることで、親の変換の影響を受けながらシーン内に配置されます。
 
 このようにUSDでは多様なPrimを用いて階層的にシーンを構築しています。
 
 ## Pythonでの構築処理
-
-上記のサンプルUSDを構築する手順について、Pythonを用いた実装を解説します。
-
+以上を踏まえて、実際にサンプルUSDを構築する手順を、以下のPythonコードをもとに解説します。
 ```
 from pxr import Usd, UsdGeom
 stage = Usd.Stage.CreateNew('HelloWorld.usda')
@@ -56,33 +44,27 @@ stage.GetRootLayer().Save()
 ```
 
 ### Stage
-
-StageはUSDシーンを扱うための起点であり、実装ではこのStageを生成するところから始まります。新規にシーンを作る場合はUsd.Stage.CreateNew() を使ってファイルと紐づいたStageを作成します。
-
+まず、Usd.Stage.CreateNew() を使って、ファイルと紐づいたStageを作成します。
 ```
 stage = Usd.Stage.CreateNew("HelloWorld.usda")
 ```
-
 この1行で「HelloWorld.usda」というUSDファイルに対応するStageが生成され、以降のすべての処理はこのstageを通して行います。
 
 ### Prim
-
-PrimはUSDシーン内のオブジェクトを定義するための基本単位です。作成はStageを通して行い、型（XformやSphereなど）とパスを指定します。
-
+次に、2つのPrimを定義します。
+Primの作成はStageを通して行い、型（Xform / Sphere）とパスを指定します。
 ```
 UsdGeom.Xform.Define(stage, "/hello")
 UsdGeom.Sphere.Define(stage, "/hello/world")
 ```
-
-このようにパスを指定することで親子関係も同時に決まり、「/hello」の中に「/hello/world」がある階層構造が自動的に作られます。
+のようにパスを指定することで、階層構造（親子関係）も同時に定義されます。
+ここでは「/hello」が親となり、「/hello/world」がその子として自動的に配置されます。
 
 ### RootLayer
-
-RootLayerはStageに紐づく最上位のレイヤーであり、実際のUSDファイルそのものに対応します。シーンに対して行ったすべての編集はこのRootLayerに書き込まれるため、データの保存先となる基盤になります。
-
-実装ではstage.GetRootLayer() で取得し、その後 Save() を呼ぶことで現在の状態をファイルに保存します。
-
+最後に、stage.GetRootLayer() でRootLayerを取得し、Save() を呼び出して内容をファイルに保存します。
 ```
 rootLayer = stage.GetRootLayer()
 rootLayer.Save()
 ```
+RootLayerは、Stageが参照する最上位のレイヤーであり、
+シーンに対する編集内容はこのRootLayerに書き込まれ、Save() を実行することでファイルとして出力されます。
