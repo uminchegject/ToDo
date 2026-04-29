@@ -1,3 +1,15 @@
+○Public
+※クライアントPCメイン
+・デバッグ環境
+ -環境変数を直接設定し、usdcat.exeでデバッグ
+ -他対応方法(https://chatgpt.com/s/t_69f1d5e7e1ec81918f82bf77e1581467)
+・Flatbuffer
+ -※ソースをAIに入れて情報収集
+ -シリアライズ処理のサンプル調査
+ -シンプルなテーブルで検証
+
+
+
 ■Employ
 ○転職本に沿った自己分析整理
 ※資料
@@ -105,14 +117,6 @@ https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
 ○プレゼンStudy
 ・共有会
 
-
-○Public
-※クライアントPCメイン
-・デバッグ環境
- -プラグインビルド
-・Flatbuffer
- -※ソースをAIに入れて情報収集
- -シンプルなテーブルで検証
 
 
 ■PatternGenerator
