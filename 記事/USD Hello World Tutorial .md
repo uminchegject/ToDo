@@ -1,4 +1,4 @@
-# USD Hello World Tutorial
+# USD Tuotorial --Hello World--
 
 Pixarが開発したフォーマットである[USD(Universal Scene Description)](https://openusd.org/release/index.html)の[公式Tutorial](https://openusd.org/release/tut_usd_tutorials.html)をもとに、USDの構造を解説します。まずは、チュートリアルの最初の項目である[Hello World](https://openusd.org/release/tut_helloworld.html)について説明します。
 
