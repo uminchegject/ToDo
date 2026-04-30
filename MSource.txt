@@ -1,12 +1,56 @@
-○Public
-※クライアントPCメイン
-・デバッグ環境
- -環境変数を直接設定し、usdcat.exeでデバッグ
- -他対応方法(https://chatgpt.com/s/t_69f1d5e7e1ec81918f82bf77e1581467)
-・Flatbuffer
- -※ソースをAIに入れて情報収集
- -シリアライズ処理のサンプル調査
- -シンプルなテーブルで検証
+■Public
+○ドキュメントメモ
+※USDメイン
+・階層構造の読み込み処理
+・Flatbufferでのバイナリ化
+ -アスキーフォーマットに沿ったバイナリ化対応
+ -
+
+○Flatbuffer処理
+※アスキーフォーマットに沿ったバイナリ化
+
+
+
+■Design
+●Noise
+※noise種類(https://qiita.com/DefaultVFX/items/b0777536b566a813dd63)
+・東熱ビル
+ -傾き
+  -色による可視化
+・ポルトガル館
+ -揺れ
+  -位置に対する力学の付け方
+  -色による可視化
+
+
+○Base設計
+※CupsuleCity・PipeCityを考慮
+・NightCity参照
+
+●City
+・Base
+ -Volume
+ -Surface
+・Point(Pos)
+ -BasePoint
+ -BaseLine
+・Detail
+ -Cupsule
+ -Pipe
+
+●CupsuleCity
+※カプセルタワーのスケール感を保つユニット設計を行う
+ -Core + Unit
+・Pattern
+ -Pos(Offset, Empty) 
+ -Type
+ -△角対応
+・CupsuleType
+ -色
+ -形態
+
+●PipeCity
+
 
 
 
@@ -59,43 +103,13 @@
  -Radius
 
 
-■Design
-●Noise
-※noise種類(https://qiita.com/DefaultVFX/items/b0777536b566a813dd63)
-・東熱ビル
- -傾き
-  -色による可視化
-・ポルトガル館
- -揺れ
-  -位置に対する力学の付け方
-  -色による可視化
+○東熱ビルNoiseEditor実装
+・傾き・色を設定するEditorを実装
+・Grid状にPointを配置し、CopyToPointで検証
 
 
-●City
-・Base
- -Volume
- -Surface
-・Point(Pos)
- -BasePoint
- -BaseLine
-・Detail
- -Cupsule
- -Pipe
-
-●CupsuleCity
-※カプセルタワーのスケール感を保つユニット設計を行う
- -Core + Unit
-・Pattern
- -Pos(Offset, Empty) 
- -Type
- -△角対応
-・CupsuleType
- -色
- -形態
-
-●PipeCity
-
-
+○ポルトガル館揺れEditor実装
+・Y軸PolyLineをGrid状に配置し検証
 
 
 
