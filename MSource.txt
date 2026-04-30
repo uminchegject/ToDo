@@ -25,7 +25,12 @@
 
 ○Base設計
 ※CupsuleCity・PipeCityを考慮
-・NightCity参照
+※NightCity参照
+・VolumeEditor
+・DetailEditor
+ -Blue Tokyo
+ -Cupsule
+ -ポンピドゥーセンター
 
 ●City
 ・Base
