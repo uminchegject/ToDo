@@ -1,3 +1,10 @@
+○※御成門に変更
+
+○美容室予約
+
+○GW休日報告
+
+
 ○Public
 ※クライアントPCメイン
 ・デバッグ環境
@@ -42,9 +49,12 @@
 ※0～240で完結するように実装
 float delete_ratio = ch("delete_ratio");
 float prim_num = nprimitives(0);
-int gradation_num = 20;
-float scale = @primnum / prim_num - delete_ratio;
-scale = fit(scale, 0, gradation_num / prim_num, 0, 1);
+
+float gradation_ratio = 0.2;
+float ratio = @primnum / prim_num;
+
+float scale = ratio - delete_ratio;
+scale = fit(scale, 0, gradation_ratio, 0, 1);
 
 ○アニメーション微調整
 ・window
