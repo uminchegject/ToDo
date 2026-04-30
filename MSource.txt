@@ -1,10 +1,3 @@
-○※御成門に変更
-
-○美容室予約
-
-○GW休日報告
-
-
 ○Public
 ※クライアントPCメイン
 ・デバッグ環境
@@ -47,21 +40,11 @@
 ■Make
 ○アニメーション調整
 ※0～240で完結するように実装
-float delete_ratio = ch("delete_ratio");
-float prim_num = nprimitives(0);
 
-float gradation_ratio = 0.2;
-float ratio = @primnum / prim_num;
-
-float scale = ratio - delete_ratio;
-scale = fit(scale, 0, gradation_ratio, 0, 1);
-
-○アニメーション微調整
-・window
- -色によるグラデーション協調
- -△移動による変化
+○アニメーション検証
 ・フロア
- -△楕円型
+・柱
+・window
 
 △HDA化
 ・調整処理実装
@@ -111,6 +94,9 @@ scale = fit(scale, 0, gradation_ratio, 0, 1);
  -形態
 
 ●PipeCity
+
+
+
 
 
 ■Study
