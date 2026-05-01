@@ -1,30 +1,28 @@
-■ドキュメントメモ
-※USDメイン
-※AdobeFileFormatPluginをベースに実装
+■Employ
+○転職本に沿った自己分析整理
+※資料
+ -M_所信表明
+ -GPT(https://chatgpt.com/share/69f17f0e-0090-8322-8d1d-944f4f60b40a)
 
-●USD
-・Primベースに読み込み処理を実装
- -UsdMesh
- -UsdXForm
- -etc…(AdobeFileFormatPluginのLayerLoadの処理)
+○書類用意
+・経歴棚卸
+ -Notion
+・書類準備(メモ)
+ -履歴書
+ -職務経歴書
+ -所信表明
 
-階層構造であるUSDフォーマットにおいてPrimで管理しているため、PrimベースにUSDからの情報取得処理を実装することが好ましい
-XFormでワールド座標を管理し、UsdMeshでメッシュ情報を管理する階層構造に対応した実装を行い、検証した。
-
-●Flatbuffer
-・Flatbufferでのバイナリ化
- -generated.hを使用しバイナリ化
- -アスキーフォーマットに沿ったバイナリ化対応
-
-出力処理は中間フォーマットであるtrmshの下記構造を参照し、generated.hを使用してバイナリ化を行う処理を実装した。
-
-
-△Flatbuffer処理
-※アスキーフォーマットに沿ったバイナリ化
-
+○カジュアル面談
 
 
 ■Design
+○東熱ビルNoiseEditor実装
+・傾き・色を設定するEditorを実装
+・Grid状にPointを配置し、CopyToPointで検証
+
+○ポルトガル館揺れEditor実装
+・Y軸PolyLineをGrid状に配置し検証
+
 ●Noise
 ※noise種類(https://qiita.com/DefaultVFX/items/b0777536b566a813dd63)
 ・東熱ビル
@@ -59,24 +57,6 @@ XFormでワールド座標を管理し、UsdMeshでメッシュ情報を管理�
 ●PipeCity
 
 
-
-■Employ
-○転職本に沿った自己分析整理
-※資料
- -M_所信表明
- -GPT(https://chatgpt.com/share/69f17f0e-0090-8322-8d1d-944f4f60b40a)
-
-○書類用意
-・経歴棚卸
- -Notion
-・書類準備(メモ)
- -履歴書
- -職務経歴書
- -所信表明
-
-○カジュアル面談
-
-
 ■Write
 ○Hello World
 ・記事化(Notion + Qiita)
@@ -107,15 +87,6 @@ XFormでワールド座標を管理し、UsdMeshでメッシュ情報を管理�
  -Pt Count
  -Line Count
  -Radius
-
-
-○東熱ビルNoiseEditor実装
-・傾き・色を設定するEditorを実装
-・Grid状にPointを配置し、CopyToPointで検証
-
-
-○ポルトガル館揺れEditor実装
-・Y軸PolyLineをGrid状に配置し検証
 
 
 
@@ -255,44 +226,3 @@ https://itami.info/maya-starter-book
 ○本&ソフト買取
 https://www.netoff.co.jp/
 ・要らない本,ソフトをまとめる
-
- 
-
-■ソース
-●UnitGenerator
-void generate_base_point(
-    vector dir; 
-    vector pos; 
-    float unit_size; 
-    int unit_num; 
-    float slide_pattern_list[]; 
-    vector color_pattern_list[])
-{
-    vector up = {0, 1, 0};
-    vector fwd = normalize(dir);
-    vector tangent = normalize(cross(fwd, up));
-    
-    int pattern_len = len(slide_pattern_list);
-    
-    for (int unit_idx = 0; unit_idx < unit_num; unit_idx++)
-    {
-        for (int pattern_idx = 0; pattern_idx < pattern_len; pattern_idx++)
-        {
-            float slider = slide_pattern_list[pattern_idx];
-            vector color = color_pattern_list[pattern_idx];
-            
-            if (slider == 0) continue;
-		 
-			
-            vector spawn_pos = pos
-                + fwd * unit_size * (unit_idx * pattern_len + pattern_idx)
-                + tangent * unit_size * slider;
-            
-            int pt = addpoint(0, spawn_pos);
-            
-            setpointattrib(0, "scale", pt, set(unit_size, unit_size, unit_size * 2), "set");
-            setpointattrib(0, "Cd", pt, color, "set");
-            setpointattrib(0, "N", pt, tangent, "set");
-        }
-    }
-}
