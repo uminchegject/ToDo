@@ -1,12 +1,25 @@
-■Public
-○ドキュメントメモ
+■ドキュメントメモ
 ※USDメイン
-・階層構造の読み込み処理
-・Flatbufferでのバイナリ化
- -アスキーフォーマットに沿ったバイナリ化対応
- -
+※AdobeFileFormatPluginをベースに実装
 
-○Flatbuffer処理
+●USD
+・Primベースに読み込み処理を実装
+ -UsdMesh
+ -UsdXForm
+ -etc…(AdobeFileFormatPluginのLayerLoadの処理)
+
+階層構造であるUSDフォーマットにおいてPrimで管理しているため、PrimベースにUSDからの情報取得処理を実装することが好ましい
+XFormでワールド座標を管理し、UsdMeshでメッシュ情報を管理する階層構造に対応した実装を行い、検証した。
+
+●Flatbuffer
+・Flatbufferでのバイナリ化
+ -generated.hを使用しバイナリ化
+ -アスキーフォーマットに沿ったバイナリ化対応
+
+出力処理は中間フォーマットであるtrmshの下記構造を参照し、generated.hを使用してバイナリ化を行う処理を実装した。
+
+
+△Flatbuffer処理
 ※アスキーフォーマットに沿ったバイナリ化
 
 
@@ -32,17 +45,6 @@
  -Cupsule
  -ポンピドゥーセンター
 
-●City
-・Base
- -Volume
- -Surface
-・Point(Pos)
- -BasePoint
- -BaseLine
-・Detail
- -Cupsule
- -Pipe
-
 ●CupsuleCity
 ※カプセルタワーのスケール感を保つユニット設計を行う
  -Core + Unit
@@ -55,7 +57,6 @@
  -形態
 
 ●PipeCity
-
 
 
 
