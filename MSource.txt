@@ -16,6 +16,7 @@
 
 ○深堀
 ※過去の経験に紐づける
+ -経歴棚卸
 ※本を参照
 
 ●資料
@@ -36,25 +37,9 @@
 
 
 ■Design
-○ポルトガル館揺れEditor実装
-・Y軸PolyLineをGrid状に配置し検証
+○Unit設計
 
-●東熱ビルNoiseEditor実装
-・傾き・色を設定するEditorを実装
-・Grid状にPointを配置し、CopyToPointで検証
-
-●Noise
-※noise種類(https://qiita.com/DefaultVFX/items/b0777536b566a813dd63)
-・東熱ビル
- -傾き
-  -色による可視化
-・ポルトガル館
- -揺れ
-  -位置に対する力学の付け方
-  -色による可視化
-
-
-○Base設計
+●City
 ※CupsuleCity・PipeCityを考慮
 ※NightCity参照
 ・UnitEditor
@@ -75,6 +60,24 @@
  -形態
 
 ●PipeCity
+
+
+○ポルトガル館揺れEditor実装
+・Y軸PolyLineをGrid状に配置し検証
+
+●東熱ビルNoiseEditor実装
+・傾き・色を設定するEditorを実装
+・Grid状にPointを配置し、CopyToPointで検証
+
+●Noise
+※noise種類(https://qiita.com/DefaultVFX/items/b0777536b566a813dd63)
+・東熱ビル
+ -傾き
+  -色による可視化
+・ポルトガル館
+ -揺れ
+  -位置に対する力学の付け方
+  -色による可視化
 
 
 ■Write
