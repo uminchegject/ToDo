@@ -57,7 +57,7 @@
 ○Base設計
 ※CupsuleCity・PipeCityを考慮
 ※NightCity参照
-・VolumeEditor
+・UnitEditor
 ・DetailEditor
  -Blue Tokyo
  -Cupsule
