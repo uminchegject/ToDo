@@ -34,32 +34,38 @@
 
 
 ○カジュアル面談
+※AmdLabs準備
+・建築テックソフト
+ -Grasshopper
+ -Revit×Dynamo
 
 
 ■Design
 ○Unit設計
-
-●City
 ※CupsuleCity・PipeCityを考慮
 ※NightCity参照
-・UnitEditor
-・DetailEditor
+・Unit
+・Detail
  -Blue Tokyo
  -Cupsule
  -ポンピドゥーセンター
 
 ●CupsuleCity
 ※カプセルタワーのスケール感を保つユニット設計を行う
- -Core + Unit
-・Pattern
- -Pos(Offset, Empty) 
- -Type
+・Unit
+ -Core + Cupsule
  -△角対応
 ・CupsuleType
  -色
  -形態
 
 ●PipeCity
+・Unit
+ -Pipe
+ -骨組み
+・PipeType
+ -Color
+ -Radius
 
 
 ○ポルトガル館揺れEditor実装
