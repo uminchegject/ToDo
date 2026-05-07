@@ -1,8 +1,13 @@
-※全てにおいて2時間1セットでスケジューリングする
- -仕事
- -Study
- -Private
+■Employ
+○書類メモ作成
+・自己PR
+・志望動機
+・経歴
+・所信表明
 
+●資料
+・M_所信表明
+・GPT(https://chatgpt.com/share/69f17f0e-0090-8322-8d1d-944f4f60b40a)
 
 ●志望動機
 ・クリエイターの業務を効率化する
@@ -13,89 +18,19 @@
  -タスクを細分化
  -R&D で様々な技術を研究するため業務に必要な知識を準備
 
+
 ○履歴書
 
 ○職務経歴書
 ※現在の経歴書をベースにシンプルに経歴のみまとめる
 
-△所信表明
+○所信表明
 ・○メモの整理
 
-
-○Bigスケール設計
-※全てのスケールのイメージを把握する
-・Unit管理
- -Core + Cupsule
- -6×6
-
-
-●Private旅行
-※旅行中は作業はせず、反省、タスク整理を行う
- -散歩中はスマホと本のみを持って散歩をし、帰ってきたらPCでまとめる
-※2時間Unit
- -昼寝 + 散歩(本斥候)
- -読書(夕日) + 散歩(夕飯)
- -映画 + 散歩(デザート)
- -散歩(朝食) + 読書
-※準備をする
- -本(BookOff)
- -映画
- -ゲーム
-※翌々日が休みの場合は午後に小旅行する
-
-
-●Private
-※2時間セット(作業 + 休憩)
- -※30分を目安にタスクを決める
-※2時間以上の時間ユニットをなくす
-※2時間以上昼寝の時間を設ける
- -12時には寝る
-※Privateタスクは前日夜か朝にカフェで整理する
- -PCタスクも一緒にやる(※家では極力避ける)
-※アイスコーヒーを積極的に飲む
-
-○小倉返信
-・渡辺も巻き込む
-
-○処分
-・廃油処理パッド
-・ごみ袋に入れる
-
-○履歴書用写真
-
-
-■Employ
-○深堀
-※過去の経験に紐づける
- -経歴棚卸
-
-○書類整理(項目整理)
-※PDF化
-・経歴書
-・履歴書
-・所信表明
-
-○書類メモ作成
-・自己PR
-・志望動機
-・経歴
-・所信表明
+△Notion
 
 △ポートフォリオ
 ※エンジニア・テクニカルアーティストの能力をアピールできるシンプルなツールを実装
-
-●資料
-・M_所信表明
-・GPT(https://chatgpt.com/share/69f17f0e-0090-8322-8d1d-944f4f60b40a)
-
-
-○書類用意
-・経歴棚卸
- -Notion
-・書類準備(メモ)
- -履歴書
- -職務経歴書
- -所信表明
 
 
 ○カジュアル面談
@@ -155,7 +90,6 @@
 ○Inspecting and Authoring Properties
 ・概要メモ(AI素材)
 
-○SolarisShelfチェック
 
 
 ■Make
@@ -186,6 +120,7 @@
 ・USD Tutorials(https://openusd.org/release/tut_usd_tutorials.html)
 ・USD Examples
 ・Reincarnation+#Tech(https://fereria.github.io/reincarnation_tech/usd)
+・△SolarisShelfチェック
 
 ○HoudiniStudy
 ・H19.5 FOUNDATIONS BOOK
@@ -275,31 +210,16 @@ https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
  
 
 ■ToDo
+○小倉返信
+・渡辺も巻き込む
+
+○処分
+・廃油処理パッド
+・ごみ袋に入れる
+
 ○望遠レンズ
 ・カメラの仕組み
 ・Blue Tokyoで検証
-
-○PFStudy
-※基礎ベース
-※簡単かつシンプルに
- -社内ベース(Tips共有会、Notion)
-・効率化の種(作業効率化のための環境整理)
- -ツール(GUI)
-・仕事Study(※メモ代わり)
- -USD Tutorials(https://openusd.org/release/tut_usd_tutorials.html)
-・趣味
- -CityProject
- -PatternProject
-
-○本Study
-※仕事のように目標を明確にする
-※CPとは差別化して考える
-※手を動かす(アウトプット)
-・H19.5 FOUNDATIONS BOOK
-https://www.sidefx.com/profile/rmagee/
-https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
-・Mayaスターターブック
-https://itami.info/maya-starter-book
 
 ○東京都ポイント
 
@@ -317,3 +237,51 @@ https://itami.info/maya-starter-book
 ○本&ソフト買取
 https://www.netoff.co.jp/
 ・要らない本,ソフトをまとめる
+
+
+●PFStudy
+※基礎ベース
+※簡単かつシンプルに
+ -社内ベース(Tips共有会、Notion)
+・効率化の種(作業効率化のための環境整理)
+ -ツール(GUI)
+・仕事Study(※メモ代わり)
+ -USD Tutorials(https://openusd.org/release/tut_usd_tutorials.html)
+・趣味
+ -CityProject
+ -PatternProject
+
+●本Study
+※仕事のように目標を明確にする
+※CPとは差別化して考える
+※手を動かす(アウトプット)
+・H19.5 FOUNDATIONS BOOK
+https://www.sidefx.com/profile/rmagee/
+https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
+・Mayaスターターブック
+https://itami.info/maya-starter-book
+
+●Private
+※2時間セット(作業 + 休憩)
+ -※30分を目安にタスクを決める
+※2時間以上の時間ユニットをなくす
+※2時間以上昼寝の時間を設ける
+ -12時には寝る
+※Privateタスクは前日夜か朝にカフェで整理する
+ -PCタスクも一緒にやる(※家では極力避ける)
+※アイスコーヒーを積極的に飲む
+
+●Private旅行
+※旅行中は作業はせず、反省、タスク整理を行う
+ -散歩中はスマホと本のみを持って散歩をし、帰ってきたらPCでまとめる
+※2時間Unit
+ -昼寝 + 散歩(本斥候)
+ -読書(夕日) + 散歩(夕飯)
+ -映画 + 散歩(デザート)
+ -散歩(朝食) + 読書
+※準備をする
+ -本(BookOff)
+ -映画
+ -ゲーム
+※翌々日が休みの場合は午後に小旅行する
+ -帰りはバスで座って帰る
