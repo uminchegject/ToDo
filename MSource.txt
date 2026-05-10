@@ -1,16 +1,22 @@
-※タスク整理 + Write + Design + Empty(ダーツ、読書、映画) + Other
+○企画
+・サバゲー
+・BBQ
+・セコンド
+
+○書類の文章を改めて統一
 
 ○所信表明清書
+※印刷
 https://chatgpt.com/share/69ff1df6-099c-8322-bb59-88136e676ee6
 
 ○Public
 ・旧バージョンで挙動確認
 
+○AMANサプライズケーキ
+
+
 
 ■Design
-※スケール感とベースデザインはそのまま反映する
- -角対応
-
 ○Bigスケール設計
 ※全てのスケールのイメージを把握する
 ・Unit管理
@@ -19,6 +25,7 @@ https://chatgpt.com/share/69ff1df6-099c-8322-bb59-88136e676ee6
 
 ●CupsuleCity
 ※カプセルタワーのスケール感を保つ
+ -角対応
 ・CupsuleType
  -色
  -形態
@@ -48,6 +55,7 @@ https://chatgpt.com/share/69ff1df6-099c-8322-bb59-88136e676ee6
  -揺れ
   -位置に対する力学の付け方
   -色による可視化
+
 
 
 ■Write
@@ -209,8 +217,6 @@ https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
 ・Blue Tokyoで検証
 
 ○東京都ポイント
-
-○AMANサプライズケーキ
 
 ○ダイエット
 ・糖質制限
