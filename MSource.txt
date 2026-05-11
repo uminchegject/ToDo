@@ -1,26 +1,16 @@
-○経歴書
-・会社とプロジェクト名を記載
-
-○所信表明
-・色身をつける
-・何が楽しくて、なんで続けるか
-
-○TAの楽しみを言語化
-※実際に何が楽しくて何で続けているのか
-・もともと希望していた理由
-・Houdini好きの理由
-
-
+※長期休み後は必ず1週間分(次回BookLoungeまで)のスケジュールを整理しておく
+ -BookLaungeで整理しておく
 ※朝カフェではWriteの添削を行う
-
-○Public
-・旧バージョンで挙動確認
 
 ○AMANサプライズケーキ
 
 
 
 ■Design
+○検証準備
+・CupsuleGenerator
+ -6×6
+
 ○Bigスケール設計
 ※全てのスケールのイメージを把握する
 ・一体感
@@ -39,6 +29,11 @@
 
 
 ○ポンピドゥーセンター模写
+・Inside
+ -凹凸
+・Outside
+ -鉄骨
+・Pipe
 
 ●PipeCity
 ・PipeType
@@ -46,12 +41,15 @@
  -Radius
 
 
-○ポルトガル館揺れEditor実装
-・Y軸PolyLineをGrid状に配置し検証
-
-○東熱ビルNoiseEditor実装
+○東熱ビル検証準備
+・※noise種類(https://qiita.com/DefaultVFX/items/b0777536b566a813dd63)
 ・傾き・色を設定するEditorを実装
 ・Grid状にPointを配置し、CopyToPointで検証
+
+○揺れロジック設計
+
+○ポルトガル館揺れEditor実装
+・Y軸PolyLineをGrid状に配置し検証
 
 ●Noise
 ※noise種類(https://qiita.com/DefaultVFX/items/b0777536b566a813dd63)
@@ -65,23 +63,13 @@
 
 
 
-■Write
-○Hello World
-・記事化(Notion + Qiita)
-
-○Inspecting and Authoring Properties
-・概要メモ(AI素材)
-
-
-
 ■Make
 ○アニメーション調整
 ※0～240で完結するように実装
-
-○アニメーション検証
 ・フロア
-・柱
-・window
+
+△※アニメーション設計・検証
+・斜め
 
 △HDA化
 ・調整処理実装
@@ -92,11 +80,33 @@
 ・プロシージャル検証
 ※側面の固定カメラ
  -Line Count
- -Radius
+ -Gap
+
+
+
+■Write
+○Hello World
+・※共有会の準備
+ -重要部分の把握
+
+○Inspecting and Authoring Properties
+・概要メモ(AI素材)
 
 
 
 ■Employ
+○経歴書
+・会社とプロジェクト名を記載
+
+○所信表明
+・色身をつける
+・何が楽しくて、なんで続けるか
+
+○TAの楽しみを言語化
+※実際に何が楽しくて何で続けているのか
+・もともと希望していた理由
+・Houdini好きの理由
+
 ●志望動機
 コンピュテーショナルデザインはコンピュータの反復処理能力を活かし、多数の設計要素や条件をルールとして一括で
 扱いながら検証を行える点に強みがあると考えています。そして、人手では困難な複雑な要素の組み合わせや無数の可
