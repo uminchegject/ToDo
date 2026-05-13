@@ -45,6 +45,7 @@ https://qiita.com/55hertz/items/0998e1ae2a3ebf0a401a
 
 ○Bigスケール設計
 ※全てのスケールのイメージを把握する
+・BaseBlockをGrid配置
 ・一体感
  -Coreの高さ
  -配置の偏り
