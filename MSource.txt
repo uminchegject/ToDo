@@ -1,10 +1,4 @@
-■Memo
-○門前仲町
-・牛肉、鶏肉、豚肉以外(羊肉、ジビエ)
-
-○書類再提出
-
-
+■メモ
 ○Inspecting and Authoring Propertiesメモ用意
 ・Inspecting and Authoring Properties
 https://openusd.org/release/tut_inspect_and_author_props.html
@@ -324,28 +318,12 @@ v@Cd = noise_cofficient;
 
 
 ●generate_simple_base_point
-void generate_simple_base_point(vector dir; vector pos; float unit_size; int unit_num; float pattern_list[])
+void generate_simple_base_point(vector pos; float unit_size; vector color; int dir)
 {
-    vector up = {0, 1, 0};
-    vector fwd = normalize(dir);
-    vector tangent = normalize(cross(fwd, up));
-    
-    int pattern_len = len(pattern_list);
-    
-    for (int unit_idx = 0; unit_idx < unit_num; unit_idx++)
-    {
-        for (int pattern_idx = 0; pattern_idx < pattern_len; pattern_idx++)
-        {
-            float pattern = pattern_list[pattern_idx];
-            
-            vector spawn_pos = pos
-                + fwd * unit_size * (unit_idx * pattern_len + pattern_idx)
-                + tangent * unit_size * pattern;
-            
-            int pt = addpoint(0, spawn_pos);
-            
-            setpointattrib(0, "scale", pt, set(unit_size, unit_size, unit_size * 2), "set");
-            setpointattrib(0, "N", pt, tangent, "set");
-        }
-    }
+	vector spawn_pos; 
+	vector tangent;
+	
+	int pt = addpoint(0, spawn_pos);            
+	setpointattrib(0, "scale", pt, set(unit_size, unit_size, unit_size * 2), "set");
+	setpointattrib(0, "N", pt, tangent, "set");	
 }
