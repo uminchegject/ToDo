@@ -1,18 +1,29 @@
-○本&ソフト買取
-https://www.netoff.co.jp/
-・要らない本,ソフトをまとめる
-
-○窓掃除
-
-○AMANサプライズケーキ
-
-
-
 ■Memo
+○門前仲町
+・牛肉、鶏肉、豚肉以外(羊肉、ジビエ)
+
+○書類再提出
+
+
 ○Inspecting and Authoring Propertiesメモ用意
+・Inspecting and Authoring Properties
+https://openusd.org/release/tut_inspect_and_author_props.html
+・GPT
+https://chatgpt.com/s/t_6a03cd46e4908191b0aa2f8e2a0328a8
+
+○カメラStudy
+・レイアウトの基本とカメラ設定
+https://qiita.com/55hertz/items/0998e1ae2a3ebf0a401a
+・再現
+ -焦点距離（Focal Length）
+ -カメラ位置（Transform）
+ -注視点（Focus）
+ -被写界深度（f-stop）
 
 
 ○工程のビジュアル資料
+
+△フロアのアニメーション処理修正
 
 
 ○カプセルCity検証準備
@@ -20,8 +31,6 @@ https://www.netoff.co.jp/
 
 ○東熱ビル検証準備
 ・ソースメモ
-
-△フロアのアニメーション処理修正
 
 
 
@@ -126,8 +135,6 @@ https://www.netoff.co.jp/
 
 ■Study
 ○カメラ
-・レイアウトの基本とカメラ設定
-https://qiita.com/55hertz/items/0998e1ae2a3ebf0a401a
 ※BlueTokyo
 ・望遠レンズ
 ・カメラの仕組み
@@ -163,6 +170,17 @@ https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
 ・建築テックソフト
  -Grasshopper
  -Revit×Dynamo
+
+
+
+■Private
+○本&ソフト買取
+https://www.netoff.co.jp/
+・要らない本,ソフトをまとめる
+
+○窓掃除
+
+○AMANサプライズケーキ
 
 
 
@@ -203,33 +221,17 @@ https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
 ・prim
 
 ●東熱ビル
+・Noise
 ・実装
  -BasePointの生成
  -CopyToPoint
-・柔軟性
- -ルーパー
-  -長さ
-  -傾き
-・変化
- -ルーパー
-  -長さ
-  -傾き
-  -色
    
 ●Gerkin
+・アニメーション
+ -Expression
 ・実装
  -螺旋状のラインを生成
-  -Base + Child
  -Primitiveを生成
-・柔軟性
- -BaseLine
-  -膨らみ
-  -傾き
- -Pattern
-  -Base(鉄骨)
-  -Child(Window)
-・変化
- -色
  
 ●CupsuleTown
 ・概要
