@@ -16,10 +16,10 @@ https://qiita.com/55hertz/items/0998e1ae2a3ebf0a401a
 
 
 ○カプセルCity検証準備
-・ソースメモ
+・1方向のSimple配置処理を実装
 
 ○東熱ビル検証準備
-・ソースメモ
+・可視化できるように調整
 
 
 △工程のビジュアル資料
@@ -309,12 +309,24 @@ https://itami.info/maya-starter-book
 
 ■ソース
 ●generate_simple_base_point
-void generate_simple_base_point(vector pos; float unit_size; vector color; int dir)
+void generate_simple_base_point(vector pos; float unit_size; vector color; int reverse)
 {
 	vector spawn_pos; 
-	vector tangent;
+	vector normal;
 	
+	spawn_pos = pos;
+	spawn_pos.x += unit_size * 1.25;
+	spawn_pos.x += unit_size * 0.25;
+	normal = {1, 0, 0};	
 	int pt = addpoint(0, spawn_pos);            
 	setpointattrib(0, "scale", pt, set(unit_size, unit_size, unit_size * 2), "set");
-	setpointattrib(0, "N", pt, tangent, "set");	
+	setpointattrib(0, "N", pt, normal, "set");
+	setpointattrib(0, "color", pt, color, "set")
+	
+	if(reverse){
+	
+	}
+	else{
+	
+	}
 }
