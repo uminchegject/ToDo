@@ -1,11 +1,13 @@
 ■メモ
+○Hello World 発表準備
+
 ○Inspecting and Authoring Propertiesメモ用意
 ・Inspecting and Authoring Properties
 https://openusd.org/release/tut_inspect_and_author_props.html
 ・GPT
 https://chatgpt.com/s/t_6a03cd46e4908191b0aa2f8e2a0328a8
 
-○カメラStudy
+○カメラStudy(Blue Tokyo)
 ・レイアウトの基本とカメラ設定
 https://qiita.com/55hertz/items/0998e1ae2a3ebf0a401a
 ・再現
@@ -60,19 +62,14 @@ https://qiita.com/55hertz/items/0998e1ae2a3ebf0a401a
  -鉄骨
 ・Pipe
 
-●Study
-・PolyWire
-
 ●PipeCity
 ・PipeType
  -Color
  -Radius
 
 
-○東熱ビル検証準備
+○東熱ビル検証
 ・※noise種類(https://qiita.com/DefaultVFX/items/b0777536b566a813dd63)
-・傾き・色を設定するEditorを実装
-・Grid状にPointを配置し、CopyToPointで検証
 
 ●Noise
 ※noise種類(https://qiita.com/DefaultVFX/items/b0777536b566a813dd63)
@@ -210,9 +207,7 @@ https://www.netoff.co.jp/
 ・折半構造の再現
 ・折半構造のプロシージャル検証
 
-○Hello World(USD)
-・stage
-・prim
+○カメラ
 
 ●東熱ビル
 ・Noise
