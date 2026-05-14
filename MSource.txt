@@ -1,13 +1,3 @@
-○Public
-・H21入れ替え
- -入れ替え方法の確認
-・H21挙動確認
- -ドキュメントに沿って挙動確認
- -リストアップ
-・△原因調査
- -H19と挙動を比較
-
-
 ■メモ
 ○Inspecting and Authoring Propertiesメモ用意
 ・Inspecting and Authoring Properties
@@ -35,7 +25,6 @@ https://qiita.com/55hertz/items/0998e1ae2a3ebf0a401a
 △工程のビジュアル資料
 
 △フロアのアニメーション処理修正
-
 
 
 ■Design
@@ -319,16 +308,6 @@ https://itami.info/maya-starter-book
 
 
 ■ソース
-●Noise
-float noise_cofficient = noise(v@P);
-
-//カラー
-v@Cd = noise_cofficient;
-
-//回転
-vector normal = set(1, 0, 0);
-normal *= rotatevector();
-
 ●generate_simple_base_point
 void generate_simple_base_point(vector pos; float unit_size; vector color; int dir)
 {

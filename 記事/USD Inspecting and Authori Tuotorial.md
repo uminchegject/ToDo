@@ -34,3 +34,17 @@ Attributeは、値を保持するPropertyです。
 数値・色・ベクトル・文字列など、実際のデータを管理します。
 
 このサンプルでは、2つのAttributeが定義されています。
+
+### radius
+Sphereの半径を表すAttributeです。
+球体の半径を2で定義しています。
+```
+double radius = 2
+```
+
+### primvars:displayColor
+Sphereの表示色を表すAttributeです。
+RGB形式で定義されており、 青色を定義しています
+```
+color3f[] primvars:displayColor = [(0, 0, 1)]
+```
