@@ -1,32 +1,4 @@
-■メモ
-○Hello World 発表準備
 
-○Inspecting and Authoring Propertiesメモ用意
-・Inspecting and Authoring Properties
-https://openusd.org/release/tut_inspect_and_author_props.html
-・GPT
-https://chatgpt.com/s/t_6a03cd46e4908191b0aa2f8e2a0328a8
-
-○カメラStudy(Blue Tokyo)
-・レイアウトの基本とカメラ設定
-https://qiita.com/55hertz/items/0998e1ae2a3ebf0a401a
-・再現
- -焦点距離（Focal Length）
- -カメラ位置（Transform）
- -注視点（Focus）
- -被写界深度（f-stop）
-
-
-○カプセルCity検証準備
-・1方向のSimple配置処理を実装
-
-○東熱ビル検証準備
-・可視化できるように調整
-
-
-△工程のビジュアル資料
-
-△フロアのアニメーション処理修正
 
 
 ■Design
@@ -172,63 +144,6 @@ https://www.netoff.co.jp/
 ○窓掃除
 
 ○AMANサプライズケーキ
-
-
-
-■PatternGenerator
-○Gerkin
-・Pattern生成アニメーション
-・PrimPattern
- 
-○Noise検証
-・ポルトガル館
-・東熱ビル
-
-
-■City
-○CupsuleCity
-※1×2×1のカプセルの配置
-・集合体
-・多様な色づかい
- -メタボリズム
-
-○ポンピドゥーセンター
-・色使い
- -メタボリズム
-
-
-■記事
-※GPTのベースを用意
-※PFStudyは基本テキストベース
- -※記事を書く手間を極限まで省く
- -文章からシークエンス図までGPTにテキストで生成する
-
-○横浜港大さん橋国際客船ターミナル
-・折半構造の再現
-・折半構造のプロシージャル検証
-
-○カメラ
-
-●東熱ビル
-・Noise
-・実装
- -BasePointの生成
- -CopyToPoint
-   
-●Gerkin
-・アニメーション
- -Expression
-・実装
- -螺旋状のラインを生成
- -Primitiveを生成
- 
-●CupsuleTown
-・概要
- -カプセルタワー
-・実装
- -凹凸の表現
-・柔軟性
- -カラー
  
 
 
