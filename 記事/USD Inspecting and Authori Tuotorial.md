@@ -48,3 +48,29 @@ RGB形式で定義されており、 青色を定義しています
 ```
 color3f[] primvars:displayColor = [(0, 0, 1)]
 ```
+
+
+## Pythonでの構築処理
+以上を踏まえて、実際にサンプルUSDを構築する手順を、以下のPythonコードをもとに解説します。
+```
+from pxr import Usd, UsdGeom
+
+# USDを開く
+stage = Usd.Stage.Open("HelloWorld.usda")
+
+# Sphere取得
+sphere = stage.GetPrimAtPath("/hello/world")
+
+# radius
+sphere.GetAttribute("radius").Set(2)
+
+# extent
+sphere.GetAttribute("extent").Set([(-2, -2, -2), (2, 2, 2)])
+
+# 色（青）
+UsdGeom.Sphere(sphere).GetDisplayColorAttr().Set([(0, 0, 1)])
+
+# 保存
+stage.GetRootLayer().Save()
+```
+

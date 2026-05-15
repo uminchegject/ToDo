@@ -1,15 +1,33 @@
 ■メモ
+※タスクの細分化と準備
+ -
+ -夜、昼
+
 ○Inspecting and Authoring Propertiesメモ用意
-・Python記事
+・各ソースの説明
 ・資料
  -Inspecting and Authoring Properties(https://openusd.org/release/tut_inspect_and_author_props.html)
  -GPT(https://chatgpt.com/s/t_6a03cd46e4908191b0aa2f8e2a0328a8)
 
 ○カメラStudy(Blue Tokyo)
 ※カメラの機能をHoudiniを用いて説明しつつ、カメラの構造を説明するドキュメントを用意したい
+・挙動検証
+ -Projection
+ -Focal Length
+ -Aperture
+ -Focus Distance + F-Stop
+ -Near Clip + Far Clip
 ・メモ作成
+ -Transform（カメラ位置）
+ -注視点（Look At）
+ -Projection（投影方式）
+ -Focal Length（焦点距離）
+ -Aperture（センサーサイズ）
+ -Focus / DOF（被写界深度）
+ -Bokeh（ボケ形状）
 ・資料
  -GPT(https://chatgpt.com/share/6a066dcc-b680-8320-8e6b-0ae653ef9920)
+
 
 △Hello World 発表準備
 ・Noteに貼り付け
@@ -36,8 +54,6 @@
 
 ○東熱ビル検証準備
 ・可視化できるように調整
-・庇の長さも適応
-
 
 
 ■Design
@@ -254,7 +270,7 @@ https://itami.info/maya-starter-book
 ※翌々日が休みの場合は午後に小旅行する
  -帰りはバスで座って帰る
  
-
+ 
 
 ■ソース
 ●generate_simple_base_point
@@ -270,10 +286,13 @@ void generate_simple_base_point(vector pos; float unit_size; vector color; int r
 	int pt = addpoint(0, spawn_pos);            
 	setpointattrib(0, "scale", pt, set(unit_size, unit_size, unit_size * 2), "set");
 	setpointattrib(0, "N", pt, normal, "set");
-	setpointattrib(0, "color", pt, color, "set")
+	setpointattrib(0, "color", pt, color, "set");
+	
+	spawn_pos.x += unit_size * 1.25;
+	
 	
 	if(reverse){
-	
+		
 	}
 	else{
 	
