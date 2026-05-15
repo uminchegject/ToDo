@@ -1,5 +1,13 @@
 ※タスクの細分化と準備
- -カフェ→午前
+ -Public, Design, Make, Write
+ -定時直前 → カフェ → 午前
+
+○Public
+・処理のドキュメント化
+・画像の解析(H19 → H21)
+
+○カプセルCity検証準備
+・1方向のSimple配置処理を実装
 
 ■メモ
 ○Inspecting and Authoring Propertiesメモ用意
@@ -27,7 +35,6 @@
 ・資料
  -GPT(https://chatgpt.com/share/6a066dcc-b680-8320-8e6b-0ae653ef9920)
 
-
 △Hello World 発表準備
 ・Noteに貼り付け
 ・見直し(重要部分のピックアップ・カンペ)
@@ -53,9 +60,13 @@
 ○カプセルCity検証
 ・区画ユニットで検証
 
+△ポンピドゥーセンター模写
+
+
 ○東熱ビル検証
 ・可視化できるように調整
 
+△揺れロジック設計
 
 ■Design
 ○検証準備
