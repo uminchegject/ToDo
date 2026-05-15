@@ -1,6 +1,3 @@
-
-
-
 ■Design
 ○検証準備
 ・CupsuleGenerator
