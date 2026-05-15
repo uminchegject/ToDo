@@ -1,3 +1,45 @@
+■メモ
+○Inspecting and Authoring Propertiesメモ用意
+・Python記事
+・資料
+ -Inspecting and Authoring Properties(https://openusd.org/release/tut_inspect_and_author_props.html)
+ -GPT(https://chatgpt.com/s/t_6a03cd46e4908191b0aa2f8e2a0328a8)
+
+○カメラStudy(Blue Tokyo)
+※カメラの機能をHoudiniを用いて説明しつつ、カメラの構造を説明するドキュメントを用意したい
+・メモ作成
+・資料
+ -GPT(https://chatgpt.com/share/6a066dcc-b680-8320-8e6b-0ae653ef9920)
+
+△Hello World 発表準備
+・Noteに貼り付け
+・見直し(重要部分のピックアップ・カンペ)
+
+
+○工程のビジュアル資料
+・main
+ -回転(Animation)
+・工程
+ -points生成
+ -Prim生成
+ -完成
+・パラメーター
+ -PointCounts(Animation)
+ -Gap(Animation)
+
+△フロアのアニメーション処理修正
+
+
+○カプセルCity検証準備
+・1方向のSimple配置処理を実装
+・区画ユニットで検証
+
+○東熱ビル検証準備
+・可視化できるように調整
+・庇の長さも適応
+
+
+
 ■Design
 ○検証準備
 ・CupsuleGenerator
