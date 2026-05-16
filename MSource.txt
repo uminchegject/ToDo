@@ -5,14 +5,34 @@
  -Public, Design, Make, Write
  -定時直前 → カフェ → 午前
 
+○BasePointGenerator
+・角配置
+・△Pattern配置
+
+●generate_simple_base_point
+void generate_edge_base_point(vector pos; float unit_size; vector color; vector dir_1; vector dir_2)
+{
+	vector spawn_pos; 
+	vector normal;
+	
+	spawn_pos = pos;
+	spawn_pos.x += unit_size * 1.25;
+	spawn_pos.x += unit_size * 0.25;
+	normal = {1, 0, 0};	
+	int pt = addpoint(0, spawn_pos);            
+	setpointattrib(0, "scale", pt, set(unit_size, unit_size, unit_size * 2), "set");
+	setpointattrib(0, "N", pt, normal, "set");
+	setpointattrib(0, "color", pt, color, "set");
+	
+	spawn_pos.x += unit_size * 1.25;
+}
+
+
+■メモ
 ○Public
 ・処理のドキュメント化
 ・画像の解析(H19 → H21)
 
-○カプセルCity検証準備
-・1方向のSimple配置処理を実装
-
-■メモ
 ○Inspecting and Authoring Propertiesメモ用意
 ・各ソースの説明
 ・資料
@@ -284,32 +304,3 @@ https://itami.info/maya-starter-book
  -ゲーム
 ※翌々日が休みの場合は午後に小旅行する
  -帰りはバスで座って帰る
- 
- 
-
-■ソース
-●generate_simple_base_point
-void generate_simple_base_point(vector pos; float unit_size; vector color; int reverse)
-{
-	vector spawn_pos; 
-	vector normal;
-	
-	spawn_pos = pos;
-	spawn_pos.x += unit_size * 1.25;
-	spawn_pos.x += unit_size * 0.25;
-	normal = {1, 0, 0};	
-	int pt = addpoint(0, spawn_pos);            
-	setpointattrib(0, "scale", pt, set(unit_size, unit_size, unit_size * 2), "set");
-	setpointattrib(0, "N", pt, normal, "set");
-	setpointattrib(0, "color", pt, color, "set");
-	
-	spawn_pos.x += unit_size * 1.25;
-	
-	
-	if(reverse){
-		
-	}
-	else{
-	
-	}
-}
