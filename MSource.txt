@@ -1,7 +1,3 @@
-○揺れ検証
-・GPT(https://chatgpt.com/share/6a09a73e-1254-8322-8994-02df8b7b7ce9)
-
-
 ■メモ
 ○サバゲー
 ・写真
@@ -64,6 +60,8 @@
 ○東熱ビル検証
 ・可視化できるように調整
 
+○揺れ検証
+※振り子を再現
 
 ■Design
 ○BasePointGenerator実装
