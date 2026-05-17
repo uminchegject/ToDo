@@ -1,30 +1,41 @@
 ※Designタスクを最優先にする
-　タスクの軸にする
-　楽しむことを継続する
+ -タスクの軸にする
+ -楽しむことを継続する
 ※タスクの細分化と準備
  -Public, Design, Make, Write
  -定時直前 → カフェ → 午前
+
+○仮検証
+※ノードベース
+・CopyToPoints
 
 ○BasePointGenerator
 ・角配置
 ・△Pattern配置
 
+△Generator検証
+・角配置
+
 ●generate_simple_base_point
-void generate_edge_base_point(vector pos; float unit_size; vector color; vector dir_1; vector dir_2)
+void generate_edge_base_point(vector pos; vector dir_1; vector dir_2;  float unit_size; vector color)
 {
-	vector spawn_pos; 
-	vector normal;
+	vector normal = dir_2;
 	
-	spawn_pos = pos;
-	spawn_pos.x += unit_size * 1.25;
-	spawn_pos.x += unit_size * 0.25;
-	normal = {1, 0, 0};	
-	int pt = addpoint(0, spawn_pos);            
-	setpointattrib(0, "scale", pt, set(unit_size, unit_size, unit_size * 2), "set");
-	setpointattrib(0, "N", pt, normal, "set");
-	setpointattrib(0, "color", pt, color, "set");
+	vector pt1_pos = pos;
+	pt1_pos += dir_1 * unit_size;
+	pt1 = addpoint(0, pt1_pos);
+	setpointattrib(0, "scale", pt1, set(unit_size, unit_size, unit_size * 2), "set");
+	setpointattrib(0, "N", pt1, normal, "set");
+	setpointattrib(0, "color", pt1, color, "set");
 	
-	spawn_pos.x += unit_size * 1.25;
+	vector pt2_pos = pos;
+	pt2_pos -= dir_1 * unit_size;
+	pt2_pos += dir_2 * unit_size;
+	pt2 = addpoint(0, pt2_pos);
+	setpointattrib(0, "scale", pt2, set(unit_size, unit_size, unit_size * 2), "set");
+	setpointattrib(0, "N", pt2, normal, "set");
+	setpointattrib(0, "color", pt2, color, "set");
+
 }
 
 
