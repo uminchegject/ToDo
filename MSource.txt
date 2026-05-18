@@ -53,15 +53,20 @@
 △フロアのアニメーション処理修正
 
 
-○カプセル配置仮検証
-※ノードベース
-・CopyToPoints
-
 ○東熱ビル検証
 ・可視化できるように調整
 
 ○揺れ検証
 ※振り子を再現
+
+
+○カプセル配置仮検証
+※ノードベース
+・CopyToPoints
+
+○ポンピドゥーセンターロジック設計
+
+
 
 ■Design
 ○BasePointGenerator実装
@@ -202,10 +207,6 @@ https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
 
 
 ■Private
-○本&ソフト買取
-https://www.netoff.co.jp/
-・要らない本,ソフトをまとめる
-
 ○窓掃除
 
 ○AMANサプライズケーキ
