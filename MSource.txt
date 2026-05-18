@@ -1,16 +1,4 @@
 ■メモ
-○BBQ決定連絡
-
-○サバゲー
-・写真
-・次回が夏前最後の屋外フィールドになる予定です
-
-
-○Public
-・処理のドキュメント化
-・画像の解析(H19 → H21)
-
-
 ○Inspecting and Authoring Propertiesメモ用意
 ・各ソースの説明
 ・資料
@@ -304,3 +292,43 @@ void generate_edge_base_point(vector pos; vector dir_1; vector dir_2;  float uni
 	setpointattrib(0, "color", pt2, color, "set");
 
 }
+
+
+●揺れ
+// ===== parameters =====
+float amp = chf("amp");
+float speed = chf("speed");
+float delay = chf("delay");
+
+// 0-1 along line
+float u = float(@ptnum) / float(@numpt - 1);
+
+// 下ほど強く動く
+float weight = pow(u, 2.0);
+
+// ラインごとのランダム位相
+float offset = rand(@primnum) * M_PI * 2.0;
+
+// 先端へ遅延
+float phase = u * delay;
+
+// 揺れ
+float angle =
+    sin(@Time * speed + offset - phase)
+    * amp
+    * weight;
+
+// 根元
+vector pivot = point(0, "P", 0);
+
+// relative position
+vector rel = @P - pivot;
+
+// 回転
+matrix3 rot = ident();
+rotate(rot, angle, {0,0,1});
+
+rel *= rot;
+
+// apply
+@P = pivot + rel;
