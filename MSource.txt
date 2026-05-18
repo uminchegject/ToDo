@@ -1,29 +1,14 @@
-○アニメーション設計
-
-
-○東熱ビル検証
-・可視化できるように調整
-・複数Noise検証
-
-○揺れ検証
-※振り子を再現
-・ソース整理
-・Grid検証
-
-
-○カプセル配置仮検証
-※ノードベース
-・CopyToPoints
-
-○ポンピドゥーセンターロジック設計
-
-
 ■メモ
+○Hello World 発表準備
+・Noteに貼り付け
+・見直し(重要部分のピックアップ・カンペ)
+
 ○Inspecting and Authoring Propertiesメモ用意
 ・各ソースの説明
 ・資料
  -Inspecting and Authoring Properties(https://openusd.org/release/tut_inspect_and_author_props.html)
  -GPT(https://chatgpt.com/s/t_6a03cd46e4908191b0aa2f8e2a0328a8)
+
 
 ○カメラStudy(Blue Tokyo)
 ※カメラの機能をHoudiniを用いて説明しつつ、カメラの構造を説明するドキュメントを用意したい
@@ -44,11 +29,6 @@
 ・資料
  -GPT(https://chatgpt.com/share/6a066dcc-b680-8320-8e6b-0ae653ef9920)
 
-△Hello World 発表準備
-・Noteに貼り付け
-・見直し(重要部分のピックアップ・カンペ)
-
-
 ○工程のビジュアル資料
 ・main
  -回転(Animation)
@@ -60,31 +40,39 @@
  -PointCounts(Animation)
  -Gap(Animation)
 
-△フロアのアニメーション処理修正
+
+○アニメーション設計
+※回転
+・Floorをレ形に
+・Windowをレ形に
+・PolyWireのスケールにグラデーション
 
 
 ○東熱ビル検証
-・可視化できるように調整
+※Noiseの模様化
+・ソース整理
+・複数Noise検証
 
 ○揺れ検証
-※振り子を再現
+※Noiseのアニメーション化
+・ソース整理
+ -primwrangleに対応
+・Grid検証
 
 
 ○カプセル配置仮検証
-※ノードベース
-・CopyToPoints
+・CoreのNoise Remove対応
+ -Box + Remove
 
 ○ポンピドゥーセンターロジック設計
-
+※TubePatternGenerator
+・Tubeの生成ロジックメモ
 
 
 ■Design
 ○BasePointGenerator実装
 ・角配置
 ・△Pattern配置
-
-○カプセルCity検証
-・区画ユニットで検証
 
 ○Bigスケール設計
 ※全てのスケールのイメージを把握する
@@ -140,10 +128,7 @@
 ・Y軸PolyLineをGrid状に配置し検証
 
 
-
 ■Make
-○工程のビジュアル資料
-
 ○横浜港大さん橋国際客船ターミナル(ビジュアル資料)
 ・工程
 ・プロシージャル検証
@@ -152,16 +137,11 @@
  -Gap
 
 
-○アニメーション調整
-※0～240で完結するように実装
-・フロア
-
-△※アニメーション設計・検証
+○※アニメーション設計・検証
 ・斜め
 
 △HDA化
 ・調整処理実装
-
 
 
 ■Write
@@ -173,7 +153,6 @@
 ・Property
  -Attribute
 ・構築処理
-
 
 
 ■Study
@@ -215,13 +194,11 @@ https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
  -Revit×Dynamo
 
 
-
 ■Private
 ○窓掃除
 
 ○AMANサプライズケーキ
  
-
 
 ■ToDo
 ○処分
@@ -315,40 +292,23 @@ void generate_edge_base_point(vector pos; vector dir_1; vector dir_2;  float uni
 
 
 ●揺れ
-// ===== parameters =====
 float amp = chf("amp");
 float speed = chf("speed");
 float delay = chf("delay");
 
-// 0-1 along line
 float u = float(@ptnum) / float(@numpt - 1);
-
-// 下ほど強く動く
 float weight = pow(u, 2.0);
-
-// ラインごとのランダム位相
 float offset = rand(@primnum) * M_PI * 2.0;
-
-// 先端へ遅延
 float phase = u * delay;
 
-// 揺れ
 float angle =
     sin(@Time * speed + offset - phase)
     * amp
     * weight;
 
-// 根元
 vector pivot = point(0, "P", 0);
-
-// relative position
 vector rel = @P - pivot;
-
-// 回転
 matrix3 rot = ident();
 rotate(rot, angle, {0,0,1});
-
 rel *= rot;
-
-// apply
 @P = pivot + rel;
