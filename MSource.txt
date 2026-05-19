@@ -261,24 +261,38 @@ void generate_edge_base_point(vector pos; vector dir_1; vector dir_2;  float uni
 }
 
 
-●揺れ
-float amp = chf("amp");
-float speed = chf("speed");
-float delay = chf("delay");
+●Noise
+vector uv = set(@P.x, 0, @P.z);
+float freq = chf("freq");
 
-float u = float(@ptnum) / float(@numpt - 1);
-float weight = pow(u, 2.0);
-float offset = rand(@primnum) * M_PI * 2.0;
-float phase = u * delay;
+int type = chi("type");
 
-float angle =
-    sin(@Time * speed + offset - phase)
-    * amp
-    * weight;
+float n = 0;
 
-vector pivot = point(0, "P", 0);
-vector rel = @P - pivot;
-matrix3 rot = ident();
-rotate(rot, angle, {0,0,1});
-rel *= rot;
-@P = pivot + rel;
+if(type == 0)
+{
+    // Perlin
+    n = noise(uv * freq);
+}
+else if(type == 1)
+{
+    // Sparse Convolution
+    n = snoise(uv * freq) * 0.5 + 0.5;
+}
+else if(type == 2)
+{
+    // Alligator
+    n = abs(noise(uv * freq) - 0.5) * 2.0;
+}
+else if(type == 3)
+{
+
+}
+else if(type == 4)
+{
+    // Curlっぽい流れ
+    vector c = curlnoise(uv * freq);
+    n = length(c);
+}
+
+@Cd = set(n,n,n);
