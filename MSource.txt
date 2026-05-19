@@ -1,7 +1,6 @@
 ■メモ
-○Hello World 発表準備
-・Noteに貼り付け
-・見直し(重要部分のピックアップ・カンペ)
+○BBQ予約
+
 
 ○Inspecting and Authoring Propertiesメモ用意
 ・各ソースの説明
@@ -9,25 +8,6 @@
  -Inspecting and Authoring Properties(https://openusd.org/release/tut_inspect_and_author_props.html)
  -GPT(https://chatgpt.com/s/t_6a03cd46e4908191b0aa2f8e2a0328a8)
 
-
-○カメラStudy(Blue Tokyo)
-※カメラの機能をHoudiniを用いて説明しつつ、カメラの構造を説明するドキュメントを用意したい
-・挙動検証
- -Projection
- -Focal Length
- -Aperture
- -Focus Distance + F-Stop
- -Near Clip + Far Clip
-・メモ作成
- -Transform（カメラ位置）
- -注視点（Look At）
- -Projection（投影方式）
- -Focal Length（焦点距離）
- -Aperture（センサーサイズ）
- -Focus / DOF（被写界深度）
- -Bokeh（ボケ形状）
-・資料
- -GPT(https://chatgpt.com/share/6a066dcc-b680-8320-8e6b-0ae653ef9920)
 
 ○工程のビジュアル資料
 ・main
@@ -39,6 +19,28 @@
 ・パラメーター
  -PointCounts(Animation)
  -Gap(Animation)
+
+
+○カメラ検証
+※Blue Tokyo
+・Projection
+・Focal Length
+・Aperture
+・Focus Distance + F-Stop
+・Near Clip + Far Clip
+
+○カメラStudy(Blue Tokyo)
+※カメラの機能をHoudiniを用いて説明しつつ、カメラの構造を説明するドキュメントを用意したい
+・メモ作成
+ -Transform（カメラ位置）
+ -注視点（Look At）
+ -Projection（投影方式）
+ -Focal Length（焦点距離）
+ -Aperture（センサーサイズ）
+ -Focus / DOF（被写界深度）
+ -Bokeh（ボケ形状）
+・資料
+ -GPT(https://chatgpt.com/share/6a066dcc-b680-8320-8e6b-0ae653ef9920)
 
 
 ○アニメーション設計
@@ -55,14 +57,13 @@
 
 ○揺れ検証
 ※Noiseのアニメーション化
-・ソース整理
- -primwrangleに対応
 ・Grid検証
 
 
 ○カプセル配置仮検証
 ・CoreのNoise Remove対応
  -Box + Remove
+・Volume単位で検証
 
 ○ポンピドゥーセンターロジック設計
 ※TubePatternGenerator
@@ -232,7 +233,7 @@ https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
 ※手を動かす(アウトプット)
 ・H19.5 FOUNDATIONS BOOK
 https://www.sidefx.com/profile/rmagee/
-https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
+https://www.sidefx.com/ja/tutorials/foundations-terrain/
 ・Mayaスターターブック
 https://itami.info/maya-starter-book
 
