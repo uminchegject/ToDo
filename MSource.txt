@@ -20,35 +20,14 @@
  -PointCounts(Animation)
  -Gap(Animation)
 
-
-○カメラ検証
-※Blue Tokyo
-・Projection
-・Focal Length
-・Aperture
-・Focus Distance + F-Stop
-・Near Clip + Far Clip
-
-○カメラStudy(Blue Tokyo)
-※カメラの機能をHoudiniを用いて説明しつつ、カメラの構造を説明するドキュメントを用意したい
-・メモ作成
- -Transform（カメラ位置）
- -注視点（Look At）
- -Projection（投影方式）
- -Focal Length（焦点距離）
- -Aperture（センサーサイズ）
- -Focus / DOF（被写界深度）
- -Bokeh（ボケ形状）
-・資料
- -GPT(https://chatgpt.com/share/6a066dcc-b680-8320-8e6b-0ae653ef9920)
+○Projection検証
+※Renderling
 
 
-○アニメーション設計
-※回転
-・Floorをレ形に
-・Windowをレ形に
-・PolyWireのスケールにグラデーション
-
+○Noise検証(Grid + Color)
+※特徴的なNoiseを選出して、その特徴を模様、揺れで表現する
+・UnifiedNoise
+https://www.sidefx.com/ja/docs/houdini/nodes/vop/unifiednoise.html
 
 ○東熱ビル検証
 ※Noiseの模様化
@@ -61,13 +40,18 @@
 
 
 ○カプセル配置仮検証
-・CoreのNoise Remove対応
- -Box + Remove
 ・Volume単位で検証
 
 ○ポンピドゥーセンターロジック設計
 ※TubePatternGenerator
 ・Tubeの生成ロジックメモ
+
+
+○アニメーション設計
+※回転
+・Floorをレ形に
+・Windowをレ形に
+・PolyWireのスケールにグラデーション
 
 
 
@@ -85,9 +69,6 @@
 ・Unit管理
  -Core + Cupsule
  -6×6
-
-●Study
-・CopyToPoints
 
 ●CupsuleCity
 ※カプセルタワーのスケール感を保つ
@@ -142,22 +123,14 @@
 
 
 ■Write
-○Hello World
-・※共有会の準備
- -重要部分の把握
-
 ○Inspecting and Authoring Properties
 ・Property
  -Attribute
+ -RelationShip
 ・構築処理
 
 
 ■Study
-○カメラ
-※BlueTokyo
-・望遠レンズ
-・カメラの仕組み
-
 ○USDStudy
 ・USD Tutorials(https://openusd.org/release/tut_usd_tutorials.html)
 ・USD Examples
