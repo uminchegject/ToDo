@@ -1,10 +1,24 @@
+○揺れ仮検証
+・長さ、揺れ特徴を比較する検証
+
+○アニメーションソースの修正
+※他パーツと照らし合わせながら検証もする
+・Window
+・Floor
+
+
 ■メモ
+※終業前は、準備メイン(メモメイン)
+
+○AMANサプライズケーキ
+
+
 ○東熱ビル検証
 ※Noiseの模様化
 
-○揺れ検証
-・空間(Noise)
-・揺れ(アニメーション)
+○ポルトガル館検証
+※Noiseのアニメーション化
+・Noiseで空間を生成
 
 
 ○カプセル配置仮検証
@@ -22,9 +36,57 @@
 
 ○Hello World Qiita化
 
-○Inspecting and Authoring Propertiesメモ用意
+○Inspecting and Authoring Properties記事化
 
-○Referencing Layers
+○Referencing Layers メモ
+https://openusd.org/release/tut_referencing_layers.html
+
+
+○工程のビジュアル資料
+・main
+ -回転(Animation)
+・工程
+ -points生成
+ -Prim生成
+ -完成
+・パラメーター
+ -PointCounts(Animation)
+ -Gap(Animation)
+
+
+
+■メモ
+※終業前は、準備メイン(メモメイン)
+
+○AMANサプライズケーキ
+
+
+○東熱ビル検証
+※Noiseの模様化
+
+○ポルトガル館検証
+※Noiseのアニメーション化
+・Noiseで空間を生成
+
+
+○カプセル配置仮検証
+
+○ポンピドゥーセンターロジック設計
+※TubePatternGenerator
+・Greeble
+
+
+○回転アニメーション処理メモ
+・Floorをレ形に
+・Windowをレ形に
+・PolyWireのスケールにグラデーション
+
+
+○Hello World Qiita化
+
+○Inspecting and Authoring Properties記事化
+
+○Referencing Layers メモ
 https://openusd.org/release/tut_referencing_layers.html
 
 
@@ -46,68 +108,58 @@ https://openusd.org/release/tut_referencing_layers.html
 ・角配置
 ・△Pattern配置
 
-○Bigスケール設計
-※全てのスケールのイメージを把握する
-・BaseBlockをGrid配置
-・一体感
- -Coreの高さ
- -配置の偏り
+●CupsuleCity
+※カプセルタワーのスケール感を保つ
 ・Unit管理
  -Core + Cupsule
  -6×6
-
-●CupsuleCity
-※カプセルタワーのスケール感を保つ
- -角対応
+・一体感
+ -Coreの高さ
+ -配置の偏り
 ・CupsuleType
  -色
  -形態
 
 
-△ポンピドゥーセンター模写
+●ポンピドゥーセンター
 ・Inside
  -凹凸
 ・Outside
  -鉄骨
 ・Pipe
-
-●PipeCity
-・PipeType
- -Color
- -Radius
+ -Greeble
 
 
 ●Noise
 ※noise種類(https://qiita.com/DefaultVFX/items/b0777536b566a813dd63)
 ・東熱ビル
  -傾き
-  -色による可視化
+ -色
 ・ポルトガル館
  -揺れ
-  -位置に対する力学の付け方
-  -色による可視化
+ -色
 
+
+■Write
+○Hello World
+・記事化
+
+○Inspecting and Authoring
+・記事化
+
+○Referencing Layers
 
 
 ■Make
-○横浜港大さん橋国際客船ターミナル(ビジュアル資料)
+○※Gerkinアニメーション設計・検証
+・斜め
+
+●横浜港大さん橋国際客船ターミナル(ビジュアル資料)
 ・工程
 ・プロシージャル検証
 ※側面の固定カメラ
  -Line Count
  -Gap
-
-
-○※アニメーション設計・検証
-・斜め
-
-
-■Write
-○Inspecting and Authoring Properties
-・Property
- -Attribute
- -RelationShip
-・構築処理
 
 
 ■Study
@@ -121,9 +173,6 @@ https://openusd.org/release/tut_referencing_layers.html
 ・H19.5 FOUNDATIONS BOOK
 https://www.sidefx.com/profile/rmagee/
 https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
-
-○プレゼンStudy
-・共有会
 
 
 ■Employ
@@ -146,7 +195,9 @@ https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
 
 ■Private
 ○窓掃除
- 
+
+○リュック選択
+
 
 ■ToDo
 ○処分
@@ -214,63 +265,102 @@ https://itami.info/maya-starter-book
  -帰りはバスで座って帰る
  
  
- 
+
 ■ソース
-●generate_simple_base_point
-void generate_edge_base_point(vector pos; vector dir_1; vector dir_2;  float unit_size; vector color)
+●scaling_Colmun
+float delete_ratio = ch("delete_ratio");
+int pts[] = primpoints(0, @primnum);
+float pt_num = len(pts);
+float gradation_ratio = 0.2;
+float offset = (@primnum % 3) * 0.2;
+
+for(int pt_idx = 0; pt_idx < pt_num; pt_idx++)
+{       
+    float ratio = pt_idx / pt_num;
+    float scale = (ratio + gradation_ratio + offset) - delete_ratio * (1 + gradation_ratio);
+    scale = fit(scale, 0, gradation_ratio, 0, 1);
+    scale = 1 - scale;
+    scale *= 0.2;
+    int pt = pts[pt_idx];
+    setpointattrib(0, "pscale", pt, scale);
+}
+
+
+●scaling_floor
+float delete_ratio = ch("delete_ratio");
+float prim_num = nprimitives(0);
+
+float gradation_ratio = 0.2;
+float ratio = @primnum / prim_num;
+float offset = (@primnum % 3) * 0.1;
+
+float scale = (ratio + gradation_ratio) - delete_ratio * (1 + gradation_ratio);
+scale = fit(scale, 0, gradation_ratio, 0, 1);
+scale = 1 - scale;
+
+vector center = v@P;
+int pts[] = primpoints(0, @primnum);
+for(int pt_idx = 0; pt_idx < pt_num; pt_idx++)
 {
-	vector normal = dir_2;
+    vector pos = point(0, "P", pts[pt_idx]);
+    vector offset = pos - center;
+    offset *= scale;
+	scale -= (@primnum % 3) * 0.2;
+    setpointattrib(0, "P", pts[pt_idx], center + offset, "set");
+}
+
+
+●delete_window
+float delete_ratio = ch("delete_ratio");
+float block_line_idx = i@block_line_idx;
+float line_prim_idx = i@line_prim_idx;
+float gradation_ratio = 0.2;
+float ratio = line_prim_idx / 50;
+
+float scale = (ratio + gradation_ratio) - delete_ratio * (1 + gradation_ratio);
+scale = fit(scale, 0, gradation_ratio, 0, 1);
+scale = 1 - scale;
+
+v@Cd = scale;
+vector center = v@P;
+int pts[] = primpoints(0, @primnum);
+for(int pt_idx = 0; pt_idx < pt_num; pt_idx++)
+{
 	
-	vector pt1_pos = pos;
-	pt1_pos += dir_1 * unit_size;
-	pt1 = addpoint(0, pt1_pos);
-	setpointattrib(0, "scale", pt1, set(unit_size, unit_size, unit_size * 2), "set");
-	setpointattrib(0, "N", pt1, normal, "set");
-	setpointattrib(0, "color", pt1, color, "set");
-	
-	vector pt2_pos = pos;
-	pt2_pos -= dir_1 * unit_size;
-	pt2_pos += dir_2 * unit_size;
-	pt2 = addpoint(0, pt2_pos);
-	setpointattrib(0, "scale", pt2, set(unit_size, unit_size, unit_size * 2), "set");
-	setpointattrib(0, "N", pt2, normal, "set");
-	setpointattrib(0, "color", pt2, color, "set");
-
+    vector pos = point(0, "P", pts[pt_idx]);
+    vector offset = pos - center;
+    offset *= scale;
+    setpointattrib(0, "P", pts[pt_idx], center + offset, "set");
 }
 
 
-●Noise
-vector uv = set(@P.x, 0, @P.z);
-float freq = chf("freq");
+●揺れ
+float amp = chf("amp");
+float speed = chf("speed");
+float delay = chf("delay");
 
-int type = chi("type");
+int prim_pts[] = primpoints(0, @primnum);
 
-float n = 0;
-
-if(type == 0)
-{
-    // Perlin
-    n = noise(uv * freq);
-}
-else if(type == 1)
-{
-    // Sparse Convolution
-    n = snoise(uv * freq) * 0.5 + 0.5;
-}
-else if(type == 2)
-{
-    // Alligator
-    n = abs(noise(uv * freq) - 0.5) * 2.0;
-}
-else if(type == 3)
+for(int pt_idx = 0; pt_idx < len(prim_pts); ++pt_idx)
 {
 
-}
-else if(type == 4)
-{
-    // Curlっぽい流れ
-    vector c = curlnoise(uv * freq);
-    n = length(c);
-}
+    float u = float(pt_idx) / float(len(prim_pts) - 1);
+    float weight = pow(u, 2.0);
+    float offset = rand(@primnum) * M_PI * 2.0;
+    float phase = u * delay;
 
-@Cd = set(n,n,n);
+    float angle =
+            sin(@Time * speed + offset - phase)
+            * amp
+            * weight;
+
+    vector pivot = point(0, "P", prim_pts[0]);
+    vector rel = point(0, "P", prim_pts[pt_idx]);
+    rel -= pivot;
+
+    matrix3 rot = ident();
+    rotate(rot, angle, {0,0,1});
+    rel *= rot;
+    vector pos = pivot + rel;
+    setpointattrib(0, "P", prim_pts[pt_idx], pos);
+}

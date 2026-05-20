@@ -87,3 +87,29 @@ UsdGeom.Sphere(sphere).GetDisplayColorAttr().Set([(0, 0, 1)])
 stage.GetRootLayer().Save()
 ```
 
+まず、Attribute を設定する対象となる world の球体 Prim を取得します。
+```
+# USDを開く
+stage = Usd.Stage.Open("HelloWorld.usda")
+
+# Sphere取得
+sphere = stage.GetPrimAtPath("/hello/world")
+```
+
+world（球体 Prim）を取得したら、各 Attribute を設定します。
+```
+# radius
+sphere.GetAttribute("radius").Set(2)
+
+# extent
+sphere.GetAttribute("extent").Set([(-2, -2, -2), (2, 2, 2)])
+
+# 色（青）
+UsdGeom.Sphere(sphere).GetDisplayColorAttr().Set([(0, 0, 1)])
+```
+
+最後に Stage を保存して完了です。
+```
+# 保存
+stage.GetRootLayer().Save()
+````
