@@ -1,16 +1,31 @@
 ■メモ
-○BBQ予約
+○東熱ビル検証
+※Noiseの模様化
 
-○AMANサプライズケーキ
+○揺れ検証
+・空間(Noise)
+・揺れ(アニメーション)
+
+
+○カプセル配置仮検証
+
+○ポンピドゥーセンターロジック設計
+※TubePatternGenerator
+・Greeble
+
+
+○回転アニメーション処理メモ
+・Floorをレ形に
+・Windowをレ形に
+・PolyWireのスケールにグラデーション
 
 
 ○Hello World Qiita化
 
 ○Inspecting and Authoring Propertiesメモ用意
-・各ソースの説明
-・資料
- -Inspecting and Authoring Properties(https://openusd.org/release/tut_inspect_and_author_props.html)
- -GPT(https://chatgpt.com/s/t_6a03cd46e4908191b0aa2f8e2a0328a8)
+
+○Referencing Layers
+https://openusd.org/release/tut_referencing_layers.html
 
 
 ○工程のビジュアル資料
@@ -23,35 +38,6 @@
 ・パラメーター
  -PointCounts(Animation)
  -Gap(Animation)
-
-
-○Noise検証(Grid + Color)
-※特徴的なNoiseを選出して、その特徴を模様、揺れで表現する
-・UnifiedNoise
-https://www.sidefx.com/ja/docs/houdini/nodes/vop/unifiednoise.html
-
-○東熱ビル検証
-※Noiseの模様化
-・ソース整理
-・複数Noise検証
-
-○揺れ検証
-※Noiseのアニメーション化
-・Grid検証
-
-
-○カプセル配置仮検証
-・Volume単位で検証
-
-○ポンピドゥーセンターロジック設計
-※TubePatternGenerator
-・Tubeの生成ロジックメモ
-
-
-○回転アニメーション処理メモ
-・Floorをレ形に
-・Windowをレ形に
-・PolyWireのスケールにグラデーション
 
 
 
