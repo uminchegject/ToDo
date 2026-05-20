@@ -1,6 +1,10 @@
 ■メモ
 ○BBQ予約
 
+○AMANサプライズケーキ
+
+
+○Hello World Qiita化
 
 ○Inspecting and Authoring Propertiesメモ用意
 ・各ソースの説明
@@ -19,9 +23,6 @@
 ・パラメーター
  -PointCounts(Animation)
  -Gap(Animation)
-
-○Projection検証
-※Renderling
 
 
 ○Noise検証(Grid + Color)
@@ -47,8 +48,7 @@ https://www.sidefx.com/ja/docs/houdini/nodes/vop/unifiednoise.html
 ・Tubeの生成ロジックメモ
 
 
-○アニメーション設計
-※回転
+○回転アニメーション処理メモ
 ・Floorをレ形に
 ・Windowをレ形に
 ・PolyWireのスケールにグラデーション
@@ -90,12 +90,6 @@ https://www.sidefx.com/ja/docs/houdini/nodes/vop/unifiednoise.html
  -Color
  -Radius
 
-
-○東熱ビル検証
-・※noise種類(https://qiita.com/DefaultVFX/items/b0777536b566a813dd63)
-
-○ポルトガル館揺れ検証
-・Y軸PolyLineをGrid状に配置し検証
 
 ●Noise
 ※noise種類(https://qiita.com/DefaultVFX/items/b0777536b566a813dd63)
@@ -166,8 +160,6 @@ https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
 
 ■Private
 ○窓掃除
-
-○AMANサプライズケーキ
  
 
 ■ToDo

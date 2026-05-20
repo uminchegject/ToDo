@@ -1,7 +1,7 @@
 # USD Tuotorial --Inspecting and Authoring Properties--
 
 Pixarが開発したフォーマットである[USD(Universal Scene Description)](https://openusd.org/release/index.html)の[公式Tutorial](https://openusd.org/release/tut_usd_tutorials.html)の項目である[Inspecting and Authoring Properties](https://openusd.org/release/tut_inspect_and_author_props.html)と以下のサンプルUSDをもとに、
-USDのPrimにおいて情報を管理するPropertyについて、AttributeとRelationShipについて解説するとともに、Pythonによる実装方法についても説明します。
+USDのPrimにおいて情報を管理するPropertyについて、Attribute と Relationship の役割を解説するとともに、Python による実装方法についても説明します。
 
 ```
 #usda 1.0
@@ -19,10 +19,9 @@ def Xform "hello"
 
 
 ## Property
-Propertyは、Primが保持する情報を表す要素で、PropertyにはAttribute と RelationShipの二種類があります。
-USDでは、Primの中にさまざまなPropertyが格納され、Primに関する情報を管理します。
-
-このサンプルでは、Sphere Primである /hello/world に対して以下のPropertyが存在しています。
+Property は、Prim が保持する情報を表す要素であり、USD では Attribute と Relationship の 2 種類に分類されます。
+Prim にはさまざまな Property が格納されており、オブジェクトの状態や他の Prim との関連情報を管理します。
+このサンプルでは、Sphere Prim である /hello/world に対して、以下の Property が存在しています。
 ```
 /hello/world
  ├── extent
@@ -32,10 +31,9 @@ USDでは、Primの中にさまざまなPropertyが格納され、Primに関す�
 
 
 ## Attribute
-Attributeは、値を保持するPropertyです。
-数値・色・ベクトル・文字列など、実際のデータを管理します。
-
-このサンプルでは、3つのAttributeが定義されています。
+Attribute は、値を保持するための Property です。
+数値・色・ベクトル・文字列など、Prim が持つ実際のデータを管理します。
+このサンプルでは、以下の 3 つの Attribute が定義されています。
 
 ### extent
 primのboundを表すattributeです。
@@ -60,9 +58,9 @@ color3f[] primvars:displayColor = [(0, 0, 1)]
 
 
 ## RelationShip
-このTutorialには含まれていませんがPropertyにはRelationShipという種類もあります。
-RelationShipは、値を実態と持つのではなく、参照として持たせるPropertyです。
-例えると、textureを別usdから参照するなどです。
+この Tutorial には含まれていませんが、Property には Relationship という種類も存在します。
+Relationship は、Attribute のように実際の値を保持するのではなく、他の Prim やデータへの参照関係を管理するための Property です。
+例えば、別の USD に存在する Texture や Material を参照する場合などに使用されます。
 
 
 ## Pythonでの構築処理
