@@ -1,5 +1,12 @@
 ■メモ
+※AIで調べた内容は必ず裏付けを確認する
 ※終業前は、準備メイン(メモメイン)
+
+○Aman支払い
+
+○勤怠報告
+・ロイさん報告
+
 
 ○アニメーションソースの修正
 ※他パーツと照らし合わせながら検証もする
@@ -12,17 +19,12 @@
 ・PolyWireのスケールにグラデーション
 
 
-○揺れ設計
+○多種Noiseで揺れを検証
+
+△揺れ設計
+※Noiseのアニメーション化
 ・向き
 ・変化
-
-○揺れ仮検証
-・Noise形式の高さの紐群を用意
-・Noise形式の揺れ特徴を比較
-
-○ポルトガル館検証
-※Noiseのアニメーション化
-・Noiseで空間を生成
 
 
 ○カプセル配置仮検証
@@ -75,7 +77,6 @@ https://openusd.org/release/tut_referencing_layers.html
  -色
  -形態
 
-
 ●ポンピドゥーセンター
 ・Inside
  -凹凸
@@ -83,7 +84,6 @@ https://openusd.org/release/tut_referencing_layers.html
  -鉄骨
 ・Pipe
  -Greeble
-
 
 ●Noise
 ※noise種類(https://qiita.com/DefaultVFX/items/b0777536b566a813dd63)
@@ -103,6 +103,7 @@ https://openusd.org/release/tut_referencing_layers.html
 ・記事化
 
 ○Referencing Layers
+・記事メモ
 
 
 ■Make
@@ -224,6 +225,12 @@ https://itami.info/maya-starter-book
  
 
 ■ソース
+●Gap
+0.1 + sin($F * 10) * 0.05
+
+●LineCount
+7 + $F
+
 ●scaling_Colmun
 float delete_ratio = ch("delete_ratio");
 int pts[] = primpoints(0, @primnum);
@@ -249,7 +256,6 @@ float prim_num = nprimitives(0);
 
 float gradation_ratio = 0.2;
 float ratio = @primnum / prim_num;
-float offset = (@primnum % 3) * 0.1;
 
 float scale = (ratio + gradation_ratio) - delete_ratio * (1 + gradation_ratio);
 scale = fit(scale, 0, gradation_ratio, 0, 1);
@@ -257,15 +263,18 @@ scale = 1 - scale;
 
 vector center = v@P;
 int pts[] = primpoints(0, @primnum);
-for(int pt_idx = 0; pt_idx < pt_num; pt_idx++)
+
+for(int pt_idx = 0; pt_idx < len(pts); pt_idx++)
 {
+	
     vector pos = point(0, "P", pts[pt_idx]);
     vector offset = pos - center;
-    offset *= scale;
-	scale -= (pt_idx % 3) * 0.1;
-    setpointattrib(0, "P", pts[pt_idx], center + offset, "set");
+	
+	float offset_scale = scale - (pt_idx % 3) * 0.2;
+	if(offset_scale < 0) removepoint(0, pts[pt_idx]);
+    offset *= offset_scale;
+    setpointattrib(0, "P", pt, center + offset, "set");	
 }
-
 
 ●delete_window
 float delete_ratio = ch("delete_ratio");
@@ -282,50 +291,10 @@ v@Cd = scale;
 vector center = v@P;
 int pts[] = primpoints(0, @primnum);
 for(int pt_idx = 0; pt_idx < pt_num; pt_idx++)
-{
-	
+{	
     vector pos = point(0, "P", pts[pt_idx]);
     vector offset = pos - center;
     offset *= scale;
+	
     setpointattrib(0, "P", pts[pt_idx], center + offset, "set");
-}
-
-
-●揺れ
-float amp = chf("amp");
-float speed = chf("speed");
-float delay = chf("delay");
-
-int prim_pts[] = primpoints(0, @primnum);
-
-for(int pt_idx = 0; pt_idx < len(prim_pts); ++pt_idx)
-{
-
-    float u = float(pt_idx) / float(len(prim_pts) - 1);
-    float weight = pow(u, 2.0);
-    float offset = rand(@primnum) * M_PI * 2.0;
-    float phase = u * delay;
-
-    float angle_x =
-            sin(@Time * speed + offset - phase)
-            * amp
-            * weight;
-
-    float angle_z =
-            cos(@Time * speed + offset - phase)
-            * amp
-            * weight;
-
-
-    vector pivot = point(0, "P", prim_pts[0]);
-    vector rel = point(0, "P", prim_pts[pt_idx]);
-    rel -= pivot;
-
-    matrix3 rot = ident();
-    rotate(rot, angle_x, {1,0,0});
-    rotate(rot, angle_x, {0,0,1});
-    rel *= rot;
-
-    vector pos = pivot + rel;
-    setpointattrib(0, "P", prim_pts[pt_idx], pos);
 }
