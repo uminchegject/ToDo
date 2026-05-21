@@ -1,7 +1,4 @@
 ■メモ
-※AIで調べた内容は必ず裏付けを確認する
-※終業前は、準備メイン(メモメイン)
-
 ○Aman支払い
 
 ○勤怠報告
@@ -26,6 +23,11 @@
 ・向き
 ・変化
 
+○Noise検証調査
+※Noiseの模様化
+・東熱ビル
+・ポルトガル館
+
 
 ○カプセル配置仮検証
 ・Procedural Wall City(https://www.youtube.com/watch?v=2d7c7dVX-kg)
@@ -35,17 +37,6 @@
 ・Greeble
  -SciFiCity参照(平行+垂直)
 ・Procedural Pipe Network(https://www.youtube.com/watch?v=Jcinr46UcJE)
-
-○東熱ビル検証
-※Noiseの模様化
-
-
-○Hello World Qiita化
-
-○Inspecting and Authoring Properties記事化
-
-○Referencing Layers メモ
-https://openusd.org/release/tut_referencing_layers.html
 
 
 ○工程のビジュアル資料
@@ -58,6 +49,14 @@ https://openusd.org/release/tut_referencing_layers.html
 ・パラメーター
  -PointCounts(Animation)
  -Gap(Animation)
+
+
+○Hello World Qiita化
+
+○Inspecting and Authoring Properties記事化
+
+○Referencing Layers メモ
+https://openusd.org/release/tut_referencing_layers.html
 
 
 ■Design
@@ -249,7 +248,6 @@ for(int pt_idx = 0; pt_idx < pt_num; pt_idx++)
     setpointattrib(0, "pscale", pt, scale);
 }
 
-
 ●scaling_floor
 float delete_ratio = ch("delete_ratio");
 float prim_num = nprimitives(0);
@@ -270,8 +268,9 @@ for(int pt_idx = 0; pt_idx < len(pts); pt_idx++)
     vector pos = point(0, "P", pts[pt_idx]);
     vector offset = pos - center;
 	
-	float offset_scale = scale - (pt_idx % 3) * 0.2;
-	if(offset_scale < 0) removepoint(0, pts[pt_idx]);
+	float offset_scale = scale + (pt_idx % 6) * 0.2;
+	offset_scale = fit(offset_scale, 0.2, 1.2, 0, 1.2);
+	if(1 < offset_scale) offset_scale = 1;
     offset *= offset_scale;
     setpointattrib(0, "P", pt, center + offset, "set");	
 }
