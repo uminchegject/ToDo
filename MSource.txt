@@ -1,44 +1,20 @@
-○揺れ設計
-※Noiseのアニメーション化
-・多様向き
-・変化
-
-○多種Noiseで揺れを検証
-
-●scaling_floor
-float delete_ratio = ch("delete_ratio");
-float prim_num = nprimitives(0);
-
-float gradation_ratio = 0.2;
-float ratio = @primnum / prim_num;
-
-float scale = (ratio + gradation_ratio) - delete_ratio * (1 + gradation_ratio);
-scale = fit(scale, 0, gradation_ratio, 0, 1);
-scale = 1 - scale;
-
-vector center = v@P;
-int pts[] = primpoints(0, @primnum);
-
-for(int pt_idx = 0; pt_idx < len(pts); pt_idx++)
-{
-        
-    vector pos = point(0, "P", pts[pt_idx]);
-    vector offset = pos - center;
-        
-    float offset_scale = scale + float(pt_idx % 6) / 6 * 0.2;
-    offset_scale = fit(offset_scale, 0.2, 1.2, 0, 1.2);
-    if(1 < offset_scale) offset_scale = 1;
-    
-    offset *= offset_scale;
-    setpointattrib(0, "P", pts[pt_idx], center + offset, "set"); 
-}
-
-
 ■メモ
 ○Aman支払い
 
 ○勤怠報告
 ・ロイさん報告
+
+
+○多種Noiseで揺れを検証
+
+○揺れ設計
+※Noiseのアニメーション化
+・フーコーの振り子
+
+○Noise検証調査
+※Noiseの模様化
+・東熱ビル
+・ポルトガル館
 
 
 ○アニメーションソースの修正
@@ -50,19 +26,6 @@ for(int pt_idx = 0; pt_idx < len(pts); pt_idx++)
 ・Floorをレ形に
 ・Windowをレ形に
 ・PolyWireのスケールにグラデーション
-
-
-○多種Noiseで揺れを検証
-
-△揺れ設計
-※Noiseのアニメーション化
-・向き
-・変化
-
-○Noise検証調査
-※Noiseの模様化
-・東熱ビル
-・ポルトガル館
 
 
 ○カプセル配置仮検証
@@ -300,15 +263,16 @@ int pts[] = primpoints(0, @primnum);
 
 for(int pt_idx = 0; pt_idx < len(pts); pt_idx++)
 {
-	
+        
     vector pos = point(0, "P", pts[pt_idx]);
     vector offset = pos - center;
-	
-	float offset_scale = scale + (pt_idx % 6) * 0.2;
-	offset_scale = fit(offset_scale, 0.2, 1.2, 0, 1.2);
-	if(1 < offset_scale) offset_scale = 1;
+        
+    float offset_scale = scale + float(pt_idx % 6) / 6 * 0.2;
+    offset_scale = fit(offset_scale, 0.2, 1.2, 0, 1.2);
+    if(1 < offset_scale) offset_scale = 1;
+    
     offset *= offset_scale;
-    setpointattrib(0, "P", pt, center + offset, "set");	
+    setpointattrib(0, "P", pts[pt_idx], center + offset, "set"); 
 }
 
 ●delete_window
