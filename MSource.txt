@@ -1,44 +1,20 @@
 ■メモ
 ○Aman支払い
 
-○勤怠報告
-・ロイさん報告
+○ギフトカード準備
+・連絡(支払い完了連絡)
+
+○本斥候
+・技術本
+・啓発本
+
+○SFC準備
+・コード
+・コントローラー
+・ソフト(DG)
 
 
-○多種Noiseで揺れを検証
-
-○揺れ設計
-※Noiseのアニメーション化
-・フーコーの振り子
-
-○Noise検証調査
-※Noiseの模様化
-・東熱ビル
-・ポルトガル館
-
-
-○アニメーションソースの修正
-※他パーツと照らし合わせながら検証もする
-・Window
-・Floor
-
-○回転アニメーション処理メモ
-・Floorをレ形に
-・Windowをレ形に
-・PolyWireのスケールにグラデーション
-
-
-○カプセル配置仮検証
-・Procedural Wall City(https://www.youtube.com/watch?v=2d7c7dVX-kg)
-
-○ポンピドゥーセンターロジック設計
-※TubePatternGenerator
-・Greeble
- -SciFiCity参照(平行+垂直)
-・Procedural Pipe Network(https://www.youtube.com/watch?v=Jcinr46UcJE)
-
-
-○工程のビジュアル資料
+○大さん橋ビジュアル資料
 ・main
  -回転(Animation)
 ・工程
@@ -48,17 +24,58 @@
 ・パラメーター
  -PointCounts(Animation)
  -Gap(Animation)
+ 
+○大さん橋記事化
+・Notion
 
 
 ○Hello World Qiita化
 
 ○Inspecting and Authoring Properties記事化
+・Notion
 
 ○Referencing Layers メモ
 https://openusd.org/release/tut_referencing_layers.html
 
 
+○Noise検証調査
+※Noiseの模様化
+・東熱ビル
+・ポルトガル館
+
+
+△アニメーションソースの修正
+※他パーツと照らし合わせながら検証もする
+・Window
+・Floor
+
+△回転アニメーション処理メモ
+・Floorをレ形に
+・Windowをレ形に
+・PolyWireのスケールにグラデーション
+
+
+△カプセル配置仮検証
+・Procedural Wall City(https://www.youtube.com/watch?v=2d7c7dVX-kg)
+
+△ポンピドゥーセンターロジック設計
+※TubePatternGenerator
+・Greeble
+ -SciFiCity参照(平行+垂直)
+・Procedural Pipe Network(https://www.youtube.com/watch?v=Jcinr46UcJE)
+
+
+
 ■Design
+●Noise
+※noise種類(https://qiita.com/DefaultVFX/items/b0777536b566a813dd63)
+・東熱ビル
+ -傾き
+ -色
+・ポルトガル館
+ -揺れ
+ -色
+
 ○BasePointGenerator実装
 ・角配置
 ・△Pattern配置
@@ -83,14 +100,8 @@ https://openusd.org/release/tut_referencing_layers.html
 ・Pipe
  -Greeble
 
-●Noise
-※noise種類(https://qiita.com/DefaultVFX/items/b0777536b566a813dd63)
-・東熱ビル
- -傾き
- -色
-・ポルトガル館
- -揺れ
- -色
+●Gerkin
+・生成アニメーション
 
 
 ■Write
@@ -105,9 +116,6 @@ https://openusd.org/release/tut_referencing_layers.html
 
 
 ■Make
-○※Gerkinアニメーション設計・検証
-・斜め
-
 ●横浜港大さん橋国際客船ターミナル(ビジュアル資料)
 ・工程
 ・プロシージャル検証
@@ -223,12 +231,6 @@ https://itami.info/maya-starter-book
  
 
 ■ソース
-●Gap
-0.1 + sin($F * 10) * 0.05
-
-●LineCount
-7 + $F
-
 ●scaling_Colmun
 float delete_ratio = ch("delete_ratio");
 int pts[] = primpoints(0, @primnum);
