@@ -3,6 +3,7 @@
 
 ○本斥候
 ・技術本
+ -AI
 ・啓発本
 
 ○SFC準備
@@ -10,8 +11,6 @@
 ・コントローラー
 ・ソフト(DG)
 
-
-○Hello World Qiita化
 
 ○Inspecting and Authoring Properties記事化 & 共有会準備
 ※Propertyについて
@@ -21,11 +20,12 @@
 ○Referencing Layers メモ
 https://openusd.org/release/tut_referencing_layers.html
 ※リファレンスについて説明
- -over
- -override
+・over(OverridePrim)
+・reference(AddReference)
 
 
-○折半構造メモ修正
+○大さん橋記事化準備
+・Notion
 
 ○大さん橋ビジュアル資料
 ・main
@@ -38,8 +38,6 @@ https://openusd.org/release/tut_referencing_layers.html
  -PointCounts(Animation)
  -Gap(Animation)
  
-○大さん橋記事化
-・Notion
 
 
 ○Noise記事準備
@@ -237,6 +235,22 @@ https://itami.info/maya-starter-book
  
 
 ■ソース
+●Over & Reference
+https://chatgpt.com/share/6a11272d-7f5c-8321-9e2b-60f7e7330342
+・over(OverridePrim)
+ `over (OverridePrim)` は、既に存在しているPrimに対して差分を上書きするための仕組みです。
+元のデータを直接編集するのではなく、後から設定を追加・変更することで、非破壊に編集を行うことができます。
+例えば、既に存在しているSphereに対して、位置やVisibility、Materialなどの設定だけを変更したい場合に使用されます。
+USDでは、後から適用されたLayerや設定ほど優先されるという「強い意見が勝つ」という考え方があり、`over` はその仕組みを利用して既存データに差分を重ねています。
+
+・reference(AddReference)
+`reference (AddReference)`` は、別のUSDファイルを現在のStageへ読み込むための仕組みです。
+これはデータをコピーするのではなく、外部USDを参照として合成する仕組みになっています。
+例えば、Tree.usda のようなアセットをScene.usdaへ配置したい場合に、`reference` を使用して読み込みます。
+参照元のUSDが更新された場合、参照先にもその変更を反映できるため、Prefabや外部アセット参照のような運用が可能になります。
+また、referenceでは通常、参照先USDの `defaultPrim` が入口として利用されます。
+そのため、どのPrimをアセットの代表として扱うかを `defaultPrim` で定義しておくことが重要になります。
+
 ●scaling_Colmun
 float delete_ratio = ch("delete_ratio");
 int pts[] = primpoints(0, @primnum);
