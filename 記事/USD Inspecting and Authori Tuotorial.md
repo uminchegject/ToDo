@@ -1,4 +1,4 @@
-# USD Tuotorial --Inspecting and Authoring Properties--
+# USD Tuotorial --Property--
 
 Pixarが開発したフォーマットである[USD(Universal Scene Description)](https://openusd.org/release/index.html)の[公式Tutorial](https://openusd.org/release/tut_usd_tutorials.html)の項目である[Inspecting and Authoring Properties](https://openusd.org/release/tut_inspect_and_author_props.html)と以下のサンプルUSDをもとに、
 USDのPrimにおいて情報を管理するPropertyについて、Attribute と Relationship の役割を解説するとともに、Python による実装方法についても説明します。

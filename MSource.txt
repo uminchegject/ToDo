@@ -1,3 +1,33 @@
+○東熱ビル記事準備
+・東熱ビルファザード概要
+・視覚化方法
+ -傾き
+ -色
+・検証
+ -Noiseごとの結果
+
+○ポルトガル館
+・ポルトガル館概要
+・視覚化の方法
+ -Lineの長さ
+ -揺れるタイミング
+・検証
+ -Noiseごとの結果
+
+●カプセルCity
+・Base_Volumeの配置ロジック
+ -Grid
+ -Randomly
+・カプセルの配置Pattern
+ -Color
+ -Empoty
+
+●ポンピドゥーセンター
+・SoulCity再現
+ -BaseLine
+ -凹凸
+
+
 ■メモ
 ※出力ケーブルにマウスを入れておく
 
@@ -7,12 +37,14 @@
 ・啓発本
 
 ○SFC準備
+・ソフト(※激選)
+ -ドンキーコング
+・イヤホンコード(※長め)
 ・コード
 ・コントローラー
-・ソフト(DG)
 
 
-○Inspecting and Authoring Properties記事化 & 共有会準備
+○Inspecting and Authoring Properties共有会準備
 ※Propertyについて
  -Attribute
  -RelationShip
@@ -24,20 +56,14 @@ https://openusd.org/release/tut_referencing_layers.html
 ・reference(AddReference)
 
 
-○大さん橋記事化準備
-・Notion
-
 ○大さん橋ビジュアル資料
-・main
- -回転(Animation)
+・横浜港
+ -全体
+ -折半構造
 ・工程
  -points生成
  -Prim生成
  -完成
-・パラメーター
- -PointCounts(Animation)
- -Gap(Animation)
- 
 
 
 ○Noise記事準備
@@ -47,7 +73,6 @@ https://openusd.org/release/tut_referencing_layers.html
 
 ○資料調査
 ・Procedural Wall City(https://www.youtube.com/watch?v=2d7c7dVX-kg)
-・Procedural Pipe Network(https://www.youtube.com/watch?v=Jcinr46UcJE)
 
 △カプセル配置仮検証
 ・Procedural Wall City(https://www.youtube.com/watch?v=2d7c7dVX-kg)
@@ -68,6 +93,7 @@ https://openusd.org/release/tut_referencing_layers.html
 ・Floorをレ形に
 ・Windowをレ形に
 ・PolyWireのスケールにグラデーション
+
 
 
 ■Design
