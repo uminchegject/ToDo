@@ -1,8 +1,5 @@
 ■メモ
-○Aman支払い
-
-○ギフトカード準備
-・連絡(支払い完了連絡)
+※出力ケーブルにマウスを入れておく
 
 ○本斥候
 ・技術本
@@ -13,6 +10,22 @@
 ・コントローラー
 ・ソフト(DG)
 
+
+○Hello World Qiita化
+
+○Inspecting and Authoring Properties記事化 & 共有会準備
+※Propertyについて
+ -Attribute
+ -RelationShip
+
+○Referencing Layers メモ
+https://openusd.org/release/tut_referencing_layers.html
+※リファレンスについて説明
+ -over
+ -override
+
+
+○折半構造メモ修正
 
 ○大さん橋ビジュアル資料
 ・main
@@ -29,19 +42,23 @@
 ・Notion
 
 
-○Hello World Qiita化
-
-○Inspecting and Authoring Properties記事化
-・Notion
-
-○Referencing Layers メモ
-https://openusd.org/release/tut_referencing_layers.html
-
-
-○Noise検証調査
-※Noiseの模様化
+○Noise記事準備
 ・東熱ビル
 ・ポルトガル館
+
+
+○資料調査
+・Procedural Wall City(https://www.youtube.com/watch?v=2d7c7dVX-kg)
+・Procedural Pipe Network(https://www.youtube.com/watch?v=Jcinr46UcJE)
+
+△カプセル配置仮検証
+・Procedural Wall City(https://www.youtube.com/watch?v=2d7c7dVX-kg)
+
+△ポンピドゥーセンターロジック設計
+※TubePatternGenerator
+・Greeble
+ -SciFiCity参照(平行+垂直)
+・Procedural Pipe Network(https://www.youtube.com/watch?v=Jcinr46UcJE
 
 
 △アニメーションソースの修正
@@ -53,17 +70,6 @@ https://openusd.org/release/tut_referencing_layers.html
 ・Floorをレ形に
 ・Windowをレ形に
 ・PolyWireのスケールにグラデーション
-
-
-△カプセル配置仮検証
-・Procedural Wall City(https://www.youtube.com/watch?v=2d7c7dVX-kg)
-
-△ポンピドゥーセンターロジック設計
-※TubePatternGenerator
-・Greeble
- -SciFiCity参照(平行+垂直)
-・Procedural Pipe Network(https://www.youtube.com/watch?v=Jcinr46UcJE)
-
 
 
 ■Design
