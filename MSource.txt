@@ -1,3 +1,19 @@
+※出力ケーブルにマウスを入れておく
+
+○本斥候
+・技術本
+ -AI
+・啓発本
+ -伝え方の本質
+
+○SFC準備
+・ソフト(※激選)
+ -ドンキーコング
+・イヤホンコード(※長め)
+・コード
+・コントローラー
+
+
 ○東熱ビル記事準備
 ・東熱ビルファザード概要
 ・視覚化方法
@@ -29,21 +45,6 @@
 
 
 ■メモ
-※出力ケーブルにマウスを入れておく
-
-○本斥候
-・技術本
- -AI
-・啓発本
-
-○SFC準備
-・ソフト(※激選)
- -ドンキーコング
-・イヤホンコード(※長め)
-・コード
-・コントローラー
-
-
 ○Inspecting and Authoring Properties共有会準備
 ※Propertyについて
  -Attribute
@@ -71,25 +72,22 @@ https://openusd.org/release/tut_referencing_layers.html
 ・ポルトガル館
 
 
-○資料調査
+○カプセル配置仮検証
 ・Procedural Wall City(https://www.youtube.com/watch?v=2d7c7dVX-kg)
 
-△カプセル配置仮検証
-・Procedural Wall City(https://www.youtube.com/watch?v=2d7c7dVX-kg)
-
-△ポンピドゥーセンターロジック設計
+○ポンピドゥーセンターロジック設計
 ※TubePatternGenerator
 ・Greeble
  -SciFiCity参照(平行+垂直)
 ・Procedural Pipe Network(https://www.youtube.com/watch?v=Jcinr46UcJE
 
 
-△アニメーションソースの修正
+○アニメーションソースの修正
 ※他パーツと照らし合わせながら検証もする
 ・Window
 ・Floor
 
-△回転アニメーション処理メモ
+○回転アニメーション処理メモ
 ・Floorをレ形に
 ・Windowをレ形に
 ・PolyWireのスケールにグラデーション
