@@ -1,49 +1,3 @@
-○本斥候
-・技術本
- -AI
-・啓発本
- -伝え方の本質
-
-○SFC準備
-・ソフト(※激選)
- -ドンキーコング
-・イヤホンコード(※長め)
-・コード
-・コントローラー
-
-○DMMポイント
-
-
-○東熱ビル記事準備
-・東熱ビルファザード概要
-・視覚化方法
- -傾き
- -色
-・検証
- -Noiseごとの結果
-
-○ポルトガル館
-・ポルトガル館概要
-・視覚化の方法
- -Lineの長さ
- -揺れるタイミング
-・検証
- -Noiseごとの結果
-
-●カプセルCity
-・Base_Volumeの配置ロジック
- -Grid
- -Randomly
-・カプセルの配置Pattern
- -Color
- -Empoty
-
-●ポンピドゥーセンター
-・SoulCity再現
- -BaseLine
- -凹凸
-
-
 ■メモ
 ○Inspecting and Authoring Properties共有会準備
 ※Propertyについて
@@ -67,19 +21,40 @@ https://openusd.org/release/tut_referencing_layers.html
  -完成
 
 
-○Noise記事準備
-・東熱ビル
-・ポルトガル館
+○東熱ビル記事準備
+・東熱ビルファザード概要
+・視覚化方法
+ -傾き
+ -色
+・検証
+ -Noiseごとの結果
+
+○ポルトガル館記事準備
+・ポルトガル館概要
+・視覚化の方法
+ -Lineの長さ
+ -揺れるタイミング
+・検証
+ -Noiseごとの結果
 
 
-○カプセル配置仮検証
-・Procedural Wall City(https://www.youtube.com/watch?v=2d7c7dVX-kg)
+●カプセルCity
+・Base_Volumeの配置ロジック
+ -Grid
+ -Randomly
+・カプセルの配置Pattern
+ -Color
+ -Empoty
 
-○ポンピドゥーセンターロジック設計
+
+○SoulCity再現
+・Greeble
+・BaseLine
+
+●ポンピドゥーセンター
 ※TubePatternGenerator
 ・Greeble
- -SciFiCity参照(平行+垂直)
-・Procedural Pipe Network(https://www.youtube.com/watch?v=Jcinr46UcJE
+・凹凸
 
 
 ○アニメーションソースの修正
@@ -91,6 +66,23 @@ https://openusd.org/release/tut_referencing_layers.html
 ・Floorをレ形に
 ・Windowをレ形に
 ・PolyWireのスケールにグラデーション
+
+
+○本斥候
+・技術本
+ -AI
+・啓発本
+ -伝え方の本質
+
+○SFC準備
+・ソフト(※激選)
+ -ドンキーコング
+・イヤホンコード(※長め)
+・コード
+・コントローラー
+
+○DMMポイント
+
 
 ■Design
 ●Noise
