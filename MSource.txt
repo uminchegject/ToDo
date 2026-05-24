@@ -1,5 +1,3 @@
-※出力ケーブルにマウスを入れておく
-
 ○本斥候
 ・技術本
  -AI
@@ -12,6 +10,8 @@
 ・イヤホンコード(※長め)
 ・コード
 ・コントローラー
+
+○DMMポイント
 
 
 ○東熱ビル記事準備
@@ -92,8 +92,6 @@ https://openusd.org/release/tut_referencing_layers.html
 ・Windowをレ形に
 ・PolyWireのスケールにグラデーション
 
-
-
 ■Design
 ●Noise
 ※noise種類(https://qiita.com/DefaultVFX/items/b0777536b566a813dd63)
@@ -102,7 +100,8 @@ https://openusd.org/release/tut_referencing_layers.html
  -色
 ・ポルトガル館
  -揺れ
- -色
+ -空間
+
 
 ○BasePointGenerator実装
 ・角配置
@@ -128,14 +127,12 @@ https://openusd.org/release/tut_referencing_layers.html
 ・Pipe
  -Greeble
 
+
 ●Gerkin
 ・生成アニメーション
 
 
 ■Write
-○Hello World
-・記事化
-
 ○Inspecting and Authoring
 ・記事化
 
@@ -147,9 +144,6 @@ https://openusd.org/release/tut_referencing_layers.html
 ●横浜港大さん橋国際客船ターミナル(ビジュアル資料)
 ・工程
 ・プロシージャル検証
-※側面の固定カメラ
- -Line Count
- -Gap
 
 
 ■Study
@@ -181,14 +175,6 @@ https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
 ・建築テックソフト
  -Grasshopper
  -Revit×Dynamo
-
-
-■Private
-○DMMポイント
-
-○窓掃除
-
-○リュック洗濯
 
 
 ■ToDo
@@ -255,7 +241,99 @@ https://itami.info/maya-starter-book
  -ゲーム
 ※翌々日が休みの場合は午後に小旅行する
  -帰りはバスで座って帰る
- 
+○本斥候
+・技術本
+ -AI
+・啓発本
+ -伝え方の本質
+
+○SFC準備
+・ソフト(※激選)
+ -ドンキーコング
+・イヤホンコード(※長め)
+・コード
+・コントローラー
+
+○DMMポイント
+
+
+○東熱ビル記事準備
+・東熱ビルファザード概要
+・視覚化方法
+ -傾き
+ -色
+・検
+ -Noiseごとの結果
+
+○ポルトガル館
+・ポルトガル館概要
+・視覚化の方法
+ -Lineの長さ
+ -揺れるタイミング
+・検証
+ -Noiseごとの結果
+
+●カプセルCity
+・Base_Volumeの配置ロジック
+ -Grid
+ -Randomly
+・カプセルの配置Pattern
+ -Color
+ -Empoty
+
+●ポンピドゥーセンター
+・SoulCity再現
+ -BaseLine
+ -凹凸
+
+
+■メモ
+○Inspecting and Authoring Properties共有会準備
+※Propertyについて
+ -Attribute
+ -RelationShip
+
+○Referencing Layers メモ
+https://openusd.org/release/tut_referencing_layers.html
+※リファレンスについて説明
+・over(OverridePrim)
+・reference(AddReference)
+
+
+○大さん橋ビジュアル資料
+・横浜港
+ -全体
+ -折半構造
+・工程
+ -points生成
+ -Prim生成
+ -完成
+
+
+○Noise記事準備
+・東熱ビル
+・ポルトガル館
+
+
+○カプセル配置仮検証
+・Procedural Wall City(https://www.youtube.com/watch?v=2d7c7dVX-kg)
+
+○ポンピドゥーセンターロジック設計
+※TubePatternGenerator
+・Greeble
+ -SciFiCity参照(平行+垂直)
+・Procedural Pipe Network(https://www.youtube.com/watch?v=Jcinr46UcJE
+
+
+○アニメーションソースの修正
+※他パーツと照らし合わせながら検証もする
+・Window
+・Floor
+
+○回転アニメーション処理メモ
+・Floorをレ形に
+・Windowをレ形に
+・PolyWireのスケールにグラデーション
  
 
 ■ソース
