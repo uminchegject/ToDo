@@ -21,6 +21,17 @@ https://openusd.org/release/tut_referencing_layers.html
  -完成
 
 
+○アニメーションソースの修正
+※他パーツと照らし合わせながら検証もする
+・Window
+・Floor
+
+○回転アニメーション処理メモ
+・Floorをレ形に
+・Windowをレ形に
+・PolyWireのスケールにグラデーション
+
+
 ○東熱ビル記事準備
 ・東熱ビルファザード概要
 ・視覚化方法
@@ -57,17 +68,6 @@ https://openusd.org/release/tut_referencing_layers.html
 ・凹凸
 
 
-○アニメーションソースの修正
-※他パーツと照らし合わせながら検証もする
-・Window
-・Floor
-
-○回転アニメーション処理メモ
-・Floorをレ形に
-・Windowをレ形に
-・PolyWireのスケールにグラデーション
-
-
 ○本斥候
 ・技術本
  -AI
@@ -82,6 +82,10 @@ https://openusd.org/release/tut_referencing_layers.html
 ・コントローラー
 
 ○DMMポイント
+
+○旅行準備
+・サンライズ
+・サプライズケーキ
 
 
 ■Design
@@ -279,71 +283,24 @@ https://itami.info/maya-starter-book
  -凹凸
 
 
-■メモ
-○Inspecting and Authoring Properties共有会準備
-※Propertyについて
- -Attribute
- -RelationShip
-
-○Referencing Layers メモ
-https://openusd.org/release/tut_referencing_layers.html
-※リファレンスについて説明
-・over(OverridePrim)
-・reference(AddReference)
-
-
-○大さん橋ビジュアル資料
-・横浜港
- -全体
- -折半構造
-・工程
- -points生成
- -Prim生成
- -完成
-
-
-○Noise記事準備
-・東熱ビル
-・ポルトガル館
-
-
-○カプセル配置仮検証
-・Procedural Wall City(https://www.youtube.com/watch?v=2d7c7dVX-kg)
-
-○ポンピドゥーセンターロジック設計
-※TubePatternGenerator
-・Greeble
- -SciFiCity参照(平行+垂直)
-・Procedural Pipe Network(https://www.youtube.com/watch?v=Jcinr46UcJE
-
-
-○アニメーションソースの修正
-※他パーツと照らし合わせながら検証もする
-・Window
-・Floor
-
-○回転アニメーション処理メモ
-・Floorをレ形に
-・Windowをレ形に
-・PolyWireのスケールにグラデーション
- 
-
 ■ソース
-●Over & Reference
+●Override & Reference
 https://chatgpt.com/share/6a11272d-7f5c-8321-9e2b-60f7e7330342
-・over(OverridePrim)
- `over (OverridePrim)` は、既に存在しているPrimに対して差分を上書きするための仕組みです。
-元のデータを直接編集するのではなく、後から設定を追加・変更することで、非破壊に編集を行うことができます。
-例えば、既に存在しているSphereに対して、位置やVisibility、Materialなどの設定だけを変更したい場合に使用されます。
-USDでは、後から適用されたLayerや設定ほど優先されるという「強い意見が勝つ」という考え方があり、`over` はその仕組みを利用して既存データに差分を重ねています。
+・over
+`over` は、既に存在している Prim に対して、差分だけを非破壊で上書きするための仕組みです。
+これまで使用していた `def` は、Scene 上に実体を持つ Prim を定義するものであり、レンダリングや DCC ツールで読み込まれる対象になります。
+一方 `over` は、別レイヤーで定義された Prim に対して、後から設定を追加・変更するための「意見（Opinion）」を持つ Prim です。
+元データを直接編集するのではなく、位置・Visibility・Material などの設定だけを差分として重ねることで、非破壊に編集を行うことができます。
+USDでは「後から適用された強い意見が優先される」という Layer Composition の仕組みがあり、`over` はその仕組みを利用して既存データに変更を加えています。
 
 ・reference(AddReference)
-`reference (AddReference)`` は、別のUSDファイルを現在のStageへ読み込むための仕組みです。
-これはデータをコピーするのではなく、外部USDを参照として合成する仕組みになっています。
-例えば、Tree.usda のようなアセットをScene.usdaへ配置したい場合に、`reference` を使用して読み込みます。
-参照元のUSDが更新された場合、参照先にもその変更を反映できるため、Prefabや外部アセット参照のような運用が可能になります。
-また、referenceでは通常、参照先USDの `defaultPrim` が入口として利用されます。
-そのため、どのPrimをアセットの代表として扱うかを `defaultPrim` で定義しておくことが重要になります。
+reference (AddReference) は、別の USD ファイルを現在の Stage に読み込むための仕組みです。
+これはデータをコピーするのではなく、外部USDを参照として合成（Compose）する形で読み込みます。
+例えば、Tree.usda のようなアセットを Scene.usda に配置したい場合、reference を使用してアセットを読み込みます。
+参照元のUSDが更新された場合、その変更を参照先にも反映できるため、Prefab や外部アセット参照のような運用が可能になります。
+また、reference では通常、参照先USDの defaultPrim が入口として利用されます。
+そのため、「どのPrimをアセットの代表として扱うか」を defaultPrim に設定しておくことが重要になります。
+USDでは、reference によってアセット全体を読み込み、over によって配置後の差分を上書きする、という形で組み合わせて利用されることが多くあります。
 
 ●scaling_Colmun
 float delete_ratio = ch("delete_ratio");
