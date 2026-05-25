@@ -9,30 +9,17 @@ https://openusd.org/release/tut_referencing_layers.html
 ※リファレンスについて説明
 ・over(OverridePrim)
 ・reference(AddReference)
+・Pythonソース解説
 
 
-○大さん橋ビジュアル資料
-・横浜港
- -全体
- -折半構造
-・工程
- -points生成
- -Prim生成
- -完成
+○Gerkin記事準備
+・記事メモ
 
 
-○アニメーションソースの修正
-※他パーツと照らし合わせながら検証もする
-・Window
-・Floor
+○Noise検証結果整理
+・記事参考
 
-○回転アニメーション処理メモ
-・Floorをレ形に
-・Windowをレ形に
-・PolyWireのスケールにグラデーション
-
-
-○東熱ビル記事準備
+○東熱ビル記事
 ・東熱ビルファザード概要
 ・視覚化方法
  -傾き
@@ -40,7 +27,7 @@ https://openusd.org/release/tut_referencing_layers.html
 ・検証
  -Noiseごとの結果
 
-○ポルトガル館記事準備
+○ポルトガル館記事
 ・ポルトガル館概要
 ・視覚化の方法
  -Lineの長さ
@@ -77,13 +64,14 @@ https://openusd.org/release/tut_referencing_layers.html
 ○SFC準備
 ・ソフト(※激選)
  -ドンキーコング
-・イヤホンコード(※長め)
-・コード
+・fiioイヤホンコード(※長め)
+・コード(SCART RGBケーブル)
 ・コントローラー
 
 ○DMMポイント
 
 ○旅行準備
+・レンタカー
 ・サンライズ
 ・サプライズケーキ
 
@@ -124,10 +112,6 @@ https://openusd.org/release/tut_referencing_layers.html
  -Greeble
 
 
-●Gerkin
-・生成アニメーション
-
-
 ■Write
 ○Inspecting and Authoring
 ・記事化
@@ -137,9 +121,8 @@ https://openusd.org/release/tut_referencing_layers.html
 
 
 ■Make
-●横浜港大さん橋国際客船ターミナル(ビジュアル資料)
-・工程
-・プロシージャル検証
+●Gerkin
+・生成アニメーション
 
 
 ■Study
@@ -152,7 +135,7 @@ https://openusd.org/release/tut_referencing_layers.html
 ○HoudiniStudy
 ・H19.5 FOUNDATIONS BOOK
 https://www.sidefx.com/profile/rmagee/
-https://www.sidefx.com/ja/tutorials/foundations-destruction-fx/
+https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
 
 
 ■Employ
@@ -242,131 +225,3 @@ https://itami.info/maya-starter-book
  -AI
 ・啓発本
  -伝え方の本質
-
-○SFC準備
-・ソフト(※激選)
- -ドンキーコング
-・イヤホンコード(※長め)
-・コード
-・コントローラー
-
-○DMMポイント
-
-
-○東熱ビル記事準備
-・東熱ビルファザード概要
-・視覚化方法
- -傾き
- -色
-・検
- -Noiseごとの結果
-
-○ポルトガル館
-・ポルトガル館概要
-・視覚化の方法
- -Lineの長さ
- -揺れるタイミング
-・検証
- -Noiseごとの結果
-
-●カプセルCity
-・Base_Volumeの配置ロジック
- -Grid
- -Randomly
-・カプセルの配置Pattern
- -Color
- -Empoty
-
-●ポンピドゥーセンター
-・SoulCity再現
- -BaseLine
- -凹凸
-
-
-■ソース
-●Override & Reference
-https://chatgpt.com/share/6a11272d-7f5c-8321-9e2b-60f7e7330342
-・over
-`over` は、既に存在している Prim に対して、差分だけを非破壊で上書きするための仕組みです。
-これまで使用していた `def` は、Scene 上に実体を持つ Prim を定義するものであり、レンダリングや DCC ツールで読み込まれる対象になります。
-一方 `over` は、別レイヤーで定義された Prim に対して、後から設定を追加・変更するための「意見（Opinion）」を持つ Prim です。
-元データを直接編集するのではなく、位置・Visibility・Material などの設定だけを差分として重ねることで、非破壊に編集を行うことができます。
-USDでは「後から適用された強い意見が優先される」という Layer Composition の仕組みがあり、`over` はその仕組みを利用して既存データに変更を加えています。
-
-・reference(AddReference)
-reference (AddReference) は、別の USD ファイルを現在の Stage に読み込むための仕組みです。
-これはデータをコピーするのではなく、外部USDを参照として合成（Compose）する形で読み込みます。
-例えば、Tree.usda のようなアセットを Scene.usda に配置したい場合、reference を使用してアセットを読み込みます。
-参照元のUSDが更新された場合、その変更を参照先にも反映できるため、Prefab や外部アセット参照のような運用が可能になります。
-また、reference では通常、参照先USDの defaultPrim が入口として利用されます。
-そのため、「どのPrimをアセットの代表として扱うか」を defaultPrim に設定しておくことが重要になります。
-USDでは、reference によってアセット全体を読み込み、over によって配置後の差分を上書きする、という形で組み合わせて利用されることが多くあります。
-
-●scaling_Colmun
-float delete_ratio = ch("delete_ratio");
-int pts[] = primpoints(0, @primnum);
-float pt_num = len(pts);
-float gradation_ratio = 0.2;
-float offset = (@primnum % 3) * 0.2;
-
-for(int pt_idx = 0; pt_idx < pt_num; pt_idx++)
-{       
-    float ratio = pt_idx / pt_num;
-    float scale = (ratio + gradation_ratio + offset) - delete_ratio * (1 + gradation_ratio);
-    scale = fit(scale, 0, gradation_ratio, 0, 1);
-    scale = 1 - scale;
-    scale *= 0.2;
-    int pt = pts[pt_idx];
-    setpointattrib(0, "pscale", pt, scale);
-}
-
-●scaling_floor
-float delete_ratio = ch("delete_ratio");
-float prim_num = nprimitives(0);
-
-float gradation_ratio = 0.2;
-float ratio = @primnum / prim_num;
-
-float scale = (ratio + gradation_ratio) - delete_ratio * (1 + gradation_ratio);
-scale = fit(scale, 0, gradation_ratio, 0, 1);
-scale = 1 - scale;
-
-vector center = v@P;
-int pts[] = primpoints(0, @primnum);
-
-for(int pt_idx = 0; pt_idx < len(pts); pt_idx++)
-{
-        
-    vector pos = point(0, "P", pts[pt_idx]);
-    vector offset = pos - center;
-        
-    float offset_scale = scale + float(pt_idx % 6) / 6 * 0.2;
-    offset_scale = fit(offset_scale, 0.2, 1.2, 0, 1.2);
-    if(1 < offset_scale) offset_scale = 1;
-    
-    offset *= offset_scale;
-    setpointattrib(0, "P", pts[pt_idx], center + offset, "set"); 
-}
-
-●delete_window
-float delete_ratio = ch("delete_ratio");
-float block_line_idx = i@block_line_idx;
-float line_prim_idx = i@line_prim_idx;
-float gradation_ratio = 0.2;
-float ratio = line_prim_idx / 50;
-
-float scale = (ratio + gradation_ratio) - delete_ratio * (1 + gradation_ratio);
-scale = fit(scale, 0, gradation_ratio, 0, 1);
-scale = 1 - scale;
-
-v@Cd = scale;
-vector center = v@P;
-int pts[] = primpoints(0, @primnum);
-for(int pt_idx = 0; pt_idx < pt_num; pt_idx++)
-{	
-    vector pos = point(0, "P", pts[pt_idx]);
-    vector offset = pos - center;
-    offset *= scale;
-	
-    setpointattrib(0, "P", pts[pt_idx], center + offset, "set");
-}
