@@ -1,4 +1,25 @@
+○多様化
+※HorikitaCity参照
+・カラー
+・Empty
+・WindowSize
 
+●Detail
+
+●City
+
+
+○PipeGenerator
+・In
+・Out
+・Curve
+
+●Detail
+・PipeGenerator
+・△鉄骨
+
+●City
+・Noiseで検証
 
 
 ■Design
