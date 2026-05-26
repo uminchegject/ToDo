@@ -1,8 +1,6 @@
 ■メモ
-○Inspecting and Authoring Properties共有会準備
-※Propertyについて
- -Attribute
- -RelationShip
+○誕生日プレゼント準備
+
 
 ○Referencing Layers メモ
 https://openusd.org/release/tut_referencing_layers.html
@@ -12,7 +10,7 @@ https://openusd.org/release/tut_referencing_layers.html
 ・Pythonソース解説
 
 
-○NoiseGround検証
+○Cupsule配置Pattern検証
 
 ●カプセルCity
 ・Base_Volumeの配置ロジック
@@ -34,19 +32,8 @@ https://openusd.org/release/tut_referencing_layers.html
 ・凹凸
 
 
-○Gerkin柔軟化
-・色
-・サイズ
- -Base
- -Window
-
-●Gerkin記事
-・生成アニメーション
-・構成物
- -window
- -柱
-
 ○Noise検証結果整理
+※分かりやすく視覚化
 ・東熱ビル
 ・ポルトガル館
 
@@ -67,6 +54,19 @@ https://openusd.org/release/tut_referencing_layers.html
  -Noiseごとの結果
 
 
+○Gerkin柔軟化
+・色
+・サイズ
+ -Base
+ -Window
+
+●Gerkin記事
+・生成アニメーション
+・構成物
+ -window
+ -柱
+
+
 ○本斥候
 ・技術本
  -AI
@@ -77,7 +77,7 @@ https://openusd.org/release/tut_referencing_layers.html
 ・ソフト(※激選)
  -ドンキーコング
 ・fiioイヤホンコード(※長め)
-・コード(SCART RGBケーブル)
+・SCART RGBケーブル(※Aliexpress)
 ・コントローラー
 
 ○DMMポイント
