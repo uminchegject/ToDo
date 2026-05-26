@@ -12,40 +12,19 @@ https://openusd.org/release/tut_referencing_layers.html
 ・Pythonソース解説
 
 
-○Gerkin記事準備
-・記事メモ
-
-
-○Noise検証結果整理
-・記事参考
-
-○東熱ビル記事
-・東熱ビルファザード概要
-・視覚化方法
- -傾き
- -色
-・検証
- -Noiseごとの結果
-
-○ポルトガル館記事
-・ポルトガル館概要
-・視覚化の方法
- -Lineの長さ
- -揺れるタイミング
-・検証
- -Noiseごとの結果
-
+○NoiseGround検証
 
 ●カプセルCity
 ・Base_Volumeの配置ロジック
  -Grid
- -Randomly
+ -△Randomly
 ・カプセルの配置Pattern
  -Color
  -Empoty
 
 
-○SoulCity再現
+○ポンピドゥーセンター模写
+※SoulCity参考
 ・Greeble
 ・BaseLine
 
@@ -53,6 +32,39 @@ https://openusd.org/release/tut_referencing_layers.html
 ※TubePatternGenerator
 ・Greeble
 ・凹凸
+
+
+○Gerkin柔軟化
+・色
+・サイズ
+ -Base
+ -Window
+
+●Gerkin記事
+・生成アニメーション
+・構成物
+ -window
+ -柱
+
+○Noise検証結果整理
+・東熱ビル
+・ポルトガル館
+
+●東熱ビル記事
+・東熱ビルファザード概要
+・視覚化方法
+ -傾き
+ -色
+・検証
+ -Noiseごとの結果
+
+●ポルトガル館記事
+・ポルトガル館概要
+・視覚化の方法
+ -Lineの長さ
+ -揺れるタイミング
+・検証
+ -Noiseごとの結果
 
 
 ○本斥候
@@ -77,20 +89,6 @@ https://openusd.org/release/tut_referencing_layers.html
 
 
 ■Design
-●Noise
-※noise種類(https://qiita.com/DefaultVFX/items/b0777536b566a813dd63)
-・東熱ビル
- -傾き
- -色
-・ポルトガル館
- -揺れ
- -空間
-
-
-○BasePointGenerator実装
-・角配置
-・△Pattern配置
-
 ●CupsuleCity
 ※カプセルタワーのスケール感を保つ
 ・Unit管理
@@ -122,7 +120,13 @@ https://openusd.org/release/tut_referencing_layers.html
 
 ■Make
 ●Gerkin
-・生成アニメーション
+・プロシージャル化
+
+●東熱ビル
+・Noise検証
+
+●ポルトガル館
+・Noise検証
 
 
 ■Study
