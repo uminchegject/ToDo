@@ -1,7 +1,26 @@
 # USD Tuotorial --Over & Reference--
 
 Pixarが開発したフォーマットである[USD(Universal Scene Description)](https://openusd.org/release/index.html)の[公式Tutorial](https://openusd.org/release/tut_usd_tutorials.html)の項目である[Referencing Layers](https://openusd.org/release/tut_referencing_layers.html)をもとに、非破壊的に情報を参照する方法について、Over と Reference の役割を解説するとともに、Python による実装方法についても説明します。
+```
+#usda 1.0
 
+over "refSphere" (
+    prepend references = @./HelloWorld.usda@
+)
+{
+    uniform token[] xformOpOrder = []
+}
+
+over "refSphere2" (
+    prepend references = @./HelloWorld.usda@
+)
+{
+    over "world"
+    {
+        color3f[] primvars:displayColor = [(1, 0, 0)]
+    }
+}
+```
 
 ## over
 `over` は、既に存在している Prim に対して、差分だけを非破壊で上書きするための仕組みです。
@@ -18,3 +37,61 @@ USDでは「後から適用された強い意見が優先される」という L
 参照元のUSDが更新された場合、その変更を参照先にも反映できるため、Prefab や外部アセット参照のような運用が可能になります。
 また、`reference` では通常、参照先USDの defaultPrim が入口として利用されます。
 そのため、「どのPrimをアセットの代表として扱うか」を defaultPrim に設定しておくことが重要になります。
+
+
+## Pythonでの構築処理
+```
+from pxr import Usd, UsdGeom
+
+# =========================================================
+# HelloWorld.usda 作成
+# =========================================================
+
+helloStage = Usd.Stage.CreateNew("HelloWorld.usda")
+
+helloXform = UsdGeom.Xform.Define(helloStage, "/hello")
+
+sphere = UsdGeom.Sphere.Define(helloStage, "/hello/world")
+sphere.GetRadiusAttr().Set(2)
+sphere.GetDisplayColorAttr().Set([(0, 0, 1)])
+
+helloStage.SetDefaultPrim(helloXform.GetPrim())
+
+UsdGeom.XformCommonAPI(helloXform).SetTranslate((4, 5, 6))
+
+helloStage.GetRootLayer().Save()
+
+
+# =========================================================
+# Reference Stage 作成
+# =========================================================
+
+refStage = Usd.Stage.CreateNew("RefExample.usda")
+
+# over Prim 作成
+refSphere = refStage.OverridePrim("/refSphere")
+
+# reference 追加
+refSphere.GetReferences().AddReference("./HelloWorld.usda")
+
+# transform override
+refXform = UsdGeom.Xformable(refSphere)
+refXform.SetXformOpOrder([])
+
+
+# =========================================================
+# 2つ目の reference
+# =========================================================
+
+refSphere2 = refStage.OverridePrim("/refSphere2")
+
+refSphere2.GetReferences().AddReference("./HelloWorld.usda")
+
+# displayColor override
+overSphere = UsdGeom.Sphere.Get(refStage, "/refSphere2/world")
+overSphere.GetDisplayColorAttr().Set([(1, 0, 0)])
+
+
+# 保存
+refStage.GetRootLayer().Save()
+```

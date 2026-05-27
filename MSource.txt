@@ -1,12 +1,79 @@
+■メモ
+○誕生日プレゼント準備
+
+○本斥候
+・技術本
+ -AI
+・啓発本
+ -伝え方の本質
+
+○SFC準備
+・ソフト(※激選)
+ -ドンキーコング
+・fiioイヤホンコード(※長め)
+・コントローラー
+
+○DMMポイント
+
+
+○Referencing Layers メモ
+https://openusd.org/release/tut_referencing_layers.html
+※リファレンスについて説明
+※サンプルソースを軸に解説
+・over
+・reference
+・Pythonソース解説
+
+
+○Noise検証結果整理
+※分かりやすく視覚化
+・東熱ビル
+ -細分化
+・ポルトガル館
+ -空間視点
+
+●東熱ビル記事
+・東熱ビルファザード概要
+・視覚化方法
+ -傾き
+ -色
+・検証
+ -Noiseごとの結果
+
+●ポルトガル館記事
+・ポルトガル館概要
+・視覚化の方法
+ -Lineの長さ
+ -揺れるタイミング
+・検証
+ -Noiseごとの結果
+
+
+○Gerkin柔軟化
+※CDの記事に必要な項目を整理
+・色
+・サイズ
+ -Base
+ -Window
+
+●Gerkin記事
+・生成アニメーション
+・構成物
+ -window
+ -柱
+ 
+ 
 ○多様化
-※HorikitaCity参照
+※HorikitaCity参照(https://www.youtube.com/watch?v=2d7c7dVX-kg&t=8512s)
 ・カラー
 ・Empty
 ・WindowSize
+・形態
 
-●Detail
-
-●City
+●カプセルCity
+・カプセルの配置Pattern
+ -Color
+ -Empoty
 
 
 ○PipeGenerator
@@ -14,12 +81,13 @@
 ・Out
 ・Curve
 
-●Detail
-・PipeGenerator
-・△鉄骨
-
-●City
-・Noiseで検証
+●ポンピドゥーセンター
+・Detail
+ -※PipeGenerator + 鉄骨
+ -Greeble
+ -凹凸
+・City
+ -Noise
 
 
 ■Design
@@ -33,23 +101,14 @@
  -配置の偏り
 ・CupsuleType
  -色
+ -Window
  -形態
 
 ●ポンピドゥーセンター
-・Inside
- -凹凸
-・Outside
- -鉄骨
+・鉄骨
+ -Pattern
 ・Pipe
  -Greeble
-
-
-■Write
-○Inspecting and Authoring
-・記事化
-
-○Referencing Layers
-・記事メモ
 
 
 ■Make
@@ -61,6 +120,14 @@
 
 ●ポルトガル館
 ・Noise検証
+
+
+■Write
+○Inspecting and Authoring
+・Qiita化
+
+○Referencing Layers
+・記事メモ
 
 
 ■Study
@@ -95,6 +162,11 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
 
 
 ■ToDo
+○旅行準備
+・レンタカー
+・サンライズ
+・サプライズケーキ
+
 ○処分
 ・廃油処理パッド
 ・ごみ袋に入れる
