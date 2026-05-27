@@ -61,8 +61,8 @@ https://openusd.org/release/tut_referencing_layers.html
 ・構成物
  -window
  -柱
- 
- 
+
+
 ○多様化
 ※HorikitaCity参照(https://www.youtube.com/watch?v=2d7c7dVX-kg&t=8512s)
 ・カラー
@@ -200,7 +200,7 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
 ※手を動かす(アウトプット)
 ・H19.5 FOUNDATIONS BOOK
 https://www.sidefx.com/profile/rmagee/
-https://www.sidefx.com/ja/tutorials/foundations-terrain/
+https://www.sidefx.com/tutorials/kinefx-rigging-fur-dude/
 ・Mayaスターターブック
 https://itami.info/maya-starter-book
 
