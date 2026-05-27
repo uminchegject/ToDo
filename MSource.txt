@@ -25,55 +25,82 @@ https://openusd.org/release/tut_referencing_layers.html
 ・Pythonソース解説
 
 
-○Noise検証結果整理
-※分かりやすく視覚化
+■ComputationalDesign
+※Pattern
 ・東熱ビル
- -細分化
+ -ルーパー
 ・ポルトガル館
- -空間視点
+ -揺れ、空間
+・Gerkin
+ -螺旋
+
+○視覚化
+・Noiseアニメーション
+・カメラ角度アニメーション
+
+●東熱ビルPattern
+・ルーパー角度
+・色
 
 ●東熱ビル記事
 ・東熱ビルファザード概要
-・視覚化方法
- -傾き
- -色
+・Patern概要
+・Pattern再現方法
 ・検証
  -Noiseごとの結果
 
-●ポルトガル館記事
+
+○視覚化
+・揺れアニメーション
+・空間表現
+・Noiseアニメーション
+
+●ポルトガル館Pattern
+・空間
+・揺れ
+
+●ポルトガル館
 ・ポルトガル館概要
-・視覚化の方法
- -Lineの長さ
- -揺れるタイミング
+・Pattern概要
+・Pattern再現方法
 ・検証
  -Noiseごとの結果
 
 
-○Gerkin柔軟化
-※CDの記事に必要な項目を整理
-・色
-・サイズ
- -Base
- -Window
+○視覚化
+・角度アニメーション
+・模様アニメーション
+ -色
+ -Gradation
+ -幅
 
-●Gerkin記事
-・生成アニメーション
-・構成物
- -window
- -柱
- 
- 
-○多様化
+●GerkinPattern
+※螺旋
+・角度
+・模様
+
+●Gerkin
+・Gerkin概要
+・Pattern概要
+・柔軟検証
+
+
+■Metaborithum
+・Pattern
+ -CupsuleTower
+ -Pipe
+・Volume
+ -Noise
+ -凹凸
+
+○Pattern多様化
 ※HorikitaCity参照(https://www.youtube.com/watch?v=2d7c7dVX-kg&t=8512s)
-・カラー
+
+●CupsuleTowerPattern
 ・Empty
+・カラー
 ・WindowSize
 ・形態
-
-●カプセルCity
-・カプセルの配置Pattern
- -Color
- -Empoty
 
 
 ○PipeGenerator
@@ -81,45 +108,10 @@ https://openusd.org/release/tut_referencing_layers.html
 ・Out
 ・Curve
 
-●ポンピドゥーセンター
-・Detail
- -※PipeGenerator + 鉄骨
- -Greeble
- -凹凸
-・City
- -Noise
-
-
-■Design
-●CupsuleCity
-※カプセルタワーのスケール感を保つ
-・Unit管理
- -Core + Cupsule
- -6×6
-・一体感
- -Coreの高さ
- -配置の偏り
-・CupsuleType
- -色
- -Window
- -形態
-
-●ポンピドゥーセンター
-・鉄骨
- -Pattern
-・Pipe
- -Greeble
-
-
-■Make
-●Gerkin
-・プロシージャル化
-
-●東熱ビル
-・Noise検証
-
-●ポルトガル館
-・Noise検証
+●PipePattern
+※Pipe + 鉄骨
+・Greeble
+・凹凸
 
 
 ■Write
@@ -183,53 +175,3 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
 ○衣類整理
 ・クローゼット
  -ユニフォーム
-
-●PFStudy
-※基礎ベース
-※簡単かつシンプルに
- -社内ベース(Tips共有会、Notion)
-・仕事Study(※メモ代わり)
- -USD Tutorials(https://openusd.org/release/tut_usd_tutorials.html)
-・趣味
- -CityProject
- -PatternProject
-
-●本Study
-※仕事のように目標を明確にする
-※CPとは差別化して考える
-※手を動かす(アウトプット)
-・H19.5 FOUNDATIONS BOOK
-https://www.sidefx.com/profile/rmagee/
-https://www.sidefx.com/ja/tutorials/foundations-terrain/
-・Mayaスターターブック
-https://itami.info/maya-starter-book
-
-●Private
-※2時間セット(作業 + 休憩)
- -※30分を目安にタスクを決める
-※2時間以上の時間ユニットをなくす
-※2時間以上昼寝の時間を設ける
- -12時には寝る
-※Privateタスクは前日夜か朝にカフェで整理する
- -PCタスクも一緒にやる(※家では極力避ける)
-※アイスコーヒーを積極的に飲む
-
-●Private旅行
-※旅行中は作業はせず、反省、タスク整理を行う
- -散歩中はスマホと本のみを持って散歩をし、帰ってきたらPCでまとめる
-※2時間Unit
- -昼寝 + 散歩(本斥候)
- -読書(夕日) + 散歩(夕飯)
- -映画 + 散歩(デザート)
- -散歩(朝食) + 読書
-※準備をする
- -本(BookOff)
- -映画
- -ゲーム
-※翌々日が休みの場合は午後に小旅行する
- -帰りはバスで座って帰る
-○本斥候
-・技術本
- -AI
-・啓発本
- -伝え方の本質

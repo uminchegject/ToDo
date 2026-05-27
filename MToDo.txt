@@ -1,8 +1,6 @@
 ■反省
 ※AIで調べた内容は必ず裏付けを確認する
 
-※終業前は、準備メイン(メモメイン)
-
 ※Designタスクを最優先にする
  -タスクの軸にする
  -楽しむことを継続する
@@ -15,12 +13,10 @@
 ※長期休み後は必ず1週間分(次回BookLoungeまで)のスケジュールを整理しておく
  -BookLaungeで整理しておく
 
-※PrivateSchedule
- -タスク整理 + Write + Design + Empty(ダーツ、読書、映画) + Other
-
 
 ■CD(Tool)
-※Pattern検証はカラーのみでまず行う
+※Pattern
+※検証はカラーのみでまず行う
 ※明確にモチーフを模写する
  -空間、形も模写する(シンプル)
 
@@ -49,14 +45,9 @@
  -RandomlyBox
  -Panel(Voronoi)
 
-○Gerkin
-・柔軟化
- 
-○Noise検証
-・Noiseの視覚化
-
 
 ■CityGenerator
+※Pattern
 ※スケール感とベースデザインはそのまま反映する
 ※低層と高層の設計を明確に別にする
 ※配置に重きをおく
@@ -69,21 +60,11 @@
 △パイプライン化
 ・背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装
 
-○CupsuleCity
-・多様な色づかい
- -メタボリズム
-
-○ポンピドゥーセンター
-・多様な色づかい
- -メタボリズム
-
 
 ■発信
+※Pattern
 ※PD作品を使って発信
 ※GPTのベースを用意
-※PFStudyは基本テキストベース
- -※記事を書く手間を極限まで省く
- -文章からシークエンス図までGPTにテキストで生成する
 
 ●構成
 ・概要
@@ -101,31 +82,54 @@
  -柔軟性(※Patternにフォーカスして変化をGif化する)
  -変化性(グラデーション)
 
-○Noise
-※Noiseの視覚化
-・東熱ビル
-・ポルトガル館
-   
-○Gerkin
-・アニメーション
- -Expression
-・実装
- -螺旋状のラインを生成
- -Primitiveを生成
- 
-○CupsuleTown
-・概要
- -カプセルタワー
-・実装
- -凹凸の表現
- -街の表現(堀北City参考)
-・柔軟性
- -カラー
 
+■Study
+●PFStudy
+※基礎ベース
+※簡単かつシンプルに
+ -社内ベース(Tips共有会、Notion)
+・仕事Study(※メモ代わり)
+ -USD Tutorials(https://openusd.org/release/tut_usd_tutorials.html)
+・趣味
+ -CityProject
+ -PatternProject
 
-■Private
-○断捨離
-・本
-・小物
-・書類
-・服
+●本Study
+※仕事のように目標を明確にする
+※CPとは差別化して考える
+※手を動かす(アウトプット)
+・H19.5 FOUNDATIONS BOOK
+https://www.sidefx.com/profile/rmagee/
+https://www.sidefx.com/ja/tutorials/foundations-terrain/
+・Mayaスターターブック
+https://itami.info/maya-starter-book
+
+●Private
+※2時間セット(作業 + 休憩)
+ -※30分を目安にタスクを決める
+※2時間以上の時間ユニットをなくす
+※2時間以上昼寝の時間を設ける
+ -12時には寝る
+※Privateタスクは前日夜か朝にカフェで整理する
+ -PCタスクも一緒にやる(※家では極力避ける)
+※アイスコーヒーを積極的に飲む
+
+●Private旅行
+※旅行中は作業はせず、反省、タスク整理を行う
+ -散歩中はスマホと本のみを持って散歩をし、帰ってきたらPCでまとめる
+※2時間Unit
+ -昼寝 + 散歩(本斥候)
+ -読書(夕日) + 散歩(夕飯)
+ -映画 + 散歩(デザート)
+ -散歩(朝食) + 読書
+※準備をする
+ -本(BookOff)
+ -映画
+ -ゲーム
+※翌々日が休みの場合は午後に小旅行する
+ -帰りはバスで座って帰る
+○本斥候
+・技術本
+ -AI
+・啓発本
+ -伝え方の本質
