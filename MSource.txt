@@ -25,6 +25,48 @@ https://openusd.org/release/tut_referencing_layers.html
 ・Pythonソース解説
 
 
+○東熱ビル模写
+・スケール
+
+○東熱ビルPattern視覚化
+・Noiseアニメーション
+・カメラ角度アニメーション
+
+
+○ポルトガル館模写
+・ソース整理
+・紐
+
+○ポルトガル館Pattern視覚化
+・空間表現
+ -Grid + 紐
+・揺れアニメーション
+・Noiseアニメーション
+
+
+○GerkinPattern視覚化
+・角度アニメーション
+・模様アニメーション
+ -色
+ -Gradation
+ -幅
+
+
+○CupsulePattern多様化
+※HorikitaCity参照(https://www.youtube.com/watch?v=2d7c7dVX-kg&t=8512s)
+・色で検証
+
+
+○PipeGenerator
+・In
+・Out
+・Curve
+
+●PipeNetwork資料
+・https://www.artstation.com/artwork/o2xdyq
+・https://www.youtube.com/watch?v=Jcinr46UcJE&t=10612s
+
+
 ■ComputationalDesign
 ※Pattern
 ・東熱ビル
@@ -34,54 +76,45 @@ https://openusd.org/release/tut_referencing_layers.html
 ・Gerkin
  -螺旋
 
-○視覚化
-・Noiseアニメーション
-・カメラ角度アニメーション
-
 ●東熱ビルPattern
 ・ルーパー角度
 ・色
 
 ●東熱ビル記事
 ・東熱ビルファザード概要
-・Patern概要
+・Pattern概要
+ -ルーパー角度、色、
 ・Pattern再現方法
-・検証
+ -Attribute + CopyToPoint
+・Noise検証
  -Noiseごとの結果
 
-
-○視覚化
-・揺れアニメーション
-・空間表現
-・Noiseアニメーション
 
 ●ポルトガル館Pattern
 ・空間
 ・揺れ
 
-●ポルトガル館
+●ポルトガル館記事
 ・ポルトガル館概要
 ・Pattern概要
+ -紐による空間
+ -揺れ
 ・Pattern再現方法
-・検証
+ -紐をLineで表現
+ -Vexで疑似的に揺れを表現(フーコー)
+・Noise検証
  -Noiseごとの結果
 
-
-○視覚化
-・角度アニメーション
-・模様アニメーション
- -色
- -Gradation
- -幅
 
 ●GerkinPattern
 ※螺旋
 ・角度
 ・模様
 
-●Gerkin
+●Gerkin記事
 ・Gerkin概要
 ・Pattern概要
+ -螺旋をベースに模様化
 ・柔軟検証
 
 
@@ -93,25 +126,17 @@ https://openusd.org/release/tut_referencing_layers.html
  -Noise
  -凹凸
 
-○Pattern多様化
-※HorikitaCity参照(https://www.youtube.com/watch?v=2d7c7dVX-kg&t=8512s)
-
 ●CupsuleTowerPattern
 ・Empty
 ・カラー
 ・WindowSize
 ・形態
 
-
-○PipeGenerator
-・In
-・Out
-・Curve
-
 ●PipePattern
 ※Pipe + 鉄骨
 ・Greeble
 ・凹凸
+
 
 
 ■Write

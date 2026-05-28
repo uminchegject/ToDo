@@ -151,3 +151,57 @@ overSphere.GetDisplayColorAttr().Set([(1, 0, 0)])
 # 保存
 refStage.GetRootLayer().Save()
 ```
+
+
+DefaultPrim設定
+```
+helloStage = Usd.Stage.CreateNew("HelloWorld.usda")
+
+helloXform = UsdGeom.Xform.Define(helloStage, "/hello")
+
+sphere = UsdGeom.Sphere.Define(helloStage, "/hello/world")
+sphere.GetRadiusAttr().Set(2)
+sphere.GetDisplayColorAttr().Set([(0, 0, 1)])
+
+helloStage.SetDefaultPrim(helloXform.GetPrim())
+
+UsdGeom.XformCommonAPI(helloXform).SetTranslate((4, 5, 6))
+
+helloStage.GetRootLayer().Save()
+```
+
+Override設定
+```
+refStage = Usd.Stage.CreateNew("RefExample.usda")
+
+# over Prim 作成
+refSphere = refStage.OverridePrim("/refSphere")
+```
+
+reference設定
+```
+# reference 追加
+refSphere.GetReferences().AddReference("./HelloWorld.usda")
+```
+
+値を上書き
+```
+# transform override
+refXform = UsdGeom.Xformable(refSphere)
+refXform.SetXformOpOrder([])
+```
+
+同様の手順
+```
+refSphere2 = refStage.OverridePrim("/refSphere2")
+
+refSphere2.GetReferences().AddReference("./HelloWorld.usda")
+
+# displayColor override
+overSphere = UsdGeom.Sphere.Get(refStage, "/refSphere2/world")
+overSphere.GetDisplayColorAttr().Set([(1, 0, 0)])
+
+
+# 保存
+refStage.GetRootLayer().Save()
+```
