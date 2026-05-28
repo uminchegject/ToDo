@@ -1,25 +1,64 @@
-○Public
-・Tree, Rock整理
-・デバッグ
+■メモ
+※昼休み前に午後のタスクを整理して改めてメモを整理する
 
 
-○東熱ビル
-・角度×色の関係
-・スケール検証
-・ソース整理(デバッグ + メイン)
+○誕生日プレゼント準備
 
-○ポルトガル館模写
-・紐モデリング
-・ソース整理(デバッグ + メイン)
+○本斥候
+・技術本
+ -AI
+・啓発本
+ -伝え方の本質
 
-○GerkinPattern化
-・ソース整理(パラメーター整理)
+○SFC準備
+・ソフト(※激選)
+ -ドンキーコング
+・fiioイヤホンコード(※長め)
+・コントローラー
+
+○DMMポイント
 
 
-△CupsulePattern多様化
+○Referencing Layers メモ
+https://openusd.org/release/tut_referencing_layers.html
+※リファレンスについて説明
+※サンプルソースを軸に解説
+・Pythonソース解説
 
-△PipeGenerator設計
 
+○東熱ビルPattern視覚化
+・スケール調整
+・Noiseアニメーション
+・カメラ角度アニメーション
+
+○ポルトガル館Pattern視覚化
+・空間表現
+ -Grid + 紐
+・揺れアニメーション
+・Noiseアニメーション
+
+○GerkinPattern視覚化
+・パラメーター調整
+・角度アニメーション
+・模様アニメーション
+ -色
+ -Gradation
+ -幅
+
+
+○CupsulePattern多様化
+※HorikitaCity参照(https://www.youtube.com/watch?v=2d7c7dVX-kg&t=8512s)
+・色で検証
+
+
+○PipeGenerator
+・In
+・Out
+・Curve
+
+●PipeNetwork資料
+・https://www.artstation.com/artwork/o2xdyq
+・https://www.youtube.com/watch?v=Jcinr46UcJE&t=10612s
 
 
 ■ComputationalDesign
