@@ -27,7 +27,6 @@ over "refSphere2" (
 これまで使用していた def は、Scene 上に実体を持つ Prim を定義するものであり、レンダリングや DCC ツールで読み込まれる対象になります。
 一方 `over` は、別レイヤーで定義された Prim に対して、後から設定を追加・変更するための Prim です。
 元データを直接編集するのではなく、位置・Visibility・Material などの設定だけを差分として重ねることで、非破壊に編集を行うことができます。
-USDでは「後から適用された強い意見が優先される」という Layer Composition の仕組みがあり、`over` はその仕組みを利用して既存データに変更を加えています。
 
 サンプルソースだと HelloWorld.usda を参照した refSphere2 に対して、world Prim の displayColor だけを上書きしています。
 ```
@@ -91,11 +90,12 @@ over "refSphere2" (
 * アセット本体は共通利用する
 * Sceneごとに見た目やTransformだけ変更する
 * 元データを壊さず差分管理する 
- 
+
 といった USD らしい非破壊ワークフローを実現できます。
 
 
 ## Pythonでの構築処理
+以上を踏まえて、実際にサンプルUSDを構築する手順を、以下のPythonコードをもとに解説します。
 ```
 from pxr import Usd, UsdGeom
 
@@ -152,9 +152,12 @@ overSphere.GetDisplayColorAttr().Set([(1, 0, 0)])
 refStage.GetRootLayer().Save()
 ```
 
+まず、`HelloWorld.usda` を生成します。
+reference で参照するため、`defaultPrim` も設定しておきます。
 
-DefaultPrim設定
-```
+```python id="4a3sm0"
+from pxr import Usd, UsdGeom
+
 helloStage = Usd.Stage.CreateNew("HelloWorld.usda")
 
 helloXform = UsdGeom.Xform.Define(helloStage, "/hello")
@@ -163,45 +166,58 @@ sphere = UsdGeom.Sphere.Define(helloStage, "/hello/world")
 sphere.GetRadiusAttr().Set(2)
 sphere.GetDisplayColorAttr().Set([(0, 0, 1)])
 
-helloStage.SetDefaultPrim(helloXform.GetPrim())
-
 UsdGeom.XformCommonAPI(helloXform).SetTranslate((4, 5, 6))
+
+# reference 時に参照される prim を設定
+helloStage.SetDefaultPrim(helloXform.GetPrim())
 
 helloStage.GetRootLayer().Save()
 ```
 
-Override設定
-```
+参照する側の USD を作成し、override prim を定義します。
+
+```python id="cf4z1q"
+from pxr import Usd, UsdGeom
+
 refStage = Usd.Stage.CreateNew("RefExample.usda")
 
-# over Prim 作成
 refSphere = refStage.OverridePrim("/refSphere")
 ```
 
-reference設定
-```
-# reference 追加
+先ほど作成した `HelloWorld.usda` を reference します。
+`defaultPrim` を設定しているため、`/hello` が `/refSphere` に読み込まれます。
+
+```python id="1dlhvr"
 refSphere.GetReferences().AddReference("./HelloWorld.usda")
 ```
 
-値を上書き
-```
-# transform override
+reference した prim の Transform を override します。
+
+```python id="d8zvqq"
 refXform = UsdGeom.Xformable(refSphere)
+
+# 元の xformOp をクリア
 refXform.SetXformOpOrder([])
 ```
 
-同様の手順
-```
+同じ要領で `HelloWorld.usda` を別 prim に reference し、今度は色情報を override します。
+
+```python id="1k4xmt"
 refSphere2 = refStage.OverridePrim("/refSphere2")
 
 refSphere2.GetReferences().AddReference("./HelloWorld.usda")
+```
 
-# displayColor override
+reference 元の `/hello/world` は、参照先では `/refSphere2/world` に展開されます。
+そのため、`/refSphere2/world` に対して `displayColor` を上書きします。
+
+```python id="cw5r8f"
 overSphere = UsdGeom.Sphere.Get(refStage, "/refSphere2/world")
 overSphere.GetDisplayColorAttr().Set([(1, 0, 0)])
+```
 
+最後に保存します。
 
-# 保存
+```python id="o2r8rt"
 refStage.GetRootLayer().Save()
 ```
