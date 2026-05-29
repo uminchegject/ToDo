@@ -1,35 +1,56 @@
-○デバッグ
-・比較
+■メモ
+○リュック着払い
+
+○誕生日プレゼント準備
+
+○本斥候
+・技術本
+ -AI(AIエージェント)
+
+○SFC準備
+・ソフト(※激選)
+ -ドンキーコング
+・fiioイヤホンコード(※長め)
+・コントローラー
+
+○DMMポイント
 
 
-○処理整理
-・Gerkin(生成アニメーション)
-
-○サンプルGIF
-・Gerkin
-・ポルトガル館
-
-
-○東熱ビルPattern視覚化
-・Noiseアニメーション
+○東熱ビルPatternビジュアル資料(各Noise)
+・NoiseOffsetアニメーション
 ・カメラ角度アニメーション
 
-○ポルトガル館Pattern視覚化
+○ポルトガル館Patternビジュアル資料(各Noise)
 ・揺れアニメーション
-・Noiseアニメーション
 
-○GerkinPattern視覚化
-※Make_Gerkin_BaseLine1
-・角度アニメーション
-・模様アニメーション
- -色
- -Gradation
- -幅
+○GerkinPatternビジュアル資料(柔軟)
+※Make_Gerkin_BaseLineメイン
+・形態
+・Pattern
 
 
-△CupsuleTowerGenerator設計
+○CupsuleTowerGenerator
+※HorikitaCity参照(https://www.youtube.com/watch?v=2d7c7dVX-kg&t=8512s)
+※Gradation + Ramdomly
+・カラー
+・Core
+・Empty
 
-△PipeGenerator設計
+○CupsuleTowerGeneratorでCity検証
+
+
+○PipeGenerator
+※ポンピドゥーセンター参照
+・In
+・Out
+・Curve
+
+●PipeNetwork資料
+・https://www.artstation.com/artwork/o2xdyq
+・https://www.youtube.com/watch?v=Jcinr46UcJE&t=10612s
+
+○PipeGenerator検証
+・PrimWall
 
 
 ■ComputationalDesign
