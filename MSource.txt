@@ -1,14 +1,13 @@
 ■メモ
 ※昼休み前に午後のタスクを整理して改めてメモを整理する
 
+○リュック着払い
 
 ○誕生日プレゼント準備
 
 ○本斥候
 ・技術本
- -AI
-・啓発本
- -伝え方の本質
+ -AI(AIエージェント)
 
 ○SFC準備
 ・ソフト(※激選)
@@ -19,11 +18,10 @@
 ○DMMポイント
 
 
-○Referencing Layers メモ
+○Referencing Layers
 https://openusd.org/release/tut_referencing_layers.html
 ※リファレンスについて説明
 ※サンプルソースを軸に解説
-・Pythonソース解説
 
 
 ○東熱ビルPattern視覚化
@@ -33,7 +31,6 @@ https://openusd.org/release/tut_referencing_layers.html
 
 ○ポルトガル館Pattern視覚化
 ・空間表現
- -Grid + 紐
 ・揺れアニメーション
 ・Noiseアニメーション
 
@@ -46,12 +43,18 @@ https://openusd.org/release/tut_referencing_layers.html
  -幅
 
 
-○CupsulePattern多様化
+○CupsuleTowerGenerator
 ※HorikitaCity参照(https://www.youtube.com/watch?v=2d7c7dVX-kg&t=8512s)
-・色で検証
+※Gradation + Ramdomly
+・カラー
+・Core
+・Empty
+
+○CupsuleTowerGeneratorでCity検証
 
 
 ○PipeGenerator
+※ポンピドゥーセンター参照
 ・In
 ・Out
 ・Curve
@@ -59,6 +62,9 @@ https://openusd.org/release/tut_referencing_layers.html
 ●PipeNetwork資料
 ・https://www.artstation.com/artwork/o2xdyq
 ・https://www.youtube.com/watch?v=Jcinr46UcJE&t=10612s
+
+○PipeGenerator検証
+・PrimWall
 
 
 ■ComputationalDesign
@@ -113,13 +119,6 @@ https://openusd.org/release/tut_referencing_layers.html
 
 
 ■Metaborithum
-・Pattern
- -CupsuleTower
- -Pipe
-・Volume
- -Noise
- -凹凸
-
 ●CupsuleTowerPattern
 ・Empty
 ・カラー
@@ -138,7 +137,7 @@ https://openusd.org/release/tut_referencing_layers.html
 ・Qiita化
 
 ○Referencing Layers
-・記事メモ
+・記事化
 
 
 ■Study
