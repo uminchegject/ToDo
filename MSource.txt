@@ -6,6 +6,7 @@
 ○本斥候
 ・技術本
  -AI(AIエージェント)
+・単語帳
 
 ○SFC準備
 ・ソフト(※激選)
@@ -33,17 +34,26 @@
 ※HorikitaCity参照(https://www.youtube.com/watch?v=2d7c7dVX-kg&t=8512s)
 ※Gradation + Ramdomly
 ・カラー
+ -Gradation
+ -Pattern
 ・Core
+ -Height
 ・Empty
+ -Pattern
 
 ○CupsuleTowerGeneratorでCity検証
 
 
 ○PipeGenerator
 ※ポンピドゥーセンター参照
-・In
-・Out
-・Curve
+※凹凸Maker
+・VerticalPipe
+ -Height
+ -Radius
+・HorizontalPipe
+ -Height
+ -Radius
+ -BlockGroup
 
 ●PipeNetwork資料
 ・https://www.artstation.com/artwork/o2xdyq
@@ -86,7 +96,7 @@
  -紐による空間
  -揺れ
 ・Pattern再現方法
- -紐をLineで表現
+ -Lineから紐をプロシージャルモデリング
  -Vexで疑似的に揺れを表現(フーコー)
 ・Noise検証
  -Noiseごとの結果
