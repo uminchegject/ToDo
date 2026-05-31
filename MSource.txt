@@ -1,14 +1,28 @@
+■Private
+○誕生日プレゼント準備
+
+○SFC準備
+・fiioイヤホンコード(※長め)
+ -イヤホン リケーブル 2pin 0.78
+・コントローラー
+・ソフト(※激選)
+ -ドンキーコング
+ -SimCity
+
+○本斥候
+・技術本
+ -AI(AIエージェント)
+・英語Study
+ -単語帳
+
+
 ■Metaborithum
 ○CupsuleTowerGenerator設計 + 実装
-※HorikitaCity参照(https://www.youtube.com/watch?v=2d7c7dVX-kg&t=8512s)
-※Gradation + Ramdomly
+※検証パラメーター
+※Gradation + Ramdomly + Pattern
 ・カラー
- -Gradation
- -Pattern
-・Core
- -Height
+・Height
 ・Empty
- -Pattern
 
 ○CupsuleTowerGeneratorでCity検証
 
@@ -35,7 +49,8 @@
 ・https://www.youtube.com/watch?v=Jcinr46UcJE&t=10612s
 
 ○PipeGenerator検証
-・PrimWall
+※凹凸
+・Grid　→ Box
 
 ●PipePattern
 ※Pipe + 鉄骨
@@ -44,14 +59,6 @@
 
 
 ■ComputationalDesign
-※Pattern
-・東熱ビル
- -ルーパー
-・ポルトガル館
- -揺れ、空間
-・Gerkin
- -螺旋
-
 ●東熱ビルPattern
 ・ルーパー角度
 ・色
@@ -61,13 +68,6 @@
 ・カメラ角度アニメーション
 
 ○東熱ビル記事
-・東熱ビルファザード概要
-・Pattern概要
- -ルーパー角度、色
-・Pattern再現方法
- -Attribute + CopyToPoint
-・Noise検証
- -Noiseごとの結果
 
 
 ●ポルトガル館Pattern
@@ -78,16 +78,6 @@
 ・揺れアニメーション
 
 ○ポルトガル館記事
-https://kkaa.co.jp/project/expo-2025-portugal-pavilion/
-・ポルトガル館概要
-・Pattern概要
- -紐による空間
- -揺れ
-・Pattern再現方法
- -Lineから紐をプロシージャルモデリング
- -Vexで疑似的に揺れを表現(フーコー)
-・Noise検証
- -Noiseごとの結果
 
 
 ●GerkinPattern
@@ -101,27 +91,6 @@ https://kkaa.co.jp/project/expo-2025-portugal-pavilion/
 ・Pattern
 
 ○Gerkin記事
-・Gerkin概要
-・Pattern概要
- -螺旋をベースに模様化
-・柔軟検証
-
-
-■Private
-○誕生日プレゼント準備
-
-○SFC準備
-・fiioイヤホンコード(※長め)
- -イヤホン リケーブル 2pin 0.78
-・コントローラー
-・ソフト(※激選)
- -ドンキーコング
-
-○本斥候
-・技術本
- -AI(AIエージェント)
-・英語Study
- -単語帳
 
 
 ■Write
