@@ -1,8 +1,4 @@
 ■メモ
-○DMMポイント
-
-○リュック着払い
-
 ○誕生日プレゼント準備
 
 ○SFC準備
@@ -19,20 +15,71 @@
  -単語帳
 
 
+■ComputationalDesign
+※Pattern
+・東熱ビル
+ -ルーパー
+・ポルトガル館
+ -揺れ、空間
+・Gerkin
+ -螺旋
+
+●東熱ビルPattern
+・ルーパー角度
+・色
+
 ○東熱ビルPatternビジュアル資料(各Noise)
 ・NoiseOffsetアニメーション
 ・カメラ角度アニメーション
 
+○東熱ビル記事
+・東熱ビルファザード概要
+・Pattern概要
+ -ルーパー角度、色
+・Pattern再現方法
+ -Attribute + CopyToPoint
+・Noise検証
+ -Noiseごとの結果
+
+
+●ポルトガル館Pattern
+・空間
+・揺れ
+
 ○ポルトガル館Patternビジュアル資料(各Noise)
 ・揺れアニメーション
+
+○ポルトガル館記事
+・ポルトガル館概要
+・Pattern概要
+ -紐による空間
+ -揺れ
+・Pattern再現方法
+ -Lineから紐をプロシージャルモデリング
+ -Vexで疑似的に揺れを表現(フーコー)
+・Noise検証
+ -Noiseごとの結果
+
+
+●GerkinPattern
+※螺旋
+・角度
+・模様
 
 ○GerkinPatternビジュアル資料(柔軟)
 ※Make_Gerkin_BaseLineメイン
 ・形態
 ・Pattern
 
+○Gerkin記事
+・Gerkin概要
+・Pattern概要
+ -螺旋をベースに模様化
+・柔軟検証
 
-○CupsuleTowerGenerator
+
+■Metaborithum
+○CupsuleTowerGenerator設計 + 実装
 ※HorikitaCity参照(https://www.youtube.com/watch?v=2d7c7dVX-kg&t=8512s)
 ※Gradation + Ramdomly
 ・カラー
@@ -44,6 +91,12 @@
  -Pattern
 
 ○CupsuleTowerGeneratorでCity検証
+
+●CupsuleTowerPattern
+・Empty
+・カラー
+・WindowSize
+・形態
 
 
 ○PipeGenerator
@@ -64,70 +117,10 @@
 ○PipeGenerator検証
 ・PrimWall
 
-
-■ComputationalDesign
-※Pattern
-・東熱ビル
- -ルーパー
-・ポルトガル館
- -揺れ、空間
-・Gerkin
- -螺旋
-
-●東熱ビルPattern
-・ルーパー角度
-・色
-
-●東熱ビル記事
-・東熱ビルファザード概要
-・Pattern概要
- -ルーパー角度、色、
-・Pattern再現方法
- -Attribute + CopyToPoint
-・Noise検証
- -Noiseごとの結果
-
-
-●ポルトガル館Pattern
-・空間
-・揺れ
-
-●ポルトガル館記事
-・ポルトガル館概要
-・Pattern概要
- -紐による空間
- -揺れ
-・Pattern再現方法
- -Lineから紐をプロシージャルモデリング
- -Vexで疑似的に揺れを表現(フーコー)
-・Noise検証
- -Noiseごとの結果
-
-
-●GerkinPattern
-※螺旋
-・角度
-・模様
-
-●Gerkin記事
-・Gerkin概要
-・Pattern概要
- -螺旋をベースに模様化
-・柔軟検証
-
-
-■Metaborithum
-●CupsuleTowerPattern
-・Empty
-・カラー
-・WindowSize
-・形態
-
 ●PipePattern
 ※Pipe + 鉄骨
 ・Greeble
 ・凹凸
-
 
 
 ■Write
@@ -136,6 +129,10 @@
 
 ○Referencing Layers
 ・記事化
+
+○Converting Between Layer Formats
+https://openusd.org/release/tut_converting_between_layer_formats.html
+・記事メモ
 
 
 ■Study
