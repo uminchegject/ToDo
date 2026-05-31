@@ -3,9 +3,13 @@
 
 ○本斥候
 ・技術本
- -AI(AIエージェント)
+ -AI(※オライリー)
 ・英語Study
  -単語帳
+ 
+○SFCソフト
+・ドンキーコング
+・シムシティ
 
 
 ■Metaborithum
@@ -42,7 +46,7 @@
 
 ○PipeGenerator検証
 ※凹凸
-・Grid　→ Box
+・Grid → Box
 
 ●PipePattern
 ※Pipe + 鉄骨
