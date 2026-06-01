@@ -2,9 +2,9 @@
 ○CupsuleTowerGenerator実装
 ※既存の処理を修正
 ※検証パラメーター(※Gradation + Randomly)
-・Height(Core + Cupsule)
-・カラー
-・Empty
+ -Height(Core + Cupsule)
+ -カラー
+ -Empty
 
 ●CupsuleTowerGenerator設計
 ※Gradation + Ramdomly
@@ -22,6 +22,8 @@
 
 
 ○PipeGenerator実装
+・BaseLine生成
+・Pipe検証(PolyWire)
 
 ●PipeGenerator設計
 ※ポンピドゥーセンター参照
@@ -99,8 +101,6 @@ https://openusd.org/release/tut_converting_between_layer_formats.html
 ○本斥候
 ・技術本
  -AI(※オライリー)
-・英語Study
- -単語帳
  
 ○SFCソフト
 ・ドンキーコング
