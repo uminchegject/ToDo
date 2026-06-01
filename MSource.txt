@@ -1,17 +1,13 @@
 ■Metaborithum
 ○CupsuleTowerGenerator実装
 ※既存の処理を修正
-※検証パラメーター(※Gradation + Pattern + △Randomly)
-・Height
+※検証パラメーター(※Gradation + Randomly)
+・Height(Core + Cupsule)
 ・カラー
- -Gradation
- -Pattern
 ・Empty
- -Gradation
- -Pattern
 
 ●CupsuleTowerGenerator設計
-※Gradation + Ramdomly + Pattern
+※Gradation + Ramdomly
 ・カラー
 ・Height
 ・Empty
@@ -26,9 +22,6 @@
 
 
 ○PipeGenerator実装
-・Greeble
- -VerticalBlock + HorizontalBlock
-・PolyLine生成
 
 ●PipeGenerator設計
 ※ポンピドゥーセンター参照
