@@ -1,3 +1,22 @@
+※1つずつ
+・Gerkin
+ -記事メモ
+ -ビジュアル資料
+・USD
+ -フォーマット
+
+○カプセルシティ検証
+・CityBlock
+ -Randomly
+・2×1, 1×1
+ -サイズを多様化
+・Very High
+
+○PipePattern
+・軸設定
+・分割ロジック設計
+
+
 ■Metaborithum
 ○CupsuleTowerGenerator実装
 ※既存の処理を修正
