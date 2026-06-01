@@ -1,20 +1,16 @@
-■Private
-○誕生日プレゼント準備
-
-○本斥候
-・技術本
- -AI(※オライリー)
-・英語Study
- -単語帳
- 
-○SFCソフト
-・ドンキーコング
-・シムシティ
-
-
 ■Metaborithum
-○CupsuleTowerGenerator設計 + 実装
-※検証パラメーター
+○CupsuleTowerGenerator実装
+※既存の処理を修正
+※検証パラメーター(※Gradation + Pattern + △Randomly)
+・Height
+・カラー
+ -Gradation
+ -Pattern
+・Empty
+ -Gradation
+ -Pattern
+
+●CupsuleTowerGenerator設計
 ※Gradation + Ramdomly + Pattern
 ・カラー
 ・Height
@@ -29,9 +25,14 @@
 ・形態
 
 
-○PipeGenerator
+○PipeGenerator実装
+・Greeble
+ -VerticalBlock + HorizontalBlock
+・PolyLine生成
+
+●PipeGenerator設計
 ※ポンピドゥーセンター参照
-※凹凸Maker
+※凹凸
 ・VerticalPipe
  -Height
  -Radius
@@ -90,15 +91,27 @@
 
 
 ■Write
-○Inspecting and Authoring
-・Qiita化
-
 ○Referencing Layers
-・記事化
+・Qiita化
 
 ○Converting Between Layer Formats
 https://openusd.org/release/tut_converting_between_layer_formats.html
-・記事メモ
+・usdフォーマットについて(usd,usda,usdc)
+・convert方法
+
+
+■Private
+○誕生日プレゼント準備
+
+○本斥候
+・技術本
+ -AI(※オライリー)
+・英語Study
+ -単語帳
+ 
+○SFCソフト
+・ドンキーコング
+・シムシティ
 
 
 ■Study
