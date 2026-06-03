@@ -21,19 +21,46 @@ https://openusd.org/release/tut_converting_between_layer_formats.html
  -Block Line Num
 
 
+○カプセルセットの用意
+・1×1
+・1×2
+・2×2
 
-○カプセル配置ロジック設計
-※区画ベース
-・RectangleからPrimを生成
+○カプセルシティ検証
+※TajimaCity参照
+・4区画で検証
+・高さに変化
+
+●CupsuleTower設計
+※スケール感を損なわない
+・高さスケールを広大化
+ -Coreの高さの多様化
+ -Cupsule配置位置の変化
+・平面スケール感の範囲を制限
+ -1 ～ 2
+
+●CupsuleCityBase設計
+※カプセルタワーのスケール感を最優先にする
+・Grid区画
+ -ランダムに道を消す
 
 
 ○BaseLine生成
-※凹凸
-・Horizontal
-・Vertical
+・RandomlyRange
+・Pattern
+ -In In
+ -In Out
+ -Out In
 
 ○PipeGenerator実装
 ・Pipe検証(PolyWire)
+
+
+○CityBaseStudy
+・Columbia
+ -RockGenerator
+・Rapture
+ -海底表現
 
 
 ■Metaborithum
