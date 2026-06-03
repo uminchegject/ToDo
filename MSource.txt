@@ -1,7 +1,5 @@
-※BaseLine + Pattern
+※Line + Pattern
 ※City + Pattern
-
-○LineArchitecture調査
 
 
 ■メモ
@@ -67,7 +65,10 @@ https://openusd.org/release/tut_converting_between_layer_formats.html
  -RockGenerator
 ・Rapture
  -海底表現
+ 
 
+○ArchitectureBaseStudy
+・Curve
 
 ■Metaborithum
 ○CupsuleTowerGenerator検証ツール実装
