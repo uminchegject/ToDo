@@ -4,12 +4,11 @@
 
 ○Converting Between Layer Formats
 https://openusd.org/release/tut_converting_between_layer_formats.html
-・usdフォーマットについて(usd,usda,usdc)
 ・convert方法
 
 
 ○Gerkin記事
-・Gerkin概要
+・生成アニメーション
 
 ○GerkinPatternビジュアル資料(柔軟)
 ※Make_Gerkin_BaseLineメイン
@@ -22,57 +21,19 @@ https://openusd.org/release/tut_converting_between_layer_formats.html
  -Block Line Num
 
 
-○CupsuleTowerGenerator検証ツール実装
-※ノードベース
-・処理ユニット
- -CoreUnit
- -CupsuleUnit
-・パラメーター
- -高さ数(Core, Cupsule)
- -ユニットサイズ
 
-○CupsuleTowerGenerator検証
-・乱雑
+○カプセル配置ロジック設計
+※区画ベース
+・RectangleからPrimを生成
 
+
+○BaseLine生成
+※凹凸
+・Horizontal
+・Vertical
 
 ○PipeGenerator実装
 ・Pipe検証(PolyWire)
-
-
-■記事
-## フォーマット形式
-USDには複数の保存形式が存在し、それらについて説明をします。
-
-### USDA
-USDA（USD ASCII）は、USDデータをテキスト形式で保存するフォーマットです。
-ファイルの内容をテキストエディタで直接確認できるため、学習やデバッグに適しています。
-また、Gitなどのバージョン管理システムで差分を確認しやすいという利点もあります。
-一方で、テキスト形式であるためファイルサイズが大きくなりやすく、読み込み速度も比較的遅くなります。
-
-### USDC
-USDC（USD Crate）は、USDデータをバイナリ形式で保存するフォーマットです。
-人が直接内容を読むことはできませんが、ファイルサイズが小さく、読み込み速度が高速であるという特徴があります。
-大規模なシーンデータを扱う際のパフォーマンスに優れているため、実際の制作現場やゲーム、映像制作などではUSDCが利用されることが多くなっています。
-
-### USD
-USDでは、テキスト形式のUSDAとバイナリ形式のUSDCの両方を、共通の拡張子である .usd で保存できます。
-そのため、ファイル名だけを見ても内部形式がUSDAなのかUSDCなのかを判断することはできません。
-これは、制作途中では可読性の高いUSDAを使用し、最終的な配布や運用時には高速なUSDCへ変換するといった運用を容易にするためです。
-Referenceなどで他のUSDファイルを参照している場合でも、拡張子を変更することなく内部形式だけを切り替えられるため、
-アセット管理やパイプライン運用をシンプルにできます。
-そのため、USDでは 「ファイルの役割」を表すために .usd を使い、内部形式（USDA/USDC）は必要に応じて切り替える という運用が推奨されています。
-
-
-●Gerkin概要
-Gherkinは、建物の形・構造・環境性能を一体で考えて設計された高層ビルです。
-
-最大の特徴は、きゅうりのような丸みを帯びた流線型の形状です。
-この形によって風の影響を受けにくくし、周囲で発生する強風も抑えています。
-
-建物の外側には斜めの鉄骨フレーム（ダイアグリッド構造）が使われており、少ない材料で高い強度を実現しています。
-そのため内部の柱を減らすことができ、広く開放的なオフィス空間を確保しています。
-
-この特徴的な形状と、鉄骨フレームによる特徴的なファサードをプロシージャルに再現しました。
 
 
 ■Metaborithum
