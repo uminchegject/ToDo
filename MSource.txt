@@ -24,8 +24,12 @@ https://openusd.org/release/tut_converting_between_layer_formats.html
 
 ○CupsuleTowerGenerator検証ツール実装
 ※ノードベース
-・高さ数(Core, Cupsule)
-・ユニットサイズ
+・処理ユニット
+ -CoreUnit
+ -CupsuleUnit
+・パラメーター
+ -高さ数(Core, Cupsule)
+ -ユニットサイズ
 
 ○CupsuleTowerGenerator検証
 ・乱雑
