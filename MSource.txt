@@ -1,94 +1,17 @@
-■メモ
-※Line + Pattern
-※City + Pattern
+○Public
+・修正前後比較
+・詳細な挙動確認
 
-○誕生日プレゼント
-
-
-○Converting Between Layer Formats
-https://openusd.org/release/tut_converting_between_layer_formats.html
-・convert方法
-
-
-○Gerkin記事
-・プロシージャル検証
-
-○GerkinPatternビジュアル資料(柔軟)
-※Make_Gerkin_BaseLineメイン
-・形態
- -Pt Count, Gap
- -Radius
- -Tip, Bulge
-・Pattern
- -Block Num
- -Block Line Num
-
-
-○カプセルセットの用意
-・1×1
-・1×2
-・2×2
+○プロシージャル検証
+・ビジュアル資料
+・記事メモ
 
 ○カプセルシティ検証
-※TajimaCity参照
-・4区画で検証
-・高さに変化
-
-●CupsuleTower設計
-※スケール感を損なわない
-・高さスケールを広大化
- -Coreの高さの多様化
- -Cupsule配置位置の変化
-・平面スケール感の範囲を制限
- -1 ～ 2
-
-●CupsuleCityBase設計
-※カプセルタワーのスケール感を最優先にする
-・Grid区画
- -ランダムに道を消す
-
+・Core, Cupsuleの高さをランダムに配置
+　ーSingleのみで仮検証
+　ーBase + Randomly
 
 ○BaseLine生成
-・RandomlyRange
-・Pattern
- -In In
- -In Out
- -Out In
-
-○PipeGenerator実装
-・Pipe検証(PolyWire)
-
-
-○CityBaseStudy
-・Columbia
- -RockGenerator
-・Rapture
- -海底表現
- 
-
-○ArchitectureBaseStudy
-・Curve
-
-
-■記事
-●Convert方法
-ASCII形式からバイナリ形式へ変換したい場合は、usdcat を使用します。
-usdcat -o NewSphere_binary.usd --usdFormat usdc Sphere.usd
-
-逆に、バイナリ形式からASCII形式へ変換する場合も同様に usdcat を使用できます。
-usdcat -o NewSphere_text.usd --usdFormat usda NewSphere_binary.usd
-
-変換後は、usddiff を使用して元ファイルと変換後のファイルの内容が同一であることを確認できます。
-usddiff Sphere.usd NewSphere_binary.usd
-
-usddiff はUSDファイルの内容を比較するツールであり、ファイル形式（USDA/USDC）が異なっていても、USDデータとして差分を確認できます。
-そのため、フォーマット変換によって内容が変わっていないことを検証する際に便利です。
-
-
-●プロシージャル検証
-・Windowと柱を再現
-・形状のプロシージャル化 
-・螺旋模様のプロシージャル化
 
 
 ■Metaborithum
