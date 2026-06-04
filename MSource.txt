@@ -1,8 +1,7 @@
+■メモ
 ※Line + Pattern
 ※City + Pattern
 
-
-■メモ
 ○誕生日プレゼント
 
 
@@ -12,7 +11,7 @@ https://openusd.org/release/tut_converting_between_layer_formats.html
 
 
 ○Gerkin記事
-・生成アニメーション
+・プロシージャル検証
 
 ○GerkinPatternビジュアル資料(柔軟)
 ※Make_Gerkin_BaseLineメイン
@@ -69,6 +68,28 @@ https://openusd.org/release/tut_converting_between_layer_formats.html
 
 ○ArchitectureBaseStudy
 ・Curve
+
+
+■記事
+●Convert方法
+ASCII形式からバイナリ形式へ変換したい場合は、usdcat を使用します。
+usdcat -o NewSphere_binary.usd --usdFormat usdc Sphere.usd
+
+逆に、バイナリ形式からASCII形式へ変換する場合も同様に usdcat を使用できます。
+usdcat -o NewSphere_text.usd --usdFormat usda NewSphere_binary.usd
+
+変換後は、usddiff を使用して元ファイルと変換後のファイルの内容が同一であることを確認できます。
+usddiff Sphere.usd NewSphere_binary.usd
+
+usddiff はUSDファイルの内容を比較するツールであり、ファイル形式（USDA/USDC）が異なっていても、USDデータとして差分を確認できます。
+そのため、フォーマット変換によって内容が変わっていないことを検証する際に便利です。
+
+
+●プロシージャル検証
+・Windowと柱を再現
+・形状のプロシージャル化 
+・螺旋模様のプロシージャル化
+
 
 ■Metaborithum
 ○CupsuleTowerGenerator検証ツール実装
@@ -245,3 +266,5 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
 ○衣類整理
 ・クローゼット
  -ユニフォーム
+ 
+ 
