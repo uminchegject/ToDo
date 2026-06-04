@@ -1,17 +1,81 @@
-○Public
-・修正前後比較
-・詳細な挙動確認
+■メモ
+※午前中に本+動画,午後に作業
 
-○プロシージャル検証
-・ビジュアル資料
-・記事メモ
+※飲み会後にコメントを送る
+
+※Line + Pattern
+※City + Pattern
+
+
+○EnglishStudy
+※日本語から独立
+・独り言
+・単語帳(※英語のみで完結)
+
+
+○Gerkin記事
+・プロシージャル検証
+ -Windowと柱を再現(GIF)
+ -形状のプロシージャル化 
+ -螺旋模様のプロシージャル化
+
+○GerkinPatternビジュアル資料
+※Make_Gerkin_BaseLineメイン
+・Windowと柱を再現
+ -PolyLine
+ -Window
+ -PolyWire
+ -完成
+・形状のプロシージャル化
+ -Pt Count, Gap
+ -Radius
+ -Tip, Bulge
+・螺旋模様のプロシージャル化
+ -Block Num
+ -Block Line Num
+
 
 ○カプセルシティ検証
-・Core, Cupsuleの高さをランダムに配置
-　ーSingleのみで仮検証
-　ーBase + Randomly
+※TajimaCity参照
+・4区画で検証
+・高さに変化
+
+●CupsuleTower設計
+※スケール感を損なわない
+・高さスケールを広大化
+ -Coreの高さの多様化
+ -Cupsule配置位置の変化
+・平面スケール感の範囲を制限
+ -1 ～ 2
+
+●CupsuleCityBase設計
+※カプセルタワーのスケール感を最優先にする
+・Grid区画
+ -ランダムに道を消す
+
 
 ○BaseLine生成
+・Type
+ -In In
+ -In Out
+ -Out In
+・In・Out位置
+ -Pattern
+ -Randomly
+
+○PipeGenerator実装
+・Pipe検証(PolyWire)
+
+
+△CityBaseStudy
+・Columbia
+ -RockGenerator
+・Rapture
+ -海底表現
+ 
+
+△ArchitectureBaseStudy
+・Curve
 
 
 ■Metaborithum
