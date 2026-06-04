@@ -1,4 +1,8 @@
 ■反省
+※午前中に本+動画,午後に作業
+
+※飲み会後にコメントを送る
+
 ※細分化タスクはそれぞれ1項目ごとに集中して対応
  -Design(Pattern)
  -Design(City)
@@ -17,6 +21,7 @@
 
 
 ■CD(Tool)
+※Line + Pattern
 ※Pattern + Modeling
 ※検証はカラーのみでまず行う
 ※明確にモチーフを模写する
@@ -48,7 +53,7 @@
 
 
 ■CityGenerator
-※Pattern + City
+※City + Pattern
 ※スケール感とベースデザインはそのまま反映する
 ※低層と高層の設計を明確に別にする
 ※配置に重きをおく
@@ -57,10 +62,6 @@
 ●Type
 ・ProceduralModeling
 ・ModularModeling
-
-●City
-・City
-・NoiseCity
 
 △パイプライン化
 ・背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装

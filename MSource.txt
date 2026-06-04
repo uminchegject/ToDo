@@ -1,12 +1,4 @@
 ■メモ
-※午前中に本+動画,午後に作業
-
-※飲み会後にコメントを送る
-
-※Line + Pattern
-※City + Pattern
-
-
 ○EnglishStudy
 ※日本語から独立
 ・独り言
@@ -35,26 +27,7 @@
  -Block Line Num
 
 
-○カプセルシティ検証
-※TajimaCity参照
-・4区画で検証
-・高さに変化
-
-●CupsuleTower設計
-※スケール感を損なわない
-・高さスケールを広大化
- -Coreの高さの多様化
- -Cupsule配置位置の変化
-・平面スケール感の範囲を制限
- -1 ～ 2
-
-●CupsuleCityBase設計
-※カプセルタワーのスケール感を最優先にする
-・Grid区画
- -ランダムに道を消す
-
-
-○BaseLine生成
+○BaseLine生
 ・Type
  -In In
  -In Out
@@ -67,44 +40,53 @@
 ・Pipe検証(PolyWire)
 
 
+○検証カプセルタワージェネレーター
+・Coreベースデザイン
+ -Core塊化
+・段々デザイン
+ -半分以上を段々デザイン
+・平面コア数調整
+
+○カプセルシティ検証
+
+●CupsuleTower設計
+※Gradation + Ramdomly
+※カプセルタワーのスケール感を最優先にする
+※スケール感を損なわない
+・高さスケールを広大化
+ -Coreの高さの多様化
+ -Cupsule配置位置の変化
+・CupsuleTowerPattern
+ -Empty
+ -カラー
+ -WindowSize
+ -形態
+
+
 △CityBaseStudy
 ・Columbia
  -RockGenerator
 ・Rapture
  -海底表現
- 
 
 △ArchitectureBaseStudy
 ・Curve
 
 
 ■Metaborithum
-○CupsuleTowerGenerator検証ツール実装
-※ノードベース
-・高さ数(Core, Cupsule)
-・ユニットサイズ
 
-○CupsuleTowerGenerator検証
-・乱雑
-
-●CupsuleTowerGenerator設計
+●CupsuleTower設計
 ※Gradation + Ramdomly
-・Size
- -2×1
- -1×1
-・CityBase
- -VeryHigh
-・パラメーター
- -カラー
- -Height
+※カプセルタワーのスケール感を最優先にする
+※スケール感を損なわない
+・高さスケールを広大化
+ -Coreの高さの多様化
+ -Cupsule配置位置の変化
+・CupsuleTowerPattern
  -Empty
-
-●CupsuleTowerPattern
-・Empty
-・カラー
-・WindowSize
-・形態
-
+ -カラー
+ -WindowSize
+ -形態
 
 ○PipeGenerator実装
 ・Pipe検証(PolyWire)
@@ -136,15 +118,23 @@
 
 ■ComputationalDesign
 ○Gerkin記事
-・Gerkin概要メモ
+・プロシージャル検証
+ -Windowと柱を再現(GIF)
+ -形状のプロシージャル化 
+ -螺旋模様のプロシージャル化
 
-○GerkinPatternビジュアル資料(柔軟)
+○GerkinPatternビジュアル資料
 ※Make_Gerkin_BaseLineメイン
-・形態
+・Windowと柱を再現
+ -PolyLine
+ -Window
+ -PolyWire
+ -完成
+・形状のプロシージャル化
  -Pt Count, Gap
  -Radius
  -Tip, Bulge
-・Pattern
+・螺旋模様のプロシージャル化
  -Block Num
  -Block Line Num
 
@@ -174,20 +164,15 @@
 ○Referencing Layers
 ・Qiita化
 
-○usdフォーマットについてメモ(usd,usda,usdc)
-・USD は手書きするもの
-https://qiita.com/takahito-tejima/items/ee0332bfb5c9baed3b09#%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AE-usda
-
 ○Converting Between Layer Formats
-https://openusd.org/release/tut_converting_between_layer_formats.html
-・usdフォーマットについて(usd,usda,usdc)
-・convert方法
+・記事化
+
 
 
 ■Private
-○誕生日プレゼント準備
-
 ○本斥候
+・英単語
+ -※英語独立
 ・技術本
  -AI(※オライリー)
  
