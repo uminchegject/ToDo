@@ -13,11 +13,7 @@
 ・生成アニメーション
 
 
-○PipeGenerator実装
-・Pipe検証(PolyWire)
-
-
-●CupsuleTower設計
+○CupsuleTowerGenerator設計
 ※Top40%
 ※Gradation + Pattern + △Ramdomly
 ※カプセルタワースケール
@@ -25,13 +21,28 @@
 ・HeightPattern
  -段々
 ・CoreDesign
-・CupsulePattern
+・△CupsulePattern
  -Empty
  -カラー
  -WindowSize
  -形態
 
-○カプセルシティ検証
+△カプセルシティ検証
+
+
+○PipeGenerator実装
+※ポンピドゥーセンター参照
+※凹凸
+・Pipe検証(PolyWire)
+
+△PipeGenerator検証
+※凹凸
+・Grid → Box
+
+●PipePattern
+※Pipe + 鉄骨
+・Greeble
+・凹凸
 
 
 ○ArchitectureBaseStudy
@@ -46,38 +57,27 @@
 
 
 ■Metaborithum
-●CupsuleTower設計
-※Gradation + Ramdomly
-※カプセルタワーのスケール感を最優先にする
-※スケール感を損なわない
+○CupsuleTowerGenerator設計
+※Top40%
+※Gradation + Pattern + △Ramdomly
+※カプセルタワースケール
 ・高さスケールを広大化
- -Coreの高さの多様化
- -Cupsule配置位置の変化
-・CupsuleTowerPattern
+・HeightPattern
+ -段々
+・CoreDesign
+・△CupsulePattern
  -Empty
  -カラー
  -WindowSize
  -形態
 
-○PipeGenerator実装
-・Pipe検証(PolyWire)
 
-●PipeGenerator設計
+○PipeGenerator実装
 ※ポンピドゥーセンター参照
 ※凹凸
-・VerticalPipe
- -Height
- -Radius
-・HorizontalPipe
- -Height
- -Radius
- -BlockGroup
+・Pipe検証(PolyWire)
 
-●PipeNetwork資料
-・https://www.artstation.com/artwork/o2xdyq
-・https://www.youtube.com/watch?v=Jcinr46UcJE&t=10612s
-
-○PipeGenerator検証
+△PipeGenerator検証
 ※凹凸
 ・Grid → Box
 
@@ -88,26 +88,12 @@
 
 
 ■ComputationalDesign
+○GerkinPatternビジュアル資料
+・生成アニメーション
+
 ○Gerkin記事
 ・プロシージャル検証
- -Windowと柱を再現(GIF)
- -形状のプロシージャル化 
- -螺旋模様のプロシージャル化
-
-○GerkinPatternビジュアル資料
-※Make_Gerkin_BaseLineメイン
-・Windowと柱を再現
- -PolyLine
- -Window
- -PolyWire
- -完成
-・形状のプロシージャル化
- -Pt Count, Gap
- -Radius
- -Tip, Bulge
-・螺旋模様のプロシージャル化
- -Block Num
- -Block Line Num
+・生成アニメーション
 
 
 ●東熱ビルPattern
@@ -137,7 +123,6 @@
 
 ○Converting Between Layer Formats
 ・記事化
-
 
 
 ■Private

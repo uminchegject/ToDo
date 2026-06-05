@@ -13,11 +13,6 @@
  -Make
  -Write
 
-※1日ベースの計画
- -カフェ時間にメモ項目にまとめる
-  -MSourceでタスク整理を行いメモに張り付ける
- -最初に読む(勉強する)範囲を決める
-
 ※Designタスクを最優先にする
  -タスクの軸にする
  -楽しむことを継続する
@@ -31,21 +26,15 @@
 ※明確にモチーフを模写する
  -空間、形も模写する(シンプル)
 
-●Type
+●PatternType
 ・Point
 ・Curve
 ・Surface
-・Pattern
 
 ●Flow
 ・PM化(検証)
 ・Gradation
 ・Randomly
-
-●Pattern設計
-・3次元的Pattern
-・遊びのあるPattern
-・複数のパーツで構成し合っているPattern
 
 ●IDEA
 ・ミラノ万博中国館(gradation_prim_editor)
