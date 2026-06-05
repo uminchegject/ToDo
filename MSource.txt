@@ -6,77 +6,46 @@
 
 
 ○GerkinPatternビジュアル資料
-※Make_Gerkin_BaseLineメイン
 ・生成アニメーション
-・Windowと柱を再現
- -PolyLine
- -Window
- -PolyWire
- -完成
-・形状のプロシージャル化
- -Pt Count, Gap
- -Radius
- -Tip, Bulge
-・螺旋模様のプロシージャル化
- -Block Num
- -Block Line Num
 
 ○Gerkin記事
 ・プロシージャル検証
-・△生成アニメーション
+・生成アニメーション
 
-
-○BaseLine生成
-・Type
- -In In
- -In Out
- -Out In
-・In・Out位置
- -Offset
- -Randomly
 
 ○PipeGenerator実装
 ・Pipe検証(PolyWire)
 
 
-○検証カプセルタワージェネレーター
-・段々デザイン
- -高さPattern
- -形状Pattern(Core)
-・パラメーター
- -平面サイズ(Core数)
- -Core高さ
-  -段々サイズ
- -Cupsuleオフセット
-
-○カプセルシティ検証
-
 ●CupsuleTower設計
-※Core & Pattern Design
+※Top40%
 ※Gradation + Pattern + △Ramdomly
-※カプセルタワーのスケール感を最優先にする
+※カプセルタワースケール
 ・高さスケールを広大化
- -Coreの高さの多様化
- -Cupsule配置位置の変化
-・CupsuleTowerPattern
+・HeightPattern
+ -段々
+・CoreDesign
+・CupsulePattern
  -Empty
  -カラー
  -WindowSize
  -形態
 
+○カプセルシティ検証
 
-△CityBaseStudy
+
+○ArchitectureBaseStudy
+・Curve
+
+
+○CityBaseStudy
 ・Columbia
  -RockGenerator
 ・Rapture
  -海底表現
 
-△ArchitectureBaseStudy
-・Curve
-
 
 ■Metaborithum
-
 ●CupsuleTower設計
 ※Gradation + Ramdomly
 ※カプセルタワーのスケール感を最優先にする
