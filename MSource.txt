@@ -5,14 +5,9 @@
 ・単語帳(※英語のみで完結)
 
 
-○Gerkin記事
-・プロシージャル検証
- -Windowと柱を再現(GIF)
- -形状のプロシージャル化 
- -螺旋模様のプロシージャル化
-
 ○GerkinPatternビジュアル資料
 ※Make_Gerkin_BaseLineメイン
+・生成アニメーション
 ・Windowと柱を再現
  -PolyLine
  -Window
@@ -26,14 +21,18 @@
  -Block Num
  -Block Line Num
 
+○Gerkin記事
+・プロシージャル検証
+・△生成アニメーション
 
-○BaseLine生
+
+○BaseLine生成
 ・Type
  -In In
  -In Out
  -Out In
 ・In・Out位置
- -Pattern
+ -Offset
  -Randomly
 
 ○PipeGenerator実装
@@ -53,9 +52,9 @@
 ○カプセルシティ検証
 
 ●CupsuleTower設計
-※Gradation + Ramdomly
+※Core & Pattern Design
+※Gradation + Pattern + △Ramdomly
 ※カプセルタワーのスケール感を最優先にする
-※スケール感を損なわない
 ・高さスケールを広大化
  -Coreの高さの多様化
  -Cupsule配置位置の変化
