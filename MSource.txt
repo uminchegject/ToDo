@@ -1,13 +1,3 @@
-○カプセルタワー
-・CoreのGrid配置
-
-○PipeGenerator
-・Patternのみで検証
-
-○BaseLinePattern
-・Gherkinで検証
-
-
 ■メモ
 ○本
 ・Pythonチュートリアル 第4版
@@ -33,10 +23,10 @@
 ※Top40%
 ※Gradation + Pattern + △Ramdomly
 ※カプセルタワースケール
-・高さスケールを広大化
+・CoreDesign
+ -※Grid
 ・HeightPattern
  -段々
-・CoreDesign
 ・△CupsulePattern
  -Empty
  -カラー
@@ -46,14 +36,10 @@
 △カプセルシティ検証
 
 
-○PipeGenerator実装
+○PipeGenerator検証
+※Patternのみで検証
 ※ポンピドゥーセンター参照
 ※凹凸
-・Pipe検証(PolyWire)
-
-△PipeGenerator検証
-※凹凸
-・Grid → Box
 
 ●PipePattern
 ※Pipe + 鉄骨
@@ -64,7 +50,8 @@
 ○ArchitectureBaseStudy
 ※Patternを意識
 ・Curve
- -ミラノ万博館
+ -Gherkin
+ -△ミラノ万博館
 
 
 ○CityBaseStudy
