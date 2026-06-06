@@ -1,4 +1,9 @@
 ■メモ
+○本
+・Pythonチュートリアル 第4版
+・生成AI時代のソフトウェア開発
+・Oxford Picture Dictionary
+
 ○EnglishStudy
 ※日本語から独立
 ・独り言
@@ -6,6 +11,7 @@
 
 
 ○GerkinPatternビジュアル資料
+・幅アニメーション
 ・生成アニメーション
 
 ○Gerkin記事
@@ -46,14 +52,18 @@
 
 
 ○ArchitectureBaseStudy
+※Patternを意識
 ・Curve
+ -ミラノ万博館
 
 
 ○CityBaseStudy
 ・Columbia
- -RockGenerator
+ -※RockGenerator
+ -Noise
 ・Rapture
- -海底表現
+ -※海底表現
+ -Terrain
 
 
 ■Metaborithum
