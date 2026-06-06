@@ -1,3 +1,13 @@
+○カプセルタワー
+・CoreのGrid配置
+
+○PipeGenerator
+・Patternのみで検証
+
+○BaseLinePattern
+・Gherkinで検証
+
+
 ■メモ
 ○本
 ・Pythonチュートリアル 第4版
