@@ -1,3 +1,55 @@
+※PMの際はSudyすることを心掛ける
+
+○CupsuleTowerGenerator設計
+※Top40%
+※カプセルタワースケール
+※Gradation + Pattern + △Ramdomly
+・CorePattern
+ -Grid
+・HeightPattern
+ -段々
+・△CupsulePattern
+ -Empty
+ -カラー
+ -WindowSize
+ -形態
+
+△カプセルシティ検証
+
+
+○PipeGeneratorStudy
+
+○PipeGenerator検証
+※Patternのみで検証
+※ポンピドゥーセンター参照
+※凹凸
+
+●PipePattern
+・Greeble
+・凹凸
+・△鉄骨
+
+
+○ArchitectureBaseStudy
+※Patternを意識
+・Curve
+ -Gherkin
+ -△ミラノ万博館
+
+
+●Columbia
+・Rock
+・ネオクラシカル
+・△植物
+・△水中表現
+
+●Rapture
+・Terrain + Rock
+・アールデコ
+・△空中表現
+
+
+
 ■メモ
 ○本
 ・Pythonチュートリアル 第4版
@@ -17,50 +69,6 @@
 ○Gerkin記事
 ・プロシージャル検証
 ・生成アニメーション
-
-
-○CupsuleTowerGenerator設計
-※Top40%
-※Gradation + Pattern + △Ramdomly
-※カプセルタワースケール
-・CoreDesign
- -※Grid
-・HeightPattern
- -段々
-・△CupsulePattern
- -Empty
- -カラー
- -WindowSize
- -形態
-
-△カプセルシティ検証
-
-
-○PipeGenerator検証
-※Patternのみで検証
-※ポンピドゥーセンター参照
-※凹凸
-
-●PipePattern
-※Pipe + 鉄骨
-・Greeble
-・凹凸
-
-
-○ArchitectureBaseStudy
-※Patternを意識
-・Curve
- -Gherkin
- -△ミラノ万博館
-
-
-○CityBaseStudy
-・Columbia
- -※RockGenerator
- -Noise
-・Rapture
- -※海底表現
- -Terrain
 
 
 ■Metaborithum
