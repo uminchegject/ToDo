@@ -37,9 +37,7 @@
 ・Randomly
 
 ●IDEA
-・ミラノ万博中国館(gradation_prim_editor)
-・曲線庇
- -モチーフ調査
+※PatternのBase
 ・ルイヴィトン美術館(grasshopper)
  -RandomlyBox
  -Panel(Voronoi)

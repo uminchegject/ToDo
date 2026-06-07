@@ -1,24 +1,44 @@
 ■メモ
 ※PMの際はSudyすることを心掛ける
 
+○EnglishStudy
+※日本語から独立
+・独り言
+・単語帳(※英語のみで完結)
+
+○HoudiniStudy
+・Rigging
+・PipeGenerator
+
+○USDStudy
+・記事化
+ -Referencing Layers
+ -Converting Between Layer Formats
+・Tutorial確認
+
+
+○GerkinPatternビジュアル資料
+・幅アニメーション
+・生成アニメーション
+
+○Gerkin記事
+・プロシージャル検証
+・生成アニメーション
+
+
 ○CupsuleTowerGenerator設計
-※Top40%
+※ハイラインデザイン
 ※カプセルタワースケール
 ※Gradation + Pattern + △Ramdomly
-・CorePattern
- -Grid
 ・HeightPattern
  -段々
-・△CupsulePattern
- -Empty
- -カラー
- -WindowSize
- -形態
+・CorePattern
+ -Grid
+・CupsulePattern
+ -EmptyPattern
 
 △カプセルシティ検証
 
-
-○PipeGeneratorStudy
 
 ○PipeGenerator検証
 ※Patternのみで検証
@@ -31,74 +51,37 @@
 ・△鉄骨
 
 
-○ArchitectureBaseStudy
+○ArchitectureBaseSurvey
 ※Patternを意識
 ・Curve
  -Gherkin
  -△ミラノ万博館
 
 
-●Columbia
-・Rock
-・ネオクラシカル
-・△植物
-・△水中表現
-
-●Rapture
-・Terrain + Rock
-・アールデコ
-・△空中表現
-
-
-○本
-・Pythonチュートリアル 第4版
-・生成AI時代のソフトウェア開発
-・Oxford Picture Dictionary
-
-○EnglishStudy
-※日本語から独立
-・独り言
-・単語帳(※英語のみで完結)
-
-
-○GerkinPatternビジュアル資料
-・幅アニメーション
-・生成アニメーション
-
-○Gerkin記事
-・プロシージャル検証
-・生成アニメーション
-
-
 ■Metaborithum
 ○CupsuleTowerGenerator設計
-※Top40%
-※Gradation + Pattern + △Ramdomly
+※ハイラインデザイン
 ※カプセルタワースケール
-・高さスケールを広大化
+※Gradation + Pattern + △Ramdomly
 ・HeightPattern
  -段々
-・CoreDesign
-・△CupsulePattern
- -Empty
- -カラー
- -WindowSize
- -形態
+・CorePattern
+ -Grid
+・CupsulePattern
+ -EmptyPattern
+
+△カプセルシティ検証
 
 
-○PipeGenerator実装
+○PipeGenerator検証
+※Patternのみで検証
 ※ポンピドゥーセンター参照
 ※凹凸
-・Pipe検証(PolyWire)
-
-△PipeGenerator検証
-※凹凸
-・Grid → Box
 
 ●PipePattern
-※Pipe + 鉄骨
 ・Greeble
 ・凹凸
+・△鉄骨
 
 
 ■ComputationalDesign
@@ -131,20 +114,24 @@
 ○ポルトガル館記事
 
 
-■USD
-○Referencing Layers
-・Qiita化
+■CityIdea
+●Columbia
+・Rock
+・ネオクラシカル
+・△植物
+・△水中表現
 
-○Converting Between Layer Formats
-・記事化
+●Rapture
+・Terrain + Rock
+・アールデコ
+・△空中表現
 
 
 ■Private
-○本斥候
-・英単語
- -※英語独立
-・技術本
- -AI(※オライリー)
+○本
+・Pythonチュートリアル 第4版
+・生成AI時代のソフトウェア開発
+・Oxford Picture Dictionary
  
 ○SFCソフト
 ・ドンキーコング
