@@ -1,29 +1,62 @@
-○サバゲー
+■メモ
+※PMの際はSudyすることを心掛ける
 
-○Public
-・19.5挙動確認
-　ー処理の調査
-・21.0挙動確認
-　ー比較
+○EnglishStudy
+※日本語から独立
+・独り言
+・単語帳(※英語のみで完結)
+
+○HoudiniStudy
+・Rigging
+・PipeGenerator
+ -Creating procedural pipes in Houdini tutorial. (https://www.youtube.com/watch?v=Ovj1m6pV1rE&list=PLia6jwJixV4h7k6apHfTpbJqhZGlopfmP&index=2)
+ 
+○USDStudy
+・記事化
+ -Referencing Layers
+ -Converting Between Layer Formats
+・Tutorial確認
 
 
-○HoudiniFoundation
-
-△Creating procedural pipes in Houdini tutorial.
-
-
-○GherkinPatternビジュアル資料
+○Gherkin記事
+・プロシージャル検証
 ・生成アニメーション
 
 
-△検証用PipeGenerator設計 + 実装
+○CupsulePattern設計 + 検証
+・空白
+・BaseHeight
+
+●CupsuleTowerGenerator設計
+※ハイラインデザイン
+※カプセルタワースケール
+※Gradation + Pattern + △Ramdomly
+・HeightPattern
+ -段々
+・CorePattern
+ -Grid
+・CupsulePattern
+ -EmptyPattern
+
+
+○検証用PipeGenerator設計 + 実装
+※Patternのみで検証
 ・PrimInput
 ・Pattern調整
 ・In or Out
 
-△CupsulePattern設計 + 検証
-・空白
-・BaseHeight
+●PipePattern
+※ポンピドゥーセンター参照
+・Greeble
+・凹凸
+・△鉄骨
+
+
+○ArchitectureBaseSurvey
+※Patternを意識
+・Curve
+ -Gherkin
+ -△ミラノ万博館
 
 
 ■Metaborithum
