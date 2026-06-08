@@ -9,7 +9,8 @@
 ○HoudiniStudy
 ・Rigging
 ・PipeGenerator
-
+ -Creating procedural pipes in Houdini tutorial. (https://www.youtube.com/watch?v=Ovj1m6pV1rE&list=PLia6jwJixV4h7k6apHfTpbJqhZGlopfmP&index=2)
+ 
 ○USDStudy
 ・記事化
  -Referencing Layers
