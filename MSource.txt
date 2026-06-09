@@ -1,47 +1,20 @@
-■メモ
-○EnglishStudy
-※日本語から独立
-・独り言
-・単語帳(※英語のみで完結)
+○Private
+・サバゲー
+・本
+・MateBookE
 
-○HoudiniStudy
-・Rigging
-・PipeGenerator
- 
-○USDStudy
-・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
-・記事化
- -Referencing Layers
- -Converting Between Layer Formats
-
-
-○Gherkin記事
-・プロシージャル検証
-・生成アニメーション
-
-
-○PipeGenerator検証
-※Patternのみで検証
-・PrimInput
-・斜めPattern
-・カラー
-・高さ
-・In or Out
+○Public
+・比較
 
 
 ○CupsulePattern検証
-・Core + 鉄骨
-・PatternEmpty
-・PatternHeight
+・鉄骨 + Core + Cupsule
+・縞々
 
+○PipeGeneratorブロック設計
+・左右対称
 
-○GherkinBaseLine検証
-・木組み
-
-○ArchitectureBaseSurvey
-※Patternを意識
-・Curve
- -Gherkin
+△ArchitectureBaseSurvey
 
 
 ■Metaborithum
