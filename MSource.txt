@@ -1,3 +1,23 @@
+○HighCity生成
+※TajimaCity参照
+
+○CupsulePattern検証
+・EmptyPattern
+
+○PipePattern検証
+・Greeble
+・Pipe + Empty
+
+
+○WoodPattern
+・SunnyHills
+・Tifanny
+
+○TPattern
+・蔦屋書店
+・Tifanny
+
+
 ■メモ
 ○EnglishStudy
 ※日本語から独立
