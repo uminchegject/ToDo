@@ -1,20 +1,49 @@
+■メモ
 ○Private
 ・サバゲー
 ・本
 ・MateBookE
 
-○Public
-・比較
+
+○EnglishStudy
+※日本語から独立
+・独り言
+・単語帳(※英語のみで完結)
+
+○HoudiniStudy
+・Rigging
+・PipeGenerator
+ 
+○USDStudy
+・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
+・記事化
+ -Referencing Layers
+ -Converting Between Layer Formats
+
+
+○Gherkin記事
+・プロシージャル検証
+・生成アニメーション
 
 
 ○CupsulePattern検証
 ・鉄骨 + Core + Cupsule
-・縞々
+・PatternEmpty
+・PatternHeight
 
-○PipeGeneratorブロック設計
+
+○PipeGenerator検証
+※Patternのみで検証
 ・左右対称
 
+
+○GherkinBaseLine検証
+・木組み
+
 △ArchitectureBaseSurvey
+※Patternを意識
+・Curve
+ -Gherkin
 
 
 ■Metaborithum
