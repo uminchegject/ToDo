@@ -1,6 +1,7 @@
-# USD Tuotorial --Over & Reference--
+# USD Totorial --Over & Reference--
 
 Pixarが開発したフォーマットである[USD(Universal Scene Description)](https://openusd.org/release/index.html)の[公式Tutorial](https://openusd.org/release/tut_usd_tutorials.html)の項目である[Referencing Layers](https://openusd.org/release/tut_referencing_layers.html)をもとに、非破壊的に情報を参照する方法について、Over と Reference の役割を解説するとともに、Python による実装方法についても説明します。
+
 ```
 #usda 1.0
 
@@ -23,12 +24,11 @@ over "refSphere2" (
 ```
 
 ## over
-`over` は、既に存在している Prim に対して、差分だけを非破壊で上書きするための仕組みです。
-これまで使用していた def は、Scene 上に実体を持つ Prim を定義するものであり、レンダリングや DCC ツールで読み込まれる対象になります。
-一方 `over` は、別レイヤーで定義された Prim に対して、後から設定を追加・変更するための Prim です。
-元データを直接編集するのではなく、位置・Visibility・Material などの設定だけを差分として重ねることで、非破壊に編集を行うことができます。
 
-サンプルソースだと HelloWorld.usda を参照した refSphere2 に対して、world Prim の displayColor だけを上書きしています。
+`over` は、既に存在している Prim に対して、差分だけを非破壊で上書きするための仕組みです。
+これまで使用していた def は、Scene 上に実体を持つ Prim を定義するものであり、レンダリングや DCC ツールで読み込まれる対象になります。一方 `over` は、別レイヤーで定義された Prim に対して、後から設定を追加・変更するための Prim です。
+元データを直接編集するのではなく、位置・Visibility・Material などの設定だけを差分として重ねることで、非破壊に編集を行うことができます。サンプルソースだと HelloWorld.usda を参照した refSphere2 に対して、world Prim の displayColor だけを上書きしています。
+
 ```
 over "refSphere2" (
     prepend references = @./HelloWorld.usda@
@@ -40,9 +40,10 @@ over "refSphere2" (
     }
 }
 ```
+
 この場合、元の HelloWorld.usda は変更されません。
-しかし、Compose 後の Stage では world Prim の色が赤 (1, 0, 0) に変更された状態として扱われます。
-また、次の例のように xformOpOrder を空にすることで、元アセットの Transform 情報を無効化することもできます。
+しかし、Compose 後の Stage では world Prim の色が赤 (1, 0, 0) に変更された状態として扱われます。また、次の例のように xformOpOrder を空にすることで、元アセットの Transform 情報を無効化することもできます。
+
 ```
 over "refSphere" (
     prepend references = @./HelloWorld.usda@
@@ -51,18 +52,17 @@ over "refSphere" (
     uniform token[] xformOpOrder = []
 }
 ```
+
 このように over は、「元データは保持したまま、一部だけ差し替えたい」という用途で非常に重要な仕組みです。
 
-
 ## refenrece
+
 `reference` は、別の USD ファイルを現在の Stage に読み込むための仕組みです。
-これはデータをコピーするのではなく、外部USDを参照として合成（Compose）する形で読み込みます。
-例えば、Tree.usda のようなアセットを Scene.usda に配置したい場合、`reference` を使用してアセットを読み込みます。
-参照元のUSDが更新された場合、その変更を参照先にも反映できるため、Prefab や外部アセット参照のような運用が可能になります。
-また、`reference` では通常、参照先USDの defaultPrim が入口として利用されます。
-そのため、「どのPrimをアセットの代表として扱うか」を defaultPrim に設定しておくことが重要になります。
+これはデータをコピーするのではなく、外部USDを参照として合成（Compose）する形で読み込みます。例えば、Tree.usda のようなアセットを Scene.usda に配置したい場合、`reference` を使用してアセットを読み込みます。参照元のUSDが更新された場合、その変更を参照先にも反映できるため、Prefab や外部アセット参照のような運用が可能になります。
+また、`reference` では通常、参照先USDの defaultPrim が入口として利用されます。そのため、「どのPrimをアセットの代表として扱うか」を defaultPrim に設定しておくことが重要になります。
 
 サンプルソースだと、以下の例では HelloWorld.usda を refSphere として読み込んでいます。
+
 ```
 over "refSphere" (
     prepend references = @./HelloWorld.usda@
@@ -71,9 +71,10 @@ over "refSphere" (
     uniform token[] xformOpOrder = []
 }
 ```
+
 prepend references に指定された @./HelloWorld.usda@ が外部USDファイルへの参照です。
-この記述により、HelloWorld.usda の内容が現在の Stage に合成され、refSphere 配下に展開されます。
-同様に、次の例でも HelloWorld.usda を参照していますが、こちらでは over を組み合わせて色だけを変更しています。
+この記述により、HelloWorld.usda の内容が現在の Stage に合成され、refSphere 配下に展開されます。同様に、次の例でも HelloWorld.usda を参照していますが、こちらでは over を組み合わせて色だけを変更しています。
+
 ```
 over "refSphere2" (
     prepend references = @./HelloWorld.usda@
@@ -85,17 +86,19 @@ over "refSphere2" (
     }
 }
 ```
+
 このように reference と over を組み合わせることで、
 
-* アセット本体は共通利用する
-* Sceneごとに見た目やTransformだけ変更する
-* 元データを壊さず差分管理する 
+- アセット本体は共通利用する
+- Sceneごとに見た目やTransformだけ変更する
+- 元データを壊さず差分管理する
 
 といった USD らしい非破壊ワークフローを実現できます。
 
-
 ## Pythonでの構築処理
+
 以上を踏まえて、実際にサンプルUSDを構築する手順を、以下のPythonコードをもとに解説します。
+
 ```
 from pxr import Usd, UsdGeom
 
@@ -117,7 +120,6 @@ UsdGeom.XformCommonAPI(helloXform).SetTranslate((4, 5, 6))
 
 helloStage.GetRootLayer().Save()
 
-
 # =========================================================
 # Reference Stage 作成
 # =========================================================
@@ -134,7 +136,6 @@ refSphere.GetReferences().AddReference("./HelloWorld.usda")
 refXform = UsdGeom.Xformable(refSphere)
 refXform.SetXformOpOrder([])
 
-
 # =========================================================
 # 2つ目の reference
 # =========================================================
@@ -147,7 +148,6 @@ refSphere2.GetReferences().AddReference("./HelloWorld.usda")
 overSphere = UsdGeom.Sphere.Get(refStage, "/refSphere2/world")
 overSphere.GetDisplayColorAttr().Set([(1, 0, 0)])
 
-
 # 保存
 refStage.GetRootLayer().Save()
 ```
@@ -155,7 +155,7 @@ refStage.GetRootLayer().Save()
 まず、`HelloWorld.usda` を生成します。
 reference で参照するため、`defaultPrim` も設定しておきます。
 
-```python id="4a3sm0"
+```python
 from pxr import Usd, UsdGeom
 
 helloStage = Usd.Stage.CreateNew("HelloWorld.usda")
@@ -176,7 +176,7 @@ helloStage.GetRootLayer().Save()
 
 参照する側の USD を作成し、override prim を定義します。
 
-```python id="cf4z1q"
+```python
 from pxr import Usd, UsdGeom
 
 refStage = Usd.Stage.CreateNew("RefExample.usda")
@@ -187,13 +187,13 @@ refSphere = refStage.OverridePrim("/refSphere")
 先ほど作成した `HelloWorld.usda` を reference します。
 `defaultPrim` を設定しているため、`/hello` が `/refSphere` に読み込まれます。
 
-```python id="1dlhvr"
+```python
 refSphere.GetReferences().AddReference("./HelloWorld.usda")
 ```
 
 reference した prim の Transform を override します。
 
-```python id="d8zvqq"
+```python
 refXform = UsdGeom.Xformable(refSphere)
 
 # 元の xformOp をクリア
@@ -202,7 +202,7 @@ refXform.SetXformOpOrder([])
 
 同じ要領で `HelloWorld.usda` を別 prim に reference し、今度は色情報を override します。
 
-```python id="1k4xmt"
+```python
 refSphere2 = refStage.OverridePrim("/refSphere2")
 
 refSphere2.GetReferences().AddReference("./HelloWorld.usda")
@@ -211,13 +211,13 @@ refSphere2.GetReferences().AddReference("./HelloWorld.usda")
 reference 元の `/hello/world` は、参照先では `/refSphere2/world` に展開されます。
 そのため、`/refSphere2/world` に対して `displayColor` を上書きします。
 
-```python id="cw5r8f"
+```python
 overSphere = UsdGeom.Sphere.Get(refStage, "/refSphere2/world")
 overSphere.GetDisplayColorAttr().Set([(1, 0, 0)])
 ```
 
 最後に保存します。
 
-```python id="o2r8rt"
+```python
 refStage.GetRootLayer().Save()
 ```
