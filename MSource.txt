@@ -1,34 +1,28 @@
-■メモ
 ○Private
 ・サバゲー
-・本
+　ー屋内
 ・MateBookE
 
-
-○USDStudy
-・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
-・記事化
- -Referencing Layers
- -Converting Between Layer Formats
-
-
-○Gherkin記事
-・プロシージャル検証
-・生成アニメーション
+○Public
+・整理
+　ーコメント
+　ー処理詳細調査
+・報告
 
 
-○HighCity生成
-※TajimaCity参照
+○HighCity検証準備
+・Volume生成
 
-○CupsulePattern検証
-・鉄骨 + Core + Cupsule
+○CupsulePattern検証準備
 ・EmptyPattern
-・△HeightPattern
 
-○PipePattern検証
-※Patternのみで検証
+○PipePattern検証準備
 ・Greeble
 ・Pipe + Empty
+
+
+△Gherkin記事化
+
 
 
 ■Metaborithum
