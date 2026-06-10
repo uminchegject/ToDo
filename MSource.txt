@@ -3,11 +3,6 @@
 ・サバゲー
  -屋内フィールド
 ・huawei smart magnetic keyboard
- -https://item.rakuten.co.jp/ryouhinkobo/huawei-smart-keyboard/
-
-
-○建築PMStudy
-・摩天楼(アールデコ)
 
 
 ○USDStudy
@@ -25,8 +20,6 @@
 ・東熱ビル
 ・ポルトガル館
 
-○青木淳Study
-
 
 ○CupsulePattern検証
 ・鉄骨 + Core + Cupsule
@@ -37,6 +30,12 @@
 ※Patternのみで検証
 ・Greeble
 ・Pipe + Empty
+
+
+○青木淳Study
+
+○建築PMStudy
+・摩天楼(アールデコ)
 
 
 ■Metaborithum
