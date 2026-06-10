@@ -1,6 +1,4 @@
 ■メモ
-※6時
-
 ○Private
 ・サバゲー
  -屋内フィールド
@@ -9,8 +7,7 @@
 
 
 ○建築PMStudy
-・アールデコ
-・モダンクラシック
+・摩天楼(アールデコ)
 
 
 ○USDStudy
@@ -23,6 +20,12 @@
 ○Gherkin記事化
 ・Notion
 ・Qiita
+
+○Noise検証ビジュアル資料
+・東熱ビル
+・ポルトガル館
+
+○青木淳Study
 
 
 ○CupsulePattern検証
@@ -76,14 +79,9 @@
 ○ポルトガル館記事
 
 
-○WoodPattern
-・SunnyHills
-・Tifanny
-
-
-○TPattern
-・蔦屋書店
-・Tifanny
+●青木淳
+・WoodPattern(SunnyHills)
+・TPattern(Tifanny)
 
 
 ■CityIdea
@@ -97,17 +95,6 @@
 ・Terrain + Rock
 ・アールデコ
 ・△空中表現
-
-
-■Private
-○本
-・Pythonチュートリアル 第4版
-・生成AI時代のソフトウェア開発
-・Oxford Picture Dictionary
- 
-○SFCソフト
-・ドンキーコング
-・シムシティ
 
 
 ■Study
@@ -142,6 +129,11 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
 
 
 ■ToDo
+○本
+・Pythonチュートリアル 第4版
+・生成AI時代のソフトウェア開発
+・Oxford Picture Dictionary
+
 ○旅行準備
 ・レンタカー
 ・サンライズ
