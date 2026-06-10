@@ -1,17 +1,9 @@
 ■反省
-※PMの際はSudyすることを心掛ける
+※PMの際はStudyすることを心掛ける
 
 ※Slackは通知から確認
 
 ※予約はキャンセルができるなら早めに
-
-※飲み会後にコメントを送る
-
-※細分化タスクはそれぞれ1項目ごとに集中して対応
- -Design(Pattern)
- -Design(City)
- -Make
- -Write
 
 ※Designタスクを最優先にする
  -タスクの軸にする
@@ -20,16 +12,10 @@
 
 
 ■CD(Tool)
-※Line + Pattern
 ※Pattern + Modeling
 ※検証はカラーのみでまず行う
 ※明確にモチーフを模写する
  -空間、形も模写する(シンプル)
-
-●PatternType
-・Point
-・Curve
-・Surface
 
 ●Flow
 ・PM化(検証)
@@ -77,56 +63,3 @@
 ・ComputetionalDesign
  -柔軟性(※Patternにフォーカスして変化をGif化する)
  -変化性(グラデーション)
-
-
-■Study
-●PFStudy
-※基礎ベース
-※簡単かつシンプルに
- -社内ベース(Tips共有会、Notion)
-・仕事Study(※メモ代わり)
- -USD Tutorials(https://openusd.org/release/tut_usd_tutorials.html)
-・趣味
- -CityProject
- -PatternProject
-
-●本Study
-※1日の目標を最初に決める
-※仕事のように目標を明確にする
-※CPとは差別化して考える
-※手を動かす(アウトプット)
-・H19.5 FOUNDATIONS BOOK
-https://www.sidefx.com/profile/rmagee/
-https://www.sidefx.com/ja/tutorials/foundations-terrain/
-・Mayaスターターブック
-https://itami.info/maya-starter-book
-
-●Private
-※2時間セット(作業 + 休憩)
- -※30分を目安にタスクを決める
-※2時間以上の時間ユニットをなくす
-※2時間以上昼寝の時間を設ける
- -12時には寝る
-※Privateタスクは前日夜か朝にカフェで整理する
- -PCタスクも一緒にやる(※家では極力避ける)
-※アイスコーヒーを積極的に飲む
-
-●Private旅行
-※旅行中は作業はせず、反省、タスク整理を行う
- -散歩中はスマホと本のみを持って散歩をし、帰ってきたらPCでまとめる
-※2時間Unit
- -昼寝 + 散歩(本斥候)
- -読書(夕日) + 散歩(夕飯)
- -映画 + 散歩(デザート)
- -散歩(朝食) + 読書
-※準備をする
- -本(BookOff)
- -映画
- -ゲーム
-※翌々日が休みの場合は午後に小旅行する
- -帰りはバスで座って帰る
-○本斥候
-・技術本
- -AI
-・啓発本
- -伝え方の本質

@@ -37,7 +37,6 @@
 ※カプセルタワースケール
 ※Gradation + Pattern + △Ramdomly
 ・HeightPattern
- -段々
 ・CorePattern
  -Grid
 ・CupsulePattern
@@ -51,11 +50,6 @@
 
 
 ■ComputationalDesign
-○Gerkin記事
-・プロシージャル検証
-・生成アニメーション
-
-
 ●東熱ビルPattern
 ・ルーパー角度
 ・色
