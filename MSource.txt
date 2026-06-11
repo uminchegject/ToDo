@@ -2,8 +2,6 @@
 ○Private
 ・サバゲー
  -屋内フィールド(パドック)
-・英漫画(Kindle)
- -Yotsuba&!
 
 
 ○USDStudy
@@ -18,31 +16,32 @@
 ・HipProject
 
 
-○Gherkin記事化
-・Notion
-・Qiita
+○※Noise検証メモ
 
 ○Noise検証ビジュアル資料
 ・東熱ビル
 ・ポルトガル館
 
+△Gherkin記事化
+・Notion(※見直し)
+・Qiita
+
 
 ○CupsulePattern検証
 ・鉄骨 + Core + Cupsule
-・EmptyPattern
+・EmptyPattern検証
 ・△HeightPattern
 
-○PipePattern検証
-※Patternのみで検証
-・Greeble
-・Pipe + Empty
+○※PipePattern検証
+・複雑化
 
-○アールデコPM
-・Volume
-・SimpleWindow
+
+△アールデコPM
+・VolumeToDetail(準備)
+ -SimpleWindow(Box)
+・Volume生成設計
 ・資料
  -Marvel’s Spider-Man(https://www.youtube.com/watch?v=D0ERCi9mMZg)
-
 
 △青木淳Study
 
