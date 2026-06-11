@@ -1,45 +1,22 @@
-■メモ
-○Private
-・サバゲー
- -屋内フィールド(パドック)
-・英漫画(Kindle)
+○City検証
+・CupsuleCity
+・PipeCity
 
 
-○USDStudy
-・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
- -記事メモ
-・記事化
- -Referencing Layers
- -Converting Between Layer Formats
+○モデリングStudy
+・本
+・HipProject
+
+○アールデコPM
+・Facadeモデリング調査
 
 
-○Gherkin記事化
-・Notion
-・Qiita
-
-○Noise検証ビジュアル資料
+○Noise検証
+※特徴的なNoiseを調査
 ・東熱ビル
-・ポルトガル館
-
-
-○CupsulePattern検証
-・鉄骨 + Core + Cupsule
-・EmptyPattern
-・△HeightPattern
-
-○PipePattern検証
-※Patternのみで検証
-・Greeble
-・Pipe + Empty
-
-
-○アールデコPM(ModelingStudy)
-・Bottom
- -Volume
-・Top
-
-
-△青木淳Study
+　ービジュアル
+・ポルト
+　ー揺れ
 
 
 ■Metaborithum
@@ -162,104 +139,3 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
 ○衣類整理
 ・クローゼット
  -ユニフォーム
- 
- 
-■Cupsule
-●set__height
-vector pos = v@P;
-float height_ratio = ch("height_ratio");
-float height_plus = ch("height_plus");
-
-float offset = int(pos.x + pos.z) % 3;
-float height = (height_plus + offset * 3) * height_ratio;
-v@scale = set(1, height, 1);
-
-
-●make__cupsule_points
-float height = v@scale.y;
-float unit_len = ch("unit_len");
-int max_unit_num = int(height / unit_len);
-
-int offset_num = chi("offset_num");
-int unit_num = max_unit_num - offset_num;
-
-for(int i = 0; i < unit_num; ++i){
-    vector spawn_pos = v@P;
-    spawn_pos.y += unit_len * i;
-    if((i + unit_num) % 6 < 2) continue;
-    int pt = addpoint(0, spawn_pos);
-    setpointattrib(0, "scale", pt, {1.0, 1.0, 1.0});
-}
-
-removepoint(0, @ptnum);
-
-
-■Tube
-●Make_BasePoint
-float bounds[] = primintrinsic(0, "bounds", @primnum);
-vector min_all = set(bounds[0], bounds[2], bounds[4]);
-vector max_all = set(bounds[1], bounds[3], bounds[5]);
-vector scale = max_all - min_all;
-if(scale.x < 0.001){
-    scale.x = max_all.z - min_all.z;
-    scale.z = max_all.x - min_all.x;
-}
-
-vector pos = v@P;
-
-int pt = addpoint(0, pos);
-setpointattrib(0, "N", pt, -v@N);
-setpointattrib(0, "scale", pt, scale);
-
-removeprim(0, i@primnum, 1);
-
-
-●MakeTube
-float bounds[] = primintrinsic(0, "bounds", @primnum);
-vector min_all = set(bounds[0], bounds[2], bounds[4]);
-vector max_all = set(bounds[1], bounds[3], bounds[5]);
-vector scale = max_all - min_all;
-vector pos = v@P;
-
-float base_offset_ratio = ch("base_offset_ratio");
-float randomly_offset_ratio = ch("randomly_offset_ratio");
-
-int tube_num = 4;
-float unit_width = scale.z / tube_num;
-for(int i = 0; i < tube_num; ++i){
-        vector base_pos = pos;
-        base_pos.z += unit_width * i - scale.z / 2 + unit_width / 2;
-        float offset_ratio = base_offset_ratio + randomly_offset_ratio * rand(base_pos);
-
-        vector pt1_pos = base_pos;
-        pt1_pos.x -= scale.x / 2 * (1 - offset_ratio);
-        pt1_pos.y = unit_width * 2;
-        int pt1 = addpoint(0, pt1_pos);
-        pt1_pos.y -= unit_width * 2;
-        int pt1_side = addpoint(0, pt1_pos);
-        
-        vector pt2_pos = base_pos;
-        pt2_pos.x += scale.x / 2 * (1 - offset_ratio);
-        pt2_pos.y += unit_width * 2;
-        int pt2 = addpoint(0, pt2_pos);
-        pt2_pos.y -= unit_width * 2;
-        
-        if(rand(base_pos * 10) < 0.2){
-            pt2_pos.y += unit_width * 4;
-        }
-        
-        int pt2_side = addpoint(0, pt2_pos);
-                
-        int prim = addprim(0, "polyline");
-        setprimgroup(0, "Horizontal", prim, 1);
-        addvertex(0, prim, pt1_side);
-        addvertex(0, prim, pt1);        
-        addvertex(0, prim, pt2);
-        addvertex(0, prim, pt2_side);
-        
-        float radius = unit_width * 3;
-        setpointattrib(0, "pscale", pt1, radius);
-        setpointattrib(0, "pscale", pt1_side, radius);
-        setpointattrib(0, "pscale", pt2, radius);
-        setpointattrib(0, "pscale", pt2_side, radius);
-}
