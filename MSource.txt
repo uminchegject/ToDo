@@ -1,22 +1,50 @@
-○City検証
-・CupsuleCity
-・PipeCity
+■メモ
+○Private
+・サバゲー
+ -屋内フィールド(パドック)
+・英漫画(Kindle)
+ -Yotsuba&!
 
+
+○USDStudy
+・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
+ -記事メモ
+・記事化
+ -Referencing Layers
+ -Converting Between Layer Formats
 
 ○モデリングStudy
 ・本
 ・HipProject
 
-○アールデコPM
-・Facadeモデリング調査
 
+○Gherkin記事化
+・Notion
+・Qiita
 
-○Noise検証
-※特徴的なNoiseを調査
+○Noise検証ビジュアル資料
 ・東熱ビル
-　ービジュアル
-・ポルト
-　ー揺れ
+・ポルトガル館
+
+
+○CupsulePattern検証
+・鉄骨 + Core + Cupsule
+・EmptyPattern
+・△HeightPattern
+
+○PipePattern検証
+※Patternのみで検証
+・Greeble
+・Pipe + Empty
+
+○アールデコPM
+・Volume
+・SimpleWindow
+・資料
+ -Marvel’s Spider-Man(https://www.youtube.com/watch?v=D0ERCi9mMZg)
+
+
+△青木淳Study
 
 
 ■Metaborithum
