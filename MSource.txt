@@ -1,12 +1,13 @@
 ■メモ
 ○Private
 ・サバゲー
- -屋内フィールド
-・huawei smart magnetic keyboard
+ -屋内フィールド(パドック)
+・英漫画(Kindle)
 
 
 ○USDStudy
 ・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
+ -記事メモ
 ・記事化
  -Referencing Layers
  -Converting Between Layer Formats
@@ -32,10 +33,13 @@
 ・Pipe + Empty
 
 
-○青木淳Study
+○アールデコPM(ModelingStudy)
+・Bottom
+ -Volume
+・Top
 
-○建築PMStudy
-・摩天楼(アールデコ)
+
+△青木淳Study
 
 
 ■Metaborithum
