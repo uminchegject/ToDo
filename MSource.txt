@@ -138,6 +138,7 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
 
 ■ToDo
 ○本
+※Kindleポイント
 ・Pythonチュートリアル 第4版
 ・生成AI時代のソフトウェア開発
 ・Oxford Picture Dictionary
