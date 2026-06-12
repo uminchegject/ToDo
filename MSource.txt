@@ -1,5 +1,7 @@
 ■メモ
 ○Private
+・ダーツ
+・勉強会
 ・サバゲー
  -屋内フィールド(パドック)
 
@@ -11,16 +13,23 @@
  -Referencing Layers
  -Converting Between Layer Formats
 
-○モデリングStudy
-・本
-・HipProject
+
+○勉強会準備(Rapture)
+※Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+
+△ビルジェネレーター(アールデコ)
+・Volume生成設計
+・VolumeToDetail
+ -SimpleWindow(Box)
+・資料
+ -Marvel’s Spider-Man(https://www.youtube.com/watch?v=D0ERCi9mMZg)
 
 
-○※Noise検証メモ
-
-○Noise検証ビジュアル資料
-・東熱ビル
-・ポルトガル館
+○Noise検証記事準備
+・ポルトガル館記事準備
+ -ポルトガル館資料用意
+ -△記事メモ
+・△東熱ビルカメラ検証
 
 △Gherkin記事化
 ・Notion(※見直し)
@@ -32,18 +41,13 @@
 ・EmptyPattern検証
 ・△HeightPattern
 
-○※PipePattern検証
+△※PipePattern検証
 ・複雑化
+ -Tube以外も凹凸化
 
-
-△アールデコPM
-・VolumeToDetail(準備)
- -SimpleWindow(Box)
-・Volume生成設計
-・資料
- -Marvel’s Spider-Man(https://www.youtube.com/watch?v=D0ERCi9mMZg)
 
 △青木淳Study
+・波Study
 
 
 ■Metaborithum
@@ -65,17 +69,6 @@
 
 
 ■ComputationalDesign
-●東熱ビルPattern
-・ルーパー角度
-・色
-
-○東熱ビルPatternビジュアル資料(各Noise)
-・NoiseOffsetアニメーション
-・カメラ角度アニメーション
-
-○東熱ビル記事
-
-
 ●ポルトガル館Pattern
 ・空間
 ・揺れ

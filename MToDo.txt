@@ -25,7 +25,6 @@
 ・Randomly
 
 ●IDEA
-※PatternのBase
 ・ルイヴィトン美術館(grasshopper)
  -RandomlyBox
  -Panel(Voronoi)
