@@ -1,53 +1,15 @@
-■メモ
 ○Private
-・ダーツ
-・勉強会
-・サバゲー
- -屋内フィールド(パドック)
+・サバゲー予約
+ -パドック
+ -東京サバゲーパーク
 
 
-○USDStudy
-・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
- -記事メモ
-・記事化
- -Referencing Layers
- -Converting Between Layer Formats
-
-
-○勉強会準備(Rapture)
-※Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
-
-△ビルジェネレーター(アールデコ)
-・Volume生成設計
-・VolumeToDetail
- -SimpleWindow(Box)
-・資料
- -Marvel’s Spider-Man(https://www.youtube.com/watch?v=D0ERCi9mMZg)
-
-
-○Noise検証記事準備
-・ポルトガル館記事準備
- -ポルトガル館資料用意
- -△記事メモ
-・△東熱ビルカメラ検証
-
-△Gherkin記事化
-・Notion(※見直し)
-・Qiita
+○TerrainStudy
+・HoudiniFaundation
+・Houdiniで街のある景観をつくる
 
 
 ○CupsulePattern検証
-・鉄骨 + Core + Cupsule
-・EmptyPattern検証
-・△HeightPattern
-
-△※PipePattern検証
-・複雑化
- -Tube以外も凹凸化
-
-
-△青木淳Study
-・波Study
 
 
 ■Metaborithum
