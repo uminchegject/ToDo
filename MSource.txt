@@ -7,13 +7,10 @@
 ・テライン設計
 ・ビルジェネレーター設計
  -Volume生成設計
- VolumeToDetail(SimpleWindow)
+ -VolumeToDetail(SimpleWindow)
 
 
 ○CupsulePattern検証
-・鉄骨 + Core + Cupsule
-・EmptyPattern検証
-・△HeightPattern
 
 ●CupsuleTower設計
 ※ハイラインデザイン
@@ -21,24 +18,22 @@
 ※Gradation + Pattern + △Ramdomly
 ・HeightPattern
 ・CorePattern
- -Grid
 ・CupsulePattern
  -EmptyPattern
 
 
 ○PipePattern検証
-・複雑化
- -Tube以外も凹凸化
+・全接地
+・ミルフィーユ状
 
 ●PompiduCenter設計
 ※ポンピドゥーセンター参照
-・Greeble
 ・凹凸
 ・△鉄骨
 
 
 ○青木淳Study
-・波Study
+・PatternStudy(波Study)
 
 
 ○Noise検証記事準備
