@@ -34,6 +34,7 @@
 
 ○青木淳Study
 ・PatternStudy(波Study)
+・BaseLine生成
 
 
 ○Noise検証記事準備
