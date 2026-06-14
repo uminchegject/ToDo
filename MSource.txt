@@ -14,48 +14,29 @@
 ・Marvel’s Spider-Man, meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
 
 
+●Traversing
+・Traversingの種類
+・実例
+
 ○USDStudy
 ・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
- -記事メモ
 ・記事化
  -Referencing Layers
  -Converting Between Layer Formats 
 
 
-○Noise検証記事準備
-・記事メモ
-・ビジュアル資料
+○ポルトガル館
+・模写
+・検証(Noise)
 
-●ポルトガル館
-・空間
-・揺れ
-
-●東熱ビル
-・視覚化
+○東熱ビル
+・模写
+・検証(Noise)
 
 
 △Gherkin記事化
 ・Notion(※見直し)
 ・Qiita
-
-
-○CupsulePattern検証
-
-●ポルトガル館
-・空間
-・揺れ
-
-●東熱ビル
-・視覚化
-
-●CupsuleTower設計
-※ハイラインデザイン
-※カプセルタワースケール
-※Gradation + Pattern + △Ramdomly
-・HeightPattern
-・CorePattern
-・CupsulePattern
- -EmptyPattern
 
 
 ○PipePattern検証
@@ -66,6 +47,18 @@
 ※ポンピドゥーセンター参照
 ・凹凸
 ・△鉄骨
+
+
+○CupsulePattern検証
+
+●CupsuleTower設計
+※ハイラインデザイン
+※カプセルタワースケール
+※Gradation + Pattern + △Ramdomly
+・HeightPattern
+・CorePattern
+・CupsulePattern
+ -EmptyPattern
 
 
 △青木淳Study
