@@ -3,14 +3,50 @@
 ・サバゲー予約
 
 
-○Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
-・テライン設計
-・ビルジェネレーター設計
- -Volume生成設計
- -VolumeToDetail(SimpleWindow)
+○テライン実装
+
+○ビルジェネレーター設計
+・Volume生成設計
+・VolumeToDetail(SimpleWindow)
+
+●資料
+・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+・Marvel’s Spider-Man, meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
+
+
+○USDStudy
+・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
+ -記事メモ
+・記事化
+ -Referencing Layers
+ -Converting Between Layer Formats 
+
+
+○Noise検証記事準備
+・記事メモ
+・ビジュアル資料
+
+●ポルトガル館
+・空間
+・揺れ
+
+●東熱ビル
+・視覚化
+
+
+△Gherkin記事化
+・Notion(※見直し)
+・Qiita
 
 
 ○CupsulePattern検証
+
+●ポルトガル館
+・空間
+・揺れ
+
+●東熱ビル
+・視覚化
 
 ●CupsuleTower設計
 ※ハイラインデザイン
@@ -32,56 +68,34 @@
 ・△鉄骨
 
 
-○青木淳Study
+△青木淳Study
 ・PatternStudy(波Study)
 ・BaseLine生成
 
 
-○Noise検証記事準備
-・記事メモ
-・ビジュアル資料
-
-
-△Gherkin記事化
-・Notion(※見直し)
-・Qiita
-
-△USDStudy
-・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
- -記事メモ
-・記事化
- -Referencing Layers
- -Converting Between Layer Formats 
-
-
 ■Metaborithum
-●CupsuleTower
+●CupsuleTower設計
 ※ハイラインデザイン
 ※カプセルタワースケール
 ※Gradation + Pattern + △Ramdomly
 ・HeightPattern
 ・CorePattern
- -Grid
 ・CupsulePattern
  -EmptyPattern
 
-●PipePattern
+●PompiduCenter設計
 ※ポンピドゥーセンター参照
-・Greeble
 ・凹凸
 ・△鉄骨
 
 
 ■ComputationalDesign
-●ポルトガル館Pattern
+●ポルトガル館
 ・空間
 ・揺れ
 
-○ポルトガル館Patternビジュアル資料(各Noise)
-・揺れアニメーション
-
-○ポルトガル館記事
-
+●東熱ビル
+・視覚化
 
 ●青木淳
 ・WoodPattern(SunnyHills)
@@ -164,20 +178,3 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
 ○衣類整理
 ・クローゼット
  -ユニフォーム
- 
- 
-■ソース
-●make__Cupsule_Basepoint
-float height = v@scale.y;
-float unit_len = ch("unit_len");
-int max_unit_num = int(height / unit_len);
-
-for(int i = 0; i < max_unit_num; ++i){
-    vector spawn_pos = v@P;
-    spawn_pos.y += unit_len * i;
-    if((int(i * 0.3) + @ptnum % 3) % 3 != 0) continue;
-    int pt = addpoint(0, spawn_pos);
-    setpointattrib(0, "scale", pt, {1.0, 1.0, 1.0});
-}
-
-removepoint(0, @ptnum);
