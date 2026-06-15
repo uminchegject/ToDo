@@ -4,6 +4,7 @@
 
 
 ○テライン実装
+・Volume配置
 
 ○ビルジェネレーター設計
 ・Volume生成設計
@@ -12,6 +13,8 @@
 ●資料
 ・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
 ・Marvel’s Spider-Man, meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
+・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
+・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
 
 
 ●Traversing
