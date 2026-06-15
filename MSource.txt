@@ -1,72 +1,18 @@
-■メモ
 ○Private
-・サバゲー予約
+・サバゲー報告
+・CEDEC確認
 
+○Public
+・SpeedTreeTutorial
+・MayaPlugin挙動確認
 
 ○テライン実装
-・Volume配置
-
-○ビルジェネレーター設計
-・Volume生成設計
-・VolumeToDetail(SimpleWindow)
-
-●資料
-・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
-・Marvel’s Spider-Man, meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
-・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
-・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
-
-
-●Traversing
-・Traversingの種類
-・実例
-
-○USDStudy
-・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
-・記事化
- -Referencing Layers
- -Converting Between Layer Formats 
-
-
-○ポルトガル館
-・模写
-・検証(Noise)
-
-○東熱ビル
-・模写
-・検証(Noise)
-
-
-△Gherkin記事化
-・Notion(※見直し)
-・Qiita
+※コンセプトアート模写
 
 
 ○PipePattern検証
 ・全接地
 ・ミルフィーユ状
-
-●PompiduCenter設計
-※ポンピドゥーセンター参照
-・凹凸
-・△鉄骨
-
-
-○CupsulePattern検証
-
-●CupsuleTower設計
-※ハイラインデザイン
-※カプセルタワースケール
-※Gradation + Pattern + △Ramdomly
-・HeightPattern
-・CorePattern
-・CupsulePattern
- -EmptyPattern
-
-
-△青木淳Study
-・PatternStudy(波Study)
-・BaseLine生成
 
 
 ■Metaborithum
