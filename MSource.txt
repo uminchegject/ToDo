@@ -3,8 +3,14 @@
 ・サバゲー予約
 
 
+○テラインStudy
+・Mask
+・HeightFieldScatter
+
 ○テライン実装
-・Volume配置
+・Mask調整
+・HeightFieldScatter
+ -分布 + footprint
 
 ○ビルジェネレーター設計
 ・Volume生成設計
@@ -15,6 +21,37 @@
 ・Marvel’s Spider-Man, meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
 ・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
 ・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
+
+
+○VerticalGreeble検証
+・Tube
+・Box
+
+●PompiduCenter設計
+※ポンピドゥーセンター参照
+・凹凸
+・△鉄骨
+
+
+○CupsuleTowerTop検証
+・RandomlyHeight
+ -Block
+・Core + Cupsule
+ -Tops
+
+●CupsuleTower設計
+※ハイラインデザイン
+※カプセルタワースケール
+※Gradation + Pattern + △Ramdomly
+・HeightPattern
+・CorePattern
+・CupsulePattern
+ -EmptyPattern
+
+
+△青木淳Study
+・PatternStudy(波Study)
+・BaseLine生成
 
 
 ●Traversing
@@ -40,33 +77,6 @@
 △Gherkin記事化
 ・Notion(※見直し)
 ・Qiita
-
-
-○PipePattern検証
-・全接地
-・ミルフィーユ状
-
-●PompiduCenter設計
-※ポンピドゥーセンター参照
-・凹凸
-・△鉄骨
-
-
-○CupsulePattern検証
-
-●CupsuleTower設計
-※ハイラインデザイン
-※カプセルタワースケール
-※Gradation + Pattern + △Ramdomly
-・HeightPattern
-・CorePattern
-・CupsulePattern
- -EmptyPattern
-
-
-△青木淳Study
-・PatternStudy(波Study)
-・BaseLine生成
 
 
 ■Metaborithum
@@ -99,16 +109,16 @@
 
 
 ■CityIdea
+●Rapture
+・Terrain + Rock
+・アールデコ
+・△空中表現
+
 ●Columbia
 ・Rock
 ・ネオクラシカル
 ・△植物
 ・△水中表現
-
-●Rapture
-・Terrain + Rock
-・アールデコ
-・△空中表現
 
 
 ■Study
