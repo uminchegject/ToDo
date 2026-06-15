@@ -8,7 +8,8 @@
 
 ○テライン実装
 ※コンセプトアート模写
-
+・Volume配置検証
+ -mask + scatter
 
 ○PipePattern検証
 ・全接地
