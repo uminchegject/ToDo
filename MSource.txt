@@ -1,5 +1,6 @@
 ■メモ
 ○Private
+・Houdini会準備
 ・サバゲー報告
 ・CEDEC確認
 
@@ -9,7 +10,6 @@
 ・vfx、gameデータ構造比較(usd)
 ・SpeedTreeImporter.py確認
 
-
 ○USDStudy
 ・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
 ・記事化
@@ -17,11 +17,11 @@
  -Converting Between Layer Formats 
 
 
-○ポルトガル館
+△ポルトガル館
 ・模写
 ・検証(Noise)
 
-○東熱ビル
+△東熱ビル
 ・模写
 ・検証(Noise)
 
@@ -31,7 +31,43 @@
 ・Qiita
 
 
+○VerticalGreeble検証
+・RandomlyRemove
+・RandomlyLength
+ -Turn
+
+●PompiduCenter設計
+※ポンピドゥーセンター参照
+・凹凸
+・△鉄骨
+
+
+○CupsuleTowerBlock検証
+・RandomlyBlockHeight
+・BlockPattern
+ -BlockEmpty
+
+●CupsuleTower設計
+※塊
+※ハイラインデザイン
+※カプセルタワースケール
+※Gradation + Pattern + △Ramdomly
+・TopDesign
+ -斜め
+ -段々
+・Pattern
+ -HeightPattern
+ -CorePattern
+ -CupsulePattern
+  -EmptyPattern
+
+
 ○rapture模写(terrain)
+
+○ミルフィー検証
+・4隅Box
+ -スケール(Offset)
+ -Height
 
 ○ビルジェネレーター設計
 ・Volume生成設計
@@ -45,50 +81,9 @@
 ・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
 
 
-○VerticalGreeble検証
-
-●PompiduCenter設計
-※ポンピドゥーセンター参照
-・凹凸
-・△鉄骨
-
-
-○CupsuleTowerTop検証
-・TopDesign
- -斜め
- -段々
-・TopBase
- -Core + Cupsule
-
-●CupsuleTower設計
-※ハイラインデザイン
-※カプセルタワースケール
-※Gradation + Pattern + △Ramdomly
-・HeightPattern
-・CorePattern
-・CupsulePattern
- -EmptyPattern
-
-
 △青木淳Study
 ・PatternStudy(波Study)
 ・BaseLine生成
-
-
-■Metaborithum
-●CupsuleTower設計
-※ハイラインデザイン
-※カプセルタワースケール
-※Gradation + Pattern + △Ramdomly
-・HeightPattern
-・CorePattern
-・CupsulePattern
- -EmptyPattern
-
-●PompiduCenter設計
-※ポンピドゥーセンター参照
-・凹凸
-・△鉄骨
 
 
 ■ComputationalDesign
@@ -151,7 +146,6 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
 ■ToDo
 ○本
 ※Kindleポイント
-・Pythonチュートリアル 第4版
 ・生成AI時代のソフトウェア開発
 ・Oxford Picture Dictionary
 
