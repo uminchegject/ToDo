@@ -1,6 +1,37 @@
+■メモ
 ○Private
 ・サバゲー報告
 ・CEDEC確認
+
+
+●Traversing
+・Traversingの種類
+ -実例
+stage.Traverse()	一般的な走査
+stage.TraverseAll()	Inactive含め全取得
+Usd.PrimRange()	任意Prim以下を走査
+Usd.PrimRange.PreAndPostVisit()	入退場イベント取得
+stage.GetPseudoRoot()	ステージ全体のルート取得
+
+○USDStudy
+・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
+・記事化
+ -Referencing Layers
+ -Converting Between Layer Formats 
+
+
+○ポルトガル館
+・模写
+・検証(Noise)
+
+○東熱ビル
+・模写
+・検証(Noise)
+
+
+△Gherkin記事化
+・Notion(※見直し)
+・Qiita
 
 
 ○テラインStudy
@@ -9,8 +40,10 @@
 
 ○テライン実装
 ・Mask調整
+ -低傾斜
+ -建物分布Noise
 ・HeightFieldScatter
- -分布 + footprint
+ -Noise値を反映した分布
 
 ○ビルジェネレーター設計
 ・Volume生成設計
@@ -53,31 +86,6 @@
 △青木淳Study
 ・PatternStudy(波Study)
 ・BaseLine生成
-
-
-●Traversing
-・Traversingの種類
-・実例
-
-○USDStudy
-・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
-・記事化
- -Referencing Layers
- -Converting Between Layer Formats 
-
-
-○ポルトガル館
-・模写
-・検証(Noise)
-
-○東熱ビル
-・模写
-・検証(Noise)
-
-
-△Gherkin記事化
-・Notion(※見直し)
-・Qiita
 
 
 ■Metaborithum
