@@ -1,27 +1,78 @@
+■メモ
+○Private
+・サバゲー報告
+・CEDEC確認
+
 ○Public
-・デフォルト状態での各フォーマットの挙動確認
-　ー挙動結果&比較ドキュメント
-・問題点の整理
+・importing to mayaドキュメント確認(https://docs.unity3d.com/speedtree-modeler/manual/import-to-maya.html)
+・挙動結果まとめ(比較)
+・vfx、gameデータ構造比較(usd)
+・SpeedTreeImporter.py確認
 
 
-○テライン実装
-・Mask調整
- -低傾斜(maskbyfeature)
- -建物分布Noise(masknoise + remap)
-・HeightFieldScatter
- -Noise値を反映した分布
+○USDStudy
+・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
+・記事化
+ -Referencing Layers
+ -Converting Between Layer Formats 
+
+
+○ポルトガル館
+・模写
+・検証(Noise)
+
+○東熱ビル
+・模写
+・検証(Noise)
+
+
+△Gherkin記事化
+・Notion(※見直し)
+・Qiita
+
+
+○rapture模写(terrain)
+
+○ビルジェネレーター設計
+・Volume生成設計
+ -Offset + Offset
+・VolumeToDetail(SimpleWindow)
+
+●資料
+・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+・Marvel’s Spider-Man, meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
+・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
+・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
 
 
 ○VerticalGreeble検証
-・Tube
-・Box
+
+●PompiduCenter設計
+※ポンピドゥーセンター参照
+・凹凸
+・△鉄骨
+
 
 ○CupsuleTowerTop検証
-・RandomlyHeight
- -Block
-・Core + Cupsule
- -Tops
+・TopDesign
+ -斜め
+ -段々
+・TopBase
+ -Core + Cupsule
 
+●CupsuleTower設計
+※ハイラインデザイン
+※カプセルタワースケール
+※Gradation + Pattern + △Ramdomly
+・HeightPattern
+・CorePattern
+・CupsulePattern
+ -EmptyPattern
+
+
+△青木淳Study
+・PatternStudy(波Study)
+・BaseLine生成
 
 
 ■Metaborithum
