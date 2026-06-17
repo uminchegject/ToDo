@@ -7,11 +7,11 @@
 ○Public
 ・ソース確認
 ・ドキュメント
-　ー処理概要
-　ー検証結果
+ ー処理概要
+ ー検証結果
 ・問題整理
-　ーUSD
-　ー透過
+ ーUSD
+ ー透過
 
 
 ○Traversing a Stageメモ
@@ -41,32 +41,31 @@
 ・検証(Noise)
 
 
-○Foundation整理
-・Height Field による地形の形状変更
-　ーheightfield
-　ーnoise
-　ーblur
-　ーdistort
-・マスクレイヤーの追加と視覚化
-　ーmaskbyfeature
-　ーremap
-　ーvisualize
-・地形にポイントをばら撒く
-　ーscatter
-
 ○rapture模写(terrain)
+・ノード整理
+ -説明向け
 ・terrain色付け
-　ー海底模写
+ -海底模写
 
+○説明資料用意
+・Height Field による地形の形状変更
+ -heightfield
+ -noise
+ -blur
+ -distort
+・マスクレイヤーの追加と視覚化
+ -maskbyfeature
+ -remap
+ -visualize
+・地形にポイントをばら撒く
+ -scatter
 
-○ミルフィーユ検証
-・4隅Box
- -スケール(Offset)
- -Height
+○Offset検証
+・4ScalingBox
 
 ○ビルジェネレーター設計
 ・Volume生成設計
- -Offset + Offset
+ -Offset
 ・VolumeToDetail(SimpleWindow)
 
 ●資料
@@ -127,15 +126,15 @@
 
 ■CityIdea
 ●Rapture
-・Terrain + Rock
-・アールデコ
-・△空中表現
-
-●Columbia
 ・Rock
 ・ネオクラシカル
 ・△植物
 ・△水中表現
+
+●Columbia
+・Terrain + Rock
+・アールデコ
+・△空中表現
 
 
 ■Study
@@ -180,14 +179,6 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
 ・サンライズ
 ・サプライズケーキ
 
-○SFC準備
-・ソフト(※激選)
- -ドンキーコング
- -SimCity
-・△fiioイヤホンコード(※長め)
- -イヤホン リケーブル 2pin 0.78
-・△コントローラー
-
 ○東京都ポイント
 
 ○ダイエット
@@ -226,3 +217,83 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
 それは19世紀から世界を征服することになったコンクリートと鉄による重たいカタマリとしての建築にかわる、
 生き物のように自由で軽やかな建築である。
 海の国であるポルトガルと日本を架け渡すことによって、新しく自由でヒューマンな建築を創造したいと夢みたのである。
+
+
+■ソース
+●Tube
+float bounds[] = primintrinsic(0, "bounds", @primnum);
+vector min_all = set(bounds[0], bounds[2], bounds[4]);
+vector max_all = set(bounds[1], bounds[3], bounds[5]);
+vector scale = max_all - min_all;
+
+float height = rand(v@P) * 10;
+
+int tube_num = int(scale.x / scale.z);
+float tube_radius = scale.z * 2;
+float unit_len = scale.x / tube_num;
+
+for(int i = 0; i < tube_num; ++i){
+
+    vector pos = v@P;
+    pos.x -= scale.x / 2 - unit_len / 2;
+    pos.x += unit_len * i;
+    int pt1 = addpoint(0, pos);
+    setpointattrib(0, "pscale", pt1, tube_radius);
+    pos.y += height;
+    int pt2 = addpoint(0, pos);
+    setpointattrib(0, "pscale", pt2, tube_radius);
+	setpointgroup(0, "top", pt2, 1);
+    int prim = addprim(0, "polyline");
+    setprimgroup(0, "Horizontal", prim, 1);
+    addvertex(0, prim, pt1);        
+    addvertex(0, prim, pt2);    
+}
+
+
+●Base
+float bounds[] = primintrinsic(0, "bounds", @primnum);
+vector min_all = set(bounds[0], bounds[2], bounds[4]);
+vector max_all = set(bounds[1], bounds[3], bounds[5]);
+vector base_scale = max_all - min_all;
+vector pos = v@P;
+
+float unit_size = ch("unit_size");
+float height = rand(v@P) * 10 + 10;
+
+int unit_num_x = int(base_scale.x / unit_size);
+int unit_num_z = int(base_scale.z / unit_size);
+float unit_size_x = base_scale.x / unit_num_x;
+float unit_size_z = base_scale.z / unit_num_z;
+vector scale = set(unit_size_x, height, unit_size_z);
+
+for(int x_idx = 0; x_idx < unit_num_x; x_idx++)
+{
+    for(int z_idx = 0; z_idx < unit_num_z; z_idx++)
+    {
+        vector spawn_pos = pos;
+        spawn_pos.x += base_scale.x / 2 - (x_idx + 0.5) * unit_size_x;
+        spawn_pos.z += base_scale.z / 2 - (z_idx + 0.5) * unit_size_z;
+                        
+        int pt = addpoint(0, spawn_pos);
+        setpointattrib(0, "scale", pt, scale);
+    }
+}
+removeprim(0, i@primnum, 1);
+
+
+●Cupsule
+float height = v@scale.y;
+float unit_size = ch("unit_size");
+
+int unit_num = int(height / unit_size);
+int block_num = int(rand(v@P) * 4 + 2);
+
+for(int i = 0; i < unit_num; ++i){
+    vector spawn_pos = v@P;
+    spawn2_pos.y += unit_size * i;
+	if(int(i / block_num) % 3 != 0) continue;
+    int pt = addpoint(0, spawn_pos);
+    setpointattrib(0, "scale", pt, {1.0, 1.0, 1.0});
+}
+
+removepoint(0, @ptnum);
