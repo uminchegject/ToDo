@@ -5,10 +5,10 @@
 ・CEDEC確認
 
 ○Public
-・importing to mayaドキュメント確認(https://docs.unity3d.com/speedtree-modeler/manual/import-to-maya.html)
+・○SpeedTreeImporter.py確認
+ -シェーダー、マテリアル情報について調査
 ・挙動結果まとめ(比較)
 ・vfx、gameデータ構造比較(usd)
-・SpeedTreeImporter.py確認
 
 ○USDStudy
 ・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
@@ -17,11 +17,17 @@
  -Converting Between Layer Formats 
 
 
-△ポルトガル館
+○ポルトガル館概要整理
+※記事のテーマを整理
+
+○ポルトガル館
+・概要
+ -公式(https://kkaa.co.jp/project/expo-2025-portugal-pavilion/)
 ・模写
 ・検証(Noise)
 
 △東熱ビル
+・※設計意図の確認
 ・模写
 ・検証(Noise)
 
@@ -29,6 +35,29 @@
 △Gherkin記事化
 ・Notion(※見直し)
 ・Qiita
+
+
+○rapture模写(terrain)
+・FaundationBase
+ -説明準備
+・terrain色付け
+ -海底模写
+
+○ミルフィー検証
+・4隅Box
+ -スケール(Offset)
+ -Height
+
+○ビルジェネレーター設計
+・Volume生成設計
+ -Offset + Offset
+・VolumeToDetail(SimpleWindow)
+
+●資料
+・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+・Marvel’s Spider-Man, meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
+・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
+・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
 
 
 ○VerticalGreeble検証
@@ -60,25 +89,6 @@
  -CorePattern
  -CupsulePattern
   -EmptyPattern
-
-
-○rapture模写(terrain)
-
-○ミルフィー検証
-・4隅Box
- -スケール(Offset)
- -Height
-
-○ビルジェネレーター設計
-・Volume生成設計
- -Offset + Offset
-・VolumeToDetail(SimpleWindow)
-
-●資料
-・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
-・Marvel’s Spider-Man, meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
-・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
-・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
 
 
 △青木淳Study
@@ -176,7 +186,7 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
  -ユニフォーム
  
  
-■Traversing a Stage 記事メモ
+■記事メモ
 ●stage.Traverse()
 `Usd.Stage.Traverse()` は、USDステージ内の Prim を深さ優先順で巡回するためのジェネレータです。
 最も基本的なステージ走査方法であり、Python のジェネレータとして扱えるため、特定の型の Prim だけを抽出するなどのフィルタリングも簡単に行えます。
@@ -207,3 +217,28 @@ Predicate（条件）を指定することで、Active な Prim のみ、Loaded 
 
 つまり、Usd.Stage.Traverse() が「ステージ全体を手軽に巡回するための高レベル API」であるのに対し、
 Usd.PrimRange() は「巡回範囲や条件を細かく制御するための低レベルで柔軟な API」と言えます。特定の階層だけを対象にした処理や、大規模シーンの最適化、カスタムな走査条件が必要な場合に利用されます。
+
+
+●ポルトガル館概要
+・海を建築として表現
+・ロープを用いて海という自然事態を身体感覚として実感できるような場所
+・ロープによって透過と反射を繰り返す光
+・ロープ自体を揺らし、振動させ、波動、振動の集積体である海を表現
+・動き続け、振動し続ける、いままでにはないタイプの建築
+
+ポルトガルは日本と同じように海の国であり、大航海時代にはカラベル船を始めとする美しい帆船で世界の海を走り廻り、
+種子島に、西洋（鉄砲）の文明をもたらし、日本を西洋に対して開いたのもポルトガル人である。
+
+その海という存在自体が感じられる海のパビリオンを、瀬戸内海に浮かぶ島である万博会場に出現させたいと思った。
+海は山と違って形というものがないので、海を建築として表現することは容易ではないが、やりがいのある目標だった。
+大航海時代の帆船の重要な道具のひとつであったロープを用いて、
+海という自然自体を身体感覚として実感できるような場所　―形態ではなく―　を作ることを思いついた。
+太さが微妙に異なる無数に吊るされたロープの間を吹き抜ける風、
+そのロープによって透過と反射を繰り返す光が、海という状態を作り出すのである。
+しかもその風はロープ自体を時にゆっくりと揺らし、時に細かく振動させ、波動、振動の集積体である海という場所が、そこに生成されるのである。
+
+建築というものは、通常はしっかりと固定された、重くて固いヴォリュームだと考えられてきたが、
+ポルトガル館は、動き続け、振動し続ける、いままでにはないタイプの建築である。
+それは19世紀から世界を征服することになったコンクリートと鉄による重たいカタマリとしての建築にかわる、
+生き物のように自由で軽やかな建築である。
+海の国であるポルトガルと日本を架け渡すことによって、新しく自由でヒューマンな建築を創造したいと夢みたのである。
