@@ -1,24 +1,79 @@
+■メモ
 ○Private
 ・Houdini会準備
-・サバゲー報告
+・サブウェイ
 ・CEDEC確認
-・耳栓
-
 
 ○Public
-・ドキュメントメモ
-　ーインストール手順
-　ーインポート処理概要
+・ソース確認
+・ドキュメント
+　ー処理概要
+　ー検証結果
+・問題整理
+　ーUSD
+　ー透過
+
+
+○Traversing a Stageメモ
+・概要
+・例
+・ドキュメント読み直し
+
+○USDStudy
+・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
+・記事化
+ -Referencing Layers
+ -Converting Between Layer Formats 
+
+
+○ポルトガル館概要整理
+※記事のテーマを整理
+
+○ポルトガル館
+・概要
+ -公式(https://kkaa.co.jp/project/expo-2025-portugal-pavilion/)
+・模写
+・検証(Noise)
+
+△東熱ビル
+・※設計意図の確認
+・模写
+・検証(Noise)
 
 
 ○Foundation整理
 ・Height Field による地形の形状変更
+　ーheightfield
+　ーnoise
+　ーblur
+　ーdistort
 ・マスクレイヤーの追加と視覚化
+　ーmaskbyfeature
+　ーremap
+　ーvisualize
 ・地形にポイントをばら撒く
+　ーscatter
 
 ○rapture模写(terrain)
 ・terrain色付け
 　ー海底模写
+
+
+○ミルフィーユ検証
+・4隅Box
+ -スケール(Offset)
+ -Height
+
+○ビルジェネレーター設計
+・Volume生成設計
+ -Offset + Offset
+・VolumeToDetail(SimpleWindow)
+
+●資料
+・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+・Marvel’s Spider-Man, meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
+・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
+・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
 
 
 ○VerticalGreeble検証
@@ -26,15 +81,35 @@
 ・RandomlyLength
  -Turn
 
+●PompiduCenter設計
+※ポンピドゥーセンター参照
+・凹凸
+・△鉄骨
+
+
 ○CupsuleTowerBlock検証
 ・RandomlyBlockHeight
 ・BlockPattern
  -BlockEmpty
 
-△ミルフィー検証
-・4隅Box
- -スケール(Offset)
- -Height
+●CupsuleTower設計
+※塊
+※ハイラインデザイン
+※カプセルタワースケール
+※Gradation + Pattern + △Ramdomly
+・TopDesign
+ -斜め
+ -段々
+・Pattern
+ -HeightPattern
+ -CorePattern
+ -CupsulePattern
+  -EmptyPattern
+
+
+△青木淳Study
+・PatternStudy(波Study)
+・BaseLine生成
 
 
 ■ComputationalDesign
