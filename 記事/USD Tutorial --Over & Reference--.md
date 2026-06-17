@@ -1,4 +1,4 @@
-# USD Totorial --Over & Reference--
+# USD Tutorial --Over & Reference--
 
 Pixarが開発したフォーマットである[USD(Universal Scene Description)](https://openusd.org/release/index.html)の[公式Tutorial](https://openusd.org/release/tut_usd_tutorials.html)の項目である[Referencing Layers](https://openusd.org/release/tut_referencing_layers.html)をもとに、非破壊的に情報を参照する方法について、Over と Reference の役割を解説するとともに、Python による実装方法についても説明します。
 

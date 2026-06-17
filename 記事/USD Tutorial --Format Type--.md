@@ -1,4 +1,4 @@
-# USD Tuotorial --Format Type--
+# USD Tutorial --Format Type--
 USDには複数の保存形式が存在し、それぞれに特徴があります。
 その中で下記3つのフォーマットについて説明します。
 
