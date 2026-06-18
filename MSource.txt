@@ -1,17 +1,19 @@
 ■メモ
 ○Private
+・サバゲー確認
 ・Houdini会準備
 ・サブウェイ
 ・CEDEC確認
 
 ○Public
 ・ソース確認
-・ドキュメント
- ー処理概要
- ー検証結果
+・処理概要(ドキュメント)
+ -Python処理(reader)
+・検証結果(ドキュメント)
+ -表(パラメーター, 出力結果)
 ・問題整理
  ーUSD
- ー透過
+ ー△透過
 
 
 ○Traversing a Stageメモ
@@ -110,6 +112,7 @@
 △青木淳Study
 ・PatternStudy(波Study)
 ・BaseLine生成
+
 
 
 ■ComputationalDesign
