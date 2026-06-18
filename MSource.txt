@@ -4,14 +4,8 @@
 ・CEDEC確認
 
 ○Public
-・ソース確認
-・処理概要(ドキュメント)
- -Python処理(reader)
-・検証結果(ドキュメント)
- -表(パラメーター, 出力結果)
-・問題整理
- ーUSD
- ー△透過
+・USD調査
+・ドキュメント整理
 
 
 ○Traversing a Stageメモ
@@ -77,9 +71,6 @@
 
 
 ○VerticalGreeble検証
-・RandomlyRemove
-・RandomlyLength
- -Turn
 
 ●PompiduCenter設計
 ※ポンピドゥーセンター参照
@@ -88,9 +79,6 @@
 
 
 ○CupsuleTowerBlock検証
-・RandomlyBlockHeight
-・BlockPattern
- -BlockEmpty
 
 ●CupsuleTower設計
 ※塊
@@ -110,7 +98,6 @@
 △青木淳Study
 ・PatternStudy(波Study)
 ・BaseLine生成
-
 
 
 ■ComputationalDesign
