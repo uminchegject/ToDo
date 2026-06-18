@@ -1,3 +1,9 @@
+○Tube
+・BlockLayer
+
+○Cupsule
+・GradationRandomlyRemove
+
 ■メモ
 ○Private
 ・Houdini会準備
