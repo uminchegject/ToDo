@@ -1,3 +1,18 @@
+○City検証準備
+・TopGradationRandomlyRemove
+・Core, Cupsule 独立
+
+○PipeWall
+・BlockPipeGenerator
+ -Pipe(ミルフィーユ)
+ -鉄骨
+・Pattern
+
+○建物Generator(rapture)
+・オフセット検証
+・Randomly検証
+
+
 ■メモ
 ○Private
 ・Houdini会準備
