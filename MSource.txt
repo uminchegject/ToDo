@@ -1,9 +1,3 @@
-○Tube
-・BlockLayer
-
-○Cupsule
-・GradationRandomlyRemove
-
 ■メモ
 ○Private
 ・Houdini会準備
@@ -76,15 +70,24 @@
 ・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
 
 
-○VerticalGreeble検証
+○Pipe + 鉄骨検証
+・鉄骨Block
+・Block内レイヤーブロック
+・鉄骨サンドイッチ
+
+○凹凸設計
+・ミルフィーユ構造
+ -Pipe
+ -鉄骨
+ -BoxObject
 
 ●PompiduCenter設計
 ※ポンピドゥーセンター参照
 ・凹凸
-・△鉄骨
 
 
 ○CupsuleTowerBlock検証
+・GradationRandomlyRemove
 
 ●CupsuleTower設計
 ※塊
