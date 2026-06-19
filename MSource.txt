@@ -1,6 +1,8 @@
 ■メモ
 ○Private
 ・Houdini会準備
+ -pinterest
+ -google
 ・CEDEC確認
 
 ○Public
@@ -35,41 +37,6 @@
 ・検証(Noise)
 
 
-○rapture模写(terrain)
-・ノード整理
- -説明向け
-・terrain色付け
- -海底模写
-
-○説明資料用意
-・Height Field による地形の形状変更
- -heightfield
- -noise
- -blur
- -distort
-・マスクレイヤーの追加と視覚化
- -maskbyfeature
- -remap
- -visualize
-・地形にポイントをばら撒く
- -scatter
-
-○Offset検証
-・4ScalingBox
- -各軸ベースに交互にスケーリング
-
-○ビルジェネレーター設計
-・Volume生成設計
- -Offset
-・VolumeToDetail(SimpleWindow)
-
-●資料
-・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
-・Marvel’s Spider-Man, meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
-・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
-・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
-
-
 ○Pipe + 鉄骨検証
 ・鉄骨Block
 ・Block内レイヤーブロック
@@ -87,7 +54,7 @@
 
 
 ○CupsuleTowerBlock検証
-・GradationRandomlyRemove
+・TopGradationRandomlyRemove
 
 ●CupsuleTower設計
 ※塊
@@ -102,6 +69,22 @@
  -CorePattern
  -CupsulePattern
   -EmptyPattern
+
+
+○Offset検証
+・4ScalingBox
+ -各軸ベースに交互にスケーリング
+
+○ビルジェネレーター設計
+・Volume生成設計
+ -Offset
+・VolumeToDetail(SimpleWindow)
+
+●資料
+・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+・Marvel’s Spider-Man, meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
+・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
+・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
 
 
 △青木淳Study
