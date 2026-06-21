@@ -1,28 +1,9 @@
-○City検証準備
-・TopGradationRandomlyRemove
-・Core, Cupsule 独立
-
-○PipeWall
-・BlockPipeGenerator
- -Pipe(ミルフィーユ)
- -鉄骨
-・Pattern
-
-○建物Generator(rapture)
-・オフセット検証
-・Randomly検証
-
-
 ■メモ
 ○Private
 ・Houdini会準備
  -pinterest
  -google
 ・CEDEC確認
-
-○Public
-・USD調査
-・ドキュメント整理
 
 
 ○Traversing a Stageメモ
@@ -53,22 +34,21 @@
 
 
 ○Pipe + 鉄骨検証
-・鉄骨Block
-・Block内レイヤーブロック
-・鉄骨サンドイッチ
+・BlockPipeGenerator(Block内レイヤーブロック)
+ -Pipe(ミルフィーユ)
+ -鉄骨
+・Pattern
 
-○凹凸設計
+●凹凸設計
 ・ミルフィーユ構造
  -Pipe
  -鉄骨
  -BoxObject
 
-●PompiduCenter設計
-※ポンピドゥーセンター参照
-・凹凸
-
 
 ○CupsuleTowerBlock検証
+※City検証準備
+・Core, Cupsule 独立
 ・TopGradationRandomlyRemove
 
 ●CupsuleTower設計
@@ -86,18 +66,19 @@
   -EmptyPattern
 
 
-○Offset検証
-・4ScalingBox
+○建物検証(rapture)
+・オフセット検証
  -各軸ベースに交互にスケーリング
+・Randomly検証
 
-○ビルジェネレーター設計
+●ビルジェネレーター設計
 ・Volume生成設計
  -Offset
 ・VolumeToDetail(SimpleWindow)
 
 ●資料
 ・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
-・Marvel’s Spider-Man, meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
+・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
 ・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
 ・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
 
