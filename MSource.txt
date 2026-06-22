@@ -6,39 +6,43 @@
  -本
  -椅子
 ・CEDEC準備
- -確認
+ -TANight確認
 
 
 ○public
-・normalの調査
+・usdaの調査
 
 
 ○mcpStudy
-・処理レビュー
-・ノード整理
-　ーコメント
-
+※処理レビュー & ノード整理(コメント)
+・rag
 
 ○USD Tutorial --Over & Reference--発表準備
+・非破壊編集
 
-○Traversing a Stageメモ
+△Traversing a Stageメモ
 ・概要
 ・例
 ・ドキュメント読み直し
 
-○USDStudy
+●USDStudy
 ・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
 ・記事化
  -Referencing Layers
  -Converting Between Layer Formats 
 
 
-○ポルトガル館概要整理
+△ポルトガル館概要整理
 ※記事のテーマを整理
 
-○ポルトガル館
+●ポルトガル館
 ・概要
  -公式(https://kkaa.co.jp/project/expo-2025-portugal-pavilion/)
+・模写
+・検証(Noise)
+
+●東熱ビル
+・※設計意図の確認
 ・模写
 ・検証(Noise)
 
@@ -96,12 +100,6 @@
 △青木淳Study
 ・PatternStudy(波Study)
 ・BaseLine生成
-
-
-△東熱ビル
-・※設計意図の確認
-・模写
-・検証(Noise)
 
 
 ■ComputationalDesign
