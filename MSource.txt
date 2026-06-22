@@ -5,7 +5,18 @@
  -モバイルバッテリー
  -本
  -椅子
-・CEDEC確認
+・CEDEC準備
+ -確認
+
+
+○public
+・normalの調査
+
+
+○mcpStudy
+・処理レビュー
+・ノード整理
+　ーコメント
 
 
 ○USD Tutorial --Over & Reference--発表準備
@@ -31,15 +42,9 @@
 ・模写
 ・検証(Noise)
 
-△東熱ビル
-・※設計意図の確認
-・模写
-・検証(Noise)
-
 
 ○CupsuleTowerBlock検証
-・TopGradationRandomlyRemove検証
- -CupsuleごとにPack + Remove
+・高低差をつけて検証
 
 ●CupsuleTower設計
 ※塊
@@ -56,14 +61,15 @@
   -EmptyPattern
 
 
-○Pipe + 鉄骨検証
-・BlockPipeGenerator
- -Pipe(ミルフィーユ)
-  -BaseLine生成
-  -レイヤーブロック
-  -高さ設定
- -鉄骨
-・BlockPattern
+○Pipe + 鉄骨検証(BlockPipeGenerator)
+・パラメーター
+ -Height
+・鉄骨
+ -HeightUnit
+ -CopyToPoint
+・Pipe
+ -BaseLine
+ -HeightBlockLayer
 
 ●凹凸設計
 ・ミルフィーユ構造
@@ -72,15 +78,13 @@
  -BoxObject
 
 
-○建物検証(rapture)
-・オフセット検証
- -各軸ベースに交互にスケーリング
-・Randomly検証
-
-●ビルジェネレーター設計
-・Volume生成設計
- -Offset
-・VolumeToDetail(SimpleWindow)
+○オフセット検証
+※4隅Boxスケーリング
+・各軸ベースに交互にスケーリング
+・Scale
+ -Width(Offset)
+ -Depth(凹)
+・Randomly
 
 ●資料
 ・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
@@ -92,6 +96,12 @@
 △青木淳Study
 ・PatternStudy(波Study)
 ・BaseLine生成
+
+
+△東熱ビル
+・※設計意図の確認
+・模写
+・検証(Noise)
 
 
 ■ComputationalDesign
