@@ -1,10 +1,14 @@
 ■メモ
 ○Private
-・Houdini会準備
- -pinterest
- -google
+・サンライズ準備
+ -動画ダウンロード
+ -モバイルバッテリー
+ -本
+ -椅子
 ・CEDEC確認
 
+
+○USD Tutorial --Over & Reference--発表準備
 
 ○Traversing a Stageメモ
 ・概要
@@ -33,23 +37,9 @@
 ・検証(Noise)
 
 
-○Pipe + 鉄骨検証
-・BlockPipeGenerator(Block内レイヤーブロック)
- -Pipe(ミルフィーユ)
- -鉄骨
-・Pattern
-
-●凹凸設計
-・ミルフィーユ構造
- -Pipe
- -鉄骨
- -BoxObject
-
-
 ○CupsuleTowerBlock検証
-※City検証準備
-・Core, Cupsule 独立
-・TopGradationRandomlyRemove
+・TopGradationRandomlyRemove検証
+ -CupsuleごとにPack + Remove
 
 ●CupsuleTower設計
 ※塊
@@ -64,6 +54,22 @@
  -CorePattern
  -CupsulePattern
   -EmptyPattern
+
+
+○Pipe + 鉄骨検証
+・BlockPipeGenerator
+ -Pipe(ミルフィーユ)
+  -BaseLine生成
+  -レイヤーブロック
+  -高さ設定
+ -鉄骨
+・BlockPattern
+
+●凹凸設計
+・ミルフィーユ構造
+ -Pipe
+ -鉄骨
+ -BoxObject
 
 
 ○建物検証(rapture)
