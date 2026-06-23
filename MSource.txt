@@ -1,4 +1,7 @@
 ■メモ
+※午前中読んで午後復習
+ -Python本
+
 ○Private
 ・CEDEC準備
  -TANight確認
@@ -14,12 +17,12 @@ https://docs.unity3d.com/speedtree-runtime-sdk/manual/index.html
 
 ●Public
 ・修正内容
-　ーnormals[]
-　ーinterpolation = "vertex"
+ -normals[]
+ -interpolation = "vertex"
 ・解決案
-　ーspeedtree
-　ーusd(fileformatplugin)
-　ーmaya
+ -speedtree
+ -usd(fileformatplugin)
+ -maya
 
 
 ○mcpStudy
@@ -31,9 +34,6 @@ https://docs.unity3d.com/speedtree-runtime-sdk/manual/index.html
 ※Designとは離す
 ※現場に求められているもの
 
-
-○USD Tutorial --Over & Reference--発表準備
-・非破壊編集
 
 △Traversing a Stageメモ
 ・概要
@@ -63,6 +63,13 @@ https://docs.unity3d.com/speedtree-runtime-sdk/manual/index.html
 
 
 ○CupsuleTowerBlock検証
+・多重層
+
+○CupsuleDetail実装
+・配置
+・Core(斜め)
+・鉄骨(斜め)
+・カプセル
 
 ●CupsuleTower設計
 ※下からの視点
@@ -82,14 +89,8 @@ https://docs.unity3d.com/speedtree-runtime-sdk/manual/index.html
 
 
 ○Pipe + 鉄骨検証(BlockPipeGenerator)
-・パラメーター
- -Height
-・鉄骨
- -HeightUnit
- -CopyToPoint
-・Pipe
- -BaseLine
- -HeightBlockLayer
+・ミルフィーユ構造検証
+ -Pipe + 鉄骨
 
 ●凹凸設計
 ・ミルフィーユ構造
@@ -98,13 +99,9 @@ https://docs.unity3d.com/speedtree-runtime-sdk/manual/index.html
  -BoxObject
 
 
-○オフセット検証
-※4隅Boxスケーリング
-・各軸ベースに交互にスケーリング
-・Scale
- -Width(Offset)
- -Depth(凹)
-・Randomly
+○建築Pattern検証
+・凹凸検証
+ -Randomly
 
 ●資料
 ・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
@@ -116,7 +113,6 @@ https://docs.unity3d.com/speedtree-runtime-sdk/manual/index.html
 △青木淳Study
 ・PatternStudy(波Study)
 ・BaseLine生成
-
 
 
 ■ComputationalDesign
@@ -146,6 +142,10 @@ https://docs.unity3d.com/speedtree-runtime-sdk/manual/index.html
 
 
 ■Study
+○本
+・Python Tutorial
+・生成AI時代のソフトウェア開発
+
 ○USDStudy
 ・USD Tutorials(https://openusd.org/release/tut_usd_tutorials.html)
 ・USD Examples
@@ -179,7 +179,6 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
 ■ToDo
 ○本
 ※Kindleポイント
-・生成AI時代のソフトウェア開発
 ・Oxford Picture Dictionary
 
 ○旅行準備
@@ -251,7 +250,6 @@ width_unit = block_width / width_unit_num;
 
 
 ●オフセット検証
-※4隅Boxスケーリング
 ・各軸ベースに交互にスケーリング
 ・Scale
  -Width(Offset)
