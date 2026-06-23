@@ -1,4 +1,14 @@
-○Public
+■メモ
+○Private
+・CEDEC準備
+ -TANight確認
+
+
+○SpeedTree SDK Study
+・SpeedTree Runtime SDK 10 User Manual
+https://docs.unity3d.com/speedtree-runtime-sdk/manual/index.html
+
+●Public
 ・修正内容
 　ーnormals[]
 　ーinterpolation = "vertex"
@@ -8,15 +18,101 @@
 　ーmaya
 
 
+○mcpStudy
+※処理レビュー & ノード整理(コメント)
+※grasshopper
+・rag
+
+○grasshopperツール
+※Designとは離す
+※現場に求められているもの
+
+
+○USD Tutorial --Over & Reference--発表準備
+・非破壊編集
+
+△Traversing a Stageメモ
+・概要
+・例
+・ドキュメント読み直し
+
+●USDStudy
+・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
+・記事化
+ -Referencing Layers
+ -Converting Between Layer Formats 
+
+
+△ポルトガル館概要整理
+※記事のテーマを整理
+
+●ポルトガル館
+・概要
+ -公式(https://kkaa.co.jp/project/expo-2025-portugal-pavilion/)
+・模写
+・検証(Noise)
+
+●東熱ビル
+・※設計意図の確認
+・模写
+・検証(Noise)
+
 
 ○CupsuleTowerBlock検証
-・高低差をつけて検証
 
-○Pipe + 鉄骨検証
-・BasePoint, BaseLine生成処理
+●CupsuleTower設計
+※下からの視点
+※塊
+※ハイラインデザイン
+※カプセルタワースケール
+※Gradation + Pattern + △Ramdomly
+・TopDesign
+ -斜め
+ -段々
+・Pattern
+ -斜め
+ -HeightPattern
+ -CorePattern
+ -CupsulePattern
+  -EmptyPattern
+
+
+○Pipe + 鉄骨検証(BlockPipeGenerator)
+・パラメーター
+ -Height
+・鉄骨
+ -HeightUnit
+ -CopyToPoint
+・Pipe
+ -BaseLine
+ -HeightBlockLayer
+
+●凹凸設計
+・ミルフィーユ構造
+ -Pipe
+ -鉄骨
+ -BoxObject
+
 
 ○オフセット検証
-・BasePoint生成処理
+※4隅Boxスケーリング
+・各軸ベースに交互にスケーリング
+・Scale
+ -Width(Offset)
+ -Depth(凹)
+・Randomly
+
+●資料
+・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
+・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
+・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
+
+
+△青木淳Study
+・PatternStudy(波Study)
+・BaseLine生成
+
 
 
 ■ComputationalDesign
@@ -126,3 +222,46 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
 生き物のように自由で軽やかな建築である。
 海の国であるポルトガルと日本を架け渡すことによって、新しく自由でヒューマンな建築を創造したいと夢みたのである。
 
+
+■ソース
+●Pipe + 鉄骨検証(BlockPipeGenerator)
+・パラメーター
+ -Height
+・鉄骨
+ -HeightUnit
+ -CopyToPoint
+・Pipe
+ -BaseLine
+ -HeightBlockLayer
+
+float block_height = 
+float height_unit = 
+
+int height_unit_num = int(block_height / height_unit);
+height_unit = block_height /height_unit_num;
+
+float block_width = 
+float width_unit = 
+int width_unit_num = int(block_width / width_unit);
+width_unit = block_width / width_unit_num;
+
+
+●オフセット検証
+※4隅Boxスケーリング
+・各軸ベースに交互にスケーリング
+・Scale
+ -Width(Offset)
+ -Depth(凹)
+・Randomly
+
+vector base_scale = 
+vector base_pos = 
+
+vector scale = base_scale;
+scale.x *= 0.4;
+
+vector block1_pos = base_pos;
+block1_pos.x += base_scale.x / 2;
+
+vector block2_pos = base_pos;
+block2_pos.y -= base_scale.x / 2;
