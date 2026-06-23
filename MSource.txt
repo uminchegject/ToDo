@@ -91,6 +91,8 @@ https://docs.unity3d.com/speedtree-runtime-sdk/manual/index.html
 ○Pipe + 鉄骨検証(BlockPipeGenerator)
 ・ミルフィーユ構造検証
  -Pipe + 鉄骨
+・多様
+ -In or Out
 
 ●凹凸設計
 ・ミルフィーユ構造
