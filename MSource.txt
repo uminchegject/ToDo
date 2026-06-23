@@ -2,8 +2,11 @@
 ・修正内容
 　ーnormals[]
 　ーinterpolation = "vertex"
-・fileformatpluginで他フォーマットから入れ替える
-　ーalembic検証
+・解決案
+　ーspeedtree
+　ーusd(fileformatplugin)
+　ーmaya
+
 
 
 ○CupsuleTowerBlock検証
