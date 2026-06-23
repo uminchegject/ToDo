@@ -1,10 +1,5 @@
 ■メモ
 ○Private
-・サンライズ準備
- -動画ダウンロード
- -モバイルバッテリー
- -本
- -椅子
 ・CEDEC準備
  -TANight確認
 
@@ -16,6 +11,7 @@
 ○mcpStudy
 ※処理レビュー & ノード整理(コメント)
 ・rag
+
 
 ○USD Tutorial --Over & Reference--発表準備
 ・非破壊編集
