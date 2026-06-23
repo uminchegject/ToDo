@@ -4,7 +4,11 @@
  -TANight確認
 
 
-○SpeedTree SDK Study
+○custom formats Study
+・Exporting custom formats
+https://docs.unity3d.com/speedtree-modeler/manual/export-custom-formats.html
+
+△SpeedTree SDK Study
 ・SpeedTree Runtime SDK 10 User Manual
 https://docs.unity3d.com/speedtree-runtime-sdk/manual/index.html
 
