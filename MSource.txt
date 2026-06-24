@@ -35,7 +35,7 @@ https://docs.unity3d.com/speedtree-runtime-sdk/manual/index.html
 ※現場に求められているもの
 
 
-△Traversing a Stageメモ
+○Traversing a Stageメモ
 ・概要
 ・例
 ・ドキュメント読み直し
@@ -47,7 +47,7 @@ https://docs.unity3d.com/speedtree-runtime-sdk/manual/index.html
  -Converting Between Layer Formats 
 
 
-△ポルトガル館概要整理
+○ポルトガル館概要整理
 ※記事のテーマを整理
 
 ●ポルトガル館
