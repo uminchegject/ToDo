@@ -1,11 +1,72 @@
-○vertex → faceVarying 変換ツール
-・usd内で完結
-　ーvertex faceVarying それぞれの値の関連性を確認
-・他フォーマットから取得
+■メモ
+※午前中読んで午後復習
+ -Python本
+
+○Private
+・ノートパソコンUpdate
+・研修
+・CEDEC準備
+ -TANight確認
+
+
+○mcpStudy
+※処理レビュー & ノード整理(コメント)
+※grasshopper
+・rag
+
+○grasshopperツール
+※Designとは離す
+※現場に求められているもの
+
+
+●USDStudy
+・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
+・記事化
+ -Referencing Layers
+ -Converting Between Layer Formats 
+
+
+○ポルトガル館概要整理
+※記事のテーマを整理
+
+●ポルトガル館
+・概要
+ -公式(https://kkaa.co.jp/project/expo-2025-portugal-pavilion/)
+・模写
+・検証(Noise)
+
+●東熱ビル
+・※設計意図の確認
+・模写
+・検証(Noise)
 
 
 ○CupsuleTowerBlock検証
-・広大化
+・逆さ
+・Cupsule, Core, 分布設計
+
+○CupsuleDetail実装
+・配置
+・Core(斜め)
+・鉄骨(斜め)
+・カプセル
+
+●CupsuleTower設計
+※下からの視点
+※塊
+※ハイラインデザイン
+※カプセルタワースケール
+※Gradation + Pattern + △Ramdomly
+・TopDesign
+ -斜め
+ -段々
+・Pattern
+ -斜め
+ -HeightPattern
+ -CorePattern
+ -CupsulePattern
+  -EmptyPattern
+
 
 ○Pipe + 鉄骨検証(BlockPipeGenerator)
 ・レイヤー構造検証
@@ -13,10 +74,27 @@
 ・パイプ多様化
  -In or Out
 
+●凹凸設計
+・ミルフィーユ構造
+ -Pipe
+ -鉄骨
+ -BoxObject
+
+
 ○建築Pattern検証
 ・凹凸検証
  -Randomly
 
+●資料
+・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
+・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
+・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
+
+
+△青木淳Study
+・PatternStudy(波Study)
+・BaseLine生成
 
 
 ■ComputationalDesign
@@ -132,14 +210,8 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
 
 ■ソース
 ●Pipe + 鉄骨検証(BlockPipeGenerator)
-・パラメーター
- -Height
-・鉄骨
- -HeightUnit
- -CopyToPoint
-・Pipe
- -BaseLine
- -HeightBlockLayer
+・HeightLayer
+・In or Out
 
 float block_height = 
 float height_unit = 
@@ -152,6 +224,36 @@ float width_unit =
 int width_unit_num = int(block_width / width_unit);
 width_unit = block_width / width_unit_num;
 
+//Frame
+for(int x = 0; x < height_unit_num; x++){
+	vector pos = 0;
+	pos.y = x * height_unit;
+	
+	vector scale = 1;
+	scale.x = block_width;
+	scale.y = height_unit; 
+	
+	int pt = addpoint(0, pos);
+	setpointattrib(0, "scale", pt, scale);
+}
+
+//Pipe
+for(int x = 0; x < width_unit_num; x++){
+	
+	float height = rand(x) * block_height;
+	
+	float offset = (int(rand(x) * 3) % 3) * 2;
+	
+	vector pos = 0;
+	pos.z += offset;
+	
+	vector pt1_pos = pos;
+	pt1_pos.x = x * width_unit;
+	
+	vector pt2_pos = pos;
+	pt2_pos.x = x * width_unit;
+	pt2_pos.y += height;
+}
 
 ●オフセット検証
 ・各軸ベースに交互にスケーリング
@@ -160,14 +262,35 @@ width_unit = block_width / width_unit_num;
  -Depth(凹)
 ・Randomly
 
-vector base_scale = 
-vector base_pos = 
+for(int i = 0; i < 5; ++i)
+{
+	vector base_scale = 1 - i * 0.1;
+	vector base_pos = 0
+	toggle = 1;
 
-vector scale = base_scale;
-scale.x *= 0.4;
+	if(toggle){
+		vector scale = base_scale;
+		scale.x *= 0.4;
 
-vector block1_pos = base_pos;
-block1_pos.x += base_scale.x / 2;
+		vector block1_pos = base_pos;
+		block1_pos.x += base_scale.x / 2;
+		int block1 = addpoint(0, block1_pos);
+		setpointattrib(0, "scale", block1, scale);
 
-vector block2_pos = base_pos;
-block2_pos.y -= base_scale.x / 2;
+		vector block2_pos = base_pos;
+		block2_pos.x -= base_scale.x / 2;
+		toggle = 0;
+	}
+	else{
+		vector scale = base_scale;
+		scale.z *= 0.4;
+
+		vector block1_pos = base_pos;
+		block1_pos.z += base_scale.z / 2;
+
+		vector block2_pos = base_pos;
+		block2_pos.z -= base_scale.z / 2;
+		toggle = 1;
+	}
+	
+}
