@@ -1,7 +1,4 @@
 ■メモ
-※午前中読んで午後復習
- -Python本
-
 ○Private
 ・ノートパソコンUpdate
 ・研修
@@ -82,8 +79,13 @@
 
 
 ○建築Pattern検証
-・凹凸検証
- -Randomly
+※凹凸検証
+・Patern
+ -DivideAxis
+・Randomly
+ -Height
+ -Offset
+ -DivideNum(or 4block)
 
 ●資料
 ・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
@@ -210,87 +212,89 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
 
 ■ソース
 ●Pipe + 鉄骨検証(BlockPipeGenerator)
-・HeightLayer
-・In or Out
-
-float block_height = 
-float height_unit = 
-
-int height_unit_num = int(block_height / height_unit);
-height_unit = block_height /height_unit_num;
-
-float block_width = 
-float width_unit = 
-int width_unit_num = int(block_width / width_unit);
-width_unit = block_width / width_unit_num;
+vector base_scale = 
+vector base_pos =
 
 //Frame
-for(int x = 0; x < height_unit_num; x++){
-	vector pos = 0;
-	pos.y = x * height_unit;
-	
-	vector scale = 1;
-	scale.x = block_width;
-	scale.y = height_unit; 
-	
-	int pt = addpoint(0, pos);
-	setpointattrib(0, "scale", pt, scale);
+float height_unit = ch("height_unit");
+int height_unit_num = int(base_scale.y / height_unit);
+height_unit = base_scale.y /height_unit_num;
+
+float width_unit = ch("width_unit");
+int width_unit_num = int(base_scale.x / width_unit);
+width_unit = base_scale.x / width_unit_num;
+
+for(int width_idx = 0; width_idx < width_unit_num; width_idx++){
+
+	for(int height_idx = 0; height_idx < height_unit_num; height_idx++){
+		vector pos = base_pos;
+		pos.x = (width_idx + 0.5) * width_unit - base_scale.x / 2;
+		pos.y = (height_idx + 0.5) * height_unit - base_scale.y / 2;
+		
+		vector scale = 1;
+		scale.x = width_unit;
+		scale.y = height_unit; 
+		
+		int pt = addpoint(0, pos);
+		setpointattrib(0, "scale", pt, scale);
+	}
 }
 
 //Pipe
-for(int x = 0; x < width_unit_num; x++){
+int layer_num = chi("layer_num");
+float pipe_unit = ch("pipe_unit");
+float pipe_unit_num = int(base_scale.x / pipe_unit);
+pipe_unit = base_scale.x / pipe_unit_num;
+
+
+for(int pipe_idx = 0; pipe_idx < pipe_unit; pipe_idx++){
 	
-	float height = rand(x) * block_height;
+	int layer_idx = int(rand(pipe_idx) * layer_num);
 	
-	float offset = (int(rand(x) * 3) % 3) * 2;
+	float height = rand(layer_idx) * base_scale.y;	
+	float offset = (int(rand(layer_idx) * layer_num) % layer_num) * 2;
 	
-	vector pos = 0;
+	vector pos = base_pos;
+	pos.y -= base_scale.y / 2;
+	pos.x += (pipe_idx + 0.5) * pipe_unit - base_scale.x / 2;
 	pos.z += offset;
 	
 	vector pt1_pos = pos;
-	pt1_pos.x = x * width_unit;
-	
 	vector pt2_pos = pos;
-	pt2_pos.x = x * width_unit;
 	pt2_pos.y += height;
+	int pt1 = addpoint(0, pt1_pos);
+	int pt2 = addpoint(0, pt2_pos);
+
+	int prim = addprim(0, "polyline");
+	addvertex(0, prim, pt1);
+	addvertex(0, prim, pt2);
 }
 
 ●オフセット検証
-・各軸ベースに交互にスケーリング
-・Scale
- -Width(Offset)
- -Depth(凹)
+・Patern
+ -DivideAxis
 ・Randomly
+ -Height
+ -Offset
+ -DivideNum(or 4block)
 
-for(int i = 0; i < 5; ++i)
-{
-	vector base_scale = 1 - i * 0.1;
-	vector base_pos = 0
-	toggle = 1;
+vector base_pos;
+vector base_scale;
+toggle;
 
-	if(toggle){
-		vector scale = base_scale;
-		scale.x *= 0.4;
+base_scale *= 0.2;
 
-		vector block1_pos = base_pos;
-		block1_pos.x += base_scale.x / 2;
-		int block1 = addpoint(0, block1_pos);
-		setpointattrib(0, "scale", block1, scale);
+if(toggle == 0){
+	vector scale = base_scale;
+	scale.x *= rand() * 0.2 + 0.4;
 
-		vector block2_pos = base_pos;
-		block2_pos.x -= base_scale.x / 2;
-		toggle = 0;
-	}
-	else{
-		vector scale = base_scale;
-		scale.z *= 0.4;
+	vector block1_pos = base_pos;
+	block1_pos.x += base_scale.x / 2;
+	int block1 = addpoint(0, block1_pos);
+	setpointattrib(0, "scale", block1, scale);
 
-		vector block1_pos = base_pos;
-		block1_pos.z += base_scale.z / 2;
-
-		vector block2_pos = base_pos;
-		block2_pos.z -= base_scale.z / 2;
-		toggle = 1;
-	}
-	
+	vector block2_pos = base_pos;
+	block2_pos.x -= base_scale.x / 2;
+	int block2 = addpoint(0, block2_pos);
+	setpointattrib(0, "scale", block2, scale);
 }
