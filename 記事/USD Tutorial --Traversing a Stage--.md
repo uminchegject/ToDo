@@ -1,4 +1,6 @@
 # USD Tuotorial --Traversing a Stage--
+USDにおける Traversing（ステージ内の Prim の走査・巡回）について解説します。
+本記事では、Usd.Stage.Traverse() と Usd.PrimRange() について説明します。
 
 ## Traverse()
 `Usd.Stage.Traverse()` は、USDステージ内の Prim を深さ優先順で巡回するためのジェネレータです。
@@ -13,6 +15,39 @@
 ただし、非アクティブ化された Prim の子要素は合成済みシーングラフ（composed scenegraph）から取り除かれるため、親 Prim は見えてもその子 Prim は存在しない場合があります。
 
 そのため、普段のシーン処理では `Traverse()` を使うことが多く、特定の Prim が見つからない原因を調査したり、USD の内部状態を確認したりするときには `TraverseAll()` を利用します。
+
+
+### 実装例
+ステージ全体を巡回して Prim のパスを出力する例です。
+```
+from pxr import Usd
+
+stage = Usd.Stage.Open("sample.usda")
+
+for prim in stage.Traverse():
+    print(prim.GetPath())
+```
+
+特定の型の Prim のみを取得する場合は、通常の Python コードと同様にフィルタリングできます。
+```
+from pxr import Usd, UsdGeom
+
+stage = Usd.Stage.Open("sample.usda")
+
+for prim in stage.Traverse():
+    if prim.IsA(UsdGeom.Mesh):
+        print(prim.GetPath())
+```
+
+非アクティブ Prim を含めて確認したい場合は TraverseAll() を利用します。
+```
+for prim in stage.TraverseAll():
+    print(
+        prim.GetPath(),
+        "active=",
+        prim.IsActive()
+    )
+```
 
 
 ## PrimRange()
@@ -31,3 +66,49 @@ Predicate（条件）を指定することで、Active な Prim のみ、Loaded 
 
 そのため、`Usd.Stage.Traverse()` が「ステージ全体を手軽に巡回するための高レベル API」であるのに対し、`Usd.PrimRange()` は「巡回範囲や条件を細かく制御するための低レベルで柔軟な API」と言えます。
 特定の階層だけを対象にした処理や、大規模シーンの最適化、カスタムな走査条件が必要な場合に利用されます。
+
+
+### 実装例
+特定の Prim 以下のみを巡回する例です。
+```
+from pxr import Usd
+
+stage = Usd.Stage.Open("sample.usda")
+
+root = stage.GetPrimAtPath("/World/Geo")
+
+for prim in Usd.PrimRange(root):
+    print(prim.GetPath())
+```
+
+Predicate を利用して巡回対象を制限することもできます。
+```
+from pxr import Usd
+
+root = stage.GetPseudoRoot()
+
+predicate = (
+    Usd.PrimIsActive &
+    Usd.PrimIsDefined &
+    Usd.PrimIsLoaded
+)
+
+for prim in Usd.PrimRange(root, predicate):
+    print(prim.GetPath())
+```
+
+また、不要な階層をスキップするために PruneChildren() を利用できます。
+```
+from pxr import Usd
+
+root = stage.GetPseudoRoot()
+
+iterator = iter(Usd.PrimRange(root))
+
+for prim in iterator:
+
+    if prim.GetName() == "Cache":
+        iterator.PruneChildren()
+
+    print(prim.GetPath())
+```

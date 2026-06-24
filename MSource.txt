@@ -1,120 +1,22 @@
-■メモ
-※午前中読んで午後復習
- -Python本
-
-○Private
-・CEDEC準備
- -TANight確認
-
-
-○custom formats Study
-・Exporting custom formats
-https://docs.unity3d.com/speedtree-modeler/manual/export-custom-formats.html
-
-△SpeedTree SDK Study
-・SpeedTree Runtime SDK 10 User Manual
-https://docs.unity3d.com/speedtree-runtime-sdk/manual/index.html
-
-●Public
-・修正内容
- -normals[]
- -interpolation = "vertex"
-・解決案
- -speedtree
- -usd(fileformatplugin)
- -maya
-
-
-○mcpStudy
-※処理レビュー & ノード整理(コメント)
-※grasshopper
-・rag
-
-○grasshopperツール
-※Designとは離す
-※現場に求められているもの
-
-
-○Traversing a Stageメモ
-・概要
-・例
-・ドキュメント読み直し
-
-●USDStudy
-・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
-・記事化
- -Referencing Layers
- -Converting Between Layer Formats 
-
-
-○ポルトガル館概要整理
-※記事のテーマを整理
-
-●ポルトガル館
-・概要
- -公式(https://kkaa.co.jp/project/expo-2025-portugal-pavilion/)
-・模写
-・検証(Noise)
-
-●東熱ビル
-・※設計意図の確認
-・模写
-・検証(Noise)
+○vertex → faceVarying 変換ツール
+・usd内で完結
+　ーvertex faceVarying それぞれの値の関連性を確認
+・他フォーマットから取得
 
 
 ○CupsuleTowerBlock検証
-・多重層
-
-○CupsuleDetail実装
-・配置
-・Core(斜め)
-・鉄骨(斜め)
-・カプセル
-
-●CupsuleTower設計
-※下からの視点
-※塊
-※ハイラインデザイン
-※カプセルタワースケール
-※Gradation + Pattern + △Ramdomly
-・TopDesign
- -斜め
- -段々
-・Pattern
- -斜め
- -HeightPattern
- -CorePattern
- -CupsulePattern
-  -EmptyPattern
-
+・広大化
 
 ○Pipe + 鉄骨検証(BlockPipeGenerator)
-・ミルフィーユ構造検証
+・レイヤー構造検証
  -Pipe + 鉄骨
-・多様
+・パイプ多様化
  -In or Out
-
-●凹凸設計
-・ミルフィーユ構造
- -Pipe
- -鉄骨
- -BoxObject
-
 
 ○建築Pattern検証
 ・凹凸検証
  -Randomly
 
-●資料
-・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
-・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
-・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
-・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
-
-
-△青木淳Study
-・PatternStudy(波Study)
-・BaseLine生成
 
 
 ■ComputationalDesign
