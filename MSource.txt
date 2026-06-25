@@ -1,16 +1,85 @@
+■メモ
+※朝は基本インプットのみ
+ -メモを確認後、さらにピックアップして整理する
+ 
 ○Private
 ・ノートパソコンUpdate
 ・研修
 ・CEDEC準備
  -TANight確認
 
-○Public
-・見直し
-・報告
-
 
 ○mcp検証準備
 ・プロジェクトソース調査
+　ー関数名把握
+
+○mcpStudy
+※処理レビュー & ノード整理(コメント)
+※grasshopper
+
+○grasshopperツール
+※Designとは離す
+※現場に求められているもの
+
+
+●USDStudy
+・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
+・記事化
+ -Referencing Layers
+ -Converting Between Layer Formats 
+
+
+○ポルトガル館概要整理
+※記事のテーマを整理
+
+●ポルトガル館
+・概要
+ -公式(https://kkaa.co.jp/project/expo-2025-portugal-pavilion/)
+・模写
+・検証(Noise)
+
+●東熱ビル
+・※設計意図の確認
+・模写
+・検証(Noise)
+
+
+○Cupsule配置ロジック設計
+・Block内でさらにBlockを用意
+
+○CupsuleDetail実装
+・配置
+・Core(斜め)
+・鉄骨(斜め)
+・カプセル
+
+●CupsuleTower設計
+※下からの視点
+※塊
+※ハイラインデザイン
+※カプセルタワースケール
+※Gradation + Pattern + △Ramdomly
+・TopDesign
+ -斜め
+ -段々
+・Pattern
+ -斜め
+ -HeightPattern
+ -CorePattern
+ -CupsulePattern
+  -EmptyPattern
+
+
+○Pipe配置ロジック設計
+・セット
+・レイヤー
+・パイプ多様化
+
+●凹凸設計
+・ミルフィーユ構造
+ -Pipe
+ -鉄骨
+ -BoxObject
 
 
 ○建築Pattern検証
@@ -21,6 +90,17 @@
  -Height
  -Offset
  -DivideNum(or 4block)
+
+●資料
+・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
+・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
+・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
+
+
+△青木淳Study
+・PatternStudy(波Study)
+・BaseLine生成
 
 
 ■ComputationalDesign
@@ -108,3 +188,35 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
  -ユニフォーム
 
 
+■ソース
+●オフセット検証
+・Patern
+ -DivideAxis
+・Randomly
+ -Height
+ -Offset
+ -DivideNum(or 4block)
+
+vector base_pos;
+vector base_scale;
+float height;
+toggle;
+
+base_scale *= 0.8;
+height *= 1.2;
+
+if(toggle == 0){
+	vector scale = base_scale;
+	scale.x *= rand() * 0.2 + 0.4;
+	scale.y = height
+
+	vector block1_pos = base_pos;
+	block1_pos.x += base_scale.x / 2;
+	int block1 = addpoint(0, block1_pos);
+	setpointattrib(0, "scale", block1, scale);
+
+	vector block2_pos = base_pos;
+	block2_pos.x -= base_scale.x / 2;
+	int block2 = addpoint(0, block2_pos);
+	setpointattrib(0, "scale", block2, scale);
+}
