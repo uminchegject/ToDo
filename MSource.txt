@@ -1,9 +1,26 @@
+※朝は基本インプットのみ
+ -メモを確認後、さらにピックアップして整理する
+
+○mcp検証準備
+
+○Pipe配置ロジック設計
+・セット
+
+○Cupsule配置ロジック設計
+・Block内でさらにBlockを用意
+
+
 ■メモ
 ○Private
 ・ノートパソコンUpdate
 ・研修
 ・CEDEC準備
  -TANight確認
+
+
+○Publicドキュメント
+・インストール手順
+・Python処理説明
 
 
 ○mcpStudy
