@@ -1,98 +1,16 @@
-※朝は基本インプットのみ
- -メモを確認後、さらにピックアップして整理する
-
-○mcp検証準備
-
-○Pipe配置ロジック設計
-・セット
-
-○Cupsule配置ロジック設計
-・Block内でさらにBlockを用意
-
-
-■メモ
 ○Private
 ・ノートパソコンUpdate
 ・研修
 ・CEDEC準備
  -TANight確認
 
-
-○Publicドキュメント
-・インストール手順
-・Python処理説明
-
-
-○mcpStudy
-※処理レビュー & ノード整理(コメント)
-※grasshopper
-・rag
-
-○grasshopperツール
-※Designとは離す
-※現場に求められているもの
+○Public
+・見直し
+・報告
 
 
-●USDStudy
-・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
-・記事化
- -Referencing Layers
- -Converting Between Layer Formats 
-
-
-○ポルトガル館概要整理
-※記事のテーマを整理
-
-●ポルトガル館
-・概要
- -公式(https://kkaa.co.jp/project/expo-2025-portugal-pavilion/)
-・模写
-・検証(Noise)
-
-●東熱ビル
-・※設計意図の確認
-・模写
-・検証(Noise)
-
-
-○CupsuleTowerBlock検証
-・逆さ
-・Cupsule, Core, 分布設計
-
-○CupsuleDetail実装
-・配置
-・Core(斜め)
-・鉄骨(斜め)
-・カプセル
-
-●CupsuleTower設計
-※下からの視点
-※塊
-※ハイラインデザイン
-※カプセルタワースケール
-※Gradation + Pattern + △Ramdomly
-・TopDesign
- -斜め
- -段々
-・Pattern
- -斜め
- -HeightPattern
- -CorePattern
- -CupsulePattern
-  -EmptyPattern
-
-
-○Pipe + 鉄骨検証(BlockPipeGenerator)
-・レイヤー構造検証
- -Pipe + 鉄骨
-・パイプ多様化
- -In or Out
-
-●凹凸設計
-・ミルフィーユ構造
- -Pipe
- -鉄骨
- -BoxObject
+○mcp検証準備
+・プロジェクトソース調査
 
 
 ○建築Pattern検証
@@ -103,17 +21,6 @@
  -Height
  -Offset
  -DivideNum(or 4block)
-
-●資料
-・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
-・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
-・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
-・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
-
-
-△青木淳Study
-・PatternStudy(波Study)
-・BaseLine生成
 
 
 ■ComputationalDesign
@@ -199,119 +106,5 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
 ○衣類整理
 ・クローゼット
  -ユニフォーム
- 
- 
-■メモ
-●ポルトガル館概要
-・海を建築として表現
-・ロープを用いて海という自然事態を身体感覚として実感できるような場所
-・ロープによって透過と反射を繰り返す光
-・ロープ自体を揺らし、振動させ、波動、振動の集積体である海を表現
-・動き続け、振動し続ける、いままでにはないタイプの建築
-
-ポルトガルは日本と同じように海の国であり、大航海時代にはカラベル船を始めとする美しい帆船で世界の海を走り廻り、
-種子島に、西洋（鉄砲）の文明をもたらし、日本を西洋に対して開いたのもポルトガル人である。
-
-その海という存在自体が感じられる海のパビリオンを、瀬戸内海に浮かぶ島である万博会場に出現させたいと思った。
-海は山と違って形というものがないので、海を建築として表現することは容易ではないが、やりがいのある目標だった。
-大航海時代の帆船の重要な道具のひとつであったロープを用いて、
-海という自然自体を身体感覚として実感できるような場所　―形態ではなく―　を作ることを思いついた。
-太さが微妙に異なる無数に吊るされたロープの間を吹き抜ける風、
-そのロープによって透過と反射を繰り返す光が、海という状態を作り出すのである。
-しかもその風はロープ自体を時にゆっくりと揺らし、時に細かく振動させ、波動、振動の集積体である海という場所が、そこに生成されるのである。
-
-建築というものは、通常はしっかりと固定された、重くて固いヴォリュームだと考えられてきたが、
-ポルトガル館は、動き続け、振動し続ける、いままでにはないタイプの建築である。
-それは19世紀から世界を征服することになったコンクリートと鉄による重たいカタマリとしての建築にかわる、
-生き物のように自由で軽やかな建築である。
-海の国であるポルトガルと日本を架け渡すことによって、新しく自由でヒューマンな建築を創造したいと夢みたのである。
 
 
-■ソース
-●Pipe + 鉄骨検証(BlockPipeGenerator)
-vector base_scale = 
-vector base_pos =
-
-//Frame
-float height_unit = ch("height_unit");
-int height_unit_num = int(base_scale.y / height_unit);
-height_unit = base_scale.y /height_unit_num;
-
-float width_unit = ch("width_unit");
-int width_unit_num = int(base_scale.x / width_unit);
-width_unit = base_scale.x / width_unit_num;
-
-for(int width_idx = 0; width_idx < width_unit_num; width_idx++){
-
-	for(int height_idx = 0; height_idx < height_unit_num; height_idx++){
-		vector pos = base_pos;
-		pos.x = (width_idx + 0.5) * width_unit - base_scale.x / 2;
-		pos.y = (height_idx + 0.5) * height_unit - base_scale.y / 2;
-		
-		vector scale = 1;
-		scale.x = width_unit;
-		scale.y = height_unit; 
-		
-		int pt = addpoint(0, pos);
-		setpointattrib(0, "scale", pt, scale);
-	}
-}
-
-//Pipe
-int layer_num = chi("layer_num");
-float pipe_unit = ch("pipe_unit");
-float pipe_unit_num = int(base_scale.x / pipe_unit);
-pipe_unit = base_scale.x / pipe_unit_num;
-
-
-for(int pipe_idx = 0; pipe_idx < pipe_unit; pipe_idx++){
-	
-	int layer_idx = int(rand(pipe_idx) * layer_num);
-	
-	float height = rand(layer_idx) * base_scale.y;	
-	float offset = (int(rand(layer_idx) * layer_num) % layer_num) * 2;
-	
-	vector pos = base_pos;
-	pos.y -= base_scale.y / 2;
-	pos.x += (pipe_idx + 0.5) * pipe_unit - base_scale.x / 2;
-	pos.z += offset;
-	
-	vector pt1_pos = pos;
-	vector pt2_pos = pos;
-	pt2_pos.y += height;
-	int pt1 = addpoint(0, pt1_pos);
-	int pt2 = addpoint(0, pt2_pos);
-
-	int prim = addprim(0, "polyline");
-	addvertex(0, prim, pt1);
-	addvertex(0, prim, pt2);
-}
-
-●オフセット検証
-・Patern
- -DivideAxis
-・Randomly
- -Height
- -Offset
- -DivideNum(or 4block)
-
-vector base_pos;
-vector base_scale;
-toggle;
-
-base_scale *= 0.2;
-
-if(toggle == 0){
-	vector scale = base_scale;
-	scale.x *= rand() * 0.2 + 0.4;
-
-	vector block1_pos = base_pos;
-	block1_pos.x += base_scale.x / 2;
-	int block1 = addpoint(0, block1_pos);
-	setpointattrib(0, "scale", block1, scale);
-
-	vector block2_pos = base_pos;
-	block2_pos.x -= base_scale.x / 2;
-	int block2 = addpoint(0, block2_pos);
-	setpointattrib(0, "scale", block2, scale);
-}
