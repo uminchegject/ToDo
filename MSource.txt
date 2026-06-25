@@ -11,7 +11,7 @@
 
 ○mcp検証準備
 ・プロジェクトソース調査
-　ー関数名把握
+ -関数名把握
 
 ○mcpStudy
 ※処理レビュー & ノード整理(コメント)
@@ -70,10 +70,21 @@
   -EmptyPattern
 
 
-○Pipe配置ロジック設計
+●Pipe配置ロジック設計
+※Block管理
 ・セット
 ・レイヤー
 ・パイプ多様化
+
+○Block配置設計
+・レイヤー
+
+○Block処理
+・Pattern
+
+float block_width
+float block_height
+float tube_radius
 
 ●凹凸設計
 ・ミルフィーユ構造
