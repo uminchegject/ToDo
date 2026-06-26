@@ -50,6 +50,8 @@
 ・セット
 ・レイヤー
 ・パイプ多様化
+・Surface To Pipe
+ -In & Out
 
 ○Block配置設計
 ・レイヤー
@@ -103,6 +105,8 @@ float tube_radius
  -Height
  -Offset
  -DivideNum(or 4block)
+ 
+○Box To Detail
 
 ●資料
 ・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
