@@ -1,42 +1,10 @@
+○elearning
+
 ○mcp検証準備
-・プロジェクトソース調査
- -関数名把握
-
-○mcpStudy
-※処理レビュー & ノード整理(コメント)
-※grasshopper
+・houdini_mcp_server.py
 
 
-○grasshopperツール
-※Designとは離す
-※現場に求められているもの
-・学生版購入
-・mcp調査
-・ツール調査
-
-
-●Pipe配置ロジック設計
-※Block管理
-・セット
-・レイヤー
-・パイプ多様化
-
-○Block配置設計
-・レイヤー
-
-○Block処理
-・Pattern
-
-float block_width
-float block_height
-float tube_radius
-
-
-○Cupsule配置ロジック設計
-・Block内でさらにBlockを用意
-
-○建築Pattern検証
-※凹凸検証
+●オフセット検証
 ・Patern
  -DivideAxis
 ・Randomly
@@ -44,122 +12,11 @@ float tube_radius
  -Offset
  -DivideNum(or 4block)
 
+○PipeBlock配置設計
+・レイヤー
 
-■メモ
-○Private
-・ノートパソコンUpdate
-・研修
-・CEDEC準備
- -TANight確認
-
-
-○mcp検証準備
-・プロジェクトソース調査
- -関数名把握
-
-○mcpStudy
-※処理レビュー & ノード整理(コメント)
-※grasshopper
-
-
-○grasshopperツール
-※Designとは離す
-※現場に求められているもの
-・学生版購入
-・mcp調査
-・ツール調査
-
-
-●USDStudy
-・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
-・記事化
- -Referencing Layers
- -Converting Between Layer Formats 
-
-
-○ポルトガル館概要整理
-※記事のテーマを整理
-
-●ポルトガル館
-・概要
- -公式(https://kkaa.co.jp/project/expo-2025-portugal-pavilion/)
-・模写
-・検証(Noise)
-
-●東熱ビル
-・※設計意図の確認
-・模写
-・検証(Noise)
-
-
-○Cupsule配置ロジック設計
+△Cupsule配置ロジック設計
 ・Block内でさらにBlockを用意
-
-○CupsuleDetail実装
-・配置
-・Core(斜め)
-・鉄骨(斜め)
-・カプセル
-
-●CupsuleTower設計
-※下からの視点
-※塊
-※ハイラインデザイン
-※カプセルタワースケール
-※Gradation + Pattern + △Ramdomly
-・TopDesign
- -斜め
- -段々
-・Pattern
- -斜め
- -HeightPattern
- -CorePattern
- -CupsulePattern
-  -EmptyPattern
-
-
-●Pipe配置ロジック設計
-※Block管理
-・セット
-・レイヤー
-・パイプ多様化
-
-○Block配置設計
-・レイヤー
-
-○Block処理
-・Pattern
-
-float block_width
-float block_height
-float tube_radius
-
-●凹凸設計
-・ミルフィーユ構造
- -Pipe
- -鉄骨
- -BoxObject
-
-
-○建築Pattern検証
-※凹凸検証
-・Patern
- -DivideAxis
-・Randomly
- -Height
- -Offset
- -DivideNum(or 4block)
-
-●資料
-・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
-・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
-・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
-・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
-
-
-△青木淳Study
-・PatternStudy(波Study)
-・BaseLine生成
 
 
 ■ComputationalDesign
