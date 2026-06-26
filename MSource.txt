@@ -1,31 +1,15 @@
 ■メモ
-○Private
-・ノートパソコンUpdate
-・e-learning
- -URL：https://tlp.edulio.com/cri
- -ID：CR-700283 
- -メールアドレス：yusuke.nakamura@pr.cri.co.jp 
- -パスワード：Creek001  
-・CEDEC準備
- -TANight確認
+○Houdini勉強会
+※勉強会が終わるまでは集中
+・LT会準備
 
 
-○mcp検証準備
-・プロジェクトソース調査
- -関数名把握
+○USD記事メモ
+・Traversing a Stage
 
-○mcpStudy
-※処理レビュー & ノード整理(コメント)
-※grasshopper
-
-
-○grasshopperツール
-※Designとは離す
-※現場に求められているもの
-・学生版購入
-・mcp調査
-・ツール調査
-
+○Qiita
+・Referencing Layers
+・Converting Between Layer Formats 
 
 ●USDStudy
 ・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
@@ -34,7 +18,7 @@
  -Converting Between Layer Formats 
 
 
-○ポルトガル館概要整理
+○ポルトガル館記事メモ
 ※記事のテーマを整理
 
 ●ポルトガル館
@@ -47,6 +31,42 @@
 ・※設計意図の確認
 ・模写
 ・検証(Noise)
+
+
+○grasshopperツール準備
+※Designとは離す
+※現場に求められているもの
+・学生版購入
+・mcp調査
+・ツール調査
+
+○mcpStudy準備
+※処理レビュー & ノード整理(コメント)
+・複数のMCPソースを確認
+
+
+●Pipe配置ロジック設計
+※Block管理
+・セット
+・レイヤー
+・パイプ多様化
+
+○Block配置設計
+・レイヤー
+ -3Layer + Greeble
+
+○Block処理
+・Pattern
+
+float block_width
+float block_height
+float tube_radius
+
+●凹凸設計
+・ミルフィーユ構造
+ -Pipe
+ -鉄骨
+ -BoxObject
 
 
 ○Cupsule配置ロジック設計
@@ -75,29 +95,6 @@
   -EmptyPattern
 
 
-●Pipe配置ロジック設計
-※Block管理
-・セット
-・レイヤー
-・パイプ多様化
-
-○Block配置設計
-・レイヤー
-
-○Block処理
-・Pattern
-
-float block_width
-float block_height
-float tube_radius
-
-●凹凸設計
-・ミルフィーユ構造
- -Pipe
- -鉄骨
- -BoxObject
-
-
 ○建築Pattern検証
 ※凹凸検証
 ・Patern
@@ -117,6 +114,12 @@ float tube_radius
 △青木淳Study
 ・PatternStudy(波Study)
 ・BaseLine生成
+
+
+△Private
+・ノートパソコンUpdate
+・CEDEC準備
+ -TANight確認
 
 
 ■ComputationalDesign
