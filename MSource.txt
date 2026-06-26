@@ -1,10 +1,105 @@
-○elearning
+■メモ
+○Private
+・ノートパソコンUpdate
+・e-learning
+ -URL：https://tlp.edulio.com/cri
+ -ID：CR-700283 
+ -メールアドレス：yusuke.nakamura@pr.cri.co.jp 
+ -パスワード：Creek001  
+・CEDEC準備
+ -TANight確認
+
 
 ○mcp検証準備
-・houdini_mcp_server.py
+・プロジェクトソース調査
+ -関数名把握
+
+○mcpStudy
+※処理レビュー & ノード整理(コメント)
+※grasshopper
 
 
-●オフセット検証
+○grasshopperツール
+※Designとは離す
+※現場に求められているもの
+・学生版購入
+・mcp調査
+・ツール調査
+
+
+●USDStudy
+・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
+・記事化
+ -Referencing Layers
+ -Converting Between Layer Formats 
+
+
+○ポルトガル館概要整理
+※記事のテーマを整理
+
+●ポルトガル館
+・概要
+ -公式(https://kkaa.co.jp/project/expo-2025-portugal-pavilion/)
+・模写
+・検証(Noise)
+
+●東熱ビル
+・※設計意図の確認
+・模写
+・検証(Noise)
+
+
+○Cupsule配置ロジック設計
+・Block内でさらにBlockを用意
+
+○CupsuleDetail実装
+・配置
+・Core(斜め)
+・鉄骨(斜め)
+・カプセル
+
+●CupsuleTower設計
+※下からの視点
+※塊
+※ハイラインデザイン
+※カプセルタワースケール
+※Gradation + Pattern + △Ramdomly
+・TopDesign
+ -斜め
+ -段々
+・Pattern
+ -斜め
+ -HeightPattern
+ -CorePattern
+ -CupsulePattern
+  -EmptyPattern
+
+
+●Pipe配置ロジック設計
+※Block管理
+・セット
+・レイヤー
+・パイプ多様化
+
+○Block配置設計
+・レイヤー
+
+○Block処理
+・Pattern
+
+float block_width
+float block_height
+float tube_radius
+
+●凹凸設計
+・ミルフィーユ構造
+ -Pipe
+ -鉄骨
+ -BoxObject
+
+
+○建築Pattern検証
+※凹凸検証
 ・Patern
  -DivideAxis
 ・Randomly
@@ -12,11 +107,16 @@
  -Offset
  -DivideNum(or 4block)
 
-○PipeBlock配置設計
-・レイヤー
+●資料
+・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
+・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
+・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
 
-△Cupsule配置ロジック設計
-・Block内でさらにBlockを用意
+
+△青木淳Study
+・PatternStudy(波Study)
+・BaseLine生成
 
 
 ■ComputationalDesign
@@ -104,35 +204,102 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
  -ユニフォーム
 
 
-■ソース
-●オフセット検証
-・Patern
- -DivideAxis
-・Randomly
- -Height
- -Offset
- -DivideNum(or 4block)
+■Houdini勉強会
+●概要
+・各ペインごとの表示設定
+・各ペインタブごとの表示設定
+・ShelfDockの非表示
+・MenuBarの非表示
+・PlayBarの非表示
+・Stowbarsを非表示
 
-vector base_pos;
-vector base_scale;
-float height;
-toggle;
 
-base_scale *= 0.8;
-height *= 1.2;
+●bat
+set EXE="C:\Program Files\Side Effects Software\Houdini 21.0.671\bin\houdini.exe"
+set HIP_FILE="C:\Users\yusuke.nakamura\Desktop\kiosk_test.hip"
+set PYTHON_SCRIPT="C:\Users\yusuke.nakamura\Desktop\setup_kiosk.py"
 
-if(toggle == 0){
-	vector scale = base_scale;
-	scale.x *= rand() * 0.2 + 0.4;
-	scale.y = height
+start "" %EXE% -s tops %HIP_FILE% waitforui %PYTHON_SCRIPT%
 
-	vector block1_pos = base_pos;
-	block1_pos.x += base_scale.x / 2;
-	int block1 = addpoint(0, block1_pos);
-	setpointattrib(0, "scale", block1, scale);
 
-	vector block2_pos = base_pos;
-	block2_pos.x -= base_scale.x / 2;
-	int block2 = addpoint(0, block2_pos);
-	setpointattrib(0, "scale", block2, scale);
-}
+●Python
+import hou
+
+# 指定パスのノードを選択状態にする
+def select_node(node_path):
+    node = hou.node(node_path)
+    
+    # すべての選択を解除
+    hou.clearAllSelected()
+    
+    # 対象ノードを選択（他を解除しない設定も一応付与）
+    node.setSelected(True, clear_all_selected=False)
+    
+
+# 指定パスのノードを表示（Display FlagをON）
+def display_node(node_path):
+    node = hou.node(node_path)
+    
+    # ビューポートで表示されるようにする
+    node.setDisplayFlag(True)
+    
+
+# UI（Houdiniのパネル構成）を整理する関数
+def setup_gui():
+    
+    # すべてのPane（画面分割領域）をループ
+    for pane in hou.ui.panes():
+        
+        # パネルタブ（上のタブUI）を非表示
+        pane.setShowPaneTabs(False)
+        
+        # Network Editorがある場合、Scene Viewerタブを追加
+        if pane.tabOfType(hou.paneTabType.NetworkEditor, 0):
+            pane.createTab(hou.paneTabType.SceneViewer)
+                    
+    # すべてのPane Tabをループ
+    for tab in hou.ui.paneTabs():
+    
+        # パラメータパネルのUI調整
+        if tab.type() == hou.paneTabType.Parm:
+            # ネットワーク操作バーを非表示
+            tab.setShowNetworkControls(False)
+                
+        # シーンビューアのUI調整
+        elif tab.type() == hou.paneTabType.SceneViewer:
+
+            tab.setShowNetworkControls(False)     # ネットワーク操作バー非表示
+            tab.showDisplayOptionsBar(False)      # 表示オプションバー非表示
+            tab.showOperationBar(False)           # 操作バー非表示
+            tab.showSelectionBar(False)           # 選択バー非表示
+            
+            # カラコレバーが存在する場合は非表示
+            if tab.includeColorCorrectionBar():
+                tab.showColorCorrectionBar(False)
+                    
+            # メモリバーが存在する場合は非表示
+            if tab.includeMemoryBar():
+                tab.showMemoryBar(False)
+                    
+        # Parm / SceneViewer以外のタブは閉じる
+        else:
+            tab.close()
+                        
+    # シェルフ（ツールバー）を非表示
+    hou.ui.curDesktop().shelfDock().show(False)
+    
+    # メニューバー表示設定（Falseで非表示）
+    hou.setPreference('showmenu.val', ['0', '1'][False])
+        
+    # 最小化されたストウバー（UIの折りたたみ）をすべて隠す
+    hou.ui.setHideAllMinimizedStowbars(True)
+        
+
+# ノード選択
+select_node("/obj/box_object/box")
+
+# ノード表示（ビューポート表示対象にする）
+display_node("/obj/box_object/box")
+
+# UIレイアウト整理
+setup_gui()
