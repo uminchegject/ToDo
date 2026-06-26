@@ -1,7 +1,51 @@
+○mcp検証準備
+・プロジェクトソース調査
+ -関数名把握
+
+○mcpStudy
+※処理レビュー & ノード整理(コメント)
+※grasshopper
+
+
+○grasshopperツール
+※Designとは離す
+※現場に求められているもの
+・学生版購入
+・mcp調査
+・ツール調査
+
+
+●Pipe配置ロジック設計
+※Block管理
+・セット
+・レイヤー
+・パイプ多様化
+
+○Block配置設計
+・レイヤー
+
+○Block処理
+・Pattern
+
+float block_width
+float block_height
+float tube_radius
+
+
+○Cupsule配置ロジック設計
+・Block内でさらにBlockを用意
+
+○建築Pattern検証
+※凹凸検証
+・Patern
+ -DivideAxis
+・Randomly
+ -Height
+ -Offset
+ -DivideNum(or 4block)
+
+
 ■メモ
-※朝は基本インプットのみ
- -メモを確認後、さらにピックアップして整理する
- 
 ○Private
 ・ノートパソコンUpdate
 ・研修
@@ -17,9 +61,13 @@
 ※処理レビュー & ノード整理(コメント)
 ※grasshopper
 
+
 ○grasshopperツール
 ※Designとは離す
 ※現場に求められているもの
+・学生版購入
+・mcp調査
+・ツール調査
 
 
 ●USDStudy
