@@ -213,6 +213,27 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
 
 ■Houdini勉強会
 ●概要
+・Kioskモード(必要なUIのみを表示して起動するモード)によるHoudiniの起動
+
+●背景
+・Houdiniで実装したツールをデザイナーが操作しやすくするため
+・必要最低限のUIを表示して起動
+ -シーンタブ
+ -パラメータータブ
+ 
+●挙動
+・.batからHoudiniを起動
+・起動時にレイアウトを自動適用
+・ツール操作に必要なUIだけを表示
+
+●処理の詳細
+・コマンドで起動
+ -
+・Python処理
+ -
+
+
+●概要
 ・各ペインごとの表示設定
 ・各ペインタブごとの表示設定
 ・ShelfDockの非表示
