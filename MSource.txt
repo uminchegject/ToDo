@@ -50,16 +50,12 @@
 ・セット
 ・レイヤー
 ・パイプ多様化
+
+○Block配置設計
 ・Surface To Pipe
  -In & Out
 
-○Block配置設計
-・レイヤー
- -3Layer + Greeble
-
 ○Block処理
-・Pattern
-
 float block_width
 float block_height
 float tube_radius
@@ -71,14 +67,13 @@ float tube_radius
  -BoxObject
 
 
-○Cupsule配置ロジック設計
-・Block内でさらにBlockを用意
-
 ○CupsuleDetail実装
 ・配置
 ・Core(斜め)
 ・鉄骨(斜め)
 ・カプセル
+
+△Cupsule配置ロジック設計
 
 ●CupsuleTower設計
 ※下からの視点
@@ -97,7 +92,7 @@ float tube_radius
   -EmptyPattern
 
 
-○建築Pattern検証
+○建築Generator実装
 ※凹凸検証
 ・Patern
  -DivideAxis
@@ -107,6 +102,8 @@ float tube_radius
  -DivideNum(or 4block)
  
 ○Box To Detail
+
+○City検証
 
 ●資料
 ・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
