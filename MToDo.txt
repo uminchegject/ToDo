@@ -1,4 +1,9 @@
 ■反省
+※休日(平日)のメイン活動時間は午前中
+ -午後はシンプルなタスクを用意する
+
+※休日中の朝カフェ(金曜カフェ)でPrivateの計画も立てる
+
 ※朝は基本インプットのみ
  -※メモを確認後、タスクをピックアップして整理する
 
@@ -23,6 +28,9 @@
 ・Randomly
 
 ●IDEA
+・青木淳
+ -PatternStudy(Wave)
+ -BaseLine生成
 ・ルイヴィトン美術館(grasshopper)
  -RandomlyBox
  -Panel(Voronoi)

@@ -1,9 +1,4 @@
 ■メモ
-※休日(平日)のメイン活動時間は午前中
- -午後はシンプルなタスクを用意する
-※休日中の朝カフェ(金曜カフェ)でPrivateの計画も立てる
-
-
 ○Private
 ・ノートパソコンUpdate
 ・CEDEC準備
@@ -43,7 +38,7 @@
 ・模写
 ・検証(Noise)
 
-●東熱ビル
+▲東熱ビル
 ・※設計意図の確認
 ・模写
 ・検証(Noise)
@@ -96,7 +91,7 @@ float tube_radius
  -BoxObject
 
 
-○CupsuleDetail実装
+○CupsuleTowerDetail実装
 ・配置
 ・Core(斜め)
 ・鉄骨(斜め)
@@ -141,18 +136,10 @@ float tube_radius
 ・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
 
 
-△青木淳Study
-・PatternStudy(波Study)
-・BaseLine生成
-
-
 ■ComputationalDesign
 ●ポルトガル館
 ・空間
 ・揺れ
-
-●東熱ビル
-・視覚化
 
 ●青木淳
 ・WoodPattern(SunnyHills)
@@ -177,11 +164,14 @@ float tube_radius
 ・Python Tutorial
 ・生成AI時代のソフトウェア開発
 
+○英語
+・Oxford Picture Dictionary
+・時計仕掛けのオレンジ
+ -映画
+ -原作
+
 ○USDStudy
 ・USD Tutorials(https://openusd.org/release/tut_usd_tutorials.html)
-・USD Examples
-・Reincarnation+#Tech(https://fereria.github.io/reincarnation_tech/usd)
-・△SolarisShelfチェック
 
 ○HoudiniStudy
 ・H19.5 FOUNDATIONS BOOK
@@ -210,7 +200,8 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
 ■ToDo
 ○本
 ※Kindleポイント
-・Oxford Picture Dictionary
+・修養
+・司馬遼太郎
 
 ○旅行準備
 ・レンタカー
