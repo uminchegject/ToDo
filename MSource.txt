@@ -1,16 +1,7 @@
 ■メモ
-○USD記事メモ
-・Traversing a Stage
-
-○Qiita
-・Referencing Layers
-・Converting Between Layer Formats 
-
-●USDStudy
-・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
-・記事化
- -Referencing Layers
- -Converting Between Layer Formats 
+※休日(平日)のメイン活動時間は午前中
+ -午後はシンプルなタスクを用意する
+※休日中の朝カフェ(金曜カフェ)でPrivateの計画も立てる
 
 
 ○ポルトガル館記事メモ
@@ -28,16 +19,23 @@
 ・検証(Noise)
 
 
-○grasshopperツール準備
+○解析処理の実装
+Houdini → Cloud
+
+●HoudiniMCP
+※複数のMCPソースを参考にする
+・処理レビュー
+・ノード整理(コメント)
+
+
+○購入
+・購入方法確認
+
+●grasshopperツール
+※コーディングベース
 ※Designとは離す
 ※現場に求められているもの
-・学生版購入
-・mcp調査
-・ツール調査
-
-○mcpStudy準備
-※処理レビュー & ノード整理(コメント)
-・複数のMCPソースを確認
+・Pythonの開発環境を整理
 
 
 ●Pipe配置ロジック設計
@@ -112,15 +110,27 @@ float tube_radius
 ・BaseLine生成
 
 
-△Private
+■After
+○Private
 ・ノートパソコンUpdate
 ・CEDEC準備
  -TANight確認
- 
+
 
 ○LT会反省
 ・LT会Study 
 
+
+○記事化
+・Traversing a Stage
+・Referencing Layers
+・Converting Between Layer Formats 
+
+●USDStudy
+・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
+・記事化
+ -Referencing Layers
+ -Converting Between Layer Formats 
 
 
 ■ComputationalDesign
