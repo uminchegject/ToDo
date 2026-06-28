@@ -4,8 +4,38 @@
 ※休日中の朝カフェ(金曜カフェ)でPrivateの計画も立てる
 
 
+○Private
+・ノートパソコンUpdate
+・CEDEC準備
+ -TANight確認
+
+
+○LT会反省
+・LT会Study 
+
+
+○記事化
+・Traversing a Stage
+・Referencing Layers
+・Converting Between Layer Formats 
+
+●USDStudy
+・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
+・記事化
+ -Referencing Layers
+ -Converting Between Layer Formats 
+
+
 ○ポルトガル館記事メモ
-※記事のテーマを整理
+・デザイン概要
+・ロープ再現
+ -BaseLineの生成
+ -ロープのプロシージャルモデリング
+・ロープの揺れ再現
+ -Vex処理
+・△Noise検証
+ -空間&揺れ検証(※Noise視覚化) 
+ -検証結果比較
 
 ●ポルトガル館
 ・概要
@@ -19,6 +49,10 @@
 ・検証(Noise)
 
 
+○AsciiHip解析検証
+・Ascii内情報調査
+ -複数のAIで検証
+
 ○解析処理の実装
 Houdini → Cloud
 
@@ -29,13 +63,15 @@ Houdini → Cloud
 
 
 ○購入
-・購入方法確認
+https://dipross.co.jp/eng/service/software/rhinoceros-1/rinoceros-edu
+・前回の提出書類を整理
 
 ●grasshopperツール
 ※コーディングベース
 ※Designとは離す
 ※現場に求められているもの
 ・Pythonの開発環境を整理
+・ノード to Python
 
 
 ●Pipe配置ロジック設計
@@ -108,29 +144,6 @@ float tube_radius
 △青木淳Study
 ・PatternStudy(波Study)
 ・BaseLine生成
-
-
-■After
-○Private
-・ノートパソコンUpdate
-・CEDEC準備
- -TANight確認
-
-
-○LT会反省
-・LT会Study 
-
-
-○記事化
-・Traversing a Stage
-・Referencing Layers
-・Converting Between Layer Formats 
-
-●USDStudy
-・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
-・記事化
- -Referencing Layers
- -Converting Between Layer Formats 
 
 
 ■ComputationalDesign
