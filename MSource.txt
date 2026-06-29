@@ -1,5 +1,32 @@
+○Base
+※菱形Block
+・鉄骨
+・Panel
+
+○Pipe
+
+○Cupsule
+
+
+○パラメーター設計
+・Pattern
+ -DivideAxis
+・Randomly
+ -Height
+ -Offset
+ -DivideNum(or 4block)
+
+
 ■メモ
+○Public
+・Python調査
+・報告準備
+
+
 ○Private
+・大政翼賛会
+ -プレゼントタイトル
+ -レンタルスペース
 ・ノートパソコンUpdate
 ・CEDEC準備
  -TANight確認
@@ -9,7 +36,7 @@
 ・LT会Study 
 
 
-○記事化
+○記事化(Qiita)
 ・Traversing a Stage
 ・Referencing Layers
 ・Converting Between Layer Formats 
@@ -28,9 +55,11 @@
  -ロープのプロシージャルモデリング
 ・ロープの揺れ再現
  -Vex処理
-・△Noise検証
- -空間&揺れ検証(※Noise視覚化) 
- -検証結果比較
+
+○Noise検証
+※デザインコンセプトに沿った表現
+・空間&揺れ検証(※Noise視覚化) 
+・検証結果比較
 
 ●ポルトガル館
 ・概要
@@ -48,7 +77,7 @@
 ・Ascii内情報調査
  -複数のAIで検証
 
-○解析処理の実装
+○Ascii情報の転送
 Houdini → Cloud
 
 ●HoudiniMCP
@@ -67,28 +96,6 @@ https://www.applicraft.com/edu_personal/
 ※現場に求められているもの
 ・Pythonの開発環境を整理
 ・ノード to Python
-
-
-●Pipe配置ロジック設計
-※Block管理
-・セット
-・レイヤー
-・パイプ多様化
-
-○Block配置設計
-・Surface To Pipe
- -In & Out
-
-○Block処理
-float block_width
-float block_height
-float tube_radius
-
-●凹凸設計
-・ミルフィーユ構造
- -Pipe
- -鉄骨
- -BoxObject
 
 
 ○CupsuleTowerDetail実装
@@ -116,15 +123,14 @@ float tube_radius
   -EmptyPattern
 
 
-○建築Generator実装
-※凹凸検証
-・Patern
+○パラメーター整理
+・Pattern
  -DivideAxis
 ・Randomly
  -Height
  -Offset
  -DivideNum(or 4block)
- 
+
 ○Box To Detail
 
 ○City検証
@@ -134,6 +140,29 @@ float tube_radius
 ・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
 ・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
 ・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
+
+
+●Pipe配置ロジック設計
+※Block管理
+・セット
+・レイヤー
+・パイプ多様化
+
+○Block配置設計
+・AxisBlock
+・Surface To Pipe
+ -In & Out
+
+○Block処理
+float block_width
+float block_height
+float tube_radius
+
+●凹凸設計
+・ミルフィーユ構造
+ -Pipe
+ -鉄骨
+ -BoxObject
 
 
 ■ComputationalDesign
@@ -220,3 +249,94 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
 ○衣類整理
 ・クローゼット
  -ユニフォーム
+ 
+ 
+■ソース
+●rapture
+vector base_pos = 0;
+vector base_scale = 1;
+float height = 1;
+int toggle = 1;
+
+for(int i = 0; i < 10; i++)
+{
+    base_scale *= 0.9;
+    height *= 1.2;
+
+    if(toggle == 0){
+        vector scale = base_scale;
+        scale.x *= rand(scale) * 0.2 + 0.4;
+        scale.z *= rand(scale) * 1 + 0.6;
+        scale.y = height;
+
+        vector block1_pos = base_pos;
+        block1_pos.x += base_scale.x / 2;
+        block1_pos.y -= height / 2;
+        int block1 = addpoint(0, block1_pos);
+        setpointattrib(0, "scale", block1, scale);
+
+        vector block2_pos = base_pos;
+        block2_pos.x -= base_scale.x / 2;
+        block2_pos.y -= height / 2;
+        int block2 = addpoint(0, block2_pos);
+        setpointattrib(0, "scale", block2, scale);
+
+        toggle = 1;
+    }
+    else if(toggle == 1){
+        vector scale = base_scale;
+        scale.z *= rand(scale) * 0.2 + 0.4;
+        scale.x *= rand(scale) * 1 + 0.6;
+        scale.y = height;
+
+        vector block1_pos = base_pos;
+        block1_pos.z += base_scale.z / 2;
+        block1_pos.y -= height / 2;
+        int block1 = addpoint(0, block1_pos);
+        setpointattrib(0, "scale", block1, scale);
+
+        vector block2_pos = base_pos;
+        block2_pos.z -= base_scale.z / 2;
+        block2_pos.y -= height / 2;
+        int block2 = addpoint(0, block2_pos);
+        setpointattrib(0, "scale", block2, scale);
+
+        toggle = 2;
+    }    
+    else{    
+        vector scale = base_scale;
+        scale.z *= rand(scale) * 0.2 + 0.4;
+        scale.x *= rand(scale) * 0.2 + 0.4;
+        scale.y = height;
+    
+        vector block1_pos = base_pos;
+        block1_pos.z += base_scale.z / 2;
+        block1_pos.x += base_scale.x / 2;
+        block1_pos.y -= height / 2;
+        int block1 = addpoint(0, block1_pos);
+        setpointattrib(0, "scale", block1, scale);
+    
+        vector block2_pos = base_pos;
+        block2_pos.z += base_scale.z / 2;
+        block2_pos.x -= base_scale.x / 2;
+        block2_pos.y -= height / 2;
+        int block2 = addpoint(0, block2_pos);
+        setpointattrib(0, "scale", block2, scale);
+                
+        vector block3_pos = base_pos;
+        block3_pos.z -= base_scale.z / 2;
+        block3_pos.x += base_scale.x / 2;
+        block3_pos.y -= height / 2;
+        int block3 = addpoint(0, block3_pos);
+        setpointattrib(0, "scale", block3, scale);              
+    
+        vector block4_pos = base_pos;
+        block4_pos.z -= base_scale.z / 2;
+        block4_pos.x -= base_scale.x / 2;
+        block4_pos.y -= height / 2;
+        int block4 = addpoint(0, block4_pos);
+        setpointattrib(0, "scale", block4, scale);
+                
+        toggle = 0;
+    }    
+}
