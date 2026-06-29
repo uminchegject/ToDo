@@ -1,74 +1,10 @@
-■メモ
-○Private
-・ノートパソコンUpdate
-・CEDEC準備
- -TANight確認
-
-
-○LT会反省
-・LT会Study 
-
-
-○記事化
-・Traversing a Stage
-・Referencing Layers
-・Converting Between Layer Formats 
-
-●USDStudy
-・Traversing a Stage(https://openusd.org/release/tut_traversing_stage.html)
-・記事化
- -Referencing Layers
- -Converting Between Layer Formats 
-
-
-○ポルトガル館記事メモ
-・デザイン概要
-・ロープ再現
- -BaseLineの生成
- -ロープのプロシージャルモデリング
-・ロープの揺れ再現
- -Vex処理
-
-○Noise検証
-※デザインコンセプトに沿った表現
-・空間&揺れ検証(※Noise視覚化) 
-・検証結果比較
-
-●ポルトガル館
-・概要
- -公式(https://kkaa.co.jp/project/expo-2025-portugal-pavilion/)
-・模写
-・検証(Noise)
-
-▲東熱ビル
-・※設計意図の確認
-・模写
-・検証(Noise)
-
+○Public
+・開発環境準備
+・挙動確認
+・処理比較
 
 ○AsciiHip解析検証
 ・Ascii内情報調査
- -複数のAIで検証
-
-○解析処理の実装
-Houdini → Cloud
-
-●HoudiniMCP
-※複数のMCPソースを参考にする
-・処理レビュー
-・ノード整理(コメント)
-
-
-○購入
-https://dipross.co.jp/eng/service/software/rhinoceros-1/rinoceros-edu
-・前回の提出書類を整理
-
-●grasshopperツール
-※コーディングベース
-※Designとは離す
-※現場に求められているもの
-・Pythonの開発環境を整理
-・ノード to Python
 
 
 ○CupsuleTowerDetail実装
@@ -76,25 +12,6 @@ https://dipross.co.jp/eng/service/software/rhinoceros-1/rinoceros-edu
 ・Core(斜め)
 ・鉄骨(斜め)
 ・カプセル
-
-△Cupsule配置ロジック設計
-
-●CupsuleTower設計
-※下からの視点
-※塊
-※ハイラインデザイン
-※カプセルタワースケール
-※Gradation + Pattern + △Ramdomly
-・TopDesign
- -斜め
- -段々
-・Pattern
- -斜め
- -HeightPattern
- -CorePattern
- -CupsulePattern
-  -EmptyPattern
-
 
 ○建築Generator実装
 ※凹凸検証
@@ -104,39 +21,12 @@ https://dipross.co.jp/eng/service/software/rhinoceros-1/rinoceros-edu
  -Height
  -Offset
  -DivideNum(or 4block)
- 
-○Box To Detail
-
-○City検証
-
-●資料
-・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
-・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
-・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
-・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
-
-
-●Pipe配置ロジック設計
-※Block管理
-・セット
-・レイヤー
-・パイプ多様化
 
 ○Block配置設計
 ・AxisBlock
 ・Surface To Pipe
  -In & Out
 
-○Block処理
-float block_width
-float block_height
-float tube_radius
-
-●凹凸設計
-・ミルフィーユ構造
- -Pipe
- -鉄骨
- -BoxObject
 
 
 ■ComputationalDesign
