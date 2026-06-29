@@ -1,13 +1,17 @@
-○Base
-※菱形Block
+■Metaborithum
+※カラー
+
+○BasePattern
+・菱形Block
 ・鉄骨
 ・Panel
 
-○Pipe
+○PipePattern
 
-○Cupsule
+○CupsulePattern
 
 
+■Rapture
 ○パラメーター設計
 ・Pattern
  -DivideAxis
@@ -15,6 +19,9 @@
  -Height
  -Offset
  -DivideNum(or 4block)
+ 
+○Pattern
+※BoxBase
 
 
 ■メモ
