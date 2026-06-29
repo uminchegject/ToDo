@@ -1,3 +1,22 @@
+○Base
+※菱形Block
+・鉄骨
+・Panel
+
+○Pipe
+
+○Cupsule
+
+
+○パラメーター設計
+・Pattern
+ -DivideAxis
+・Randomly
+ -Height
+ -Offset
+ -DivideNum(or 4block)
+
+
 ■メモ
 ○Public
 ・Python調査
