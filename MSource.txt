@@ -28,9 +28,11 @@
  -ロープのプロシージャルモデリング
 ・ロープの揺れ再現
  -Vex処理
-・△Noise検証
- -空間&揺れ検証(※Noise視覚化) 
- -検証結果比較
+
+○Noise検証
+※デザインコンセプトに沿った表現
+・空間&揺れ検証(※Noise視覚化) 
+・検証結果比較
 
 ●ポルトガル館
 ・概要
@@ -67,28 +69,6 @@ https://dipross.co.jp/eng/service/software/rhinoceros-1/rinoceros-edu
 ※現場に求められているもの
 ・Pythonの開発環境を整理
 ・ノード to Python
-
-
-●Pipe配置ロジック設計
-※Block管理
-・セット
-・レイヤー
-・パイプ多様化
-
-○Block配置設計
-・Surface To Pipe
- -In & Out
-
-○Block処理
-float block_width
-float block_height
-float tube_radius
-
-●凹凸設計
-・ミルフィーユ構造
- -Pipe
- -鉄骨
- -BoxObject
 
 
 ○CupsuleTowerDetail実装
@@ -134,6 +114,29 @@ float tube_radius
 ・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
 ・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
 ・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
+
+
+●Pipe配置ロジック設計
+※Block管理
+・セット
+・レイヤー
+・パイプ多様化
+
+○Block配置設計
+・AxisBlock
+・Surface To Pipe
+ -In & Out
+
+○Block処理
+float block_width
+float block_height
+float tube_radius
+
+●凹凸設計
+・ミルフィーユ構造
+ -Pipe
+ -鉄骨
+ -BoxObject
 
 
 ■ComputationalDesign
