@@ -1,27 +1,3 @@
-■Metaborithum
-※カラー
-
-○BasePattern
-・菱形Block
-・鉄骨
-・Panel
-
-○PipePattern
-
-○CupsulePattern
-
-
-■Rapture
-○パラメーター設計
-・Pattern
- -DivideAxis
-・Randomly
- -Height
- -Offset
- -DivideNum(or 4block)
- 
-○Pattern
-※BoxBase
 
 
 ■メモ
@@ -105,15 +81,33 @@ https://www.applicraft.com/edu_personal/
 ・ノード to Python
 
 
-○CupsuleTowerDetail実装
-・配置
-・Core(斜め)
-・鉄骨(斜め)
-・カプセル
+■Metaborithum
+※カラー
 
-△Cupsule配置ロジック設計
+●BasePattern
+・菱形Block
+・鉄骨
+・Panel
 
-●CupsuleTower設計
+
+○PipeBlock設計
+・AxisBlock
+・Surface To Pipe
+ -In & Out
+
+○Block処理
+float block_width
+float block_height
+float tube_radius
+
+●PipePattern
+※Block管理
+・セット
+・レイヤー
+・パイプ多様化
+
+
+●CupsulePattern
 ※下からの視点
 ※塊
 ※ハイラインデザイン
@@ -130,6 +124,7 @@ https://www.applicraft.com/edu_personal/
   -EmptyPattern
 
 
+■Rapture
 ○パラメーター整理
 ・Pattern
  -DivideAxis
@@ -139,6 +134,7 @@ https://www.applicraft.com/edu_personal/
  -DivideNum(or 4block)
 
 ○Box To Detail
+※Pattern
 
 ○City検証
 
@@ -148,28 +144,6 @@ https://www.applicraft.com/edu_personal/
 ・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
 ・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
 
-
-●Pipe配置ロジック設計
-※Block管理
-・セット
-・レイヤー
-・パイプ多様化
-
-○Block配置設計
-・AxisBlock
-・Surface To Pipe
- -In & Out
-
-○Block処理
-float block_width
-float block_height
-float tube_radius
-
-●凹凸設計
-・ミルフィーユ構造
- -Pipe
- -鉄骨
- -BoxObject
 
 
 ■ComputationalDesign
