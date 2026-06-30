@@ -1,5 +1,3 @@
-
-
 ■メモ
 ○Public
 ・Python調査
@@ -7,6 +5,8 @@
 
 
 ○Private
+・修養
+・Dazn
 ・大政翼賛会
  -プレゼントタイトル
  -レンタルスペース
@@ -34,8 +34,6 @@
 ○ポルトガル館記事メモ
 ・デザイン概要
 ・ロープ再現
- -BaseLineの生成
- -ロープのプロシージャルモデリング
 ・ロープの揺れ再現
  -Vex処理
 
@@ -85,9 +83,23 @@ https://www.applicraft.com/edu_personal/
 ※カラー
 
 ●BasePattern
+※ハイラインデザイン
 ・菱形Block
-・鉄骨
-・Panel
+・Parts
+ -鉄骨
+ -Panel
+・Pattern
+ -斜め
+ -段々
+
+
+●CupsulePattern
+※下からの視点
+※塊
+※カプセルタワースケール
+※Gradation + Pattern + △Ramdomly
+・Pattern
+ -EmptyPattern
 
 
 ○PipeBlock設計
@@ -105,23 +117,6 @@ float tube_radius
 ・セット
 ・レイヤー
 ・パイプ多様化
-
-
-●CupsulePattern
-※下からの視点
-※塊
-※ハイラインデザイン
-※カプセルタワースケール
-※Gradation + Pattern + △Ramdomly
-・TopDesign
- -斜め
- -段々
-・Pattern
- -斜め
- -HeightPattern
- -CorePattern
- -CupsulePattern
-  -EmptyPattern
 
 
 ■Rapture
@@ -143,7 +138,6 @@ float tube_radius
 ・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
 ・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
 ・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
-
 
 
 ■ComputationalDesign
