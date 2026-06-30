@@ -1,71 +1,3 @@
-■Metaborithum
-※カラー
-
-○BaseGenerator実装
-※Simple検証
-・鉄骨
-・Panel
-
-●BasePattern
-※ハイラインデザイン
-・菱形Block
-・Parts
- -鉄骨
- -Panel
-・Pattern
- -斜め
- -段々
-
-
-●CupsulePattern
-※下からの視点
-※塊
-※カプセルタワースケール
-※Gradation + Pattern + △Ramdomly
-・EmptyPattern
-
-
-○PipeBlock設計
-・AxisBlock
-・Surface To Pipe
- -In & Out
-
-○Block処理
-float block_width
-float block_height
-float tube_radius
-
-●PipePattern
-※Block管理
-・セット
-・レイヤー
-・パイプ多様化
-
-
-■Rapture
-●Inside(Core)
-・TopDesign
-
-●OutSide
-・Pattern
- -DivideAxis
-・Randomly
- -Height
- -Offset
- -DivideNum(or 4block)
-
-○Box To Detail
-※Pattern
-
-○City検証
-
-●資料
-・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
-・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
-・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
-・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
-
-
 ■メモ
 ※定時30分前を目安にタスク整理(メモ整理)を行う
  -散歩 + 歯磨き
@@ -144,13 +76,20 @@ https://www.applicraft.com/edu_personal/
 ■Metaborithum
 ※カラー
 
-○BaseGenerator実装
-※Simple検証
-・鉄骨
-・Panel
+○Simple検証
+・Base
+ -鉄骨
+ -Panel
+・Cupsule
+ -CupsuleTower
+ -On Panel
+・Pipe
+ -On Panel
 
 ●BasePattern
 ※ハイラインデザイン
+・塊
+ -TopDesign(Panel)
 ・菱形Block
 ・Parts
  -鉄骨
@@ -172,6 +111,7 @@ https://www.applicraft.com/edu_personal/
 ・AxisBlock
 ・Surface To Pipe
  -In & Out
+ -On Panel
 
 ○Block処理
 float block_width
@@ -199,6 +139,8 @@ float tube_radius
 
 ○Box To Detail
 ※Pattern
+・Column
+・WindowStyle
 
 ○City検証
 
@@ -207,7 +149,6 @@ float tube_radius
 ・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
 ・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
 ・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
-
 
 
 ■ComputationalDesign
