@@ -9,13 +9,9 @@
 ・Study準備(朝カフェ)
 
 ○Private
-・※アマゾン
- -ルイージマンション
- -修養
- -ブーツ消しゴム
-・大政翼賛会
- -ポピープレイタイム・lofi with you
- -レンタルスペース
+・プレゼント
+ -ポピープレイタイム
+ -lofi with you
 ・ノートパソコンUpdate
 ・CEDEC準備
  -TANight確認
@@ -85,6 +81,18 @@ https://www.applicraft.com/edu_personal/
  -On Panel
 ・Pipe
  -On Panel
+ 
+●Parts
+・鉄骨
+ -ハの字
+ -CopyToPoints
+・Panel
+ -△斜め
+・Cupsule
+ -CupsuleTower
+・Pipe
+ -Randomly
+
 
 ●BasePattern
 ※ハイラインデザイン
@@ -126,6 +134,17 @@ float tube_radius
 
 
 ■Rapture
+○VolumeGenerator実装
+・InSide
+・Outside 
+ 
+○Box To Detail
+※Pattern
+・Column
+・WindowStyle
+
+△City検証
+
 ●Inside(Core)
 ・TopDesign
 
@@ -136,13 +155,6 @@ float tube_radius
  -Height
  -Offset
  -DivideNum(or 4block)
-
-○Box To Detail
-※Pattern
-・Column
-・WindowStyle
-
-○City検証
 
 ●資料
 ・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
