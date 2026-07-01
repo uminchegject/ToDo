@@ -1,21 +1,5 @@
-■メモ
-※定時30分前を目安にタスク整理(メモ整理)を行う
- -散歩 + 歯磨き
- -MToDoチェック
-
-※タスク整理スケジュール
-・タスク整理 + MToDoチェック(定時前)
-・メモ確認 + 朝カフェ準備 + Design準備(夜カフェ)
-・Study準備(朝カフェ)
-
-○Private
-・プレゼント
- -ポピープレイタイム
- -lofi with you
-・ノートパソコンUpdate
-・CEDEC準備
- -TANight確認
-
+○Public
+・material_attr 取得
 
 ○ポルトガル館記事メモ
 ・デザイン概要
@@ -28,139 +12,27 @@
 ・空間&揺れ検証(※Noise視覚化) 
 ・検証結果比較
 
-●ポルトガル館
-・概要
- -公式(https://kkaa.co.jp/project/expo-2025-portugal-pavilion/)
-・模写
-・検証(Noise)
 
-▲東熱ビル
-・※設計意図の確認
-・模写
-・検証(Noise)
+○Simple検証準備
+・BasePoint(CopyToPoint)
+　ー鉄骨
+　ーPanel
+　ーCupsule
+・BaseLine
+　ーPipe
 
 
-○Authoring Variants調査
-https://openusd.org/release/tut_authoring_variants.html
-
-
-○Model Context Protocol Study
-
-△AsciiHip解析検証
-・Ascii内情報調査
- -複数のAIで検証
-
-●HoudiniMCP
-※複数のMCPソースを参考にする
-・Houdini → Cloud
-・処理レビュー
-・ノード整理(コメント)
-
-
-○購入
-https://www.applicraft.com/edu_personal/
-・前回の提出書類を整理
-
-●grasshopperツール
-※コーディングベース
-※Designとは離す
-※現場に求められているもの
-・Pythonの開発環境を整理
-・ノード to Python
-
-
-■Metaborithum
-※カラー
-
-○Simple検証
-・Base
- -鉄骨
- -Panel
-・Cupsule
- -CupsuleTower
- -On Panel
-・Pipe
- -On Panel
- 
-●Parts
-・鉄骨
- -ハの字
- -CopyToPoints
-・Panel
- -△斜め
-・Cupsule
- -CupsuleTower
-・Pipe
- -Randomly
-
-
-●BasePattern
-※ハイラインデザイン
-・塊
- -TopDesign(Panel)
-・菱形Block
-・Parts
- -鉄骨
- -Panel
-・Pattern
- -斜め
- -段々
-
-
-●CupsulePattern
-※下からの視点
-※塊
-※カプセルタワースケール
-※Gradation + Pattern + △Ramdomly
-・EmptyPattern
-
-
-○PipeBlock設計
-・AxisBlock
-・Surface To Pipe
- -In & Out
- -On Panel
-
-○Block処理
-float block_width
-float block_height
-float tube_radius
-
-●PipePattern
-※Block管理
-・セット
-・レイヤー
-・パイプ多様化
-
-
-■Rapture
 ○VolumeGenerator実装
 ・InSide
+　ーTopPattern(段々)
 ・Outside 
- 
+　ーソース修正
+
 ○Box To Detail
 ※Pattern
 ・Column
 ・WindowStyle
 
-△City検証
-
-●Inside(Core)
-・TopDesign
-
-●OutSide
-・Pattern
- -DivideAxis
-・Randomly
- -Height
- -Offset
- -DivideNum(or 4block)
-
-●資料
-・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
-・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
-・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
-・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
 
 
 ■ComputationalDesign
