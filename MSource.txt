@@ -15,18 +15,18 @@
 
 ○Simple検証準備
 ・BasePoint(CopyToPoint)
-　ー鉄骨
-　ーPanel
-　ーCupsule
+ -鉄骨
+ -Panel
+ -Cupsule
 ・BaseLine
-　ーPipe
+ -Pipe
 
 
 ○VolumeGenerator実装
 ・InSide
-　ーTopPattern(段々)
+ -TopPattern(段々)
 ・Outside 
-　ーソース修正
+ -ソース修正
 
 ○Box To Detail
 ※Pattern
@@ -122,7 +122,43 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
  
  
 ■ソース
-●OutSide
+●Atttribute
+・PanelRange設定
+・カプセルRatio
+・Cupsule or Pipe
+
+●BasePoint
+for(int height_idex = 0; height_idex < height_unit_num; height_idex++)
+{
+
+	int frame_pt = addpoint()
+	
+	//PanelRange
+	if(){
+		//パネル
+	
+		//カプセル
+	}	
+}
+
+●パイプ
+・アウトサイドパイプ
+ -PanelRange
+・インサイドパイプ
+ -Greeble
+
+
+●アールデコ
+//Center
+for(int idx = 0; idx < num; idx++)
+{
+	vector scale = 
+	scale.x *= 0.8
+	scale.z *= 0.8
+	scale.y += 
+}
+
+//Side
 vector base_pos = 0;
 vector base_scale = 1;
 float height = 1;
