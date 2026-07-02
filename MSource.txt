@@ -1,38 +1,19 @@
 ○Public
-・material_attr 取得
+・挙動確認
 
-○ポルトガル館記事メモ
-・デザイン概要
-・ロープ再現
-・ロープの揺れ再現
- -Vex処理
+○Authoring Variants
+・概要
+・実装方法
 
-○Noise検証
-※デザインコンセプトに沿った表現
-・空間&揺れ検証(※Noise視覚化) 
-・検証結果比較
+○AI調査
+・MCPのソース生成
+ -server.py
+・内部AIのドキュメント調査
 
 
-○Simple検証準備
-・BasePoint(CopyToPoint)
- -鉄骨
- -Panel
- -Cupsule
-・BaseLine
- -Pipe
+○メタボリズム検証
 
-
-○VolumeGenerator実装
-・InSide
- -TopPattern(段々)
-・Outside 
- -ソース修正
-
-○Box To Detail
-※Pattern
-・Column
-・WindowStyle
-
+○アールデコ検証
 
 
 ■ComputationalDesign
@@ -122,12 +103,13 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
  
  
 ■ソース
-●Atttribute
+○Atttribute設定
 ・PanelRange設定
-・カプセルRatio
-・CupsuleBlock & PipeBlock
+@height
+v@panel_range
 
-●BasePoint
+○Base処理
+int pipe_block[];
 for(int height_idex = 0; height_idex < height_unit_num; height_idex++)
 {
 
@@ -137,15 +119,13 @@ for(int height_idex = 0; height_idex < height_unit_num; height_idex++)
 	if(){
 		//パネル
 	
-		//カプセル
+		//カプセル or Pipe
+	
 	}	
 }
 
-●パイプ
-・アウトサイドパイプ
- -PanelRange
-・インサイドパイプ
- -Greeble
+△アウトサイドパイプ
+・GreebleBlock
 
 
 ●アールデコ
