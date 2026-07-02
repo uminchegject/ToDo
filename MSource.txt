@@ -1,3 +1,14 @@
+●Block
+・×8
+
+●Pipe
+・PipePrim
+・Prim TO Pipe
+
+●Randomly
+・Smaller&&TallerBlock
+
+
 ■メモ
 ※コーヒー + アイス
 
