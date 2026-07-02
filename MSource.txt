@@ -1,5 +1,17 @@
-○Public
-・material_attr 取得
+
+
+
+■メモ
+○Private
+・プレゼント
+ -ポピープレイタイム
+ -lofi with you
+・ノートパソコンUpdate
+・CEDEC準備
+ -TANight確認
+
+
+○Gherkinメモ
 
 ○ポルトガル館記事メモ
 ・デザイン概要
@@ -12,37 +24,127 @@
 ・空間&揺れ検証(※Noise視覚化) 
 ・検証結果比較
 
+●ポルトガル館
+・概要
+ -公式(https://kkaa.co.jp/project/expo-2025-portugal-pavilion/)
+・模写
+・検証(Noise)
 
-○Simple検証準備
-・BasePoint(CopyToPoint)
-　ー鉄骨
-　ーPanel
-　ーCupsule
-・BaseLine
-　ーPipe
+▲東熱ビル
+・※設計意図の確認
+・模写
+・検証(Noise)
 
 
+○Authoring Variants調査
+https://openusd.org/release/tut_authoring_variants.html
+
+
+○Model Context Protocol Study
+・GPT
+
+△AsciiHip解析検証
+・Ascii内情報調査
+ -複数のAIで検証
+
+●HoudiniMCP
+※複数のMCPソースを参考にする
+・Houdini → Cloud
+・処理レビュー
+・ノード整理(コメント)
+
+
+○購入
+https://www.applicraft.com/edu_personal/
+・前回の提出書類を整理
+
+●grasshopperツール
+※コーディングベース
+※Designとは離す
+※現場に求められているもの
+・Pythonの開発環境を整理
+・ノード to Python
+
+
+■Metaborithum
+○Simple検証
+・Base
+ -鉄骨
+ -Panel
+・Cupsule
+ -CupsuleTower
+ -On Panel
+・Pipe
+ -On Panel
+・カラー
+
+●Parts
+・鉄骨
+ -ハの字
+ -CopyToPoints
+・Panel
+ -△斜め
+・Cupsule
+ -CupsuleTower
+・Pipe
+ -Randomly
+
+
+●BasePattern
+※ハイラインデザイン
+・塊
+ -TopDesign(Panel)
+・菱形Block
+・Parts
+ -鉄骨
+ -Panel
+・Pattern
+ -斜め
+ -段々
+
+●CupsulePattern
+※下からの視点
+※塊
+※カプセルタワースケール
+※Gradation + Pattern + △Ramdomly
+・EmptyPattern
+
+●PipePattern
+※Block管理
+・セット
+ -AxisBlock
+・レイヤー
+・パイプ多様化
+
+
+■Rapture
 ○VolumeGenerator実装
 ・InSide
-　ーTopPattern(段々)
 ・Outside 
-　ーソース修正
-
+ 
 ○Box To Detail
 ※Pattern
 ・Column
 ・WindowStyle
 
+△City検証
 
+●Inside(Core)
+・TopDesign
 
-■ComputationalDesign
-●ポルトガル館
-・空間
-・揺れ
+●OutSide
+・Pattern
+ -DivideAxis
+・Randomly
+ -Height
+ -Offset
+ -DivideNum(or 4block)
 
-●青木淳
-・WoodPattern(SunnyHills)
-・TPattern(Tifanny)
+●資料
+・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
+・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
+・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
 
 
 ■CityIdea
@@ -122,91 +224,49 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
  
  
 ■ソース
-●OutSide
-vector base_pos = 0;
-vector base_scale = 1;
-float height = 1;
-int toggle = 1;
+●アールデコジェネレーター
+vector base_scale = 
+float center_ratio = 
 
-for(int i = 0; i < 10; i++)
+//センター
+vector center_size = 
+
+//サイド
+
+
+●Metaborithum
+vector base_scale = v@scale;
+vector base_pos = v@P;
+base_pos.y -= base_scale.y / 2;
+
+//鉄骨
+float unit_height = ch("unit_height");
+int unit_num = int(base_scale.y / unit_height);
+unit_height = base_scale.y / unit_num;
+
+for(int height_idx = 0; height_idx < unit_height; ++height_idx)
 {
-    base_scale *= 0.9;
-    height *= 1.2;
+	vector pos = base_pos;
+	pos = base_pos;
+	pos.y += unit_height * height_idx;
+	
+	vector scale = base_scale;
+	scale.y = unit_height;
+	
+	int pt = addpoint(0, pos);
+	setpointattrib(0, "scale", pt, scale);
+	
+}
 
-    if(toggle == 0){
-        vector scale = base_scale;
-        scale.x *= rand(scale) * 0.2 + 0.4;
-        scale.z *= rand(scale) * 1 + 0.6;
-        scale.y = height;
 
-        vector block1_pos = base_pos;
-        block1_pos.x += base_scale.x / 2;
-        block1_pos.y -= height / 2;
-        int block1 = addpoint(0, block1_pos);
-        setpointattrib(0, "scale", block1, scale);
+//パネル
+for(int height_idx = 0; height_idx < unit_height; ++height_idx)
+{
+	int 
 
-        vector block2_pos = base_pos;
-        block2_pos.x -= base_scale.x / 2;
-        block2_pos.y -= height / 2;
-        int block2 = addpoint(0, block2_pos);
-        setpointattrib(0, "scale", block2, scale);
+	//カプセル
+	float unit_size = base_pos.x;
 
-        toggle = 1;
-    }
-    else if(toggle == 1){
-        vector scale = base_scale;
-        scale.z *= rand(scale) * 0.2 + 0.4;
-        scale.x *= rand(scale) * 1 + 0.6;
-        scale.y = height;
-
-        vector block1_pos = base_pos;
-        block1_pos.z += base_scale.z / 2;
-        block1_pos.y -= height / 2;
-        int block1 = addpoint(0, block1_pos);
-        setpointattrib(0, "scale", block1, scale);
-
-        vector block2_pos = base_pos;
-        block2_pos.z -= base_scale.z / 2;
-        block2_pos.y -= height / 2;
-        int block2 = addpoint(0, block2_pos);
-        setpointattrib(0, "scale", block2, scale);
-
-        toggle = 2;
-    }    
-    else{    
-        vector scale = base_scale;
-        scale.z *= rand(scale) * 0.2 + 0.4;
-        scale.x *= rand(scale) * 0.2 + 0.4;
-        scale.y = height;
-    
-        vector block1_pos = base_pos;
-        block1_pos.z += base_scale.z / 2;
-        block1_pos.x += base_scale.x / 2;
-        block1_pos.y -= height / 2;
-        int block1 = addpoint(0, block1_pos);
-        setpointattrib(0, "scale", block1, scale);
-    
-        vector block2_pos = base_pos;
-        block2_pos.z += base_scale.z / 2;
-        block2_pos.x -= base_scale.x / 2;
-        block2_pos.y -= height / 2;
-        int block2 = addpoint(0, block2_pos);
-        setpointattrib(0, "scale", block2, scale);
-                
-        vector block3_pos = base_pos;
-        block3_pos.z -= base_scale.z / 2;
-        block3_pos.x += base_scale.x / 2;
-        block3_pos.y -= height / 2;
-        int block3 = addpoint(0, block3_pos);
-        setpointattrib(0, "scale", block3, scale);              
-    
-        vector block4_pos = base_pos;
-        block4_pos.z -= base_scale.z / 2;
-        block4_pos.x -= base_scale.x / 2;
-        block4_pos.y -= height / 2;
-        int block4 = addpoint(0, block4_pos);
-        setpointattrib(0, "scale", block4, scale);
-                
-        toggle = 0;
-    }    
+	//パイプ
+	
 }
