@@ -115,8 +115,11 @@ https://openusd.org/release/tut_authoring_variants.html
 
 ■アールデコ
 ○volumeGenerator処理メモ
-・凹凸Pattern
- -Randomly
+・Parameter
+ -BlockType
+ -BlockSize
+ -BlockHeight
+
  
 ○Box To Detail
 ※Pattern
