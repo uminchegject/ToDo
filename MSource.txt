@@ -8,14 +8,27 @@
  -TANight確認
 
 
-○Authoring Variantsメモ
-https://openusd.org/release/tut_authoring_variants.html
-※コンポジションアークStudy
+○Employ
+・書類&メモ再確認
+・建築調査
 
 
 ○CopilotStudy
 ・VSCodeでプロジェクト修正方法の調査
-・MCPプロジェクト開発準備
+・grasshopper開発準備
+・△MCPプロジェクト開発準備
+
+○grasshopper購入
+https://www.applicraft.com/edu_personal/
+・前回の提出書類を整理
+
+●grasshopperツール
+※コーディングベース
+※Designとは離す
+※現場に求められているもの
+・Pythonの開発環境を整理
+・ノード to Python
+
 
 △Model Context Protocol 修正
 
@@ -30,16 +43,9 @@ https://openusd.org/release/tut_authoring_variants.html
 ・ノード整理(コメント)
 
 
-○購入
-https://www.applicraft.com/edu_personal/
-・前回の提出書類を整理
-
-●grasshopperツール
-※コーディングベース
-※Designとは離す
-※現場に求められているもの
-・Pythonの開発環境を整理
-・ノード to Python
+△Authoring Variantsメモ
+https://openusd.org/release/tut_authoring_variants.html
+※コンポジションアークStudy
 
 
 △Gherkin記事化
@@ -68,8 +74,11 @@ https://www.applicraft.com/edu_personal/
 
 
 ■メタボリズム
-○検証用配置処理メモ
-・×8ブロック管理
+○配置処理メモ
+・カプセル
+・PipePrim
+
+○Prim To Pipe
 
 ○Simple検証
 ・カラー
