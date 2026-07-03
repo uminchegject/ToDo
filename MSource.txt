@@ -41,6 +41,7 @@
 
 ○Authoring Variants調査
 https://openusd.org/release/tut_authoring_variants.html
+※コンポジションアークStudy
 
 
 ○CopilotStudy
