@@ -119,6 +119,10 @@ https://openusd.org/release/tut_authoring_variants.html
  -BlockType
  -BlockSize
  -BlockHeight
+・Randomly
+ -Type(RongBlock)
+ -SizeRatio(偏り)
+ -HeightRatio(偏り)
 
  
 ○Box To Detail
