@@ -1,10 +1,8 @@
 ■メモ
 ○Private
-・Kindleポイント
- -よつばと
-・ノートパソコンUpdate
-・CEDEC準備
- -TANight確認
+・コード整理
+・Copilot大全
+・就活本用意
 
 
 ○Employ準備
@@ -22,10 +20,9 @@
 ・grasshopper開発準備
 ・△MCPプロジェクト開発準備
 
-○grasshopper購入
-https://www.applicraft.com/edu_personal/
-・前回の提出書類を整理
 
+○grasshopper開発環境整理
+・VSCode(Python)
 
 ●grasshopperツール
 ※コーディングベース
@@ -173,14 +170,11 @@ https://openusd.org/release/tut_authoring_variants.html
 
 ■Study
 ○本
-・Python Tutorial
 ・生成AI時代のソフトウェア開発
+・Copilot大全
 
 ○英語
 ・Oxford Picture Dictionary
-・時計仕掛けのオレンジ
- -映画
- -原作
 
 ○USDStudy
 ・USD Tutorials(https://openusd.org/release/tut_usd_tutorials.html)
@@ -211,23 +205,15 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
 
 ■ToDo
 ○本
-※Kindleポイント
-・修養
+※エッセイ
+・村上春樹
 ・司馬遼太郎
-
-○旅行準備
-・レンタカー
-・サンライズ
-・サプライズケーキ
 
 ○東京都ポイント
 
 ○ダイエット
 ・糖質制限
 ・ランニング
-
-○図書カード
-・GiantKilling
 
 ○衣類整理
 ・クローゼット
