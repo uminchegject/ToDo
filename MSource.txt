@@ -1,3 +1,12 @@
+■メモ
+○Private
+・Kindleポイント
+ -よつばと
+・ノートパソコンUpdate
+・CEDEC準備
+ -TANight確認
+
+
 ○Employ準備
 ・資料整理
  -M_所信表明
@@ -5,31 +14,18 @@
  -M_C&R(企業理解)
 ・本
  -就活本見直し
+
  
-○Copilot
-・本(GitHubCopilot大全)
-
-
-■メモ
-○Private
-・プレゼント
- -ポピープレイタイム
- -lofi with you
-・ノートパソコンUpdate
-・CEDEC準備
- -TANight確認
-
-
-○Employ
-
-
 ○CopilotStudy
+・本(GitHubCopilot大全)
+ -HoudiniMCPプロジェクトで本を検証
 ・grasshopper開発準備
 ・△MCPプロジェクト開発準備
 
 ○grasshopper購入
 https://www.applicraft.com/edu_personal/
 ・前回の提出書類を整理
+
 
 ●grasshopperツール
 ※コーディングベース
