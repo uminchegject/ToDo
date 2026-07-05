@@ -21,12 +21,9 @@
 
 
 ○Employ
-・書類&メモ再確認
-・建築調査
 
 
 ○CopilotStudy
-・VSCodeでプロジェクト修正方法の調査
 ・grasshopper開発準備
 ・△MCPプロジェクト開発準備
 
@@ -113,6 +110,8 @@ https://openusd.org/release/tut_authoring_variants.html
 ※カプセルタワースケール
 ※Gradation + Pattern + △Ramdomly
 ・EmptyPattern
+ -Gradation
+ -Randomly
 
 ●PipePattern
 ※Block管理
@@ -136,13 +135,13 @@ https://openusd.org/release/tut_authoring_variants.html
  -SizeRatio(偏り)
  -HeightRatio(偏り)
 
- 
 ○Box To Detail
 ※Pattern
 ・Column
 ・WindowStyle
 
 △City検証
+
 
 ●Inside(Core)
 ・TopDesign
