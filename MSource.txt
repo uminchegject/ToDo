@@ -2,13 +2,19 @@
 ○Private
 ・コード整理
 
+○Public
+・VATソース確認
+・attribute未設定対応
+
+
 ○Employ準備
 ・資料整理
- -M_所信表明
  -M_Employ(志望動機・アピールポイント)
+ -M_所信表明
  -M_C&R(企業理解)
 ・本
- -就活本見直し
+ -自己分析
+ -面接項目
 
  
 ○CopilotStudy
@@ -73,17 +79,28 @@ https://openusd.org/release/tut_authoring_variants.html
 
 
 ■メタボリズム
-○Simple検証処理メモ
-・BaseFrame
-・BasePipe
-・Panel
-・Cupsule
-・Pipe
-
-△Prim To Pipe
+○Prim To Pipe
+・Height
+・In Out
+・Pattern(Set)
+ -Simple
+ -Gradation
 
 ○Simple検証
-・カラー
+※カラー
+・BaseFrame
+・BasePipe
+ -Inside PipePanel
+・Panel
+ -Empty(InsidePipe)
+・Cupsule
+・OutsidePipe
+
+●レイヤー
+・InsidePipe + BaseFrame
+・Panel
+・Cupsule + Pipe
+
 
 ●BasePattern
 ※ハイラインデザイン
@@ -152,6 +169,7 @@ https://openusd.org/release/tut_authoring_variants.html
 ・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
 ・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
 ・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
+・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
 ・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
 
 
@@ -295,7 +313,7 @@ vector scale = block_scale;
 scale.x *= 0.3;
 float offset = (1 - (scale.x / block_scale.x)) / 2 * block_scale.x;	
 
-
+//ChangeBlock
 if(int(idx) % 3 == 0){            
 	scale.x *= 0.3;
 	offset = (1 - (scale.x / block_scale.x)) / 2 * block_scale.x;
