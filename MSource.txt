@@ -16,7 +16,11 @@
  -自己分析
  -面接項目
 
- 
+○環境Study
+・Houdini
+ -Public
+・grasshopper
+
 ○CopilotStudy
 ・本(GitHubCopilot大全)
  -HoudiniMCPプロジェクトで本を検証
@@ -305,13 +309,13 @@ int panel_unit_num = int((random(v@P) * 0.4 + 0.6) * height_unit_num);
  -SizeRatio(偏り)
  -HeightRatio(偏り)
 
-//HeightRatio
-block_scale.y *= (1 - idx / side_block_num);
-
 //SizeRatio
 vector scale = block_scale;
 scale.x *= 0.3;
 float offset = (1 - (scale.x / block_scale.x)) / 2 * block_scale.x;	
+
+//HeightRatio
+block_scale.y *= (1 - idx / side_block_num);
 
 //ChangeBlock
 if(int(idx) % 3 == 0){            
