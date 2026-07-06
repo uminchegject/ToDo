@@ -73,11 +73,14 @@ https://openusd.org/release/tut_authoring_variants.html
 
 
 ■メタボリズム
-○配置処理メモ
-・カプセル
-・PipePrim
+○Simple検証処理メモ
+・BaseFrame
+・BasePipe
+・Panel
+・Cupsule
+・Pipe
 
-○Prim To Pipe
+△Prim To Pipe
 
 ○Simple検証
 ・カラー
@@ -275,116 +278,30 @@ int panel_unit_num = int((random(v@P) * 0.4 + 0.6) * height_unit_num);
 
 
 ●VolumeGenerator
-vector base_pos = 0; //v@P;
-vector base_scale = {1.0, 10.0, 1.0};
+・Parameter
+ -BlockType
+ -BlockSize
+ -BlockHeight
+・Randomly
+ -Type(LongBlock)
+ -SizeRatio(偏り)
+ -HeightRatio(偏り)
 
-int center_block_num = chi("center_block_num");
-float center_ratio = ch("center_ratio");
-float center_height_ratio = ch("center_height_ratio");
+//HeightRatio
+block_scale.y *= (1 - idx / side_block_num);
 
-//Center
-vector center_scale = base_scale;
-center_scale.x *= center_ratio;
-center_scale.z *= center_ratio;
+//SizeRatio
+vector scale = block_scale;
+scale.x *= 0.3;
+float offset = (1 - (scale.x / block_scale.x)) / 2 * block_scale.x;	
 
-for(float idx = 0; idx < center_block_num; idx++)
-{
-    vector block_scale = center_scale;
-    block_scale.x *= (1 - idx / center_block_num);
-    block_scale.z *= (1 - idx / center_block_num);
-    block_scale.y *= (1 - center_height_ratio) * (idx / center_block_num) + center_height_ratio;
-    
-    int pt = addpoint(0, base_pos);
-    setpointattrib(0, "scale", pt, block_scale);
+
+if(int(idx) % 3 == 0){            
+	scale.x *= 0.3;
+	offset = (1 - (scale.x / block_scale.x)) / 2 * block_scale.x;
 }
-
-//Side
-int side_block_num = chi("side_block_num");
-
-int toggle = 1;
-for(float idx = 0; idx < side_block_num; idx++)
-{
-    vector block_scale = base_scale;
-    block_scale.y *= center_height_ratio;
-    
-    block_scale.x *= (1 - center_ratio) * (idx / side_block_num) + center_ratio;
-    block_scale.z *= (1 - center_ratio) * (idx / side_block_num) + center_ratio;
-    block_scale.y *= (1 - idx / side_block_num);
-
-    if(toggle == 0){
-        
-        vector scale = block_scale;
-        float offset;
-        if(int(idx) % 3 == 0){            
-            scale.x *= 0.3;
-            offset = (1 - (scale.x / block_scale.x)) / 2 * block_scale.x;
-        }
-        else{
-            scale.z *= 1.3;
-            scale.x *= 0.3;
-            offset = ((scale.x / block_scale.x)) / 2 * block_scale.x;        
-        }
-
-        vector block1_pos = base_pos;
-        block1_pos.x += offset;
-        int block1 = addpoint(0, block1_pos);
-        setpointattrib(0, "scale", block1, scale);
-
-        vector block2_pos = base_pos;
-        block2_pos.x -= offset;
-        int block2 = addpoint(0, block2_pos);
-        setpointattrib(0, "scale", block2, scale);
-
-        toggle = 1;
-    }   
-    else if(toggle == 1){
-        vector scale = block_scale;
-        scale.z *= 0.3;
-        float offset = (1 - (scale.z / block_scale.z)) / 2 * block_scale.z;
-
-        vector block1_pos = base_pos;
-        block1_pos.z += offset;
-        int block1 = addpoint(0, block1_pos);
-        setpointattrib(0, "scale", block1, scale);
-
-        vector block2_pos = base_pos;
-        block2_pos.z -= offset;
-        int block2 = addpoint(0, block2_pos);
-        setpointattrib(0, "scale", block2, scale);
-
-        toggle = 0;
-    }
-    else{    
-        vector scale = block_scale;
-        scale.z *= 0.3;
-        scale.x *= 0.3;
-        float offset_x = (1 - (scale.x / block_scale.x)) / 2 * block_scale.x;           
-        float offset_z = (1 - (scale.z / block_scale.z)) / 2 * block_scale.z;           
-
-        vector block1_pos = base_pos;
-        block1_pos.x += offset_x;
-        block1_pos.z += offset_z;
-        int block1 = addpoint(0, block1_pos);
-        setpointattrib(0, "scale", block1, scale);
-
-        vector block2_pos = base_pos;
-        block2_pos.x -= offset_x;
-        block2_pos.z += offset_z;
-        int block2 = addpoint(0, block2_pos);
-        setpointattrib(0, "scale", block2, scale);
-                        
-        vector block3_pos = base_pos;
-        block3_pos.x += offset_x;
-        block3_pos.z -= offset_z;
-        int block3 = addpoint(0, block3_pos);
-        setpointattrib(0, "scale", block3, scale);              
-
-        vector block4_pos = base_pos;
-        block4_pos.x -= offset_x;
-        block4_pos.z -= offset_z;
-        int block4 = addpoint(0, block4_pos);
-        setpointattrib(0, "scale", block4, scale);
-
-        toggle = 0;
-    }
+else{
+	scale.z *= 1.3;
+	scale.x *= 0.3;
+	offset = ((scale.x / block_scale.x)) / 2 * block_scale.x;        
 }
