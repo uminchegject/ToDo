@@ -1,16 +1,86 @@
-△所信表明メモ修正
+■メモ
+○Private
+・コード整理
+
+
+○所信表明メモ修正
+
+○Employ準備
+・資料整理
+ -M_Employ(志望動機・アピールポイント)
+ -M_所信表明
+ -M_C&R(企業理解)
+・本
+ -自己分析
+ -面接項目
 
 
 ○環境Study
-・Client AI
-　ーgrasshopperも
+・launch_bat
+・project.code-workspace
+・project.json
 
-○volumeGenerator処理メモ
-・SizeRatio(偏り)
-・HeightRatio(偏り)
-・Type(RongBlock)
+○CopilotStudy
+・本(GitHubCopilot大全)
+ -HoudiniMCPプロジェクトで本を検証
+ 
+○環境構築
+・Copilotを使用して環境構築
+・テストツール実装
 
 
+●grasshopperツール
+※コーディングベース
+※Designとは離す
+※現場に求められているもの
+・Pythonの開発環境を整理
+・ノード to Python
+
+
+△Model Context Protocol 修正
+
+△AsciiHip解析検証
+・Ascii内情報調査
+ -複数のAIで検証
+
+●HoudiniMCP
+※複数のMCPソースを参考にする
+・Houdini → Cloud
+・処理レビュー
+・ノード整理(コメント)
+
+
+△Authoring Variantsメモ
+https://openusd.org/release/tut_authoring_variants.html
+※コンポジションアークStudy
+
+
+△Gherkin記事化
+
+△ポルトガル館記事メモ
+・デザイン概要
+・ロープ再現
+・ロープの揺れ再現
+ -Vex処理
+
+△Noise検証
+※デザインコンセプトに沿った表現
+・空間&揺れ検証(※Noise視覚化) 
+・検証結果比較
+
+●ポルトガル館
+・概要
+ -公式(https://kkaa.co.jp/project/expo-2025-portugal-pavilion/)
+・模写
+・検証(Noise)
+
+▲東熱ビル
+・※設計意図の確認
+・模写
+・検証(Noise)
+
+
+■メタボリズム
 ○Prim To Pipe
 ・Height
 ・In Out
@@ -27,6 +97,83 @@
  -Empty(InsidePipe)
 ・Cupsule
 ・OutsidePipe
+
+●レイヤー
+・InsidePipe + BaseFrame
+・Panel
+・Cupsule + Pipe
+
+
+●BasePattern
+※ハイラインデザイン
+・塊
+ -TopDesign(Panel)
+・菱形Block
+・Parts
+ -鉄骨(ハの字)
+ -Panel
+・Pattern
+ -斜め
+ -段々
+
+●CupsulePattern
+※下からの視点
+※塊
+※カプセルタワースケール
+※Gradation + Pattern + △Ramdomly
+・EmptyPattern
+ -Gradation
+ -Randomly
+
+●PipePattern
+※Block管理
+・Prim To Pipe
+ -InSide
+ -OutSide(Panel)
+・セット
+ -AxisBlock
+・レイヤー
+・パイプ多様化
+
+
+■アールデコ
+○Randomly検証
+・Type(RongBlock)
+・SizeRatio(偏り)
+・HeightRatio(偏り)
+
+○volumeGenerator処理メモ
+・Parameter
+ -BlockType
+ -BlockSize
+ -BlockHeight
+
+○Box To Detail
+※Pattern
+・Column
+・WindowStyle
+
+△City検証
+
+
+●Inside(Core)
+・TopDesign
+ -CopyToPoints
+
+●OutSide
+・Pattern
+ -DivideAxis
+・Randomly
+ -Height
+ -Offset
+ -DivideNum(or 4block)
+
+●資料
+・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
+・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
+・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
+・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
 
 
 ■CityIdea
@@ -45,7 +192,6 @@
 ■Study
 ○本
 ・生成AI時代のソフトウェア開発
-・Copilot大全
 
 ○英語
 ・Oxford Picture Dictionary
@@ -126,21 +272,15 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
  -クリエイターが表現や品質向上に集中できる環境の構築
 
 
-●BasePoint
-vector base_scale = v@scale;
-
-float unit_size = base_scale.x / 6;
-
-float height_unit_size = ("height_unit_size");
-int height_unit_num = int(base_scale.y / height_unit_size);
-height_unit_size = base_scale.y / height_unit_num;
-
-int panel_unit_num = int((random(v@P) * 0.4 + 0.6) * height_unit_num);
+●Prim To Pipe
+・Height
+・In Out
+・Pattern(Set)
+ -Simple
+ -Gradation
 
 
-●配置処理
-・カプセル
-・PipePrim
+●配置処理(カプセル・PipePrim)
 void block_base_generator(vector pos; vector normal; vector scale; int height_unit_num)
 {
 
@@ -183,23 +323,18 @@ void block_base_generator(vector pos; vector normal; vector scale; int height_un
 }
 
 
-●VolumeGenerator
-・Parameter
- -BlockType
- -BlockSize
- -BlockHeight
-・Randomly
- -Type(LongBlock)
- -SizeRatio(偏り)
- -HeightRatio(偏り)
-
-//SizeRatio
-vector scale = block_scale;
-scale.x *= 0.3;
-float offset = (1 - (scale.x / block_scale.x)) / 2 * block_scale.x;	
+●Randomly検証
+・Type(RongBlock)
+・SizeRatio(偏り)
+・HeightRatio(偏り)
 
 //HeightRatio
-block_scale.y *= (1 - idx / side_block_num);
+block_scale.y *= (1 - (idx / side_block_num) * (rand(idx + 10000) * 0.6 + 0.7));
+
+
+//SizeRatio
+float offset = (1 - (scale.x / block_scale.x) * (rand(idx) * 0.4 + 0.8)) / 2 * block_scale.x;
+
 
 //ChangeBlock
 if(int(idx) % 3 == 0){            
