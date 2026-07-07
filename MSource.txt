@@ -1,3 +1,23 @@
+●Randomly検証
+・Type(RongBlock)
+・HeightRatio(偏り)
+
+//HeightRatio
+block_scale.y *= (1 - (idx / side_block_num) * (rand(idx + 10000) * 0.6 + 0.7));
+
+
+//ChangeBlock
+if(int(idx) % 3 == 0){            
+	scale.x *= 0.3;
+	offset = (1 - (scale.x / block_scale.x)) / 2 * block_scale.x;
+}
+else{
+	scale.z *= 1.3;
+	scale.x *= 0.3;
+	offset = ((scale.x / block_scale.x)) / 2 * block_scale.x;        
+}
+
+
 ■メモ
 ○Private
 ・コード整理
@@ -81,12 +101,20 @@ https://openusd.org/release/tut_authoring_variants.html
 
 
 ■メタボリズム
-○Prim To Pipe
+○PipeBlock処理
+・Radius
+・Num
+
+●Prim To Pipe
 ・Height
 ・In Out
 ・Pattern(Set)
  -Simple
  -Gradation
+
+○Panel配置
+・Block
+・RandomlyEmpty
 
 ○Simple検証
 ※カラー
