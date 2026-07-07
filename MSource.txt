@@ -16,10 +16,11 @@
  -自己分析
  -面接項目
 
+
 ○環境Study
 ・Houdini
  -Public
-・grasshopper
+・△grasshopper
 
 ○CopilotStudy
 ・本(GitHubCopilot大全)
