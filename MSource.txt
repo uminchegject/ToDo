@@ -82,13 +82,10 @@ https://openusd.org/release/tut_authoring_variants.html
 
 ■メタボリズム
 ○Panel配置
-・Block
+・Block(Pattern)
  -OutsidePipe
-・RandomlyEmpty
+・RandomlyEmpty(Remove Randomly From Block)
  -Cupsule
- 
-○Cupsule配置
-・On Panel
 
 ○PipeBlock処理
 ・Subdivision改修
@@ -103,13 +100,9 @@ https://openusd.org/release/tut_authoring_variants.html
 ○Simple検証
 ※カラー
 ・BaseFrame
- -UnitBasePoint
 ・BasePipe
- -Inside PipePanel
 ・Panel
- -Empty(InsidePipe)
 ・OutsidePipe
- -OnPanel
 ・Cupsule
 
 ●レイヤー
@@ -158,6 +151,7 @@ https://openusd.org/release/tut_authoring_variants.html
  -BlockHeight
 
 ○Box To Detail 検証
+・HDA検証 & 修正
 
 ●Box To Detail
 ※Pattern
