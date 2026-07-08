@@ -3,10 +3,6 @@
 ・コード整理
 
 
-○C&RStudy
-・資料確認
-・GPT学習
-
 ○Employ準備
 ・資料整理
  -M_Employ(志望動機・アピールポイント)
@@ -16,19 +12,17 @@
  -自己分析
  -面接項目
 
+●Base
+・所信表明
+ -制作工程の効率化
+ -技術的表現の選択肢の拡大
+・C&R
+ -クリエイティブ
+ -業界人事
 
-○Copilot環境準備
-・環境構築検証
 
-○環境Study
-※Copilot環境で検証
-・launch_bat
-・project.code-workspace
-・project.json
-
-○CopilotStudy
-・本(GitHubCopilot大全)
- -HoudiniMCPプロジェクトで本を検証
+○Houdini環境検証
+・検証用Pythonツール実装
  
 ○環境構築
 ・Copilotを使用して環境構築
@@ -89,8 +83,10 @@ https://openusd.org/release/tut_authoring_variants.html
 ■メタボリズム
 ○Panel配置
 ・Block
+ -OutsidePipe
 ・RandomlyEmpty
-
+ -Cupsule
+ 
 ○Cupsule配置
 ・On Panel
 
@@ -155,18 +151,15 @@ https://openusd.org/release/tut_authoring_variants.html
 
 
 ■アールデコ
-○Randomly検証
-・Type(RongBlock)
-・SizeRatio(偏り)
-・HeightRatio(偏り)
-
-○volumeGenerator処理メモ
+○volumeGenerator整理
 ・Parameter
  -BlockType
  -BlockSize
  -BlockHeight
 
-○Box To Detail
+○Box To Detail 検証
+
+●Box To Detail
 ※Pattern
 ・Column
 ・WindowStyle
@@ -310,94 +303,3 @@ void block_base_generator(vector pos; vector normal; vector scale; int height_un
 }
 
 
-●Randomly検証
-vector base_pos = 0; //v@P;
-vector base_scale = {1.0, 10.0, 1.0};
-
-int center_block_num = chi("center_block_num");
-float center_ratio = ch("center_ratio");
-float center_height_ratio = ch("center_height_ratio");
-
-//Center
-vector center_scale = base_scale;
-center_scale.x *= center_ratio;
-center_scale.z *= center_ratio;
-
-for(float idx = 0; idx < center_block_num; idx++)
-{
-    vector block_scale = center_scale;
-    block_scale.x *= (1 - idx / center_block_num);
-    block_scale.z *= (1 - idx / center_block_num);
-    block_scale.y *= (1 - center_height_ratio) * (idx / center_block_num) + center_height_ratio;
-    
-    int pt = addpoint(0, base_pos);
-    setpointattrib(0, "scale", pt, block_scale);
-}
-
-//Side
-int side_block_num = chi("side_block_num");
-
-int toggle = 1;
-for(float idx = 0; idx < side_block_num; idx++)
-{
-    vector block_scale = base_scale;
-    block_scale.y *= center_height_ratio;
-    
-    block_scale.x *= (1 - center_ratio) * (idx / side_block_num) + center_ratio;
-    block_scale.z *= (1 - center_ratio) * (idx / side_block_num) + center_ratio;
-    
-    block_scale.y *= (1 - (idx / side_block_num) * (rand(idx + 10000) * 0.6 + 0.7));
-
-    if(toggle == 0){
-        
-        vector scale = block_scale;
-        float offset;
-        
-        if(int(idx) % 3 != 0){            
-            scale.x *= 0.3;
-            offset = (1 - (scale.x / block_scale.x)) / 2 * block_scale.x;
-        }
-        else{
-            scale.z *= 1.4;
-            scale.x *= 0.3;
-            offset = ((scale.x / block_scale.x)) / 2 * block_scale.x;        
-        }        
-
-        vector block1_pos = base_pos;
-        block1_pos.x += offset;
-        int block1 = addpoint(0, block1_pos);
-        setpointattrib(0, "scale", block1, scale);
-
-        vector block2_pos = base_pos;
-        block2_pos.x -= offset;
-        int block2 = addpoint(0, block2_pos);
-        setpointattrib(0, "scale", block2, scale);
-
-        toggle = 1;
-    }   
-    else if(toggle == 1){
-        vector scale = block_scale;
-        float offset;
-        if(int(idx) % 3 != 0){            
-            scale.z *= 0.3;
-            offset = (1 - (scale.z / block_scale.z)) / 2 * block_scale.z;
-        }
-        else{
-            scale.x *= 1.4;
-            scale.z *= 0.3;
-            offset = ((scale.z / block_scale.z)) / 2 * block_scale.z;        
-        }         
-
-        vector block1_pos = base_pos;
-        block1_pos.z += offset;
-        int block1 = addpoint(0, block1_pos);
-        setpointattrib(0, "scale", block1, scale);
-
-        vector block2_pos = base_pos;
-        block2_pos.z -= offset;
-        int block2 = addpoint(0, block2_pos);
-        setpointattrib(0, "scale", block2, scale);
-
-        toggle = 0;
-    }
-}
