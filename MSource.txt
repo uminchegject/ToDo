@@ -152,6 +152,7 @@ https://openusd.org/release/tut_authoring_variants.html
 
 ○Box To Detail 検証
 ・HDA検証 & 修正
+・Class化
 
 ●Box To Detail
 ※Pattern
