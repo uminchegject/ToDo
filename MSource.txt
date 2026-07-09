@@ -1,5 +1,7 @@
 ■メモ
 ○Private
+・勤怠報告
+・美容室予約
 ・コード整理
 
 
@@ -23,6 +25,10 @@
 
 ○Houdini環境検証
 ・検証用Pythonツール実装
+geo = hou.selectedNodes()[0].geometry()
+
+print(geo.intrinsicValue("pointcount"))
+print(geo.intrinsicValue("primitivecount"))
  
 ○環境構築
 ・Copilotを使用して環境構築
