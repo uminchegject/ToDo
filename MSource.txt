@@ -1,22 +1,3 @@
-○Panel配置
-・Block(Pattern)
- -OutsidePipe
-・RandomlyEmpty(Remove Randomly From Block)
- -Cupsule
-
-○sub division 調査
-・LongestEdge処理を修正
-
-○PipeBlock処理
-・Subdivision改修
-
-
-○Box To Detail 検証
-・HDA検証 & 修正
-・Class化
-
-
-
 ■メモ
 ○Private
 ・小話準備
@@ -32,27 +13,10 @@
 ・原因調査
 
 
-○Employ準備
-・会社
-・マインド
-
-●Base
-・所信表明
- -制作工程の効率化
- -技術的表現の選択肢の拡大
-
-
-○Houdini環境検証
-・検証用Pythonツール実装
-geo = hou.selectedNodes()[0].geometry()
-
-print(geo.intrinsicValue("pointcount"))
-print(geo.intrinsicValue("primitivecount"))
- 
-○環境構築
-・Copilotを使用して環境構築
-・テストツール実装
-
+○grasshopper準備
+・環境準備
+・ツールテーマ
+・簡易ツール
 
 ●grasshopperツール
 ※コーディングベース
@@ -62,33 +26,33 @@ print(geo.intrinsicValue("primitivecount"))
 ・ノード to Python
 
 
-△Model Context Protocol 修正
+○Employ資料整理
+・会社
+・マインド
 
-△AsciiHip解析検証
-・Ascii内情報調査
- -複数のAIで検証
+○Employ準備
+・本
 
-●HoudiniMCP
-※複数のMCPソースを参考にする
-・Houdini → Cloud
-・処理レビュー
-・ノード整理(コメント)
+●Base
+・所信表明
+ -制作工程の効率化
+ -技術的表現の選択肢の拡大
 
 
-△Authoring Variantsメモ
+○Authoring Variantsメモ
 https://openusd.org/release/tut_authoring_variants.html
 ※コンポジションアークStudy
 
 
-△Gherkin記事化
+○Gherkin記事化
 
-△ポルトガル館記事メモ
+○ポルトガル館記事メモ
 ・デザイン概要
 ・ロープ再現
 ・ロープの揺れ再現
  -Vex処理
 
-△Noise検証
+○Noise検証
 ※デザインコンセプトに沿った表現
 ・空間&揺れ検証(※Noise視覚化) 
 ・検証結果比較
@@ -103,6 +67,14 @@ https://openusd.org/release/tut_authoring_variants.html
 ・※設計意図の確認
 ・模写
 ・検証(Noise)
+
+
+△MCP検証
+・解析処理
+
+△AsciiHip解析検証
+・Ascii内情報調査
+ -複数のAIで検証
 
 
 ■メタボリズム
@@ -124,6 +96,7 @@ https://openusd.org/release/tut_authoring_variants.html
 ・Pattern(Set)
  -Simple
  -Gradation
+
 
 ○Simple検証
 ※カラー
@@ -174,21 +147,16 @@ https://openusd.org/release/tut_authoring_variants.html
 ■アールデコ
 ○Box To Detail 検証
 ・HDA検証 & 修正
-・Class化
 
-○volumeGenerator整理
+○Class化
+
+△volumeGenerator整理
 ・Parameter
  -BlockType
  -BlockSize
  -BlockHeight
 
-●Box To Detail
-※Pattern
-・Column
-・WindowStyle
-
 △City検証
-
 
 ●Inside(Core)
 ・TopDesign
