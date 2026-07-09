@@ -1,92 +1,17 @@
-■メモ
-○Private
-・勤怠報告
-・美容室予約
-・コード整理
+○public
+・入出力調査
+　ーソース処理デバッグ確認
 
 
-○Employ準備
-・資料整理
- -M_Employ(志望動機・アピールポイント)
- -M_所信表明
- -M_C&R(企業理解)
-・本
- -自己分析
- -面接項目
-
-●Base
-・所信表明
- -制作工程の効率化
- -技術的表現の選択肢の拡大
-・C&R
- -クリエイティブ
- -業界人事
+○Employ
 
 
-○Houdini環境検証
-・検証用Pythonツール実装
-geo = hou.selectedNodes()[0].geometry()
+○sub division 調査
+・LongestEdge処理を修正
 
-print(geo.intrinsicValue("pointcount"))
-print(geo.intrinsicValue("primitivecount"))
- 
-○環境構築
-・Copilotを使用して環境構築
-・テストツール実装
+△検証用Pythonツール実装
 
 
-●grasshopperツール
-※コーディングベース
-※Designとは離す
-※現場に求められているもの
-・Pythonの開発環境を整理
-・ノード to Python
-
-
-△Model Context Protocol 修正
-
-△AsciiHip解析検証
-・Ascii内情報調査
- -複数のAIで検証
-
-●HoudiniMCP
-※複数のMCPソースを参考にする
-・Houdini → Cloud
-・処理レビュー
-・ノード整理(コメント)
-
-
-△Authoring Variantsメモ
-https://openusd.org/release/tut_authoring_variants.html
-※コンポジションアークStudy
-
-
-△Gherkin記事化
-
-△ポルトガル館記事メモ
-・デザイン概要
-・ロープ再現
-・ロープの揺れ再現
- -Vex処理
-
-△Noise検証
-※デザインコンセプトに沿った表現
-・空間&揺れ検証(※Noise視覚化) 
-・検証結果比較
-
-●ポルトガル館
-・概要
- -公式(https://kkaa.co.jp/project/expo-2025-portugal-pavilion/)
-・模写
-・検証(Noise)
-
-▲東熱ビル
-・※設計意図の確認
-・模写
-・検証(Noise)
-
-
-■メタボリズム
 ○Panel配置
 ・Block(Pattern)
  -OutsidePipe
@@ -96,96 +21,10 @@ https://openusd.org/release/tut_authoring_variants.html
 ○PipeBlock処理
 ・Subdivision改修
 
-●Prim To Pipe
-・Height
-・In Out
-・Pattern(Set)
- -Simple
- -Gradation
-
-○Simple検証
-※カラー
-・BaseFrame
-・BasePipe
-・Panel
-・OutsidePipe
-・Cupsule
-
-●レイヤー
-・InsidePipe + BaseFrame
-・Panel
-・Cupsule + Pipe
-
-
-●BasePattern
-※ハイラインデザイン
-・塊
- -TopDesign(Panel)
-・菱形Block
-・Parts
- -鉄骨(ハの字)
- -Panel
-・Pattern
- -斜め
- -段々
-
-●CupsulePattern
-※下からの視点
-※塊
-※カプセルタワースケール
-※Gradation + Pattern + △Ramdomly
-・EmptyPattern
- -Gradation
- -Randomly
-
-●PipePattern
-※Block管理
-・Prim To Pipe
- -InSide
- -OutSide(Panel)
-・セット
- -AxisBlock
-・レイヤー
-・パイプ多様化
-
-
-■アールデコ
-○volumeGenerator整理
-・Parameter
- -BlockType
- -BlockSize
- -BlockHeight
 
 ○Box To Detail 検証
 ・HDA検証 & 修正
 ・Class化
-
-●Box To Detail
-※Pattern
-・Column
-・WindowStyle
-
-△City検証
-
-
-●Inside(Core)
-・TopDesign
- -CopyToPoints
-
-●OutSide
-・Pattern
- -DivideAxis
-・Randomly
- -Height
- -Offset
- -DivideNum(or 4block)
-
-●資料
-・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
-・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
-・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
-・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
-・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
 
 
 ■CityIdea
