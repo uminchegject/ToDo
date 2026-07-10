@@ -11,19 +11,15 @@
 ・処理確認
  -入力
 ・原因調査
+ -splatmap, heightmap周り調査
 
 
-○grasshopper準備
-・環境準備
-・ツールテーマ
+○grasshopper環境準備
 ・簡易ツール
 
 ●grasshopperツール
 ※コーディングベース
-※Designとは離す
-※現場に求められているもの
-・Pythonの開発環境を整理
-・ノード to Python
+・清水ツール参考(https://www.shimz.co.jp/dde/tools/index.html)
 
 
 ○Employ資料整理
