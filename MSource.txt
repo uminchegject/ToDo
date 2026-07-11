@@ -71,10 +71,8 @@ https://openusd.org/release/tut_authoring_variants.html
 ・RandomlyEmpty(Remove Randomly From Block)
  -Cupsule
 
-
 ○配置処理(カプセル・PipePrim)
 ・PanelBase
-
 
 ○PipeBlock処理
 ・Subdivision改修
@@ -134,8 +132,7 @@ https://openusd.org/release/tut_authoring_variants.html
 
 
 ■アールデコ
-○Box To Detail 検証
-・HDA検証 & 修正
+○Box To Detail 修正
 
 ○Class化
 
@@ -311,3 +308,34 @@ void block_base_generator(vector pos; vector normal; vector scale; int height_un
 		}
 	}
 }
+
+■朝会
+●小学生低学年(ゲームボーイ)
+・ポケモン
+・ドンキーコング
+・ムシキング
+ -カードを集めて遊ぶムシキングが流行っていた
+
+●小学生高学年(DS, Wii)
+※3Dゲームに目覚めた
+・マリオ64
+・マリオギャラクシー
+
+●中学生(PSP)
+※友達と通信を通して遊ぶようになった
+・モンハン
+・GTA
+・メタルギアピースウォーカー
+
+●高校生(PS4)
+※グラフィックの向上
+※FPSへの興味
+・BF4
+ -ニアルチ
+ 
+●大学生
+※Eスポーツ
+・レインボーシックス
+
+●社会人(SFC)
+※シンプルisベスト(おじさん…)
