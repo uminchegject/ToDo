@@ -1,20 +1,91 @@
+○Employ資料整理
+・会社
+・マインド
+
+○Employ準備
+・本
+
+●Base
+・所信表明
+ -制作工程の効率化
+ -技術的表現の選択肢の拡大
+
+
+○grasshopper環境準備
+・フォルダ構成
+・簡易ツール
+
+●grasshopperツール
+※コーディングベース
+・清水ツール参考(https://www.shimz.co.jp/dde/tools/index.html)
+
+
+○Authoring Variantsメモ
+https://openusd.org/release/tut_authoring_variants.html
+※コンポジションアークStudy
+
+
+○Gherkin記事化
+
+○ポルトガル館記事メモ
+・デザイン概要
+・ロープ再現
+・ロープの揺れ再現
+ -Vex処理
+
+○Noise検証
+※デザインコンセプトに沿った表現
+・空間&揺れ検証(※Noise視覚化) 
+・検証結果比較
+
+
+■CupsuleCity
+○Panel配置
+・Block(Pattern)
+ -OutsidePipe
+・RandomlyEmpty(Remove Randomly From Block)
+ -Cupsule
+
+○PipeBlock処理
+・Subdivision改修
+
+●Prim To Pipe
+・Height
+・In Out
+・Pattern(Set)
+ -Simple
+ -Gradation
+
+○Simple検証
+※カラー
+・BaseFrame
+・BasePipe
+・Panel
+・OutsidePipe
+・Cupsule
+
+●レイヤー
+・InsidePipe + BaseFrame
+・Panel
+・Cupsule + Pipe
+
+
+■Rapture
+○Box To Detail 検証
+・HDA検証 & 修正
+
+○Class化
+
+
 ■メモ
 ○Private
 ・小話準備
 ・勤怠報告
 ・コード整理
 
-○Public
-・問題調査
- -Issues with Unity Terrain as input(https://www.sidefx.com/forum/topic/75031/?page=1#post-435619)
- -Issue transferring Terrain Layer data to Houdini in H20.5 / Unity(https://github.com/sideeffects/HoudiniEngineForUnity/issues/32)
-・処理確認
- -入力
-・原因調査
- -splatmap, heightmap周り調査
-
 
 ○grasshopper環境準備
+・フォルダ構成
 ・簡易ツール
 
 ●grasshopperツール
