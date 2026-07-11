@@ -1,11 +1,15 @@
-■メモ
+○小話準備
+・メモ
+・スライド
+
 ○Private
-・小話準備
-・勤怠報告
 ・コード整理
+・掃除機
+・Godivaアイス
+・勤怠報告
 
 
-○grasshopper環境準備
+○grasshopper開発環境準備
 ・フォルダ構成
 ・簡易ツール
 
@@ -14,6 +18,7 @@
 ・清水ツール参考(https://www.shimz.co.jp/dde/tools/index.html)
 
 
+■メモ
 ○Employ準備
 ・本
 ・資料
