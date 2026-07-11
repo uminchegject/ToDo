@@ -1,49 +1,3 @@
-○grasshopper環境準備
-・フォルダ構成
-・簡易ツール
-
-●grasshopperツール
-※コーディングベース
-・清水ツール参考(https://www.shimz.co.jp/dde/tools/index.html)
-
-
-○Box To Detail 検証
-・HDA検証 & 修正
-
-○Class化
-
-
-○Panel配置
-・Block(Pattern)
- -OutsidePipe
-・RandomlyEmpty(Remove Randomly From Block)
- -Cupsule
-
-○PipeBlock処理
-・Subdivision改修
-
-●Prim To Pipe
-・Height
-・In Out
-・Pattern(Set)
- -Simple
- -Gradation
-
-○Simple検証
-※カラー
-・BaseFrame
-・BasePipe
-・Panel
-・OutsidePipe
-・Cupsule
-
-●レイヤー
-・InsidePipe + BaseFrame
-・Panel
-・Cupsule + Pipe
-
-
-
 ■メモ
 ○Private
 ・小話準備
@@ -109,14 +63,18 @@ https://openusd.org/release/tut_authoring_variants.html
 
 
 ■メタボリズム
-○Panel配置
+○配置処理(Frame, Panel)
+
+●Panel
 ・Block(Pattern)
  -OutsidePipe
 ・RandomlyEmpty(Remove Randomly From Block)
  -Cupsule
 
-○sub division 調査
-・LongestEdge処理を修正
+
+○配置処理(カプセル・PipePrim)
+・PanelBase
+
 
 ○PipeBlock処理
 ・Subdivision改修
@@ -282,6 +240,36 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
  -Gradation
 
 
+●配置処理(Frame, Panel)
+vector base_scale = v@scale;
+
+float unit_size = base_scale.x / 6;
+
+float height_unit_size = ch("height_unit_size");
+int height_unit_num = int(base_scale.y / height_unit_size);
+height_unit_size = base_scale.y / height_unit_num;
+
+for(int idx = 0; idx < height_unit_num; idx++)
+{
+    vector pos = v@P;
+    pos.y += height_unit_size * idx;
+    
+    //Frame
+    vector frame_scale = set(unit_size * 2, height_unit_size, unit_size * 2);
+    int frame_pt = addpoint(0, pos);
+    setpointattrib(0, "scale", frame_pt, frame_scale);
+    
+    //Panel
+    if(int(idx / 5) % 2 == 0){
+        vector panel_scale = set(unit_size * 2, height_unit_size, unit_size * 2);
+        int panel_pt = addpoint(0, pos);
+        setpointattrib(0, "scale", panel_pt, panel_scale);
+        setpointgroup(0, "panel", panel_pt, 1);
+    }
+}
+removepoint(0, @ptnum);
+
+
 ●配置処理(カプセル・PipePrim)
 void block_base_generator(vector pos; vector normal; vector scale; int height_unit_num)
 {
@@ -295,7 +283,7 @@ void block_base_generator(vector pos; vector normal; vector scale; int height_un
 		pos.y += scale.y;
 		
 		block_num += 1;
-		if(block_num < rand(pos) * 5 + 3){
+		if(block_num < 5){
 			toggle = !toggle;
 			block_num = 0;
 		}
