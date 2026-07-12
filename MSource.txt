@@ -1,9 +1,9 @@
 ○小話準備
-・メモ
 ・スライド
 
+
+■メモ
 ○Private
-・コード整理
 ・掃除機
 ・Godivaアイス
 ・勤怠報告
@@ -18,22 +18,7 @@
 ・清水ツール参考(https://www.shimz.co.jp/dde/tools/index.html)
 
 
-■メモ
-○Employ準備
-・本
-・資料
-
-●Base
-・所信表明
- -制作工程の効率化
- -技術的表現の選択肢の拡大
-
-
 ○Gherkin記事化
-
-○Authoring Variantsメモ
-https://openusd.org/release/tut_authoring_variants.html
-※コンポジションアークStudy
 
 △ポルトガル館記事メモ
 ・デザイン概要
@@ -57,6 +42,21 @@ https://openusd.org/release/tut_authoring_variants.html
 ・※設計意図の確認
 ・模写
 ・検証(Noise)
+
+
+○Employ準備
+・本
+・資料
+
+●Base
+・所信表明
+ -制作工程の効率化
+ -技術的表現の選択肢の拡大
+
+
+○Authoring Variantsメモ
+https://openusd.org/release/tut_authoring_variants.html
+※コンポジションアークStudy
 
 
 △MCP検証
@@ -140,6 +140,7 @@ https://openusd.org/release/tut_authoring_variants.html
 ○Box To Detail 修正
 
 ○Class化
+・VolumeBlock修正
 
 △volumeGenerator整理
 ・Parameter
