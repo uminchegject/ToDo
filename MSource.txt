@@ -1,4 +1,36 @@
+○Private
+・振込
+
+○Public
+・mask, height volumeの調査
+
+○Employ資料確認
+
+
+○Authoring Variants
+
+○Gherkin記事化
+
+
+○海波の表現
+※波の強弱
+・空間
+・揺れ
+
+○メタボリズム
+・配置処理(Frame, Panel)
+・配置処理(カプセル・PipePrim)
+・PipeBlock処理
+
+○アールデコ
+・Box To Detail 修正
+・Class化
+
+
 ■メモ
+○Private
+・サッカー振込
+
 ○Public
 ・mask, height volumeの調査
 
