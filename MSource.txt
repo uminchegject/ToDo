@@ -57,7 +57,14 @@ https://openusd.org/release/tut_authoring_variants.html
 
 
 ■メタボリズム
+○PipeBlock処理
+・Prim To Line(検証)
+・△Subdivision改修
+
 ○配置処理(Frame, Panel)
+
+○配置処理(カプセル・PipePrim)
+※PanelBase
 
 ●Panel
 ・Block(Pattern)
@@ -65,13 +72,7 @@ https://openusd.org/release/tut_authoring_variants.html
 ・RandomlyEmpty(Remove Randomly From Block)
  -Cupsule
 
-○配置処理(カプセル・PipePrim)
-・PanelBase
-
-○PipeBlock処理
-・Subdivision改修
-
-●Prim To Pipe
+●Pipe
 ・Height
 ・In Out
 ・Pattern(Set)
@@ -245,7 +246,7 @@ int height_unit_num = int(base_scale.y / height_unit_size);
 height_unit_size = base_scale.y / height_unit_num;
 
 for(int idx = 0; idx < height_unit_num; idx++)
-{
+{	
     vector pos = v@P;
     pos.y += height_unit_size * idx;
     
