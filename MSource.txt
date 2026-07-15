@@ -1,3 +1,35 @@
+○Private
+・振込
+
+○Public
+・修正 & 挙動確認
+・マージ
+・報告
+
+○Employ資料確認
+・Q定例資料確認
+
+
+○Gherkin記事化(Qiita)
+・見直し
+
+
+○海波の表現
+※波の強弱
+・空間
+・揺れ
+
+○メタボリズム
+・配置処理(Frame, Panel)
+・配置処理(カプセル・PipePrim)
+・PipeBlock処理
+
+○アールデコ
+・Box To Detail 修正
+・Class化
+
+
+
 ■メモ
 ○Private
 ・サッカー振込
