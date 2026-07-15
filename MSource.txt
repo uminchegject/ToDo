@@ -1,30 +1,3 @@
-○Private
-・振込
-
-○Public
-・mask, height volumeの調査
-
-○Employ資料確認
-
-
-○Authoring Variants
-
-○Gherkin記事化
-
-
-○海波の表現
-※波の強弱
-・空間
-・揺れ
-
-○メタボリズム
-・配置処理(Frame, Panel)
-・配置処理(カプセル・PipePrim)
-・PipeBlock処理
-
-○アールデコ
-・Box To Detail 修正
-・Class化
 
 
 ■メモ
@@ -32,7 +5,7 @@
 ・サッカー振込
 
 ○Public
-・mask, height volumeの調査
+・mask,heightのvolumeインポート処理の調査
 
 
 ○Employ準備
@@ -80,12 +53,6 @@ https://openusd.org/release/tut_authoring_variants.html
 ※波の強弱
 ・空間
 ・揺れ
-
-●ポルトガル館
-・概要
- -公式(https://kkaa.co.jp/project/expo-2025-portugal-pavilion/)
-・模写
-・検証(Noise)
 
 
 ■メタボリズム
@@ -336,66 +303,3 @@ void block_base_generator(vector pos; vector normal; vector scale; int height_un
 		}
 	}
 }
-
-
-■朝会
-・俺のゲーム経歴
-
-●小学生低学年
-・2005年頃
- -DS
- -PSP
- -ゲームキューブ
- -PS2
-・自分は…(ゲームボーイ)
- -ポケモン
- -ドンキーコング
- -ムシキング
-  -カードを集めて遊ぶムシキングが流行っていた
-
-●小学生高学年(DS, Wii)
-・2009年頃
- -PS3
- -Wii
-・自分は…(DSLite, Wii)
- -※3Dゲームに目覚めた
- -マリオ64
- -マリオギャラクシー
- -今でもマリオ = 3Dアクションのイメージが強い
-
-●中学生(PSP)
-・2012年頃
- -PSVita
- -3DS
- -WiiU
- -スマホゲー(パズドラ、テンプルラン)
-・自分は…(PSP)
- -※友達と通信を通して遊ぶようになった
- -モンハン
- -メタルギアピースウォーカー
-
-●高校生(PS4)
-・2015年頃
- -PS4(グラフィックの向上)
-・自分は…(PS4, 3DS)
- -3DS
-  -モンハン(ハード転換)
- -PS4
-  -BF4(ニアルチ)
- -ソシャゲ・ブラウザゲー
-  -艦これ
- 
-●大学生
-・2020年頃
- -switch
- -PS5
- -ソシャゲ(ポケモンGO)
-・自分は…(PS4)
- -※あまりゲームをしていなかった
- -レインボーシックス(Eスポーツ)
-
-●社会人
-・そして現在へ…
- -GameBoy → DS, Wii, → PSP → PS4 …→ SFC!?
- -理由は…(※シンプルisベスト!(おじさん…))
- -他にもシンプルなインディーゲームや、ボードゲームを中心に疲れないゲームを細々と遊んでいます…
