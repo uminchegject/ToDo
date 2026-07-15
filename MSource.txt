@@ -1,8 +1,3 @@
-○Private
-振り込み遅れてすみません…
->その他の支払方法については個別にご相談ください
-上記についてだけど、もしpaypayが可能ならpaypayで支払いをお願いしたいのですが、可能でしょうか。
-
 ○Public
 ・修正 & 挙動確認
 ・ドキュメント
@@ -13,7 +8,20 @@
 ・報告
 
 
-○海波の表現
+○grasshopper開発環境準備
+・フォルダ構成
+・簡易ツール
+
+●grasshopperツール
+※コーディングベース
+・清水ツール参考(https://www.shimz.co.jp/dde/tools/index.html)
+
+
+○アールデコ
+・DetailGenerator パラメーター修正
+・ClassID設定
+
+○海波の表現処理設計
 ※波の強弱
 ・空間
 ・揺れ
@@ -21,11 +29,7 @@
 ○メタボリズム
 ・配置処理(Frame, Panel)
 ・配置処理(カプセル・PipePrim)
-・PipeBlock処理
-
-○アールデコ
-・Box To Detail 修正
-・Class化
+・PipeBlock処理設計
 
 
 
