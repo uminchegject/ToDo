@@ -57,14 +57,15 @@ https://openusd.org/release/tut_authoring_variants.html
 
 
 ■メタボリズム
+○配置処理(Frame, Panel, Pipe)
+※PanelBase
+
 ○PipeBlock処理
 ・Prim To Line(検証)
 ・△Subdivision改修
 
-○配置処理(Frame, Panel)
+△カプセル処理
 
-○配置処理(カプセル・PipePrim)
-※PanelBase
 
 ●Panel
 ・Block(Pattern)
@@ -228,14 +229,6 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
  
  
 ■ソース
-●Prim To Pipe
-・Height
-・In Out
-・Pattern(Set)
- -Simple
- -Gradation
-
-
 ●配置処理(Frame, Panel)
 vector base_scale = v@scale;
 
