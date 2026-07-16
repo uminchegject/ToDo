@@ -57,7 +57,7 @@ https://openusd.org/release/tut_authoring_variants.html
 
 
 ■メタボリズム
-○配置処理(Frame, Panel, Pipe)
+○配置処理(Frame, Panel, PipePrim)
 ※PanelBase
 
 ○PipeBlock処理
@@ -128,13 +128,13 @@ https://openusd.org/release/tut_authoring_variants.html
 
 
 ■アールデコ
-○Box To Detail 修正
-・DetailGeneratorパラメーター修正
-
 ○VolumeBlockBasePointGenerator修正
 ・Class化
 ・CenterBlockの単一化
  -1ポイントのみ生成
+
+○Box To Detail 修正
+・DetailGeneratorパラメーター修正
 
 △volumeGenerator整理
 ・Parameter
