@@ -1,10 +1,39 @@
+○Public
+・修正 & 挙動確認
+・ドキュメント
+・マージ
+・報告
+
+
+○海波表現
+・波の形態模写
+　ー長さ
+　ー細さ
+　ー色(モノトーン)
+・波の揺れ模写
+
+
+○配置処理(Frame, Panel, PipePrim)
+※PanelBase
+
+○PipeBlock処理
+・Prim To Line(検証)
+・△Subdivision改修
+
+
+○VolumeBlockBasePointGenerator修正
+・Class化
+・CenterBlockの単一化
+ -1ポイントのみ生成
+
+○Box To Detail 修正
+・DetailGeneratorパラメーター修正
+
+
 ■メモ
 ○Public
 ・修正 & 挙動確認
 ・ドキュメント
- -問題点
- -修正点
- -懸念点
 ・マージ
 ・報告
 
@@ -18,10 +47,10 @@
  -制作工程の効率化
  -技術的表現の選択肢の拡大
 
-
-○Authoring Variantsメモ
-https://openusd.org/release/tut_authoring_variants.html
-※コンポジションアークStudy
+○コンポジションアーク記事メモ
+・各コンポジションアークの長所
+・サンプルソース
+・Authoring Variants(https://openusd.org/release/tut_authoring_variants.html)
 
 
 △MCP検証
@@ -41,7 +70,8 @@ https://openusd.org/release/tut_authoring_variants.html
 ・清水ツール参考(https://www.shimz.co.jp/dde/tools/index.html)
 
 
-○Gherkin記事化
+○Gherkin公開
+・記事見直し
 
 ○ポルトガル館記事メモ
 ・デザイン概要
