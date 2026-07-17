@@ -2,7 +2,7 @@
 ○Public
 ・ドキュメント再確認
 ・挙動確認
-　ー確認項目整理
+ -確認項目整理
 ・マージ
 ・報告
 
@@ -32,6 +32,10 @@
 ・サンプルソース
 ・Authoring Variants(https://openusd.org/release/tut_authoring_variants.html)
 
+
+○MCP解析環境準備
+・GitCopilot
+・調査検証
 
 △MCP検証
 ・解析処理
