@@ -39,8 +39,12 @@
 ・清水ツール参考(https://www.shimz.co.jp/dde/tools/index.html)
 
 
-○Gherkin公開
-・記事見直し
+○海波表現
+・波の形態模写
+ -長さ
+ -細さ
+ -色(モノトーン)
+・波の揺れ模写
 
 ○ポルトガル館記事メモ
 ・デザイン概要
@@ -49,16 +53,8 @@
  -Vex処理
 
 
-○海波表現
-・波の形態模写
-　ー長さ
-　ー細さ
-　ー色(モノトーン)
-・波の揺れ模写
-
-
 ■メタボリズム
-○配置処理(Frame, Panel, PipePrim)
+○配置処理(PipePrim, Cupsule)
 ※PanelBase
 
 ○PipeBlock処理
