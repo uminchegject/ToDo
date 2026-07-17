@@ -1,17 +1,20 @@
 ■メモ
 ○Public
-・修正 & 挙動確認
+・ドキュメント再確認
+・挙動確認
+　ー確認項目整理
 ・マージ
 ・報告
 
 
 ●反省
 ・要約から話す
-・客観性、将来性を考える
-・チームとの関係性をしっかりと話せるようにする
-・自分ならどうするかをセットで話せるようにする
+・客観性、将来性
+・チームとの関係性
+ -自分ならどうするかをセットで話せるようにする
 
 ○整理項目
+※引き出しを用意する
 ・Houdiniについて
 ・TAについて
  -TAになったきっかけ
@@ -19,6 +22,7 @@
 ・TAチームについて(将来性)
  -業界課題に対するアプローチ
  -育成体制が整っていない
+・現在行っていくこと、行いたいこと
 
 ○本整理
 
@@ -46,7 +50,7 @@
 ・清水ツール参考(https://www.shimz.co.jp/dde/tools/index.html)
 
 
-○海波表現
+○海波表現方法調査
 ・波の形態模写
  -長さ
  -細さ
@@ -58,6 +62,40 @@
 ・ロープ再現
 ・ロープの揺れ再現
  -Vex処理
+
+
+■アールデコ
+○Class化
+・BaseVolumeClass化
+・DetailGeneratorパラメーター複数用意
+
+△volumeGenerator整理
+・Random化
+・Parameter
+ -BlockType
+ -BlockSize
+ -BlockHeight
+
+△City検証
+
+●Inside(Core)
+・TopDesign
+ -CopyToPoints
+
+●OutSide
+・Pattern
+ -DivideAxis
+・Randomly
+ -Height
+ -Offset
+ -DivideNum(or 4block)
+
+●資料
+・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
+・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
+・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
+・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
 
 
 ■メタボリズム
@@ -126,40 +164,6 @@
  -AxisBlock
 ・レイヤー
 ・パイプ多様化
-
-
-■アールデコ
-○Class化
-・BaseVolumeClass化
-・DetailGeneratorパラメーター複数用意
-
-△volumeGenerator整理
-・Random化
-・Parameter
- -BlockType
- -BlockSize
- -BlockHeight
-
-△City検証
-
-●Inside(Core)
-・TopDesign
- -CopyToPoints
-
-●OutSide
-・Pattern
- -DivideAxis
-・Randomly
- -Height
- -Offset
- -DivideNum(or 4block)
-
-●資料
-・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
-・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
-・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
-・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
-・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
 
 
 ■CityIdea
