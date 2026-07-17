@@ -127,6 +127,7 @@
 ・DetailGeneratorパラメーター複数用意
 
 △volumeGenerator整理
+・Random化
 ・Parameter
  -BlockType
  -BlockSize
