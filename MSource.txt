@@ -61,9 +61,6 @@
 ・Prim To Line(検証)
 ・△Subdivision改修
 
-△カプセル処理
-
-
 ●Panel
 ・Block(Pattern)
  -OutsidePipe
