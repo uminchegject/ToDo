@@ -16,33 +16,6 @@
 ○grasshopperツール開発準備
 
 
-○Class化
-・BaseVolumeClass化
-・DetailGeneratorパラメーター複数用意
-
-△City化
-
-△整理
-
-
-○海波表現方法調査
-・波の形態模写
- -長さ
- -細さ
- -色(モノトーン)
-・波の揺れ模写
-
-
-○Base + Cupsule検証
-
-○Pipe実装
-
-●メタボリズム
-※規格デザイン
-・Pipe
- -規格化
-
-
 ■メモ
 ○Public
 ・ドキュメント再確認
@@ -86,7 +59,7 @@
  -色(モノトーン)
 ・波の揺れ模写
 
-○ポルトガル館記事メモ
+△ポルトガル館記事メモ
 ・デザイン概要
 ・ロープ再現
 ・ロープの揺れ再現
@@ -95,8 +68,9 @@
 
 ■アールデコ
 ○Class化
-・BaseVolumeClass化
 ・DetailGeneratorパラメーター複数用意
+ -枠サイズ、枠カラー × 2
+ -センターブロック
 
 △volumeGenerator整理
 ・Random化
@@ -105,7 +79,7 @@
  -BlockSize
  -BlockHeight
 
-△City検証
+○City検証
 
 ●Inside(Core)
 ・TopDesign
@@ -128,31 +102,26 @@
 
 
 ■メタボリズム
-○配置処理(PipePrim, Cupsule)
-※PanelBase
+※規格デザイン
+○Base + Cupsule検証
 
 ○PipeBlock処理
 ・Prim To Line(検証)
 ・△Subdivision改修
 
-●Panel
-・Block(Pattern)
- -OutsidePipe
-・RandomlyEmpty(Remove Randomly From Block)
- -Cupsule
+○Pipe
+・Block管理(Cupsule or Pipe or Empty)
+・BasePrim
+ -InSide
+ -OutSide
+・検証
 
-●Pipe
-・Height
-・In Out
-・Pattern(Set)
- -Simple
- -Gradation
+○City(配置)
 
 
-○Simple検証
-※カラー
+●Parts
 ・BaseFrame
-・BasePipe
+・InsidePipe
 ・Panel
 ・OutsidePipe
 ・Cupsule
@@ -163,19 +132,30 @@
 ・Cupsule + Pipe
 
 
-●BasePattern
+●Base
 ※ハイラインデザイン
 ・塊
  -TopDesign(Panel)
 ・菱形Block
-・Parts
- -鉄骨(ハの字)
- -Panel
 ・Pattern
  -斜め
  -段々
 
-●CupsulePattern
+●Panel
+・Block(Pattern)
+ -OutsidePipe
+・RandomlyEmpty(Remove Randomly From Block)
+ -Cupsule
+
+●Pipe
+※規格化(Radius, Color)
+・Height
+・In Out
+・Pattern(Set)
+ -Simple
+ -Gradation
+
+●Cupsule
 ※下からの視点
 ※塊
 ※カプセルタワースケール
@@ -183,16 +163,6 @@
 ・EmptyPattern
  -Gradation
  -Randomly
-
-●PipePattern
-※Block管理
-・Prim To Pipe
- -InSide
- -OutSide(Panel)
-・セット
- -AxisBlock
-・レイヤー
-・パイプ多様化
 
 
 ■CityIdea
