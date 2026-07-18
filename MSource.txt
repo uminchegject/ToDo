@@ -1,13 +1,3 @@
-○Base + Cupsule検証
-
-○Pipe実装
-
-●メタボリズム
-※規格デザイン
-・Pipe
- -規格化
-
-
 ○棚卸
 ※自分とTAを分かってもらう
 ※引き出しを用意する
@@ -20,6 +10,8 @@
 ○MCP解析環境準備
 ・GitCopilot
 ・調査検証
+
+○grasshopperツール開発準備
 
 
 ○Class化
@@ -35,12 +27,14 @@
 ・波の揺れ模写
 
 
-○配置処理(PipePrim, Cupsule)
-※PanelBase
+○Base + Cupsule検証
 
-○PipeBlock処理
-・Prim To Line(検証)
-・△Subdivision改修
+○Pipe実装
+
+●メタボリズム
+※規格デザイン
+・Pipe
+ -規格化
 
 
 ■メモ
