@@ -16,6 +16,31 @@
 ○grasshopperツール開発準備
 
 
+○海波表現方法調査
+・波の形態模写
+ -長さ
+ -細さ
+ -色(モノトーン)
+・波の揺れ模写
+
+
+○Class検証
+・DetailGeneratorパラメーター複数用意
+ -枠サイズ、枠カラー × 2
+ -センターブロック
+
+○City設計
+・Terrain
+・BaseVolume
+
+
+○Base + Cupsule検証
+
+○配置設計
+・Base
+・Block(Cupsule, Pipe)
+
+
 ■メモ
 ○Public
 ・ドキュメント再確認
@@ -67,7 +92,7 @@
 
 
 ■アールデコ
-○Class化
+○Class検証
 ・DetailGeneratorパラメーター複数用意
  -枠サイズ、枠カラー × 2
  -センターブロック
@@ -103,6 +128,7 @@
 
 ■メタボリズム
 ※規格デザイン
+
 ○Base + Cupsule検証
 
 ○PipeBlock処理
