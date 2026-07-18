@@ -6,6 +6,8 @@
 ・要約 + 詳細のセットでまとめる
 ・将来性についてまとめる
 
+○USD記事
+
 
 ○MCP解析環境準備
 ・GitCopilot
@@ -17,6 +19,10 @@
 ○Class化
 ・BaseVolumeClass化
 ・DetailGeneratorパラメーター複数用意
+
+△City化
+
+△整理
 
 
 ○海波表現方法調査
