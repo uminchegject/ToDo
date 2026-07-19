@@ -13,9 +13,15 @@
 ・調査検証
 
 
-○grasshopperStudy
+○ツール設計
+※パイプライン
+・敷地環境可視化ツール(https://chatgpt.com/c/6a5c3438-7014-83e8-b263-73798ab7fb8b)
+ -斜線制限
+ -日射量
+・清水(https://www.shimz.co.jp/dde/)
 
-○grasshopperツール開発準備
+○実装検証
+・Python環境整理
 
 
 ○海波表現方法調査
@@ -25,8 +31,6 @@
  -細さ
  -色(モノトーン)
 ・波の揺れ模写
-
-○Grasshopper再現
 
 
 ○City設計
@@ -44,7 +48,6 @@
 ・Block(Cupsule, Pipe)
 
 △Base + Cupsule検証
-
 
 
 ■メモ
