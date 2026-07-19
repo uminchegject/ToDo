@@ -8,37 +8,43 @@
 
 ○USD記事
 
-
 ○MCP解析環境準備
 ・GitCopilot
 ・調査検証
+
+
+○grasshopperStudy
 
 ○grasshopperツール開発準備
 
 
 ○海波表現方法調査
+※Houdini, Grasshopper
 ・波の形態模写
  -長さ
  -細さ
  -色(モノトーン)
 ・波の揺れ模写
 
+○Grasshopper再現
 
-○Class検証
-・DetailGeneratorパラメーター複数用意
- -枠サイズ、枠カラー × 2
- -センターブロック
 
 ○City設計
 ・Terrain
 ・BaseVolume
 
+△Class検証
+・DetailGeneratorパラメーター複数用意
+ -枠サイズ、枠カラー × 2
+ -センターブロック
 
-○Base + Cupsule検証
 
 ○配置設計
 ・Base
 ・Block(Cupsule, Pipe)
+
+△Base + Cupsule検証
+
 
 
 ■メモ
