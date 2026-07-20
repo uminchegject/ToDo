@@ -1,3 +1,67 @@
+※スタバではコーヒーのみ
+ -ワンモアコーヒー(カード化)
+
+●小旅行反省
+※長期振り返り & 計画
+・午前中
+ -美術館、博物館
+ -長期反省 & 整理
+・セット
+ -散歩(アイデア + スマホ + 本） 
+ -メモ + 本
+・6時～8時散歩
+
+
+○実装検証
+※朝(実装メモ) + 夜(検証)
+・Python環境整理
+
+●ツール設計
+※パイプライン
+・敷地環境可視化ツール(https://chatgpt.com/c/6a5c3438-7014-83e8-b263-73798ab7fb8b)
+ -斜線制限
+ -日射量
+・清水(https://www.shimz.co.jp/dde/)
+
+
+○海波表現(Houseini)
+・波の形態模写
+ -長さ
+ -細さ
+ -色(モノトーン)
+・波の揺れ模写
+
+△Grasshopper再現
+
+
+○Class検証
+・DetailGeneratorパラメーター複数用意
+ -枠サイズ、枠カラー × 2
+ -センターブロック
+
+○volumeGenerator整理
+・Random化
+・Parameter
+ -BlockType
+ -BlockSize
+ -BlockHeight
+
+○Rapture City検証
+※Middle & Topデザイン
+・BaseVolume(Randomly)
+ -Subdivision
+
+
+○PipeGenerator実装
+
+○Base + Pipe検証
+・RandomlyBaseSize
+
+○配置設計
+※Base & Block(Cupsule, Pipe)
+・Cupsule配置
+
+
 ○棚卸(メモ)
 ※自分とTAを分かってもらう
 ※引き出しを用意する
@@ -11,43 +75,6 @@
 △MCP解析環境準備
 ・GitCopilot
 ・調査検証
-
-
-○ツール設計
-※パイプライン
-・敷地環境可視化ツール(https://chatgpt.com/c/6a5c3438-7014-83e8-b263-73798ab7fb8b)
- -斜線制限
- -日射量
-・清水(https://www.shimz.co.jp/dde/)
-
-○実装検証
-・Python環境整理
-
-
-○海波表現方法調査
-※Houdini, Grasshopper
-・波の形態模写
- -長さ
- -細さ
- -色(モノトーン)
-・波の揺れ模写
-
-
-○City設計
-・Terrain
-・BaseVolume
-
-△Class検証
-・DetailGeneratorパラメーター複数用意
- -枠サイズ、枠カラー × 2
- -センターブロック
-
-
-○配置設計
-・Base
-・Block(Cupsule, Pipe)
-
-△Base + Cupsule検証
 
 
 ■メモ
