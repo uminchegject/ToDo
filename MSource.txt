@@ -1,17 +1,19 @@
-※スタバではコーヒーのみ
- -ワンモアコーヒー
+■メモ
+○Public
+・ドキュメント再確認
+・挙動確認
+ -確認項目整理
+・マージ
+・報告
 
-●旅行反省
-※長期振り返り&計画
-・午前中(旅行前)
- -美術館・博物館
- -長期反省&整理
- -昼ご飯
-・旅行セット
- -※PC作業はNG
- -散歩(アイデア+スマホ+本） 
- -部屋(メモ+本・映画)
-・6～8時散歩
+
+○棚卸(メモ)
+※自分とTAを分かってもらう
+※引き出しを用意する
+※客観性、将来性
+※チームとの関係性
+・要約 + 詳細のセットでまとめる
+・将来性についてまとめる
 
 
 ○実装検証
@@ -26,16 +28,7 @@
 ・清水ツール参照(https://www.shimz.co.jp/dde/)
 
 
-○海波表現(Houdini)
-・波の形態模写
- -長さ
- -細さ
- -色(モノトーン)
-・波の揺れ模写
-
-△Grasshopper再現
-
-
+■アールデコ
 ○Class検証
 ・DetailGeneratorパラメーター複数用意
  -枠サイズ、枠カラー × 2
@@ -52,100 +45,6 @@
 ※Middle & Topデザイン
 ・BaseVolume(Randomly)
  -Subdivision
-
-
-○PipeGenerator実装
-
-○Base + Pipe検証
-・RandomlyBaseSize
-・Layer(InsidePipe Frame Panel OutsidePipe)
-
-○配置設計
-※Base & Block(Cupsule, Pipe)
-・Cupsule配置
-
-
-○棚卸(メモ)
-※自分とTAを分かってもらう
-※引き出しを用意する
-※客観性、将来性
-※チームとの関係性
-・要約 + 詳細のセットでまとめる
-・将来性についてまとめる
-
-△USD記事
-
-△MCP解析環境準備
-・GitCopilot
-・調査検証
-
-
-■メモ
-○Public
-・ドキュメント再確認
-・挙動確認
- -確認項目整理
-・マージ
-・報告
-
-
-○コンポジションアーク記事メモ
-・各コンポジションアークの長所
-・サンプルソース
-・Authoring Variants(https://openusd.org/release/tut_authoring_variants.html)
-
-
-○MCP解析環境準備
-・GitCopilot
-・調査検証
-
-△MCP検証
-・解析処理
-
-△AsciiHip解析検証
-・Ascii内情報調査
- -複数のAIで検証
-
-
-○ツール設計
-※パイプライン
-・敷地環境可視化ツール(https://chatgpt.com/c/6a5c3438-7014-83e8-b263-73798ab7fb8b)
- -斜線制限
- -日射量
-・清水(https://www.shimz.co.jp/dde/)
-
-○実装検証
-・Python環境整理
-
-
-○海波表現方法調査
-・波の形態模写
- -長さ
- -細さ
- -色(モノトーン)
-・波の揺れ模写
-
-△ポルトガル館記事メモ
-・デザイン概要
-・ロープ再現
-・ロープの揺れ再現
- -Vex処理
-
-
-■アールデコ
-○Class検証
-・DetailGeneratorパラメーター複数用意
- -枠サイズ、枠カラー × 2
- -センターブロック
-
-△volumeGenerator整理
-・Random化
-・Parameter
- -BlockType
- -BlockSize
- -BlockHeight
-
-○City検証
 
 ●Inside(Core)
 ・TopDesign
@@ -170,20 +69,15 @@
 ■メタボリズム
 ※規格デザイン
 
-○Base + Cupsule検証
+○PipeGenerator実装
 
-○PipeBlock処理
-・Prim To Line(検証)
-・△Subdivision改修
+○Base + Pipe検証
+・RandomlyBaseSize
+・Layer(InsidePipe Frame Panel OutsidePipe)
 
-○Pipe
-・Block管理(Cupsule or Pipe or Empty)
-・BasePrim
- -InSide
- -OutSide
-・検証
-
-○City(配置)
+○配置設計
+※Base & Block(Cupsule, Pipe)
+・Cupsule配置
 
 
 ●Parts
@@ -232,20 +126,42 @@
  -Randomly
 
 
-■CityIdea
-●Rapture
-・アールデコ
-・Terrain + Rock
-・△植物
-・△水中表現
+■ComputationalDesign
+○海波表現(Houdini)
+・波の形態模写
+ -長さ
+ -細さ
+ -色(モノトーン)
+・波の揺れ模写
 
-●Columbia
-・Rock
-・ネオクラシカル
-・△空中表現
+△Grasshopper再現
+
+△ポルトガル館記事メモ
+・デザイン概要
+・ロープ再現
+・ロープの揺れ再現
+ -Vex処理
 
 
 ■Study
+△コンポジションアーク記事メモ
+・各コンポジションアークの長所
+・サンプルソース
+・Authoring Variants(https://openusd.org/release/tut_authoring_variants.html)
+
+
+△MCP解析環境準備
+・GitCopilot
+・調査検証
+
+△MCP検証
+・解析処理
+
+△AsciiHip解析検証
+・Ascii内情報調査
+ -複数のAIで検証
+
+
 ○本
 ・生成AI時代のソフトウェア開発
 
