@@ -1,11 +1,21 @@
-○PipeGenerator設計
+○Grasshopper実装検証
+※Editor上での挙動をベースに実装
+・Input
+ -敷地情報(周辺環境)
+・Output
+ -Volume
 
-○海波表現設計
+○PipeGenerator
+・Subdivision修正
+ -DivideAxisを管理
+
+○海波表現
 ・波の形態模写
  -長さ
  -細さ
  -色(モノトーン)
 ・波の揺れ模写
+
 
 
 ■メモ
