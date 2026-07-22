@@ -5,10 +5,6 @@
 ・Output
  -Volume
 
-○PipeGenerator
-・Subdivision修正
- -DivideAxisを管理
-
 ○海波表現
 ・GPTで再現
 ・波の形態模写
@@ -16,6 +12,11 @@
  -細さ
  -色(モノトーン)
 ・波の揺れ模写
+
+○PipeGenerator
+・BaseBlock(Subdivision修正)
+ -Find_longest_edgeを修正
+・BaseLine
 
 
 ■メモ
@@ -84,7 +85,8 @@
 
 ○Base + Pipe検証
 ・RandomlyBaseSize
-・Layer(InsidePipe Frame Panel OutsidePipe)
+・Layer(InsidePipe・Frame・Panel・OutsidePipe)
+・City検証
 
 ○配置設計
 ※Base & Block(Cupsule, Pipe)
