@@ -1,24 +1,3 @@
-○Grasshopper実装検証
-※Editor上での挙動をベースに実装
-・Input
- -敷地情報(周辺環境)
-・Output
- -Volume
-
-○海波表現
-・GPTで再現
-・波の形態模写
- -長さ
- -細さ
- -色(モノトーン)
-・波の揺れ模写
-
-○PipeGenerator
-・BaseBlock(Subdivision修正)
- -Find_longest_edgeを修正
-・BaseLine
-
-
 ■メモ
 ○棚卸(メモ)
 ※自分とTAを分かってもらう
@@ -29,8 +8,13 @@
 ・将来性についてまとめる
 
 
-○実装検証
+○Grasshopper実装検証
 ※日中(実装メモ) + 夜(検証)
+※Editor上での挙動をベースに実装
+・Input
+ -敷地情報(周辺環境)
+・Output
+ -Volume
 
 ●ツール設計
 ※パイプライン
@@ -81,7 +65,10 @@
 ■メタボリズム
 ※規格デザイン
 
-○PipeGenerator実装
+○PipeGenerator
+・BaseBlock(Subdivision修正)
+ -Find_longest_edgeを修正
+・BaseLine
 
 ○Base + Pipe検証
 ・RandomlyBaseSize
