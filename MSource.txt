@@ -1,30 +1,9 @@
-○Private
-・Houdiniライセンス
-・建て替え申請
-・Houdini勉強会
-
 ○Public
-・Exporter調査(データ構造把握)
-・Importer調査(処理構造把握)
-
-
-○Class検証
-・DetailGeneratorパラメーター複数用意
- -枠サイズ、枠カラー × 2
- -センターブロック
-
-○volumeGenerator整理
-・Random化
-・Parameter
- -BlockType
- -BlockSize
- -BlockHeight
-
-
-○PipeGenerator
-・BaseBlock(Subdivision修正)
- -Find_longest_edgeを修正
-・BaseLine
+・調査
+ -Exporter調査(データ構造把握)
+ -Importer調査(処理構造把握)
+・準備
+ -サブモジュール
 
 
 ○棚卸(メモ)
@@ -34,6 +13,25 @@
 ※チームとの関係性
 ・要約 + 詳細のセットでまとめる
 ・将来性についてまとめる
+
+
+○volumeGenerator処理修正
+・Random化
+・Parameter
+ -BlockType
+ -BlockSize
+ -BlockHeight
+
+○Class検証
+・DetailGeneratorパラメーター複数用意
+ -枠サイズ、枠カラー × 2
+ -センターブロック
+
+
+○PipeGenerator
+・BaseBlock(Subdivision修正)
+ -Find_longest_edgeを修正
+・BaseLine
 
 
 ■メモ
