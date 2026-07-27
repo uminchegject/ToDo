@@ -1,3 +1,41 @@
+○Private
+・Houdiniライセンス
+・建て替え申請
+・Houdini勉強会
+
+○Public
+・Exporter調査(データ構造把握)
+・Importer調査(処理構造把握)
+
+
+○Class検証
+・DetailGeneratorパラメーター複数用意
+ -枠サイズ、枠カラー × 2
+ -センターブロック
+
+○volumeGenerator整理
+・Random化
+・Parameter
+ -BlockType
+ -BlockSize
+ -BlockHeight
+
+
+○PipeGenerator
+・BaseBlock(Subdivision修正)
+ -Find_longest_edgeを修正
+・BaseLine
+
+
+○棚卸(メモ)
+※自分とTAを分かってもらう
+※引き出しを用意する
+※客観性、将来性
+※チームとの関係性
+・要約 + 詳細のセットでまとめる
+・将来性についてまとめる
+
+
 ■メモ
 ○棚卸(メモ)
 ※自分とTAを分かってもらう
@@ -150,6 +188,10 @@
 
 
 ■Study
+△CEDECまとめ
+※メモをベースに調べていく
+
+
 △コンポジションアーク記事メモ
 ・各コンポジションアークの長所
 ・サンプルソース
