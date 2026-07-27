@@ -1,11 +1,3 @@
-○Public
-・調査
- -Exporter調査(データ構造把握)
- -Importer調査(処理構造把握)
-・準備
- -サブモジュール
-
-
 ○棚卸(メモ)
 ※自分とTAを分かってもらう
 ※引き出しを用意する
@@ -15,23 +7,40 @@
 ・将来性についてまとめる
 
 
-○volumeGenerator処理修正
-・Random化
-・Parameter
- -BlockType
- -BlockSize
- -BlockHeight
-
-○Class検証
-・DetailGeneratorパラメーター複数用意
- -枠サイズ、枠カラー × 2
- -センターブロック
+△Public
+・調査
+ -フォルダ構造把握
+ -処理構造把握
+・準備
 
 
 ○PipeGenerator
 ・BaseBlock(Subdivision修正)
  -Find_longest_edgeを修正
 ・BaseLine
+
+do{
+    vector edge_dir = edgev(h);
+    if(edge_dir){
+		i@_lot_cut_edge = h;       
+		return;
+    }
+    h = hedge_next(0,h);
+   
+} while (h != temp);
+
+
+△volumeGenerator処理修正
+・Random化
+・Parameter
+ -BlockType
+ -BlockSize
+ -BlockHeight
+
+△Class検証
+・DetailGeneratorパラメーター複数用意
+ -枠サイズ、枠カラー × 2
+ -センターブロック
 
 
 ■メモ
