@@ -1,7 +1,7 @@
 ○Public
 ※報告準備
 ・Import処理整理(Python)
-・サブモジュール対応方法確認
+・必要データの確認
 
 ○Private
 ・サッカーサブスク更新(UNext)
