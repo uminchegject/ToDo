@@ -25,19 +25,12 @@
 
 
 ○サンプルプロジェクト調査
+・MapToSurface
 
 ○grasshopperメモ用意
 ・チェックツール
 ・モジュールシステム
- - Pattern生成ツール
-
-
-○Labs導入
-
-○PipeGenerator
-・BaseBlock(Subdivision修正)
- -Find_longest_edgeを修正
-・BaseLine
+ -Pattern生成ツール
 
 
 ○volumeGenerator処理修正
@@ -53,6 +46,14 @@
 ・DetailGeneratorパラメーター複数用意
  -枠サイズ、枠カラー × 2
  -センターブロック
+
+
+○Labs導入
+
+○PipeGenerator
+・BaseBlock(Subdivision修正)
+ -Find_longest_edgeを修正
+・BaseLine
 
 
 ○波表現調査
