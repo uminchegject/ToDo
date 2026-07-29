@@ -33,27 +33,35 @@
  -Pattern生成ツール
 
 
-○volumeGenerator処理修正
+○Class検証
+・Classのランダム化
+・DetailGeneratorパラメーター複数用意
+ -枠サイズ、枠カラー × 2
+ -センターブロック
+
+○volumeGeneratorソース整理
 ・Randomly
- -Volumeの配置位置
+ -Size
  -Class
 ・Parameter
  -BlockType
  -BlockSize
  -BlockHeight
 
-△Class検証
-・DetailGeneratorパラメーター複数用意
- -枠サイズ、枠カラー × 2
- -センターブロック
-
 
 ○Labs導入
 
-○PipeGenerator
-・BaseBlock(Subdivision修正)
- -Find_longest_edgeを修正
-・BaseLine
+○PipeGenerator検証
+・Greeble
+・Prim To Line
+
+△PipeGenerator実装
+・Find_longest_edgeを修正
+
+○Base + Pipe検証
+・RandomlyBaseSize
+・Layer(InsidePipe・Frame・Panel・OutsidePipe)
+・City検証
 
 
 ○波表現調査
