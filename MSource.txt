@@ -1,13 +1,34 @@
 ○Public
-・Import処理整理(Python)
-・必要データの確認
-・※報告準備
+・報告
+・Import処理実装
+・フォルダ構成
 
 ○Private
 ・サッカーサブスク更新(UNext)
 ・骨盤イヤホン(eイヤホン)
 ・建て替え申請
-・△Houdini勉強会
+
+
+○grasshopperメモ用意
+・チェックツール
+ -
+・モジュールシステム
+ -Pattern生成ツール
+
+
+○SubDivisionの修正検証
+
+○volumeGenerator処理修正
+・Randomly
+ -Volumeの配置位置
+ -Class
+・Parameter
+ -BlockType
+ -BlockSize
+ -BlockHeight
+
+○波表現調査
+・Houdini
 
 
 ○経歴の修正
@@ -20,54 +41,6 @@
 ※引き出しを用意する
 ※客観性、将来性
 ※チームとの関係性
-
-
-○grasshopperメモ用意
-・チェックツール
- -
-・モジュールシステム
- -Pattern生成ツール
-
-
-○Labs導入
-
-○PipeGenerator
-・BaseBlock(Subdivision修正)
- -Find_longest_edgeを修正
-・BaseLine
-
-vector divide_axis = {1.0, 0.0, 0.0};
-do{
-    vector edge_dir = edgev(h);
-    if(acos(dot(edge_dir, divide_axis)) < 0.1){
-		i@_lot_cut_edge = h;
-		return;
-    }
-    h = hedge_next(0,h);
-} while (h != temp);
-
-
-○volumeGenerator処理修正
-・Randomly
- -Volumeの配置位置
- -Class
-・Parameter
- -BlockType
- -BlockSize
- -BlockHeight
-
-△Class検証
-・DetailGeneratorパラメーター複数用意
- -枠サイズ、枠カラー × 2
- -センターブロック
-
-
-○海波表現(Houdini)
-・波の形態模写
- -長さ
- -細さ
- -色(モノトーン)
-・波の揺れ模写
 
 
 ■メモ
