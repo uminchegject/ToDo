@@ -1,49 +1,13 @@
 ○Public
-・開発環境準備
+・開発環境準備(サブモジュール参照)
 ・Import処理調査&整理
 ・実装
 ・フォルダ構成整理
 
 ○Private
-・サッカーサブスク更新(UNext)
-・骨盤イヤホン(eイヤホン)
 ・建て替え申請
+・骨盤イヤホン(eイヤホン)
 ・△Houdini勉強会
-
-
-●面接反省
-※Houdiniをベースにした説明
- -自分がやりたいこと・TAに転籍した理由
- -パワーワード(Houdiniやりたいです)
-※大枠から小枠へ説明していく意識をする
- -結論(要約) → 詳細&例
-※NGワード(適切、様々、部分(具体的に説明できるようにする))
-※社員として提供できることを意識して説明
-※ディレクションの視点に立ったメリットを話すことを意識
-
-○トークスクリプトを確認
-
-○メモ確認
-※過去 → 現在 → 将来
-※メモとテーマの紐づけ
-※自分とTAを分かってもらう準備
-※引き出しを用意する
-※客観性、将来性
-※チームとの関係性
-・TAに転籍した理由を明確化
-・自分がやりたことを明確化(Houdini)
-
-△リラックスする工夫
-
-
-○Pattern生成ツール設計
-・Grid状にModuleをPattern配置
-・MapToSurface
- -四角形にPatternを生成し、MapToSurface
-
-△チェックツール設計
-※Pattern生成ツールを踏まえて設計
-・敷地情報の入力
 
 
 ○Class検証
@@ -52,40 +16,9 @@
  -枠サイズ、枠カラー × 2
  -センターブロック
 
-○volumeGeneratorソース整理
-・Randomly
- -Size
- -Class
-・Parameter
- -BlockType
- -BlockSize
- -BlockHeight
-
-
-○Labs導入
-
 ○PipeGenerator検証
 ・Greeble
 ・Prim To Line
-
-△PipeGenerator実装
-・Find_longest_edgeを修正
-
-○Base + Pipe検証
-・RandomlyBaseSize
-・Layer(InsidePipe・Frame・Panel・OutsidePipe)
-・City検証
-
-
-○波表現調査
-・Houdini
-
-○海波表現(Houdini)
-・波の形態模写
- -長さ
- -細さ
- -色(モノトーン)
-・波の揺れ模写
 
 
 ■Grasshopper
