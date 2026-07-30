@@ -1,5 +1,5 @@
 ○Public
-・開発環境準備(サブモジュール参照)
+・開発環境準備
 ・Import処理調査&整理
 ・実装
 ・フォルダ構成整理
@@ -10,64 +10,82 @@
 ・△Houdini勉強会
 
 
-○Class検証
-・Classのランダム化
-・DetailGeneratorパラメーター複数用意
- -枠サイズ、枠カラー × 2
- -センターブロック
+●面接反省
+※Houdiniをベースにした説明
+ -自分がやりたいこと・TAに転籍した理由
+ -パワーワード(Houdiniやりたいです)
+※大枠から小枠へ説明していく意識をする
+ -結論(要約) → 詳細&例
+※NGワード(適切、様々、部分(具体的に説明できるようにする))
+※社員として提供できることを意識して説明
+※ディレクションの視点に立ったメリットを話すことを意識
 
-○PipeGenerator検証
-・Greeble
-・Prim To Line
+○トークスクリプトを確認
+
+○メモ確認
+※過去 → 現在 → 将来
+※メモとテーマの紐づけ
+※自分とTAを分かってもらう準備
+※引き出しを用意する
+※客観性、将来性
+※チームとの関係性
+・TAに転籍した理由を明確化
+・自分がやりたことを明確化(Houdini)
+
+△リラックスする工夫
 
 
 ■Grasshopper
-○grasshopperメモ用意
-・チェックツール
-・モジュールシステム
- - Pattern生成ツール
+○Pattern生成ツール設計
+・Grid状にModuleをPattern配置
+・MapToSurface
+ -四角形にPatternを生成し、MapToSurface
 
-●grasshopper
-・実務ツール
-・コンピュテーショナルデザインツール(モジュールシステム)
- -Pattern生成ツール
-
-○Grasshopper実装検証
-※日中(実装メモ) + 夜(検証)
-※Editor上での挙動をベースに実装
+△実務ツール実装検証
+※Pattern生成ツールを踏まえて設計
+・敷地情報の入力
 ・検証準備
  -敷地データ用意
 ・Pythonノードで挙動確認
 ・仮ソース(https://chatgpt.com/share/6a66a6af-22c4-83e8-94e0-400a750f87a7)
 
-○処理メモ
-・Input
- -敷地情報(周辺環境)
-・Output
- -Volume
-
-●ツール設計
+●実務ツール設計
 ※パイプライン
+ -清水ツール参照(https://www.shimz.co.jp/dde/)
 ・敷地環境可視化ツール(https://chatgpt.com/c/6a5c3438-7014-83e8-b263-73798ab7fb8b)
  -斜線制限
  -日射量
-・清水ツール参照(https://www.shimz.co.jp/dde/)
+
+
+■メタボリズム
+※規格デザイン
+※ハイラインデザイン
+
+○Base検証
+・BaseFrame
+・Panel
+・InsidePipe
+
+●Pipe
+※規格化(Radius, Color)
+・Height
+・In Out
+・Pattern(Set)
+ -Simple
+ -Gradation
+
+●Cupsule
+※下からの視点
+※塊
+※カプセルタワースケール
+※Gradation + Pattern + △Ramdomly
+・EmptyPattern
+ -Gradation
+ -Randomly
 
 
 ■アールデコ
-○volumeGenerator処理修正
-・Randomly
- -Volumeの配置位置
- -Class
-・Parameter
- -BlockType
- -BlockSize
- -BlockHeight
-
-○Class検証
-・DetailGeneratorパラメーター複数用意
- -枠サイズ、枠カラー × 2
- -センターブロック
+○建物Generaoter
 
 ○Rapture City検証
 ※Middle & Topデザイン
@@ -94,79 +112,16 @@
 ・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
 
 
-■メタボリズム
-※規格デザイン
-
-○PipeGenerator
-・BaseBlock(Subdivision修正)
- -Find_longest_edgeを修正
-・BaseLine
-
-○Base + Pipe検証
-・RandomlyBaseSize
-・Layer(InsidePipe・Frame・Panel・OutsidePipe)
-・City検証
-
-○配置設計
-※Base & Block(Cupsule, Pipe)
-・Cupsule配置
-
-
-●Parts
-・BaseFrame
-・InsidePipe
-・Panel
-・OutsidePipe
-・Cupsule
-
-●レイヤー
-・InsidePipe + BaseFrame
-・Panel
-・Cupsule + Pipe
-
-
-●Base
-※ハイラインデザイン
-・塊
- -TopDesign(Panel)
-・菱形Block
-・Pattern
- -斜め
- -段々
-
-●Panel
-・Block(Pattern)
- -OutsidePipe
-・RandomlyEmpty(Remove Randomly From Block)
- -Cupsule
-
-●Pipe
-※規格化(Radius, Color)
-・Height
-・In Out
-・Pattern(Set)
- -Simple
- -Gradation
-
-●Cupsule
-※下からの視点
-※塊
-※カプセルタワースケール
-※Gradation + Pattern + △Ramdomly
-・EmptyPattern
- -Gradation
- -Randomly
-
-
 ■ComputationalDesign
+○波表現調査
+・Houdini
+
 ○海波表現(Houdini)
 ・波の形態模写
  -長さ
  -細さ
  -色(モノトーン)
 ・波の揺れ模写
-
-△Grasshopper再現
 
 △ポルトガル館記事メモ
 ・デザイン概要
