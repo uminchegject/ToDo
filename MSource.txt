@@ -11,10 +11,6 @@
 ・△Houdini勉強会
 
 
-○経歴の修正
-・所信表明確認
-・GPT(所信表明を踏まえて)
-
 ○メモ確認
 ※過去 → 現在 → 将来
 ※メモとテーマの紐づけ
@@ -24,13 +20,14 @@
 ※チームとの関係性
 
 
-○サンプルプロジェクト調査
+○Pattern生成ツール設計
+・Grid状にModuleをPattern配置
 ・MapToSurface
+ -四角形にPatternを生成し、MapToSurface
 
-○grasshopperメモ用意
-・チェックツール
-・モジュールシステム
- -Pattern生成ツール
+△チェックツール設計
+※Pattern生成ツールを踏まえて設計
+・敷地情報の入力
 
 
 ○Class検証
