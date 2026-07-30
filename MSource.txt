@@ -10,6 +10,7 @@
 ・△Houdini勉強会
 
 
+■面接
 ●面接反省
 ※Houdiniをベースにした説明
  -自分がやりたいこと・TAに転籍した理由
@@ -36,12 +37,18 @@
 
 
 ■Grasshopper
+○Python検証
+・ノード検証
+ -Input, Output
+
 ○Pattern生成ツール設計
 ・Grid状にModuleをPattern配置
+・フランクゲーリー
 ・MapToSurface
  -四角形にPatternを生成し、MapToSurface
 
-△実務ツール実装検証
+
+△実務ツール実装
 ※Pattern生成ツールを踏まえて設計
 ・敷地情報の入力
 ・検証準備
@@ -61,18 +68,18 @@
 ※規格デザイン
 ※ハイラインデザイン
 
-○Base検証
+○Inside(Base)検証
+・InsidePipe配置
+
+●Base
 ・BaseFrame
 ・Panel
 ・InsidePipe
 
-●Pipe
-※規格化(Radius, Color)
-・Height
-・In Out
-・Pattern(Set)
- -Simple
- -Gradation
+
+○Outside検証
+・Panel配置
+・Cupsule配置
 
 ●Cupsule
 ※下からの視点
@@ -84,8 +91,35 @@
  -Randomly
 
 
+△Pipe複雑化
+・PipeGenerator
+
+●Pipe
+※規格化(Radius, Color)
+・Height
+・In Out
+・Pattern(Set)
+ -Simple
+ -Gradation
+
+
 ■アールデコ
-○建物Generaoter
+○Class検証
+※建築Generatorベース完成
+・Classランダム化
+ -左右対称
+・DetailGeneratorパラメーター複数用意
+ -枠サイズ、枠カラー × 2
+ -センターブロック
+
+△volumeGeneratorソース整理
+・Randomly
+ -Size
+ -Class
+・Parameter
+ -BlockType
+ -BlockSize
+ -BlockHeight
 
 ○Rapture City検証
 ※Middle & Topデザイン
