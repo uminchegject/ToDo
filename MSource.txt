@@ -16,6 +16,7 @@
 ○Inside(Base)検証
 ・InsidePipe(Greeble)
 
+
 ○Class検証
 ※建築Generatorベース完成
 ・Classランダム化
@@ -24,9 +25,11 @@
  -枠サイズ、枠カラー × 2
  -センターブロック
 
+int volume_class = int(rand(idx) * 3);
+setpointattrib(0, "Class", block1, volume_class);
 
-△Python検証調査
-・Grasshopper Python 初級・中級編
+
+△Python検証設計
 ・Pythonノードで検証
  -Input, Output
 ・モジュール化
