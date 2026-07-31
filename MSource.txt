@@ -1,10 +1,18 @@
-○GrasshopperPython検証
+○Python検証設計
+・Pythonノードで検証
+ -Input, Output
+・モジュール化
 
 ○カプセル + Panel配置ロジック設計
 
-○RaptureCity検証
+○RaptureCity検証設計
 
-○Wave模写
+○Wave設計
+・波の形態模写
+ -長さ
+ -細さ
+ -色(モノトーン)
+・波の揺れ模写
 
 
 ■Grasshopper
@@ -13,20 +21,13 @@
  -Input, Output
 ・モジュール化
 
-○Pattern生成ツール設計
+●Patternツール
 ・Grid状にModuleをPattern配置
 ・MapToSurface
  -四角形にPatternを生成し、MapToSurface
 
-△実務ツール実装
+●実務ツール
 ※Pattern生成ツールを踏まえて設計
-・敷地情報の入力
-・検証準備
- -敷地データ用意
-・Pythonノードで挙動確認
-・仮ソース(https://chatgpt.com/share/6a66a6af-22c4-83e8-94e0-400a750f87a7)
-
-●実務ツール設計
 ※パイプライン
  -清水ツール参照(https://www.shimz.co.jp/dde/)
 ・敷地環境可視化ツール(https://chatgpt.com/c/6a5c3438-7014-83e8-b263-73798ab7fb8b)
@@ -100,7 +101,7 @@
  -Offset
  -DivideNum(or 4block)
 
-●Detail
+●BuildingPattern
 ・枠サイズ
 ・カラー
 
@@ -113,10 +114,7 @@
 
 
 ■ComputationalDesign
-○波表現調査
-・Houdini
-
-○海波表現(Houdini)
+○海波表現設計
 ・波の形態模写
  -長さ
  -細さ
