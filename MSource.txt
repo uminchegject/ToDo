@@ -1,73 +1,13 @@
-○Public
-・実装
-　ーベース実装(再設計)
-　ーLod対応
-・△フォルダ構成整理
-
-○Class検証
-※建築Generatorベース完成
-・Classランダム化
- -各toggleごとにClassをランダムに用意
-・DetailGeneratorパラメーター複数用意
- -枠サイズ、枠カラー × 2
- -センターブロック
-
-
-△Inside(Base)検証
-・処理整理
-
-△Python検証設計
+■Grasshopper
+○Python検証設計
 ・Pythonノードで検証
  -Input, Output
 ・モジュール化
 
-
-○Private
-・シャチハタ
-・建て替え申請
-・骨盤イヤホン(eイヤホン)
-・Stains Gate
-・メイドインアビス(Kindle)
-・△Houdini勉強会
-
-
-■面接
-●面接反省
-※Houdiniをベースにした説明
- -自分がやりたいこと・TAに転籍した理由
- -パワーワード(Houdiniやりたいです)
-※大枠から小枠へ説明していく意識をする
- -結論(要約) → 詳細&例
-※NGワード(適切、様々、部分(具体的に説明できるようにする))
-※社員として提供できることを意識して説明
-※ディレクションの視点に立ったメリットを話すことを意識
-
-○トークスクリプトを確認
-
-○メモ確認
-※過去 → 現在 → 将来
-※メモとテーマの紐づけ
-※自分とTAを分かってもらう準備
-※引き出しを用意する
-※客観性、将来性
-※チームとの関係性
-・TAに転籍した理由を明確化
-・自分がやりたことを明確化(Houdini)
-
-△リラックスする工夫
-
-
-■Grasshopper
-○Python検証
-・ノード検証
- -Input, Output
-
 ○Pattern生成ツール設計
 ・Grid状にModuleをPattern配置
-・フランクゲーリー
 ・MapToSurface
  -四角形にPatternを生成し、MapToSurface
-
 
 △実務ツール実装
 ※Pattern生成ツールを踏まえて設計
@@ -90,7 +30,7 @@
 ※ハイラインデザイン
 
 ○Inside(Base)検証
-・InsidePipe配置
+・処理整理
 
 ●Base
 ・BaseFrame
@@ -125,15 +65,7 @@
 
 
 ■アールデコ
-○Class検証
-※建築Generatorベース完成
-・Classランダム化
- -左右対称
-・DetailGeneratorパラメーター複数用意
- -枠サイズ、枠カラー × 2
- -センターブロック
-
-△volumeGeneratorソース整理
+○volumeGeneratorソース整理
 ・Randomly
  -Size
  -Class
@@ -159,6 +91,10 @@
  -Offset
  -DivideNum(or 4block)
 
+●Detail
+・枠サイズ
+・カラー
+
 ●資料
 ・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
 ・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
@@ -183,6 +119,51 @@
 ・ロープ再現
 ・ロープの揺れ再現
  -Vex処理
+
+
+■メモ
+○CEDEC資料整理
+
+○Public
+・実装
+　ーベース実装
+　ーLod対応
+・△フォルダ構成整理
+
+○Private
+・シャチハタ
+・建て替え申請
+・街だゼルビア発券
+・骨盤イヤホン(eイヤホン)
+・Stains Gate
+・メイドインアビス(Kindle)
+・△Houdini勉強会
+
+
+■面接
+●面接反省
+※Houdiniをベースにした説明
+ -自分がやりたいこと・TAに転籍した理由
+ -パワーワード(Houdiniやりたいです)
+※大枠から小枠へ説明していく意識をする
+ -結論(要約) → 詳細&例
+※NGワード(適切、様々、部分(具体的に説明できるようにする))
+※社員として提供できることを意識して説明
+※ディレクションの視点に立ったメリットを話すことを意識
+
+○トークスクリプトを確認
+
+○メモ確認
+※過去 → 現在 → 将来
+※メモとテーマの紐づけ
+※自分とTAを分かってもらう準備
+※引き出しを用意する
+※客観性、将来性
+※チームとの関係性
+・TAに転籍した理由を明確化
+・自分がやりたことを明確化(Houdini)
+
+△リラックスする工夫
 
 
 ■Study
