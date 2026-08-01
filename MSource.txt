@@ -1,3 +1,22 @@
+○カプセル + Panel配置ロジック設計
+
+○Wave設計
+・波の形態模写
+ -長さ
+ -細さ
+ -色(モノトーン)
+・波の揺れ模写
+
+
+●RaptureCity検証設計
+※Middle & Topデザイン
+・最適化
+・BaseVolume(Randomly)
+ -Subdivision
+・起伏
+ -Terrain
+
+
 ○Python検証
 ※Pythonノードで検証
 
@@ -10,23 +29,6 @@
  -MapToSurface
 ・Parameter
  -傾き
-
-
-○カプセル + Panel配置ロジック設計
-
-○RaptureCity検証設計
-※Middle & Topデザイン
-・BaseVolume(Randomly)
- -Subdivision
-・起伏
- -Terrain
-
-○Wave設計
-・波の形態模写
- -長さ
- -細さ
- -色(モノトーン)
-・波の揺れ模写
 
 
 ■Grasshopper
