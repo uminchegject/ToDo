@@ -1,11 +1,26 @@
-○Python検証設計
-・Pythonノードで検証
- -Input, Output
-・モジュール化
+○Python検証
+※Pythonノードで検証
+・Input→Output
+
+●鱗ツール
+・Input
+ -BaseSurface
+ -鱗
+・Flow
+ -Grid状で鱗を配置
+ -MapToSurface
+・Parameter
+ -傾き
+
 
 ○カプセル + Panel配置ロジック設計
 
 ○RaptureCity検証設計
+※Middle & Topデザイン
+・BaseVolume(Randomly)
+ -Subdivision
+・起伏
+ -Terrain
 
 ○Wave設計
 ・波の形態模写
