@@ -1,6 +1,5 @@
 ○Python検証
 ※Pythonノードで検証
-・Input→Output
 
 ●鱗ツール
 ・Input
