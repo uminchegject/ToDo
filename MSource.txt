@@ -1,6 +1,10 @@
-○カプセル + Panel配置ロジック設計
-・PatternPanel
-・RandomlyCupsule
+○カプセルタワー検証
+・Outside検証
+ -Panel(Pattern)
+ -Cupsule(Randomly + Pattern Empty)
+・カラー検証
+ -Cupsule
+ -Pipe
 
 
 ○Wave拡張検証
