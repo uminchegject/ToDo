@@ -1,14 +1,21 @@
 ○カプセル + Panel配置ロジック設計
+・PatternPanel
+・RandomlyCupsule
 
-○Wave設計
-・波の形態模写
- -長さ
+
+○Wave拡張検証
+・細さ
+・色
+
+●Wave
+・波形態拡張
+ -ながさ
  -細さ
  -色(モノトーン)
 ・波の揺れ模写
 
 
-●RaptureCity検証設計
+○RaptureCity検証
 ※Middle & Topデザイン
 ・最適化
 ・BaseVolume(Randomly)
