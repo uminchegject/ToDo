@@ -1,175 +1,14 @@
-○Private
-・シャチハタ
-・建て替え申請
-・町田ゼルビア発券
-・Stains Gate
-
-
-○カプセルタワー検証
-・Outside検証
- -Panel(Pattern)
- -Cupsule(Randomly + Pattern Empty)
-・カラー検証
- -Cupsule
- -Pipe
-
-
-○Wave拡張検証
-・細さ
-・色
-
-●Wave
-・波形態拡張
- -ながさ
- -細さ
- -色(モノトーン)
-・波の揺れ模写
-
-
-○RaptureCity検証
-※Middle & Topデザイン
-・最適化
-・BaseVolume(Randomly)
- -Subdivision
-・起伏
- -Terrain
-
-
-○Python検証
-※Pythonノードで検証
-
-●鱗ツール
-・Input
- -BaseSurface
- -鱗
-・Flow
- -Grid状で鱗を配置
- -MapToSurface
-・Parameter
- -傾き
-
-
-■メモ
-○CEDEC資料整理
-
 ○Public
 ・実装
  ーベース実装(※クラスごとにソースを用意し、各クラスを確認・整理)
  ーLod対応
 ・△フォルダ構成整理
 
-
-■Grasshopper
-○Python検証設計
-・Pythonノードで検証
- -Input, Output
-・モジュール化
-
-●Patternツール
-・Grid状にModuleをPattern配置
-・MapToSurface
- -四角形にPatternを生成し、MapToSurface
-
-●実務ツール
-※Pattern生成ツールを踏まえて設計
-※パイプライン
- -清水ツール参照(https://www.shimz.co.jp/dde/)
-・敷地環境可視化ツール(https://chatgpt.com/c/6a5c3438-7014-83e8-b263-73798ab7fb8b)
- -斜線制限
- -日射量
-
-
-■メタボリズム
-※規格デザイン
-※ハイラインデザイン
-
-○Inside(Base)検証
-・処理整理
-
-●Base
-・BaseFrame
-・Panel
-・InsidePipe
-
-
-○Outside検証
-・Panel配置
-・Cupsule配置
-
-●Cupsule
-※下からの視点
-※塊
-※カプセルタワースケール
-※Gradation + Pattern + △Ramdomly
-・EmptyPattern
- -Gradation
- -Randomly
-
-
-△Pipe複雑化
-・PipeGenerator
-
-●Pipe
-※規格化(Radius, Color)
-・Height
-・In Out
-・Pattern(Set)
- -Simple
- -Gradation
-
-
-■アールデコ
-○volumeGeneratorソース整理
-・Randomly
- -Size
- -Class
-・Parameter
- -BlockType
- -BlockSize
- -BlockHeight
-
-○Rapture City検証
-※Middle & Topデザイン
-・BaseVolume(Randomly)
- -Subdivision
-
-●Inside(Core)
-・TopDesign
- -CopyToPoints
-
-●OutSide
-・Pattern
- -DivideAxis
-・Randomly
- -Height
- -Offset
- -DivideNum(or 4block)
-
-●BuildingPattern
-・枠サイズ
-・カラー
-
-●資料
-・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
-・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
-・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
-・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
-・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
-
-
-■ComputationalDesign
-○海波表現設計
-・波の形態模写
- -長さ
- -細さ
- -色(モノトーン)
-・波の揺れ模写
-
-△ポルトガル館記事メモ
-・デザイン概要
-・ロープ再現
-・ロープの揺れ再現
- -Vex処理
+○Private
+・シャチハタ
+・建て替え申請
+・町田ゼルビア発券
+・Stains Gate
 
 
 ■面接
@@ -196,6 +35,125 @@
 ・自分がやりたことを明確化(Houdini)
 
 △リラックスする工夫
+
+
+■Grasshopper
+○Python検証
+※Pythonノードで検証
+
+●鱗ツール
+・Input
+ -BaseSurface
+ -鱗
+・Flow
+ -Grid状で鱗を配置
+ -MapToSurface
+・Parameter
+ -傾き
+
+●実務ツール
+※Pattern生成ツールを踏まえて設計
+※パイプライン
+ -清水ツール参照(https://www.shimz.co.jp/dde/)
+・敷地環境可視化ツール(https://chatgpt.com/c/6a5c3438-7014-83e8-b263-73798ab7fb8b)
+ -斜線制限
+ -日射量
+
+
+■メタボリズム
+※規格デザイン
+※ハイラインデザイン
+
+○カプセルタワー検証
+・Outside検証
+ -Panel(Pattern)
+ -Cupsule(Randomly + Pattern Empty)
+・カラー検証
+ -Cupsule
+ -Pipe
+
+●Inside
+・BaseFrame
+・Panel
+・InsidePipe
+
+●Outside
+※下からの視点
+※塊
+※カプセルタワースケール
+※Gradation + Pattern + △Ramdomly
+・EmptyPattern
+ -Gradation
+ -Randomly
+
+●Pipe
+※規格化(Radius, Color)
+・Height
+・In Out
+・Pattern(Set)
+ -Simple
+ -Gradation
+
+
+■アールデコ
+○volumeGeneratorソース整理
+・Randomly
+ -Size
+ -Class
+・Parameter
+ -BlockType
+ -BlockSize
+ -BlockHeight
+
+○RaptureCity検証
+※Middle & Topデザイン
+・最適化
+・BaseVolume(Randomly)
+ -Subdivision
+・起伏
+ -Terrain
+
+●Inside(Core)
+・TopDesign
+ -CopyToPoints
+
+●OutSide
+・Pattern
+ -DivideAxis
+・Randomly
+ -Height
+ -Offset
+ -DivideNum(or 4block)
+
+●BuildingPattern
+・枠サイズ
+・カラー
+
+●資料
+・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
+・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
+・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
+・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
+
+
+■ComputationalDesign
+○Wave拡張検証
+・細さ
+・色
+
+●Wave
+・波形態拡張
+ -ながさ
+ -細さ
+ -色(モノトーン)
+・波の揺れ模写
+
+△ポルトガル館記事メモ
+・デザイン概要
+・ロープ再現
+・ロープの揺れ再現
+ -Vex処理
 
 
 ■Study
