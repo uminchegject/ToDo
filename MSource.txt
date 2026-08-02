@@ -38,7 +38,11 @@
 
 
 ■Grasshopper
+○実装準備
+・開発GHファイル準備
+
 ○Python検証
+※ファサード生成ツールのベース
 ※Pythonノードで検証
 
 ●鱗ツール
@@ -51,13 +55,10 @@
 ・Parameter
  -傾き
 
-●実務ツール
-※Pattern生成ツールを踏まえて設計
-※パイプライン
- -清水ツール参照(https://www.shimz.co.jp/dde/)
-・敷地環境可視化ツール(https://chatgpt.com/c/6a5c3438-7014-83e8-b263-73798ab7fb8b)
- -斜線制限
- -日射量
+●パネルツール
+※合理化ツール
+・参照資料
+ -コンピュテーショナルデザインにおけるファサードとルールのデザイン(https://www.archifuture-web.jp/magazine/466.html)
 
 
 ■メタボリズム
