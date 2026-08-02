@@ -7,7 +7,6 @@
 ○Private
 ・シャチハタ
 ・建て替え申請
-・町田ゼルビア発券
 ・Stains Gate
 
 
@@ -23,6 +22,7 @@
 ※ディレクションの視点に立ったメリットを話すことを意識
 
 ○トークスクリプトを確認
+※会社理念について再チェック
 
 ○メモ確認
 ※過去 → 現在 → 将来
@@ -74,11 +74,9 @@
 
 ●Inside
 ・BaseFrame
-・Panel
 ・InsidePipe
 
 ●Outside
-※下からの視点
 ※塊
 ※カプセルタワースケール
 ※Gradation + Pattern + △Ramdomly
@@ -104,6 +102,8 @@
  -BlockType
  -BlockSize
  -BlockHeight
+
+△Detail拡張
 
 ○RaptureCity検証
 ※Middle & Topデザイン
