@@ -1,7 +1,6 @@
 ○Public
-・実装
- ークラスごとにソースを用意、整理
-・△フォルダ構成整理
+・処理整理
+・フォルダ構成整理
 
 ○Private
 ・棚卸
@@ -17,7 +16,7 @@
 ・本 & サンプル
 
 
-○カプセルタワー検証ソース準備
+○カプセルタワー実装
 ・Outside検証
  -Panel(Pattern)
  -Cupsule(Randomly + Pattern Empty)
@@ -30,10 +29,11 @@
 ・色(Randomly + Pattern)
 ・位置(Randomly + Pattern)
 
-○建築Generator完成
+○建築Generator実装
 ・ソース整理
 ・Detail拡張
 ・最適化
+
 
 
 ■面接
