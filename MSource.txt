@@ -12,8 +12,14 @@
 ○面談反省
 
 
-○Tutorial調査
-・本 & サンプル
+○ツール設計
+※コンピュテーショナルデザインをテーマ(https://www.archifuture-web.jp/magazine/466.html)
+・Pattern
+・合理化
+
+○実装準備
+※BookRaungeで検証する準備
+・CopyToPoint(MapToSurface)
 
 
 ○カプセルタワー実装
