@@ -25,14 +25,6 @@
 ※ディレクションの視点に立ったメリットを話すことを意識
 
 
-○カプセルタワー検証
-・Outside検証
- -Panel(Pattern)
- -Cupsule(Randomly + Pattern Empty)
-・カラー検証
- -Cupsule
- -Pipe
-
 ○volumeGeneratorソース整理
 ・Randomly
  -Size
@@ -45,6 +37,15 @@
 ○Wave拡張検証
 ・細さ
 ・色
+
+
+△カプセルタワー検証ソース準備
+・Outside検証
+ -Panel(Pattern)
+ -Cupsule(Randomly + Pattern Empty)
+・カラー検証
+ -Cupsule
+ -Pipe
 
 
 ■面接
