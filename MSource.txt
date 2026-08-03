@@ -38,6 +38,8 @@
 
 
 ■Grasshopper
+○Tutorial調査
+
 ○実装準備
 ・開発GHファイル準備
 
