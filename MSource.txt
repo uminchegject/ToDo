@@ -5,9 +5,43 @@
 ・△フォルダ構成整理
 
 ○Private
+・棚卸
 ・シャチハタ
 ・建て替え申請
 ・Stains Gate
+
+
+○逆質問用意
+・GPT
+
+○トークスクリプトを確認
+※会社理念について再チェック
+
+
+○Tutorial調査
+・本確認
+
+
+○カプセルタワー検証
+・Outside検証
+ -Panel(Pattern)
+ -Cupsule(Randomly + Pattern Empty)
+・カラー検証
+ -Cupsule
+ -Pipe
+
+○volumeGeneratorソース整理
+・Randomly
+ -Size
+ -Class
+・Parameter
+ -BlockType
+ -BlockSize
+ -BlockHeight
+
+○Wave拡張検証
+・細さ
+・色
 
 
 ■面接
@@ -39,6 +73,7 @@
 
 ■Grasshopper
 ○Tutorial調査
+・本確認
 
 ○実装準備
 ・開発GHファイル準備
