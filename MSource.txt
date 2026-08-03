@@ -10,6 +10,13 @@
 ・Stains Gate
 
 
+○面談反省
+
+
+○Tutorial調査
+・本 & サンプル
+
+
 ○カプセルタワー検証ソース準備
 ・Outside検証
  -Panel(Pattern)
@@ -66,7 +73,7 @@
 
 ■Grasshopper
 ○Tutorial調査
-・本確認
+・本 & サンプル
 
 ○実装準備
 ・開発GHファイル準備
