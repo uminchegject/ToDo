@@ -10,27 +10,23 @@
 ・Stains Gate
 
 
-○volumeGeneratorソース整理
-・Randomly
- -Size
- -Class
-・Parameter
- -BlockType
- -BlockSize
- -BlockHeight
-
-○Wave拡張検証
-・細さ
-・色
-
-
-△カプセルタワー検証ソース準備
+○カプセルタワー検証ソース準備
 ・Outside検証
  -Panel(Pattern)
  -Cupsule(Randomly + Pattern Empty)
 ・カラー検証
  -Cupsule
  -Pipe
+
+○Wave拡張検証
+・細さ(Randomly + Pattern)
+・色(Randomly + Pattern)
+・位置(Randomly + Pattern)
+
+○建築Generator完成
+・ソース整理
+・Detail拡張
+・最適化
 
 
 ■面接
@@ -129,7 +125,12 @@
 
 
 ■アールデコ
-○volumeGeneratorソース整理
+○建築Generator完成
+・ソース整理
+・Detail拡張
+・最適化
+
+△volumeGeneratorソース整理
 ・Randomly
  -Size
  -Class
@@ -142,7 +143,6 @@
 
 ○RaptureCity検証
 ※Middle & Topデザイン
-・最適化
 ・BaseVolume(Randomly)
  -Subdivision
 ・起伏
