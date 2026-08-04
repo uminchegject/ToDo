@@ -1,8 +1,11 @@
 ○Public
 ・Python処理整理
-　ー※挙動確認
-・必要データの整理
-　ーデータ調査
+　ー※挙動確認内容整理
+・必要データ調査&整理
+　ーpylintrc, pylintrc_ci
+　ー.gitlab-ci.yml
+・フォルダ整理
+・ビルド検証
 
 ○Private
 ・※ジンギスカン予約
@@ -39,6 +42,10 @@
  -Pipe
 
 
+○wwise検証
+・foundationをaiに取得させて処理を用意
+・高さ、色を再現
+
 ○波模写
 ・Noise調整
  -高さ
@@ -71,6 +78,7 @@
 
 ○説明に理念を混ぜる(会社に繋げる説明)
  -理念とやりたいことをつなげる
+ -Houdiniから繋げる
 
 ○貢献について深堀
 
@@ -90,16 +98,6 @@
 
 
 ■Grasshopper
-○Tutorial調査
-・本 & サンプル
-
-○実装準備
-・開発GHファイル準備
-
-○Python検証
-※ファサード生成ツールのベース
-※Pythonノードで検証
-
 ●鱗ツール
 ・Input
  -BaseSurface
@@ -150,12 +148,13 @@
 
 
 ■アールデコ
-○建築Generator完成
-・ソース整理
-・Detail拡張
+○アールデコ建築Generator実装
+・VolumeGeneratorソース整理
 ・最適化
+ -Lod化方法調査
+・Detail拡張
 
-△volumeGeneratorソース整理
+○volumeGeneratorソース整理
 ・Randomly
  -Size
  -Class
@@ -163,8 +162,6 @@
  -BlockType
  -BlockSize
  -BlockHeight
-
-△Detail拡張
 
 ○RaptureCity検証
 ※Middle & Topデザイン
@@ -198,10 +195,6 @@
 
 
 ■ComputationalDesign
-○Wave拡張検証
-・細さ
-・色
-
 ●Wave
 ・波形態拡張
  -ながさ
