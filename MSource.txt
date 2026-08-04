@@ -1,9 +1,10 @@
 ○Public
-・Python処理整理
-　ー※挙動確認内容整理
+・※質問&確認
 ・必要データ調査&整理
 　ーpylintrc, pylintrc_ci
 　ー.gitlab-ci.yml
+・Python処理整理
+　ー※挙動確認内容整理
 ・フォルダ整理
 ・ビルド検証
 
