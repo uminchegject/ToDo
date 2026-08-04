@@ -18,7 +18,7 @@
 
 ○GrasshopperStudy
 ・本
-・sampleデータ確認
+・sampleデータ確認(https://www.applicraft.com/cpmodeling_data/)
 
 ○ツール設計
 ※コンピュテーショナルデザインをテーマ
@@ -65,9 +65,10 @@
 ・Detail拡張
 
 ○RaptureCity検証
+※Houdiniで街のある景観をつくる!参考(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
 ※Middle & Topデザイン
 ・BaseVolume(Randomly)
- -Subdivision
+ -Scatter
 ・起伏
  -Terrain
 
