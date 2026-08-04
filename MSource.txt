@@ -1,10 +1,10 @@
 ○Public
 ・※質問&確認
 ・必要データ調査&整理
-　ーpylintrc, pylintrc_ci
-　ー.gitlab-ci.yml
+ ーpylintrc, pylintrc_ci
+ ー.gitlab-ci.yml
 ・Python処理整理
-　ー※挙動確認内容整理
+ ー※挙動確認内容整理
 ・フォルダ整理
 ・ビルド検証
 
@@ -59,10 +59,17 @@
 
 ○アールデコ建築Generator実装
 ・VolumeGeneratorソース整理
+ -Parameter(Size)
 ・最適化
  -Lod化方法調査
 ・Detail拡張
 
+○RaptureCity検証
+※Middle & Topデザイン
+・BaseVolume(Randomly)
+ -Subdivision
+・起伏
+ -Terrain
 
 
 ■面接
@@ -149,28 +156,6 @@
 
 
 ■アールデコ
-○アールデコ建築Generator実装
-・VolumeGeneratorソース整理
-・最適化
- -Lod化方法調査
-・Detail拡張
-
-○volumeGeneratorソース整理
-・Randomly
- -Size
- -Class
-・Parameter
- -BlockType
- -BlockSize
- -BlockHeight
-
-○RaptureCity検証
-※Middle & Topデザイン
-・BaseVolume(Randomly)
- -Subdivision
-・起伏
- -Terrain
-
 ●Inside(Core)
 ・TopDesign
  -CopyToPoints
