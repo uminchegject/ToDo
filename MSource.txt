@@ -1,3 +1,8 @@
+※3つの異なるデータで必ずデバッグする
+※タスクが明確化できていない場合は、カフェでサッカーを見ながら練る
+ -2件目を検討
+ -定時後ダーツは15分レベルの明確なタスクがあるときのみ
+
 ○Public
 ・処理整理
 ・フォルダ構成整理
@@ -12,15 +17,22 @@
 ○面談反省
 
 
+○GrasshopperStudy
+・本
+
 ○ツール設計
 ※コンピュテーショナルデザインをテーマ(https://www.archifuture-web.jp/magazine/466.html)
-・Pattern
-・合理化
+・Pattern生成
+・シミュレーション
 
 ○実装準備
 ※BookRaungeで検証する準備
 ・CopyToPoint(MapToSurface)
 
+
+○Outside検証
+・等間隔でPanel配置
+・Panel状にCupsuleをランダム配置
 
 ○カプセルタワー実装
 ・Outside検証
@@ -30,16 +42,23 @@
  -Cupsule
  -Pipe
 
+
+○波模写
+・Noise調整
+ -高さ
+ -色
+
 ○Wave拡張検証
-・細さ(Randomly + Pattern)
-・色(Randomly + Pattern)
-・位置(Randomly + Pattern)
+・細さ(Randomly)
+・位置(Scatter)
 
-○建築Generator実装
-・ソース整理
-・Detail拡張
+
+○アールデコ建築Generator実装
+・VolumeGeneratorソース整理
 ・最適化
-
+ -Lod化方法調査
+・Detail拡張
+ -
 
 
 ■面接
