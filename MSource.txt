@@ -1,9 +1,7 @@
 ○Public
 ・※質問&確認
-・Python処理整理
-　ーマテリアル対応をコメントアウト
-・フォルダ整理
-・ビルド検証
+・Python処理確認&処理
+・MR
 
 ○Private
 ・※ジンギスカン予約
@@ -12,8 +10,18 @@
 ・シャチハタ
 
 
-○Grasshopper
-・Grasshopperサンプルの確認
+○GrasshopperStudy
+・本
+・sampleデータ確認(https://www.applicraft.com/cpmodeling_data/)
+
+○ツール設計
+※コンピュテーショナルデザインをテーマ
+・Pattern生成
+・シミュレーション
+
+○実装準備
+※BookRaungeで検証する準備
+・CopyToPoint(MapToSurface)
 
 
 ○Outside検証
@@ -30,7 +38,7 @@
 
 
 ○wwise検証
-・foundationをaiに取得させて処理を用意
+・foundation参照
 ・高さ、色を再現
 
 ○波模写
@@ -51,13 +59,12 @@
 ・Detail拡張
 
 ○RaptureCity検証
-※Houdiniで街のある景観をつくる!参考
+※Houdiniで街のある景観をつくる!参考(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
 ※Middle & Topデザイン
 ・BaseVolume(Randomly)
  -Scatter
 ・起伏
  -Terrain
-
 
 
 ■面接
