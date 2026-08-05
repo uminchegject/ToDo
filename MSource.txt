@@ -16,6 +16,14 @@
 ・Stains Gate
 
 
+○やりたいことと理念の紐づけ
+・説明に理念を混ぜる(会社に繋げる説明)
+ -2つの理念とやりたいことをつなげる
+ -貢献について深堀
+
+○Grasshopper
+・Grasshopperサンプルの確認
+
 ○GrasshopperStudy
 ・本
 ・sampleデータ確認(https://www.applicraft.com/cpmodeling_data/)
