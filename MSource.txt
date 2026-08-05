@@ -10,6 +10,9 @@
 ・シャチハタ
 
 
+○会社理念への貢献についてまとめる
+
+
 ○GrasshopperStudy
 ・本
 ・sampleデータ確認(https://www.applicraft.com/cpmodeling_data/)
@@ -79,12 +82,6 @@
 ※社員として提供できることを意識して説明
 ※ディレクションの視点に立ったメリットを話すことを意識
 
-○説明に理念を混ぜる(会社に繋げる説明)
- -理念とやりたいことをつなげる
- -Houdiniから繋げる
-
-○貢献について深堀
-
 ○メモ確認
 ※過去 → 現在 → 将来
 ※自分とTAを分かってもらう準備
@@ -135,11 +132,11 @@
 
 ●Outside
 ※塊
-※カプセルタワースケール
 ※Gradation + Pattern + △Ramdomly
-・EmptyPattern
- -Gradation
- -Randomly
+・Panel
+ -Pattern
+・Cupsule
+ -Randomly + Pattern Empty
 
 ●Pipe
 ※規格化(Radius, Color)
@@ -161,7 +158,7 @@
 ・Randomly
  -Height
  -Offset
- -DivideNum(or 4block)
+ -DivideNum
 
 ●BuildingPattern
 ・枠サイズ
