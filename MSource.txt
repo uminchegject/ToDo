@@ -1,41 +1,20 @@
 ○Public
 ・※質問&確認
-・必要データ調査&整理
- ーpylintrc, pylintrc_ci
- ー.gitlab-ci.yml
 ・Python処理整理
- ー※挙動確認内容整理
+　ーマテリアル対応をコメントアウト
 ・フォルダ整理
 ・ビルド検証
 
 ○Private
 ・※ジンギスカン予約
-・棚卸
+・※Stains Gate
+・※建て替え申請
+・※棚卸
 ・シャチハタ
-・建て替え申請
-・Stains Gate
 
-
-○やりたいことと理念の紐づけ
-・説明に理念を混ぜる(会社に繋げる説明)
- -2つの理念とやりたいことをつなげる
- -貢献について深堀
 
 ○Grasshopper
 ・Grasshopperサンプルの確認
-
-○GrasshopperStudy
-・本
-・sampleデータ確認(https://www.applicraft.com/cpmodeling_data/)
-
-○ツール設計
-※コンピュテーショナルデザインをテーマ
-・Pattern生成
-・シミュレーション
-
-○実装準備
-※BookRaungeで検証する準備
-・CopyToPoint(MapToSurface)
 
 
 ○Outside検証
@@ -73,12 +52,13 @@
 ・Detail拡張
 
 ○RaptureCity検証
-※Houdiniで街のある景観をつくる!参考(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+※Houdiniで街のある景観をつくる!参考
 ※Middle & Topデザイン
 ・BaseVolume(Randomly)
  -Scatter
 ・起伏
  -Terrain
+
 
 
 ■面接
