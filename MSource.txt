@@ -15,7 +15,7 @@
 
 ○GrasshopperStudy
 ・本
-・sampleデータ確認(https://www.applicraft.com/cpmodeling_data/)
+・△sampleデータ確認(https://www.applicraft.com/cpmodeling_data/)
 
 ○ツール設計
 ※コンピュテーショナルデザインをテーマ
