@@ -1,7 +1,4 @@
 ○Public
-・※質問&確認
-・Python処理確認&処理
-・MR
 
 ○Private
 ・※ジンギスカン予約
@@ -16,15 +13,6 @@
 ○GrasshopperStudy
 ・本
 ・△sampleデータ確認(https://www.applicraft.com/cpmodeling_data/)
-
-○ツール設計
-※コンピュテーショナルデザインをテーマ
-・Pattern生成
-・シミュレーション
-
-○実装準備
-※BookRaungeで検証する準備
-・CopyToPoint(MapToSurface)
 
 
 ○Outside検証
@@ -68,6 +56,7 @@
  -Scatter
 ・起伏
  -Terrain
+
 
 
 ■面接
