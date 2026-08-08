@@ -1,4 +1,8 @@
-○Grasshopper設計
+○Grasshopper準備
+・鱗ツール検証
+　ー
+・合理化Study
+　ー※杉原記事確認
 
 
 ○Outside検証
@@ -42,6 +46,7 @@
  -Scatter
 ・起伏
  -Terrain
+
 
 
 ■メモ
