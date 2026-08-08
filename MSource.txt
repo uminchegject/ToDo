@@ -1,15 +1,4 @@
-○Public
-・Python整理
-・サブミット
-
-○Private
-・※Stains Gate
-・シャチハタ
-
-
-○GrasshopperStudy
-・本
-・△sampleデータ確認(https://www.applicraft.com/cpmodeling_data/)
+○Grasshopper設計
 
 
 ○Outside検証
@@ -55,32 +44,74 @@
  -Terrain
 
 
+■メモ
+○Public
+・Python整理
+・サブミット
 
-■面接
-●面接反省
-※1DG-DD3-2
+○Private
+・※Stains Gate
+・シャチハタ
+
+
+■Study
+○CEDECまとめ
+※メモをベースに調べていく
+
+
+○MCP解析環境準備
+・GitCopilot
+・調査検証
+
+△MCP検証
+・解析処理
+
+△AsciiHip解析検証
+・Ascii内情報調査
+ -複数のAIで検証
+
+
+○本
+・生成AI時代のソフトウェア開発
+
+○英語
+・Oxford Picture Dictionary
+
+○USDStudy
+・USD Tutorials(https://openusd.org/release/tut_usd_tutorials.html)
+
+○HoudiniStudy
+・H19.5 FOUNDATIONS BOOK
+https://www.sidefx.com/profile/rmagee/
+https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
+
+
+■Employ
+●反省
 ※Houdiniをベースにした説明
  -自分がやりたいこと・TAに転籍した理由
  -パワーワード(Houdiniやりたいです)
 ※大枠から小枠へ説明していく意識をする
  -結論(要約) → 詳細&例
-※NGワード(適切、様々、部分(具体的に説明できるようにする))
 ※社員として提供できることを意識して説明
-※ディレクションの視点に立ったメリットを話すことを意識
+※より良い物を作るための手段として説明 
 
-○メモ確認
+○Employ準備
+・本再読
+・ToDo整理
+ -エージェント
+ -カジュアル面談
+
+○メモ整理
 ※過去 → 現在 → 将来
 ※自分とTAを分かってもらう準備
 ※引き出しを用意する
-※客観性、将来性
 
-●メモ
-・背景の自動生成を例にプロシージャルの説明
-・GFSはゲームを開発することができるスタジオ
-・映像、医療
-・サイバーエージェントグループ
-
-△リラックスする工夫
+△カジュアル面談
+※AmdLabs準備
+・建築テックソフト
+ -Grasshopper
+ -Revit×Dynamo
 
 
 ■Grasshopper
@@ -171,62 +202,6 @@
 ・ロープ再現
 ・ロープの揺れ再現
  -Vex処理
-
-
-■Study
-△CEDECまとめ
-※メモをベースに調べていく
-
-
-△コンポジションアーク記事メモ
-・各コンポジションアークの長所
-・サンプルソース
-・Authoring Variants(https://openusd.org/release/tut_authoring_variants.html)
-
-
-△MCP解析環境準備
-・GitCopilot
-・調査検証
-
-△MCP検証
-・解析処理
-
-△AsciiHip解析検証
-・Ascii内情報調査
- -複数のAIで検証
-
-
-○本
-・生成AI時代のソフトウェア開発
-
-○英語
-・Oxford Picture Dictionary
-
-○USDStudy
-・USD Tutorials(https://openusd.org/release/tut_usd_tutorials.html)
-
-○HoudiniStudy
-・H19.5 FOUNDATIONS BOOK
-https://www.sidefx.com/profile/rmagee/
-https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
-
-
-■Employ
-●志望動機
-コンピュテーショナルデザインはコンピュータの反復処理能力を活かし、多数の設計要素や条件をルールとして一括で
-扱いながら検証を行える点に強みがあると考えています。そして、人手では困難な複雑な要素の組み合わせや無数の可
-能性を効率的に検証でき、設計条件や意図に応じて柔軟に対応できるデザインプロセスに大きな魅力を感じています。 
-私はデザインをアルゴリズムへ落とし込み、ツールによる比較検証や調整を通じてコンピュテーショナルデザインの強
-みを活かし、デザイン業務に貢献していきたいと考えています。
-
-△ポートフォリオ
-※エンジニア・テクニカルアーティストの能力をアピールできるシンプルなツールを実装
-
-○カジュアル面談
-※AmdLabs準備
-・建築テックソフト
- -Grasshopper
- -Revit×Dynamo
 
 
 ■ToDo
