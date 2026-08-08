@@ -1,5 +1,6 @@
 ○サンプルプロジェクト調査
 ・使用ノードのリストアップ
+・コンピュテーショナル・モデリング 入門から応用(https://www.applicraft.com/cpmodeling_data/)
 
 ○Grasshopper準備
 ・鱗ツール検証
