@@ -1,22 +1,11 @@
-○Employ準備
-・本再読
-・ToDo整理
- -エージェント
- -カジュアル面談
-
-
-○GrasshopperStudy
-・サンプルプロジェクトのリストアップ
- -確認事項を整理
-・サンプルプロジェクト調査
- -使用ノードのリストアップ
-・コンピュテーショナル・モデリング 入門から応用(https://www.applicraft.com/cpmodeling_data/)
-
-○Grasshopper準備
-・鱗ツール検証
- ーシンプル実装
-・合理化Study
- ー※杉原記事確認
+○Public
+・Impoter
+ -HDA化
+ -挙動確認
+・UVTool
+ -検証の現状を確認
+  -※要望の優先順位に沿ってそれぞれ調べる)
+  -ドキュメント & Hip
 
 
 ○Outside検証
