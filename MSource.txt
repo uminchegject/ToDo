@@ -12,49 +12,12 @@
 ・等間隔でPanel配置
 ・Panel状にCupsuleをランダム配置
 
-○カプセルタワー実装
-・Outside検証
- -Panel(Pattern)
- -Cupsule(Randomly + Pattern Empty)
-・カラー検証
- -Cupsule
- -Pipe
-
-
 ○wwise検証
 ・foundation参照
 ・高さ、色を再現
 
-○波模写
-・Noise調整
- -高さ
- -色
+○Houdiniで街のある景観をつくる!確認
 
-○Wave拡張検証
-・細さ(Randomly)
-・位置(Scatter)
-
-
-○アールデコ建築Generator実装
-・VolumeGeneratorソース整理
- -Parameter(Size)
-・最適化
- -Lod化方法調査
-・Detail拡張
-
-○RaptureCity検証
-※Houdiniで街のある景観をつくる!参考(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
-※Middle & Topデザイン
-・BaseVolume(Randomly)
- -Scatter
-・起伏
- -Terrain
-
-
-■メモ
-○Public
-・Python整理
-・サブミット
 
 ○Private
 ・※Stains Gate
