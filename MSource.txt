@@ -22,6 +22,9 @@
 ○各オブジェクト配置ロジック設計
 ・スレッド確認
 
+○TopCupsule検証
+・Slack参照
+
 ○カプセルタワー実装
 ・Outside検証
  -Panel(Pattern)
@@ -31,7 +34,7 @@
  -Pipe
 
 
-○波模写
+○ポルトガル館模写
 ・ランダム化
  -細さ
  -位置
@@ -43,6 +46,8 @@
 https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa
 ・※今後の進め方を決める
 ・必要オブジェクトの整理
+
+○Detail設計
 
 ○アールデコ建築Generator実装
 ・VolumeGeneratorソース整理
