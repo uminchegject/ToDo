@@ -1,23 +1,71 @@
-○Public
-・Impoter
- -HDA化
- -挙動確認
-・UVTool
- -検証の現状を確認
-  -※要望の優先順位に沿ってそれぞれ調べる)
-  -ドキュメント & Hip
+○Employ準備
+・本再読
+・ToDo整理
+ -エージェント
+ -カジュアル面談
 
 
-○Outside検証
-・等間隔でPanel配置
-・Panel状にCupsuleをランダム配置
+○GrasshopperStudy
+・サンプルプロジェクトのリストアップ
+ -確認事項を整理
+・サンプルプロジェクト調査
+ -使用ノードのリストアップ
+・コンピュテーショナル・モデリング 入門から応用(https://www.applicraft.com/cpmodeling_data/)
 
-○wwise検証
-・foundation参照
-・高さ、色を再現
+○Grasshopper準備
+・鱗ツール検証
+ ーシンプル実装
+・合理化Study
+ ー※杉原記事確認
+
+
+○各オブジェクト配置ロジック設計
+・スレッド確認
+
+○カプセルタワー実装
+・Outside検証
+ -Panel(Pattern)
+ -Cupsule(Randomly + Pattern Empty)
+・カラー検証
+ -Cupsule
+ -Pipe
+
+
+○波模写
+・ランダム化
+ -細さ
+ -位置
+ -長さ
+ -色
+
 
 ○Houdiniで街のある景観をつくる!確認
+https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa
 
+○アールデコ建築Generator実装
+・VolumeGeneratorソース整理
+ -Parameter(Size)
+・最適化
+ -Lod化方法調査
+・Detail拡張
+
+○RaptureCity検証
+※Houdiniで街のある景観をつくる!参考(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+※Middle & Topデザイン
+・BaseVolume(Randomly)
+ -Scatter
+・起伏
+ -Terrain
+
+
+■メモ
+○Public
+・Impoter
+ -サブミット
+・UVTool
+ -※検証のゴールの明確化
+ -処理確認
+ -検証環境整理
 
 ○Private
 ・※Stains Gate
@@ -29,6 +77,7 @@
 ※メモをベースに調べていく
 
 ○MCP解析環境準備
+・MCPStudy
 ・挙動確認
 ・ソース調査準備
 
@@ -96,14 +145,6 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
 ※規格デザイン
 ※ハイラインデザイン
 
-○カプセルタワー検証
-・Outside検証
- -Panel(Pattern)
- -Cupsule(Randomly + Pattern Empty)
-・カラー検証
- -Cupsule
- -Pipe
-
 ●Inside
 ・BaseFrame
 ・InsidePipe
@@ -152,10 +193,7 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
 
 ■ComputationalDesign
 ●Wave
-・波形態拡張
- -ながさ
- -細さ
- -色(モノトーン)
+・波形態模写
 ・波の揺れ模写
 
 △ポルトガル館記事メモ
