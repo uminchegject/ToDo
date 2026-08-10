@@ -41,6 +41,8 @@
 
 ○Houdiniで街のある景観をつくる!確認
 https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa
+・※今後の進め方を決める
+・必要オブジェクトの整理
 
 ○アールデコ建築Generator実装
 ・VolumeGeneratorソース整理
@@ -61,10 +63,10 @@ https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa
 ■メモ
 ○Public
 ・Impoter
- -サブミット
+ -サブミット(※他プロジェクトと比較)
 ・UVTool
- -※検証のゴールの明確化
  -処理確認
+ -※検証のゴールの明確化
  -検証環境整理
 
 ○Private
