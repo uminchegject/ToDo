@@ -39,6 +39,10 @@
  -色
 
 
+○モデリングStudy
+・SampleProject調査
+ -参考部分をリストアップ
+
 ○Detail設計
 ・Detailモデリング
 ・モジュラーモデリング
