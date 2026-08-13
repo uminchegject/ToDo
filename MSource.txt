@@ -1,3 +1,22 @@
+○Public
+・Impoter
+ -サブミット(※他プロジェクトと比較)
+・UVTool
+ -処理確認
+ -※検証のゴールの明確化
+ -検証環境整理
+
+○Private
+・休日スケジュール
+ -ToDo
+ -1日目,3,4日目
+・Stains Gate
+・安心遠隔サポート解約
+・シャチハタ
+・エアダスター
+・ワイヤレスHDMI
+
+
 ○GrasshopperStudy
 ・サンプルプロジェクトのリストアップ
  -確認事項を整理
@@ -64,47 +83,6 @@
  -Terrain
 
 
-■メモ
-○Public
-・Impoter
- -サブミット(※他プロジェクトと比較)
-・UVTool
- -処理確認
- -※検証のゴールの明確化
- -検証環境整理
-
-○Private
-・エアダスター
-・ワイヤレスHDMI
-・Stains Gate
-・安心遠隔サポート解約
-・シャチハタ
-
-
-■Study
-○CEDECまとめ
-※メモをベースに調べていく
-
-○MCP解析環境準備
-・MCPStudy
-・挙動確認
-・ソース調査準備
-
-○本
-・生成AI時代のソフトウェア開発
-
-○英語
-・Oxford Picture Dictionary
-
-○USDStudy
-・USD Tutorials(https://openusd.org/release/tut_usd_tutorials.html)
-
-○HoudiniStudy
-・H19.5 FOUNDATIONS BOOK
-https://www.sidefx.com/profile/rmagee/
-https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
-
-
 ■Employ
 ●反省
 ※コンピュテーショナルデザインをベースにした説明
@@ -142,21 +120,28 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
 ・不足しているスキルの自己啓発を行う。
 
 
-■Grasshopper
-●鱗ツール
-・Input
- -BaseSurface
- -鱗
-・Flow
- -Grid状で鱗を配置
- -MapToSurface
-・Parameter
- -傾き
+■Study
+○CEDECまとめ
+※メモをベースに調べていく
 
-●パネルツール
-※合理化ツール
-・参照資料
- -コンピュテーショナルデザインにおけるファサードとルールのデザイン(https://www.archifuture-web.jp/magazine/466.html)
+○MCP解析環境準備
+・MCPStudy
+・挙動確認
+・ソース調査準備
+
+○本
+・生成AI時代のソフトウェア開発
+
+○英語
+・Oxford Picture Dictionary
+
+○USDStudy
+・USD Tutorials(https://openusd.org/release/tut_usd_tutorials.html)
+
+○HoudiniStudy
+・H19.5 FOUNDATIONS BOOK
+https://www.sidefx.com/profile/rmagee/
+https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
 
 
 ■メタボリズム
