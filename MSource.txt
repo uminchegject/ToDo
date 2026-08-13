@@ -1,33 +1,25 @@
-○Private
-・Houdiniログイン
-・ダーツカード
-・健康診断
-・目標設定シート
-・休日スケジュール
- -ToDo
- -1日目,3,4日目
+■Grasshopper
+○コンピュテーショナルデザインStudy
+・合理化記事の確認
+・※合理化タスクの整理
+ -建築形態の合理化
+ -合理的曲面分割
+ -部材のユニット化
+ -部材形状の合理化
 
-○Public
-・env_rootマージ
-・importer再チェック
-・作業準備
-　ー挙動確認環境用意
-　ー現状の調査段階確認
+○GrasshopperStudy
+※Study 設計
+・サンプルプロジェクトのリストアップ
+ -確認事項を整理
+・サンプルプロジェクト調査
+ -使用ノードのリストアップ
+・コンピュテーショナル・モデリング 入門から応用
 
-
-○TopCupsule検証
-・Slack参照
-
-○ポルトガル館模写
-・ランダム化
- -細さ
- -位置
- -長さ
- -色
-
-○モデリングStudy
-・SampleProject調査
- -参考部分をリストアップ
+●IDEA
+・Sound
+ -音波のLoft
+ -rationalization
+ -Panel化
 
 
 ■Employ
@@ -65,6 +57,76 @@
 ・職務経験の強みを自覚する。
 
 ・不足しているスキルの自己啓発を行う。
+
+
+■メモ
+○Public
+・UVTool検証準備
+ -ツールの検証環境構築
+ -各要望の現状の検証段階を整理(ドキュメント化)
+
+○Private
+・健康診断
+・目標設定シート
+・安心遠隔サポート解約
+・シャチハタ
+・エアダスター
+・ワイヤレスHDMI
+
+
+○TopCupsule検証
+・BaseFrame
+ -Unit × HeightNum
+・InsidePipe
+ -Height
+・Panel
+ -Pattern
+・Cupsule
+ -Randomly + Pattern Empty
+
+○各オブジェクト配置ロジック設計
+・スレッド確認
+
+●カプセルタワー
+・Outside検証
+ -Panel(Pattern)
+ -Cupsule(Randomly + Pattern Empty)
+・カラー検証
+ -Cupsule
+ -Pipe
+
+
+○ポルトガル館模写
+※Randomly
+・細さ
+・位置
+・長さ
+・色
+
+
+○モデリングStudy
+・SampleProject調査
+ -参考部分をリストアップ
+
+○Detail設計
+・Detailモデリング
+・モジュラーモデリング
+ -Volume To BasePoint
+
+○アールデコ建築Generator実装
+・VolumeGeneratorソース整理
+ -Parameter(Size)
+・最適化
+ -Lod化方法調査
+・Detail拡張
+
+○RaptureCity検証
+※Houdiniで街のある景観をつくる!参考(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+※Middle & Topデザイン
+・BaseVolume(Randomly)
+ -Scatter
+・起伏
+ -Terrain
 
 
 ■Study
