@@ -1,11 +1,19 @@
 ■Grasshopper
-○GrasshopperStudy
+○Grasshopper Study
 ※Study 設計
 ・サンプルプロジェクトのリストアップ
  -確認事項を整理
 ・サンプルプロジェクト調査
  -使用ノードのリストアップ
 ・コンピュテーショナル・モデリング 入門から応用
+
+○rationalization Study
+・SampleProject
+・SampleSurce
+
+○実装アプローチ設計
+・Python
+・Node
 
 ●設計
 ・建築形態の合理化
