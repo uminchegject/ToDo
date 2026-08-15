@@ -1,19 +1,14 @@
 ■Grasshopper
 ○Grasshopper Study
-※Study 設計
-・サンプルプロジェクトのリストアップ
+・※テーマに沿ったサンプルプロジェクトを調査
  -確認事項を整理
-・サンプルプロジェクト調査
  -使用ノードのリストアップ
-・コンピュテーショナル・モデリング 入門から応用
+・読書
+ -コンピュテーショナル・モデリング 入門から応用
 
-○rationalization Study
-・SampleProject
-・SampleSurce
-
-○実装アプローチ設計
-・Python
-・Node
+○Python Study
+・※テーマに沿った文献を調査
+ -ソース化
 
 ●設計
 ・建築形態の合理化
