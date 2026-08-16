@@ -11,6 +11,7 @@
 ●パネル設計
 ・軸
 ・Translate
+・パネル形態
 
 ○Grasshopper Study
 ・※テーマに沿ったサンプルプロジェクトを調査
