@@ -10,6 +10,13 @@
 
 
 ○Employメモ整理
+・会社概要を同じフォーマットで整理
+ -M_C&R
+ -M_会社理念
+・経歴周りを整理
+ -M_TA
+ -M_Employ
+ -M_所信表明
 
 ○Resolution文献調査
 ・曲面の合理化
@@ -38,7 +45,6 @@
 ○モデリングStudy
 ・SampleProject調査
  -参考部分をリストアップ
-
 
 
 ■Employ
