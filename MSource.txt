@@ -1,12 +1,19 @@
 ○Public
 ・UVTool検証準備
- -ツールの検証環境構築
- -各要望の現状の検証段階を整理(ドキュメント化)
+ -サブモジュール
+ -mayaでポケモンデータを開く
+・メモ整理
+ -要望概要
+ -各要望の現状の検証段階
+ -検証ToDo
 
 ○Private
-・Houdiniログイン
 ・健康診断
 ・目標設定シート
+・安心遠隔サポート解約
+・シャチハタ
+・エアダスター
+・ワイヤレスHDMI
 
 
 ○Employメモ整理
@@ -37,16 +44,49 @@
 ・Cupsule
  -Randomly + Pattern Empty
 
+○各オブジェクト配置ロジック設計
+・スレッド確認
+
+●カプセルタワー
+・Outside検証
+ -Panel(Pattern)
+ -Cupsule(Randomly + Pattern Empty)
+・カラー検証
+ -Cupsule
+ -Pipe
+
+
 ○ポルトガル館模写
-※Randomly
+※Noise + Randomly
 ・細さ
 ・位置
 ・長さ
 ・色
 
+
 ○モデリングStudy
 ・SampleProject調査
  -参考部分をリストアップ
+
+○Detail設計
+・Detailモデリング
+・モジュラーモデリング
+ -Volume To BasePoint
+
+○アールデコ建築Generator実装
+・VolumeGeneratorソース整理
+ -Parameter(Size)
+・最適化
+ -Lod化方法調査
+・Detail拡張
+
+○RaptureCity検証
+※Houdiniで街のある景観をつくる!参考(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+※Middle & Topデザイン
+・BaseVolume(Randomly)
+ -Scatter
+・起伏
+ -Terrain
 
 
 ■Employ
@@ -69,10 +109,10 @@
 ・職務経験の強みを自覚する。
 
 ○情報収集
+・※AmdLabs準備(カジュアル面談)
 ・建築テックソフト調査
  -Grasshopper
  -Revit×Dynamo
-・※AmdLabs準備(カジュアル面談)
 
 ●ToDoリスト
 ・求人サイトへ登録する。
@@ -169,14 +209,6 @@ https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
  -Pattern
 ・Cupsule
  -Randomly + Pattern Empty
-
-●Pipe
-※規格化(Radius, Color)
-・Height
-・In Out
-・Pattern(Set)
- -Simple
- -Gradation
 
 
 ■アールデコ
