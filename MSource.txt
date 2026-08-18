@@ -27,11 +27,17 @@
  -M_Employ
  -M_所信表明
 
+
+○Grasshopper Python Study
+※ツールのヒントにする
+・ATLV(http://atlv.org/education/)
+
 ○Resolution文献調査
 ・曲面の合理化
  -※文献ベースで実装
  -建築形態の合理化
  -合理的曲面分割
+
 
 
 ○TopCupsule検証
