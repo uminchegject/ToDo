@@ -1,19 +1,13 @@
 ○Public
-・UVTool検証準備
- -サブモジュール
- -mayaでポケモンデータを開く
-・メモ整理
- -要望概要
- -各要望の現状の検証段階
- -検証ToDo
+・Hip処理調査
+　ー左右対称
+　ー歪み
+・左右対称調査
 
 ○Private
+・※KOT対応
 ・健康診断
 ・目標設定シート
-・安心遠隔サポート解約
-・シャチハタ
-・エアダスター
-・ワイヤレスHDMI
 
 
 ○Employメモ整理
@@ -21,18 +15,8 @@
  -M_TA
  -M_Employ
  -M_所信表明
-・会社概要整理(※メモのフォーマットに沿って整理)
- -M_C&R
- -M_会社理念
 
-
-○Grasshopper Python Study
-※ツールのヒントにする
-・ATLV(http://atlv.org/education/)
-
-○post-rationalization文献調査
-※中国パビリオンベースで調査
-・工程を細分化して、各工程ごとに実装挙動確認
+○中国パビリオンロジック確認
 
 
 ○TopCupsule検証
@@ -45,49 +29,11 @@
 ・Cupsule
  -Randomly + Pattern Empty
 
-△各オブジェクト配置ロジック設計
-・スレッド確認
-
-●カプセルタワー
-・Outside検証
- -Panel(Pattern)
- -Cupsule(Randomly + Pattern Empty)
-・カラー検証
- -Cupsule
- -Pipe
-
-
-○ポルトガル館模写
-※Noise + Randomly
+○ポルトガル館 Noise + Randomly 設計
 ・細さ
 ・位置
 ・長さ
 ・色
-
-
-○モデリングStudy
-・SampleProject調査
- -参考部分をリストアップ
-
-○Detail設計
-・Detailモデリング
-・モジュラーモデリング
- -Volume To BasePoint
-
-○アールデコ建築Generator実装
-・VolumeGeneratorソース整理
- -Parameter(Size)
-・最適化
- -Lod化方法調査
-・Detail拡張
-
-○RaptureCity検証
-※Houdiniで街のある景観をつくる!参考(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
-※Middle & Topデザイン
-・BaseVolume(Randomly)
- -Scatter
-・起伏
- -Terrain
 
 
 ■Employ
