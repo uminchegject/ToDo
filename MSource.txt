@@ -1,11 +1,31 @@
-○Public
-・各要望の調査
-　ーAI
+○UV Study準備(GPT)
+・Tutorial
+・文献
 
 ○Private
-・※KOT対応
-・健康診断
-・△目標設定シート
+・目標設定シート
+・シャチハタ
+・エアダスター
+・ワイヤレスHDMI
+
+
+○Employメモ整理
+・自分概要整理
+ -本に従ってメモを再整理(※旧メモを参照)
+・会社概要整理(※メモのフォーマットに沿って整理)
+ -M_C&R
+ -M_会社理念
+ -M_所信表明
+
+
+○Grasshopper Python Study
+※ツールのヒントにする
+・ATLV(http://atlv.org/education/)
+・GPT(https://chatgpt.com/s/t_6a852502fef081919cba369044b4ee55)
+
+○post-rationalization文献調査
+※中国パビリオンベースで調査
+・工程を細分化して、各工程ごとに実装挙動確認
 
 
 ○TopCupsule検証
@@ -18,11 +38,76 @@
 ・Cupsule
  -Randomly + Pattern Empty
 
-○ポルトガル館 Noise + Randomly 設計
-・細さ
-・位置
+△各オブジェクト配置ロジック設計
+・スレッド確認
+
+●カプセルタワー
+・Outside検証
+ -Panel(Pattern)
+ -Cupsule(Randomly + Pattern Empty)
+・カラー検証
+ -Cupsule
+ -Pipe
+
+
+○ポルトガル館 Noise + Randomly 検証
+※Noise値をベースに設定
 ・長さ
 ・色
+・△細さ
+
+
+○モデリングStudy
+・SampleProject調査
+ -参考部分をリストアップ
+
+○Detail設計
+・Detailモデリング
+・モジュラーモデリング
+ -Volume To BasePoint
+
+○アールデコ建築Generator実装
+・VolumeGeneratorソース整理
+ -Parameter(Size)
+・最適化
+ -Lod化方法調査
+・Detail拡張
+
+○RaptureCity検証
+※Houdiniで街のある景観をつくる!参考(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+※Middle & Topデザイン
+・BaseVolume(Randomly)
+ -Scatter
+・起伏
+ -Terrain
+
+
+■Public
+●左右対称の配置
+・シンメトリ形状の場合、1つのパーツ内で解像度を均一に保ちつつ、左右対称に制度高く配置したい
+
+●パーツごとの解像度調整
+・全パーツを均一な解像度にするのではなく、パーツごとに任意で解像度を変えたい
+
+●展開
+「展開」のワンアクションだけで歪みのないUV展開になる(事前準備：シームを任意の場所に入れておく)
+
+●UVのコピー
+・同じトポロジーを持つパーツにUVをコピーしたい
+
+●調査ノード
+・UVFlatten
+ -Flattening Constraints(Seams)
+ -Axis-Aligned Vertex Groups
+・UVLayout
+ -Variable Scaling(Island Scale Attribute)
+ -Scale Island to Match Their Surface Areas
+ -Axis Alignment(By Island Position in 3D)
+ -Packing(Island Padding)
+ -Island Stacking(Stack Identical Islands)
+ 
+●メモ
+transfer UVs by topology?
 
 
 ■Employ
@@ -67,7 +152,12 @@
 
 
 ■Grashopper
-○ミラノ万博中国館再現
+●パネル設計
+・軸
+・Translate
+・パネル形態
+
+●設計
 ・曲面の合理化
  -※文献ベースで実装
  -建築形態の合理化
@@ -76,28 +166,6 @@
  -※合理化(文献)に応じたパネルデザインを設計する
  -部材のユニット化
  -部材形状の合理化
-
-●パネル設計
-・軸
-・Translate
-・パネル形態
-
-○Grasshopper Study
-・※テーマに沿ったサンプルプロジェクトを調査
- -確認事項を整理
- -使用ノードのリストアップ
-・読書
- -コンピュテーショナル・モデリング 入門から応用
-
-○Python Study
-・※テーマに沿った文献を調査
- -ソース化
-
-●設計
-・建築形態の合理化
-・合理的曲面分割
-・部材のユニット化
-・部材形状の合理化
 
 ●IDEA
 ・Sound
@@ -115,19 +183,11 @@
 ・挙動確認
 ・ソース調査準備
 
-○本
+●本
 ・生成AI時代のソフトウェア開発
 
-○英語
+●英語
 ・Oxford Picture Dictionary
-
-○USDStudy
-・USD Tutorials(https://openusd.org/release/tut_usd_tutorials.html)
-
-○HoudiniStudy
-・H19.5 FOUNDATIONS BOOK
-https://www.sidefx.com/profile/rmagee/
-https://www.sidefx.com/ja/tutorials/kinefx-rigging-fur-dude/
 
 
 ■メタボリズム
