@@ -1,12 +1,31 @@
 ○Public
-・GPT確認
-・処理整理
-　ー左右対称の配置
-　ーパーツごとの解像度調整
 ・事例調査
-　ー登録した情報のやり直し
-　ー歪みのないUV展開
-　ー同じトポロジーを持つパーツにUVをコピー
+・検証準備
+
+○Private
+・目標設定シート
+・シャチハタ
+・エアダスター
+・ワイヤレスHDMI
+
+
+○Employメモ整理
+・自分概要整理
+ -本に従ってメモを再整理(※旧メモを参照)
+・会社概要整理(※メモのフォーマットに沿って整理)
+ -M_C&R
+ -M_会社理念
+ -M_所信表明
+
+
+○Grasshopper Python Study
+※ツールのヒントにする
+・ATLV(http://atlv.org/education/)
+・GPT(https://chatgpt.com/s/t_6a852502fef081919cba369044b4ee55)
+
+○post-rationalization文献調査(中国パビリオンベース)
+※自由曲面をGrid化(Line化)し合理化
+・工程を細分化して、各工程ごとに実装挙動確認
 
 
 ○TopCupsule検証
@@ -19,6 +38,18 @@
 ・Cupsule
  -Randomly + Pattern Empty
 
+△各オブジェクト配置ロジック設計
+・スレッド確認
+
+●カプセルタワー
+・Outside検証
+ -Panel(Pattern)
+ -Cupsule(Randomly + Pattern Empty)
+・カラー検証
+ -Cupsule
+ -Pipe
+
+
 ○ポルトガル館 波化
 ※Noise + Randomly
 ※Noise値をベースに設定
@@ -27,7 +58,56 @@
 ・色
 
 
+○モデリングStudy
+・SmolingRobot
+・SampleProject調査
+ -参考部分をリストアップ
+
+○Detail設計
+・Detailモデリング
+・モジュラーモデリング
+ -Volume To BasePoint
+
+○アールデコ建築Generator実装
+・VolumeGeneratorソース整理
+ -Parameter(Size)
+・最適化
+ -Lod化方法調査
+・Detail拡張
+
+○RaptureCity検証
+※Houdiniで街のある景観をつくる!参考(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+※Middle & Topデザイン
+・BaseVolume(Randomly)
+ -Scatter
+・起伏
+ -Terrain
+
+
 ■Public
+○同じトポロジーを持つパーツにUVをコピー実装
+・挙動確認
+
+
+○深堀(修正(整理)・拡張・その他アプローチ)
+・左右対称の配置
+ -処理修正(整理)
+・パーツごとの解像度調整
+ -拡張(パーツごとにScale Attributeを設定)
+
+○仕様確認
+・登録した情報のやり直し
+ -シームやIslandを、モデルのTopology変更後にどう再認識するか
+ -GPT(https://chatgpt.com/s/t_6a86d7e6a3488191be675d2036a43b56)
+
+○事例調査
+※再現及び検証を行う
+・歪みのないUV展開
+ -Labs Remove UV Distortion(https://sidefxlabs.artstation.com/projects/klGq0x?utm_source)
+・同じトポロジーを持つパーツにUVをコピー
+ -Attribute copy SOP(https://www.sidefx.com/forum/topic/90150/?page=1&utm_source)
+
+ 
 ●左右対称の配置
 ・シンメトリ形状の場合、1つのパーツ内で解像度を均一に保ちつつ、左右対称に制度高く配置したい
 
