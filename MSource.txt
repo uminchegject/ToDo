@@ -1,33 +1,12 @@
-○UV Study準備(GPT)
-・GPT(https://chatgpt.com/s/t_6a864e067db08191a981c41a64d4b297)
-
-○Private
-・目標設定シート
-・シャチハタ
-・エアダスター
-・ワイヤレスHDMI
-
-
-○Employメモ整理
-・自分概要整理
- -本に従ってメモを再整理(※旧メモを参照)
-・会社概要整理(※メモのフォーマットに沿って整理)
- -M_C&R
- -M_会社理念
- -M_所信表明
-
-
-○文章を項目で整理
-https://www.archifuture-web.jp/magazine/508.html
-
-○Grasshopper Python Study
-※ツールのヒントにする
-・ATLV(http://atlv.org/education/)
-・GPT(https://chatgpt.com/s/t_6a852502fef081919cba369044b4ee55)
-
-○post-rationalization文献調査
-※中国パビリオンベースで調査
-・工程を細分化して、各工程ごとに実装挙動確認
+○Public
+・GPT確認
+・処理整理
+　ー左右対称の配置
+　ーパーツごとの解像度調整
+・事例調査
+　ー登録した情報のやり直し
+　ー歪みのないUV展開
+　ー同じトポロジーを持つパーツにUVをコピー
 
 
 ○TopCupsule検証
@@ -40,48 +19,12 @@ https://www.archifuture-web.jp/magazine/508.html
 ・Cupsule
  -Randomly + Pattern Empty
 
-△各オブジェクト配置ロジック設計
-・スレッド確認
-
-●カプセルタワー
-・Outside検証
- -Panel(Pattern)
- -Cupsule(Randomly + Pattern Empty)
-・カラー検証
- -Cupsule
- -Pipe
-
-
-○ポルトガル館 Noise + Randomly 検証
+○ポルトガル館 波化
+※Noise + Randomly
 ※Noise値をベースに設定
+・細さ
 ・長さ
 ・色
-・△細さ
-
-
-○モデリングStudy
-・SampleProject調査
- -参考部分をリストアップ
-
-○Detail設計
-・Detailモデリング
-・モジュラーモデリング
- -Volume To BasePoint
-
-○アールデコ建築Generator実装
-・VolumeGeneratorソース整理
- -Parameter(Size)
-・最適化
- -Lod化方法調査
-・Detail拡張
-
-○RaptureCity検証
-※Houdiniで街のある景観をつくる!参考(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
-※Middle & Topデザイン
-・BaseVolume(Randomly)
- -Scatter
-・起伏
- -Terrain
 
 
 ■Public
@@ -90,6 +33,8 @@ https://www.archifuture-web.jp/magazine/508.html
 
 ●パーツごとの解像度調整
 ・全パーツを均一な解像度にするのではなく、パーツごとに任意で解像度を変えたい
+・登録した情報のやり直しや作業コストが上がらない形で機能実装が可能か検証
+　ー「UV自動展開 → モデルの編集(頂点・UVアイランドの編集・増減) → 再度UV自動展開」のワークフローを考慮
 
 ●展開
 「展開」のワンアクションだけで歪みのないUV展開になる(事前準備：シームを任意の場所に入れておく)
