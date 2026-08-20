@@ -1,6 +1,5 @@
 ○UV Study準備(GPT)
-・Tutorial
-・文献
+・GPT(https://chatgpt.com/s/t_6a864e067db08191a981c41a64d4b297)
 
 ○Private
 ・目標設定シート
@@ -17,6 +16,9 @@
  -M_会社理念
  -M_所信表明
 
+
+○文章を項目で整理
+https://www.archifuture-web.jp/magazine/508.html
 
 ○Grasshopper Python Study
 ※ツールのヒントにする
