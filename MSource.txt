@@ -33,9 +33,9 @@
  -Pipe
 
 
-○ポルトガル館 波化準備
+○ポルトガル館波化
 ※Noise + Randomly
-※Noise値をベースに設定
+・※Noise値をベースに設定
 ・Noise多重
 ・Element
  -細さ
@@ -43,15 +43,8 @@
  -色
 
 
-○モデリングStudy
-・SampleProject調査
- -参考部分をリストアップ
- 
-●資料
-・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
-・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
-
 ○Detail設計
+※シンプル
 ・Detailモデリング
 ・モジュラーモデリング
  -Volume To BasePoint
@@ -62,6 +55,10 @@
 ・最適化
  -Lod化方法調査
 ・Detail拡張
+
+●資料
+・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
 
 ○RaptureCity検証
 ※Houdiniで街のある景観をつくる!参考(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
