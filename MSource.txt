@@ -1,6 +1,9 @@
 ○Public
-・事例調査
 ・検証準備
+ -maya上での検証
+ -※それぞれの要望の挙動確認環境を整理
+・同じトポロジーを持つパーツにUVをコピー実装
+ -挙動確認
 
 ○Private
 ・目標設定シート
@@ -29,10 +32,6 @@
 
 
 ○TopCupsule検証
-・BaseFrame
- -Unit × HeightNum
-・InsidePipe
- -Height
 ・Panel
  -Pattern
 ・Cupsule
@@ -85,18 +84,11 @@
 
 
 ■Public
-○同じトポロジーを持つパーツにUVをコピー実装
-・挙動確認
-
-
 ○深堀(修正(整理)・拡張・その他アプローチ)
 ・左右対称の配置
  -処理修正(整理)
 ・パーツごとの解像度調整
  -拡張(パーツごとにScale Attributeを設定)
-
-○仕様確認
-・登録した情報のやり直し
  -シームやIslandを、モデルのTopology変更後にどう再認識するか
  -GPT(https://chatgpt.com/s/t_6a86d7e6a3488191be675d2036a43b56)
 
@@ -114,7 +106,7 @@
 ●パーツごとの解像度調整
 ・全パーツを均一な解像度にするのではなく、パーツごとに任意で解像度を変えたい
 ・登録した情報のやり直しや作業コストが上がらない形で機能実装が可能か検証
-　ー「UV自動展開 → モデルの編集(頂点・UVアイランドの編集・増減) → 再度UV自動展開」のワークフローを考慮
+ ー「UV自動展開 → モデルの編集(頂点・UVアイランドの編集・増減) → 再度UV自動展開」のワークフローを考慮
 
 ●展開
 「展開」のワンアクションだけで歪みのないUV展開になる(事前準備：シームを任意の場所に入れておく)
@@ -132,9 +124,6 @@
  -Axis Alignment(By Island Position in 3D)
  -Packing(Island Padding)
  -Island Stacking(Stack Identical Islands)
- 
-●メモ
-transfer UVs by topology?
 
 
 ■Employ
