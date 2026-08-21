@@ -1,12 +1,10 @@
-○Public
-・同じトポロジーを持つパーツにUVをコピー実装
- -挙動確認
-
-
-○Grasshopper 検証準備
-・GPT(https://chatgpt.com/s/t_6a87cd5fcb4c819181088ec7aa42e011)
-・自由曲面をGrid化(Line化)し合理化するフローをそれぞれ検証
-・ATLVの記事をベースにGPTでソース生成
+○事例調査&検証
+※再現及び検証を行う
+・※要望の詳細確認
+・歪みのないUV展開
+　ーLabs Remove UV Distortion
+・同じトポロジーを持つパーツにUVをコピー
+　ーAttribute copy SOP
 
 
 ○TopCupsule検証
@@ -26,7 +24,6 @@
 ・細さ
 ・長さ
 ・色
-
 
 
 ■Employ
