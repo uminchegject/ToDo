@@ -17,13 +17,7 @@
  -修正
 
 
-○TopCupsule検証
-・中抜け
- -Remove Panel
- -Remove Cupsule
-・カラー(メタボリズム)
- -Panel
- -Cupsule
+○TopCupsule検証添削
 
 ○各オブジェクト配置ロジック設計
 ※TopCupsuleを参照(スレッド参照)
@@ -37,10 +31,11 @@
  -Pipe
 
 
+○Noise多重検証添削
+
 ○ポルトガル館波化
 ※Noise + Randomly
 ・※Noise値をベースに設定
-・Noise多重
 ・Element
  -細さ
  -長さ
