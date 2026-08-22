@@ -13,6 +13,8 @@
 ※自由曲面をGrid化(Line化)し合理化
 ※工程を細分化して、各工程ごとに実装挙動確認
 ・ATLV(http://atlv.org/education/)
+・シンプル処理実装
+ -修正
 
 
 ○TopCupsule検証
@@ -320,136 +322,233 @@
 ・会社への返却物・会社から受け取る書類などを確認する。
 
 
-●Raptureボリュームジェネレーター
-vector base_pos = 0; //v@P;
-vector base_scale = {1.0, 10.0, 1.0};
+●ミラノ万博中国館の形態合理化
+import Rhino.Geometry as rg
 
-int center_block_num = chi("center_block_num");
-float center_ratio = ch("center_ratio");
-float center_height_ratio = ch("center_height_ratio");
 
-//Center
-vector center_scale = base_scale;
-center_scale.x *= center_ratio;
-center_scale.z *= center_ratio;
+# --------------------------------------------------
+# 1. 稜線を取得
+# --------------------------------------------------
 
-for(float idx = 0; idx < center_block_num; idx++)
-{
-    vector block_scale = center_scale;
-    block_scale.x *= (1 - idx / center_block_num);
-    block_scale.z *= (1 - idx / center_block_num);
-    block_scale.y *= (1 - center_height_ratio) * (idx / center_block_num) + center_height_ratio;
-    
-    int pt = addpoint(0, base_pos);
-    setpointattrib(0, "scale", pt, block_scale);
-}
+def get_ridges(surface):
 
-//Side
-int side_block_num = chi("side_block_num");
+    brep = surface.ToBrep()
 
-int toggle = 1;
-for(float idx = 0; idx < side_block_num; idx++)
-{
-    vector block_scale = base_scale;
-    block_scale.y *= center_height_ratio;
-    
-    block_scale.x *= (1 - center_ratio) * (idx / side_block_num) + center_ratio;
-    block_scale.z *= (1 - center_ratio) * (idx / side_block_num) + center_ratio;
-    
-    block_scale.y *= (1 - (idx / side_block_num) * (rand(idx + 10000) * 0.6 + 0.7));
-	
-	int volume_class = int(rand(idx) * 3);
+    return [
+        edge.DuplicateCurve()
+        for edge in brep.Edges
+    ]
 
-    if(toggle == 0){
-        vector scale = block_scale;
-        float offset;    
-        
-        if(int(idx) % 6 == 2){
-            scale.x *= 0.4;
-            vector block_pos = base_pos;
-            int block = addpoint(0, block_pos);
-            setpointattrib(0, "scale", block, scale);                       
-            
-            toggle = 1;
-            continue;
-        }
 
-        scale.x *= 0.3;
-        offset = (1 - (scale.x / block_scale.x)) / 2 * block_scale.x;        
+# --------------------------------------------------
+# 2. 稜線を平行な直線にする
+# --------------------------------------------------
 
-        vector block1_pos = base_pos;
-        block1_pos.x += offset;
-        int block1 = addpoint(0, block1_pos);
-        setpointattrib(0, "scale", block1, scale);
-		setpointattrib(0, "Class", block1, volume_class);
+def make_parallel_lines(curves):
 
-        vector block2_pos = base_pos;
-        block2_pos.x -= offset;
-        int block2 = addpoint(0, block2_pos);
-        setpointattrib(0, "scale", block2, scale);
+    if not curves:
+        return []
 
-        toggle = 1;
-    }   
-    else if(toggle == 1){
-        vector scale = block_scale;
-        float offset;
+    # 全体の基準方向
+    direction = (
+        curves[0].PointAtEnd
+        - curves[0].PointAtStart
+    )
 
-        if(int(idx) % 6 == 0){          
-            scale.z *= 0.3;
-            vector block_pos = base_pos;
-            int block = addpoint(0, block_pos);
-            setpointattrib(0, "scale", block, scale);       
-            
-            toggle = 2;
-            continue;
-        }         
+    direction.Unitize()
 
-        scale.z *= 0.3;
-        offset = (1 - (scale.z / block_scale.z)) / 2 * block_scale.z;        
+    result = []
 
-        vector block1_pos = base_pos;
-        block1_pos.z += offset;
-        int block1 = addpoint(0, block1_pos);
-        setpointattrib(0, "scale", block1, scale);
+    for curve in curves:
 
-        vector block2_pos = base_pos;
-        block2_pos.z -= offset;
-        int block2 = addpoint(0, block2_pos);
-        setpointattrib(0, "scale", block2, scale);
+        center = curve.PointAt(
+            curve.Domain.Mid
+        )
 
-        toggle = 2;
-    }
-    else{    
-        vector scale = block_scale;
-        scale.z *= 0.2;
-        scale.x *= 0.2;
-        float offset_x = (1 - (scale.x / block_scale.x)) / 2 * block_scale.x;           
-        float offset_z = (1 - (scale.z / block_scale.z)) / 2 * block_scale.z;           
-    
-        vector block1_pos = base_pos;
-        block1_pos.x += offset_x;
-        block1_pos.z += offset_z;
-        int block1 = addpoint(0, block1_pos);
-        setpointattrib(0, "scale", block1, scale);
-    
-        vector block2_pos = base_pos;
-        block2_pos.x -= offset_x;
-        block2_pos.z += offset_z;
-        int block2 = addpoint(0, block2_pos);
-        setpointattrib(0, "scale", block2, scale);
-                                        
-        vector block3_pos = base_pos;
-        block3_pos.x += offset_x;
-        block3_pos.z -= offset_z;
-        int block3 = addpoint(0, block3_pos);
-        setpointattrib(0, "scale", block3, scale);              
-    
-        vector block4_pos = base_pos;
-        block4_pos.x -= offset_x;
-        block4_pos.z -= offset_z;
-        int block4 = addpoint(0, block4_pos);
-        setpointattrib(0, "scale", block4, scale);
-    
-        toggle = 0;
-    }    
-}
+        length = curve.GetLength()
+
+        p0 = center - direction * length * 0.5
+        p1 = center + direction * length * 0.5
+
+        result.append(
+            rg.LineCurve(p0, p1)
+        )
+
+    return result
+
+
+# --------------------------------------------------
+# 3. 中央の2本を基準線にする
+# --------------------------------------------------
+
+def get_reference_lines(lines, surface):
+
+    center = surface.GetBoundingBox(
+        True
+    ).Center
+
+    lines = sorted(
+        lines,
+        key=lambda x:
+        x.PointAt(x.Domain.Mid).DistanceTo(center)
+    )
+
+    return lines[:2]
+
+
+# --------------------------------------------------
+# 4. 2m間隔のグリッドを作る
+# --------------------------------------------------
+
+def make_grid(surface, spacing):
+
+    bbox = surface.GetBoundingBox(True)
+
+    min_x = bbox.Min.X
+    max_x = bbox.Max.X
+    min_y = bbox.Min.Y
+    max_y = bbox.Max.Y
+
+    lines = []
+
+    x = min_x
+
+    while x <= max_x:
+
+        p0 = rg.Point3d(
+            x,
+            min_y,
+            bbox.Min.Z
+        )
+
+        p1 = rg.Point3d(
+            x,
+            max_y,
+            bbox.Max.Z
+        )
+
+        lines.append(
+            rg.LineCurve(p0, p1)
+        )
+
+        x += spacing
+
+    return lines
+
+
+# --------------------------------------------------
+# 5. 境界をグリッドに合わせる
+# --------------------------------------------------
+
+def snap_boundary(surface, spacing):
+
+    bbox = surface.GetBoundingBox(True)
+
+    curves = []
+
+    for edge in surface.ToBrep().Edges:
+
+        p0 = edge.PointAtStart
+        p1 = edge.PointAtEnd
+
+        # Y方向の位置を2m単位にする
+        y0 = round(p0.Y / spacing) * spacing
+        y1 = round(p1.Y / spacing) * spacing
+
+        p0 = rg.Point3d(
+            p0.X,
+            y0,
+            p0.Z
+        )
+
+        p1 = rg.Point3d(
+            p1.X,
+            y1,
+            p1.Z
+        )
+
+        curves.append(
+            rg.LineCurve(p0, p1)
+        )
+
+    return curves
+
+
+# --------------------------------------------------
+# 6. 境界を直線・円弧にする
+# --------------------------------------------------
+
+def rationalize_boundary(curves):
+
+    result = []
+
+    for curve in curves:
+
+        points = [
+            curve.PointAtStart,
+            curve.PointAt(
+                curve.Domain.Mid
+            ),
+            curve.PointAtEnd
+        ]
+
+        # 3点から円弧を作成
+        arc = rg.Arc(
+            points[0],
+            points[1],
+            points[2]
+        )
+
+        if arc.IsValid:
+            result.append(
+                rg.ArcCurve(arc)
+            )
+        else:
+            result.append(
+                rg.LineCurve(
+                    points[0],
+                    points[2]
+                )
+            )
+
+    return result
+
+
+# ==================================================
+# MAIN
+# ==================================================
+
+if S:
+
+    # ① 稜線
+    ridges = get_ridges(S)
+
+    # ② 平行化
+    parallel_lines = \
+        make_parallel_lines(ridges)
+
+    # ③ 基準線
+    reference_lines = \
+        get_reference_lines(
+            parallel_lines,
+            S
+        )
+
+    # ④ 2mグリッド
+    grid = make_grid(
+        S,
+        spacing
+    )
+
+    # ⑤ 境界をグリッドへ
+    snapped_boundary = \
+        snap_boundary(
+            S,
+            spacing
+        )
+
+    # ⑥ 直線・円弧へ
+    rational_boundary = \
+        rationalize_boundary(
+            snapped_boundary
+        )
