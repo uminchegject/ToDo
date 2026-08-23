@@ -1,3 +1,23 @@
+○ゴミ整理
+・傘
+
+○サンライズ準備
+
+
+○SciFi Project配置検証
+※Pipeベース (+αCupsule)
+
+○波化検証
+※PolyWireで検証
+※Noise + Randomly
+・細さ
+・長さ
+・色
+
+○Volume To Detail 調査&設計
+
+
+
 ○M_TA修正
 
 ○自分概要整理
