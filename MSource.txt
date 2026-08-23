@@ -1,23 +1,3 @@
-○ゴミ整理
-・傘
-
-○サンライズ準備
-
-
-○SciFi Project配置検証
-※Pipeベース (+αCupsule)
-
-○波化検証
-※PolyWireで検証
-※Noise + Randomly
-・細さ
-・長さ
-・色
-
-○Volume To Detail 調査&設計
-
-
-
 ○M_TA修正
 
 ○自分概要整理
@@ -34,21 +14,22 @@
 ※工程を細分化して、各工程ごとに実装挙動確認
 ・ATLV(http://atlv.org/education/)
 ・シンプル処理実装
+ -各工程ごとに実装&挙動確認
  -修正
 
 
-○TopCupsule検証添削
-・各オブジェクト配置ロジック設計
+○SciFiProject配置検証
+※ポンピドゥーセンター参照
+※PipeBase(+Cupsule)
 
-
-○Noise多重検証添削
+○波化検証
+※PolyWireで検証
 ※Noise + Randomly
 ・細さ
 ・長さ
 ・色
 
-
-○Detail設計
+○Volume To Detail 調査&設計
 ※シンプル
 ・Detailモデリング
 ・モジュラーモデリング
