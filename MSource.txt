@@ -1,3 +1,27 @@
+○結婚式準備
+https://wedding-invi.jp/invitation/491664/c22110b28b9
+・メッセージ
+・画像
+
+○OutOfPrint
+
+○サンライズ予約準備
+
+
+
+○Public
+※1週間のスケジュールを考える
+・HDA実装
+ ー左右対称の配置
+ ーパーツごとの解像度調整
+・事例調査&検証(※GPTから検証内容を詰める)
+ ー歪みのないUV展開
+ ー同じトポロジーを持つパーツにUVをコピー
+
+○Private
+・目標設定シート(確認)
+
+
 ○M_TA修正
 
 ○自分概要整理
@@ -29,17 +53,11 @@
 ・長さ
 ・色
 
-○Volume To Detail 調査&設計※シンプル
+○Volume To Detail 調査&設計
+※シンプル
 ・Detailモデリング
 ・モジュラーモデリング
  -Volume To BasePoint
-
-○アールデコ建築Generator実装
-・VolumeGeneratorソース整理
- -Parameter(Size)
-・最適化
- -Lod化方法調査
-・Detail拡張
 
 ●資料
 ・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
@@ -52,23 +70,6 @@
  -Scatter
 ・起伏
  -Terrain
-
-
-■メモ
-○Public
-※1週間のスケジュールを考える
-・HDA実装
- ー左右対称の配置
- ーパーツごとの解像度調整
-・事例調査&検証(※GPTから検証内容を詰める)
- ー歪みのないUV展開
- ー同じトポロジーを持つパーツにUVをコピー
-
-○Private
-・目標設定シート
-・シャチハタ
-・エアダスター
-・ワイヤレスHDMI
 
 
 ■Public
@@ -119,7 +120,7 @@
 ■Employ
 ●反省
 ※コンピュテーショナルデザインをベースにした説明
- -自分がやりたいこと・転職にを決断した理由
+ -自分がやりたいこと・転職を決断した理由
  -パワーワード(Grasshopperやりたいです)
 ※大枠から小枠へ説明していく意識をする
  -結論(要約) → 詳細&例
@@ -233,9 +234,6 @@
 ●資料
 ・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
 ・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
-・Madelaine Fischer-Bernhut(https://www.artstation.com/artwork/OmdXN8)
-・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
-・conceptart(https://neverwasmag.com/wp-content/uploads/2018/03/Rapture-BioShock-concept-art-6.jpg)
 
 
 ■ComputationalDesign
