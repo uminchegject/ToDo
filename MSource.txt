@@ -29,8 +29,7 @@
 ・長さ
 ・色
 
-○Volume To Detail 調査&設計
-※シンプル
+○Volume To Detail 調査&設計※シンプル
 ・Detailモデリング
 ・モジュラーモデリング
  -Volume To BasePoint
