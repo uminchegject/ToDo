@@ -16,6 +16,8 @@
 ・M_所信表明
 
 
+○自由曲面グリッド化ロジック実装
+
 ○中国館ロジック実装
 ※自由曲面をGrid化(Line化)し合理化
 ※工程を細分化して、各工程ごとに実装挙動確認
@@ -25,9 +27,12 @@
  -修正
 
 
+○Pipe Design 設計
+
 ○SciFiProject配置検証
 ※ポンピドゥーセンター参照
 ※PipeBase(+Cupsule)
+
 
 ○波化検証
 ※Noise + Randomly
@@ -35,9 +40,11 @@
 ・長さ
 ・色
 
+
+○Vertex Detail Design 設計
+
 ○Volume To Detail 調査&設計
 ※シンプル
-・Vertex Design
 ・Detailモデリング
 ・モジュラーモデリング
  -Volume To BasePoint
