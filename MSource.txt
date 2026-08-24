@@ -37,6 +37,7 @@
 
 ○Volume To Detail 調査&設計
 ※シンプル
+・Vertex Design
 ・Detailモデリング
 ・モジュラーモデリング
  -Volume To BasePoint
