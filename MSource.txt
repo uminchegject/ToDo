@@ -1,3 +1,8 @@
+○Public
+・検証内容調査&整理
+ -※各要望
+・検証
+
 ○Private
 ・目標設定シート(確認)
 ・結婚式準備(https://wedding-invi.jp/invitation/491664/c22110b28b9)
@@ -17,6 +22,7 @@
 
 
 ○自由曲面グリッド化ロジック実装
+・文献調査
 
 ○中国館ロジック実装
 ※自由曲面をGrid化(Line化)し合理化
@@ -28,6 +34,8 @@
 
 
 ○Pipe Design 設計
+※ポンピドゥーセンター参照
+・Frame
 
 ○SciFiProject配置検証
 ※ポンピドゥーセンター参照
@@ -42,6 +50,8 @@
 
 
 ○Vertex Detail Design 設計
+・Small Volume
+・凹凸
 
 ○Volume To Detail 調査&設計
 ※シンプル
