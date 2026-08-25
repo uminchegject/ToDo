@@ -1,6 +1,6 @@
 ○Public
-・検証内容調査&整理
- -※各要望
+・情報整理
+・検証内容整理&準備
 ・検証
 
 ○Private
@@ -8,9 +8,11 @@
 ・結婚式準備(https://wedding-invi.jp/invitation/491664/c22110b28b9)
  -メッセージ
  -画像
-
+・液体廃棄(キッチン棚)
 
 ○M_TA修正
+・Houdini → Grasshopper
+・C&R → Amdlab
 
 ○自分概要整理
 ・本に従ってメモを再整理(※旧メモを参照)
@@ -22,7 +24,7 @@
 
 
 ○自由曲面グリッド化ロジック実装
-・文献調査
+・文献調査(https://chatgpt.com/s/t_6a8ce59750388191bfa7bb0758893da0)
 
 ○中国館ロジック実装
 ※自由曲面をGrid化(Line化)し合理化
@@ -72,6 +74,7 @@
 ・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
 
 
+
 ■Public
 ○UV Study
 ※UvFlatten & UvLayout ベース
@@ -80,7 +83,7 @@
 ○左右対称の配置
 ・HDA整理
 ・UVアイランド結合検証
-　ーVex調査
+ -Vex調査
 
 ○パーツごとの解像度調整
 ・検証用HDA整理
