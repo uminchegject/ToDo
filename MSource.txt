@@ -1,23 +1,53 @@
 ○Public
-・検証内容整理&準備
-・検証
+・調査
+　ー自動展開
+　ーUVアイランド情報設定
+・検証(内容整理&準備)
+　ーUVアイランドの情報設定
+　ーUVの結合調査
+　ーUVコピー機能
 
-○UVアイランドの設定方法調査
-・HDAパラメーターにmeshを設定方法
+○Private
+・目標設定シート(確認)
+・結婚式準備(https://wedding-invi.jp/invitation/491664/c22110b28b9)
+ -メッセージ
+ -画像
+・液体廃棄(キッチン棚)
 
-○UVの結合調査&検証
-※Vexベース
 
-○UVコピー機能をVexで検証
+○M_TA修正
+・Houdini → Grasshopper
+・C&R → Amdlab
+
+○自分概要整理
+・本に従ってメモを再整理(※旧メモを参照)
+
+△会社概要整理(※メモのフォーマットに沿って整理)
+・M_C&R
+・M_会社理念
+・M_所信表明
 
 
 ○自由曲面グリッド化ロジック実装
-・文献調査
+・文献調査(https://chatgpt.com/s/t_6a8ce59750388191bfa7bb0758893da0)
+
+○中国館ロジック実装
+※自由曲面をGrid化(Line化)し合理化
+※工程を細分化して、各工程ごとに実装挙動確認
+・ATLV(http://atlv.org/education/)
+・シンプル処理実装
+ -各工程ごとに実装&挙動確認
+ -修正
 
 
 ○Pipe Design 設計
 ※ポンピドゥーセンター参照
 ・Frame
+
+○SciFiProject配置検証
+※ポンピドゥーセンター参照
+※PipeBase(+Cupsule)
+
 
 ○波化検証
 ※Noise + Randomly
@@ -25,42 +55,48 @@
 ・長さ
 ・色
 
+
 ○Vertex Detail Design 設計
 ・Small Volume
 ・凹凸
 
+○Volume To Detail 調査&設計
+※シンプル
+・Detailモデリング
+・モジュラーモデリング
+ -Volume To BasePoint
+
+△RaptureCity検証
+※Houdiniで街のある景観をつくる!参考(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+※Middle & Topデザイン
+・BaseVolume(Randomly)
+ -Scatter
+・起伏
+ -Terrain
+
+●資料
+・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
+
 
 ■Public
-○UV Study
-※UvFlatten & UvLayout ベース
-・その他アプローチのヒント
+○UVアイランドの設定方法調査
+・HDAパラメーターにmeshを設定方法
 
-○左右対称の配置
-・HDA整理
-・UVアイランド結合検証
- -Vex調査
+○UVの結合調査&検証
+※Vexベース
+・0.5付近の判定
 
-○パーツごとの解像度調整
-・検証用HDA整理
-・パーツ選択パラメーター実装
- -パーツごとにScale設定する仕組み
-・△UVアイランド情報の記録方法の調査
- -シームやIslandを、モデルのTopology変更後にどう再認識するか
+○UVコピー機能をVexで検証
 
-
-○事例調査&検証
-※再現及び検証を行う
-・※GPTから検証内容を詰める
-・歪みのないUV展開
- -GPT(https://chatgpt.com/s/t_6a87fc82eb8c81919966922efe47c468)
- -Labs Remove UV Distortion(https://sidefxlabs.artstation.com/projects/klGq0x?utm_source)
-・同じトポロジーを持つパーツにUVをコピー
- -GPT(https://chatgpt.com/s/t_6a87fc8ae3fc8191bcf97b1041e6b8ee)
- -Attribute copy SOP(https://www.sidefx.com/forum/topic/90150/?page=1&utm_source)
-
+△歪みのないUV展開調査
+※UVFlattenベース
+・回転回避
 
 ●展開
-「展開」のワンアクションだけで歪みのないUV展開になる(事前準備：シームを任意の場所に入れておく)
+・「展開」のワンアクションだけで歪みのないUV展開になる(事前準備：シームを任意の場所に入れておく)
+・歪みのないUV展開
+ -GPT(https://chatgpt.com/s/t_6a87fc82eb8c81919966922efe47c468)
 
 ●UVのコピー
 ・同じトポロジーを持つパーツにUVをコピーしたい
@@ -73,6 +109,7 @@
 ・全パーツを均一な解像度にするのではなく、パーツごとに任意で解像度を変えたい
 ・登録した情報のやり直しや作業コストが上がらない形で機能実装が可能か検証
  ー「UV自動展開 → モデルの編集(頂点・UVアイランドの編集・増減) → 再度UV自動展開」のワークフローを考慮
+ -シームやIslandを、モデルのTopology変更後にどう再認識するか
 
 ●調査ノード
 ・UVFlatten
