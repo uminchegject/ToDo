@@ -6,13 +6,10 @@
 ・HDAパラメーターにmeshを設定方法
 
 ○UVの結合調査&検証
+※Vexベース
 
 ○UVコピー機能をVexで検証
 
-
-○M_TA修正
-・Houdini → Grasshopper
-・C&R → Amdlab
 
 ○自由曲面グリッド化ロジック実装
 ・文献調査
