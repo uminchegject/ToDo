@@ -1,11 +1,11 @@
 ○Public
 ・調査
-　ーUVアイランド情報設定
-　ー△自動展開
+ ーUVアイランド情報設定
+ ー△自動展開
 ・検証(内容整理&準備)
-　ーUVアイランドの情報設定
-　ーUVの結合調査
-　ーUVコピー機能
+ ーUVアイランドの情報設定
+ ーUVの結合調査
+ ーUVコピー機能
 
 ○Private
 ・目標設定シート(確認)
@@ -16,8 +16,8 @@
 
 
 ○M_TA修正
-・Houdini → Grasshopper
-・C&R → Amdlab
+・Grasshopper
+・C&RとHoudini → AmdlabとGrasshopper
 
 ○自分概要整理
 ・本に従ってメモを再整理(※旧メモを参照)
@@ -28,7 +28,7 @@
 ・M_所信表明
 
 
-○自由曲面グリッド化ロジック実装
+○自由曲面グリッド化ロジック調査
 ・文献調査(https://chatgpt.com/s/t_6a8ce59750388191bfa7bb0758893da0)
 
 ○中国館ロジック実装
@@ -40,9 +40,11 @@
  -修正
 
 
-○Pipe Design 設計
-※ポンピドゥーセンター参照
+○各Elementの配置設計
 ・Frame
+・Pipe
+・Panel
+・Cupsule
 
 ○SciFiProject配置検証
 ※ポンピドゥーセンター参照
