@@ -1,4 +1,8 @@
-﻿○パイプユニット用意
+﻿○モデリングStudy
+・SciFiModeling
+
+
+○パイプユニット用意
 ※SciFi Town参照
 ※検証
 
@@ -42,8 +46,8 @@ else{
 
 
 ●set_scale_color
-float cofficient = ch("cofficient");
+
 float noise = @noise;
-v@scale = set(1, noise * cofficient, 1);
+v@scale = set(1, fit(noise, 0.4, 0.6, 0, 1), 1);
 v@Cd = fit(noise, 0.4, 0.6, 0, 1);
 @pscale = fit(noise, 0.4, 0.6, 0, 1)
