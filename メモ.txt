@@ -1,0 +1,49 @@
+﻿○パイプユニット用意
+※SciFi Town参照
+※検証
+
+○ユニット
+・カプセルタワー
+ -Pipe
+ -Frame
+ -Panel
+ -Cupsule
+・Pipe
+ -Frame
+ -Pipe
+
+
+■多重検証
+●set_noise
+float pos_cofficient = ch("pos_cofficient");
+float noise_cofficient = ch("noise_cofficient");
+float adjust_cofficient = ch("adjust_cofficient");
+float small_pos_cofficient = ch("small_pos_cofficient");
+float small_noise_cofficient = ch("small_noise_cofficient");
+float small_adjust_cofficient = ch("small_adjust_cofficient");
+
+float randomly_cofficient = ch("randomly_cofficient");
+
+vector pos = v@P;
+int seed = 0;
+float f1 = 0;
+float f2 = 0;
+
+if(rand(v@P) < 0.5){
+    wnoise(pos * pos_cofficient, seed, f1, f2);
+    @noise = f1 * noise_cofficient + adjust_cofficient;
+}
+else{
+    wnoise(pos * small_pos_cofficient, seed, f1, f2);
+    @noise += f1 * small_noise_cofficient + small_adjust_cofficient;
+}
+
+@noise += rand(v@P) * randomly_cofficient;
+
+
+●set_scale_color
+float cofficient = ch("cofficient");
+float noise = @noise;
+v@scale = set(1, noise * cofficient, 1);
+v@Cd = fit(noise, 0.4, 0.6, 0, 1);
+@pscale = fit(noise, 0.4, 0.6, 0, 1)
