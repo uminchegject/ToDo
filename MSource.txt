@@ -1,44 +1,25 @@
-○Public
-・調査
- ーUVアイランド情報設定
- ー△自動展開
-・検証(内容整理&準備)
- ーUVアイランドの情報設定
- ーUVの結合調査
- ーUVコピー機能
-
 ○Private
-・目標設定シート(確認)
-・結婚式準備(https://wedding-invi.jp/invitation/491664/c22110b28b9)
- -メッセージ
- -画像
-・液体廃棄(キッチン棚)
+・健康診断再予約
+
+○Public
+・Prim情報の受け渡し方法調査
+　ーJson経由
+・UVLayoutの編集方法の調査
+　ーVEX
 
 
 ○M_TA修正
 ・Grasshopper
 ・C&RとHoudini → AmdlabとGrasshopper
 
-○自分概要整理
-・本に従ってメモを再整理(※旧メモを参照)
 
-△会社概要整理(※メモのフォーマットに沿って整理)
-・M_C&R
-・M_会社理念
-・M_所信表明
+○自由曲面合理化手法調査
 
 
-○自由曲面グリッド化ロジック調査
-・文献調査(https://chatgpt.com/s/t_6a8ce59750388191bfa7bb0758893da0)
-
-○中国館ロジック実装
-※自由曲面をGrid化(Line化)し合理化
-※工程を細分化して、各工程ごとに実装挙動確認
-・ATLV(http://atlv.org/education/)
-・シンプル処理実装
- -各工程ごとに実装&挙動確認
- -修正
-
+○ポルトガル館模写
+・細さ
+・長さ
+・色
 
 ○各Elementの配置設計
 ・Frame
@@ -46,39 +27,9 @@
 ・Panel
 ・Cupsule
 
-○SciFiProject配置検証
-※ポンピドゥーセンター参照
-※PipeBase(+Cupsule)
-
-
-○波化検証
-※Noise + Randomly
-・細さ
-・長さ
-・色
-
-
 ○Vertex Detail Design 設計
 ・Small Volume
 ・凹凸
-
-○Volume To Detail 調査&設計
-※シンプル
-・Detailモデリング
-・モジュラーモデリング
- -Volume To BasePoint
-
-△RaptureCity検証
-※Houdiniで街のある景観をつくる!参考(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
-※Middle & Topデザイン
-・BaseVolume(Randomly)
- -Scatter
-・起伏
- -Terrain
-
-●資料
-・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
-・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
 
 
 ■Public
