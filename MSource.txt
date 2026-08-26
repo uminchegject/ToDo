@@ -1,61 +1,98 @@
-○Private
-・健康診断再予約
-
 ○Public
-・Prim情報の受け渡し方法検証
-　ーsidefx::maya_component_selection_type
-・UVコピー機能検証(vex)
-・△UVの結合調査&検証(vex)
-　ー位置調整
-　ー結合
+・調査
+　ーやり直し対応調査
+　ー歪みのない展開調査
+・検証
+　ーPrim情報の受け渡し
+　ーUVコピー機能(vex)
+　ーパーツごとの解像度調整
+
+○Private
+・目標設定シート(確認)
+・結婚式準備(https://wedding-invi.jp/invitation/491664/c22110b28b9)
+ -メッセージ
+ -画像
+・液体廃棄(キッチン棚)
 
 
 ○M_TA修正
-・Grasshopper
-・C&RとHoudini → AmdlabとGrasshopper
+・将来
+
+○自分概要整理
+・本に従ってメモを再整理(※旧メモを参照)
+
+△会社概要整理(※メモのフォーマットに沿って整理)
+・M_C&R
+・M_会社理念
+・M_所信表明
 
 
-○自由曲面合理化手法調査
-・処理確認
+○自由曲面グリッド化ロジック調査
+・中国館ロジック参照(https://www.archifuture-web.jp/magazine/508.html)
 
-○多重検証
-・色
-・長さ
-○ポルトガル館模写
-・細さ
-・長さ
-・色
+○中国館ロジック実装
+※自由曲面をGrid化(Line化)し合理化
+※工程を細分化して、各工程ごとに実装挙動確認
+・ATLV(http://atlv.org/education/)
+・シンプル処理実装
+ -各工程ごとに実装&挙動確認
+ -修正
+
 
 ○ポンピドゥセンター検証
 ・Pipe
 ・Frame
+
 ○各Elementの配置設計
 ・Frame
 ・Pipe
 ・Panel
 ・Cupsule
 
+○SciFiProject配置検証
+※ポンピドゥーセンター参照
+※PipeBase(+Cupsule)
+
+
+○多重検証
+・色
+・長さ
+
+○波化検証
+※Noise + Randomly
+・細さ
+・長さ
+・色
+
+
 ○モデリングStudy
 ・SciFiModeling
+
 ○Vertex Detail Design 設計
 ・Small Volume
 ・凹凸
 
+○Volume To Detail 調査&設計
+※シンプル
+・Detailモデリング
+・モジュラーモデリング
+ -Volume To BasePoint
+
+△RaptureCity検証
+※Houdiniで街のある景観をつくる!参考(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+※Middle & Topデザイン
+・BaseVolume(Randomly)
+ -Scatter
+・起伏
+ -Terrain
+
+●資料
+・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
+
+
 
 ■Public
-○UVアイランドの設定方法調査
-・HDAパラメーターにmeshを設定方法
-
-○UVの結合調査&検証
-※Vexベース
-・0.5付近の判定
-
-○UVコピー機能をVexで検証
-
-△歪みのないUV展開調査
-※UVFlattenベース
-・回転回避
-
 ●展開
 ・「展開」のワンアクションだけで歪みのないUV展開になる(事前準備：シームを任意の場所に入れておく)
 ・歪みのないUV展開
@@ -100,10 +137,6 @@
 ※過去 → 現在 → 将来
 ※自分とTAを分かってもらう準備
 ※引き出しを用意する
-・転職で優先すべきこと、譲歩できることを考える。
-・転職の目的を明確にする。
-・職務経歴の棚卸しをする。
-・職務経験の強みを自覚する。
 
 ○情報収集
 ・※AmdLabs準備(カジュアル面談)
@@ -172,7 +205,7 @@
 
 ●Inside
 ・BaseFrame
-・InsidePipe
+・Pipe
 
 ●Outside
 ※塊
@@ -228,9 +261,136 @@
 ・クローゼット
  -ユニフォーム
 
+
+■多重検証
+●set_noise
+float pos_cofficient = ch("pos_cofficient");
+float noise_cofficient = ch("noise_cofficient");
+float adjust_cofficient = ch("adjust_cofficient");
+float small_pos_cofficient = ch("small_pos_cofficient");
+float small_noise_cofficient = ch("small_noise_cofficient");
+float small_adjust_cofficient = ch("small_adjust_cofficient");
+
+float randomly_cofficient = ch("randomly_cofficient");
+
+vector pos = v@P;
+int seed = 0;
+float f1 = 0;
+float f2 = 0;
+
+if(rand(v@P) < 0.5){
+    wnoise(pos * pos_cofficient, seed, f1, f2);
+    @noise = f1 * noise_cofficient + adjust_cofficient;
+}
+else{
+    wnoise(pos * small_pos_cofficient, seed, f1, f2);
+    @noise += f1 * small_noise_cofficient + small_adjust_cofficient;
+}
+
+@noise += rand(v@P) * randomly_cofficient;
+
+
+●set_scale_color
+float cofficient = ch("cofficient");
+float noise = @noise;
+v@scale = set(1, noise * cofficient, 1);
+v@Cd = noise;
+
+
+■将来性
+================================================================================
+将来性
+================================================================================
+
+■TA（テクニカルアーティスト）
+===============================================================================
+【要約】
+ゲーム開発の大規模化に伴い、TAの重要性は今後さらに高まる。
+
+【詳細】
+■開発環境の変化
+・ゲームの大規模化
+・高品質化
+・開発期間の長期化
+・開発コストの増加
+・開発人数の増加
+↓
+従来の手作業中心の開発では限界がある
+↓
+制作工程全体を最適化する役割が必要
+↓
+TAの需要が拡大
+
+■TAに求められること
+・ツール開発
+・パイプライン構築
+・DCCツールとの連携
+・自動化
+・AIなど新技術への対応
+制作効率と品質の両立を実現する存在として、TAの価値は今後さらに高まる。
+
+
+================================================================================
+Houdini
+================================================================================
+【要約】
+Houdiniは大規模開発を支える中核ツールとして、今後さらに活用範囲が広がる。
+
+【詳細】
+■Houdiniが求められる背景
+・オープンワールド化
+・大量アセット制作
+・繰り返し作業の増加
+・環境制作の複雑化
+↓
+プロシージャルワークフローによる
+効率化・再利用が重要になる。
+
+■今後の可能性
+・Procedural Modeling
+・Simulation
+・PCG
+・USDとの連携
+・AIとの組み合わせ
+Houdiniは単なるモデリングツールではなく、制作パイプライン全体を支えるプラットフォームとして活用が広がっていくと考えている。
+
+
+================================================================================
+TAチーム・C&R
+================================================================================
+【要約】
+C&RのTAチームは、現場支援だけでなく、業界全体へ技術を還元する存在として成長できる。
+
+【詳細】
+■業界への貢献
+・Houdini技術の普及
+・TAの認知向上
+・技術情報の発信
+・勉強会の開催
+・ナレッジ共有
+
+■人材育成
+ゲーム業界ではHoudiniを扱えるTAがまだ少ない。
+↓
+多様な案件を経験したTAを育成することで、様々な開発現場へ技術支援ができる。
+
+■C&Rだからできること
+・様々な開発会社との取引
+・多様な案件経験
+・現場ごとの課題を横断的に蓄積
+・ノウハウを他案件へ展開
+単一の開発会社では得られない知見を業界全体へ還元できることがC&Rの強み。
+
+■自分が目指す姿
+・新しい技術をキャッチアップする
+・現場で技術検証を行う
+・成果をドキュメント化する
+・チームへ共有する
+・業界へ発信する
+個人の知見をチームの資産へ、チームの資産を業界の価値へとつなげられるテクニカルアーティストになりたい。
+
  
-■ソース
-●就活スケジュール
+■就活スケジュール
 【転職活動スタート】
 ＜転職活動開始時期＞
 ・就きたい業界・職種を考える。
@@ -270,233 +430,148 @@
 ・会社への返却物・会社から受け取る書類などを確認する。
 
 
-●ミラノ万博中国館の形態合理化
+■Rationalization of Free-Form Architecture Using Generative and Parametric Designs
+・論文(https://www.mdpi.com/2075-5309/13/5/1250)
+・GPT(https://chatgpt.com/s/t_6a8ec0f7326481918c9a0555c951013e)
+
 import Rhino.Geometry as rg
+# =========================================================
+# 入力
+# Srf       : 自由曲面
+# UCount    : U方向の分割数
+# VCount    : V方向の分割数
+# Tolerance : 平面とみなす許容誤差
+# =========================================================
 
 
-# --------------------------------------------------
-# 1. 稜線を取得
-# --------------------------------------------------
+# ---------------------------------------------------------
+# 曲面をパネルに分割
+# ---------------------------------------------------------
 
-def get_ridges(surface):
+def divide_surface(srf, u_count, v_count):
 
-    brep = surface.ToBrep()
+    panels = []
 
-    return [
-        edge.DuplicateCurve()
-        for edge in brep.Edges
+    u_domain = srf.Domain(0)
+    v_domain = srf.Domain(1)
+
+    for i in range(u_count):
+
+        for j in range(v_count):
+
+            u0 = u_domain.ParameterAt(float(i) / u_count)
+            u1 = u_domain.ParameterAt(float(i + 1) / u_count)
+
+            v0 = v_domain.ParameterAt(float(j) / v_count)
+            v1 = v_domain.ParameterAt(float(j + 1) / v_count)
+
+            panel = srf.Trim(
+                rg.Interval(u0, u1),
+                rg.Interval(v0, v1)
+            )
+
+            panels.append(panel)
+
+    return panels
+
+
+# ---------------------------------------------------------
+# パネルが平面に近いか判定
+# ---------------------------------------------------------
+
+def check_planarity(panel, tolerance):
+
+    corners = [
+        panel.PointAt(panel.Domain(0).T0, panel.Domain(1).T0),
+        panel.PointAt(panel.Domain(0).T1, panel.Domain(1).T0),
+        panel.PointAt(panel.Domain(0).T1, panel.Domain(1).T1),
+        panel.PointAt(panel.Domain(0).T0, panel.Domain(1).T1)
     ]
 
+    plane = rg.Plane.FitPlaneToPoints(corners)[1]
 
-# --------------------------------------------------
-# 2. 稜線を平行な直線にする
-# --------------------------------------------------
+    max_error = 0
 
-def make_parallel_lines(curves):
+    for point in corners:
 
-    if not curves:
-        return []
+        error = abs(plane.DistanceTo(point))
 
-    # 全体の基準方向
-    direction = (
-        curves[0].PointAtEnd
-        - curves[0].PointAtStart
-    )
+        max_error = max(max_error, error)
 
-    direction.Unitize()
+    return max_error <= tolerance, max_error
 
-    result = []
 
-    for curve in curves:
+# ---------------------------------------------------------
+# パネルを評価
+# ---------------------------------------------------------
 
-        center = curve.PointAt(
-            curve.Domain.Mid
+def evaluate_panels(panels, tolerance):
+
+    results = []
+
+    for panel in panels:
+
+        is_planar, error = check_planarity(
+            panel,
+            tolerance
         )
 
-        length = curve.GetLength()
+        if is_planar:
+            panel_type = "Planar"
+            cost = 100
 
-        p0 = center - direction * length * 0.5
-        p1 = center + direction * length * 0.5
-
-        result.append(
-            rg.LineCurve(p0, p1)
-        )
-
-    return result
-
-
-# --------------------------------------------------
-# 3. 中央の2本を基準線にする
-# --------------------------------------------------
-
-def get_reference_lines(lines, surface):
-
-    center = surface.GetBoundingBox(
-        True
-    ).Center
-
-    lines = sorted(
-        lines,
-        key=lambda x:
-        x.PointAt(x.Domain.Mid).DistanceTo(center)
-    )
-
-    return lines[:2]
-
-
-# --------------------------------------------------
-# 4. 2m間隔のグリッドを作る
-# --------------------------------------------------
-
-def make_grid(surface, spacing):
-
-    bbox = surface.GetBoundingBox(True)
-
-    min_x = bbox.Min.X
-    max_x = bbox.Max.X
-    min_y = bbox.Min.Y
-    max_y = bbox.Max.Y
-
-    lines = []
-
-    x = min_x
-
-    while x <= max_x:
-
-        p0 = rg.Point3d(
-            x,
-            min_y,
-            bbox.Min.Z
-        )
-
-        p1 = rg.Point3d(
-            x,
-            max_y,
-            bbox.Max.Z
-        )
-
-        lines.append(
-            rg.LineCurve(p0, p1)
-        )
-
-        x += spacing
-
-    return lines
-
-
-# --------------------------------------------------
-# 5. 境界をグリッドに合わせる
-# --------------------------------------------------
-
-def snap_boundary(surface, spacing):
-
-    bbox = surface.GetBoundingBox(True)
-
-    curves = []
-
-    for edge in surface.ToBrep().Edges:
-
-        p0 = edge.PointAtStart
-        p1 = edge.PointAtEnd
-
-        # Y方向の位置を2m単位にする
-        y0 = round(p0.Y / spacing) * spacing
-        y1 = round(p1.Y / spacing) * spacing
-
-        p0 = rg.Point3d(
-            p0.X,
-            y0,
-            p0.Z
-        )
-
-        p1 = rg.Point3d(
-            p1.X,
-            y1,
-            p1.Z
-        )
-
-        curves.append(
-            rg.LineCurve(p0, p1)
-        )
-
-    return curves
-
-
-# --------------------------------------------------
-# 6. 境界を直線・円弧にする
-# --------------------------------------------------
-
-def rationalize_boundary(curves):
-
-    result = []
-
-    for curve in curves:
-
-        points = [
-            curve.PointAtStart,
-            curve.PointAt(
-                curve.Domain.Mid
-            ),
-            curve.PointAtEnd
-        ]
-
-        # 3点から円弧を作成
-        arc = rg.Arc(
-            points[0],
-            points[1],
-            points[2]
-        )
-
-        if arc.IsValid:
-            result.append(
-                rg.ArcCurve(arc)
-            )
         else:
-            result.append(
-                rg.LineCurve(
-                    points[0],
-                    points[2]
-                )
-            )
+            panel_type = "Curved"
+            cost = 200
 
-    return result
+        results.append({
+            "panel": panel,
+            "type": panel_type,
+            "error": error,
+            "cost": cost
+        })
+
+    return results
 
 
-# ==================================================
-# MAIN
-# ==================================================
+# ---------------------------------------------------------
+# 実行
+# ---------------------------------------------------------
 
-if S:
+panels = divide_surface(
+    Srf,
+    UCount,
+    VCount
+)
 
-    # ① 稜線
-    ridges = get_ridges(S)
+results = evaluate_panels(
+    panels,
+    Tolerance
+)
 
-    # ② 平行化
-    parallel_lines = \
-        make_parallel_lines(ridges)
 
-    # ③ 基準線
-    reference_lines = \
-        get_reference_lines(
-            parallel_lines,
-            S
-        )
+# ---------------------------------------------------------
+# 出力
+# ---------------------------------------------------------
 
-    # ④ 2mグリッド
-    grid = make_grid(
-        S,
-        spacing
-    )
+PanelGeometry = [
+    r["panel"]
+    for r in results
+]
 
-    # ⑤ 境界をグリッドへ
-    snapped_boundary = \
-        snap_boundary(
-            S,
-            spacing
-        )
+PanelType = [
+    r["type"]
+    for r in results
+]
 
-    # ⑥ 直線・円弧へ
-    rational_boundary = \
-        rationalize_boundary(
-            snapped_boundary
-        )
+Error = [
+    r["error"]
+    for r in results
+]
+
+TotalCost = sum(
+    r["cost"]
+    for r in results
+)
+
+
