@@ -2,10 +2,12 @@
 ・健康診断再予約
 
 ○Public
-・Prim情報の受け渡し方法調査
-　ーJson経由
-・UVLayoutの編集方法の調査
-　ーVEX
+・Prim情報の受け渡し方法検証
+　ーsidefx::maya_component_selection_type
+・UVコピー機能検証(vex)
+・△UVの結合調査&検証(vex)
+　ー位置調整
+　ー結合
 
 
 ○M_TA修正
@@ -14,19 +16,27 @@
 
 
 ○自由曲面合理化手法調査
+・処理確認
 
-
+○多重検証
+・色
+・長さ
 ○ポルトガル館模写
 ・細さ
 ・長さ
 ・色
 
+○ポンピドゥセンター検証
+・Pipe
+・Frame
 ○各Elementの配置設計
 ・Frame
 ・Pipe
 ・Panel
 ・Cupsule
 
+○モデリングStudy
+・SciFiModeling
 ○Vertex Detail Design 設計
 ・Small Volume
 ・凹凸
