@@ -1,22 +1,95 @@
+○Public
+・情報補間
+・左右反転
+・UV転写
+・△展開
+
 ○Private
 ・買い物
  -チキンラーメン
- -朝パン
  -スティックコーヒー
+・目標設定シート(確認)
+・結婚式準備(https://wedding-invi.jp/invitation/491664/c22110b28b9)
+ -メッセージ
+ -画像
+・液体廃棄(キッチン棚)
 
-○Public
-・検証準備
-・maya_component_selection_type検証(Prim, Mult Param)
-・UVコピー機能検証(vex)
-・パーツごとの解像度調整
+
+○M_TA見直し
+
+○自分概要整理
+・本に従ってメモを修正
+
+△会社概要整理(※メモのフォーマットに沿って整理)
+・M_C&R
+・M_会社理念
+・M_所信表明
+
+
+○Rationalization of Free-Form Architecture Using Generative and Parametric Designs
+
+○自由曲面グリッド化ロジック調査
+・中国館ロジック参照(https://www.archifuture-web.jp/magazine/508.html)
+
+○中国館ロジック実装
+※自由曲面をGrid化(Line化)し合理化
+※工程を細分化して、各工程ごとに実装挙動確認
+・ATLV(http://atlv.org/education/)
+・シンプル処理実装
+ -各工程ごとに実装&挙動確認
+ -修正
+
+
+○パイプユニット用意
+※SciFi Town参照
+※検証
+
+●ユニット
+・カプセルタワー
+ -Pipe
+ -Frame
+ -Panel
+ -Cupsule
+・Pipe
+ -Frame
+ -Pipe
 
 
 ○多重検証
 ・色
 ・長さ
 
-△モデリングStudy
+○波化検証
+※Noise + Randomly
+・細さ
+・長さ
+・色
 
+
+○モデリングStudy
+・SciFiModeling
+
+○Vertex Detail Design 設計
+・Small Volume
+・凹凸
+
+○Volume To Detail 調査&設計
+※シンプル
+・Detailモデリング
+・モジュラーモデリング
+ -Volume To BasePoint
+
+△RaptureCity検証
+※Houdiniで街のある景観をつくる!参考(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+※Middle & Topデザイン
+・BaseVolume(Randomly)
+ -Scatter
+・起伏
+ -Terrain
+
+●資料
+・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
 
 
 ■Public
@@ -56,12 +129,6 @@
  -Axis Alignment(By Island Position in 3D)
  -Packing(Island Padding)
  -Island Stacking(Stack Identical Islands)
- 
- 
- script_action import soputils;
-kwargs['inputindex'] = 0
-kwargs['geometrytype'] = hou.geometryType.Points
-soputils.selectGroupParm(kwargs)
 
 
 ■Employ
