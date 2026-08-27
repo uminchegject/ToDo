@@ -1,12 +1,50 @@
-﻿○モデリングStudy
-・SciFiModeling
+﻿○Public
+・調査
+　ーやり直し対応調査
+　ー歪みのない展開調査
+・検証
+　ーPrim情報の受け渡し
+　ーUVコピー機能(vex)
+　ーパーツごとの解像度調整
+
+○Private
+・目標設定シート(確認)
+・結婚式準備(https://wedding-invi.jp/invitation/491664/c22110b28b9)
+ -メッセージ
+ -画像
+・液体廃棄(キッチン棚)
+
+
+○M_TA見直し
+
+○自分概要整理
+・本に従ってメモを修正
+
+△会社概要整理(※メモのフォーマットに沿って整理)
+・M_C&R
+・M_会社理念
+・M_所信表明
+
+
+○Rationalization of Free-Form Architecture Using Generative and Parametric Designs
+
+○自由曲面グリッド化ロジック調査
+・中国館ロジック参照(https://www.archifuture-web.jp/magazine/508.html)
+
+○中国館ロジック実装
+※自由曲面をGrid化(Line化)し合理化
+※工程を細分化して、各工程ごとに実装挙動確認
+・ATLV(http://atlv.org/education/)
+・シンプル処理実装
+ -各工程ごとに実装&挙動確認
+ -修正
 
 
 ○パイプユニット用意
 ※SciFi Town参照
 ※検証
 
-○ユニット
+●ユニット
 ・カプセルタワー
  -Pipe
  -Frame
@@ -17,37 +55,38 @@
  -Pipe
 
 
-■多重検証
-●set_noise
-float pos_cofficient = ch("pos_cofficient");
-float noise_cofficient = ch("noise_cofficient");
-float adjust_cofficient = ch("adjust_cofficient");
-float small_pos_cofficient = ch("small_pos_cofficient");
-float small_noise_cofficient = ch("small_noise_cofficient");
-float small_adjust_cofficient = ch("small_adjust_cofficient");
+○多重検証
+・色
+・長さ
 
-float randomly_cofficient = ch("randomly_cofficient");
-
-vector pos = v@P;
-int seed = 0;
-float f1 = 0;
-float f2 = 0;
-
-if(rand(v@P) < 0.5){
-    wnoise(pos * pos_cofficient, seed, f1, f2);
-    @noise = f1 * noise_cofficient + adjust_cofficient;
-}
-else{
-    wnoise(pos * small_pos_cofficient, seed, f1, f2);
-    @noise += f1 * small_noise_cofficient + small_adjust_cofficient;
-}
-
-@noise += rand(v@P) * randomly_cofficient;
+○波化検証
+※Noise + Randomly
+・細さ
+・長さ
+・色
 
 
-●set_scale_color
+○モデリングStudy
+・SciFiModeling
 
-float noise = @noise;
-v@scale = set(1, fit(noise, 0.4, 0.6, 0, 1), 1);
-v@Cd = fit(noise, 0.4, 0.6, 0, 1);
-@pscale = fit(noise, 0.4, 0.6, 0, 1)
+○Vertex Detail Design 設計
+・Small Volume
+・凹凸
+
+○Volume To Detail 調査&設計
+※シンプル
+・Detailモデリング
+・モジュラーモデリング
+ -Volume To BasePoint
+
+△RaptureCity検証
+※Houdiniで街のある景観をつくる!参考(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+※Middle & Topデザイン
+・BaseVolume(Randomly)
+ -Scatter
+・起伏
+ -Terrain
+
+●資料
+・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
