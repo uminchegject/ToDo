@@ -1,42 +1,3 @@
-■Public
-●展開
-・「展開」のワンアクションだけで歪みのないUV展開になる(事前準備：シームを任意の場所に入れておく)
-・歪みのないUV展開
- -GPT(https://chatgpt.com/s/t_6a87fc82eb8c81919966922efe47c468)
-・アルゴリズム
- -Angle-Based Flattening
- -Least Squares Conformal Maps
- -Spectral
- -Stretch minimizing
-・歪みの種類
- -角度歪み
- -面積歪み
-
-●UVのコピー
-・同じトポロジーを持つパーツにUVをコピーしたい
- 
-●左右対称の配置
-・シンメトリ形状の場合、1つのパーツ内で解像度を均一に保ちつつ、左右対称に制度高く配置したい
- -UVを繋げる
-
-●パーツごとの解像度調整
-・全パーツを均一な解像度にするのではなく、パーツごとに任意で解像度を変えたい
-・登録した情報のやり直しや作業コストが上がらない形で機能実装が可能か検証
- ー「UV自動展開 → モデルの編集(頂点・UVアイランドの編集・増減) → 再度UV自動展開」のワークフローを考慮
- -シームやIslandを、モデルのTopology変更後にどう再認識するか
-
-●調査ノード
-・UVFlatten
- -Flattening Constraints(Seams)
- -Axis-Aligned Vertex Groups
-・UVLayout
- -Variable Scaling(Island Scale Attribute)
- -Scale Island to Match Their Surface Areas
- -Axis Alignment(By Island Position in 3D)
- -Packing(Island Padding)
- -Island Stacking(Stack Identical Islands)
-
-
 ■Employ
 ●反省
 ※コンピュテーショナルデザインをベースにした説明
@@ -75,11 +36,6 @@
 
 
 ■Grashopper
-●パネル設計
-・軸
-・Translate
-・パネル形態
-
 ●設計
 ・曲面の合理化
  -※文献ベースで実装
@@ -90,6 +46,11 @@
  -部材のユニット化
  -部材形状の合理化
 
+●パネル設計
+・軸
+・Translate
+・パネル形態
+
 ●IDEA
 ・Sound
  -音波のLoft
@@ -97,20 +58,16 @@
  -Panel化
 
 
-■Study
-○CEDECまとめ
-※メモをベースに調べていく
+■ComputationalDesign
+●Wave
+・波形態模写
+・波の揺れ模写
 
-△MCP解析環境準備
-・MCPStudy
-・挙動確認
-・ソース調査準備
-
-●本
-・生成AI時代のソフトウェア開発
-
-●英語
-・Oxford Picture Dictionary
+△ポルトガル館記事メモ
+・デザイン概要
+・ロープ再現
+・ロープの揺れ再現
+ -Vex処理
 
 
 ■メタボリズム
@@ -152,16 +109,20 @@
 ・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
 
 
-■ComputationalDesign
-●Wave
-・波形態模写
-・波の揺れ模写
+■Study
+○CEDECまとめ
+※メモをベースに調べていく
 
-△ポルトガル館記事メモ
-・デザイン概要
-・ロープ再現
-・ロープの揺れ再現
- -Vex処理
+△MCP解析環境準備
+・MCPStudy
+・挙動確認
+・ソース調査準備
+
+●本
+・生成AI時代のソフトウェア開発
+
+●英語
+・Oxford Picture Dictionary
 
 
 ■ToDo
@@ -174,6 +135,45 @@
 ○衣類整理
 ・クローゼット
  -ユニフォーム
+
+
+■Public
+●展開
+・「展開」のワンアクションだけで歪みのないUV展開になる(事前準備：シームを任意の場所に入れておく)
+・歪みのないUV展開
+ -GPT(https://chatgpt.com/s/t_6a87fc82eb8c81919966922efe47c468)
+・アルゴリズム
+ -Angle-Based Flattening
+ -Least Squares Conformal Maps
+ -Spectral
+ -Stretch minimizing
+・歪みの種類
+ -角度歪み
+ -面積歪み
+
+●UVのコピー
+・同じトポロジーを持つパーツにUVをコピーしたい
+ 
+●左右対称の配置
+・シンメトリ形状の場合、1つのパーツ内で解像度を均一に保ちつつ、左右対称に制度高く配置したい
+ -UVを繋げる
+
+●パーツごとの解像度調整
+・全パーツを均一な解像度にするのではなく、パーツごとに任意で解像度を変えたい
+・登録した情報のやり直しや作業コストが上がらない形で機能実装が可能か検証
+ ー「UV自動展開 → モデルの編集(頂点・UVアイランドの編集・増減) → 再度UV自動展開」のワークフローを考慮
+ -シームやIslandを、モデルのTopology変更後にどう再認識するか
+
+●調査ノード
+・UVFlatten
+ -Flattening Constraints(Seams)
+ -Axis-Aligned Vertex Groups
+・UVLayout
+ -Variable Scaling(Island Scale Attribute)
+ -Scale Island to Match Their Surface Areas
+ -Axis Alignment(By Island Position in 3D)
+ -Packing(Island Padding)
+ -Island Stacking(Stack Identical Islands)
 
  
 ■就活スケジュール

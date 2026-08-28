@@ -27,13 +27,24 @@
 ○自由曲面グリッド化ロジック調査
 ・中国館ロジック参照(https://www.archifuture-web.jp/magazine/508.html)
 
-○中国館ロジック実装
+○Pattern化
+※中国館ロジックベース
+
+△中国館ロジック実装
 ※自由曲面をGrid化(Line化)し合理化
 ※工程を細分化して、各工程ごとに実装挙動確認
 ・ATLV(http://atlv.org/education/)
-・シンプル処理実装
- -各工程ごとに実装&挙動確認
- -修正
+
+
+○多重検証
+・色
+・長さ
+
+○波化検証
+※Noise + Randomly
+・細さ
+・長さ
+・色
 
 
 ○パイプユニット用意
@@ -49,17 +60,6 @@
 ・Pipe
  -Frame
  -Pipe
-
-
-○多重検証
-・色
-・長さ
-
-○波化検証
-※Noise + Randomly
-・細さ
-・長さ
-・色
 
 
 ○モデリングStudy
