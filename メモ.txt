@@ -1,4 +1,6 @@
 ﻿※土曜日は1週間の午前タスクを行う
+※白紙からアイデアを練っていく
+※Design 1週間準備
 
 
 ○Private
@@ -30,6 +32,7 @@
 
 ○論文確認(https://www.mdpi.com/2075-5309/13/5/1250)
 ・ロジック確認
+・英語勉強(GPT)
 
 ○検証自由曲面準備
 ・Scatter → Make Surface
@@ -51,11 +54,13 @@
 
 
 ○多重検証
-・色
-・長さ
-
-○波化検証
 ※Noise + Randomly
+※2層をコントラストをつけて検証(色、長さ)
+
+○波の模写
+・先端を白く
+
+●Element
 ・細さ
 ・長さ
 ・色
@@ -64,9 +69,16 @@
 ○パイプユニット用意
 ※SciFi Town参照
 ※検証
+・GreebleBlock
+・Curve In Block
+・2D → 3D
+
+○配置ロジック
+・カプセルタワーユニット(Pattern)
+・Pipeユニット(Randomly)
 
 ●ユニット
-・カプセルタワー
+ -Pattern
  -Pipe
  -Frame
  -Panel
@@ -76,14 +88,12 @@
  -Pipe
 
 
-○モデリングStudy
-・SciFiModeling
+○Rapture Modeling
+※Vertex Detail Design
+・溝(Vertical)
+・形態(Top)
 
-○Vertex Detail Design 設計
-・Small Volume
-・凹凸
-
-○Volume To Detail 調査&設計
+○Volume To Detail 設計
 ※シンプル
 ・Detailモデリング
 ・モジュラーモデリング
