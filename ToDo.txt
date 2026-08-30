@@ -53,35 +53,24 @@
 ※規格デザイン
 ※ハイラインデザイン
 
-●Inside
-・BaseFrame
+●CupsuleTower
+※Gradation + Pattern + △Ramdomly
+※塊
+・Frame
+・Panel
+・Cupsule
+・△Pipe
+
+●Industrial
+・Base
+・Frame
 ・Pipe
 
-●Outside
-※塊
-※Gradation + Pattern + △Ramdomly
-・Panel
- -Pattern
-・Cupsule
- -Randomly + Pattern Empty
 
-
-■アールデコ
-●Inside(Core)
-・TopDesign
- -CopyToPoints
-
-●OutSide
-・Pattern
- -DivideAxis
-・Randomly
- -Height
- -Offset
- -DivideNum
-
+■Rapture
 ●BuildingPattern
-・枠サイズ
-・カラー
+・Vertical Design
+・Color
 
 ●資料
 ・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)

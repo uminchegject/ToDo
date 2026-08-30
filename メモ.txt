@@ -1,10 +1,16 @@
-﻿○Private
+﻿○Public
+・左右対称レイアウト処理 設計
+・歪みのない展開 調査
+・パラメーター情報の保存 挙動確認
+・ドキュメント化
+
+○Private
 ・ノートパソコン振り込み
 ・結婚式準備(https://wedding-invi.jp/invitation/491664/c22110b28b9)
  -メッセージ
  -画像
 ・ワイアレス HDMI
-・液体廃棄(キッチン棚)
+・液体廃棄(GPT)
 ・目標設定シート(確認)
 
 
@@ -54,48 +60,42 @@
 ・色
 
 
-○パイプユニット用意
+○パイプユニット設計
 ※SciFi Town参照
 ※検証
-・GreebleBlock
-・Curve In Block
-・2D → 3D
+・Pipe
+ -GreebleBlock
+ -Curve In Block
+ -2D 3D
+・Frame
+ -Pattern
+・△Base
 
 ○配置ロジック
 ・カプセルタワーユニット(Pattern)
 ・Pipeユニット(Randomly)
 
-●ユニット
- -Pattern
- -Pipe
- -Frame
- -Panel
- -Cupsule
-・Pipe
- -Frame
- -Pipe
 
-
-○Rapture Modeling
+○Rapture Modeling 調査
 ※Vertex Detail Design
-・溝(Vertical)
-・形態(Top)
+・溝
+・形態
+
+●Design
+・Inside
+ -TopPattern
+・OutSide
+ -WindowPattern
 
 ○Volume To Detail 設計
 ※シンプル
 ・Detailモデリング
-・モジュラーモデリング
- -Volume To BasePoint
+・△モジュラーモデリング
 
 △RaptureCity検証
-※Houdiniで街のある景観をつくる!参考(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+※Houdiniで街のある景観をつくる!参考
 ※Middle & Topデザイン
 ・BaseVolume(Randomly)
  -Scatter
 ・起伏
  -Terrain
-
-●資料
-・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
-・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
-
