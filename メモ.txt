@@ -82,6 +82,14 @@
 ・カプセルタワーユニット(Pattern)
 ・Pipeユニット(Randomly)
 
+●Inside(Industrial)
+・Base
+・Pipe & Frame
+
+●Outside(Cupsule Tower)
+※Pattern配置(凹凸)
+・Frame & Cupsule
+
 
 ○Rapture Modeling 調査
 ※Vertex Detail Design
