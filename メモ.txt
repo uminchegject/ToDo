@@ -1,51 +1,15 @@
 ﻿○Public
+・ドキュメント準備
+・歪み展開準備
 ・左右対称レイアウト処理 検証
-　ーレイアウト後と元展開を比較した歪みを確認
-・パラメーター情報の保存 挙動確認
-・△ドキュメント化
+　ー中央パーツのレイアウト精度向上
+・パラメーター情報の保存 挙動確認(PigHead)
+　ー精度向上
+　ーScale Toolに実装
 
 ○Private
-・ノートパソコン振り込み
-
-
-○M_Employ メモ整理
-・原因
-
-
-○多重検証
-※Noise + Randomly
-※2層をコントラストをつけて検証(色、長さ)
-
-○波の模写
-・先端を白く
-
-
-○パイプユニット設計
-※SciFi Town参照
-※検証
-・Pipe
- -GreebleBlock
- -Curve In Block
- -2D 3D
-・Frame
- -Pattern
-・△Base
-
-○Rapture Modeling 調査
-※Vertex Detail Design
-・溝
-・形態
-
-
-■メモ
-○Public
-・左右対称レイアウト処理 検証
-　ーレイアウト後と元展開を比較した歪みを確認
-・パラメーター情報の保存 挙動確認
-・△ドキュメント化
-
-○Private
-・ノートパソコン振り込み
+・ノートパソコン周辺機器用意
+ -ケース
 ・結婚式準備(https://wedding-invi.jp/invitation/491664/c22110b28b9)
  -メッセージ
  -画像
