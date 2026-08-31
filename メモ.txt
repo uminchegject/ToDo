@@ -1,9 +1,44 @@
 ﻿○Public
-・左右対称レイアウト処理 設計
-・歪みのない展開 調査
+・左右対称レイアウト処理 検証
+　ーレイアウト後と元展開を比較した歪みを確認
 ・パラメーター情報の保存 挙動確認
-・ドキュメント化
+・△ドキュメント化
 
+○Private
+・ノートパソコン振り込み
+
+
+○M_Employ メモ整理
+・M_TA
+・原因
+
+
+○多重検証
+※Noise + Randomly
+※2層をコントラストをつけて検証(色、長さ)
+
+○波の模写
+・先端を白く
+
+
+○パイプユニット設計
+※SciFi Town参照
+※検証
+・Pipe
+ -GreebleBlock
+ -Curve In Block
+ -2D 3D
+・Frame
+ -Pattern
+・△Base
+
+○Rapture Modeling 調査
+※Vertex Detail Design
+・溝
+・形態
+
+
+■メモ
 ○Private
 ・ノートパソコン振り込み
 ・結婚式準備(https://wedding-invi.jp/invitation/491664/c22110b28b9)
@@ -27,9 +62,12 @@
 ○論文確認(https://www.mdpi.com/2075-5309/13/5/1250)
 ・ロジック確認
 ・英語勉強(GPT)
+上記論文の *** を英語を勉強するていで要約して
 
-○検証自由曲面準備
-・Scatter → Make Surface
+○※チェックツール検証
+・サンプル自由曲面の生成
+　ーScatter → Make Surface
+・サンプルソースで挙動確認
 
 ○自由曲面 → カーブ → パネル実装
 ・GPT参照
