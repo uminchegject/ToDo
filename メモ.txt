@@ -6,8 +6,9 @@
 ・情報登録機能 設計
 
 ○Private
-・ノートパソコン周辺機器用意
+・macbookセットアップ
  -ケース
+ ーアップルケア
 ・結婚式準備(https://wedding-invi.jp/invitation/491664/c22110b28b9)
  -メッセージ
  -画像
@@ -32,19 +33,10 @@
 上記論文の *** を英語を勉強するていで要約して(https://chatgpt.com/s/t_6a9503f8806c81919bd2009bee4c8dce)
 
 ○チェックツール検証
+・レイアウトショートカット
+・ノード検索ショートカット
+・Surface From Points
 ・検証用自由曲面
-Rectangle
-   ↓
-Divide Surface
-   ↓
-Grid Points
-   ↓
-Random
-   ↓
-Move (Z方向)
-   ↓
-Surface from Points
-・デバッグ(可視化)
 
 △自由曲面 → カーブ → パネル実装
 ・GPT参照
@@ -62,18 +54,25 @@ Surface from Points
 △Pattern設計
 
 
-○多重検証
-※Noise + Randomly
-※2層をコントラストをつけて検証(色、長さ)
 
-○波の模写
-・先端を白く
+○波模写
+※Noise + Randomly
+※浮世絵参照
+※2層をコントラストをつけて検証(色、長さ)
+・色(白×青)
+ -※コントラスト
+・グラデーション
 
 ●Element
 ・細さ
 ・長さ
 ・色
 
+
+○ポンピドゥーセンター模写
+・Base(Window Pattern)
+・Frame
+・△Pipe Pattern
 
 ○パイプユニット設計
 ※SciFi Town参照
@@ -98,6 +97,8 @@ Surface from Points
 ※Pattern配置(凹凸)
 ・Frame & Cupsule
 
+
+○アールデコイラスト 調査
 
 ○Rapture Modeling 調査
 ※Vertex Detail Design
