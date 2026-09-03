@@ -1,34 +1,33 @@
 ﻿○Public
-・処理整理
-・ドキュメント作成
-・△情報登録機能 設計
+・情報登録機能 検証
+　ーMaya上再現
+・UVコピー機能
+　ー複写処理 実装&検証
+　ーMaya上再現
+・ドキュメントメモ準備
+　ーGPT用メモ
 
+○判定ツール検証
+・デバッグ機能実装
+ -printログ
+ -ビジュアル化(色付け)
 
-○波模写
+○色検証
 ※Noise + Randomly
-※浮世絵参照
-※2層をコントラストをつけて検証(色、長さ)
-・色(白×青)
- -※コントラスト
-・グラデーション
-
-○ポンピドゥーセンター模写
-・Base(Window Pattern)
-・Frame
-・△Pipe Pattern
-
-
-○アールデコイラスト 調査
-
+・noise グラデーション
+・先端 グラデーション
 
 
 ■メモ
 ○Public
-・ドキュメントメモ整理
-　ー展開 調査
-・左右対称レイアウト処理 検証
-　ー中央パーツのレイアウト精度向上
-・情報登録機能 設計
+・情報登録機能 検証
+　ーMaya上再現
+・UVコピー機能
+　ー複写処理 実装&検証
+　ーMaya上再現
+・ドキュメントメモ準備
+　ーGPT用メモ
+　-ビジュアル資料
 
 ○Private
 ・macbookセットアップ
@@ -57,14 +56,10 @@
 ・英語勉強(GPT)
 上記論文の *** を英語を勉強するていで要約して(https://chatgpt.com/s/t_6a9503f8806c81919bd2009bee4c8dce)
 
-
 ○判定ツール検証
-・検証用自由曲面生成
-　ーSimplity
-　ーU方向の数(ライン上のポイントの数)
-・サンプルソース検証
-　ーprintログ
-・△ビジュアル化
+・デバッグ機能実装
+ -printログ
+ -ビジュアル化(色付け)
 
 △自由曲面 → カーブ → パネル実装
 ・GPT参照
@@ -82,40 +77,34 @@
 △Pattern設計
 
 
+○色検証
+※Noise + Randomly
+・noise グラデーション
+・先端 グラデーション
 
-○波模写
+○多重層検証
+・Noise Cofficient(変化低め)
+
+△フランス館検証(アニメーション)
+・色
+
+●波 Design
 ※Noise + Randomly
 ※浮世絵参照
-※2層をコントラストをつけて検証(色、長さ)
-・色(白×青)
- -※コントラスト
-・グラデーション
-
-●Element
-・細さ
-・長さ
-・色
+・Element
+ -細さ
+ -長さ
+ -色
 
 
 ○ポンピドゥーセンター模写
 ・Base(Window Pattern)
 ・Frame
 ・△Pipe Pattern
-
-○パイプユニット設計
-※SciFi Town参照
-※検証
-・Pipe
  -GreebleBlock
  -Curve In Block
- -2D 3D
-・Frame
- -Pattern
-・△Base
 
-○配置ロジック
-・カプセルタワーユニット(Pattern)
-・Pipeユニット(Randomly)
+△CupsuleTower Design設計
 
 ●Inside(Industrial)
 ・Base
@@ -127,17 +116,9 @@
 
 
 ○アールデコイラスト 調査
-
-○Rapture Modeling 調査
-※Vertex Detail Design
-・溝
-・形態
-
-●Design
-・Inside
- -TopPattern
-・OutSide
- -WindowPattern
+・色
+ -グラデーション
+・VerticalBlock & HorizontalBlock(Window)
 
 ○Volume To Detail 設計
 ※シンプル
@@ -151,3 +132,9 @@
  -Scatter
 ・起伏
  -Terrain
+
+●Design
+・Inside
+ -TopPattern
+・OutSide
+ -WindowPattern
