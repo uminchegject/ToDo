@@ -15,6 +15,7 @@
 
 ○フランス館ロジック 設計
 ・カラーアニメーション
+ -揺れアニメーションに同期
  -波
 
 
@@ -22,9 +23,11 @@
 ・Base
  -Grid Window
 ・Frame
+ -Grid Pattern
 ・Pipe
  -In or Out
  -Pipe Block
+ -Multi Layer
 
 
 ○アールデコ 設計
