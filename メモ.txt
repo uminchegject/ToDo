@@ -13,11 +13,31 @@
  -中国館の手順も参照
 
 
+○フランス館ロジック 設計
+・カラーアニメーション
+ -波
+
+
+○ポンピドゥセンター 設計
+・Base
+ -Grid Window
+・Frame
+・Pipe
+ -In or Out
+ -Pipe Block
+
+
+○アールデコ 設計
+・Gradation Color
+・Volume
+ -BaseVolume
+ -DetailVolume(VerticalWindow,HorizontalWindow)
+
+
 ○買い物
 ・クロスクリーナー
 ・ワックススプレー
 ・キーボードカバー
-
 
 
 
@@ -57,7 +77,7 @@
 ・Literature Review(https://chatgpt.com/s/t_6a99493154cc8191827d68e25e76ac44)
 
 
-○※フランス館検証(アニメーション)準備
+○※フランス館検証(アニメーション)
 ・色
 
 ○検証添削
