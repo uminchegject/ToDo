@@ -1,51 +1,4 @@
-﻿○Employメモ整理
-
-
-○合理化ロジック 設計
-※曲率分析処理を修正
-・PanelのPoint座標を調整
- -曲率を抑えるように実装
-
-○曲面合理化一連処理実装
-・全体フローの実装（自由曲面 → カーブ → パネル）
-・Gridカーブの合理化
- -論文の曲率をベースに実装
- -中国館の手順も参照
-
-
-○フランス館ロジック 設計
-・カラーアニメーション
- -揺れアニメーションに同期
- -波
-
-
-○ポンピドゥセンター 設計
-・Base
- -Grid Window
-・Frame
- -Grid Pattern
-・Pipe
- -In or Out
- -Pipe Block
- -Multi Layer
-
-
-○アールデコ 設計
-・Gradation Color
-・Volume
- -BaseVolume
- -DetailVolume(VerticalWindow,HorizontalWindow)
-
-
-○買い物
-・クロスクリーナー
-・ワックススプレー
-・キーボードカバー
-
-
-
-■メモ
-○Private
+﻿○Private
 ・健康診断準備
 ・macbookセットアップ
  -アプリ
@@ -62,6 +15,7 @@
 
 ○合理化ロジック 設計
 ※曲率分析処理を修正
+・GPT(https://chatgpt.com/share/6a9cfb25-b820-83e8-98b8-a55a56799c3c)
 ・PanelのPoint座標を調整
  -曲率を抑えるように実装
 
@@ -80,8 +34,11 @@
 ・Literature Review(https://chatgpt.com/s/t_6a99493154cc8191827d68e25e76ac44)
 
 
-○※フランス館検証(アニメーション)
-・色
+○カラーアニメーション(フランス館) 検証
+※波表現
+※揺れアニメーションに同期
+・グラデーションの白の割合を変更
+ -Pos.yを係数に色を設定
 
 ○検証添削
 ・色検証
@@ -99,12 +56,15 @@
 ・Noise + Randomly
 
 
-○ポンピドゥーセンター模写 設計
-・Base(Window Pattern)
+○ポンピドゥセンター 設計
+・Base
+ -Grid Window
 ・Frame
-・Pipe Pattern
- -GreebleBlock
- -Curve In Block
+ -Grid Pattern
+・Pipe
+ -In or Out
+ -Pipe Block
+ -Multi Layer
 
 △CupsuleTower Design設計
 
@@ -117,10 +77,11 @@
 ・Frame & Cupsule
 
 
-○アールデコイラスト 調査 設計
-・色
- -グラデーション
-・VerticalBlock & HorizontalBlock(Window)
+○アールデコ 設計
+・Gradation Color
+・Volume
+ -BaseVolume
+ -DetailVolume(VerticalWindow,HorizontalWindow)
 
 ○Volume To Detail 設計
 ※シンプル
