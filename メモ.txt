@@ -1,7 +1,7 @@
 ﻿○Public
 ・レイアウト 修正
-　ー修正箇所整理
-　ー調査
+ ー修正箇所整理
+ ー調査
 ・ツール精度向上
  -※スケール調整ツールベース
  -現状確認 & 添削
@@ -73,28 +73,6 @@
 ・Noise + Randomly
 
 
-○ポンピドゥセンター 設計
-・Base
- -Grid Window
-・Frame
- -Grid Pattern
-・Pipe
- -In or Out
- -Top In
- -Pipe Block
- -Multi Layer
-
-△CupsuleTower Design設計
-
-●Inside(ポンピドゥセンター)
-・Base
-・Pipe & Frame
-
-●Outside(Cupsule Tower)
-※Pattern配置(凹凸)
-・Frame & Cupsule
-
-
 ○アールデコ 設計
 ・Gradation Color
 ・Volume
@@ -113,7 +91,24 @@
  -Scatter
 ・起伏
  -Terrain
- 
+
+
+○ユニット設計
+・検証
+
+●Unit
+・Base
+ -Grid Window
+・Frame
+ -Module Frame
+・Pipe
+・△Cupsule
+
+●Randomly Pipe
+・In or Out
+・Top In
+・Pipe Block
+・Multi Layer
 
 
 ■ソース
@@ -124,7 +119,8 @@
  -Pos.yを係数に色を設定
 
 ○グラデーションアニメーション
-float time_cofficient = sin(@Time);
+//sin(@Time * speed + offset - phase)
+float time_cofficient = sin(@Time* speed);
 int num = noise * 40;
 
 
@@ -139,7 +135,6 @@ for (int i = 0; i < num; i++)
     color.z += (1 - color.z) * gradation_cofficient * time_cofficient;
     setpointattrib(0, "Cd", pt, color, "set");
 }
-
 
 
 ●アールデコ 設計
