@@ -114,7 +114,8 @@
 ・起伏
  -Terrain
  
- 
+
+
 ■ソース
 ●カラーアニメーション(フランス館) 検証
 ※波表現
@@ -123,17 +124,48 @@
  -Pos.yを係数に色を設定
 
 ○グラデーションアニメーション
-float time_cofficient = @Time * noise
+float time_cofficient = sin(@Time);
+int num = noise * 40;
+
 
 for (int i = 0; i < num; i++)
 {
     int pt = pts[order[i]];
     vector color = point(0, "Cd", pt);
-    color.x += (1 - color.x) * float(num - i) / num * time_cofficient;
-    color.y += (1 - color.y) * float(num - i) / num * time_cofficient;
-    color.z += (1 - color.z) * float(num - i) / num * time_cofficient;
+
+    float gradation_cofficient = fit(float(num - i) / num, 0, noise_cofficient, 0, 1);
+    color.x += (1 - color.x) * gradation_cofficient * time_cofficient;    
+    color.y += (1 - color.y) * gradation_cofficient * time_cofficient;
+    color.z += (1 - color.z) * gradation_cofficient * time_cofficient;
     setpointattrib(0, "Cd", pt, color, "set");
 }
+
+
+
+●アールデコ 設計
+・Gradation Color
+・Volume
+ -BaseVolume
+ -DetailVolume(VerticalWindow,HorizontalWindow)
+
+⚪︎DetailVolume BasePoint 生成
+vector base_scale = 
+float unit_size = 
+float base_ratio = 
+
+int unit_num = int(base_ratio * base_scale.y / unit_size);
+
+for(int i = 0; i < unit_num; i++)
+{
+    vector pos = v@P;
+    pos.y += i  *  (base_ratio * base_scale.y / unit_num);
+
+}
+
+⚪︎Copy To Points
+・グラデーションBoxを用意
+
+
 
 
 ●ポンピドゥセンター 設計
@@ -155,31 +187,3 @@ vector base_scale =
 
 vector frame_scale = 
 float frame_offset = 
-
-
-●アールデコ 設計
-・Gradation Color
-・Volume
- -BaseVolume
- -DetailVolume(VerticalWindow,HorizontalWindow)
-
-○DetailVolumeの設定
-
-vector scale = block_scale;
-
-scale.x *= 0.3;
-float offset = (1 - (scale.x / block_scale.x)) / 2 * block_scale.x;        
-
-vector block1_pos = base_pos;
-block1_pos.x += offset;
-int block1 = addpoint(0, block1_pos);
-setpointattrib(0, "scale", block1, scale);
-		setpointattrib(0, "Class", block1, volume_class);
-
-vector block2_pos = base_pos;
-block2_pos.x -= offset;
-int block2 = addpoint(0, block2_pos);
-setpointattrib(0, "scale", block2, scale);
-		setpointattrib(0, "Class", block2, volume_class);
-
-toggle = 1;
