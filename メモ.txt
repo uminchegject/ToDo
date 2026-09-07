@@ -1,4 +1,41 @@
 ﻿○Public
+・レイアウト 記事 調査
+　ー※余白
+・△AGEHA
+
+
+△合理化ロジック 設計
+※曲率分析処理を修正
+・PanelのPoint座標を調整
+ -曲率を抑えるように実装
+
+
+○カラーアニメーション(フランス館) 検証
+※波表現
+※揺れアニメーションに同期
+・グラデーションの白の割合を変更
+ -Pos.yを係数に色を設定
+
+○ポンピドゥセンター 設計
+・Base
+ -Grid Window
+・Frame
+ -Grid Pattern
+・Pipe
+ -In or Out
+ -Pipe Block
+ -Multi Layer
+
+○アールデコ 設計
+・Gradation Color
+・Volume
+ -BaseVolume
+ -DetailVolume(VerticalWindow,HorizontalWindow)
+
+
+
+■メモ
+○Public
 ・UV展開復習(本)
 ・ツール精度向上
  -※スケール調整ツールベース
@@ -18,7 +55,8 @@
 ○Employフォルダ整理
 ・メモ確認 & 整理
 
-○企業研究
+○C研究
+・Gradationを設定する
 
 
 ○論文確認(https://www.mdpi.com/2075-5309/13/5/1250)
