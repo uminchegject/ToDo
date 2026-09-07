@@ -1,42 +1,7 @@
 ﻿○Public
-・レイアウト 記事 調査
-　ー※余白
-・△AGEHA
-
-
-△合理化ロジック 設計
-※曲率分析処理を修正
-・PanelのPoint座標を調整
- -曲率を抑えるように実装
-
-
-○カラーアニメーション(フランス館) 検証
-※波表現
-※揺れアニメーションに同期
-・グラデーションの白の割合を変更
- -Pos.yを係数に色を設定
-
-○ポンピドゥセンター 設計
-・Base
- -Grid Window
-・Frame
- -Grid Pattern
-・Pipe
- -In or Out
- -Pipe Block
- -Multi Layer
-
-○アールデコ 設計
-・Gradation Color
-・Volume
- -BaseVolume
- -DetailVolume(VerticalWindow,HorizontalWindow)
-
-
-
-■メモ
-○Public
-・UV展開復習(本)
+・レイアウト 修正
+　ー修正箇所整理
+　ー調査
 ・ツール精度向上
  -※スケール調整ツールベース
  -現状確認 & 添削
@@ -51,12 +16,18 @@
 ・液体廃棄(GPT)
 ・目標設定シート(確認)
 
+○Study(本)
+・UV展開
+
 
 ○Employフォルダ整理
 ・メモ確認 & 整理
 
 ○C研究
-・Gradationを設定する
+
+○テックソフト調査
+・Grasshopper
+・Revit×Dynamo
 
 
 ○論文確認(https://www.mdpi.com/2075-5309/13/5/1250)
@@ -80,18 +51,18 @@
 △Pattern設計
 
 
+○カラーアニメーション(フランス館) 検証
+※波表現
+※揺れアニメーションに同期
+・グラデーションの白の割合を変更
+ -Pos.yを係数に色を設定
+
 ○検証添削
 ・色検証
  -noise グラデーション
  -先端 グラデーション
 ・多重層検証
  -Noise Cofficient(変化低め)
-
-○カラーアニメーション(フランス館) 検証
-※波表現
-※揺れアニメーションに同期
-・グラデーションの白の割合を変更
- -Pos.yを係数に色を設定
 
 ●波 Design
 ※浮世絵参照
@@ -109,12 +80,13 @@
  -Grid Pattern
 ・Pipe
  -In or Out
+ -Top In
  -Pipe Block
  -Multi Layer
 
 △CupsuleTower Design設計
 
-●Inside(Industrial)
+●Inside(ポンピドゥセンター)
 ・Base
 ・Pipe & Frame
 
@@ -141,9 +113,73 @@
  -Scatter
 ・起伏
  -Terrain
+ 
+ 
+■ソース
+●カラーアニメーション(フランス館) 検証
+※波表現
+※揺れアニメーションに同期
+・グラデーションの白の割合を変更
+ -Pos.yを係数に色を設定
 
-●Design
-・Inside
- -TopPattern
-・OutSide
- -WindowPattern
+○グラデーションアニメーション
+float time_cofficient = @Time * noise
+
+for (int i = 0; i < num; i++)
+{
+    int pt = pts[order[i]];
+    vector color = point(0, "Cd", pt);
+    color.x += (1 - color.x) * float(num - i) / num * time_cofficient;
+    color.y += (1 - color.y) * float(num - i) / num * time_cofficient;
+    color.z += (1 - color.z) * float(num - i) / num * time_cofficient;
+    setpointattrib(0, "Cd", pt, color, "set");
+}
+
+
+●ポンピドゥセンター 設計
+・Base
+ -Grid Window
+・Frame
+ -Grid Pattern
+・Pipe
+ -Top In
+ -In or Out
+ -Pipe Block
+ -Multi Layer
+
+○Base + Frame
+・Base は BaseVolume → GridWindow(Detail)
+・Frame は BaseLine → Detail
+
+vector base_scale = 
+
+vector frame_scale = 
+float frame_offset = 
+
+
+●アールデコ 設計
+・Gradation Color
+・Volume
+ -BaseVolume
+ -DetailVolume(VerticalWindow,HorizontalWindow)
+
+○DetailVolumeの設定
+
+vector scale = block_scale;
+
+scale.x *= 0.3;
+float offset = (1 - (scale.x / block_scale.x)) / 2 * block_scale.x;        
+
+vector block1_pos = base_pos;
+block1_pos.x += offset;
+int block1 = addpoint(0, block1_pos);
+setpointattrib(0, "scale", block1, scale);
+		setpointattrib(0, "Class", block1, volume_class);
+
+vector block2_pos = base_pos;
+block2_pos.x -= offset;
+int block2 = addpoint(0, block2_pos);
+setpointattrib(0, "scale", block2, scale);
+		setpointattrib(0, "Class", block2, volume_class);
+
+toggle = 1;
