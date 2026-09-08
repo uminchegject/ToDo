@@ -1,47 +1,11 @@
 ﻿○Public
-・パラメーター用意
-　ー挙動確認
-・修正
-　ー回転
 ・ドキュメント準備(メモ)
-
-○Study(本)
-・UV展開
-
-○ブログ
-・最適化
-
-○Form-finding with Polyhedral Meshes Made Simple 調査
-
-
-○グラデーションアニメーション検証
-※揺れアニメーションに同期
-・グラデーションの白の割合を変更
-
-
-○Detail Volume BasePoint生成処理
-・Vertical Detail
-・Horizontal Box
-
-○グラデーションカラー
-・頂点カラーを設定
-
-
-○Unit設計(Modular Modeling)
-・Base
- -Grid Window
-・Frame
- -Module Frame
-・Pipe
-・△Cupsule
-
-
-■メモ
-○Public
-
-・ツール精度向上
- -※スケール調整ツールベース
- -現状確認 & 添削
+　ーUV Layout の重要なパラメーターをHDAのパラメーターからユーザーに操作できるようにする
+　ーIsland Rotation Stepを90度にデフォルトで設定(比較的余白をつぶすことができる)
+　ーiteration, randomlyを操作してもらい最適なレイアウトを探してもらう
+・ツール精度向上(スケール調整)
+　ー左右対称処理
+　ー記録処理
 ・△AGEHA
 
 ○Private
@@ -52,9 +16,6 @@
  -ケース
  -アップルケア
 ・液体廃棄(GPT)
-
-○Study(本)
-・UV展開
 
 
 ○C研究
@@ -74,17 +35,17 @@
 ・英語勉強(GPT)
  -上記論文の *** を英語を勉強するていで要約して
 ・ロジック確認
-
-●Form-finding with Polyhedral Meshes Made Simple
-・論文(https://www.geometrie.tuwien.ac.at/geom/ig/publications/2014/formfinding22014/formfinding22014.pdf)
-・GPT(https://chatgpt.com/s/t_6a9f5a974b6c8191b8deeba89a9f5ab8)
+・grasshopperで検証
 
 ●Rationalization of Free-Form Architecture Using Generative and Parametric Designs
 ・論文(https://www.mdpi.com/2075-5309/13/5/1250)
-・GPT(https://chatgpt.com/share/6a9cfb25-b820-83e8-98b8-a55a56799c3c)
 ・視覚化ツール
 
-○曲面合理化一連処理実装
+▲Form-finding with Polyhedral Meshes Made Simple
+・論文(https://www.geometrie.tuwien.ac.at/geom/ig/publications/2014/formfinding22014/formfinding22014.pdf)
+・GPT(https://chatgpt.com/s/t_6a9f5a974b6c8191b8deeba89a9f5ab8)
+
+△曲面合理化一連処理実装
 ・全体フローの実装（自由曲面 → カーブ → パネル）
 ・Gridカーブの合理化
  -論文の曲率をベースに実装
@@ -96,7 +57,7 @@
 ○カラーアニメーション(フランス館) 検証
 ※波表現
 ※揺れアニメーションに同期
-・グラデーションの白の割合を変更
+・全体にカラーアニメーションを適応
  -Pos.yを係数に色を設定
 
 ○検証添削
@@ -153,39 +114,47 @@
 ・Multi Layer
 
 
-■ソース
-●カラーアニメーション(フランス館) 検証
-※波表現
-※揺れアニメーションに同期
-・グラデーションの白の割合を変更
- -Pos.yを係数に色を設定
+■カラーアニメーション(フランス館)
+●グラデーションアニメーション
+int pts[] = primpoints(0, @primnum);
 
-○グラデーションアニメーション
+float values[];
+foreach (int pt; pts)
+{
+    vector pos = point(0, "P", pt);
+    append(values, pos.y);
+}
+
+// 高い順にソート
+int order[] = argsort(values);
+
+// id を設定
 //sin(@Time * speed + offset - phase)
-float time_cofficient = sin(@Time* speed);
-int num = noise * 40;
-
+float time_cofficient = fit(sin(@Frame * 0.1), -1, 1, 0, 1);
+float noise = fit(@noise, 0.4, 1, 0, 2);
+float num = noise * 40;
 
 for (int i = 0; i < num; i++)
 {
     int pt = pts[order[i]];
     vector color = point(0, "Cd", pt);
 
-    float gradation_cofficient = fit(float(num - i) / num, 0, noise_cofficient, 0, 1);
-    color.x += (1 - color.x) * gradation_cofficient * time_cofficient;    
-    color.y += (1 - color.y) * gradation_cofficient * time_cofficient;
-    color.z += (1 - color.z) * gradation_cofficient * time_cofficient;
+    float gradation_cofficient = fit((num - i) / num, 0, time_cofficient, 0, 1);
+    color.x += (1 - color.x) * gradation_cofficient;    
+    color.y += (1 - color.y) * gradation_cofficient;
+    color.z += (1 - color.z) * gradation_cofficient;
     setpointattrib(0, "Cd", pt, color, "set");
 }
 
 
-●アールデコ 設計
+
+■アールデコ 設計
 ・Gradation Color
 ・Volume
  -BaseVolume
  -DetailVolume(VerticalWindow,HorizontalWindow)
 
-○DetailVolume BasePoint 生成
+●DetailVolume(Vertical) BasePoint
 vector base_scale = 
 float unit_size = 
 float base_ratio = 
@@ -199,6 +168,7 @@ for(int i = 0; i < unit_num; i++)
 
 }
 
-○Copy To Points
-・グラデーションBoxを用意
-
+●Gradation Color
+・
+・Copy To Points
+ -頂点カラーにグラデーションを設定
