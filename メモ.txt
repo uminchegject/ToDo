@@ -20,20 +20,25 @@
 ・UV展開
 
 
-○Employフォルダ整理
-・メモ確認 & 整理
-
 ○C研究
+・テックブログ
 
 ○テックソフト調査
 ・Grasshopper
 ・Revit×Dynamo
 
+△Employフォルダ整理
+・メモ確認 & 整理
+
+
+⚪︎論文 調査
+・論文(https://www.geometrie.tuwien.ac.at/geom/ig/publications/2014/formfinding22014/formfinding22014.pdf)
+・GPT(https://chatgpt.com/s/t_6a9f5a974b6c8191b8deeba89a9f5ab8)
 
 ○論文確認(https://www.mdpi.com/2075-5309/13/5/1250)
-・ロジック確認
 ・英語勉強(GPT)
 上記論文の *** を英語を勉強するていで要約して(https://chatgpt.com/s/t_6a9503f8806c81919bd2009bee4c8dce)
+・ロジック確認
 ・Literature Review(https://chatgpt.com/s/t_6a99493154cc8191827d68e25e76ac44)
 
 ○合理化ロジック 設計
