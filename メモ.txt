@@ -1,20 +1,57 @@
 ﻿○Public
-・レイアウト 修正
- ー修正箇所整理
- ー調査
+・パラメーター用意
+　ー挙動確認
+・修正
+　ー回転
+・ドキュメント準備(メモ)
+
+○Study(本)
+・UV展開
+
+○ブログ
+・最適化
+
+○Form-finding with Polyhedral Meshes Made Simple 調査
+
+
+○グラデーションアニメーション検証
+※揺れアニメーションに同期
+・グラデーションの白の割合を変更
+
+
+○Detail Volume BasePoint生成処理
+・Vertical Detail
+・Horizontal Box
+
+○グラデーションカラー
+・頂点カラーを設定
+
+
+○Unit設計(Modular Modeling)
+・Base
+ -Grid Window
+・Frame
+ -Module Frame
+・Pipe
+・△Cupsule
+
+
+■メモ
+○Public
+
 ・ツール精度向上
  -※スケール調整ツールベース
  -現状確認 & 添削
 ・△AGEHA
 
 ○Private
+・※目標設定シート
 ・健康診断準備
 ・macbookセットアップ
  -アプリ
  -ケース
  -アップルケア
 ・液体廃棄(GPT)
-・目標設定シート(確認)
 
 ○Study(本)
 ・UV展開
@@ -31,21 +68,21 @@
 ・メモ確認 & 整理
 
 
-⚪︎論文 調査
+○論文 調査
+
+○論文確認
+・英語勉強(GPT)
+ -上記論文の *** を英語を勉強するていで要約して
+・ロジック確認
+
+●Form-finding with Polyhedral Meshes Made Simple
 ・論文(https://www.geometrie.tuwien.ac.at/geom/ig/publications/2014/formfinding22014/formfinding22014.pdf)
 ・GPT(https://chatgpt.com/s/t_6a9f5a974b6c8191b8deeba89a9f5ab8)
 
-○論文確認(https://www.mdpi.com/2075-5309/13/5/1250)
-・英語勉強(GPT)
-上記論文の *** を英語を勉強するていで要約して(https://chatgpt.com/s/t_6a9503f8806c81919bd2009bee4c8dce)
-・ロジック確認
-・Literature Review(https://chatgpt.com/s/t_6a99493154cc8191827d68e25e76ac44)
-
-○合理化ロジック 設計
-※曲率分析処理を修正
+●Rationalization of Free-Form Architecture Using Generative and Parametric Designs
+・論文(https://www.mdpi.com/2075-5309/13/5/1250)
 ・GPT(https://chatgpt.com/share/6a9cfb25-b820-83e8-98b8-a55a56799c3c)
-・PanelのPoint座標を調整
- -曲率を抑えるように実装
+・視覚化ツール
 
 ○曲面合理化一連処理実装
 ・全体フローの実装（自由曲面 → カーブ → パネル）
@@ -148,7 +185,7 @@ for (int i = 0; i < num; i++)
  -BaseVolume
  -DetailVolume(VerticalWindow,HorizontalWindow)
 
-⚪︎DetailVolume BasePoint 生成
+○DetailVolume BasePoint 生成
 vector base_scale = 
 float unit_size = 
 float base_ratio = 
@@ -162,28 +199,6 @@ for(int i = 0; i < unit_num; i++)
 
 }
 
-⚪︎Copy To Points
+○Copy To Points
 ・グラデーションBoxを用意
 
-
-
-
-●ポンピドゥセンター 設計
-・Base
- -Grid Window
-・Frame
- -Grid Pattern
-・Pipe
- -Top In
- -In or Out
- -Pipe Block
- -Multi Layer
-
-○Base + Frame
-・Base は BaseVolume → GridWindow(Detail)
-・Frame は BaseLine → Detail
-
-vector base_scale = 
-
-vector frame_scale = 
-float frame_offset = 
