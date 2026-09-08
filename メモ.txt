@@ -1,4 +1,5 @@
 ﻿○Public
+・他方法調査
 ・ドキュメント準備(メモ)
 　ーUV Layout の重要なパラメーターをHDAのパラメーターからユーザーに操作できるようにする
 　ーIsland Rotation Stepを90度にデフォルトで設定(比較的余白をつぶすことができる)
@@ -96,8 +97,10 @@
  -Terrain
 
 
-○ユニット設計
-・検証
+○ユニット検証
+・オセロ盤
+ -Pipe
+ -Cupsule + Frame
 
 ●Unit
 ・Base
@@ -138,7 +141,7 @@ for (int i = 0; i < pts_num; i++)
 {
     int pt = pts[order[i]];
     vector color = point(0, "Cd", pt);
-    float gradation_cofficient = fit(sin(@Frame * 0.1 * i), -1, 1, 0, 1);
+    float gradation_cofficient = fit(sin(0.05 * i + @Frame * 0.1), -1, 1, 0, 1);
     color.x += (1 - color.x) * gradation_cofficient;    
     color.y += (1 - color.y) * gradation_cofficient;
     color.z += (1 - color.z) * gradation_cofficient;
