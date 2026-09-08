@@ -115,6 +115,12 @@
 
 
 ■カラーアニメーション(フランス館)
+○カラーアニメーション(フランス館) 検証
+※波表現
+※揺れアニメーションに同期
+・全体にカラーアニメーションを適応
+ -Pos.yを係数に色を設定
+
 ●グラデーションアニメーション
 int pts[] = primpoints(0, @primnum);
 
@@ -125,27 +131,19 @@ foreach (int pt; pts)
     append(values, pos.y);
 }
 
-// 高い順にソート
 int order[] = argsort(values);
+float pts_num = len(pts);
 
-// id を設定
-//sin(@Time * speed + offset - phase)
-float time_cofficient = fit(sin(@Frame * 0.1), -1, 1, 0, 1);
-float noise = fit(@noise, 0.4, 1, 0, 2);
-float num = noise * 40;
-
-for (int i = 0; i < num; i++)
+for (int i = 0; i < pts_num; i++)
 {
     int pt = pts[order[i]];
     vector color = point(0, "Cd", pt);
-
-    float gradation_cofficient = fit((num - i) / num, 0, time_cofficient, 0, 1);
+    float gradation_cofficient = fit(sin(@Frame * 0.1 * i), -1, 1, 0, 1);
     color.x += (1 - color.x) * gradation_cofficient;    
     color.y += (1 - color.y) * gradation_cofficient;
     color.z += (1 - color.z) * gradation_cofficient;
     setpointattrib(0, "Cd", pt, color, "set");
 }
-
 
 
 ■アールデコ 設計
@@ -155,20 +153,29 @@ for (int i = 0; i < num; i++)
  -DetailVolume(VerticalWindow,HorizontalWindow)
 
 ●DetailVolume(Vertical) BasePoint
-vector base_scale = 
-float unit_size = 
 float base_ratio = 
+float unit_size = 
+float unit_ratio = 
+float offset_ratio = 
+
+vector base_scale = v@scale;
+vector base_pos = v@P;
 
 int unit_num = int(base_ratio * base_scale.y / unit_size);
-
 for(int i = 0; i < unit_num; i++)
 {
     vector pos = v@P;
+    pos.y += (1 - base_ratio) * base_scale.y;
     pos.y += i  *  (base_ratio * base_scale.y / unit_num);
-
+    
+    vector scale = base_scale;
+    scale.y = base_scale.y / unit_num;
+    scale.y *= unit_ratio;
+    scale.x *= offset_ratio;
+    scale.z *= offset_ratio;
 }
 
 ●Gradation Color
-・
 ・Copy To Points
- -頂点カラーにグラデーションを設定
+ -Copy Attribute(TopColor, BottomColor)
+・TopColor BottomColor 適応
