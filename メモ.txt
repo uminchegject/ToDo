@@ -20,7 +20,10 @@
 
 
 ○C研究
-・テックブログ
+・DDDBOX(https://chatgpt.com/s/t_6aa0aa8bef308191a44bf29a95da22ea)
+ -DDDDbox体験レビュー
+・テックブログ()
+
 
 ○テックソフト調査
 ・Grasshopper
@@ -40,6 +43,7 @@
 
 ●Rationalization of Free-Form Architecture Using Generative and Parametric Designs
 ・論文(https://www.mdpi.com/2075-5309/13/5/1250)
+・GPT(https://chatgpt.com/s/t_6aa0abe1fa48819194f8169ac62c7e9e)
 ・視覚化ツール
 
 ▲Form-finding with Polyhedral Meshes Made Simple
