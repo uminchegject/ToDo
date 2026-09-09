@@ -1,14 +1,35 @@
 ﻿○Public
-・他方法調査
-・ドキュメント準備(メモ)
-　ーUV Layout の重要なパラメーターをHDAのパラメーターからユーザーに操作できるようにする
-　ーIsland Rotation Stepを90度にデフォルトで設定(比較的余白をつぶすことができる)
-　ーiteration, randomlyを操作してもらい最適なレイアウトを探してもらう
-・ツール精度向上(スケール調整)
-　ー左右対称処理
-　ー記録処理
+・ドキュメント作成
+・スケール調整ツール修正
+　ーrotate_center_island
+　ー△記録処理
+・トポロジーのコピー処理修正
 ・△AGEHA
 
+
+
+○カラーアニメーション(フランス館) 検証
+※波表現
+※揺れアニメーションに同期
+・全体にカラーアニメーションを適応
+ -Pos.yを係数に色を設定
+
+○アールデコ 検証
+・処理細分化(BaseVolume)
+・Gradation Color 設定
+・DetailVolume BasePoint 生成
+　ーVerticalWindow
+　ーHorizontalWindow
+
+○ユニット検証
+・オセロ盤配置処理
+　ーPipe
+ 　ーCupsule + Frame
+
+
+
+
+■メモ
 ○Private
 ・※目標設定シート
 ・健康診断準備
@@ -20,10 +41,7 @@
 
 
 ○C研究
-・DDDBOX(https://chatgpt.com/s/t_6aa0aa8bef308191a44bf29a95da22ea)
- -DDDDbox体験レビュー
-・テックブログ()
-
+・テックブログ
 
 ○テックソフト調査
 ・Grasshopper
@@ -44,7 +62,6 @@
 ●Rationalization of Free-Form Architecture Using Generative and Parametric Designs
 ・論文(https://www.mdpi.com/2075-5309/13/5/1250)
 ・GPT(https://chatgpt.com/s/t_6aa0abe1fa48819194f8169ac62c7e9e)
-・視覚化ツール
 
 ▲Form-finding with Polyhedral Meshes Made Simple
 ・論文(https://www.geometrie.tuwien.ac.at/geom/ig/publications/2014/formfinding22014/formfinding22014.pdf)
@@ -121,68 +138,3 @@
 ・Multi Layer
 
 
-■カラーアニメーション(フランス館)
-○カラーアニメーション(フランス館) 検証
-※波表現
-※揺れアニメーションに同期
-・全体にカラーアニメーションを適応
- -Pos.yを係数に色を設定
-
-●グラデーションアニメーション
-int pts[] = primpoints(0, @primnum);
-
-float values[];
-foreach (int pt; pts)
-{
-    vector pos = point(0, "P", pt);
-    append(values, pos.y);
-}
-
-int order[] = argsort(values);
-float pts_num = len(pts);
-
-for (int i = 0; i < pts_num; i++)
-{
-    int pt = pts[order[i]];
-    vector color = point(0, "Cd", pt);
-    float gradation_cofficient = fit(sin(0.05 * i + @Frame * 0.1), -1, 1, 0, 1);
-    color.x += (1 - color.x) * gradation_cofficient;    
-    color.y += (1 - color.y) * gradation_cofficient;
-    color.z += (1 - color.z) * gradation_cofficient;
-    setpointattrib(0, "Cd", pt, color, "set");
-}
-
-
-■アールデコ 設計
-・Gradation Color
-・Volume
- -BaseVolume
- -DetailVolume(VerticalWindow,HorizontalWindow)
-
-●DetailVolume(Vertical) BasePoint
-float base_ratio = 
-float unit_size = 
-float unit_ratio = 
-float offset_ratio = 
-
-vector base_scale = v@scale;
-vector base_pos = v@P;
-
-int unit_num = int(base_ratio * base_scale.y / unit_size);
-for(int i = 0; i < unit_num; i++)
-{
-    vector pos = v@P;
-    pos.y += (1 - base_ratio) * base_scale.y;
-    pos.y += i  *  (base_ratio * base_scale.y / unit_num);
-    
-    vector scale = base_scale;
-    scale.y = base_scale.y / unit_num;
-    scale.y *= unit_ratio;
-    scale.x *= offset_ratio;
-    scale.z *= offset_ratio;
-}
-
-●Gradation Color
-・Copy To Points
- -Copy Attribute(TopColor, BottomColor)
-・TopColor BottomColor 適応
