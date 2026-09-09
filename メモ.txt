@@ -7,7 +7,6 @@
 ・△AGEHA
 
 
-
 ○カラーアニメーション(フランス館) 検証
 ※波表現
 ※揺れアニメーションに同期
@@ -25,7 +24,6 @@
 ・オセロ盤配置処理
 　ーPipe
  　ーCupsule + Frame
-
 
 
 
@@ -61,7 +59,7 @@
 
 ●Rationalization of Free-Form Architecture Using Generative and Parametric Designs
 ・論文(https://www.mdpi.com/2075-5309/13/5/1250)
-・GPT(https://chatgpt.com/s/t_6aa0abe1fa48819194f8169ac62c7e9e)
+・GPT(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
 
 ▲Form-finding with Polyhedral Meshes Made Simple
 ・論文(https://www.geometrie.tuwien.ac.at/geom/ig/publications/2014/formfinding22014/formfinding22014.pdf)
