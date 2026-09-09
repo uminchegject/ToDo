@@ -106,6 +106,11 @@
 
 
 ■アールデコ 設計
+○ソース整理
+・BaseVolume(Center, Side)
+・DetailVolume(Vertical)
+・SetColor
+
 ●DetailVolume(Vertical) BasePoint
 float base_ratio = ch("base_ratio");
 float unit_size = ch("unit_size");
@@ -153,6 +158,13 @@ if (@group_bottom == 1){
 
 
 ■ユニット検証
+●オセロ配置
+・グリープ化
+・Split
+if ((x_idx + z_idx) % 2 == 0){
+    setpointgroup(0, "PipeBlock", pt, 1);
+}
+
 ●set__height
 float bounds[] = primintrinsic(0, "bounds", @primnum);
 vector min_all = set(bounds[0], bounds[2], bounds[4]);
@@ -182,6 +194,11 @@ for(int x_idx = 0; x_idx < unit_num_x; x_idx++)
 
         int pt = addpoint(0, spawn_pos);
         setpointattrib(0, "scale", pt, scale);
+
+        if ((x_idx + z_idx) % 2 == 0){
+            setpointgroup(0, "PipeBlock", pt, 1);
+        }
+
     }
 }
 removeprim(0, i@primnum, 1);
