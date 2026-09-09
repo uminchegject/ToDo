@@ -28,13 +28,6 @@
  -Gradation
  -Randomly
 
-●IDEA
-・フランクゲーリー
- -鱗Pattern
-・GroundBreath
- -卒業研究
- -テオヤンセン機構
-
 
 ■CityGenerator
 ※City + Pattern

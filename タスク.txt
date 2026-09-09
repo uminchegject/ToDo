@@ -44,6 +44,16 @@
 ・アニメーション
 
 
+■Rapture
+●BuildingPattern
+・Vertical Design
+・Color
+
+●資料
+・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
+
+
 ■メタボリズム
 ※規格デザイン
 ※ハイラインデザイン
@@ -60,16 +70,6 @@
 ・Base
 ・Frame
 ・Pipe
-
-
-■Rapture
-●BuildingPattern
-・Vertical Design
-・Color
-
-●資料
-・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
-・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
 
 
 ■Study

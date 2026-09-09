@@ -1,33 +1,9 @@
 ﻿○Public
-・ドキュメント作成
-・スケール調整ツール修正
-　ーrotate_center_island
-　ー△記録処理
-・トポロジーのコピー処理修正
+・ドキュメント提出
+・トポロジーのコピー処理 修正
+・情報記録処理 設計&修正
 ・△AGEHA
 
-
-○カラーアニメーション(フランス館) 検証
-※波表現
-※揺れアニメーションに同期
-・全体にカラーアニメーションを適応
- -Pos.yを係数に色を設定
-
-○アールデコ 検証
-・処理細分化(BaseVolume)
-・Gradation Color 設定
-・DetailVolume BasePoint 生成
-　ーVerticalWindow
-　ーHorizontalWindow
-
-○ユニット検証
-・オセロ盤配置処理
-　ーPipe
- 　ーCupsule + Frame
-
-
-
-■メモ
 ○Private
 ・※目標設定シート
 ・健康診断準備
@@ -74,18 +50,15 @@
 △Pattern設計
 
 
-○カラーアニメーション(フランス館) 検証
-※波表現
-※揺れアニメーションに同期
-・全体にカラーアニメーションを適応
- -Pos.yを係数に色を設定
-
 ○検証添削
 ・色検証
  -noise グラデーション
  -先端 グラデーション
 ・多重層検証
  -Noise Cofficient(変化低め)
+・カラーアニメーション
+
+△ソース整理
 
 ●波 Design
 ※浮世絵参照
@@ -96,16 +69,12 @@
 ・Noise + Randomly
 
 
-○アールデコ 設計
-・Gradation Color
-・Volume
- -BaseVolume
- -DetailVolume(VerticalWindow,HorizontalWindow)
-
-○Volume To Detail 設計
-※シンプル
-・Detailモデリング
-・△モジュラーモデリング
+○アールデコ 検証
+・処理細分化(BaseVolume)
+・Gradation Color 設定
+・DetailVolume BasePoint 生成
+　ーVerticalWindow
+　ーHorizontalWindow
 
 △RaptureCity検証
 ※Houdiniで街のある景観をつくる!参考
@@ -136,3 +105,113 @@
 ・Multi Layer
 
 
+■アールデコ 設計
+●DetailVolume(Vertical) BasePoint
+float base_ratio = ch("base_ratio");
+float unit_size = ch("unit_size");
+float unit_ratio = ch("unit_ratio");
+float offset_ratio = ch("offset_ratio");
+
+vector base_scale = v@scale;
+vector base_pos = v@P;
+
+int unit_num = int(base_ratio * base_scale.y / unit_size);
+for(int i = 0; i < unit_num; i++)
+{
+    vector pos = v@P;
+    pos.y += (1 - base_ratio) * base_scale.y;
+    pos.y += i  *  (base_ratio * base_scale.y / unit_num);
+    
+    vector scale = base_scale;
+    scale.y = base_scale.y / unit_num;
+    scale.y *= unit_ratio;
+    scale.x *= offset_ratio;
+    scale.z *= offset_ratio;
+}
+
+●Gradation Color
+・Copy To Points
+ -Copy Attribute(TopColor, BottomColor)
+・TopColor BottomColor 適応
+
+if (@group_top == 1){
+	int prim_pts[] = primpoints(0, @primnum);
+	foreach(int idx; prim_pts){
+		int prim_pt = prim_pts[idx];
+		setpointattrib(0, "Cd", prim_pt, v@TopColor);
+	}
+	return;
+}
+if (@group_bottom == 1){
+	int prim_pts[] = primpoints(0, @primnum);
+	foreach(int idx; prim_pts){
+		int prim_pt = prim_pts[idx];
+		setpointattrib(0, "Cd", prim_pt, v@BottomColor);
+	}
+	return;
+}
+
+
+■ユニット検証
+●set__height
+float bounds[] = primintrinsic(0, "bounds", @primnum);
+vector min_all = set(bounds[0], bounds[2], bounds[4]);
+vector max_all = set(bounds[1], bounds[3], bounds[5]);
+vector base_scale = max_all - min_all;
+vector pos = v@P;
+
+float unit_size = ch("unit_size");
+float height = rand(v@P) * 150 + 30;
+
+int unit_num_x = int(base_scale.x / unit_size);
+int unit_num_z = int(base_scale.z / unit_size);
+float unit_size_x = base_scale.x / unit_num_x;
+float unit_size_z = base_scale.z / unit_num_z;
+
+unit_size = unit_size_x;
+if(unit_size_z < unit_size_x) unit_size = unit_size_z;
+vector scale = set(unit_size, height, unit_size);
+
+for(int x_idx = 0; x_idx < unit_num_x; x_idx++)
+{
+    for(int z_idx = 0; z_idx < unit_num_z; z_idx++)
+    {
+        vector spawn_pos = pos;
+        spawn_pos.x += base_scale.x / 2 - (x_idx + 0.5) * unit_size_x;
+        spawn_pos.z += base_scale.z / 2 - (z_idx + 0.5) * unit_size_z;
+
+        int pt = addpoint(0, spawn_pos);
+        setpointattrib(0, "scale", pt, scale);
+    }
+}
+removeprim(0, i@primnum, 1);
+
+
+●make__Base_Basepoint
+vector base_scale = v@scale;
+
+float unit_size = base_scale.x / 6;
+
+float height_unit_size = ch("height_unit_size");
+int height_unit_num = int(base_scale.y / height_unit_size);
+height_unit_size = base_scale.y / height_unit_num;
+
+for(int idx = 0; idx < height_unit_num; idx++)
+{
+    vector pos = v@P;
+    pos.y += height_unit_size * idx;
+    
+    //Frame
+    vector frame_scale = set(unit_size * 2, height_unit_size, unit_size * 2);
+    int frame_pt = addpoint(0, pos);
+    setpointattrib(0, "scale", frame_pt, frame_scale);
+    
+    //Panel
+    if((height_unit_num - idx) < 5 + rand(v@P) * 10){
+        vector panel_scale = set(unit_size * 2, height_unit_size, unit_size * 2);
+        int panel_pt = addpoint(0, pos);
+        setpointattrib(0, "scale", panel_pt, panel_scale);
+        setpointgroup(0, "panel", panel_pt, 1);
+    }
+}
+removepoint(0, @ptnum);
