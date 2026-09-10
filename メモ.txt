@@ -25,17 +25,19 @@
 ・メモ確認 & 整理
 
 
-○論文 調査
-
-○論文確認
+○論文調査
 ・英語勉強(GPT)
  -上記論文の *** を英語を勉強するていで要約して
 ・ロジック確認
 ・grasshopperで検証
 
-●Rationalization of Free-Form Architecture Using Generative and Parametric Designs
-・論文(https://www.mdpi.com/2075-5309/13/5/1250)
-・GPT(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
+○Rationalization of Free-Form Architecture Using Generative and Parametric Designs
+論文(https://www.mdpi.com/2075-5309/13/5/1250)
+GPT(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
+・Conclutions(英語)
+・Literature Reviews
+・Research Methods
+・Validation and Case Study
 
 ▲Form-finding with Polyhedral Meshes Made Simple
 ・論文(https://www.geometrie.tuwien.ac.at/geom/ig/publications/2014/formfinding22014/formfinding22014.pdf)
