@@ -1,8 +1,12 @@
 ﻿○Public
-・ドキュメント提出
+・お休み報告
+　ー健康診断
+　ーシルバーウィーク
+・スケール調整ツール 設計&修正
+　ーレイアウト調整パラメーター
+　ー記録機能
 ・トポロジーのコピー処理 修正
-・情報記録処理 設計&修正
-・△AGEHA
+・△AGEHA(※面談前)
 
 ○Private
 ・※目標設定シート
@@ -34,7 +38,6 @@
 ○Rationalization of Free-Form Architecture Using Generative and Parametric Designs
 論文(https://www.mdpi.com/2075-5309/13/5/1250)
 GPT(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
-・Conclutions(英語)
 ・Literature Reviews
 ・Research Methods
 ・Validation and Case Study
@@ -44,8 +47,7 @@ GPT(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
 ・GPT(https://chatgpt.com/s/t_6a9f5a974b6c8191b8deeba89a9f5ab8)
 
 △曲面合理化一連処理実装
-・全体フローの実装（自由曲面 → カーブ → パネル）
-・Gridカーブの合理化
+・全体フローの実装（自由曲面 → カーブ → パネル）・Gridカーブの合理化
  -論文の曲率をベースに実装
  -中国館の手順も参照
 
@@ -72,7 +74,6 @@ GPT(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
 
 
 ○アールデコ 検証
-・処理細分化(BaseVolume)
 ・Gradation Color 設定
 ・DetailVolume BasePoint 生成
 　ーVerticalWindow
@@ -88,7 +89,7 @@ GPT(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
 
 
 ○ユニット検証
-・オセロ盤
+・オセロ盤 添削
  -Pipe
  -Cupsule + Frame
 
