@@ -13,7 +13,7 @@
 ・C研究
  -テックブログ
 
-○テックソフト調査
+○テックソフト Study
 ・Grasshopper
 ・Revit×Dynamo
 
@@ -21,21 +21,18 @@
 ・メモ確認 & 整理
 
 
-○論文調査
-・英語勉強(GPT)
- -上記論文の *** を英語を勉強するていで要約して
-・ロジック確認
-・grasshopperで検証
-
-○Rationalization of Free-Form Architecture Using Generative and Parametric Designs
+○ツール実装 準備 (Rationalization of Free-Form Architecture Using Generative and Parametric Designs)
 論文(https://www.mdpi.com/2075-5309/13/5/1250)
-GPT
+・GPT(ロジック確認)
  -(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
  -(https://chatgpt.com/s/t_6aa3d89cc8788191b9a378a4dfeb4a27)
 
-
-▲Form-finding with Polyhedral Meshes Made Simple
-・論文(https://www.geometrie.tuwien.ac.at/geom/ig/publications/2014/formfinding22014/formfinding22014.pdf)
+○論文調査 準備 (Form-finding with Polyhedral Meshes Made Simple)
+論文(https://www.geometrie.tuwien.ac.at/geom/ig/publications/2014/formfinding22014/formfinding22014.pdf)
+※ロジック確認
+※grasshopperで検証
+・英語勉強(GPT)
+ -上記論文の *** を英語を勉強するていで要約して
 ・GPT(https://chatgpt.com/s/t_6a9f5a974b6c8191b8deeba89a9f5ab8)
 
 △曲面合理化一連処理実装
