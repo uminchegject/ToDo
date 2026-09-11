@@ -63,10 +63,11 @@
 
 
 ○アールデコ 検証
-・Gradation Color 設定
-・DetailVolume BasePoint 生成
-　ーVerticalWindow
-　ーHorizontalWindow
+・Gradation Color バリエーション
+　ーコントラスト
+・DetailVolume バリエーション
+　ーVerticalWindow or HorizontalWindow
+　ーPattern Size
 
 △RaptureCity検証
 ※Houdiniで街のある景観をつくる!参考
