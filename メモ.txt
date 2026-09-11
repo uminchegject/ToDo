@@ -1,14 +1,4 @@
-﻿○Public
-・お休み報告
-　ー健康診断
-　ーシルバーウィーク
-・スケール調整ツール 設計&修正
-　ーレイアウト調整パラメーター
-　ー記録機能
-・トポロジーのコピー処理 修正
-・△AGEHA(※面談前)
-
-○Private
+﻿○Private
 ・※目標設定シート
 ・健康診断準備
 ・macbookセットアップ
@@ -18,8 +8,10 @@
 ・液体廃棄(GPT)
 
 
-○C研究
-・テックブログ
+○M準備
+・PR
+・C研究
+ -テックブログ
 
 ○テックソフト調査
 ・Grasshopper
@@ -37,10 +29,10 @@
 
 ○Rationalization of Free-Form Architecture Using Generative and Parametric Designs
 論文(https://www.mdpi.com/2075-5309/13/5/1250)
-GPT(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
-・Literature Reviews
-・Research Methods
-・Validation and Case Study
+GPT
+ -(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
+ -(https://chatgpt.com/s/t_6aa3d89cc8788191b9a378a4dfeb4a27)
+
 
 ▲Form-finding with Polyhedral Meshes Made Simple
 ・論文(https://www.geometrie.tuwien.ac.at/geom/ig/publications/2014/formfinding22014/formfinding22014.pdf)
@@ -106,3 +98,47 @@ GPT(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
 ・Top In
 ・Pipe Block
 ・Multi Layer
+
+
+○Public
+・お休み報告
+　ー健康診断
+　ーシルバーウィーク
+・スケール調整ツール 設計&修正
+　ー記録機能
+　ーレイアウト調整パラメーター
+・トポロジーのコピー処理 修正
+・△AGEHA(※面談前)
+
+
+■個人目標
+◆質 ／「仕事の質向上」（Quality）
+クラッシュや不具合の発生を抑制するために、コメントやドキュメントの整備によって仕様や意図を明確化し、
+ログ出力の仕組みを導入することで不具合の原因追跡を容易にする。
+
+◆量 ／「成果の量・生産性」（Productivity / Output）
+現在の案件においてAIを活用した生産性向上を図る。
+具体的には今月リリースされたクライアントが提供するAI環境を活用することで作業補助を行い、
+限られた時間の中でより多くの成果を安定して創出できる体制を構築する。
+
+◆価値創造 ／「価値の創出」（Value Creation）
+担当業務の中で、改善できそうな作業を見つけ、簡単なツール化や仕組み化に取り組む。
+Houdiniなどを活用し、可能な範囲で作業を楽にする工夫を行う。
+
+◆マインド ／「思考・姿勢（マインドセット）」（Mindset）
+日々の業務の中で効率化の視点を常に持って行動する。
+具板的には作業環境の整理や最適化を行い、
+VSCodeの拡張機能の活用やHoudiniのDesktop整理などを通じて生産性の向上を図る姿勢を持つ。
+
+◆貢献 ／「組織・周囲への貢献」
+案件や自習で学んだ内容をナレッジとして記録・共有するとともに、
+Tips共有会などの場で積極的に発信することで、チーム全体の技術力向上に寄与する。
+
+
+◆【 品質 】成果品質
+
+◆【 量・納期・実行力 】業務遂行・生産性
+
+◆【 改善・価値創造 】改善・価値創出
+
+◆【 組織貢献・連携 】組織貢献・協働
