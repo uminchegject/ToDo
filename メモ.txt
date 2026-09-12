@@ -1,5 +1,7 @@
-﻿○Private
-・※目標設定シート
+﻿○目標設定シート
+※上期と下期でつながりをもたせる
+
+○Private
 ・健康診断準備
 ・macbookセットアップ
  -アプリ
@@ -25,8 +27,8 @@
 ○ツール実装 準備 (Rationalization of Free-Form Architecture Using Generative and Parametric Designs)
 論文(https://www.mdpi.com/2075-5309/13/5/1250)
 ・GPT(ロジック確認)
- -(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
- -(https://chatgpt.com/s/t_6aa3d89cc8788191b9a378a4dfeb4a27)
+ -概要(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
+ -Pythonソース(https://chatgpt.com/s/t_6aa3d89cc8788191b9a378a4dfeb4a27)
 
 ○論文調査 準備 (Form-finding with Polyhedral Meshes Made Simple)
 論文(https://www.geometrie.tuwien.ac.at/geom/ig/publications/2014/formfinding22014/formfinding22014.pdf)
@@ -34,7 +36,8 @@
 ※grasshopperで検証
 ・英語勉強(GPT)
  -上記論文の *** を英語を勉強するていで要約して
-・GPT(https://chatgpt.com/s/t_6a9f5a974b6c8191b8deeba89a9f5ab8)
+・GPT
+　-数式(https://chatgpt.com/s/t_6aa4fa992bf881918a65c5640d1b7a4f)
 
 △曲面合理化一連処理実装
 ・全体フローの実装（自由曲面 → カーブ → パネル）・Gridカーブの合理化
