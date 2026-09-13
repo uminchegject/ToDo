@@ -1,6 +1,16 @@
 ﻿○目標設定シート
 ※上期と下期でつながりをもたせる
 
+○Public
+・お休み報告
+ ー健康診断
+ ーシルバーウィーク
+・スケール調整ツール 設計&修正
+ ー記録機能
+ ーレイアウト調整パラメーター
+・トポロジーのコピー処理 修正
+・△AGEHA(※面談前)
+
 ○Private
 ・健康診断準備
 ・macbookセットアップ
@@ -37,7 +47,7 @@
 ・英語勉強(GPT)
  -上記論文の *** を英語を勉強するていで要約して
 ・GPT
-　-数式(https://chatgpt.com/s/t_6aa4fa992bf881918a65c5640d1b7a4f)
+ -数式(https://chatgpt.com/s/t_6aa4fa992bf881918a65c5640d1b7a4f)
 
 △曲面合理化一連処理実装
 ・全体フローの実装（自由曲面 → カーブ → パネル）・Gridカーブの合理化
@@ -73,10 +83,10 @@
 
 ○アールデコ 検証
 ・Gradation Color バリエーション
-　ーコントラスト
-・DetailVolume バリエーション
-　ーVerticalWindow or HorizontalWindow
-　ーPattern Size
+ ーコントラスト
+・DetailVolume バリエーション 
+ ーVerticalWindow or HorizontalWindow
+ ーPattern Size
 
 △RaptureCity検証
 ※Houdiniで街のある景観をつくる!参考
@@ -89,6 +99,8 @@
 
 ○Pipe + Frame 設計
 ※ポンピドゥセンター参照
+・Frame(3DGrid)
+・PipePattern
 
 ●Unit
 ・Base
@@ -103,17 +115,6 @@
 ・Top In
 ・Pipe Block
 ・Multi Layer
-
-
-○Public
-・お休み報告
-　ー健康診断
-　ーシルバーウィーク
-・スケール調整ツール 設計&修正
-　ー記録機能
-　ーレイアウト調整パラメーター
-・トポロジーのコピー処理 修正
-・△AGEHA(※面談前)
 
 
 ■カジュアルPR
