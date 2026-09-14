@@ -94,12 +94,23 @@
  -色
 ・Noise + Randomly
 
-○アールデコ 検証
-・Gradation Color バリエーション
- ーコントラスト
-・DetailVolume バリエーション 
- ーVerticalWindow or HorizontalWindow
- ーPattern Size
+
+○Gradation Color バリエーション
+※コントラスト
+setpointattrib(0, "TopColor", pt, top_color);
+setpointattrib(0, "BottomColor", pt, bottom_color);
+
+if(i@group_TopColor){
+	v@Cd = v@TopColor;
+	v@Cd = v@BottomColor;
+}
+
+○DetailVolume バリエーション 
+・VerticalWindow or HorizontalWindow
+float base_ratio = ch("base_ratio");
+float unit_size = ch("unit_size");
+float unit_ratio = ch("unit_ratio");
+float offset_ratio = ch("offset_ratio");
 
 △RaptureCity検証
 ※Houdiniで街のある景観をつくる!参考
