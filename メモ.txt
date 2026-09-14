@@ -112,10 +112,11 @@
 
 ○PipePattern 設計
 ※ポンピドゥセンター参照
-・PipePattern
+・In Out
 
 ○Pipe + Frame 検証
 ・FrameBasePoint生成
+ -BaseFrame + SurfaceFrame
  -3DGrid
  -ユニットスケールパラメーター化
 ・PipePattern
