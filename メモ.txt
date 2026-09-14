@@ -20,15 +20,18 @@
 ・液体廃棄(GPT)
 
 
+○テックソフト Study
+※業務ベース
+・Grasshopper
+・Revit×Dynamo
+
 ○M準備
 ・応募
 ・C研究
  -テックブログ
 
-○テックソフト Study
-※業務ベース
-・Grasshopper
-・Revit×Dynamo
+○書類準備
+※本参照
 
 △Employフォルダ整理
 ・メモ確認 & 整理
