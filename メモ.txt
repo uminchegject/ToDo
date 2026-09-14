@@ -1,15 +1,14 @@
-﻿○目標設定シート
-※上期と下期でつながりをもたせる
-
-○Public
-・お休み報告
- ー健康診断
- ーシルバーウィーク
-・スケール調整ツール 設計&修正
- ー記録機能
- ーレイアウト調整パラメーター
-・トポロジーのコピー処理 修正
+﻿○Public
+・Houdini Engine for Unity について調査
+・△ スケール調整ツール 設計&修正
+　ーレイアウト調整パラメーター
+　ー記録機能
+・△トポロジーのコピー処理 修正
 ・△AGEHA(※面談前)
+
+○目標設定シート
+※上期と下期でつながりをもたせる
+・GPT整理
 
 ○Private
 ・健康診断準備
@@ -37,13 +36,16 @@
 ・メモ確認 & 整理
 
 
+○Grasshopper Pythonソース実装&検証
+※関数ごとに実装
+
 ○ツール実装 準備 (Rationalization of Free-Form Architecture Using Generative and Parametric Designs)
 論文(https://www.mdpi.com/2075-5309/13/5/1250)
 ・GPT(ロジック確認)
  -概要(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
  -Pythonソース(https://chatgpt.com/s/t_6aa3d89cc8788191b9a378a4dfeb4a27)
 
-○論文調査 準備 (Form-finding with Polyhedral Meshes Made Simple)
+△論文調査 準備 (Form-finding with Polyhedral Meshes Made Simple)
 論文(https://www.geometrie.tuwien.ac.at/geom/ig/publications/2014/formfinding22014/formfinding22014.pdf)
 ※ロジック確認
 ※grasshopperで検証
@@ -60,7 +62,20 @@
 △Pattern設計
 
 
-○検証添削
+○記事準備
+・ソース整理
+・処理概要整理
+
+●処理概要
+・ポルトガル館再現
+ -scatter
+ -紐で波を表現
+・フランス館再現
+ -アニメーションを用意(白 → 青)
+・揺れの表現
+ -フーコーの振り子
+
+△検証
 ・色検証
  -noise グラデーション
  -先端 グラデーション
@@ -68,12 +83,8 @@
  -Noise Cofficient(変化低め)
 ・カラーアニメーション
 
-○紐の再現
+△紐の再現
 ・プロシージャルモデリング
-
-○記事準備
-・ソース整理
-・処理概要整理
 
 ●波 Design
 ※浮世絵参照
@@ -82,7 +93,6 @@
  -長さ
  -色
 ・Noise + Randomly
-
 
 ○アールデコ 検証
 ・Gradation Color バリエーション
@@ -100,9 +110,14 @@
  -Terrain
 
 
-○Pipe + Frame 設計
+○PipePattern 設計
 ※ポンピドゥセンター参照
-・Frame(3DGrid)
+・PipePattern
+
+○Pipe + Frame 検証
+・FrameBasePoint生成
+ -3DGrid
+ -ユニットスケールパラメーター化
 ・PipePattern
 
 ●Unit
