@@ -1,4 +1,42 @@
 ﻿○Public
+・Houdini Engine For Unity 調査
+　ーHoudini Engine For Unity が Labsをどう参照しているか
+・△ スケール調整ツール 設計&修正
+　ーレイアウト調整パラメーター
+　ー記録機能
+・△トポロジーのコピー処理 修正
+・△AGEHA(※面談前)
+
+○レビュー会準備
+
+
+○記事準備
+・ソース整理
+・処理概要整理
+
+●処理概要
+・ポルトガル館再現
+ -scatter
+ -紐で波を表現
+・フランス館再現
+ -アニメーションを用意(白 → 青)
+・揺れの表現
+ -フーコーの振り子
+
+
+○Gradation Color バリエーション 検証
+
+○DetailVolume バリエーション 検証
+
+
+○PipePattern 設計
+※ポンピドゥセンター参照
+・In Out
+
+
+
+■メモ
+○Public
 ・Houdini Engine for Unity について調査
 ・△ スケール調整ツール 設計&修正
 　ーレイアウト調整パラメーター
