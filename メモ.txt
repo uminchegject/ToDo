@@ -13,6 +13,8 @@
 
 ○Grasshopper Pythonソース実装&検証
 ※関数ごとに実装
+※引数を整理
+※検証用ソース用意
 
 
 ○記事準備
@@ -259,79 +261,74 @@ else if(i@group_BottomColor){
     v@Cd = v@BottomColor;
 }
 
-●Vertical
+●Detail Volume Base Point
 float base_ratio = ch("base_ratio");
 float unit_size = ch("unit_size");
 float unit_ratio = ch("unit_ratio");
 float offset_ratio = ch("offset_ratio");
+float toggle_vertical = chi("toggle_vertical");
 
-vector base_scale = v@scale;
-base_scale.y /= 2;
-base_scale.y *= base_ratio;
-vector base_pos = v@P;
+if(toggle_vertical){
+	vector base_scale = v@scale;
+	base_scale.y /= 2;
+	base_scale.y *= base_ratio;
+	vector base_pos = v@P;
 
-int unit_num = int(base_scale.y / unit_size);
-for(int i = 0; i < unit_num; i++)
-{
-    vector pos = v@P;
-    pos.y += i * (base_scale.y / unit_num);
-    
-    vector scale = base_scale;
-    scale.y = base_scale.y / unit_num;
-    scale.y *= unit_ratio;
-    scale.x *= offset_ratio;
-    scale.z *= offset_ratio;
-    
-    int pt = addpoint(0, pos);
-    setpointattrib(0, "scale", pt, scale);
+	int unit_num = int(base_scale.y / unit_size);
+	for(int i = 0; i < unit_num; i++)
+	{
+		vector pos = v@P;
+		pos.y += i * (base_scale.y / unit_num);
+		
+		vector scale = base_scale;
+		scale.y = base_scale.y / unit_num;
+		scale.y *= unit_ratio;
+		scale.x *= offset_ratio;
+		scale.z *= offset_ratio;
+		
+		int pt = addpoint(0, pos);
+		setpointattrib(0, "scale", pt, scale);
+	}
 }
+else{
+	vector base_scale = v@scale;
+	base_scale.x *= base_ratio;
+	vector base_pos = v@P;
 
-removepoint(0, @ptnum);
+	int unit_num = int(base_scale.x / unit_size);
+	for(int i = 0; i < unit_num; i++)
+	{
+		vector pos = v@P;
+		pos.x -= base_scale.x / 2;
+		pos.x += (i + 0.5) * (base_scale.x / unit_num);
+		
+		vector scale = base_scale;
+		scale.x = base_scale.x / unit_num;
+		scale.x *= unit_ratio;
+		scale.z *= offset_ratio;
+		
+		int pt = addpoint(0, pos);
+		setpointattrib(0, "scale", pt, scale);
+	}
 
+	base_scale = v@scale;
+	base_scale.z *= base_ratio;
 
-●Horizontal
-float base_ratio = ch("base_ratio");
-float unit_size = ch("unit_size");
-float unit_ratio = ch("unit_ratio");
-float offset_ratio = ch("offset_ratio");
-
-vector base_scale = v@scale;
-base_scale.x *= base_ratio;
-vector base_pos = v@P;
-
-int unit_num = int(base_scale.x / unit_size);
-for(int i = 0; i < unit_num; i++)
-{
-    vector pos = v@P;
-    pos.x -= base_scale.x / 2;
-    pos.x += (i + 0.5) * (base_scale.x / unit_num);
-    
-    vector scale = base_scale;
-    scale.x = base_scale.x / unit_num;
-    scale.x *= unit_ratio;
-    scale.z *= offset_ratio;
-    
-    int pt = addpoint(0, pos);
-    setpointattrib(0, "scale", pt, scale);
-}
-
-base_scale = v@scale;
-base_scale.z *= base_ratio;
-
-unit_num = int(base_scale.z / unit_size);
-for(int i = 0; i < unit_num; i++)
-{
-    vector pos = v@P;
-    pos.z -= base_scale.z / 2;
-    pos.z += (i + 0.5) * (base_scale.z / unit_num);
-    
-    vector scale = base_scale;
-    scale.z = base_scale.z / unit_num;
-    scale.z *= unit_ratio;
-    scale.x *= offset_ratio;
-    
-    int pt = addpoint(0, pos);
-    setpointattrib(0, "scale", pt, scale);
+	unit_num = int(base_scale.z / unit_size);
+	for(int i = 0; i < unit_num; i++)
+	{
+		vector pos = v@P;
+		pos.z -= base_scale.z / 2;
+		pos.z += (i + 0.5) * (base_scale.z / unit_num);
+		
+		vector scale = base_scale;
+		scale.z = base_scale.z / unit_num;
+		scale.z *= unit_ratio;
+		scale.x *= offset_ratio;
+		
+		int pt = addpoint(0, pos);
+		setpointattrib(0, "scale", pt, scale);
+	}
 }
 
 removepoint(0, @ptnum);
