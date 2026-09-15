@@ -29,9 +29,12 @@
  -フーコーの振り子
 
 
-○Rapture Detail 検証
+○Rapture Detail 検証 準備
+※各ノードごとにパラメーターで調整
 ・カラー
 ・デザイン
+ -BaseVolume
+ -DetailVolume
 
 ○DetailVolume バリエーション 
 VerticalWindow or HorizontalWindow
@@ -44,6 +47,7 @@ float offset_ratio = ch("offset_ratio");
 ○PipePattern 設計
 ※ポンピドゥセンター参照
 ・In Out
+・Box
 
 
 ▫️メモ
