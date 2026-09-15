@@ -1,4 +1,52 @@
-﻿○Public
+﻿○目標設定シート
+※上期と下期でつながりをもたせる
+※各テーマに対して話す内容を整理する
+※1つミスリードする
+・GPT整理
+
+
+○テックソフト Study
+※業務ベース
+・Grasshopper
+・Revit×Dynamo
+
+
+○Grasshopper Pythonソース実装&検証
+※関数ごとに実装
+
+
+○記事準備
+・ソース整理
+・処理概要整理
+
+●処理概要
+・ポルトガル館再現
+ -scatter
+ -紐で波を表現
+・フランス館再現
+ -アニメーションを用意(白 → 青)
+・揺れの表現
+ -フーコーの振り子
+
+
+○Rapture Detail 検証
+・カラー
+・デザイン
+
+
+○PipePattern 設計
+※ポンピドゥセンター参照
+・In Out
+
+
+▫️メモ
+※仕事後はすぐにカフェに行く
+ -※カフェでの作業を含めて基本音楽は聞かない
+ -※カフェ前(仕事終盤)にタスク整理(夜カフェ、家、朝カフェ)をしておく
+
+※カフェでは今後のタスクを楽にするための工夫を意識する
+
+○Public
 ・Houdini Engine For Unity SideFXLabs 管理方法 調査
 ・△ スケール調整ツール 設計&修正
 　ーレイアウト調整パラメーター
@@ -41,6 +89,7 @@
 
 ○ツール実装 準備 (Rationalization of Free-Form Architecture Using Generative and Parametric Designs)
 論文(https://www.mdpi.com/2075-5309/13/5/1250)
+※論文を理解し、ツールのイメージをしっかりする
 ・GPT(ロジック確認)
  -概要(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
  -Pythonソース(https://chatgpt.com/s/t_6aa3d89cc8788191b9a378a4dfeb4a27)
@@ -185,14 +234,18 @@ Tips共有会などの場で積極的に発信することで、チーム全体�
 
 
 ■Detail Base Point
-○Gradation Color バリエーション
-※コントラスト
+●Set Color
+vector top_color = chv("top_color");
+vector bottom_color = chv("bottom_color");
 setpointattrib(0, "TopColor", pt, top_color);
 setpointattrib(0, "BottomColor", pt, bottom_color);
 
+●Set Attribute Color
 if(i@group_TopColor){
 	v@Cd = v@TopColor;
-	v@Cd = v@BottomColor;
+}
+else if(i@group_BottomColor){
+    v@Cd = v@BottomColor;
 }
 
 
