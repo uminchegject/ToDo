@@ -33,6 +33,13 @@
 ・カラー
 ・デザイン
 
+○DetailVolume バリエーション 
+VerticalWindow or HorizontalWindow
+float base_ratio = ch("base_ratio");
+float unit_size = ch("unit_size");
+float unit_ratio = ch("unit_ratio");
+float offset_ratio = ch("offset_ratio");
+
 
 ○PipePattern 設計
 ※ポンピドゥセンター参照
@@ -247,15 +254,6 @@ if(i@group_TopColor){
 else if(i@group_BottomColor){
     v@Cd = v@BottomColor;
 }
-
-
-○DetailVolume バリエーション 
-・VerticalWindow or HorizontalWindow
-float base_ratio = ch("base_ratio");
-float unit_size = ch("unit_size");
-float unit_ratio = ch("unit_ratio");
-float offset_ratio = ch("offset_ratio");
-
 
 ●Vertical
 float base_ratio = ch("base_ratio");
