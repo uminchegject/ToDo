@@ -1,80 +1,9 @@
 ﻿○Public
-・検証
-　ーUnity起動処理
-　ーhoudini.env
-・△AGEHA(※面談前)
-
-
-○各段階のビジュアル資料を用意
-・ポルトガル館再現
- -紐の再現
-・フランス艦再現
-・揺れ処理追加
-
-○検証用ノード整理
-※各ノードごとにパラメーターで調整
-・カラー
-・デザイン
- -BaseVolume
- -DetailVolume
-
-
-○PipePattern 設計
-※ポンピドゥセンター参照
-・In Out
-・Box
-
-
-■メモ
-○Public
-・Labs実データ管理方法 調査
-　ーkarasu における実データ管理方法調査
-　ーkarasu におけるパス設定方法調査
-・△AGEHA(※面談前)
-
-○目標設定シート 反省
-※上期と下期でつながりをもたせる
-※各テーマに対して話す内容を整理する
-※1つミスリードする
-※反省を踏まえて次期目標を設定
-・反省
-
-○Grasshopper Pythonソース整理
-※関数ごとに実装
-※引数を整理
-※検証用ソース用意
-
-○Unity Study 本Study
-
-
-○各段階のビジュアル資料を用意
-・ポルトガル館再現
- -紐の再現
-・フランス艦再現
-・揺れ処理追加
-
-○検証用ノード整理
-※各ノードごとにパラメーターで調整
-・カラー
-・デザイン
- -BaseVolume
- -DetailVolume
-
-
-○PipePattern 設計
-※ポンピドゥセンター参照
-・In Out
-・Box
-
-
-
-■メモ
-○Public
-・Houdini Engine For Unity SideFXLabs 管理方法 調査
-・△ スケール調整ツール 設計&修正
-　ーレイアウト調整パラメーター
-　ー記録機能
-・△トポロジーのコピー処理 修正
+・ドキュメント準備
+　ーhoudini.envについて
+　ーhoudini.envを用いた管理の検証
+　　ーlabs wheel の解凍
+　　ーhoudini.envの生成
 ・△AGEHA(※面談前)
 
 ○目標設定シート
