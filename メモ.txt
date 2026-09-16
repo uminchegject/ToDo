@@ -2,6 +2,7 @@
 ※関数ごとに実装
 ※引数を整理
 ※検証用ソース用意
+・処理確認
 
 ○検証用ノード実装
 ※各ノードごとにパラメーターで調整
@@ -335,19 +336,14 @@ removepoint(0, @ptnum);
 
 
 ■ grasshopper
-```python
 import Rhino.Geometry as rg
 
 
-# ============================================================
-# 1. SurfaceをUV方向にPanel化
-# ============================================================
+def panelize_surface(S, nu, nv):
 
-def panelize_surface(surface, nu, nv):
-
-    # SurfaceのU/V Domainを取得
-    u_domain = surface.Domain(0)
-    v_domain = surface.Domain(1)
+    # U/V Domain
+    u_domain = S.Domain(0)
+    v_domain = S.Domain(1)
 
     u0 = u_domain.T0
     u1 = u_domain.T1
@@ -355,13 +351,12 @@ def panelize_surface(surface, nu, nv):
     v0 = v_domain.T0
     v1 = v_domain.T1
 
-    # U方向の分割位置
+    # U/V方向の分割位置
     u_values = [
         u0 + (u1 - u0) * i / float(nu)
         for i in range(nu + 1)
     ]
 
-    # V方向の分割位置
     v_values = [
         v0 + (v1 - v0) * j / float(nv)
         for j in range(nv + 1)
@@ -369,12 +364,7 @@ def panelize_surface(surface, nu, nv):
 
     panels = []
 
-    # --------------------------------------------------------
-    # UV方向にPanelを作成
-    # --------------------------------------------------------
-
     for i in range(nu):
-
         for j in range(nv):
 
             u_interval = rg.Interval(
@@ -387,8 +377,11 @@ def panelize_surface(surface, nu, nv):
                 v_values[j + 1]
             )
 
-            # SurfaceをUV範囲で切り出す
-            panel = surface.IsoTrim(
+            # 元Surfaceを複製
+            #panel = S.DuplicateSurface()
+
+            # UV範囲でトリム
+            panel = S.Trim(
                 u_interval,
                 v_interval
             )
@@ -567,4 +560,3 @@ def main(surface, nu, nv):
     nu,
     nv
 )
-```
