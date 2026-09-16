@@ -1,15 +1,20 @@
-﻿○目標設定シート
+﻿※仕事後はすぐにカフェに行く
+ -※カフェでの作業を含めて基本音楽は聞かない
+ -※カフェ前(仕事終盤)にタスク整理(夜カフェ、家、朝カフェ)をしておく
+
+※カフェでは今後のタスクを楽にするための工夫を意識する
+
+○目標設定シート
 ※上期と下期でつながりをもたせる
 ※各テーマに対して話す内容を整理する
 ※1つミスリードする
-・GPT整理
-
+※反省を踏まえて次期目標を設定
+・反省
 
 ○テックソフト Study
 ※業務ベース
 ・Grasshopper
 ・Revit×Dynamo
-
 
 ○Grasshopper Pythonソース実装&検証
 ※関数ごとに実装
@@ -17,48 +22,7 @@
 ※検証用ソース用意
 
 
-○記事準備
-・ソース整理
-・処理概要整理
-
-●処理概要
-・ポルトガル館再現
- -scatter
- -紐で波を表現
-・フランス館再現
- -アニメーションを用意(白 → 青)
-・揺れの表現
- -フーコーの振り子
-
-
-○Rapture Detail 検証 準備
-※各ノードごとにパラメーターで調整
-・カラー
-・デザイン
- -BaseVolume
- -DetailVolume
-
-○DetailVolume バリエーション 
-VerticalWindow or HorizontalWindow
-float base_ratio = ch("base_ratio");
-float unit_size = ch("unit_size");
-float unit_ratio = ch("unit_ratio");
-float offset_ratio = ch("offset_ratio");
-
-
-○PipePattern 設計
-※ポンピドゥセンター参照
-・In Out
-・Box
-
-
-▫️メモ
-※仕事後はすぐにカフェに行く
- -※カフェでの作業を含めて基本音楽は聞かない
- -※カフェ前(仕事終盤)にタスク整理(夜カフェ、家、朝カフェ)をしておく
-
-※カフェでは今後のタスクを楽にするための工夫を意識する
-
+■メモ
 ○Public
 ・Houdini Engine For Unity SideFXLabs 管理方法 調査
 ・△ スケール調整ツール 設計&修正
@@ -99,6 +63,8 @@ float offset_ratio = ch("offset_ratio");
 
 ○Grasshopper Pythonソース実装&検証
 ※関数ごとに実装
+※引数を整理
+※検証用ソース用意
 
 ○ツール実装 準備 (Rationalization of Free-Form Architecture Using Generative and Parametric Designs)
 論文(https://www.mdpi.com/2075-5309/13/5/1250)
@@ -124,6 +90,12 @@ float offset_ratio = ch("offset_ratio");
 △Pattern設計
 
 
+○各段階のビジュアル資料を用意
+・ポルトガル館再現
+ -紐の再現
+・フランス艦再現
+・揺れ処理追加
+
 ○記事準備
 ・ソース整理
 ・処理概要整理
@@ -131,7 +103,7 @@ float offset_ratio = ch("offset_ratio");
 ●処理概要
 ・ポルトガル館再現
  -scatter
- -紐で波を表現
+ -紐をプロシージャるに再現
 ・フランス館再現
  -アニメーションを用意(白 → 青)
 ・揺れの表現
@@ -157,7 +129,19 @@ float offset_ratio = ch("offset_ratio");
 ・Noise + Randomly
 
 
-○Rapture Detail 検証
+○Rapture Detail 検証 準備
+※各ノードごとにパラメーターで調整
+・カラー
+・デザイン
+ -BaseVolume
+ -DetailVolume
+
+○DetailVolume バリエーション 
+VerticalWindow or HorizontalWindow
+float base_ratio = ch("base_ratio");
+float unit_size = ch("unit_size");
+float unit_ratio = ch("unit_ratio");
+float offset_ratio = ch("offset_ratio");
 
 △RaptureCity検証
 ※Houdiniで街のある景観をつくる!参考
@@ -171,6 +155,7 @@ float offset_ratio = ch("offset_ratio");
 ○PipePattern 設計
 ※ポンピドゥセンター参照
 ・In Out
+・Box
 
 ○Pipe + Frame 検証
 ・FrameBasePoint生成
