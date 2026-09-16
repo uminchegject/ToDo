@@ -1,4 +1,40 @@
-﻿○Public
+﻿○Grasshopper Pythonソース実装&検証
+※関数ごとに実装
+※引数を整理
+※検証用ソース用意
+
+○検証用ノード実装
+※各ノードごとにパラメーターで調整
+・Color
+・BaseVolume
+・DetailVolume
+
+
+●Unit 設計
+※ポンピドゥセンター 参照
+※Frame Unit ベース
+・Frame
+ -Module Frame
+・Pipe
+ -In Out
+ -From Box
+・Box
+・Cupsule
+
+
+○カジュアル面談 応募
+
+○目標設定シート
+※上期と下期でつながりをもたせる
+※各テーマに対して話す内容を整理する
+※1つミスリードする
+※反省を踏まえて次期目標を設定
+・反省
+
+
+
+▫️メモ
+○Public
 ・ドキュメント準備
 　ーhoudini.envについて
 　ーhoudini.envを用いた管理の検証
