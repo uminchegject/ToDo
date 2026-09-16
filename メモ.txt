@@ -1,4 +1,32 @@
 ﻿○Public
+・検証
+　ーUnity起動処理
+　ーhoudini.env
+・△AGEHA(※面談前)
+
+
+○各段階のビジュアル資料を用意
+・ポルトガル館再現
+ -紐の再現
+・フランス艦再現
+・揺れ処理追加
+
+○検証用ノード整理
+※各ノードごとにパラメーターで調整
+・カラー
+・デザイン
+ -BaseVolume
+ -DetailVolume
+
+
+○PipePattern 設計
+※ポンピドゥセンター参照
+・In Out
+・Box
+
+
+■メモ
+○Public
 ・Labs実データ管理方法 調査
 　ーkarasu における実データ管理方法調査
 　ーkarasu におけるパス設定方法調査
@@ -338,3 +366,240 @@ else{
 }
 
 removepoint(0, @ptnum);
+
+
+
+■ grasshopper
+```python
+import Rhino.Geometry as rg
+
+
+# ============================================================
+# 1. SurfaceをUV方向にPanel化
+# ============================================================
+
+def panelize_surface(surface, nu, nv):
+
+    # SurfaceのU/V Domainを取得
+    u_domain = surface.Domain(0)
+    v_domain = surface.Domain(1)
+
+    u0 = u_domain.T0
+    u1 = u_domain.T1
+
+    v0 = v_domain.T0
+    v1 = v_domain.T1
+
+    # U方向の分割位置
+    u_values = [
+        u0 + (u1 - u0) * i / float(nu)
+        for i in range(nu + 1)
+    ]
+
+    # V方向の分割位置
+    v_values = [
+        v0 + (v1 - v0) * j / float(nv)
+        for j in range(nv + 1)
+    ]
+
+    panels = []
+
+    # --------------------------------------------------------
+    # UV方向にPanelを作成
+    # --------------------------------------------------------
+
+    for i in range(nu):
+
+        for j in range(nv):
+
+            u_interval = rg.Interval(
+                u_values[i],
+                u_values[i + 1]
+            )
+
+            v_interval = rg.Interval(
+                v_values[j],
+                v_values[j + 1]
+            )
+
+            # SurfaceをUV範囲で切り出す
+            panel = surface.IsoTrim(
+                u_interval,
+                v_interval
+            )
+
+            if panel is not None:
+                panels.append(panel)
+
+    return panels
+
+
+# ============================================================
+# 2. Panel中心のUV座標を取得
+# ============================================================
+
+def get_panel_center_uv(panel):
+
+    u_domain = panel.Domain(0)
+    v_domain = panel.Domain(1)
+
+    # UV Domainの中心
+    u = (u_domain.T0 + u_domain.T1) / 2.0
+    v = (v_domain.T0 + v_domain.T1) / 2.0
+
+    return u, v
+
+
+# ============================================================
+# 3. Panel中心でPrincipal Curvatureを取得
+# ============================================================
+
+def get_principal_curvature(panel):
+
+    # Panel中心のUV座標
+    u, v = get_panel_center_uv(panel)
+
+    # Curvature情報を取得
+    curvature = panel.CurvatureAt(u, v)
+
+    # 第1主曲率
+    k1 = curvature.Kappa(0)
+
+    # 第2主曲率
+    k2 = curvature.Kappa(1)
+
+    return k1, k2
+
+
+# ============================================================
+# 4. 全PanelのPrincipal Curvatureを計算
+# ============================================================
+
+def calculate_principal_curvatures(panels):
+
+    k1_list = []
+    k2_list = []
+
+    for panel in panels:
+
+        k1, k2 = get_principal_curvature(panel)
+
+        k1_list.append(k1)
+        k2_list.append(k2)
+
+    return k1_list, k2_list
+
+
+# ============================================================
+# 5. Gaussian Curvatureを計算
+#
+# K = k1 * k2
+# ============================================================
+
+def calculate_gaussian_curvature(k1_list, k2_list):
+
+    gaussian_curvature = []
+
+    for k1, k2 in zip(k1_list, k2_list):
+
+        K = k1 * k2
+
+        gaussian_curvature.append(K)
+
+    return gaussian_curvature
+
+
+# ============================================================
+# 6. Mean Curvatureを計算
+#
+# H = (k1 + k2) / 2
+# ============================================================
+
+def calculate_mean_curvature(k1_list, k2_list):
+
+    mean_curvature = []
+
+    for k1, k2 in zip(k1_list, k2_list):
+
+        H = (k1 + k2) / 2.0
+
+        mean_curvature.append(H)
+
+    return mean_curvature
+
+
+# ============================================================
+# 7. Main処理
+# ============================================================
+
+def main(surface, nu, nv):
+
+    # --------------------------------------------------------
+    # STEP 1
+    # SurfaceをPanel化
+    # --------------------------------------------------------
+
+    panels = panelize_surface(
+        surface,
+        nu,
+        nv
+    )
+
+    # --------------------------------------------------------
+    # STEP 2
+    # Principal Curvature
+    # --------------------------------------------------------
+
+    k1_list, k2_list = calculate_principal_curvatures(
+        panels
+    )
+
+    # --------------------------------------------------------
+    # STEP 3
+    # Gaussian Curvature
+    # --------------------------------------------------------
+
+    gaussian_curvature = calculate_gaussian_curvature(
+        k1_list,
+        k2_list
+    )
+
+    # --------------------------------------------------------
+    # STEP 4
+    # Mean Curvature
+    # --------------------------------------------------------
+
+    mean_curvature = calculate_mean_curvature(
+        k1_list,
+        k2_list
+    )
+
+    # --------------------------------------------------------
+    # 結果をまとめて返す
+    # --------------------------------------------------------
+
+    return (
+        panels,
+        k1_list,
+        k2_list,
+        gaussian_curvature,
+        mean_curvature
+    )
+
+
+# ============================================================
+# Main
+# ============================================================
+
+(
+    P,
+    K1,
+    K2,
+    GaussianCurvature,
+    MeanCurvature
+) = main(
+    S,
+    nu,
+    nv
+)
+```
