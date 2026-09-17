@@ -1,39 +1,10 @@
-﻿○Grasshopper Pythonソース実装&検証
-※関数ごとに実装
-※引数を整理
-※検証用ソース用意
-・処理確認
-
-
-○BaseVolume 修正
+﻿○BaseVolume 修正
 
 ○検証用ノード実装
 ※各ノードごとにパラメーターで調整
 ・Color
 ・BaseVolume
 ・DetailVolume
-
-
-●Unit 設計
-※ポンピドゥセンター 参照
-※Frame Unit ベース
-・Frame
- -Module Frame
-・Pipe
- -In Out
- -From Box
-・Box
-・Cupsule
-
-
-○カジュアル面談 応募
-
-○目標設定シート
-※上期と下期でつながりをもたせる
-※各テーマに対して話す内容を整理する
-※1つミスリードする
-※反省を踏まえて次期目標を設定
-・反省
 
 
 
@@ -147,19 +118,13 @@
 ・Noise + Randomly
 
 
-○Rapture Detail 検証 準備
-※各ノードごとにパラメーターで調整
-・カラー
-・デザイン
- -BaseVolume
- -DetailVolume
+○BaseVolume 修正
 
-○DetailVolume バリエーション 
-VerticalWindow or HorizontalWindow
-float base_ratio = ch("base_ratio");
-float unit_size = ch("unit_size");
-float unit_ratio = ch("unit_ratio");
-float offset_ratio = ch("offset_ratio");
+○検証用ノード実装
+※各ノードごとにパラメーターで調整
+・Color
+・BaseVolume
+・DetailVolume
 
 △RaptureCity検証
 ※Houdiniで街のある景観をつくる!参考
@@ -195,25 +160,6 @@ float offset_ratio = ch("offset_ratio");
 ・Top In
 ・Pipe Block
 ・Multi Layer
-
-
-■カジュアルPR
-これまで、ゲームエンジニア、テクニカルアーティストとして、制作現場の開発や業務効率化に取り組んできました。
-新卒ではゲームエンジニアとして、UI開発やコンシューマー機への移植、バグ修正・運用対応などを経験しました。
-その後、より現場全体の作業効率や制作体験を改善できる仕事に携わりたいと考え、テクニカルアーティストへ転向しました。
-現在はHoudiniを中心に、ツール開発やR&D、新技術の検証などを行っています。
-その中で、Houdiniを用いたプロシージャルなワークフロー開発や、ツール開発によって制作工程を改善していくことに興味を持つようになりました。
-また、大学では建築を学び、GrasshopperやC#を用いた形状生成や、アルゴリズムを活用した設計検討に取り組んでいました。
-
-これまでの経験から、技術を活用して制作・設計業務を効率化することに関心があり、ゲーム業界だけでなく建築分野でも、
-これまでの経験を活かせるのではないかと考え、建築業界への転身を考えています。
-今後は、GrasshopperやPython、BIMなどを学びながら、
-建築設計の業務効率化や、コンピュテーショナルデザインを活用した設計・表現について経験を積んでいきたいと考えています。
-
-今回のカジュアル面談では、実際のコンピュテーショナルデザイナーの業務内容や、
-建築・設計現場の課題に対してどのように業務改善を行っているのかについてお伺いしたいです。
-また、自分のこれまでのエンジニア・TAとしての経験や、Houdini・プログラミング・Grasshopperなどの経験が、
-建築分野でどのように活かせるのかについてもお話を伺えればと考えています。
 
 
 ■個人目標
