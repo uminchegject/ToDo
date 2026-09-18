@@ -1,21 +1,4 @@
-﻿○Public
-・ドキュメント
-　ー検証ソース確認
-　ードキュメントメモ参照
-・△AGEHA(※面談前)
-
-
-○目標設定シート
-https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
-※上期と下期でつながりをもたせる
-※各テーマに対して話す内容を整理する
-※1つミスリードする
-※反省を踏まえて次期目標を設定
-・反省
-・次の計画
-
-○Private
-・健康診断準備
+﻿○Private
 ・macbookセットアップ
  -アプリ
  -ケース
@@ -23,23 +6,24 @@ https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
 ・液体廃棄(GPT)
 
 
-○テックソフト Study
+○本 確認
+
+○他 調査
+
+△テックソフト Study
 ※業務ベース
 ・Grasshopper
 ・Revit×Dynamo
 
-○M準備
+△M準備
 ・C研究
  -テックブログ
-・本
-・メモ確認 & 整理
 
 
 ○Grasshopper Pythonソース実装&検証
 ※関数ごとに実装
 ※引数を整理
 ※検証用ソース用意
-・処理確認
 
 ○ツール実装 準備 (Rationalization of Free-Form Architecture Using Generative and Parametric Designs)
 論文(https://www.mdpi.com/2075-5309/13/5/1250)
@@ -104,6 +88,8 @@ https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
 ・BaseVolume
 ・DetailVolume
 
+○検証
+
 △RaptureCity検証
 ※Houdiniで街のある景観をつくる!参考
 ※Middle & Topデザイン
@@ -133,125 +119,235 @@ https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
  -ユニットスケールパラメーター化
 
 
-■個人目標
-◆質 ／「仕事の質向上」（Quality）
-クラッシュや不具合の発生を抑制するために、コメントやドキュメントの整備によって仕様や意図を明確化し、
-ログ出力の仕組みを導入することで不具合の原因追跡を容易にする。
-・detailmap対応
-　ーデバッグをしっかり行う(成果品質)
+■Public
+○Public
+・ドキュメント提出
+・△AGEHA(※面談前)
 
-◆量 ／「成果の量・生産性」（Productivity / Output）
-現在の案件においてAIを活用した生産性向上を図る。
-具体的には今月リリースされたクライアントが提供するAI環境を活用することで作業補助を行い、
-限られた時間の中でより多くの成果を安定して創出できる体制を構築する。
-・ドキュメント文章の添削
-・実装した処理の添削
-　ーさらにAIで生産性を上げることができる部分を改善していきたい(業務遂行・生産性)
-
-◆価値創造 ／「価値の創出」（Value Creation）
-担当業務の中で、改善できそうな作業を見つけ、簡単なツール化や仕組み化に取り組む。
-Houdiniなどを活用し、可能な範囲で作業を楽にする工夫を行う。
-・ (改善・価値創出)
-
-◆マインド ／「思考・姿勢（マインドセット）」（Mindset）
-日々の業務の中で効率化の視点を常に持って行動する。
-具板的には作業環境の整理や最適化を行い、
-VSCodeの拡張機能の活用やHoudiniのDesktop整理などを通じて生産性の向上を図る姿勢を持つ。
-・
-
-◆貢献 ／「組織・周囲への貢献」
-案件や自習で学んだ内容をナレッジとして記録・共有するとともに、
-Tips共有会などの場で積極的に発信することで、チーム全体の技術力向上に寄与する。
-・USDについてなどの業務で身につけた知見をNotionでまとめてTips共有会や、Houdini勉強会で共有した
- -Q定例の企画について組織貢献を行なっていきたい(組織貢献・協働)
+○目標設定シート
+https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
+※上期と下期でつながりをもたせる
+※各テーマに対して話す内容を整理する
+※反省を踏まえて次期目標を設定
 
 
 ■Detail Base Point
-●Set Color
-vector top_color = chv("top_color");
-vector bottom_color = chv("bottom_color");
-setpointattrib(0, "TopColor", pt, top_color);
-setpointattrib(0, "BottomColor", pt, bottom_color);
+●center_base_point
+vector base_scale = v@base_scale;
+vector base_pos = v@base_pos;
 
-●Set Attribute Color
-if(i@group_TopColor){
-	v@Cd = v@TopColor;
-}
-else if(i@group_BottomColor){
-    v@Cd = v@BottomColor;
-}
+int center_block_num = chi("center_block_num");
+float center_ratio = ch("center_ratio");
+float center_height_ratio = ch("center_height_ratio");
 
-●Detail Volume Base Point
-float base_ratio = ch("base_ratio");
-float unit_size = ch("unit_size");
-float unit_ratio = ch("unit_ratio");
-float offset_ratio = ch("offset_ratio");
-float toggle_vertical = chi("toggle_vertical");
+vector center_scale = base_scale;
 
-if(toggle_vertical){
-	vector base_scale = v@scale;
-	base_scale.y /= 2;
-	base_scale.y *= base_ratio;
-	vector base_pos = v@P;
+center_scale.x *= center_ratio;
+center_scale.z *= center_ratio;
 
-	int unit_num = int(base_scale.y / unit_size);
-	for(int i = 0; i < unit_num; i++)
-	{
-		vector pos = v@P;
-		pos.y += i * (base_scale.y / unit_num);
-		
-		vector scale = base_scale;
-		scale.y = base_scale.y / unit_num;
-		scale.y *= unit_ratio;
-		scale.x *= offset_ratio;
-		scale.z *= offset_ratio;
-		
-		int pt = addpoint(0, pos);
-		setpointattrib(0, "scale", pt, scale);
-	}
-}
-else{
-	vector base_scale = v@scale;
-	base_scale.x *= base_ratio;
-	vector base_pos = v@P;
+for (int idx = 0; idx < center_block_num; idx++)
+{
+    vector block_scale = center_scale;
+    
+    float ratio = float(idx) / float(center_block_num);
+    
+    block_scale.x *= 1.0 - ratio;
+    block_scale.z *= 1.0 - ratio;
+    
+    block_scale.y *= (1.0 - center_height_ratio) * ratio
+                   + center_height_ratio;
+    
+    int pt = addpoint(0, base_pos);
+    
+    setpointattrib(0, "scale", pt, block_scale);
+    setpointattrib(0, "Class", pt, 0);
 
-	int unit_num = int(base_scale.x / unit_size);
-	for(int i = 0; i < unit_num; i++)
-	{
-		vector pos = v@P;
-		pos.x -= base_scale.x / 2;
-		pos.x += (i + 0.5) * (base_scale.x / unit_num);
-		
-		vector scale = base_scale;
-		scale.x = base_scale.x / unit_num;
-		scale.x *= unit_ratio;
-		scale.z *= offset_ratio;
-		
-		int pt = addpoint(0, pos);
-		setpointattrib(0, "scale", pt, scale);
-	}
-
-	base_scale = v@scale;
-	base_scale.z *= base_ratio;
-
-	unit_num = int(base_scale.z / unit_size);
-	for(int i = 0; i < unit_num; i++)
-	{
-		vector pos = v@P;
-		pos.z -= base_scale.z / 2;
-		pos.z += (i + 0.5) * (base_scale.z / unit_num);
-		
-		vector scale = base_scale;
-		scale.z = base_scale.z / unit_num;
-		scale.z *= unit_ratio;
-		scale.x *= offset_ratio;
-		
-		int pt = addpoint(0, pos);
-		setpointattrib(0, "scale", pt, scale);
-	}
 }
 
-removepoint(0, @ptnum);
+removeprim(0, @primnum, 1);
+
+
+●side_base_point
+vector base_scale = v@base_scale;
+vector base_pos = v@base_pos;
+
+float center_ratio = ch("center_ratio");
+float center_height_ratio = ch("center_height_ratio");
+int side_block_num = chi("side_block_num");
+
+int toggle = 1;
+
+for (int idx = 0; idx < side_block_num; idx++)
+{
+float ratio = float(idx) / float(side_block_num);
+
+vector block_scale = base_scale;
+
+block_scale.y *= center_height_ratio;
+
+block_scale.x *= (1.0 - center_ratio) * ratio + center_ratio;
+block_scale.z *= (1.0 - center_ratio) * ratio + center_ratio;
+
+block_scale.y *= 1.0 -
+    ratio * (rand(idx + 10000) * 0.6 + 0.7);
+
+int volume_class = int(random(idx) * 2);
+
+// --------------------------------------------------
+// Toggle 0 : X方向に2分割
+// --------------------------------------------------
+if (toggle == 0)
+{
+    vector scale = block_scale;
+
+    if (idx % 6 == 2)
+    {
+        scale.x *= 0.4;
+
+        int block = addpoint(0, base_pos);
+
+        setpointattrib(0, "scale", block, scale);
+        setpointattrib(0, "Class", block, volume_class);
+
+        toggle = 1;
+        continue;
+    }
+
+    scale.x *= 0.3;
+
+    float offset =
+        (1.0 - scale.x / block_scale.x) / 2.0
+        * block_scale.x;
+
+    vector block1_pos = base_pos;
+    block1_pos.x += offset;
+
+    int block1 = addpoint(0, block1_pos);
+
+    setpointattrib(0, "scale", block1, scale);
+    setpointattrib(0, "Class", block1, volume_class);
+
+
+    vector block2_pos = base_pos;
+    block2_pos.x -= offset;
+
+    int block2 = addpoint(0, block2_pos);
+
+    setpointattrib(0, "scale", block2, scale);
+    setpointattrib(0, "Class", block2, volume_class);
+
+    toggle = 1;
+}
+
+// --------------------------------------------------
+// Toggle 1 : Z方向に2分割
+// --------------------------------------------------
+else if (toggle == 1)
+{
+    vector scale = block_scale;
+
+    if (idx % 6 == 0)
+    {
+        scale.z *= 0.3;
+
+        int block = addpoint(0, base_pos);
+
+        setpointattrib(0, "scale", block, scale);
+        setpointattrib(0, "Class", block, volume_class);
+
+        toggle = 2;
+        continue;
+    }
+
+    scale.z *= 0.3;
+
+    float offset =
+        (1.0 - scale.z / block_scale.z) / 2.0
+        * block_scale.z;
+
+    vector block1_pos = base_pos;
+    block1_pos.z += offset;
+
+    int block1 = addpoint(0, block1_pos);
+
+    setpointattrib(0, "scale", block1, scale);
+    setpointattrib(0, "Class", block1, volume_class);
+
+
+    vector block2_pos = base_pos;
+    block2_pos.z -= offset;
+
+    int block2 = addpoint(0, block2_pos);
+
+    setpointattrib(0, "scale", block2, scale);
+    setpointattrib(0, "Class", block2, volume_class);
+
+    toggle = 2;
+}
+
+// --------------------------------------------------
+// Toggle 2 : 4分割
+// --------------------------------------------------
+else
+{
+    vector scale = block_scale;
+
+    scale.x *= 0.2;
+    scale.z *= 0.2;
+
+    float offset_x =
+        (1.0 - scale.x / block_scale.x) / 2.0
+        * block_scale.x;
+
+    float offset_z =
+        (1.0 - scale.z / block_scale.z) / 2.0
+        * block_scale.z;
+
+
+    vector block1_pos = base_pos;
+    block1_pos.x += offset_x;
+    block1_pos.z += offset_z;
+
+    int block1 = addpoint(0, block1_pos);
+
+    setpointattrib(0, "scale", block1, scale);
+    setpointattrib(0, "Class", block1, volume_class);
+
+
+    vector block2_pos = base_pos;
+    block2_pos.x -= offset_x;
+    block2_pos.z += offset_z;
+
+    int block2 = addpoint(0, block2_pos);
+
+    setpointattrib(0, "scale", block2, scale);
+    setpointattrib(0, "Class", block2, volume_class);
+
+
+    vector block3_pos = base_pos;
+    block3_pos.x += offset_x;
+    block3_pos.z -= offset_z;
+
+    int block3 = addpoint(0, block3_pos);
+
+    setpointattrib(0, "scale", block3, scale);
+    setpointattrib(0, "Class", block3, volume_class);
+
+
+    vector block4_pos = base_pos;
+    block4_pos.x -= offset_x;
+    block4_pos.z -= offset_z;
+
+    int block4 = addpoint(0, block4_pos);
+
+    setpointattrib(0, "scale", block4, scale);
+    setpointattrib(0, "Class", block4, volume_class);
+
+    toggle = 0;
+}
+}
+
+removeprim(0, @primnum, 1);
 
 
 

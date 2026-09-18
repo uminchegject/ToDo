@@ -13,12 +13,6 @@
 ※自分とTAを分かってもらう準備
 ※引き出しを用意する
 
-○会社情報収集
-・※AmdLabs準備(カジュアル面談)
-・建築テックソフト調査
- -Grasshopper
- -Revit×Dynamo
-
 
 ■Grashopper
 ●設計
