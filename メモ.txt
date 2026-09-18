@@ -23,10 +23,6 @@ https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
 ・液体廃棄(GPT)
 
 
-○※書類確認
-・履歴書
-・職務経歴書
-
 ○テックソフト Study
 ※業務ベース
 ・Grasshopper
