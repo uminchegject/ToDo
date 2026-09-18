@@ -1,4 +1,65 @@
-﻿○Private
+﻿○本 確認
+
+○他 調査
+・GPT(https://chatgpt.com/share/6aad239b-0014-83ee-bc3f-2c3cb50a948d)
+
+
+○テック Study
+※ポートフォリオに求められる技術を調査
+・Grasshopper
+・Revit Dynamo 
+
+○ツール実装 (Rationalization of Free-Form Architecture Using Generative and Parametric Designs)
+論文(https://www.mdpi.com/2075-5309/13/5/1250)
+※論文を理解し、ツールのイメージをしっかりする
+・GPT(ロジック確認)
+ -概要(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
+ -Pythonソース(https://chatgpt.com/s/t_6aa3d89cc8788191b9a378a4dfeb4a27)
+
+
+○各段階のビジュアル資料を用意
+※記事準備
+・ポルトガル館再現
+ -紐の再現
+・フランス館再現
+・揺れ処理追加
+ -フランス館
+ -ポルトガル館
+
+
+○BaseVolume 修正
+
+○検証用ノード実装
+※各ノードごとにパラメーターで調整
+・Color
+・BaseVolume
+・DetailVolume
+
+○検証
+
+
+●Unit 設計
+※ポンピドゥセンター 参照
+※Frame Unit ベース
+・Frame(Module)
+ -BaseFrame
+ -SurfaceFrame
+・Box
+・Pipe
+ -In Out
+ -From Box
+ -Multi Layer
+・Cupsule
+
+○Frame 検証
+・FrameBasePoint生成
+ -BaseFrame + SurfaceFrame
+ -3DGrid
+ -ユニットスケールパラメーター化
+
+
+▫️めも
+○Private
 ・macbookセットアップ
  -アプリ
  -ケース
