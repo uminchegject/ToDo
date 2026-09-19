@@ -67,13 +67,6 @@
 
 
 ○BaseVolume 修正
-・中央のVolumeを消す
-
-○検証用ノード実装
-※各ノードごとにパラメーターで調整
-・Color
-・BaseVolume
-・DetailVolume
 
 ○検証用ノード実装
 ※各ノードごとにパラメーターで調整
