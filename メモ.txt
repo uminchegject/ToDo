@@ -1,4 +1,5 @@
 ﻿●靴
+※最低限月一でクリームを塗る
 ・※雨
 ・ルーティン(ポストマン)
 ・Weekly(Weekender)
@@ -12,16 +13,21 @@
 ・書類整理(フォルダ整理)
 
 
-○テック Study
-※ポートフォリオに求められる技術を調査
-・清水(https://www.shimz.co.jp/dde/)
-
-○ツール実装 (Rationalization of Free-Form Architecture Using Generative and Parametric Designs)
-論文(https://www.mdpi.com/2075-5309/13/5/1250)
+○ツール 設計
 ※論文を理解し、ツールのイメージをしっかりする
+・パラメーター
+ -バリエーション
+・出力
+ -視覚化(カラー)
+
+○ Rationalization Panel ツール実装 
+・論文(https://www.mdpi.com/2075-5309/13/5/1250)
 ・GPT(ロジック確認)
  -概要(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
  -Pythonソース(https://chatgpt.com/s/t_6aa3d89cc8788191b9a378a4dfeb4a27)
+
+○ Panel デザイン+配置 ツール 設計
+※grasshopper における デザイン のベースを考える
 
 
 ○各段階のビジュアル資料を用意
