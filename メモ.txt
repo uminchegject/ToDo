@@ -1,13 +1,20 @@
-﻿○本 確認
+﻿●靴
+・※雨
+・ルーティン(ポストマン)
+・Weekly(Weekender)
+・Cool(Beckman)
+・アウトドア(NorthFace復活)
 
-○他 調査
-・GPT(https://chatgpt.com/share/6aad239b-0014-83ee-bc3f-2c3cb50a948d)
+
+○Employ 準備
+・本 確認
+・RE 準備 調査
+・書類整理(フォルダ整理)
 
 
 ○テック Study
 ※ポートフォリオに求められる技術を調査
-・Grasshopper
-・Revit Dynamo 
+・清水(https://www.shimz.co.jp/dde/)
 
 ○ツール実装 (Rationalization of Free-Form Architecture Using Generative and Parametric Designs)
 論文(https://www.mdpi.com/2075-5309/13/5/1250)
