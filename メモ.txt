@@ -77,6 +77,8 @@
 
 ○検証
 
+○Design 設計
+
 △RaptureCity検証
 ※Houdiniで街のある景観をつくる!参考
 ※Middle & Topデザイン
