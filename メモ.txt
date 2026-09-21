@@ -10,20 +10,18 @@
  -テックブログ
 
 
-○ツール 設計
-※論文を理解し、ツールのイメージをしっかりする
-・パラメーター
- -バリエーション
-・出力
- -視覚化(カラー)
-
 ○ Rationalization Panel ツール実装 
+※論文を理解し、ツールのイメージをしっかりする
 ※関数ごとに実装
 ※引数を整理
 ・論文(https://www.mdpi.com/2075-5309/13/5/1250)
 ・GPT(ロジック確認)
  -概要(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
  -Pythonソース(https://chatgpt.com/s/t_6aa3d89cc8788191b9a378a4dfeb4a27)
+・パラメーター
+ -バリエーション
+・出力
+ -視覚化(カラー)
 
 ○ Panel デザイン+配置 ツール 設計
 ※grasshopper における デザイン のベースを考える
@@ -75,9 +73,7 @@
 ・BaseVolume
 ・DetailVolume
 
-○検証
-
-○Design 設計
+○Design 設計 & 検証
 
 △RaptureCity検証
 ※Houdiniで街のある景観をつくる!参考
