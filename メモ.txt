@@ -1,5 +1,21 @@
-﻿○Employ 準備
-・本 確認
+﻿○Private
+・ケース消臭
+・macbookセットアップ
+ -アプリ
+ -ケース
+ -アップルケア
+・液体廃棄(GPT)
+
+●靴
+※最低限月一でクリームを塗る
+・※雨
+・ルーティン(ポストマン)
+・Weekly(Weekender)
+・Cool(Beckman)
+・アウトドア(NorthFace復活)
+
+
+○Employ 準備
 ・RE 準備 調査
 ・書類整理(フォルダ整理)
 ・テック Study
@@ -65,8 +81,6 @@
  -フーコーの振り子
 
 
-○BaseVolume 修正
-
 ○検証用ノード実装
 ※各ノードごとにパラメーターで調整
 ・Color
@@ -102,22 +116,6 @@
  -BaseFrame + SurfaceFrame
  -3DGrid
  -ユニットスケールパラメーター化
-
-
-○Private
-・macbookセットアップ
- -アプリ
- -ケース
- -アップルケア
-・液体廃棄(GPT)
-
-●靴
-※最低限月一でクリームを塗る
-・※雨
-・ルーティン(ポストマン)
-・Weekly(Weekender)
-・Cool(Beckman)
-・アウトドア(NorthFace復活)
 
 
 ■Public
