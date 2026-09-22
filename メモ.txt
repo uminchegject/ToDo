@@ -118,7 +118,7 @@
  -3DGrid
  -ユニットスケールパラメーター化
 
-△Unit 配置設計
+○Unit 配置設計
 ※Frameベース
 ・Box
 ・Pipe
