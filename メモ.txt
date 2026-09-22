@@ -1,10 +1,100 @@
 ﻿○Private
+・旅行準備
+ -計画
+ -※USB Lightning
+ -本、漫画、映画
 ・ケース消臭
 ・macbookセットアップ
- -アプリ
- -ケース
  -アップルケア
 ・液体廃棄(GPT)
+・書類整理
+
+
+○カラー化
+・GPT(https://chatgpt.com/s/t_6ab1df5aa35c8191b0163965745e9a7f)
+
+○ Rationalization Panel ツール実装 
+※論文を理解し、ツールのイメージをしっかりする
+※関数ごとに実装
+※引数を整理
+・論文(https://www.mdpi.com/2075-5309/13/5/1250)
+・GPT(ロジック確認)
+ -概要(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
+ -Pythonソース(https://chatgpt.com/s/t_6aa3d89cc8788191b9a378a4dfeb4a27)
+・パラメーター
+ -カラー設定
+・出力
+ -視覚化(カラー)
+
+○ Panel デザイン+配置 ツール 設計
+※grasshopper における デザイン のベースを考える
+※ATLV参照(http://atlv.org/)
+・※Panel To Design 設計
+・Surface To Panel(軸)
+・最適化
+・パラメーター
+ -イテレーション回数
+ -バリエーション
+
+
+○記事準備
+・ソース整理
+・処理概要整理
+
+●処理概要
+・ポルトガル館再現
+ -紐をプロシージャルに再現
+・フランス館再現
+ -波のカラーアニメーション
+・揺れの表現
+ -フーコーの振り子
+
+
+○検証用ノード実装
+※各ノードごとにパラメーターで調整
+・Color
+・BaseVolume
+・DetailVolume
+
+○Design 設計 & 検証
+・拡張検討
+
+○RaptureCity検証
+※Houdiniで街のある景観をつくる!参考
+※Middle & Topデザイン
+・BaseVolume(Randomly)
+ -Scatter
+・起伏
+ -Terrain
+
+
+○Frame 検証　準備
+・FrameBasePoint生成
+ -BaseFrame + SurfaceFrame
+ -3DGrid
+ -ユニットスケールパラメーター化
+
+●Unit 設計
+※ポンピドゥセンター 参照
+※Frame Unit ベース
+・Frame(Module)
+ -BaseFrame
+ -SurfaceFrame
+・Box
+・Pipe
+ -In Out
+ -From Box
+ -Multi Layer
+・Cupsule
+
+
+▫️メモ
+○Private
+・ケース消臭
+・macbookセットアップ
+ -アップルケア
+・液体廃棄(GPT)
+・書類整理
 
 ●靴
 ※最低限月一でクリームを塗る
@@ -98,6 +188,12 @@
  -Terrain
 
 
+○Frame 検証　準備
+・FrameBasePoint生成
+ -BaseFrame + SurfaceFrame
+ -3DGrid
+ -ユニットスケールパラメーター化
+
 ●Unit 設計
 ※ポンピドゥセンター 参照
 ※Frame Unit ベース
@@ -110,12 +206,6 @@
  -From Box
  -Multi Layer
 ・Cupsule
-
-○Frame 検証
-・FrameBasePoint生成
- -BaseFrame + SurfaceFrame
- -3DGrid
- -ユニットスケールパラメーター化
 
 
 ■Public
