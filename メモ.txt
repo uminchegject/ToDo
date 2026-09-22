@@ -57,6 +57,10 @@
 ・DetailVolume
 
 ○Design 設計 & 検証
+・※バリエーション化
+ -Base Volume
+ -Detail
+ -色
 ・拡張検討
 
 ○RaptureCity検証
@@ -64,8 +68,9 @@
 ※Middle & Topデザイン
 ・BaseVolume(Randomly)
  -Scatter
-・起伏
- -Terrain
+・起伏(海峡)
+ -Terrain(絶壁)
+・岩
 
 
 ○Frame 検証　準備
