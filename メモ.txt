@@ -1,19 +1,38 @@
 ﻿○Private
+・キャンピングカー
 ・旅行準備
  -計画
- -※USB Lightning
  -本、漫画、映画
-・ケース消臭
 ・macbookセットアップ
  -アップルケア
-・液体廃棄(GPT)
+・液体廃棄
+ -脱水ペーパー
 ・書類整理
+
+●靴
+※最低限月一でクリームを塗る
+・※雨
+・ルーティン(ポストマン)
+・Weekly(Weekender)
+・Cool(Beckman)
+・アウトドア(NorthFace復活)
+
+
+○Employ 準備
+・RE 準備 調査
+・書類整理(フォルダ整理)
+・テック Study
+ -清水(https://www.shimz.co.jp/dde/)
+
+△M準備
+・C研究
+ -テックブログ
 
 
 ○カラー化
 ・GPT(https://chatgpt.com/s/t_6ab1df5aa35c8191b0163965745e9a7f)
 
-○ Rationalization Panel ツール実装 
+○ Rationalization Viewer 実装 
 ※論文を理解し、ツールのイメージをしっかりする
 ※関数ごとに実装
 ※引数を整理
@@ -37,6 +56,17 @@
  -バリエーション
 
 
+○ビジュアル資料 準備
+・ポルトガル館再現
+ -紐処理修正
+ -色固定
+・フランス館再現
+ -紐を改良
+ -カラーアニメーション
+・揺れ処理追加
+ -フランス館
+ -ポルトガル館
+
 ○記事準備
 ・ソース整理
 ・処理概要整理
@@ -48,6 +78,15 @@
  -波のカラーアニメーション
 ・揺れの表現
  -フーコーの振り子
+
+●Design
+※浮世絵参照
+・Element
+ -細さ
+ -長さ
+ -色
+・Noise + Randomly
+・Layer
 
 
 ○検証用ノード実装
@@ -61,7 +100,7 @@
  -Base Volume
  -Detail
  -色
-・拡張検討
+・Extend Design
 
 ○RaptureCity検証
 ※Houdiniで街のある景観をつくる!参考
@@ -79,125 +118,11 @@
  -3DGrid
  -ユニットスケールパラメーター化
 
-●Unit 設計
-※ポンピドゥセンター 参照
-※Frame Unit ベース
-・Frame(Module)
- -BaseFrame
- -SurfaceFrame
+△Unit 配置設計
+※Frameベース
 ・Box
 ・Pipe
- -In Out
- -From Box
- -Multi Layer
 ・Cupsule
-
-
-▫️メモ
-○Private
-・ケース消臭
-・macbookセットアップ
- -アップルケア
-・液体廃棄(GPT)
-・書類整理
-
-●靴
-※最低限月一でクリームを塗る
-・※雨
-・ルーティン(ポストマン)
-・Weekly(Weekender)
-・Cool(Beckman)
-・アウトドア(NorthFace復活)
-
-
-○Employ 準備
-・RE 準備 調査
-・書類整理(フォルダ整理)
-・テック Study
- -清水(https://www.shimz.co.jp/dde/)
-
-△M準備
-・C研究
- -テックブログ
-
-
-○ Rationalization Panel ツール実装 
-※論文を理解し、ツールのイメージをしっかりする
-※関数ごとに実装
-※引数を整理
-・論文(https://www.mdpi.com/2075-5309/13/5/1250)
-・GPT(ロジック確認)
- -概要(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
- -Pythonソース(https://chatgpt.com/s/t_6aa3d89cc8788191b9a378a4dfeb4a27)
-・パラメーター
- -バリエーション
-・出力
- -視覚化(カラー)
-
-○ Panel デザイン+配置 ツール 設計
-※grasshopper における デザイン のベースを考える
-※ATLV参照(http://atlv.org/)
-
-△Pattern設計
-
-
-○各段階のビジュアル資料を用意
-※記事準備
-・ポルトガル館再現
- -紐処理修正
- -色固定
-・フランス館再現
- -紐を改良
- -カラーアニメーション
-・揺れ処理追加
- -フランス館
- -ポルトガル館
-
-●Design
-※浮世絵参照
-・Element
- -細さ
- -長さ
- -色
-・Noise + Randomly
-・Layer
-
-○記事準備
-・ソース整理
-・処理概要整理
-
-●処理概要
-・ポルトガル館再現
- -scatter
- -紐をプロシージャるに再現
-・フランス館再現
- -アニメーションを用意(白 → 青)
-・揺れの表現
- -フーコーの振り子
-
-
-○検証用ノード実装
-※各ノードごとにパラメーターで調整
-・Color
-・BaseVolume
-・DetailVolume
-
-○Design 設計 & 検証
-
-△RaptureCity検証
-※Houdiniで街のある景観をつくる!参考
-※Middle & Topデザイン
-・BaseVolume(Randomly)
- -Scatter
-・起伏
- -Terrain
-
-
-○Frame 検証　準備
-・FrameBasePoint生成
- -BaseFrame + SurfaceFrame
- -3DGrid
- -ユニットスケールパラメーター化
 
 ●Unit 設計
 ※ポンピドゥセンター 参照
@@ -215,7 +140,6 @@
 
 ■Public
 ○Public
-・ドキュメント提出
 ・△AGEHA(※面談前)
 
 ○目標設定シート
