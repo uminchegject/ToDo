@@ -2,45 +2,61 @@
 ・旅行準備
  -計画
  -本、漫画、映画
-・macbookセットアップ
- -アップルケア
-・液体廃棄
- -脱水ペーパー
-・書類整理
+・横浜FC タオルマフラー
+・革靴 リペアストア 調査
 
-○ Rationalization Viewer 実装 
-※論文を理解し、ツールのイメージをしっかりする
-※関数ごとに実装
-※引数を整理
-・論文(https://www.mdpi.com/2075-5309/13/5/1250)
-・GPT(ロジック確認)
- -概要(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
- -Pythonソース(https://chatgpt.com/s/t_6aa3d89cc8788191b9a378a4dfeb4a27)
+○フランス館再現
+・Radius 修正
+・紐を改良
+・カラーアニメーション
+
+
+■Design 設計
+○ Panel デザイン+配置 ツール 設計
+※grasshopper における デザイン のベースを考える
+※ATLV参照(http://atlv.org/)
+・※Panel To Design 設計
+・Surface To Panel(軸)
+・最適化
 ・パラメーター
- -カラー設定
-・出力
- -視覚化(カラー)
-
-○ビジュアル資料 準備
-・ポルトガル館再現
- -紐処理修正
- -色固定
-・フランス館再現
- -紐を改良
- -カラーアニメーション
-・揺れ処理追加
- -フランス館
- -ポルトガル館
-
-○検証用ノード実装
-※各ノードごとにパラメーターで調整
-・Color
-・BaseVolume
-・DetailVolume
+ -イテレーション回数
+ -バリエーション
 
 
-▫️メモ
+○Design 設計 & 検証
+・※バリエーション化
+ -Base Volume
+ -Detail
+ -色
+・Extend Design
+
+○RaptureCity検証
+※Houdiniで街のある景観をつくる!参考
+※Middle & Topデザイン
+・BaseVolume(Randomly)
+ -Scatter
+・起伏(海峡)
+ -Terrain(絶壁)
+・岩
+
+
+○Frame 検証　準備
+・FrameBasePoint生成
+ -BaseFrame + SurfaceFrame
+ -3DGrid
+ -ユニットスケールパラメーター化
+
+○Unit 配置設計
+※Frameベース
+・Box
+・Pipe
+・Cupsule
+
+
+■メモ
 ○Private
+・横浜FC タオルマフラー
+・革靴 リペアストア 調査
 ・旅行準備
  -計画
  -本、漫画、映画
@@ -188,48 +204,6 @@ https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
 ※上期と下期でつながりをもたせる
 ※各テーマに対して話す内容を整理する
 ※反省を踏まえて次期目標を設定
-
-
-▫️Design 設計
-○ Panel デザイン+配置 ツール 設計
-※grasshopper における デザイン のベースを考える
-※ATLV参照(http://atlv.org/)
-・※Panel To Design 設計
-・Surface To Panel(軸)
-・最適化
-・パラメーター
- -イテレーション回数
- -バリエーション
-
-
-○Design 設計 & 検証
-・※バリエーション化
- -Base Volume
- -Detail
- -色
-・Extend Design
-
-○RaptureCity検証
-※Houdiniで街のある景観をつくる!参考
-※Middle & Topデザイン
-・BaseVolume(Randomly)
- -Scatter
-・起伏(海峡)
- -Terrain(絶壁)
-・岩
-
-
-○Frame 検証　準備
-・FrameBasePoint生成
- -BaseFrame + SurfaceFrame
- -3DGrid
- -ユニットスケールパラメーター化
-
-○Unit 配置設計
-※Frameベース
-・Box
-・Pipe
-・Cupsule
 
 
 ■Detail Base Point
