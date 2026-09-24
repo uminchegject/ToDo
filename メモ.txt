@@ -1,8 +1,8 @@
 ﻿○ Panel デザイン+配置 ツール 設計
 ※grasshopper における デザイン のベースを考える
 ※ATLV参照(http://atlv.org/)
-・※Panel To Design 設計
-・Surface To Panel(軸)
+・※Panel To Design
+ -Surface To Panel(軸)
 ・最適化
 ・パラメーター
  -イテレーション回数
@@ -15,6 +15,8 @@
  -Detail
  -色
 ・Extend Design
+ -Volume Design
+ -Detail Design
 
 ○RaptureCity検証
 ※Houdiniで街のある景観をつくる!参考
@@ -27,7 +29,7 @@
 
 
 ○Frame 検証　準備
-・FrameBasePoint生成
+・FrameBasePoint生成(Module)
  -BaseFrame + SurfaceFrame
  -3DGrid
  -ユニットスケールパラメーター化
