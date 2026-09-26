@@ -1,8 +1,9 @@
 ﻿○ Panel デザイン+配置 ツール 設計
-※grasshopper における デザイン のベースを考える
+※Design 設計
 ※ATLV参照(http://atlv.org/)
 ・※Panel To Design
- -Surface To Panel(軸)
+ -Axis
+ -Surface To Panel
 ・最適化
 ・パラメーター
  -イテレーション回数
