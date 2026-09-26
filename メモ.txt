@@ -29,17 +29,8 @@
  -Volume Design
  -Detail Design
 
-○RaptureCity検証
-※Houdiniで街のある景観をつくる!参考
-※Middle & Topデザイン
-・BaseVolume(Randomly)
- -Scatter
-・起伏(海峡)
- -Terrain(絶壁)
-・岩
 
-
-○Frame 検証　準備
+○Frame 検証 準備
 ・FrameBasePoint生成(Module)
  -BaseFrame + SurfaceFrame
  -3DGrid
