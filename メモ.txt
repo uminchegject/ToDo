@@ -1,14 +1,20 @@
-﻿○Private
-・革靴修理 見積もり
- -アッパー修理
- -△ソール交換
+﻿○Public
+・△AGEHA(※面談前)
+
+○目標設定シート
+https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
+※上期と下期でつながりをもたせる
+※各テーマに対して話す内容を整理する
+※反省を踏まえて次期目標を設定
+
+○Private
+・防水靴
+ -ホーキンスhl81020
 ・macbookセットアップ
  -アップルケア
 ・液体廃棄
  -脱水ペーパー
 ・書類整理
-・防水靴
- -ホーキンスhl81020
 
 
 ○Employ 準備
@@ -109,17 +115,6 @@
   -In Out
   -From Box
   -Multi Layer
-
-
-■Public
-○Public
-・△AGEHA(※面談前)
-
-○目標設定シート
-https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
-※上期と下期でつながりをもたせる
-※各テーマに対して話す内容を整理する
-※反省を踏まえて次期目標を設定
 
 
 ■Detail Base Point
