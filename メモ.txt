@@ -1,46 +1,39 @@
-﻿○Private
-・横浜FC タオルマフラー
-・革靴 リペアストア 調査
-・macbookセットアップ
- -アップルケア
-・液体廃棄
- -脱水ペーパー
-・書類整理
+﻿○Panel From Surface By Axis
+
+○Panel To Design
 
 
-○Panel デザイン+配置 ツール 設計
-※Design 設計
-※ATLV参照(http://atlv.org/)
-・※Panel To Design
- -Axis
- -Surface To Panel
-・最適化
-・パラメーター
- -イテレーション回数
- -バリエーション
+○バリエーション化
+・Base Volume
+・Detail
+・色
+
+○Design 設計(Extend)
+・Volume Design
+・Detail Design
 
 
-○Design 設計 & 検証
-・※バリエーション化
- -Base Volume
- -Detail
- -色
-・Extend Design
- -Volume Design
- -Detail Design
-
-
-○Frame 検証 準備
-・FrameBasePoint生成(Module)
- -BaseFrame + SurfaceFrame
- -3DGrid
- -ユニットスケールパラメーター化
+○Frame 検証　(Module)
+・BaseFrame + SurfaceFrame
+・3DGrid
+・ユニットスケールパラメーター化
 
 ○Unit 配置設計
 ※Frameベース
 ・Box
 ・Pipe
 ・Cupsule
+
+
+○Private
+・革靴 リペアストア 調査
+ -アッパー修理
+ -△ソール交換
+・macbookセットアップ
+ -アップルケア
+・液体廃棄
+ -脱水ペーパー
+・書類整理
 
 
 ■メモ
