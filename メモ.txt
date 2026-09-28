@@ -1,4 +1,6 @@
 ﻿※GPT → メモ　→ 検証
+ -GPT, メモ 午前
+ -検証準備, 検証 午後
 
 ○Rationalization of Free-Form Architecture
 ・ソース準備(GPT → ソースメモ)
