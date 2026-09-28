@@ -28,9 +28,22 @@
 ・Detail
 ・色
 
+
 ○Frame + Unit 検証 (BaseFrame SurfaceFrame)
 ・3DGrid
 ・ユニットスケールパラメーター化
+
+●Unit 設計
+※ポンピドゥセンター 参照
+※Frame Unit ベース
+・BaseFrame
+ -Cupsule
+・SurfaceFrame
+ -Box
+ -Pipe
+  -In Out
+  -From Box
+  -Multi Layer
 
 
 ■メモ
