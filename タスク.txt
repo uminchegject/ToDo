@@ -4,8 +4,18 @@
 ※自分とTAを分かってもらう準備
 ※引き出しを用意する
 
+○Employ 準備
+・RE 準備 調査
+・書類整理(フォルダ整理)
+・テック Study
+ -清水(https://www.shimz.co.jp/dde/)
 
-■Grashopper
+△M準備
+・C研究
+ -テックブログ
+
+
+■Rationalization Tool
 ●設計
 ・曲面の合理化
  -※文献ベースで実装
@@ -15,6 +25,29 @@
  -※合理化(文献)に応じたパネルデザインを設計する
  -部材のユニット化
  -部材形状の合理化
+ 
+○カラー化
+・GPT(https://chatgpt.com/s/t_6ab1df5aa35c8191b0163965745e9a7f)
+
+○最適化処理実装
+・GPT(ロジック確認)
+ -概要(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
+ -Pythonソース(https://chatgpt.com/s/t_6aa3d89cc8788191b9a378a4dfeb4a27)
+
+●Rationalization of Free-Form
+※論文を理解し、ツールのイメージをしっかりする
+・論文(https://www.mdpi.com/2075-5309/13/5/1250)
+・入力
+ -カラー設定
+ -イテレーション回数
+・出力
+ -視覚化(カラー)
+
+○Panel From Surface By Axis
+
+○Panel To Design
+※ATLV参照(http://atlv.org/)
+・バリエーション(バリエーション)
 
 
 ■ポルトガル館
@@ -23,8 +56,54 @@
 ・波の揺れ模写
 ・アニメーション
 
+○ビジュアル資料 準備
+・ポルトガル館再現
+・フランス館再現
+・揺れ処理追加
+ -フランス館
+ -ポルトガル館
+
+○記事準備
+・ソース整理
+・処理概要整理
+
+●処理概要
+・ポルトガル館再現
+ -紐をプロシージャルに再現
+・フランス館再現
+ -波のカラーアニメーション
+・揺れの表現
+ -フーコーの振り子
+
+●Design
+※浮世絵参照
+・Element
+ -細さ
+ -長さ
+ -色
+・Noise + Randomly
+・Layer
+
 
 ■Rapture City
+○バリエーション化
+・Base Volume
+・Detail
+・色
+
+○Design 設計(Extend)
+・Volume Design
+・Detail Design
+
+○RaptureCity検証
+※Houdiniで街のある景観をつくる!参考
+※Middle & Topデザイン
+・BaseVolume(Randomly)
+ -Scatter
+・起伏(海峡)
+ -Terrain(絶壁)
+・岩
+
 ●資料
 ・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
 ・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
@@ -34,6 +113,22 @@
 ●設計
 ※規格デザイン
 ※ハイラインデザイン
+
+○Frame + Unit 検証 (BaseFrame SurfaceFrame)
+・3DGrid
+・ユニットスケールパラメーター化
+
+●Unit 設計
+※ポンピドゥセンター 参照
+※Frame Unit ベース
+・BaseFrame
+ -Cupsule
+・SurfaceFrame
+ -Box
+ -Pipe
+  -In Out
+  -From Box
+  -Multi Layer
 
 
 ■Study
