@@ -1,4 +1,25 @@
 ﻿○Public
+・他ソース調査
+・ソース整理
+
+
+○Rationalization of Free-Form Architecture 準備
+
+○ポルトガル館 準備
+
+
+○バリエーション化
+・Base Volume
+・Detail
+・色
+
+○Frame + Unit 検証 (BaseFrame SurfaceFrame)
+・3DGrid
+・ユニットスケールパラメーター化
+
+
+■メモ
+○Public
 ・△AGEHA(※面談前)
 
 ○目標設定シート
