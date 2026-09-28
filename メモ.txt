@@ -25,13 +25,21 @@
 
 ○バリエーション化
 ・Base Volume
+ -Pattern Num
+ -Pattern Size
 ・Detail
+ -Vertical or Horizontal
+ -Pattern Size
 ・色
 
 
-○Frame + Unit 検証 (BaseFrame SurfaceFrame)
-・3DGrid
-・ユニットスケールパラメーター化
+○Frame Unit 検証準備 
+※ユニットスケールパラメーター化
+・BaseFrame
+ -Cupsule
+・SurfaceFrame
+ -Box
+ -Pipe
 
 ●Unit 設計
 ※ポンピドゥセンター 参照
