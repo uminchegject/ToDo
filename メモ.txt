@@ -1,14 +1,4 @@
-﻿○Public
-・他ソース調査
-・ソース整理
-
-
-○Rationalization of Free-Form Architecture 準備
-
-○ポルトガル館 準備
-
-
-○バリエーション化
+﻿○バリエーション化
 ・Base Volume
 ・Detail
 ・色
@@ -18,8 +8,34 @@
 ・ユニットスケールパラメーター化
 
 
+※GPT → メモ　→ 検証
+
+○Rationalization of Free-Form Architecture
+・ソース準備(GPT → ソースメモ)
+ -カラー化
+ -Rationalized Surface
+ -Deviation
+ -Costs
+・ソース検証
+
+
+○再現 完成
+・ポルトガル館
+・フランス館 
+
+○記事準備 
+・ビジュアル資料
+ -ポルトガル館
+ -フランス館
+ -揺れ
+・ドキュメントメモ
+ -ポルトガル館再現
+ -フランス館再現
+
+
 ■メモ
 ○Public
+・懸念点整理
 ・△AGEHA(※面談前)
 
 ○目標設定シート
@@ -29,7 +45,6 @@ https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
 ※反省を踏まえて次期目標を設定
 
 ○Private
-・働かないふたり(福利厚生Kindleポイント)
 ・防水靴(ダナー)
 ・アップルケア
 ・液体廃棄
