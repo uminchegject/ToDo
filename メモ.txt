@@ -1,14 +1,4 @@
-﻿○バリエーション化
-・Base Volume
-・Detail
-・色
-
-○Frame + Unit 検証 (BaseFrame SurfaceFrame)
-・3DGrid
-・ユニットスケールパラメーター化
-
-
-※GPT → メモ　→ 検証
+﻿※GPT → メモ　→ 検証
 
 ○Rationalization of Free-Form Architecture
 ・ソース準備(GPT → ソースメモ)
@@ -31,6 +21,16 @@
 ・ドキュメントメモ
  -ポルトガル館再現
  -フランス館再現
+
+
+○バリエーション化
+・Base Volume
+・Detail
+・色
+
+○Frame + Unit 検証 (BaseFrame SurfaceFrame)
+・3DGrid
+・ユニットスケールパラメーター化
 
 
 ■メモ
