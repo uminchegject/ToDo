@@ -47,14 +47,10 @@ https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
 ○SurfaceFrame Module用意 
 ※Frame Unit 検証準備
 
+○SurfaceFrame 検証
+・Box
+・Pipe
+
 ○Frame 配置処理設計
 ・BaseFrame(1次元)
 ・SurfaceFrame(2次元)
-
-△Frame Unit 検証
-※ユニットスケールパラメーター化
-・BaseFrame
- -Cupsule
-・SurfaceFrame
- -Box
- -Pipe
