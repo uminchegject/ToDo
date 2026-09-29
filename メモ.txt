@@ -26,7 +26,9 @@ https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
 
 
 ○アニメーション 設計
-・荒々しいアニメーション
+・消 → 着
+・飛沫
+ -After Wave
 
 
 ○バリエーション設定
@@ -44,12 +46,13 @@ https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
 ・色
 
 
-○SurfaceFrame Module用意 
-※Frame Unit 検証準備
+○PonpiduePattern 設計
+※Surface
+・Frame Block
+・Box Block
+・Pipe Block
 
-○SurfaceFrame 検証
-・Box
-・Pipe
+○PonpiduePattern 検証
 
 ○Frame 配置処理設計
 ・BaseFrame(1次元)

@@ -1,14 +1,14 @@
 ﻿■バリエーション化
 ●Volume
-i@CenterBlockNum 
-i@SideBlockNum
-@Center Ratio
-@Center Height Ratio
+i@CenterBlockNum = int(random(v@P * 1) * 4 + 1);
+i@SideBlockNum = int(random(v@P * 2) * 4 + 1);
+@CenterRatio = random(v@P * 3) * 0.2 + 0.2;
+@CenterHeightRatio = random(v@P * 4) * 0.4 + 0.6;
 
 ●Detail
-i@ToggleVertical
-@Unit Size
-@Unit Ratio
+@Unit Size = random(v@P * 5) * 0.4 + 0.6;
+@Unit Ratio = random(v@P * 6) * 0.4 + 0.6;
+i@ToggleDetailDesign = int(ranodm(v@P * 7) * 2);
 
 ▲Color
 v@TopColor
@@ -32,11 +32,9 @@ for (int i = 0; i < pts_num; i++)
 {
     int pt = pts[order[i]];
     vector color = point(0, "Cd", pt);
-    float sin_value = sin(0.05 * i + @Frame * 0.2 + @noise * 5.0);
-    float gradation_cofficient = fit(sin_value, -1, 1, 0, 1);
-    color.x += (1 - color.x) * gradation_cofficient;    
-    color.y += (1 - color.y) * gradation_cofficient;
-    color.z += (1 - color.z) * gradation_cofficient;
+    float tan_value = tan(0.05 * i + @Frame * 0.2 + @noise * 5.0);
+    float gradation_cofficient = fit(tan_value, 0, 1, 0, 1);
+    color *= gradation_cofficient;
     setpointattrib(0, "Cd", pt, color, "set");
 }
 
