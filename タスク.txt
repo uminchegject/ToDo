@@ -37,7 +37,6 @@
 ●GPT(ロジック確認)
 ・概要(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
 ・Pythonソース(https://chatgpt.com/s/t_6aa3d89cc8788191b9a378a4dfeb4a27)
-・カラー化(https://chatgpt.com/s/t_6ab1df5aa35c8191b0163965745e9a7f)
 
 ●Rationalization of Free-Form
 ※論文を理解し、ツールのイメージをしっかりする

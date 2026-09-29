@@ -2,7 +2,7 @@
 ・処理確認
 ・挙動確認
 ・マージ
-　ーgit.ignore
+ ーgit.ignore
 ・△AGEHA(※面談前)
 
 ○Private
@@ -20,9 +20,9 @@ https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
 ※反省を踏まえて次期目標を設定
 
 
-○カラー設定 検証
+○grasshopper カラー設定方法 調査
 
-△Rationalized Surface
+○Rationalized Surface
 
 
 ○アニメーション 設計
