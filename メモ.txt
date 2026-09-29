@@ -1,32 +1,8 @@
 ﻿○Public
-・ソース確認
-・質問 準備
+・処理確認
 ・挙動確認
-
-○カラー設定 検証
-
-○フランス館 再現
-・アニメーション 設計
-　－荒々しいアニメーション
-
-○バリエーション化
-・Attribute 化
-
-○SurfaceFrame用意 (Frame Module Unit 用意)
-
-
-■メモ
-※GPT → メモ → 検証
- -GPT, メモ 午前
- -検証準備, 検証 午後
-
-※メモに翌日のタスクを細分化した上で整理する
- -終業前にメモ反省、タスク整理
- -カフェで細分化
- -業務でタスク集中
-
-
-○Public
+・マージ
+　ーgit.ignore
 ・△AGEHA(※面談前)
 
 ○Private
@@ -44,30 +20,21 @@ https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
 ※反省を踏まえて次期目標を設定
 
 
-○Rationalization of Free-Form Architecture
-・ソース準備(GPT → ソースメモ)
- -カラー化
- -Rationalized Surface
- -Deviation
- -Costs
-・ソース検証
+○カラー設定 検証
+
+△Rationalized Surface
 
 
-○再現 完成
-・ポルトガル館
-・フランス館 
-
-○記事準備 
-・ビジュアル資料
- -ポルトガル館
- -フランス館
- -揺れ
-・ドキュメントメモ
- -ポルトガル館再現
- -フランス館再現
+○アニメーション 設計
+・荒々しいアニメーション
 
 
-○バリエーション化
+○バリエーション設定
+・Attribute 化
+
+○バリエーション 検証
+
+●バリエーション
 ・Base Volume
  -Pattern Num
  -Pattern Size
@@ -77,22 +44,17 @@ https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
 ・色
 
 
-○Frame Unit 検証準備 
+○SurfaceFrame Module用意 
+※Frame Unit 検証準備
+
+○Frame 配置処理設計
+・BaseFrame(1次元)
+・SurfaceFrame(2次元)
+
+△Frame Unit 検証
 ※ユニットスケールパラメーター化
 ・BaseFrame
  -Cupsule
 ・SurfaceFrame
  -Box
  -Pipe
-
-●Unit 設計
-※ポンピドゥセンター 参照
-※Frame Unit ベース
-・BaseFrame
- -Cupsule
-・SurfaceFrame
- -Box
- -Pipe
-  -In Out
-  -From Box
-  -Multi Layer

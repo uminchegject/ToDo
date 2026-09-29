@@ -1,56 +1,44 @@
-﻿■就活スケジュール
-【転職活動スタート】
-＜転職活動開始時期＞
-・就きたい業界・職種を考える。
-・転職で優先すべきこと、譲歩できることを考える。
-・転職の目的を明確にする。
-・職務経歴の棚卸しをする。
-・職務経歴書・履歴書を作成する。
-・職務経験の強みを自覚する。
-・求人サイトへ登録する。
-・人材紹介サイトへ登録する。
-・就業規則で退職について確認をする。
-・不足しているスキルの自己啓発を行う。
+﻿■バリエーション化
+●Volume
+i@CenterBlockNum 
+i@SideBlockNum
+@Center Ratio
+@Center Height Ratio
 
-【情報収集スタート】
-＜情報収集・応募時期＞
-※開始後2週間～6週間
-・希望業界・職種の事前研究を行う。
-・求人サイト・人材紹介サイトの求人をチェックする。
-・応募企業を選択し、応募する。
-・応募企業向けに職務経歴書・履歴書の見直しを行う。
-・面接対策を行う（模擬面接など）。
+●Detail
+i@ToggleVertical
+@Unit Size
+@Unit Ratio
 
-【採用試験スタート】
-＜採用試験時期＞
-※開始後3週間～8週間
-・進ちょく状況により、応募企業の見直しをする。
-・進ちょく状況により、書類・面接対策の見直しをする。
-・内定を受諾する。
-
-【退社・入社準備スタート】
-＜退社・入社準備時期＞
-※内定後1～2週間
-・転職先企業へ必要書類を提出する。
-・退職願を提出する。
-・業務の引継ぎを行う。
-・退職に伴うあいさつを行う。
-・会社への返却物・会社から受け取る書類などを確認する。
+▲Color
+v@TopColor
+v@BottomColor
 
 
-■Kindleポイント
-Amazon図書商品券の登録：https://www.amazon.co.jp/gc/pv/redeem
-Amazon図書商品券の残高確認はこちらから：https://www.amazon.co.jp/gc/pv/balance
-WZYE-AX3GQ5-KHCP
-WZ36-R3W3BJ-GSCQ
-W2MT-JDSYMC-24CH
-W2NV-3T6GA2-AYC9
-W3C3-MTLRB5-A4C6
-XJHD-HATUWT-QVCN
-XJJ2-NDP6JL-FSC6
-XJRG-2FNUMV-BBC3
-XJUQ-SQ6SGC-P7C3
-XKH2-M8Q8X7-LECW
+■アニメーション 設計
+int pts[] = primpoints(0, @primnum);
+
+float values[];
+foreach (int pt; pts)
+{
+    vector pos = point(0, "P", pt);
+    append(values, pos.y);
+}
+
+int order[] = argsort(values);
+float pts_num = len(pts);
+
+for (int i = 0; i < pts_num; i++)
+{
+    int pt = pts[order[i]];
+    vector color = point(0, "Cd", pt);
+    float sin_value = sin(0.05 * i + @Frame * 0.2 + @noise * 5.0);
+    float gradation_cofficient = fit(sin_value, -1, 1, 0, 1);
+    color.x += (1 - color.x) * gradation_cofficient;    
+    color.y += (1 - color.y) * gradation_cofficient;
+    color.z += (1 - color.z) * gradation_cofficient;
+    setpointattrib(0, "Cd", pt, color, "set");
+}
 
 
 ■ grasshopper
@@ -365,3 +353,60 @@ def main(surface, nu, nv):
     nu,
     nv
 )
+
+
+■就活スケジュール
+【転職活動スタート】
+＜転職活動開始時期＞
+・就きたい業界・職種を考える。
+・転職で優先すべきこと、譲歩できることを考える。
+・転職の目的を明確にする。
+・職務経歴の棚卸しをする。
+・職務経歴書・履歴書を作成する。
+・職務経験の強みを自覚する。
+・求人サイトへ登録する。
+・人材紹介サイトへ登録する。
+・就業規則で退職について確認をする。
+・不足しているスキルの自己啓発を行う。
+
+【情報収集スタート】
+＜情報収集・応募時期＞
+※開始後2週間～6週間
+・希望業界・職種の事前研究を行う。
+・求人サイト・人材紹介サイトの求人をチェックする。
+・応募企業を選択し、応募する。
+・応募企業向けに職務経歴書・履歴書の見直しを行う。
+・面接対策を行う（模擬面接など）。
+
+【採用試験スタート】
+＜採用試験時期＞
+※開始後3週間～8週間
+・進ちょく状況により、応募企業の見直しをする。
+・進ちょく状況により、書類・面接対策の見直しをする。
+・内定を受諾する。
+
+【退社・入社準備スタート】
+＜退社・入社準備時期＞
+※内定後1～2週間
+・転職先企業へ必要書類を提出する。
+・退職願を提出する。
+・業務の引継ぎを行う。
+・退職に伴うあいさつを行う。
+・会社への返却物・会社から受け取る書類などを確認する。
+
+
+■Kindleポイント
+Amazon図書商品券の登録：https://www.amazon.co.jp/gc/pv/redeem
+Amazon図書商品券の残高確認はこちらから：https://www.amazon.co.jp/gc/pv/balance
+WZYE-AX3GQ5-KHCP
+WZ36-R3W3BJ-GSCQ
+W2MT-JDSYMC-24CH
+W2NV-3T6GA2-AYC9
+W3C3-MTLRB5-A4C6
+XJHD-HATUWT-QVCN
+XJJ2-NDP6JL-FSC6
+XJRG-2FNUMV-BBC3
+XJUQ-SQ6SGC-P7C3
+XKH2-M8Q8X7-LECW
+
+

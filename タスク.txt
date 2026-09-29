@@ -25,14 +25,19 @@
  -※合理化(文献)に応じたパネルデザインを設計する
  -部材のユニット化
  -部材形状の合理化
- 
-○カラー化
-・GPT(https://chatgpt.com/s/t_6ab1df5aa35c8191b0163965745e9a7f)
 
-○最適化処理実装
-・GPT(ロジック確認)
- -概要(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
- -Pythonソース(https://chatgpt.com/s/t_6aa3d89cc8788191b9a378a4dfeb4a27)
+○Rationalization of Free-Form Architecture
+・ソース準備(GPT → ソースメモ)
+ -カラー化
+ -Rationalized Surface
+ -Deviation
+ -Costs
+・ソース検証
+
+●GPT(ロジック確認)
+・概要(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
+・Pythonソース(https://chatgpt.com/s/t_6aa3d89cc8788191b9a378a4dfeb4a27)
+・カラー化(https://chatgpt.com/s/t_6ab1df5aa35c8191b0163965745e9a7f)
 
 ●Rationalization of Free-Form
 ※論文を理解し、ツールのイメージをしっかりする
@@ -51,10 +56,9 @@
 
 
 ■ポルトガル館
-●設計
-・波形態模写
-・波の揺れ模写
-・アニメーション
+○再現
+・ポルトガル館
+・フランス館
 
 ○ビジュアル資料 準備
 ・ポルトガル館再現
@@ -63,9 +67,14 @@
  -フランス館
  -ポルトガル館
 
-○記事準備
-・ソース整理
-・処理概要整理
+○記事準備 
+・ビジュアル資料
+ -ポルトガル館
+ -フランス館
+ -揺れ
+・ドキュメントメモ
+ -ポルトガル館再現
+ -フランス館再現
 
 ●処理概要
 ・ポルトガル館再現
@@ -86,9 +95,13 @@
 
 
 ■Rapture City
-○バリエーション化
+●バリエーション
 ・Base Volume
+ -Pattern Num
+ -Pattern Size
 ・Detail
+ -Vertical or Horizontal
+ -Pattern Size
 ・色
 
 ○Design 設計(Extend)
@@ -110,13 +123,16 @@
 
 
 ■メタボリズム City
-●設計
 ※規格デザイン
 ※ハイラインデザイン
 
-○Frame + Unit 検証 (BaseFrame SurfaceFrame)
-・3DGrid
-・ユニットスケールパラメーター化
+○Frame Unit 検証
+※ユニットスケールパラメーター化
+・BaseFrame
+ -Cupsule
+・SurfaceFrame
+ -Box
+ -Pipe
 
 ●Unit 設計
 ※ポンピドゥセンター 参照
