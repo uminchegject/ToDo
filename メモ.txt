@@ -1,7 +1,10 @@
-﻿○Public
+﻿○Unity C# Study
+・テンプレート調査
+
+○Public
 ・懸念点整理
 　ー修正ソース用意
-　ー質問 項目
+　ー質問 準備
 ・質問 
 ・挙動確認
 
@@ -14,9 +17,7 @@
 ○バリエーション化
 ・Attribute 化
 
-○Frame Module Unit 用意
-・BaseFrame
-・SurfaceFrame
+○SurfaceFrame用意 (Frame Module Unit 用意)
 
 
 ■メモ
