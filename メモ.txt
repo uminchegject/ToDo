@@ -28,6 +28,7 @@ https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
 ○アニメーション 設計
 ・消 → 着
 ・飛沫
+ -tan_value の offsetを調整
  -After Wave
 
 
@@ -49,8 +50,10 @@ https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
 ○PonpiduePattern 設計
 ※Surface
 ・Frame Block
+ -固定
 ・Box Block
 ・Pipe Block
+ -In To In
 
 ○PonpiduePattern 検証
 
