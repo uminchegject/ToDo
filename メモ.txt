@@ -21,6 +21,7 @@ https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
 ・https://iarchway.com/custom_preview/
 
 ○Rationalized Surface
+※ツールの完成形を設計
 
 △grasshopper開発環境準備
 ・pythonモジュール管理フォルダ
@@ -32,9 +33,14 @@ https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
  -tan_value の offsetを調整
  -After Wave
 
+●ソース
+float tan_value = tan(0.05 * i + @Frame * 0.1 + @noise * 0.2 + random(v@P) * 0.2);
+float gradation_cofficient = tan_value;
 
-○バリエーション 検証
-・Attribute 設定
+○バリエーション 検証準備
+・Attribute設定
+ -適正値設定
+・Attribute適応
 
 ●バリエーション
 ・Base Volume
@@ -54,8 +60,7 @@ https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
 ・Pipe Block
  -In To In
 
-○PompidouPattern 検証
-・処理メモ
+○PompidouPattern 検証用処理メモ
 
 ○Frame 配置処理設計
 ・BaseFrame(1次元)
