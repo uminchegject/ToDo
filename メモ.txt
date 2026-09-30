@@ -1,4 +1,6 @@
-﻿○Public
+﻿※カフェには最低20分
+
+○Public
 ・処理確認
 ・挙動確認
 ・マージ
@@ -20,22 +22,21 @@ https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
 ※反省を踏まえて次期目標を設定
 
 
-○grasshopper カラー設定方法 調査
+○grasshopper カラー設定 検証
+・https://iarchway.com/custom_preview/
 
 ○Rationalized Surface
 
 
-○アニメーション 設計
+○アニメーション 設計 検証
 ・消 → 着
 ・飛沫
  -tan_value の offsetを調整
  -After Wave
 
 
-○バリエーション設定
-・Attribute 化
-
 ○バリエーション 検証
+・Attribute 設定
 
 ●バリエーション
 ・Base Volume
@@ -47,7 +48,7 @@ https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
 ・色
 
 
-○PonpiduePattern 設計
+○PompidouPattern 設計
 ※Surface
 ・Frame Block
  -固定
@@ -55,7 +56,8 @@ https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
 ・Pipe Block
  -In To In
 
-○PonpiduePattern 検証
+○PompidouPattern 検証
+・処理メモ
 
 ○Frame 配置処理設計
 ・BaseFrame(1次元)
