@@ -1,44 +1,5 @@
 ﻿○Public
-・挙動確認
-・マージ
-・△AGEHA(※面談前)
-
-
-○ Secure AI Study
-
-
-△Rationalized Surface
-
-
-○アニメーション 設計 検証
-・消 → 着
-・飛沫
- -tan_value の offsetを調整
- -After Wave
-
-
-○バリエーション 検証
-・Attribute 設定
-
-
-○PompidouPattern 処理メモ
-※Surface
-・Frame Block
- -固定
-・Box Block
-・Pipe Block
- -In To In
-
-
-
-■メモ
-※カフェには最低20分
-
-○Public
-・処理確認
-・挙動確認
-・マージ
- ーgit.ignore
+・修正
 ・△AGEHA(※面談前)
 
 ○Private
