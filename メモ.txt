@@ -27,6 +27,9 @@ https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
 
 ○Rationalized Surface
 
+△grasshopper開発環境準備
+・pythonモジュール管理フォルダ
+
 
 ○アニメーション 設計 検証
 ・消 → 着
