@@ -20,11 +20,13 @@ https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
 ○grasshopper カラー設定 検証
 ・https://iarchway.com/custom_preview/
 
-○Rationalized Surface
-※ツールの完成形を設計
+○コスト計算
+・求めた情報を基にコスト計算する処理を実装
 
 △grasshopper開発環境準備
 ・pythonモジュール管理フォルダ
+
+△コストを落とす合理化方法 調査
 
 
 ○アニメーション 設計 検証
@@ -36,6 +38,7 @@ https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
 ●ソース
 float tan_value = tan(0.05 * i + @Frame * 0.1 + @noise * 0.2 + random(v@P) * 0.2);
 float gradation_cofficient = tan_value;
+
 
 ○バリエーション 検証準備
 ・Attribute設定
