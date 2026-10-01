@@ -26,26 +26,20 @@
  -部材のユニット化
  -部材形状の合理化
 
-○Rationalization of Free-Form Architecture
+○ツール実装
 ・ソース準備(GPT → ソースメモ)
- -カラー化
- -Rationalized Surface
- -Deviation
- -Costs
 ・ソース検証
+
+●曲面解析ツール
+・論文(https://www.mdpi.com/2075-5309/13/5/1250)
+※論文を理解し、ツールのイメージをしっかりする
+・視覚化
+ -コスト
+ -曲面
 
 ●GPT(ロジック確認)
 ・概要(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
 ・Pythonソース(https://chatgpt.com/s/t_6aa3d89cc8788191b9a378a4dfeb4a27)
-
-●Rationalization of Free-Form
-※論文を理解し、ツールのイメージをしっかりする
-・論文(https://www.mdpi.com/2075-5309/13/5/1250)
-・入力
- -カラー設定
- -イテレーション回数
-・出力
- -視覚化(カラー)
 
 ○Panel From Surface By Axis
 
