@@ -1,37 +1,25 @@
-﻿○Public
-・ビルド 確認
-　ードキュメント手順の調査
-・ビルド手順懸念点整理
-・△AGEHA(※面談前)
-
-○Private
+﻿○Private
 ・ガンバ大阪チケット
-・防水靴(ダナー)
-・アップルケア
-・液体廃棄
- -脱水ペーパー
-・書類整理
+・靴磨き店確認
 
-△目標設定シート
-https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
-※上期と下期でつながりをもたせる
-※各テーマに対して話す内容を整理する
-※反省を踏まえて次期目標を設定
+○Public
+・ビルドデータ 挙動確認
+・懸念点整理 (ドキュメント準備)
+・ドキュメント内容添削
 
 
-○grasshopper カラー設定 検証
-・https://iarchway.com/custom_preview/
+○アニメーション 設計
+※フランス館アニメーション 参照
+・消 → 着
+・飛沫
+ -tan_value の offsetを調整
+ -After Wave
 
-○コスト計算処理
-・求めた情報を基にコスト計算する処理を実装
-・GPT(https://chatgpt.com/s/t_6abefda65e1c8191ba9a071a2f12a598)
 
-△コストを落とす合理化方法 調査
-
-○曲面解析ツール 設計
-
-△grasshopper開発環境準備
-・pythonモジュール管理フォルダ
+○バリエーション 検証準備
+・Attribute設定
+ -適正値設定
+・Attribute適応
 
 
 ○PompidouPattern 設計
@@ -44,12 +32,48 @@ https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
 
 ○PompidouPattern 検証用処理メモ
 
-○Frame 配置処理設計
-・BaseFrame(1次元)
-・SurfaceFrame(2次元)
 
 
-○アニメーション 設計 検証
+■メモ
+○Public
+・ビルド 確認
+　ードキュメント手順の調査
+・ビルド手順懸念点整理
+・△AGEHA(※面談前)
+
+○Private
+・※アップルケア
+・靴磨き(shine castle)
+・銀座
+ -防水靴(ダナー)
+ -おつまみ
+・液体廃棄
+ -脱水ペーパー
+・書類整理
+
+△目標設定シート
+https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
+※上期と下期でつながりをもたせる
+※各テーマに対して話す内容を整理する
+※反省を踏まえて次期目標を設定
+
+○Study
+・Houdini Foundation (読書)
+　ー※概要部分を整理
+
+
+○grasshopper カラー設定 検証
+・https://iarchway.com/custom_preview/
+
+△曲率を落とす合理化方法 調査
+
+○曲面解析ツール 設計
+
+△grasshopper開発環境準備
+・pythonモジュール管理フォルダ
+
+
+○アニメーション 設計
 ・消 → 着
 ・飛沫
  -tan_value の offsetを調整
@@ -82,3 +106,18 @@ float gradation_cofficient = tan_value;
  -Vertical or Horizontal
  -Pattern Size
 ・色
+
+
+○PompidouPattern 設計
+※Surface
+・Frame Block
+ -固定
+・Box Block
+・Pipe Block
+ -In To In
+
+○PompidouPattern 検証用処理メモ
+
+○Frame 配置処理設計
+・BaseFrame(1次元)
+・SurfaceFrame(2次元)
