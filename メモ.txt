@@ -24,6 +24,7 @@ https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
 
 ○コスト計算処理
 ・求めた情報を基にコスト計算する処理を実装
+・GPT(https://chatgpt.com/s/t_6abefda65e1c8191ba9a071a2f12a598)
 
 △コストを落とす合理化方法 調査
 
@@ -31,6 +32,21 @@ https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
 
 △grasshopper開発環境準備
 ・pythonモジュール管理フォルダ
+
+
+○PompidouPattern 設計
+※Surface
+・Frame Block
+ -固定
+・Box Block
+・Pipe Block
+ -In To In
+
+○PompidouPattern 検証用処理メモ
+
+○Frame 配置処理設計
+・BaseFrame(1次元)
+・SurfaceFrame(2次元)
 
 
 ○アニメーション 設計 検証
@@ -66,18 +82,3 @@ float gradation_cofficient = tan_value;
  -Vertical or Horizontal
  -Pattern Size
 ・色
-
-
-○PompidouPattern 設計
-※Surface
-・Frame Block
- -固定
-・Box Block
-・Pipe Block
- -In To In
-
-○PompidouPattern 検証用処理メモ
-
-○Frame 配置処理設計
-・BaseFrame(1次元)
-・SurfaceFrame(2次元)
