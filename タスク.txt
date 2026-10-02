@@ -34,14 +34,10 @@
 ・論文(https://www.mdpi.com/2075-5309/13/5/1250)
 ※論文を理解し、ツールのイメージをしっかりする
 ・視覚化
- -コスト
- -曲面
 
 ●GPT(ロジック確認)
 ・概要(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
 ・Pythonソース(https://chatgpt.com/s/t_6aa3d89cc8788191b9a378a4dfeb4a27)
-
-○Panel From Surface By Axis
 
 ○Panel To Design
 ※ATLV参照(http://atlv.org/)
