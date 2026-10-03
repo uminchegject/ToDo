@@ -10,40 +10,40 @@
  -脱水ペーパー
 ・書類整理
 
-○目標設定シート
-https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
-※上期と下期でつながりをもたせる
-※各テーマに対して話す内容を整理する
-※反省を踏まえて次期目標を設定
 
+○grasshopper開発環境準備
+・pythonモジュール管理フォルダ
 
 ○grasshopper カラー設定 検証
 ・https://iarchway.com/custom_preview/
 
-○曲面解析ツール 設計
+○曲面解析ツール 実装
 ・※Panel From Surface By Axis
+
+△曲率を落とす合理化処理 設計
+・smoooth機能
+ -Axis
 
 △Panel To Design
 ※ATLV参照(http://atlv.org/)
 ・バリエーション(バリエーション)
 
-△曲率を落とす合理化方法 調査
-
-△grasshopper開発環境準備
-・pythonモジュール管理フォルダ
 
 
 ○アニメーション 設計
 ※フランス館参照(https://www.youtube.com/watch?v=wOtdRfv-lWU)
-・横方向
+・上下運動
 ・消 → 着
 ・飛沫
  -tan_value の offsetを調整
  -After Wave
 
 ●ソース
-float tan_value = tan(0.05 * i + @Frame * 0.1 + @noise * 0.2 + random(v@P) * 0.2);
-float gradation_cofficient = tan_value;
+float gradation_value = tan(0.05 * i);
+float animation_value = sin(@Frame * 0.1);
+float offset_value = @noise * 0.2;
+
+△揺れ検証
 
 ●Design
 ※浮世絵参照
@@ -56,6 +56,8 @@ float gradation_cofficient = tan_value;
 
 
 ○バリエーション 検証
+・固定パラメーターを複数用意
+・パラメーターを組み合わせる
 
 ●バリエーション
 ・Base Volume
@@ -66,7 +68,7 @@ float gradation_cofficient = tan_value;
  -Pattern Size
 ・色
 
-○RaptureCity検証
+○RaptureCity検証 準備
 ※Houdiniで街のある景観をつくる!参考
 ※Middle & Topデザイン
 ・BaseVolume(Randomly)
@@ -92,6 +94,12 @@ float gradation_cofficient = tan_value;
 
 
 ■Public
+○※目標設定シート
+https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
+※上期と下期でつながりをもたせる
+※各テーマに対して話す内容を整理する
+※反省を踏まえて次期目標を設定
+
 ○Public
 ・ビルドデータ挙動確認
 ・CMake 質問
