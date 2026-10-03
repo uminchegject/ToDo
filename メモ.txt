@@ -1,4 +1,33 @@
-﻿○Private
+﻿○アニメーション 設計
+・上下運動
+・消 → 着
+・飛沫(After Wave)
+
+
+○バリエーション 検証
+・固定パラメーターを複数用意
+・パラメーターを組み合わせる
+
+
+○Surface To Panel
+・分割軸の設定
+
+○Panel To Design
+※ATLV参照(http://atlv.org/)
+・バリエーション(バリエーション)
+
+
+○PompidouPattern 設計
+※Surface
+・Frame Block
+ -固定
+・Box Block
+・Pipe Block
+ -In To In
+
+
+■ メモ
+○Private
 ・※アップルケア
 ・靴磨き店 調査(shine castle)
 ・本斥候
@@ -8,38 +37,19 @@
 ・書類整理
 
 
-○grasshopper開発環境準備
-・pythonモジュール管理フォルダ
-
-○Surface To Panel
-・分割軸の設定
-
-○Panel To Design
-※ATLV参照(http://atlv.org/)
-・バリエーション(バリエーション)
-
-○曲面解析ツール 実装
-・※Panel From Surface By Axis
-・grasshopper カラー設定 検証(https://iarchway.com/custom_preview/)
-
-△曲率を落とす合理化処理 設計
-・smoooth機能
- -Axis
-
-
 ○アニメーション 設計
 ※フランス館参照(https://www.youtube.com/watch?v=wOtdRfv-lWU)
 ・上下運動
 ・消 → 着
-・飛沫
- -tan_value の offsetを調整
- -After Wave
+・飛沫(After Wave)
 
 ●ソース
-float gradation_value = tan(0.05 * i);
-float animation_value = sin(@Frame * 0.1);
-float offset_value = @noise * 0.2;
-
+vector color = point(0, "Cd", pt);
+float gradation_value = tan(0.2 * i);
+float animation_value = sin(@Frame * 0.1 * @noise * 2);   
+float cofficient = gradation_value * animation_value;
+color *= cofficient;
+	
 △揺れ検証
 
 ●Design
@@ -73,6 +83,25 @@ float offset_value = @noise * 0.2;
 ・起伏(海峡)
  -Terrain(絶壁)
 ・岩
+
+
+○grasshopper開発環境準備
+・pythonモジュール管理フォルダ
+
+○Surface To Panel
+・分割軸の設定
+
+○Panel To Design
+※ATLV参照(http://atlv.org/)
+・バリエーション(バリエーション)
+
+○曲面解析ツール 実装
+・※Panel From Surface By Axis
+・grasshopper カラー設定 検証(https://iarchway.com/custom_preview/)
+
+△曲率を落とす合理化処理 設計
+・smoooth機能
+ -Axis
 
 
 ○PompidouPattern 設計
