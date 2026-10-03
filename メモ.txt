@@ -1,9 +1,6 @@
 ﻿○Private
 ・※アップルケア
 ・靴磨き店 調査(shine castle)
-・銀座
- -防水靴(ダナー)
- -おつまみ
 ・本斥候
  -AI
 ・液体廃棄
@@ -14,20 +11,20 @@
 ○grasshopper開発環境準備
 ・pythonモジュール管理フォルダ
 
-○grasshopper カラー設定 検証
-・https://iarchway.com/custom_preview/
+○Surface To Panel
+・分割軸の設定
+
+○Panel To Design
+※ATLV参照(http://atlv.org/)
+・バリエーション(バリエーション)
 
 ○曲面解析ツール 実装
 ・※Panel From Surface By Axis
+・grasshopper カラー設定 検証(https://iarchway.com/custom_preview/)
 
 △曲率を落とす合理化処理 設計
 ・smoooth機能
  -Axis
-
-△Panel To Design
-※ATLV参照(http://atlv.org/)
-・バリエーション(バリエーション)
-
 
 
 ○アニメーション 設計
