@@ -1,37 +1,26 @@
-﻿○Private
-・靴磨き店 調査(shine castle)
-・液体廃棄
- -脱水ペーパー
-・年金確認
+﻿○※目標設定シート
+https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
+※上期と下期でつながりをもたせる
+※各テーマに対して話す内容を整理する
+※反省を踏まえて次期目標を設定
 
+○Public
+・CMake 報告＆質問
+・△AGEHA(※面談前)
 
-○Surface To Panel 設計
-・分割軸の設定 
+○Study
+・Houdini Foundation (読書)
+　ー※概要部分を整理
 
-○Panel To Design 設計
-※ATLV参照(http://atlv.org/)
-・バリエーション(バリエーション)
-
-
-○PompidouPattern 設計 & 検証準備(メモ)
-※Surface
-・Frame Block
- -固定
-・Box Block
-・Pipe Block
- -In To In
-
-
-
-■ メモ
 ○Private
-・※アップルケア
+・まどマギ 予約
+・※サバゲー
 ・靴磨き店 調査(shine castle)
 ・本斥候
  -AI
 ・液体廃棄
  -脱水ペーパー
-・書類整理
+・年金確認
 
 
 ○アニメーション 検証 & 実装
@@ -108,20 +97,3 @@
 ○Frame 配置処理設計
 ・BaseFrame(1次元)
 ・SurfaceFrame(2次元)
-
-
-■Public
-○※目標設定シート
-https://hqcri.evaluation.hrbrain.jp/#/usersheets/71002/993256/701978
-※上期と下期でつながりをもたせる
-※各テーマに対して話す内容を整理する
-※反省を踏まえて次期目標を設定
-
-○Public
-・ビルドデータ挙動確認
-・CMake 質問
-・△AGEHA(※面談前)
-
-○Study
-・Houdini Foundation (読書)
-　ー※概要部分を整理

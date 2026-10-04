@@ -39,6 +39,9 @@
 ・概要(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
 ・Pythonソース(https://chatgpt.com/s/t_6aa3d89cc8788191b9a378a4dfeb4a27)
 
+○Surface To Panel
+・分割軸の設定
+
 ○Panel To Design
 ※ATLV参照(http://atlv.org/)
 ・バリエーション(バリエーション)
@@ -75,10 +78,6 @@
 
 ●Design
 ※浮世絵参照
-・Element
- -細さ
- -長さ
- -色
 ・Noise + Randomly
 ・Layer
 
