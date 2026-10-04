@@ -1,25 +1,20 @@
-﻿○現在の処理をAIに添削する
-
-○アニメーション 設計
-・上下運動
-・消 → 着
-・飛沫(After Wave)
-
-
-○バリエーション 検証
-・固定パラメーターを複数用意
-・パラメーターを組み合わせる
+﻿○Private
+・※アップルケア
+・靴磨き店 調査(shine castle)
+・液体廃棄
+ -脱水ペーパー
+・書類整理
 
 
-○Surface To Panel
-・分割軸の設定
+○Surface To Panel 設計
+・分割軸の設定 
 
-○Panel To Design
+○Panel To Design 設計
 ※ATLV参照(http://atlv.org/)
 ・バリエーション(バリエーション)
 
 
-○PompidouPattern 設計
+○PompidouPattern 設計 & 検証準備(メモ)
 ※Surface
 ・Frame Block
  -固定
@@ -40,20 +35,16 @@
 ・書類整理
 
 
-○アニメーション 設計
+○アニメーション 検証 & 実装
 ※フランス館参照(https://www.youtube.com/watch?v=wOtdRfv-lWU)
+・現在の処理をAIに添削する
+
+●アニメーション
 ・上下運動
 ・消 → 着
 ・飛沫(After Wave)
-
-●ソース
-vector color = point(0, "Cd", pt);
-float gradation_value = tan(0.2 * i);
-float animation_value = sin(@Frame * 0.1 * @noise * 2);   
-float cofficient = gradation_value * animation_value;
-color *= cofficient;
 	
-△揺れ検証
+○揺れ検証
 
 ●Design
 ※浮世絵参照
@@ -66,8 +57,8 @@ color *= cofficient;
 
 
 ○バリエーション 検証
-・固定パラメーターを複数用意
-・パラメーターを組み合わせる
+※固定パラメーターを複数用意
+・リファレンスに沿って複数検証
 
 ●バリエーション
 ・Base Volume
@@ -107,15 +98,13 @@ color *= cofficient;
  -Axis
 
 
-○PompidouPattern 設計
+○PompidouPattern 設計 & 検証準備(メモ)
 ※Surface
 ・Frame Block
  -固定
 ・Box Block
 ・Pipe Block
  -In To In
-
-○PompidouPattern 検証用処理メモ
 
 ○Frame 配置処理設計
 ・BaseFrame(1次元)
