@@ -29,9 +29,23 @@
 ・岩
 
 
+○PompidouPattern 設計 & 検証準備(メモ)
+※Surface
+・Frame Block
+ -固定
+・Box Block
+ -Randomly
+・Pipe Block
+ -In To In(Box To Box)
+
+△Frame 配置処理設計
+・BaseFrame(1次元)
+・SurfaceFrame(2次元)
+
+
 ○アニメーション 検証 & 実装
 ※フランス館参照(https://www.youtube.com/watch?v=wOtdRfv-lWU)
-・現在の処理をAIに添削する
+・波アニメーション
 
 ●アニメーション
 ・上下運動
@@ -91,16 +105,3 @@
 △曲率を落とす合理化処理 設計
 ・smoooth機能
  -Axis
-
-
-○PompidouPattern 設計 & 検証準備(メモ)
-※Surface
-・Frame Block
- -固定
-・Box Block
-・Pipe Block
- -In To In
-
-△Frame 配置処理設計
-・BaseFrame(1次元)
-・SurfaceFrame(2次元)
