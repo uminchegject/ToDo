@@ -1,4 +1,37 @@
-﻿■ grasshopper
+﻿
+▫️PompidouPattern
+・Frame Block
+ -固定
+・Box Block
+・Pipe Block
+ -In To In
+
+vector base_scale;
+vector base_pos;
+vector base_unit_scale;
+
+int unit_num_x = (base_scale.x / base_unit_scale.x);
+int unit_num_y = (base_scale.y / base_unit_scale.y);
+
+vector unit_scale = 1;
+unit_scale.x = base_scale / unit_num_x;
+unit_scale.y = base_scale / unit_num_y;
+
+for(int x_idx = 0; x_idx < unit_num_x; x_idx++){
+
+    for(int y_idx = 0; y_idx < unit_num_y; y_idx++){
+
+        vector pos = base_pos;
+        pos.x += x_idx * unit_scale.x;
+        pos.y += y_idx * unit_scale.y;
+
+        int frame_pt = addpoint(0, pos);
+        setpoint(0, "scale", frame_pt, unit_scale);
+    }
+}
+
+
+■ grasshopper
 ```python
 import Rhino.Geometry as rg
 

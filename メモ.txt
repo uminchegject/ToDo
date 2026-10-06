@@ -23,6 +23,11 @@
 
 ○エージェント 準備
 
+○Houdiniで街のある景観をつくる! Study
+・起伏(海峡)
+ -Terrain(絶壁)
+・岩
+
 
 ○アニメーション 検証 & 実装
 ※フランス館参照(https://www.youtube.com/watch?v=wOtdRfv-lWU)
@@ -33,7 +38,7 @@
 ・消 → 着
 ・飛沫(After Wave)
 
-○揺れ検証
+△揺れ検証
 
 ●Design
 ※浮世絵参照
@@ -58,7 +63,7 @@
  -Pattern Size
 ・色
 
-○RaptureCity検証 準備
+△RaptureCity検証 準備
 ※Houdiniで街のある景観をつくる!参考
 ※Middle & Topデザイン
 ・BaseVolume(Randomly)
@@ -68,8 +73,6 @@
 ・岩
 
 
-○grasshopper開発環境準備
-・pythonモジュール管理フォルダ
 
 ○Surface To Panel
 ・分割軸の設定
@@ -78,7 +81,10 @@
 ※ATLV参照(http://atlv.org/)
 ・バリエーション(バリエーション)
 
-○曲面解析ツール 実装
+△grasshopper開発環境準備
+・pythonモジュール管理フォルダ
+
+△曲面解析ツール 実装
 ・※Panel From Surface By Axis
 ・grasshopper カラー設定 検証(https://iarchway.com/custom_preview/)
 
@@ -95,6 +101,6 @@
 ・Pipe Block
  -In To In
 
-○Frame 配置処理設計
+△Frame 配置処理設計
 ・BaseFrame(1次元)
 ・SurfaceFrame(2次元)
