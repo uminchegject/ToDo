@@ -1,5 +1,11 @@
 ﻿○Public
-・タスク調査 検証 準備
+・Editor機能 Study
+・materialX 調査
+ -フォーマット
+ -Editor(必要機能)
+・Maya・Houdini Editor再現方法 調査
+ -文献(AI)
+・ラウンドテーブル 準備
 ・個人目標 設定
 
 ○Study
