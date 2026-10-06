@@ -21,6 +21,9 @@
 ・年金確認
 
 
+○エージェント 準備
+
+
 ○アニメーション 検証 & 実装
 ※フランス館参照(https://www.youtube.com/watch?v=wOtdRfv-lWU)
 ・現在の処理をAIに添削する
