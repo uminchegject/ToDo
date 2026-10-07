@@ -1,20 +1,4 @@
-﻿○地形生成処理 メモ
-・絶壁
-・資料
- -Foundation
- -Houdiniで街のある景観をつくる!
-
-○PompidouPattern メモ
-・Box Block
- -Randomly
- -Pipe Block(Box To Box)
-
-○波アニメーション メモ & 検証
-・Noise Pos スライド
-
-
-■メモ
-○Client
+﻿○Client
 ・Editor 仕様整理
 ・各DCC MaterialX 使用方法整理
  -Houdini VOP
@@ -51,7 +35,15 @@ https://github.com/AcademySoftwareFoundation/MaterialX/blob/main/documents/Devel
  -平地にVolume
 
 
-○PompidouPattern 設計 & 検証準備(メモ)
+○PompidouPattern メモ
+・PipeBlock BasePoint
+ -Slide
+ -△Randomly
+・Module
+ -Box Block
+ -Pipe Block(Box To Box)
+
+○PompidouPattern 設計 & 検証
 ※Surface
 ・Frame Block
  -固定
@@ -65,7 +57,7 @@ https://github.com/AcademySoftwareFoundation/MaterialX/blob/main/documents/Devel
 ・SurfaceFrame(2次元)
 
 
-○アニメーション 設計
+○アニメーション 設計 & メモ
 ※フランス館参照(https://www.youtube.com/watch?v=wOtdRfv-lWU)
 ・横波
 ・Drop
@@ -87,6 +79,11 @@ https://github.com/AcademySoftwareFoundation/MaterialX/blob/main/documents/Devel
 ・Noise + Randomly
 ・Layer
 
+
+○地形生成 検証
+・テライン生成
+・マスク
+・Volume
 
 ○バリエーション 検証
 ※固定パラメーターを複数用意

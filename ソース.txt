@@ -1,36 +1,9 @@
-﻿■PompidouPattern
-・Frame Block
- -固定
-・Box Block
-・Pipe Block
- -In To In
+﻿■アニメーション
+※フランス館参照(https://www.youtube.com/watch?v=wOtdRfv-lWU)
+・横波
+ -Noise Pos スライド
+・Drop & Wave
 
-vector base_scale;
-vector base_pos;
-vector base_unit_scale;
-
-int unit_num_x = (base_scale.x / base_unit_scale.x);
-int unit_num_y = (base_scale.y / base_unit_scale.y);
-
-vector unit_scale = 1;
-unit_scale.x = base_scale / unit_num_x;
-unit_scale.y = base_scale / unit_num_y;
-
-for(int x_idx = 0; x_idx < unit_num_x; x_idx++){
-
-    for(int y_idx = 0; y_idx < unit_num_y; y_idx++){
-
-        vector pos = base_pos;
-        pos.x += x_idx * unit_scale.x;
-        pos.y += y_idx * unit_scale.y;
-
-        int frame_pt = addpoint(0, pos);
-        setpoint(0, "scale", frame_pt, unit_scale);
-    }
-}
-
-
-■波アニメーション
 int pts[] = primpoints(0, @primnum);
 
 float values[];
@@ -47,11 +20,48 @@ for (int i = 0; i < pts_num; i++)
 {
     int pt = pts[order[i]];
     vector color = point(0, "Cd", pt);
-    float gradation_value = tan(0.2 * i);
-    float animation_value = sin(@Frame * 0.1 * @noise * 2);   
-    float cofficient = gradation_value * animation_value;
+
+    vector pos = v@P;
+    pos.y = 0;
+    pos.x += @Frame;
+    float cofficient = tan(0.2 * i + sin(pos * 0.1));
     color *= cofficient;
     setpointattrib(0, "Cd", pt, color, "set");
+}
+
+
+■PompidouPattern
+・PipeBlock BasePoint
+ -Slide
+ -△Randomly
+
+vector base_scale;
+vector base_pos;
+vector base_unit_scale;
+
+int unit_num_x = (base_scale.x / base_unit_scale.x);
+int unit_num_y = (base_scale.y / base_unit_scale.y);
+
+vector unit_scale = 1;
+unit_scale.x = base_scale / unit_num_x;
+unit_scale.y = base_scale / unit_num_y;
+
+for(int x_idx = 0; x_idx < unit_num_x; x_idx++){
+
+    //Frame
+    for(int y_idx = 0; y_idx < unit_num_y; y_idx++){
+
+        vector pos = base_pos;
+        pos.x += x_idx * unit_scale.x;
+        pos.y += y_idx * unit_scale.y;
+
+        int frame_pt = addpoint(0, pos);
+        setpoint(0, "scale", frame_pt, unit_scale);
+
+    }
+
+    //Pipe
+
 }
 
 
