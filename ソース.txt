@@ -1,5 +1,4 @@
-﻿
-▫️PompidouPattern
+﻿■PompidouPattern
 ・Frame Block
  -固定
 ・Box Block
@@ -28,6 +27,31 @@ for(int x_idx = 0; x_idx < unit_num_x; x_idx++){
         int frame_pt = addpoint(0, pos);
         setpoint(0, "scale", frame_pt, unit_scale);
     }
+}
+
+
+■波アニメーション
+int pts[] = primpoints(0, @primnum);
+
+float values[];
+foreach (int pt; pts)
+{
+    vector pos = point(0, "P", pt);
+    append(values, pos.y);
+}
+
+int order[] = argsort(values);
+float pts_num = len(pts);
+
+for (int i = 0; i < pts_num; i++)
+{
+    int pt = pts[order[i]];
+    vector color = point(0, "Cd", pt);
+    float gradation_value = tan(0.2 * i);
+    float animation_value = sin(@Frame * 0.1 * @noise * 2);   
+    float cofficient = gradation_value * animation_value;
+    color *= cofficient;
+    setpointattrib(0, "Cd", pt, color, "set");
 }
 
 

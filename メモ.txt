@@ -1,12 +1,33 @@
-﻿○Public
-・Editor機能 Study
-・materialX 調査
- -フォーマット
- -Editor(必要機能)
-・Maya・Houdini Editor再現方法 調査
- -文献(AI)
+﻿○地形生成処理 メモ
+・絶壁
+・資料
+ -Foundation
+ -Houdiniで街のある景観をつくる!
+
+○PompidouPattern メモ
+・Box Block
+ -Randomly
+ -Pipe Block(Box To Box)
+
+○波アニメーション メモ & 検証
+・Noise Pos スライド
+
+
+■メモ
+○Client
+・Editor 仕様整理
+・各DCC MaterialX 使用方法整理
+ -Houdini VOP
+ -Maya LookDevX
+
+●GPT
+https://github.com/AcademySoftwareFoundation/MaterialX/blob/main/documents/DeveloperGuide/GraphEditor.md
+上記ドキュメントのようなMaterialXのエディタ機能をHoudiniでのVOPで代用できるか検証したいのだが、参考になりそうなフォーラムやドキュメントをリストアップして
+
+○Public
 ・ラウンドテーブル 準備
 ・個人目標 設定
+
 
 ○Study
 ・Houdini Foundation (読書)
@@ -44,15 +65,16 @@
 ・SurfaceFrame(2次元)
 
 
-○アニメーション 検証 & 実装
+○アニメーション 設計
 ※フランス館参照(https://www.youtube.com/watch?v=wOtdRfv-lWU)
-・波アニメーション
- -NoiseのPosをスライド
+・横波
+・Drop
 
 ●アニメーション
-・上下運動
 ・消 → 着
 ・飛沫(After Wave)
+
+○アニメーション 検証 & 実装
 
 △揺れ検証
 
