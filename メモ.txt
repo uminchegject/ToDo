@@ -24,9 +24,10 @@
 ○エージェント 準備
 
 ○Houdiniで街のある景観をつくる! Study
+・各項目に沿って順番に実装する
 ・起伏(海峡)
  -Terrain(絶壁)
-・岩
+ -平地にVolume
 
 
 ○PompidouPattern 設計 & 検証準備(メモ)
@@ -35,8 +36,8 @@
  -固定
 ・Box Block
  -Randomly
-・Pipe Block
- -In To In(Box To Box)
+ -Pipe Block(Box To Box)
+・△Pipe Block
 
 △Frame 配置処理設計
 ・BaseFrame(1次元)
@@ -46,6 +47,7 @@
 ○アニメーション 検証 & 実装
 ※フランス館参照(https://www.youtube.com/watch?v=wOtdRfv-lWU)
 ・波アニメーション
+ -NoiseのPosをスライド
 
 ●アニメーション
 ・上下運動
@@ -85,7 +87,6 @@
 ・起伏(海峡)
  -Terrain(絶壁)
 ・岩
-
 
 
 ○Surface To Panel
