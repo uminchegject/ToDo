@@ -60,7 +60,8 @@ https://github.com/AcademySoftwareFoundation/MaterialX/blob/main/documents/Devel
 ○アニメーション 設計 & メモ
 ※フランス館参照(https://www.youtube.com/watch?v=wOtdRfv-lWU)
 ・横波
-・Drop
+ -Noise Pos スライド
+・Drop & Wave
 
 ●アニメーション
 ・消 → 着
