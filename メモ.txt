@@ -29,9 +29,6 @@ https://github.com/AcademySoftwareFoundation/MaterialX/blob/main/documents/Devel
 
 ○Houdiniで街のある景観をつくる! Study
 ・各項目に沿って順番に実装する
-・起伏(海峡)
- -Terrain(絶壁)
- -平地にVolume
 
 
 ○PompidouPattern メモ
@@ -61,14 +58,13 @@ https://github.com/AcademySoftwareFoundation/MaterialX/blob/main/documents/Devel
 ・横波
  -Noise Pos スライド
 ・Drop & Wave
+・△揺れ
 
 ●アニメーション
 ・消 → 着
 ・飛沫(After Wave)
 
 ○アニメーション 検証 & 実装
-
-△揺れ検証
 
 ●Design
 ※浮世絵参照
