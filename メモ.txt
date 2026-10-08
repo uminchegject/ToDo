@@ -1,12 +1,51 @@
 ﻿○Client
-・Editor 仕様整理
-・各DCC MaterialX 使用方法整理
- -Houdini VOP
- -Maya LookDevX
+・各DCC MaterialX 調査項目整理(調査準備)
+　ー検証事例調査
+　ー機能調査
+
+○Study
+・Houdini Foundation (読書)
+ ー※概要部分を整理
+
+○Houdiniで街のある景観をつくる! Study
+・各項目に沿って順番に実装する
+
+
+○PompidouPattern メモ
+・PipeBlock BasePoint
+ -Slide
+ -△Randomly
+・Module
+ -Box Block
+ -Pipe Block(Box To Box)
+
+○アニメーション 設計 & メモ
+※フランス館参照(https://www.youtube.com/watch?v=wOtdRfv-lWU)
+・横波
+ -Noise Pos スライド
+・Drop & Wave
+・△揺れ
+
+○地形生成 検証
+・テライン生成
+・マスク
+・Volume
+
+
+■メモ
+○Client
+・各DCC MaterialX 調査項目整理(調査準備)
+・各DCC MaterialX 調査
+ -事例調査
+ -機能調査
+
+●公式ドキュメント
+https://www.sidefx.com/ja/docs/houdini/solaris/materialx.html
+https://help.autodesk.com/view/MAYAUL/2024/JPN/?guid=GUID-5C076445-22FB-4C74-9147-43672BCF88CD
 
 ●GPT
 https://github.com/AcademySoftwareFoundation/MaterialX/blob/main/documents/DeveloperGuide/GraphEditor.md
-上記ドキュメントのようなMaterialXのエディタ機能をHoudiniでのVOPで代用できるか検証したいのだが、参考になりそうなフォーラムやドキュメントをリストアップして
+上記ドキュメントのようなMaterialXのエディタ機能をHoudiniで下記ドキュメント機能などを利用して、代用できるか検証したいのだが、参考になりそうなフォーラムやドキュメントをリストアップして。
 
 ○Public
 ・ラウンドテーブル 準備
@@ -25,10 +64,10 @@ https://github.com/AcademySoftwareFoundation/MaterialX/blob/main/documents/Devel
 ・Houdini Foundation (読書)
  ー※概要部分を整理
 
-○エージェント 準備
-
 ○Houdiniで街のある景観をつくる! Study
 ・各項目に沿って順番に実装する
+
+△AG準備
 
 
 ○PompidouPattern メモ
