@@ -1,4 +1,32 @@
-﻿○Client
+﻿○クライアント
+・必要機能整理
+・ラーニング
+ -https://chatgpt.com/s/t_6ac76fd3d35481918c5cfd5c8e90331f
+ -https://chatgpt.com/s/t_6ac76ff8ee488191ba0e1ea885dab620
+
+○PompidouPattern 検証
+・PipeBlock BasePoint
+ -Slide
+ -△Randomly
+・Module
+ -Box Block
+ -Pipe Block(Box To Box)
+
+○フランス館アニメーション 設計 & メモ
+※フランス館参照(https://www.youtube.com/watch?v=wOtdRfv-lWU)
+・横波
+ -Noise Pos スライド
+・Drop & Wave
+・△揺れ
+
+○地形生成 検証
+・テライン生成
+・マスク
+・Volume
+
+
+■メモ
+○Client
 ・必要機能整理
 ・ラーニング
 ・機能比較
@@ -11,8 +39,6 @@ https://help.autodesk.com/view/MAYAUL/2024/JPN/?guid=GUID-5C076445-22FB-4C74-914
 https://github.com/AcademySoftwareFoundation/MaterialX/blob/main/documents/DeveloperGuide/GraphEditor.md
 上記ドキュメントのようなMaterialXのエディタ機能をHoudiniで下記ドキュメント機能などを利用して、代用できるか検証したいのだが、参考になりそうなフォーラムやドキュメントをリストアップして。
 上記ドキュメントのようなMaterialXのエディタ機能をHoudiniで下記ドキュメント機能などを利用して、代用できるか検証したいのだが、そのための適切なTutorialを調べて
-・https://chatgpt.com/s/t_6ac76fd3d35481918c5cfd5c8e90331f
-・https://chatgpt.com/s/t_6ac76ff8ee488191ba0e1ea885dab620
 
 ○Public
 ・ラウンドテーブル 準備
