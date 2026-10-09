@@ -1,4 +1,5 @@
 ﻿○MaterialX Study
+※Client 準備
 ・構造
 ・Editor
 
