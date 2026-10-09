@@ -1,6 +1,6 @@
 ﻿○クライアント
 ・必要機能整理
-・ラーニング
+・ラーニング(Houdini 優先)
  -https://chatgpt.com/s/t_6ac76fd3d35481918c5cfd5c8e90331f
  -https://chatgpt.com/s/t_6ac76ff8ee488191ba0e1ea885dab620
 
