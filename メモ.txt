@@ -1,8 +1,7 @@
-﻿○クライアント
-・必要機能整理
-・ラーニング(Houdini 優先)
- -https://chatgpt.com/s/t_6ac76fd3d35481918c5cfd5c8e90331f
- -https://chatgpt.com/s/t_6ac76ff8ee488191ba0e1ea885dab620
+﻿○MaterialX Study
+・構造
+・Editor
+
 
 ○PompidouPattern 検証
 ・PipeBlock BasePoint
@@ -25,25 +24,8 @@
 ・Volume
 
 
+
 ■メモ
-○Client
-・必要機能整理
-・ラーニング
-・機能比較
-
-●公式ドキュメント
-https://www.sidefx.com/ja/docs/houdini/solaris/materialx.html
-https://help.autodesk.com/view/MAYAUL/2024/JPN/?guid=GUID-5C076445-22FB-4C74-9147-43672BCF88CD
-
-●GPT
-https://github.com/AcademySoftwareFoundation/MaterialX/blob/main/documents/DeveloperGuide/GraphEditor.md
-上記ドキュメントのようなMaterialXのエディタ機能をHoudiniで下記ドキュメント機能などを利用して、代用できるか検証したいのだが、参考になりそうなフォーラムやドキュメントをリストアップして。
-上記ドキュメントのようなMaterialXのエディタ機能をHoudiniで下記ドキュメント機能などを利用して、代用できるか検証したいのだが、そのための適切なTutorialを調べて
-
-○Public
-・ラウンドテーブル 準備
-・個人目標 設定
-
 ○Private
 ・靴磨き店 調査(shine castle)
 ・本斥候
@@ -153,3 +135,45 @@ https://github.com/AcademySoftwareFoundation/MaterialX/blob/main/documents/Devel
 △曲率を落とす合理化処理 設計
 ・smoooth機能
  -Axis
+ 
+ 
+■Public
+○Client
+・ツールラーニング
+　-※動画で挙動を確認
+・MaterialXデータ構造確認
+・基本仕様再現
+　ーインポート
+　ーエディット
+　ーエクスポート
+
+●公式ドキュメント
+https://www.sidefx.com/ja/docs/houdini/solaris/materialx.html
+https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=GUID-139850AD-F5B8-4F7C-87A5-214C787423FC
+
+●資料
+https://qiita.com/kit2cuz/items/d4459493248b147f4ea6
+https://www.sidefx.com/ja/docs/houdini/solaris/materialx.html
+https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=LookdevX_LookdevX_for_Maya_Tutorial_Files_MaterialX_Displacement_MaterialX_Displacement_html
+https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=GUID-C5538D9F-612D-4735-BAA9-96C0104CCB22
+https://help.autodesk.com/view/MAYAUL/2026/ENU/?guid=GUID-CEFCBC08-58A4-4470-BEC6-FBA478644BC3
+https://www.youtube.com/watch?v=Z-9W3CIwt9k
+
+●GPT
+https://github.com/AcademySoftwareFoundation/MaterialX/blob/main/documents/DeveloperGuide/GraphEditor.md
+上記ドキュメントのようなMaterialXのエディタ機能を、下記ドキュメントを参考に代用できるか検証したい。
+具体的には、MaterialXのインポート、エディット、エクスポートの基本的な機能の部分のみをシンプルに検証してみたい。
+
+同じ要領で下記ドキュメントのLookdevXについても調査して
+https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=GUID-139850AD-F5B8-4F7C-87A5-214C787423FC
+https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=GUID-C5538D9F-612D-4735-BAA9-96C0104CCB22
+https://help.autodesk.com/view/MAYAUL/2026/ENU/?guid=GUID-CEFCBC08-58A4-4470-BEC6-FBA478644BC3
+
+Houdiniで下記ドキュメント機能などを利用して、
+代用できるか検証したいのだが、参考になりそうなフォーラムやドキュメントをリストアップして。
+上記ドキュメントのようなMaterialXのエディタ機能をHoudiniで下記ドキュメント機能などを利用して、代用できるか検証したいのだが、そのための適切なTutorialを調べて
+
+○Public
+・ラウンドテーブルテーマ
+・クイズサンプル
+・個人目標 設定
