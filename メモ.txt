@@ -1,7 +1,14 @@
-﻿○MaterialX Study
+﻿○MaterialXで遊ぶ
+
+○MaterialX Study
 ※Client 準備
 ・構造
 ・Editor
+
+
+○カジュアル面談 質問
+
+○CDFAM 調査
 
 
 ○PompidouPattern 検証
@@ -13,7 +20,7 @@
  -Pipe Block(Box To Box)
 
 ○フランス館アニメーション 設計 & メモ
-※フランス館参照(https://www.youtube.com/watch?v=wOtdRfv-lWU)
+※フランス館参照
 ・横波
  -Noise Pos スライド
 ・Drop & Wave
@@ -25,8 +32,7 @@
 ・Volume
 
 
-
-■メモ
+▫️メモ
 ○Private
 ・靴磨き店 調査(shine castle)
 ・本斥候
@@ -42,8 +48,6 @@
 
 ○Houdiniで街のある景観をつくる! Study
 ・各項目に沿って順番に実装する
-
-△AG準備
 
 
 ○PompidouPattern メモ
@@ -119,25 +123,7 @@
 ・岩
 
 
-○Surface To Panel
-・分割軸の設定
 
-○Panel To Design
-※ATLV参照(http://atlv.org/)
-・バリエーション(バリエーション)
-
-△grasshopper開発環境準備
-・pythonモジュール管理フォルダ
-
-△曲面解析ツール 実装
-・※Panel From Surface By Axis
-・grasshopper カラー設定 検証(https://iarchway.com/custom_preview/)
-
-△曲率を落とす合理化処理 設計
-・smoooth機能
- -Axis
- 
- 
 ■Public
 ○Client
 ・ツールラーニング
