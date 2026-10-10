@@ -46,6 +46,8 @@ vector unit_scale = 1;
 unit_scale.x = base_scale / unit_num_x;
 unit_scale.y = base_scale / unit_num_y;
 
+int pipe_unit_num = 3;
+
 for(int x_idx = 0; x_idx < unit_num_x; x_idx++){
 
     //Frame
@@ -56,11 +58,23 @@ for(int x_idx = 0; x_idx < unit_num_x; x_idx++){
         pos.y += y_idx * unit_scale.y;
 
         int frame_pt = addpoint(0, pos);
-        setpoint(0, "scale", frame_pt, unit_scale);
+        setpointattrib(0, "scale", frame_pt, unit_scale);
 
     }
 
     //Pipe
+    if(y_idx % pipe_unit_num == 0)
+    {
+        vector pos = base_pos;
+        pos.x += x_idx * unit_scale.x;
+        pos.y += y_idx * unit_scale.y;
+        int pipe_pt = addpoint(0, pos);
+
+        vector pipe_unit_scale = unit_scale;
+        pipe_unit_scale.y *= pipe_unit_num;
+        setpointattrib(0, "scale", pipe_pt, pipe_unit_scale);
+
+    }
 
 }
 
