@@ -13,7 +13,7 @@
 
 
 ■Rationalization Tool
-⚪︎※CDFAM 調査
+●※CDFAM 調査
 
 ●設計
 ・曲面の合理化
