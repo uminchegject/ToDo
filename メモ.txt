@@ -1,14 +1,19 @@
-﻿○MaterialXで遊ぶ
-
-○MaterialX Study
+﻿○MaterialX Study
 ※Client 準備
 ・構造
 ・Editor
+・GPT(https://chatgpt.com/share/6acae61d-a8ec-83e8-9f16-dab47db25783)
 
 
 ○カジュアル面談 質問
+・業務について
+ -業務におけるコンピュテーショナルデザインについて
+ -求められているスキルについて
+・不足している点について
+
 
 ○CDFAM 調査
+・カジュアル面談質問項目整理
 
 
 ○PompidouPattern 検証
@@ -123,46 +128,29 @@
 ・岩
 
 
-
 ■Public
 ○Client
+※Houdiniに集中
+・MaterialX Study
 ・ツールラーニング
 　-※動画で挙動を確認
-・MaterialXデータ構造確認
 ・基本仕様再現
 　ーインポート
 　ーエディット
 　ーエクスポート
 
-●公式ドキュメント
-https://www.sidefx.com/ja/docs/houdini/solaris/materialx.html
-https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=GUID-139850AD-F5B8-4F7C-87A5-214C787423FC
-
 ●資料
-https://qiita.com/kit2cuz/items/d4459493248b147f4ea6
 https://www.sidefx.com/ja/docs/houdini/solaris/materialx.html
+https://qiita.com/kit2cuz/items/d4459493248b147f4ea6
+https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=GUID-139850AD-F5B8-4F7C-87A5-214C787423FC
 https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=LookdevX_LookdevX_for_Maya_Tutorial_Files_MaterialX_Displacement_MaterialX_Displacement_html
 https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=GUID-C5538D9F-612D-4735-BAA9-96C0104CCB22
 https://help.autodesk.com/view/MAYAUL/2026/ENU/?guid=GUID-CEFCBC08-58A4-4470-BEC6-FBA478644BC3
 https://www.youtube.com/watch?v=Z-9W3CIwt9k
 
-●GPT
-https://github.com/AcademySoftwareFoundation/MaterialX/blob/main/documents/DeveloperGuide/GraphEditor.md
-上記ドキュメントのようなMaterialXのエディタ機能を、下記ドキュメントを参考に代用できるか検証したい。
-具体的には、MaterialXのインポート、エディット、エクスポートの基本的な機能の部分のみをシンプルに検証してみたい。
-
-同じ要領で下記ドキュメントのLookdevXについても調査して
-https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=GUID-139850AD-F5B8-4F7C-87A5-214C787423FC
-https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=GUID-C5538D9F-612D-4735-BAA9-96C0104CCB22
-https://help.autodesk.com/view/MAYAUL/2026/ENU/?guid=GUID-CEFCBC08-58A4-4470-BEC6-FBA478644BC3
-
-Houdiniで下記ドキュメント機能などを利用して、
-代用できるか検証したいのだが、参考になりそうなフォーラムやドキュメントをリストアップして。
-上記ドキュメントのようなMaterialXのエディタ機能をHoudiniで下記ドキュメント機能などを利用して、代用できるか検証したいのだが、そのための適切なTutorialを調べて
-
 ○Public
-・ラウンドテーブルテーマ
- 
-・クイズサンプル
+・ラウンドテーブル
+ -テーマ
+・クイズ
  -グループ
 ・個人目標 設定
