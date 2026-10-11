@@ -1,44 +1,4 @@
-﻿○MaterialX Study
-※Client 準備
-・構造
-・Editor
-・GPT(https://chatgpt.com/share/6acae61d-a8ec-83e8-9f16-dab47db25783)
-
-
-○カジュアル面談 質問
-・業務について
- -業務におけるコンピュテーショナルデザインについて
- -求められているスキルについて
-・不足している点について
-
-
-○CDFAM 調査
-・カジュアル面談質問項目整理
-
-
-○PompidouPattern 検証
-・PipeBlock BasePoint
- -Slide
- -△Randomly
-・Module
- -Box Block
- -Pipe Block(Box To Box)
-
-○フランス館アニメーション 設計 & メモ
-※フランス館参照
-・横波
- -Noise Pos スライド
-・Drop & Wave
-・△揺れ
-
-△地形生成 検証
-※サンプルファイルを確認
-・テライン生成
-・マスク
-・Volume
-
-
-■メモ
+﻿■メモ
 ○Private
 ・靴磨き店 調査(shine castle)
 ・本斥候
@@ -60,6 +20,8 @@
 ・PipeBlock BasePoint
  -Slide
  -△Randomly
+
+⚪︎Pipe Module モデリング
 ・Module
  -Box Block
  -Pipe Block(Box To Box)
@@ -102,9 +64,18 @@
 
 
 ○地形生成 検証
+※サンプルファイルを確認
 ・テライン生成
 ・マスク
 ・Volume
+
+●RaptureCity
+※Middle & Topデザイン
+・BaseVolume(Randomly)
+ -Scatter
+・起伏(海峡)
+ -Terrain(絶壁)
+・岩
 
 ○バリエーション 検証
 ※固定パラメーターを複数用意
@@ -119,17 +90,13 @@
  -Pattern Size
 ・色
 
-△RaptureCity検証 準備
-※Houdiniで街のある景観をつくる!参考
-※Middle & Topデザイン
-・BaseVolume(Randomly)
- -Scatter
-・起伏(海峡)
- -Terrain(絶壁)
-・岩
 
 
 ■Public
+○MaterialX Study
+※Client 準備
+・GPT(https://chatgpt.com/share/6acae61d-a8ec-83e8-9f16-dab47db25783)
+
 ○Client
 ※Houdiniに集中
 ・MaterialX Study
