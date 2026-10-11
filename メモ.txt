@@ -1,8 +1,10 @@
-﻿⚪︎旅行準備
+﻿○旅行準備
 
 ○Computational Design Study
-・CDFAM 調査
-・業務
+・※Study(情報収集) 方法調査
+・ComputationalDesign 調査
+ -需要
+ -CDFAM
 
 ○カジュアル面談 質問
 ・業務について
