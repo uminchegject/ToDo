@@ -21,11 +21,11 @@ for (int i = 0; i < pts_num; i++)
     int pt = pts[order[i]];
     vector color = point(0, "Cd", pt);
 
-    vector pos = v@P;
-    pos.y = 0;
-    pos.x *= 1.8;
-    pos.x += @Frame * 0.1;
-    float cofficient = tan(0.2 * i + sin(pos.x));
+    vector cofficient_pos = v@P;
+    cofficient_pos.y = 0;
+    cofficient_pos *= 2.0;
+    cofficient_pos += @Frame * 0.1;
+    float cofficient = noise(cofficient_pos);
     color *= cofficient;
     setpointattrib(0, "Cd", pt, color, "set");
 }
