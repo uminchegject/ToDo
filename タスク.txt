@@ -5,40 +5,9 @@
 ※引き出しを用意する
 
 ○Employ 準備
-・※相談
-・RE 準備 調査
 ・書類整理(フォルダ整理)
 ・テック Study
  -清水(https://www.shimz.co.jp/dde/)
-
-
-■Computational Design
-●※CDFAM 調査
-
-●設計
-・曲面の合理化
- -※文献ベースで実装
- -建築形態の合理化
- -合理的曲面分割
-・パネル化
- -※合理化(文献)に応じたパネルデザインを設計する
- -部材のユニット化
- -部材形状の合理化
-
-○ツール実装
-・ソース準備(GPT → ソースメモ)
-・ソース検証
-
-●GPT(ロジック確認)
-・概要(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
-・Pythonソース(https://chatgpt.com/s/t_6aa3d89cc8788191b9a378a4dfeb4a27)
-
-○Surface To Panel
-・分割軸の設定
-
-○Panel To Design
-※ATLV参照(http://atlv.org/)
-・バリエーション(バリエーション)
 
 
 ■ポルトガル館
@@ -127,6 +96,35 @@
   -In Out
   -From Box
   -Multi Layer
+
+
+■Computational Design
+●※CDFAM 調査
+
+●設計
+・曲面の合理化
+ -※文献ベースで実装
+ -建築形態の合理化
+ -合理的曲面分割
+・パネル化
+ -※合理化(文献)に応じたパネルデザインを設計する
+ -部材のユニット化
+ -部材形状の合理化
+
+○ツール実装
+・ソース準備(GPT → ソースメモ)
+・ソース検証
+
+●GPT(ロジック確認)
+・概要(https://chatgpt.com/s/t_6aa0df964a4c8191972269f1ea43e203)
+・Pythonソース(https://chatgpt.com/s/t_6aa3d89cc8788191b9a378a4dfeb4a27)
+
+○Surface To Panel
+・分割軸の設定
+
+○Panel To Design
+※ATLV参照(http://atlv.org/)
+・バリエーション(バリエーション)
 
 
 ■Study

@@ -1,32 +1,8 @@
-﻿○MaterialX Study
-※Client 準備
-・GPT(https://chatgpt.com/share/6acae61d-a8ec-83e8-9f16-dab47db25783)
+﻿○啓発漫画
 
-○Client
-※Houdiniに集中
-・MaterialX Study
-・ツールラーニング
- -※動画で挙動を確認
-・基本仕様再現
- ーインポート
- ーエディット
- ーエクスポート
-
-●資料
-https://www.sidefx.com/ja/docs/houdini/solaris/materialx.html
-https://qiita.com/kit2cuz/items/d4459493248b147f4ea6
-https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=GUID-139850AD-F5B8-4F7C-87A5-214C787423FC
-https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=LookdevX_LookdevX_for_Maya_Tutorial_Files_MaterialX_Displacement_MaterialX_Displacement_html
-https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=GUID-C5538D9F-612D-4735-BAA9-96C0104CCB22
-https://help.autodesk.com/view/MAYAUL/2026/ENU/?guid=GUID-CEFCBC08-58A4-4470-BEC6-FBA478644BC3
-https://www.youtube.com/watch?v=Z-9W3CIwt9k
-
-○Public
-・ラウンドテーブル
- -テーマ
-・クイズ
- -グループ
-・個人目標 設定
+○Conference 準備
+・経歴書印刷
+・メモ整理(※話すこと準備)
 
 
 ○Private
@@ -38,25 +14,12 @@ https://www.youtube.com/watch?v=Z-9W3CIwt9k
 ・年金確認
 
 
-○Employ
-・経歴書
-・メモ整理
-
-
-○Study
-・Houdini Foundation (読書)
- ー※概要部分を整理
-
-○Houdiniで街のある景観をつくる! Study
-・各項目に沿って順番に実装する
-
-
 ○PompidouPattern メモ
 ・PipeBlock BasePoint
  -Slide
  -△Randomly
 
-⚪︎Pipe Module モデリング
+○Pipe Module モデリング
 ・Module
  -Box Block
  -Pipe Block(Box To Box)
@@ -125,3 +88,36 @@ https://www.youtube.com/watch?v=Z-9W3CIwt9k
  -Pattern Size
 ・色
 
+
+
+■メモ
+○Client
+※Houdiniに集中
+・基本仕様再現
+ ーインポート
+ ーエディット
+ ーエクスポート
+
+●資料
+https://www.sidefx.com/ja/docs/houdini/solaris/materialx.html
+https://qiita.com/kit2cuz/items/d4459493248b147f4ea6
+https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=GUID-139850AD-F5B8-4F7C-87A5-214C787423FC
+https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=LookdevX_LookdevX_for_Maya_Tutorial_Files_MaterialX_Displacement_MaterialX_Displacement_html
+https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=GUID-C5538D9F-612D-4735-BAA9-96C0104CCB22
+https://help.autodesk.com/view/MAYAUL/2026/ENU/?guid=GUID-CEFCBC08-58A4-4470-BEC6-FBA478644BC3
+・GPT(https://chatgpt.com/share/6acae61d-a8ec-83e8-9f16-dab47db25783)
+
+○Public
+・Q定例
+ -クイズ(グループ)
+ -ラウンドテーブル
+ -オードブル(ホットモット,他)
+・個人目標 設定
+
+
+○Study
+・Houdini Foundation (読書)
+ ー※概要部分を整理
+
+○Houdiniで街のある景観をつくる! Study
+・各項目に沿って順番に実装する
