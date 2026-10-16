@@ -1,15 +1,34 @@
-﻿※自己啓発はKindleで漫画
+﻿○MaterialX Study
+※Client 準備
+・GPT(https://chatgpt.com/share/6acae61d-a8ec-83e8-9f16-dab47db25783)
 
-⚪︎30代に向けて
+○Client
+※Houdiniに集中
+・MaterialX Study
+・ツールラーニング
+ -※動画で挙動を確認
+・基本仕様再現
+ ーインポート
+ ーエディット
+ ーエクスポート
 
-○カジュアル面談 質問
-・業務について
- -業務におけるコンピュテーショナルデザインについて
- -求められているスキルについて
-・不足している点について
+●資料
+https://www.sidefx.com/ja/docs/houdini/solaris/materialx.html
+https://qiita.com/kit2cuz/items/d4459493248b147f4ea6
+https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=GUID-139850AD-F5B8-4F7C-87A5-214C787423FC
+https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=LookdevX_LookdevX_for_Maya_Tutorial_Files_MaterialX_Displacement_MaterialX_Displacement_html
+https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=GUID-C5538D9F-612D-4735-BAA9-96C0104CCB22
+https://help.autodesk.com/view/MAYAUL/2026/ENU/?guid=GUID-CEFCBC08-58A4-4470-BEC6-FBA478644BC3
+https://www.youtube.com/watch?v=Z-9W3CIwt9k
+
+○Public
+・ラウンドテーブル
+ -テーマ
+・クイズ
+ -グループ
+・個人目標 設定
 
 
-■メモ
 ○Private
 ・靴磨き店 調査(shine castle)
 ・本斥候
@@ -17,6 +36,11 @@
 ・液体廃棄
  -脱水ペーパー
 ・年金確認
+
+
+○Employ
+・経歴書
+・メモ整理
 
 
 ○Study
@@ -101,35 +125,3 @@
  -Pattern Size
 ・色
 
-
-
-■Public
-○MaterialX Study
-※Client 準備
-・GPT(https://chatgpt.com/share/6acae61d-a8ec-83e8-9f16-dab47db25783)
-
-○Client
-※Houdiniに集中
-・MaterialX Study
-・ツールラーニング
-　-※動画で挙動を確認
-・基本仕様再現
-　ーインポート
-　ーエディット
-　ーエクスポート
-
-●資料
-https://www.sidefx.com/ja/docs/houdini/solaris/materialx.html
-https://qiita.com/kit2cuz/items/d4459493248b147f4ea6
-https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=GUID-139850AD-F5B8-4F7C-87A5-214C787423FC
-https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=LookdevX_LookdevX_for_Maya_Tutorial_Files_MaterialX_Displacement_MaterialX_Displacement_html
-https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=GUID-C5538D9F-612D-4735-BAA9-96C0104CCB22
-https://help.autodesk.com/view/MAYAUL/2026/ENU/?guid=GUID-CEFCBC08-58A4-4470-BEC6-FBA478644BC3
-https://www.youtube.com/watch?v=Z-9W3CIwt9k
-
-○Public
-・ラウンドテーブル
- -テーマ
-・クイズ
- -グループ
-・個人目標 設定
