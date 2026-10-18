@@ -9,7 +9,6 @@
 
 ○MaterialX
 ※ベース + アイデア + ソリューション
-・USD・MaterialXを使用したインテリアマップシェーダー(https://www.monolithsoft.co.jp/techblog/articles/000554.html)
 
 ●インタラクティブアート(TeamLabs)
 ・ゲームエンジンで表現
@@ -23,16 +22,8 @@
  -Pipeの用途別配色
 
 
-○買い物
-・お茶
- -ティーパック
-・歯間ブラシ
-・寝巻
- -アウター
-・Tops
- -gicipi3 lana-seta
-
 ○Private
+・gicipi3 lana-seta
 ・靴磨き店 調査(shine castle)
 ・本斥候
  -AI
