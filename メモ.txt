@@ -1,26 +1,25 @@
-﻿※会社でのスポーツ観戦は無音
- -Study 調査
+﻿○Client
+※Houdiniに集中
+・基本仕様再現
+ ーインポート
+ ー※エディット
+ ーエクスポート
 
-●国会図書館
-・※事前準備(調査内容整理)
- -活字系の知識は事前に調べておく
-・画集メイン(ビジュアル資料メイン)
+●資料
+https://www.sidefx.com/ja/docs/houdini/solaris/materialx.html
+https://qiita.com/kit2cuz/items/d4459493248b147f4ea6
+https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=GUID-139850AD-F5B8-4F7C-87A5-214C787423FC
+https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=LookdevX_LookdevX_for_Maya_Tutorial_Files_MaterialX_Displacement_MaterialX_Displacement_html
+https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=GUID-C5538D9F-612D-4735-BAA9-96C0104CCB22
+https://help.autodesk.com/view/MAYAUL/2026/ENU/?guid=GUID-CEFCBC08-58A4-4470-BEC6-FBA478644BC3
+・GPT(https://chatgpt.com/share/6acae61d-a8ec-83e8-9f16-dab47db25783)
 
-
-○MaterialX
-※ベース + アイデア + ソリューション
-
-●インタラクティブアート(TeamLabs)
-・ゲームエンジンで表現
-
-●アールデコ
-・Cops
-・Terrain
-
-●メタボリズム
-・ポンピドゥセンター
- -Pipeの用途別配色
-
+○Public
+・Q定例
+ -クイズ(グループ)
+ -ラウンドテーブル
+ -オードブル(ホットモット,他)
+・個人目標 設定
 
 ○Private
 ・洋服
@@ -34,6 +33,10 @@
 ・年金確認
 
 
+○Study
+・Houdini Foundation (読書)
+ ー※概要部分を整理
+
 ○Next
 ・カンファレンス&講演会 調査
 ・Porfolio 準備
@@ -41,30 +44,14 @@
  -Qiita
 
 
-■メモ
-○PompidouPattern メモ
-・PipeBlock BasePoint
- -Slide
- -△Randomly
+⚪︎紐の表現 Study
 
-○Pipe Module モデリング
-・Module
- -Box Block
- -Pipe Block(Box To Box)
+⚪︎ポルトガル館 記事化
 
-○PompidouPattern 設計 & 検証
-※Surface
-・Frame Block
- -固定
-・Box Block
- -Randomly
- -Pipe Block(Box To Box)
-・△Pipe Block
 
-△Frame 配置処理設計
-・BaseFrame(1次元)
-・SurfaceFrame(2次元)
-
+○ゲームエンジンで表現 Study
+※インタラクティブアート
+・参考資料 調査
 
 ○フランス館アニメーション  設計 & メモ
 ※フランス館参照(https://www.youtube.com/watch?v=wOtdRfv-lWU)
@@ -88,6 +75,13 @@
 ・Noise + Randomly
 ・Layer
 
+
+○Houdiniで街のある景観をつくる! Study
+・各項目に沿って順番に実装する
+
+○Cops Study
+※アールデコ模様
+・資料 調査
 
 ○地形生成 検証
 ※サンプルファイルを確認
@@ -117,35 +111,27 @@
 ・色
 
 
+○PompidouPattern メモ
+・PipeBlock BasePoint
+ -Slide
+ -△Randomly
 
-■Client
-○Client
-※Houdiniに集中
-・基本仕様再現
- ーインポート
- ーエディット
- ーエクスポート
+○Pipe Module モデリング
+・Module
+ -Box Block
+ -Pipe Block(Box To Box)
 
-●資料
-https://www.sidefx.com/ja/docs/houdini/solaris/materialx.html
-https://qiita.com/kit2cuz/items/d4459493248b147f4ea6
-https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=GUID-139850AD-F5B8-4F7C-87A5-214C787423FC
-https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=LookdevX_LookdevX_for_Maya_Tutorial_Files_MaterialX_Displacement_MaterialX_Displacement_html
-https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=GUID-C5538D9F-612D-4735-BAA9-96C0104CCB22
-https://help.autodesk.com/view/MAYAUL/2026/ENU/?guid=GUID-CEFCBC08-58A4-4470-BEC6-FBA478644BC3
-・GPT(https://chatgpt.com/share/6acae61d-a8ec-83e8-9f16-dab47db25783)
+○PompidouPattern 設計 & 検証
+※Surface
+・Frame Block
+ -固定
+・Box Block
+ -多様化
+  -Color, BlockSize
+ -Randomly
+ -Pipe Block(Box To Box)
+・△Pipe Block
 
-○Public
-・Q定例
- -クイズ(グループ)
- -ラウンドテーブル
- -オードブル(ホットモット,他)
-・個人目標 設定
-
-
-○Study
-・Houdini Foundation (読書)
- ー※概要部分を整理
-
-○Houdiniで街のある景観をつくる! Study
-・各項目に沿って順番に実装する
+△Frame 配置処理設計
+・BaseFrame(1次元)
+・SurfaceFrame(2次元)
