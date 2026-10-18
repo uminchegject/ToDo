@@ -23,8 +23,8 @@ https://help.autodesk.com/view/MAYAUL/2026/ENU/?guid=GUID-CEFCBC08-58A4-4470-BEC
 
 ○Private
 ・洋服
-　ー部屋着(しまむら)
-　ーGicipi(Roppongi)
+ ー部屋着(しまむら)
+ ーGicipi(Roppongi)
 ・靴磨き店 調査(shine castle)
 ・本斥候
  -AI
@@ -36,6 +36,8 @@ https://help.autodesk.com/view/MAYAUL/2026/ENU/?guid=GUID-CEFCBC08-58A4-4470-BEC
 ○Study
 ・Houdini Foundation (読書)
  ー※概要部分を整理
+
+○OneStruction Study
 
 ○Next
 ・カンファレンス&講演会 調査
