@@ -1,27 +1,8 @@
 ﻿○Client
-・各項目の検証及びドキュメント化
- ーインポート
- ー※エディット
- ーエクスポート
-
-
-○シェーダー Study
-・HTML魔導書 読書
-　ー基礎
-・MaterialX
-　ーHoudini
-　ーMaya
-　ーUnreal
-
-
-
-■メモ
-○Client
-※Houdiniに集中
-・各項目の検証及びドキュメント化
- ーインポート
- ー※エディット
- ーエクスポート
+・中間報告
+　ー途中経過ドキュメント整理
+　ー質問整理
+・△拡張検証
 
 ●資料
 https://www.sidefx.com/ja/docs/houdini/solaris/materialx.html
@@ -33,9 +14,9 @@ https://help.autodesk.com/view/MAYAUL/2026/ENU/?guid=GUID-CEFCBC08-58A4-4470-BEC
 ・GPT(https://chatgpt.com/share/6acae61d-a8ec-83e8-9f16-dab47db25783)
 
 ○Public
-・Q定例
+※・Q定例
  -クイズ(グループ)
- -ラウンドテーブル
+ -△ラウンドテーブル
  -オードブル(ホットモット,他)
 ・個人目標 設定
 
@@ -51,17 +32,25 @@ https://help.autodesk.com/view/MAYAUL/2026/ENU/?guid=GUID-CEFCBC08-58A4-4470-BEC
 ・年金確認
 
 
-○Study
+○シェーダー Study
+・HTML魔導書 読書
+　ー基礎
+・MaterialX
+　ー各ソフト(Unreal, Houdini, Maya)
+　ー編集機能
+
+○Houdini Study
 ・Houdini Foundation (読書)
  ー※概要部分を整理
+
 
 ○Want 準備
 ・他サイト 調査
 ・プロフィール 用意
 ・OneStruction Study
 
-
 ○Next
+※多様化
 ・カンファレンス&講演会 調査
 ・Porfolio 準備
  -ArtWork
