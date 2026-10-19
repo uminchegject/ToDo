@@ -1,4 +1,22 @@
 ﻿○Client
+・各項目の検証及びドキュメント化
+ ーインポート
+ ー※エディット
+ ーエクスポート
+
+
+○シェーダー Study
+・HTML魔導書 読書
+　ー基礎
+・MaterialX
+　ーHoudini
+　ーMaya
+　ーUnreal
+
+
+
+■メモ
+○Client
 ※Houdiniに集中
 ・各項目の検証及びドキュメント化
  ーインポート
@@ -50,9 +68,9 @@ https://help.autodesk.com/view/MAYAUL/2026/ENU/?guid=GUID-CEFCBC08-58A4-4470-BEC
  -Qiita
 
 
-⚪︎紐の表現 Study
+○紐の表現 Study
 
-⚪︎ポルトガル館 記事化
+○ポルトガル館 記事化
 
 
 ○ゲームエンジンで表現 Study
