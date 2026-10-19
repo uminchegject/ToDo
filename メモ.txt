@@ -1,4 +1,30 @@
-﻿○Client
+﻿⚪︎material Study
+※各ソフトウェアで検証
+ -Maya ⇄ Houdini
+・Create Shader
+ -簡単なシェーダーを選択
+・Export
+・Import
+
+
+⚪︎Terrain サンプルデータ確認
+・Houdini Foundation
+・Houdiniで街のある景観をつくる！
+
+⚪︎Cops Tutorial
+・DIAMOND PLATE TEXTURES IN COPS
+・Craft Man
+
+△Houdini To Unreal
+・SideFXProject
+
+
+⚪︎Unreal Engine　インスタレーション Study
+・MASTER DYNAMIC ENVIRONMENTS & FX: PART 1
+
+
+■メモ
+○Client
 ・中間報告
 　ー途中経過ドキュメント整理
 　ー質問整理
