@@ -1,10 +1,12 @@
-﻿⚪︎material Study
+﻿⚪︎materialX Study
 ※各ソフトウェアで検証
  -Maya ⇄ Houdini
 ・Create Shader
  -簡単なシェーダーを選択
 ・Export
 ・Import
+
+△Solaris Study
 
 
 ⚪︎Terrain サンプルデータ確認
@@ -21,6 +23,15 @@
 
 ⚪︎Unreal Engine　インスタレーション Study
 ・MASTER DYNAMIC ENVIRONMENTS & FX: PART 1
+
+
+⚪︎紐 Unreal 表現
+・GPT
+
+
+⚪︎Pipe + Box Block パラメトリック化
+・サイズ
+・カラー
 
 
 ■メモ
