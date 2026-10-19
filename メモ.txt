@@ -30,8 +30,15 @@
 
 
 ⚪︎Pipe + Box Block パラメトリック化
-・サイズ
-・カラー
+・Pattern
+ -角度
+ -間隔
+ -Size
+・Object(Box + Pipe)
+ -数
+ -角度
+ -サイズ
+ -カラー
 
 
 ■メモ
