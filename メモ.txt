@@ -1,6 +1,6 @@
-﻿⚪︎materialX Study
+﻿○materialX Study
 ※各ソフトウェアで検証
- -Maya ⇄ Houdini
+ -Maya + Houdini
 ・Create Shader
  -簡単なシェーダーを選択
 ・Export
@@ -9,11 +9,11 @@
 △Solaris Study
 
 
-⚪︎Terrain サンプルデータ確認
+○Terrain サンプルデータ確認
 ・Houdini Foundation
 ・Houdiniで街のある景観をつくる！
 
-⚪︎Cops Tutorial
+○Cops Tutorial
 ・DIAMOND PLATE TEXTURES IN COPS
 ・Craft Man
 
@@ -21,15 +21,15 @@
 ・SideFXProject
 
 
-⚪︎Unreal Engine　インスタレーション Study
+○UnrealEngine インスタレーション Study
 ・MASTER DYNAMIC ENVIRONMENTS & FX: PART 1
 
 
-⚪︎紐 Unreal 表現
+○紐 Unreal 表現
 ・GPT
 
 
-⚪︎Pipe + Box Block パラメトリック化
+○Pipe + Box Block パラメトリック化
 ・Pattern
  -角度
  -間隔
