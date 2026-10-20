@@ -1,8 +1,15 @@
-﻿○materialX Study
+﻿○Q定例
+・クイズ(グループ)
+ -4人１組でグループにし、4人で答えを考える方式
+ -様々な分野のクイズを出し、グループメンバーが協力して考えるようにする
+・オードブル(ホットモット)
+ -テーブルメンバーで1つのオードブルを共有する
+
+○materialX Study
 ※各ソフトウェアで検証
  -Maya + Houdini
 ・Create Shader
- -簡単なシェーダーを選択
+ -簡単なシェーダーを選択(GPT)
 ・Export
 ・Import
 
@@ -21,11 +28,10 @@
 ・SideFXProject
 
 
-○UnrealEngine インスタレーション Study
-・MASTER DYNAMIC ENVIRONMENTS & FX: PART 1
+△UnrealEngine インスタレーション Study
+・GPT
 
-
-○紐 Unreal 表現
+△紐 Unreal 表現
 ・GPT
 
 
