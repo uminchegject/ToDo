@@ -1,4 +1,11 @@
-﻿○materialX Study
+﻿○Client
+・外部ライブラリ検証
+・既存ノード検証
+・フック検証 準備
+　ー※ゴールをイメージ
+　ー事例調査
+
+○materialX Study
 ※各ソフトウェアで検証
  -Maya + Houdini
 ・Create Shader
@@ -41,12 +48,6 @@
 
 
 ■メモ
-○Client
-・中間報告
-　ー途中経過ドキュメント整理
-　ー質問整理
-・△拡張検証
-
 ●資料
 https://www.sidefx.com/ja/docs/houdini/solaris/materialx.html
 https://qiita.com/kit2cuz/items/d4459493248b147f4ea6
@@ -57,11 +58,9 @@ https://help.autodesk.com/view/MAYAUL/2026/ENU/?guid=GUID-CEFCBC08-58A4-4470-BEC
 ・GPT(https://chatgpt.com/share/6acae61d-a8ec-83e8-9f16-dab47db25783)
 
 ○Public
-※・Q定例
- -クイズ(グループ)
- -△ラウンドテーブル
- -オードブル(ホットモット,他)
-・個人目標 設定
+※・個人目標 設定
+・Q定例
+ -クイズ アイデア 共有
 
 ○Private
 ・洋服
