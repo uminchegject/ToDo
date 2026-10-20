@@ -28,11 +28,12 @@
 ・SideFXProject
 
 
+⚪︎SideFX UnrealTutorial群 調査
+・Titan
+
 △UnrealEngine インスタレーション Study
-・GPT
 
 △紐 Unreal 表現
-・GPT
 
 
 ○Pipe + Box Block パラメトリック化
