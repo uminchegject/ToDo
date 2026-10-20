@@ -2,8 +2,8 @@
 ・外部ライブラリ検証
 ・既存ノード検証
 ・フック検証 準備
-　ー※ゴールをイメージ
-　ー事例調査
+ ー※ゴールをイメージ
+ ー事例調査
 
 ○materialX Study
 ※各ソフトウェアで検証
@@ -14,7 +14,7 @@
 ・Import
 
 △Solaris Study
-
+・SOLARIS ESSENTIALS
 
 ○Terrain サンプルデータ確認
 ・Houdini Foundation
@@ -28,7 +28,7 @@
 ・SideFXProject
 
 
-⚪︎SideFX UnrealTutorial群 調査
+○SideFX UnrealTutorial群 調査
 ・Titan
 
 △UnrealEngine インスタレーション Study
