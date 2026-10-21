@@ -4,10 +4,7 @@
 　ー挙動内の不明点調査
 ・編集操作のフック 調査
 
-
-○HTML魔導書 読書
-
-○materialX Study
+○materialX 検証
 ※各ソフトウェアで検証
  -Maya + Houdini
 ・Edit
@@ -15,15 +12,17 @@
 ・Import
 
 
-○Solaris Study
-・Karma User Guide Materials
-・Houdini Cook Book Vol.127 Solaris / USDベースのワークフロー
-・SOLARIS ESSENTIALS
+○HTML魔導書 読書
 
-○Cops Tutorial
+○Solaris Study
+・Karma User Guide Materials (基礎)
+・Houdini Cook Book Vol.127 Solaris / USDベースのワークフロー (基礎)
+・SOLARIS ESSENTIALS (必要)
+
+○Cops Study
 ※アールデコ 模様
-・DIAMOND PLATE TEXTURES IN COPS
-・Craft Man
+・DIAMOND PLATE TEXTURES IN COPS (基礎)
+・Craft Man (必要)
 
 
 ○SideFX UnrealTutorial群 調査
@@ -31,6 +30,9 @@ https://www.sidefx.com/learn-main-menu/production-projects
 ・UnrealEngine インスタレーション Study
 ・Terrain Study
 
+
+○波インスタレーション 設計
+・TeamLabs
 
 ○Pipe + Box Block パラメトリック化
 ・Pattern
