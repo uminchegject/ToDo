@@ -14,29 +14,22 @@
 ・Export
 ・Import
 
+
 ○Solaris Study
 ・Karma User Guide Materials
 ・Houdini Cook Book Vol.127 Solaris / USDベースのワークフロー
 ・SOLARIS ESSENTIALS
 
-
-○Houdiniで街のある景観をつくる！ Study
-・各項目ごとに確認
-
 ○Cops Tutorial
+※アールデコ 模様
 ・DIAMOND PLATE TEXTURES IN COPS
 ・Craft Man
 
-△Houdini To Unreal
-・SideFX UnrealTutorial群 調査
-
 
 ○SideFX UnrealTutorial群 調査
-・Titan
-
-△UnrealEngine インスタレーション Study
-
-△紐 Unreal 表現
+https://www.sidefx.com/learn-main-menu/production-projects
+・UnrealEngine インスタレーション Study
+・Terrain Study
 
 
 ○Pipe + Box Block パラメトリック化
