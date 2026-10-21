@@ -1,8 +1,11 @@
 ﻿○Client
-・既存ライブラリ 調査 (必要)
+・既存ライブラリ 調査 
 ・外部ライブラリ検証
-　ー挙動内の不明点調査
-・編集操作のフック 調査 (必要)
+ ー挙動内の不明点調査
+・編集操作のフック 調査
+
+
+○Houdini Export 調査
 
 ○materialX 検証
 ※各ソフトウェアで検証
@@ -15,17 +18,21 @@
 ○HTML魔導書 読書
 
 ○Solaris Study
-・Karma User Guide Materials (基礎)
-・Houdini Cook Book Vol.127 Solaris / USDベースのワークフロー (基礎)
-・SOLARIS ESSENTIALS (必要)
+・Karma User Guide Materials 
+・Houdini Cook Book Vol.127 Solaris / USDベースのワークフロー 
+・SOLARIS ESSENTIALS (調査資料)
 
 ○Cops Study
 ※アールデコ 模様
-・DIAMOND PLATE TEXTURES IN COPS (基礎)
-・Craft Man (必要)
+・DIAMOND PLATE TEXTURES IN COPS (検証)
+・Craft Man (調査資料)
 
 
-○SideFX UnrealTutorial群 調査
+○Terrain 調査
+・GPT
+・houdiniで街のある景観をつくる! (調査資料)
+
+○SideFX UnrealTutorial群 をベースに調査
 https://www.sidefx.com/learn-main-menu/production-projects
 ・UnrealEngine インスタレーション Study
 ・Terrain Study
