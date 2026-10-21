@@ -1,37 +1,16 @@
 ﻿○Client
+・既存ライブラリ 調査
 ・外部ライブラリ検証
 　ー挙動内の不明点調査
-・既存ライブラリの確認
-　ー挙動確認
-・ドキュメントメモ
-　－挙動確認を踏まえて記載すべき情報を整理
-・編集操作のフック
-　ー実際の挙動確認(※ゴールの確認)
-　ー必要な対応の整理
-
-○materialX Study(Houdini)
-・Edit
-・Export
-
-○Houdiniで街のある景観をつくる！ Strudy
-
-△クイズ
-・サンプルをSlackに用意
+・編集操作のフック 調査
 
 
-■メモ
-○Client
-・外部ライブラリ検証
-・既存ノード検証
-・フック検証 準備
- ー※ゴールをイメージ
- ー事例調査
+○HTML魔導書 読書
 
 ○materialX Study
 ※各ソフトウェアで検証
  -Maya + Houdini
-・Create Shader
- -簡単なシェーダーを選択(GPT)
+・Edit
 ・Export
 ・Import
 
@@ -41,16 +20,15 @@
 ・SOLARIS ESSENTIALS
 
 
-○Terrain サンプルデータ確認
-・Houdini Foundation
-・Houdiniで街のある景観をつくる！
+○Houdiniで街のある景観をつくる！ Study
+・各項目ごとに確認
 
 ○Cops Tutorial
 ・DIAMOND PLATE TEXTURES IN COPS
 ・Craft Man
 
 △Houdini To Unreal
-・SideFXProject
+・SideFX UnrealTutorial群 調査
 
 
 ○SideFX UnrealTutorial群 調査
@@ -74,14 +52,6 @@
 
 
 ■メモ
-●資料
-https://www.sidefx.com/ja/docs/houdini/solaris/materialx.html
-https://qiita.com/kit2cuz/items/d4459493248b147f4ea6
-https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=GUID-139850AD-F5B8-4F7C-87A5-214C787423FC
-https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=LookdevX_LookdevX_for_Maya_Tutorial_Files_MaterialX_Displacement_MaterialX_Displacement_html
-https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=GUID-C5538D9F-612D-4735-BAA9-96C0104CCB22
-https://help.autodesk.com/view/MAYAUL/2026/ENU/?guid=GUID-CEFCBC08-58A4-4470-BEC6-FBA478644BC3
-
 ○Public
 ※・個人目標 設定
 ・Q定例
@@ -97,18 +67,6 @@ https://help.autodesk.com/view/MAYAUL/2026/ENU/?guid=GUID-CEFCBC08-58A4-4470-BEC
 ・液体廃棄
  -脱水ペーパー
 ・年金確認
-
-
-○シェーダー Study
-・HTML魔導書 読書
-　ー基礎
-・MaterialX
-　ー各ソフト(Unreal, Houdini, Maya)
-　ー編集機能
-
-○Houdini Study
-・Houdini Foundation (読書)
- ー※概要部分を整理
 
 
 ○Want 準備
@@ -156,18 +114,17 @@ https://help.autodesk.com/view/MAYAUL/2026/ENU/?guid=GUID-CEFCBC08-58A4-4470-BEC
 ・Layer
 
 
-○Houdiniで街のある景観をつくる! Study
-・各項目に沿って順番に実装する
+○Terrain Study
 
 ○Cops Study
 ※アールデコ模様
-・資料 調査
 
 ○地形生成 検証
 ※サンプルファイルを確認
 ・テライン生成
 ・マスク
 ・Volume
+・レンダリング
 
 ●RaptureCity
 ※Middle & Topデザイン
