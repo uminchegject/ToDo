@@ -13,13 +13,10 @@
 ・Edit
 ・Export
 
+○Houdiniで街のある景観をつくる！ Strudy
+
 △クイズ
 ・サンプルをSlackに用意
-
-○Terrain サンプルデータ確認
-・Houdini Foundation
-・Houdiniで街のある景観をつくる！
-
 
 
 ■メモ
