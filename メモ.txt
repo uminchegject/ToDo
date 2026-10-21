@@ -1,5 +1,30 @@
 ﻿○Client
 ・外部ライブラリ検証
+　ー挙動内の不明点調査
+・既存ライブラリの確認
+　ー挙動確認
+・ドキュメントメモ
+　－挙動確認を踏まえて記載すべき情報を整理
+・編集操作のフック
+　ー実際の挙動確認(※ゴールの確認)
+　ー必要な対応の整理
+
+○materialX Study(Houdini)
+・Edit
+・Export
+
+△クイズ
+・サンプルをSlackに用意
+
+○Terrain サンプルデータ確認
+・Houdini Foundation
+・Houdiniで街のある景観をつくる！
+
+
+
+■メモ
+○Client
+・外部ライブラリ検証
 ・既存ノード検証
 ・フック検証 準備
  ー※ゴールをイメージ
@@ -13,7 +38,9 @@
 ・Export
 ・Import
 
-△Solaris Study
+○Solaris Study
+・Karma User Guide Materials
+・Houdini Cook Book Vol.127 Solaris / USDベースのワークフロー
 ・SOLARIS ESSENTIALS
 
 
@@ -57,7 +84,6 @@ https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=GUID-139850AD-F5B8-4F7C-87A
 https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=LookdevX_LookdevX_for_Maya_Tutorial_Files_MaterialX_Displacement_MaterialX_Displacement_html
 https://help.autodesk.com/view/MAYAUL/2026/JPN/?guid=GUID-C5538D9F-612D-4735-BAA9-96C0104CCB22
 https://help.autodesk.com/view/MAYAUL/2026/ENU/?guid=GUID-CEFCBC08-58A4-4470-BEC6-FBA478644BC3
-・GPT(https://chatgpt.com/share/6acae61d-a8ec-83e8-9f16-dab47db25783)
 
 ○Public
 ※・個人目標 設定
