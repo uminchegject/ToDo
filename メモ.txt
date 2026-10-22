@@ -1,33 +1,9 @@
 ﻿○Client
-・Houdini カスタムノード定義 検証
+・外部ライブラリ使用情報 整理
 ・編集操作のフック 調査
+・ドキュメントメモ 準備
 
-○DIAMOND PLATE TEXTURES IN COPS 検証
-
-○Terrain 検証
-
-
-○波インスタレーション 設計
-・TeamLabs
-
-○Pipe + Box Block パラメトリック化
-・Pattern
- -角度
- -間隔
- -Size
-・Object(Box + Pipe)
- -数
- -角度
- -サイズ
- -カラー
-
-
-■メモ
-○Client
-・既存ライブラリ 調査 
-・外部ライブラリ検証
- ー挙動内の不明点調査
-・編集操作のフック 調査
+○個人目標 設定
 
 
 ○HTML魔導書 読書
@@ -42,22 +18,20 @@
 ※アールデコ 模様
 ・DIAMOND PLATE TEXTURES IN COPS 
 ・Craft Man (調査資料)
+・COPS - Colorful Plate Texture Maps(調査資料)
+
+○Hython Study
 
 
 ○海底 検証
 ・形状生成
 ・カラーリング
 
-●資料
+●調査資料
 ・GPT(https://chatgpt.com/s/t_6ad95b5e3b548191a37a5940b67736ca)
 ・※Terrain creation
 ・Erosion
-
-
-○SideFX UnrealTutorial 調査
-https://www.sidefx.com/learn-main-menu/production-projects
-・UnrealEngine インスタレーション Study
-・Terrain Study
+・WorldBuilding/Terrain
 
 
 ○波インスタレーション 設計
@@ -75,9 +49,9 @@ https://www.sidefx.com/learn-main-menu/production-projects
  -カラー
 
 
+
 ■メモ
 ○Public
-※・個人目標 設定
 ・Q定例
  -クイズ アイデア 共有
 
@@ -104,6 +78,12 @@ https://www.sidefx.com/learn-main-menu/production-projects
 ・Porfolio 準備
  -ArtWork
  -Qiita
+
+
+○※SideFX UnrealTutorial 調査
+https://www.sidefx.com/learn-main-menu/production-projects
+・UnrealEngine インスタレーション Study
+・Terrain Study
 
 
 ○紐の表現 Study
