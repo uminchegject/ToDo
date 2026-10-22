@@ -1,23 +1,39 @@
 ﻿○Client
+・Houdini カスタムノード定義 検証
+・編集操作のフック 調査
+
+○DIAMOND PLATE TEXTURES IN COPS 検証
+
+○Terrain 検証
+
+
+○波インスタレーション 設計
+・TeamLabs
+
+○Pipe + Box Block パラメトリック化
+・Pattern
+ -角度
+ -間隔
+ -Size
+・Object(Box + Pipe)
+ -数
+ -角度
+ -サイズ
+ -カラー
+
+
+■メモ
+○Client
 ・既存ライブラリ 調査 
 ・外部ライブラリ検証
  ー挙動内の不明点調査
 ・編集操作のフック 調査
 
 
-○Houdini Export 調査
-
-○materialX 検証
-※各ソフトウェアで検証
- -Maya + Houdini
-・Edit
-・Export
-・Import
-
-
 ○HTML魔導書 読書
 
 ○Solaris Study
+※MaterialX
 ・Houdini Cook Book Vol.127 Solaris / USDベースのワークフロー 
 ・Karma User Guide Materials (調査資料)
 ・SOLARIS ESSENTIALS (調査資料)
