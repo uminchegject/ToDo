@@ -18,21 +18,27 @@
 ○HTML魔導書 読書
 
 ○Solaris Study
-・Karma User Guide Materials 
 ・Houdini Cook Book Vol.127 Solaris / USDベースのワークフロー 
+・Karma User Guide Materials (調査資料)
 ・SOLARIS ESSENTIALS (調査資料)
 
 ○Cops Study
 ※アールデコ 模様
-・DIAMOND PLATE TEXTURES IN COPS (検証)
+・DIAMOND PLATE TEXTURES IN COPS 
 ・Craft Man (調査資料)
 
 
-○Terrain 調査
-・GPT
-・houdiniで街のある景観をつくる! (調査資料)
+○海底 検証
+・形状生成
+・カラーリング
 
-○SideFX UnrealTutorial群 をベースに調査
+●資料
+・GPT(https://chatgpt.com/s/t_6ad95b5e3b548191a37a5940b67736ca)
+・※Terrain creation
+・Erosion
+
+
+○SideFX UnrealTutorial 調査
 https://www.sidefx.com/learn-main-menu/production-projects
 ・UnrealEngine インスタレーション Study
 ・Terrain Study
