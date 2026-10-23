@@ -1,11 +1,52 @@
-﻿○Client
-・編集操作のフック 検証
-・外部ライブラリ使用情報 整理
-・ドキュメントメモ 準備
+﻿○個人目標 設定
 
-○個人目標 設定
+○Private
+・洋服
+ ー部屋着(しまむら)
+ ーGicipi(Roppongi)
+・靴磨き店 調査(shine castle)
+・本斥候
+ -AI
+・液体廃棄
+ -脱水ペーパー
+・年金確認
 
 
+○Want 準備
+・他サイト 調査
+・プロフィール 用意
+・OneStruction Study
+
+○Next
+※多様化
+・カンファレンス&講演会 調査
+・Porfolio 準備
+ -ArtWork
+ -Qiita
+
+
+○※Rapture City 準備
+・Terrain
+　ー地形生成
+　ーMask & Scatter (Building)
+・Corpernicus
+
+○波インスタレーション 設計
+・TeamLabs
+
+○Pipe + Box Block パラメトリック化
+・Pattern
+ -角度
+ -間隔
+ -Size
+・Object(Box + Pipe)
+ -数
+ -角度
+ -サイズ
+ -カラー
+
+
+■Study メモ
 ○HTML魔導書 読書
 
 ○Solaris Study
@@ -30,26 +71,11 @@
 ・WorldBuilding/Terrain
 
 
-○※Rapture City 準備
-・Terrain
- -Building
-・Corpernicus
-
-○波インスタレーション 設計
-・TeamLabs
-
-○Pipe + Box Block パラメトリック化
-・Pattern
- -角度
- -間隔
- -Size
-・Object(Box + Pipe)
- -数
- -角度
- -サイズ
- -カラー
-
 ■メモ
+○Client
+・ドキュメント 作成
+・詳細 調査
+
 ○Q定例
 ・ケータリングアイデア
 ・クイズ アイデア 共有
@@ -103,40 +129,9 @@ https://www.sidefx.com/learn-main-menu/production-projects
 ・UnrealEngine インスタレーション Study
 ・Terrain Study
 
-
-○紐の表現 Study
-
-○ポルトガル館 記事化
-
-
-○ゲームエンジンで表現 Study
-※インタラクティブアート
-・参考資料 調査
-
-○フランス館アニメーション  設計 & メモ
-※フランス館参照(https://www.youtube.com/watch?v=wOtdRfv-lWU)
-・横波
- -Noise Pos スライド
-・Drop & Wave
-・△揺れ
-
-●アニメーション
-・消 → 着
-・飛沫(After Wave)
-
-○フランス館アニメーション 検証 & 実装
-
-●Design
-※浮世絵参照
-・Element
- -細さ
- -長さ
- -色
-・Noise + Randomly
-・Layer
-
-
+ 
 ○Terrain Study
+・海底表現 調査
 
 ○Cops Study
 ※アールデコ模様
@@ -194,3 +189,35 @@ https://www.sidefx.com/learn-main-menu/production-projects
 △Frame 配置処理設計
 ・BaseFrame(1次元)
 ・SurfaceFrame(2次元)
+
+
+○ゲームエンジンで表現 Study
+※インタラクティブアート
+・参考資料 調査
+
+○フランス館アニメーション  設計 & メモ
+※フランス館参照(https://www.youtube.com/watch?v=wOtdRfv-lWU)
+・横波
+ -Noise Pos スライド
+・Drop & Wave
+・△揺れ
+
+●アニメーション
+・消 → 着
+・飛沫(After Wave)
+
+○フランス館アニメーション 検証 & 実装
+
+●Design
+※浮世絵参照
+・Element
+ -細さ
+ -長さ
+ -色
+・Noise + Randomly
+・Layer
+
+
+△紐の表現 Study
+
+△ポルトガル館 記事化
