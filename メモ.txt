@@ -1,18 +1,4 @@
 ﻿○Client
-・Maya 編集操作のフック 調査&検証
-・ドキュメントメモ 準備
-
-○Rapture City 準備
-・Terrain
-　ー地形生成
-　ーMask & Scatter (Building)
-・Corpernicus
-
-△個人目標設定
-
-
-■メモ
-○Client
 ・編集操作のフック 検証
 ・外部ライブラリ使用情報 整理
 ・ドキュメントメモ 準備
@@ -62,7 +48,6 @@
  -角度
  -サイズ
  -カラー
-
 
 ■メモ
 ○Q定例

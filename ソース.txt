@@ -1,4 +1,27 @@
-﻿■アニメーション
+﻿■Call Back
+import ufe
+
+class LookdevXLogger(ufe.Observer):
+    def __call__(self, notification):
+        event = type(notification).__name__
+
+        path = ""
+        if hasattr(notification, "changedPath"):
+            try:
+                path = str(notification.changedPath())
+            except Exception:
+                pass
+
+        print("[LookdevX] {} {}".format(event, path))
+
+
+# 登録
+scene = ufe.Scene()
+observer = LookdevXLogger()
+scene.addObserver(observer)
+
+
+■アニメーション
 ※フランス館参照(https://www.youtube.com/watch?v=wOtdRfv-lWU)
 ・横波
  -Noise Pos スライド
