@@ -31,9 +31,6 @@
 　ーMask & Scatter (Building)
 ・Corpernicus
 
-○波インスタレーション 設計
-・TeamLabs
-
 ○Pipe + Box Block パラメトリック化
 ・Pattern
  -角度
@@ -45,8 +42,24 @@
  -サイズ
  -カラー
 
+○波インスタレーション 設計
+・TeamLabs
+
 
 ■Study メモ
+○Cops Study
+※アールデコ 模様
+・DIAMOND PLATE TEXTURES IN COPS 
+・Craft Man (調査資料)
+・COPS - Colorful Plate Texture Maps(調査資料)
+
+○海底表現 調査
+・GPT(https://chatgpt.com/s/t_6ad95b5e3b548191a37a5940b67736ca)
+・※Terrain creation
+・Erosion
+・WorldBuilding/Terrain
+
+
 ○HTML魔導書 読書
 
 ○Solaris Study
@@ -55,20 +68,8 @@
 ・Karma User Guide Materials (調査資料)
 ・SOLARIS ESSENTIALS (調査資料)
 
-○Cops Study
-※アールデコ 模様
-・DIAMOND PLATE TEXTURES IN COPS 
-・Craft Man (調査資料)
-・COPS - Colorful Plate Texture Maps(調査資料)
-
 ○Hython Study
 ・Python in Houdini入門｜houモジュールでノード操作を自動化
-
-△海底表現 調査
-・GPT(https://chatgpt.com/s/t_6ad95b5e3b548191a37a5940b67736ca)
-・※Terrain creation
-・Erosion
-・WorldBuilding/Terrain
 
 
 ■メモ
