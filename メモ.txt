@@ -16,13 +16,6 @@
 ・プロフィール 用意
 ・△Green
 
-○Next
-※多様化
-・カンファレンス&講演会 調査
-・Porfolio 準備
- -ArtWork
- -Qiita
-
 
 ○※Rapture City 準備
 ・Terrain
@@ -37,6 +30,8 @@ HOW TO CREATE TILE-BASED TEXTURES
 GETTING STARTED WITH COPERNICUS | SDF SHAPES & PATTERNS
 
 
+※Design → Detail
+
 ○Pipe + Box Block パラメトリック化
 ・Pattern
  -角度
@@ -48,7 +43,9 @@ GETTING STARTED WITH COPERNICUS | SDF SHAPES & PATTERNS
  -サイズ
  -カラー
 
-○波インスタレーション 設計
+○Lineインスタレーション 設計
+・パビリオン
+・浮世絵 雨
 ・TeamLabs
 
 
