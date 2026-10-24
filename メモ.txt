@@ -1,4 +1,7 @@
-﻿○個人目標 設定
+﻿※Design → Detail
+
+
+○個人目標 設定
 
 ○Private
 ・洋服
@@ -30,8 +33,6 @@ HOW TO CREATE TILE-BASED TEXTURES
 GETTING STARTED WITH COPERNICUS | SDF SHAPES & PATTERNS
 
 
-※Design → Detail
-
 ○Pipe + Box Block パラメトリック化
 ・Pattern
  -角度
@@ -43,7 +44,13 @@ GETTING STARTED WITH COPERNICUS | SDF SHAPES & PATTERNS
  -サイズ
  -カラー
 
+
 ○Lineインスタレーション 設計
+・アニメーション
+ -カラー
+ -位置
+
+●資料
 ・パビリオン
 ・浮世絵 雨
 ・TeamLabs
