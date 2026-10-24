@@ -13,9 +13,8 @@
 
 
 ○Want 準備
-・他サイト 調査
 ・プロフィール 用意
-・OneStruction Study
+・△Green
 
 ○Next
 ※多様化
@@ -30,6 +29,13 @@
 　ー地形生成
 　ーMask & Scatter (Building)
 ・Corpernicus
+
+●資料
+How to Leverage Height Fields to Create Cliffs in Houdini
+THE COMPLETE A-Z TERRAIN HANDBOOK
+HOW TO CREATE TILE-BASED TEXTURES
+GETTING STARTED WITH COPERNICUS | SDF SHAPES & PATTERNS
+
 
 ○Pipe + Box Block パラメトリック化
 ・Pattern
