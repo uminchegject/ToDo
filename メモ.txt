@@ -1,24 +1,26 @@
-﻿○Private
-・洋服
- ー部屋着(しまむら)
- ーGicipi(Roppongi)
-・靴磨き店 調査(shine castle)
-・本斥候
- -AI
-・液体廃棄
- -脱水ペーパー
-・年金確認
+﻿○※個人目標 設定
+
+○Client
+・ドキュメント 作成
+・詳細 調査
 
 
-○Want 準備
-・プロフィール 用意
-・△Green
+○HTML魔導書 読書
+
+○Solaris Study
+※MaterialX
+・Houdini Cook Book Vol.127 Solaris / USDベースのワークフロー 
+・Karma User Guide Materials (調査資料)
+・SOLARIS ESSENTIALS (調査資料)
+
+○Hython Study
+・Python in Houdini入門｜houモジュールでノード操作を自動化
 
 
-○※Rapture City 準備
+○RaptureCity Study
 ・Terrain
-　ー地形生成
-　ーMask & Scatter (Building)
+ ー地形生成
+ ーMask & Scatter (Building)
 ・Corpernicus
 
 ●資料
@@ -26,6 +28,18 @@ How to Leverage Height Fields to Create Cliffs in Houdini
 THE COMPLETE A-Z TERRAIN HANDBOOK
 HOW TO CREATE TILE-BASED TEXTURES
 GETTING STARTED WITH COPERNICUS | SDF SHAPES & PATTERNS
+
+○Cops Study
+※アールデコ 模様
+・DIAMOND PLATE TEXTURES IN COPS 
+・Craft Man (調査資料)
+・COPS - Colorful Plate Texture Maps(調査資料)
+
+○海底表現 調査
+・GPT(https://chatgpt.com/s/t_6ad95b5e3b548191a37a5940b67736ca)
+・※Terrain creation
+・Erosion
+・WorldBuilding/Terrain
 
 
 ○Pipe + Box Block パラメトリック化
@@ -51,39 +65,7 @@ GETTING STARTED WITH COPERNICUS | SDF SHAPES & PATTERNS
 ・Noise
 
 
-■Study メモ
-○Cops Study
-※アールデコ 模様
-・DIAMOND PLATE TEXTURES IN COPS 
-・Craft Man (調査資料)
-・COPS - Colorful Plate Texture Maps(調査資料)
-
-○海底表現 調査
-・GPT(https://chatgpt.com/s/t_6ad95b5e3b548191a37a5940b67736ca)
-・※Terrain creation
-・Erosion
-・WorldBuilding/Terrain
-
-
-○HTML魔導書 読書
-
-○Solaris Study
-※MaterialX
-・Houdini Cook Book Vol.127 Solaris / USDベースのワークフロー 
-・Karma User Guide Materials (調査資料)
-・SOLARIS ESSENTIALS (調査資料)
-
-○Hython Study
-・Python in Houdini入門｜houモジュールでノード操作を自動化
-
-
 ■メモ
-○※個人目標 設定
-
-○Client
-・ドキュメント 作成
-・詳細 調査
-
 ○Q定例
 ・ケータリングアイデア
 ・クイズ アイデア 共有
@@ -120,9 +102,8 @@ GETTING STARTED WITH COPERNICUS | SDF SHAPES & PATTERNS
 
 
 ○Want 準備
-・他サイト 調査
 ・プロフィール 用意
-・OneStruction Study
+・△Green
 
 ○Next
 ※多様化
@@ -197,35 +178,3 @@ https://www.sidefx.com/learn-main-menu/production-projects
 △Frame 配置処理設計
 ・BaseFrame(1次元)
 ・SurfaceFrame(2次元)
-
-
-○ゲームエンジンで表現 Study
-※インタラクティブアート
-・参考資料 調査
-
-○フランス館アニメーション  設計 & メモ
-※フランス館参照(https://www.youtube.com/watch?v=wOtdRfv-lWU)
-・横波
- -Noise Pos スライド
-・Drop & Wave
-・△揺れ
-
-●アニメーション
-・消 → 着
-・飛沫(After Wave)
-
-○フランス館アニメーション 検証 & 実装
-
-●Design
-※浮世絵参照
-・Element
- -細さ
- -長さ
- -色
-・Noise + Randomly
-・Layer
-
-
-△紐の表現 Study
-
-△ポルトガル館 記事化

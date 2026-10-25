@@ -19,15 +19,14 @@
 
 
 ■CD(Tool)
+※Design → Detail
 ※Pattern + Modeling
 ※検証はカラーのみでまず行う
 ※明確にモチーフを模写する
 
-●Flow
-・PM化(検証)
-・拡張
- -Gradation
- -Randomly
+●Design
+・形態デザイン
+・アニメーション
 
 
 ■CityGenerator
