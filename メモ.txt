@@ -1,9 +1,4 @@
-﻿※Design → Detail
-
-
-○個人目標 設定
-
-○Private
+﻿○Private
 ・洋服
  ー部屋着(しまむら)
  ーGicipi(Roppongi)
@@ -45,15 +40,15 @@ GETTING STARTED WITH COPERNICUS | SDF SHAPES & PATTERNS
  -カラー
 
 
-○Lineインスタレーション 設計
+●コンピュテーショナルデザイン
+※Design → Detail
+・形態デザイン
 ・アニメーション
- -カラー
- -位置
 
-●資料
-・パビリオン
-・浮世絵 雨
-・TeamLabs
+○万博シリーズ
+・ポルトガル館
+・大屋根リング
+・Noise
 
 
 ■Study メモ
@@ -83,6 +78,8 @@ GETTING STARTED WITH COPERNICUS | SDF SHAPES & PATTERNS
 
 
 ■メモ
+○※個人目標 設定
+
 ○Client
 ・ドキュメント 作成
 ・詳細 調査
