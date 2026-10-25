@@ -42,6 +42,19 @@ GETTING STARTED WITH COPERNICUS | SDF SHAPES & PATTERNS
 ・WorldBuilding/Terrain
 
 
+■Design Idea
+○メタボリズム CD
+・カプセルタワー
+・ポンピドゥーセンター
+
+○メタボリズム City
+※規格デザイン
+※ハイラインデザイン
+
+○Terrain
+・Japanese Chastle
+・Rapture
+
 ○Pipe + Box Block パラメトリック化
 ・Pattern
  -角度
@@ -63,18 +76,6 @@ GETTING STARTED WITH COPERNICUS | SDF SHAPES & PATTERNS
 ・ポルトガル館
 ・大屋根リング
 ・Noise
-
-○メタボリズム CD
-・カプセルタワー
-・ポンピドゥーセンター
-
-○メタボリズム City
-※規格デザイン
-※ハイラインデザイン
-
-○Terrain
-・Japanese Chastle
-・Rapture
 
 
 ■メモ
