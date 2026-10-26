@@ -8,14 +8,13 @@
 ※ハイラインデザイン
 
 
-■CD(Tool)
+■Computational Design
 ※Design → Detail
 ※Pattern + Modeling
 ※検証はカラーのみでまず行う
 ※明確にモチーフを模写する
 
-●コンピュテーショナル デザイン
-※Design → Detail
+●Component
 ・形態デザイン
 ・アニメーション
 
