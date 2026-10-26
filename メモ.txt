@@ -1,9 +1,19 @@
-﻿■Design Idea
-○メタボリズム Design
+﻿○Pipe + Box Block パラメトリック化
+・Pattern
+ -角度
+ -間隔
+ -Size
+・Object(Box + Pipe)
+ -数
+ -角度
+ -サイズ
+ -カラー
+
+●メタボリズム Design
 ・カプセルタワー
 ・ポンピドゥーセンター
 
-○メタボリズム City
+●メタボリズム City
 ※規格デザイン
 ※ハイラインデザイン
 
@@ -18,7 +28,7 @@
 ・形態デザイン
 ・アニメーション
 
-○万博 シリーズ
+●万博 シリーズ
 ・ポルトガル館
 ・大屋根リング
 
@@ -37,7 +47,7 @@
 ●背景
 ・地形
 
-○Terrain シリーズ
+●Terrain シリーズ
 ・Japanese Chastle
 ・Rapture
 
@@ -80,18 +90,6 @@
  ー地形生成
  ーMask & Scatter (Building)
 ・Corpernicus
-
-
-○Pipe + Box Block パラメトリック化
-・Pattern
- -角度
- -間隔
- -Size
-・Object(Box + Pipe)
- -数
- -角度
- -サイズ
- -カラー
 
 
 ■メモ
