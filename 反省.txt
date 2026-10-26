@@ -18,15 +18,19 @@
  -業務でタスク集中
 
 
-■CD(Tool)
+■Computational Design
 ※Design → Detail
 ※Pattern + Modeling
 ※検証はカラーのみでまず行う
 ※明確にモチーフを模写する
 
-●Design
+●Component
 ・形態デザイン
 ・アニメーション
+
+●万博 シリーズ
+・ポルトガル館
+・大屋根リング
 
 
 ■CityGenerator
@@ -39,6 +43,13 @@
 ●Type
 ・ProceduralModeling
 ・ModularModeling
+
+●背景
+・地形
+
+●Terrain シリーズ
+・Japanese Chastle
+・Rapture
 
 △パイプライン化
 ・背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装

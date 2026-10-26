@@ -1,59 +1,4 @@
-﻿○Pipe + Box Block パラメトリック化
-・Pattern
- -角度
- -間隔
- -Size
-・Object(Box + Pipe)
- -数
- -角度
- -サイズ
- -カラー
-
-●メタボリズム Design
-・カプセルタワー
-・ポンピドゥーセンター
-
-●メタボリズム City
-※規格デザイン
-※ハイラインデザイン
-
-
-■Computational Design
-※Design → Detail
-※Pattern + Modeling
-※検証はカラーのみでまず行う
-※明確にモチーフを模写する
-
-●Component
-・形態デザイン
-・アニメーション
-
-●万博 シリーズ
-・ポルトガル館
-・大屋根リング
-
-
-■CityGenerator
-※City + Pattern
-※スケール感とベースデザインはそのまま反映する
-※低層と高層の設計を明確に別にする
-※配置に重きをおく
- -シンプルモデリング + Color
-
-●Type
-・ProceduralModeling
-・ModularModeling
-
-●背景
-・地形
-
-●Terrain シリーズ
-・Japanese Chastle
-・Rapture
-
-
-■メモ
-○※個人目標 設定
+﻿○※個人目標 設定
 
 ○Client
 ・ドキュメント 作成
@@ -90,6 +35,26 @@
  ー地形生成
  ーMask & Scatter (Building)
 ・Corpernicus
+
+
+○Pipe + Box Block パラメトリック化
+・Pattern
+ -角度
+ -間隔
+ -Size
+・Object(Box + Pipe)
+ -数
+ -角度
+ -サイズ
+ -カラー
+
+●メタボリズム Design
+・カプセルタワー
+・ポンピドゥーセンター
+
+●メタボリズム City
+※規格デザイン
+※ハイラインデザイン
 
 
 ■メモ
@@ -143,10 +108,8 @@
 
 ○※SideFX UnrealTutorial 調査
 https://www.sidefx.com/learn-main-menu/production-projects
-・UnrealEngine インスタレーション Study
-・Terrain Study
 
- 
+
 ○Terrain Study
 ・海底表現 調査
 
