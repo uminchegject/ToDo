@@ -1,4 +1,50 @@
-﻿○※個人目標 設定
+﻿■Design Idea
+○メタボリズム Design
+・カプセルタワー
+・ポンピドゥーセンター
+
+○メタボリズム City
+※規格デザイン
+※ハイラインデザイン
+
+
+■CD(Tool)
+※Design → Detail
+※Pattern + Modeling
+※検証はカラーのみでまず行う
+※明確にモチーフを模写する
+
+●コンピュテーショナル デザイン
+※Design → Detail
+・形態デザイン
+・アニメーション
+
+○万博 シリーズ
+・ポルトガル館
+・大屋根リング
+
+
+■CityGenerator
+※City + Pattern
+※スケール感とベースデザインはそのまま反映する
+※低層と高層の設計を明確に別にする
+※配置に重きをおく
+ -シンプルモデリング + Color
+
+●Type
+・ProceduralModeling
+・ModularModeling
+
+●背景
+・地形
+
+○Terrain シリーズ
+・Japanese Chastle
+・Rapture
+
+
+■メモ
+○※個人目標 設定
 
 ○Client
 ・ドキュメント 作成
@@ -37,19 +83,6 @@
 ・Corpernicus
 
 
-■Design Idea
-○メタボリズム Design
-・カプセルタワー
-・ポンピドゥーセンター
-
-○メタボリズム City
-※規格デザイン
-※ハイラインデザイン
-
-○Terrain
-・Japanese Chastle
-・Rapture
-
 ○Pipe + Box Block パラメトリック化
 ・Pattern
  -角度
@@ -60,17 +93,6 @@
  -角度
  -サイズ
  -カラー
-
-
-●コンピュテーショナルデザイン
-※Design → Detail
-・形態デザイン
-・アニメーション
-
-○万博シリーズ
-・ポルトガル館
-・大屋根リング
-・Noise
 
 
 ■メモ
