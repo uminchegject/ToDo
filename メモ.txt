@@ -17,29 +17,24 @@
 ・Python in Houdini入門｜houモジュールでノード操作を自動化
 
 
+○Cops Study
+※アールデコ 模様
+・DIAMOND PLATE TEXTURES IN COPS 
+・HOW TO CREATE TILE-BASED TEXTURES
+・GETTING STARTED WITH COPERNICUS | SDF SHAPES & PATTERNS
+・Craft Man (調査資料)
+・COPS - Colorful Plate Texture Maps(調査資料)
+
+○海底表現 調査
+・How to Leverage Height Fields to Create Cliffs in Houdini
+・THE COMPLETE A-Z TERRAIN HANDBOOK
+・WorldBuilding/Terrain (資料)
+
 ○RaptureCity Study
 ・Terrain
  ー地形生成
  ーMask & Scatter (Building)
 ・Corpernicus
-
-●資料
-How to Leverage Height Fields to Create Cliffs in Houdini
-THE COMPLETE A-Z TERRAIN HANDBOOK
-HOW TO CREATE TILE-BASED TEXTURES
-GETTING STARTED WITH COPERNICUS | SDF SHAPES & PATTERNS
-
-○Cops Study
-※アールデコ 模様
-・DIAMOND PLATE TEXTURES IN COPS 
-・Craft Man (調査資料)
-・COPS - Colorful Plate Texture Maps(調査資料)
-
-○海底表現 調査
-・GPT(https://chatgpt.com/s/t_6ad95b5e3b548191a37a5940b67736ca)
-・※Terrain creation
-・Erosion
-・WorldBuilding/Terrain
 
 
 ■Design Idea
@@ -107,6 +102,7 @@ GETTING STARTED WITH COPERNICUS | SDF SHAPES & PATTERNS
  ー部屋着(しまむら)
  ーGicipi(Roppongi)
 ・靴磨き店 調査(shine castle)
+・Huawei 修理
 ・本斥候
  -AI
 ・液体廃棄
