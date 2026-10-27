@@ -3,13 +3,13 @@
 ○ToDo 整理
 ※できること・やりたいこと
 ・Client(Houdini, Unreal)
-　ーUSD(Plugin)
-　ーMaterialX
-　ーProcedural Tools(Houdini)
+ ーUSD(Plugin)
+ ーMaterialX
+ ーProcedural Tools(Houdini)
 ・Computational, City(Detail)
-　ーProcedural Modeling
-　ーTerrain
-　ーMaterial
+ ーProcedural Modeling
+ ーTerrain
+ ーMaterial
 
 
 ○HTML魔導書 読書
@@ -23,6 +23,13 @@
 ○Hython Study
 
 
+○Terrain 調査
+・How to Leverage Height Fields to Create Cliffs in Houdini
+・THE COMPLETE A-Z TERRAIN HANDBOOK
+・WorldBuilding/Terrain (資料)
+
+○Procedural Modeling
+
 ○Cops Study
 ※アールデコ 模様
 ・DIAMOND PLATE TEXTURES IN COPS 
@@ -30,11 +37,6 @@
 ・GETTING STARTED WITH COPERNICUS | SDF SHAPES & PATTERNS
 ・Craft Man (調査資料)
 ・COPS - Colorful Plate Texture Maps(調査資料)
-
-○海底表現 調査
-・How to Leverage Height Fields to Create Cliffs in Houdini
-・THE COMPLETE A-Z TERRAIN HANDBOOK
-・WorldBuilding/Terrain (資料)
 
 ○RaptureCity Study
 ・Terrain
