@@ -31,6 +31,7 @@
 
 ■Computational Design
 ※Design → Detail
+ -Study(基礎情報) → 調査(必要情報) → 検証
 ※Pattern + Modeling
 ※検証はカラーのみでまず行う
 ※明確にモチーフを模写する
