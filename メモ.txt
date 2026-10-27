@@ -1,11 +1,14 @@
-﻿○※個人目標 設定
+﻿○Client
+・挙動と課題
+・編集操作に対するコールバック処理の検証
+・機能要件のまとめ
 
-○Client
-・ドキュメント 作成
-・詳細 調査
 
-○Clientタスク 整理
-※調査項目 整理
+○※個人目標 設定
+
+○※ToDo 整理
+・Client(Houdini, Unreal)
+・Computational, City(Detail)
 
 
 ○HTML魔導書 読書
