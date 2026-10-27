@@ -7,6 +7,7 @@
  ーMaterialX
  ーProcedural Tools(Houdini)
 ・Computational, City(Detail)
+ -※Detail (調査)
  ーProcedural Modeling
  ーTerrain
  ーMaterial
