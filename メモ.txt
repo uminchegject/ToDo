@@ -44,6 +44,7 @@
 
 
 ○Pipe + Box Block パラメトリック化
+※BasePoint
 ・Pattern
  -角度
  -間隔
