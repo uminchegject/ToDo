@@ -22,14 +22,16 @@
 ・Karma User Guide Materials (調査資料)
 ・SOLARIS ESSENTIALS (調査資料)
 
-○Python Study
-・venv
-・Hython
+○venv
+・venv: Python 仮想環境管理
 
-○OpenPBR Study
+○Hython
+・Pythonスクリプト
+
+○PBR Study
+・OpenPBR
 
 ○MaterialX FileFormat and Shader Plugin 調査
-・ビルド
 ・デバッグ
 ・USD と MaterialX (資料)
 
@@ -61,10 +63,10 @@ https://www.sidefx.com/learn-main-menu/production-projects
 ・Corpernicus
 
 
-○Pipe + Box Block パラメトリック化
+○PompidouPattern BasePoint
 ・Pattern (BasePoint)
  -Size
-・Object(Box  + Pipe)
+・Object(Frame, Box, Pipe)
  -数
  -サイズ
  -カラー
