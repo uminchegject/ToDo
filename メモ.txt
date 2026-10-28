@@ -1,42 +1,7 @@
-﻿○Client
-・Houdini 外部ライブラリ読み込み 調査
-　ー環境変数
-　ーmtlxHDA.py
-　ーMaterialXImportExport 
-
-○materialX Study
-・USD と MaterialX
-　ーMaterialX FileFormat and Shader Plugins のビルド及び調査
-・Houdini Cook Book Vol.127 Solaris / USDベースのワークフロー 
-
-○Terrain Study
-・THE COMPLETE A-Z TERRAIN HANDBOOK
-
-○Cops Study
-・DIAMOND PLATE TEXTURES IN COPS
-
-○village 確認
-
+﻿○個人目標 設定
 
 ○ToDo 整理
 ※ゴールを見据えることでモチベーションを上げる
-※できること・やりたいこと
-・Client(Houdini, Unreal)
- ーUSD(Plugin)
- ーMaterialX
- ーProcedural Tools(Houdini)
-・ComputationalDesign, CityDesign
- -※Detail (調査)
- ーProcedural Modeling
- ーTerrain
- ーMaterial
-
-
-
-■メモ
-○個人目標 設定
-
-○ToDo 整理
 ※できること・やりたいこと
 ・Client(Houdini, Unreal)
  ーUSD(Plugin)
@@ -53,26 +18,38 @@
 
 ○Solaris Study
 ※MaterialX
-・Houdini Cook Book Vol.127 Solaris / USDベースのワークフロー 
+・※Houdini Cook Book Vol.127 Solaris / USDベースのワークフロー 
 ・Karma User Guide Materials (調査資料)
 ・SOLARIS ESSENTIALS (調査資料)
 
-○Hython Study
+○Python Study
+・venv
+・Hython
 
 ○OpenPBR Study
 
+○MaterialX FileFormat and Shader Plugin 調査
+・ビルド
+・デバッグ
+・USD と MaterialX (資料)
+
+
+○※SideFX UnrealTutorial 調査
+https://www.sidefx.com/learn-main-menu/production-projects
+
 
 ○Terrain 調査
+・※THE COMPLETE A-Z TERRAIN HANDBOOK
 ・How to Leverage Height Fields to Create Cliffs in Houdini
-・THE COMPLETE A-Z TERRAIN HANDBOOK
 ・WorldBuilding/Terrain (資料)
 
 ○Procedural Modeling
+・Creation of a Medieval Town
 
 ○Cops Study
 ※アールデコ 模様
+・※HOW TO CREATE TILE-BASED TEXTURES
 ・DIAMOND PLATE TEXTURES IN COPS 
-・HOW TO CREATE TILE-BASED TEXTURES
 ・GETTING STARTED WITH COPERNICUS | SDF SHAPES & PATTERNS
 ・Craft Man (調査資料)
 ・COPS - Colorful Plate Texture Maps(調査資料)
@@ -85,117 +62,12 @@
 
 
 ○Pipe + Box Block パラメトリック化
-※BasePoint
-・Pattern
- -角度
- -間隔
+・Pattern (BasePoint)
  -Size
-・Object(Box + Pipe)
+・Object(Box  + Pipe)
  -数
- -角度
  -サイズ
  -カラー
-
-●メタボリズム Design
-・カプセルタワー
-・ポンピドゥーセンター
-
-●メタボリズム City
-※規格デザイン
-※ハイラインデザイン
-
-
-■メモ
-○Q定例
-・ケータリングアイデア
-・クイズ アイデア 共有
-
-○忘年会提案
-・クイズは取り消し
- -新年会に残しておくため
- -お話メインになることを踏まえて、あまり強制するのも違うかなと
-・ラウンドテーブルを企画したい
- -一年の反省、新年の抱負をテーマ
- -忘年会に参加したはいいものの、常駐組などあまり顔馴染みがないメンバー向けに企画
- -端っこのスペースを使って、(以前の定例会と同じ感じ)
- -ファシリテーターは自分がやります
- -ラウンドテーブルならこちらから話を降る事ができるのと、テーマが決まっているので顔馴染みがなくても話がしやすい
- -ラウンドテーブルの経験を踏まえて今後のクォーター定例の候補にしたい。
-
-○ダーツ部
-・ダーツ部主催映画観賞会
- -スターウォーズ
-・チップ制 (追加性)
- -お酒
- -映画ラインナップ
-
-○Private
-・洋服
- ー部屋着(しまむら)
- ーGicipi(Roppongi)
-・Huawei 修理
-・本斥候
- -AI
-・液体廃棄
- -脱水ペーパー
-・年金確認
-
-
-○Want 準備
-・プロフィール 用意
-・△Green
-
-○Next
-※多様化
-・カンファレンス&講演会 調査
-・Porfolio 準備
- -ArtWork
- -Qiita
-
-
-○※SideFX UnrealTutorial 調査
-https://www.sidefx.com/learn-main-menu/production-projects
-
-
-○Terrain Study
-・海底表現 調査
-
-○Cops Study
-※アールデコ模様
-
-○地形生成 検証
-※サンプルファイルを確認
-・テライン生成
-・マスク
-・Volume
-・レンダリング
-
-●RaptureCity
-※Middle & Topデザイン
-・BaseVolume(Randomly)
- -Scatter
-・起伏(海峡)
- -Terrain(絶壁)
-・岩
-
-○バリエーション 検証
-※固定パラメーターを複数用意
-・リファレンスに沿って複数検証
-
-●バリエーション
-・Base Volume
- -Pattern Num
- -Pattern Size
-・Detail
- -Vertical or Horizontal
- -Pattern Size
-・色
-
-
-○PompidouPattern メモ
-・PipeBlock BasePoint
- -Slide
- -△Randomly
 
 ○Pipe Module モデリング
 ・Module
@@ -216,3 +88,11 @@ https://www.sidefx.com/learn-main-menu/production-projects
 △Frame 配置処理設計
 ・BaseFrame(1次元)
 ・SurfaceFrame(2次元)
+
+●メタボリズム Design
+・カプセルタワー
+・ポンピドゥーセンター
+
+●メタボリズム City
+※規格デザイン
+※ハイラインデザイン
