@@ -1,4 +1,40 @@
-﻿○個人目標 設定
+﻿○Client
+・Houdini 外部ライブラリ読み込み 調査
+　ー環境変数
+　ーmtlxHDA.py
+　ーMaterialXImportExport 
+
+○materialX Study
+・USD と MaterialX
+　ーMaterialX FileFormat and Shader Plugins のビルド及び調査
+・Houdini Cook Book Vol.127 Solaris / USDベースのワークフロー 
+
+○Terrain Study
+・THE COMPLETE A-Z TERRAIN HANDBOOK
+
+○Cops Study
+・DIAMOND PLATE TEXTURES IN COPS
+
+○village 確認
+
+
+○ToDo 整理
+※ゴールを見据えることでモチベーションを上げる
+※できること・やりたいこと
+・Client(Houdini, Unreal)
+ ーUSD(Plugin)
+ ーMaterialX
+ ーProcedural Tools(Houdini)
+・ComputationalDesign, CityDesign
+ -※Detail (調査)
+ ーProcedural Modeling
+ ーTerrain
+ ーMaterial
+
+
+
+■メモ
+○個人目標 設定
 
 ○ToDo 整理
 ※できること・やりたいこと
@@ -22,6 +58,8 @@
 ・SOLARIS ESSENTIALS (調査資料)
 
 ○Hython Study
+
+○OpenPBR Study
 
 
 ○Terrain 調査
