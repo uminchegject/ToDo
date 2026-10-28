@@ -6,7 +6,7 @@
  ーUSD(Plugin)
  ーMaterialX
  ーProcedural Tools(Houdini)
-・Computational, City(Detail)
+・ComputationalDesign, CityDesign
  -※Detail (調査)
  ーProcedural Modeling
  ーTerrain
@@ -95,7 +95,6 @@
 ・洋服
  ー部屋着(しまむら)
  ーGicipi(Roppongi)
-・靴磨き店 調査(shine castle)
 ・Huawei 修理
 ・本斥候
  -AI
