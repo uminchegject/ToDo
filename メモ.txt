@@ -18,15 +18,10 @@
 
 ○Solaris Study
 ※MaterialX
+※USD Study
 ・※Houdini Cook Book Vol.127 Solaris / USDベースのワークフロー 
 ・Karma User Guide Materials (調査資料)
 ・SOLARIS ESSENTIALS (調査資料)
-
-○venv
-・venv: Python 仮想環境管理
-
-○Hython
-・Pythonスクリプト
 
 ○PBR Study
 ・OpenPBR
