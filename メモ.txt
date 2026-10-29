@@ -1,4 +1,41 @@
-﻿○個人目標 設定
+﻿○クライアント
+・LookDevXエラー原因調査
+・LookDevXドキュメント整理
+
+○個人目標 設定
+
+
+○Solaris Study
+・Houdini Cook Book Vol.127 Solaris / USDベースのワークフロー 
+
+○MaterialX
+・USD と MaterialX 
+・デバッグ
+
+
+○Terrain Study
+・THE COMPLETE A-Z TERRAIN HANDBOOK
+
+○Cops Study
+・HOW TO CREATE TILE-BASED TEXTURES
+
+○ProceduralModeling 調査
+・Creation of a Medieval Town
+
+
+○PompidouPattern BasePointメモ
+・Pattern (BasePoint)
+ -Size
+・Object(Frame, Box, Pipe)
+ -数
+ -サイズ
+ -カラー
+
+
+
+
+■メモ
+○個人目標 設定
 
 ○ToDo 整理
 ※ゴールを見据えることでモチベーションを上げる
@@ -17,11 +54,10 @@
 ○HTML魔導書 読書
 
 ○Solaris Study
-※MaterialX
+※MaterialX Study
 ※USD Study
-・※Houdini Cook Book Vol.127 Solaris / USDベースのワークフロー 
-・Karma User Guide Materials (調査資料)
-・SOLARIS ESSENTIALS (調査資料)
+・Houdini Cook Book Vol.127 Solaris / USDベースのワークフロー 
+・SOLARIS MARKET
 
 ○PBR Study
 ・OpenPBR
@@ -40,7 +76,7 @@ https://www.sidefx.com/learn-main-menu/production-projects
 ・How to Leverage Height Fields to Create Cliffs in Houdini
 ・WorldBuilding/Terrain (資料)
 
-○Procedural Modeling
+○ProceduralModeling 調査
 ・Creation of a Medieval Town
 
 ○Cops Study
