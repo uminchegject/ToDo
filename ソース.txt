@@ -6,16 +6,16 @@
  -サイズ
  -カラー
 
-vector base_scale;
-vector base_pos;
-vector base_unit_scale;
+vector base_scale = {10.0, 10.0, 0.0};
+vector base_pos = 0;
+vector base_unit_scale = 2.0;
 
-int unit_num_x = (base_scale.x / base_unit_scale.x);
-int unit_num_y = (base_scale.y / base_unit_scale.y);
+int unit_num_x = int(base_scale.x / base_unit_scale.x);
+int unit_num_y = int(base_scale.y / base_unit_scale.y);
 
 vector unit_scale = 1;
-unit_scale.x = base_scale / unit_num_x;
-unit_scale.y = base_scale / unit_num_y;
+unit_scale.x = base_scale.x / float(unit_num_x);
+unit_scale.y = base_scale.y / float(unit_num_y);
 
 for(int x_idx = 0; x_idx < unit_num_x; x_idx++){
 
@@ -25,25 +25,31 @@ for(int x_idx = 0; x_idx < unit_num_x; x_idx++){
         pos.y += y_idx * unit_scale.y;
         
         //Frame
+        vector base_frame_scale = 0.8;
         vector frame_pos = pos;
-        vector frame_scale = unit_scale * ch("frame_scale");
+        vector frame_scale = unit_scale * base_frame_scale;
         int frame_pt = addpoint(0, frame_pos);
         setpointattrib(0, "scale", frame_pt, frame_scale);
-
+        
         //Box
+        vector base_box_scale = 0.9;
         vector box_pos = pos;
-        vector box_scale = unit_scale * ch("box_scale");
+        vector box_scale = unit_scale * base_box_scale;
         int box_pt = addpoint(0, box_pos);
         setpointattrib(0, "scale", box_pt, box_scale);
-
+        
         //Pipe
-        int pipe_num = 0;
+        int pipe_num = 5;
         for(int pipe_idx = 0; pipe_idx < pipe_num; ++pipe_idx){
             vector pipe_scale = unit_scale;
+            pipe_scale.x /= pipe_num;
+            pipe_scale *= 0.8;
+                        
             vector pipe_pos = pos;
+            pipe_pos.x += pipe_idx * pipe_scale.x;
 
             int pipe_pt = addpoint(0, pipe_pos);
-            setpointattrib(0, "scale", pipe_pt, pipe_unit_scale);
-        }       
+            setpointattrib(0, "scale", pipe_pt, pipe_scale);
+        }        
     }
 }

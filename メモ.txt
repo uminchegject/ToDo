@@ -1,41 +1,8 @@
-﻿○クライアント
-・LookDevXエラー原因調査
-・LookDevXドキュメント整理
+﻿○※個人目標 設定
 
-○個人目標 設定
-
-
-○Solaris Study
-・Houdini Cook Book Vol.127 Solaris / USDベースのワークフロー 
-
-○MaterialX
-・USD と MaterialX 
-・デバッグ
-
-
-○Terrain Study
-・THE COMPLETE A-Z TERRAIN HANDBOOK
-
-○Cops Study
-・HOW TO CREATE TILE-BASED TEXTURES
-
-○ProceduralModeling 調査
-・Creation of a Medieval Town
-
-
-○PompidouPattern BasePointメモ
-・Pattern (BasePoint)
- -Size
-・Object(Frame, Box, Pipe)
- -数
- -サイズ
- -カラー
-
-
-
-
-■メモ
-○個人目標 設定
+○クライアント
+・ドキュメント整理
+・提出
 
 ○ToDo 整理
 ※ゴールを見据えることでモチベーションを上げる
@@ -56,15 +23,15 @@
 ○Solaris Study
 ※MaterialX Study
 ※USD Study
-・Houdini Cook Book Vol.127 Solaris / USDベースのワークフロー 
-・SOLARIS MARKET
+・FOUNDATIONS 20.5 | SOLARIS MARKET
+
+○MaterialX FileFormat and Shader Plugin 調査
+・UsdMtlx : MaterialX File Format and Shader Plugins (Study)
+・デバッグ準備
+・USD と MaterialX (資料)
 
 ○PBR Study
 ・OpenPBR
-
-○MaterialX FileFormat and Shader Plugin 調査
-・デバッグ
-・USD と MaterialX (資料)
 
 
 ○※SideFX UnrealTutorial 調査
@@ -117,10 +84,6 @@ https://www.sidefx.com/learn-main-menu/production-projects
  -Randomly
  -Pipe Block(Box To Box)
 ・△Pipe Block
-
-△Frame 配置処理設計
-・BaseFrame(1次元)
-・SurfaceFrame(2次元)
 
 ●メタボリズム Design
 ・カプセルタワー
