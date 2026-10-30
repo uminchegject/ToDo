@@ -1,6 +1,31 @@
 ﻿○※個人目標 設定
 ・GPT
 
+
+○ソース群解析AI Prepare
+・usdMtlx
+
+
+○BlockGenerator
+※vertical
+・Frame
+・Box + Empty
+・Pipe + Empty
+
+○DetailGenerator
+・Pattern (BasePoint)
+ -Size
+・Object(Frame, Box, Pipe)
+ -数
+ -サイズ
+ -カラー
+
+○Module モデリング
+・Frame
+・Box Block
+・Pipe Block
+
+
 ○ToDo 整理
 ※ゴールを見据えることでモチベーションを上げる
 ※できること・やりたいこと
@@ -13,40 +38,6 @@
  ーProcedural Modeling
  ーTerrain
  ーMaterial
-
-
-○PompidouPattern
-・※BlockGenerator → DetailGenerator
-・Pattern (BasePoint)
- -Size
-・Object(Frame, Box, Pipe)
- -数
- -サイズ
- -カラー
-
-○Pipe Module モデリング
-・Module
- -Box Block
- -Pipe Block(Box To Box)
-
-○PompidouPattern 設計 & 検証
-※Surface
-・Frame Block
- -固定
-・Box Block
- -多様化
-  -Color, BlockSize
- -Randomly
- -Pipe Block(Box To Box)
-・△Pipe Block
-
-●メタボリズム Design
-・カプセルタワー
-・ポンピドゥーセンター
-
-●メタボリズム City
-※規格デザイン
-※ハイラインデザイン
 
 
 ■Study
