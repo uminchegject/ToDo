@@ -1,9 +1,6 @@
 ﻿○※個人目標 設定
 ・GPT
 
-○年末調整
-
-
 ○ToDo 整理
 ※ゴールを見据えることでモチベーションを上げる
 ※できること・やりたいこと
@@ -16,55 +13,6 @@
  ーProcedural Modeling
  ーTerrain
  ーMaterial
-
-
-○HTML魔導書 読書
-
-○Solaris Study
-※MaterialX Study
-※USD Study
-・FOUNDATIONS 20.5 | SOLARIS MARKET
-
-○PBR Study
-・OpenPBR
-
-○PowerShell Study
-
-
-○MaterialX FileFormat and Shader Plugin 調査
-・デバッグ準備
-　ーvisual studioを用いたプラグインのデバッグ
-　ー※挙動からデバッグしたい処理を整理
-・USD と MaterialX (資料)
-
-○mtlx2hda.py 調査
-・Hython デバッグ
-
-
-○※SideFX UnrealTutorial 調査
-https://www.sidefx.com/learn-main-menu/production-projects
-
-
-○Terrain 調査
-・※THE COMPLETE A-Z TERRAIN HANDBOOK
-・WorldBuilding/Terrain (資料)
-
-○ProceduralModeling 調査
-・Creation of a Medieval Town
-
-○Cops Study
-※アールデコ 模様
-・※HOW TO CREATE TILE-BASED TEXTURES
-・DIAMOND PLATE TEXTURES IN COPS 
-・GETTING STARTED WITH COPERNICUS | SDF SHAPES & PATTERNS
-・Craft Man (調査資料)
-・COPS - Colorful Plate Texture Maps(調査資料)
-
-○RaptureCity Study
-・Terrain
- ー地形生成
- ーMask & Scatter (Building)
-・Corpernicus
 
 
 ○PompidouPattern
@@ -99,3 +47,56 @@ https://www.sidefx.com/learn-main-menu/production-projects
 ●メタボリズム City
 ※規格デザイン
 ※ハイラインデザイン
+
+
+■Study
+○HTML魔導書 読書
+
+○Solaris Study
+※MaterialX Study
+※USD Study
+・FOUNDATIONS 20.5 | SOLARIS MARKET
+
+○PBR Study
+・OpenPBR
+
+○PowerShell Study
+
+○Python debugger（pdb) Study
+※mtlx2hda.py 調査
+
+
+○MaterialX FileFormat and Shader Plugin 調査
+・デバッグ準備
+　ーvisual studioを用いたプラグインのデバッグ (usdObjでデバッグ挙動確認)
+　ー※挙動からデバッグしたい処理を整理
+・USD と MaterialX (資料)
+
+○mtlx2hda.py 調査
+・Hython デバッグ
+
+
+○※SideFX UnrealTutorial 調査
+https://www.sidefx.com/learn-main-menu/production-projects
+
+
+○Terrain 調査
+・※THE COMPLETE A-Z TERRAIN HANDBOOK
+・WorldBuilding/Terrain (資料)
+
+○ProceduralModeling 調査
+・Creation of a Medieval Town
+
+○Cops Study
+※アールデコ 模様
+・※HOW TO CREATE TILE-BASED TEXTURES
+・DIAMOND PLATE TEXTURES IN COPS 
+・GETTING STARTED WITH COPERNICUS | SDF SHAPES & PATTERNS
+・Craft Man (調査資料)
+・COPS - Colorful Plate Texture Maps(調査資料)
+
+○RaptureCity Study
+・Terrain
+ ー地形生成
+ ーMask & Scatter (Building)
+・Corpernicus
