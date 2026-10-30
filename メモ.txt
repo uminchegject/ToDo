@@ -1,8 +1,8 @@
 ﻿○※個人目標 設定
+・GPT
 
-○クライアント
-・ドキュメント整理
-・提出
+○年末調整
+
 
 ○ToDo 整理
 ※ゴールを見据えることでモチベーションを上げる
@@ -25,14 +25,20 @@
 ※USD Study
 ・FOUNDATIONS 20.5 | SOLARIS MARKET
 
+○PBR Study
+・OpenPBR
+
+○PowerShell Study
+
+
 ○MaterialX FileFormat and Shader Plugin 調査
 ・デバッグ準備
 　ーvisual studioを用いたプラグインのデバッグ
 　ー※挙動からデバッグしたい処理を整理
 ・USD と MaterialX (資料)
 
-○PBR Study
-・OpenPBR
+○mtlx2hda.py 調査
+・Hython デバッグ
 
 
 ○※SideFX UnrealTutorial 調査
@@ -61,7 +67,8 @@ https://www.sidefx.com/learn-main-menu/production-projects
 ・Corpernicus
 
 
-○PompidouPattern BasePoint
+○PompidouPattern
+・※BlockGenerator → DetailGenerator
 ・Pattern (BasePoint)
  -Size
 ・Object(Frame, Box, Pipe)
