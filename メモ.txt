@@ -26,8 +26,9 @@
 ・FOUNDATIONS 20.5 | SOLARIS MARKET
 
 ○MaterialX FileFormat and Shader Plugin 調査
-・UsdMtlx : MaterialX File Format and Shader Plugins (Study)
 ・デバッグ準備
+　ーvisual studioを用いたプラグインのデバッグ
+　ー※挙動からデバッグしたい処理を整理
 ・USD と MaterialX (資料)
 
 ○PBR Study
@@ -40,7 +41,6 @@ https://www.sidefx.com/learn-main-menu/production-projects
 
 ○Terrain 調査
 ・※THE COMPLETE A-Z TERRAIN HANDBOOK
-・How to Leverage Height Fields to Create Cliffs in Houdini
 ・WorldBuilding/Terrain (資料)
 
 ○ProceduralModeling 調査
