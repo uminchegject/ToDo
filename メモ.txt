@@ -4,52 +4,6 @@
 ・GPT
 
 
-○GitHub Copilot Study
-・Copilot 簡単検証
-
-○ソース群解析AI Prepare
-・やりたいことを整理
-　ー解析
-　ー質問
-　ーソースの提案
-・クライアントの使用モデルの確認
-
-
-○BlockGenerator
-※vertical
-・Frame
-・Box + Empty
-・Pipe + Empty
-
-○DetailGenerator
-・Pattern (BasePoint)
- -Size
-・Object(Frame, Box, Pipe)
- -数
- -サイズ
- -カラー
-
-○Module モデリング
-・Frame
-・Box Block
-・Pipe Block
-
-
-○ToDo 整理
-※ゴールを見据えることでモチベーションを上げる
-※できること・やりたいこと
-・Client(Houdini, Unreal)
- ーUSD(Plugin)
- ーMaterialX
- ーProcedural Tools(Houdini)
-・ComputationalDesign, CityDesign
- -※Detail (調査)
- ーProcedural Modeling
- ーTerrain
- ーMaterial
-
-
-■Study
 ○HTML魔導書 読書
 
 ○Solaris Study
@@ -57,13 +11,24 @@
 ※USD Study
 ・FOUNDATIONS 20.5 | SOLARIS MARKET
 
+○Python debugger（pdb) Study
+※mtlx2hda.py 調査
+・Pythonデバッガ pdb クイックリファレンス
+
 ○PBR Study
 ・OpenPBR
 
-○PowerShell Study
 
-○Python debugger（pdb) Study
-※mtlx2hda.py 調査
+○GitHub Copilot Study
+・Copilot 簡単検証
+
+○ソース群解析AI Prepare
+※Open_USD解析・開発
+・やりたいことを整理
+　ー解析
+　ー質問
+　ーソースの提案
+・クライアントの使用モデルの確認
 
 
 ○MaterialX FileFormat and Shader Plugin 調査
