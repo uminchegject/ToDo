@@ -17,14 +17,6 @@
 ○PBR Study
 ・OpenPBR
 
-○GitHub Copilot Study
-※Open_USD解析・開発
-・やりたいことを整理
- ー解析
- ー質問
- ーソースの提案
-・クライアントの使用モデルの確認
-
 
 ○MaterialX FileFormat and Shader Plugin 調査
 ・デバッグ準備
@@ -34,6 +26,15 @@
 
 ○mtlx2hda.py 調査
 ・Hython デバッグ
+
+○GitHub Copilot 調査資料
+※Open_USD解析・開発
+・やりたいことを整理
+ ー解析
+ ー質問
+ ーソースの提案
+・クライアントの使用モデルの確認
+・GPT(https://chatgpt.com/s/t_6ae7cb7c4b088191a6bcf1c163256a30)
 
 
 ○Terrain 調査
