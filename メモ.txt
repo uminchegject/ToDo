@@ -1,7 +1,6 @@
 ﻿○サバゲー
 
 ○※個人目標 設定
-・GPT
 
 
 ○HTML魔導書 読書
@@ -21,16 +20,16 @@
 ○GitHub Copilot Study
 ※Open_USD解析・開発
 ・やりたいことを整理
-　ー解析
-　ー質問
-　ーソースの提案
+ ー解析
+ ー質問
+ ーソースの提案
 ・クライアントの使用モデルの確認
 
 
 ○MaterialX FileFormat and Shader Plugin 調査
 ・デバッグ準備
-　ーvisual studioを用いたプラグインのデバッグ (usdObjでデバッグ挙動確認)
-　ー※挙動からデバッグしたい処理を整理
+ ーvisual studioを用いたプラグインのデバッグ (usdObjでデバッグ挙動確認)
+ ー※挙動からデバッグしたい処理を整理
 ・USD と MaterialX (資料)
 
 ○mtlx2hda.py 調査
@@ -57,3 +56,23 @@
  ー地形生成
  ーMask & Scatter (Building)
 ・Corpernicus
+
+
+○BlockGenerator
+※vertical
+・Frame
+・Box + Empty
+・Pipe + Empty
+
+○DetailGenerator
+・Pattern (BasePoint)
+ -Size
+・Object(Frame, Box, Pipe)
+ -数
+ -サイズ
+ -カラー
+
+○Module モデリング
+・Frame
+・Box Block
+・Pipe Block
