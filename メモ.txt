@@ -1,9 +1,18 @@
-﻿○※個人目標 設定
+﻿○サバゲー
+
+○※個人目標 設定
 ・GPT
 
 
+○GitHub Copilot Study
+・Copilot 簡単検証
+
 ○ソース群解析AI Prepare
-・usdMtlx
+・やりたいことを整理
+　ー解析
+　ー質問
+　ーソースの提案
+・クライアントの使用モデルの確認
 
 
 ○BlockGenerator
