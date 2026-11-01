@@ -83,5 +83,8 @@
 ・Japanese Chastle
 ・Rapture
 
+○※SideFX UnrealTutorial 調査
+https://www.sidefx.com/learn-main-menu/production-projects
+
 △パイプライン化
 ・背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装

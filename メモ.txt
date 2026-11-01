@@ -18,11 +18,7 @@
 ○PBR Study
 ・OpenPBR
 
-
 ○GitHub Copilot Study
-・Copilot 簡単検証
-
-○ソース群解析AI Prepare
 ※Open_USD解析・開発
 ・やりたいことを整理
 　ー解析
@@ -39,10 +35,6 @@
 
 ○mtlx2hda.py 調査
 ・Hython デバッグ
-
-
-○※SideFX UnrealTutorial 調査
-https://www.sidefx.com/learn-main-menu/production-projects
 
 
 ○Terrain 調査
