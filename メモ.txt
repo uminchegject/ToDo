@@ -1,16 +1,7 @@
-﻿○サバゲー
-・フィールド
-
-○11/7 セッティング
-・好物
-
-○クライアント
-・Setup処理 確認
+﻿○クライアント
 ・ゴール 整理
+・Labs管理方法 調査
 
-
-○Solaris Study
-・FOUNDATIONS 20.5 | SOLARIS MARKET
 
 ○Terrain 調査
 ・THE COMPLETE A-Z TERRAIN HANDBOOK
@@ -55,16 +46,18 @@
 
 ■メモ
 ○サバゲー
+・フィールド
 
-○個人目標 設定
+○11/7 セッティング
+・好物
 
 
 ○HTML魔導書 読書
 
-○Solaris Study
+○Solaris Prepare
+※SampleHip付
 ※MaterialX Study
 ※USD Study
-・FOUNDATIONS 20.5 | SOLARIS MARKET
 
 ○Python debugger（pdb) Study
 ※mtlx2hda.py 調査
