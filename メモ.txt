@@ -5,28 +5,25 @@
 ・好物
 
 
-○Rapture Terrain
-
-
-○BlockGenerator
-※vertical
-・Frame
-・Box + Empty
-・Pipe + Empty
-
-○DetailGenerator
-・Pattern (BasePoint)
+○BasePoint 生成
+・Pattern
+ -Obj + Empty
  -Size
 ・Object(Frame, Box, Pipe)
  -数
  -サイズ
  -カラー
 
+●Pattern
+※vertical
+・Frame
+・Box + Empty
+・Pipe + Empty
+
 ○Module モデリング
 ・Frame
 ・Box Block
 ・Pipe Block
-
 
 
 ■メモ
