@@ -7,28 +7,23 @@
 
 ○Rapture Terrain 検証
 ※Tutorialのプロジェクトをベースに用意
-・Mask & BasePoint 処理用意
 
 
-○BasePoint 生成
-・Pattern
- -Obj + Empty
- -Size
-・Object(Frame, Box, Pipe)
- -数
- -サイズ
- -カラー
+○Module モデリング
+・Frame
+・Box Block
+・Pipe Block
+
+●Object(Frame, Box, Pipe)
+・数
+・サイズ
+・カラー
 
 ●Pattern
 ※vertical
 ・Frame
 ・Box + Empty
 ・Pipe + Empty
-
-○Module モデリング
-・Frame
-・Box Block
-・Pipe Block
 
 
 ■メモ
