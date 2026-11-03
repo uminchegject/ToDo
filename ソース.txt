@@ -32,24 +32,22 @@ for(int x_idx = 0; x_idx < unit_num_x; x_idx++){
         setpointattrib(0, "scale", frame_pt, frame_scale);
         
         //Box
-        vector base_box_scale = 0.9;
-        vector box_pos = pos;
-        vector box_scale = unit_scale * base_box_scale;
-        int box_pt = addpoint(0, box_pos);
-        setpointattrib(0, "scale", box_pt, box_scale);
+        if(x_idx % 5 == 0){
+            vector base_box_scale = 0.9;
+            vector box_pos = pos;
+            vector box_scale = unit_scale * base_box_scale;
+            int box_pt = addpoint(0, box_pos);
+            setpointattrib(0, "scale", box_pt, box_scale);
+        }
         
         //Pipe
-        int pipe_num = 5;
-        for(int pipe_idx = 0; pipe_idx < pipe_num; ++pipe_idx){
-            vector pipe_scale = unit_scale;
-            pipe_scale.x /= pipe_num;
-            pipe_scale *= 0.8;
-                        
+        if(x_idx % 5 != 0 && y_idx % 5 == 3){            
             vector pipe_pos = pos;
-            pipe_pos.x += pipe_idx * pipe_scale.x;
-
+            vector pipe_scale = unit_scale;
+            pipe_scale.y *= 5;
+            pipe_scale *= 0.8;
             int pipe_pt = addpoint(0, pipe_pos);
-            setpointattrib(0, "scale", pipe_pt, pipe_scale);
+            setpointattrib(0, "scale", pipe_pt, pipe_scale);       
         }        
     }
 }

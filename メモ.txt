@@ -5,6 +5,11 @@
 ・好物
 
 
+○Rapture Terrain 検証
+※Tutorialのプロジェクトをベースに用意
+・Mask & BasePoint 処理用意
+
+
 ○BasePoint 生成
 ・Pattern
  -Obj + Empty
