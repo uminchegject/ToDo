@@ -1,34 +1,11 @@
-﻿○サバゲー
+﻿○クライアント
+・※Labsデータが取得できなかった場合のフォールバック対応
+・Labs Study (Private)
+
+○サバゲー
 ・フィールド
 
 ○11/7 セッティング
-・好物
-
-
-○Rapture Terrain 検証
-※Tutorialのプロジェクトをベースに用意
-
-
-○Module モデリング
-・Frame
-・Box Block
-・Pipe Block
-
-●Object(Frame, Box, Pipe)
-・数
-・サイズ
-・カラー
-
-●Pattern
-※vertical
-・Frame
-・Box + Empty
-・Pipe + Empty
-
-
-■メモ
-○クライアント
-・※Labsデータが取得できなかった場合のフォールバック対応
 
 
 ○HTML魔導書 読書
@@ -37,6 +14,8 @@
 ※SampleHip付
 ※MaterialX Study
 ※USD Study
+・GPT(https://chatgpt.com/s/t_6ae9a2824e1081919a045ef70481f49b)
+　ー※SampleHipを確認・比較
 
 ○Python debugger（pdb) Study
 ※mtlx2hda.py 調査
@@ -69,10 +48,13 @@
 ・※THE COMPLETE A-Z TERRAIN HANDBOOK
 ・WorldBuilding/Terrain (資料)
 
-○ProceduralModeling 調査
+○Rapture Terrain 検証
+※Tutorialのプロジェクトをベースに用意
+
+△ProceduralModeling 調査
 ・Creation of a Medieval Town
 
-○Cops Study
+△Cops Study
 ※アールデコ 模様
 ・※HOW TO CREATE TILE-BASED TEXTURES
 ・DIAMOND PLATE TEXTURES IN COPS 
@@ -85,3 +67,20 @@
  ー地形生成
  ーMask & Scatter (Building)
 ・Corpernicus
+
+
+○Module モデリング
+・Frame
+・Box Block
+・Pipe Block
+
+●Object(Frame, Box, Pipe)
+・数
+・サイズ
+・カラー
+
+●Pattern
+※vertical
+・Frame
+・Box + Empty
+・Pipe + Empty
