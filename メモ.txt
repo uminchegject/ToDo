@@ -1,63 +1,7 @@
 ﻿○クライアント
 ・※Labsデータが取得できなかった場合のフォールバック対応
-・検証
-・報告準備
-・Labs Study (Private)
-
-○サバゲー
-・フィールド(Battle)
-
-○11/7 セッティング
-
-
-○Solaris Study
-※MaterialX Study
-※USD Study
-・USD ASSET BUILDING WITH SOLARIS
-
-○MaterialX FileFormat and Shader Plugin 調査
-・usdview mtlx エラー調査
-・デバッグ
- ーvisual studioを用いたプラグインのデバッグ
- ー※挙動からデバッグしたい処理を整理
-・USD と MaterialX (資料)
-
-△GitHub Copilot 調査資料
-※Open_USD解析・開発
-・やりたいことを整理
- ー解析
- ー質問
- ーソースの提案
-
-
-○Terrain 調査
-・※THE COMPLETE A-Z TERRAIN HANDBOOK
-・WorldBuilding/Terrain (資料)
-
-○Rapture Terrain 検証
-※Tutorialのプロジェクトをベースに用意
-
-
-○Module モデリング
-・Frame
-・Box Block
-・Pipe Block
-
-●Object(Frame, Box, Pipe)
-・数
-・サイズ
-・カラー
-
-●Pattern
-※vertical
-・Frame
-
-
-
-■メモ
-○クライアント
-・※Labsデータが取得できなかった場合のフォールバック対応
-・Labs Study (Private)
+・ソース整理・確認
+・報告内容整理
 
 ○サバゲー
 ・フィールド(Battle)
@@ -67,12 +11,10 @@
 
 ○HTML魔導書 読書
 
-○Solaris Prepare
-※SampleHip付
+○Solaris Study
 ※MaterialX Study
 ※USD Study
-・GPT(https://chatgpt.com/s/t_6ae9a2824e1081919a045ef70481f49b)
-　ー※SampleHipを確認・比較
+・USD ASSET BUILDING WITH SOLARIS
 
 ○PBR Study
 ・OpenPBR
@@ -80,6 +22,8 @@
 
 ○MaterialX FileFormat and Shader Plugin 調査
 ・デバッグ準備
+ -usdObj
+・デバッグ
  ーvisual studioを用いたプラグインのデバッグ (usdObjでデバッグ挙動確認)
  ー※挙動からデバッグしたい処理を整理
 ・USD と MaterialX (資料)
@@ -107,6 +51,7 @@
 
 ○Rapture Terrain 検証
 ※Tutorialのプロジェクトをベースに用意
+・BuildingGenerator検証
 
 △ProceduralModeling 調査
 ・Creation of a Medieval Town
@@ -125,6 +70,8 @@
  ーMask & Scatter (Building)
 ・Corpernicus
 
+
+○Pinterestイラスト 模写
 
 ○Module モデリング
 ・Frame
