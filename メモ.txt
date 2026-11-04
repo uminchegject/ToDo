@@ -6,7 +6,12 @@
 ・フィールド
 
 ○11/7 セッティング
-
+了解!
+そしたらサッカーのチケットと夜ご飯の予約は自分の方で進めておくね!
+夜ご飯についてはコースで予約すれば個室にできるっぽいので一番スタンダードな下記のコースをつけて
+予約するね!
+因みにだけど‥
+もし差し支えなければ、夜ご飯の時だけ奥さんも一緒にどうでしょうか?
 
 ○HTML魔導書 読書
 
@@ -16,10 +21,6 @@
 ※USD Study
 ・GPT(https://chatgpt.com/s/t_6ae9a2824e1081919a045ef70481f49b)
 　ー※SampleHipを確認・比較
-
-○Python debugger（pdb) Study
-※mtlx2hda.py 調査
-・Pythonデバッガ pdb クイックリファレンス
 
 ○PBR Study
 ・OpenPBR
@@ -31,8 +32,12 @@
  ー※挙動からデバッグしたい処理を整理
 ・USD と MaterialX (資料)
 
-○mtlx2hda.py 調査
-・Hython デバッグ
+○Python debugger（pdb) 検証
+※mtlx2hda.py 調査
+・コマンド
+・VsCode
+・※mtlx2hda.py 調査
+・Pythonデバッガ pdb クイックリファレンス　(資料)
 
 ○GitHub Copilot 調査資料
 ※Open_USD解析・開発
