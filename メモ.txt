@@ -7,6 +7,9 @@
 ・フィールド(Battle)
 
 ○11/7 セッティング
+・サッカーチケット
+・ディナー 予約
+　ーバースデープレート
 
 
 ○HTML魔導書 読書
@@ -17,7 +20,7 @@
 ・USD ASSET BUILDING WITH SOLARIS
 
 ○PBR Study
-・OpenPBR
+・PBRとは｜物理ベースレンダリングの仕組みとパラメータ
 
 
 ○MaterialX FileFormat and Shader Plugin 調査
@@ -41,7 +44,6 @@
  ー解析
  ー質問
  ーソースの提案
-・クライアントの使用モデルの確認
 ・GPT(https://chatgpt.com/s/t_6ae7cb7c4b088191a6bcf1c163256a30)
 
 
@@ -77,6 +79,9 @@
 ・Frame
 ・Box Block
 ・Pipe Block
+
+○ソース修正
+・UnitサイズのObjごとの調整
 
 ●Object(Frame, Box, Pipe)
 ・数
