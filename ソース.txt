@@ -1,14 +1,10 @@
 ﻿■PompidouPattern
-・Pattern (BasePoint)
- -Size
-・Object(Frame, Box, Pipe)
- -数
- -サイズ
- -カラー
+vector base_scale = chv("base_scale");
+vector base_unit_scale = chv("base_unit_scale");
+int x_skip_num = chi("x_skip_num");
+int y_skip_num = chi("y_skip_num");
 
-vector base_scale = {10.0, 10.0, 0.0};
 vector base_pos = 0;
-vector base_unit_scale = 2.0;
 
 int unit_num_x = int(base_scale.x / base_unit_scale.x);
 int unit_num_y = int(base_scale.y / base_unit_scale.y);
@@ -20,34 +16,14 @@ unit_scale.y = base_scale.y / float(unit_num_y);
 for(int x_idx = 0; x_idx < unit_num_x; x_idx++){
 
     for(int y_idx = 0; y_idx < unit_num_y; y_idx++){
+        
+        if(x_idx % x_skip_num != 0) continue;
+        if(y_idx % y_skip_num != 0) continue;
+                
         vector pos = base_pos;
         pos.x += x_idx * unit_scale.x;
         pos.y += y_idx * unit_scale.y;
-        
-        //Frame
-        vector base_frame_scale = 0.8;
-        vector frame_pos = pos;
-        vector frame_scale = unit_scale * base_frame_scale;
-        int frame_pt = addpoint(0, frame_pos);
-        setpointattrib(0, "scale", frame_pt, frame_scale);
-        
-        //Box
-        if(x_idx % 5 == 0){
-            vector base_box_scale = 0.9;
-            vector box_pos = pos;
-            vector box_scale = unit_scale * base_box_scale;
-            int box_pt = addpoint(0, box_pos);
-            setpointattrib(0, "scale", box_pt, box_scale);
-        }
-        
-        //Pipe
-        if(x_idx % 5 != 0 && y_idx % 5 == 3){            
-            vector pipe_pos = pos;
-            vector pipe_scale = unit_scale;
-            pipe_scale.y *= 5;
-            pipe_scale *= 0.8;
-            int pipe_pt = addpoint(0, pipe_pos);
-            setpointattrib(0, "scale", pipe_pt, pipe_scale);       
-        }        
+        int pt = addpoint(0, pos);
+        setpointattrib(0, "scale", pt, unit_scale);     
     }
 }
