@@ -1,10 +1,56 @@
 ﻿○クライアント
+・報告
+
+○スクリーン確認
+
+
+○Terrain Study
+・Sop側処理確認
+
+
+○MaterialX FileFormat and Shader Plugin デバッグ準備
+・usdObj
+
+○Pythonデバッカー 検証
+・コマンド
+・VsCode
+
+
+○ソース修正
+・※レイヤー対応
+
+○Pinterestイラスト 模写
+
+○Module モデリング
+・Frame
+・Box Block
+・Pipe Block
+
+●Object(Frame, Box, Pipe)
+※レイヤー
+・数
+・サイズ
+・カラー
+
+●Pattern
+※vertical
+・Frame
+・Box + Empty
+・Pipe + Empty
+
+
+
+■メモ
+○クライアント
 ・※Labsデータが取得できなかった場合のフォールバック対応
 ・ソース整理・確認
 ・報告内容整理
 
-○サバゲー
-・フィールド(Battle)
+○サバゲー予約
+
+○プレゼント
+・switch
+・ケーキ
 
 
 ○HTML魔導書 読書
@@ -14,7 +60,7 @@
 ※USD Study
 ・USD ASSET BUILDING WITH SOLARIS
 
-○GitHub Copilot Study
+○GitHub Copilot Prepare
 
 
 ○MaterialX FileFormat and Shader Plugin 調査
@@ -28,7 +74,7 @@
 ○Python debugger（pdb) 検証
 ※mtlx2hda.py 調査
 ・コマンド
-・VsCode
+・VSCode
 ・※mtlx2hda.py 調査
 ・Pythonデバッガ pdb クイックリファレンス　(資料)
 
