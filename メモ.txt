@@ -6,11 +6,6 @@
 ○サバゲー
 ・フィールド(Battle)
 
-○11/7 セッティング
-・サッカーチケット
-・ディナー 予約
-　ーバースデープレート
-
 
 ○HTML魔導書 読書
 
@@ -19,8 +14,7 @@
 ※USD Study
 ・USD ASSET BUILDING WITH SOLARIS
 
-○PBR Study
-・PBRとは｜物理ベースレンダリングの仕組みとパラメータ
+○GitHub Copilot Study
 
 
 ○MaterialX FileFormat and Shader Plugin 調査
@@ -38,13 +32,12 @@
 ・※mtlx2hda.py 調査
 ・Pythonデバッガ pdb クイックリファレンス　(資料)
 
-○GitHub Copilot 調査資料
+○GitHub Copilot 調査
 ※Open_USD解析・開発
 ・やりたいことを整理
  ー解析
  ー質問
  ーソースの提案
-・GPT(https://chatgpt.com/s/t_6ae7cb7c4b088191a6bcf1c163256a30)
 
 
 ○Terrain 調査
