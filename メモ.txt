@@ -3,13 +3,27 @@
 ・ケーキ
 
 
+○Output準備
+・mtlx2hda.py
+ -MaterialXからの情報取得処理
+ -HDA構築処理
+・MaterialX FileFormat and Shader Plugin
+ -MaterialXからの情報取得処理
+ -USD構築処理
+
+
 ○Terrain 調査
+・※THE COMPLETE A-Z TERRAIN HANDBOOK
 ・WorldBuilding/Terrain (資料)
 
 ○Rapture Terrain 検証
 ※Tutorialのプロジェクトをベースに用意
 ・BuildingGenerator検証
-・※THE COMPLETE A-Z TERRAIN HANDBOOK
+
+○ProceduralModeling 調査
+・Creation of a Medieval Town
+
+○BuildingGenerator 設計
 
 △Cops Study
 ※アールデコ 模様
@@ -19,15 +33,6 @@
 ・GETTING STARTED WITH COPERNICUS | SDF SHAPES & PATTERNS
 ・Craft Man (調査資料)
 ・COPS - Colorful Plate Texture Maps(調査資料)
-
-△ProceduralModeling 調査
-・Creation of a Medieval Town
-
-○RaptureCity Study
-・Terrain
- ー地形生成
- ーMask & Scatter (Building)
-・Corpernicus
 
 
 ○Pinterestイラスト 模写
