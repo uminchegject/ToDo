@@ -25,7 +25,10 @@
 
 ○BuildingGenerator 設計
 
-△Cops Study
+○Cops Study (Prepare)
+※家 模様
+ -屋根
+ -壁
 ※アールデコ 模様
 ・※THE COMPLETE A-Z TERRAIN HANDBOOK
 ・HOW TO CREATE TILE-BASED TEXTURES
@@ -35,16 +38,17 @@
 ・COPS - Colorful Plate Texture Maps(調査資料)
 
 
-○Pinterestイラスト 模写
-・レイヤー検証
-　ーFrame + Box
+○レイヤー検証
+※Pinterestイラスト参照
+・Module デザイン
+ -モデリング 設計
 
-○Module モデリング
+●Module
 ・Frame
 ・Box Block
 ・Pipe Block
 
-●Object(Frame, Box, Pipe)
+●UnitParam
 ・数
 ・サイズ
 ・カラー
