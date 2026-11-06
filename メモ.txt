@@ -21,8 +21,13 @@
 ※USD Study
 ・USD ASSET BUILDING WITH SOLARIS
 
-○GitHub Copilot Prepare
+△GitHub Copilot Study
 
+
+○mtlx2hda.py 調査
+・※処理の概要確認
+・デバッグ
+ -python -m pdb your_script.py
 
 ○MaterialX FileFormat and Shader Plugin 調査
 ・デバッグ準備
@@ -32,18 +37,13 @@
  ー※挙動からデバッグしたい処理を整理
 ・USD と MaterialX (資料)
 
-○GitHub Copilot 調査
+△GitHub Copilot 調査
 ※Open_USD解析・開発
 ・やりたいことを整理
  ー解析
  ー質問
  ーソースの提案
 
-△mtlx2hda.py 調査
-・処理の概要確認
-・デバッグ
- -python -m pdb your_script.py
- 
 
 ○Terrain 調査
 ・※THE COMPLETE A-Z TERRAIN HANDBOOK
@@ -53,16 +53,17 @@
 ※Tutorialのプロジェクトをベースに用意
 ・BuildingGenerator検証
 
-△ProceduralModeling 調査
-・Creation of a Medieval Town
-
 △Cops Study
 ※アールデコ 模様
-・※HOW TO CREATE TILE-BASED TEXTURES
+・※THE COMPLETE A-Z TERRAIN HANDBOOK
+・HOW TO CREATE TILE-BASED TEXTURES
 ・DIAMOND PLATE TEXTURES IN COPS 
 ・GETTING STARTED WITH COPERNICUS | SDF SHAPES & PATTERNS
 ・Craft Man (調査資料)
 ・COPS - Colorful Plate Texture Maps(調査資料)
+
+△ProceduralModeling 調査
+・Creation of a Medieval Town
 
 ○RaptureCity Study
 ・Terrain
