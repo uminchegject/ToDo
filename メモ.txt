@@ -1,42 +1,33 @@
-﻿○クライアント
-・UnityPackageManager 調査&検証
-
-○プレゼント
+﻿○プレゼント
 ・switch
 ・ケーキ
 
-○サバゲー予約
 
+○Terrain 調査
+・WorldBuilding/Terrain (資料)
 
-○HTML魔導書 読書
+○Rapture Terrain 検証
+※Tutorialのプロジェクトをベースに用意
+・BuildingGenerator検証
+・※THE COMPLETE A-Z TERRAIN HANDBOOK
 
-○UnityPackageManager Study
+△Cops Study
+※アールデコ 模様
+・※THE COMPLETE A-Z TERRAIN HANDBOOK
+・HOW TO CREATE TILE-BASED TEXTURES
+・DIAMOND PLATE TEXTURES IN COPS 
+・GETTING STARTED WITH COPERNICUS | SDF SHAPES & PATTERNS
+・Craft Man (調査資料)
+・COPS - Colorful Plate Texture Maps(調査資料)
 
-○VSCodeDebug Study
-・launch.json
+△ProceduralModeling 調査
+・Creation of a Medieval Town
 
-※ソース調査
-・処理概要
-・日本語コメント
-・デバッグ
-
-○クライアント
-・クローン ソース整理
-・UnityPackageManager 調査&検証
-
-○スクリーン確認
-
-
-○CreateLod 挙動確認
-・ノード確認
-・usda確認
-
-△THE COMPLETE A-Z TERRAIN HANDBOOK
-・Cops Tutorial
-
-
-○OpenUSDデバッグ準備
-・usdObj
+○RaptureCity Study
+・Terrain
+ ー地形生成
+ ーMask & Scatter (Building)
+・Corpernicus
 
 
 ○Pinterestイラスト 模写
@@ -63,16 +54,34 @@
 
 
 ■メモ
+○クライアント
+・クローン ソース整理
+・UnityPackageManager 調査&検証
+
+○忘年会 準備
+・チーム分け
+・クイズ用意
+
+○サバゲー予約
+
+
+○HTML魔導書 読書
+
+○VSCodeDebug Study
+・launch.json
+
+
 ○Solaris Study
 ※MaterialX Study
 ※USD Study
 ・USD ASSET BUILDING WITH SOLARIS
 
-△GitHub Copilot Study
+○GitHub Copilot Study
+※Copilot Edits
 
 
 ○mtlx2hda.py 調査
-・※処理の概要確認
+・処理の概要確認
  -調査項目整理
 ・日本語コメント化
  -処理詳細 確認
@@ -82,67 +91,10 @@
  -HDAについて
 
 ○MaterialX FileFormat and Shader Plugin 調査
-・※処理の概要確認
+・処理の概要確認
  -調査項目整理
 ・日本語コメント化
  -処理詳細 確認
 ・デバッグ
  ーvisual studioを用いたプラグインのデバッグ (usdObjでデバッグ挙動確認)
  ー※挙動からデバッグしたい処理を整理
-
-
-△GitHub Copilot 調査
-※Open_USD解析・開発
-・やりたいことを整理
- ー解析
- ー質問
- ーソースの提案
-
-
-○Terrain 調査
-・※THE COMPLETE A-Z TERRAIN HANDBOOK
-・WorldBuilding/Terrain (資料)
-
-○Rapture Terrain 検証
-※Tutorialのプロジェクトをベースに用意
-・BuildingGenerator検証
-
-△Cops Study
-※アールデコ 模様
-・※THE COMPLETE A-Z TERRAIN HANDBOOK
-・HOW TO CREATE TILE-BASED TEXTURES
-・DIAMOND PLATE TEXTURES IN COPS 
-・GETTING STARTED WITH COPERNICUS | SDF SHAPES & PATTERNS
-・Craft Man (調査資料)
-・COPS - Colorful Plate Texture Maps(調査資料)
-
-△ProceduralModeling 調査
-・Creation of a Medieval Town
-
-○RaptureCity Study
-・Terrain
- ー地形生成
- ーMask & Scatter (Building)
-・Corpernicus
-
-
-○Pinterestイラスト 模写
-
-○Module モデリング
-・Frame
-・Box Block
-・Pipe Block
-
-○ソース修正
-・UnitサイズのObjごとの調整
-
-●Object(Frame, Box, Pipe)
-・数
-・サイズ
-・カラー
-
-●Pattern
-※vertical
-・Frame
-・Box + Empty
-・Pipe + Empty
