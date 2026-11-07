@@ -72,7 +72,9 @@
 vector base_scale = chv("base_scale");
 vector base_unit_scale = chv("base_unit_scale");
 int x_skip_num = chi("x_skip_num");
+int x_skip_offset = chi("x_skip_offset");
 int y_skip_num = chi("y_skip_num");
+int y_skip_offset = chi("y_skip_offset");
 
 vector base_pos = 0;
 
@@ -87,8 +89,8 @@ for(int x_idx = 0; x_idx < unit_num_x; x_idx++){
 
     for(int y_idx = 0; y_idx < unit_num_y; y_idx++){
         
-        if(x_idx % x_skip_num != 0) continue;
-        if(y_idx % y_skip_num != 0) continue;
+        if(x_idx % x_skip_num != x_skip_offset) continue;
+        if(y_idx % y_skip_num != y_skip_offset) continue;
                 
         vector pos = base_pos;
         pos.x += x_idx * unit_scale.x;

@@ -22,7 +22,8 @@
 ・THE COMPLETE A-Z TERRAIN HANDBOOK 組み込み
 
 ○BuildingGenerator 設計
-・Creation of a Medieval Town 調査
+・Creation of a Medieval Town
+・Houdiniで街のある景観をつくる！
 
 ○Cops Study
 ・※家 模様
@@ -43,6 +44,7 @@
 
 ●Module
 ・Frame
+ -棒
 ・Box Block
 ・Pipe Block
 
