@@ -12,24 +12,22 @@
  -USD構築処理
 
 
-○Terrain 調査
-・※THE COMPLETE A-Z TERRAIN HANDBOOK
-・WorldBuilding/Terrain (資料)
+○Houdiniで街のある景観をつくる！ 調査
+※ベース(組み込み)
+・配置 設計
+・ProceduralModeling
 
-○Rapture Terrain 検証
+○Terrain 検証
 ※Tutorialのプロジェクトをベースに用意
-・BuildingGenerator検証
-
-○ProceduralModeling 調査
-・Creation of a Medieval Town
+・THE COMPLETE A-Z TERRAIN HANDBOOK 組み込み
 
 ○BuildingGenerator 設計
+・Creation of a Medieval Town 調査
 
-○Cops Study (Prepare)
-※家 模様
+○Cops Study
+・※家 模様
  -屋根
  -壁
-※アールデコ 模様
 ・※THE COMPLETE A-Z TERRAIN HANDBOOK
 ・HOW TO CREATE TILE-BASED TEXTURES
 ・DIAMOND PLATE TEXTURES IN COPS 
