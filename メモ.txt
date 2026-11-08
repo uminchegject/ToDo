@@ -1,10 +1,50 @@
-﻿○Output準備
-・mtlx2hda.py
- -MaterialXからの情報取得処理
- -HDA構築処理
-・MaterialX FileFormat and Shader Plugin
- -MaterialXからの情報取得処理
- -USD構築処理
+﻿○クライアント
+・クローン ソース整理
+・UnityPackageManager 調査&検証
+
+○忘年会 準備
+・チーム分け
+・クイズ用意
+
+○サバゲー予約
+
+
+○HTML魔導書 読書
+
+○VSCodeDebug Study
+・【初心者向け】VSCodeでPythonデバッグを始めよう！完全ガイド
+
+○Solaris Study
+※MaterialX Study
+※USD Study
+・USD ASSET BUILDING WITH SOLARIS
+
+
+○GitHub Copilot 準備
+・ソースのコメント化
+
+○mtlx2hda.py 調査
+※MaterialXからの情報取得処理
+※HDA構築処理
+・処理の概要確認
+ -調査項目整理
+・日本語コメント化
+ -処理詳細 確認
+・デバッグ
+ -python -m pdb your_script.py
+・Output準備
+ -HDAについて
+
+○MaterialX FileFormat and Shader Plugin 調査
+※MaterialXからの情報取得処理
+※HDA構築処理
+・処理の概要確認
+ -調査項目整理
+・日本語コメント化
+ -処理詳細 確認
+・デバッグ
+ ーvisual studioを用いたプラグインのデバッグ (usdObjでデバッグ挙動確認)
+ ー※挙動からデバッグしたい処理を整理
 
 
 ○※Houdiniで街のある景観をつくる！ 調査
@@ -55,51 +95,3 @@
 ・Frame
 ・Box + Empty
 ・Pipe + Empty
-
-
-
-■メモ
-○クライアント
-・クローン ソース整理
-・UnityPackageManager 調査&検証
-
-○忘年会 準備
-・チーム分け
-・クイズ用意
-
-○サバゲー予約
-
-
-○HTML魔導書 読書
-
-○VSCodeDebug Study
-・launch.json
-
-
-○Solaris Study
-※MaterialX Study
-※USD Study
-・USD ASSET BUILDING WITH SOLARIS
-
-○GitHub Copilot Study
-※Copilot Edits
-
-
-○mtlx2hda.py 調査
-・処理の概要確認
- -調査項目整理
-・日本語コメント化
- -処理詳細 確認
-・デバッグ
- -python -m pdb your_script.py
-・Output準備
- -HDAについて
-
-○MaterialX FileFormat and Shader Plugin 調査
-・処理の概要確認
- -調査項目整理
-・日本語コメント化
- -処理詳細 確認
-・デバッグ
- ーvisual studioを用いたプラグインのデバッグ (usdObjでデバッグ挙動確認)
- ー※挙動からデバッグしたい処理を整理
