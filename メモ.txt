@@ -1,9 +1,4 @@
-﻿○プレゼント
-・switch
-・ケーキ
-
-
-○Output準備
+﻿○Output準備
 ・mtlx2hda.py
  -MaterialXからの情報取得処理
  -HDA構築処理
@@ -12,7 +7,7 @@
  -USD構築処理
 
 
-○Houdiniで街のある景観をつくる！ 調査
+○※Houdiniで街のある景観をつくる！ 調査
 ※ベース(組み込み)
 ・配置 設計
 ・ProceduralModeling
@@ -44,9 +39,11 @@
 
 ●Module
 ・Frame
- -棒
+ -Tube
 ・Box Block
+ -Tube
 ・Pipe Block
+ -U字Tube
 
 ●UnitParam
 ・数
