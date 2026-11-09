@@ -1,46 +1,15 @@
 ﻿○クライアント
-・UnityPackageManager方式 検証
-　ー手動検証
-　ー自動化検証
-　ーリモート検証
 ・クローン方式
+　ーソース整理
 　ーデバッグ
 　ー報告 準備(メモ)
+・△UnityPackageManager方式 検証
+　ーmetaデータエラー 調査
 
 ○忘年会 準備
 ・チーム分け
 ・クイズ用意
-
-
-○MaterialX FileFormat and Shader Plugin デバッグ準備
-・usdObjクラス
-
-
-○Terrain 実装
-※TownLandscape参照
-・地形生成
-・マスク設定
- -ビル
- -岩
-
-
-○Molude モデリング
-・Frame
- -Tube
-・Box Block
- -Tube
-・Pipe Block
- -U字Tube
-
-
-■メモ
-○クライアント
-・クローン ソース整理
-・UnityPackageManager 調査&検証
-
-○忘年会 準備
-・チーム分け
-・クイズ用意
+ -・GPT(https://chatgpt.com/s/t_6af196a91e908191a5c259d252d9e462)
 
 ○サバゲー予約
 
@@ -67,49 +36,39 @@
 ・COPS - Colorful Plate Texture Maps(調査資料)
 
 
-○mtlx2hda.py デバッグ準備
-・VSCode
-
-○mtlx2hda.py 調査
-※MaterialXからの情報取得処理
-※HDA構築処理
-・処理の概要確認
- -調査項目整理
-・日本語コメント化
- -処理詳細 確認
-・デバッグ
- -python -m pdb your_script.py
-・Output準備
- -HDAについて
-
-○MaterialX FileFormat and Shader Plugin デバッグ準備
-
 ○MaterialX FileFormat and Shader Plugin 調査
 ※MaterialXからの情報取得処理
 ※HDA構築処理
 ・処理の概要確認
  -調査項目整理
-・日本語コメント化
- -処理詳細 確認
 ・デバッグ
- ーvisual studioを用いたプラグインのデバッグ (usdObjでデバッグ挙動確認)
- ー※挙動からデバッグしたい処理を整理
+ ーUsdMtlxRead
+
+○mtlx2hda.py デバッグ準備
+・VSCode
+
+△mtlx2hda.py 調査
+※MaterialXからの情報取得処理
+※HDA構築処理
+・処理の概要確認
+ -調査項目整理
+・デバッグ
 
 
 ○Terrain 実装
 ※TownLandscape参照
-・ハウスマスク
-・岩マスク
+・地形生成
+・マスク設定
+ -ビル
+ -岩
 
 ○BuildingGenerator 設計
 ・Creation of a Medieval Town
 ・Houdiniで街のある景観をつくる！
 
 
-○レイヤー検証
-※Pinterestイラスト参照
-・Module デザイン
- -モデリング 設計
+△Module デザイン
+・モデリング 設計
 
 ●Module
 ・Frame
@@ -118,6 +77,9 @@
  -Tube
 ・Pipe Block
  -U字Tube
+
+○レイヤー検証
+※Pinterestイラスト参照
 
 ●UnitParam
 ・数
