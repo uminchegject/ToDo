@@ -1,4 +1,38 @@
 ﻿○クライアント
+・UnityPackageManager方式 検証
+　ー手動検証
+　ー自動化検証
+　ーリモート検証
+・クローン方式
+　ーデバッグ
+　ー報告 準備(メモ)
+
+○忘年会 準備
+・チーム分け
+・クイズ用意
+
+
+○MaterialX FileFormat and Shader Plugin デバッグ準備
+・usdObjクラス
+
+
+○Terrain 実装
+※TownLandscape参照
+・ハウスマスク
+・岩マスク
+
+
+○Molude モデリング
+・Frame
+ -Tube
+・Box Block
+ -Tube
+・Pipe Block
+ -U字Tube
+
+
+■メモ
+○クライアント
 ・クローン ソース整理
 ・UnityPackageManager 調査&検証
 
@@ -19,9 +53,20 @@
 ※USD Study
 ・USD ASSET BUILDING WITH SOLARIS
 
+△Cops Study
+・※家 模様
+ -屋根
+ -壁
+・※THE COMPLETE A-Z TERRAIN HANDBOOK
+・HOW TO CREATE TILE-BASED TEXTURES
+・DIAMOND PLATE TEXTURES IN COPS 
+・GETTING STARTED WITH COPERNICUS | SDF SHAPES & PATTERNS
+・Craft Man (調査資料)
+・COPS - Colorful Plate Texture Maps(調査資料)
 
-○GitHub Copilot 準備
-・ソースのコメント化
+
+○mtlx2hda.py デバッグ準備
+・VSCode
 
 ○mtlx2hda.py 調査
 ※MaterialXからの情報取得処理
@@ -35,6 +80,8 @@
 ・Output準備
  -HDAについて
 
+○MaterialX FileFormat and Shader Plugin デバッグ準備
+
 ○MaterialX FileFormat and Shader Plugin 調査
 ※MaterialXからの情報取得処理
 ※HDA構築処理
@@ -47,29 +94,14 @@
  ー※挙動からデバッグしたい処理を整理
 
 
-○※Houdiniで街のある景観をつくる！ 調査
-※ベース(組み込み)
-・配置 設計
-・ProceduralModeling
-
-○Terrain 検証
-※Tutorialのプロジェクトをベースに用意
-・THE COMPLETE A-Z TERRAIN HANDBOOK 組み込み
+○Terrain 実装
+※TownLandscape参照
+・ハウスマスク
+・岩マスク
 
 ○BuildingGenerator 設計
 ・Creation of a Medieval Town
 ・Houdiniで街のある景観をつくる！
-
-○Cops Study
-・※家 模様
- -屋根
- -壁
-・※THE COMPLETE A-Z TERRAIN HANDBOOK
-・HOW TO CREATE TILE-BASED TEXTURES
-・DIAMOND PLATE TEXTURES IN COPS 
-・GETTING STARTED WITH COPERNICUS | SDF SHAPES & PATTERNS
-・Craft Man (調査資料)
-・COPS - Colorful Plate Texture Maps(調査資料)
 
 
 ○レイヤー検証
