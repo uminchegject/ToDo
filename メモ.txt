@@ -1,11 +1,14 @@
 ﻿○クライアント
+・UnityPackageManager方式 報告準備
+　ーUPMでのSideFXLabsの管理についての不備
 ・クローン方式
 　ーソース整理
 　ーデバッグ
 　ー報告 準備(メモ)
-・△UnityPackageManager方式 検証
-　ーUPMでのSideFXLabsの扱いについて調査
-
+・△UVレイアウト 準備
+　ードキュメント確認(AI)
+　ー環境準備
+　ー処理確認
 
 ○忘年会 準備
 ・チーム分け
@@ -45,6 +48,7 @@
 ・COPS - Colorful Plate Texture Maps
 
 ○Terrain 調査
+※TownLandscapeベース
 ・THE COMPLETE A-Z TERRAIN HANDBOOK
 
 ○Procedural Modeling 調査
@@ -73,7 +77,6 @@
 
 ○Terrain 実装
 ※TownLandscape参照
-　ー
 ・地形生成
 ・マスク設定
  -ビル
