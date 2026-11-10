@@ -84,6 +84,8 @@
 
 
 ○BuildingGenerator 設計
+・屋根
+・壁
 
 ●Procedural Modeling 資料
 ・Creation of a Medieval Town
