@@ -1,12 +1,66 @@
 ﻿※朝Sample Hip → 昼 深掘り
 
+○議事録
+
+○クライアント
+・UnityPackageManager方式 調査
+　ーUPMでのSideFXLabsの扱いについて調査(GPT)
+・クローン方式
+　ーソース整理
+　ーデバッグ
+　ー報告 準備(メモ)
+
+○忘年会 準備
+・チーム分け
+・クイズ用意
+
+
+○Cops Study
+・HOW TO CREATE TILE-BASED TEXTURES
+
+△Terrain 調査
+・TownLandscape 確認
+
+
+○MaterialX FileFormat and Shader Plugin 調査
+・処理の概要確認
+ -調査項目整理
+・デバッグ
+ ーUsdMtlxRead
+
+○mtlx2hda.py デバッグ準備
+・【初心者向け】VSCodeでPythonデバッグを始めよう！完全ガイド 検証
+
+
+○Terrain 実装
+※TownLandscape参照
+・地形生成
+・マスク設定
+ -ビル
+ -岩
+
+
+○Module モデル用意
+・Frame
+ -Tube
+・Box Block
+ -Tube
+・Pipe Block
+ -U字Tube
+
+△レイヤー検証
+※Pinterestイラスト参照
+
+
+■メモ
 ○クライアント
 ・クローン方式
 　ーソース整理
 　ーデバッグ
 　ー報告 準備(メモ)
 ・△UnityPackageManager方式 検証
-　ーmetaデータエラー 調査
+　ーUPMでのSideFXLabsの扱いについて調査
+
 
 ○忘年会 準備
 ・チーム分け
@@ -17,6 +71,13 @@
 
 
 ○HTML魔導書 読書
+
+○OpenUSD事例 Study
+・CEDIL(https://cedil.cesa.or.jp/cedil_sessions/search?q=usd)
+
+○FBX Study
+※既存パイプラインについて
+・FBXファイルをちょっとだけ理解した
 
 ○VSCodeDebug Study
 ・【初心者向け】VSCodeでPythonデバッグを始めよう！完全ガイド
@@ -66,6 +127,7 @@
 
 ○Terrain 実装
 ※TownLandscape参照
+　ー
 ・地形生成
 ・マスク設定
  -ビル

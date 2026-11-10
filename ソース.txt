@@ -68,14 +68,14 @@
 ■チーム候補
 ●前山辰治
 狸塚亮宏
-▲黒坂駿
-▲梶原 拓馬
+▲山内沙帆
+▲梶原拓馬
 
 ●菊池一成
+▲黒坂駿
 中林伸和
 戸沢直誠
 武田さん
-▲山内沙帆
 ▲坂本雄輝
 
 ●小澤 侑未
@@ -100,6 +100,7 @@
 ▲原田慎太郎
 
 
+
 ■クイズ
 ●時事的な問題​・カジュアルな問題
 ・「純烈」のリーダーがプロデュースした4人組歌謡グループ「モナオとキツネ」の略称。​SNSで大バズりした彼らのデビュー曲のタイトルは？
@@ -120,38 +121,3 @@
 
 ●チームに関する問題​
 ・小話から出題できたらよい？​常駐メンバーが不利？​
-
-
-
-
-■PompidouPattern
-vector base_scale = chv("base_scale");
-vector base_unit_scale = chv("base_unit_scale");
-int x_skip_num = chi("x_skip_num");
-int x_skip_offset = chi("x_skip_offset");
-int y_skip_num = chi("y_skip_num");
-int y_skip_offset = chi("y_skip_offset");
-
-vector base_pos = 0;
-
-int unit_num_x = int(base_scale.x / base_unit_scale.x);
-int unit_num_y = int(base_scale.y / base_unit_scale.y);
-
-vector unit_scale = 1;
-unit_scale.x = base_scale.x / float(unit_num_x);
-unit_scale.y = base_scale.y / float(unit_num_y);
-
-for(int x_idx = 0; x_idx < unit_num_x; x_idx++){
-
-    for(int y_idx = 0; y_idx < unit_num_y; y_idx++){
-        
-        if(x_idx % x_skip_num != x_skip_offset) continue;
-        if(y_idx % y_skip_num != y_skip_offset) continue;
-                
-        vector pos = base_pos;
-        pos.x += x_idx * unit_scale.x;
-        pos.y += y_idx * unit_scale.y;
-        int pt = addpoint(0, pos);
-        setpointattrib(0, "scale", pt, unit_scale);     
-    }
-}
