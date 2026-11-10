@@ -5,7 +5,8 @@
 　ーソース整理
 　ーデバッグ
 　ー報告 準備(メモ)
-・△UVレイアウト 準備
+・UVレイアウト 準備
+　ー※Study準備(Study項目整理)
 　ードキュメント確認(AI)
 　ー環境準備
 　ー処理確認
@@ -28,32 +29,11 @@
 ※既存パイプラインについて
 ・FBXファイルをちょっとだけ理解した
 
-○VSCodeDebug Study
-・【初心者向け】VSCodeでPythonデバッグを始めよう！完全ガイド
 
 ○Solaris Study
 ※MaterialX Study
 ※USD Study
 ・USD ASSET BUILDING WITH SOLARIS
-
-○Cops Study
-・※家 模様
- -屋根
- -壁
-・※HOW TO CREATE TILE-BASED TEXTURES
-・THE COMPLETE A-Z TERRAIN HANDBOOK
-・DIAMOND PLATE TEXTURES IN COPS 
-・GETTING STARTED WITH COPERNICUS | SDF SHAPES & PATTERNS
-・Craft Man
-・COPS - Colorful Plate Texture Maps
-
-○Terrain 調査
-※TownLandscapeベース
-・THE COMPLETE A-Z TERRAIN HANDBOOK
-
-○Procedural Modeling 調査
-・Creation of a Medieval Town
-・Houdiniで街のある景観をつくる！
 
 
 ○MaterialX FileFormat and Shader Plugin 調査
@@ -64,8 +44,9 @@
 ・デバッグ
  ーUsdMtlxRead
 
+
 ○mtlx2hda.py デバッグ準備
-・VSCode
+・【初心者向け】VSCodeでPythonデバッグを始めよう！完全ガイド
 
 △mtlx2hda.py 調査
 ※MaterialXからの情報取得処理
@@ -82,11 +63,35 @@
  -ビル
  -岩
 
+●Terrain 資料
+・※TownLandscape
+・THE COMPLETE A-Z TERRAIN HANDBOOK
+・WorldBuilding/Terrain
+
+
+○Cops 実装
+・家 模様
+ -屋根
+ -壁
+
+●Cops 資料
+・※HOW TO CREATE TILE-BASED TEXTURES
+・THE COMPLETE A-Z TERRAIN HANDBOOK
+・DIAMOND PLATE TEXTURES IN COPS 
+・GETTING STARTED WITH COPERNICUS | SDF SHAPES & PATTERNS
+・Craft Man
+・COPS - Colorful Plate Texture Maps
+
+
 ○BuildingGenerator 設計
 
+●Procedural Modeling 資料
+・Creation of a Medieval Town
+・Houdiniで街のある景観をつくる！
 
-△Module デザイン
-・モデリング 設計
+
+○レイヤー検証
+※Pinterestイラスト参照
 
 ●Module
 ・Frame
@@ -95,9 +100,6 @@
  -Tube
 ・Pipe Block
  -U字Tube
-
-○レイヤー検証
-※Pinterestイラスト参照
 
 ●UnitParam
 ・数
@@ -109,3 +111,28 @@
 ・Frame
 ・Box + Empty
 ・Pipe + Empty
+
+
+○Frame 配置処理設計
+・BaseFrame(1次元)
+・SurfaceFrame(2次元)
+
+○Frame Unit 検証
+※ユニットスケールパラメーター化
+・BaseFrame
+ -Cupsule
+・SurfaceFrame
+ -Box
+ -Pipe
+
+●Unit 設計
+※ポンピドゥセンター 参照
+※Frame Unit ベース
+・BaseFrame
+ -Cupsule
+・SurfaceFrame
+ -Box
+ -Pipe
+  -In Out
+  -From Box
+  -Multi Layer
