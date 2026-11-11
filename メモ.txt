@@ -1,4 +1,44 @@
 ﻿○クライアント
+・クローン方式
+　ーソース整理
+　ーデバッグ
+・報告 準備(メモ)
+・UVレイアウト 準備
+　ー※Study準備(Study項目整理)
+　ー処理確認
+
+△忘年会 準備
+・クイズ用意
+
+
+△USD ASSET BUILDING WITH SOLARIS
+・RECOMMENDED ASSET STRUCTURE
+
+△tile_based_textures_scene_files
+・Cops 処理確認
+
+
+△TownLandscape
+・Terrain(マスク)
+
+△terrain_tutorial_FINAL
+・Cops
+・scatter
+
+
+△Procedural Modeling 調査
+
+
+○MaterialX FileFormat and Shader Plugin 調査
+・UsdMtlxRead
+
+○mtlx2hda.py デバッグ準備
+・【初心者向け】VSCodeでPythonデバッグを始めよう！完全ガイド
+
+
+
+■メモ
+○クライアント
 ・UnityPackageManager方式 報告準備
 　ーUPMでのSideFXLabsの管理についての不備
 ・クローン方式
@@ -12,19 +52,19 @@
 　ー処理確認
 
 ○忘年会 準備
-・チーム分け
 ・クイズ用意
  -・GPT(https://chatgpt.com/s/t_6af196a91e908191a5c259d252d9e462)
 
-○サバゲー予約
+○サバゲー連絡
 
-
-○HTML魔導書 Study
-・Descriptor, DescriptorHeap, RootSignature
 
 ○FBX Study
 ※既存パイプラインについて
 ・FBXファイルをちょっとだけ理解した
+・file format plugin
+
+○HTML魔導書 Study
+・Descriptor, DescriptorHeap, RootSignature
 
 
 ○Solaris Study
@@ -90,6 +130,15 @@
 ●Procedural Modeling 資料
 ・Creation of a Medieval Town
 ・Houdiniで街のある景観をつくる！
+
+
+
+●IDEA
+・Terrainから街並みを再現
+ -川
+ -建物の高さ
+・バリエーション
+ -Box(Procedural) + Frame
 
 
 ○レイヤー検証
