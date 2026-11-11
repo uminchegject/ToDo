@@ -22,9 +22,6 @@
 ○HTML魔導書 Study
 ・Descriptor, DescriptorHeap, RootSignature
 
-○OpenUSD事例 Study
-・CEDIL(https://cedil.cesa.or.jp/cedil_sessions/search?q=usd)
-
 ○FBX Study
 ※既存パイプラインについて
 ・FBXファイルをちょっとだけ理解した
@@ -34,6 +31,9 @@
 ※MaterialX Study
 ※USD Study
 ・USD ASSET BUILDING WITH SOLARIS
+
+○OpenUSD事例 Study
+・CEDIL(https://cedil.cesa.or.jp/cedil_sessions/search?q=usd)
 
 
 ○MaterialX FileFormat and Shader Plugin 調査
