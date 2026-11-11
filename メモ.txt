@@ -1,55 +1,14 @@
-﻿○クライアント
+﻿※Privateは各列1タスクずつに集中する
+　ー※最後の作業準備を行う(メモ)
+　　ー準備完了後にタスク整理
+　ーサブタスク設定 (△)
+
+■Public
+○クライアント
 ・クローン方式
 　ーソース整理
 　ーデバッグ
 ・報告 準備(メモ)
-・UVレイアウト 準備
-　ー※Study準備(Study項目整理)
-　ー処理確認
-
-△忘年会 準備
-・クイズ用意
-
-
-△USD ASSET BUILDING WITH SOLARIS
-・RECOMMENDED ASSET STRUCTURE
-
-△tile_based_textures_scene_files
-・Cops 処理確認
-
-
-△TownLandscape
-・Terrain(マスク)
-
-△terrain_tutorial_FINAL
-・Cops
-・scatter
-
-
-△Procedural Modeling 調査
-
-
-○MaterialX FileFormat and Shader Plugin 調査
-・UsdMtlxRead
-
-○mtlx2hda.py デバッグ準備
-・【初心者向け】VSCodeでPythonデバッグを始めよう！完全ガイド
-
-
-
-■メモ
-○クライアント
-・UnityPackageManager方式 報告準備
-　ーUPMでのSideFXLabsの管理についての不備
-・クローン方式
-　ーソース整理
-　ーデバッグ
-　ー報告 準備(メモ)
-・UVレイアウト 準備
-　ー※Study準備(Study項目整理)
-　ードキュメント確認(AI)
-　ー環境準備
-　ー処理確認
 
 ○忘年会 準備
 ・クイズ用意
@@ -58,10 +17,21 @@
 ○サバゲー連絡
 
 
-○FBX Study
-※既存パイプラインについて
-・FBXファイルをちょっとだけ理解した
-・file format plugin
+
+■Study
+○AutoUVLayout Study
+・事例
+　ー左右対称の配置
+　ーUVのコピー
+　ーパーツごとの解像度調整
+　ーライブ展開機能
+・uvlayout
+　ーIsland Padding
+　ーIterations
+　ーSearchResolution
+　ーRandomSeed
+・sidefx::maya_component_selection_type
+・MNodeMessage、MMessage
 
 ○HTML魔導書 Study
 ・Descriptor, DescriptorHeap, RootSignature
@@ -95,6 +65,11 @@
  -調査項目整理
 ・デバッグ
 
+
+■City
+○Terrain 調査
+・形状生成処理一連確認
+・各マスク設定処理部分確認
 
 ○Terrain 実装
 ※TownLandscape参照
@@ -132,7 +107,7 @@
 ・Houdiniで街のある景観をつくる！
 
 
-
+■Metaborithum
 ●IDEA
 ・Terrainから街並みを再現
  -川

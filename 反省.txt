@@ -11,11 +11,6 @@
 ※最低限の知識を入れる
  ー引き算
 
-●国会図書館
-・※事前準備(調査内容整理)
- -活字系の知識は事前に調べておく
-・画集メイン(ビジュアル資料メイン)
-
 
 ■Public
 ※基礎情報 + 必要情報
@@ -44,10 +39,6 @@
 ・形態デザイン
 ・アニメーション
 
-●万博 シリーズ
-・ポルトガル館
-・大屋根リング
-
 
 ■CityGenerator
 ※Theme
@@ -58,20 +49,11 @@
 ※低層と高層の設計を明確に別にする
 ※配置に重きをおく
  -シンプルモデリング + Color
+※SideFX UnrealTutorial (https://www.sidefx.com/learn-main-menu/production-projects)
 
 ●Type
 ・ProceduralModeling
 ・ModularModeling
-
-●背景
-・地形
-
-●Terrain シリーズ
-・Japanese Chastle
-・Rapture
-
-○※SideFX UnrealTutorial 調査
-https://www.sidefx.com/learn-main-menu/production-projects
 
 △パイプライン化
 ・背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装
