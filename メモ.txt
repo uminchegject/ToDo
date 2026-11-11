@@ -9,16 +9,7 @@
 　ーデバッグ
 ・報告 準備(メモ)
 
-○忘年会 準備
-・クイズ用意
- -・GPT(https://chatgpt.com/s/t_6af196a91e908191a5c259d252d9e462)
-
-○サバゲー連絡
-
-
-
-■Study
-○AutoUVLayout Study
+○AutoUVLayout 調査
 ・事例
 　ー左右対称の配置
 　ーUVのコピー
@@ -32,9 +23,16 @@
 ・sidefx::maya_component_selection_type
 ・MNodeMessage、MMessage
 
-○HTML魔導書 Study
-・Descriptor, DescriptorHeap, RootSignature
+○忘年会 準備
+・クイズ用意
+ -・GPT(https://chatgpt.com/s/t_6af196a91e908191a5c259d252d9e462)
 
+○サバゲー連絡
+
+
+■Study
+○HTML魔導書 Study
+・DirectX12のDescriptorHeapとかRootSignatureとかその周辺のメモ
 
 ○Solaris Study
 ※MaterialX Study
@@ -45,13 +43,13 @@
 ・CEDIL(https://cedil.cesa.or.jp/cedil_sessions/search?q=usd)
 
 
+○UsdMtlxRead 調査
+
 ○MaterialX FileFormat and Shader Plugin 調査
 ※MaterialXからの情報取得処理
 ※HDA構築処理
 ・処理の概要確認
- -調査項目整理
 ・デバッグ
- ーUsdMtlxRead
 
 
 ○mtlx2hda.py デバッグ準備
