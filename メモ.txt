@@ -1,52 +1,4 @@
-﻿■メモ
-○クライアント
-・クローン方式
-　ーソース整理
-　ーデバッグ
-・報告 準備(メモ)
-
-○AutoUVLayout 調査
-・事例
-　ー左右対称の配置
-　ーUVのコピー
-　ーパーツごとの解像度調整
-　ーライブ展開機能
-・uvlayout
-　ーIsland Padding
-　ーIterations
-　ーSearchResolution
-　ーRandomSeed
-・sidefx::maya_component_selection_type
-・MNodeMessage、MMessage
-
-
-○UsdMtlxRead 調査
-・デバッグ
-
-
-○Terrain 調査
-・形状生成処理一連確認
-・各マスク設定処理部分確認
-
-
-△Cedil Study
-
-△Solaris Study
-・USD ASSET BUILDING WITH SOLARIS
-
-△Cops Study
-・HOW TO CREATE TILE-BASED TEXTURES
-
-△mtlx2hda.py デバッグ準備
-
-
-■Public
-○クライアント
-・クローン方式
-　ーソース整理
-　ーデバッグ
-・報告 準備(メモ)
-
+﻿■Public
 ○AutoUVLayout 調査
 ・事例
 　ー左右対称の配置
@@ -65,13 +17,8 @@
 ・クイズ用意
  -・GPT(https://chatgpt.com/s/t_6af196a91e908191a5c259d252d9e462)
 
-○サバゲー連絡
-
 
 ■Study
-○HTML魔導書 Study
-・DirectX12のDescriptorHeapとかRootSignatureとかその周辺のメモ
-
 ○Solaris Study
 ※MaterialX Study
 ※USD Study
@@ -82,12 +29,15 @@
 
 
 ○UsdMtlxRead 調査
+・※mtlx, usdaデータを比較して紐づけしている部分を確認
+　ー調査したい内容のmtlxを調査
+・ソース処理確認
 
 ○MaterialX FileFormat and Shader Plugin 調査
 ※MaterialXからの情報取得処理
 ※HDA構築処理
 ・処理の概要確認
-・デバッグ
+　ーそれぞれのソースの役割を確認
 
 
 ○mtlx2hda.py デバッグ準備
@@ -102,16 +52,24 @@
 
 
 ■City
-○Terrain 調査
-・形状生成処理一連確認
-・各マスク設定処理部分確認
+○マスク設定処理実装
+※TownLandscape参照
+・Terrain Sample で検証
+
+●マスク
+・sea
+　ーclip
+・cliff
+　ーmask by feature
+・glass & forest
+　ーnoise + remap
+　ーcombine mask
+・forest
 
 ○Terrain 実装
 ※TownLandscape参照
 ・地形生成
 ・マスク設定
- -ビル
- -岩
 
 ●Terrain 資料
 ・※TownLandscape
