@@ -1,6 +1,44 @@
-﻿※Private作業は各列1タスクずつ、日中準備する
-　ー※最後の作業準備を行う(Study、調査、メモ)
-　ー準備完了後にタスク整理(その後、検証、実装)
+﻿■メモ
+○クライアント
+・クローン方式
+　ーソース整理
+　ーデバッグ
+・報告 準備(メモ)
+
+○AutoUVLayout 調査
+・事例
+　ー左右対称の配置
+　ーUVのコピー
+　ーパーツごとの解像度調整
+　ーライブ展開機能
+・uvlayout
+　ーIsland Padding
+　ーIterations
+　ーSearchResolution
+　ーRandomSeed
+・sidefx::maya_component_selection_type
+・MNodeMessage、MMessage
+
+
+○UsdMtlxRead 調査
+・デバッグ
+
+
+○Terrain 調査
+・形状生成処理一連確認
+・各マスク設定処理部分確認
+
+
+△Cedil Study
+
+△Solaris Study
+・USD ASSET BUILDING WITH SOLARIS
+
+△Cops Study
+・HOW TO CREATE TILE-BASED TEXTURES
+
+△mtlx2hda.py デバッグ準備
+
 
 ■Public
 ○クライアント
