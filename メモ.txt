@@ -1,5 +1,6 @@
 ﻿■Public
 ○AutoUVLayout 調査
+・GPT(https://chatgpt.com/share/6af5a5c4-892c-83ec-8ff8-7669aac0423c)
 ・事例
 　ー左右対称の配置
 　ーUVのコピー
