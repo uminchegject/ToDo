@@ -1,11 +1,61 @@
-﻿■Public
-○AutoUVLayout 調査
-・GPT(https://chatgpt.com/share/6af5a5c4-892c-83ec-8ff8-7669aac0423c)
-・事例
-　ー左右対称の配置
-　ーUVのコピー
-　ーパーツごとの解像度調整
-　ーライブ展開機能
+﻿※Tutorial Hip はなるべく詳細なコメントがついているものを確認する
+　ーコメントとTutorialサイトをGPTに教えて挙動を確認する
+
+■Metaborithum
+○Frame&Box 設計
+
+○Box + Frame 検証
+・Volume To Box&Frame
+・Box To Pompidue
+・Greeble Town (検証)
+
+
+○レイヤー検証
+※Pinterestイラスト参照
+
+●Module
+・Frame
+ -Tube
+・Box Block
+ -Tube
+・Pipe Block
+ -U字Tube
+
+●UnitParam
+・数
+・サイズ
+・カラー
+
+●Pattern
+※vertical
+・Frame
+・Box + Empty
+・Pipe + Empty
+
+
+●IDEA
+※Frame Unit ベース
+・バリエーション
+ -Frame
+ -Module(Box)
+
+●Frame 
+・BaseFrame(1次元)
+・SurfaceFrame(2次元)
+
+●Module 
+・Procedural Box
+・Pompidue Bpx
+・Cupsule Box
+
+●背景(Terrain)
+・川
+・建物高さ
+
+
+
+■Public
+○検証処理確認
 ・uvlayout
 　ーIsland Padding
 　ーIterations
@@ -14,15 +64,19 @@
 ・sidefx::maya_component_selection_type
 ・MNodeMessage、MMessage
 
+●仕様
+・左右対称の配置
+・UVのコピー
+・パーツごとの解像度調整
+・ライブ展開機能
+
+
 ○忘年会 準備
 ・クイズ用意
  -・GPT(https://chatgpt.com/s/t_6af196a91e908191a5c259d252d9e462)
-
+・プレゼント用意
 
 ■Study
-○UV Study
-・sidefx UV TOOLS
-
 ○Solaris Study
 ※MaterialX Study
 ※USD Study
@@ -102,53 +156,3 @@
 ●Procedural Modeling 資料
 ・Creation of a Medieval Town
 ・Houdiniで街のある景観をつくる！
-
-
-■Metaborithum
-○Box + Frame 検証
-・Volume To Box&Frame
-・Box To Pompidue
-・Greeble Town (検証)
-
-
-○レイヤー検証
-※Pinterestイラスト参照
-
-●Module
-・Frame
- -Tube
-・Box Block
- -Tube
-・Pipe Block
- -U字Tube
-
-●UnitParam
-・数
-・サイズ
-・カラー
-
-●Pattern
-※vertical
-・Frame
-・Box + Empty
-・Pipe + Empty
-
-
-●IDEA
-※Frame Unit ベース
-・バリエーション
- -Frame
- -Module(Box)
-
-●Frame 
-・BaseFrame(1次元)
-・SurfaceFrame(2次元)
-
-●Module 
-・Procedural Box
-・Pompidue Bpx
-・Cupsule Box
-
-●背景(Terrain)
-・川
-・建物高さ
