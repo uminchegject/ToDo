@@ -1,6 +1,8 @@
 ﻿※Tutorial Hip はなるべく詳細なコメントがついているものを確認する
 　ーコメントとTutorialサイトをGPTに教えて挙動を確認する
 
+○コーディングAI Study
+
 ■Metaborithum
 ○Frame&Box 設計
 
