@@ -20,6 +20,9 @@
 
 
 ■Study
+○UV Study
+・sidefx UV TOOLS
+
 ○Solaris Study
 ※MaterialX Study
 ※USD Study
@@ -105,25 +108,7 @@
 ○Box + Frame 検証
 ・Volume To Box&Frame
 ・Terrain
-
-○Frame 配置処理設計
-・BaseFrame(1次元)
-・SurfaceFrame(2次元)
-
-○Module 設計
-・Procedural Box
-・Pompidue Bpx
-・Cupsule Box
-
-○背景(Terrain) 設計
-・川
-・建物高さ
-
-●IDEA
-※Frame Unit ベース
-・バリエーション
- -Frame
- -Module(Box)
+・Box To Pompidue
  
 
 ○レイヤー検証
@@ -147,3 +132,23 @@
 ・Frame
 ・Box + Empty
 ・Pipe + Empty
+
+
+●IDEA
+※Frame Unit ベース
+・バリエーション
+ -Frame
+ -Module(Box)
+
+●Frame 
+・BaseFrame(1次元)
+・SurfaceFrame(2次元)
+
+●Module 
+・Procedural Box
+・Pompidue Bpx
+・Cupsule Box
+
+●背景(Terrain)
+・川
+・建物高さ
