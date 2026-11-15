@@ -1,7 +1,6 @@
 ﻿※Tutorial Hip はなるべく詳細なコメントがついているものを確認する
 　ーコメントとTutorialサイトをGPTに教えて挙動を確認する
 
-○コーディングAI Study
 
 ■Metaborithum
 ○Frame&Box 設計
@@ -55,7 +54,6 @@
 ・建物高さ
 
 
-
 ■Public
 ○検証処理確認
 ・uvlayout
@@ -78,7 +76,13 @@
  -・GPT(https://chatgpt.com/s/t_6af196a91e908191a5c259d252d9e462)
 ・プレゼント用意
 
+
 ■Study
+○コーディングAI Study
+・Codex
+・Cloude Code
+
+
 ○Solaris Study
 ※MaterialX Study
 ※USD Study
