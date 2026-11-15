@@ -110,12 +110,17 @@
 
 ■Metaborithum
 ○Frame&Box 設計
-・Base → Pattern
 
 ○Box + Frame 検証
 ・Volume To Box&Frame
 ・Box To Pompidue
 ・Greeble Town (検証)
+
+●Pattern 検証
+※Base → Pattern
+・Greeble Volume
+・Base Surface
+・Layer Pattern
 
 
 ○レイヤー検証
