@@ -24,7 +24,6 @@
 ■Study
 ○コーディングAI Study
 ・ClaudeCodeとCodexにコーディングを全て任せて商用レベルのUnityゲーム開発を行う【前編】
-・GPT(https://chatgpt.com/c/6af96e8b-03ac-83e8-99dc-410d78d20768)
 
 
 ○Solaris Study
