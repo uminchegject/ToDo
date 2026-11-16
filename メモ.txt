@@ -1,44 +1,9 @@
-﻿■メモ
-○機能 調査 & 整理
-・sidefx::maya_component_selection_type
-・MNodeMessage、MMessage
+﻿■Public
+○MayaPython Study
+・scripts フォルダ
+・hou モジュール
 
-
-○忘年会 準備
-・クイズ用意
-・プレゼント用意
-
-
-○Solaris Study
-・USD ASSET BUILDING WITH SOLARIS
-
-△Cops Study
-
-
-○UsdMtlxRead 調査
-・usda - mtlxファイル比較
-　ー調査箇所整理
-
-
-○マスク設定処理実装
-※TownLandscape参照
-
-
-●Pattern 検証
-※Base → Pattern
-・Greeble Volume
-・Base Surface
-・Layer Pattern
-
-
-
-■Public
-○検証処理確認
-・uvlayout
-　ーIsland Padding
-　ーIterations
-　ーSearchResolution
-　ーRandomSeed
+○機能 検証
 ・sidefx::maya_component_selection_type
 ・MNodeMessage、MMessage
 
@@ -67,6 +32,7 @@
 ※MaterialX Study
 ※USD Study
 ・USD ASSET BUILDING WITH SOLARIS
+　ーExport USDと比較
 
 ○OpenUSD事例 Study
 ・USDを活用したHoudiniと自社開発環境の連携事例
@@ -76,7 +42,8 @@
 ○UsdMtlxRead 調査
 ・※mtlx, usdaデータを比較して紐づけしている部分を確認
 　ー調査したい内容のmtlxを調査
-・ソース処理確認
+・usda - mtlxファイル比較
+　ー調査箇所整理
 
 ○MaterialX FileFormat and Shader Plugin 調査
 ※MaterialXからの情報取得処理

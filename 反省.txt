@@ -35,18 +35,6 @@
 ※タスクに求められている情報
 
 
-■Computational Design
-※Design → Detail
- -Study(基礎情報) → 調査(必要情報) → 検証
-※Pattern + Modeling
-※検証はカラーのみでまず行う
-※明確にモチーフを模写する
-
-●Component
-・形態デザイン
-・アニメーション
-
-
 ■CityGenerator
 ※Theme
  -※Detail
@@ -64,3 +52,15 @@
 
 △パイプライン化
 ・背景アーティスト導きの書(プロシージャル)の効率化できる部分を参考に実装
+
+
+■Computational Design
+※Design → Detail
+ -Study(基礎情報) → 調査(必要情報) → 検証
+※Pattern + Modeling
+※検証はカラーのみでまず行う
+※明確にモチーフを模写する
+
+●Component
+・形態デザイン
+・アニメーション
