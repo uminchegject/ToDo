@@ -1,4 +1,41 @@
-﻿■Public
+﻿■メモ
+○機能 調査 & 整理
+・sidefx::maya_component_selection_type
+・MNodeMessage、MMessage
+
+
+○忘年会 準備
+・クイズ用意
+・プレゼント用意
+
+
+○Solaris Study
+・USD ASSET BUILDING WITH SOLARIS
+
+○OpenUSD事例 Study
+・USDを活用したHoudiniと自社開発環境の連携事例
+
+△Cops Study
+
+
+○UsdMtlxRead 調査
+・usda - mtlxファイル比較
+　ー調査箇所整理
+
+
+○マスク設定処理実装
+※TownLandscape参照
+
+
+●Pattern 検証
+※Base → Pattern
+・Greeble Volume
+・Base Surface
+・Layer Pattern
+
+
+
+■Public
 ○検証処理確認
 ・uvlayout
 　ーIsland Padding
@@ -22,8 +59,11 @@
 
 
 ■Study
-○コーディングAI Study
-・ClaudeCodeとCodexにコーディングを全て任せて商用レベルのUnityゲーム開発を行う【前編】
+○Codex Study
+※コーディングAI 検証
+・初めてのCodex
+・OpenAI Codex：3つの実用例でわかるステップバイステップガイド
+・△Cloude Code
 
 
 ○Solaris Study
