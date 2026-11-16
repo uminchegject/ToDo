@@ -57,6 +57,12 @@
 
 
 ■City
+○Skylark Study
+・Terrain
+・House
+・Wood
+
+
 ○Terrain 実装
 ※TownLandscape参照
 ・地形生成
@@ -70,7 +76,6 @@
 
 
 ○Procedural Modeling Study
-・Skylark
 ・Houdiniで街のある景観をつくる！
 
 ●Procedural Modeling 資料
