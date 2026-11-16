@@ -64,13 +64,14 @@
  -Volume (Mask by feature)
 
 ●Terrain 資料
-・※TownLandscape
+・TownLandscape
 ・THE COMPLETE A-Z TERRAIN HANDBOOK
 ・WorldBuilding/Terrain
 
 
 ○Procedural Modeling Study
 ・Skylark
+・Houdiniで街のある景観をつくる！
 
 ●Procedural Modeling 資料
 ・Creation of a Medieval Town
