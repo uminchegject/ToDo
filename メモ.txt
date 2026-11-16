@@ -64,24 +64,11 @@
 
 
 ■City
-○マスク設定処理実装
-※TownLandscape参照
-・Terrain Sample で検証
-
-●マスク
-・sea
-　ーclip
-・cliff
-　ーmask by feature
-・glass & forest
-　ーnoise + remap
-　ーcombine mask
-・forest
-
 ○Terrain 実装
 ※TownLandscape参照
 ・地形生成
 ・マスク設定
+ -Volume (Mask by feature)
 
 ●Terrain 資料
 ・※TownLandscape
