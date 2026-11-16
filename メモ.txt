@@ -1,8 +1,4 @@
 ﻿■Public
-○MayaPython Study
-・scripts フォルダ
-・hou モジュール
-
 ○機能 検証
 ・sidefx::maya_component_selection_type
 ・MNodeMessage、MMessage
@@ -32,7 +28,7 @@
 ※MaterialX Study
 ※USD Study
 ・USD ASSET BUILDING WITH SOLARIS
-　ーExport USDと比較
+　ーExportファイル確認
 
 ○OpenUSD事例 Study
 ・USDを活用したHoudiniと自社開発環境の連携事例
@@ -40,14 +36,11 @@
 
 
 ○UsdMtlxRead 調査
-・※mtlx, usdaデータを比較して紐づけしている部分を確認
-　ー調査したい内容のmtlxを調査
 ・usda - mtlxファイル比較
 　ー調査箇所整理
 
 ○MaterialX FileFormat and Shader Plugin 調査
 ※MaterialXからの情報取得処理
-※HDA構築処理
 ・処理の概要確認
 　ーそれぞれのソースの役割を確認
 
@@ -76,23 +69,8 @@
 ・WorldBuilding/Terrain
 
 
-○Cops 実装
-・家 模様
- -屋根
- -壁
-
-●Cops 資料
-・※HOW TO CREATE TILE-BASED TEXTURES
-・THE COMPLETE A-Z TERRAIN HANDBOOK
-・DIAMOND PLATE TEXTURES IN COPS 
-・GETTING STARTED WITH COPERNICUS | SDF SHAPES & PATTERNS
-・Craft Man
-・COPS - Colorful Plate Texture Maps
-
-
-○BuildingGenerator 設計
-・屋根
-・壁
+○Procedural Modeling Study
+・Skylark
 
 ●Procedural Modeling 資料
 ・Creation of a Medieval Town
