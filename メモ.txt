@@ -12,9 +12,6 @@
 ○Solaris Study
 ・USD ASSET BUILDING WITH SOLARIS
 
-○OpenUSD事例 Study
-・USDを活用したHoudiniと自社開発環境の連携事例
-
 △Cops Study
 
 
@@ -72,6 +69,7 @@
 ・USD ASSET BUILDING WITH SOLARIS
 
 ○OpenUSD事例 Study
+・USDを活用したHoudiniと自社開発環境の連携事例
 ・CEDIL(https://cedil.cesa.or.jp/cedil_sessions/search?q=usd)
 
 
