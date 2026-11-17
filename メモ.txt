@@ -1,4 +1,42 @@
-﻿■Public
+﻿■メモ
+○ライブ展開機能 実装
+・シームカット
+
+○機能 検証
+・sidefx::maya_component_selection_type
+・MNodeMessage、MMessage
+
+●仕様
+・左右対称の配置
+・UVのコピー
+・パーツごとの解像度調整
+・ライブ展開機能
+
+
+○忘年会 準備
+・クイズ用意
+　ーパネル
+　ー数式
+・プレゼント用意
+
+○Q定例 準備
+・クイズ用意 (2択)
+・議事録
+
+
+○mtlx2hda.py デバッグ準備
+・【初心者向け】VSCodeでPythonデバッグを始めよう！完全ガイド
+
+△mtlx2hda.py 調査
+※MaterialXからの情報取得処理
+※HDA構築処理
+・処理の概要確認
+ -調査項目整理
+・デバッグ
+
+
+
+■Public
 ○機能 検証
 ・sidefx::maya_component_selection_type
 ・MNodeMessage、MMessage
@@ -17,7 +55,14 @@
 
 
 ■Study
-○Codex Study
+○materialX Study
+・Develop Reference
+
+○Guidelines for Structuring USD Assets Study
+・USD ASSET BUILDING WITH SOLARIS
+　ーExportファイル確認
+
+△Codex Study
 ※コーディングAI 検証
 ・初めてのCodex
 ・OpenAI Codex：3つの実用例でわかるステップバイステップガイド
@@ -32,6 +77,7 @@
 
 ○OpenUSD事例 Study
 ・USDを活用したHoudiniと自社開発環境の連携事例
+　ーAsset Resolver
 ・CEDIL(https://cedil.cesa.or.jp/cedil_sessions/search?q=usd)
 
 
