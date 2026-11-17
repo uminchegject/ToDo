@@ -35,6 +35,11 @@
 ・デバッグ
 
 
+○レイヤー検証
+※Pinterestイラスト参照
+・Base → Unit
+・Layer
+
 
 ■Public
 ○機能 検証
