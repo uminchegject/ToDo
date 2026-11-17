@@ -1,12 +1,16 @@
 ﻿※AIで調査する場合は公式ドキュメントを食わせる
 
-※日中はなるべく調査、検証を行う
+●夜(Half Time) + 昼(Play TIme)
+・夜
+ -※翌日のタスクの準備
+ -Studyブラウザ準備
+ -読みものStudy内容は確定させる
+・日中
+ -※なるべく調査、検証を行う
  -英語、長文は避ける (AI)
  -読み物は避けて、サンプルファイル・デバッグメイン
  -読み物が必要そうな場合はリストアップして、夜(準備)・翌日(Study)に回す
 
-※Studyブラウザを夜準備
-読みものStudy内容は確定させる
 
 ■Public
 ○ライブ展開機能 実装
@@ -52,7 +56,7 @@
 
 ○OpenUSD事例 Study
 ・USDを活用したHoudiniと自社開発環境の連携事例
-　ーAsset Resolver
+ ーAsset Resolver
 ・CEDIL(https://cedil.cesa.or.jp/cedil_sessions/search?q=usd)
 
 
