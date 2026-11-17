@@ -1,32 +1,37 @@
-﻿■クイズ
-●時事的な問題​・カジュアルな問題
-・「純烈」のリーダーがプロデュースした4人組歌謡グループ「モナオとキツネ」の略称。​SNSで大バズりした彼らのデビュー曲のタイトルは？
-・
+﻿■忘年会 準備
+●クイズ
+※体験型
+※複数回答
+・計算クイズ
+ -何の処理 (星)
+・チームメンバークイズ (ボーナス問題)
+ -フルネームをできるだけ(漢字であればボーナス点)
+・伝言クイズ
+ -絵 + 答え
+・シルエットクイズ 
+ -国
+ -ポケモン
+・イントロクイズ(1秒)
+ -映画
+ -ゲーム
+ -Jpop
+・間違え探し
+ -おかしい点
 
-●ゲームに関する問題
-・今年発売されたゲームの販売本数・売上ランキングを予想
-・このゲームの開発会社はどこ？
-・ゲームに登場するキャラクターの名前当て
-・このゲームのグラフィックはどのゲームエンジンで作られている？
-
-●体力問題
-・代表者にでてきてもらって​万歩計ふって大きい数字が勝ちとか​
-
-
-●TAっぽい問題​
-・身体の動きとして​ありえない動きはどれとか​（みんなで動いて確かめてたらおもろそう）​
-
-●チームに関する問題​
-・小話から出題できたらよい？​常駐メンバーが不利？​
+●景品
+・食料
+・消耗品
 
 
 ■ソース
-vector base_scale = chv("base_scale");
+vector base_scale = v@scale;
+vector base_pos = v@P;
+
 vector base_unit_scale = chv("base_unit_scale");
 int x_skip_num = chi("x_skip_num");
+int x_skip_offset = chi("x_skip_offset");
 int y_skip_num = chi("y_skip_num");
-
-vector base_pos = 0;
+int y_skip_offset = chi("y_skip_offset");
 
 int unit_num_x = int(base_scale.x / base_unit_scale.x);
 int unit_num_y = int(base_scale.y / base_unit_scale.y);
@@ -39,8 +44,8 @@ for(int x_idx = 0; x_idx < unit_num_x; x_idx++){
 
     for(int y_idx = 0; y_idx < unit_num_y; y_idx++){
         
-        if(x_idx % x_skip_num != 0) continue;
-        if(y_idx % y_skip_num != 0) continue;
+        if(x_idx % x_skip_num != x_skip_offset) continue;
+        if(y_idx % y_skip_num != y_skip_offset) continue;
                 
         vector pos = base_pos;
         pos.x += x_idx * unit_scale.x;
