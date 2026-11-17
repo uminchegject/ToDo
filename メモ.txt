@@ -45,7 +45,6 @@
 ※MaterialX Study
 ※USD Study
 ・USD ASSET BUILDING WITH SOLARIS
-　ーExportファイル確認
 
 
 ○AssetResolver Study
