@@ -1,4 +1,12 @@
-﻿■Public
+﻿※AIで調査する場合は公式ドキュメントを食わせる
+
+※日中はなるべく調査、検証を行う
+ -英語、長文は避ける (AI)
+ -読み物は避けて、サンプルファイル・デバッグメイン
+ -読み物が必要そうな場合はリストアップして、夜(準備)・翌日(Study)に回す
+
+
+■Public
 ○ライブ展開機能 実装
 ・シームカット
 
@@ -15,18 +23,11 @@
 
 ○忘年会 準備
 ・クイズ用意
- -・GPT(https://chatgpt.com/s/t_6af196a91e908191a5c259d252d9e462)
+ -メモ
 ・プレゼント用意
 
 
 ■Study
-○materialX Study
-・Develop Reference
-
-○Guidelines for Structuring USD Assets Study
-・USD ASSET BUILDING WITH SOLARIS
-　ーExportファイル確認
-
 △Codex Study
 ※コーディングAI 検証
 ・初めてのCodex
@@ -34,11 +35,19 @@
 ・△Cloude Code
 
 
+○Guidelines for Structuring USD Assets Study
+・※Exportファイルベース (AI)
+・USDのアセット構造の話
+
 ○Solaris Study
 ※MaterialX Study
 ※USD Study
 ・USD ASSET BUILDING WITH SOLARIS
 　ーExportファイル確認
+
+
+○AssetResolver Study
+・AssetResolution(1) - usdResolverExample
 
 ○OpenUSD事例 Study
 ・USDを活用したHoudiniと自社開発環境の連携事例
@@ -46,20 +55,21 @@
 ・CEDIL(https://cedil.cesa.or.jp/cedil_sessions/search?q=usd)
 
 
-○UsdMtlxRead 調査
+○materialXプロジェクト Study
+・Copilot
+・Document(https://github.com/AcademySoftwareFoundation/MaterialX/blob/main/documents)
+
+△UsdMtlxRead 調査
 ・usda - mtlxファイル比較
 　ー調査箇所整理
 
-○MaterialX FileFormat and Shader Plugin 調査
+△MaterialX FileFormat and Shader Plugin 調査
 ※MaterialXからの情報取得処理
 ・処理の概要確認
 　ーそれぞれのソースの役割を確認
 
 
-○mtlx2hda.py デバッグ準備
-・【初心者向け】VSCodeでPythonデバッグを始めよう！完全ガイド
-
-△mtlx2hda.py 調査
+○mtlx2hda.py 調査
 ※MaterialXからの情報取得処理
 ※HDA構築処理
 ・処理の概要確認
