@@ -35,7 +35,6 @@
 
 
 ○Solaris Study
-※MaterialX Study
 ※USD Study
 ・USD ASSET BUILDING WITH SOLARIS
 
@@ -51,13 +50,14 @@
  -MaterialX.Specification.md
 
 ○MaterialX FileFormat and Shader Plugin 調査
-※MaterialXからの情報取得処理
-・UsdMtlxRead
-　ーusda - mtlxファイル比較 (調査箇所整理)
+※USDからMaterialXをStudy
+・usda - mtlxファイル比較 (調査箇所整理)
+・UsdMtlxRead デバッグ
 
-△mtlx2hda.py 調査
-※MaterialXからの情報取得処理
-※HDA構築処理
+○Solaris MatrialX Study
+※HoudiniからMaterialXをStudy
+・SOLARIS ESSENTIALS(※サンプルhip)
+・△mtlx2hda.py 調査
 
 
 ■City
