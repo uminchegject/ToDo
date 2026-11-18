@@ -3,7 +3,7 @@
 ・仕様整理
  -左右対称の配置
  -UVのコピー
- -パーツごとの解像度調整　
+ -パーツごとの解像度調整
 
 ●仕様
 ・左右対称の配置
@@ -20,10 +20,12 @@
 
 ■Study
 ○UV Study
+・HoudiniでUV展開＆リグ入門
+・UV TOOLS (復習)
 
 ○Guidelines for Structuring USD Assets Study
 ・公式ドキュメント
-　ーAI + 原文確認
+ ーAI + 原文確認
 
 △Codex Study
 ※コーディングAI 検証
