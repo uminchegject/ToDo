@@ -1,18 +1,4 @@
-﻿■準備
-○materialX Study
-・MaterialX.Specification.md
-
-○Houdiniで街のある景観をつくる！ 整理
-※Cityベース要素を整理
-・terrain
- -配置
-・Procedural Modeling
-
-○ポンピドゥ検証
-・街検証(Greeble)
-
-
-■Public
+﻿■Public
 ○プロトタイプ実装 準備
 ・仕様整理
  -左右対称の配置
@@ -62,6 +48,7 @@
 
 ○materialX Study
 ・documents
+ -MaterialX.Specification.md
 
 ○MaterialX FileFormat and Shader Plugin 調査
 ※MaterialXからの情報取得処理
@@ -102,10 +89,10 @@
 
 
 ■Metaborithum
-○レイヤー検証
-※Pinterestイラスト参照
-・Base → Unit
-・Layer
+○ポンピドゥ検証
+・Grid To BasePoint
+・街検証(Greeble)
+・Detail(Layer) 検証
 
 ●Module
 ・Frame
