@@ -1,46 +1,6 @@
-﻿○機能 実装 検証
-※シンプルuv展開hdaをベースに修正していく
-・解像度調整機能
-・ライブ展開機能
-
-●機能詳細
-・sidefx::maya_component_selection_type
-・MNodeMessage、MMessage
-
-△実例 調査
-※AIの素材にする
-
-●仕様
-・左右対称の配置
-・UVのコピー
-・パーツごとの解像度調整
-・ライブ展開機能
-
-
-○※git 更新
-
-○忘年会 準備
-・クイズ用意
- -メモ
-・プレゼント用意
-
-
-○USD_with_Solaris_AssetBuilding 調査
-
-○usdResolverExample 調査
-・挙動
-・ソース
-　ーデバッグ
-
-
-○レイヤー検証
-※Pinterestイラスト参照
-・Base → Unit
-・Layer
-
-
-■準備
-○materialX Study 準備
+﻿■準備
+○materialX Study
+・MaterialX.Specification.md
 
 ○Houdiniで街のある景観をつくる！ 整理
 ※ベース要素を整理
@@ -48,16 +8,17 @@
  -配置
 ・Procedural Modeling
 
-○mtlx2hda.py 調査
-※MaterialXからの情報取得処理
-※HDA構築処理
-
+○レイヤー検証
+※Pinterestイラスト参照
+・Layer
 
 
 ■Public
-○機能 検証
-・sidefx::maya_component_selection_type
-・MNodeMessage、MMessage
+○プロトタイプ実装 準備
+・仕様整理
+ -左右対称の配置
+ -UVのコピー
+ -パーツごとの解像度調整　
 
 ●仕様
 ・左右対称の配置
@@ -73,53 +34,44 @@
 
 
 ■Study
+○Guidelines for Structuring USD Assets Study
+・公式ドキュメント
+　ーAI + 原文確認
+
 △Codex Study
 ※コーディングAI 検証
 ・初めてのCodex
 ・OpenAI Codex：3つの実用例でわかるステップバイステップガイド
 ・△Cloude Code
 
+△AssetResolverSample 調査
+・ソース調査
+・デバッグ
 
-○Guidelines for Structuring USD Assets Study
-・公式ドキュメント
-　ーAI + 原文確認
 
 ○Solaris Study
 ※MaterialX Study
 ※USD Study
 ・USD ASSET BUILDING WITH SOLARIS
 
-
-○AssetResolver Study
-・AssetResolution(1) - usdResolverExample
-
 ○OpenUSD事例 Study
 •[CEDEC2022] 『グランツーリスモ７』開発におけるUSD活用事例
-•[CEDEC2017] ピクサーUSD 入門新たなコンテンツパイプラインを構築する
 •[CEDEC2021] パイプライン開発者が知っておきたいUSDの使い方
+•[CEDEC2017] ピクサーUSD 入門新たなコンテンツパイプラインを構築する
 ・CEDIL(https://cedil.cesa.or.jp/cedil_sessions/search?q=usd)
 
 
-○materialXプロジェクト Study
-・Copilot
-・Document(https://github.com/AcademySoftwareFoundation/MaterialX/blob/main/documents)
+○materialX Study
+・documents
 
-△UsdMtlxRead 調査
-・usda - mtlxファイル比較
-　ー調査箇所整理
-
-△MaterialX FileFormat and Shader Plugin 調査
+○MaterialX FileFormat and Shader Plugin 調査
 ※MaterialXからの情報取得処理
-・処理の概要確認
-　ーそれぞれのソースの役割を確認
+・UsdMtlxRead
+　ーusda - mtlxファイル比較 (調査箇所整理)
 
-
-○mtlx2hda.py 調査
+△mtlx2hda.py 調査
 ※MaterialXからの情報取得処理
 ※HDA構築処理
-・処理の概要確認
- -調査項目整理
-・デバッグ
 
 
 ■City
