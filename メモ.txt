@@ -3,14 +3,13 @@
 ・MaterialX.Specification.md
 
 ○Houdiniで街のある景観をつくる！ 整理
-※ベース要素を整理
+※Cityベース要素を整理
 ・terrain
  -配置
 ・Procedural Modeling
 
-○レイヤー検証
-※Pinterestイラスト参照
-・Layer
+○ポンピドゥ検証
+・街検証(Greeble)
 
 
 ■Public
