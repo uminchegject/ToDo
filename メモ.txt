@@ -19,6 +19,8 @@
 
 
 ■Study
+○UV Study
+
 ○Guidelines for Structuring USD Assets Study
 ・公式ドキュメント
 　ーAI + 原文確認
@@ -61,12 +63,12 @@
 
 
 ■City
-○Houdiniで街のある景観をつくる！ 整理
-※ベース要素を整理
-・terrain
+○City Tutorial
+・Houdiniで街のある景観をつくる！ 調査
+・Terrain
  -配置
-・Procedural Modeling
-
+・House
+・tree
 
 ○Terrain 実装
 ※TownLandscape参照
