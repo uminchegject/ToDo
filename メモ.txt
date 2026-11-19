@@ -1,4 +1,22 @@
-﻿■Public
+﻿■Design
+○ポンピドゥ検証
+・街検証
+ -Randomly Height
+・Long Tube
+・Detail(Layer) 検証
+
+○Metaborithum Design 準備
+
+○Rapture 準備
+※City Projcetは明確なモチーフを用意する
+・Terrain
+ -断崖
+・Object
+ -岩
+ -Building
+
+
+■Public
 ○Client
 ・CopyUV 修正
 ・プロトタイプ 実装
