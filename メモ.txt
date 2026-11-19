@@ -23,20 +23,15 @@
 ・HoudiniでUV展開＆リグ入門
 ・UV TOOLS (復習)
 
-○Guidelines for Structuring USD Assets Study
-・公式ドキュメント
- ーAI + 原文確認
-
 △Codex Study
 ※コーディングAI 検証
 ・初めてのCodex
 ・OpenAI Codex：3つの実用例でわかるステップバイステップガイド
 ・△Cloude Code
 
-△AssetResolverSample 調査
-・ソース調査
-・デバッグ
 
+○Guidelines for Structuring USD Assets Study
+・公式ドキュメント (https://chatgpt.com/s/t_6afe45091e788191acf09b128c720285)
 
 ○Solaris Study
 ※USD Study
@@ -48,10 +43,13 @@
 •[CEDEC2017] ピクサーUSD 入門新たなコンテンツパイプラインを構築する
 ・CEDIL(https://cedil.cesa.or.jp/cedil_sessions/search?q=usd)
 
+△AssetResolverSample 調査
+・ソース調査
+・デバッグ
+
 
 ○materialX Study
-・documents
- -MaterialX.Specification.md
+・MaterialX.Specification.md (https://chatgpt.com/s/t_6afe457b2c748191946f60f6b10be796)
 
 ○MaterialX FileFormat and Shader Plugin 調査
 ※USDからMaterialXをStudy
