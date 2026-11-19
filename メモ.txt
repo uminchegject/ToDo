@@ -1,19 +1,4 @@
-﻿■準備
-○Guidelines for Structuring USD Assets
-
-○MaterialX.Specification.md
-
-
-○City Tutorial
-・Houdiniで街のある景観をつくる！ 調査
-　ー※シンプル
-　ーHoudini Foundation
-・Terrain
-・House
-・tree
-
-
-■Public
+﻿■Public
 ○Client
 ・CopyUV 修正
 ・プロトタイプ 実装
@@ -84,13 +69,13 @@
 　-UsdMtlxRead ソース確認
 　ーデバッグ
 
-○Solaris MatrialX Study
+○Houdini MatrialX Study
 ※HoudiniからMaterialXをStudy
 ・△mtlx2hda.py 調査
 
 
 ■City
-○City Tutorial
+○City 設計
 ・Houdiniで街のある景観をつくる！ 調査
 　ー※シンプル
 　ーHoudini Foundation
