@@ -1,40 +1,22 @@
-﻿○プロトタイプ実装 
-・UVコピー
-・スケール調整
-
-○忘年会 準備
-・クイズ用意
- -メモ
-・プレゼント用意
-
-○ブログ　＜新２段階認証＞設定のお願い
-
-
-○USD ASSET BUILDING WITH SOLARIS
-・出力usdaとhip処理を比較
-
-△AssetResolverSample 調査
-・ソース確認
-
-
-■準備
-○Expression Study
-
-○SOLARIS ESSENTIALS
-
-
+﻿■準備
 ○Guidelines for Structuring USD Assets
 
 ○MaterialX.Specification.md
 
 
+○City Tutorial
+・Houdiniで街のある景観をつくる！ 調査
+　ー※シンプル
+　ーHoudini Foundation
+・Terrain
+・House
+・tree
+
 
 ■Public
-○プロトタイプ実装 準備
-・仕様整理
- -左右対称の配置
- -UVのコピー
- -パーツごとの解像度調整
+○Client
+・CopyUV 修正
+・プロトタイプ 実装
 
 ●仕様
 ・左右対称の配置
@@ -48,10 +30,23 @@
  -メモ
 ・プレゼント用意
 
+●クイズ
+※体験型
+※複数回答
+・イントロクイズ(歌詞)
+ -Jpop
+・名言クイズ(映画・アニメ)
+・シルエットクイズ
+
+
+○ブログ　＜新２段階認証＞設定のお願い
+
 
 ■Study
-○UV Study
-・UV TOOLS (復習)
+○Expression Study
+・Houdini初級編：エクスプレッション＆スクリプティング
+・【Houdini16.5基礎編】19.Expressionsとスクリプト
+・HoudiniのPythonのExpressionについて
 
 △Codex Study
 ※コーディングAI 検証
@@ -74,8 +69,9 @@
 ・CEDIL(https://cedil.cesa.or.jp/cedil_sessions/search?q=usd)
 
 △AssetResolverSample 調査
-・ソース調査
-・デバッグ
+・resolver.cpp 調査
+　ーソース確認
+　ーデバッグ
 
 
 ○materialX Study
@@ -84,19 +80,21 @@
 ○MaterialX FileFormat and Shader Plugin 調査
 ※USDからMaterialXをStudy
 ・usda - mtlxファイル比較 (調査箇所整理)
-・UsdMtlxRead デバッグ
+・reader.cpp
+　-UsdMtlxRead ソース確認
+　ーデバッグ
 
 ○Solaris MatrialX Study
 ※HoudiniからMaterialXをStudy
-・SOLARIS ESSENTIALS(※サンプルhip)
 ・△mtlx2hda.py 調査
 
 
 ■City
 ○City Tutorial
 ・Houdiniで街のある景観をつくる！ 調査
+　ー※シンプル
+　ーHoudini Foundation
 ・Terrain
- -配置
 ・House
 ・tree
 
