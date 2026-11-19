@@ -1,4 +1,35 @@
-﻿■Public
+﻿○プロトタイプ実装 
+・UVコピー
+・スケール調整
+
+○忘年会 準備
+・クイズ用意
+ -メモ
+・プレゼント用意
+
+○ブログ　＜新２段階認証＞設定のお願い
+
+
+○USD ASSET BUILDING WITH SOLARIS
+・出力usdaとhip処理を比較
+
+△AssetResolverSample 調査
+・ソース確認
+
+
+■準備
+○Expression Study
+
+○SOLARIS ESSENTIALS
+
+
+○Guidelines for Structuring USD Assets
+
+○MaterialX.Specification.md
+
+
+
+■Public
 ○プロトタイプ実装 準備
 ・仕様整理
  -左右対称の配置
@@ -20,7 +51,6 @@
 
 ■Study
 ○UV Study
-・HoudiniでUV展開＆リグ入門
 ・UV TOOLS (復習)
 
 △Codex Study
