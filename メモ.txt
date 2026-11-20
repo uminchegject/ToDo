@@ -1,19 +1,34 @@
-﻿■Design
+﻿■メモ
+○Client
+・CopyUV 修正
+・プロトタイプ 提出
+
+△忘年会 準備
+・クイズ用意
+　ーメモ
+・プレゼント用意
+
+
+△resolver.cpp 調査
+・ソース確認
+・デバッグ
+
+
 ○ポンピドゥ検証
 ・街検証
- -Randomly Height
+　ーRandomly Height
 ・Long Tube
 ・Detail(Layer) 検証
 
-○Metaborithum Design 準備
 
-○Rapture 準備
-※City Projcetは明確なモチーフを用意する
-・Terrain
- -断崖
-・Object
- -岩
- -Building
+
+■準備
+○Guidelines for Structuring USD Assets
+・Component まで
+
+○MaterialX.Specification.md
+・Nodes まで
+
 
 
 ■Public
@@ -92,6 +107,20 @@
 ・△mtlx2hda.py 調査
 
 
+
+■Design
+○Metaborithum Design 準備
+・規格デザイン
+
+○Rapture 準備
+※City Projcetは明確なモチーフを用意する
+・Terrain
+ -断崖
+・Object
+ -岩
+ -Building
+
+
 ■City
 ○City 設計
 ・Houdiniで街のある景観をつくる！ 調査
@@ -123,8 +152,9 @@
 
 ■Metaborithum
 ○ポンピドゥ検証
-・Grid To BasePoint
-・街検証(Greeble)
+・街検証
+ -Randomly Height
+・Long Tube
 ・Detail(Layer) 検証
 
 ●Module
