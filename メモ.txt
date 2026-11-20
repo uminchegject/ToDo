@@ -1,4 +1,8 @@
-﻿■Rapture City
+﻿○甲府旅行準備
+・お金の本
+
+
+■Rapture City
 ●Rapture Design
 ※Middle & Topデザイン
 ・Terrain
@@ -63,11 +67,14 @@
 ●Pattern
 ※vertical
 ・Frame
+・Pipe (Long)
 ・Box + Empty
-・Pipe + Empty
+
 
 
 ■Metaborithum City
+※City Projcetは明確なモチーフを用意する
+
 ●Design
 ※Frame Unit ベース
 ・規格デザイン
@@ -95,7 +102,6 @@
 
 
 
-
 ■Public
 ○忘年会 準備
 ・クイズ用意
@@ -112,6 +118,7 @@
 
 
 ○ブログ　＜新２段階認証＞設定のお願い
+
 
 
 ■Study
