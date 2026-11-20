@@ -1,5 +1,14 @@
-﻿○甲府旅行準備
-・お金の本
+﻿■Study
+○Codex Study
+※コーディングAI 検証
+・初めてのCodex
+・OpenAI Codex：3つの実用例でわかるステップバイステップガイド
+
+○USD Study 準備
+※Guidelines for Structuring USD Assets
+・File format Plugin
+ ーusdMtlx
+ ー社内フォーマット
 
 
 ■Rapture City
@@ -102,25 +111,6 @@
 
 
 
-■Public
-○忘年会 準備
-・クイズ用意
- -メモ
-・プレゼント用意
-
-●クイズ
-※体験型
-※複数回答
-・イントロクイズ(歌詞)
- -Jpop
-・名言クイズ(映画・アニメ)
-・シルエットクイズ
-
-
-○ブログ　＜新２段階認証＞設定のお願い
-
-
-
 ■Study
 △Codex Study
 ※コーディングAI 検証
@@ -163,3 +153,22 @@
 ○Houdini MatrialX Study
 ※HoudiniからMaterialXをStudy
 ・△mtlx2hda.py 調査
+
+
+
+■Public
+○忘年会 準備
+・クイズ用意
+ -メモ
+・プレゼント用意
+
+●クイズ
+※体験型
+※複数回答
+・イントロクイズ(歌詞)
+ -Jpop
+・名言クイズ(映画・アニメ)
+・シルエットクイズ
+
+
+○ブログ　＜新２段階認証＞設定のお願い
