@@ -1,11 +1,15 @@
-■メタボリズム City
-●Design
-・規格デザイン
-・ハイラインデザイン
+■City
+※City Projcetは明確なモチーフを用意する
 
-●参照
-・カプセルタワー
-・ポンピドゥーセンター
+●Terrain 資料
+※地形生成 + マスク設定
+・TownLandscape
+・THE COMPLETE A-Z TERRAIN HANDBOOK
+・WorldBuilding/Terrain
+
+●Procedural Modeling 資料
+・Creation of a Medieval Town
+・Houdiniで街のある景観をつくる！
 
 
 ■Next
@@ -64,47 +68,3 @@
 ○衣類整理
 ・クローゼット
  -ユニフォーム
- 
- 
-■Rapture City
-○Terrain Study
-・海底表現 
-
-○Cops Study
-・アールデコ模様
-
-●RaptureCity
-※Middle & Topデザイン
-・BaseVolume(Randomly)
- -Scatter
-・起伏(海峡)
- -Terrain(絶壁)
-
-○バリエーション 検証
-※固定パラメーターを複数用意
-・リファレンスに沿って複数検証
-
-●バリエーション
-・Base Volume
- -Pattern Num
- -Pattern Size
-・Detail
- -Vertical or Horizontal
- -Pattern Size
-・色
-
-○Design 設計(Extend)
-・Volume Design
-・Detail Design
-
-●Rapture City
-※Middle & Topデザイン
-・BaseVolume(Randomly)
- -Scatter
-・起伏(海峡)
- -Terrain(絶壁)
-・岩
-
-●資料
-・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
-・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)

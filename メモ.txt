@@ -1,119 +1,6 @@
-﻿■メモ
-○Client
-・CopyUV 修正
-・プロトタイプ 提出
-
-△忘年会 準備
-・クイズ用意
-　ーメモ
-・プレゼント用意
-
-
-△resolver.cpp 調査
-・ソース確認
-・デバッグ
-
-
-○ポンピドゥ検証
-・街検証
-　ーRandomly Height
-・Long Tube
-・Detail(Layer) 検証
-
-
-
-■準備
-○Guidelines for Structuring USD Assets
-・Component まで
-
-○MaterialX.Specification.md
-・Nodes まで
-
-
-
-■Public
-○Client
-・CopyUV 修正
-・プロトタイプ 実装
-
-●仕様
-・左右対称の配置
-・UVのコピー
-・パーツごとの解像度調整
-・ライブ展開機能
-
-
-○忘年会 準備
-・クイズ用意
- -メモ
-・プレゼント用意
-
-●クイズ
-※体験型
-※複数回答
-・イントロクイズ(歌詞)
- -Jpop
-・名言クイズ(映画・アニメ)
-・シルエットクイズ
-
-
-○ブログ　＜新２段階認証＞設定のお願い
-
-
-■Study
-○Expression Study
-・Houdini初級編：エクスプレッション＆スクリプティング
-・【Houdini16.5基礎編】19.Expressionsとスクリプト
-・HoudiniのPythonのExpressionについて
-
-△Codex Study
-※コーディングAI 検証
-・初めてのCodex
-・OpenAI Codex：3つの実用例でわかるステップバイステップガイド
-・△Cloude Code
-
-
-○Guidelines for Structuring USD Assets Study
-・公式ドキュメント (https://chatgpt.com/s/t_6afe45091e788191acf09b128c720285)
-
-○Solaris Study
-※USD Study
-・USD ASSET BUILDING WITH SOLARIS
-
-○OpenUSD事例 Study
-•[CEDEC2022] 『グランツーリスモ７』開発におけるUSD活用事例
-•[CEDEC2021] パイプライン開発者が知っておきたいUSDの使い方
-•[CEDEC2017] ピクサーUSD 入門新たなコンテンツパイプラインを構築する
-・CEDIL(https://cedil.cesa.or.jp/cedil_sessions/search?q=usd)
-
-△AssetResolverSample 調査
-・resolver.cpp 調査
-　ーソース確認
-　ーデバッグ
-
-
-○materialX Study
-・MaterialX.Specification.md (https://chatgpt.com/s/t_6afe457b2c748191946f60f6b10be796)
-
-○MaterialX FileFormat and Shader Plugin 調査
-※USDからMaterialXをStudy
-・usda - mtlxファイル比較 (調査箇所整理)
-・reader.cpp
-　-UsdMtlxRead ソース確認
-　ーデバッグ
-
-○Houdini MatrialX Study
-※HoudiniからMaterialXをStudy
-・△mtlx2hda.py 調査
-
-
-
-■Design
-○Metaborithum Design 準備
-・規格デザイン
-
-○Rapture 準備
-※City Projcetは明確なモチーフを用意する
+﻿■Rapture City
+●Rapture Design
+※Middle & Topデザイン
 ・Terrain
  -断崖
 ・Object
@@ -121,36 +8,39 @@
  -Building
 
 
-■City
-○City 設計
-・Houdiniで街のある景観をつくる！ 調査
-　ー※シンプル
-　ーHoudini Foundation
-・Terrain
-・House
-・tree
+○Terrain Study
+・海底表現 
 
-○Terrain 実装
-※TownLandscape参照
-・地形生成
-・マスク設定
- -Volume (Mask by feature)
-
-●Terrain 資料
-・TownLandscape
-・THE COMPLETE A-Z TERRAIN HANDBOOK
-・WorldBuilding/Terrain
+○Cops Study
+・アールデコ模様
 
 
-○Procedural Modeling Study
-・Houdiniで街のある景観をつくる！
+○バリエーション 検証
+※固定パラメーターを複数用意
+・リファレンスに沿って複数検証
 
-●Procedural Modeling 資料
-・Creation of a Medieval Town
-・Houdiniで街のある景観をつくる！
+●バリエーション
+・Base Volume
+ -Pattern Num
+ -Pattern Size
+・Detail
+ -Vertical or Horizontal
+ -Pattern Size
+・色
 
 
-■Metaborithum
+○Design 設計(Extend)
+・Volume Design
+・Detail Design
+
+
+●資料
+・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
+
+
+
+■Pompidue
 ○ポンピドゥ検証
 ・街検証
  -Randomly Height
@@ -177,8 +67,11 @@
 ・Pipe + Empty
 
 
-●IDEA
+■Metaborithum City
+●Design
 ※Frame Unit ベース
+・規格デザイン
+・ハイラインデザイン
 ・バリエーション
  -Frame
  -Module(Box)
@@ -195,3 +88,71 @@
 ●背景(Terrain)
 ・川
 ・建物高さ
+
+●参照
+・カプセルタワー
+・ポンピドゥーセンター
+
+
+
+
+■Public
+○忘年会 準備
+・クイズ用意
+ -メモ
+・プレゼント用意
+
+●クイズ
+※体験型
+※複数回答
+・イントロクイズ(歌詞)
+ -Jpop
+・名言クイズ(映画・アニメ)
+・シルエットクイズ
+
+
+○ブログ　＜新２段階認証＞設定のお願い
+
+
+■Study
+△Codex Study
+※コーディングAI 検証
+・初めてのCodex
+・OpenAI Codex：3つの実用例でわかるステップバイステップガイド
+・△Cloude Code
+
+
+○Guidelines for Structuring USD Assets Study
+・公式ドキュメント (https://chatgpt.com/s/t_6afe45091e788191acf09b128c720285)
+・Component まで
+
+○Solaris Study
+※USD Study
+・USD ASSET BUILDING WITH SOLARIS
+
+○OpenUSD事例 Study
+•[CEDEC2022] 『グランツーリスモ７』開発におけるUSD活用事例
+•[CEDEC2021] パイプライン開発者が知っておきたいUSDの使い方
+•[CEDEC2017] ピクサーUSD 入門新たなコンテンツパイプラインを構築する
+・CEDIL(https://cedil.cesa.or.jp/cedil_sessions/search?q=usd)
+
+△AssetResolverSample 調査
+・resolver.cpp 調査
+　ーソース確認
+　ーデバッグ
+
+
+○materialX Study
+・MaterialX.Specification.md (https://chatgpt.com/s/t_6afe457b2c748191946f60f6b10be796)
+・Nodes まで
+
+○MaterialX FileFormat and Shader Plugin 調査
+※USDからMaterialXをStudy
+・usda - mtlxファイル比較 (調査箇所整理)
+・reader.cpp
+　-UsdMtlxRead ソース確認
+　ーデバッグ
+
+○Houdini MatrialX Study
+※HoudiniからMaterialXをStudy
+・△mtlx2hda.py 調査
