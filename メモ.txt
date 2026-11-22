@@ -1,9 +1,4 @@
-﻿○旅行準備
-・Kindle Unlimited
- -バビロン
- 
-
-■Rapture City
+﻿■Rapture City
 ●Rapture Design
 ※Middle & Topデザイン
 ・Terrain
@@ -76,9 +71,13 @@
 
 
 ■Pompidue
-○ポンピドゥ検証
+○※多様化 設計
+・Height
+・カラー
+・レイヤー
+
+○検証
 ・街検証
- -Randomly Height
 ・Long Tube
 ・Detail(Layer) 検証
 
