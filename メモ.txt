@@ -7,18 +7,6 @@
  -岩
  -Building
 
-
-○Terrain Study
-・海底表現 
-
-○Cops Study
-・アールデコ模様
-
-
-○バリエーション 検証
-※固定パラメーターを複数用意
-・リファレンスに沿って複数検証
-
 ●バリエーション
 ・Base Volume
  -Pattern Num
@@ -32,6 +20,17 @@
 ○Design 設計(Extend)
 ・Volume Design
 ・Detail Design
+
+○バリエーション 検証
+※固定パラメーターを複数用意
+・リファレンスに沿って複数検証
+
+
+○Terrain Study
+・海底表現 
+
+○Cops Study
+・アールデコ模様
 
 
 ●資料
