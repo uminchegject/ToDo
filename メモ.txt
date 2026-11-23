@@ -1,4 +1,33 @@
-﻿■Rapture City
+﻿●旅行反省
+・1日目 読書メイン(2日目準備) 2日目 反省メイン
+・日始 + 日終
+ -反省 (整理・計画)
+ -PC作業はこの時のみ
+・読書はNutoralになる本を読む(小説・漫画・生き方)
+ -Kindle Unlimited
+
+
+■Rapture City
+○Terrain 実装
+・Terrain
+ -断崖
+・Mask ± Scatter
+ -岩
+ -Building
+
+○Cops Study
+・アールデコ模様
+
+
+△Design 設計(Extend)
+・Volume Design
+・Detail Design
+
+△バリエーション 検証
+※固定パラメーターを複数用意
+・リファレンスに沿って複数検証
+
+
 ●Rapture Design
 ※Middle & Topデザイン
 ・Terrain
@@ -16,26 +45,41 @@
  -Pattern Size
 ・色
 
-
-○Design 設計(Extend)
-・Volume Design
-・Detail Design
-
-○バリエーション 検証
-※固定パラメーターを複数用意
-・リファレンスに沿って複数検証
-
-
-○Terrain Study
-・海底表現 
-
-○Cops Study
-・アールデコ模様
-
-
 ●資料
 ・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
 ・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
+
+
+
+■Pompidue
+○※多様化 設計
+・Height
+・カラー
+・レイヤー
+
+○検証
+・Long Tube
+・Detail(Layer) 検証
+・街検証
+ -※Metaborithum City
+ -Greeble Block
+ -Randomly Height
+
+●Module
+・Frame
+・Box Block
+・Pipe Block
+
+●UnitParam
+・数
+・サイズ
+・カラー
+
+●Pattern
+※vertical
+・Frame
+・Pipe (Long)
+・Box + Empty
 
 
 
@@ -63,41 +107,9 @@
 ・川
 ・建物高さ
 
-●参照
+●Reference
 ・カプセルタワー
 ・ポンピドゥーセンター
-
-
-
-■Pompidue
-○※多様化 設計
-・Height
-・カラー
-・レイヤー
-
-○検証
-・街検証
-・Long Tube
-・Detail(Layer) 検証
-
-●Module
-・Frame
- -Tube
-・Box Block
- -Tube
-・Pipe Block
- -U字Tube
-
-●UnitParam
-・数
-・サイズ
-・カラー
-
-●Pattern
-※vertical
-・Frame
-・Pipe (Long)
-・Box + Empty
 
 
 
