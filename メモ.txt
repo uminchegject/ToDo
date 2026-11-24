@@ -1,152 +1,31 @@
-﻿●旅行反省
-・1日目 反省メイン 2日目 計画メイン
- -計画は新規メモで整理する
-・日始 + 日終
- -日中は読書メイン
- -反省 (整理・計画)
- -PC作業はこの時のみ
-・読書はNutoralになる本を読む(小説・漫画・生き方)
- -Kindle Unlimited
+﻿■Public
+○忘年会 準備
+・クイズ用意
+ -メモ
+・プレゼント用意
+
+●クイズ
+※体験型
+※複数回答
+・イントロクイズ(歌詞)
+ -Jpop
+・名言クイズ(映画・アニメ)
+・シルエットクイズ
 
 
-●Rapture City
-・Terrain 実装
-・Cops Study
-・Building Generator
-
-●Metaborithum City
-・Pompidue Pattern
-・Unit ± Frame Design
-
-●Study
-※Guidelines for Structuring USD Assets 化
-・File format Plugin
- ーusdMtlx
- ー社内フォーマット
-・Codex Study
- -File Format Plugin 実装準備
-
-
-
-■Rapture City
-○Terrain 実装
-・Terrain
- -断崖
-・Mask ± Scatter
- -岩
- -Building
-
-○Cops Study
-・アールデコ模様
-
-
-△Design 設計(Extend)
-・Volume Design
-・Detail Design
-
-△バリエーション 検証
-※固定パラメーターを複数用意
-・リファレンスに沿って複数検証
-
-
-●Rapture Design
-※Middle & Topデザイン
-・Terrain
- -断崖
-・Object
- -岩
- -Building
-
-●バリエーション
-・Base Volume
- -Pattern Num
- -Pattern Size
-・Detail
- -Vertical or Horizontal
- -Pattern Size
-・色
-
-●資料
-・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
-・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
-
-
-
-■Pompidue
-○※多様化 設計
-・Height
-・カラー
-・レイヤー
-
-○検証
-・Long Tube
-・Detail(Layer) 検証
-・街検証
- -※Metaborithum City
- -Greeble Block
- -Randomly Height
-
-●Module
-・Frame
-・Box Block
-・Pipe Block
-
-●UnitParam
-・数
-・サイズ
-・カラー
-
-●Pattern
-※vertical
-・Frame
-・Pipe (Long)
-・Box + Empty
-
-
-
-■Metaborithum City
-※City Projcetは明確なモチーフを用意する
-
-●Design
-※Frame Unit ベース
-・規格デザイン
-・ハイラインデザイン
-・バリエーション
- -Frame
- -Module(Box)
-
-●Frame 
-・BaseFrame(1次元)
-・SurfaceFrame(2次元)
-
-●Module 
-・Procedural Box
-・Pompidue Bpx
-・Cupsule Box
-
-●背景(Terrain)
-・川
-・建物高さ
-
-●Reference
-・カプセルタワー
-・ポンピドゥーセンター
+○ブログ　＜新２段階認証＞設定のお願い
 
 
 
 ■Study
-※Guidelines for Structuring USD Assets 化
-・File format Plugin
- ーusdMtlx
- ー社内フォーマット
-・Codex Study
- -File Format Plugin 実装準備
+○※勉強会準備
+・Solaris を用いたGuidelines for Structuring USD Assets 説明
 
-
-△Codex Study
-※コーディングAI 検証
+○Codex Study
+※コーディングAI 検証 
+※File Format Plugin 実装準備
 ・初めてのCodex
-・OpenAI Codex：3つの実用例でわかるステップバイステップガイド
+・OpenAI Codex：3つの実用例でわかるステップバイテップガイド
 ・△Cloude Code
 
 
@@ -176,30 +55,110 @@
 
 ○MaterialX FileFormat and Shader Plugin 調査
 ※USDからMaterialXをStudy
+・※Guidelines for Structuring USD Assets 化
+ -確認 (AI)
+ -※file format plugin 修正箇所 整理
 ・usda - mtlxファイル比較 (調査箇所整理)
 ・reader.cpp
 　-UsdMtlxRead ソース確認
-　ーデバッグ
-
-○Houdini MatrialX Study
-※HoudiniからMaterialXをStudy
-・△mtlx2hda.py 調査
+　-デバッグ
 
 
 
-■Public
-○忘年会 準備
-・クイズ用意
- -メモ
-・プレゼント用意
+■Rapture City
+○Terrain 実装
+・Terrain
+ -断崖
+・Mask ± Scatter
+ -岩
+ -Building
 
-●クイズ
-※体験型
-※複数回答
-・イントロクイズ(歌詞)
- -Jpop
-・名言クイズ(映画・アニメ)
-・シルエットクイズ
+○Cops Study
+・アールデコ模様
+
+△Building Generator
+・Design 設計(Extend)
+ -Volume Design
+ -Detail Design
+・バリエーション 検証
+ -※固定パラメーターを複数用意
+ -リファレンスに沿って複数検証
+
+●Rapture Design
+※Middle & Topデザイン
+・Terrain
+ -断崖
+・Object
+ -岩
+ -Building
+
+●バリエーション
+・Base Volume
+ -Pattern Num
+ -Pattern Size
+・Detail
+ -Vertical or Horizontal
+ -Pattern Size
+・色
+
+●資料
+・Houdiniで街のある景観をつくる！(https://qiita.com/okada_takuya/items/ac2e07d5892b418c4cfa)
+・Marvel’s Spider-Man,  meet Houdini(https://www.youtube.com/watch?v=D0ERCi9mMZg)
 
 
-○ブログ　＜新２段階認証＞設定のお願い
+
+■Pompidue
+○※多様化 検証
+・Size(Volume, Module)
+・カラー
+・レイヤー (組み合わせ)
+
+○街検証
+・※Metaborithum City
+・Greeble Block
+・Randomly Height
+
+●Module
+・Frame
+・Box Block
+・Pipe Block
+
+●UnitParam
+・数
+・サイズ
+・カラー
+
+●Pattern
+※vertical
+・Frame
+・Pipe (Long)
+・Box + Empty
+
+
+■Metaborithum City
+※City Projcetは明確なモチーフを用意する
+
+●Design
+※Frame Unit ベース
+・規格デザイン
+・ハイラインデザイン
+・バリエーション
+ -Frame
+ -Module(Box)
+
+●Frame 
+・BaseFrame(1次元)
+・SurfaceFrame(2次元)
+
+●Module 
+・Procedural Box
+・Pompidue Bpx
+・Cupsule Box
+
+●背景(Terrain)
+・川
+・建物高さ
+
+●Reference
+・カプセルタワー
+・ポンピドゥーセンター
