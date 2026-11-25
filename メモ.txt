@@ -127,9 +127,6 @@
 
 
 ■Pompidue
-・Pompidue Pattern
-・Unit + Frame Design
-
 ○※多様化 検証
 ・Size(Volume, Module)
 ・カラー
