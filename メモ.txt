@@ -140,18 +140,14 @@
 ●Module
 ・Frame
 ・Box Block
+ -Empty Pattern
 ・Pipe Block
+ -Size 多様化
 
 ●UnitParam
 ・数
 ・サイズ
 ・カラー
-
-●Pattern
-※vertical
-・Frame
-・Pipe (Long)
-・Box + Empty
 
 
 ■Metaborithum City
