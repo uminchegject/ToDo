@@ -1,7 +1,21 @@
-﻿○サバゲー告知
+﻿■メモ
+○再提出準備
+・エラー確認
+・マニュアル整理
 
-○年末年始 ゴジラ
+○忘年会 準備
+・クイズ用意
+ -メモ
+・プレゼント用意
 
+○ブログ　＜新２段階認証＞設定のお願い
+
+
+○Guidelines for Structuring USD Assets
+・What is an Asset in USD?
+
+○USD ASSET BUILDING WITH SOLARIS
+・Export USD 調査
 
 
 ■Public
@@ -34,14 +48,6 @@
 
 ○※勉強会準備
 ・Solaris を用いたGuidelines for Structuring USD Assets 説明
-
-
-○Codex Study
-※コーディングAI 検証 
-※File Format Plugin 実装準備
-・初めてのCodex
-・OpenAI Codex：3つの実用例でわかるステップバイテップガイド
-・△Cloude Code
 
 
 ○Guidelines for Structuring USD Assets Study
@@ -77,6 +83,14 @@
 ・reader.cpp
 　-UsdMtlxRead ソース確認
 　-デバッグ
+
+
+○Codex Study
+※コーディングAI 検証 
+※File Format Plugin 実装準備
+・初めてのCodex
+・OpenAI Codex：3つの実用例でわかるステップバイテップガイド
+・△Cloude Code
 
 
 
