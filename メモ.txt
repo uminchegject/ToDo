@@ -1,24 +1,8 @@
-﻿■メモ
-○再提出準備
-・エラー確認
-・マニュアル整理
+﻿■Public
+○修正
+・CopyUV
+・Reload Asset
 
-○忘年会 準備
-・クイズ用意
- -メモ
-・プレゼント用意
-
-○ブログ　＜新２段階認証＞設定のお願い
-
-
-○Guidelines for Structuring USD Assets
-・What is an Asset in USD?
-
-○USD ASSET BUILDING WITH SOLARIS
-・Export USD 調査
-
-
-■Public
 ○忘年会 準備
 ・クイズ用意
  -メモ
@@ -52,11 +36,13 @@
 
 ○Guidelines for Structuring USD Assets Study
 ・公式ドキュメント (https://chatgpt.com/s/t_6afe45091e788191acf09b128c720285)
- - What is an Asset in USD? (https://chatgpt.com/s/t_6b0629ec71c48191ba2ae31e3cd436f9)
+ - What is an Asset in USD? (https://chatgpt.com/s/t_6b06b51788fc8191b802a2876e128fb6)
+ - Components (https://chatgpt.com/s/t_6b06b57063c48191a578faa000c8c582)
 
 ○Solaris Study
 ※USD Study
 ・USD ASSET BUILDING WITH SOLARIS
+ -Export USD 調査
 
 ○OpenUSD事例 Study
 •[CEDEC2022] 『グランツーリスモ７』開発におけるUSD活用事例
@@ -102,7 +88,7 @@
 ○Terrain 実装
 ・Terrain
  -断崖
-・Mask ± Scatter
+・Mask + Scatter
  -岩
  -Building
 
