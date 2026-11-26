@@ -36,6 +36,9 @@
 ○USD ASSET BUILDING WITH SOLARIS
 ・Study 方法
 
+○terrain_tutorial_FINAL Study
+・他プロジェクトの確認
+
 ○Copernicus Study
 ・HOW TO CREATE TILE-BASED TEXTURES
 　ープロジェクト整理
