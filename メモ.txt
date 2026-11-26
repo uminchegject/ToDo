@@ -7,6 +7,7 @@
 ・Assembly
 
 ○MaterialX.Specification.md
+※usda 参照
 
 ○max乗り換え割
 
