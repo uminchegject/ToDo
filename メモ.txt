@@ -139,15 +139,12 @@
 
 
 ■Pompidue
-○※多様化 検証
+○多様化 検証
 ・Size(Volume, Module)
 ・カラー
 ・レイヤー (組み合わせ)
 
-○街検証
-・※Metaborithum City
-・Greeble Block
-・Randomly Height
+○街検証 (Metaborithum City)
 
 ●Module
 ・Frame
