@@ -1,4 +1,49 @@
-﻿■Public
+﻿■メモ
+○修正
+・Scale調整
+・MultiParam修正
+
+○忘年会 準備
+・クイズ用意
+ -メモ
+・プレゼント用意
+
+○ブログ　＜新２段階認証＞設定のお願い
+
+
+○Terrain 実装
+・Sample Project 整理
+
+○Copernicus Study
+・Getting Started with Copernicus in Houdini | SDF Shapes & Patterns
+
+
+
+■準備
+○Solaris 操作 Tutorial
+・UIの使用方法の確認
+
+○Guidelines for Structuring USD Assets
+・Components
+
+○MaterialX.Specification.md
+・MaterialX Overview
+　ー和訳 準備
+
+○パイプライン開発者が知っておきたいUSDの使い方
+
+
+○USD ASSET BUILDING WITH SOLARIS
+・Study 方法
+
+○Copernicus Study
+・HOW TO CREATE TILE-BASED TEXTURES
+　ープロジェクト整理
+
+
+
+
+■Public
 ○修正
 ・CopyUV
 ・Reload Asset
@@ -45,15 +90,11 @@
  -Export USD 調査
 
 ○OpenUSD事例 Study
-•[CEDEC2022] 『グランツーリスモ７』開発におけるUSD活用事例
 •[CEDEC2021] パイプライン開発者が知っておきたいUSDの使い方
 •[CEDEC2017] ピクサーUSD 入門新たなコンテンツパイプラインを構築する
 ・CEDIL(https://cedil.cesa.or.jp/cedil_sessions/search?q=usd)
 
-△AssetResolverSample 調査
-・resolver.cpp 調査
-　ーソース確認
-　ーデバッグ
+△パイプライン Study (CEDEC)
 
 
 ○materialX Study
