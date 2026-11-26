@@ -1,55 +1,22 @@
-﻿■メモ
-○修正
-・Scale調整
-・MultiParam修正
-
-○忘年会 準備
-・クイズ用意
- -メモ
-・プレゼント用意
-
-○ブログ　＜新２段階認証＞設定のお願い
-
-
-○Terrain 実装
-・Sample Project 整理
-
-○Copernicus Study
-・Getting Started with Copernicus in Houdini | SDF Shapes & Patterns
-
-
-
-■準備
+﻿■準備
 ○Solaris 操作 Tutorial
 ・UIの使用方法の確認
 
 ○Guidelines for Structuring USD Assets
 ・Components
+・Assembly
 
 ○MaterialX.Specification.md
-・MaterialX Overview
-　ー和訳 準備
 
-○パイプライン開発者が知っておきたいUSDの使い方
-
-
-○USD ASSET BUILDING WITH SOLARIS
-・Study 方法
-
-○terrain_tutorial_FINAL Study
-・他プロジェクトの確認
-
-○Copernicus Study
-・HOW TO CREATE TILE-BASED TEXTURES
-　ープロジェクト整理
-
+○max乗り換え割
 
 
 
 ■Public
-○修正
-・CopyUV
-・Reload Asset
+○整理
+・仕様
+ -マニュアル
+・処理
 
 ○忘年会 準備
 ・クイズ用意
@@ -63,9 +30,6 @@
  -Jpop
 ・名言クイズ(映画・アニメ)
 ・シルエットクイズ
-
-
-○ブログ　＜新２段階認証＞設定のお願い
 
 
 
@@ -100,11 +64,14 @@
 △パイプライン Study (CEDEC)
 
 
+○materialX usda 調査
+・※usda ベースで構造把握
+
 ○materialX Study
 ・MaterialX.Specification.md (https://chatgpt.com/s/t_6afe457b2c748191946f60f6b10be796)
  -MaterialX Overview (https://chatgpt.com/s/t_6b062a9010e4819196cc7ca3b7ef755b)
 
-○MaterialX FileFormat and Shader Plugin 調査
+△MaterialX FileFormat and Shader Plugin 調査
 ※USDからMaterialXをStudy
 ・※Guidelines for Structuring USD Assets 化
  -確認 (AI)
@@ -136,8 +103,9 @@
  -岩
  -Building
 
-○Cops Study
-・アールデコ模様
+○Cops 設計 & Study
+・アールデコ模様 調査
+ -Pinterest
 
 △Building Generator
 ・Design 設計(Extend)
