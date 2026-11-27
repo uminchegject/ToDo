@@ -1,116 +1,10 @@
-﻿■メモ
-○file format plugin 調査
-
-△整理
-・仕様
- -マニュアル
-・処理
-
-○忘年会 準備
-・クイズ用意
- -メモ
-・プレゼント用意
-
-●クイズ
-※体験型
-※複数回答
-・イントロクイズ(歌詞)
- -Jpop
-・名言クイズ(映画・アニメ)
-・シルエットクイズ
-
-
-○materialX×usda Study
-
-○USD ASSET BUILDING WITH SOLARIS
-
-
-○Terrain 実装
-・Terrain
- -断崖
-・Mask + Scatter
- -岩
- -Building
-
-
-
-■Public
-○整理
-・仕様
- -マニュアル
-・処理
-
-○忘年会 準備
-・クイズ用意
- -メモ
-・プレゼント用意
-
-●クイズ
-※体験型
-※複数回答
-・イントロクイズ(歌詞)
- -Jpop
-・名言クイズ(映画・アニメ)
-・シルエットクイズ
-
-
-■Private
+﻿■Private
 ○max乗り換え割
  -dazn
  -danime
 
 ○ETC PayPay
  -PayPayETC
-
-
-■Study
-※Guidelines for Structuring USD Assets 化
-・File format Plugin
- ーusdMtlx
- ー社内フォーマット
-・Codex Study
- -File Format Plugin 実装準備
-
-
-○Guidelines for Structuring USD Assets Study
-・公式ドキュメント (https://chatgpt.com/s/t_6afe45091e788191acf09b128c720285)
- - What is an Asset in USD? (https://chatgpt.com/s/t_6b06b51788fc8191b802a2876e128fb6)
- - Components (https://chatgpt.com/s/t_6b06b57063c48191a578faa000c8c582)
- - Assembly (https://chatgpt.com/s/t_6b0816faf01881919fe1aa1fc82aba54)
-
-○Solaris Study
-※USD Study
-・USD ASSET BUILDING WITH SOLARIS
-
-○OpenUSD事例 Study
-•[CEDEC2021] パイプライン開発者が知っておきたいUSDの使い方
-•[CEDEC2017] ピクサーUSD 入門新たなコンテンツパイプラインを構築する
-・CEDIL(https://cedil.cesa.or.jp/cedil_sessions/search?q=usd)
-
-△パイプライン Study (CEDEC)
-
-
-○materialX Study
-・usda (https://chatgpt.com/s/t_6b081822f95c8191abff21f7aa508331)
-・MaterialX.Specification.md (https://chatgpt.com/s/t_6afe457b2c748191946f60f6b10be796)
-
-△MaterialX FileFormat and Shader Plugin 調査
-※USDからMaterialXをStudy
-・※Guidelines for Structuring USD Assets 化
- -確認 (AI)
- -※file format plugin 修正箇所 整理
-・usda - mtlxファイル比較 (調査箇所整理)
-・reader.cpp
- -UsdMtlxRead ソース確認
- -デバッグ
-
-
-○Codex Study
-※コーディングAI 検証 
-※File Format Plugin 実装準備
-・初めてのCodex
-・OpenAI Codex：3つの実用例でわかるステップバイテップガイド
-・△Cloude Code
 
 
 
@@ -211,3 +105,76 @@
 ●Reference
 ・カプセルタワー
 ・ポンピドゥーセンター
+
+
+
+■Study
+※Guidelines for Structuring USD Assets 化
+・File format Plugin
+ ーusdMtlx
+ ー社内フォーマット
+・Codex Study
+ -File Format Plugin 実装準備
+
+
+○Guidelines for Structuring USD Assets Study
+・公式ドキュメント (https://chatgpt.com/s/t_6afe45091e788191acf09b128c720285)
+ - What is an Asset in USD? (https://chatgpt.com/s/t_6b06b51788fc8191b802a2876e128fb6)
+ - Components (https://chatgpt.com/s/t_6b06b57063c48191a578faa000c8c582)
+ - Assembly (https://chatgpt.com/s/t_6b0816faf01881919fe1aa1fc82aba54)
+
+○Solaris Study
+※USD Study
+・USD ASSET BUILDING WITH SOLARIS
+
+○OpenUSD事例 Study
+•[CEDEC2021] パイプライン開発者が知っておきたいUSDの使い方
+•[CEDEC2017] ピクサーUSD 入門新たなコンテンツパイプラインを構築する
+・CEDIL(https://cedil.cesa.or.jp/cedil_sessions/search?q=usd)
+
+△パイプライン Study (CEDEC)
+
+
+○materialX Study
+・usda (https://chatgpt.com/s/t_6b081822f95c8191abff21f7aa508331)
+・MaterialX.Specification.md (https://chatgpt.com/s/t_6afe457b2c748191946f60f6b10be796)
+
+△MaterialX FileFormat and Shader Plugin 調査
+※USDからMaterialXをStudy
+・※Guidelines for Structuring USD Assets 化
+ -確認 (AI)
+ -※file format plugin 修正箇所 整理
+・usda - mtlxファイル比較 (調査箇所整理)
+・reader.cpp
+ -UsdMtlxRead ソース確認
+ -デバッグ
+
+
+○社内フォーマット調査
+・sample file format plugin 修正
+・検証
+
+
+△Codex Study
+※コーディングAI 検証 
+※File Format Plugin 実装準備
+・初めてのCodex
+・OpenAI Codex：3つの実用例でわかるステップバイテップガイド
+・△Cloude Code
+
+
+
+■Public
+○整理
+・仕様
+ -マニュアル
+・処理
+
+○忘年会 準備
+・クイズ用意
+ -TA問題 (Coyoteブログネタ)
+ -中村さん(写真)
+ -漢字クイズ
+・プレゼント用意
+ -4000円
+ -テーマ

@@ -42,6 +42,7 @@
 
 
 ■CityGenerator
+※City Projcetは明確なモチーフを用意する
 ※Theme
  -※Detail
  -再現(真似)メイン
