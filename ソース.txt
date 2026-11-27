@@ -1,4 +1,20 @@
-﻿■Mtlx usda
+﻿■議事録
+●メモ
+・1月の予算 9万円(6万 + 3万)
+・飲み物(2万円)
+ -https://www.kakuyasu.co.jp/products/00416707
+ -https://www.kakuyasu.co.jp/products/00416022
+ -https://www.kakuyasu.co.jp/products/00061875
+ -https://www.kakuyasu.co.jp/products/00349405
+ -https://www.kakuyasu.co.jp/products/00303305
+ -https://www.kakuyasu.co.jp/products/00077483
+ -https://www.kakuyasu.co.jp/products/00077479
+ -https://www.kakuyasu.co.jp/products/00343950
+ -https://www.kakuyasu.co.jp/products/00001233
+・食事(7万円)
+
+
+■Mtlx usda
 ●usd_preview_surface_gold.usda
 #usda 1.0
 
