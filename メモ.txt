@@ -1,4 +1,40 @@
-﻿■Public
+﻿■メモ
+○file format plugin 調査
+
+△整理
+・仕様
+ -マニュアル
+・処理
+
+○忘年会 準備
+・クイズ用意
+ -メモ
+・プレゼント用意
+
+●クイズ
+※体験型
+※複数回答
+・イントロクイズ(歌詞)
+ -Jpop
+・名言クイズ(映画・アニメ)
+・シルエットクイズ
+
+
+○materialX×usda Study
+
+○USD ASSET BUILDING WITH SOLARIS
+
+
+○Terrain 実装
+・Terrain
+ -断崖
+・Mask + Scatter
+ -岩
+ -Building
+
+
+
+■Public
 ○整理
 ・仕様
  -マニュアル
@@ -24,7 +60,7 @@
  -danime
 
 ○ETC PayPay
-
+ -PayPayETC
 
 
 ■Study
