@@ -45,7 +45,6 @@
 ○Solaris Study
 ※USD Study
 ・USD ASSET BUILDING WITH SOLARIS
- -Export USD 調査
 
 ○OpenUSD事例 Study
 •[CEDEC2021] パイプライン開発者が知っておきたいUSDの使い方
