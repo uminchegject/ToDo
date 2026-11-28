@@ -1,4 +1,11 @@
-﻿■Private
+﻿※技術 Studyは基本デジタルメイン
+ -Study + 調査 + 検証
+
+■Private
+○お金 Study
+・概念
+・詳細
+
 ○max乗り換え割
  -dazn
  -danime
@@ -111,10 +118,18 @@
 ■Study
 ※Guidelines for Structuring USD Assets 化
 ・File format Plugin
- ーusdMtlx
+ ーusdMtlx(※最適な構造設計をする)
  ー社内フォーマット
 ・Codex Study
  -File Format Plugin 実装準備
+
+
+○OpenUSD事例 Study
+•[CEDEC2021] パイプライン開発者が知っておきたいUSDの使い方
+•[CEDEC2017] ピクサーUSD 入門新たなコンテンツパイプラインを構築する
+・CEDIL(https://cedil.cesa.or.jp/cedil_sessions/search?q=usd)
+
+△パイプライン Study (CEDEC)
 
 
 ○Guidelines for Structuring USD Assets Study
@@ -127,27 +142,16 @@
 ※USD Study
 ・USD ASSET BUILDING WITH SOLARIS
 
-○OpenUSD事例 Study
-•[CEDEC2021] パイプライン開発者が知っておきたいUSDの使い方
-•[CEDEC2017] ピクサーUSD 入門新たなコンテンツパイプラインを構築する
-・CEDIL(https://cedil.cesa.or.jp/cedil_sessions/search?q=usd)
-
-△パイプライン Study (CEDEC)
-
 
 ○materialX Study
-・usda (https://chatgpt.com/s/t_6b081822f95c8191abff21f7aa508331)
 ・MaterialX.Specification.md (https://chatgpt.com/s/t_6afe457b2c748191946f60f6b10be796)
+・mtlx.usda構造 (https://chatgpt.com/s/t_6b0a337844588191b25953636f8cb012)
+ -Looks.mtlx構造確認
 
-△MaterialX FileFormat and Shader Plugin 調査
-※USDからMaterialXをStudy
-・※Guidelines for Structuring USD Assets 化
- -確認 (AI)
- -※file format plugin 修正箇所 整理
-・usda - mtlxファイル比較 (調査箇所整理)
-・reader.cpp
- -UsdMtlxRead ソース確認
- -デバッグ
+○MaterialX FileFormat and Shader Plugin 調査
+※最適な構造設計(Guidelines for Structuring USD Assets 化)
+・usdaの最適化 (https://chatgpt.com/share/6b0a33e8-873c-83ee-8196-e64b2254702e)
+・reader.cpp　修正
 
 
 ○社内フォーマット調査
@@ -161,7 +165,6 @@
 ・初めてのCodex
 ・OpenAI Codex：3つの実用例でわかるステップバイテップガイド
 ・△Cloude Code
-
 
 
 ■Public
