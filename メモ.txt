@@ -1,17 +1,20 @@
-﻿●Pompidue Pattern
-・Box Pattern
-　ーSize
-　ーColor
-・Pipe Pattern
-　ーSize
-　ーColor
-　ーIn Out
+﻿■反省
+※技術 Studyは基本デジタルメイン
+ -Study + 調査 + 検証
 
-●Metaborithum Pattern
-・Core
-・Box
-　ーFrame
-　ーObject
+※月1 目安で会社Only Day
+
+
+■Private
+○シューキーパー
+
+○max乗り換え割
+ -dazn
+ -danime
+
+○ETC PayPay
+ -PayPayETC
+
 
 
 ■Pompidue
@@ -20,21 +23,30 @@
 ・カラー
 ・レイヤー (組み合わせ)
 
-○街検証 (Metaborithum City)
-・Core + Module + Pipe + Frame
-・カプセルタワー + ポンピドゥーセンター
-
-●Module
-・Frame
-・Box Block
- -Empty Pattern
-・Pipe Block
- -Size 多様化
-
 ●UnitParam
 ・数
 ・サイズ
 ・カラー
+
+●Pompidue Pattern
+・Box Pattern
+　ーSize
+　ーColor
+・Pipe Pattern
+　ーSize
+　ーColor
+　ーIn Out
+
+
+○街検証 (Metaborithum City)
+・Core + Module + Pipe + Frame
+・カプセルタワー + ポンピドゥーセンター
+
+●Metaborithum Pattern
+・Core
+・Box
+　ーFrame
+　ーObject Layer
 
 
 ■Metaborithum City
@@ -48,15 +60,6 @@
  -Frame
  -Module(Box)
 
-●Frame 
-・BaseFrame(1次元)
-・SurfaceFrame(2次元)
-
-●Module 
-・Procedural Box
-・Pompidue Bpx
-・Cupsule Box
-
 ●背景(Terrain)
 ・川
 ・建物高さ
@@ -64,23 +67,6 @@
 ●Reference
 ・カプセルタワー
 ・ポンピドゥーセンター
-
-
-
-■反省
-※技術 Studyは基本デジタルメイン
- -Study + 調査 + 検証
-
-※月1 目安で会社Only Day
-
-
-■Private
-○max乗り換え割
- -dazn
- -danime
-
-○ETC PayPay
- -PayPayETC
 
 
 
